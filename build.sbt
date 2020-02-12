@@ -36,7 +36,7 @@ lazy val root = (project in file(".")).
       "kr.ac.kaist.ires.IRTest",
       "kr.ac.kaist.ires.JSTest"
     ).mkString(" ", " ", "")) dependsOn compile,
-    irTest <<= (testOnly in Test).toTask(" kr.ac.kaist.ires.IRTest") dependsOn compile,
+    irTest <<= (testOnly in Test).toTask(" kr.ac.kaist.ires.BasicIRTest") dependsOn compile,
     jsTest <<= (testOnly in Test).toTask(" kr.ac.kaist.ires.JSTest") dependsOn compile,
     test262Test <<= (testOnly in Test).toTask(" kr.ac.kaist.ires.Test262Test") dependsOn compile,
     test262PropTest <<= (testOnly in Test).toTask(" kr.ac.kaist.ires.Test262PropTest") dependsOn compile,

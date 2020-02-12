@@ -1,3 +1,15 @@
-JSCheck: 101 / 101
-JSEval: 101 / 101
-JSParse: 101 / 101
+  JSCheck:
+    PASS : 101
+    Yet  : 0
+    FAIL : 0
+    TOTAL: 101
+  JSEval:
+    PASS : 101
+    Yet  : 0
+    FAIL : 0
+    TOTAL: 101
+  JSParse:
+    PASS : 101
+    Yet  : 0
+    FAIL : 0
+    TOTAL: 101

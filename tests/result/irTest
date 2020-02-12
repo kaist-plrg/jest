@@ -1,2 +1,10 @@
-IREval: 30 / 30
-IRParse: 30 / 30
+  IREval:
+    PASS : 30
+    Yet  : 0
+    FAIL : 0
+    TOTAL: 30
+  IRParse:
+    PASS : 30
+    Yet  : 0
+    FAIL : 0
+    TOTAL: 30

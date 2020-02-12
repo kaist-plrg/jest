@@ -1,11 +1,11 @@
 package kr.ac.kaist.ires
 
 import java.io._
-import kr.ac.kaist.ires.error.NotSupported
+import kr.ac.kaist.ires.error._
 import kr.ac.kaist.ires.phase._
 import kr.ac.kaist.ires.util.Useful._
 import org.scalatest._
-import scala.Console.{ CYAN, GREEN, RED }
+import scala.Console.{ CYAN, GREEN, YELLOW, RED, RESET }
 import scala.io.Source
 import scala.util.{ Try, Success, Failure }
 import spray.json._
@@ -46,21 +46,28 @@ abstract class IRESTest extends FunSuite with BeforeAndAfterAll {
         case Success(_) =>
           resMap += tag -> (res + (name -> Pass))
           if (DISPLAY_TEST_PROGRESS) printGreen("#")
-        case Failure(e @ NotSupported(msg)) =>
-          resMap += tag -> (res + (name -> Yet(msg)))
-          if (DISPLAY_TEST_PROGRESS) printYellow("#")
-        case Failure(e) =>
-          resMap += tag -> (res + (name -> Fail))
-          if (DISPLAY_TEST_PROGRESS) printRed("#")
-          fail(e.toString)
+        case Failure(e) => (e match {
+          case NotSupported(msg) => Some(msg)
+          case ModelNotYetGenerated => Some("Incomplete Modeling")
+          case _ => None
+        }) match {
+          case Some(msg) =>
+            resMap += tag -> (res + (name -> Yet(msg)))
+            if (DISPLAY_TEST_PROGRESS) printYellow("#")
+          case None =>
+            resMap += tag -> (res + (name -> Fail))
+            if (DISPLAY_TEST_PROGRESS) printRed("#")
+            fail(e.toString)
+        }
       })
     }
   }
 
-  // get sir
-  def getSir(res: Map[String, Result]): (Int, Int) = (
+  // get score
+  def getScore(res: Map[String, Result]): (Int, Int, Int) = (
     res.count { case (k, r) => r == Pass },
-    res.size
+    res.count { case (k, r) => r != Pass && r != Fail },
+    res.count { case (k, r) => r == Fail }
   )
 
   // tag name
@@ -69,6 +76,12 @@ abstract class IRESTest extends FunSuite with BeforeAndAfterAll {
   // sort by keys
   def sortByKey[U, V](map: Map[U, V])(implicit ord: scala.math.Ordering[U]): List[(U, V)] = map.toList.sortBy { case (k, v) => k }
 
+  // print information
+  def printInfo(msg: String, color: String = RESET): Unit = {
+    print(s"[info] ")
+    printlnColor(color)(msg)
+  }
+
   // check backward-compatibility after all tests
   override def afterAll(): Unit = {
     import DefaultJsonProtocol._
@@ -76,7 +89,7 @@ abstract class IRESTest extends FunSuite with BeforeAndAfterAll {
       resMap
         .toList
         .sortBy { case (k, v) => k }
-        .map { case (t, r) => (t, getSir(r)) }
+        .map { case (t, r) => (t, getScore(r)) }
 
     // check backward-compatibility
     var breakCount = 0
@@ -87,12 +100,14 @@ abstract class IRESTest extends FunSuite with BeforeAndAfterAll {
 
     // show abstract result
     if (DISPLAY_TEST_PROGRESS) println
-    print("[info] ")
-    printlnColor(CYAN)(s"$tag:")
+    printInfo(s"$tag:", CYAN)
     sorted.foreach {
-      case (t, (x, y)) =>
-        print("[info] ")
-        printlnColor(if (x == y) GREEN else RED)(s"  $t: $x / $y")
+      case (name, (p, y, f)) =>
+        printInfo(s"  $name:")
+        if (p > 0) printInfo(s"    PASS : $p", GREEN)
+        if (y > 0) printInfo(s"    Yet  : $y", YELLOW)
+        if (f > 0) printInfo(s"    FAIL : $f", RED)
+        printInfo(s"    TOTAL: ${p + y + f}")
     }
     val filename = s"$TEST_DIR/result/$tag.json"
     val orig =
@@ -117,7 +132,14 @@ abstract class IRESTest extends FunSuite with BeforeAndAfterAll {
     // save abstract result if backward-compatible
     if (breakCount == 0) {
       val pw = getPrintWriter(s"$TEST_DIR/result/$tag")
-      sorted.foreach { case (t, (x, y)) => pw.println(s"$t: $x / $y") }
+      sorted.foreach {
+        case (name, (p, y, f)) =>
+          pw.println(s"  $name:")
+          pw.println(s"    PASS : $p")
+          pw.println(s"    Yet  : $y")
+          pw.println(s"    FAIL : $f")
+          pw.println(s"    TOTAL: ${p + y + f}")
+      }
       pw.close()
 
       val jpw = getPrintWriter(filename)
