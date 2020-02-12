@@ -1,6 +1,6 @@
 package kr.ac.kaist.ires.core
 
-// Walker for CORE Language
+// Walker for IR Language
 trait Walker {
   // all cases
   def walk(node: CoreNode): CoreNode = node match {

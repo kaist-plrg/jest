@@ -3,7 +3,7 @@ package kr.ac.kaist.ires.core
 import kr.ac.kaist.ires.error.NotSupported
 import kr.ac.kaist.ires.model.Model.tyMap
 
-// CORE Heaps
+// IR Heaps
 case class Heap(
     map: Map[Addr, Obj] = Map(),
     size: Int = 0

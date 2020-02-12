@@ -1,6 +1,6 @@
 package kr.ac.kaist.ires.core
 
-// CORE Expressions
+// IR Expressions
 sealed trait Expr extends CoreNode
 case class ENum(n: Double) extends Expr {
   override def equals(that: Any): Boolean = that match {

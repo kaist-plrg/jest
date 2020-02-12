@@ -1,6 +1,6 @@
 package kr.ac.kaist.ires.core
 
-// CORE Instructions
+// IR Instructions
 sealed trait Inst extends CoreNode
 case class IExpr(expr: Expr) extends Inst
 case class ILet(id: Id, expr: Expr) extends Inst

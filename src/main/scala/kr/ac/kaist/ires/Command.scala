@@ -2,7 +2,6 @@ package kr.ac.kaist.ires
 
 import kr.ac.kaist.ires.error.NoMode
 import kr.ac.kaist.ires.model.Script
-import kr.ac.kaist.ires.algorithm.Algorithm
 import kr.ac.kaist.ires.phase._
 import kr.ac.kaist.ires.util.ArgParser
 
@@ -33,27 +32,13 @@ class CommandObj[Result](
 // base command
 case object CmdBase extends CommandObj("", PhaseNil)
 
-// parse-algo
-case object CmdParseAlgo extends CommandObj("parse-algo", CmdBase >> ParseAlgo) {
-  override def display(algo: Algorithm): Unit = println(algo)
-}
-
-// compile-algo
-case object CmdCompileAlgo extends CommandObj("compile-algo", CmdParseAlgo >> CompileAlgo) {
-  override def display(func: core.Func): Unit = println(core.beautify(func))
-}
-
-// infer-algo
-case object CmdInferAlgo extends CommandObj("infer-algo", CmdParseAlgo >> InferAlgo) {
-}
+// filter
+case object CmdFilterMeta extends CommandObj("filter-meta", CmdBase >> FilterMeta)
 
 // parse
 case object CmdParse extends CommandObj("parse", CmdBase >> Parse) {
   override def display(script: Script): Unit = println(script)
 }
-
-// filter
-case object CmdFilterMeta extends CommandObj("filter-meta", CmdBase >> FilterMeta)
 
 // load
 case object CmdLoad extends CommandObj("load", CmdParse >> Load)
@@ -83,15 +68,6 @@ case object CmdEvalCore extends CommandObj("eval-core", CmdLoadCore >> EvalCore)
 
 // repl-core
 case object CmdREPLCore extends CommandObj("repl-core", CmdLoadCore >> REPLCore)
-
-// repl-algo
-case object CmdREPLAlgo extends CommandObj("repl-algo", CmdBase >> REPLAlgo)
-
-// gen-model
-case object CmdGenModel extends CommandObj("gen-model", CmdBase >> GenModel)
-
-// preprocess
-case object CmdPreProcess extends CommandObj("preprocess", CmdBase >> PreProcess)
 
 // help
 case object CmdHelp extends CommandObj("help", CmdBase >> Help)

@@ -1,6 +1,6 @@
 package kr.ac.kaist.ires.core
 
-// CORE States
+// IR States
 case class State(
     context: Context = Context(),
     ctxStack: List[Context] = List(),

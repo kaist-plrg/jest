@@ -1,11 +1,6 @@
-import java.io.File
-
 lazy val dummyModel = taskKey[Unit]("Generates a dummy model.")
-lazy val coreTest = taskKey[Unit]("Launch core language interpreter tests")
-lazy val grammarDiffTest = taskKey[Unit]("Launch tests for GrammarDiff")
-lazy val algoCompilerTest = taskKey[Unit]("Launch tests for AlgoCompiler")
-lazy val algoCompilerDiffTest = taskKey[Unit]("Launch tests for AlgoCompilerDiff")
-lazy val jsTest = taskKey[Unit]("Launch js language interpreter tests")
+lazy val irTest = taskKey[Unit]("Launch IRES language interpreter tests")
+lazy val jsTest = taskKey[Unit]("Launch JavaScript language interpreter tests")
 lazy val test262Test = taskKey[Unit]("Launch test262 tests")
 lazy val test262PropTest = taskKey[Unit]("Launch test262 tests")
 lazy val test262ParseTest = taskKey[Unit]("Launch test262 parsing tests")
@@ -38,13 +33,10 @@ lazy val root = (project in file(".")).
     testOptions in Test += Tests.Argument("-fDG", baseDirectory.value + "/tests/detail"),
     compile <<= (compile in Compile) dependsOn (dummyModel in Compile),
     test <<= (testOnly in Test).toTask(List(
-      "kr.ac.kaist.ires.BasicCoreTest",
+      "kr.ac.kaist.ires.IRTest",
       "kr.ac.kaist.ires.JSTest"
     ).mkString(" ", " ", "")) dependsOn compile,
-    coreTest <<= (testOnly in Test).toTask(" kr.ac.kaist.ires.BasicCoreTest") dependsOn compile,
-    grammarDiffTest <<= (testOnly in Test).toTask(" kr.ac.kaist.ires.GrammarDiffTest") dependsOn compile,
-    algoCompilerTest <<= (testOnly in Test).toTask(" kr.ac.kaist.ires.AlgoCompilerTest") dependsOn compile,
-    algoCompilerDiffTest <<= (testOnly in Test).toTask(" kr.ac.kaist.ires.AlgoCompilerDiffTest") dependsOn compile,
+    irTest <<= (testOnly in Test).toTask(" kr.ac.kaist.ires.IRTest") dependsOn compile,
     jsTest <<= (testOnly in Test).toTask(" kr.ac.kaist.ires.JSTest") dependsOn compile,
     test262Test <<= (testOnly in Test).toTask(" kr.ac.kaist.ires.Test262Test") dependsOn compile,
     test262PropTest <<= (testOnly in Test).toTask(" kr.ac.kaist.ires.Test262PropTest") dependsOn compile,
@@ -64,22 +56,6 @@ libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % "3.0.8" % "test",
   "org.jline" % "jline" % "3.13.1"
 )
-
-commands += Command.command("generateModel") { state =>
-    "compile" ::
-    s"run preprocess" ::
-    "compile" ::
-    s"run gen-model" ::
-    "compile" ::
-    state
-}
-
-commands += Command.command("updateAndTestModel") { state =>
-    s"run gen-model" ::
-    "test" ::
-    "algoCompilerDiffTest" ::
-    state
-}
 
 scalacOptions in ThisBuild ++= Seq("-deprecation", "-feature",
                                    "-language:postfixOps",

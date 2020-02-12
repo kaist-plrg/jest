@@ -1,17 +1,16 @@
 package kr.ac.kaist.ires
 
-import kr.ac.kaist.ires.parser.{ ESParsers, TokenParsers }
+import kr.ac.kaist.ires.parser.ESParsers
 import kr.ac.kaist.ires.error.ModelNotYetGenerated
 import kr.ac.kaist.ires.core._
 import kr.ac.kaist.ires.core.Parser._
-import kr.ac.kaist.ires.algorithm.{ AlgoKind, Algorithm, Token }
 import scala.collection.immutable.{ Set => SSet }
 
 package object model {
-  val Parser: ESParsers = throw ModelNotYetGenerated
+  lazy val Parser: ESParsers = throw ModelNotYetGenerated
   object Model {
-    val initState: State = throw ModelNotYetGenerated
-    val tyMap: Map[String, Map[Value, Value]] = throw ModelNotYetGenerated
+    val initState: State = State()
+    val tyMap: Map[String, Map[Value, Value]] = Map()
   }
   object ESValueParser {
     def parseIdentifier(str: String): String = throw ModelNotYetGenerated
@@ -38,8 +37,4 @@ package object model {
     val long: List[String] = throw ModelNotYetGenerated
     val failed: List[String] = throw ModelNotYetGenerated
   }
-
-  trait AlgoCompilerHelper extends GeneralAlgoCompilerHelper
-  case class AlgoCompiler(algoName: String, algo: Algorithm) extends AlgoCompilerHelper
-
 }

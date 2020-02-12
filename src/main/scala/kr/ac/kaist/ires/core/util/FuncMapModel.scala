@@ -4,7 +4,7 @@ import java.io.File
 import kr.ac.kaist.ires.LINE_SEP
 import kr.ac.kaist.ires.util.Useful
 
-// CORE Global Model Loader
+// IR Global Model Loader
 object GlobalLoader {
   def apply(filename: String): Map[Id, Value] = {
     var map: Map[Id, Value] = Map()

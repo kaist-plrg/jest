@@ -9,7 +9,7 @@ import kr.ac.kaist.ires.{ DEBUG_INTERP, IRES, Lexical }
 import kr.ac.kaist.ires.error.NotSupported
 import kr.ac.kaist.ires.model.{ Parser => ESParser, ESValueParser, ModelHelper }
 
-// CORE Interpreter
+// IR Interpreter
 class Interp {
   val timeout: Long = 3000L
   val startTime: Long = System.currentTimeMillis

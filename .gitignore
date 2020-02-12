@@ -28,7 +28,6 @@ target/
 
 ## IRES
 src/main/scala/kr/ac/kaist/ires/model
-src/main/scala/kr/ac/kaist/ires/algorithm/rule
 
 ## macOS
 .DS_Store
@@ -37,29 +36,3 @@ src/main/scala/kr/ac/kaist/ires/algorithm/rule
 tests/detail
 tests/test262.json
 tests/result/test262Test_*
-
-## Core latex/pdflatex auxiliary files:
-*.aux
-*.bak
-*.lof
-*.log
-*.lot
-*.fls
-*.out
-*.toc
-*.fmt
-*.fot
-*.cb
-*.cb2
-.*.lb
-
-## Generated pdf file
-main.pdf
-
-## Bibliography auxiliary files (bibtex/biblatex/biber):
-*.bbl
-*.bcf
-*.blg
-*-blx.aux
-*-blx.bib
-*.run.xml

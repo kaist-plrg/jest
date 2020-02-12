@@ -3,7 +3,7 @@ package kr.ac.kaist.ires.error
 sealed abstract class ModelError(msg: String) extends IRESError(msg)
 
 case object ModelNotYetGenerated extends ModelError({
-  s"Models are not yet generated. Please generate models using 'sbt generateModel'."
+  s"Models are not yet complete. Please implement models."
 })
 
 case class UnexpectedSemantics(name: String) extends ModelError({

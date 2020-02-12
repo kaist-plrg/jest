@@ -1,6 +1,6 @@
 package kr.ac.kaist.ires.core
 
-// CORE Types
+// IR Types
 case class Ty(name: String) extends CoreNode {
   override def toString: String = s"Ty($TRIPLE$name$TRIPLE)"
 }

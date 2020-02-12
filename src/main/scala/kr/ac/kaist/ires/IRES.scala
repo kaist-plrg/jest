@@ -57,9 +57,7 @@ object IRES {
   // commands
   val commands: List[Command] = List(
     CmdHelp,
-    CmdParseAlgo,
-    CmdCompileAlgo,
-    CmdInferAlgo,
+    CmdFilterMeta,
     CmdParse,
     CmdLoad,
     CmdEval,
@@ -67,11 +65,7 @@ object IRES {
     CmdParseCore,
     CmdLoadCore,
     CmdEvalCore,
-    CmdREPLCore,
-    CmdREPLAlgo,
-    CmdPreProcess,
-    CmdGenModel,
-    CmdFilterMeta
+    CmdREPLCore
   )
   val cmdMap = commands.foldLeft[Map[String, Command]](Map()) {
     case (map, cmd) => map + (cmd.name -> cmd)
@@ -80,19 +74,13 @@ object IRES {
   // phases
   var phases: List[Phase] = List(
     Help,
-    ParseAlgo,
-    CompileAlgo,
-    InferAlgo,
+    FilterMeta,
     Parse,
     Load,
     ParseCore,
     LoadCore,
     EvalCore,
-    REPLCore,
-    REPLAlgo,
-    GenModel,
-    PreProcess,
-    FilterMeta
+    REPLCore
   )
 
   // global options

@@ -1,6 +1,6 @@
 package kr.ac.kaist.ires.core
 
-// CORE Binary Operators
+// IR Binary Operators
 sealed trait BOp extends CoreNode
 case object OPlus extends BOp
 case object OSub extends BOp

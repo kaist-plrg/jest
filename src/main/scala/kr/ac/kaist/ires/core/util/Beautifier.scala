@@ -3,7 +3,7 @@ package kr.ac.kaist.ires.core
 import kr.ac.kaist.ires.LINE_SEP
 import kr.ac.kaist.ires.core.Helper.norm
 
-// CORE Beautifier
+// IR Beautifier
 object Beautifier {
   // beautify
   def beautify(

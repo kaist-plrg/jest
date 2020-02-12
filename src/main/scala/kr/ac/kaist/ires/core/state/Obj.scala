@@ -1,12 +1,12 @@
 package kr.ac.kaist.ires.core
 
-// CORE Objects
+// IR Objects
 sealed trait Obj extends CoreNode {
   // types
   def ty: Ty
 }
 
-// CORE symbols
+// IR symbols
 case class CoreSymbol(desc: Value) extends Obj {
   val ty: Ty = Ty("Symbol")
 
@@ -17,7 +17,7 @@ case class CoreSymbol(desc: Value) extends Obj {
   }
 }
 
-// CORE maps
+// IR maps
 case class CoreMap(ty: Ty, props: Map[Value, Value]) extends Obj {
   // getters
   def apply(prop: Value): Value = props.getOrElse(prop, Absent)
@@ -29,7 +29,7 @@ case class CoreMap(ty: Ty, props: Map[Value, Value]) extends Obj {
   def deleted(prop: Value): CoreMap = copy(props = props - prop)
 }
 
-// CORE lists
+// IR lists
 case class CoreList(values: Vector[Value]) extends Obj {
   // types
   def ty: Ty = Ty("List")
@@ -61,7 +61,7 @@ case class CoreList(values: Vector[Value]) extends Obj {
   }
 }
 
-// CORE not supported objects
+// IR not supported objects
 case class CoreNotSupported(name: String) extends Obj {
   val ty: Ty = Ty("NotSupported")
 }
