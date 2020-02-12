@@ -1,10 +1,10 @@
-package kr.ac.kaist.jiset
+package kr.ac.kaist.ires
 
-import kr.ac.kaist.jiset.parser.{ ESParsers, TokenParsers }
-import kr.ac.kaist.jiset.error.ModelNotYetGenerated
-import kr.ac.kaist.jiset.core._
-import kr.ac.kaist.jiset.core.Parser._
-import kr.ac.kaist.jiset.algorithm.{ AlgoKind, Algorithm, Token }
+import kr.ac.kaist.ires.parser.{ ESParsers, TokenParsers }
+import kr.ac.kaist.ires.error.ModelNotYetGenerated
+import kr.ac.kaist.ires.core._
+import kr.ac.kaist.ires.core.Parser._
+import kr.ac.kaist.ires.algorithm.{ AlgoKind, Algorithm, Token }
 import scala.collection.immutable.{ Set => SSet }
 
 package object model {

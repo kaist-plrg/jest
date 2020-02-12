@@ -1,16 +1,16 @@
-# JISET
+# IRES
 JavaScript IR-based Semantics Extraction Toolchain
 
 ## Environment Setting
 ```
-export JISET_HOME="<<JISET directory path>>"
-export PATH="$JISET_HOME/bin:$PATH"
+export IRES_HOME="<<IRES directory path>>"
+export PATH="$IRES_HOME/bin:$PATH"
 ```
 
 ## Install
 ```
-git clone --recurse-submodules git@github.com:kaist-plrg/jiset.git
-cd jiset
+git clone --recurse-submodules git@github.com:kaist-plrg/ires.git
+cd ires
 sbt generateModel
 ```
 

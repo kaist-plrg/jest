@@ -26,9 +26,9 @@ target/
 *.swo
 .history
 
-## JISET
-src/main/scala/kr/ac/kaist/jiset/model
-src/main/scala/kr/ac/kaist/jiset/algorithm/rule
+## IRES
+src/main/scala/kr/ac/kaist/ires/model
+src/main/scala/kr/ac/kaist/ires/algorithm/rule
 
 ## macOS
 .DS_Store
