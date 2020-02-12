@@ -33,7 +33,7 @@ lazy val root = (project in file(".")).
     testOptions in Test += Tests.Argument("-fDG", baseDirectory.value + "/tests/detail"),
     compile <<= (compile in Compile) dependsOn (dummyModel in Compile),
     test <<= (testOnly in Test).toTask(List(
-      "kr.ac.kaist.ires.IRTest",
+      "kr.ac.kaist.ires.BasicIRTest",
       "kr.ac.kaist.ires.JSTest"
     ).mkString(" ", " ", "")) dependsOn compile,
     irTest <<= (testOnly in Test).toTask(" kr.ac.kaist.ires.BasicIRTest") dependsOn compile,
