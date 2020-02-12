@@ -1,7 +1,7 @@
 package kr.ac.kaist.ires
 
 import java.io._
-import kr.ac.kaist.ires.core._
+import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.error.NotSupported
 import kr.ac.kaist.ires.model.{ Parser => JSParser, StatementListItem, ModelHelper, NoParse }
 import kr.ac.kaist.ires.util.Useful._

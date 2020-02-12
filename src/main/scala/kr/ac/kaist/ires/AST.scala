@@ -1,6 +1,6 @@
 package kr.ac.kaist.ires
 
-import kr.ac.kaist.ires.core._
+import kr.ac.kaist.ires.ir._
 
 trait AST {
   val kind: String

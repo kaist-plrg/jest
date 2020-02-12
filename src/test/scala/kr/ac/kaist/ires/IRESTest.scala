@@ -57,8 +57,8 @@ abstract class IRESTest extends FunSuite with BeforeAndAfterAll {
     }
   }
 
-  // get score
-  def getScore(res: Map[String, Result]): (Int, Int) = (
+  // get sir
+  def getSir(res: Map[String, Result]): (Int, Int) = (
     res.count { case (k, r) => r == Pass },
     res.size
   )
@@ -76,7 +76,7 @@ abstract class IRESTest extends FunSuite with BeforeAndAfterAll {
       resMap
         .toList
         .sortBy { case (k, v) => k }
-        .map { case (t, r) => (t, getScore(r)) }
+        .map { case (t, r) => (t, getSir(r)) }
 
     // check backward-compatibility
     var breakCount = 0

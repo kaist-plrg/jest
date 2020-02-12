@@ -2,8 +2,8 @@ package kr.ac.kaist.ires
 
 import kr.ac.kaist.ires.parser.ESParsers
 import kr.ac.kaist.ires.error.ModelNotYetGenerated
-import kr.ac.kaist.ires.core._
-import kr.ac.kaist.ires.core.Parser._
+import kr.ac.kaist.ires.ir._
+import kr.ac.kaist.ires.ir.Parser._
 import scala.collection.immutable.{ Set => SSet }
 
 package object model {

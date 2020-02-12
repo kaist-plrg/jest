@@ -2,7 +2,7 @@ package kr.ac.kaist.ires.phase
 
 import kr.ac.kaist.ires.{ LINE_SEP, IRESConfig }
 import kr.ac.kaist.ires.model.{ Parser => JSParser, _ }
-import kr.ac.kaist.ires.core._
+import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.util.Useful._
 import scala.io.Source
 

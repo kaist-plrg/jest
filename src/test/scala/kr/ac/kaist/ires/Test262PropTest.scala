@@ -1,7 +1,7 @@
 package kr.ac.kaist.ires
 
 import java.io._
-import kr.ac.kaist.ires.core._
+import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.error.NotSupported
 import kr.ac.kaist.ires.model.{ Parser => JSParser, StatementListItem, ModelHelper, NoParse }
 import kr.ac.kaist.ires.util.Useful._
@@ -84,7 +84,7 @@ class Test262PropTest extends IRESTest {
         val stList = includes.foldLeft(initStList) {
           case (li, s) => li ++ includeMap(s)
         } ++ ModelHelper.flattenStatement(ast)
-        val st = EvalCore(Load(ModelHelper.mergeStatement(stList), jsConfig), jsConfig)
+        val st = IREval(Load(ModelHelper.mergeStatement(stList), jsConfig), jsConfig)
         evalJSTest(st)
       })
     }

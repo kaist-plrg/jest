@@ -1,14 +1,14 @@
 package kr.ac.kaist.ires
 
 import java.io._
-import kr.ac.kaist.ires.core._
+import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.model.{ Parser => JSParser }
 import kr.ac.kaist.ires.util.Useful._
 import kr.ac.kaist.ires.phase._
 import org.scalatest._
 import scala.util.Random.shuffle
 
-class JSTest extends CoreTest {
+class JSTest extends IRTest {
   // tag name
   val tag: String = "jsTest"
 
@@ -32,7 +32,7 @@ class JSTest extends CoreTest {
     case None => fail("no return value")
   }
 
-  val js2core = changeExt("js", "core")
+  val js2ir = changeExt("js", "ir")
 
   // registration
   for (file <- shuffle(walkTree(new File(jsDir)))) {
@@ -45,17 +45,17 @@ class JSTest extends CoreTest {
       lazy val ast = Parse((), jsConfig)
       check("JSParse", name, parseJSTest(ast))
 
-      lazy val st = EvalCore(Load(ast, jsConfig), jsConfig)
+      lazy val st = IREval(Load(ast, jsConfig), jsConfig)
       check("JSEval", name, evalJSTest(st))
 
-      lazy val coreName = js2core(jsName)
-      lazy val coreConfig = aseConfig.copy(fileNames = List(coreName))
+      lazy val irName = js2ir(jsName)
+      lazy val irConfig = aseConfig.copy(fileNames = List(irName))
 
-      lazy val pgm = ParseCore((), coreConfig)
-      lazy val coreSt = EvalCore(st.copy(context = st.context.copy(insts = pgm.insts)), coreConfig)
+      lazy val pgm = IRParse((), irConfig)
+      lazy val irSt = IREval(st.copy(context = st.context.copy(insts = pgm.insts)), irConfig)
       check("JSCheck", name, {
-        parseCoreTest(pgm)
-        evalCoreTest(coreSt)
+        parseIRTest(pgm)
+        evalIRTest(irSt)
       })
     }
   }
