@@ -26,9 +26,6 @@ target/
 *.swo
 .history
 
-## IRES
-src/main/scala/kr/ac/kaist/ires/model
-
 ## macOS
 .DS_Store
 
