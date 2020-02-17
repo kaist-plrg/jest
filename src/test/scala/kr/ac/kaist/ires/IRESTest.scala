@@ -45,7 +45,6 @@ abstract class IRESTest extends FunSuite with BeforeAndAfterAll {
       (Try(t) match {
         case Success(_) =>
           resMap += tag -> (res + (name -> Pass))
-          if (DISPLAY_TEST_PROGRESS) printGreen("#")
         case Failure(e) => (e match {
           case NotSupported(msg) => Some(msg)
           case ModelNotYetGenerated => Some("Incomplete Modeling")
@@ -53,10 +52,8 @@ abstract class IRESTest extends FunSuite with BeforeAndAfterAll {
         }) match {
           case Some(msg) =>
             resMap += tag -> (res + (name -> Yet(msg)))
-            if (DISPLAY_TEST_PROGRESS) printYellow("#")
           case None =>
             resMap += tag -> (res + (name -> Fail))
-            if (DISPLAY_TEST_PROGRESS) printRed("#")
             fail(e.toString)
         }
       })
@@ -76,12 +73,6 @@ abstract class IRESTest extends FunSuite with BeforeAndAfterAll {
   // sort by keys
   def sortByKey[U, V](map: Map[U, V])(implicit ord: scala.math.Ordering[U]): List[(U, V)] = map.toList.sortBy { case (k, v) => k }
 
-  // print information
-  def printInfo(msg: String, color: String = RESET): Unit = {
-    print(s"[info] ")
-    printlnColor(color)(msg)
-  }
-
   // check backward-compatibility after all tests
   override def afterAll(): Unit = {
     import DefaultJsonProtocol._
@@ -99,16 +90,6 @@ abstract class IRESTest extends FunSuite with BeforeAndAfterAll {
     }
 
     // show abstract result
-    if (DISPLAY_TEST_PROGRESS) println
-    printInfo(s"$tag:", CYAN)
-    sorted.foreach {
-      case (name, (p, y, f)) =>
-        printInfo(s"  $name:")
-        if (p > 0) printInfo(s"    PASS : $p", GREEN)
-        if (y > 0) printInfo(s"    Yet  : $y", YELLOW)
-        if (f > 0) printInfo(s"    FAIL : $f", RED)
-        printInfo(s"    TOTAL: ${p + y + f}")
-    }
     val filename = s"$TEST_DIR/result/$tag.json"
     val orig =
       Try(readFile(filename))

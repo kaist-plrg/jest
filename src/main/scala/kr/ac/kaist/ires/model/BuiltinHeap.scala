@@ -68,9 +68,9 @@ object BuiltinHeap {
   }
 
   private case class Struct(
-    typeName: String,
-    imap: IMap,
-    nmap: NMap
+      typeName: String,
+      imap: IMap,
+      nmap: NMap
   )
 
   private case class IMap(map: Map[Value, Value])
@@ -91,16 +91,16 @@ object BuiltinHeap {
 
   private trait Property
   private case class DataProperty(
-    value: Value,
-    writable: Boolean,
-    enumerable: Boolean,
-    configurable: Boolean
+      value: Value,
+      writable: Boolean,
+      enumerable: Boolean,
+      configurable: Boolean
   ) extends Property
   private case class AccessorProperty(
-    get: Value,
-    set: Value,
-    enumerable: Boolean,
-    configurable: Boolean
+      get: Value,
+      set: Value,
+      enumerable: Boolean,
+      configurable: Boolean
   ) extends Property
   private val T = true
   private val F = false

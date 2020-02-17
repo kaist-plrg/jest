@@ -24,5 +24,5 @@ case object IRREPL extends PhaseObj[State, IRREPLConfig, Unit] {
 
 // IRREPL phase config
 case class IRREPLConfig(
-  var detail: Boolean = false
+    var detail: Boolean = false
 ) extends Config

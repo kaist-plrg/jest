@@ -17,6 +17,7 @@ import spray.json._
 import kr.ac.kaist.ires.util._
 import kr.ac.kaist.ires.util.Useful._
 import kr.ac.kaist.ires.util.TestConfigJsonProtocol._
+import scala.Console.{ CYAN, GREEN, YELLOW, RED, RESET }
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent._
 import scala.concurrent.duration._
@@ -86,14 +87,10 @@ class Test262Test extends IRESTest {
   def init: Unit = {
     val initStList = includeMap("assert.js") ++ includeMap("sta.js")
     val noParseSet = NoParse.failed.toSet ++ NoParse.long.toSet
-    val failedSet = (
-      if (PREVDIFF) Source.fromFile(PREVFILE).getLines.filter(_ contains ": false").map((s) => s.takeWhile(_ != ':').replace("//", "/").split("test/").last).toList
-      else Nil
-    )
     for (NormalTestConfig(filename, includes) <- shuffle(config.normal)) {
       val jsName = s"${dir.toString}/test/$filename".replace("//", "/")
       val name = removedExt(jsName).drop(dir.toString.length)
-      if ((!(noParseSet contains name)) && ((!PREVDIFF) || (failedSet contains name.replace("//", "/").split("test/").last))) check("Test262Eval", name, {
+      if (!noParseSet.contains(name)) check("Test262Eval", name, {
         val jsConfig = aseConfig.copy(fileNames = List(jsName))
 
         val ast = Parse((), jsConfig)
@@ -106,15 +103,6 @@ class Test262Test extends IRESTest {
         evalJSTest(st)
       })
     }
-    print("[info] ")
-    printlnCyan(s"$count tests are applicble:")
-    print("[info] ")
-    printlnRed("  - #: failed tests")
-    print("[info] ")
-    printlnYellow("  - #: not supported tests")
-    print("[info] ")
-    printlnGreen("  - #: passed tests")
-    println("[info] Loading tests... (It might take several minutes.)")
   }
 
   init

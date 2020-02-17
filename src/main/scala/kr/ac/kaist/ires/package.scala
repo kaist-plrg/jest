@@ -28,10 +28,5 @@ package object ires {
   val DEBUG_SEMI_INSERT: Boolean = false
   val DEBUG_PARSER: Boolean = false
   val DEBUG_INTERP: Boolean = false
-
-  // display progress in tests
-  val DISPLAY_TEST_PROGRESS = true
-
-  val PREVDIFF = false
-  val PREVFILE = "tests/result/test262Test_1908221732"
+  val DEBUG_FILTER: Boolean = false
 }

@@ -37,5 +37,6 @@ case object Parse extends PhaseObj[Unit, ParseConfig, Script] {
 
 // Parse phase config
 case class ParseConfig(
-  var jsonFile: Option[String] = None
+    var jsonFile: Option[String] = None,
+    var debug: Boolean = false
 ) extends Config

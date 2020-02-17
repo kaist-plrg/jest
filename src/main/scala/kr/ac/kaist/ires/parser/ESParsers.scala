@@ -13,8 +13,8 @@ trait ESParsers extends LAParsers {
   // container with cache for LAParser and right-most failed positions
   def emptyContainer: Container = Container()
   case class Container(
-    var cache: Map[ParseCase[_], ParseResult[_]] = Map(),
-    var rightmostFailedPos: Option[(Position, List[Char])] = None
+      var cache: Map[ParseCase[_], ParseResult[_]] = Map(),
+      var rightmostFailedPos: Option[(Position, List[Char])] = None
   )
 
   // automatic semicolon insertion

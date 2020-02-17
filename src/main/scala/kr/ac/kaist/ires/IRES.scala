@@ -134,8 +134,8 @@ object IRES {
 }
 
 case class IRESConfig(
-  var command: Command,
-  var fileNames: List[String] = Nil,
-  var silent: Boolean = false,
-  var time: Boolean = false
+    var command: Command,
+    var fileNames: List[String] = Nil,
+    var silent: Boolean = false,
+    var time: Boolean = false
 ) extends Config

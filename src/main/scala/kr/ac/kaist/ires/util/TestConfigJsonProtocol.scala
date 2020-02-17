@@ -1,5 +1,6 @@
 package kr.ac.kaist.ires.util
 
+import kr.ac.kaist.ires.DEBUG_FILTER
 import kr.ac.kaist.ires.parser.{ MetaParser, MetaData }
 import spray.json._
 
@@ -25,7 +26,7 @@ case class TestList(list: List[MetaData]) {
         if (f(meta)) (l, count + 1)
         else (meta :: l, count)
     }
-    println(f"$desc%-30s: $removed tests are removed")
+    if (DEBUG_FILTER) println(f"$desc%-30s: $removed tests are removed")
     TestList(filtered.reverse)
   }
   def getSummary: Test262ConfigSummary = {
