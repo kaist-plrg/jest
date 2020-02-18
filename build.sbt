@@ -1,4 +1,5 @@
 import scalariform.formatter.preferences._
+import sbtassembly.AssemblyPlugin.defaultUniversalScript
 
 ThisBuild / version       := "1.0"
 ThisBuild / scalaVersion  := "2.13.1"
@@ -35,6 +36,9 @@ lazy val ires = (project in file("."))
     test in assembly := {},
     testOptions in Test += Tests.Argument("-fDG", baseDirectory.value + "/tests/detail"),
     parallelExecution in Test := true,
+    assemblyOutputPath in assembly := file("bin/ires"),
+    assemblyOption in assembly := (assemblyOption in assembly).value
+      .copy(prependShellScript = Some(defaultUniversalScript(shebang = false))),
     test := (testOnly in Test).toTask(List(
       "kr.ac.kaist.ires.BasicIRTest",
       "kr.ac.kaist.ires.JSTest"
