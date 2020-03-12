@@ -97,10 +97,6 @@ trait UnitWalker {
       walk(list); walk(idx)
     case ERef(ref) =>
       walk(ref)
-    case EFunc(params, varparam, body) =>
-      walkList[Id](params, walk);
-      walkOpt[Id](varparam, walk);
-      walk(body)
     case ECont(params, body) =>
       walkList[Id](params, walk);
       walk(body)

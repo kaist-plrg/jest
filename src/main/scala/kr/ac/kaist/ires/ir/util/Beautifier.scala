@@ -152,12 +152,6 @@ object Beautifier {
       case EPop(list, idx) =>
         walk("(pop "); walk(list); walk(" "); walk(idx); walk(")")
       case ERef(ref) => walk(ref)
-      case EFunc(params, varparam, body) =>
-        walk("("); walkListSep[Id](params, ", ", walk);
-        walkOpt[Id](varparam, (id: Id) => if (params.length == 0) { walk("..."); walk(id); } else { walk(", ..."); walk(id) });
-        walk(") => ")
-        if (detail) walk(body)
-        else walk("...")
       case ECont(params, body) =>
         walk("("); walkListSep[Id](params, ", ", walk);
         walk(") [=>] ")

@@ -263,8 +263,6 @@ class Interp {
         else (addr, s)
         case (v, s) => (v, s)
       }
-    case EFunc(params, varparam, body) =>
-      (Func("<empty>", params, varparam, body), st)
     case ECont(params, body) =>
       (Cont(params, body, st.context, st.ctxStack), st)
     case EUOp(uop, expr) =>

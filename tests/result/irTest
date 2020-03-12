@@ -1,10 +1,10 @@
   IREval:
-    PASS : 30
+    PASS : 20
     Yet  : 0
     FAIL : 0
-    TOTAL: 30
+    TOTAL: 20
   IRParse:
-    PASS : 30
+    PASS : 20
     Yet  : 0
     FAIL : 0
-    TOTAL: 30
+    TOTAL: 20
