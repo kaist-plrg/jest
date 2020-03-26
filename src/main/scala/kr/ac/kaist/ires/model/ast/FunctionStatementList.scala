@@ -20,15 +20,15 @@ case class FunctionStatementList0(x0: Option[StatementList], parserParams: List[
 object FunctionStatementList0 extends ASTInfo {
   val maxK: Int = 1
   val semMap: Map[String, Func] = Map(
-    "VarScopedDeclarations0" -> FunctionStatementList0VarScopedDeclarations0.func,
-    "VarDeclaredNames0" -> FunctionStatementList0VarDeclaredNames0.func,
-    "VarDeclaredNames1" -> FunctionStatementList0VarDeclaredNames1.func,
+    "Evaluation0" -> FunctionStatementList0Evaluation0.func,
     "StatementRules0" -> FunctionStatementList0StatementRules0.func,
-    "VarScopedDeclarations1" -> FunctionStatementList0VarScopedDeclarations1.func,
-    "LexicallyDeclaredNames1" -> FunctionStatementList0LexicallyDeclaredNames1.func,
     "LexicallyScopedDeclarations0" -> FunctionStatementList0LexicallyScopedDeclarations0.func,
+    "VarScopedDeclarations0" -> FunctionStatementList0VarScopedDeclarations0.func,
+    "VarScopedDeclarations1" -> FunctionStatementList0VarScopedDeclarations1.func,
+    "VarDeclaredNames1" -> FunctionStatementList0VarDeclaredNames1.func,
     "LexicallyScopedDeclarations1" -> FunctionStatementList0LexicallyScopedDeclarations1.func,
-    "LexicallyDeclaredNames0" -> FunctionStatementList0LexicallyDeclaredNames0.func,
-    "Evaluation0" -> FunctionStatementList0Evaluation0.func
+    "LexicallyDeclaredNames1" -> FunctionStatementList0LexicallyDeclaredNames1.func,
+    "VarDeclaredNames0" -> FunctionStatementList0VarDeclaredNames0.func,
+    "LexicallyDeclaredNames0" -> FunctionStatementList0LexicallyDeclaredNames0.func
   )
 }

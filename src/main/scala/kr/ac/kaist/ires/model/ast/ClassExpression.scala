@@ -20,10 +20,10 @@ case class ClassExpression0(x1: Option[BindingIdentifier], x2: ClassTail, parser
 object ClassExpression0 extends ASTInfo {
   val maxK: Int = 1
   val semMap: Map[String, Func] = Map(
-    "NamedEvaluation0" -> ClassExpression0NamedEvaluation0.func,
     "HasName0" -> ClassExpression0HasName0.func,
-    "HasName1" -> ClassExpression0HasName1.func,
+    "IsFunctionDefinition1" -> ClassExpression0IsFunctionDefinition1.func,
+    "NamedEvaluation0" -> ClassExpression0NamedEvaluation0.func,
     "Evaluation1" -> ClassExpression0Evaluation1.func,
-    "IsFunctionDefinition1" -> ClassExpression0IsFunctionDefinition1.func
+    "HasName1" -> ClassExpression0HasName1.func
   )
 }

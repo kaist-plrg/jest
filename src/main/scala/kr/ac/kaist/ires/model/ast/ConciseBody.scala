@@ -20,13 +20,13 @@ case class ConciseBody0(x1: AssignmentExpression, parserParams: List[Boolean]) e
 object ConciseBody0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "LexicallyDeclaredNames0" -> ConciseBody0LexicallyDeclaredNames0.func,
-    "VarScopedDeclarations0" -> ConciseBody0VarScopedDeclarations0.func,
+    "VarDeclaredNames0" -> ConciseBody0VarDeclaredNames0.func,
     "EvaluateBody0" -> ConciseBody0EvaluateBody0.func,
     "LexicallyScopedDeclarations0" -> ConciseBody0LexicallyScopedDeclarations0.func,
+    "StatementRules0" -> ConciseBody0StatementRules0.func,
+    "VarScopedDeclarations0" -> ConciseBody0VarScopedDeclarations0.func,
     "ContainsUseStrict0" -> ConciseBody0ContainsUseStrict0.func,
-    "VarDeclaredNames0" -> ConciseBody0VarDeclaredNames0.func,
-    "StatementRules0" -> ConciseBody0StatementRules0.func
+    "LexicallyDeclaredNames0" -> ConciseBody0LexicallyDeclaredNames0.func
   )
 }
 case class ConciseBody1(x1: FunctionBody, parserParams: List[Boolean]) extends ConciseBody {

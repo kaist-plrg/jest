@@ -35,11 +35,11 @@ case class FormalParameterList1(x0: FormalParameterList, x2: FormalParameter, pa
 object FormalParameterList1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "ContainsExpression0" -> FormalParameterList1ContainsExpression0.func,
-    "IsSimpleParameterList0" -> FormalParameterList1IsSimpleParameterList0.func,
-    "HasInitializer0" -> FormalParameterList1HasInitializer0.func,
     "ExpectedArgumentCount0" -> FormalParameterList1ExpectedArgumentCount0.func,
+    "BoundNames0" -> FormalParameterList1BoundNames0.func,
+    "ContainsExpression0" -> FormalParameterList1ContainsExpression0.func,
+    "HasInitializer0" -> FormalParameterList1HasInitializer0.func,
     "IteratorBindingInitialization0" -> FormalParameterList1IteratorBindingInitialization0.func,
-    "BoundNames0" -> FormalParameterList1BoundNames0.func
+    "IsSimpleParameterList0" -> FormalParameterList1IsSimpleParameterList0.func
   )
 }

@@ -21,8 +21,8 @@ object AsyncGeneratorMethod0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "PropertyDefinitionEvaluation0" -> AsyncGeneratorMethod0PropertyDefinitionEvaluation0.func,
-    "ComputedPropertyContains0" -> AsyncGeneratorMethod0ComputedPropertyContains0.func,
     "HasDirectSuper0" -> AsyncGeneratorMethod0HasDirectSuper0.func,
+    "ComputedPropertyContains0" -> AsyncGeneratorMethod0ComputedPropertyContains0.func,
     "PropName0" -> AsyncGeneratorMethod0PropName0.func
   )
 }

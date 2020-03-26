@@ -20,17 +20,17 @@ case class Block0(x1: Option[StatementList], parserParams: List[Boolean]) extend
 object Block0 extends ASTInfo {
   val maxK: Int = 1
   val semMap: Map[String, Func] = Map(
-    "ContainsUndefinedBreakTarget0" -> Block0ContainsUndefinedBreakTarget0.func,
-    "VarDeclaredNames0" -> Block0VarDeclaredNames0.func,
+    "TopLevelLexicallyScopedDeclarations0" -> Block0TopLevelLexicallyScopedDeclarations0.func,
+    "TopLevelVarScopedDeclarations0" -> Block0TopLevelVarScopedDeclarations0.func,
     "TopLevelVarDeclaredNames0" -> Block0TopLevelVarDeclaredNames0.func,
+    "ContainsDuplicateLabels0" -> Block0ContainsDuplicateLabels0.func,
+    "ContainsUndefinedBreakTarget0" -> Block0ContainsUndefinedBreakTarget0.func,
     "StatementRules0" -> Block0StatementRules0.func,
-    "LexicallyDeclaredNames0" -> Block0LexicallyDeclaredNames0.func,
+    "VarDeclaredNames0" -> Block0VarDeclaredNames0.func,
+    "VarScopedDeclarations0" -> Block0VarScopedDeclarations0.func,
     "ContainsUndefinedContinueTarget0" -> Block0ContainsUndefinedContinueTarget0.func,
     "Evaluation0" -> Block0Evaluation0.func,
-    "VarScopedDeclarations0" -> Block0VarScopedDeclarations0.func,
-    "TopLevelLexicallyScopedDeclarations0" -> Block0TopLevelLexicallyScopedDeclarations0.func,
-    "ContainsDuplicateLabels0" -> Block0ContainsDuplicateLabels0.func,
-    "Evaluation1" -> Block0Evaluation1.func,
-    "TopLevelVarScopedDeclarations0" -> Block0TopLevelVarScopedDeclarations0.func
+    "LexicallyDeclaredNames0" -> Block0LexicallyDeclaredNames0.func,
+    "Evaluation1" -> Block0Evaluation1.func
   )
 }

@@ -20,7 +20,7 @@ case class VariableStatement0(x1: VariableDeclarationList, parserParams: List[Bo
 object VariableStatement0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "Evaluation0" -> VariableStatement0Evaluation0.func,
-    "VarDeclaredNames0" -> VariableStatement0VarDeclaredNames0.func
+    "VarDeclaredNames0" -> VariableStatement0VarDeclaredNames0.func,
+    "Evaluation0" -> VariableStatement0Evaluation0.func
   )
 }

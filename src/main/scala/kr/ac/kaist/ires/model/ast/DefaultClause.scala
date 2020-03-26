@@ -20,15 +20,15 @@ case class DefaultClause0(x2: Option[StatementList], parserParams: List[Boolean]
 object DefaultClause0 extends ASTInfo {
   val maxK: Int = 1
   val semMap: Map[String, Func] = Map(
-    "ContainsUndefinedContinueTarget1" -> DefaultClause0ContainsUndefinedContinueTarget1.func,
-    "VarScopedDeclarations1" -> DefaultClause0VarScopedDeclarations1.func,
-    "VarDeclaredNames1" -> DefaultClause0VarDeclaredNames1.func,
-    "LexicallyScopedDeclarations1" -> DefaultClause0LexicallyScopedDeclarations1.func,
-    "ContainsDuplicateLabels1" -> DefaultClause0ContainsDuplicateLabels1.func,
-    "LexicallyDeclaredNames1" -> DefaultClause0LexicallyDeclaredNames1.func,
-    "Evaluation1" -> DefaultClause0Evaluation1.func,
-    "Evaluation0" -> DefaultClause0Evaluation0.func,
     "ContainsUndefinedBreakTarget1" -> DefaultClause0ContainsUndefinedBreakTarget1.func,
+    "VarScopedDeclarations1" -> DefaultClause0VarScopedDeclarations1.func,
+    "LexicallyScopedDeclarations1" -> DefaultClause0LexicallyScopedDeclarations1.func,
+    "Evaluation1" -> DefaultClause0Evaluation1.func,
+    "LexicallyDeclaredNames1" -> DefaultClause0LexicallyDeclaredNames1.func,
+    "Evaluation0" -> DefaultClause0Evaluation0.func,
+    "VarDeclaredNames1" -> DefaultClause0VarDeclaredNames1.func,
+    "ContainsUndefinedContinueTarget1" -> DefaultClause0ContainsUndefinedContinueTarget1.func,
+    "ContainsDuplicateLabels1" -> DefaultClause0ContainsDuplicateLabels1.func,
     "StatementRules1" -> DefaultClause0StatementRules1.func
   )
 }

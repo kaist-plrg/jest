@@ -22,7 +22,7 @@ object ArrowFunction0 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "HasName0" -> ArrowFunction0HasName0.func,
     "Evaluation0" -> ArrowFunction0Evaluation0.func,
-    "NamedEvaluation0" -> ArrowFunction0NamedEvaluation0.func,
-    "Contains0" -> ArrowFunction0Contains0.func
+    "Contains0" -> ArrowFunction0Contains0.func,
+    "NamedEvaluation0" -> ArrowFunction0NamedEvaluation0.func
   )
 }

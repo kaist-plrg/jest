@@ -20,11 +20,11 @@ case class FunctionDeclaration0(x1: BindingIdentifier, x3: FormalParameters, x6:
 object FunctionDeclaration0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "InstantiateFunctionObject0" -> FunctionDeclaration0InstantiateFunctionObject0.func,
-    "IsConstantDeclaration0" -> FunctionDeclaration0IsConstantDeclaration0.func,
+    "BoundNames0" -> FunctionDeclaration0BoundNames0.func,
     "Contains0" -> FunctionDeclaration0Contains0.func,
+    "IsConstantDeclaration0" -> FunctionDeclaration0IsConstantDeclaration0.func,
     "Evaluation0" -> FunctionDeclaration0Evaluation0.func,
-    "BoundNames0" -> FunctionDeclaration0BoundNames0.func
+    "InstantiateFunctionObject0" -> FunctionDeclaration0InstantiateFunctionObject0.func
   )
 }
 case class FunctionDeclaration1(x2: FormalParameters, x5: FunctionBody, parserParams: List[Boolean]) extends FunctionDeclaration {
@@ -39,10 +39,10 @@ case class FunctionDeclaration1(x2: FormalParameters, x5: FunctionBody, parserPa
 object FunctionDeclaration1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "InstantiateFunctionObject0" -> FunctionDeclaration1InstantiateFunctionObject0.func,
-    "Contains0" -> FunctionDeclaration1Contains0.func,
-    "BoundNames0" -> FunctionDeclaration1BoundNames0.func,
     "Evaluation0" -> FunctionDeclaration1Evaluation0.func,
-    "IsConstantDeclaration0" -> FunctionDeclaration1IsConstantDeclaration0.func
+    "Contains0" -> FunctionDeclaration1Contains0.func,
+    "IsConstantDeclaration0" -> FunctionDeclaration1IsConstantDeclaration0.func,
+    "BoundNames0" -> FunctionDeclaration1BoundNames0.func,
+    "InstantiateFunctionObject0" -> FunctionDeclaration1InstantiateFunctionObject0.func
   )
 }

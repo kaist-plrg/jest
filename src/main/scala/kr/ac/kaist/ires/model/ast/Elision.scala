@@ -20,8 +20,8 @@ case class Elision0(parserParams: List[Boolean]) extends Elision {
 object Elision0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "ElisionWidth0" -> Elision0ElisionWidth0.func,
-    "IteratorDestructuringAssignmentEvaluation0" -> Elision0IteratorDestructuringAssignmentEvaluation0.func
+    "IteratorDestructuringAssignmentEvaluation0" -> Elision0IteratorDestructuringAssignmentEvaluation0.func,
+    "ElisionWidth0" -> Elision0ElisionWidth0.func
   )
 }
 case class Elision1(x0: Elision, parserParams: List[Boolean]) extends Elision {

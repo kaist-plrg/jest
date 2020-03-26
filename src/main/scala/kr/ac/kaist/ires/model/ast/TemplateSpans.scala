@@ -20,9 +20,9 @@ case class TemplateSpans0(x0: Lexical, parserParams: List[Boolean]) extends Temp
 object TemplateSpans0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "Evaluation0" -> TemplateSpans0Evaluation0.func,
+    "SubstitutionEvaluation0" -> TemplateSpans0SubstitutionEvaluation0.func,
     "TemplateStrings0" -> TemplateSpans0TemplateStrings0.func,
-    "SubstitutionEvaluation0" -> TemplateSpans0SubstitutionEvaluation0.func
+    "Evaluation0" -> TemplateSpans0Evaluation0.func
   )
 }
 case class TemplateSpans1(x0: TemplateMiddleList, x1: Lexical, parserParams: List[Boolean]) extends TemplateSpans {

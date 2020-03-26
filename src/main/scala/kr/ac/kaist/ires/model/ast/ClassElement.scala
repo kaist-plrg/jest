@@ -20,8 +20,8 @@ case class ClassElement0(x0: MethodDefinition, parserParams: List[Boolean]) exte
 object ClassElement0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "ComputedPropertyContains0" -> ClassElement0ComputedPropertyContains0.func,
-    "IsStatic0" -> ClassElement0IsStatic0.func
+    "IsStatic0" -> ClassElement0IsStatic0.func,
+    "ComputedPropertyContains0" -> ClassElement0ComputedPropertyContains0.func
   )
 }
 case class ClassElement1(x1: MethodDefinition, parserParams: List[Boolean]) extends ClassElement {
@@ -36,8 +36,8 @@ case class ClassElement1(x1: MethodDefinition, parserParams: List[Boolean]) exte
 object ClassElement1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "IsStatic0" -> ClassElement1IsStatic0.func,
-    "ComputedPropertyContains0" -> ClassElement1ComputedPropertyContains0.func
+    "ComputedPropertyContains0" -> ClassElement1ComputedPropertyContains0.func,
+    "IsStatic0" -> ClassElement1IsStatic0.func
   )
 }
 case class ClassElement2(parserParams: List[Boolean]) extends ClassElement {

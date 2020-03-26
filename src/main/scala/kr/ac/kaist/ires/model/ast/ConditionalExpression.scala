@@ -34,8 +34,8 @@ object ConditionalExpression1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "IsFunctionDefinition0" -> ConditionalExpression1IsFunctionDefinition0.func,
+    "AssignmentTargetType0" -> ConditionalExpression1AssignmentTargetType0.func,
     "ExpressionRules0" -> ConditionalExpression1ExpressionRules0.func,
-    "Evaluation0" -> ConditionalExpression1Evaluation0.func,
-    "AssignmentTargetType0" -> ConditionalExpression1AssignmentTargetType0.func
+    "Evaluation0" -> ConditionalExpression1Evaluation0.func
   )
 }

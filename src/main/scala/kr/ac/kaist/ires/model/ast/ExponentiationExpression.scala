@@ -34,8 +34,8 @@ object ExponentiationExpression1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "ExpressionRules0" -> ExponentiationExpression1ExpressionRules0.func,
+    "IsFunctionDefinition0" -> ExponentiationExpression1IsFunctionDefinition0.func,
     "AssignmentTargetType0" -> ExponentiationExpression1AssignmentTargetType0.func,
-    "Evaluation0" -> ExponentiationExpression1Evaluation0.func,
-    "IsFunctionDefinition0" -> ExponentiationExpression1IsFunctionDefinition0.func
+    "Evaluation0" -> ExponentiationExpression1Evaluation0.func
   )
 }

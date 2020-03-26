@@ -20,19 +20,19 @@ case class LabelledStatement0(x0: LabelIdentifier, x2: LabelledItem, parserParam
 object LabelledStatement0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "ContainsDuplicateLabels0" -> LabelledStatement0ContainsDuplicateLabels0.func,
-    "ContainsUndefinedBreakTarget0" -> LabelledStatement0ContainsUndefinedBreakTarget0.func,
     "VarDeclaredNames0" -> LabelledStatement0VarDeclaredNames0.func,
     "VarScopedDeclarations0" -> LabelledStatement0VarScopedDeclarations0.func,
-    "Evaluation0" -> LabelledStatement0Evaluation0.func,
-    "TopLevelVarScopedDeclarations0" -> LabelledStatement0TopLevelVarScopedDeclarations0.func,
-    "TopLevelLexicallyScopedDeclarations0" -> LabelledStatement0TopLevelLexicallyScopedDeclarations0.func,
-    "TopLevelLexicallyDeclaredNames0" -> LabelledStatement0TopLevelLexicallyDeclaredNames0.func,
     "ContainsUndefinedContinueTarget0" -> LabelledStatement0ContainsUndefinedContinueTarget0.func,
     "LabelledEvaluation0" -> LabelledStatement0LabelledEvaluation0.func,
+    "TopLevelVarScopedDeclarations0" -> LabelledStatement0TopLevelVarScopedDeclarations0.func,
+    "TopLevelLexicallyScopedDeclarations0" -> LabelledStatement0TopLevelLexicallyScopedDeclarations0.func,
     "LexicallyDeclaredNames0" -> LabelledStatement0LexicallyDeclaredNames0.func,
-    "LexicallyScopedDeclarations0" -> LabelledStatement0LexicallyScopedDeclarations0.func,
+    "ContainsDuplicateLabels0" -> LabelledStatement0ContainsDuplicateLabels0.func,
+    "Evaluation0" -> LabelledStatement0Evaluation0.func,
+    "TopLevelLexicallyDeclaredNames0" -> LabelledStatement0TopLevelLexicallyDeclaredNames0.func,
     "TopLevelVarDeclaredNames0" -> LabelledStatement0TopLevelVarDeclaredNames0.func,
-    "StatementRules0" -> LabelledStatement0StatementRules0.func
+    "StatementRules0" -> LabelledStatement0StatementRules0.func,
+    "ContainsUndefinedBreakTarget0" -> LabelledStatement0ContainsUndefinedBreakTarget0.func,
+    "LexicallyScopedDeclarations0" -> LabelledStatement0LexicallyScopedDeclarations0.func
   )
 }

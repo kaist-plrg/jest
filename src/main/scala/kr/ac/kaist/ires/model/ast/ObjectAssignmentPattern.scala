@@ -65,7 +65,7 @@ case class ObjectAssignmentPattern3(x1: AssignmentPropertyList, x3: Option[Assig
 object ObjectAssignmentPattern3 extends ASTInfo {
   val maxK: Int = 1
   val semMap: Map[String, Func] = Map(
-    "DestructuringAssignmentEvaluation0" -> ObjectAssignmentPattern3DestructuringAssignmentEvaluation0.func,
-    "DestructuringAssignmentEvaluation1" -> ObjectAssignmentPattern3DestructuringAssignmentEvaluation1.func
+    "DestructuringAssignmentEvaluation1" -> ObjectAssignmentPattern3DestructuringAssignmentEvaluation1.func,
+    "DestructuringAssignmentEvaluation0" -> ObjectAssignmentPattern3DestructuringAssignmentEvaluation0.func
   )
 }

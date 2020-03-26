@@ -20,9 +20,9 @@ case class VariableDeclaration0(x0: BindingIdentifier, x1: Option[Initializer], 
 object VariableDeclaration0 extends ASTInfo {
   val maxK: Int = 1
   val semMap: Map[String, Func] = Map(
-    "BoundNames1" -> VariableDeclaration0BoundNames1.func,
     "Evaluation1" -> VariableDeclaration0Evaluation1.func,
-    "Evaluation0" -> VariableDeclaration0Evaluation0.func
+    "Evaluation0" -> VariableDeclaration0Evaluation0.func,
+    "BoundNames1" -> VariableDeclaration0BoundNames1.func
   )
 }
 case class VariableDeclaration1(x0: BindingPattern, x1: Initializer, parserParams: List[Boolean]) extends VariableDeclaration {

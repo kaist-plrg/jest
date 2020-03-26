@@ -20,12 +20,12 @@ case class GeneratorExpression0(x2: Option[BindingIdentifier], x4: FormalParamet
 object GeneratorExpression0 extends ASTInfo {
   val maxK: Int = 1
   val semMap: Map[String, Func] = Map(
-    "NamedEvaluation0" -> GeneratorExpression0NamedEvaluation0.func,
-    "HasName1" -> GeneratorExpression0HasName1.func,
-    "Evaluation0" -> GeneratorExpression0Evaluation0.func,
-    "Evaluation1" -> GeneratorExpression0Evaluation1.func,
+    "Contains1" -> GeneratorExpression0Contains1.func,
     "HasName0" -> GeneratorExpression0HasName0.func,
     "IsFunctionDefinition1" -> GeneratorExpression0IsFunctionDefinition1.func,
-    "Contains1" -> GeneratorExpression0Contains1.func
+    "Evaluation1" -> GeneratorExpression0Evaluation1.func,
+    "Evaluation0" -> GeneratorExpression0Evaluation0.func,
+    "NamedEvaluation0" -> GeneratorExpression0NamedEvaluation0.func,
+    "HasName1" -> GeneratorExpression0HasName1.func
   )
 }

@@ -20,11 +20,11 @@ case class ArrowParameters0(x0: BindingIdentifier, parserParams: List[Boolean]) 
 object ArrowParameters0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
+    "ContainsExpression0" -> ArrowParameters0ContainsExpression0.func,
     "IsSimpleParameterList0" -> ArrowParameters0IsSimpleParameterList0.func,
-    "IteratorBindingInitialization0" -> ArrowParameters0IteratorBindingInitialization0.func,
-    "CoveredFormalsList0" -> ArrowParameters0CoveredFormalsList0.func,
     "ExpectedArgumentCount0" -> ArrowParameters0ExpectedArgumentCount0.func,
-    "ContainsExpression0" -> ArrowParameters0ContainsExpression0.func
+    "IteratorBindingInitialization0" -> ArrowParameters0IteratorBindingInitialization0.func,
+    "CoveredFormalsList0" -> ArrowParameters0CoveredFormalsList0.func
   )
 }
 case class ArrowParameters1(x0: CoverParenthesizedExpressionAndArrowParameterList, parserParams: List[Boolean]) extends ArrowParameters {
@@ -39,8 +39,8 @@ case class ArrowParameters1(x0: CoverParenthesizedExpressionAndArrowParameterLis
 object ArrowParameters1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "BoundNames0" -> ArrowParameters1BoundNames0.func,
+    "IsSimpleParameterList0" -> ArrowParameters1IsSimpleParameterList0.func,
     "Contains0" -> ArrowParameters1Contains0.func,
-    "IsSimpleParameterList0" -> ArrowParameters1IsSimpleParameterList0.func
+    "BoundNames0" -> ArrowParameters1BoundNames0.func
   )
 }

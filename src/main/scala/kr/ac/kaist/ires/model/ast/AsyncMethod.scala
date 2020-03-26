@@ -20,9 +20,9 @@ case class AsyncMethod0(x2: PropertyName, x4: UniqueFormalParameters, x7: AsyncF
 object AsyncMethod0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "HasDirectSuper0" -> AsyncMethod0HasDirectSuper0.func,
     "ComputedPropertyContains0" -> AsyncMethod0ComputedPropertyContains0.func,
     "PropName0" -> AsyncMethod0PropName0.func,
+    "HasDirectSuper0" -> AsyncMethod0HasDirectSuper0.func,
     "PropertyDefinitionEvaluation0" -> AsyncMethod0PropertyDefinitionEvaluation0.func
   )
 }

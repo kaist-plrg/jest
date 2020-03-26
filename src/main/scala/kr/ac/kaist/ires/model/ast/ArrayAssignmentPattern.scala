@@ -20,9 +20,9 @@ case class ArrayAssignmentPattern0(x1: Option[Elision], x2: Option[AssignmentRes
 object ArrayAssignmentPattern0 extends ASTInfo {
   val maxK: Int = 3
   val semMap: Map[String, Func] = Map(
+    "DestructuringAssignmentEvaluation2" -> ArrayAssignmentPattern0DestructuringAssignmentEvaluation2.func,
     "DestructuringAssignmentEvaluation0" -> ArrayAssignmentPattern0DestructuringAssignmentEvaluation0.func,
-    "DestructuringAssignmentEvaluation3" -> ArrayAssignmentPattern0DestructuringAssignmentEvaluation3.func,
-    "DestructuringAssignmentEvaluation2" -> ArrayAssignmentPattern0DestructuringAssignmentEvaluation2.func
+    "DestructuringAssignmentEvaluation3" -> ArrayAssignmentPattern0DestructuringAssignmentEvaluation3.func
   )
 }
 case class ArrayAssignmentPattern1(x1: AssignmentElementList, parserParams: List[Boolean]) extends ArrayAssignmentPattern {

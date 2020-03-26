@@ -21,13 +21,13 @@ object SingleNameBinding0 extends ASTInfo {
   val maxK: Int = 1
   val semMap: Map[String, Func] = Map(
     "IsSimpleParameterList0" -> SingleNameBinding0IsSimpleParameterList0.func,
+    "HasInitializer1" -> SingleNameBinding0HasInitializer1.func,
     "IteratorBindingInitialization1" -> SingleNameBinding0IteratorBindingInitialization1.func,
     "IsSimpleParameterList1" -> SingleNameBinding0IsSimpleParameterList1.func,
-    "HasInitializer1" -> SingleNameBinding0HasInitializer1.func,
-    "HasInitializer0" -> SingleNameBinding0HasInitializer0.func,
-    "BoundNames1" -> SingleNameBinding0BoundNames1.func,
-    "ContainsExpression0" -> SingleNameBinding0ContainsExpression0.func,
     "KeyedBindingInitialization1" -> SingleNameBinding0KeyedBindingInitialization1.func,
-    "ContainsExpression1" -> SingleNameBinding0ContainsExpression1.func
+    "ContainsExpression1" -> SingleNameBinding0ContainsExpression1.func,
+    "ContainsExpression0" -> SingleNameBinding0ContainsExpression0.func,
+    "HasInitializer0" -> SingleNameBinding0HasInitializer0.func,
+    "BoundNames1" -> SingleNameBinding0BoundNames1.func
   )
 }

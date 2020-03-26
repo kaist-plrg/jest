@@ -20,13 +20,13 @@ case class Catch0(x2: CatchParameter, x4: Block, parserParams: List[Boolean]) ex
 object Catch0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
+    "ContainsUndefinedBreakTarget0" -> Catch0ContainsUndefinedBreakTarget0.func,
     "CatchClauseEvaluation0" -> Catch0CatchClauseEvaluation0.func,
     "VarDeclaredNames0" -> Catch0VarDeclaredNames0.func,
+    "VarScopedDeclarations0" -> Catch0VarScopedDeclarations0.func,
     "ContainsUndefinedContinueTarget0" -> Catch0ContainsUndefinedContinueTarget0.func,
     "ContainsDuplicateLabels0" -> Catch0ContainsDuplicateLabels0.func,
-    "StatementRules0" -> Catch0StatementRules0.func,
-    "ContainsUndefinedBreakTarget0" -> Catch0ContainsUndefinedBreakTarget0.func,
-    "VarScopedDeclarations0" -> Catch0VarScopedDeclarations0.func
+    "StatementRules0" -> Catch0StatementRules0.func
   )
 }
 case class Catch1(x1: Block, parserParams: List[Boolean]) extends Catch {

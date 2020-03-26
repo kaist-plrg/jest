@@ -20,7 +20,7 @@ case class AssignmentElement0(x0: DestructuringAssignmentTarget, x1: Option[Init
 object AssignmentElement0 extends ASTInfo {
   val maxK: Int = 1
   val semMap: Map[String, Func] = Map(
-    "KeyedDestructuringAssignmentEvaluation1" -> AssignmentElement0KeyedDestructuringAssignmentEvaluation1.func,
-    "IteratorDestructuringAssignmentEvaluation1" -> AssignmentElement0IteratorDestructuringAssignmentEvaluation1.func
+    "IteratorDestructuringAssignmentEvaluation1" -> AssignmentElement0IteratorDestructuringAssignmentEvaluation1.func,
+    "KeyedDestructuringAssignmentEvaluation1" -> AssignmentElement0KeyedDestructuringAssignmentEvaluation1.func
   )
 }

@@ -20,8 +20,8 @@ case class TemplateMiddleList0(x0: Lexical, x1: Expression, parserParams: List[B
 object TemplateMiddleList0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "TemplateStrings0" -> TemplateMiddleList0TemplateStrings0.func,
     "SubstitutionEvaluation0" -> TemplateMiddleList0SubstitutionEvaluation0.func,
+    "TemplateStrings0" -> TemplateMiddleList0TemplateStrings0.func,
     "Evaluation0" -> TemplateMiddleList0Evaluation0.func
   )
 }

@@ -20,13 +20,13 @@ case class IfStatement0(x2: Expression, x4: Statement, parserParams: List[Boolea
 object IfStatement0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "Evaluation0" -> IfStatement0Evaluation0.func,
-    "ContainsDuplicateLabels0" -> IfStatement0ContainsDuplicateLabels0.func,
     "StatementRules0" -> IfStatement0StatementRules0.func,
-    "ContainsUndefinedBreakTarget0" -> IfStatement0ContainsUndefinedBreakTarget0.func,
     "ContainsUndefinedContinueTarget0" -> IfStatement0ContainsUndefinedContinueTarget0.func,
-    "VarDeclaredNames0" -> IfStatement0VarDeclaredNames0.func,
-    "VarScopedDeclarations0" -> IfStatement0VarScopedDeclarations0.func
+    "ContainsDuplicateLabels0" -> IfStatement0ContainsDuplicateLabels0.func,
+    "VarScopedDeclarations0" -> IfStatement0VarScopedDeclarations0.func,
+    "Evaluation0" -> IfStatement0Evaluation0.func,
+    "ContainsUndefinedBreakTarget0" -> IfStatement0ContainsUndefinedBreakTarget0.func,
+    "VarDeclaredNames0" -> IfStatement0VarDeclaredNames0.func
   )
 }
 case class IfStatement1(x2: Expression, x4: Statement, x6: Statement, parserParams: List[Boolean]) extends IfStatement {
@@ -42,11 +42,11 @@ object IfStatement1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "VarDeclaredNames0" -> IfStatement1VarDeclaredNames0.func,
-    "Evaluation0" -> IfStatement1Evaluation0.func,
-    "StatementRules0" -> IfStatement1StatementRules0.func,
-    "VarScopedDeclarations0" -> IfStatement1VarScopedDeclarations0.func,
-    "ContainsUndefinedContinueTarget0" -> IfStatement1ContainsUndefinedContinueTarget0.func,
     "ContainsDuplicateLabels0" -> IfStatement1ContainsDuplicateLabels0.func,
+    "Evaluation0" -> IfStatement1Evaluation0.func,
+    "ContainsUndefinedContinueTarget0" -> IfStatement1ContainsUndefinedContinueTarget0.func,
+    "VarScopedDeclarations0" -> IfStatement1VarScopedDeclarations0.func,
+    "StatementRules0" -> IfStatement1StatementRules0.func,
     "ContainsUndefinedBreakTarget0" -> IfStatement1ContainsUndefinedBreakTarget0.func
   )
 }

@@ -20,9 +20,9 @@ case class AsyncArrowFunction0(x2: AsyncArrowBindingIdentifier, x5: AsyncConcise
 object AsyncArrowFunction0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "HasName0" -> AsyncArrowFunction0HasName0.func,
-    "Evaluation0" -> AsyncArrowFunction0Evaluation0.func,
     "Contains0" -> AsyncArrowFunction0Contains0.func,
+    "Evaluation0" -> AsyncArrowFunction0Evaluation0.func,
+    "HasName0" -> AsyncArrowFunction0HasName0.func,
     "NamedEvaluation0" -> AsyncArrowFunction0NamedEvaluation0.func
   )
 }
@@ -38,9 +38,9 @@ case class AsyncArrowFunction1(x0: CoverCallExpressionAndAsyncArrowHead, x3: Asy
 object AsyncArrowFunction1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "Evaluation0" -> AsyncArrowFunction1Evaluation0.func,
-    "HasName0" -> AsyncArrowFunction1HasName0.func,
+    "NamedEvaluation0" -> AsyncArrowFunction1NamedEvaluation0.func,
     "Contains0" -> AsyncArrowFunction1Contains0.func,
-    "NamedEvaluation0" -> AsyncArrowFunction1NamedEvaluation0.func
+    "Evaluation0" -> AsyncArrowFunction1Evaluation0.func,
+    "HasName0" -> AsyncArrowFunction1HasName0.func
   )
 }

@@ -20,8 +20,8 @@ case class SubstitutionTemplate0(x0: Lexical, x1: Expression, x2: TemplateSpans,
 object SubstitutionTemplate0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "ArgumentListEvaluation0" -> SubstitutionTemplate0ArgumentListEvaluation0.func,
     "TemplateStrings0" -> SubstitutionTemplate0TemplateStrings0.func,
-    "Evaluation0" -> SubstitutionTemplate0Evaluation0.func
+    "Evaluation0" -> SubstitutionTemplate0Evaluation0.func,
+    "ArgumentListEvaluation0" -> SubstitutionTemplate0ArgumentListEvaluation0.func
   )
 }

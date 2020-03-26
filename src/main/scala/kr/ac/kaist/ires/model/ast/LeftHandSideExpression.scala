@@ -33,8 +33,8 @@ case class LeftHandSideExpression1(x0: CallExpression, parserParams: List[Boolea
 object LeftHandSideExpression1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
+    "IsIdentifierRef0" -> LeftHandSideExpression1IsIdentifierRef0.func,
     "IsDestructuring0" -> LeftHandSideExpression1IsDestructuring0.func,
-    "IsFunctionDefinition0" -> LeftHandSideExpression1IsFunctionDefinition0.func,
-    "IsIdentifierRef0" -> LeftHandSideExpression1IsIdentifierRef0.func
+    "IsFunctionDefinition0" -> LeftHandSideExpression1IsFunctionDefinition0.func
   )
 }

@@ -35,7 +35,7 @@ case class PropertyDefinitionList1(x0: PropertyDefinitionList, x2: PropertyDefin
 object PropertyDefinitionList1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "PropertyDefinitionEvaluation0" -> PropertyDefinitionList1PropertyDefinitionEvaluation0.func,
-    "PropertyNameList0" -> PropertyDefinitionList1PropertyNameList0.func
+    "PropertyNameList0" -> PropertyDefinitionList1PropertyNameList0.func,
+    "PropertyDefinitionEvaluation0" -> PropertyDefinitionList1PropertyDefinitionEvaluation0.func
   )
 }

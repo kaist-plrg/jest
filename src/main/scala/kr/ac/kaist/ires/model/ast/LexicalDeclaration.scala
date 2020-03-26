@@ -20,8 +20,8 @@ case class LexicalDeclaration0(x0: LetOrConst, x1: BindingList, parserParams: Li
 object LexicalDeclaration0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "IsConstantDeclaration0" -> LexicalDeclaration0IsConstantDeclaration0.func,
+    "Evaluation0" -> LexicalDeclaration0Evaluation0.func,
     "BoundNames0" -> LexicalDeclaration0BoundNames0.func,
-    "Evaluation0" -> LexicalDeclaration0Evaluation0.func
+    "IsConstantDeclaration0" -> LexicalDeclaration0IsConstantDeclaration0.func
   )
 }

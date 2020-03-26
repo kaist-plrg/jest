@@ -20,8 +20,8 @@ case class LiteralPropertyName0(x0: Lexical, parserParams: List[Boolean]) extend
 object LiteralPropertyName0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "PropName0" -> LiteralPropertyName0PropName0.func,
     "Evaluation0" -> LiteralPropertyName0Evaluation0.func,
+    "PropName0" -> LiteralPropertyName0PropName0.func,
     "Contains0" -> LiteralPropertyName0Contains0.func
   )
 }

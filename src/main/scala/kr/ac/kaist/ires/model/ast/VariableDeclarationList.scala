@@ -35,8 +35,8 @@ case class VariableDeclarationList1(x0: VariableDeclarationList, x2: VariableDec
 object VariableDeclarationList1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "Evaluation0" -> VariableDeclarationList1Evaluation0.func,
     "BoundNames0" -> VariableDeclarationList1BoundNames0.func,
+    "Evaluation0" -> VariableDeclarationList1Evaluation0.func,
     "VarScopedDeclarations0" -> VariableDeclarationList1VarScopedDeclarations0.func
   )
 }

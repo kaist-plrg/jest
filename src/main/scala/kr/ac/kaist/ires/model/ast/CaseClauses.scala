@@ -33,13 +33,13 @@ case class CaseClauses1(x0: CaseClauses, x1: CaseClause, parserParams: List[Bool
 object CaseClauses1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
+    "StatementRules0" -> CaseClauses1StatementRules0.func,
     "LexicallyScopedDeclarations0" -> CaseClauses1LexicallyScopedDeclarations0.func,
+    "ContainsUndefinedBreakTarget0" -> CaseClauses1ContainsUndefinedBreakTarget0.func,
+    "ContainsDuplicateLabels0" -> CaseClauses1ContainsDuplicateLabels0.func,
     "VarScopedDeclarations0" -> CaseClauses1VarScopedDeclarations0.func,
     "ContainsUndefinedContinueTarget0" -> CaseClauses1ContainsUndefinedContinueTarget0.func,
-    "ContainsUndefinedBreakTarget0" -> CaseClauses1ContainsUndefinedBreakTarget0.func,
     "VarDeclaredNames0" -> CaseClauses1VarDeclaredNames0.func,
-    "LexicallyDeclaredNames0" -> CaseClauses1LexicallyDeclaredNames0.func,
-    "StatementRules0" -> CaseClauses1StatementRules0.func,
-    "ContainsDuplicateLabels0" -> CaseClauses1ContainsDuplicateLabels0.func
+    "LexicallyDeclaredNames0" -> CaseClauses1LexicallyDeclaredNames0.func
   )
 }

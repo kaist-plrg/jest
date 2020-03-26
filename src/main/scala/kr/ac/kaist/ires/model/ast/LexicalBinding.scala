@@ -20,8 +20,8 @@ case class LexicalBinding0(x0: BindingIdentifier, x1: Option[Initializer], parse
 object LexicalBinding0 extends ASTInfo {
   val maxK: Int = 1
   val semMap: Map[String, Func] = Map(
-    "Evaluation0" -> LexicalBinding0Evaluation0.func,
     "Evaluation1" -> LexicalBinding0Evaluation1.func,
+    "Evaluation0" -> LexicalBinding0Evaluation0.func,
     "BoundNames1" -> LexicalBinding0BoundNames1.func
   )
 }

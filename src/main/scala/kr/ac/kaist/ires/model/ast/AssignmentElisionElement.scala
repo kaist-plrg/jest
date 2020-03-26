@@ -20,7 +20,7 @@ case class AssignmentElisionElement0(x0: Option[Elision], x1: AssignmentElement,
 object AssignmentElisionElement0 extends ASTInfo {
   val maxK: Int = 1
   val semMap: Map[String, Func] = Map(
-    "IteratorDestructuringAssignmentEvaluation1" -> AssignmentElisionElement0IteratorDestructuringAssignmentEvaluation1.func,
-    "IteratorDestructuringAssignmentEvaluation0" -> AssignmentElisionElement0IteratorDestructuringAssignmentEvaluation0.func
+    "IteratorDestructuringAssignmentEvaluation0" -> AssignmentElisionElement0IteratorDestructuringAssignmentEvaluation0.func,
+    "IteratorDestructuringAssignmentEvaluation1" -> AssignmentElisionElement0IteratorDestructuringAssignmentEvaluation1.func
   )
 }

@@ -21,11 +21,11 @@ object MethodDefinition0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "SpecialMethod0" -> MethodDefinition0SpecialMethod0.func,
-    "PropertyDefinitionEvaluation0" -> MethodDefinition0PropertyDefinitionEvaluation0.func,
-    "HasDirectSuper0" -> MethodDefinition0HasDirectSuper0.func,
     "DefineMethod0" -> MethodDefinition0DefineMethod0.func,
+    "PropName0" -> MethodDefinition0PropName0.func,
+    "PropertyDefinitionEvaluation0" -> MethodDefinition0PropertyDefinitionEvaluation0.func,
     "ComputedPropertyContains0" -> MethodDefinition0ComputedPropertyContains0.func,
-    "PropName0" -> MethodDefinition0PropName0.func
+    "HasDirectSuper0" -> MethodDefinition0HasDirectSuper0.func
   )
 }
 case class MethodDefinition1(x0: GeneratorMethod, parserParams: List[Boolean]) extends MethodDefinition {
@@ -85,11 +85,11 @@ case class MethodDefinition4(x1: PropertyName, x5: FunctionBody, parserParams: L
 object MethodDefinition4 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "HasDirectSuper0" -> MethodDefinition4HasDirectSuper0.func,
-    "ComputedPropertyContains0" -> MethodDefinition4ComputedPropertyContains0.func,
     "PropertyDefinitionEvaluation0" -> MethodDefinition4PropertyDefinitionEvaluation0.func,
     "SpecialMethod0" -> MethodDefinition4SpecialMethod0.func,
-    "PropName0" -> MethodDefinition4PropName0.func
+    "PropName0" -> MethodDefinition4PropName0.func,
+    "ComputedPropertyContains0" -> MethodDefinition4ComputedPropertyContains0.func,
+    "HasDirectSuper0" -> MethodDefinition4HasDirectSuper0.func
   )
 }
 case class MethodDefinition5(x1: PropertyName, x3: PropertySetParameterList, x6: FunctionBody, parserParams: List[Boolean]) extends MethodDefinition {
@@ -105,9 +105,9 @@ object MethodDefinition5 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "PropName0" -> MethodDefinition5PropName0.func,
+    "SpecialMethod0" -> MethodDefinition5SpecialMethod0.func,
     "ComputedPropertyContains0" -> MethodDefinition5ComputedPropertyContains0.func,
     "HasDirectSuper0" -> MethodDefinition5HasDirectSuper0.func,
-    "SpecialMethod0" -> MethodDefinition5SpecialMethod0.func,
     "PropertyDefinitionEvaluation0" -> MethodDefinition5PropertyDefinitionEvaluation0.func
   )
 }

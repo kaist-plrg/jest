@@ -20,8 +20,8 @@ case class PropertyDefinition0(x0: IdentifierReference, parserParams: List[Boole
 object PropertyDefinition0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "PropertyDefinitionEvaluation0" -> PropertyDefinition0PropertyDefinitionEvaluation0.func,
-    "PropName0" -> PropertyDefinition0PropName0.func
+    "PropName0" -> PropertyDefinition0PropName0.func,
+    "PropertyDefinitionEvaluation0" -> PropertyDefinition0PropertyDefinitionEvaluation0.func
   )
 }
 case class PropertyDefinition1(x0: CoverInitializedName, parserParams: List[Boolean]) extends PropertyDefinition {
@@ -80,7 +80,7 @@ case class PropertyDefinition4(x1: AssignmentExpression, parserParams: List[Bool
 object PropertyDefinition4 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "PropertyDefinitionEvaluation0" -> PropertyDefinition4PropertyDefinitionEvaluation0.func,
-    "PropName0" -> PropertyDefinition4PropName0.func
+    "PropName0" -> PropertyDefinition4PropName0.func,
+    "PropertyDefinitionEvaluation0" -> PropertyDefinition4PropertyDefinitionEvaluation0.func
   )
 }

@@ -20,10 +20,10 @@ case class ClassDeclaration0(x1: BindingIdentifier, x2: ClassTail, parserParams:
 object ClassDeclaration0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "BindingClassDeclarationEvaluation0" -> ClassDeclaration0BindingClassDeclarationEvaluation0.func,
     "Evaluation0" -> ClassDeclaration0Evaluation0.func,
+    "IsConstantDeclaration0" -> ClassDeclaration0IsConstantDeclaration0.func,
     "BoundNames0" -> ClassDeclaration0BoundNames0.func,
-    "IsConstantDeclaration0" -> ClassDeclaration0IsConstantDeclaration0.func
+    "BindingClassDeclarationEvaluation0" -> ClassDeclaration0BindingClassDeclarationEvaluation0.func
   )
 }
 case class ClassDeclaration1(x1: ClassTail, parserParams: List[Boolean]) extends ClassDeclaration {
@@ -38,8 +38,8 @@ case class ClassDeclaration1(x1: ClassTail, parserParams: List[Boolean]) extends
 object ClassDeclaration1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "BoundNames0" -> ClassDeclaration1BoundNames0.func,
+    "BindingClassDeclarationEvaluation0" -> ClassDeclaration1BindingClassDeclarationEvaluation0.func,
     "IsConstantDeclaration0" -> ClassDeclaration1IsConstantDeclaration0.func,
-    "BindingClassDeclarationEvaluation0" -> ClassDeclaration1BindingClassDeclarationEvaluation0.func
+    "BoundNames0" -> ClassDeclaration1BoundNames0.func
   )
 }

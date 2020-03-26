@@ -33,9 +33,9 @@ case class LogicalANDExpression1(x0: LogicalANDExpression, x2: BitwiseORExpressi
 object LogicalANDExpression1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "Evaluation0" -> LogicalANDExpression1Evaluation0.func,
     "AssignmentTargetType0" -> LogicalANDExpression1AssignmentTargetType0.func,
+    "ExpressionRules0" -> LogicalANDExpression1ExpressionRules0.func,
     "IsFunctionDefinition0" -> LogicalANDExpression1IsFunctionDefinition0.func,
-    "ExpressionRules0" -> LogicalANDExpression1ExpressionRules0.func
+    "Evaluation0" -> LogicalANDExpression1Evaluation0.func
   )
 }
