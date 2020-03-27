@@ -291,6 +291,22 @@ class Interp {
       (Str(v match {
         case addr: Addr => s0.heap.map.getOrElse(addr, error(s"unknown address: $addr")) match {
           case IRNotSupported(name) => throw NotSupported(name)
+          case IRMap(Ty("Completion"), m) => m(Str("Value")) match {
+            case addr: Addr => s0.heap.map.getOrElse(addr, error(s"unknown address: $addr")) match {
+              case IRNotSupported(name) => throw NotSupported(name)
+              case obj => obj.ty.name
+            }
+            case Num(_) | INum(_) => "Number"
+            case Str(_) => "String"
+            case Bool(_) => "Boolean"
+            case Undef => "Undefined"
+            case Null => "Null"
+            case Absent => "Absent"
+            case Func(_, _, _, _) => "Function"
+            case Cont(_, _, _, _) => "Continuation"
+            case ASTVal(_) => "AST"
+            case ASTMethod(_, _) => "ASTMethod"
+          }
           case obj => obj.ty.name
         }
         case Num(_) | INum(_) => "Number"
@@ -303,6 +319,17 @@ class Interp {
         case Cont(_, _, _, _) => "Continuation"
         case ASTVal(_) => "AST"
         case ASTMethod(_, _) => "ASTMethod"
+      }), s0)
+    }
+    case EIsCompletion(expr) => {
+      val (v, s0) = interp(expr)(st)
+      (Bool(v match {
+        case addr: Addr => s0.heap.map.getOrElse(addr, error(s"unknown address: $addr")) match {
+          case IRNotSupported(name) => throw NotSupported(name)
+          case IRMap(Ty("Completion"), _) => true
+          case _ => false
+        }
+        case _ => false
       }), s0)
     }
     case EIsInstanceOf(base, kind) => interp(base, true)(st) match {

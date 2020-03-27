@@ -83,6 +83,7 @@ trait Walker {
     case EUOp(uop, expr) => EUOp(walk(uop), walk(expr))
     case EBOp(bop, left, right) => EBOp(walk(bop), walk(left), walk(right))
     case ETypeOf(expr) => ETypeOf(walk(expr))
+    case EIsCompletion(expr) => EIsCompletion(walk(expr))
     case EIsInstanceOf(base, name) => EIsInstanceOf(walk(base), walk(name))
     case EGetElems(base, name) => EGetElems(walk(base), walk(name))
     case EGetSyntax(base) => EGetSyntax(walk(base))

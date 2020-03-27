@@ -163,6 +163,8 @@ object Beautifier {
         walk("("); walk(bop); walk(" "); walk(left); walk(" "); walk(right); walk(")")
       case ETypeOf(expr) =>
         walk("(typeof "); walk(expr); walk(")")
+      case EIsCompletion(expr) =>
+        walk("(is-completion "); walk(expr); walk(")")
       case EIsInstanceOf(base, name) =>
         walk("(is-instance-of "); walk(base); walk(" "); walk(name); walk(")")
       case EGetElems(base, name) =>

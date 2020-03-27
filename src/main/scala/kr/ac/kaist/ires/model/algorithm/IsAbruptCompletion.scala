@@ -5,6 +5,6 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object IsAbruptCompletion {
   val func: Func = parseFunc(""""IsAbruptCompletion" (x) => {
-    return (&& (= (typeof x) "Completion") (! (= x.Type CONST_normal)))
+  return (&& (is-completion x) (! (= x.Type CONST_normal)))
   }""")
 }

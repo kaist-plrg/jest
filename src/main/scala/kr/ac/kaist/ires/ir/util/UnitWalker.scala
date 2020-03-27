@@ -106,6 +106,8 @@ trait UnitWalker {
       walk(bop); walk(left); walk(right)
     case ETypeOf(expr) =>
       walk(expr)
+    case EIsCompletion(expr) =>
+      walk(expr)
     case EIsInstanceOf(base, name) =>
       walk(base); walk(name)
     case EGetElems(base, name) =>
