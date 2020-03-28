@@ -20,7 +20,7 @@ case class FormalParameter0(x0: BindingElement, parserParams: List[Boolean]) ext
 object FormalParameter0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "IteratorBindingInitialization0" -> FormalParameter0IteratorBindingInitialization0.func,
-    "IsSimpleParameterList0" -> FormalParameter0IsSimpleParameterList0.func
+    "IsSimpleParameterList0" -> FormalParameter0IsSimpleParameterList0.func,
+    "IteratorBindingInitialization0" -> FormalParameter0IteratorBindingInitialization0.func
   )
 }

@@ -20,12 +20,12 @@ case class AsyncGeneratorExpression0(x4: Option[BindingIdentifier], x6: FormalPa
 object AsyncGeneratorExpression0 extends ASTInfo {
   val maxK: Int = 1
   val semMap: Map[String, Func] = Map(
-    "Evaluation1" -> AsyncGeneratorExpression0Evaluation1.func,
+    "Contains1" -> AsyncGeneratorExpression0Contains1.func,
     "Evaluation0" -> AsyncGeneratorExpression0Evaluation0.func,
+    "Evaluation1" -> AsyncGeneratorExpression0Evaluation1.func,
     "HasName0" -> AsyncGeneratorExpression0HasName0.func,
-    "NamedEvaluation0" -> AsyncGeneratorExpression0NamedEvaluation0.func,
-    "IsFunctionDefinition1" -> AsyncGeneratorExpression0IsFunctionDefinition1.func,
     "HasName1" -> AsyncGeneratorExpression0HasName1.func,
-    "Contains1" -> AsyncGeneratorExpression0Contains1.func
+    "IsFunctionDefinition1" -> AsyncGeneratorExpression0IsFunctionDefinition1.func,
+    "NamedEvaluation0" -> AsyncGeneratorExpression0NamedEvaluation0.func
   )
 }

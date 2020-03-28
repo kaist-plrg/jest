@@ -33,8 +33,8 @@ case class LogicalORExpression1(x0: LogicalORExpression, x2: LogicalANDExpressio
 object LogicalORExpression1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "Evaluation0" -> LogicalORExpression1Evaluation0.func,
     "AssignmentTargetType0" -> LogicalORExpression1AssignmentTargetType0.func,
+    "Evaluation0" -> LogicalORExpression1Evaluation0.func,
     "ExpressionRules0" -> LogicalORExpression1ExpressionRules0.func,
     "IsFunctionDefinition0" -> LogicalORExpression1IsFunctionDefinition0.func
   )

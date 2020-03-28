@@ -34,9 +34,9 @@ object Statement1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "ContainsDuplicateLabels0" -> Statement1ContainsDuplicateLabels0.func,
-    "StatementRules0" -> Statement1StatementRules0.func,
     "ContainsUndefinedBreakTarget0" -> Statement1ContainsUndefinedBreakTarget0.func,
-    "ContainsUndefinedContinueTarget0" -> Statement1ContainsUndefinedContinueTarget0.func
+    "ContainsUndefinedContinueTarget0" -> Statement1ContainsUndefinedContinueTarget0.func,
+    "StatementRules0" -> Statement1StatementRules0.func
   )
 }
 case class Statement2(x0: EmptyStatement, parserParams: List[Boolean]) extends Statement {
@@ -52,11 +52,11 @@ object Statement2 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "ContainsDuplicateLabels0" -> Statement2ContainsDuplicateLabels0.func,
-    "VarScopedDeclarations0" -> Statement2VarScopedDeclarations0.func,
+    "ContainsUndefinedBreakTarget0" -> Statement2ContainsUndefinedBreakTarget0.func,
+    "ContainsUndefinedContinueTarget0" -> Statement2ContainsUndefinedContinueTarget0.func,
     "StatementRules0" -> Statement2StatementRules0.func,
     "VarDeclaredNames0" -> Statement2VarDeclaredNames0.func,
-    "ContainsUndefinedBreakTarget0" -> Statement2ContainsUndefinedBreakTarget0.func,
-    "ContainsUndefinedContinueTarget0" -> Statement2ContainsUndefinedContinueTarget0.func
+    "VarScopedDeclarations0" -> Statement2VarScopedDeclarations0.func
   )
 }
 case class Statement3(x0: ExpressionStatement, parserParams: List[Boolean]) extends Statement {
@@ -73,10 +73,10 @@ object Statement3 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "ContainsDuplicateLabels0" -> Statement3ContainsDuplicateLabels0.func,
     "ContainsUndefinedBreakTarget0" -> Statement3ContainsUndefinedBreakTarget0.func,
-    "VarScopedDeclarations0" -> Statement3VarScopedDeclarations0.func,
+    "ContainsUndefinedContinueTarget0" -> Statement3ContainsUndefinedContinueTarget0.func,
     "StatementRules0" -> Statement3StatementRules0.func,
     "VarDeclaredNames0" -> Statement3VarDeclaredNames0.func,
-    "ContainsUndefinedContinueTarget0" -> Statement3ContainsUndefinedContinueTarget0.func
+    "VarScopedDeclarations0" -> Statement3VarScopedDeclarations0.func
   )
 }
 case class Statement4(x0: IfStatement, parserParams: List[Boolean]) extends Statement {
@@ -118,10 +118,10 @@ object Statement6 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "ContainsDuplicateLabels0" -> Statement6ContainsDuplicateLabels0.func,
-    "VarScopedDeclarations0" -> Statement6VarScopedDeclarations0.func,
-    "VarDeclaredNames0" -> Statement6VarDeclaredNames0.func,
     "ContainsUndefinedBreakTarget0" -> Statement6ContainsUndefinedBreakTarget0.func,
-    "StatementRules0" -> Statement6StatementRules0.func
+    "StatementRules0" -> Statement6StatementRules0.func,
+    "VarDeclaredNames0" -> Statement6VarDeclaredNames0.func,
+    "VarScopedDeclarations0" -> Statement6VarScopedDeclarations0.func
   )
 }
 case class Statement7(x0: BreakStatement, parserParams: List[Boolean]) extends Statement {
@@ -136,11 +136,11 @@ case class Statement7(x0: BreakStatement, parserParams: List[Boolean]) extends S
 object Statement7 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "VarDeclaredNames0" -> Statement7VarDeclaredNames0.func,
-    "VarScopedDeclarations0" -> Statement7VarScopedDeclarations0.func,
     "ContainsDuplicateLabels0" -> Statement7ContainsDuplicateLabels0.func,
+    "ContainsUndefinedContinueTarget0" -> Statement7ContainsUndefinedContinueTarget0.func,
     "StatementRules0" -> Statement7StatementRules0.func,
-    "ContainsUndefinedContinueTarget0" -> Statement7ContainsUndefinedContinueTarget0.func
+    "VarDeclaredNames0" -> Statement7VarDeclaredNames0.func,
+    "VarScopedDeclarations0" -> Statement7VarScopedDeclarations0.func
   )
 }
 case class Statement8(x0: ReturnStatement, parserParams: List[Boolean]) extends Statement {
@@ -155,11 +155,11 @@ case class Statement8(x0: ReturnStatement, parserParams: List[Boolean]) extends 
 object Statement8 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "VarScopedDeclarations0" -> Statement8VarScopedDeclarations0.func,
-    "VarDeclaredNames0" -> Statement8VarDeclaredNames0.func,
-    "ContainsUndefinedContinueTarget0" -> Statement8ContainsUndefinedContinueTarget0.func,
+    "ContainsDuplicateLabels0" -> Statement8ContainsDuplicateLabels0.func,
     "ContainsUndefinedBreakTarget0" -> Statement8ContainsUndefinedBreakTarget0.func,
-    "ContainsDuplicateLabels0" -> Statement8ContainsDuplicateLabels0.func
+    "ContainsUndefinedContinueTarget0" -> Statement8ContainsUndefinedContinueTarget0.func,
+    "VarDeclaredNames0" -> Statement8VarDeclaredNames0.func,
+    "VarScopedDeclarations0" -> Statement8VarScopedDeclarations0.func
   )
 }
 case class Statement9(x0: WithStatement, parserParams: List[Boolean]) extends Statement {
@@ -201,11 +201,11 @@ object Statement11 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "ContainsDuplicateLabels0" -> Statement11ContainsDuplicateLabels0.func,
-    "VarScopedDeclarations0" -> Statement11VarScopedDeclarations0.func,
-    "VarDeclaredNames0" -> Statement11VarDeclaredNames0.func,
-    "StatementRules0" -> Statement11StatementRules0.func,
+    "ContainsUndefinedBreakTarget0" -> Statement11ContainsUndefinedBreakTarget0.func,
     "ContainsUndefinedContinueTarget0" -> Statement11ContainsUndefinedContinueTarget0.func,
-    "ContainsUndefinedBreakTarget0" -> Statement11ContainsUndefinedBreakTarget0.func
+    "StatementRules0" -> Statement11StatementRules0.func,
+    "VarDeclaredNames0" -> Statement11VarDeclaredNames0.func,
+    "VarScopedDeclarations0" -> Statement11VarScopedDeclarations0.func
   )
 }
 case class Statement12(x0: TryStatement, parserParams: List[Boolean]) extends Statement {
@@ -233,11 +233,11 @@ case class Statement13(x0: DebuggerStatement, parserParams: List[Boolean]) exten
 object Statement13 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "StatementRules0" -> Statement13StatementRules0.func,
-    "VarScopedDeclarations0" -> Statement13VarScopedDeclarations0.func,
     "ContainsDuplicateLabels0" -> Statement13ContainsDuplicateLabels0.func,
-    "VarDeclaredNames0" -> Statement13VarDeclaredNames0.func,
     "ContainsUndefinedBreakTarget0" -> Statement13ContainsUndefinedBreakTarget0.func,
-    "ContainsUndefinedContinueTarget0" -> Statement13ContainsUndefinedContinueTarget0.func
+    "ContainsUndefinedContinueTarget0" -> Statement13ContainsUndefinedContinueTarget0.func,
+    "StatementRules0" -> Statement13StatementRules0.func,
+    "VarDeclaredNames0" -> Statement13VarDeclaredNames0.func,
+    "VarScopedDeclarations0" -> Statement13VarScopedDeclarations0.func
   )
 }

@@ -35,8 +35,8 @@ case class BindingElementList1(x0: BindingElementList, x2: BindingElisionElement
 object BindingElementList1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
+    "BoundNames0" -> BindingElementList1BoundNames0.func,
     "ContainsExpression0" -> BindingElementList1ContainsExpression0.func,
-    "IteratorBindingInitialization0" -> BindingElementList1IteratorBindingInitialization0.func,
-    "BoundNames0" -> BindingElementList1BoundNames0.func
+    "IteratorBindingInitialization0" -> BindingElementList1IteratorBindingInitialization0.func
   )
 }

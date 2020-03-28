@@ -20,9 +20,9 @@ case class TemplateLiteral0(x0: Lexical, parserParams: List[Boolean]) extends Te
 object TemplateLiteral0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "TemplateStrings0" -> TemplateLiteral0TemplateStrings0.func,
     "ArgumentListEvaluation0" -> TemplateLiteral0ArgumentListEvaluation0.func,
-    "Evaluation0" -> TemplateLiteral0Evaluation0.func
+    "Evaluation0" -> TemplateLiteral0Evaluation0.func,
+    "TemplateStrings0" -> TemplateLiteral0TemplateStrings0.func
   )
 }
 case class TemplateLiteral1(x0: SubstitutionTemplate, parserParams: List[Boolean]) extends TemplateLiteral {

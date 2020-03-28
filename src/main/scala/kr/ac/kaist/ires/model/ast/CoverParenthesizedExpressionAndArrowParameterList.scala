@@ -20,8 +20,8 @@ case class CoverParenthesizedExpressionAndArrowParameterList0(x1: Expression, pa
 object CoverParenthesizedExpressionAndArrowParameterList0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "CoveredParenthesizedExpression0" -> CoverParenthesizedExpressionAndArrowParameterList0CoveredParenthesizedExpression0.func,
-    "CoveredFormalsList0" -> CoverParenthesizedExpressionAndArrowParameterList0CoveredFormalsList0.func
+    "CoveredFormalsList0" -> CoverParenthesizedExpressionAndArrowParameterList0CoveredFormalsList0.func,
+    "CoveredParenthesizedExpression0" -> CoverParenthesizedExpressionAndArrowParameterList0CoveredParenthesizedExpression0.func
   )
 }
 case class CoverParenthesizedExpressionAndArrowParameterList1(x1: Expression, parserParams: List[Boolean]) extends CoverParenthesizedExpressionAndArrowParameterList {

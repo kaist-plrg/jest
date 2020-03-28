@@ -20,8 +20,8 @@ case class HoistableDeclaration0(x0: FunctionDeclaration, parserParams: List[Boo
 object HoistableDeclaration0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "Evaluation0" -> HoistableDeclaration0Evaluation0.func,
-    "DeclarationPart0" -> HoistableDeclaration0DeclarationPart0.func
+    "DeclarationPart0" -> HoistableDeclaration0DeclarationPart0.func,
+    "Evaluation0" -> HoistableDeclaration0Evaluation0.func
   )
 }
 case class HoistableDeclaration1(x0: GeneratorDeclaration, parserParams: List[Boolean]) extends HoistableDeclaration {
@@ -36,8 +36,8 @@ case class HoistableDeclaration1(x0: GeneratorDeclaration, parserParams: List[Bo
 object HoistableDeclaration1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "Evaluation0" -> HoistableDeclaration1Evaluation0.func,
-    "DeclarationPart0" -> HoistableDeclaration1DeclarationPart0.func
+    "DeclarationPart0" -> HoistableDeclaration1DeclarationPart0.func,
+    "Evaluation0" -> HoistableDeclaration1Evaluation0.func
   )
 }
 case class HoistableDeclaration2(x0: AsyncFunctionDeclaration, parserParams: List[Boolean]) extends HoistableDeclaration {

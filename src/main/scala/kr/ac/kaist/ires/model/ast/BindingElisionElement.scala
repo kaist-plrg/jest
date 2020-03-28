@@ -20,9 +20,9 @@ case class BindingElisionElement0(x0: Option[Elision], x1: BindingElement, parse
 object BindingElisionElement0 extends ASTInfo {
   val maxK: Int = 1
   val semMap: Map[String, Func] = Map(
-    "IteratorBindingInitialization1" -> BindingElisionElement0IteratorBindingInitialization1.func,
-    "ContainsExpression1" -> BindingElisionElement0ContainsExpression1.func,
     "BoundNames1" -> BindingElisionElement0BoundNames1.func,
-    "IteratorBindingInitialization0" -> BindingElisionElement0IteratorBindingInitialization0.func
+    "ContainsExpression1" -> BindingElisionElement0ContainsExpression1.func,
+    "IteratorBindingInitialization0" -> BindingElisionElement0IteratorBindingInitialization0.func,
+    "IteratorBindingInitialization1" -> BindingElisionElement0IteratorBindingInitialization1.func
   )
 }

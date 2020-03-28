@@ -34,8 +34,8 @@ object LogicalANDExpression1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> LogicalANDExpression1AssignmentTargetType0.func,
+    "Evaluation0" -> LogicalANDExpression1Evaluation0.func,
     "ExpressionRules0" -> LogicalANDExpression1ExpressionRules0.func,
-    "IsFunctionDefinition0" -> LogicalANDExpression1IsFunctionDefinition0.func,
-    "Evaluation0" -> LogicalANDExpression1Evaluation0.func
+    "IsFunctionDefinition0" -> LogicalANDExpression1IsFunctionDefinition0.func
   )
 }

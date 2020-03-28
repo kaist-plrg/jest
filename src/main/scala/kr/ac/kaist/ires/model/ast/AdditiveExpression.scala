@@ -51,9 +51,9 @@ case class AdditiveExpression2(x0: AdditiveExpression, x2: MultiplicativeExpress
 object AdditiveExpression2 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "IsFunctionDefinition0" -> AdditiveExpression2IsFunctionDefinition0.func,
     "AssignmentTargetType0" -> AdditiveExpression2AssignmentTargetType0.func,
     "Evaluation0" -> AdditiveExpression2Evaluation0.func,
-    "ExpressionRules0" -> AdditiveExpression2ExpressionRules0.func
+    "ExpressionRules0" -> AdditiveExpression2ExpressionRules0.func,
+    "IsFunctionDefinition0" -> AdditiveExpression2IsFunctionDefinition0.func
   )
 }

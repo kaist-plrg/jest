@@ -21,8 +21,8 @@ object GeneratorMethod0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "ComputedPropertyContains0" -> GeneratorMethod0ComputedPropertyContains0.func,
-    "PropertyDefinitionEvaluation0" -> GeneratorMethod0PropertyDefinitionEvaluation0.func,
+    "HasDirectSuper0" -> GeneratorMethod0HasDirectSuper0.func,
     "PropName0" -> GeneratorMethod0PropName0.func,
-    "HasDirectSuper0" -> GeneratorMethod0HasDirectSuper0.func
+    "PropertyDefinitionEvaluation0" -> GeneratorMethod0PropertyDefinitionEvaluation0.func
   )
 }

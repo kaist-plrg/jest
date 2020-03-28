@@ -20,9 +20,9 @@ case class BreakableStatement0(x0: IterationStatement, parserParams: List[Boolea
 object BreakableStatement0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "LabelledEvaluation0" -> BreakableStatement0LabelledEvaluation0.func,
+    "ContainsUndefinedContinueTarget0" -> BreakableStatement0ContainsUndefinedContinueTarget0.func,
     "Evaluation0" -> BreakableStatement0Evaluation0.func,
-    "ContainsUndefinedContinueTarget0" -> BreakableStatement0ContainsUndefinedContinueTarget0.func
+    "LabelledEvaluation0" -> BreakableStatement0LabelledEvaluation0.func
   )
 }
 case class BreakableStatement1(x0: SwitchStatement, parserParams: List[Boolean]) extends BreakableStatement {

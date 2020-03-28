@@ -20,9 +20,9 @@ case class AsyncArrowBindingIdentifier0(x0: BindingIdentifier, parserParams: Lis
 object AsyncArrowBindingIdentifier0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "IteratorBindingInitialization0" -> AsyncArrowBindingIdentifier0IteratorBindingInitialization0.func,
     "ContainsExpression0" -> AsyncArrowBindingIdentifier0ContainsExpression0.func,
     "ExpectedArgumentCount0" -> AsyncArrowBindingIdentifier0ExpectedArgumentCount0.func,
-    "IsSimpleParameterList0" -> AsyncArrowBindingIdentifier0IsSimpleParameterList0.func
+    "IsSimpleParameterList0" -> AsyncArrowBindingIdentifier0IsSimpleParameterList0.func,
+    "IteratorBindingInitialization0" -> AsyncArrowBindingIdentifier0IteratorBindingInitialization0.func
   )
 }

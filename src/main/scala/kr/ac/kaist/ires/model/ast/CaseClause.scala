@@ -20,15 +20,15 @@ case class CaseClause0(x1: Expression, x3: Option[StatementList], parserParams: 
 object CaseClause0 extends ASTInfo {
   val maxK: Int = 1
   val semMap: Map[String, Func] = Map(
-    "VarDeclaredNames1" -> CaseClause0VarDeclaredNames1.func,
-    "Evaluation1" -> CaseClause0Evaluation1.func,
     "ContainsDuplicateLabels1" -> CaseClause0ContainsDuplicateLabels1.func,
-    "Evaluation0" -> CaseClause0Evaluation0.func,
-    "ContainsUndefinedContinueTarget1" -> CaseClause0ContainsUndefinedContinueTarget1.func,
     "ContainsUndefinedBreakTarget1" -> CaseClause0ContainsUndefinedBreakTarget1.func,
-    "VarScopedDeclarations1" -> CaseClause0VarScopedDeclarations1.func,
-    "StatementRules1" -> CaseClause0StatementRules1.func,
+    "ContainsUndefinedContinueTarget1" -> CaseClause0ContainsUndefinedContinueTarget1.func,
+    "Evaluation0" -> CaseClause0Evaluation0.func,
+    "Evaluation1" -> CaseClause0Evaluation1.func,
+    "LexicallyDeclaredNames1" -> CaseClause0LexicallyDeclaredNames1.func,
     "LexicallyScopedDeclarations1" -> CaseClause0LexicallyScopedDeclarations1.func,
-    "LexicallyDeclaredNames1" -> CaseClause0LexicallyDeclaredNames1.func
+    "StatementRules1" -> CaseClause0StatementRules1.func,
+    "VarDeclaredNames1" -> CaseClause0VarDeclaredNames1.func,
+    "VarScopedDeclarations1" -> CaseClause0VarScopedDeclarations1.func
   )
 }

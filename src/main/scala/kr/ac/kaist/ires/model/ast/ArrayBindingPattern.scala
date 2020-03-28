@@ -21,12 +21,12 @@ object ArrayBindingPattern0 extends ASTInfo {
   val maxK: Int = 3
   val semMap: Map[String, Func] = Map(
     "BoundNames0" -> ArrayBindingPattern0BoundNames0.func,
-    "IteratorBindingInitialization0" -> ArrayBindingPattern0IteratorBindingInitialization0.func,
-    "ContainsExpression3" -> ArrayBindingPattern0ContainsExpression3.func,
-    "IteratorBindingInitialization2" -> ArrayBindingPattern0IteratorBindingInitialization2.func,
-    "ContainsExpression2" -> ArrayBindingPattern0ContainsExpression2.func,
     "BoundNames2" -> ArrayBindingPattern0BoundNames2.func,
     "BoundNames3" -> ArrayBindingPattern0BoundNames3.func,
+    "ContainsExpression2" -> ArrayBindingPattern0ContainsExpression2.func,
+    "ContainsExpression3" -> ArrayBindingPattern0ContainsExpression3.func,
+    "IteratorBindingInitialization0" -> ArrayBindingPattern0IteratorBindingInitialization0.func,
+    "IteratorBindingInitialization2" -> ArrayBindingPattern0IteratorBindingInitialization2.func,
     "IteratorBindingInitialization3" -> ArrayBindingPattern0IteratorBindingInitialization3.func
   )
 }
@@ -57,13 +57,13 @@ case class ArrayBindingPattern2(x1: BindingElementList, x3: Option[Elision], x4:
 object ArrayBindingPattern2 extends ASTInfo {
   val maxK: Int = 3
   val semMap: Map[String, Func] = Map(
-    "IteratorBindingInitialization3" -> ArrayBindingPattern2IteratorBindingInitialization3.func,
-    "BoundNames3" -> ArrayBindingPattern2BoundNames3.func,
-    "BoundNames2" -> ArrayBindingPattern2BoundNames2.func,
-    "IteratorBindingInitialization2" -> ArrayBindingPattern2IteratorBindingInitialization2.func,
     "BoundNames0" -> ArrayBindingPattern2BoundNames0.func,
+    "BoundNames2" -> ArrayBindingPattern2BoundNames2.func,
+    "BoundNames3" -> ArrayBindingPattern2BoundNames3.func,
     "ContainsExpression2" -> ArrayBindingPattern2ContainsExpression2.func,
     "ContainsExpression3" -> ArrayBindingPattern2ContainsExpression3.func,
-    "IteratorBindingInitialization0" -> ArrayBindingPattern2IteratorBindingInitialization0.func
+    "IteratorBindingInitialization0" -> ArrayBindingPattern2IteratorBindingInitialization0.func,
+    "IteratorBindingInitialization2" -> ArrayBindingPattern2IteratorBindingInitialization2.func,
+    "IteratorBindingInitialization3" -> ArrayBindingPattern2IteratorBindingInitialization3.func
   )
 }

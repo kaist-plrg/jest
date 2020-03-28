@@ -20,12 +20,12 @@ case class SwitchStatement0(x2: Expression, x4: CaseBlock, parserParams: List[Bo
 object SwitchStatement0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "VarScopedDeclarations0" -> SwitchStatement0VarScopedDeclarations0.func,
     "ContainsDuplicateLabels0" -> SwitchStatement0ContainsDuplicateLabels0.func,
     "ContainsUndefinedBreakTarget0" -> SwitchStatement0ContainsUndefinedBreakTarget0.func,
-    "Evaluation0" -> SwitchStatement0Evaluation0.func,
     "ContainsUndefinedContinueTarget0" -> SwitchStatement0ContainsUndefinedContinueTarget0.func,
+    "Evaluation0" -> SwitchStatement0Evaluation0.func,
+    "StatementRules0" -> SwitchStatement0StatementRules0.func,
     "VarDeclaredNames0" -> SwitchStatement0VarDeclaredNames0.func,
-    "StatementRules0" -> SwitchStatement0StatementRules0.func
+    "VarScopedDeclarations0" -> SwitchStatement0VarScopedDeclarations0.func
   )
 }

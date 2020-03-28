@@ -20,7 +20,7 @@ case class ClassTail0(x0: Option[ClassHeritage], x2: Option[ClassBody], parserPa
 object ClassTail0 extends ASTInfo {
   val maxK: Int = 3
   val semMap: Map[String, Func] = Map(
-    "Contains3" -> ClassTail0Contains3.func,
-    "ClassDefinitionEvaluation3" -> ClassTail0ClassDefinitionEvaluation3.func
+    "ClassDefinitionEvaluation3" -> ClassTail0ClassDefinitionEvaluation3.func,
+    "Contains3" -> ClassTail0Contains3.func
   )
 }

@@ -20,9 +20,9 @@ case class ArrowFunction0(x0: ArrowParameters, x3: ConciseBody, parserParams: Li
 object ArrowFunction0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "HasName0" -> ArrowFunction0HasName0.func,
-    "Evaluation0" -> ArrowFunction0Evaluation0.func,
     "Contains0" -> ArrowFunction0Contains0.func,
+    "Evaluation0" -> ArrowFunction0Evaluation0.func,
+    "HasName0" -> ArrowFunction0HasName0.func,
     "NamedEvaluation0" -> ArrowFunction0NamedEvaluation0.func
   )
 }

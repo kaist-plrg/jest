@@ -20,8 +20,8 @@ case class ReturnStatement0(parserParams: List[Boolean]) extends ReturnStatement
 object ReturnStatement0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "StatementRules0" -> ReturnStatement0StatementRules0.func,
-    "Evaluation0" -> ReturnStatement0Evaluation0.func
+    "Evaluation0" -> ReturnStatement0Evaluation0.func,
+    "StatementRules0" -> ReturnStatement0StatementRules0.func
   )
 }
 case class ReturnStatement1(x2: Expression, parserParams: List[Boolean]) extends ReturnStatement {

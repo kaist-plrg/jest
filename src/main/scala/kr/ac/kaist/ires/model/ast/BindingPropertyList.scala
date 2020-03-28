@@ -33,8 +33,8 @@ case class BindingPropertyList1(x0: BindingPropertyList, x2: BindingProperty, pa
 object BindingPropertyList1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
+    "BoundNames0" -> BindingPropertyList1BoundNames0.func,
     "ContainsExpression0" -> BindingPropertyList1ContainsExpression0.func,
-    "PropertyBindingInitialization0" -> BindingPropertyList1PropertyBindingInitialization0.func,
-    "BoundNames0" -> BindingPropertyList1BoundNames0.func
+    "PropertyBindingInitialization0" -> BindingPropertyList1PropertyBindingInitialization0.func
   )
 }

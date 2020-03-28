@@ -35,9 +35,9 @@ case class Expression1(x0: Expression, x2: AssignmentExpression, parserParams: L
 object Expression1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "ExpressionRules0" -> Expression1ExpressionRules0.func,
+    "AssignmentTargetType0" -> Expression1AssignmentTargetType0.func,
     "Evaluation0" -> Expression1Evaluation0.func,
-    "IsFunctionDefinition0" -> Expression1IsFunctionDefinition0.func,
-    "AssignmentTargetType0" -> Expression1AssignmentTargetType0.func
+    "ExpressionRules0" -> Expression1ExpressionRules0.func,
+    "IsFunctionDefinition0" -> Expression1IsFunctionDefinition0.func
   )
 }

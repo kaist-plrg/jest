@@ -20,9 +20,9 @@ case class ForDeclaration0(x0: LetOrConst, x1: ForBinding, parserParams: List[Bo
 object ForDeclaration0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "IsDestructuring0" -> ForDeclaration0IsDestructuring0.func,
+    "BindingInitialization0" -> ForDeclaration0BindingInitialization0.func,
     "BindingInstantiation0" -> ForDeclaration0BindingInstantiation0.func,
     "BoundNames0" -> ForDeclaration0BoundNames0.func,
-    "BindingInitialization0" -> ForDeclaration0BindingInitialization0.func
+    "IsDestructuring0" -> ForDeclaration0IsDestructuring0.func
   )
 }

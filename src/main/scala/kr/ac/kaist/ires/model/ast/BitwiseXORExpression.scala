@@ -33,9 +33,9 @@ case class BitwiseXORExpression1(x0: BitwiseXORExpression, x2: BitwiseANDExpress
 object BitwiseXORExpression1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "Evaluation0" -> BitwiseXORExpression1Evaluation0.func,
-    "IsFunctionDefinition0" -> BitwiseXORExpression1IsFunctionDefinition0.func,
     "AssignmentTargetType0" -> BitwiseXORExpression1AssignmentTargetType0.func,
-    "ExpressionRules0" -> BitwiseXORExpression1ExpressionRules0.func
+    "Evaluation0" -> BitwiseXORExpression1Evaluation0.func,
+    "ExpressionRules0" -> BitwiseXORExpression1ExpressionRules0.func,
+    "IsFunctionDefinition0" -> BitwiseXORExpression1IsFunctionDefinition0.func
   )
 }

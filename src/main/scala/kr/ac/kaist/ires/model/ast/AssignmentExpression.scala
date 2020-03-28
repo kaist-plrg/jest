@@ -34,8 +34,8 @@ object AssignmentExpression1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> AssignmentExpression1AssignmentTargetType0.func,
-    "IsFunctionDefinition0" -> AssignmentExpression1IsFunctionDefinition0.func,
-    "ExpressionRules0" -> AssignmentExpression1ExpressionRules0.func
+    "ExpressionRules0" -> AssignmentExpression1ExpressionRules0.func,
+    "IsFunctionDefinition0" -> AssignmentExpression1IsFunctionDefinition0.func
   )
 }
 case class AssignmentExpression2(x0: ArrowFunction, parserParams: List[Boolean]) extends AssignmentExpression {
@@ -50,8 +50,8 @@ case class AssignmentExpression2(x0: ArrowFunction, parserParams: List[Boolean])
 object AssignmentExpression2 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "ExpressionRules0" -> AssignmentExpression2ExpressionRules0.func,
     "AssignmentTargetType0" -> AssignmentExpression2AssignmentTargetType0.func,
+    "ExpressionRules0" -> AssignmentExpression2ExpressionRules0.func,
     "IsFunctionDefinition0" -> AssignmentExpression2IsFunctionDefinition0.func
   )
 }
@@ -85,9 +85,9 @@ object AssignmentExpression4 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> AssignmentExpression4AssignmentTargetType0.func,
-    "IsFunctionDefinition0" -> AssignmentExpression4IsFunctionDefinition0.func,
+    "Evaluation0" -> AssignmentExpression4Evaluation0.func,
     "ExpressionRules0" -> AssignmentExpression4ExpressionRules0.func,
-    "Evaluation0" -> AssignmentExpression4Evaluation0.func
+    "IsFunctionDefinition0" -> AssignmentExpression4IsFunctionDefinition0.func
   )
 }
 case class AssignmentExpression5(x0: LeftHandSideExpression, x1: AssignmentOperator, x2: AssignmentExpression, parserParams: List[Boolean]) extends AssignmentExpression {
@@ -102,9 +102,9 @@ case class AssignmentExpression5(x0: LeftHandSideExpression, x1: AssignmentOpera
 object AssignmentExpression5 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
+    "AssignmentTargetType0" -> AssignmentExpression5AssignmentTargetType0.func,
     "Evaluation0" -> AssignmentExpression5Evaluation0.func,
     "ExpressionRules0" -> AssignmentExpression5ExpressionRules0.func,
-    "AssignmentTargetType0" -> AssignmentExpression5AssignmentTargetType0.func,
     "IsFunctionDefinition0" -> AssignmentExpression5IsFunctionDefinition0.func
   )
 }

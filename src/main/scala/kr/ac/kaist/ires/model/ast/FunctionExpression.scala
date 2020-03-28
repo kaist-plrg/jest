@@ -20,13 +20,13 @@ case class FunctionExpression0(x1: Option[BindingIdentifier], x3: FormalParamete
 object FunctionExpression0 extends ASTInfo {
   val maxK: Int = 1
   val semMap: Map[String, Func] = Map(
+    "Contains1" -> FunctionExpression0Contains1.func,
+    "Evaluation0" -> FunctionExpression0Evaluation0.func,
     "Evaluation1" -> FunctionExpression0Evaluation1.func,
     "HasName0" -> FunctionExpression0HasName0.func,
-    "IsFunctionDefinition0" -> FunctionExpression0IsFunctionDefinition0.func,
-    "Evaluation0" -> FunctionExpression0Evaluation0.func,
-    "IsFunctionDefinition1" -> FunctionExpression0IsFunctionDefinition1.func,
-    "Contains1" -> FunctionExpression0Contains1.func,
     "HasName1" -> FunctionExpression0HasName1.func,
+    "IsFunctionDefinition0" -> FunctionExpression0IsFunctionDefinition0.func,
+    "IsFunctionDefinition1" -> FunctionExpression0IsFunctionDefinition1.func,
     "NamedEvaluation0" -> FunctionExpression0NamedEvaluation0.func
   )
 }

@@ -35,7 +35,7 @@ case class SuperProperty1(x2: Lexical, parserParams: List[Boolean]) extends Supe
 object SuperProperty1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "Evaluation0" -> SuperProperty1Evaluation0.func,
-    "Contains0" -> SuperProperty1Contains0.func
+    "Contains0" -> SuperProperty1Contains0.func,
+    "Evaluation0" -> SuperProperty1Evaluation0.func
   )
 }

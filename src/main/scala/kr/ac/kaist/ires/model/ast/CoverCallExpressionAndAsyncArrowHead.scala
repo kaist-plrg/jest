@@ -20,9 +20,9 @@ case class CoverCallExpressionAndAsyncArrowHead0(x0: MemberExpression, x1: Argum
 object CoverCallExpressionAndAsyncArrowHead0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "CoveredCallExpression0" -> CoverCallExpressionAndAsyncArrowHead0CoveredCallExpression0.func,
-    "IsSimpleParameterList0" -> CoverCallExpressionAndAsyncArrowHead0IsSimpleParameterList0.func,
     "BoundNames0" -> CoverCallExpressionAndAsyncArrowHead0BoundNames0.func,
-    "CoveredAsyncArrowHead0" -> CoverCallExpressionAndAsyncArrowHead0CoveredAsyncArrowHead0.func
+    "CoveredAsyncArrowHead0" -> CoverCallExpressionAndAsyncArrowHead0CoveredAsyncArrowHead0.func,
+    "CoveredCallExpression0" -> CoverCallExpressionAndAsyncArrowHead0CoveredCallExpression0.func,
+    "IsSimpleParameterList0" -> CoverCallExpressionAndAsyncArrowHead0IsSimpleParameterList0.func
   )
 }

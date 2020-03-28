@@ -20,10 +20,10 @@ case class Script0(x0: Option[ScriptBody], parserParams: List[Boolean]) extends 
 object Script0 extends ASTInfo {
   val maxK: Int = 1
   val semMap: Map[String, Func] = Map(
-    "LexicallyDeclaredNames0" -> Script0LexicallyDeclaredNames0.func,
-    "VarDeclaredNames0" -> Script0VarDeclaredNames0.func,
-    "LexicallyScopedDeclarations0" -> Script0LexicallyScopedDeclarations0.func,
     "Evaluation0" -> Script0Evaluation0.func,
+    "LexicallyDeclaredNames0" -> Script0LexicallyDeclaredNames0.func,
+    "LexicallyScopedDeclarations0" -> Script0LexicallyScopedDeclarations0.func,
+    "VarDeclaredNames0" -> Script0VarDeclaredNames0.func,
     "VarScopedDeclarations0" -> Script0VarScopedDeclarations0.func
   )
 }

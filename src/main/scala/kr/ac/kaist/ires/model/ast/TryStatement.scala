@@ -20,13 +20,13 @@ case class TryStatement0(x1: Block, x2: Catch, parserParams: List[Boolean]) exte
 object TryStatement0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "StatementRules0" -> TryStatement0StatementRules0.func,
-    "ContainsUndefinedBreakTarget0" -> TryStatement0ContainsUndefinedBreakTarget0.func,
     "ContainsDuplicateLabels0" -> TryStatement0ContainsDuplicateLabels0.func,
+    "ContainsUndefinedBreakTarget0" -> TryStatement0ContainsUndefinedBreakTarget0.func,
     "ContainsUndefinedContinueTarget0" -> TryStatement0ContainsUndefinedContinueTarget0.func,
+    "Evaluation0" -> TryStatement0Evaluation0.func,
+    "StatementRules0" -> TryStatement0StatementRules0.func,
     "VarDeclaredNames0" -> TryStatement0VarDeclaredNames0.func,
-    "VarScopedDeclarations0" -> TryStatement0VarScopedDeclarations0.func,
-    "Evaluation0" -> TryStatement0Evaluation0.func
+    "VarScopedDeclarations0" -> TryStatement0VarScopedDeclarations0.func
   )
 }
 case class TryStatement1(x1: Block, x2: Finally, parserParams: List[Boolean]) extends TryStatement {
@@ -41,13 +41,13 @@ case class TryStatement1(x1: Block, x2: Finally, parserParams: List[Boolean]) ex
 object TryStatement1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "ContainsUndefinedContinueTarget0" -> TryStatement1ContainsUndefinedContinueTarget0.func,
-    "VarDeclaredNames0" -> TryStatement1VarDeclaredNames0.func,
     "ContainsDuplicateLabels0" -> TryStatement1ContainsDuplicateLabels0.func,
-    "VarScopedDeclarations0" -> TryStatement1VarScopedDeclarations0.func,
-    "StatementRules0" -> TryStatement1StatementRules0.func,
+    "ContainsUndefinedBreakTarget0" -> TryStatement1ContainsUndefinedBreakTarget0.func,
+    "ContainsUndefinedContinueTarget0" -> TryStatement1ContainsUndefinedContinueTarget0.func,
     "Evaluation0" -> TryStatement1Evaluation0.func,
-    "ContainsUndefinedBreakTarget0" -> TryStatement1ContainsUndefinedBreakTarget0.func
+    "StatementRules0" -> TryStatement1StatementRules0.func,
+    "VarDeclaredNames0" -> TryStatement1VarDeclaredNames0.func,
+    "VarScopedDeclarations0" -> TryStatement1VarScopedDeclarations0.func
   )
 }
 case class TryStatement2(x1: Block, x2: Catch, x3: Finally, parserParams: List[Boolean]) extends TryStatement {
@@ -62,12 +62,12 @@ case class TryStatement2(x1: Block, x2: Catch, x3: Finally, parserParams: List[B
 object TryStatement2 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "VarScopedDeclarations0" -> TryStatement2VarScopedDeclarations0.func,
+    "ContainsDuplicateLabels0" -> TryStatement2ContainsDuplicateLabels0.func,
     "ContainsUndefinedBreakTarget0" -> TryStatement2ContainsUndefinedBreakTarget0.func,
     "ContainsUndefinedContinueTarget0" -> TryStatement2ContainsUndefinedContinueTarget0.func,
-    "StatementRules0" -> TryStatement2StatementRules0.func,
     "Evaluation0" -> TryStatement2Evaluation0.func,
+    "StatementRules0" -> TryStatement2StatementRules0.func,
     "VarDeclaredNames0" -> TryStatement2VarDeclaredNames0.func,
-    "ContainsDuplicateLabels0" -> TryStatement2ContainsDuplicateLabels0.func
+    "VarScopedDeclarations0" -> TryStatement2VarScopedDeclarations0.func
   )
 }

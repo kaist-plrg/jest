@@ -20,11 +20,11 @@ case class AsyncFunctionExpression0(x4: FormalParameters, x7: AsyncFunctionBody,
 object AsyncFunctionExpression0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "IsFunctionDefinition0" -> AsyncFunctionExpression0IsFunctionDefinition0.func,
-    "NamedEvaluation0" -> AsyncFunctionExpression0NamedEvaluation0.func,
+    "Contains0" -> AsyncFunctionExpression0Contains0.func,
     "Evaluation0" -> AsyncFunctionExpression0Evaluation0.func,
     "HasName0" -> AsyncFunctionExpression0HasName0.func,
-    "Contains0" -> AsyncFunctionExpression0Contains0.func
+    "IsFunctionDefinition0" -> AsyncFunctionExpression0IsFunctionDefinition0.func,
+    "NamedEvaluation0" -> AsyncFunctionExpression0NamedEvaluation0.func
   )
 }
 case class AsyncFunctionExpression1(x3: BindingIdentifier, x5: FormalParameters, x8: AsyncFunctionBody, parserParams: List[Boolean]) extends AsyncFunctionExpression {
@@ -39,9 +39,9 @@ case class AsyncFunctionExpression1(x3: BindingIdentifier, x5: FormalParameters,
 object AsyncFunctionExpression1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "Evaluation0" -> AsyncFunctionExpression1Evaluation0.func,
-    "IsFunctionDefinition0" -> AsyncFunctionExpression1IsFunctionDefinition0.func,
     "Contains0" -> AsyncFunctionExpression1Contains0.func,
-    "HasName0" -> AsyncFunctionExpression1HasName0.func
+    "Evaluation0" -> AsyncFunctionExpression1Evaluation0.func,
+    "HasName0" -> AsyncFunctionExpression1HasName0.func,
+    "IsFunctionDefinition0" -> AsyncFunctionExpression1IsFunctionDefinition0.func
   )
 }

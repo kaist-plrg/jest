@@ -21,10 +21,10 @@ object AsyncFunctionDeclaration0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "BoundNames0" -> AsyncFunctionDeclaration0BoundNames0.func,
+    "Contains0" -> AsyncFunctionDeclaration0Contains0.func,
     "Evaluation0" -> AsyncFunctionDeclaration0Evaluation0.func,
-    "IsConstantDeclaration0" -> AsyncFunctionDeclaration0IsConstantDeclaration0.func,
     "InstantiateFunctionObject0" -> AsyncFunctionDeclaration0InstantiateFunctionObject0.func,
-    "Contains0" -> AsyncFunctionDeclaration0Contains0.func
+    "IsConstantDeclaration0" -> AsyncFunctionDeclaration0IsConstantDeclaration0.func
   )
 }
 case class AsyncFunctionDeclaration1(x4: FormalParameters, x7: AsyncFunctionBody, parserParams: List[Boolean]) extends AsyncFunctionDeclaration {
@@ -39,10 +39,10 @@ case class AsyncFunctionDeclaration1(x4: FormalParameters, x7: AsyncFunctionBody
 object AsyncFunctionDeclaration1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "InstantiateFunctionObject0" -> AsyncFunctionDeclaration1InstantiateFunctionObject0.func,
-    "Evaluation0" -> AsyncFunctionDeclaration1Evaluation0.func,
     "BoundNames0" -> AsyncFunctionDeclaration1BoundNames0.func,
     "Contains0" -> AsyncFunctionDeclaration1Contains0.func,
+    "Evaluation0" -> AsyncFunctionDeclaration1Evaluation0.func,
+    "InstantiateFunctionObject0" -> AsyncFunctionDeclaration1InstantiateFunctionObject0.func,
     "IsConstantDeclaration0" -> AsyncFunctionDeclaration1IsConstantDeclaration0.func
   )
 }

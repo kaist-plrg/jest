@@ -38,9 +38,9 @@ case class AsyncArrowFunction1(x0: CoverCallExpressionAndAsyncArrowHead, x3: Asy
 object AsyncArrowFunction1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "NamedEvaluation0" -> AsyncArrowFunction1NamedEvaluation0.func,
     "Contains0" -> AsyncArrowFunction1Contains0.func,
     "Evaluation0" -> AsyncArrowFunction1Evaluation0.func,
-    "HasName0" -> AsyncArrowFunction1HasName0.func
+    "HasName0" -> AsyncArrowFunction1HasName0.func,
+    "NamedEvaluation0" -> AsyncArrowFunction1NamedEvaluation0.func
   )
 }
