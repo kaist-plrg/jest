@@ -5,8 +5,5 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object MemberExpression5IsFunctionDefinition0 {
   val length: Int = 0
-  val func: Func = Func("""MemberExpression5IsFunctionDefinition0""", List(Id("""this"""), Id("""MetaProperty""")), None, IReturn(EBool(false)))
-  /* Beautified form:
-  "MemberExpression5IsFunctionDefinition0" (this, MetaProperty) => return false
-  */
+  val func: Func = parseFunc(""""MemberExpression5IsFunctionDefinition0" (this, MetaProperty) => return false""")
 }

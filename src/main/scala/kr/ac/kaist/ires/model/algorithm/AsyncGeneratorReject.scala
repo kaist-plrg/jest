@@ -5,9 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object AsyncGeneratorReject {
   val length: Int = 2
-  val func: Func = Func("""AsyncGeneratorReject""", List(Id("""generator"""), Id("""exception""")), None, ISeq(List(ILet(Id("""queue"""), ERef(RefProp(RefId(Id("""generator""")), EStr("""AsyncGeneratorQueue""")))), IAssert(EBOp(OLt, EINum(0L), ERef(RefProp(RefId(Id("""queue""")), EStr("""length"""))))), ILet(Id("""next"""), EPop(ERef(RefId(Id("""queue"""))), EINum(0L))), ILet(Id("""promiseCapability"""), ERef(RefProp(RefId(Id("""next""")), EStr("""Capability""")))), IApp(Id("""__x0__"""), ERef(RefId(Id("""Call"""))), List(ERef(RefProp(RefId(Id("""promiseCapability""")), EStr("""Reject"""))), EUndef, EList(List(ERef(RefId(Id("""exception"""))))))), IIf(EIsCompletion(ERef(RefId(Id("""__x0__""")))), IIf(EBOp(OEq, ERef(RefProp(RefId(Id("""__x0__""")), EStr("""Type"""))), ERef(RefId(Id("""CONST_normal""")))), IAssign(RefId(Id("""__x0__""")), ERef(RefProp(RefId(Id("""__x0__""")), EStr("""Value""")))), IReturn(ERef(RefId(Id("""__x0__"""))))), ISeq(List())), IExpr(ERef(RefId(Id("""__x0__""")))), IApp(Id("""__x1__"""), ERef(RefId(Id("""AsyncGeneratorResumeNext"""))), List(ERef(RefId(Id("""generator"""))))), IIf(EIsCompletion(ERef(RefId(Id("""__x1__""")))), IIf(EBOp(OEq, ERef(RefProp(RefId(Id("""__x1__""")), EStr("""Type"""))), ERef(RefId(Id("""CONST_normal""")))), IAssign(RefId(Id("""__x1__""")), ERef(RefProp(RefId(Id("""__x1__""")), EStr("""Value""")))), IReturn(ERef(RefId(Id("""__x1__"""))))), ISeq(List())), IExpr(ERef(RefId(Id("""__x1__""")))), IApp(Id("""__x2__"""), ERef(RefId(Id("""WrapCompletion"""))), List(EUndef)), IReturn(ERef(RefId(Id("""__x2__""")))))))
-  /* Beautified form:
-  "AsyncGeneratorReject" (generator, exception) => {
+  val func: Func = parseFunc(""""AsyncGeneratorReject" (generator, exception) => {
     let queue = generator["AsyncGeneratorQueue"]
     assert (< 0i queue["length"])
     let next = (pop queue 0i)
@@ -20,6 +18,5 @@ object AsyncGeneratorReject {
     __x1__
     app __x2__ = (WrapCompletion undefined)
     return __x2__
-  }
-  */
+  }""")
 }

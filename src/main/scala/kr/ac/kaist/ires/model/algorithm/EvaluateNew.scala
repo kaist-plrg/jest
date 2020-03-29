@@ -5,9 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object EvaluateNew {
   val length: Int = 2
-  val func: Func = Func("""EvaluateNew""", List(Id("""constructExpr"""), Id("""arguments""")), None, ISeq(List(IAssert(EBOp(OOr, EIsInstanceOf(ERef(RefId(Id("""constructExpr"""))), """NewExpression"""), EIsInstanceOf(ERef(RefId(Id("""constructExpr"""))), """MemberExpression"""))), IAssert(EBOp(OOr, EBOp(OEq, ERef(RefId(Id("""arguments"""))), ERef(RefId(Id("""CONST_empty""")))), EIsInstanceOf(ERef(RefId(Id("""arguments"""))), """Arguments"""))), IAccess(Id("""__x0__"""), ERef(RefId(Id("""constructExpr"""))), EStr("""Evaluation""")), ILet(Id("""ref"""), ERef(RefId(Id("""__x0__""")))), IApp(Id("""__x1__"""), ERef(RefId(Id("""GetValue"""))), List(ERef(RefId(Id("""ref"""))))), IIf(EIsCompletion(ERef(RefId(Id("""__x1__""")))), IIf(EBOp(OEq, ERef(RefProp(RefId(Id("""__x1__""")), EStr("""Type"""))), ERef(RefId(Id("""CONST_normal""")))), IAssign(RefId(Id("""__x1__""")), ERef(RefProp(RefId(Id("""__x1__""")), EStr("""Value""")))), IReturn(ERef(RefId(Id("""__x1__"""))))), ISeq(List())), ILet(Id("""constructor"""), ERef(RefId(Id("""__x1__""")))), IIf(EBOp(OEq, ERef(RefId(Id("""arguments"""))), ERef(RefId(Id("""CONST_empty""")))), ILet(Id("""argList"""), EList(List())), ISeq(List(IAccess(Id("""__x2__"""), ERef(RefId(Id("""arguments"""))), EStr("""ArgumentListEvaluation""")), IIf(EIsCompletion(ERef(RefId(Id("""__x2__""")))), IIf(EBOp(OEq, ERef(RefProp(RefId(Id("""__x2__""")), EStr("""Type"""))), ERef(RefId(Id("""CONST_normal""")))), IAssign(RefId(Id("""__x2__""")), ERef(RefProp(RefId(Id("""__x2__""")), EStr("""Value""")))), IReturn(ERef(RefId(Id("""__x2__"""))))), ISeq(List())), ILet(Id("""argList"""), ERef(RefId(Id("""__x2__"""))))))), IApp(Id("""__x3__"""), ERef(RefId(Id("""IsConstructor"""))), List(ERef(RefId(Id("""constructor"""))))), IIf(EBOp(OEq, ERef(RefId(Id("""__x3__"""))), EBool(false)), ISeq(List(IApp(Id("""__x4__"""), ERef(RefId(Id("""ThrowCompletion"""))), List(EMap(Ty("""OrdinaryObject"""), List((EStr("""Prototype"""), ERef(RefId(Id("""INTRINSIC_TypeErrorPrototype""")))), (EStr("""ErrorData"""), EUndef), (EStr("""SubMap"""), EMap(Ty("""SubMap"""), List())))))), IReturn(ERef(RefId(Id("""__x4__""")))))), ISeq(List())), IApp(Id("""__x5__"""), ERef(RefId(Id("""Construct"""))), List(ERef(RefId(Id("""constructor"""))), ERef(RefId(Id("""argList"""))))), IIf(EIsCompletion(ERef(RefId(Id("""__x5__""")))), IIf(EBOp(OEq, ERef(RefProp(RefId(Id("""__x5__""")), EStr("""Type"""))), ERef(RefId(Id("""CONST_normal""")))), IAssign(RefId(Id("""__x5__""")), ERef(RefProp(RefId(Id("""__x5__""")), EStr("""Value""")))), IReturn(ERef(RefId(Id("""__x5__"""))))), ISeq(List())), IApp(Id("""__x6__"""), ERef(RefId(Id("""WrapCompletion"""))), List(ERef(RefId(Id("""__x5__"""))))), IReturn(ERef(RefId(Id("""__x6__""")))))))
-  /* Beautified form:
-  "EvaluateNew" (constructExpr, arguments) => {
+  val func: Func = parseFunc(""""EvaluateNew" (constructExpr, arguments) => {
     assert (|| (is-instance-of constructExpr NewExpression) (is-instance-of constructExpr MemberExpression))
     assert (|| (= arguments CONST_empty) (is-instance-of arguments Arguments))
     access __x0__ = (constructExpr "Evaluation")
@@ -29,6 +27,5 @@ object EvaluateNew {
     if (is-completion __x5__) if (= __x5__["Type"] CONST_normal) __x5__ = __x5__["Value"] else return __x5__ else {}
     app __x6__ = (WrapCompletion __x5__)
     return __x6__
-  }
-  */
+  }""")
 }

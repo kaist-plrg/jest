@@ -5,8 +5,5 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object AdditiveExpression1IsFunctionDefinition0 {
   val length: Int = 0
-  val func: Func = Func("""AdditiveExpression1IsFunctionDefinition0""", List(Id("""this"""), Id("""AdditiveExpression"""), Id("""MultiplicativeExpression""")), None, IReturn(EBool(false)))
-  /* Beautified form:
-  "AdditiveExpression1IsFunctionDefinition0" (this, AdditiveExpression, MultiplicativeExpression) => return false
-  */
+  val func: Func = parseFunc(""""AdditiveExpression1IsFunctionDefinition0" (this, AdditiveExpression, MultiplicativeExpression) => return false""")
 }

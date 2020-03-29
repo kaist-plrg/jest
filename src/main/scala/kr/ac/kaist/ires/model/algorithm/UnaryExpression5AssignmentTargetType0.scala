@@ -5,8 +5,5 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object UnaryExpression5AssignmentTargetType0 {
   val length: Int = 0
-  val func: Func = Func("""UnaryExpression5AssignmentTargetType0""", List(Id("""this"""), Id("""UnaryExpression""")), None, IReturn(ERef(RefId(Id("""CONST_invalid""")))))
-  /* Beautified form:
-  "UnaryExpression5AssignmentTargetType0" (this, UnaryExpression) => return CONST_invalid
-  */
+  val func: Func = parseFunc(""""UnaryExpression5AssignmentTargetType0" (this, UnaryExpression) => return CONST_invalid""")
 }

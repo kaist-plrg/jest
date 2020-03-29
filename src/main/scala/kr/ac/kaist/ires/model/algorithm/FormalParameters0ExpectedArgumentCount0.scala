@@ -5,8 +5,5 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object FormalParameters0ExpectedArgumentCount0 {
   val length: Int = 0
-  val func: Func = Func("""FormalParameters0ExpectedArgumentCount0""", List(Id("""this""")), None, IReturn(EINum(0L)))
-  /* Beautified form:
-  "FormalParameters0ExpectedArgumentCount0" (this) => return 0i
-  */
+  val func: Func = parseFunc(""""FormalParameters0ExpectedArgumentCount0" (this) => return 0i""")
 }

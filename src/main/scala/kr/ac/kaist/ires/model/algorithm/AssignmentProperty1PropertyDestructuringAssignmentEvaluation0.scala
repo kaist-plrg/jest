@@ -5,9 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object AssignmentProperty1PropertyDestructuringAssignmentEvaluation0 {
   val length: Int = 0
-  val func: Func = Func("""AssignmentProperty1PropertyDestructuringAssignmentEvaluation0""", List(Id("""this"""), Id("""PropertyName"""), Id("""AssignmentElement"""), Id("""value""")), None, ISeq(List(IAccess(Id("""__x0__"""), ERef(RefId(Id("""PropertyName"""))), EStr("""Evaluation""")), ILet(Id("""name"""), ERef(RefId(Id("""__x0__""")))), IIf(EIsCompletion(ERef(RefId(Id("""name""")))), IIf(EBOp(OEq, ERef(RefProp(RefId(Id("""name""")), EStr("""Type"""))), ERef(RefId(Id("""CONST_normal""")))), IAssign(RefId(Id("""name""")), ERef(RefProp(RefId(Id("""name""")), EStr("""Value""")))), IReturn(ERef(RefId(Id("""name"""))))), ISeq(List())), IExpr(ERef(RefId(Id("""name""")))), IAccess(Id("""__x1__"""), ERef(RefId(Id("""AssignmentElement"""))), EStr("""KeyedDestructuringAssignmentEvaluation""")), IApp(Id("""__x2__"""), ERef(RefId(Id("""__x1__"""))), List(ERef(RefId(Id("""value"""))), ERef(RefId(Id("""name"""))))), IIf(EIsCompletion(ERef(RefId(Id("""__x2__""")))), IIf(EBOp(OEq, ERef(RefProp(RefId(Id("""__x2__""")), EStr("""Type"""))), ERef(RefId(Id("""CONST_normal""")))), IAssign(RefId(Id("""__x2__""")), ERef(RefProp(RefId(Id("""__x2__""")), EStr("""Value""")))), IReturn(ERef(RefId(Id("""__x2__"""))))), ISeq(List())), IExpr(ERef(RefId(Id("""__x2__""")))), IApp(Id("""__x3__"""), ERef(RefId(Id("""WrapCompletion"""))), List(EList(List(ERef(RefId(Id("""name"""))))))), IReturn(ERef(RefId(Id("""__x3__""")))))))
-  /* Beautified form:
-  "AssignmentProperty1PropertyDestructuringAssignmentEvaluation0" (this, PropertyName, AssignmentElement, value) => {
+  val func: Func = parseFunc(""""AssignmentProperty1PropertyDestructuringAssignmentEvaluation0" (this, PropertyName, AssignmentElement, value) => {
     access __x0__ = (PropertyName "Evaluation")
     let name = __x0__
     if (is-completion name) if (= name["Type"] CONST_normal) name = name["Value"] else return name else {}
@@ -18,6 +16,5 @@ object AssignmentProperty1PropertyDestructuringAssignmentEvaluation0 {
     __x2__
     app __x3__ = (WrapCompletion (new [name]))
     return __x3__
-  }
-  */
+  }""")
 }

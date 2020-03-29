@@ -5,9 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object IsPromise {
   val length: Int = 1
-  val func: Func = Func("""IsPromise""", List(Id("""x""")), None, ISeq(List(IApp(Id("""__x0__"""), ERef(RefId(Id("""Type"""))), List(ERef(RefId(Id("""x"""))))), IIf(EUOp(ONot, EBOp(OEq, ERef(RefId(Id("""__x0__"""))), ERef(RefId(Id("""Object"""))))), ISeq(List(IApp(Id("""__x1__"""), ERef(RefId(Id("""WrapCompletion"""))), List(EBool(false))), IReturn(ERef(RefId(Id("""__x1__""")))))), ISeq(List())), IIf(EBOp(OEq, ERef(RefProp(RefId(Id("""x""")), EStr("""PromiseState"""))), EAbsent), ISeq(List(IApp(Id("""__x2__"""), ERef(RefId(Id("""WrapCompletion"""))), List(EBool(false))), IReturn(ERef(RefId(Id("""__x2__""")))))), ISeq(List())), IApp(Id("""__x3__"""), ERef(RefId(Id("""WrapCompletion"""))), List(EBool(true))), IReturn(ERef(RefId(Id("""__x3__""")))))))
-  /* Beautified form:
-  "IsPromise" (x) => {
+  val func: Func = parseFunc(""""IsPromise" (x) => {
     app __x0__ = (Type x)
     if (! (= __x0__ Object)) {
       app __x1__ = (WrapCompletion false)
@@ -19,6 +17,5 @@ object IsPromise {
     } else {}
     app __x3__ = (WrapCompletion true)
     return __x3__
-  }
-  */
+  }""")
 }

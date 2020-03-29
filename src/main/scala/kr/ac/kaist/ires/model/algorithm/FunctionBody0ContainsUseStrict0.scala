@@ -5,8 +5,5 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object FunctionBody0ContainsUseStrict0 {
   val length: Int = 0
-  val func: Func = Func("""FunctionBody0ContainsUseStrict0""", List(Id("""this"""), Id("""FunctionStatementList""")), None, IExpr(ENotSupported("""Etc""")))
-  /* Beautified form:
-  "FunctionBody0ContainsUseStrict0" (this, FunctionStatementList) => !!! "Etc"
-  */
+  val func: Func = parseFunc(""""FunctionBody0ContainsUseStrict0" (this, FunctionStatementList) => !!! "Etc"""")
 }

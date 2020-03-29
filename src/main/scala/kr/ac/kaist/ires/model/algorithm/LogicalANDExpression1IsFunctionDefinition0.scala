@@ -5,8 +5,5 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object LogicalANDExpression1IsFunctionDefinition0 {
   val length: Int = 0
-  val func: Func = Func("""LogicalANDExpression1IsFunctionDefinition0""", List(Id("""this"""), Id("""LogicalANDExpression"""), Id("""BitwiseORExpression""")), None, IReturn(EBool(false)))
-  /* Beautified form:
-  "LogicalANDExpression1IsFunctionDefinition0" (this, LogicalANDExpression, BitwiseORExpression) => return false
-  */
+  val func: Func = parseFunc(""""LogicalANDExpression1IsFunctionDefinition0" (this, LogicalANDExpression, BitwiseORExpression) => return false""")
 }

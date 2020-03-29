@@ -5,8 +5,5 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object Statement1ContainsUndefinedBreakTarget0 {
   val length: Int = 0
-  val func: Func = Func("""Statement1ContainsUndefinedBreakTarget0""", List(Id("""this"""), Id("""VariableStatement"""), Id("""labelSet""")), None, IReturn(EBool(false)))
-  /* Beautified form:
-  "Statement1ContainsUndefinedBreakTarget0" (this, VariableStatement, labelSet) => return false
-  */
+  val func: Func = parseFunc(""""Statement1ContainsUndefinedBreakTarget0" (this, VariableStatement, labelSet) => return false""")
 }

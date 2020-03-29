@@ -5,8 +5,5 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object AssignmentExpression3IsFunctionDefinition0 {
   val length: Int = 0
-  val func: Func = Func("""AssignmentExpression3IsFunctionDefinition0""", List(Id("""this"""), Id("""AsyncArrowFunction""")), None, IReturn(EBool(true)))
-  /* Beautified form:
-  "AssignmentExpression3IsFunctionDefinition0" (this, AsyncArrowFunction) => return true
-  */
+  val func: Func = parseFunc(""""AssignmentExpression3IsFunctionDefinition0" (this, AsyncArrowFunction) => return true""")
 }

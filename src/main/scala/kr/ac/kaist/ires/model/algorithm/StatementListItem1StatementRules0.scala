@@ -5,11 +5,8 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object StatementListItem1StatementRules0 {
   val length: Int = 0
-  val func: Func = Func("""StatementListItem1StatementRules0""", List(Id("""this"""), Id("""Declaration""")), None, ISeq(List(IApp(Id("""__x0__"""), ERef(RefId(Id("""WrapCompletion"""))), List(EBool(false))), IReturn(ERef(RefId(Id("""__x0__""")))))))
-  /* Beautified form:
-  "StatementListItem1StatementRules0" (this, Declaration) => {
+  val func: Func = parseFunc(""""StatementListItem1StatementRules0" (this, Declaration) => {
     app __x0__ = (WrapCompletion false)
     return __x0__
-  }
-  */
+  }""")
 }

@@ -5,8 +5,5 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object BindingIdentifier1StringValue0 {
   val length: Int = 0
-  val func: Func = Func("""BindingIdentifier1StringValue0""", List(Id("""this""")), None, IReturn(EStr("""yield""")))
-  /* Beautified form:
-  "BindingIdentifier1StringValue0" (this) => return "yield"
-  */
+  val func: Func = parseFunc(""""BindingIdentifier1StringValue0" (this) => return "yield"""")
 }

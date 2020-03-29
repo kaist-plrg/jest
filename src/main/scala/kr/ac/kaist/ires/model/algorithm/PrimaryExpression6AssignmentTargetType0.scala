@@ -5,8 +5,5 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object PrimaryExpression6AssignmentTargetType0 {
   val length: Int = 0
-  val func: Func = Func("""PrimaryExpression6AssignmentTargetType0""", List(Id("""this"""), Id("""ClassExpression""")), None, IReturn(ERef(RefId(Id("""CONST_invalid""")))))
-  /* Beautified form:
-  "PrimaryExpression6AssignmentTargetType0" (this, ClassExpression) => return CONST_invalid
-  */
+  val func: Func = parseFunc(""""PrimaryExpression6AssignmentTargetType0" (this, ClassExpression) => return CONST_invalid""")
 }

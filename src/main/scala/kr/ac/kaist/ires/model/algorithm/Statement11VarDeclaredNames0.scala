@@ -5,8 +5,5 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object Statement11VarDeclaredNames0 {
   val length: Int = 0
-  val func: Func = Func("""Statement11VarDeclaredNames0""", List(Id("""this"""), Id("""ThrowStatement""")), None, IReturn(EList(List())))
-  /* Beautified form:
-  "Statement11VarDeclaredNames0" (this, ThrowStatement) => return (new [])
-  */
+  val func: Func = parseFunc(""""Statement11VarDeclaredNames0" (this, ThrowStatement) => return (new [])""")
 }

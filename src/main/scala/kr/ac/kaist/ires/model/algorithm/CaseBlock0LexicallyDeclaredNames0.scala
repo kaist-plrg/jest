@@ -5,8 +5,5 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object CaseBlock0LexicallyDeclaredNames0 {
   val length: Int = 0
-  val func: Func = Func("""CaseBlock0LexicallyDeclaredNames0""", List(Id("""this""")), None, IReturn(EList(List())))
-  /* Beautified form:
-  "CaseBlock0LexicallyDeclaredNames0" (this) => return (new [])
-  */
+  val func: Func = parseFunc(""""CaseBlock0LexicallyDeclaredNames0" (this) => return (new [])""")
 }

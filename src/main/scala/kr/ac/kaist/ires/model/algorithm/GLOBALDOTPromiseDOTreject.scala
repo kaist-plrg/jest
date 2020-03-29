@@ -5,9 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTPromiseDOTreject {
   val length: Int = 1
-  val func: Func = Func("""GLOBAL.Promise.reject""", List(Id("""this"""), Id("""argumentsList"""), Id("""NewTarget""")), None, ISeq(List(IApp(Id("""__x0__"""), ERef(RefId(Id("""GetArgument"""))), List(ERef(RefId(Id("""argumentsList"""))), EINum(0L))), ILet(Id("""r"""), ERef(RefId(Id("""__x0__""")))), ILet(Id("""C"""), ERef(RefId(Id("""this""")))), IApp(Id("""__x1__"""), ERef(RefId(Id("""NewPromiseCapability"""))), List(ERef(RefId(Id("""C"""))))), IIf(EIsCompletion(ERef(RefId(Id("""__x1__""")))), IIf(EBOp(OEq, ERef(RefProp(RefId(Id("""__x1__""")), EStr("""Type"""))), ERef(RefId(Id("""CONST_normal""")))), IAssign(RefId(Id("""__x1__""")), ERef(RefProp(RefId(Id("""__x1__""")), EStr("""Value""")))), IReturn(ERef(RefId(Id("""__x1__"""))))), ISeq(List())), ILet(Id("""promiseCapability"""), ERef(RefId(Id("""__x1__""")))), IApp(Id("""__x2__"""), ERef(RefId(Id("""Call"""))), List(ERef(RefProp(RefId(Id("""promiseCapability""")), EStr("""Reject"""))), EUndef, EList(List(ERef(RefId(Id("""r"""))))))), IIf(EIsCompletion(ERef(RefId(Id("""__x2__""")))), IIf(EBOp(OEq, ERef(RefProp(RefId(Id("""__x2__""")), EStr("""Type"""))), ERef(RefId(Id("""CONST_normal""")))), IAssign(RefId(Id("""__x2__""")), ERef(RefProp(RefId(Id("""__x2__""")), EStr("""Value""")))), IReturn(ERef(RefId(Id("""__x2__"""))))), ISeq(List())), IExpr(ERef(RefId(Id("""__x2__""")))), IApp(Id("""__x3__"""), ERef(RefId(Id("""WrapCompletion"""))), List(ERef(RefProp(RefId(Id("""promiseCapability""")), EStr("""Promise"""))))), IReturn(ERef(RefId(Id("""__x3__""")))))))
-  /* Beautified form:
-  "GLOBAL.Promise.reject" (this, argumentsList, NewTarget) => {
+  val func: Func = parseFunc(""""GLOBAL.Promise.reject" (this, argumentsList, NewTarget) => {
     app __x0__ = (GetArgument argumentsList 0i)
     let r = __x0__
     let C = this
@@ -19,6 +17,5 @@ object GLOBALDOTPromiseDOTreject {
     __x2__
     app __x3__ = (WrapCompletion promiseCapability["Promise"])
     return __x3__
-  }
-  */
+  }""")
 }

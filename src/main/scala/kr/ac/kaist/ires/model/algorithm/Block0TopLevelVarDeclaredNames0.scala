@@ -5,8 +5,5 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object Block0TopLevelVarDeclaredNames0 {
   val length: Int = 0
-  val func: Func = Func("""Block0TopLevelVarDeclaredNames0""", List(Id("""this""")), None, IReturn(EList(List())))
-  /* Beautified form:
-  "Block0TopLevelVarDeclaredNames0" (this) => return (new [])
-  */
+  val func: Func = parseFunc(""""Block0TopLevelVarDeclaredNames0" (this) => return (new [])""")
 }

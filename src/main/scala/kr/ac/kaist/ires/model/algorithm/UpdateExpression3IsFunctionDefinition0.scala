@@ -5,8 +5,5 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object UpdateExpression3IsFunctionDefinition0 {
   val length: Int = 0
-  val func: Func = Func("""UpdateExpression3IsFunctionDefinition0""", List(Id("""this"""), Id("""UnaryExpression""")), None, IReturn(EBool(false)))
-  /* Beautified form:
-  "UpdateExpression3IsFunctionDefinition0" (this, UnaryExpression) => return false
-  */
+  val func: Func = parseFunc(""""UpdateExpression3IsFunctionDefinition0" (this, UnaryExpression) => return false""")
 }

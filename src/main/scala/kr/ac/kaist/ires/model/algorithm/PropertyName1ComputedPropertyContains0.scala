@@ -5,8 +5,5 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object PropertyName1ComputedPropertyContains0 {
   val length: Int = 0
-  val func: Func = Func("""PropertyName1ComputedPropertyContains0""", List(Id("""this"""), Id("""ComputedPropertyName"""), Id("""symbol""")), None, IExpr(ENotSupported("""Etc""")))
-  /* Beautified form:
-  "PropertyName1ComputedPropertyContains0" (this, ComputedPropertyName, symbol) => !!! "Etc"
-  */
+  val func: Func = parseFunc(""""PropertyName1ComputedPropertyContains0" (this, ComputedPropertyName, symbol) => !!! "Etc"""")
 }

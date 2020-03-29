@@ -5,9 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object RelationalExpression4Evaluation0 {
   val length: Int = 0
-  val func: Func = Func("""RelationalExpression4Evaluation0""", List(Id("""this"""), Id("""RelationalExpression"""), Id("""ShiftExpression""")), None, ISeq(List(IAccess(Id("""__x0__"""), ERef(RefId(Id("""RelationalExpression"""))), EStr("""Evaluation""")), ILet(Id("""lref"""), ERef(RefId(Id("""__x0__""")))), IApp(Id("""__x1__"""), ERef(RefId(Id("""GetValue"""))), List(ERef(RefId(Id("""lref"""))))), IIf(EIsCompletion(ERef(RefId(Id("""__x1__""")))), IIf(EBOp(OEq, ERef(RefProp(RefId(Id("""__x1__""")), EStr("""Type"""))), ERef(RefId(Id("""CONST_normal""")))), IAssign(RefId(Id("""__x1__""")), ERef(RefProp(RefId(Id("""__x1__""")), EStr("""Value""")))), IReturn(ERef(RefId(Id("""__x1__"""))))), ISeq(List())), ILet(Id("""lval"""), ERef(RefId(Id("""__x1__""")))), IAccess(Id("""__x2__"""), ERef(RefId(Id("""ShiftExpression"""))), EStr("""Evaluation""")), ILet(Id("""rref"""), ERef(RefId(Id("""__x2__""")))), IApp(Id("""__x3__"""), ERef(RefId(Id("""GetValue"""))), List(ERef(RefId(Id("""rref"""))))), IIf(EIsCompletion(ERef(RefId(Id("""__x3__""")))), IIf(EBOp(OEq, ERef(RefProp(RefId(Id("""__x3__""")), EStr("""Type"""))), ERef(RefId(Id("""CONST_normal""")))), IAssign(RefId(Id("""__x3__""")), ERef(RefProp(RefId(Id("""__x3__""")), EStr("""Value""")))), IReturn(ERef(RefId(Id("""__x3__"""))))), ISeq(List())), ILet(Id("""rval"""), ERef(RefId(Id("""__x3__""")))), IApp(Id("""__x4__"""), ERef(RefId(Id("""AbstractRelationalComparison"""))), List(ERef(RefId(Id("""lval"""))), ERef(RefId(Id("""rval"""))))), ILet(Id("""r"""), ERef(RefId(Id("""__x4__""")))), IIf(EIsCompletion(ERef(RefId(Id("""r""")))), IIf(EBOp(OEq, ERef(RefProp(RefId(Id("""r""")), EStr("""Type"""))), ERef(RefId(Id("""CONST_normal""")))), IAssign(RefId(Id("""r""")), ERef(RefProp(RefId(Id("""r""")), EStr("""Value""")))), IReturn(ERef(RefId(Id("""r"""))))), ISeq(List())), IExpr(ERef(RefId(Id("""r""")))), IIf(EBOp(OOr, EBOp(OEq, ERef(RefId(Id("""r"""))), EBool(true)), EBOp(OEq, ERef(RefId(Id("""r"""))), EUndef)), ISeq(List(IApp(Id("""__x5__"""), ERef(RefId(Id("""WrapCompletion"""))), List(EBool(false))), IReturn(ERef(RefId(Id("""__x5__""")))))), ISeq(List(IApp(Id("""__x6__"""), ERef(RefId(Id("""WrapCompletion"""))), List(EBool(true))), IReturn(ERef(RefId(Id("""__x6__"""))))))))))
-  /* Beautified form:
-  "RelationalExpression4Evaluation0" (this, RelationalExpression, ShiftExpression) => {
+  val func: Func = parseFunc(""""RelationalExpression4Evaluation0" (this, RelationalExpression, ShiftExpression) => {
     access __x0__ = (RelationalExpression "Evaluation")
     let lref = __x0__
     app __x1__ = (GetValue lref)
@@ -29,6 +27,5 @@ object RelationalExpression4Evaluation0 {
       app __x6__ = (WrapCompletion true)
       return __x6__
     }
-  }
-  */
+  }""")
 }

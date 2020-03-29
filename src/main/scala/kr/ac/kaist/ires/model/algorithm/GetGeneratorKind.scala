@@ -5,9 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GetGeneratorKind {
   val length: Int = 0
-  val func: Func = Func("""GetGeneratorKind""", List(), None, ISeq(List(ILet(Id("""genContext"""), ERef(RefId(Id("""GLOBAL_context""")))), IIf(EBOp(OEq, ERef(RefProp(RefId(Id("""genContext""")), EStr("""Generator"""))), EAbsent), ISeq(List(IApp(Id("""__x0__"""), ERef(RefId(Id("""WrapCompletion"""))), List(ERef(RefId(Id("""CONST_nongenerator"""))))), IReturn(ERef(RefId(Id("""__x0__""")))))), ISeq(List())), ILet(Id("""generator"""), ERef(RefProp(RefId(Id("""genContext""")), EStr("""Generator""")))), IIf(EUOp(ONot, EBOp(OEq, ERef(RefProp(RefId(Id("""generator""")), EStr("""AsyncGeneratorState"""))), EAbsent)), ISeq(List(IApp(Id("""__x1__"""), ERef(RefId(Id("""WrapCompletion"""))), List(ERef(RefId(Id("""CONST_async"""))))), IReturn(ERef(RefId(Id("""__x1__""")))))), ISeq(List(IApp(Id("""__x2__"""), ERef(RefId(Id("""WrapCompletion"""))), List(ERef(RefId(Id("""CONST_sync"""))))), IReturn(ERef(RefId(Id("""__x2__"""))))))))))
-  /* Beautified form:
-  "GetGeneratorKind" () => {
+  val func: Func = parseFunc(""""GetGeneratorKind" () => {
     let genContext = GLOBAL_context
     if (= genContext["Generator"] absent) {
       app __x0__ = (WrapCompletion CONST_nongenerator)
@@ -21,6 +19,5 @@ object GetGeneratorKind {
       app __x2__ = (WrapCompletion CONST_sync)
       return __x2__
     }
-  }
-  */
+  }""")
 }

@@ -5,8 +5,5 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object LeftHandSideExpression1IsFunctionDefinition0 {
   val length: Int = 0
-  val func: Func = Func("""LeftHandSideExpression1IsFunctionDefinition0""", List(Id("""this"""), Id("""CallExpression""")), None, IReturn(EBool(false)))
-  /* Beautified form:
-  "LeftHandSideExpression1IsFunctionDefinition0" (this, CallExpression) => return false
-  */
+  val func: Func = parseFunc(""""LeftHandSideExpression1IsFunctionDefinition0" (this, CallExpression) => return false""")
 }

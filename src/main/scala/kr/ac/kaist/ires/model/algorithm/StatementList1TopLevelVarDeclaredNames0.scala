@@ -5,9 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object StatementList1TopLevelVarDeclaredNames0 {
   val length: Int = 0
-  val func: Func = Func("""StatementList1TopLevelVarDeclaredNames0""", List(Id("""this"""), Id("""StatementList"""), Id("""StatementListItem""")), None, ISeq(List(IAccess(Id("""__x0__"""), ERef(RefId(Id("""StatementList"""))), EStr("""TopLevelVarDeclaredNames""")), ILet(Id("""names"""), ERef(RefId(Id("""__x0__""")))), IAccess(Id("""__x1__"""), ERef(RefId(Id("""StatementListItem"""))), EStr("""TopLevelVarDeclaredNames""")), ILet(Id("""__x2__"""), ERef(RefId(Id("""__x1__""")))), ILet(Id("""__x3__"""), EINum(0L)), IWhile(EBOp(OLt, ERef(RefId(Id("""__x3__"""))), ERef(RefProp(RefId(Id("""__x2__""")), EStr("""length""")))), ISeq(List(ILet(Id("""__x4__"""), ERef(RefProp(RefId(Id("""__x2__""")), ERef(RefId(Id("""__x3__""")))))), IAppend(ERef(RefId(Id("""__x4__"""))), ERef(RefId(Id("""names""")))), IAssign(RefId(Id("""__x3__""")), EBOp(OPlus, ERef(RefId(Id("""__x3__"""))), EINum(1L)))))), IReturn(ERef(RefId(Id("""names""")))))))
-  /* Beautified form:
-  "StatementList1TopLevelVarDeclaredNames0" (this, StatementList, StatementListItem) => {
+  val func: Func = parseFunc(""""StatementList1TopLevelVarDeclaredNames0" (this, StatementList, StatementListItem) => {
     access __x0__ = (StatementList "TopLevelVarDeclaredNames")
     let names = __x0__
     access __x1__ = (StatementListItem "TopLevelVarDeclaredNames")
@@ -19,6 +17,5 @@ object StatementList1TopLevelVarDeclaredNames0 {
       __x3__ = (+ __x3__ 1i)
     }
     return names
-  }
-  */
+  }""")
 }

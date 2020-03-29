@@ -5,8 +5,5 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object MemberExpression1IsIdentifierRef0 {
   val length: Int = 0
-  val func: Func = Func("""MemberExpression1IsIdentifierRef0""", List(Id("""this"""), Id("""MemberExpression"""), Id("""Expression""")), None, IReturn(EBool(false)))
-  /* Beautified form:
-  "MemberExpression1IsIdentifierRef0" (this, MemberExpression, Expression) => return false
-  */
+  val func: Func = parseFunc(""""MemberExpression1IsIdentifierRef0" (this, MemberExpression, Expression) => return false""")
 }

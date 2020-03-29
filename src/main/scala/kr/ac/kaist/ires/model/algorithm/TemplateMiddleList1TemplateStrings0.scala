@@ -5,9 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object TemplateMiddleList1TemplateStrings0 {
   val length: Int = 0
-  val func: Func = Func("""TemplateMiddleList1TemplateStrings0""", List(Id("""this"""), Id("""TemplateMiddleList"""), Id("""TemplateMiddle"""), Id("""Expression"""), Id("""raw""")), None, ISeq(List(IAccess(Id("""__x0__"""), ERef(RefId(Id("""TemplateMiddleList"""))), EStr("""TemplateStrings""")), IApp(Id("""__x1__"""), ERef(RefId(Id("""__x0__"""))), List(ERef(RefId(Id("""raw"""))))), ILet(Id("""front"""), ERef(RefId(Id("""__x1__""")))), IIf(EBOp(OEq, ERef(RefId(Id("""raw"""))), EBool(false)), ISeq(List(IAccess(Id("""__x2__"""), ERef(RefId(Id("""TemplateMiddle"""))), EStr("""TV""")), ILet(Id("""last"""), ERef(RefId(Id("""__x2__""")))))), ISeq(List(IAccess(Id("""__x3__"""), ERef(RefId(Id("""TemplateMiddle"""))), EStr("""TRV""")), ILet(Id("""last"""), ERef(RefId(Id("""__x3__"""))))))), IAppend(ERef(RefId(Id("""last"""))), ERef(RefId(Id("""front""")))), IReturn(ERef(RefId(Id("""front""")))))))
-  /* Beautified form:
-  "TemplateMiddleList1TemplateStrings0" (this, TemplateMiddleList, TemplateMiddle, Expression, raw) => {
+  val func: Func = parseFunc(""""TemplateMiddleList1TemplateStrings0" (this, TemplateMiddleList, TemplateMiddle, Expression, raw) => {
     access __x0__ = (TemplateMiddleList "TemplateStrings")
     app __x1__ = (__x0__ raw)
     let front = __x1__
@@ -20,6 +18,5 @@ object TemplateMiddleList1TemplateStrings0 {
     }
     append last -> front
     return front
-  }
-  */
+  }""")
 }

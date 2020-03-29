@@ -5,9 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object CreateArrayFromList {
   val length: Int = 1
-  val func: Func = Func("""CreateArrayFromList""", List(Id("""elements""")), None, ISeq(List(IApp(Id("""__x0__"""), ERef(RefId(Id("""ArrayCreate"""))), List(EINum(0L))), IIf(EIsCompletion(ERef(RefId(Id("""__x0__""")))), IIf(EBOp(OEq, ERef(RefProp(RefId(Id("""__x0__""")), EStr("""Type"""))), ERef(RefId(Id("""CONST_normal""")))), IAssign(RefId(Id("""__x0__""")), ERef(RefProp(RefId(Id("""__x0__""")), EStr("""Value""")))), IReturn(ERef(RefId(Id("""__x0__"""))))), ISeq(List())), ILet(Id("""array"""), ERef(RefId(Id("""__x0__""")))), ILet(Id("""n"""), EINum(0L)), ILet(Id("""__x1__"""), ERef(RefId(Id("""elements""")))), ILet(Id("""__x2__"""), EINum(0L)), IWhile(EBOp(OLt, ERef(RefId(Id("""__x2__"""))), ERef(RefProp(RefId(Id("""__x1__""")), EStr("""length""")))), ISeq(List(ILet(Id("""e"""), ERef(RefProp(RefId(Id("""__x1__""")), ERef(RefId(Id("""__x2__""")))))), IApp(Id("""__x3__"""), ERef(RefId(Id("""ToString"""))), List(ERef(RefId(Id("""n"""))))), IIf(EIsCompletion(ERef(RefId(Id("""__x3__""")))), IIf(EBOp(OEq, ERef(RefProp(RefId(Id("""__x3__""")), EStr("""Type"""))), ERef(RefId(Id("""CONST_normal""")))), IAssign(RefId(Id("""__x3__""")), ERef(RefProp(RefId(Id("""__x3__""")), EStr("""Value""")))), IReturn(ERef(RefId(Id("""__x3__"""))))), ISeq(List())), IApp(Id("""__x4__"""), ERef(RefId(Id("""CreateDataProperty"""))), List(ERef(RefId(Id("""array"""))), ERef(RefId(Id("""__x3__"""))), ERef(RefId(Id("""e"""))))), ILet(Id("""status"""), ERef(RefId(Id("""__x4__""")))), IAssert(EBOp(OEq, ERef(RefId(Id("""status"""))), EBool(true))), IAssign(RefId(Id("""n""")), EBOp(OPlus, ERef(RefId(Id("""n"""))), EINum(1L))), IAssign(RefId(Id("""__x2__""")), EBOp(OPlus, ERef(RefId(Id("""__x2__"""))), EINum(1L)))))), IApp(Id("""__x5__"""), ERef(RefId(Id("""WrapCompletion"""))), List(ERef(RefId(Id("""array"""))))), IReturn(ERef(RefId(Id("""__x5__""")))))))
-  /* Beautified form:
-  "CreateArrayFromList" (elements) => {
+  val func: Func = parseFunc(""""CreateArrayFromList" (elements) => {
     app __x0__ = (ArrayCreate 0i)
     if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
     let array = __x0__
@@ -26,6 +24,5 @@ object CreateArrayFromList {
     }
     app __x5__ = (WrapCompletion array)
     return __x5__
-  }
-  */
+  }""")
 }

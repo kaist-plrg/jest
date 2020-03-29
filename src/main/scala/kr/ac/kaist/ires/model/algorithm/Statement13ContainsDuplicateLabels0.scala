@@ -5,8 +5,5 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object Statement13ContainsDuplicateLabels0 {
   val length: Int = 0
-  val func: Func = Func("""Statement13ContainsDuplicateLabels0""", List(Id("""this"""), Id("""DebuggerStatement"""), Id("""labelSet""")), None, IReturn(EBool(false)))
-  /* Beautified form:
-  "Statement13ContainsDuplicateLabels0" (this, DebuggerStatement, labelSet) => return false
-  */
+  val func: Func = parseFunc(""""Statement13ContainsDuplicateLabels0" (this, DebuggerStatement, labelSet) => return false""")
 }

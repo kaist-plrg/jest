@@ -5,9 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object CreateBuiltinFunction {
   val length: Int = 2
-  val func: Func = Func("""CreateBuiltinFunction""", List(Id("""steps"""), Id("""internalSlotsList"""), Id("""realm"""), Id("""prototype""")), None, ISeq(List(IIf(EBOp(OEq, ERef(RefId(Id("""realm"""))), EAbsent), IAssign(RefId(Id("""realm""")), ERef(RefId(Id("""REALM""")))), ISeq(List())), IAssert(EBOp(OEq, ETypeOf(ERef(RefId(Id("""realm""")))), EStr("""RealmRecord"""))), IIf(EBOp(OEq, ERef(RefId(Id("""prototype"""))), EAbsent), IAssign(RefId(Id("""prototype""")), ERef(RefProp(RefProp(RefId(Id("""realm""")), EStr("""Intrinsics""")), EStr("""INTRINSIC_FunctionPrototype""")))), ISeq(List())), IAssign(RefId(Id("""prototype""")), ERef(RefId(Id("""INTRINSIC_FunctionPrototype""")))), ILet(Id("""func"""), EMap(Ty("""BuiltinFunctionObject"""), List((EStr("""SubMap"""), EMap(Ty("""SubMap"""), List()))))), IDelete(RefProp(RefId(Id("""func""")), EStr("""Construct"""))), IAssign(RefProp(RefId(Id("""func""")), EStr("""Code""")), ERef(RefProp(RefId(Id("""steps""")), EStr("""step""")))), IAssign(RefProp(RefProp(RefId(Id("""func""")), EStr("""SubMap""")), EStr("""name""")), EMap(Ty("""DataProperty"""), List((EStr("""Value"""), ERef(RefProp(RefId(Id("""steps""")), EStr("""name""")))), (EStr("""Writable"""), EBool(false)), (EStr("""Enumerable"""), EBool(false)), (EStr("""Configurable"""), EBool(true))))), IAssign(RefProp(RefProp(RefId(Id("""func""")), EStr("""SubMap""")), EStr("""length""")), EMap(Ty("""DataProperty"""), List((EStr("""Value"""), ERef(RefProp(RefId(Id("""steps""")), EStr("""length""")))), (EStr("""Writable"""), EBool(false)), (EStr("""Enumerable"""), EBool(false)), (EStr("""Configurable"""), EBool(true))))), IAssign(RefProp(RefId(Id("""func""")), EStr("""Realm""")), ERef(RefId(Id("""realm""")))), IAssign(RefProp(RefId(Id("""func""")), EStr("""Prototype""")), ERef(RefId(Id("""prototype""")))), IAssign(RefProp(RefId(Id("""func""")), EStr("""Extensible""")), EBool(true)), IAssign(RefProp(RefId(Id("""func""")), EStr("""ScriptOrModule""")), ENull), IApp(Id("""__x0__"""), ERef(RefId(Id("""WrapCompletion"""))), List(ERef(RefId(Id("""func"""))))), IReturn(ERef(RefId(Id("""__x0__""")))))))
-  /* Beautified form:
-  "CreateBuiltinFunction" (steps, internalSlotsList, realm, prototype) => {
+  val func: Func = parseFunc(""""CreateBuiltinFunction" (steps, internalSlotsList, realm, prototype) => {
     if (= realm absent) realm = REALM else {}
     assert (= (typeof realm) "RealmRecord")
     if (= prototype absent) prototype = realm["Intrinsics"]["INTRINSIC_FunctionPrototype"] else {}
@@ -23,6 +21,5 @@ object CreateBuiltinFunction {
     func["ScriptOrModule"] = null
     app __x0__ = (WrapCompletion func)
     return __x0__
-  }
-  */
+  }""")
 }
