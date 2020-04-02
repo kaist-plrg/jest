@@ -32,7 +32,6 @@ object GLOBALDOTINTRINSIC_MapIteratorPrototypeDOTnext {
         if (= itemKind "key") let result = e["Key"] else if (= itemKind "value") let result = e["Value"] else {
           assert (= itemKind "key+value")
           app __x4__ = (CreateArrayFromList (new [e["Key"], e["Value"]]))
-          if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
           let result = __x4__
         }
         app __x5__ = (CreateIterResultObject result false)

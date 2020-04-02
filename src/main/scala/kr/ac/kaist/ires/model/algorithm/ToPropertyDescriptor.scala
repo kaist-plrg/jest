@@ -19,7 +19,6 @@ object ToPropertyDescriptor {
       app __x3__ = (Get Obj "enumerable")
       if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
       app __x4__ = (ToBoolean __x3__)
-      if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
       let enumerable = __x4__
       desc["Enumerable"] = enumerable
     } else {}
@@ -30,7 +29,6 @@ object ToPropertyDescriptor {
       app __x6__ = (Get Obj "configurable")
       if (is-completion __x6__) if (= __x6__["Type"] CONST_normal) __x6__ = __x6__["Value"] else return __x6__ else {}
       app __x7__ = (ToBoolean __x6__)
-      if (is-completion __x7__) if (= __x7__["Type"] CONST_normal) __x7__ = __x7__["Value"] else return __x7__ else {}
       let configurable = __x7__
       desc["Configurable"] = configurable
     } else {}
@@ -50,7 +48,6 @@ object ToPropertyDescriptor {
       app __x11__ = (Get Obj "writable")
       if (is-completion __x11__) if (= __x11__["Type"] CONST_normal) __x11__ = __x11__["Value"] else return __x11__ else {}
       app __x12__ = (ToBoolean __x11__)
-      if (is-completion __x12__) if (= __x12__["Type"] CONST_normal) __x12__ = __x12__["Value"] else return __x12__ else {}
       let writable = __x12__
       desc["Writable"] = writable
     } else {}

@@ -14,7 +14,6 @@ object IterationStatement1LabelledEvaluation0 {
       if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
       let exprValue = __x1__
       app __x2__ = (ToBoolean exprValue)
-      if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
       if (= __x2__ false) {
         app __x3__ = (NormalCompletion V)
         app __x4__ = (WrapCompletion __x3__)

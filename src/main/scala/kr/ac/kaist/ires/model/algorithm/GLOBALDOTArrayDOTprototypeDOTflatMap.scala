@@ -13,23 +13,24 @@ object GLOBALDOTArrayDOTprototypeDOTflatMap {
     app __x2__ = (ToObject this)
     if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     let O = __x2__
-    app __x3__ = (LengthOfArrayLike O)
+    app __x3__ = (Get O "length")
     if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
-    let sourceLen = __x3__
-    app __x4__ = (IsCallable mapperFunction)
+    app __x4__ = (ToLength __x3__)
     if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
-    if (= __x4__ false) {
-      app __x5__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
-      return __x5__
+    let sourceLen = __x4__
+    app __x5__ = (IsCallable mapperFunction)
+    if (= __x5__ false) {
+      app __x6__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
+      return __x6__
     } else {}
     if (! (= argumentsList[1i] absent)) let T = thisArg else let T = undefined
-    app __x6__ = (ArraySpeciesCreate O 0i)
-    if (is-completion __x6__) if (= __x6__["Type"] CONST_normal) __x6__ = __x6__["Value"] else return __x6__ else {}
-    let A = __x6__
-    app __x7__ = (FlattenIntoArray A O sourceLen 0i 1i mapperFunction T)
+    app __x7__ = (ArraySpeciesCreate O 0i)
     if (is-completion __x7__) if (= __x7__["Type"] CONST_normal) __x7__ = __x7__["Value"] else return __x7__ else {}
-    __x7__
-    app __x8__ = (WrapCompletion A)
-    return __x8__
+    let A = __x7__
+    app __x8__ = (FlattenIntoArray A O sourceLen 0i 1i mapperFunction T)
+    if (is-completion __x8__) if (= __x8__["Type"] CONST_normal) __x8__ = __x8__["Value"] else return __x8__ else {}
+    __x8__
+    app __x9__ = (WrapCompletion A)
+    return __x9__
   }""")
 }

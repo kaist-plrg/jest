@@ -11,8 +11,9 @@ object ArrayLiteral2Evaluation1 {
     let array = __x0__
     access __x1__ = (ElementList "ArrayAccumulation")
     app __x2__ = (__x1__ array 0i)
-    if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     let len = __x2__
+    if (is-completion len) if (= len["Type"] CONST_normal) len = len["Value"] else return len else {}
+    len
     if (= Elision absent) let padding = 0i else {
       access __x3__ = (Elision "ElisionWidth")
       let padding = __x3__

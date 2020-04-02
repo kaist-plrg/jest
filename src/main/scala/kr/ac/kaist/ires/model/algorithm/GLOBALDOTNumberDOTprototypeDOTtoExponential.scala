@@ -47,7 +47,6 @@ object GLOBALDOTNumberDOTprototypeDOTtoExponential {
       let d = "0"
     } else {
       if (< 0i e) let c = "+" else {
-        assert (< e 0i)
         let c = "-"
         e = (- e)
       }

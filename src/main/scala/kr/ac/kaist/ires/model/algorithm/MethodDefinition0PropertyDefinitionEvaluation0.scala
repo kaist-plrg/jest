@@ -8,8 +8,9 @@ object MethodDefinition0PropertyDefinitionEvaluation0 {
   val func: Func = parseFunc(""""MethodDefinition0PropertyDefinitionEvaluation0" (this, PropertyName, UniqueFormalParameters, FunctionBody, object, enumerable) => {
     access __x0__ = (this "DefineMethod")
     app __x1__ = (__x0__ object)
-    if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
     let methodDef = __x1__
+    if (is-completion methodDef) if (= methodDef["Type"] CONST_normal) methodDef = methodDef["Value"] else return methodDef else {}
+    methodDef
     app __x2__ = (SetFunctionName methodDef["Closure"] methodDef["Key"])
     __x2__
     let desc = (new PropertyDescriptor("Value" -> methodDef["Closure"], "Writable" -> true, "Enumerable" -> enumerable, "Configurable" -> true))

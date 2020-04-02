@@ -16,8 +16,6 @@ object OrdinaryGetOwnProperty {
       D["Value"] = X["Value"]
       D["Writable"] = X["Writable"]
     } else {
-      app __x2__ = (IsAccessorDescriptor X)
-      assert __x2__
       D["Get"] = X["Get"]
       D["Set"] = X["Set"]
     }

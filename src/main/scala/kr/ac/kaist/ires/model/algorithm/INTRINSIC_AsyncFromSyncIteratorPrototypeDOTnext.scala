@@ -7,23 +7,30 @@ object INTRINSIC_AsyncFromSyncIteratorPrototypeDOTnext {
   val length: Int = 1
   val func: Func = parseFunc(""""INTRINSIC_AsyncFromSyncIteratorPrototype.next" (value) => {
     let O = this
-    app __x0__ = (Type O)
-    assert (&& (= __x0__ Object) (! (= O["SyncIteratorRecord"] absent)))
-    app __x1__ = (NewPromiseCapability INTRINSIC_Promise)
-    if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
-    let promiseCapability = __x1__
+    app __x0__ = (NewPromiseCapability INTRINSIC_Promise)
+    if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
+    let promiseCapability = __x0__
+    app __x1__ = (Type O)
+    if (|| (! (= __x1__ Object)) (= O["SyncIteratorRecord"] absent)) {
+      let invalidIteratorError = (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap())))
+      app __x2__ = (Call promiseCapability["Reject"] undefined (new [invalidIteratorError]))
+      if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
+      __x2__
+      app __x3__ = (WrapCompletion promiseCapability["Promise"])
+      return __x3__
+    } else {}
     let syncIteratorRecord = O["SyncIteratorRecord"]
-    app __x2__ = (IteratorNext syncIteratorRecord value)
-    let result = __x2__
+    app __x4__ = (IteratorNext syncIteratorRecord value)
+    let result = __x4__
     if (is-completion result) if (= result["Type"] CONST_normal) result = result["Value"] else {
-      app __x3__ = (Call promiseCapability["Reject"] undefined (new [result["Value"]]))
-      if (&& (is-completion __x3__) (! (= __x3__["Type"] CONST_normal))) return __x3__ else {}
+      app __x5__ = (Call promiseCapability["Reject"] undefined (new [result["Value"]]))
+      if (&& (is-completion __x5__) (! (= __x5__["Type"] CONST_normal))) return __x5__ else {}
       return promiseCapability["Promise"]
     } else {}
     result
-    app __x4__ = (AsyncFromSyncIteratorContinuation result promiseCapability)
-    if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
-    app __x5__ = (WrapCompletion __x4__)
-    return __x5__
+    app __x6__ = (AsyncFromSyncIteratorContinuation result promiseCapability)
+    if (is-completion __x6__) if (= __x6__["Type"] CONST_normal) __x6__ = __x6__["Value"] else return __x6__ else {}
+    app __x7__ = (WrapCompletion __x6__)
+    return __x7__
   }""")
 }

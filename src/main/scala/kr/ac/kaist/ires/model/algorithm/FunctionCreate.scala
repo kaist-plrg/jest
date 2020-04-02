@@ -4,11 +4,11 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object FunctionCreate {
-  val length: Int = 4
-  val func: Func = parseFunc(""""FunctionCreate" (kind, ParameterList, Body, Scope, prototype) => {
+  val length: Int = 5
+  val func: Func = parseFunc(""""FunctionCreate" (kind, ParameterList, Body, Scope, Strict, prototype) => {
     if (= prototype absent) prototype = INTRINSIC_FunctionPrototype else {}
     if (! (= kind CONST_Normal)) let allocKind = "non-constructor" else let allocKind = "normal"
-    app __x0__ = (FunctionAllocate prototype allocKind)
+    app __x0__ = (FunctionAllocate prototype Strict allocKind)
     let F = __x0__
     app __x1__ = (FunctionInitialize F kind ParameterList Body Scope)
     app __x2__ = (WrapCompletion __x1__)

@@ -25,124 +25,101 @@ object ValidateAndApplyPropertyDescriptor {
         if (! (= absent Desc["Enumerable"])) dp["Enumerable"] = Desc["Enumerable"] else dp["Enumerable"] = false
         if (! (= absent Desc["Configurable"])) dp["Configurable"] = Desc["Configurable"] else dp["Configurable"] = false
         O["SubMap"][P] = dp
-      } else {} else {
-        app __x4__ = (IsAccessorDescriptor Desc)
-        if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
-        assert (= __x4__ true)
-        if (! (= O undefined)) {
-          dp = (new AccessorProperty())
-          if (! (= absent Desc["Get"])) dp["Get"] = Desc["Get"] else dp["Get"] = undefined
-          if (! (= absent Desc["Set"])) dp["Set"] = Desc["Set"] else dp["Set"] = undefined
-          if (! (= absent Desc["Enumerable"])) dp["Enumerable"] = Desc["Enumerable"] else dp["Enumerable"] = false
-          if (! (= absent Desc["Configurable"])) dp["Configurable"] = Desc["Configurable"] else dp["Configurable"] = false
-          O["SubMap"][P] = dp
-        } else {}
-      }
+      } else {} else if (! (= O undefined)) {
+        dp = (new AccessorProperty())
+        if (! (= absent Desc["Get"])) dp["Get"] = Desc["Get"] else dp["Get"] = undefined
+        if (! (= absent Desc["Set"])) dp["Set"] = Desc["Set"] else dp["Set"] = undefined
+        if (! (= absent Desc["Enumerable"])) dp["Enumerable"] = Desc["Enumerable"] else dp["Enumerable"] = false
+        if (! (= absent Desc["Configurable"])) dp["Configurable"] = Desc["Configurable"] else dp["Configurable"] = false
+        O["SubMap"][P] = dp
+      } else {}
+      app __x4__ = (WrapCompletion true)
+      return __x4__
+    } else {}
+    if (&& (= absent Desc["Value"]) (&& (= absent Desc["Writable"]) (&& (= absent Desc["Get"]) (&& (= absent Desc["Set"]) (&& (= absent Desc["Enumerable"]) (= absent Desc["Configurable"])))))) {
       app __x5__ = (WrapCompletion true)
       return __x5__
     } else {}
-    if (&& (= absent Desc["Value"]) (&& (= absent Desc["Writable"]) (&& (= absent Desc["Get"]) (&& (= absent Desc["Set"]) (&& (= absent Desc["Enumerable"]) (= absent Desc["Configurable"])))))) {
-      app __x6__ = (WrapCompletion true)
-      return __x6__
-    } else {}
     if (= current["Configurable"] false) {
       if (= Desc["Configurable"] true) {
+        app __x6__ = (WrapCompletion false)
+        return __x6__
+      } else {}
+      if (&& (! (= absent Desc["Enumerable"])) (|| (&& (= true current["Enumerable"]) (= false Desc["Enumerable"])) (&& (= false current["Enumerable"]) (= true Desc["Enumerable"])))) {
         app __x7__ = (WrapCompletion false)
         return __x7__
       } else {}
-      let __x8__ = (! (= Desc["Enumerable"] absent))
-      if __x8__ {
-        app __x9__ = (SameValue Desc["Enumerable"] current["Enumerable"])
-        if (is-completion __x9__) if (= __x9__["Type"] CONST_normal) __x9__ = __x9__["Value"] else return __x9__ else {}
-        __x8__ = (= __x9__ false)
-      } else {}
-      if __x8__ {
-        app __x10__ = (WrapCompletion false)
-        return __x10__
-      } else {}
     } else {}
-    app __x11__ = (IsGenericDescriptor Desc)
-    if (is-completion __x11__) if (= __x11__["Type"] CONST_normal) __x11__ = __x11__["Value"] else return __x11__ else {}
-    if (= __x11__ true) {} else {
-      app __x12__ = (IsDataDescriptor current)
-      if (is-completion __x12__) if (= __x12__["Type"] CONST_normal) __x12__ = __x12__["Value"] else return __x12__ else {}
-      app __x13__ = (IsDataDescriptor Desc)
-      if (is-completion __x13__) if (= __x13__["Type"] CONST_normal) __x13__ = __x13__["Value"] else return __x13__ else {}
-      app __x14__ = (SameValue __x12__ __x13__)
-      if (is-completion __x14__) if (= __x14__["Type"] CONST_normal) __x14__ = __x14__["Value"] else return __x14__ else {}
-      if (= __x14__ false) {
+    app __x8__ = (IsGenericDescriptor Desc)
+    if (= __x8__ true) {} else {
+      app __x9__ = (IsDataDescriptor current)
+      app __x10__ = (IsDataDescriptor Desc)
+      if (! (= __x9__ __x10__)) {
         if (= current["Configurable"] false) {
-          app __x15__ = (WrapCompletion false)
-          return __x15__
+          app __x11__ = (WrapCompletion false)
+          return __x11__
         } else {}
-        app __x16__ = (IsDataDescriptor current)
-        if (= __x16__ true) if (! (= O undefined)) {
-          let __x17__ = O["SubMap"][P]
-          O["SubMap"][P] = (new AccessorProperty("Get" -> undefined, "Set" -> undefined, "Enumerable" -> __x17__["Enumerable"], "Configurable" -> __x17__["Configurable"]))
+        app __x12__ = (IsDataDescriptor current)
+        if (= __x12__ true) if (! (= O undefined)) {
+          let __x13__ = O["SubMap"][P]
+          O["SubMap"][P] = (new AccessorProperty("Get" -> undefined, "Set" -> undefined, "Enumerable" -> __x13__["Enumerable"], "Configurable" -> __x13__["Configurable"]))
         } else {} else if (! (= O undefined)) {
-          let __x18__ = O["SubMap"][P]
-          O["SubMap"][P] = (new DataProperty("Value" -> undefined, "Writable" -> false, "Enumerable" -> __x18__["Enumerable"], "Configurable" -> __x18__["Configurable"]))
+          let __x14__ = O["SubMap"][P]
+          O["SubMap"][P] = (new DataProperty("Value" -> undefined, "Writable" -> false, "Enumerable" -> __x14__["Enumerable"], "Configurable" -> __x14__["Configurable"]))
         } else {}
       } else {
-        app __x19__ = (IsDataDescriptor current)
-        app __x20__ = (IsDataDescriptor Desc)
-        if (&& (= __x19__ true) (= __x20__ true)) if (&& (= current["Configurable"] false) (= current["Writable"] false)) {
+        app __x15__ = (IsDataDescriptor current)
+        app __x16__ = (IsDataDescriptor Desc)
+        if (&& (= __x15__ true) (= __x16__ true)) if (&& (= current["Configurable"] false) (= current["Writable"] false)) {
           if (&& (! (= Desc["Writable"] absent)) (= Desc["Writable"] true)) {
-            app __x21__ = (WrapCompletion false)
-            return __x21__
+            app __x17__ = (WrapCompletion false)
+            return __x17__
           } else {}
-          let __x22__ = (! (= Desc["Value"] absent))
+          let __x18__ = (! (= Desc["Value"] absent))
+          if __x18__ {
+            app __x19__ = (SameValue Desc["Value"] current["Value"])
+            __x18__ = (= __x19__ false)
+          } else {}
+          if __x18__ {
+            app __x20__ = (WrapCompletion false)
+            return __x20__
+          } else {}
+          app __x21__ = (WrapCompletion true)
+          return __x21__
+        } else {} else if (= current["Configurable"] false) {
+          let __x22__ = (! (= Desc["Set"] absent))
           if __x22__ {
-            app __x23__ = (SameValue Desc["Value"] current["Value"])
+            app __x23__ = (SameValue Desc["Set"] current["Set"])
             __x22__ = (= __x23__ false)
           } else {}
           if __x22__ {
             app __x24__ = (WrapCompletion false)
             return __x24__
           } else {}
-          app __x25__ = (WrapCompletion true)
-          return __x25__
-        } else {} else {
-          app __x26__ = (IsAccessorDescriptor current)
-          if (is-completion __x26__) if (= __x26__["Type"] CONST_normal) __x26__ = __x26__["Value"] else return __x26__ else {}
-          app __x27__ = (IsAccessorDescriptor Desc)
-          if (is-completion __x27__) if (= __x27__["Type"] CONST_normal) __x27__ = __x27__["Value"] else return __x27__ else {}
-          assert (&& (= __x26__ true) (= __x27__ true))
-          if (= current["Configurable"] false) {
-            let __x28__ = (! (= Desc["Set"] absent))
-            if __x28__ {
-              app __x29__ = (SameValue Desc["Set"] current["Set"])
-              __x28__ = (= __x29__ false)
-            } else {}
-            if __x28__ {
-              app __x30__ = (WrapCompletion false)
-              return __x30__
-            } else {}
-            let __x31__ = (! (= Desc["Get"] absent))
-            if __x31__ {
-              app __x32__ = (SameValue Desc["Get"] current["Get"])
-              __x31__ = (= __x32__ false)
-            } else {}
-            if __x31__ {
-              app __x33__ = (WrapCompletion false)
-              return __x33__
-            } else {}
-            app __x34__ = (WrapCompletion true)
-            return __x34__
+          let __x25__ = (! (= Desc["Get"] absent))
+          if __x25__ {
+            app __x26__ = (SameValue Desc["Get"] current["Get"])
+            __x25__ = (= __x26__ false)
           } else {}
-        }
+          if __x25__ {
+            app __x27__ = (WrapCompletion false)
+            return __x27__
+          } else {}
+          app __x28__ = (WrapCompletion true)
+          return __x28__
+        } else {}
       }
     }
     if (! (= O undefined)) {
-      let __x35__ = (map-keys Desc)
-      let __x36__ = 0i
-      while (< __x36__ __x35__["length"]) {
-        let __x37__ = __x35__[__x36__]
-        O["SubMap"][P][__x37__] = Desc[__x37__]
-        __x36__ = (+ __x36__ 1i)
+      let __x29__ = (map-keys Desc)
+      let __x30__ = 0i
+      while (< __x30__ __x29__["length"]) {
+        let __x31__ = __x29__[__x30__]
+        O["SubMap"][P][__x31__] = Desc[__x31__]
+        __x30__ = (+ __x30__ 1i)
       }
     } else {}
-    app __x38__ = (WrapCompletion true)
-    return __x38__
+    app __x32__ = (WrapCompletion true)
+    return __x32__
   }""")
 }

@@ -22,10 +22,18 @@ object GLOBALDOTStringDOTprototypeDOTcodePointAt {
       app __x4__ = (WrapCompletion undefined)
       return __x4__
     } else {}
-    app __x5__ = (CodePointAt S position)
-    if (is-completion __x5__) if (= __x5__["Type"] CONST_normal) __x5__ = __x5__["Value"] else return __x5__ else {}
-    let cp = __x5__
-    app __x6__ = (WrapCompletion cp["CodePoint"])
-    return __x6__
+    let first = S[position]
+    if (|| (< first 55296i) (|| (< 56319i first) (= (+ position 1i) size))) {
+      app __x5__ = (WrapCompletion first)
+      return __x5__
+    } else {}
+    let second = S[(+ position 1i)]
+    if (|| (< second 56320i) (< 57343i second)) {
+      app __x6__ = (WrapCompletion first)
+      return __x6__
+    } else {}
+    app __x7__ = (UTF16Decode first second)
+    app __x8__ = (WrapCompletion __x7__)
+    return __x8__
   }""")
 }

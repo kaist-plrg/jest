@@ -11,8 +11,9 @@ object ArrayLiteral1Evaluation0 {
     let array = __x0__
     access __x1__ = (ElementList "ArrayAccumulation")
     app __x2__ = (__x1__ array 0i)
-    if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     let len = __x2__
+    if (is-completion len) if (= len["Type"] CONST_normal) len = len["Value"] else return len else {}
+    len
     app __x3__ = (ToUint32 len)
     app __x4__ = (Set array "length" __x3__ false)
     __x4__

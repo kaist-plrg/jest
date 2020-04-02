@@ -26,7 +26,6 @@ object ProxyExoticObjectDOTConstruct {
       return __x5__
     } else {}
     app __x6__ = (CreateArrayFromList argumentsList)
-    if (is-completion __x6__) if (= __x6__["Type"] CONST_normal) __x6__ = __x6__["Value"] else return __x6__ else {}
     let argArray = __x6__
     app __x7__ = (Call trap handler (new [target, argArray, newTarget]))
     if (is-completion __x7__) if (= __x7__["Type"] CONST_normal) __x7__ = __x7__["Value"] else return __x7__ else {}

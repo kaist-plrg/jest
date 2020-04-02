@@ -10,9 +10,10 @@ object AsyncMethod0PropertyDefinitionEvaluation0 {
     let propKey = __x0__
     if (is-completion propKey) if (= propKey["Type"] CONST_normal) propKey = propKey["Value"] else return propKey else {}
     propKey
+    if true let strict = true else let strict = false
     access __x1__ = (GLOBAL_context "LexicalEnvironment")
     let scope = __x1__
-    app __x2__ = (AsyncFunctionCreate CONST_Method UniqueFormalParameters AsyncFunctionBody scope)
+    app __x2__ = (AsyncFunctionCreate CONST_Method UniqueFormalParameters AsyncFunctionBody scope strict)
     if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     let closure = __x2__
     app __x3__ = (MakeMethod closure object)

@@ -16,7 +16,6 @@ object IsRegExp {
     let matcher = __x2__
     if (! (= matcher undefined)) {
       app __x3__ = (ToBoolean matcher)
-      if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
       app __x4__ = (WrapCompletion __x3__)
       return __x4__
     } else {}

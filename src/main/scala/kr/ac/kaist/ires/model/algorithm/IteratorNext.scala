@@ -7,7 +7,7 @@ object IteratorNext {
   val length: Int = 1
   val func: Func = parseFunc(""""IteratorNext" (iteratorRecord, value) => {
     if (= value absent) {
-      app __x0__ = (Call iteratorRecord["NextMethod"] iteratorRecord["Iterator"])
+      app __x0__ = (Call iteratorRecord["NextMethod"] iteratorRecord["Iterator"] (new []))
       if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
       let result = __x0__
     } else {

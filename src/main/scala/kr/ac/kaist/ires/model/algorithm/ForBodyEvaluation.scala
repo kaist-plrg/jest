@@ -18,7 +18,6 @@ object ForBodyEvaluation {
         if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
         let testValue = __x2__
         app __x3__ = (ToBoolean testValue)
-        if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
         if (= __x3__ false) {
           app __x4__ = (NormalCompletion V)
           app __x5__ = (WrapCompletion __x4__)

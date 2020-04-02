@@ -11,18 +11,24 @@ object GLOBALDOTMapDOTprototypeDOTforEach {
     app __x1__ = (GetArgument argumentsList 1i)
     let thisArg = __x1__
     let M = this
-    app __x2__ = (RequireInternalSlot M "MapData")
-    if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
-    __x2__
-    app __x3__ = (IsCallable callbackfn)
-    if (= __x3__ false) {
+    app __x2__ = (Type M)
+    if (! (= __x2__ Object)) {
+      app __x3__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
+      return __x3__
+    } else {}
+    if (= M["MapData"] absent) {
       app __x4__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
       return __x4__
+    } else {}
+    app __x5__ = (IsCallable callbackfn)
+    if (= __x5__ false) {
+      app __x6__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
+      return __x6__
     } else {}
     if (! (= argumentsList[1i] absent)) let T = thisArg else let T = undefined
     let entries = M["MapData"]
     !!! "Etc"
-    app __x5__ = (WrapCompletion undefined)
-    return __x5__
+    app __x7__ = (WrapCompletion undefined)
+    return __x7__
   }""")
 }

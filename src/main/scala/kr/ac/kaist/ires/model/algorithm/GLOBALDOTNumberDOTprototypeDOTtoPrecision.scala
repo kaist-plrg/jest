@@ -50,7 +50,6 @@ object GLOBALDOTNumberDOTprototypeDOTtoPrecision {
           m = (+ (+ a ".") b)
         } else {}
         if (< 0i e) let c = "+" else {
-          assert (< e 0i)
           let c = "-"
           e = (- e)
         }

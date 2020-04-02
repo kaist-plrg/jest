@@ -23,8 +23,7 @@ object CopyDataBlockBytes {
         assert (! (= (typeof toBlock) "SharedDataBlock"))
         toBlock[toIndex] = fromBlock[fromIndex]
       }
-      toIndex = (+ toIndex 1i)
-      fromIndex = (+ fromIndex 1i)
+      !!! "Etc"
       count = (- count 1i)
     }
     app __x0__ = (NormalCompletion CONST_empty)

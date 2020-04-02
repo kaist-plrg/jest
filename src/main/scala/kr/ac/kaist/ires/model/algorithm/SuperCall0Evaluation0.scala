@@ -14,8 +14,9 @@ object SuperCall0Evaluation0 {
     if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     let func = __x2__
     access __x3__ = (Arguments "ArgumentListEvaluation")
-    if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
     let argList = __x3__
+    if (is-completion argList) if (= argList["Type"] CONST_normal) argList = argList["Value"] else return argList else {}
+    argList
     app __x4__ = (Construct func argList newTarget)
     if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
     let result = __x4__

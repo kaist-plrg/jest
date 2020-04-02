@@ -6,9 +6,10 @@ import kr.ac.kaist.ires.ir.Parser._
 object AsyncFunctionDeclaration0InstantiateFunctionObject0 {
   val length: Int = 0
   val func: Func = parseFunc(""""AsyncFunctionDeclaration0InstantiateFunctionObject0" (this, BindingIdentifier, FormalParameters, AsyncFunctionBody, scope) => {
+    if true let strict = true else let strict = false
     access __x0__ = (BindingIdentifier "StringValue")
     let name = __x0__
-    app __x1__ = (AsyncFunctionCreate CONST_Normal FormalParameters AsyncFunctionBody scope)
+    app __x1__ = (AsyncFunctionCreate CONST_Normal FormalParameters AsyncFunctionBody scope strict)
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
     let F = __x1__
     app __x2__ = (SetFunctionName F name)

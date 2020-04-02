@@ -41,7 +41,7 @@ object ForInOfHeadEvaluation {
       app __x9__ = (WrapCompletion __x8__)
       return __x9__
     } else {
-      assert (= iterationKind CONST_iterate)
+      assert (|| (= iterationKind !!! "iterate") (= iterationKind !!! "async-iterate"))
       if (= iterationKind CONST_asynciterate) let iteratorHint = CONST_async else let iteratorHint = CONST_sync
       app __x10__ = (GetIterator exprValue iteratorHint)
       if (is-completion __x10__) if (= __x10__["Type"] CONST_normal) __x10__ = __x10__["Value"] else return __x10__ else {}

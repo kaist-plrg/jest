@@ -10,8 +10,9 @@ object MethodDefinition5PropertyDefinitionEvaluation0 {
     let propKey = __x0__
     if (is-completion propKey) if (= propKey["Type"] CONST_normal) propKey = propKey["Value"] else return propKey else {}
     propKey
+    if true let strict = true else let strict = false
     let scope = GLOBAL_context["LexicalEnvironment"]
-    app __x1__ = (FunctionCreate CONST_Method PropertySetParameterList FunctionBody scope)
+    app __x1__ = (FunctionCreate CONST_Method PropertySetParameterList FunctionBody scope strict)
     let closure = __x1__
     app __x2__ = (MakeMethod closure object)
     __x2__

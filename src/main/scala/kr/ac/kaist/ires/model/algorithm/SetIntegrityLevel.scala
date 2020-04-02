@@ -30,7 +30,6 @@ object SetIntegrityLevel {
         __x5__ = (+ __x5__ 1i)
       }
     } else {
-      assert (= level "frozen")
       let __x7__ = keys
       let __x8__ = 0i
       while (< __x8__ __x7__["length"]) {

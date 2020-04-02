@@ -4,8 +4,8 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object FunctionAllocate {
-  val length: Int = 2
-  val func: Func = parseFunc(""""FunctionAllocate" (functionPrototype, functionKind) => {
+  val length: Int = 3
+  val func: Func = parseFunc(""""FunctionAllocate" (functionPrototype, strict, functionKind) => {
     app __x0__ = (Type functionPrototype)
     assert (= __x0__ Object)
     assert (|| (|| (|| (|| (= functionKind "normal") (= functionKind "non-constructor")) (= functionKind "generator")) (= functionKind "async")) (= functionKind "async generator"))
@@ -30,6 +30,7 @@ object FunctionAllocate {
       F["Construct"] = ECMAScriptFunctionObjectDOTConstruct
       F["ConstructorKind"] = "base"
     } else {}
+    F["Strict"] = strict
     F["FunctionKind"] = functionKind
     F["Prototype"] = functionPrototype
     F["Extensible"] = true

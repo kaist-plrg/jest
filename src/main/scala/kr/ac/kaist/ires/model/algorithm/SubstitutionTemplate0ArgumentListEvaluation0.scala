@@ -15,8 +15,9 @@ object SubstitutionTemplate0ArgumentListEvaluation0 {
     if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     let firstSub = __x2__
     access __x3__ = (TemplateSpans "SubstitutionEvaluation")
-    if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
     let restSub = __x3__
+    if (is-completion restSub) if (= restSub["Type"] CONST_normal) restSub = restSub["Value"] else return restSub else {}
+    restSub
     let __x4__ = (copy-obj restSub)
     prepend firstSub -> __x4__
     prepend siteObj -> __x4__

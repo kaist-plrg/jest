@@ -18,8 +18,7 @@ object EqualityExpression4Evaluation0 {
     let rval = __x3__
     app __x4__ = (StrictEqualityComparison rval lval)
     let r = __x4__
-    assert (&& (is-completion r) (= r["Type"] CONST_normal))
-    if (= r["Value"] true) {
+    if (= r true) {
       app __x5__ = (WrapCompletion false)
       return __x5__
     } else {

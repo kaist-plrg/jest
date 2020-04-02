@@ -15,8 +15,9 @@ object EvaluateNew {
     let constructor = __x1__
     if (= arguments CONST_empty) let argList = (new []) else {
       access __x2__ = (arguments "ArgumentListEvaluation")
-      if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
       let argList = __x2__
+      if (is-completion argList) if (= argList["Type"] CONST_normal) argList = argList["Value"] else return argList else {}
+      argList
     }
     app __x3__ = (IsConstructor constructor)
     if (= __x3__ false) {

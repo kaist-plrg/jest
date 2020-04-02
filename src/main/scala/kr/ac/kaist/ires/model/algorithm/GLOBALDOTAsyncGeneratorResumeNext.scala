@@ -29,17 +29,15 @@ object GLOBALDOTAsyncGeneratorResumeNext {
       } else {}
       if (= state "completed") if (= completion["Type"] CONST_return) {
         generator["AsyncGeneratorState"] = "awaiting-return"
-        app __x4__ = (PromiseResolve INTRINSIC_Promise completion["Value"])
+        app __x4__ = (PromiseResolve INTRINSIC_Promise (new [completion["Value"]]))
         if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
         let promise = __x4__
         let stepsFulfilled = !!! "Algorithms"
         app __x5__ = (CreateBuiltinFunction stepsFulfilled (new ["Generator"]))
-        if (is-completion __x5__) if (= __x5__["Type"] CONST_normal) __x5__ = __x5__["Value"] else return __x5__ else {}
         let onFulfilled = __x5__
         onFulfilled["Generator"] = generator
         let stepsRejected = !!! "Algorithms"
         app __x6__ = (CreateBuiltinFunction stepsRejected (new ["Generator"]))
-        if (is-completion __x6__) if (= __x6__["Type"] CONST_normal) __x6__ = __x6__["Value"] else return __x6__ else {}
         let onRejected = __x6__
         onRejected["Generator"] = generator
         app __x7__ = (PerformPromiseThen promise onFulfilled onRejected)

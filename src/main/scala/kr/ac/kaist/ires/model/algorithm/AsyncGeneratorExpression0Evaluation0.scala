@@ -6,9 +6,10 @@ import kr.ac.kaist.ires.ir.Parser._
 object AsyncGeneratorExpression0Evaluation0 {
   val length: Int = 0
   val func: Func = parseFunc(""""AsyncGeneratorExpression0Evaluation0" (this, FormalParameters, AsyncGeneratorBody) => {
+    if true let strict = true else let strict = false
     access __x0__ = (GLOBAL_context "LexicalEnvironment")
     let scope = __x0__
-    app __x1__ = (AsyncGeneratorFunctionCreate CONST_Normal FormalParameters AsyncGeneratorBody scope)
+    app __x1__ = (AsyncGeneratorFunctionCreate CONST_Normal FormalParameters AsyncGeneratorBody scope strict)
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
     let closure = __x1__
     app __x2__ = (ObjectCreate INTRINSIC_AsyncGeneratorPrototype)

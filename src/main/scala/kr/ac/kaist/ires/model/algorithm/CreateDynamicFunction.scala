@@ -34,7 +34,6 @@ object CreateDynamicFunction {
     let argCount = args["length"]
     let P = ""
     if (= argCount 0i) let bodyText = "" else if (= argCount 1i) let bodyText = args[0i] else {
-      assert (< 1i argCount)
       let firstArg = args[0i]
       app __x1__ = (ToString firstArg)
       if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
@@ -112,7 +111,7 @@ object CreateDynamicFunction {
     app __x26__ = (GetPrototypeFromConstructor newTarget fallbackProto)
     if (is-completion __x26__) if (= __x26__["Type"] CONST_normal) __x26__ = __x26__["Value"] else return __x26__ else {}
     let proto = __x26__
-    app __x27__ = (FunctionAllocate proto kind)
+    app __x27__ = (FunctionAllocate proto strict kind)
     let F = __x27__
     let realmF = F["Realm"]
     let scope = realmF["GlobalEnv"]

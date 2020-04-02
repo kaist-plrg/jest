@@ -32,12 +32,10 @@ object AsyncGeneratorResumeNext {
         let promise = __x3__
         let stepsFulfilled = !!! "Algorithms"
         app __x4__ = (CreateBuiltinFunction stepsFulfilled (new ["Generator"]))
-        if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
         let onFulfilled = __x4__
         onFulfilled["Generator"] = generator
         let stepsRejected = !!! "Algorithms"
         app __x5__ = (CreateBuiltinFunction stepsRejected (new ["Generator"]))
-        if (is-completion __x5__) if (= __x5__["Type"] CONST_normal) __x5__ = __x5__["Value"] else return __x5__ else {}
         let onRejected = __x5__
         onRejected["Generator"] = generator
         app __x6__ = (PerformPromiseThen promise onFulfilled onRejected)

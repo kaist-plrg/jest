@@ -13,12 +13,10 @@ object CreateIntrinsics {
     intrinsics["INTRINSIC_ObjectPrototype"] = objProto
     let throwerSteps = (new algorithm("name" -> "", "length" -> 0i, "step" -> INTRINSIC_ThrowTypeError))
     app __x1__ = (CreateBuiltinFunction throwerSteps (new []) realmRec null)
-    if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
     let thrower = __x1__
     intrinsics["INTRINSIC_ThrowTypeError"] = thrower
     let noSteps = (new algorithm("name" -> "", "length" -> 0i, "step" -> EmptyFunction))
     app __x2__ = (CreateBuiltinFunction noSteps (new []) realmRec objProto)
-    if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     let funcProto = __x2__
     intrinsics["INTRINSIC_FunctionPrototype"] = funcProto
     app __x3__ = (thrower["SetPrototypeOf"] thrower funcProto)

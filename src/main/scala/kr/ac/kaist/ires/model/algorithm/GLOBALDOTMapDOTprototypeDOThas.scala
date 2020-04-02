@@ -9,26 +9,32 @@ object GLOBALDOTMapDOTprototypeDOThas {
     app __x0__ = (GetArgument argumentsList 0i)
     let key = __x0__
     let M = this
-    app __x1__ = (RequireInternalSlot M "MapData")
-    if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
-    __x1__
+    app __x1__ = (Type M)
+    if (! (= __x1__ Object)) {
+      app __x2__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
+      return __x2__
+    } else {}
+    if (= M["MapData"] absent) {
+      app __x3__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
+      return __x3__
+    } else {}
     let entries = M["MapData"]
-    let __x2__ = entries
-    let __x3__ = 0i
-    while (< __x3__ __x2__["length"]) {
-      let p = __x2__[__x3__]
-      let __x4__ = (! (= p["Key"] CONST_empty))
-      if __x4__ {
-        app __x5__ = (SameValueZero p["Key"] key)
-        __x4__ = (= __x5__ true)
+    let __x4__ = entries
+    let __x5__ = 0i
+    while (< __x5__ __x4__["length"]) {
+      let p = __x4__[__x5__]
+      let __x6__ = (! (= p["Key"] CONST_empty))
+      if __x6__ {
+        app __x7__ = (SameValueZero p["Key"] key)
+        __x6__ = (= __x7__ true)
       } else {}
-      if __x4__ {
-        app __x6__ = (WrapCompletion true)
-        return __x6__
+      if __x6__ {
+        app __x8__ = (WrapCompletion true)
+        return __x8__
       } else {}
-      __x3__ = (+ __x3__ 1i)
+      __x5__ = (+ __x5__ 1i)
     }
-    app __x7__ = (WrapCompletion false)
-    return __x7__
+    app __x9__ = (WrapCompletion false)
+    return __x9__
   }""")
 }

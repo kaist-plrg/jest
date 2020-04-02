@@ -13,9 +13,26 @@ object GLOBALDOTStringDOTprototypeDOTpadEnd {
     app __x2__ = (RequireObjectCoercible this)
     if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     let O = __x2__
-    app __x3__ = (StringPad O maxLength fillString "end")
+    app __x3__ = (ToString O)
     if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
-    app __x4__ = (WrapCompletion __x3__)
-    return __x4__
+    let S = __x3__
+    app __x4__ = (ToLength maxLength)
+    if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
+    let intMaxLength = __x4__
+    let stringLength = S["length"]
+    !!! "Etc"
+    if (= fillString undefined) let filler = !!! "StringOp" else {
+      app __x5__ = (ToString fillString)
+      if (is-completion __x5__) if (= __x5__["Type"] CONST_normal) __x5__ = __x5__["Value"] else return __x5__ else {}
+      let filler = __x5__
+    }
+    if (= filler "") {
+      app __x6__ = (WrapCompletion S)
+      return __x6__
+    } else {}
+    let fillLen = (- intMaxLength stringLength)
+    let truncatedStringFiller = !!! "StringOp"
+    app __x7__ = (WrapCompletion (+ S truncatedStringFiller))
+    return __x7__
   }""")
 }

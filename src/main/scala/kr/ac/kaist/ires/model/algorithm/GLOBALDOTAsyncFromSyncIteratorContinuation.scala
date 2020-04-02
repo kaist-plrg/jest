@@ -26,23 +26,17 @@ object GLOBALDOTAsyncFromSyncIteratorContinuation {
       return promiseCapability["Promise"]
     } else {}
     value
-    app __x6__ = (PromiseResolve INTRINSIC_Promise value)
+    app __x6__ = (PromiseResolve INTRINSIC_Promise (new [value]))
+    if (is-completion __x6__) if (= __x6__["Type"] CONST_normal) __x6__ = __x6__["Value"] else return __x6__ else {}
     let valueWrapper = __x6__
-    if (is-completion valueWrapper) if (= valueWrapper["Type"] CONST_normal) valueWrapper = valueWrapper["Value"] else {
-      app __x7__ = (Call promiseCapability["Reject"] undefined (new [valueWrapper["Value"]]))
-      if (&& (is-completion __x7__) (! (= __x7__["Type"] CONST_normal))) return __x7__ else {}
-      return promiseCapability["Promise"]
-    } else {}
-    valueWrapper
     let steps = (new algorithm("name" -> "", "length" -> 1i, "step" -> GLOBALDOTAsyncfromSyncIteratorValueUnwrapFunctions))
-    app __x8__ = (CreateBuiltinFunction steps (new ["Done"]))
-    if (is-completion __x8__) if (= __x8__["Type"] CONST_normal) __x8__ = __x8__["Value"] else return __x8__ else {}
-    let onFulfilled = __x8__
+    app __x7__ = (CreateBuiltinFunction steps (new ["Done"]))
+    let onFulfilled = __x7__
     onFulfilled["Done"] = done
-    app __x9__ = (PerformPromiseThen valueWrapper onFulfilled undefined promiseCapability)
-    if (is-completion __x9__) if (= __x9__["Type"] CONST_normal) __x9__ = __x9__["Value"] else return __x9__ else {}
-    __x9__
-    app __x10__ = (WrapCompletion promiseCapability["Promise"])
-    return __x10__
+    app __x8__ = (PerformPromiseThen valueWrapper onFulfilled undefined promiseCapability)
+    if (is-completion __x8__) if (= __x8__["Type"] CONST_normal) __x8__ = __x8__["Value"] else return __x8__ else {}
+    __x8__
+    app __x9__ = (WrapCompletion promiseCapability["Promise"])
+    return __x9__
   }""")
 }

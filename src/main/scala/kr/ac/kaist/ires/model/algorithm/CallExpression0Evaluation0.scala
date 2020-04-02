@@ -43,18 +43,21 @@ object CallExpression0Evaluation0 {
         let evalText = argList[0i]
         if true let strictCaller = true else let strictCaller = false
         let evalRealm = REALM
-        app __x13__ = (PerformEval evalText evalRealm strictCaller true)
+        app __x13__ = (HostEnsureCanCompileStrings evalRealm evalRealm)
         if (is-completion __x13__) if (= __x13__["Type"] CONST_normal) __x13__ = __x13__["Value"] else return __x13__ else {}
-        app __x14__ = (WrapCompletion __x13__)
-        return __x14__
+        __x13__
+        app __x14__ = (PerformEval evalText evalRealm strictCaller true)
+        if (is-completion __x14__) if (= __x14__["Type"] CONST_normal) __x14__ = __x14__["Value"] else return __x14__ else {}
+        app __x15__ = (WrapCompletion __x14__)
+        return __x15__
       } else {}
     } else {}
     let thisCall = this
-    app __x15__ = (IsInTailPosition thisCall)
-    let tailCall = __x15__
-    app __x16__ = (EvaluateCall func ref arguments tailCall)
-    if (is-completion __x16__) if (= __x16__["Type"] CONST_normal) __x16__ = __x16__["Value"] else return __x16__ else {}
-    app __x17__ = (WrapCompletion __x16__)
-    return __x17__
+    app __x16__ = (IsInTailPosition thisCall)
+    let tailCall = __x16__
+    app __x17__ = (EvaluateCall func ref arguments tailCall)
+    if (is-completion __x17__) if (= __x17__["Type"] CONST_normal) __x17__ = __x17__["Value"] else return __x17__ else {}
+    app __x18__ = (WrapCompletion __x17__)
+    return __x18__
   }""")
 }

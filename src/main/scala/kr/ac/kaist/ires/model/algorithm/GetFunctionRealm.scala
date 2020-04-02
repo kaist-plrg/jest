@@ -6,32 +6,29 @@ import kr.ac.kaist.ires.ir.Parser._
 object GetFunctionRealm {
   val length: Int = 1
   val func: Func = parseFunc(""""GetFunctionRealm" (obj) => {
-    app __x0__ = (IsCallable obj)
-    if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
-    assert (= __x0__ true)
     if (! (= obj["Realm"] absent)) {
-      app __x1__ = (WrapCompletion obj["Realm"])
-      return __x1__
+      app __x0__ = (WrapCompletion obj["Realm"])
+      return __x0__
     } else {}
     if (= (typeof obj) "BoundFunctionExoticObject") {
       let target = obj["BoundTargetFunction"]
-      app __x2__ = (GetFunctionRealm target)
-      if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
-      app __x3__ = (WrapCompletion __x2__)
-      return __x3__
+      app __x1__ = (GetFunctionRealm target)
+      if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
+      app __x2__ = (WrapCompletion __x1__)
+      return __x2__
     } else {}
     if (= (typeof obj) "ProxyExoticObject") {
       if (= obj["ProxyHandler"] null) {
-        app __x4__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
-        return __x4__
+        app __x3__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
+        return __x3__
       } else {}
       let proxyTarget = obj["ProxyTarget"]
-      app __x5__ = (GetFunctionRealm proxyTarget)
-      if (is-completion __x5__) if (= __x5__["Type"] CONST_normal) __x5__ = __x5__["Value"] else return __x5__ else {}
-      app __x6__ = (WrapCompletion __x5__)
-      return __x6__
+      app __x4__ = (GetFunctionRealm proxyTarget)
+      if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
+      app __x5__ = (WrapCompletion __x4__)
+      return __x5__
     } else {}
-    app __x7__ = (WrapCompletion REALM)
-    return __x7__
+    app __x6__ = (WrapCompletion REALM)
+    return __x6__
   }""")
 }

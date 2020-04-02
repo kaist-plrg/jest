@@ -18,7 +18,7 @@ object ProxyCreate {
       return __x3__
     } else {}
     !!! "Etc"
-    let P = (new ProxyExoticObject("SubMap" -> (new SubMap()), "ProxyTarget" -> undefined, "ProxyHandler" -> undefined))
+    let P = (new OrdinaryObject("SubMap" -> (new SubMap())))
     if (= P["HasProperty"] absent) P["HasProperty"] = OrdinaryObjectDOTHasProperty else {}
     if (= P["DefineOwnProperty"] absent) P["DefineOwnProperty"] = OrdinaryObjectDOTDefineOwnProperty else {}
     if (= P["Set"] absent) P["Set"] = OrdinaryObjectDOTSet else {}

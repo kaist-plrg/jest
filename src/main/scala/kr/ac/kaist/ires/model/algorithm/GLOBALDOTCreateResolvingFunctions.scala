@@ -11,13 +11,11 @@ object GLOBALDOTCreateResolvingFunctions {
     let alreadyResolved = (new Record("Value" -> false))
     let stepsResolve = (new algorithm("name" -> "", "length" -> 1i, "step" -> GLOBALDOTPromiseResolveFunctions))
     app __x1__ = (CreateBuiltinFunction stepsResolve (new ["Promise", "AlreadyResolved"]))
-    if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
     let resolve = __x1__
     resolve["Promise"] = promise
     resolve["AlreadyResolved"] = alreadyResolved
     let stepsReject = (new algorithm("name" -> "", "length" -> 1i, "step" -> GLOBALDOTPromiseRejectFunctions))
     app __x2__ = (CreateBuiltinFunction stepsReject (new ["Promise", "AlreadyResolved"]))
-    if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     let reject = __x2__
     reject["Promise"] = promise
     reject["AlreadyResolved"] = alreadyResolved

@@ -6,7 +6,14 @@ import kr.ac.kaist.ires.ir.Parser._
 object IntegerIndexedObjectCreate {
   val length: Int = 2
   val func: Func = parseFunc(""""IntegerIndexedObjectCreate" (prototype, internalSlotsList) => {
-    !!! "Etc"
+    let A = (new OrdinaryObject("SubMap" -> (new SubMap())))
+    let __x0__ = internalSlotsList
+    let __x1__ = 0i
+    while (< __x1__ __x0__["length"]) {
+      let __x2__ = __x0__[__x1__]
+      A[__x2__] = undefined
+      __x1__ = (+ __x1__ 1i)
+    }
     if (= A["HasProperty"] absent) A["HasProperty"] = OrdinaryObjectDOTHasProperty else {}
     if (= A["DefineOwnProperty"] absent) A["DefineOwnProperty"] = OrdinaryObjectDOTDefineOwnProperty else {}
     if (= A["Set"] absent) A["Set"] = OrdinaryObjectDOTSet else {}
@@ -26,7 +33,7 @@ object IntegerIndexedObjectCreate {
     A["OwnPropertyKeys"] = IntegerIndexedExoticObjectDOTOwnPropertyKeys
     A["Prototype"] = prototype
     A["Extensible"] = true
-    app __x0__ = (WrapCompletion A)
-    return __x0__
+    app __x3__ = (WrapCompletion A)
+    return __x3__
   }""")
 }

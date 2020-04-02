@@ -15,7 +15,6 @@ object GLOBALDOTObjectDOTfromEntries {
     let obj = __x2__
     let stepsDefine = !!! "Algorithms"
     app __x3__ = (CreateBuiltinFunction stepsDefine (new []))
-    if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
     let adder = __x3__
     app __x4__ = (AddEntriesFromIterable obj iterable adder)
     if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}

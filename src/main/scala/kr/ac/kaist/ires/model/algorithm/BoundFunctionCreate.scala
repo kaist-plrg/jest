@@ -11,7 +11,7 @@ object BoundFunctionCreate {
     app __x1__ = (targetFunction["GetPrototypeOf"] targetFunction)
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
     let proto = __x1__
-    let obj = (new BoundFunctionExoticObject("SubMap" -> (new SubMap())))
+    let obj = (new OrdinaryObject("SubMap" -> (new SubMap())))
     if (= obj["HasProperty"] absent) obj["HasProperty"] = OrdinaryObjectDOTHasProperty else {}
     if (= obj["DefineOwnProperty"] absent) obj["DefineOwnProperty"] = OrdinaryObjectDOTDefineOwnProperty else {}
     if (= obj["Set"] absent) obj["Set"] = OrdinaryObjectDOTSet else {}

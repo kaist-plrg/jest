@@ -17,7 +17,7 @@ object AsyncIteratorClose {
       app __x3__ = (WrapCompletion __x2__)
       return __x3__
     } else {}
-    app __x4__ = (Call return iterator)
+    app __x4__ = (Call return iterator (new []))
     let innerResult = __x4__
     if (= innerResult["Type"] CONST_normal) {
       app __x5__ = (Await innerResult["Value"])

@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GeneratorDeclaration1InstantiateFunctionObject0 {
   val length: Int = 0
   val func: Func = parseFunc(""""GeneratorDeclaration1InstantiateFunctionObject0" (this, FormalParameters, GeneratorBody, scope) => {
-    app __x0__ = (GeneratorFunctionCreate CONST_Normal FormalParameters GeneratorBody scope)
+    app __x0__ = (GeneratorFunctionCreate CONST_Normal FormalParameters GeneratorBody scope true)
     let F = __x0__
     app __x1__ = (ObjectCreate INTRINSIC_GeneratorPrototype)
     let prototype = __x1__

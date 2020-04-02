@@ -12,12 +12,10 @@ object Await {
     let promise = __x0__
     let stepsFulfilled = (new algorithm("name" -> "", "length" -> 1i, "step" -> GLOBALDOTAwaitFulfilledFunctions))
     app __x1__ = (CreateBuiltinFunction stepsFulfilled (new ["AsyncContext"]))
-    if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
     let onFulfilled = __x1__
     onFulfilled["AsyncContext"] = asyncContext
     let stepsRejected = (new algorithm("name" -> "", "length" -> 1i, "step" -> GLOBALDOTAwaitRejectedFunctions))
     app __x2__ = (CreateBuiltinFunction stepsRejected (new ["AsyncContext"]))
-    if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     let onRejected = __x2__
     onRejected["AsyncContext"] = asyncContext
     app __x3__ = (PerformPromiseThen promise onFulfilled onRejected)

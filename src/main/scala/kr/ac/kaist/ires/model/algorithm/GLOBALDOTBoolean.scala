@@ -9,7 +9,6 @@ object GLOBALDOTBoolean {
     app __x0__ = (GetArgument argumentsList 0i)
     let value = __x0__
     app __x1__ = (ToBoolean value)
-    if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
     let b = __x1__
     if (= NewTarget undefined) {
       app __x2__ = (WrapCompletion b)

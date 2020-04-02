@@ -6,7 +6,8 @@ import kr.ac.kaist.ires.ir.Parser._
 object AsyncGeneratorDeclaration1InstantiateFunctionObject0 {
   val length: Int = 0
   val func: Func = parseFunc(""""AsyncGeneratorDeclaration1InstantiateFunctionObject0" (this, FormalParameters, AsyncGeneratorBody, scope) => {
-    app __x0__ = (AsyncGeneratorFunctionCreate CONST_Normal FormalParameters AsyncGeneratorBody scope)
+    if true let strict = true else let strict = false
+    app __x0__ = (AsyncGeneratorFunctionCreate CONST_Normal FormalParameters AsyncGeneratorBody scope strict)
     let F = __x0__
     app __x1__ = (ObjectCreate INTRINSIC_AsyncGeneratorPrototype)
     let prototype = __x1__

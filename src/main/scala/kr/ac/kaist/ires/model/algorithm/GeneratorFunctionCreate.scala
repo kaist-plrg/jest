@@ -4,10 +4,10 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GeneratorFunctionCreate {
-  val length: Int = 4
-  val func: Func = parseFunc(""""GeneratorFunctionCreate" (kind, ParameterList, Body, Scope) => {
+  val length: Int = 5
+  val func: Func = parseFunc(""""GeneratorFunctionCreate" (kind, ParameterList, Body, Scope, Strict) => {
     let functionPrototype = INTRINSIC_Generator
-    app __x0__ = (FunctionAllocate functionPrototype "generator")
+    app __x0__ = (FunctionAllocate functionPrototype Strict "generator")
     let F = __x0__
     app __x1__ = (FunctionInitialize F kind ParameterList Body Scope)
     app __x2__ = (WrapCompletion __x1__)

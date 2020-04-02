@@ -7,7 +7,7 @@ object ModuleNamespaceCreate {
   val length: Int = 2
   val func: Func = parseFunc(""""ModuleNamespaceCreate" (module, exports) => {
     assert (= module["Namespace"] undefined)
-    !!! "Etc"
+    let M = (new OrdinaryObject("SubMap" -> (new SubMap())))
     if (= M["HasProperty"] absent) M["HasProperty"] = OrdinaryObjectDOTHasProperty else {}
     if (= M["DefineOwnProperty"] absent) M["DefineOwnProperty"] = OrdinaryObjectDOTDefineOwnProperty else {}
     if (= M["Set"] absent) M["Set"] = OrdinaryObjectDOTSet else {}

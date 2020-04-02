@@ -717,13 +717,12 @@ object Parser extends ESParsers {
     val List(pYield, pAwait) = getArgsN("CallExpression", args, 2)
     log(resolveLL((
       log(MATCH ~ CoverCallExpressionAndAsyncArrowHead(List(pYield, pAwait)) ^^ { case _ ~ x0 => CallExpression0(x0, args) })("CallExpression0") |
-      log(MATCH ~ SuperCall(List(pYield, pAwait)) ^^ { case _ ~ x0 => CallExpression1(x0, args) })("CallExpression1") |
-      log(MATCH ~ ImportCall(List(pYield, pAwait)) ^^ { case _ ~ x0 => CallExpression2(x0, args) })("CallExpression2")
+      log(MATCH ~ SuperCall(List(pYield, pAwait)) ^^ { case _ ~ x0 => CallExpression1(x0, args) })("CallExpression1")
     ), (
-      log(MATCH ~ Arguments(List(pYield, pAwait)) ^^ { case _ ~ x0 => ((x: CallExpression) => CallExpression3(x, x0, args)) })("CallExpression3") |
-      log(((MATCH <~ t("[")) ~ Expression(List(true, pYield, pAwait)) <~ t("]")) ^^ { case _ ~ x0 => ((x: CallExpression) => CallExpression4(x, x0, args)) })("CallExpression4") |
-      log((MATCH <~ t(".")) ~ nt("IdentifierName", IdentifierName) ^^ { case _ ~ x0 => ((x: CallExpression) => CallExpression5(x, x0, args)) })("CallExpression5") |
-      log(MATCH ~ TemplateLiteral(List(pYield, pAwait, true)) ^^ { case _ ~ x0 => ((x: CallExpression) => CallExpression6(x, x0, args)) })("CallExpression6")
+      log(MATCH ~ Arguments(List(pYield, pAwait)) ^^ { case _ ~ x0 => ((x: CallExpression) => CallExpression2(x, x0, args)) })("CallExpression2") |
+      log(((MATCH <~ t("[")) ~ Expression(List(true, pYield, pAwait)) <~ t("]")) ^^ { case _ ~ x0 => ((x: CallExpression) => CallExpression3(x, x0, args)) })("CallExpression3") |
+      log((MATCH <~ t(".")) ~ nt("IdentifierName", IdentifierName) ^^ { case _ ~ x0 => ((x: CallExpression) => CallExpression4(x, x0, args)) })("CallExpression4") |
+      log(MATCH ~ TemplateLiteral(List(pYield, pAwait, true)) ^^ { case _ ~ x0 => ((x: CallExpression) => CallExpression5(x, x0, args)) })("CallExpression5")
     )))("CallExpression")
   })
   lazy val CoverCallExpressionAndAsyncArrowHead: ESParser[CoverCallExpressionAndAsyncArrowHead] = memo(args => {
@@ -743,12 +742,6 @@ object Parser extends ESParsers {
     log((
       log((MATCH <~ t("super")) ~ Arguments(List(pYield, pAwait)) ^^ { case _ ~ x0 => SuperCall0(x0, args) })("SuperCall0")
     ))("SuperCall")
-  })
-  lazy val ImportCall: ESParser[ImportCall] = memo(args => {
-    val List(pYield, pAwait) = getArgsN("ImportCall", args, 2)
-    log((
-      log((((MATCH <~ t("import")) <~ t("(")) ~ AssignmentExpression(List(true, pYield, pAwait)) <~ t(")")) ^^ { case _ ~ x0 => ImportCall0(x0, args) })("ImportCall0")
-    ))("ImportCall")
   })
   lazy val Arguments: ESParser[Arguments] = memo(args => {
     val List(pYield, pAwait) = getArgsN("Arguments", args, 2)
@@ -1892,7 +1885,6 @@ object Parser extends ESParsers {
     "CoverCallExpressionAndAsyncArrowHead" -> CoverCallExpressionAndAsyncArrowHead,
     "CallMemberExpression" -> CallMemberExpression,
     "SuperCall" -> SuperCall,
-    "ImportCall" -> ImportCall,
     "Arguments" -> Arguments,
     "ArgumentList" -> ArgumentList,
     "LeftHandSideExpression" -> LeftHandSideExpression,

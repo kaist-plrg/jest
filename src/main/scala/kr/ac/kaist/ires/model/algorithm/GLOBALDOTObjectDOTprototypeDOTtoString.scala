@@ -20,7 +20,7 @@ object GLOBALDOTObjectDOTprototypeDOTtoString {
     app __x3__ = (IsArray O)
     if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
     let isArray = __x3__
-    if (= isArray true) let builtinTag = "Array" else if (! (= O["ParameterMap"] absent)) let builtinTag = "Arguments" else if (! (= O["Call"] absent)) let builtinTag = "Function" else if (! (= O["ErrorData"] absent)) let builtinTag = "Error" else if (! (= O["BooleanData"] absent)) let builtinTag = "Boolean" else if (! (= O["NumberData"] absent)) let builtinTag = "Number" else if (! (= O["StringData"] absent)) let builtinTag = "String" else if (! (= O["DateValue"] absent)) let builtinTag = "Date" else if (! (= O["RegExpMatcher"] absent)) let builtinTag = "RegExp" else let builtinTag = "Object"
+    if (= isArray true) let builtinTag = "Array" else if (= (typeof O) "StringExoticObject") let builtinTag = "String" else if (! (= O["ParameterMap"] absent)) let builtinTag = "Arguments" else if (! (= O["Call"] absent)) let builtinTag = "Function" else if (! (= O["ErrorData"] absent)) let builtinTag = "Error" else if (! (= O["BooleanData"] absent)) let builtinTag = "Boolean" else if (! (= O["NumberData"] absent)) let builtinTag = "Number" else if (! (= O["DateValue"] absent)) let builtinTag = "Date" else if (! (= O["RegExpMatcher"] absent)) let builtinTag = "RegExp" else let builtinTag = "Object"
     app __x4__ = (Get O SYMBOL_toStringTag)
     if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
     let tag = __x4__

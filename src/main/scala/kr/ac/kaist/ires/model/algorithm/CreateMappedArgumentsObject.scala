@@ -8,6 +8,11 @@ object CreateMappedArgumentsObject {
   val func: Func = parseFunc(""""CreateMappedArgumentsObject" (func, formals, argumentsList, env) => {
     let len = argumentsList["length"]
     let obj = (new ArgumentsExoticObject("SubMap" -> (new SubMap()), "ParameterMap" -> undefined))
+    obj["GetOwnProperty"] = ArgumentsExoticObjectDOTGetOwnProperty
+    obj["DefineOwnProperty"] = ArgumentsExoticObjectDOTDefineOwnProperty
+    obj["Get"] = ArgumentsExoticObjectDOTGet
+    obj["Set"] = ArgumentsExoticObjectDOTSet
+    obj["Delete"] = ArgumentsExoticObjectDOTDelete
     if (= obj["HasProperty"] absent) obj["HasProperty"] = OrdinaryObjectDOTHasProperty else {}
     if (= obj["DefineOwnProperty"] absent) obj["DefineOwnProperty"] = OrdinaryObjectDOTDefineOwnProperty else {}
     if (= obj["Set"] absent) obj["Set"] = OrdinaryObjectDOTSet else {}
@@ -19,11 +24,6 @@ object CreateMappedArgumentsObject {
     if (= obj["OwnPropertyKeys"] absent) obj["OwnPropertyKeys"] = OrdinaryObjectDOTOwnPropertyKeys else {}
     if (= obj["GetPrototypeOf"] absent) obj["GetPrototypeOf"] = OrdinaryObjectDOTGetPrototypeOf else {}
     if (= obj["IsExtensible"] absent) obj["IsExtensible"] = OrdinaryObjectDOTIsExtensible else {}
-    obj["GetOwnProperty"] = ArgumentsExoticObjectDOTGetOwnProperty
-    obj["DefineOwnProperty"] = ArgumentsExoticObjectDOTDefineOwnProperty
-    obj["Get"] = ArgumentsExoticObjectDOTGet
-    obj["Set"] = ArgumentsExoticObjectDOTSet
-    obj["Delete"] = ArgumentsExoticObjectDOTDelete
     obj["Prototype"] = INTRINSIC_ObjectPrototype
     obj["Extensible"] = true
     app __x0__ = (ObjectCreate null)

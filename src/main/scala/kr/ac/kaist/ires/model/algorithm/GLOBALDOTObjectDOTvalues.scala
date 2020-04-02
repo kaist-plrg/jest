@@ -11,7 +11,7 @@ object GLOBALDOTObjectDOTvalues {
     app __x1__ = (ToObject O)
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
     let obj = __x1__
-    app __x2__ = (EnumerableOwnPropertyNames obj "value")
+    app __x2__ = (EnumerableOwnPropertyNames obj !!! "\"value\"")
     if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     let nameList = __x2__
     app __x3__ = (CreateArrayFromList nameList)

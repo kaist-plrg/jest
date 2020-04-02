@@ -30,13 +30,15 @@ object GLOBALDOTINTRINSIC_StringIteratorPrototypeDOTnext {
       app __x6__ = (WrapCompletion __x5__)
       return __x6__
     } else {}
-    app __x7__ = (CodePointAt s position)
-    if (is-completion __x7__) if (= __x7__["Type"] CONST_normal) __x7__ = __x7__["Value"] else return __x7__ else {}
-    let cp = __x7__
-    let resultString = !!! "StringOp"
-    O["StringIteratorNextIndex"] = (+ position cp["CodeUnitCount"])
-    app __x8__ = (CreateIterResultObject resultString false)
-    app __x9__ = (WrapCompletion __x8__)
-    return __x9__
+    let first = s[position]
+    if (|| (< first 55296i) (|| (< 56319i first) (= (+ position 1i) len))) let resultString = first else {
+      let second = s[(+ position 1i)]
+      if (|| (< second 56320i) (< 57343i second)) let resultString = first else let resultString = (+ first second)
+    }
+    let resultSize = resultString["length"]
+    O["StringIteratorNextIndex"] = (+ position resultSize)
+    app __x7__ = (CreateIterResultObject resultString false)
+    app __x8__ = (WrapCompletion __x7__)
+    return __x8__
   }""")
 }

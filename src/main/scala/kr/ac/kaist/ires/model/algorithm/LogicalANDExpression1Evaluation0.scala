@@ -12,7 +12,6 @@ object LogicalANDExpression1Evaluation0 {
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
     let lval = __x1__
     app __x2__ = (ToBoolean lval)
-    if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     let lbool = __x2__
     if (= lbool false) {
       app __x3__ = (WrapCompletion lval)

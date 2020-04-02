@@ -6,6 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GeneratorExpression0Evaluation1 {
   val length: Int = 0
   val func: Func = parseFunc(""""GeneratorExpression0Evaluation1" (this, BindingIdentifier, FormalParameters, GeneratorBody) => {
+    if true let strict = true else let strict = false
     let scope = GLOBAL_context["LexicalEnvironment"]
     app __x0__ = (NewDeclarativeEnvironment scope)
     let funcEnv = __x0__
@@ -14,7 +15,7 @@ object GeneratorExpression0Evaluation1 {
     let name = __x1__
     app __x2__ = (envRec["CreateImmutableBinding"] envRec name false)
     __x2__
-    app __x3__ = (GeneratorFunctionCreate CONST_Normal FormalParameters GeneratorBody funcEnv)
+    app __x3__ = (GeneratorFunctionCreate CONST_Normal FormalParameters GeneratorBody funcEnv strict)
     let closure = __x3__
     app __x4__ = (ObjectCreate INTRINSIC_GeneratorPrototype)
     let prototype = __x4__

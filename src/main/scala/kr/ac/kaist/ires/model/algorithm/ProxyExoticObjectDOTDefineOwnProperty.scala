@@ -30,7 +30,6 @@ object ProxyExoticObjectDOTDefineOwnProperty {
     app __x7__ = (Call trap handler (new [target, P, descObj]))
     if (is-completion __x7__) if (= __x7__["Type"] CONST_normal) __x7__ = __x7__["Value"] else return __x7__ else {}
     app __x8__ = (ToBoolean __x7__)
-    if (is-completion __x8__) if (= __x8__["Type"] CONST_normal) __x8__ = __x8__["Value"] else return __x8__ else {}
     let booleanTrapResult = __x8__
     if (= booleanTrapResult false) {
       app __x9__ = (WrapCompletion false)

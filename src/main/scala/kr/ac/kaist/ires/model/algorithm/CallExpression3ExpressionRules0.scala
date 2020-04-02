@@ -5,12 +5,8 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object CallExpression3ExpressionRules0 {
   val length: Int = 0
-  val func: Func = parseFunc(""""CallExpression3ExpressionRules0" (this, CallExpression, Arguments) => {
-    if (= this call) {
-      app __x0__ = (WrapCompletion true)
-      return __x0__
-    } else {}
-    app __x1__ = (WrapCompletion false)
-    return __x1__
+  val func: Func = parseFunc(""""CallExpression3ExpressionRules0" (this, CallExpression, Expression) => {
+    app __x0__ = (WrapCompletion false)
+    return __x0__
   }""")
 }

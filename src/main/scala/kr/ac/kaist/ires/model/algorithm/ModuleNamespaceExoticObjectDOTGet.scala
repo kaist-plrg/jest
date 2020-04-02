@@ -21,7 +21,7 @@ object ModuleNamespaceExoticObjectDOTGet {
       return __x4__
     } else {}
     let m = O["Module"]
-    app __x5__ = (m["ResolveExport"] m P)
+    app __x5__ = (m["ResolveExport"] m P (new []))
     if (is-completion __x5__) if (= __x5__["Type"] CONST_normal) __x5__ = __x5__["Value"] else return __x5__ else {}
     let binding = __x5__
     assert (= (typeof binding) "ResolvedBindingRecord")

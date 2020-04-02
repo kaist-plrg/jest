@@ -16,7 +16,6 @@ object GLOBALDOTNewPromiseCapability {
     let promiseCapability = (new PromiseCapability("Promise" -> undefined, "Resolve" -> undefined, "Reject" -> undefined))
     let steps = (new algorithm("name" -> "", "length" -> 2i, "step" -> GLOBALDOTGetCapabilitiesExecutorFunctions))
     app __x3__ = (CreateBuiltinFunction steps (new ["Capability"]))
-    if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
     let executor = __x3__
     executor["Capability"] = promiseCapability
     app __x4__ = (Construct C (new [executor]))

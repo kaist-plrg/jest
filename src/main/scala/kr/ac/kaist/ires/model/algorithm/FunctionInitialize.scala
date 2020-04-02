@@ -11,8 +11,7 @@ object FunctionInitialize {
     app __x1__ = (SetFunctionLength F len)
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
     __x1__
-    if true let Strict = true else let Strict = false
-    F["Strict"] = Strict
+    let Strict = F["Strict"]
     F["Environment"] = Scope
     F["FormalParameters"] = ParameterList
     F["ECMAScriptCode"] = Body

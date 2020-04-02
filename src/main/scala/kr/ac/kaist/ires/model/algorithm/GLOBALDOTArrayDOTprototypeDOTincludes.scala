@@ -13,34 +13,36 @@ object GLOBALDOTArrayDOTprototypeDOTincludes {
     app __x2__ = (ToObject this)
     if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     let O = __x2__
-    app __x3__ = (LengthOfArrayLike O)
+    app __x3__ = (Get O "length")
     if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
-    let len = __x3__
+    app __x4__ = (ToLength __x3__)
+    if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
+    let len = __x4__
     if (= len 0i) {
-      app __x4__ = (WrapCompletion false)
-      return __x4__
+      app __x5__ = (WrapCompletion false)
+      return __x5__
     } else {}
-    app __x5__ = (ToInteger fromIndex)
-    if (is-completion __x5__) if (= __x5__["Type"] CONST_normal) __x5__ = __x5__["Value"] else return __x5__ else {}
-    let n = __x5__
+    app __x6__ = (ToInteger fromIndex)
+    if (is-completion __x6__) if (= __x6__["Type"] CONST_normal) __x6__ = __x6__["Value"] else return __x6__ else {}
+    let n = __x6__
     if (! (< n 0i)) let k = n else {
       let k = (+ len n)
       if (< k 0i) k = 0i else {}
     }
     while (< k len) {
-      app __x6__ = (ToString k)
-      if (is-completion __x6__) if (= __x6__["Type"] CONST_normal) __x6__ = __x6__["Value"] else return __x6__ else {}
-      app __x7__ = (Get O __x6__)
+      app __x7__ = (ToString k)
       if (is-completion __x7__) if (= __x7__["Type"] CONST_normal) __x7__ = __x7__["Value"] else return __x7__ else {}
-      let elementK = __x7__
-      app __x8__ = (SameValueZero searchElement elementK)
-      if (= __x8__ true) {
-        app __x9__ = (WrapCompletion true)
-        return __x9__
+      app __x8__ = (Get O __x7__)
+      if (is-completion __x8__) if (= __x8__["Type"] CONST_normal) __x8__ = __x8__["Value"] else return __x8__ else {}
+      let elementK = __x8__
+      app __x9__ = (SameValueZero searchElement elementK)
+      if (= __x9__ true) {
+        app __x10__ = (WrapCompletion true)
+        return __x10__
       } else {}
       k = (+ k 1i)
     }
-    app __x10__ = (WrapCompletion false)
-    return __x10__
+    app __x11__ = (WrapCompletion false)
+    return __x11__
   }""")
 }

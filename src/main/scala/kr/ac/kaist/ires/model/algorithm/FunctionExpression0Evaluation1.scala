@@ -6,6 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object FunctionExpression0Evaluation1 {
   val length: Int = 0
   val func: Func = parseFunc(""""FunctionExpression0Evaluation1" (this, BindingIdentifier, FormalParameters, FunctionBody) => {
+    if true let strict = true else let strict = false
     let scope = GLOBAL_context["LexicalEnvironment"]
     app __x0__ = (NewDeclarativeEnvironment scope)
     let funcEnv = __x0__
@@ -14,7 +15,7 @@ object FunctionExpression0Evaluation1 {
     let name = __x1__
     app __x2__ = (envRec["CreateImmutableBinding"] envRec name false)
     __x2__
-    app __x3__ = (FunctionCreate CONST_Normal FormalParameters FunctionBody funcEnv)
+    app __x3__ = (FunctionCreate CONST_Normal FormalParameters FunctionBody funcEnv strict)
     let closure = __x3__
     app __x4__ = (MakeConstructor closure)
     __x4__

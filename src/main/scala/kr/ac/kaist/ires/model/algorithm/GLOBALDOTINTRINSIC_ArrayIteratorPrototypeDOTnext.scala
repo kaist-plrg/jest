@@ -32,36 +32,37 @@ object GLOBALDOTINTRINSIC_ArrayIteratorPrototypeDOTnext {
       } else {}
       let len = a["ArrayLength"]
     } else {
-      app __x7__ = (LengthOfArrayLike a)
+      app __x7__ = (Get a "length")
       if (is-completion __x7__) if (= __x7__["Type"] CONST_normal) __x7__ = __x7__["Value"] else return __x7__ else {}
-      let len = __x7__
+      app __x8__ = (ToLength __x7__)
+      if (is-completion __x8__) if (= __x8__["Type"] CONST_normal) __x8__ = __x8__["Value"] else return __x8__ else {}
+      let len = __x8__
     }
     if (! (< index len)) {
       O["IteratedObject"] = undefined
-      app __x8__ = (CreateIterResultObject undefined true)
-      app __x9__ = (WrapCompletion __x8__)
-      return __x9__
+      app __x9__ = (CreateIterResultObject undefined true)
+      app __x10__ = (WrapCompletion __x9__)
+      return __x10__
     } else {}
     O["ArrayIteratorNextIndex"] = (+ index 1i)
     if (= itemKind "key") {
-      app __x10__ = (CreateIterResultObject index false)
-      app __x11__ = (WrapCompletion __x10__)
-      return __x11__
+      app __x11__ = (CreateIterResultObject index false)
+      app __x12__ = (WrapCompletion __x11__)
+      return __x12__
     } else {}
-    app __x12__ = (ToString index)
-    if (is-completion __x12__) if (= __x12__["Type"] CONST_normal) __x12__ = __x12__["Value"] else return __x12__ else {}
-    let elementKey = __x12__
-    app __x13__ = (Get a elementKey)
+    app __x13__ = (ToString index)
     if (is-completion __x13__) if (= __x13__["Type"] CONST_normal) __x13__ = __x13__["Value"] else return __x13__ else {}
-    let elementValue = __x13__
+    let elementKey = __x13__
+    app __x14__ = (Get a elementKey)
+    if (is-completion __x14__) if (= __x14__["Type"] CONST_normal) __x14__ = __x14__["Value"] else return __x14__ else {}
+    let elementValue = __x14__
     if (= itemKind "value") let result = elementValue else {
       assert (= itemKind "key+value")
-      app __x14__ = (CreateArrayFromList (new [index, elementValue]))
-      if (is-completion __x14__) if (= __x14__["Type"] CONST_normal) __x14__ = __x14__["Value"] else return __x14__ else {}
-      let result = __x14__
+      app __x15__ = (CreateArrayFromList (new [index, elementValue]))
+      let result = __x15__
     }
-    app __x15__ = (CreateIterResultObject result false)
-    app __x16__ = (WrapCompletion __x15__)
-    return __x16__
+    app __x16__ = (CreateIterResultObject result false)
+    app __x17__ = (WrapCompletion __x16__)
+    return __x17__
   }""")
 }

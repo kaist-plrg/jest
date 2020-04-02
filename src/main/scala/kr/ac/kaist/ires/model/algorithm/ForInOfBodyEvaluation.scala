@@ -16,7 +16,7 @@ object ForInOfBodyEvaluation {
       let assignmentPattern = (parse-syntax lhs "AssignmentPattern" )
     } else {}
     while true {
-      app __x1__ = (Call iteratorRecord["NextMethod"] iteratorRecord["Iterator"])
+      app __x1__ = (Call iteratorRecord["NextMethod"] iteratorRecord["Iterator"] (new []))
       if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
       let nextResult = __x1__
       if (= iteratorKind CONST_async) {

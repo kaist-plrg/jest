@@ -21,14 +21,13 @@ object EnumerableOwnPropertyNames {
         app __x5__ = (O["GetOwnProperty"] O key)
         if (is-completion __x5__) if (= __x5__["Type"] CONST_normal) __x5__ = __x5__["Value"] else return __x5__ else {}
         let desc = __x5__
-        if (&& (! (= desc undefined)) (= desc["Enumerable"] true)) if (= kind "key") append key -> properties else {
+        if (&& (! (= desc undefined)) (= desc["Enumerable"] true)) if (= kind !!! "\"key\"") append key -> properties else {
           app __x6__ = (Get O key)
           if (is-completion __x6__) if (= __x6__["Type"] CONST_normal) __x6__ = __x6__["Value"] else return __x6__ else {}
           let value = __x6__
-          if (= kind "value") append value -> properties else {
-            assert (= kind "key+value")
+          if (= kind !!! "\"value\"") append value -> properties else {
+            assert (= kind !!! "\"key+value\"")
             app __x7__ = (CreateArrayFromList (new [key, value]))
-            if (is-completion __x7__) if (= __x7__["Type"] CONST_normal) __x7__ = __x7__["Value"] else return __x7__ else {}
             let entry = __x7__
             append entry -> properties
           }

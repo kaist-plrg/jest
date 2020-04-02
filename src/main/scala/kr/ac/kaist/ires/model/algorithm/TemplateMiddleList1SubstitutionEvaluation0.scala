@@ -7,8 +7,9 @@ object TemplateMiddleList1SubstitutionEvaluation0 {
   val length: Int = 0
   val func: Func = parseFunc(""""TemplateMiddleList1SubstitutionEvaluation0" (this, TemplateMiddleList, TemplateMiddle, Expression) => {
     access __x0__ = (TemplateMiddleList "SubstitutionEvaluation")
-    if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
     let preceding = __x0__
+    if (is-completion preceding) if (= preceding["Type"] CONST_normal) preceding = preceding["Value"] else return preceding else {}
+    preceding
     access __x1__ = (Expression "Evaluation")
     let nextRef = __x1__
     app __x2__ = (GetValue nextRef)

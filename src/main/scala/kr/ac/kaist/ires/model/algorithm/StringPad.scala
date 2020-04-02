@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object StringPad {
   val length: Int = 4
   val func: Func = parseFunc(""""StringPad" (O, maxLength, fillString, placement) => {
-    assert (|| (= placement "start") (= placement "end"))
+    assert (|| (= placement CONST_start) (= placement CONST_end))
     app __x0__ = (ToString O)
     if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
     let S = __x0__
@@ -26,7 +26,7 @@ object StringPad {
     } else {}
     let fillLen = (- intMaxLength stringLength)
     let truncatedStringFiller = !!! "StringOp"
-    if (= placement "start") {
+    if (= placement CONST_start) {
       app __x4__ = (WrapCompletion (+ truncatedStringFiller S))
       return __x4__
     } else {

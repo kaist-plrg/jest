@@ -10,6 +10,7 @@ object MethodDefinition0DefineMethod0 {
     let propKey = __x0__
     if (is-completion propKey) if (= propKey["Type"] CONST_normal) propKey = propKey["Value"] else return propKey else {}
     propKey
+    if true let strict = true else let strict = false
     let scope = GLOBAL_context["LexicalEnvironment"]
     if (! (= functionPrototype absent)) {
       let kind = CONST_Normal
@@ -18,7 +19,7 @@ object MethodDefinition0DefineMethod0 {
       let kind = CONST_Method
       let prototype = INTRINSIC_FunctionPrototype
     }
-    app __x1__ = (FunctionCreate kind UniqueFormalParameters FunctionBody scope prototype)
+    app __x1__ = (FunctionCreate kind UniqueFormalParameters FunctionBody scope strict prototype)
     let closure = __x1__
     app __x2__ = (MakeMethod closure object)
     __x2__

@@ -8,7 +8,7 @@ object StringCreate {
   val func: Func = parseFunc(""""StringCreate" (value, prototype) => {
     app __x0__ = (Type value)
     assert (= __x0__ String)
-    let S = (new StringExoticObject("SubMap" -> (new SubMap()), "StringData" -> undefined))
+    let S = (new StringExoticObject("SubMap" -> (new SubMap())))
     S["StringData"] = value
     if (= S["HasProperty"] absent) S["HasProperty"] = OrdinaryObjectDOTHasProperty else {}
     if (= S["DefineOwnProperty"] absent) S["DefineOwnProperty"] = OrdinaryObjectDOTDefineOwnProperty else {}

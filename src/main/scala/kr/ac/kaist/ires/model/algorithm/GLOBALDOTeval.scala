@@ -10,9 +10,13 @@ object GLOBALDOTeval {
     let x = __x0__
     let callerContext = GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 2i)]
     let callerRealm = callerContext["Realm"]
-    app __x1__ = (PerformEval x callerRealm false false)
+    let calleeRealm = REALM
+    app __x1__ = (HostEnsureCanCompileStrings callerRealm calleeRealm)
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
-    app __x2__ = (WrapCompletion __x1__)
-    return __x2__
+    __x1__
+    app __x2__ = (PerformEval x calleeRealm false false)
+    if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
+    app __x3__ = (WrapCompletion __x2__)
+    return __x3__
   }""")
 }

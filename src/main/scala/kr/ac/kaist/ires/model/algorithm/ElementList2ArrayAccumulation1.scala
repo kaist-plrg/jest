@@ -8,8 +8,9 @@ object ElementList2ArrayAccumulation1 {
   val func: Func = parseFunc(""""ElementList2ArrayAccumulation1" (this, ElementList, Elision, AssignmentExpression, array, nextIndex) => {
     access __x0__ = (ElementList "ArrayAccumulation")
     app __x1__ = (__x0__ array nextIndex)
-    if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
     let postIndex = __x1__
+    if (is-completion postIndex) if (= postIndex["Type"] CONST_normal) postIndex = postIndex["Value"] else return postIndex else {}
+    postIndex
     if (= Elision absent) let padding = 0i else {
       access __x2__ = (Elision "ElisionWidth")
       let padding = __x2__

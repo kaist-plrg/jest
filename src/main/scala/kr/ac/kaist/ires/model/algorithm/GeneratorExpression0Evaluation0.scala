@@ -6,9 +6,10 @@ import kr.ac.kaist.ires.ir.Parser._
 object GeneratorExpression0Evaluation0 {
   val length: Int = 0
   val func: Func = parseFunc(""""GeneratorExpression0Evaluation0" (this, FormalParameters, GeneratorBody) => {
+    if true let strict = true else let strict = false
     access __x0__ = (GLOBAL_context "LexicalEnvironment")
     let scope = __x0__
-    app __x1__ = (GeneratorFunctionCreate CONST_Normal FormalParameters GeneratorBody scope)
+    app __x1__ = (GeneratorFunctionCreate CONST_Normal FormalParameters GeneratorBody scope strict)
     let closure = __x1__
     app __x2__ = (ObjectCreate INTRINSIC_GeneratorPrototype)
     let prototype = __x2__

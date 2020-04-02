@@ -10,8 +10,9 @@ object ClassDeclaration0BindingClassDeclarationEvaluation0 {
     let className = __x0__
     access __x1__ = (ClassTail "ClassDefinitionEvaluation")
     app __x2__ = (__x1__ className className)
-    if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     let value = __x2__
+    if (is-completion value) if (= value["Type"] CONST_normal) value = value["Value"] else return value else {}
+    value
     value["SourceText"] = (get-syntax this)
     let env = GLOBAL_context["LexicalEnvironment"]
     app __x3__ = (InitializeBoundName className value env)

@@ -10,8 +10,9 @@ object AsyncGeneratorMethod0PropertyDefinitionEvaluation0 {
     let propKey = __x0__
     if (is-completion propKey) if (= propKey["Type"] CONST_normal) propKey = propKey["Value"] else return propKey else {}
     propKey
+    if true let strict = true else let strict = false
     let scope = GLOBAL_context["LexicalEnvironment"]
-    app __x1__ = (AsyncGeneratorFunctionCreate CONST_Method UniqueFormalParameters AsyncGeneratorBody scope)
+    app __x1__ = (AsyncGeneratorFunctionCreate CONST_Method UniqueFormalParameters AsyncGeneratorBody scope strict)
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
     let closure = __x1__
     app __x2__ = (MakeMethod closure object)

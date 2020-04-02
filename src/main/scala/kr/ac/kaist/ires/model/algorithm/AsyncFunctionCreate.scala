@@ -4,10 +4,10 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object AsyncFunctionCreate {
-  val length: Int = 4
-  val func: Func = parseFunc(""""AsyncFunctionCreate" (kind, parameters, body, Scope) => {
+  val length: Int = 5
+  val func: Func = parseFunc(""""AsyncFunctionCreate" (kind, parameters, body, Scope, Strict) => {
     let functionPrototype = INTRINSIC_AsyncFunctionPrototype
-    app __x0__ = (FunctionAllocate functionPrototype "async")
+    app __x0__ = (FunctionAllocate functionPrototype Strict "async")
     if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
     let F = __x0__
     app __x1__ = (FunctionInitialize F kind parameters body Scope)

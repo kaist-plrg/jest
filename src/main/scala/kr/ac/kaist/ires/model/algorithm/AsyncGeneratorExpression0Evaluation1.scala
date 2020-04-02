@@ -6,6 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object AsyncGeneratorExpression0Evaluation1 {
   val length: Int = 0
   val func: Func = parseFunc(""""AsyncGeneratorExpression0Evaluation1" (this, BindingIdentifier, FormalParameters, AsyncGeneratorBody) => {
+    if true let strict = true else let strict = false
     let scope = GLOBAL_context["LexicalEnvironment"]
     app __x0__ = (NewDeclarativeEnvironment scope)
     if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
@@ -16,7 +17,7 @@ object AsyncGeneratorExpression0Evaluation1 {
     app __x2__ = (envRec["CreateImmutableBinding"] envRec name)
     if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     __x2__
-    app __x3__ = (AsyncGeneratorFunctionCreate CONST_Normal FormalParameters AsyncGeneratorBody funcEnv)
+    app __x3__ = (AsyncGeneratorFunctionCreate CONST_Normal FormalParameters AsyncGeneratorBody funcEnv strict)
     if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
     let closure = __x3__
     app __x4__ = (ObjectCreate INTRINSIC_AsyncGeneratorPrototype)

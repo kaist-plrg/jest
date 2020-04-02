@@ -4,10 +4,10 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object AsyncGeneratorFunctionCreate {
-  val length: Int = 4
-  val func: Func = parseFunc(""""AsyncGeneratorFunctionCreate" (kind, ParameterList, Body, Scope) => {
+  val length: Int = 5
+  val func: Func = parseFunc(""""AsyncGeneratorFunctionCreate" (kind, ParameterList, Body, Scope, Strict) => {
     let functionPrototype = INTRINSIC_AsyncGenerator
-    app __x0__ = (FunctionAllocate functionPrototype "generator")
+    app __x0__ = (FunctionAllocate functionPrototype Strict "generator")
     if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
     let F = __x0__
     app __x1__ = (FunctionInitialize F kind ParameterList Body Scope)

@@ -6,6 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object AsyncFunctionExpression1Evaluation0 {
   val length: Int = 0
   val func: Func = parseFunc(""""AsyncFunctionExpression1Evaluation0" (this, BindingIdentifier, FormalParameters, AsyncFunctionBody) => {
+    if true let strict = true else let strict = false
     access __x0__ = (GLOBAL_context "LexicalEnvironment")
     let scope = __x0__
     app __x1__ = (NewDeclarativeEnvironment scope)
@@ -17,7 +18,7 @@ object AsyncFunctionExpression1Evaluation0 {
     app __x3__ = (envRec["CreateImmutableBinding"] envRec name)
     if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
     __x3__
-    app __x4__ = (AsyncFunctionCreate CONST_Normal FormalParameters AsyncFunctionBody funcEnv)
+    app __x4__ = (AsyncFunctionCreate CONST_Normal FormalParameters AsyncFunctionBody funcEnv strict)
     if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
     let closure = __x4__
     app __x5__ = (SetFunctionName closure name)
