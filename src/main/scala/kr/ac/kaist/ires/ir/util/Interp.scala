@@ -58,14 +58,14 @@ class Interp {
         val (exprV, s0) = interp(expr, true)(st)
         val (listV, s1) = interp(list, true)(s0)
         listV match {
-          case addr: Addr => s0.append(addr, exprV)
+          case addr: Addr => s1.append(addr, exprV)
           case v => error(s"not an address: $v")
         }
       case IPrepend(expr, list) =>
         val (exprV, s0) = interp(expr, true)(st)
         val (listV, s1) = interp(list, true)(s0)
         listV match {
-          case addr: Addr => s0.prepend(addr, exprV)
+          case addr: Addr => s1.prepend(addr, exprV)
           case v => error(s"not an address: $v")
         }
       case IReturn(expr) =>
@@ -215,6 +215,7 @@ class Interp {
           case (Str(str), p) => p match {
             case Str("length") => s2.define(id, INum(str.length))
             case INum(k) => s2.define(id, Str(str(k.toInt).toString))
+            case Num(k) => s2.define(id, Str(str(k.toInt).toString))
             case v => error(s"wrong access of string reference: $str.$p")
           }
           case v => error(s"not an address: $v")
