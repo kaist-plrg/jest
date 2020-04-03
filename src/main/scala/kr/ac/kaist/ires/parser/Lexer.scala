@@ -3,87 +3,69 @@ package kr.ac.kaist.ires.parser
 import kr.ac.kaist.ires.util.Useful.cached
 import scala.util.matching.Regex
 import scala.util.parsing.combinator.RegexParsers
-import scala.util.parsing.input.{ Reader, Position }
+import scala.util.parsing.input._
 
-trait Lexer extends RegexParsers with UnicodeRegex {
+trait Lexer extends RegexParsers with EPackratParsers with UnicodeRegex {
   // not skip white spaces
   override def skipWhitespace = false
 
   // lexer type
-  type Lexer = Parser[String]
-  type FLexer = Parser[String => String]
-  implicit def str2lexer(str: String): Lexer = literal(str)
-  implicit def regex2lexer(r: Regex): Lexer = regex(r)
+  type Lexer = EPackratParser[String]
+
+  // implicit conversion to Lexer
+  implicit def str2lexer[T](str: String): Lexer = parser2packrat(literal(str))
+  implicit def regex2lexer[T](r: Regex): Lexer = parser2packrat(regex(r))
+
+  // implicit lexer helper
+  implicit class LexerHelper[T](val parser: T)(implicit f: T => Parser[String]) {
+    // lookahead symbols
+    def unary_-(): Parser[String] = "" <~ not(parser)
+    def unary_+(): Parser[String] = "" <~ guard(parser)
+
+    // sequence
+    def %(that: => Parser[String]): Parser[String] =
+      this.parser ~ that.parser ^^ { case x ~ y => x + y }
+
+    // sequence with Skip
+    def %%(that: => Parser[String]): Parser[String] = %(
+      if (that.parser eq strNoLineTerminator) that.parser
+      else Skip ~> that.parser
+    )
+
+    // exclusion (butnot) symbol
+    def \(cond: => Parser[String]): Parser[String] =
+      this.parser.filter(s => parseAll(cond.parser, s).isEmpty)
+
+    // optional symbol
+    def opt(): Parser[String] = parser | empty
+  }
 
   // basic lexers
   lazy val WhiteSpace: Lexer = TAB | VT | FF | SP | NBSP | ZWNBSP | USP
   lazy val LineTerminator: Lexer = LF | CR | LS | PS
-  lazy val LineTerminatorSequence: Lexer = LF | CR <~ -LF | LS | PS | s(CR, LF)
+  lazy val LineTerminatorSequence: Lexer = LF | CR <~ -LF | LS | PS | CR % LF
 
   // empty
-  val empty: Lexer = success("")
-
-  // optional
-  def opt(parser: Lexer): Lexer = parser | empty
-
-  // lookahead syntax
-  implicit def lookaheadSyntax[L](parser: L)(implicit ev: L => Lexer): LookaheadSyntax =
-    new LookaheadSyntax(parser)
-  class LookaheadSyntax(parser: Lexer) {
-    def unary_-(): Lexer = Parser { in =>
-      parser(in) match {
-        case Success(_, _) => Failure("Wrong Lookahead", in)
-        case _ => Success("", in)
-      }
-    }
-    def unary_+(): Lexer = Parser { in =>
-      parser(in) match {
-        case s @ Success(_, _) => Success("", in)
-        case _ => Failure("Wrong Lookahead", in)
-      }
-    }
-  }
-
-  // butnot syntax
-  private val butnotCache = cached[(Lexer, Lexer), Lexer] {
-    case (parser, cond) => parser.filter(s => parseAll(cond, s).isEmpty)
-  }
-  implicit def butnotSyntax(parser: Lexer): ButnotSyntax = new ButnotSyntax(parser)
-  class ButnotSyntax(parser: Lexer) {
-    def \(cond: Lexer): Lexer = butnotCache((parser, cond))
-  }
-
-  // sequence
-  def s(p1: => Lexer): Lexer = p1
-  def s(p1: => Lexer, p2: => Lexer): Lexer =
-    p1 ~ p2 ^^ { case x1 ~ x2 => x1 + x2 }
-  def s(p1: => Lexer, p2: => Lexer, p3: => Lexer): Lexer =
-    p1 ~ p2 ~ p3 ^^ { case x1 ~ x2 ~ x3 => x1 + x2 + x3 }
-  def s(p1: => Lexer, p2: => Lexer, p3: => Lexer, p4: => Lexer): Lexer =
-    p1 ~ p2 ~ p3 ~ p4 ^^ { case x1 ~ x2 ~ x3 ~ x4 => x1 + x2 + x3 + x4 }
-  def s(p1: => Lexer, p2: => Lexer, p3: => Lexer, p4: => Lexer, p5: => Lexer): Lexer =
-    p1 ~ p2 ~ p3 ~ p4 ~ p5 ^^ { case x1 ~ x2 ~ x3 ~ x4 ~ x5 => x1 + x2 + x3 + x4 + x5 }
-  def s(p1: => Lexer, p2: => Lexer, p3: => Lexer, p4: => Lexer, p5: => Lexer, p6: => Lexer): Lexer =
-    p1 ~ p2 ~ p3 ~ p4 ~ p5 ~ p6 ^^ { case x1 ~ x2 ~ x3 ~ x4 ~ x5 ~ x6 => x1 + x2 + x3 + x4 + x5 + x6 }
-
-  def sLL(p1: => Lexer): FLexer = p1 ^^ { case x1 => (x0: String) => x0 + x1 }
-
-  // sequence with skips
-  def ss(seq: Lexer*): Lexer = ss(seq.toList)
-  def ss(list: List[Lexer]): Lexer = if (list.length == 0) empty else list.map(x => {
-    if (x eq strNoLineTerminator) x
-    else Skip ~> x
-  }).reduce(_ ~ _ ^^^ "")
+  val empty: Lexer = ""
 
   // skip
-  lazy val Skip: Lexer = ((WhiteSpace | LineTerminator | Comment)*) ^^ { _.mkString }
+  lazy val Skip: Lexer =
+    ((WhiteSpace | LineTerminator | Comment)*) ^^ { _.mkString }
 
   // no LineTerminator lexer
-  lazy val strNoLineTerminator: Lexer = +Skip.filter(s => lines.findFirstIn(s).isEmpty)
+  lazy val strNoLineTerminator: Lexer =
+    +Skip.filter(s => lines.findFirstIn(s).isEmpty)
 
-  // resolve left recursions
-  def resolveLL(f: Lexer, s: FLexer): Lexer = {
-    lazy val p: FLexer = s ~ p ^^ { case b ~ f => (x: String) => f(b(x)) } | success((x: String) => x)
-    f ~ p ^^ { case a ~ f => f(a) }
+  // Parse charater reader `in` with parser `p`
+  def parse(p: Lexer, in: Reader[Char]): ParseResult[String] = {
+    p(new EPackratReader(in))
   }
+
+  // Parse character sequence `in` with parser `p`
+  def parse(p: Lexer, in: java.lang.CharSequence): ParseResult[String] =
+    parse(p, new CharSequenceReader(in))
+
+  // Parse reader `in` with parser `p`
+  def parse(p: Lexer, in: java.io.Reader): ParseResult[String] =
+    parse(p, new PagedSeqReader(PagedSeq.fromReader(in)))
 }

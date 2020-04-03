@@ -6,14 +6,9 @@ import scala.collection.mutable
 import scala.language.reflectiveCalls
 import scala.util.parsing.input._
 
-trait LAParsers extends Lexer with Containers {
+trait LAParsers extends Lexer {
   // failed parser
   val failed: Parser[Nothing] = failure("")
-
-  // added cache for containers
-  type Container <: {
-    var cache: Map[ParseCase[_], ParseResult[_]]
-  }
 
   // first terms
   case class FirstTerms(
@@ -41,7 +36,7 @@ trait LAParsers extends Lexer with Containers {
       val t = TERMINAL.filter(ts contains _)
       record(
         nts.foldLeft(base | t)(_ | _._2),
-        rawIn.asInstanceOf[ContainerReader[Char]]
+        rawIn.asInstanceOf[EPackratReader[Char]]
       )
     }
     override def toString: String = (ts.map("\"" + _ + "\"") ++ nts.map(_._1) ++ (if (possibleEmpty) List("ε") else Nil)).mkString("[", ", ", "]")
@@ -89,7 +84,7 @@ trait LAParsers extends Lexer with Containers {
       this.first
     )
 
-    def apply(follow: FirstTerms, in: ContainerReader[Char]): ParseResult[T] =
+    def apply(follow: FirstTerms, in: EPackratReader[Char]): ParseResult[T] =
       parser(follow)(in)
 
     def unary_-(): LAParser[Unit] = new LAParser(
@@ -116,7 +111,7 @@ trait LAParsers extends Lexer with Containers {
   case class ParseCase[+T](parser: LAParser[T], follow: FirstTerms, pos: Position)
   protected def memo[T](p: LAParser[T]): LAParser[T] =
     new LAParser(follow => Parser { rawIn =>
-      val in = rawIn.asInstanceOf[ContainerReader[Char]]
+      val in = rawIn.asInstanceOf[EPackratReader[Char]]
       val c = ParseCase(p, follow, in.pos)
       val container = in.container
       container.cache.get(c) match {
@@ -131,7 +126,7 @@ trait LAParsers extends Lexer with Containers {
   // logging
   var keepLog: Boolean = true
   def log[T](p: LAParser[T])(name: String): LAParser[T] = if (!DEBUG_PARSER) p else new LAParser(follow => Parser { rawIn =>
-    val in = rawIn.asInstanceOf[ContainerReader[Char]]
+    val in = rawIn.asInstanceOf[EPackratReader[Char]]
     val stopMsg = s"trying $name with $follow at [${in.pos}] \n\n${in.pos.longString}\n"
     if (keepLog) stop(stopMsg) match {
       case "q" =>
@@ -159,7 +154,7 @@ trait LAParsers extends Lexer with Containers {
 
   // Parse charater reader `in` with parser `p`
   def parse[T](p: LAParser[T], in: Reader[Char]): ParseResult[T] = {
-    p(emptyFirst, new ContainerReader(in))
+    p(emptyFirst, new EPackratReader(in))
   }
 
   // Parse character sequence `in` with parser `p`
@@ -171,7 +166,7 @@ trait LAParsers extends Lexer with Containers {
     parse(p, new PagedSeqReader(PagedSeq.fromReader(in)))
 
   // record parsing process
-  protected def record[T](parser: Parser[T], in: ContainerReader[Char]): ParseResult[T]
+  protected def record[T](parser: Parser[T], in: EPackratReader[Char]): ParseResult[T]
 
   // terminal lexer
   protected val TERMINAL: Lexer

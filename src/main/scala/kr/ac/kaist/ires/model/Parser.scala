@@ -6,479 +6,479 @@ import kr.ac.kaist.ires.parser.ESParsers
 
 object Parser extends ESParsers {
   lazy val SourceCharacter: Lexer = (
-    s(Unicode)
+    Unicode
   )
   lazy val InputElementDiv: Lexer = (
-    s(WhiteSpace) |||
-    s(LineTerminator) |||
-    s(Comment) |||
-    s(CommonToken) |||
-    s(DivPunctuator) |||
-    s(RightBracePunctuator)
+    WhiteSpace |||
+    LineTerminator |||
+    Comment |||
+    CommonToken |||
+    DivPunctuator |||
+    RightBracePunctuator
   )
   lazy val InputElementRegExp: Lexer = (
-    s(WhiteSpace) |||
-    s(LineTerminator) |||
-    s(Comment) |||
-    s(CommonToken) |||
-    s(RightBracePunctuator) |||
-    s(RegularExpressionLiteral)
+    WhiteSpace |||
+    LineTerminator |||
+    Comment |||
+    CommonToken |||
+    RightBracePunctuator |||
+    RegularExpressionLiteral
   )
   lazy val InputElementRegExpOrTemplateTail: Lexer = (
-    s(WhiteSpace) |||
-    s(LineTerminator) |||
-    s(Comment) |||
-    s(CommonToken) |||
-    s(RegularExpressionLiteral) |||
-    s(TemplateSubstitutionTail)
+    WhiteSpace |||
+    LineTerminator |||
+    Comment |||
+    CommonToken |||
+    RegularExpressionLiteral |||
+    TemplateSubstitutionTail
   )
   lazy val InputElementTemplateTail: Lexer = (
-    s(WhiteSpace) |||
-    s(LineTerminator) |||
-    s(Comment) |||
-    s(CommonToken) |||
-    s(DivPunctuator) |||
-    s(TemplateSubstitutionTail)
+    WhiteSpace |||
+    LineTerminator |||
+    Comment |||
+    CommonToken |||
+    DivPunctuator |||
+    TemplateSubstitutionTail
   )
   lazy val MultiLineComment: Lexer = (
-    s("/*", opt(MultiLineCommentChars), "*/")
+    "/*" % MultiLineCommentChars.opt % "*/"
   )
   lazy val MultiLineCommentChars: Lexer = (
-    s(MultiLineNotAsteriskChar, opt(MultiLineCommentChars)) |||
-    s("*", opt(PostAsteriskCommentChars))
+    MultiLineNotAsteriskChar % MultiLineCommentChars.opt |||
+    "*" % PostAsteriskCommentChars.opt
   )
   lazy val PostAsteriskCommentChars: Lexer = (
-    s(MultiLineNotForwardSlashOrAsteriskChar, opt(MultiLineCommentChars)) |||
-    s("*", opt(PostAsteriskCommentChars))
+    MultiLineNotForwardSlashOrAsteriskChar % MultiLineCommentChars.opt |||
+    "*" % PostAsteriskCommentChars.opt
   )
   lazy val MultiLineNotAsteriskChar: Lexer = (
-    s((SourceCharacter \ ("*")))
+    (SourceCharacter \ ("*"))
   )
   lazy val MultiLineNotForwardSlashOrAsteriskChar: Lexer = (
-    s((SourceCharacter \ ("/" ||| "*")))
+    (SourceCharacter \ ("/" ||| "*"))
   )
   lazy val SingleLineComment: Lexer = (
-    s("//", opt(SingleLineCommentChars))
+    "//" % SingleLineCommentChars.opt
   )
   lazy val SingleLineCommentChars: Lexer = (
-    s(SingleLineCommentChar, opt(SingleLineCommentChars))
+    SingleLineCommentChar % SingleLineCommentChars.opt
   )
   lazy val SingleLineCommentChar: Lexer = (
-    s((SourceCharacter \ (LineTerminator)))
+    (SourceCharacter \ (LineTerminator))
   )
   lazy val CommonToken: Lexer = (
-    s(IdentifierName) |||
-    s(Punctuator) |||
-    s(NumericLiteral) |||
-    s(StringLiteral) |||
-    s(Template)
+    IdentifierName |||
+    Punctuator |||
+    NumericLiteral |||
+    StringLiteral |||
+    Template
   )
-  lazy val IdentifierName: Lexer = resolveLL(
-    s(IdentifierStart),
-    sLL(IdentifierPart)
+  lazy val IdentifierName: Lexer = (
+    IdentifierStart |||
+    IdentifierName % IdentifierPart
   )
   lazy val IdentifierStart: Lexer = (
-    s(UnicodeIDStart) |||
-    s("$") |||
-    s("_") |||
-    s("\\", UnicodeEscapeSequence)
+    UnicodeIDStart |||
+    "$" |||
+    "_" |||
+    "\\" % UnicodeEscapeSequence
   )
   lazy val IdentifierPart: Lexer = (
-    s(UnicodeIDContinue) |||
-    s("$") |||
-    s("\\", UnicodeEscapeSequence) |||
-    s(ZWNJ) |||
-    s(ZWJ)
+    UnicodeIDContinue |||
+    "$" |||
+    "\\" % UnicodeEscapeSequence |||
+    ZWNJ |||
+    ZWJ
   )
   lazy val UnicodeIDStart: Lexer = (
-    s(IDStart)
+    IDStart
   )
   lazy val UnicodeIDContinue: Lexer = (
-    s(IDContinue)
+    IDContinue
   )
   lazy val ReservedWord: Lexer = (
-    s(Keyword) |||
-    s(FutureReservedWord) |||
-    s(NullLiteral) |||
-    s(BooleanLiteral)
+    Keyword |||
+    FutureReservedWord |||
+    NullLiteral |||
+    BooleanLiteral
   )
   lazy val Keyword: Lexer = (
-    s("await") |||
-    s("break") |||
-    s("case") |||
-    s("catch") |||
-    s("class") |||
-    s("const") |||
-    s("continue") |||
-    s("debugger") |||
-    s("default") |||
-    s("delete") |||
-    s("do") |||
-    s("else") |||
-    s("export") |||
-    s("extends") |||
-    s("finally") |||
-    s("for") |||
-    s("function") |||
-    s("if") |||
-    s("import") |||
-    s("in") |||
-    s("instanceof") |||
-    s("new") |||
-    s("return") |||
-    s("super") |||
-    s("switch") |||
-    s("this") |||
-    s("throw") |||
-    s("try") |||
-    s("typeof") |||
-    s("var") |||
-    s("void") |||
-    s("while") |||
-    s("with") |||
-    s("yield")
+    "await" |||
+    "break" |||
+    "case" |||
+    "catch" |||
+    "class" |||
+    "const" |||
+    "continue" |||
+    "debugger" |||
+    "default" |||
+    "delete" |||
+    "do" |||
+    "else" |||
+    "export" |||
+    "extends" |||
+    "finally" |||
+    "for" |||
+    "function" |||
+    "if" |||
+    "import" |||
+    "in" |||
+    "instanceof" |||
+    "new" |||
+    "return" |||
+    "super" |||
+    "switch" |||
+    "this" |||
+    "throw" |||
+    "try" |||
+    "typeof" |||
+    "var" |||
+    "void" |||
+    "while" |||
+    "with" |||
+    "yield"
   )
   lazy val FutureReservedWord: Lexer = (
-    s("enum")
+    "enum"
   )
   lazy val Punctuator: Lexer = (
-    s("{") |||
-    s("(") |||
-    s(")") |||
-    s("[") |||
-    s("]") |||
-    s(".") |||
-    s("...") |||
-    s(";") |||
-    s(",") |||
-    s("<") |||
-    s(">") |||
-    s("<=") |||
-    s(">=") |||
-    s("==") |||
-    s("!=") |||
-    s("===") |||
-    s("!==") |||
-    s("+") |||
-    s("-") |||
-    s("*") |||
-    s("%") |||
-    s("**") |||
-    s("++") |||
-    s("--") |||
-    s("<<") |||
-    s(">>") |||
-    s(">>>") |||
-    s("&") |||
-    s("|") |||
-    s("^") |||
-    s("!") |||
-    s("~") |||
-    s("&&") |||
-    s("||") |||
-    s("?") |||
-    s(":") |||
-    s("=") |||
-    s("+=") |||
-    s("-=") |||
-    s("*=") |||
-    s("%=") |||
-    s("**=") |||
-    s("<<=") |||
-    s(">>=") |||
-    s(">>>=") |||
-    s("&=") |||
-    s("|=") |||
-    s("^=") |||
-    s("=>")
+    "{" |||
+    "(" |||
+    ")" |||
+    "[" |||
+    "]" |||
+    "." |||
+    "..." |||
+    ";" |||
+    "," |||
+    "<" |||
+    ">" |||
+    "<=" |||
+    ">=" |||
+    "==" |||
+    "!=" |||
+    "===" |||
+    "!==" |||
+    "+" |||
+    "-" |||
+    "*" |||
+    "%" |||
+    "**" |||
+    "++" |||
+    "--" |||
+    "<<" |||
+    ">>" |||
+    ">>>" |||
+    "&" |||
+    "|" |||
+    "^" |||
+    "!" |||
+    "~" |||
+    "&&" |||
+    "||" |||
+    "?" |||
+    ":" |||
+    "=" |||
+    "+=" |||
+    "-=" |||
+    "*=" |||
+    "%=" |||
+    "**=" |||
+    "<<=" |||
+    ">>=" |||
+    ">>>=" |||
+    "&=" |||
+    "|=" |||
+    "^=" |||
+    "=>"
   )
   lazy val DivPunctuator: Lexer = (
-    s("/") |||
-    s("/=")
+    "/" |||
+    "/="
   )
   lazy val RightBracePunctuator: Lexer = (
-    s("}")
+    "}"
   )
   lazy val NullLiteral: Lexer = (
-    s("null")
+    "null"
   )
   lazy val BooleanLiteral: Lexer = (
-    s("true") |||
-    s("false")
+    "true" |||
+    "false"
   )
   lazy val NumericLiteral: Lexer = (
-    s(DecimalLiteral) |||
-    s(BinaryIntegerLiteral) |||
-    s(OctalIntegerLiteral) |||
-    s(HexIntegerLiteral)
+    DecimalLiteral |||
+    BinaryIntegerLiteral |||
+    OctalIntegerLiteral |||
+    HexIntegerLiteral
   )
   lazy val DecimalLiteral: Lexer = (
-    s(DecimalIntegerLiteral, ".", opt(DecimalDigits), opt(ExponentPart)) |||
-    s(".", DecimalDigits, opt(ExponentPart)) |||
-    s(DecimalIntegerLiteral, opt(ExponentPart))
+    DecimalIntegerLiteral % "." % DecimalDigits.opt % ExponentPart.opt |||
+    "." % DecimalDigits % ExponentPart.opt |||
+    DecimalIntegerLiteral % ExponentPart.opt
   )
   lazy val DecimalIntegerLiteral: Lexer = (
-    s("0") |||
-    s(NonZeroDigit, opt(DecimalDigits))
+    "0" |||
+    NonZeroDigit % DecimalDigits.opt
   )
-  lazy val DecimalDigits: Lexer = resolveLL(
-    s(DecimalDigit),
-    sLL(DecimalDigit)
+  lazy val DecimalDigits: Lexer = (
+    DecimalDigit |||
+    DecimalDigits % DecimalDigit
   )
   lazy val DecimalDigit: Lexer = (
-    s("0") |||
-    s("1") |||
-    s("2") |||
-    s("3") |||
-    s("4") |||
-    s("5") |||
-    s("6") |||
-    s("7") |||
-    s("8") |||
-    s("9")
+    "0" |||
+    "1" |||
+    "2" |||
+    "3" |||
+    "4" |||
+    "5" |||
+    "6" |||
+    "7" |||
+    "8" |||
+    "9"
   )
   lazy val NonZeroDigit: Lexer = (
-    s("1") |||
-    s("2") |||
-    s("3") |||
-    s("4") |||
-    s("5") |||
-    s("6") |||
-    s("7") |||
-    s("8") |||
-    s("9")
+    "1" |||
+    "2" |||
+    "3" |||
+    "4" |||
+    "5" |||
+    "6" |||
+    "7" |||
+    "8" |||
+    "9"
   )
   lazy val ExponentPart: Lexer = (
-    s(ExponentIndicator, SignedInteger)
+    ExponentIndicator % SignedInteger
   )
   lazy val ExponentIndicator: Lexer = (
-    s("e") |||
-    s("E")
+    "e" |||
+    "E"
   )
   lazy val SignedInteger: Lexer = (
-    s(DecimalDigits) |||
-    s("+", DecimalDigits) |||
-    s("-", DecimalDigits)
+    DecimalDigits |||
+    "+" % DecimalDigits |||
+    "-" % DecimalDigits
   )
   lazy val BinaryIntegerLiteral: Lexer = (
-    s("0b", BinaryDigits) |||
-    s("0B", BinaryDigits)
+    "0b" % BinaryDigits |||
+    "0B" % BinaryDigits
   )
-  lazy val BinaryDigits: Lexer = resolveLL(
-    s(BinaryDigit),
-    sLL(BinaryDigit)
+  lazy val BinaryDigits: Lexer = (
+    BinaryDigit |||
+    BinaryDigits % BinaryDigit
   )
   lazy val BinaryDigit: Lexer = (
-    s("0") |||
-    s("1")
+    "0" |||
+    "1"
   )
   lazy val OctalIntegerLiteral: Lexer = (
-    s("0o", OctalDigits) |||
-    s("0O", OctalDigits)
+    "0o" % OctalDigits |||
+    "0O" % OctalDigits
   )
-  lazy val OctalDigits: Lexer = resolveLL(
-    s(OctalDigit),
-    sLL(OctalDigit)
+  lazy val OctalDigits: Lexer = (
+    OctalDigit |||
+    OctalDigits % OctalDigit
   )
   lazy val OctalDigit: Lexer = (
-    s("0") |||
-    s("1") |||
-    s("2") |||
-    s("3") |||
-    s("4") |||
-    s("5") |||
-    s("6") |||
-    s("7")
+    "0" |||
+    "1" |||
+    "2" |||
+    "3" |||
+    "4" |||
+    "5" |||
+    "6" |||
+    "7"
   )
   lazy val HexIntegerLiteral: Lexer = (
-    s("0x", HexDigits) |||
-    s("0X", HexDigits)
+    "0x" % HexDigits |||
+    "0X" % HexDigits
   )
-  lazy val HexDigits: Lexer = resolveLL(
-    s(HexDigit),
-    sLL(HexDigit)
+  lazy val HexDigits: Lexer = (
+    HexDigit |||
+    HexDigits % HexDigit
   )
   lazy val HexDigit: Lexer = (
-    s("0") |||
-    s("1") |||
-    s("2") |||
-    s("3") |||
-    s("4") |||
-    s("5") |||
-    s("6") |||
-    s("7") |||
-    s("8") |||
-    s("9") |||
-    s("a") |||
-    s("b") |||
-    s("c") |||
-    s("d") |||
-    s("e") |||
-    s("f") |||
-    s("A") |||
-    s("B") |||
-    s("C") |||
-    s("D") |||
-    s("E") |||
-    s("F")
+    "0" |||
+    "1" |||
+    "2" |||
+    "3" |||
+    "4" |||
+    "5" |||
+    "6" |||
+    "7" |||
+    "8" |||
+    "9" |||
+    "a" |||
+    "b" |||
+    "c" |||
+    "d" |||
+    "e" |||
+    "f" |||
+    "A" |||
+    "B" |||
+    "C" |||
+    "D" |||
+    "E" |||
+    "F"
   )
   lazy val StringLiteral: Lexer = (
-    s("\"", opt(DoubleStringCharacters), "\"") |||
-    s("'", opt(SingleStringCharacters), "'")
+    "\"" % DoubleStringCharacters.opt % "\"" |||
+    "'" % SingleStringCharacters.opt % "'"
   )
   lazy val DoubleStringCharacters: Lexer = (
-    s(DoubleStringCharacter, opt(DoubleStringCharacters))
+    DoubleStringCharacter % DoubleStringCharacters.opt
   )
   lazy val SingleStringCharacters: Lexer = (
-    s(SingleStringCharacter, opt(SingleStringCharacters))
+    SingleStringCharacter % SingleStringCharacters.opt
   )
   lazy val DoubleStringCharacter: Lexer = (
-    s((SourceCharacter \ ("\"" ||| "\\" ||| LineTerminator))) |||
-    s(LS) |||
-    s(PS) |||
-    s("\\", EscapeSequence) |||
-    s(LineContinuation)
+    (SourceCharacter \ ("\"" ||| "\\" ||| LineTerminator)) |||
+    LS |||
+    PS |||
+    "\\" % EscapeSequence |||
+    LineContinuation
   )
   lazy val SingleStringCharacter: Lexer = (
-    s((SourceCharacter \ ("'" ||| "\\" ||| LineTerminator))) |||
-    s(LS) |||
-    s(PS) |||
-    s("\\", EscapeSequence) |||
-    s(LineContinuation)
+    (SourceCharacter \ ("'" ||| "\\" ||| LineTerminator)) |||
+    LS |||
+    PS |||
+    "\\" % EscapeSequence |||
+    LineContinuation
   )
   lazy val LineContinuation: Lexer = (
-    s("\\", LineTerminatorSequence)
+    "\\" % LineTerminatorSequence
   )
   lazy val EscapeSequence: Lexer = (
-    s(CharacterEscapeSequence) |||
-    s("0", -s(DecimalDigit)) |||
-    s(HexEscapeSequence) |||
-    s(UnicodeEscapeSequence)
+    CharacterEscapeSequence |||
+    "0" % -(DecimalDigit) |||
+    HexEscapeSequence |||
+    UnicodeEscapeSequence
   )
   lazy val CharacterEscapeSequence: Lexer = (
-    s(SingleEscapeCharacter) |||
-    s(NonEscapeCharacter)
+    SingleEscapeCharacter |||
+    NonEscapeCharacter
   )
   lazy val SingleEscapeCharacter: Lexer = (
-    s("'") |||
-    s("\"") |||
-    s("\\") |||
-    s("b") |||
-    s("f") |||
-    s("n") |||
-    s("r") |||
-    s("t") |||
-    s("v")
+    "'" |||
+    "\"" |||
+    "\\" |||
+    "b" |||
+    "f" |||
+    "n" |||
+    "r" |||
+    "t" |||
+    "v"
   )
   lazy val NonEscapeCharacter: Lexer = (
-    s((SourceCharacter \ (EscapeCharacter ||| LineTerminator)))
+    (SourceCharacter \ (EscapeCharacter ||| LineTerminator))
   )
   lazy val EscapeCharacter: Lexer = (
-    s(SingleEscapeCharacter) |||
-    s(DecimalDigit) |||
-    s("x") |||
-    s("u")
+    SingleEscapeCharacter |||
+    DecimalDigit |||
+    "x" |||
+    "u"
   )
   lazy val HexEscapeSequence: Lexer = (
-    s("x", HexDigit, HexDigit)
+    "x" % HexDigit % HexDigit
   )
   lazy val UnicodeEscapeSequence: Lexer = (
-    s("u", Hex4Digits) |||
-    s("u{", CodePoint, "}")
+    "u" % Hex4Digits |||
+    "u{" % CodePoint % "}"
   )
   lazy val Hex4Digits: Lexer = (
-    s(HexDigit, HexDigit, HexDigit, HexDigit)
+    HexDigit % HexDigit % HexDigit % HexDigit
   )
   lazy val RegularExpressionLiteral: Lexer = (
-    s("/", RegularExpressionBody, "/", RegularExpressionFlags)
+    "/" % RegularExpressionBody % "/" % RegularExpressionFlags
   )
   lazy val RegularExpressionBody: Lexer = (
-    s(RegularExpressionFirstChar, RegularExpressionChars)
+    RegularExpressionFirstChar % RegularExpressionChars
   )
-  lazy val RegularExpressionChars: Lexer = resolveLL(
-    s(empty),
-    sLL(RegularExpressionChar)
+  lazy val RegularExpressionChars: Lexer = (
+    EMPTY |||
+    RegularExpressionChars % RegularExpressionChar
   )
   lazy val RegularExpressionFirstChar: Lexer = (
-    s((RegularExpressionNonTerminator \ ("*" ||| "\\" ||| "/" ||| "["))) |||
-    s(RegularExpressionBackslashSequence) |||
-    s(RegularExpressionClass)
+    (RegularExpressionNonTerminator \ ("*" ||| "\\" ||| "/" ||| "[")) |||
+    RegularExpressionBackslashSequence |||
+    RegularExpressionClass
   )
   lazy val RegularExpressionChar: Lexer = (
-    s((RegularExpressionNonTerminator \ ("\\" ||| "/" ||| "["))) |||
-    s(RegularExpressionBackslashSequence) |||
-    s(RegularExpressionClass)
+    (RegularExpressionNonTerminator \ ("\\" ||| "/" ||| "[")) |||
+    RegularExpressionBackslashSequence |||
+    RegularExpressionClass
   )
   lazy val RegularExpressionBackslashSequence: Lexer = (
-    s("\\", RegularExpressionNonTerminator)
+    "\\" % RegularExpressionNonTerminator
   )
   lazy val RegularExpressionNonTerminator: Lexer = (
-    s((SourceCharacter \ (LineTerminator)))
+    (SourceCharacter \ (LineTerminator))
   )
   lazy val RegularExpressionClass: Lexer = (
-    s("[", RegularExpressionClassChars, "]")
+    "[" % RegularExpressionClassChars % "]"
   )
-  lazy val RegularExpressionClassChars: Lexer = resolveLL(
-    s(empty),
-    sLL(RegularExpressionClassChar)
+  lazy val RegularExpressionClassChars: Lexer = (
+    EMPTY |||
+    RegularExpressionClassChars % RegularExpressionClassChar
   )
   lazy val RegularExpressionClassChar: Lexer = (
-    s((RegularExpressionNonTerminator \ ("]" ||| "\\"))) |||
-    s(RegularExpressionBackslashSequence)
+    (RegularExpressionNonTerminator \ ("]" ||| "\\")) |||
+    RegularExpressionBackslashSequence
   )
-  lazy val RegularExpressionFlags: Lexer = resolveLL(
-    s(empty),
-    sLL(IdentifierPart)
+  lazy val RegularExpressionFlags: Lexer = (
+    EMPTY |||
+    RegularExpressionFlags % IdentifierPart
   )
   lazy val Template: Lexer = (
-    s(NoSubstitutionTemplate) |||
-    s(TemplateHead)
+    NoSubstitutionTemplate |||
+    TemplateHead
   )
   lazy val NoSubstitutionTemplate: Lexer = (
-    s("`", opt(TemplateCharacters), "`")
+    "`" % TemplateCharacters.opt % "`"
   )
   lazy val TemplateHead: Lexer = (
-    s("`", opt(TemplateCharacters), "${")
+    "`" % TemplateCharacters.opt % "${"
   )
   lazy val TemplateSubstitutionTail: Lexer = (
-    s(TemplateMiddle) |||
-    s(TemplateTail)
+    TemplateMiddle |||
+    TemplateTail
   )
   lazy val TemplateMiddle: Lexer = (
-    s("}", opt(TemplateCharacters), "${")
+    "}" % TemplateCharacters.opt % "${"
   )
   lazy val TemplateTail: Lexer = (
-    s("}", opt(TemplateCharacters), "`")
+    "}" % TemplateCharacters.opt % "`"
   )
   lazy val TemplateCharacters: Lexer = (
-    s(TemplateCharacter, opt(TemplateCharacters))
+    TemplateCharacter % TemplateCharacters.opt
   )
   lazy val TemplateCharacter: Lexer = (
-    s("$", -s("{")) |||
-    s("\\", EscapeSequence) |||
-    s("\\", NotEscapeSequence) |||
-    s(LineContinuation) |||
-    s(LineTerminatorSequence) |||
-    s((SourceCharacter \ ("`" ||| "\\" ||| "$" ||| LineTerminator)))
+    "$" % -("{") |||
+    "\\" % EscapeSequence |||
+    "\\" % NotEscapeSequence |||
+    LineContinuation |||
+    LineTerminatorSequence |||
+    (SourceCharacter \ ("`" ||| "\\" ||| "$" ||| LineTerminator))
   )
   lazy val NotEscapeSequence: Lexer = (
-    s("0", DecimalDigit) |||
-    s((DecimalDigit \ ("0"))) |||
-    s("x", -s(HexDigit)) |||
-    s("x", HexDigit, -s(HexDigit)) |||
-    s("u", -s(HexDigit), -s("{")) |||
-    s("u", HexDigit, -s(HexDigit)) |||
-    s("u", HexDigit, HexDigit, -s(HexDigit)) |||
-    s("u", HexDigit, HexDigit, HexDigit, -s(HexDigit)) |||
-    s("u", "{", -s(HexDigit)) |||
-    s("u", "{", NotCodePoint, -s(HexDigit)) |||
-    s("u", "{", CodePoint, -s(HexDigit), -s("}"))
+    "0" % DecimalDigit |||
+    (DecimalDigit \ ("0")) |||
+    "x" % -(HexDigit) |||
+    "x" % HexDigit % -(HexDigit) |||
+    "u" % -(HexDigit) % -("{") |||
+    "u" % HexDigit % -(HexDigit) |||
+    "u" % HexDigit % HexDigit % -(HexDigit) |||
+    "u" % HexDigit % HexDigit % HexDigit % -(HexDigit) |||
+    "u" % "{" % -(HexDigit) |||
+    "u" % "{" % NotCodePoint % -(HexDigit) |||
+    "u" % "{" % CodePoint % -(HexDigit) % -("}")
   )
   lazy val NotCodePoint: Lexer = (
-    s(HexDigits)
+    HexDigits
   )
   lazy val CodePoint: Lexer = (
-    s(HexDigits)
+    HexDigits
   )
   lazy val IdentifierReference: ESParser[IdentifierReference] = memo(args => {
     val List(pYield, pAwait) = getArgsN("IdentifierReference", args, 2)
@@ -1221,7 +1221,7 @@ object Parser extends ESParsers {
   lazy val ExpressionStatement: ESParser[ExpressionStatement] = memo(args => {
     val List(pYield, pAwait) = getArgsN("ExpressionStatement", args, 2)
     log((
-      log(((MATCH <~ -ntl(ss("{") | ss("function" <~ not(IDContinue)) | ss("async" <~ not(IDContinue), strNoLineTerminator, "function" <~ not(IDContinue)) | ss("class" <~ not(IDContinue)) | ss("let" <~ not(IDContinue), "["))) ~ Expression(List(true, pYield, pAwait)) <~ t(";")) ^^ { case _ ~ x0 => ExpressionStatement0(x0, args) })("ExpressionStatement0")
+      log(((MATCH <~ -ntl(("{") | (("function" <~ not(IDContinue))) | (("async" <~ not(IDContinue)) %% strNoLineTerminator %% ("function" <~ not(IDContinue))) | (("class" <~ not(IDContinue))) | (("let" <~ not(IDContinue)) %% "["))) ~ Expression(List(true, pYield, pAwait)) <~ t(";")) ^^ { case _ ~ x0 => ExpressionStatement0(x0, args) })("ExpressionStatement0")
     ))("ExpressionStatement")
   })
   lazy val IfStatement: ESParser[IfStatement] = memo(args => {
@@ -1236,16 +1236,16 @@ object Parser extends ESParsers {
     log((
       log((((((MATCH <~ t("do")) ~ Statement(List(pYield, pAwait, pReturn)) <~ t("while")) <~ t("(")) ~ Expression(List(true, pYield, pAwait)) <~ t(")")) <~ t(";")) ^^ { case _ ~ x0 ~ x1 => IterationStatement0(x0, x1, args) })("IterationStatement0") |
       log((((MATCH <~ t("while")) <~ t("(")) ~ Expression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 ~ x1 => IterationStatement1(x0, x1, args) })("IterationStatement1") |
-      log(((((((MATCH <~ t("for")) <~ t("(")) <~ -ntl(ss("let" <~ not(IDContinue), "["))) ~ opt(Expression(List(false, pYield, pAwait))) <~ t(";")) ~ opt(Expression(List(true, pYield, pAwait))) <~ t(";")) ~ opt(Expression(List(true, pYield, pAwait))) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 ~ x1 ~ x2 ~ x3 => IterationStatement2(x0, x1, x2, x3, args) })("IterationStatement2") |
+      log(((((((MATCH <~ t("for")) <~ t("(")) <~ -ntl((("let" <~ not(IDContinue)) %% "["))) ~ opt(Expression(List(false, pYield, pAwait))) <~ t(";")) ~ opt(Expression(List(true, pYield, pAwait))) <~ t(";")) ~ opt(Expression(List(true, pYield, pAwait))) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 ~ x1 ~ x2 ~ x3 => IterationStatement2(x0, x1, x2, x3, args) })("IterationStatement2") |
       log(((((((MATCH <~ t("for")) <~ t("(")) <~ t("var")) ~ VariableDeclarationList(List(false, pYield, pAwait)) <~ t(";")) ~ opt(Expression(List(true, pYield, pAwait))) <~ t(";")) ~ opt(Expression(List(true, pYield, pAwait))) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 ~ x1 ~ x2 ~ x3 => IterationStatement3(x0, x1, x2, x3, args) })("IterationStatement3") |
       log(((((MATCH <~ t("for")) <~ t("(")) ~ LexicalDeclaration(List(false, pYield, pAwait)) ~ opt(Expression(List(true, pYield, pAwait))) <~ t(";")) ~ opt(Expression(List(true, pYield, pAwait))) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 ~ x1 ~ x2 ~ x3 => IterationStatement4(x0, x1, x2, x3, args) })("IterationStatement4") |
-      log((((((MATCH <~ t("for")) <~ t("(")) <~ -ntl(ss("let" <~ not(IDContinue), "["))) ~ LeftHandSideExpression(List(pYield, pAwait)) <~ t("in")) ~ Expression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 ~ x1 ~ x2 => IterationStatement5(x0, x1, x2, args) })("IterationStatement5") |
+      log((((((MATCH <~ t("for")) <~ t("(")) <~ -ntl((("let" <~ not(IDContinue)) %% "["))) ~ LeftHandSideExpression(List(pYield, pAwait)) <~ t("in")) ~ Expression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 ~ x1 ~ x2 => IterationStatement5(x0, x1, x2, args) })("IterationStatement5") |
       log((((((MATCH <~ t("for")) <~ t("(")) <~ t("var")) ~ ForBinding(List(pYield, pAwait)) <~ t("in")) ~ Expression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 ~ x1 ~ x2 => IterationStatement6(x0, x1, x2, args) })("IterationStatement6") |
       log(((((MATCH <~ t("for")) <~ t("(")) ~ ForDeclaration(List(pYield, pAwait)) <~ t("in")) ~ Expression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 ~ x1 ~ x2 => IterationStatement7(x0, x1, x2, args) })("IterationStatement7") |
-      log((((((MATCH <~ t("for")) <~ t("(")) <~ -ntl(ss("let" <~ not(IDContinue)))) ~ LeftHandSideExpression(List(pYield, pAwait)) <~ t("of")) ~ AssignmentExpression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 ~ x1 ~ x2 => IterationStatement8(x0, x1, x2, args) })("IterationStatement8") |
+      log((((((MATCH <~ t("for")) <~ t("(")) <~ -ntl((("let" <~ not(IDContinue))))) ~ LeftHandSideExpression(List(pYield, pAwait)) <~ t("of")) ~ AssignmentExpression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 ~ x1 ~ x2 => IterationStatement8(x0, x1, x2, args) })("IterationStatement8") |
       log((((((MATCH <~ t("for")) <~ t("(")) <~ t("var")) ~ ForBinding(List(pYield, pAwait)) <~ t("of")) ~ AssignmentExpression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 ~ x1 ~ x2 => IterationStatement9(x0, x1, x2, args) })("IterationStatement9") |
       log(((((MATCH <~ t("for")) <~ t("(")) ~ ForDeclaration(List(pYield, pAwait)) <~ t("of")) ~ AssignmentExpression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 ~ x1 ~ x2 => IterationStatement10(x0, x1, x2, args) })("IterationStatement10") |
-      log((if (pAwait) ((((((MATCH <~ t("for")) <~ t("await")) <~ t("(")) <~ -ntl(ss("let" <~ not(IDContinue)))) ~ LeftHandSideExpression(List(pYield, pAwait)) <~ t("of")) ~ AssignmentExpression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 ~ x1 ~ x2 => IterationStatement11(x0, x1, x2, args) } else MISMATCH))("IterationStatement11") |
+      log((if (pAwait) ((((((MATCH <~ t("for")) <~ t("await")) <~ t("(")) <~ -ntl((("let" <~ not(IDContinue))))) ~ LeftHandSideExpression(List(pYield, pAwait)) <~ t("of")) ~ AssignmentExpression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 ~ x1 ~ x2 => IterationStatement11(x0, x1, x2, args) } else MISMATCH))("IterationStatement11") |
       log((if (pAwait) ((((((MATCH <~ t("for")) <~ t("await")) <~ t("(")) <~ t("var")) ~ ForBinding(List(pYield, pAwait)) <~ t("of")) ~ AssignmentExpression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 ~ x1 ~ x2 => IterationStatement12(x0, x1, x2, args) } else MISMATCH))("IterationStatement12") |
       log((if (pAwait) (((((MATCH <~ t("for")) <~ t("await")) <~ t("(")) ~ ForDeclaration(List(pYield, pAwait)) <~ t("of")) ~ AssignmentExpression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 ~ x1 ~ x2 => IterationStatement13(x0, x1, x2, args) } else MISMATCH))("IterationStatement13")
     ))("IterationStatement")
@@ -1451,7 +1451,7 @@ object Parser extends ESParsers {
   lazy val ConciseBody: ESParser[ConciseBody] = memo(args => {
     val List(pIn) = getArgsN("ConciseBody", args, 1)
     log((
-      log((MATCH <~ -ntl(ss("{"))) ~ AssignmentExpression(List(pIn, false, false)) ^^ { case _ ~ x0 => ConciseBody0(x0, args) })("ConciseBody0") |
+      log((MATCH <~ -ntl(("{"))) ~ AssignmentExpression(List(pIn, false, false)) ^^ { case _ ~ x0 => ConciseBody0(x0, args) })("ConciseBody0") |
       log(((MATCH <~ t("{")) ~ FunctionBody(List(false, false)) <~ t("}")) ^^ { case _ ~ x0 => ConciseBody1(x0, args) })("ConciseBody1")
     ))("ConciseBody")
   })
@@ -1471,7 +1471,7 @@ object Parser extends ESParsers {
   lazy val AsyncConciseBody: ESParser[AsyncConciseBody] = memo(args => {
     val List(pIn) = getArgsN("AsyncConciseBody", args, 1)
     log((
-      log((MATCH <~ -ntl(ss("{"))) ~ AssignmentExpression(List(pIn, false, true)) ^^ { case _ ~ x0 => AsyncConciseBody0(x0, args) })("AsyncConciseBody0") |
+      log((MATCH <~ -ntl(("{"))) ~ AssignmentExpression(List(pIn, false, true)) ^^ { case _ ~ x0 => AsyncConciseBody0(x0, args) })("AsyncConciseBody0") |
       log(((MATCH <~ t("{")) ~ AsyncFunctionBody(List()) <~ t("}")) ^^ { case _ ~ x0 => AsyncConciseBody1(x0, args) })("AsyncConciseBody1")
     ))("AsyncConciseBody")
   })
@@ -1730,7 +1730,7 @@ object Parser extends ESParsers {
       log((MATCH <~ t("export")) ~ Declaration(List(false, false)) ^^ { case _ ~ x0 => ExportDeclaration4(x0, args) })("ExportDeclaration4") |
       log(((MATCH <~ t("export")) <~ t("default")) ~ HoistableDeclaration(List(false, false, true)) ^^ { case _ ~ x0 => ExportDeclaration5(x0, args) })("ExportDeclaration5") |
       log(((MATCH <~ t("export")) <~ t("default")) ~ ClassDeclaration(List(false, false, true)) ^^ { case _ ~ x0 => ExportDeclaration6(x0, args) })("ExportDeclaration6") |
-      log(((((MATCH <~ t("export")) <~ t("default")) <~ -ntl(ss("function" <~ not(IDContinue)) | ss("async" <~ not(IDContinue), strNoLineTerminator, "function" <~ not(IDContinue)) | ss("class" <~ not(IDContinue)))) ~ AssignmentExpression(List(true, false, false)) <~ t(";")) ^^ { case _ ~ x0 => ExportDeclaration7(x0, args) })("ExportDeclaration7")
+      log(((((MATCH <~ t("export")) <~ t("default")) <~ -ntl((("function" <~ not(IDContinue))) | (("async" <~ not(IDContinue)) %% strNoLineTerminator %% ("function" <~ not(IDContinue))) | (("class" <~ not(IDContinue))))) ~ AssignmentExpression(List(true, false, false)) <~ t(";")) ^^ { case _ ~ x0 => ExportDeclaration7(x0, args) })("ExportDeclaration7")
     ))("ExportDeclaration")
   })
   lazy val ExportClause: ESParser[ExportClause] = memo(args => {

@@ -10,15 +10,8 @@ import scala.util.parsing.combinator._
 import scala.util.parsing.input._
 
 trait ESParsers extends LAParsers {
-  // container with cache for LAParser and right-most failed positions
-  def emptyContainer: Container = Container()
-  case class Container(
-      var cache: Map[ParseCase[_], ParseResult[_]] = Map(),
-      var rightmostFailedPos: Option[(Position, List[Char])] = None
-  )
-
   // automatic semicolon insertion
-  def insertSemicolon(reader: ContainerReader[Char]): Option[String] = {
+  def insertSemicolon(reader: EPackratReader[Char]): Option[String] = {
     reader.container.rightmostFailedPos match {
       case Some((pos, rev)) =>
         val source = reader.source.toString
@@ -82,8 +75,8 @@ trait ESParsers extends LAParsers {
   val t = cached[String, LAParser[String]] {
     case t => log(new LAParser(follow => {
       Skip ~> {
-        if (parseAll("[a-z]+".r, t).isEmpty) t
-        else t <~ not(IDContinue)
+        if (t.matches("[a-z]+")) t <~ not(IDContinue)
+        else t
       } <~ +follow.parser
     }, FirstTerms() + t))(t)
   }
@@ -103,20 +96,20 @@ trait ESParsers extends LAParsers {
   // parser that supports automatic semicolon insertions
   override def parse[T](p: LAParser[T], in: Reader[Char]): ParseResult[T] = {
     val MAX_ADDITION = 100
-    val init: (Option[ParseResult[T]], Reader[Char]) = (None, in)
+    val init: Either[ParseResult[T], Reader[Char]] = Right(in)
     (0 until MAX_ADDITION).foldLeft(init) {
-      case ((None, in), _) =>
-        val reader = new ContainerReader(in)
+      case (Right(in), _) =>
+        val reader = new EPackratReader(in)
         p(emptyFirst, reader) match {
           case (f: Failure) => insertSemicolon(reader) match {
-            case Some(str) => (None, new CharSequenceReader(str))
-            case None => (Some(f), reader)
+            case Some(str) => Right(new CharSequenceReader(str))
+            case None => Left(f)
           }
-          case r => (Some(r), reader)
+          case r => Left(r)
         }
       case (res, _) => res
     } match {
-      case (Some(res), _) => res
+      case Left(res) => res
       case _ => throw TooManySemicolonInsertion(MAX_ADDITION)
     }
   }
@@ -135,13 +128,13 @@ trait ESParsers extends LAParsers {
   }
 
   // record right-most faield positions
-  protected def record[T](parser: Parser[T], in: ContainerReader[Char]): ParseResult[T] = {
+  protected def record[T](parser: Parser[T], in: EPackratReader[Char]): ParseResult[T] = {
     val container = in.container
     val res = parser(in)
     (res, container.rightmostFailedPos) match {
-      case (f @ Failure(_, cur: ContainerReader[_]), Some((origPos, _))) if origPos < cur.pos =>
+      case (f @ Failure(_, cur: EPackratReader[_]), Some((origPos, _))) if origPos < cur.pos =>
         container.rightmostFailedPos = Some((cur.pos, cur.rev))
-      case (f @ Failure(_, cur: ContainerReader[_]), None) =>
+      case (f @ Failure(_, cur: EPackratReader[_]), None) =>
         container.rightmostFailedPos = Some((cur.pos, cur.rev))
       case _ =>
     }
