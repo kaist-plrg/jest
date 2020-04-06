@@ -395,6 +395,7 @@ class Interp {
       case (Str(s), s0) => {
         (cop match {
           case CStrToNum => Num(ESValueParser.str2num(s))
+          case CStrToCP => if (s.length < 1) error(s"empty string $s") else INum(s(0).toInt)
           case _ => error(s"not convertable option: Str to $cop")
         }, s0)
       }
