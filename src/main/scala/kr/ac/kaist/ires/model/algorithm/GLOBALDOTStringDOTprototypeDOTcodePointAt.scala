@@ -22,12 +22,12 @@ object GLOBALDOTStringDOTprototypeDOTcodePointAt {
       app __x4__ = (WrapCompletion undefined)
       return __x4__
     } else {}
-    let first = S[position]
+    let first = (convert S[position] str2cp )
     if (|| (< first 55296i) (|| (< 56319i first) (= (+ position 1i) size))) {
       app __x5__ = (WrapCompletion first)
       return __x5__
     } else {}
-    let second = S[(+ position 1i)]
+    let second = (convert S[(+ position 1i)] str2cp )
     if (|| (< second 56320i) (< 57343i second)) {
       app __x6__ = (WrapCompletion first)
       return __x6__

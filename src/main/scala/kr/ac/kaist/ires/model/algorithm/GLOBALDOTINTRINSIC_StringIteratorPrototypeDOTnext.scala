@@ -30,9 +30,9 @@ object GLOBALDOTINTRINSIC_StringIteratorPrototypeDOTnext {
       app __x6__ = (WrapCompletion __x5__)
       return __x6__
     } else {}
-    let first = s[position]
+    let first = (convert s[position] str2cp )
     if (|| (< first 55296i) (|| (< 56319i first) (= (+ position 1i) len))) let resultString = first else {
-      let second = s[(+ position 1i)]
+      let second = (convert s[(+ position 1i)] str2cp )
       if (|| (< second 56320i) (< 57343i second)) let resultString = first else let resultString = (+ first second)
     }
     let resultSize = resultString["length"]

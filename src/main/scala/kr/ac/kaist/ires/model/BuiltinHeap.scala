@@ -445,7 +445,7 @@ object BuiltinHeap {
       )
     ),
     "GLOBAL.String.prototype" -> Struct(
-      typeName = "OrdinaryObject",
+      typeName = "StringExoticObject",
       imap = IMap(
         "Extensible" -> Bool(true),
         "StringData" -> Str(""),
