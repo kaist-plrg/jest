@@ -18,6 +18,8 @@ object EqualityExpression2Evaluation0 {
     let rval = __x3__
     app __x4__ = (AbstractEqualityComparison rval lval)
     let r = __x4__
+    if (is-completion r) if (= r["Type"] CONST_normal) r = r["Value"] else return r else {}
+    r
     if (= r true) {
       app __x5__ = (WrapCompletion false)
       return __x5__
