@@ -230,7 +230,6 @@ object Beautifier {
     // convert operators
     override def walk(cop: COp): Unit = walk(cop match {
       case CStrToNum => "str2num"
-      case CStrToCP => "str2cp"
       case CNumToStr => "num2str"
       case CNumToInt => "num2int"
     })

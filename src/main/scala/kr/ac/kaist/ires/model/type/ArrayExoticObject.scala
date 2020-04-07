@@ -2,7 +2,7 @@ package kr.ac.kaist.ires.model
 
 import kr.ac.kaist.ires.ir._
 object ArrayExoticObject {
-  val map: Map[Value, Value] = Map(
+  val map: Map[Value, Value] = Map[Value, Value](
     (Str("Set") -> OrdinaryObjectDOTSet.func),
     (Str("SetPrototypeOf") -> OrdinaryObjectDOTSetPrototypeOf.func),
     (Str("Get") -> OrdinaryObjectDOTGet.func),
@@ -14,5 +14,5 @@ object ArrayExoticObject {
     (Str("DefineOwnProperty") -> ArrayExoticObjectDOTDefineOwnProperty.func),
     (Str("OwnPropertyKeys") -> OrdinaryObjectDOTOwnPropertyKeys.func),
     (Str("GetPrototypeOf") -> OrdinaryObjectDOTGetPrototypeOf.func)
-  )
+  ) ++ BaseType.getMap("ArrayExoticObject")
 }

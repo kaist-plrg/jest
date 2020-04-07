@@ -848,7 +848,7 @@ object BuiltinHeap {
         "Prototype" -> NamedAddr("GLOBAL.Object.prototype")
       ),
       nmap = NMap(
-        "prototype" -> DataProperty(NamedAddr("GLOBAL.Promise"), F, F, F)
+        "constructor" -> DataProperty(NamedAddr("GLOBAL.Promise"), F, F, F)
       ) ++ Map(
           NamedAddr("GLOBAL.Symbol.toStringTag") -> DataProperty(Str("Promise"), F, F, T)
         )

@@ -2,7 +2,7 @@ package kr.ac.kaist.ires.model
 
 import kr.ac.kaist.ires.ir._
 object ProxyExoticObject {
-  val map: Map[Value, Value] = Map(
+  val map: Map[Value, Value] = Map[Value, Value](
     (Str("Set") -> ProxyExoticObjectDOTSet.func),
     (Str("SetPrototypeOf") -> ProxyExoticObjectDOTSetPrototypeOf.func),
     (Str("Get") -> ProxyExoticObjectDOTGet.func),
@@ -16,5 +16,5 @@ object ProxyExoticObject {
     (Str("DefineOwnProperty") -> ProxyExoticObjectDOTDefineOwnProperty.func),
     (Str("OwnPropertyKeys") -> ProxyExoticObjectDOTOwnPropertyKeys.func),
     (Str("GetPrototypeOf") -> ProxyExoticObjectDOTGetPrototypeOf.func)
-  )
+  ) ++ BaseType.getMap("ProxyExoticObject")
 }

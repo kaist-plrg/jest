@@ -25,7 +25,7 @@ object OrdinaryOwnPropertyKeys {
       let __x8__ = 0i
       let __x9__ = 0i
       while (< __x9__ __x2__["length"]) {
-        if (< __x2__[__x8__] __x2__[__x9__]) __x8__ = __x9__ else {}
+        if (< __x2__[__x9__] __x2__[__x8__]) __x8__ = __x9__ else {}
         __x9__ = (+ __x9__ 1i)
       }
       let __x10__ = (pop __x2__ __x8__)

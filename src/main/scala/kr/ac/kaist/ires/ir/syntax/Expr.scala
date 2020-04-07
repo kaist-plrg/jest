@@ -54,6 +54,5 @@ case class ENotSupported(msg: String) extends Expr {
 
 sealed trait COp extends IRNode
 case object CStrToNum extends COp
-case object CStrToCP extends COp
 case object CNumToStr extends COp
 case object CNumToInt extends COp

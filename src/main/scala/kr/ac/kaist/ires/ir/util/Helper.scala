@@ -23,6 +23,11 @@ object Helper {
         n -= 1
       }
     }
+    while ((((s - (s % radix)) / radix) * BigDecimal(radix).pow(n + 1)).toDouble == m) {
+      s = (s - (s % radix)) / radix
+      n = n + 1
+    }
+
     var sLong = s.toLong
     var k = 0
     while (s >= BigDecimal(1)) {

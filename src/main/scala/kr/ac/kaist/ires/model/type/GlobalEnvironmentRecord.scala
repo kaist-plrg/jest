@@ -2,7 +2,7 @@ package kr.ac.kaist.ires.model
 
 import kr.ac.kaist.ires.ir._
 object GlobalEnvironmentRecord {
-  val map: Map[Value, Value] = Map(
+  val map: Map[Value, Value] = Map[Value, Value](
     (Str("CreateGlobalVarBinding") -> GlobalEnvironmentRecordDOTCreateGlobalVarBinding.func),
     (Str("WithBaseObject") -> GlobalEnvironmentRecordDOTWithBaseObject.func),
     (Str("HasRestrictedGlobalProperty") -> GlobalEnvironmentRecordDOTHasRestrictedGlobalProperty.func),
@@ -21,5 +21,5 @@ object GlobalEnvironmentRecord {
     (Str("SetMutableBinding") -> GlobalEnvironmentRecordDOTSetMutableBinding.func),
     (Str("HasThisBinding") -> GlobalEnvironmentRecordDOTHasThisBinding.func),
     (Str("HasBinding") -> GlobalEnvironmentRecordDOTHasBinding.func)
-  )
+  ) ++ BaseType.getMap("GlobalEnvironmentRecord")
 }

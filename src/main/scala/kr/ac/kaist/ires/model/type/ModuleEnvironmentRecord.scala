@@ -2,7 +2,7 @@ package kr.ac.kaist.ires.model
 
 import kr.ac.kaist.ires.ir._
 object ModuleEnvironmentRecord {
-  val map: Map[Value, Value] = Map(
+  val map: Map[Value, Value] = Map[Value, Value](
     (Str("WithBaseObject") -> DeclarativeEnvironmentRecordDOTWithBaseObject.func),
     (Str("HasSuperBinding") -> DeclarativeEnvironmentRecordDOTHasSuperBinding.func),
     (Str("DeleteBinding") -> ModuleEnvironmentRecordDOTDeleteBinding.func),
@@ -15,5 +15,5 @@ object ModuleEnvironmentRecord {
     (Str("SetMutableBinding") -> DeclarativeEnvironmentRecordDOTSetMutableBinding.func),
     (Str("HasThisBinding") -> ModuleEnvironmentRecordDOTHasThisBinding.func),
     (Str("HasBinding") -> DeclarativeEnvironmentRecordDOTHasBinding.func)
-  )
+  ) ++ BaseType.getMap("ModuleEnvironmentRecord")
 }
