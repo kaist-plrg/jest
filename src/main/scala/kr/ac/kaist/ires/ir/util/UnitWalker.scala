@@ -213,6 +213,8 @@ trait UnitWalker {
     case Cont(params, body, context, ctxStack) =>
       walkList[Id](params, walk)
       walk(body)
+      walk(context)
+      walkList[Context](ctxStack, walk)
   }
 
   // AST values
