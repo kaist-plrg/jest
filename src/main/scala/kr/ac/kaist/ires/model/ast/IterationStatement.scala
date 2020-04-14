@@ -62,7 +62,11 @@ case class IterationStatement2(x3: Option[Expression], x5: Option[Expression], x
 object IterationStatement2 extends ASTInfo {
   val maxK: Int = 7
   val semMap: Map[String, Func] = Map(
+    "ContainsDuplicateLabels7" -> IterationStatement2ContainsDuplicateLabels7.func,
+    "ContainsUndefinedBreakTarget7" -> IterationStatement2ContainsUndefinedBreakTarget7.func,
+    "ContainsUndefinedContinueTarget7" -> IterationStatement2ContainsUndefinedContinueTarget7.func,
     "LabelledEvaluation7" -> IterationStatement2LabelledEvaluation7.func,
+    "StatementRules7" -> IterationStatement2StatementRules7.func,
     "VarDeclaredNames7" -> IterationStatement2VarDeclaredNames7.func,
     "VarScopedDeclarations7" -> IterationStatement2VarScopedDeclarations7.func
   )
@@ -79,7 +83,11 @@ case class IterationStatement3(x3: VariableDeclarationList, x5: Option[Expressio
 object IterationStatement3 extends ASTInfo {
   val maxK: Int = 3
   val semMap: Map[String, Func] = Map(
+    "ContainsDuplicateLabels3" -> IterationStatement3ContainsDuplicateLabels3.func,
+    "ContainsUndefinedBreakTarget3" -> IterationStatement3ContainsUndefinedBreakTarget3.func,
+    "ContainsUndefinedContinueTarget3" -> IterationStatement3ContainsUndefinedContinueTarget3.func,
     "LabelledEvaluation3" -> IterationStatement3LabelledEvaluation3.func,
+    "StatementRules3" -> IterationStatement3StatementRules3.func,
     "VarDeclaredNames3" -> IterationStatement3VarDeclaredNames3.func,
     "VarScopedDeclarations3" -> IterationStatement3VarScopedDeclarations3.func
   )
@@ -96,7 +104,11 @@ case class IterationStatement4(x2: LexicalDeclaration, x3: Option[Expression], x
 object IterationStatement4 extends ASTInfo {
   val maxK: Int = 3
   val semMap: Map[String, Func] = Map(
+    "ContainsDuplicateLabels3" -> IterationStatement4ContainsDuplicateLabels3.func,
+    "ContainsUndefinedBreakTarget3" -> IterationStatement4ContainsUndefinedBreakTarget3.func,
+    "ContainsUndefinedContinueTarget3" -> IterationStatement4ContainsUndefinedContinueTarget3.func,
     "LabelledEvaluation3" -> IterationStatement4LabelledEvaluation3.func,
+    "StatementRules3" -> IterationStatement4StatementRules3.func,
     "VarDeclaredNames3" -> IterationStatement4VarDeclaredNames3.func,
     "VarScopedDeclarations3" -> IterationStatement4VarScopedDeclarations3.func
   )
