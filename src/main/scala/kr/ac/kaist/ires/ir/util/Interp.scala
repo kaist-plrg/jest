@@ -37,7 +37,7 @@ class Interp {
       case ISeq(_) =>
       case _ => println(s"${st.context.name}: ${beautify(inst)}")
     }
-    inst match {
+    val res = inst match {
       case IExpr(expr) =>
         val (_, s0) = interp(expr)(st)
         s0
@@ -225,6 +225,8 @@ class Interp {
         s0.copy(context = s0.context.copy(insts = List(body)))
       }
     }
+    if (instCount % 100000 == 0) GC.gc(res)
+    else res
   }
 
   // expresssions
