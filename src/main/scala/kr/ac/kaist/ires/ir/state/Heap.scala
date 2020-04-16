@@ -15,7 +15,7 @@ case class Heap(
     case (s: IRSymbol) => s(key)
     case (m: IRMap) => m(key)
     case (l: IRList) => l(key)
-    case IRNotSupported(msg) => throw NotSupported(msg)
+    case IRNotSupported(_, msg) => throw NotSupported(msg)
   }
 
   // setters

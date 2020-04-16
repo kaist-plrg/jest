@@ -291,10 +291,10 @@ class Interp {
       val (v, s0) = interp(expr)(st)
       (Str(v match {
         case addr: Addr => s0.heap.map.getOrElse(addr, error(s"unknown address: $addr")) match {
-          case IRNotSupported(name) => throw NotSupported(name)
+          case IRNotSupported(tyname, desc) => tyname
           case IRMap(Ty("Completion"), m) => m(Str("Value")) match {
             case addr: Addr => s0.heap.map.getOrElse(addr, error(s"unknown address: $addr")) match {
-              case IRNotSupported(name) => throw NotSupported(name)
+              case IRNotSupported(tyname, desc) => tyname
               case obj => obj.ty.name
             }
             case Num(_) | INum(_) => "Number"
@@ -326,7 +326,6 @@ class Interp {
       val (v, s0) = interp(expr)(st)
       (Bool(v match {
         case addr: Addr => s0.heap.map.getOrElse(addr, error(s"unknown address: $addr")) match {
-          case IRNotSupported(name) => throw NotSupported(name)
           case IRMap(Ty("Completion"), _) => true
           case _ => false
         }

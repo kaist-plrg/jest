@@ -183,7 +183,8 @@ trait UnitWalker {
       walkMap[Value, Value](props, walk, walk)
     case IRList(values) =>
       walkList[Value](values.toList, walk)
-    case IRNotSupported(msg) =>
+    case IRNotSupported(tyname, msg) =>
+      walk(tyname)
       walk(msg)
   }
 

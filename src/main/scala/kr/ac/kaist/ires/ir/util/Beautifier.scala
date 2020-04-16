@@ -273,8 +273,8 @@ object Beautifier {
         walk("(List [length = "); walk(values.length.toString); walk("])")
         walkList[Value](values.toList, walk)
       })
-      case IRNotSupported(msg) =>
-        walk("(NotSupported \""); walk(msg); walk("\")")
+      case IRNotSupported(tyname, msg) =>
+        walk("(NotSupported \""); walk(tyname); walk("\" \""); walk(msg); walk("\")")
     }
 
     // values

@@ -149,7 +149,7 @@ trait Walker {
     case IRList(values) => IRList(
       walkList[Value](values.toList, walk).toVector
     )
-    case IRNotSupported(msg) => IRNotSupported(walk(msg))
+    case IRNotSupported(tyname, msg) => IRNotSupported(walk(tyname), walk(msg))
   }
 
   // values

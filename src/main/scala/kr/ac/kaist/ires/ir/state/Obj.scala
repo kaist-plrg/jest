@@ -62,6 +62,6 @@ case class IRList(values: Vector[Value]) extends Obj {
 }
 
 // IR not supported objects
-case class IRNotSupported(name: String) extends Obj {
-  val ty: Ty = Ty("NotSupported")
+case class IRNotSupported(tyname: String, desc: String) extends Obj {
+  val ty: Ty = Ty(tyname)
 }
