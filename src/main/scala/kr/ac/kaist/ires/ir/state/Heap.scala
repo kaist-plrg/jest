@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.model.Model.tyMap
 // IR Heaps
 case class Heap(
     map: Map[Addr, Obj] = Map(),
-    size: Int = 0
+    size: Long = 0L
 ) extends IRNode {
   // getters
   def get(addr: Addr): Option[Obj] = map.get(addr)
