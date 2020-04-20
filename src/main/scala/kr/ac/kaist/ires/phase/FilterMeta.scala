@@ -180,7 +180,10 @@ case object FilterMeta extends PhaseObj[Unit, FilterMetaConfig, Unit] {
     ("/built-ins/String/prototype/matchAll/regexp-is-null", "matchAll"),
     ("/built-ins/String/prototype/matchAll/regexp-is-undefined", "matchAll"),
     ("/built-ins/String/prototype/matchAll/regexp-matchAll-invocation", "matchAll"),
-    ("/built-ins/String/prototype/matchAll/this-val-non-obj-coercible", "matchAll")
+    ("/built-ins/String/prototype/matchAll/this-val-non-obj-coercible", "matchAll"),
+    ("/built-ins/String/prototype/matchAll/regexp-matchAll-not-callable", "matchAll"),
+    ("/built-ins/String/prototype/matchAll/regexp-prototype-has-no-matchAll", "matchAll"),
+    ("/built-ins/RegExp/lookBehind/sliced-strings", "substr")
   )
 
   lazy val manualDebatable = List(
@@ -212,6 +215,12 @@ case object FilterMeta extends PhaseObj[Unit, FilterMetaConfig, Unit] {
     "/built-ins/Array/prototype/some/15.4.4.17-7-c-ii-2",
     "/built-ins/RegExp/S15.10.2.8_A3_T15",
     "/built-ins/RegExp/S15.10.2.8_A3_T16",
+    "/built-ins/RegExp/property-escapes/generated/Changes_When_NFKC_Casefolded",
+    "/built-ins/RegExp/property-escapes/generated/General_Category_-_Letter",
+    "/built-ins/RegExp/property-escapes/generated/General_Category_-_Other",
+    "/built-ins/RegExp/property-escapes/generated/General_Category_-_Unassigned",
+    "/built-ins/RegExp/property-escapes/generated/ID_Continue",
+    "/built-ins/RegExp/property-escapes/generated/ID_Start",
     "/language/expressions/call/tco-call-args",
     "/language/expressions/call/tco-member-args",
     "/language/expressions/class/async-gen-method-static/yield-star-async-throw",
