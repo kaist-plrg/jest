@@ -23,8 +23,15 @@ import scala.concurrent._
 import scala.concurrent.duration._
 
 class Test262Test extends IRESTest {
+
+  sealed trait TestKind
+  case object Basic extends TestKind
+  case object Long extends TestKind
+  case object VeryLong extends TestKind
+
   // tag name
   val tag: String = "test262Test"
+  def testKind: TestKind = Basic
 
   // base directory
   val test262Dir = s"$TEST_DIR/test262"
@@ -60,7 +67,11 @@ class Test262Test extends IRESTest {
 
   // registration
   val dir = new File(test262Dir)
-  val config = FilterMeta.test262configSummary
+  val (config, evalConfig) = testKind match {
+    case Basic => (FilterMeta.test262configSummary, new IREvalConfig(timeout = Some(3)))
+    case Long => (FilterMeta.test262LongconfigSummary, new IREvalConfig(timeout = None))
+    case VeryLong => (FilterMeta.test262VeryLongconfigSummary, new IREvalConfig(timeout = None))
+  }
   val initInclude = List("assert.js", "sta.js").foldLeft(Map[String, List[StatementListItem]]()) {
     case (imm, s) => {
       val includeName = s"${dir.toString}/harness/$s"
@@ -99,11 +110,19 @@ class Test262Test extends IRESTest {
         val stList = includes.foldLeft(initStList) {
           case (li, s) => li ++ includeMap(s)
         } ++ ModelHelper.flattenStatement(ast)
-        val st = IREval(Load(ModelHelper.mergeStatement(stList), jsConfig), jsConfig)
+        val st = IREval(Load(ModelHelper.mergeStatement(stList), jsConfig), jsConfig, evalConfig)
         evalJSTest(st)
       })
     }
   }
 
   init
+}
+
+class Test262LongTest extends Test262Test {
+  override def testKind = Long
+}
+
+class Test262VeryLongTest extends Test262Test {
+  override def testKind = VeryLong
 }

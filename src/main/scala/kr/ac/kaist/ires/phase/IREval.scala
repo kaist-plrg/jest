@@ -13,11 +13,19 @@ case object IREval extends PhaseObj[State, IREvalConfig, State] {
     initialSt: State,
     iresConfig: IRESConfig,
     config: IREvalConfig
-  ): State = (new Interp())(initialSt)
+  ): State = (new Interp(config.debugir, config.timeout))(initialSt)
 
   def defaultConfig: IREvalConfig = IREvalConfig()
-  val options: List[PhaseOption[IREvalConfig]] = List()
+  val options: List[PhaseOption[IREvalConfig]] = List(
+    ("debug-ir", BoolOption(c => c.debugir = true),
+      "print each step of IR."),
+    ("timeout", NumOption((c, i) => c.timeout = if (i == 0) None else Some(i)),
+      "set timeout of interpreter(second), 0 for unlimited.")
+  )
 }
 
 // IREval phase config
-case class IREvalConfig() extends Config
+case class IREvalConfig(
+    var debugir: Boolean = false,
+    var timeout: Option[Long] = Some(3)
+) extends Config

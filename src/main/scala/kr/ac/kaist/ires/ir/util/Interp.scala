@@ -10,8 +10,7 @@ import kr.ac.kaist.ires.error.NotSupported
 import kr.ac.kaist.ires.model.{ Parser => ESParser, ESValueParser, ModelHelper }
 
 // IR Interpreter
-class Interp {
-  val timeout: Long = 3000L
+class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
   val startTime: Long = System.currentTimeMillis
   var instCount = 0
 
@@ -32,8 +31,11 @@ class Interp {
   // instructions
   def interp(inst: Inst): State => State = st => {
     instCount = instCount + 1
-    if ((instCount % 10000 == 0) && (System.currentTimeMillis - startTime) > timeout) error("timeoutInst")
-    if (DEBUG_INTERP) inst match {
+    if (instCount % 10000 == 0) timeLimit match {
+      case Some(timeout) => if ((System.currentTimeMillis - startTime) > timeout * 1000) error("timeoutInst")
+      case _ => ()
+    }
+    if (DEBUG_INTERP || isDebug) inst match {
       case ISeq(_) =>
       case _ => println(s"${st.context.name}: ${beautify(inst)}")
     }
@@ -362,7 +364,7 @@ class Interp {
           val newVal = try {
             ASTVal(Await.result(Future(
               ESParser.parse(p(ast.parserParams), ast.toString).get
-            ), timeout.milliseconds))
+            ), timeLimit.map(_.seconds).getOrElse(Duration.Inf)))
           } catch {
             case e: TimeoutException => error("parser timeout")
             case e: Throwable => Absent
@@ -384,7 +386,7 @@ class Interp {
           val newVal = try {
             ASTVal(Await.result(Future(
               ESParser.parse(p(parserParams), str).get
-            ), timeout.milliseconds))
+            ), timeLimit.map(_.seconds).getOrElse(Duration.Inf)))
           } catch {
             case e: TimeoutException => error("parser timeout")
             case e: Throwable => Absent

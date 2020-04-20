@@ -13,7 +13,7 @@ import scala.util.{ Try, Success, Failure }
 
 // REPL
 object REPL {
-  def run(initial: State, detail: Boolean): Unit = {
+  def run(initial: State, detail: Boolean, isDebug: Boolean, timeLimit: Option[Long]): Unit = {
     val cyan = "\u001b[36m"
     val reset = "\u001b[0m"
     val builder: TerminalBuilder = TerminalBuilder.builder()
@@ -46,7 +46,7 @@ object REPL {
     }
 
     var st: State = initial
-    val interp: Interp = new Interp()
+    val interp: Interp = new Interp(isDebug, timeLimit)
     def pre: String = "Instruction: " + st.context.insts.map(inst => LINE_SEP + "  " + beautify(inst, detail = detail)).mkString
     def prompt: String = pre + LINE_SEP + s"${cyan}ir>${reset} "
     def fixMsg: String = pre + LINE_SEP + "Please press the enter key..."
