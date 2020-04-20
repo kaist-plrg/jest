@@ -95,11 +95,15 @@ class Interp {
           case Bool(true) => s0
           case Bool(false) =>
             error(s"\n${beautify(s0.globals.get(Id("__filename__")).getOrElse(Str("unknown")))} - ${s0.context.name}: assertion failure: ${beautify(expr)}"); s0
+          case Str(msg) =>
+            error(s"\n${beautify(s0.globals.get(Id("__filename__")).getOrElse(Str("unknown")))} - ${s0.context.name}: Error occured : $msg"); s0
           case addr: Addr => s0.get(addr) match {
             case Some(IRMap(Ty("Completion"), m)) => m(Str("Value")) match {
               case Bool(true) => s0
               case Bool(false) =>
                 error(s"\n${beautify(s0.globals.get(Id("__filename__")).getOrElse(Str("unknown")))} - ${s0.context.name}: assertion failure: ${beautify(expr)}"); s0
+              case Str(msg) =>
+                error(s"\n${beautify(s0.globals.get(Id("__filename__")).getOrElse(Str("unknown")))} - ${s0.context.name}: Error occured : $msg"); s0
               case v => error(s"\n${beautify(s0.globals.get(Id("__filename__")).getOrElse(Str("unknown")))} - ${s0.context.name}: assertion is not a boolean: $v"); s0
             }
             case v => error(s"\n${beautify(s0.globals.get(Id("__filename__")).getOrElse(Str("unknown")))} - ${s0.context.name}: assertion is not a boolean: $v"); s0
