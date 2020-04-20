@@ -9,6 +9,8 @@ trait AssignmentElisionElement extends AST {
   val kind: String = "AssignmentElisionElement"
 }
 case class AssignmentElisionElement0(x0: Option[Elision], x1: AssignmentElement, parserParams: List[Boolean]) extends AssignmentElisionElement {
+  x0.foreach((m) => m.parent = Some(this))
+  x1.parent = Some(this)
   val name: String = "AssignmentElisionElement0"
   override def toString: String = {
     s"${x0.getOrElse("")} $x1"

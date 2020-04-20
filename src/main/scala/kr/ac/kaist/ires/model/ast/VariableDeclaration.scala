@@ -9,6 +9,8 @@ trait VariableDeclaration extends AST {
   val kind: String = "VariableDeclaration"
 }
 case class VariableDeclaration0(x0: BindingIdentifier, x1: Option[Initializer], parserParams: List[Boolean]) extends VariableDeclaration {
+  x0.parent = Some(this)
+  x1.foreach((m) => m.parent = Some(this))
   val name: String = "VariableDeclaration0"
   override def toString: String = {
     s"$x0 ${x1.getOrElse("")}"
@@ -26,6 +28,8 @@ object VariableDeclaration0 extends ASTInfo {
   )
 }
 case class VariableDeclaration1(x0: BindingPattern, x1: Initializer, parserParams: List[Boolean]) extends VariableDeclaration {
+  x0.parent = Some(this)
+  x1.parent = Some(this)
   val name: String = "VariableDeclaration1"
   override def toString: String = {
     s"$x0 $x1"

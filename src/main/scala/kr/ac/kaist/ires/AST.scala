@@ -3,6 +3,7 @@ package kr.ac.kaist.ires
 import kr.ac.kaist.ires.ir._
 
 trait AST {
+  var parent: Option[AST] = None
   val kind: String
   val name: String
   val k: Int

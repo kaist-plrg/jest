@@ -9,6 +9,7 @@ trait AssignmentPattern extends AST {
   val kind: String = "AssignmentPattern"
 }
 case class AssignmentPattern0(x0: ObjectAssignmentPattern, parserParams: List[Boolean]) extends AssignmentPattern {
+  x0.parent = Some(this)
   val name: String = "AssignmentPattern0"
   override def toString: String = {
     s"$x0"
@@ -22,6 +23,7 @@ object AssignmentPattern0 extends ASTInfo {
   val semMap: Map[String, Func] = Map()
 }
 case class AssignmentPattern1(x0: ArrayAssignmentPattern, parserParams: List[Boolean]) extends AssignmentPattern {
+  x0.parent = Some(this)
   val name: String = "AssignmentPattern1"
   override def toString: String = {
     s"$x0"

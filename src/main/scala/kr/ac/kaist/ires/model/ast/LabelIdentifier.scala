@@ -9,6 +9,7 @@ trait LabelIdentifier extends AST {
   val kind: String = "LabelIdentifier"
 }
 case class LabelIdentifier0(x0: Identifier, parserParams: List[Boolean]) extends LabelIdentifier {
+  x0.parent = Some(this)
   val name: String = "LabelIdentifier0"
   override def toString: String = {
     s"$x0"

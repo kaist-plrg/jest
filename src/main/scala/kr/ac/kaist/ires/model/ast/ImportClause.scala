@@ -9,6 +9,7 @@ trait ImportClause extends AST {
   val kind: String = "ImportClause"
 }
 case class ImportClause0(x0: ImportedDefaultBinding, parserParams: List[Boolean]) extends ImportClause {
+  x0.parent = Some(this)
   val name: String = "ImportClause0"
   override def toString: String = {
     s"$x0"
@@ -22,6 +23,7 @@ object ImportClause0 extends ASTInfo {
   val semMap: Map[String, Func] = Map()
 }
 case class ImportClause1(x0: NameSpaceImport, parserParams: List[Boolean]) extends ImportClause {
+  x0.parent = Some(this)
   val name: String = "ImportClause1"
   override def toString: String = {
     s"$x0"
@@ -35,6 +37,7 @@ object ImportClause1 extends ASTInfo {
   val semMap: Map[String, Func] = Map()
 }
 case class ImportClause2(x0: NamedImports, parserParams: List[Boolean]) extends ImportClause {
+  x0.parent = Some(this)
   val name: String = "ImportClause2"
   override def toString: String = {
     s"$x0"
@@ -48,6 +51,8 @@ object ImportClause2 extends ASTInfo {
   val semMap: Map[String, Func] = Map()
 }
 case class ImportClause3(x0: ImportedDefaultBinding, x2: NameSpaceImport, parserParams: List[Boolean]) extends ImportClause {
+  x0.parent = Some(this)
+  x2.parent = Some(this)
   val name: String = "ImportClause3"
   override def toString: String = {
     s"$x0 , $x2"
@@ -61,6 +66,8 @@ object ImportClause3 extends ASTInfo {
   val semMap: Map[String, Func] = Map()
 }
 case class ImportClause4(x0: ImportedDefaultBinding, x2: NamedImports, parserParams: List[Boolean]) extends ImportClause {
+  x0.parent = Some(this)
+  x2.parent = Some(this)
   val name: String = "ImportClause4"
   override def toString: String = {
     s"$x0 , $x2"

@@ -9,6 +9,7 @@ trait FunctionRestParameter extends AST {
   val kind: String = "FunctionRestParameter"
 }
 case class FunctionRestParameter0(x0: BindingRestElement, parserParams: List[Boolean]) extends FunctionRestParameter {
+  x0.parent = Some(this)
   val name: String = "FunctionRestParameter0"
   override def toString: String = {
     s"$x0"

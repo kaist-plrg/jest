@@ -22,6 +22,7 @@ object ExportClause0 extends ASTInfo {
   val semMap: Map[String, Func] = Map()
 }
 case class ExportClause1(x1: ExportsList, parserParams: List[Boolean]) extends ExportClause {
+  x1.parent = Some(this)
   val name: String = "ExportClause1"
   override def toString: String = {
     s"{ $x1 }"
@@ -35,6 +36,7 @@ object ExportClause1 extends ASTInfo {
   val semMap: Map[String, Func] = Map()
 }
 case class ExportClause2(x1: ExportsList, parserParams: List[Boolean]) extends ExportClause {
+  x1.parent = Some(this)
   val name: String = "ExportClause2"
   override def toString: String = {
     s"{ $x1 , }"

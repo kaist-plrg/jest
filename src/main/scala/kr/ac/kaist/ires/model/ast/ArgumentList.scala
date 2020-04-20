@@ -9,6 +9,7 @@ trait ArgumentList extends AST {
   val kind: String = "ArgumentList"
 }
 case class ArgumentList0(x0: AssignmentExpression, parserParams: List[Boolean]) extends ArgumentList {
+  x0.parent = Some(this)
   val name: String = "ArgumentList0"
   override def toString: String = {
     s"$x0"
@@ -24,6 +25,7 @@ object ArgumentList0 extends ASTInfo {
   )
 }
 case class ArgumentList1(x1: AssignmentExpression, parserParams: List[Boolean]) extends ArgumentList {
+  x1.parent = Some(this)
   val name: String = "ArgumentList1"
   override def toString: String = {
     s"... $x1"
@@ -39,6 +41,8 @@ object ArgumentList1 extends ASTInfo {
   )
 }
 case class ArgumentList2(x0: ArgumentList, x2: AssignmentExpression, parserParams: List[Boolean]) extends ArgumentList {
+  x0.parent = Some(this)
+  x2.parent = Some(this)
   val name: String = "ArgumentList2"
   override def toString: String = {
     s"$x0 , $x2"
@@ -54,6 +58,8 @@ object ArgumentList2 extends ASTInfo {
   )
 }
 case class ArgumentList3(x0: ArgumentList, x3: AssignmentExpression, parserParams: List[Boolean]) extends ArgumentList {
+  x0.parent = Some(this)
+  x3.parent = Some(this)
   val name: String = "ArgumentList3"
   override def toString: String = {
     s"$x0 , ... $x3"

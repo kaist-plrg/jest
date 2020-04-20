@@ -9,6 +9,9 @@ trait AsyncMethod extends AST {
   val kind: String = "AsyncMethod"
 }
 case class AsyncMethod0(x2: PropertyName, x4: UniqueFormalParameters, x7: AsyncFunctionBody, parserParams: List[Boolean]) extends AsyncMethod {
+  x2.parent = Some(this)
+  x4.parent = Some(this)
+  x7.parent = Some(this)
   val name: String = "AsyncMethod0"
   override def toString: String = {
     s"async $x2 ( $x4 ) { $x7 }"

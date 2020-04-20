@@ -9,6 +9,7 @@ trait PropertySetParameterList extends AST {
   val kind: String = "PropertySetParameterList"
 }
 case class PropertySetParameterList0(x0: FormalParameter, parserParams: List[Boolean]) extends PropertySetParameterList {
+  x0.parent = Some(this)
   val name: String = "PropertySetParameterList0"
   override def toString: String = {
     s"$x0"

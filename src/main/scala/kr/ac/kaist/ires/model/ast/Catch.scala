@@ -9,6 +9,8 @@ trait Catch extends AST {
   val kind: String = "Catch"
 }
 case class Catch0(x2: CatchParameter, x4: Block, parserParams: List[Boolean]) extends Catch {
+  x2.parent = Some(this)
+  x4.parent = Some(this)
   val name: String = "Catch0"
   override def toString: String = {
     s"catch ( $x2 ) $x4"
@@ -24,12 +26,13 @@ object Catch0 extends ASTInfo {
     "ContainsDuplicateLabels0" -> Catch0ContainsDuplicateLabels0.func,
     "ContainsUndefinedBreakTarget0" -> Catch0ContainsUndefinedBreakTarget0.func,
     "ContainsUndefinedContinueTarget0" -> Catch0ContainsUndefinedContinueTarget0.func,
-    "StatementRules0" -> Catch0StatementRules0.func,
+    "HasCallInTailPosition0" -> Catch0HasCallInTailPosition0.func,
     "VarDeclaredNames0" -> Catch0VarDeclaredNames0.func,
     "VarScopedDeclarations0" -> Catch0VarScopedDeclarations0.func
   )
 }
 case class Catch1(x1: Block, parserParams: List[Boolean]) extends Catch {
+  x1.parent = Some(this)
   val name: String = "Catch1"
   override def toString: String = {
     s"catch $x1"

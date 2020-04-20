@@ -9,6 +9,7 @@ trait BindingList extends AST {
   val kind: String = "BindingList"
 }
 case class BindingList0(x0: LexicalBinding, parserParams: List[Boolean]) extends BindingList {
+  x0.parent = Some(this)
   val name: String = "BindingList0"
   override def toString: String = {
     s"$x0"
@@ -22,6 +23,8 @@ object BindingList0 extends ASTInfo {
   val semMap: Map[String, Func] = Map()
 }
 case class BindingList1(x0: BindingList, x2: LexicalBinding, parserParams: List[Boolean]) extends BindingList {
+  x0.parent = Some(this)
+  x2.parent = Some(this)
   val name: String = "BindingList1"
   override def toString: String = {
     s"$x0 , $x2"

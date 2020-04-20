@@ -9,6 +9,7 @@ trait EqualityExpression extends AST {
   val kind: String = "EqualityExpression"
 }
 case class EqualityExpression0(x0: RelationalExpression, parserParams: List[Boolean]) extends EqualityExpression {
+  x0.parent = Some(this)
   val name: String = "EqualityExpression0"
   override def toString: String = {
     s"$x0"
@@ -22,6 +23,8 @@ object EqualityExpression0 extends ASTInfo {
   val semMap: Map[String, Func] = Map()
 }
 case class EqualityExpression1(x0: EqualityExpression, x2: RelationalExpression, parserParams: List[Boolean]) extends EqualityExpression {
+  x0.parent = Some(this)
+  x2.parent = Some(this)
   val name: String = "EqualityExpression1"
   override def toString: String = {
     s"$x0 == $x2"
@@ -40,6 +43,8 @@ object EqualityExpression1 extends ASTInfo {
   )
 }
 case class EqualityExpression2(x0: EqualityExpression, x2: RelationalExpression, parserParams: List[Boolean]) extends EqualityExpression {
+  x0.parent = Some(this)
+  x2.parent = Some(this)
   val name: String = "EqualityExpression2"
   override def toString: String = {
     s"$x0 != $x2"
@@ -58,6 +63,8 @@ object EqualityExpression2 extends ASTInfo {
   )
 }
 case class EqualityExpression3(x0: EqualityExpression, x2: RelationalExpression, parserParams: List[Boolean]) extends EqualityExpression {
+  x0.parent = Some(this)
+  x2.parent = Some(this)
   val name: String = "EqualityExpression3"
   override def toString: String = {
     s"$x0 === $x2"
@@ -76,6 +83,8 @@ object EqualityExpression3 extends ASTInfo {
   )
 }
 case class EqualityExpression4(x0: EqualityExpression, x2: RelationalExpression, parserParams: List[Boolean]) extends EqualityExpression {
+  x0.parent = Some(this)
+  x2.parent = Some(this)
   val name: String = "EqualityExpression4"
   override def toString: String = {
     s"$x0 !== $x2"

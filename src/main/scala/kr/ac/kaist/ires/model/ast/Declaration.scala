@@ -9,6 +9,7 @@ trait Declaration extends AST {
   val kind: String = "Declaration"
 }
 case class Declaration0(x0: HoistableDeclaration, parserParams: List[Boolean]) extends Declaration {
+  x0.parent = Some(this)
   val name: String = "Declaration0"
   override def toString: String = {
     s"$x0"
@@ -22,6 +23,7 @@ object Declaration0 extends ASTInfo {
   val semMap: Map[String, Func] = Map()
 }
 case class Declaration1(x0: ClassDeclaration, parserParams: List[Boolean]) extends Declaration {
+  x0.parent = Some(this)
   val name: String = "Declaration1"
   override def toString: String = {
     s"$x0"
@@ -37,6 +39,7 @@ object Declaration1 extends ASTInfo {
   )
 }
 case class Declaration2(x0: LexicalDeclaration, parserParams: List[Boolean]) extends Declaration {
+  x0.parent = Some(this)
   val name: String = "Declaration2"
   override def toString: String = {
     s"$x0"

@@ -9,6 +9,7 @@ trait AssignmentElementList extends AST {
   val kind: String = "AssignmentElementList"
 }
 case class AssignmentElementList0(x0: AssignmentElisionElement, parserParams: List[Boolean]) extends AssignmentElementList {
+  x0.parent = Some(this)
   val name: String = "AssignmentElementList0"
   override def toString: String = {
     s"$x0"
@@ -24,6 +25,8 @@ object AssignmentElementList0 extends ASTInfo {
   )
 }
 case class AssignmentElementList1(x0: AssignmentElementList, x2: AssignmentElisionElement, parserParams: List[Boolean]) extends AssignmentElementList {
+  x0.parent = Some(this)
+  x2.parent = Some(this)
   val name: String = "AssignmentElementList1"
   override def toString: String = {
     s"$x0 , $x2"

@@ -9,6 +9,7 @@ trait ConciseBody extends AST {
   val kind: String = "ConciseBody"
 }
 case class ConciseBody0(x1: AssignmentExpression, parserParams: List[Boolean]) extends ConciseBody {
+  x1.parent = Some(this)
   val name: String = "ConciseBody0"
   override def toString: String = {
     s"$x1"
@@ -22,14 +23,15 @@ object ConciseBody0 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "ContainsUseStrict0" -> ConciseBody0ContainsUseStrict0.func,
     "EvaluateBody0" -> ConciseBody0EvaluateBody0.func,
+    "HasCallInTailPosition0" -> ConciseBody0HasCallInTailPosition0.func,
     "LexicallyDeclaredNames0" -> ConciseBody0LexicallyDeclaredNames0.func,
     "LexicallyScopedDeclarations0" -> ConciseBody0LexicallyScopedDeclarations0.func,
-    "StatementRules0" -> ConciseBody0StatementRules0.func,
     "VarDeclaredNames0" -> ConciseBody0VarDeclaredNames0.func,
     "VarScopedDeclarations0" -> ConciseBody0VarScopedDeclarations0.func
   )
 }
 case class ConciseBody1(x1: FunctionBody, parserParams: List[Boolean]) extends ConciseBody {
+  x1.parent = Some(this)
   val name: String = "ConciseBody1"
   override def toString: String = {
     s"{ $x1 }"

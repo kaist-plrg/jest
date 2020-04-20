@@ -9,6 +9,9 @@ trait AsyncGeneratorMethod extends AST {
   val kind: String = "AsyncGeneratorMethod"
 }
 case class AsyncGeneratorMethod0(x3: PropertyName, x5: UniqueFormalParameters, x8: AsyncGeneratorBody, parserParams: List[Boolean]) extends AsyncGeneratorMethod {
+  x3.parent = Some(this)
+  x5.parent = Some(this)
+  x8.parent = Some(this)
   val name: String = "AsyncGeneratorMethod0"
   override def toString: String = {
     s"async * $x3 ( $x5 ) { $x8 }"

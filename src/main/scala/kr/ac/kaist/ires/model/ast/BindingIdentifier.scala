@@ -9,6 +9,7 @@ trait BindingIdentifier extends AST {
   val kind: String = "BindingIdentifier"
 }
 case class BindingIdentifier0(x0: Identifier, parserParams: List[Boolean]) extends BindingIdentifier {
+  x0.parent = Some(this)
   val name: String = "BindingIdentifier0"
   override def toString: String = {
     s"$x0"

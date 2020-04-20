@@ -24,6 +24,7 @@ object ObjectLiteral0 extends ASTInfo {
   )
 }
 case class ObjectLiteral1(x1: PropertyDefinitionList, parserParams: List[Boolean]) extends ObjectLiteral {
+  x1.parent = Some(this)
   val name: String = "ObjectLiteral1"
   override def toString: String = {
     s"{ $x1 }"
@@ -39,6 +40,7 @@ object ObjectLiteral1 extends ASTInfo {
   )
 }
 case class ObjectLiteral2(x1: PropertyDefinitionList, parserParams: List[Boolean]) extends ObjectLiteral {
+  x1.parent = Some(this)
   val name: String = "ObjectLiteral2"
   override def toString: String = {
     s"{ $x1 , }"

@@ -9,6 +9,7 @@ trait AsyncArrowBindingIdentifier extends AST {
   val kind: String = "AsyncArrowBindingIdentifier"
 }
 case class AsyncArrowBindingIdentifier0(x0: BindingIdentifier, parserParams: List[Boolean]) extends AsyncArrowBindingIdentifier {
+  x0.parent = Some(this)
   val name: String = "AsyncArrowBindingIdentifier0"
   override def toString: String = {
     s"$x0"

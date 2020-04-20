@@ -9,6 +9,7 @@ trait VariableDeclarationList extends AST {
   val kind: String = "VariableDeclarationList"
 }
 case class VariableDeclarationList0(x0: VariableDeclaration, parserParams: List[Boolean]) extends VariableDeclarationList {
+  x0.parent = Some(this)
   val name: String = "VariableDeclarationList0"
   override def toString: String = {
     s"$x0"
@@ -24,6 +25,8 @@ object VariableDeclarationList0 extends ASTInfo {
   )
 }
 case class VariableDeclarationList1(x0: VariableDeclarationList, x2: VariableDeclaration, parserParams: List[Boolean]) extends VariableDeclarationList {
+  x0.parent = Some(this)
+  x2.parent = Some(this)
   val name: String = "VariableDeclarationList1"
   override def toString: String = {
     s"$x0 , $x2"

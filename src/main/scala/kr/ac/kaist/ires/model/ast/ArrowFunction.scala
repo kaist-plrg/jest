@@ -9,6 +9,8 @@ trait ArrowFunction extends AST {
   val kind: String = "ArrowFunction"
 }
 case class ArrowFunction0(x0: ArrowParameters, x3: ConciseBody, parserParams: List[Boolean]) extends ArrowFunction {
+  x0.parent = Some(this)
+  x3.parent = Some(this)
   val name: String = "ArrowFunction0"
   override def toString: String = {
     s"$x0 => $x3"

@@ -9,6 +9,7 @@ trait CaseClauses extends AST {
   val kind: String = "CaseClauses"
 }
 case class CaseClauses0(x0: CaseClause, parserParams: List[Boolean]) extends CaseClauses {
+  x0.parent = Some(this)
   val name: String = "CaseClauses0"
   override def toString: String = {
     s"$x0"
@@ -22,6 +23,8 @@ object CaseClauses0 extends ASTInfo {
   val semMap: Map[String, Func] = Map()
 }
 case class CaseClauses1(x0: CaseClauses, x1: CaseClause, parserParams: List[Boolean]) extends CaseClauses {
+  x0.parent = Some(this)
+  x1.parent = Some(this)
   val name: String = "CaseClauses1"
   override def toString: String = {
     s"$x0 $x1"
@@ -36,9 +39,9 @@ object CaseClauses1 extends ASTInfo {
     "ContainsDuplicateLabels0" -> CaseClauses1ContainsDuplicateLabels0.func,
     "ContainsUndefinedBreakTarget0" -> CaseClauses1ContainsUndefinedBreakTarget0.func,
     "ContainsUndefinedContinueTarget0" -> CaseClauses1ContainsUndefinedContinueTarget0.func,
+    "HasCallInTailPosition0" -> CaseClauses1HasCallInTailPosition0.func,
     "LexicallyDeclaredNames0" -> CaseClauses1LexicallyDeclaredNames0.func,
     "LexicallyScopedDeclarations0" -> CaseClauses1LexicallyScopedDeclarations0.func,
-    "StatementRules0" -> CaseClauses1StatementRules0.func,
     "VarDeclaredNames0" -> CaseClauses1VarDeclaredNames0.func,
     "VarScopedDeclarations0" -> CaseClauses1VarScopedDeclarations0.func
   )

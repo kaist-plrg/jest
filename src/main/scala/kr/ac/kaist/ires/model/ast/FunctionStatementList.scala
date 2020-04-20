@@ -9,6 +9,7 @@ trait FunctionStatementList extends AST {
   val kind: String = "FunctionStatementList"
 }
 case class FunctionStatementList0(x0: Option[StatementList], parserParams: List[Boolean]) extends FunctionStatementList {
+  x0.foreach((m) => m.parent = Some(this))
   val name: String = "FunctionStatementList0"
   override def toString: String = {
     s"${x0.getOrElse("")}"
@@ -21,11 +22,11 @@ object FunctionStatementList0 extends ASTInfo {
   val maxK: Int = 1
   val semMap: Map[String, Func] = Map(
     "Evaluation0" -> FunctionStatementList0Evaluation0.func,
+    "HasCallInTailPosition0" -> FunctionStatementList0HasCallInTailPosition0.func,
     "LexicallyDeclaredNames0" -> FunctionStatementList0LexicallyDeclaredNames0.func,
     "LexicallyDeclaredNames1" -> FunctionStatementList0LexicallyDeclaredNames1.func,
     "LexicallyScopedDeclarations0" -> FunctionStatementList0LexicallyScopedDeclarations0.func,
     "LexicallyScopedDeclarations1" -> FunctionStatementList0LexicallyScopedDeclarations1.func,
-    "StatementRules0" -> FunctionStatementList0StatementRules0.func,
     "VarDeclaredNames0" -> FunctionStatementList0VarDeclaredNames0.func,
     "VarDeclaredNames1" -> FunctionStatementList0VarDeclaredNames1.func,
     "VarScopedDeclarations0" -> FunctionStatementList0VarScopedDeclarations0.func,

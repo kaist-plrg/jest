@@ -9,6 +9,8 @@ trait WithStatement extends AST {
   val kind: String = "WithStatement"
 }
 case class WithStatement0(x2: Expression, x4: Statement, parserParams: List[Boolean]) extends WithStatement {
+  x2.parent = Some(this)
+  x4.parent = Some(this)
   val name: String = "WithStatement0"
   override def toString: String = {
     s"with ( $x2 ) $x4"
@@ -24,7 +26,7 @@ object WithStatement0 extends ASTInfo {
     "ContainsUndefinedBreakTarget0" -> WithStatement0ContainsUndefinedBreakTarget0.func,
     "ContainsUndefinedContinueTarget0" -> WithStatement0ContainsUndefinedContinueTarget0.func,
     "Evaluation0" -> WithStatement0Evaluation0.func,
-    "StatementRules0" -> WithStatement0StatementRules0.func,
+    "HasCallInTailPosition0" -> WithStatement0HasCallInTailPosition0.func,
     "VarDeclaredNames0" -> WithStatement0VarDeclaredNames0.func,
     "VarScopedDeclarations0" -> WithStatement0VarScopedDeclarations0.func
   )

@@ -9,6 +9,7 @@ trait AsyncArrowHead extends AST {
   val kind: String = "AsyncArrowHead"
 }
 case class AsyncArrowHead0(x2: ArrowFormalParameters, parserParams: List[Boolean]) extends AsyncArrowHead {
+  x2.parent = Some(this)
   val name: String = "AsyncArrowHead0"
   override def toString: String = {
     s"async $x2"

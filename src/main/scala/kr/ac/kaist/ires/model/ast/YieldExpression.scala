@@ -24,6 +24,7 @@ object YieldExpression0 extends ASTInfo {
   )
 }
 case class YieldExpression1(x2: AssignmentExpression, parserParams: List[Boolean]) extends YieldExpression {
+  x2.parent = Some(this)
   val name: String = "YieldExpression1"
   override def toString: String = {
     s"yield $x2"
@@ -39,6 +40,7 @@ object YieldExpression1 extends ASTInfo {
   )
 }
 case class YieldExpression2(x3: AssignmentExpression, parserParams: List[Boolean]) extends YieldExpression {
+  x3.parent = Some(this)
   val name: String = "YieldExpression2"
   override def toString: String = {
     s"yield * $x3"

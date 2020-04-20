@@ -9,6 +9,8 @@ trait ArrayBindingPattern extends AST {
   val kind: String = "ArrayBindingPattern"
 }
 case class ArrayBindingPattern0(x1: Option[Elision], x2: Option[BindingRestElement], parserParams: List[Boolean]) extends ArrayBindingPattern {
+  x1.foreach((m) => m.parent = Some(this))
+  x2.foreach((m) => m.parent = Some(this))
   val name: String = "ArrayBindingPattern0"
   override def toString: String = {
     s"[ ${x1.getOrElse("")} ${x2.getOrElse("")} ]"
@@ -31,6 +33,7 @@ object ArrayBindingPattern0 extends ASTInfo {
   )
 }
 case class ArrayBindingPattern1(x1: BindingElementList, parserParams: List[Boolean]) extends ArrayBindingPattern {
+  x1.parent = Some(this)
   val name: String = "ArrayBindingPattern1"
   override def toString: String = {
     s"[ $x1 ]"
@@ -46,6 +49,9 @@ object ArrayBindingPattern1 extends ASTInfo {
   )
 }
 case class ArrayBindingPattern2(x1: BindingElementList, x3: Option[Elision], x4: Option[BindingRestElement], parserParams: List[Boolean]) extends ArrayBindingPattern {
+  x1.parent = Some(this)
+  x3.foreach((m) => m.parent = Some(this))
+  x4.foreach((m) => m.parent = Some(this))
   val name: String = "ArrayBindingPattern2"
   override def toString: String = {
     s"[ $x1 , ${x3.getOrElse("")} ${x4.getOrElse("")} ]"

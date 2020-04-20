@@ -9,6 +9,7 @@ trait AsyncConciseBody extends AST {
   val kind: String = "AsyncConciseBody"
 }
 case class AsyncConciseBody0(x1: AssignmentExpression, parserParams: List[Boolean]) extends AsyncConciseBody {
+  x1.parent = Some(this)
   val name: String = "AsyncConciseBody0"
   override def toString: String = {
     s"$x1"
@@ -28,6 +29,7 @@ object AsyncConciseBody0 extends ASTInfo {
   )
 }
 case class AsyncConciseBody1(x1: AsyncFunctionBody, parserParams: List[Boolean]) extends AsyncConciseBody {
+  x1.parent = Some(this)
   val name: String = "AsyncConciseBody1"
   override def toString: String = {
     s"{ $x1 }"

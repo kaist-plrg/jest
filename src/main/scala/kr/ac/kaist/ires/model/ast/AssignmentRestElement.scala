@@ -9,6 +9,7 @@ trait AssignmentRestElement extends AST {
   val kind: String = "AssignmentRestElement"
 }
 case class AssignmentRestElement0(x1: DestructuringAssignmentTarget, parserParams: List[Boolean]) extends AssignmentRestElement {
+  x1.parent = Some(this)
   val name: String = "AssignmentRestElement0"
   override def toString: String = {
     s"... $x1"

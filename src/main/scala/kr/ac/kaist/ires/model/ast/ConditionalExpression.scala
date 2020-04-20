@@ -9,6 +9,7 @@ trait ConditionalExpression extends AST {
   val kind: String = "ConditionalExpression"
 }
 case class ConditionalExpression0(x0: LogicalORExpression, parserParams: List[Boolean]) extends ConditionalExpression {
+  x0.parent = Some(this)
   val name: String = "ConditionalExpression0"
   override def toString: String = {
     s"$x0"
@@ -22,6 +23,9 @@ object ConditionalExpression0 extends ASTInfo {
   val semMap: Map[String, Func] = Map()
 }
 case class ConditionalExpression1(x0: LogicalORExpression, x2: AssignmentExpression, x4: AssignmentExpression, parserParams: List[Boolean]) extends ConditionalExpression {
+  x0.parent = Some(this)
+  x2.parent = Some(this)
+  x4.parent = Some(this)
   val name: String = "ConditionalExpression1"
   override def toString: String = {
     s"$x0 ? $x2 : $x4"

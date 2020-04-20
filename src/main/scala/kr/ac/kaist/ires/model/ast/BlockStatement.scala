@@ -9,6 +9,7 @@ trait BlockStatement extends AST {
   val kind: String = "BlockStatement"
 }
 case class BlockStatement0(x0: Block, parserParams: List[Boolean]) extends BlockStatement {
+  x0.parent = Some(this)
   val name: String = "BlockStatement0"
   override def toString: String = {
     s"$x0"

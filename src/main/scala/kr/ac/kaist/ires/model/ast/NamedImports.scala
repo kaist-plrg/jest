@@ -22,6 +22,7 @@ object NamedImports0 extends ASTInfo {
   val semMap: Map[String, Func] = Map()
 }
 case class NamedImports1(x1: ImportsList, parserParams: List[Boolean]) extends NamedImports {
+  x1.parent = Some(this)
   val name: String = "NamedImports1"
   override def toString: String = {
     s"{ $x1 }"
@@ -35,6 +36,7 @@ object NamedImports1 extends ASTInfo {
   val semMap: Map[String, Func] = Map()
 }
 case class NamedImports2(x1: ImportsList, parserParams: List[Boolean]) extends NamedImports {
+  x1.parent = Some(this)
   val name: String = "NamedImports2"
   override def toString: String = {
     s"{ $x1 , }"

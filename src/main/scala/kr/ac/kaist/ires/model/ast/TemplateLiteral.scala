@@ -9,6 +9,7 @@ trait TemplateLiteral extends AST {
   val kind: String = "TemplateLiteral"
 }
 case class TemplateLiteral0(x0: Lexical, parserParams: List[Boolean]) extends TemplateLiteral {
+  x0.parent = Some(this)
   val name: String = "TemplateLiteral0"
   override def toString: String = {
     s"$x0"
@@ -26,6 +27,7 @@ object TemplateLiteral0 extends ASTInfo {
   )
 }
 case class TemplateLiteral1(x0: SubstitutionTemplate, parserParams: List[Boolean]) extends TemplateLiteral {
+  x0.parent = Some(this)
   val name: String = "TemplateLiteral1"
   override def toString: String = {
     s"$x0"

@@ -197,27 +197,30 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
           })
           case (astV: ASTVal, Str(name)) =>
             val ASTVal(ast) = astV
-            ast.semantics(name) match {
-              case Some((Func(fname, params, varparam, body), lst)) =>
-                val (locals, rest) = (astV :: lst).foldLeft(Map[Id, Value](), params) {
-                  case ((map, param :: rest), arg) =>
-                    (map + (param -> arg), rest)
-                  case (pair, _) => pair
+            name match {
+              case "parent" => s2.define(id, ast.parent.map(ASTVal(_)).getOrElse(Absent))
+              case name =>
+                ast.semantics(name) match {
+                  case Some((Func(fname, params, varparam, body), lst)) =>
+                    val (locals, rest) = (astV :: lst).foldLeft(Map[Id, Value](), params) {
+                      case ((map, param :: rest), arg) =>
+                        (map + (param -> arg), rest)
+                      case (pair, _) => pair
+                    }
+                    rest match {
+                      case Nil =>
+                        val updatedCtx = s2.context.copy(retId = id)
+                        val newCtx = Context(name = fname, insts = List(body), locals = locals)
+                        s2.copy(context = newCtx, ctxStack = updatedCtx :: s2.ctxStack)
+                      case _ =>
+                        s2.define(id, ASTMethod(Func(fname, rest, varparam, body), locals))
+                    }
+                  case None => ast.subs(name) match {
+                    case Some(v) => s2.define(id, v)
+                    case None => error(s"Unexpected semantics: ${ast.name}.$name")
+                  }
                 }
-                rest match {
-                  case Nil =>
-                    val updatedCtx = s2.context.copy(retId = id)
-                    val newCtx = Context(name = fname, insts = List(body), locals = locals)
-                    s2.copy(context = newCtx, ctxStack = updatedCtx :: s2.ctxStack)
-                  case _ =>
-                    s2.define(id, ASTMethod(Func(fname, rest, varparam, body), locals))
-                }
-              case None => ast.subs(name) match {
-                case Some(v) => s2.define(id, v)
-                case None => error(s"Unexpected semantics: ${ast.name}.$name")
-              }
             }
-
           case (Str(str), p) => p match {
             case Str("length") => s2.define(id, INum(str.length))
             case INum(k) => s2.define(id, Str(str(k.toInt).toString))

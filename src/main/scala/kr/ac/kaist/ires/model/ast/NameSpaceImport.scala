@@ -9,6 +9,7 @@ trait NameSpaceImport extends AST {
   val kind: String = "NameSpaceImport"
 }
 case class NameSpaceImport0(x2: ImportedBinding, parserParams: List[Boolean]) extends NameSpaceImport {
+  x2.parent = Some(this)
   val name: String = "NameSpaceImport0"
   override def toString: String = {
     s"* as $x2"

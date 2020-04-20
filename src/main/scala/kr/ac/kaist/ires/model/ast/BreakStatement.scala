@@ -25,6 +25,7 @@ object BreakStatement0 extends ASTInfo {
   )
 }
 case class BreakStatement1(x2: LabelIdentifier, parserParams: List[Boolean]) extends BreakStatement {
+  x2.parent = Some(this)
   val name: String = "BreakStatement1"
   override def toString: String = {
     s"break $x2 ;"

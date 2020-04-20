@@ -9,6 +9,8 @@ trait TryStatement extends AST {
   val kind: String = "TryStatement"
 }
 case class TryStatement0(x1: Block, x2: Catch, parserParams: List[Boolean]) extends TryStatement {
+  x1.parent = Some(this)
+  x2.parent = Some(this)
   val name: String = "TryStatement0"
   override def toString: String = {
     s"try $x1 $x2"
@@ -24,12 +26,14 @@ object TryStatement0 extends ASTInfo {
     "ContainsUndefinedBreakTarget0" -> TryStatement0ContainsUndefinedBreakTarget0.func,
     "ContainsUndefinedContinueTarget0" -> TryStatement0ContainsUndefinedContinueTarget0.func,
     "Evaluation0" -> TryStatement0Evaluation0.func,
-    "StatementRules0" -> TryStatement0StatementRules0.func,
+    "HasCallInTailPosition0" -> TryStatement0HasCallInTailPosition0.func,
     "VarDeclaredNames0" -> TryStatement0VarDeclaredNames0.func,
     "VarScopedDeclarations0" -> TryStatement0VarScopedDeclarations0.func
   )
 }
 case class TryStatement1(x1: Block, x2: Finally, parserParams: List[Boolean]) extends TryStatement {
+  x1.parent = Some(this)
+  x2.parent = Some(this)
   val name: String = "TryStatement1"
   override def toString: String = {
     s"try $x1 $x2"
@@ -45,12 +49,15 @@ object TryStatement1 extends ASTInfo {
     "ContainsUndefinedBreakTarget0" -> TryStatement1ContainsUndefinedBreakTarget0.func,
     "ContainsUndefinedContinueTarget0" -> TryStatement1ContainsUndefinedContinueTarget0.func,
     "Evaluation0" -> TryStatement1Evaluation0.func,
-    "StatementRules0" -> TryStatement1StatementRules0.func,
+    "HasCallInTailPosition0" -> TryStatement1HasCallInTailPosition0.func,
     "VarDeclaredNames0" -> TryStatement1VarDeclaredNames0.func,
     "VarScopedDeclarations0" -> TryStatement1VarScopedDeclarations0.func
   )
 }
 case class TryStatement2(x1: Block, x2: Catch, x3: Finally, parserParams: List[Boolean]) extends TryStatement {
+  x1.parent = Some(this)
+  x2.parent = Some(this)
+  x3.parent = Some(this)
   val name: String = "TryStatement2"
   override def toString: String = {
     s"try $x1 $x2 $x3"
@@ -66,7 +73,7 @@ object TryStatement2 extends ASTInfo {
     "ContainsUndefinedBreakTarget0" -> TryStatement2ContainsUndefinedBreakTarget0.func,
     "ContainsUndefinedContinueTarget0" -> TryStatement2ContainsUndefinedContinueTarget0.func,
     "Evaluation0" -> TryStatement2Evaluation0.func,
-    "StatementRules0" -> TryStatement2StatementRules0.func,
+    "HasCallInTailPosition0" -> TryStatement2HasCallInTailPosition0.func,
     "VarDeclaredNames0" -> TryStatement2VarDeclaredNames0.func,
     "VarScopedDeclarations0" -> TryStatement2VarScopedDeclarations0.func
   )

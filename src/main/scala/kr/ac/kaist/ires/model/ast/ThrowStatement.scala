@@ -9,6 +9,7 @@ trait ThrowStatement extends AST {
   val kind: String = "ThrowStatement"
 }
 case class ThrowStatement0(x2: Expression, parserParams: List[Boolean]) extends ThrowStatement {
+  x2.parent = Some(this)
   val name: String = "ThrowStatement0"
   override def toString: String = {
     s"throw $x2 ;"

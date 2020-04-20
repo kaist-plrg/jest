@@ -9,6 +9,7 @@ trait CallExpression extends AST {
   val kind: String = "CallExpression"
 }
 case class CallExpression0(x0: CoverCallExpressionAndAsyncArrowHead, parserParams: List[Boolean]) extends CallExpression {
+  x0.parent = Some(this)
   val name: String = "CallExpression0"
   override def toString: String = {
     s"$x0"
@@ -26,6 +27,7 @@ object CallExpression0 extends ASTInfo {
   )
 }
 case class CallExpression1(x0: SuperCall, parserParams: List[Boolean]) extends CallExpression {
+  x0.parent = Some(this)
   val name: String = "CallExpression1"
   override def toString: String = {
     s"$x0"
@@ -42,6 +44,8 @@ object CallExpression1 extends ASTInfo {
   )
 }
 case class CallExpression2(x0: CallExpression, x1: Arguments, parserParams: List[Boolean]) extends CallExpression {
+  x0.parent = Some(this)
+  x1.parent = Some(this)
   val name: String = "CallExpression2"
   override def toString: String = {
     s"$x0 $x1"
@@ -59,6 +63,8 @@ object CallExpression2 extends ASTInfo {
   )
 }
 case class CallExpression3(x0: CallExpression, x2: Expression, parserParams: List[Boolean]) extends CallExpression {
+  x0.parent = Some(this)
+  x2.parent = Some(this)
   val name: String = "CallExpression3"
   override def toString: String = {
     s"$x0 [ $x2 ]"
@@ -76,6 +82,8 @@ object CallExpression3 extends ASTInfo {
   )
 }
 case class CallExpression4(x0: CallExpression, x2: Lexical, parserParams: List[Boolean]) extends CallExpression {
+  x0.parent = Some(this)
+  x2.parent = Some(this)
   val name: String = "CallExpression4"
   override def toString: String = {
     s"$x0 . $x2"
@@ -94,6 +102,8 @@ object CallExpression4 extends ASTInfo {
   )
 }
 case class CallExpression5(x0: CallExpression, x1: TemplateLiteral, parserParams: List[Boolean]) extends CallExpression {
+  x0.parent = Some(this)
+  x1.parent = Some(this)
   val name: String = "CallExpression5"
   override def toString: String = {
     s"$x0 $x1"

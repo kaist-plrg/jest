@@ -32,11 +32,11 @@ object GLOBALDOTAsyncGeneratorResumeNext {
         app __x4__ = (PromiseResolve INTRINSIC_Promise (new [completion["Value"]]))
         if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
         let promise = __x4__
-        let stepsFulfilled = !!! "Algorithms"
+        let stepsFulfilled = (new algorithm("name" -> "", "length" -> 1i, "step" -> GLOBALDOTAsyncGeneratorResumeNextReturnProcessorFulfilledFunctions))
         app __x5__ = (CreateBuiltinFunction stepsFulfilled (new ["Generator"]))
         let onFulfilled = __x5__
         onFulfilled["Generator"] = generator
-        let stepsRejected = !!! "Algorithms"
+        let stepsRejected = (new algorithm("name" -> "", "length" -> 1i, "step" -> GLOBALDOTAsyncGeneratorResumeNextReturnProcessorRejectedFunctions))
         app __x6__ = (CreateBuiltinFunction stepsRejected (new ["Generator"]))
         let onRejected = __x6__
         onRejected["Generator"] = generator

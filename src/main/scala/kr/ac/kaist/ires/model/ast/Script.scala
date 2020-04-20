@@ -9,6 +9,7 @@ trait Script extends AST {
   val kind: String = "Script"
 }
 case class Script0(x0: Option[ScriptBody], parserParams: List[Boolean]) extends Script {
+  x0.foreach((m) => m.parent = Some(this))
   val name: String = "Script0"
   override def toString: String = {
     s"${x0.getOrElse("")}"

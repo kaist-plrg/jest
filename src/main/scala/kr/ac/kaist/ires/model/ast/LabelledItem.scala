@@ -9,6 +9,7 @@ trait LabelledItem extends AST {
   val kind: String = "LabelledItem"
 }
 case class LabelledItem0(x0: Statement, parserParams: List[Boolean]) extends LabelledItem {
+  x0.parent = Some(this)
   val name: String = "LabelledItem0"
   override def toString: String = {
     s"$x0"
@@ -28,6 +29,7 @@ object LabelledItem0 extends ASTInfo {
   )
 }
 case class LabelledItem1(x0: FunctionDeclaration, parserParams: List[Boolean]) extends LabelledItem {
+  x0.parent = Some(this)
   val name: String = "LabelledItem1"
   override def toString: String = {
     s"$x0"
@@ -42,10 +44,10 @@ object LabelledItem1 extends ASTInfo {
     "ContainsDuplicateLabels0" -> LabelledItem1ContainsDuplicateLabels0.func,
     "ContainsUndefinedBreakTarget0" -> LabelledItem1ContainsUndefinedBreakTarget0.func,
     "ContainsUndefinedContinueTarget0" -> LabelledItem1ContainsUndefinedContinueTarget0.func,
+    "HasCallInTailPosition0" -> LabelledItem1HasCallInTailPosition0.func,
     "LabelledEvaluation0" -> LabelledItem1LabelledEvaluation0.func,
     "LexicallyDeclaredNames0" -> LabelledItem1LexicallyDeclaredNames0.func,
     "LexicallyScopedDeclarations0" -> LabelledItem1LexicallyScopedDeclarations0.func,
-    "StatementRules0" -> LabelledItem1StatementRules0.func,
     "TopLevelVarDeclaredNames0" -> LabelledItem1TopLevelVarDeclaredNames0.func,
     "TopLevelVarScopedDeclarations0" -> LabelledItem1TopLevelVarScopedDeclarations0.func,
     "VarDeclaredNames0" -> LabelledItem1VarDeclaredNames0.func,

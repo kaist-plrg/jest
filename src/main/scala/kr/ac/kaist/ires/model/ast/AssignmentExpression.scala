@@ -9,6 +9,7 @@ trait AssignmentExpression extends AST {
   val kind: String = "AssignmentExpression"
 }
 case class AssignmentExpression0(x0: ConditionalExpression, parserParams: List[Boolean]) extends AssignmentExpression {
+  x0.parent = Some(this)
   val name: String = "AssignmentExpression0"
   override def toString: String = {
     s"$x0"
@@ -22,6 +23,7 @@ object AssignmentExpression0 extends ASTInfo {
   val semMap: Map[String, Func] = Map()
 }
 case class AssignmentExpression1(x0: YieldExpression, parserParams: List[Boolean]) extends AssignmentExpression {
+  x0.parent = Some(this)
   val name: String = "AssignmentExpression1"
   override def toString: String = {
     s"$x0"
@@ -39,6 +41,7 @@ object AssignmentExpression1 extends ASTInfo {
   )
 }
 case class AssignmentExpression2(x0: ArrowFunction, parserParams: List[Boolean]) extends AssignmentExpression {
+  x0.parent = Some(this)
   val name: String = "AssignmentExpression2"
   override def toString: String = {
     s"$x0"
@@ -56,6 +59,7 @@ object AssignmentExpression2 extends ASTInfo {
   )
 }
 case class AssignmentExpression3(x0: AsyncArrowFunction, parserParams: List[Boolean]) extends AssignmentExpression {
+  x0.parent = Some(this)
   val name: String = "AssignmentExpression3"
   override def toString: String = {
     s"$x0"
@@ -73,6 +77,8 @@ object AssignmentExpression3 extends ASTInfo {
   )
 }
 case class AssignmentExpression4(x0: LeftHandSideExpression, x2: AssignmentExpression, parserParams: List[Boolean]) extends AssignmentExpression {
+  x0.parent = Some(this)
+  x2.parent = Some(this)
   val name: String = "AssignmentExpression4"
   override def toString: String = {
     s"$x0 = $x2"
@@ -91,6 +97,9 @@ object AssignmentExpression4 extends ASTInfo {
   )
 }
 case class AssignmentExpression5(x0: LeftHandSideExpression, x1: AssignmentOperator, x2: AssignmentExpression, parserParams: List[Boolean]) extends AssignmentExpression {
+  x0.parent = Some(this)
+  x1.parent = Some(this)
+  x2.parent = Some(this)
   val name: String = "AssignmentExpression5"
   override def toString: String = {
     s"$x0 $x1 $x2"

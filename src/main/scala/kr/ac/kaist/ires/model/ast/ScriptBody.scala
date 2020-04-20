@@ -9,6 +9,7 @@ trait ScriptBody extends AST {
   val kind: String = "ScriptBody"
 }
 case class ScriptBody0(x0: StatementList, parserParams: List[Boolean]) extends ScriptBody {
+  x0.parent = Some(this)
   val name: String = "ScriptBody0"
   override def toString: String = {
     s"$x0"

@@ -9,6 +9,7 @@ trait Finally extends AST {
   val kind: String = "Finally"
 }
 case class Finally0(x1: Block, parserParams: List[Boolean]) extends Finally {
+  x1.parent = Some(this)
   val name: String = "Finally0"
   override def toString: String = {
     s"finally $x1"

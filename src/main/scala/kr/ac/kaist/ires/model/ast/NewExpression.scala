@@ -9,6 +9,7 @@ trait NewExpression extends AST {
   val kind: String = "NewExpression"
 }
 case class NewExpression0(x0: MemberExpression, parserParams: List[Boolean]) extends NewExpression {
+  x0.parent = Some(this)
   val name: String = "NewExpression0"
   override def toString: String = {
     s"$x0"
@@ -22,6 +23,7 @@ object NewExpression0 extends ASTInfo {
   val semMap: Map[String, Func] = Map()
 }
 case class NewExpression1(x1: NewExpression, parserParams: List[Boolean]) extends NewExpression {
+  x1.parent = Some(this)
   val name: String = "NewExpression1"
   override def toString: String = {
     s"new $x1"

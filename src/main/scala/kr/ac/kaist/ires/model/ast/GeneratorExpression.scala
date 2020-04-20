@@ -9,6 +9,9 @@ trait GeneratorExpression extends AST {
   val kind: String = "GeneratorExpression"
 }
 case class GeneratorExpression0(x2: Option[BindingIdentifier], x4: FormalParameters, x7: GeneratorBody, parserParams: List[Boolean]) extends GeneratorExpression {
+  x2.foreach((m) => m.parent = Some(this))
+  x4.parent = Some(this)
+  x7.parent = Some(this)
   val name: String = "GeneratorExpression0"
   override def toString: String = {
     s"function * ${x2.getOrElse("")} ( $x4 ) { $x7 }"

@@ -9,6 +9,7 @@ trait ParenthesizedExpression extends AST {
   val kind: String = "ParenthesizedExpression"
 }
 case class ParenthesizedExpression0(x1: Expression, parserParams: List[Boolean]) extends ParenthesizedExpression {
+  x1.parent = Some(this)
   val name: String = "ParenthesizedExpression0"
   override def toString: String = {
     s"( $x1 )"

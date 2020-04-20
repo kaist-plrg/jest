@@ -30,11 +30,11 @@ object AsyncGeneratorResumeNext {
         app __x3__ = (PromiseResolve INTRINSIC_Promise completion["Value"])
         if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
         let promise = __x3__
-        let stepsFulfilled = !!! "Algorithms"
+        let stepsFulfilled = (new algorithm("name" -> "", "length" -> 1i, "step" -> GLOBALDOTAsyncGeneratorResumeNextReturnProcessorFulfilledFunctions))
         app __x4__ = (CreateBuiltinFunction stepsFulfilled (new ["Generator"]))
         let onFulfilled = __x4__
         onFulfilled["Generator"] = generator
-        let stepsRejected = !!! "Algorithms"
+        let stepsRejected = (new algorithm("name" -> "", "length" -> 1i, "step" -> GLOBALDOTAsyncGeneratorResumeNextReturnProcessorRejectedFunctions))
         app __x5__ = (CreateBuiltinFunction stepsRejected (new ["Generator"]))
         let onRejected = __x5__
         onRejected["Generator"] = generator

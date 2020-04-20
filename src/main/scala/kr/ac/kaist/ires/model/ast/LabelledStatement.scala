@@ -9,6 +9,8 @@ trait LabelledStatement extends AST {
   val kind: String = "LabelledStatement"
 }
 case class LabelledStatement0(x0: LabelIdentifier, x2: LabelledItem, parserParams: List[Boolean]) extends LabelledStatement {
+  x0.parent = Some(this)
+  x2.parent = Some(this)
   val name: String = "LabelledStatement0"
   override def toString: String = {
     s"$x0 : $x2"
@@ -24,10 +26,10 @@ object LabelledStatement0 extends ASTInfo {
     "ContainsUndefinedBreakTarget0" -> LabelledStatement0ContainsUndefinedBreakTarget0.func,
     "ContainsUndefinedContinueTarget0" -> LabelledStatement0ContainsUndefinedContinueTarget0.func,
     "Evaluation0" -> LabelledStatement0Evaluation0.func,
+    "HasCallInTailPosition0" -> LabelledStatement0HasCallInTailPosition0.func,
     "LabelledEvaluation0" -> LabelledStatement0LabelledEvaluation0.func,
     "LexicallyDeclaredNames0" -> LabelledStatement0LexicallyDeclaredNames0.func,
     "LexicallyScopedDeclarations0" -> LabelledStatement0LexicallyScopedDeclarations0.func,
-    "StatementRules0" -> LabelledStatement0StatementRules0.func,
     "TopLevelLexicallyDeclaredNames0" -> LabelledStatement0TopLevelLexicallyDeclaredNames0.func,
     "TopLevelLexicallyScopedDeclarations0" -> LabelledStatement0TopLevelLexicallyScopedDeclarations0.func,
     "TopLevelVarDeclaredNames0" -> LabelledStatement0TopLevelVarDeclaredNames0.func,

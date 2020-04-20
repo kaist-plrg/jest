@@ -9,6 +9,8 @@ trait ForDeclaration extends AST {
   val kind: String = "ForDeclaration"
 }
 case class ForDeclaration0(x0: LetOrConst, x1: ForBinding, parserParams: List[Boolean]) extends ForDeclaration {
+  x0.parent = Some(this)
+  x1.parent = Some(this)
   val name: String = "ForDeclaration0"
   override def toString: String = {
     s"$x0 $x1"

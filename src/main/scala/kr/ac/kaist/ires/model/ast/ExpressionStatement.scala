@@ -9,6 +9,7 @@ trait ExpressionStatement extends AST {
   val kind: String = "ExpressionStatement"
 }
 case class ExpressionStatement0(x1: Expression, parserParams: List[Boolean]) extends ExpressionStatement {
+  x1.parent = Some(this)
   val name: String = "ExpressionStatement0"
   override def toString: String = {
     s"$x1 ;"

@@ -9,6 +9,9 @@ trait FunctionExpression extends AST {
   val kind: String = "FunctionExpression"
 }
 case class FunctionExpression0(x1: Option[BindingIdentifier], x3: FormalParameters, x6: FunctionBody, parserParams: List[Boolean]) extends FunctionExpression {
+  x1.foreach((m) => m.parent = Some(this))
+  x3.parent = Some(this)
+  x6.parent = Some(this)
   val name: String = "FunctionExpression0"
   override def toString: String = {
     s"function ${x1.getOrElse("")} ( $x3 ) { $x6 }"

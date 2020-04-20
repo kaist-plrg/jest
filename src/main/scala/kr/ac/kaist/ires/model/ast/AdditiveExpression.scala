@@ -9,6 +9,7 @@ trait AdditiveExpression extends AST {
   val kind: String = "AdditiveExpression"
 }
 case class AdditiveExpression0(x0: MultiplicativeExpression, parserParams: List[Boolean]) extends AdditiveExpression {
+  x0.parent = Some(this)
   val name: String = "AdditiveExpression0"
   override def toString: String = {
     s"$x0"
@@ -22,6 +23,8 @@ object AdditiveExpression0 extends ASTInfo {
   val semMap: Map[String, Func] = Map()
 }
 case class AdditiveExpression1(x0: AdditiveExpression, x2: MultiplicativeExpression, parserParams: List[Boolean]) extends AdditiveExpression {
+  x0.parent = Some(this)
+  x2.parent = Some(this)
   val name: String = "AdditiveExpression1"
   override def toString: String = {
     s"$x0 + $x2"
@@ -40,6 +43,8 @@ object AdditiveExpression1 extends ASTInfo {
   )
 }
 case class AdditiveExpression2(x0: AdditiveExpression, x2: MultiplicativeExpression, parserParams: List[Boolean]) extends AdditiveExpression {
+  x0.parent = Some(this)
+  x2.parent = Some(this)
   val name: String = "AdditiveExpression2"
   override def toString: String = {
     s"$x0 - $x2"

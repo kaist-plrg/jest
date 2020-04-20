@@ -9,6 +9,9 @@ trait AsyncGeneratorExpression extends AST {
   val kind: String = "AsyncGeneratorExpression"
 }
 case class AsyncGeneratorExpression0(x4: Option[BindingIdentifier], x6: FormalParameters, x9: AsyncGeneratorBody, parserParams: List[Boolean]) extends AsyncGeneratorExpression {
+  x4.foreach((m) => m.parent = Some(this))
+  x6.parent = Some(this)
+  x9.parent = Some(this)
   val name: String = "AsyncGeneratorExpression0"
   override def toString: String = {
     s"async function * ${x4.getOrElse("")} ( $x6 ) { $x9 }"

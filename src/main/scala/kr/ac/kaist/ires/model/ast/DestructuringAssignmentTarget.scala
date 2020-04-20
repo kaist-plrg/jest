@@ -9,6 +9,7 @@ trait DestructuringAssignmentTarget extends AST {
   val kind: String = "DestructuringAssignmentTarget"
 }
 case class DestructuringAssignmentTarget0(x0: LeftHandSideExpression, parserParams: List[Boolean]) extends DestructuringAssignmentTarget {
+  x0.parent = Some(this)
   val name: String = "DestructuringAssignmentTarget0"
   override def toString: String = {
     s"$x0"

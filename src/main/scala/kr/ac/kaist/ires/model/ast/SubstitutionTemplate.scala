@@ -9,6 +9,9 @@ trait SubstitutionTemplate extends AST {
   val kind: String = "SubstitutionTemplate"
 }
 case class SubstitutionTemplate0(x0: Lexical, x1: Expression, x2: TemplateSpans, parserParams: List[Boolean]) extends SubstitutionTemplate {
+  x0.parent = Some(this)
+  x1.parent = Some(this)
+  x2.parent = Some(this)
   val name: String = "SubstitutionTemplate0"
   override def toString: String = {
     s"$x0 $x1 $x2"

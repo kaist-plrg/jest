@@ -9,6 +9,7 @@ trait ShiftExpression extends AST {
   val kind: String = "ShiftExpression"
 }
 case class ShiftExpression0(x0: AdditiveExpression, parserParams: List[Boolean]) extends ShiftExpression {
+  x0.parent = Some(this)
   val name: String = "ShiftExpression0"
   override def toString: String = {
     s"$x0"
@@ -22,6 +23,8 @@ object ShiftExpression0 extends ASTInfo {
   val semMap: Map[String, Func] = Map()
 }
 case class ShiftExpression1(x0: ShiftExpression, x2: AdditiveExpression, parserParams: List[Boolean]) extends ShiftExpression {
+  x0.parent = Some(this)
+  x2.parent = Some(this)
   val name: String = "ShiftExpression1"
   override def toString: String = {
     s"$x0 << $x2"
@@ -40,6 +43,8 @@ object ShiftExpression1 extends ASTInfo {
   )
 }
 case class ShiftExpression2(x0: ShiftExpression, x2: AdditiveExpression, parserParams: List[Boolean]) extends ShiftExpression {
+  x0.parent = Some(this)
+  x2.parent = Some(this)
   val name: String = "ShiftExpression2"
   override def toString: String = {
     s"$x0 >> $x2"
@@ -58,6 +63,8 @@ object ShiftExpression2 extends ASTInfo {
   )
 }
 case class ShiftExpression3(x0: ShiftExpression, x2: AdditiveExpression, parserParams: List[Boolean]) extends ShiftExpression {
+  x0.parent = Some(this)
+  x2.parent = Some(this)
   val name: String = "ShiftExpression3"
   override def toString: String = {
     s"$x0 >>> $x2"

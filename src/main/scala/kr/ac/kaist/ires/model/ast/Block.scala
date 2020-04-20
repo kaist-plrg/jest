@@ -9,6 +9,7 @@ trait Block extends AST {
   val kind: String = "Block"
 }
 case class Block0(x1: Option[StatementList], parserParams: List[Boolean]) extends Block {
+  x1.foreach((m) => m.parent = Some(this))
   val name: String = "Block0"
   override def toString: String = {
     s"{ ${x1.getOrElse("")} }"
@@ -25,8 +26,8 @@ object Block0 extends ASTInfo {
     "ContainsUndefinedContinueTarget0" -> Block0ContainsUndefinedContinueTarget0.func,
     "Evaluation0" -> Block0Evaluation0.func,
     "Evaluation1" -> Block0Evaluation1.func,
+    "HasCallInTailPosition0" -> Block0HasCallInTailPosition0.func,
     "LexicallyDeclaredNames0" -> Block0LexicallyDeclaredNames0.func,
-    "StatementRules0" -> Block0StatementRules0.func,
     "TopLevelLexicallyScopedDeclarations0" -> Block0TopLevelLexicallyScopedDeclarations0.func,
     "TopLevelVarDeclaredNames0" -> Block0TopLevelVarDeclaredNames0.func,
     "TopLevelVarScopedDeclarations0" -> Block0TopLevelVarScopedDeclarations0.func,

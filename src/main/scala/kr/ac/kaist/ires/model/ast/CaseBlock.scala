@@ -9,6 +9,7 @@ trait CaseBlock extends AST {
   val kind: String = "CaseBlock"
 }
 case class CaseBlock0(x1: Option[CaseClauses], parserParams: List[Boolean]) extends CaseBlock {
+  x1.foreach((m) => m.parent = Some(this))
   val name: String = "CaseBlock0"
   override def toString: String = {
     s"{ ${x1.getOrElse("")} }"
@@ -25,14 +26,17 @@ object CaseBlock0 extends ASTInfo {
     "ContainsDuplicateLabels0" -> CaseBlock0ContainsDuplicateLabels0.func,
     "ContainsUndefinedBreakTarget0" -> CaseBlock0ContainsUndefinedBreakTarget0.func,
     "ContainsUndefinedContinueTarget0" -> CaseBlock0ContainsUndefinedContinueTarget0.func,
+    "HasCallInTailPosition0" -> CaseBlock0HasCallInTailPosition0.func,
     "LexicallyDeclaredNames0" -> CaseBlock0LexicallyDeclaredNames0.func,
     "LexicallyScopedDeclarations0" -> CaseBlock0LexicallyScopedDeclarations0.func,
-    "StatementRules0" -> CaseBlock0StatementRules0.func,
     "VarDeclaredNames0" -> CaseBlock0VarDeclaredNames0.func,
     "VarScopedDeclarations0" -> CaseBlock0VarScopedDeclarations0.func
   )
 }
 case class CaseBlock1(x1: Option[CaseClauses], x2: DefaultClause, x3: Option[CaseClauses], parserParams: List[Boolean]) extends CaseBlock {
+  x1.foreach((m) => m.parent = Some(this))
+  x2.parent = Some(this)
+  x3.foreach((m) => m.parent = Some(this))
   val name: String = "CaseBlock1"
   override def toString: String = {
     s"{ ${x1.getOrElse("")} $x2 ${x3.getOrElse("")} }"
@@ -48,9 +52,9 @@ object CaseBlock1 extends ASTInfo {
     "ContainsDuplicateLabels3" -> CaseBlock1ContainsDuplicateLabels3.func,
     "ContainsUndefinedBreakTarget3" -> CaseBlock1ContainsUndefinedBreakTarget3.func,
     "ContainsUndefinedContinueTarget3" -> CaseBlock1ContainsUndefinedContinueTarget3.func,
+    "HasCallInTailPosition3" -> CaseBlock1HasCallInTailPosition3.func,
     "LexicallyDeclaredNames3" -> CaseBlock1LexicallyDeclaredNames3.func,
     "LexicallyScopedDeclarations3" -> CaseBlock1LexicallyScopedDeclarations3.func,
-    "StatementRules3" -> CaseBlock1StatementRules3.func,
     "VarDeclaredNames3" -> CaseBlock1VarDeclaredNames3.func,
     "VarScopedDeclarations3" -> CaseBlock1VarScopedDeclarations3.func
   )

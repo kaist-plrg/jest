@@ -9,6 +9,7 @@ trait FormalParameterList extends AST {
   val kind: String = "FormalParameterList"
 }
 case class FormalParameterList0(x0: FormalParameter, parserParams: List[Boolean]) extends FormalParameterList {
+  x0.parent = Some(this)
   val name: String = "FormalParameterList0"
   override def toString: String = {
     s"$x0"
@@ -24,6 +25,8 @@ object FormalParameterList0 extends ASTInfo {
   )
 }
 case class FormalParameterList1(x0: FormalParameterList, x2: FormalParameter, parserParams: List[Boolean]) extends FormalParameterList {
+  x0.parent = Some(this)
+  x2.parent = Some(this)
   val name: String = "FormalParameterList1"
   override def toString: String = {
     s"$x0 , $x2"

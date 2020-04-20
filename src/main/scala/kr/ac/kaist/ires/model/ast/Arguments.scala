@@ -24,6 +24,7 @@ object Arguments0 extends ASTInfo {
   )
 }
 case class Arguments1(x1: ArgumentList, parserParams: List[Boolean]) extends Arguments {
+  x1.parent = Some(this)
   val name: String = "Arguments1"
   override def toString: String = {
     s"( $x1 )"
@@ -37,6 +38,7 @@ object Arguments1 extends ASTInfo {
   val semMap: Map[String, Func] = Map()
 }
 case class Arguments2(x1: ArgumentList, parserParams: List[Boolean]) extends Arguments {
+  x1.parent = Some(this)
   val name: String = "Arguments2"
   override def toString: String = {
     s"( $x1 , )"

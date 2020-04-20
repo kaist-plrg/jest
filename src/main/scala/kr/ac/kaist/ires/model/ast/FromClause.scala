@@ -9,6 +9,7 @@ trait FromClause extends AST {
   val kind: String = "FromClause"
 }
 case class FromClause0(x1: ModuleSpecifier, parserParams: List[Boolean]) extends FromClause {
+  x1.parent = Some(this)
   val name: String = "FromClause0"
   override def toString: String = {
     s"from $x1"

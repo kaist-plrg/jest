@@ -21,10 +21,11 @@ object ReturnStatement0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "Evaluation0" -> ReturnStatement0Evaluation0.func,
-    "StatementRules0" -> ReturnStatement0StatementRules0.func
+    "HasCallInTailPosition0" -> ReturnStatement0HasCallInTailPosition0.func
   )
 }
 case class ReturnStatement1(x2: Expression, parserParams: List[Boolean]) extends ReturnStatement {
+  x2.parent = Some(this)
   val name: String = "ReturnStatement1"
   override def toString: String = {
     s"return $x2 ;"
@@ -37,6 +38,6 @@ object ReturnStatement1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "Evaluation0" -> ReturnStatement1Evaluation0.func,
-    "StatementRules0" -> ReturnStatement1StatementRules0.func
+    "HasCallInTailPosition0" -> ReturnStatement1HasCallInTailPosition0.func
   )
 }

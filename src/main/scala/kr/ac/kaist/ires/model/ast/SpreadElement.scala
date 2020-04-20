@@ -9,6 +9,7 @@ trait SpreadElement extends AST {
   val kind: String = "SpreadElement"
 }
 case class SpreadElement0(x1: AssignmentExpression, parserParams: List[Boolean]) extends SpreadElement {
+  x1.parent = Some(this)
   val name: String = "SpreadElement0"
   override def toString: String = {
     s"... $x1"

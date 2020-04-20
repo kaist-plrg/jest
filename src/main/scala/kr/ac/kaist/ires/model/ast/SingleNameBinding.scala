@@ -9,6 +9,8 @@ trait SingleNameBinding extends AST {
   val kind: String = "SingleNameBinding"
 }
 case class SingleNameBinding0(x0: BindingIdentifier, x1: Option[Initializer], parserParams: List[Boolean]) extends SingleNameBinding {
+  x0.parent = Some(this)
+  x1.foreach((m) => m.parent = Some(this))
   val name: String = "SingleNameBinding0"
   override def toString: String = {
     s"$x0 ${x1.getOrElse("")}"

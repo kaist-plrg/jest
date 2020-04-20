@@ -9,6 +9,7 @@ trait BindingElement extends AST {
   val kind: String = "BindingElement"
 }
 case class BindingElement0(x0: SingleNameBinding, parserParams: List[Boolean]) extends BindingElement {
+  x0.parent = Some(this)
   val name: String = "BindingElement0"
   override def toString: String = {
     s"$x0"
@@ -24,6 +25,8 @@ object BindingElement0 extends ASTInfo {
   )
 }
 case class BindingElement1(x0: BindingPattern, x1: Option[Initializer], parserParams: List[Boolean]) extends BindingElement {
+  x0.parent = Some(this)
+  x1.foreach((m) => m.parent = Some(this))
   val name: String = "BindingElement1"
   override def toString: String = {
     s"$x0 ${x1.getOrElse("")}"

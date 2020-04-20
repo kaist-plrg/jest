@@ -25,6 +25,7 @@ object Elision0 extends ASTInfo {
   )
 }
 case class Elision1(x0: Elision, parserParams: List[Boolean]) extends Elision {
+  x0.parent = Some(this)
   val name: String = "Elision1"
   override def toString: String = {
     s"$x0 ,"

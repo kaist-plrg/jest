@@ -9,6 +9,7 @@ trait StatementList extends AST {
   val kind: String = "StatementList"
 }
 case class StatementList0(x0: StatementListItem, parserParams: List[Boolean]) extends StatementList {
+  x0.parent = Some(this)
   val name: String = "StatementList0"
   override def toString: String = {
     s"$x0"
@@ -22,6 +23,8 @@ object StatementList0 extends ASTInfo {
   val semMap: Map[String, Func] = Map()
 }
 case class StatementList1(x0: StatementList, x1: StatementListItem, parserParams: List[Boolean]) extends StatementList {
+  x0.parent = Some(this)
+  x1.parent = Some(this)
   val name: String = "StatementList1"
   override def toString: String = {
     s"$x0 $x1"
@@ -37,9 +40,9 @@ object StatementList1 extends ASTInfo {
     "ContainsUndefinedBreakTarget0" -> StatementList1ContainsUndefinedBreakTarget0.func,
     "ContainsUndefinedContinueTarget0" -> StatementList1ContainsUndefinedContinueTarget0.func,
     "Evaluation0" -> StatementList1Evaluation0.func,
+    "HasCallInTailPosition0" -> StatementList1HasCallInTailPosition0.func,
     "LexicallyDeclaredNames0" -> StatementList1LexicallyDeclaredNames0.func,
     "LexicallyScopedDeclarations0" -> StatementList1LexicallyScopedDeclarations0.func,
-    "StatementRules0" -> StatementList1StatementRules0.func,
     "TopLevelLexicallyDeclaredNames0" -> StatementList1TopLevelLexicallyDeclaredNames0.func,
     "TopLevelLexicallyScopedDeclarations0" -> StatementList1TopLevelLexicallyScopedDeclarations0.func,
     "TopLevelVarDeclaredNames0" -> StatementList1TopLevelVarDeclaredNames0.func,

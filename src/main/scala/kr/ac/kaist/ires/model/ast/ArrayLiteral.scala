@@ -9,6 +9,7 @@ trait ArrayLiteral extends AST {
   val kind: String = "ArrayLiteral"
 }
 case class ArrayLiteral0(x1: Option[Elision], parserParams: List[Boolean]) extends ArrayLiteral {
+  x1.foreach((m) => m.parent = Some(this))
   val name: String = "ArrayLiteral0"
   override def toString: String = {
     s"[ ${x1.getOrElse("")} ]"
@@ -24,6 +25,7 @@ object ArrayLiteral0 extends ASTInfo {
   )
 }
 case class ArrayLiteral1(x1: ElementList, parserParams: List[Boolean]) extends ArrayLiteral {
+  x1.parent = Some(this)
   val name: String = "ArrayLiteral1"
   override def toString: String = {
     s"[ $x1 ]"
@@ -39,6 +41,8 @@ object ArrayLiteral1 extends ASTInfo {
   )
 }
 case class ArrayLiteral2(x1: ElementList, x3: Option[Elision], parserParams: List[Boolean]) extends ArrayLiteral {
+  x1.parent = Some(this)
+  x3.foreach((m) => m.parent = Some(this))
   val name: String = "ArrayLiteral2"
   override def toString: String = {
     s"[ $x1 , ${x3.getOrElse("")} ]"

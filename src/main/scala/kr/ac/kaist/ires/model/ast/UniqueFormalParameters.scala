@@ -9,6 +9,7 @@ trait UniqueFormalParameters extends AST {
   val kind: String = "UniqueFormalParameters"
 }
 case class UniqueFormalParameters0(x0: FormalParameters, parserParams: List[Boolean]) extends UniqueFormalParameters {
+  x0.parent = Some(this)
   val name: String = "UniqueFormalParameters0"
   override def toString: String = {
     s"$x0"

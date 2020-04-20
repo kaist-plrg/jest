@@ -9,6 +9,7 @@ trait ComputedPropertyName extends AST {
   val kind: String = "ComputedPropertyName"
 }
 case class ComputedPropertyName0(x1: AssignmentExpression, parserParams: List[Boolean]) extends ComputedPropertyName {
+  x1.parent = Some(this)
   val name: String = "ComputedPropertyName0"
   override def toString: String = {
     s"[ $x1 ]"

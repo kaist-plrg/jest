@@ -9,6 +9,8 @@ trait IfStatement extends AST {
   val kind: String = "IfStatement"
 }
 case class IfStatement0(x2: Expression, x4: Statement, parserParams: List[Boolean]) extends IfStatement {
+  x2.parent = Some(this)
+  x4.parent = Some(this)
   val name: String = "IfStatement0"
   override def toString: String = {
     s"if ( $x2 ) $x4"
@@ -24,12 +26,15 @@ object IfStatement0 extends ASTInfo {
     "ContainsUndefinedBreakTarget0" -> IfStatement0ContainsUndefinedBreakTarget0.func,
     "ContainsUndefinedContinueTarget0" -> IfStatement0ContainsUndefinedContinueTarget0.func,
     "Evaluation0" -> IfStatement0Evaluation0.func,
-    "StatementRules0" -> IfStatement0StatementRules0.func,
+    "HasCallInTailPosition0" -> IfStatement0HasCallInTailPosition0.func,
     "VarDeclaredNames0" -> IfStatement0VarDeclaredNames0.func,
     "VarScopedDeclarations0" -> IfStatement0VarScopedDeclarations0.func
   )
 }
 case class IfStatement1(x2: Expression, x4: Statement, x6: Statement, parserParams: List[Boolean]) extends IfStatement {
+  x2.parent = Some(this)
+  x4.parent = Some(this)
+  x6.parent = Some(this)
   val name: String = "IfStatement1"
   override def toString: String = {
     s"if ( $x2 ) $x4 else $x6"
@@ -45,7 +50,7 @@ object IfStatement1 extends ASTInfo {
     "ContainsUndefinedBreakTarget0" -> IfStatement1ContainsUndefinedBreakTarget0.func,
     "ContainsUndefinedContinueTarget0" -> IfStatement1ContainsUndefinedContinueTarget0.func,
     "Evaluation0" -> IfStatement1Evaluation0.func,
-    "StatementRules0" -> IfStatement1StatementRules0.func,
+    "HasCallInTailPosition0" -> IfStatement1HasCallInTailPosition0.func,
     "VarDeclaredNames0" -> IfStatement1VarDeclaredNames0.func,
     "VarScopedDeclarations0" -> IfStatement1VarScopedDeclarations0.func
   )

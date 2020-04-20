@@ -28,6 +28,7 @@ object PrimaryExpression0 extends ASTInfo {
   )
 }
 case class PrimaryExpression1(x0: IdentifierReference, parserParams: List[Boolean]) extends PrimaryExpression {
+  x0.parent = Some(this)
   val name: String = "PrimaryExpression1"
   override def toString: String = {
     s"$x0"
@@ -45,6 +46,7 @@ object PrimaryExpression1 extends ASTInfo {
   )
 }
 case class PrimaryExpression2(x0: Literal, parserParams: List[Boolean]) extends PrimaryExpression {
+  x0.parent = Some(this)
   val name: String = "PrimaryExpression2"
   override def toString: String = {
     s"$x0"
@@ -63,6 +65,7 @@ object PrimaryExpression2 extends ASTInfo {
   )
 }
 case class PrimaryExpression3(x0: ArrayLiteral, parserParams: List[Boolean]) extends PrimaryExpression {
+  x0.parent = Some(this)
   val name: String = "PrimaryExpression3"
   override def toString: String = {
     s"$x0"
@@ -81,6 +84,7 @@ object PrimaryExpression3 extends ASTInfo {
   )
 }
 case class PrimaryExpression4(x0: ObjectLiteral, parserParams: List[Boolean]) extends PrimaryExpression {
+  x0.parent = Some(this)
   val name: String = "PrimaryExpression4"
   override def toString: String = {
     s"$x0"
@@ -99,6 +103,7 @@ object PrimaryExpression4 extends ASTInfo {
   )
 }
 case class PrimaryExpression5(x0: FunctionExpression, parserParams: List[Boolean]) extends PrimaryExpression {
+  x0.parent = Some(this)
   val name: String = "PrimaryExpression5"
   override def toString: String = {
     s"$x0"
@@ -116,6 +121,7 @@ object PrimaryExpression5 extends ASTInfo {
   )
 }
 case class PrimaryExpression6(x0: ClassExpression, parserParams: List[Boolean]) extends PrimaryExpression {
+  x0.parent = Some(this)
   val name: String = "PrimaryExpression6"
   override def toString: String = {
     s"$x0"
@@ -133,6 +139,7 @@ object PrimaryExpression6 extends ASTInfo {
   )
 }
 case class PrimaryExpression7(x0: GeneratorExpression, parserParams: List[Boolean]) extends PrimaryExpression {
+  x0.parent = Some(this)
   val name: String = "PrimaryExpression7"
   override def toString: String = {
     s"$x0"
@@ -150,6 +157,7 @@ object PrimaryExpression7 extends ASTInfo {
   )
 }
 case class PrimaryExpression8(x0: AsyncFunctionExpression, parserParams: List[Boolean]) extends PrimaryExpression {
+  x0.parent = Some(this)
   val name: String = "PrimaryExpression8"
   override def toString: String = {
     s"$x0"
@@ -167,6 +175,7 @@ object PrimaryExpression8 extends ASTInfo {
   )
 }
 case class PrimaryExpression9(x0: AsyncGeneratorExpression, parserParams: List[Boolean]) extends PrimaryExpression {
+  x0.parent = Some(this)
   val name: String = "PrimaryExpression9"
   override def toString: String = {
     s"$x0"
@@ -184,6 +193,7 @@ object PrimaryExpression9 extends ASTInfo {
   )
 }
 case class PrimaryExpression10(x0: Lexical, parserParams: List[Boolean]) extends PrimaryExpression {
+  x0.parent = Some(this)
   val name: String = "PrimaryExpression10"
   override def toString: String = {
     s"$x0"
@@ -203,6 +213,7 @@ object PrimaryExpression10 extends ASTInfo {
   )
 }
 case class PrimaryExpression11(x0: TemplateLiteral, parserParams: List[Boolean]) extends PrimaryExpression {
+  x0.parent = Some(this)
   val name: String = "PrimaryExpression11"
   override def toString: String = {
     s"$x0"
@@ -221,6 +232,7 @@ object PrimaryExpression11 extends ASTInfo {
   )
 }
 case class PrimaryExpression12(x0: CoverParenthesizedExpressionAndArrowParameterList, parserParams: List[Boolean]) extends PrimaryExpression {
+  x0.parent = Some(this)
   val name: String = "PrimaryExpression12"
   override def toString: String = {
     s"$x0"

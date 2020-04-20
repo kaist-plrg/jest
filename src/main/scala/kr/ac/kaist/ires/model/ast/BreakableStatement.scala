@@ -9,6 +9,7 @@ trait BreakableStatement extends AST {
   val kind: String = "BreakableStatement"
 }
 case class BreakableStatement0(x0: IterationStatement, parserParams: List[Boolean]) extends BreakableStatement {
+  x0.parent = Some(this)
   val name: String = "BreakableStatement0"
   override def toString: String = {
     s"$x0"
@@ -26,6 +27,7 @@ object BreakableStatement0 extends ASTInfo {
   )
 }
 case class BreakableStatement1(x0: SwitchStatement, parserParams: List[Boolean]) extends BreakableStatement {
+  x0.parent = Some(this)
   val name: String = "BreakableStatement1"
   override def toString: String = {
     s"$x0"

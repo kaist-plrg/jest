@@ -9,6 +9,7 @@ trait LogicalANDExpression extends AST {
   val kind: String = "LogicalANDExpression"
 }
 case class LogicalANDExpression0(x0: BitwiseORExpression, parserParams: List[Boolean]) extends LogicalANDExpression {
+  x0.parent = Some(this)
   val name: String = "LogicalANDExpression0"
   override def toString: String = {
     s"$x0"
@@ -22,6 +23,8 @@ object LogicalANDExpression0 extends ASTInfo {
   val semMap: Map[String, Func] = Map()
 }
 case class LogicalANDExpression1(x0: LogicalANDExpression, x2: BitwiseORExpression, parserParams: List[Boolean]) extends LogicalANDExpression {
+  x0.parent = Some(this)
+  x2.parent = Some(this)
   val name: String = "LogicalANDExpression1"
   override def toString: String = {
     s"$x0 && $x2"

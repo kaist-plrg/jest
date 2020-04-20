@@ -9,6 +9,7 @@ trait HoistableDeclaration extends AST {
   val kind: String = "HoistableDeclaration"
 }
 case class HoistableDeclaration0(x0: FunctionDeclaration, parserParams: List[Boolean]) extends HoistableDeclaration {
+  x0.parent = Some(this)
   val name: String = "HoistableDeclaration0"
   override def toString: String = {
     s"$x0"
@@ -25,6 +26,7 @@ object HoistableDeclaration0 extends ASTInfo {
   )
 }
 case class HoistableDeclaration1(x0: GeneratorDeclaration, parserParams: List[Boolean]) extends HoistableDeclaration {
+  x0.parent = Some(this)
   val name: String = "HoistableDeclaration1"
   override def toString: String = {
     s"$x0"
@@ -41,6 +43,7 @@ object HoistableDeclaration1 extends ASTInfo {
   )
 }
 case class HoistableDeclaration2(x0: AsyncFunctionDeclaration, parserParams: List[Boolean]) extends HoistableDeclaration {
+  x0.parent = Some(this)
   val name: String = "HoistableDeclaration2"
   override def toString: String = {
     s"$x0"
@@ -57,6 +60,7 @@ object HoistableDeclaration2 extends ASTInfo {
   )
 }
 case class HoistableDeclaration3(x0: AsyncGeneratorDeclaration, parserParams: List[Boolean]) extends HoistableDeclaration {
+  x0.parent = Some(this)
   val name: String = "HoistableDeclaration3"
   override def toString: String = {
     s"$x0"

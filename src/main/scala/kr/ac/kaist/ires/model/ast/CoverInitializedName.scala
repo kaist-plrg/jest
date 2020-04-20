@@ -9,6 +9,8 @@ trait CoverInitializedName extends AST {
   val kind: String = "CoverInitializedName"
 }
 case class CoverInitializedName0(x0: IdentifierReference, x1: Initializer, parserParams: List[Boolean]) extends CoverInitializedName {
+  x0.parent = Some(this)
+  x1.parent = Some(this)
   val name: String = "CoverInitializedName0"
   override def toString: String = {
     s"$x0 $x1"

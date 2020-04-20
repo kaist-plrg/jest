@@ -9,6 +9,7 @@ trait ImportsList extends AST {
   val kind: String = "ImportsList"
 }
 case class ImportsList0(x0: ImportSpecifier, parserParams: List[Boolean]) extends ImportsList {
+  x0.parent = Some(this)
   val name: String = "ImportsList0"
   override def toString: String = {
     s"$x0"
@@ -22,6 +23,8 @@ object ImportsList0 extends ASTInfo {
   val semMap: Map[String, Func] = Map()
 }
 case class ImportsList1(x0: ImportsList, x2: ImportSpecifier, parserParams: List[Boolean]) extends ImportsList {
+  x0.parent = Some(this)
+  x2.parent = Some(this)
   val name: String = "ImportsList1"
   override def toString: String = {
     s"$x0 , $x2"

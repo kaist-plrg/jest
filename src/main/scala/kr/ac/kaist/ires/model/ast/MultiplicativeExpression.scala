@@ -9,6 +9,7 @@ trait MultiplicativeExpression extends AST {
   val kind: String = "MultiplicativeExpression"
 }
 case class MultiplicativeExpression0(x0: ExponentiationExpression, parserParams: List[Boolean]) extends MultiplicativeExpression {
+  x0.parent = Some(this)
   val name: String = "MultiplicativeExpression0"
   override def toString: String = {
     s"$x0"
@@ -22,6 +23,9 @@ object MultiplicativeExpression0 extends ASTInfo {
   val semMap: Map[String, Func] = Map()
 }
 case class MultiplicativeExpression1(x0: MultiplicativeExpression, x1: MultiplicativeOperator, x2: ExponentiationExpression, parserParams: List[Boolean]) extends MultiplicativeExpression {
+  x0.parent = Some(this)
+  x1.parent = Some(this)
+  x2.parent = Some(this)
   val name: String = "MultiplicativeExpression1"
   override def toString: String = {
     s"$x0 $x1 $x2"

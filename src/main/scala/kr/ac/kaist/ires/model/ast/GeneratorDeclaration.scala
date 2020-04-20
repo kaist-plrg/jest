@@ -9,6 +9,9 @@ trait GeneratorDeclaration extends AST {
   val kind: String = "GeneratorDeclaration"
 }
 case class GeneratorDeclaration0(x2: BindingIdentifier, x4: FormalParameters, x7: GeneratorBody, parserParams: List[Boolean]) extends GeneratorDeclaration {
+  x2.parent = Some(this)
+  x4.parent = Some(this)
+  x7.parent = Some(this)
   val name: String = "GeneratorDeclaration0"
   override def toString: String = {
     s"function * $x2 ( $x4 ) { $x7 }"
@@ -27,6 +30,8 @@ object GeneratorDeclaration0 extends ASTInfo {
   )
 }
 case class GeneratorDeclaration1(x3: FormalParameters, x6: GeneratorBody, parserParams: List[Boolean]) extends GeneratorDeclaration {
+  x3.parent = Some(this)
+  x6.parent = Some(this)
   val name: String = "GeneratorDeclaration1"
   override def toString: String = {
     s"function * ( $x3 ) { $x6 }"

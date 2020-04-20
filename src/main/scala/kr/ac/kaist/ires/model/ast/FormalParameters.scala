@@ -28,6 +28,7 @@ object FormalParameters0 extends ASTInfo {
   )
 }
 case class FormalParameters1(x0: FunctionRestParameter, parserParams: List[Boolean]) extends FormalParameters {
+  x0.parent = Some(this)
   val name: String = "FormalParameters1"
   override def toString: String = {
     s"$x0"
@@ -44,6 +45,7 @@ object FormalParameters1 extends ASTInfo {
   )
 }
 case class FormalParameters2(x0: FormalParameterList, parserParams: List[Boolean]) extends FormalParameters {
+  x0.parent = Some(this)
   val name: String = "FormalParameters2"
   override def toString: String = {
     s"$x0"
@@ -57,6 +59,7 @@ object FormalParameters2 extends ASTInfo {
   val semMap: Map[String, Func] = Map()
 }
 case class FormalParameters3(x0: FormalParameterList, parserParams: List[Boolean]) extends FormalParameters {
+  x0.parent = Some(this)
   val name: String = "FormalParameters3"
   override def toString: String = {
     s"$x0 ,"
@@ -70,6 +73,8 @@ object FormalParameters3 extends ASTInfo {
   val semMap: Map[String, Func] = Map()
 }
 case class FormalParameters4(x0: FormalParameterList, x2: FunctionRestParameter, parserParams: List[Boolean]) extends FormalParameters {
+  x0.parent = Some(this)
+  x2.parent = Some(this)
   val name: String = "FormalParameters4"
   override def toString: String = {
     s"$x0 , $x2"

@@ -9,6 +9,8 @@ trait CallMemberExpression extends AST {
   val kind: String = "CallMemberExpression"
 }
 case class CallMemberExpression0(x0: MemberExpression, x1: Arguments, parserParams: List[Boolean]) extends CallMemberExpression {
+  x0.parent = Some(this)
+  x1.parent = Some(this)
   val name: String = "CallMemberExpression0"
   override def toString: String = {
     s"$x0 $x1"

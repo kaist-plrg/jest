@@ -9,6 +9,7 @@ trait MetaProperty extends AST {
   val kind: String = "MetaProperty"
 }
 case class MetaProperty0(x0: NewTarget, parserParams: List[Boolean]) extends MetaProperty {
+  x0.parent = Some(this)
   val name: String = "MetaProperty0"
   override def toString: String = {
     s"$x0"

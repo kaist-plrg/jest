@@ -9,6 +9,8 @@ trait SwitchStatement extends AST {
   val kind: String = "SwitchStatement"
 }
 case class SwitchStatement0(x2: Expression, x4: CaseBlock, parserParams: List[Boolean]) extends SwitchStatement {
+  x2.parent = Some(this)
+  x4.parent = Some(this)
   val name: String = "SwitchStatement0"
   override def toString: String = {
     s"switch ( $x2 ) $x4"
@@ -24,7 +26,7 @@ object SwitchStatement0 extends ASTInfo {
     "ContainsUndefinedBreakTarget0" -> SwitchStatement0ContainsUndefinedBreakTarget0.func,
     "ContainsUndefinedContinueTarget0" -> SwitchStatement0ContainsUndefinedContinueTarget0.func,
     "Evaluation0" -> SwitchStatement0Evaluation0.func,
-    "StatementRules0" -> SwitchStatement0StatementRules0.func,
+    "HasCallInTailPosition0" -> SwitchStatement0HasCallInTailPosition0.func,
     "VarDeclaredNames0" -> SwitchStatement0VarDeclaredNames0.func,
     "VarScopedDeclarations0" -> SwitchStatement0VarScopedDeclarations0.func
   )

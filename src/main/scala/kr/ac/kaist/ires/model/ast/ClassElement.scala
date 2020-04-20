@@ -9,6 +9,7 @@ trait ClassElement extends AST {
   val kind: String = "ClassElement"
 }
 case class ClassElement0(x0: MethodDefinition, parserParams: List[Boolean]) extends ClassElement {
+  x0.parent = Some(this)
   val name: String = "ClassElement0"
   override def toString: String = {
     s"$x0"
@@ -25,6 +26,7 @@ object ClassElement0 extends ASTInfo {
   )
 }
 case class ClassElement1(x1: MethodDefinition, parserParams: List[Boolean]) extends ClassElement {
+  x1.parent = Some(this)
   val name: String = "ClassElement1"
   override def toString: String = {
     s"static $x1"

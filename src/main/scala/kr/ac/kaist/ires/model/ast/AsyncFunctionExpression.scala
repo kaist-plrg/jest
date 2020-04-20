@@ -9,6 +9,8 @@ trait AsyncFunctionExpression extends AST {
   val kind: String = "AsyncFunctionExpression"
 }
 case class AsyncFunctionExpression0(x4: FormalParameters, x7: AsyncFunctionBody, parserParams: List[Boolean]) extends AsyncFunctionExpression {
+  x4.parent = Some(this)
+  x7.parent = Some(this)
   val name: String = "AsyncFunctionExpression0"
   override def toString: String = {
     s"async function ( $x4 ) { $x7 }"
@@ -28,6 +30,9 @@ object AsyncFunctionExpression0 extends ASTInfo {
   )
 }
 case class AsyncFunctionExpression1(x3: BindingIdentifier, x5: FormalParameters, x8: AsyncFunctionBody, parserParams: List[Boolean]) extends AsyncFunctionExpression {
+  x3.parent = Some(this)
+  x5.parent = Some(this)
+  x8.parent = Some(this)
   val name: String = "AsyncFunctionExpression1"
   override def toString: String = {
     s"async function $x3 ( $x5 ) { $x8 }"

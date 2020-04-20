@@ -9,6 +9,8 @@ trait ImportDeclaration extends AST {
   val kind: String = "ImportDeclaration"
 }
 case class ImportDeclaration0(x1: ImportClause, x2: FromClause, parserParams: List[Boolean]) extends ImportDeclaration {
+  x1.parent = Some(this)
+  x2.parent = Some(this)
   val name: String = "ImportDeclaration0"
   override def toString: String = {
     s"import $x1 $x2 ;"
@@ -22,6 +24,7 @@ object ImportDeclaration0 extends ASTInfo {
   val semMap: Map[String, Func] = Map()
 }
 case class ImportDeclaration1(x1: ModuleSpecifier, parserParams: List[Boolean]) extends ImportDeclaration {
+  x1.parent = Some(this)
   val name: String = "ImportDeclaration1"
   override def toString: String = {
     s"import $x1 ;"

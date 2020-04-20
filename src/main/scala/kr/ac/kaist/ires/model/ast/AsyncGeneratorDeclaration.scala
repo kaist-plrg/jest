@@ -9,6 +9,9 @@ trait AsyncGeneratorDeclaration extends AST {
   val kind: String = "AsyncGeneratorDeclaration"
 }
 case class AsyncGeneratorDeclaration0(x4: BindingIdentifier, x6: FormalParameters, x9: AsyncGeneratorBody, parserParams: List[Boolean]) extends AsyncGeneratorDeclaration {
+  x4.parent = Some(this)
+  x6.parent = Some(this)
+  x9.parent = Some(this)
   val name: String = "AsyncGeneratorDeclaration0"
   override def toString: String = {
     s"async function * $x4 ( $x6 ) { $x9 }"
@@ -27,6 +30,8 @@ object AsyncGeneratorDeclaration0 extends ASTInfo {
   )
 }
 case class AsyncGeneratorDeclaration1(x5: FormalParameters, x8: AsyncGeneratorBody, parserParams: List[Boolean]) extends AsyncGeneratorDeclaration {
+  x5.parent = Some(this)
+  x8.parent = Some(this)
   val name: String = "AsyncGeneratorDeclaration1"
   override def toString: String = {
     s"async function * ( $x5 ) { $x8 }"

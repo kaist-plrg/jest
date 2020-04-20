@@ -24,6 +24,7 @@ object ObjectAssignmentPattern0 extends ASTInfo {
   )
 }
 case class ObjectAssignmentPattern1(x1: AssignmentRestProperty, parserParams: List[Boolean]) extends ObjectAssignmentPattern {
+  x1.parent = Some(this)
   val name: String = "ObjectAssignmentPattern1"
   override def toString: String = {
     s"{ $x1 }"
@@ -39,6 +40,7 @@ object ObjectAssignmentPattern1 extends ASTInfo {
   )
 }
 case class ObjectAssignmentPattern2(x1: AssignmentPropertyList, parserParams: List[Boolean]) extends ObjectAssignmentPattern {
+  x1.parent = Some(this)
   val name: String = "ObjectAssignmentPattern2"
   override def toString: String = {
     s"{ $x1 }"
@@ -54,6 +56,8 @@ object ObjectAssignmentPattern2 extends ASTInfo {
   )
 }
 case class ObjectAssignmentPattern3(x1: AssignmentPropertyList, x3: Option[AssignmentRestProperty], parserParams: List[Boolean]) extends ObjectAssignmentPattern {
+  x1.parent = Some(this)
+  x3.foreach((m) => m.parent = Some(this))
   val name: String = "ObjectAssignmentPattern3"
   override def toString: String = {
     s"{ $x1 , ${x3.getOrElse("")} }"

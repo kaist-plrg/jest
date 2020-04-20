@@ -9,6 +9,7 @@ trait ImportedBinding extends AST {
   val kind: String = "ImportedBinding"
 }
 case class ImportedBinding0(x0: BindingIdentifier, parserParams: List[Boolean]) extends ImportedBinding {
+  x0.parent = Some(this)
   val name: String = "ImportedBinding0"
   override def toString: String = {
     s"$x0"

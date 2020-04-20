@@ -25,6 +25,7 @@ object ContinueStatement0 extends ASTInfo {
   )
 }
 case class ContinueStatement1(x2: LabelIdentifier, parserParams: List[Boolean]) extends ContinueStatement {
+  x2.parent = Some(this)
   val name: String = "ContinueStatement1"
   override def toString: String = {
     s"continue $x2 ;"

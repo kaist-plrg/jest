@@ -9,6 +9,7 @@ trait BitwiseANDExpression extends AST {
   val kind: String = "BitwiseANDExpression"
 }
 case class BitwiseANDExpression0(x0: EqualityExpression, parserParams: List[Boolean]) extends BitwiseANDExpression {
+  x0.parent = Some(this)
   val name: String = "BitwiseANDExpression0"
   override def toString: String = {
     s"$x0"
@@ -22,6 +23,8 @@ object BitwiseANDExpression0 extends ASTInfo {
   val semMap: Map[String, Func] = Map()
 }
 case class BitwiseANDExpression1(x0: BitwiseANDExpression, x2: EqualityExpression, parserParams: List[Boolean]) extends BitwiseANDExpression {
+  x0.parent = Some(this)
+  x2.parent = Some(this)
   val name: String = "BitwiseANDExpression1"
   override def toString: String = {
     s"$x0 & $x2"

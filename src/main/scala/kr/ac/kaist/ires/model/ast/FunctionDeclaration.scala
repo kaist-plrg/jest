@@ -9,6 +9,9 @@ trait FunctionDeclaration extends AST {
   val kind: String = "FunctionDeclaration"
 }
 case class FunctionDeclaration0(x1: BindingIdentifier, x3: FormalParameters, x6: FunctionBody, parserParams: List[Boolean]) extends FunctionDeclaration {
+  x1.parent = Some(this)
+  x3.parent = Some(this)
+  x6.parent = Some(this)
   val name: String = "FunctionDeclaration0"
   override def toString: String = {
     s"function $x1 ( $x3 ) { $x6 }"
@@ -28,6 +31,8 @@ object FunctionDeclaration0 extends ASTInfo {
   )
 }
 case class FunctionDeclaration1(x2: FormalParameters, x5: FunctionBody, parserParams: List[Boolean]) extends FunctionDeclaration {
+  x2.parent = Some(this)
+  x5.parent = Some(this)
   val name: String = "FunctionDeclaration1"
   override def toString: String = {
     s"function ( $x2 ) { $x5 }"
