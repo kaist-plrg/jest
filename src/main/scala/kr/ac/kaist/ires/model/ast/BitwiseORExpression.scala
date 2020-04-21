@@ -38,7 +38,7 @@ object BitwiseORExpression1 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> BitwiseORExpression1AssignmentTargetType0.func,
     "Evaluation0" -> BitwiseORExpression1Evaluation0.func,
-    "ExpressionRules0" -> BitwiseORExpression1ExpressionRules0.func,
+    "HasCallInTailPosition0" -> BitwiseORExpression1HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> BitwiseORExpression1IsFunctionDefinition0.func
   )
 }

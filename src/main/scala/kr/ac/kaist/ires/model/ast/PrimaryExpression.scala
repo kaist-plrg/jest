@@ -22,7 +22,7 @@ object PrimaryExpression0 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> PrimaryExpression0AssignmentTargetType0.func,
     "Evaluation0" -> PrimaryExpression0Evaluation0.func,
-    "ExpressionRules0" -> PrimaryExpression0ExpressionRules0.func,
+    "HasCallInTailPosition0" -> PrimaryExpression0HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> PrimaryExpression0IsFunctionDefinition0.func,
     "IsIdentifierRef0" -> PrimaryExpression0IsIdentifierRef0.func
   )
@@ -40,7 +40,7 @@ case class PrimaryExpression1(x0: IdentifierReference, parserParams: List[Boolea
 object PrimaryExpression1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "ExpressionRules0" -> PrimaryExpression1ExpressionRules0.func,
+    "HasCallInTailPosition0" -> PrimaryExpression1HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> PrimaryExpression1IsFunctionDefinition0.func,
     "IsIdentifierRef0" -> PrimaryExpression1IsIdentifierRef0.func
   )
@@ -59,7 +59,7 @@ object PrimaryExpression2 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> PrimaryExpression2AssignmentTargetType0.func,
-    "ExpressionRules0" -> PrimaryExpression2ExpressionRules0.func,
+    "HasCallInTailPosition0" -> PrimaryExpression2HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> PrimaryExpression2IsFunctionDefinition0.func,
     "IsIdentifierRef0" -> PrimaryExpression2IsIdentifierRef0.func
   )
@@ -78,7 +78,7 @@ object PrimaryExpression3 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> PrimaryExpression3AssignmentTargetType0.func,
-    "ExpressionRules0" -> PrimaryExpression3ExpressionRules0.func,
+    "HasCallInTailPosition0" -> PrimaryExpression3HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> PrimaryExpression3IsFunctionDefinition0.func,
     "IsIdentifierRef0" -> PrimaryExpression3IsIdentifierRef0.func
   )
@@ -97,7 +97,7 @@ object PrimaryExpression4 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> PrimaryExpression4AssignmentTargetType0.func,
-    "ExpressionRules0" -> PrimaryExpression4ExpressionRules0.func,
+    "HasCallInTailPosition0" -> PrimaryExpression4HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> PrimaryExpression4IsFunctionDefinition0.func,
     "IsIdentifierRef0" -> PrimaryExpression4IsIdentifierRef0.func
   )
@@ -116,7 +116,7 @@ object PrimaryExpression5 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> PrimaryExpression5AssignmentTargetType0.func,
-    "ExpressionRules0" -> PrimaryExpression5ExpressionRules0.func,
+    "HasCallInTailPosition0" -> PrimaryExpression5HasCallInTailPosition0.func,
     "IsIdentifierRef0" -> PrimaryExpression5IsIdentifierRef0.func
   )
 }
@@ -134,7 +134,7 @@ object PrimaryExpression6 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> PrimaryExpression6AssignmentTargetType0.func,
-    "ExpressionRules0" -> PrimaryExpression6ExpressionRules0.func,
+    "HasCallInTailPosition0" -> PrimaryExpression6HasCallInTailPosition0.func,
     "IsIdentifierRef0" -> PrimaryExpression6IsIdentifierRef0.func
   )
 }
@@ -152,7 +152,7 @@ object PrimaryExpression7 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> PrimaryExpression7AssignmentTargetType0.func,
-    "ExpressionRules0" -> PrimaryExpression7ExpressionRules0.func,
+    "HasCallInTailPosition0" -> PrimaryExpression7HasCallInTailPosition0.func,
     "IsIdentifierRef0" -> PrimaryExpression7IsIdentifierRef0.func
   )
 }
@@ -170,7 +170,7 @@ object PrimaryExpression8 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> PrimaryExpression8AssignmentTargetType0.func,
-    "ExpressionRules0" -> PrimaryExpression8ExpressionRules0.func,
+    "HasCallInTailPosition0" -> PrimaryExpression8HasCallInTailPosition0.func,
     "IsIdentifierRef0" -> PrimaryExpression8IsIdentifierRef0.func
   )
 }
@@ -188,7 +188,7 @@ object PrimaryExpression9 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> PrimaryExpression9AssignmentTargetType0.func,
-    "ExpressionRules0" -> PrimaryExpression9ExpressionRules0.func,
+    "HasCallInTailPosition0" -> PrimaryExpression9HasCallInTailPosition0.func,
     "IsIdentifierRef0" -> PrimaryExpression9IsIdentifierRef0.func
   )
 }
@@ -207,7 +207,7 @@ object PrimaryExpression10 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> PrimaryExpression10AssignmentTargetType0.func,
     "Evaluation0" -> PrimaryExpression10Evaluation0.func,
-    "ExpressionRules0" -> PrimaryExpression10ExpressionRules0.func,
+    "HasCallInTailPosition0" -> PrimaryExpression10HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> PrimaryExpression10IsFunctionDefinition0.func,
     "IsIdentifierRef0" -> PrimaryExpression10IsIdentifierRef0.func
   )
@@ -226,7 +226,7 @@ object PrimaryExpression11 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> PrimaryExpression11AssignmentTargetType0.func,
-    "ExpressionRules0" -> PrimaryExpression11ExpressionRules0.func,
+    "HasCallInTailPosition0" -> PrimaryExpression11HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> PrimaryExpression11IsFunctionDefinition0.func,
     "IsIdentifierRef0" -> PrimaryExpression11IsIdentifierRef0.func
   )
@@ -246,7 +246,7 @@ object PrimaryExpression12 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> PrimaryExpression12AssignmentTargetType0.func,
     "Evaluation0" -> PrimaryExpression12Evaluation0.func,
-    "ExpressionRules0" -> PrimaryExpression12ExpressionRules0.func,
+    "HasCallInTailPosition0" -> PrimaryExpression12HasCallInTailPosition0.func,
     "HasName0" -> PrimaryExpression12HasName0.func,
     "IsFunctionDefinition0" -> PrimaryExpression12IsFunctionDefinition0.func,
     "IsIdentifierRef0" -> PrimaryExpression12IsIdentifierRef0.func,

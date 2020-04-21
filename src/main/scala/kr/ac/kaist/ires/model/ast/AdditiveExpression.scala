@@ -38,7 +38,7 @@ object AdditiveExpression1 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> AdditiveExpression1AssignmentTargetType0.func,
     "Evaluation0" -> AdditiveExpression1Evaluation0.func,
-    "ExpressionRules0" -> AdditiveExpression1ExpressionRules0.func,
+    "HasCallInTailPosition0" -> AdditiveExpression1HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> AdditiveExpression1IsFunctionDefinition0.func
   )
 }
@@ -58,7 +58,7 @@ object AdditiveExpression2 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> AdditiveExpression2AssignmentTargetType0.func,
     "Evaluation0" -> AdditiveExpression2Evaluation0.func,
-    "ExpressionRules0" -> AdditiveExpression2ExpressionRules0.func,
+    "HasCallInTailPosition0" -> AdditiveExpression2HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> AdditiveExpression2IsFunctionDefinition0.func
   )
 }

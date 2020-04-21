@@ -118,7 +118,9 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
           case addr: Addr =>
             println(addr)
             println(beautify(s0.heap(addr)))
-          case v => println(beautify(v))
+          case v => {
+            println(beautify(v))
+          }
         }
         s0
       case IApp(id, fexpr, args) =>
@@ -202,7 +204,7 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
               case name =>
                 ast.semantics(name) match {
                   case Some((Func(fname, params, varparam, body), lst)) =>
-                    val (locals, rest) = (astV :: lst).foldLeft(Map[Id, Value](), params) {
+                    val (locals, rest) = lst.foldLeft(Map[Id, Value](), params) {
                       case ((map, param :: rest), arg) =>
                         (map + (param -> arg), rest)
                       case (pair, _) => pair

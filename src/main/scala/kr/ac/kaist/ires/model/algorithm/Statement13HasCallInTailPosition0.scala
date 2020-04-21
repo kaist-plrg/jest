@@ -5,7 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object Statement13HasCallInTailPosition0 {
   val length: Int = 0
-  val func: Func = parseFunc(""""Statement13HasCallInTailPosition0" (this, DebuggerStatement) => {
+  val func: Func = parseFunc(""""Statement13HasCallInTailPosition0" (this, DebuggerStatement, call) => {
     app __x0__ = (WrapCompletion false)
     return __x0__
   }""")

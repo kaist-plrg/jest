@@ -36,7 +36,7 @@ object AssignmentExpression1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> AssignmentExpression1AssignmentTargetType0.func,
-    "ExpressionRules0" -> AssignmentExpression1ExpressionRules0.func,
+    "HasCallInTailPosition0" -> AssignmentExpression1HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> AssignmentExpression1IsFunctionDefinition0.func
   )
 }
@@ -54,7 +54,7 @@ object AssignmentExpression2 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> AssignmentExpression2AssignmentTargetType0.func,
-    "ExpressionRules0" -> AssignmentExpression2ExpressionRules0.func,
+    "HasCallInTailPosition0" -> AssignmentExpression2HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> AssignmentExpression2IsFunctionDefinition0.func
   )
 }
@@ -72,7 +72,7 @@ object AssignmentExpression3 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> AssignmentExpression3AssignmentTargetType0.func,
-    "ExpressionRules0" -> AssignmentExpression3ExpressionRules0.func,
+    "HasCallInTailPosition0" -> AssignmentExpression3HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> AssignmentExpression3IsFunctionDefinition0.func
   )
 }
@@ -92,7 +92,7 @@ object AssignmentExpression4 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> AssignmentExpression4AssignmentTargetType0.func,
     "Evaluation0" -> AssignmentExpression4Evaluation0.func,
-    "ExpressionRules0" -> AssignmentExpression4ExpressionRules0.func,
+    "HasCallInTailPosition0" -> AssignmentExpression4HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> AssignmentExpression4IsFunctionDefinition0.func
   )
 }
@@ -113,7 +113,7 @@ object AssignmentExpression5 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> AssignmentExpression5AssignmentTargetType0.func,
     "Evaluation0" -> AssignmentExpression5Evaluation0.func,
-    "ExpressionRules0" -> AssignmentExpression5ExpressionRules0.func,
+    "HasCallInTailPosition0" -> AssignmentExpression5HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> AssignmentExpression5IsFunctionDefinition0.func
   )
 }

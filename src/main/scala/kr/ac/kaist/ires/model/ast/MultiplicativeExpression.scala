@@ -39,7 +39,7 @@ object MultiplicativeExpression1 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> MultiplicativeExpression1AssignmentTargetType0.func,
     "Evaluation0" -> MultiplicativeExpression1Evaluation0.func,
-    "ExpressionRules0" -> MultiplicativeExpression1ExpressionRules0.func,
+    "HasCallInTailPosition0" -> MultiplicativeExpression1HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> MultiplicativeExpression1IsFunctionDefinition0.func
   )
 }

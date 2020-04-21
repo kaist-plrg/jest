@@ -21,7 +21,7 @@ case class Expression0(x0: AssignmentExpression, parserParams: List[Boolean]) ex
 object Expression0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "ExpressionRules0" -> Expression0ExpressionRules0.func
+    "HasCallInTailPosition0" -> Expression0HasCallInTailPosition0.func
   )
 }
 case class Expression1(x0: Expression, x2: AssignmentExpression, parserParams: List[Boolean]) extends Expression {
@@ -40,7 +40,7 @@ object Expression1 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> Expression1AssignmentTargetType0.func,
     "Evaluation0" -> Expression1Evaluation0.func,
-    "ExpressionRules0" -> Expression1ExpressionRules0.func,
+    "HasCallInTailPosition0" -> Expression1HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> Expression1IsFunctionDefinition0.func
   )
 }

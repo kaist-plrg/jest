@@ -44,8 +44,8 @@ trait AST {
   // get semantics
   def semantics(fname: String): Option[(Func, List[Value])] = {
     (info.semMap.get(fname + k.toString) match {
-      case Some(f) => Some((f, list.map(_._2)))
-      case None => info.semMap.get(fname + info.maxK.toString).map((f) => (f, fullList.map(_._2)))
+      case Some(f) => Some((f, ASTVal(this) :: list.map(_._2)))
+      case None => info.semMap.get(fname + info.maxK.toString).map((f) => (f, ASTVal(this) :: fullList.map(_._2)))
     }) match {
       case Some(f) => Some(f)
       // `Contains` static semantics
@@ -68,7 +68,7 @@ trait AST {
             ))
           )
         }
-      ), list.map(_._2)))
+      ), ASTVal(this) :: list.map(_._2)))
       else (list match {
         // case None => (list match {
         case List((_, ASTVal(x))) => x.semantics(fname)

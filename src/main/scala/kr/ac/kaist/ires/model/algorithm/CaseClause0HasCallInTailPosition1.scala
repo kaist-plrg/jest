@@ -5,7 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object CaseClause0HasCallInTailPosition1 {
   val length: Int = 0
-  val func: Func = parseFunc(""""CaseClause0HasCallInTailPosition1" (this, Expression, StatementList) => {
+  val func: Func = parseFunc(""""CaseClause0HasCallInTailPosition1" (this, Expression, StatementList, call) => {
     if (! (= StatementList absent)) {
       access __x0__ = (StatementList "HasCallInTailPosition")
       app __x1__ = (__x0__ call)

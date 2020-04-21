@@ -38,7 +38,7 @@ object RelationalExpression1 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> RelationalExpression1AssignmentTargetType0.func,
     "Evaluation0" -> RelationalExpression1Evaluation0.func,
-    "ExpressionRules0" -> RelationalExpression1ExpressionRules0.func,
+    "HasCallInTailPosition0" -> RelationalExpression1HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> RelationalExpression1IsFunctionDefinition0.func
   )
 }
@@ -58,7 +58,7 @@ object RelationalExpression2 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> RelationalExpression2AssignmentTargetType0.func,
     "Evaluation0" -> RelationalExpression2Evaluation0.func,
-    "ExpressionRules0" -> RelationalExpression2ExpressionRules0.func,
+    "HasCallInTailPosition0" -> RelationalExpression2HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> RelationalExpression2IsFunctionDefinition0.func
   )
 }
@@ -78,7 +78,7 @@ object RelationalExpression3 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> RelationalExpression3AssignmentTargetType0.func,
     "Evaluation0" -> RelationalExpression3Evaluation0.func,
-    "ExpressionRules0" -> RelationalExpression3ExpressionRules0.func,
+    "HasCallInTailPosition0" -> RelationalExpression3HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> RelationalExpression3IsFunctionDefinition0.func
   )
 }
@@ -98,7 +98,7 @@ object RelationalExpression4 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> RelationalExpression4AssignmentTargetType0.func,
     "Evaluation0" -> RelationalExpression4Evaluation0.func,
-    "ExpressionRules0" -> RelationalExpression4ExpressionRules0.func,
+    "HasCallInTailPosition0" -> RelationalExpression4HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> RelationalExpression4IsFunctionDefinition0.func
   )
 }
@@ -118,7 +118,7 @@ object RelationalExpression5 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> RelationalExpression5AssignmentTargetType0.func,
     "Evaluation0" -> RelationalExpression5Evaluation0.func,
-    "ExpressionRules0" -> RelationalExpression5ExpressionRules0.func,
+    "HasCallInTailPosition0" -> RelationalExpression5HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> RelationalExpression5IsFunctionDefinition0.func
   )
 }
@@ -138,7 +138,7 @@ object RelationalExpression6 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> RelationalExpression6AssignmentTargetType0.func,
     "Evaluation0" -> RelationalExpression6Evaluation0.func,
-    "ExpressionRules0" -> RelationalExpression6ExpressionRules0.func,
+    "HasCallInTailPosition0" -> RelationalExpression6HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> RelationalExpression6IsFunctionDefinition0.func
   )
 }

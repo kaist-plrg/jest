@@ -39,7 +39,7 @@ object ConditionalExpression1 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> ConditionalExpression1AssignmentTargetType0.func,
     "Evaluation0" -> ConditionalExpression1Evaluation0.func,
-    "ExpressionRules0" -> ConditionalExpression1ExpressionRules0.func,
+    "HasCallInTailPosition0" -> ConditionalExpression1HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> ConditionalExpression1IsFunctionDefinition0.func
   )
 }

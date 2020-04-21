@@ -38,7 +38,7 @@ object EqualityExpression1 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> EqualityExpression1AssignmentTargetType0.func,
     "Evaluation0" -> EqualityExpression1Evaluation0.func,
-    "ExpressionRules0" -> EqualityExpression1ExpressionRules0.func,
+    "HasCallInTailPosition0" -> EqualityExpression1HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> EqualityExpression1IsFunctionDefinition0.func
   )
 }
@@ -58,7 +58,7 @@ object EqualityExpression2 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> EqualityExpression2AssignmentTargetType0.func,
     "Evaluation0" -> EqualityExpression2Evaluation0.func,
-    "ExpressionRules0" -> EqualityExpression2ExpressionRules0.func,
+    "HasCallInTailPosition0" -> EqualityExpression2HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> EqualityExpression2IsFunctionDefinition0.func
   )
 }
@@ -78,7 +78,7 @@ object EqualityExpression3 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> EqualityExpression3AssignmentTargetType0.func,
     "Evaluation0" -> EqualityExpression3Evaluation0.func,
-    "ExpressionRules0" -> EqualityExpression3ExpressionRules0.func,
+    "HasCallInTailPosition0" -> EqualityExpression3HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> EqualityExpression3IsFunctionDefinition0.func
   )
 }
@@ -98,7 +98,7 @@ object EqualityExpression4 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> EqualityExpression4AssignmentTargetType0.func,
     "Evaluation0" -> EqualityExpression4Evaluation0.func,
-    "ExpressionRules0" -> EqualityExpression4ExpressionRules0.func,
+    "HasCallInTailPosition0" -> EqualityExpression4HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> EqualityExpression4IsFunctionDefinition0.func
   )
 }

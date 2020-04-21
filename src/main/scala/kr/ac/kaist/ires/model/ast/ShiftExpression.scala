@@ -38,7 +38,7 @@ object ShiftExpression1 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> ShiftExpression1AssignmentTargetType0.func,
     "Evaluation0" -> ShiftExpression1Evaluation0.func,
-    "ExpressionRules0" -> ShiftExpression1ExpressionRules0.func,
+    "HasCallInTailPosition0" -> ShiftExpression1HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> ShiftExpression1IsFunctionDefinition0.func
   )
 }
@@ -58,7 +58,7 @@ object ShiftExpression2 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> ShiftExpression2AssignmentTargetType0.func,
     "Evaluation0" -> ShiftExpression2Evaluation0.func,
-    "ExpressionRules0" -> ShiftExpression2ExpressionRules0.func,
+    "HasCallInTailPosition0" -> ShiftExpression2HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> ShiftExpression2IsFunctionDefinition0.func
   )
 }
@@ -78,7 +78,7 @@ object ShiftExpression3 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> ShiftExpression3AssignmentTargetType0.func,
     "Evaluation0" -> ShiftExpression3Evaluation0.func,
-    "ExpressionRules0" -> ShiftExpression3ExpressionRules0.func,
+    "HasCallInTailPosition0" -> ShiftExpression3HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> ShiftExpression3IsFunctionDefinition0.func
   )
 }

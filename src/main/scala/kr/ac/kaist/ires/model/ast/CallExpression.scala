@@ -23,7 +23,7 @@ object CallExpression0 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> CallExpression0AssignmentTargetType0.func,
     "Evaluation0" -> CallExpression0Evaluation0.func,
-    "ExpressionRules0" -> CallExpression0ExpressionRules0.func
+    "HasCallInTailPosition0" -> CallExpression0HasCallInTailPosition0.func
   )
 }
 case class CallExpression1(x0: SuperCall, parserParams: List[Boolean]) extends CallExpression {
@@ -40,7 +40,7 @@ object CallExpression1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> CallExpression1AssignmentTargetType0.func,
-    "ExpressionRules0" -> CallExpression1ExpressionRules0.func
+    "HasCallInTailPosition0" -> CallExpression1HasCallInTailPosition0.func
   )
 }
 case class CallExpression2(x0: CallExpression, x1: Arguments, parserParams: List[Boolean]) extends CallExpression {
@@ -59,7 +59,7 @@ object CallExpression2 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> CallExpression2AssignmentTargetType0.func,
     "Evaluation0" -> CallExpression2Evaluation0.func,
-    "ExpressionRules0" -> CallExpression2ExpressionRules0.func
+    "HasCallInTailPosition0" -> CallExpression2HasCallInTailPosition0.func
   )
 }
 case class CallExpression3(x0: CallExpression, x2: Expression, parserParams: List[Boolean]) extends CallExpression {
@@ -78,7 +78,7 @@ object CallExpression3 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> CallExpression3AssignmentTargetType0.func,
     "Evaluation0" -> CallExpression3Evaluation0.func,
-    "ExpressionRules0" -> CallExpression3ExpressionRules0.func
+    "HasCallInTailPosition0" -> CallExpression3HasCallInTailPosition0.func
   )
 }
 case class CallExpression4(x0: CallExpression, x2: Lexical, parserParams: List[Boolean]) extends CallExpression {
@@ -98,7 +98,7 @@ object CallExpression4 extends ASTInfo {
     "AssignmentTargetType0" -> CallExpression4AssignmentTargetType0.func,
     "Contains0" -> CallExpression4Contains0.func,
     "Evaluation0" -> CallExpression4Evaluation0.func,
-    "ExpressionRules0" -> CallExpression4ExpressionRules0.func
+    "HasCallInTailPosition0" -> CallExpression4HasCallInTailPosition0.func
   )
 }
 case class CallExpression5(x0: CallExpression, x1: TemplateLiteral, parserParams: List[Boolean]) extends CallExpression {
@@ -117,6 +117,6 @@ object CallExpression5 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> CallExpression5AssignmentTargetType0.func,
     "Evaluation0" -> CallExpression5Evaluation0.func,
-    "ExpressionRules0" -> CallExpression5ExpressionRules0.func
+    "HasCallInTailPosition0" -> CallExpression5HasCallInTailPosition0.func
   )
 }

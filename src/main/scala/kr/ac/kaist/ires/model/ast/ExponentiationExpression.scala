@@ -38,7 +38,7 @@ object ExponentiationExpression1 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> ExponentiationExpression1AssignmentTargetType0.func,
     "Evaluation0" -> ExponentiationExpression1Evaluation0.func,
-    "ExpressionRules0" -> ExponentiationExpression1ExpressionRules0.func,
+    "HasCallInTailPosition0" -> ExponentiationExpression1HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> ExponentiationExpression1IsFunctionDefinition0.func
   )
 }

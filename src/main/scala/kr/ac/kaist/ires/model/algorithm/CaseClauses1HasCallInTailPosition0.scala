@@ -5,7 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object CaseClauses1HasCallInTailPosition0 {
   val length: Int = 0
-  val func: Func = parseFunc(""""CaseClauses1HasCallInTailPosition0" (this, CaseClauses, CaseClause) => {
+  val func: Func = parseFunc(""""CaseClauses1HasCallInTailPosition0" (this, CaseClauses, CaseClause, call) => {
     access __x0__ = (CaseClauses "HasCallInTailPosition")
     app __x1__ = (__x0__ call)
     let has = __x1__

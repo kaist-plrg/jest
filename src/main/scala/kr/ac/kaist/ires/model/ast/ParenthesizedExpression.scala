@@ -23,7 +23,7 @@ object ParenthesizedExpression0 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> ParenthesizedExpression0AssignmentTargetType0.func,
     "Evaluation0" -> ParenthesizedExpression0Evaluation0.func,
-    "ExpressionRules0" -> ParenthesizedExpression0ExpressionRules0.func,
+    "HasCallInTailPosition0" -> ParenthesizedExpression0HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> ParenthesizedExpression0IsFunctionDefinition0.func,
     "NamedEvaluation0" -> ParenthesizedExpression0NamedEvaluation0.func
   )
