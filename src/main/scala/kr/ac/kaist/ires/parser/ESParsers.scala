@@ -32,11 +32,11 @@ trait ESParsers extends LAParsers {
 
         // insert semicolon right before the offending token
         lazy val insert = Some({
-          if (line < lines.length) {
+          if (line < lines.length && column < curLine.length) {
             val (pre, post) = curLine.splitAt(column)
             lines(line) = pre + ';' + post
-          } else lines(lines.length - 1) = lines(lines.length - 1) + ';'
-          lines.mkString("\n")
+            lines.mkString("\n")
+          } else lines.mkString("\n") + "\n;"
         })
 
         // 2. The end of the input stream of tokens is encountered

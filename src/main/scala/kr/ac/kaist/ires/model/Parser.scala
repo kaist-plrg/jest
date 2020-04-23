@@ -1227,8 +1227,8 @@ object Parser extends ESParsers {
   lazy val IfStatement: ESParser[IfStatement] = memo(args => {
     val List(pYield, pAwait, pReturn) = getArgsN("IfStatement", args, 3)
     log((
-      log((((MATCH <~ t("if")) <~ t("(")) ~ Expression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 ~ x1 => IfStatement0(x0, x1, args) })("IfStatement0") |
-      log(((((MATCH <~ t("if")) <~ t("(")) ~ Expression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn)) <~ t("else")) ~ Statement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 ~ x1 ~ x2 => IfStatement1(x0, x1, x2, args) })("IfStatement1")
+      log(((((MATCH <~ t("if")) <~ t("(")) ~ Expression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn)) <~ t("else")) ~ Statement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 ~ x1 ~ x2 => IfStatement0(x0, x1, x2, args) })("IfStatement0") |
+      log((((MATCH <~ t("if")) <~ t("(")) ~ Expression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 ~ x1 => IfStatement1(x0, x1, args) })("IfStatement1")
     ))("IfStatement")
   })
   lazy val IterationStatement: ESParser[IterationStatement] = memo(args => {
