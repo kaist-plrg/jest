@@ -7,12 +7,10 @@ object PrepareForTailCall {
   val length: Int = 0
   val func: Func = parseFunc(""""PrepareForTailCall" () => {
     let leafContext = GLOBAL_context
-    GLOBAL_context = null
-    leafContext = null
-    GLOBAL_context = null
     if (= GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 1i)] leafContext) {
       __x0__ = (- GLOBAL_executionStack["length"] 1i)
       (pop GLOBAL_executionStack __x0__)
-    } else {}
+      if (= GLOBAL_executionStack["length"] 0i) GLOBAL_context = null else GLOBAL_context = GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 1i)]
+    } else GLOBAL_context = null
   }""")
 }

@@ -13,7 +13,6 @@ object ScriptEvaluation {
     scriptCxt["ScriptOrModule"] = scriptRecord
     scriptCxt["VariableEnvironment"] = globalEnv
     scriptCxt["LexicalEnvironment"] = globalEnv
-    GLOBAL_context = null
     append scriptCxt -> GLOBAL_executionStack
     GLOBAL_context = GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 1i)]
     let scriptBody = scriptRecord["ECMAScriptCode"]
@@ -27,11 +26,11 @@ object ScriptEvaluation {
       app __x2__ = (NormalCompletion undefined)
       result = __x2__
     } else {}
-    GLOBAL_context = null
     if (= GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 1i)] scriptCxt) {
       __x3__ = (- GLOBAL_executionStack["length"] 1i)
       (pop GLOBAL_executionStack __x3__)
-    } else {}
+      if (= GLOBAL_executionStack["length"] 0i) GLOBAL_context = null else GLOBAL_context = GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 1i)]
+    } else GLOBAL_context = null
     assert (< 0i GLOBAL_executionStack["length"])
     GLOBAL_context = GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 1i)]
     app __x4__ = (Completion result)

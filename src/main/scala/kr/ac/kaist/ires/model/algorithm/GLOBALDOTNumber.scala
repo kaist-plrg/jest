@@ -17,7 +17,7 @@ object GLOBALDOTNumber {
       app __x2__ = (WrapCompletion n)
       return __x2__
     } else {}
-    app __x3__ = (OrdinaryCreateFromConstructor NewTarget "%NumberPrototype%" (new ["NumberData"]))
+    app __x3__ = (OrdinaryCreateFromConstructor NewTarget INTRINSIC_NumberPrototype (new ["NumberData"]))
     if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
     let O = __x3__
     O["NumberData"] = n

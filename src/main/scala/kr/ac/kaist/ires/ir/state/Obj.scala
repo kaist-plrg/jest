@@ -18,15 +18,26 @@ case class IRSymbol(desc: Value) extends Obj {
 }
 
 // IR maps
-case class IRMap(ty: Ty, props: Map[Value, Value]) extends Obj {
+case class IRMap(ty: Ty, props: Map[Value, (Value, Long)], size: Long = 0L) extends Obj {
+
   // getters
-  def apply(prop: Value): Value = props.getOrElse(prop, Absent)
+  def apply(prop: Value): Value = props.get(prop).map(_._1).getOrElse(Absent)
 
   // setters
-  def updated(prop: Value, value: Value): IRMap = copy(props = props + (prop -> value))
+  def updated(prop: Value, value: Value): IRMap = copy(props = props + (prop -> (value, props.get(prop).map(_._2).getOrElse(size))), size = size + 1L)
 
   // deletes
   def deleted(prop: Value): IRMap = copy(props = props - prop)
+}
+
+// Unordered IR map helper
+object IRUMap {
+  def apply(ty: Ty, props: Map[Value, Value]): IRMap = {
+    val (nm, size) = props.foldLeft((Map[Value, (Value, Long)](), 0L)) {
+      case ((m, l), (k, v)) => (m + (k -> (v, l)), l + 1)
+    }
+    IRMap(ty, nm, size)
+  }
 }
 
 // IR lists

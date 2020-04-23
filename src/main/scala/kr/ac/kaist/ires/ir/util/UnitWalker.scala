@@ -178,9 +178,9 @@ trait UnitWalker {
   def walk(obj: Obj): Unit = obj match {
     case IRSymbol(desc) =>
       walk(desc)
-    case IRMap(ty, props) =>
+    case IRMap(ty, props, size) =>
       walk(ty)
-      walkMap[Value, Value](props, walk, walk)
+      walkMap[Value, (Value, Long)](props, walk, (x) => walk(x._1))
     case IRList(values) =>
       walkList[Value](values.toList, walk)
     case IRNotSupported(tyname, msg) =>

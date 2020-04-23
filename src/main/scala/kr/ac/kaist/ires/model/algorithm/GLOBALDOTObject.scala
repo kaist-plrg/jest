@@ -9,7 +9,7 @@ object GLOBALDOTObject {
     app __x0__ = (GetArgument argumentsList 0i)
     let value = __x0__
     if (! (|| (= NewTarget undefined) (= NewTarget GLOBAL_context["Function"]))) {
-      app __x1__ = (OrdinaryCreateFromConstructor NewTarget "%ObjectPrototype%")
+      app __x1__ = (OrdinaryCreateFromConstructor NewTarget INTRINSIC_ObjectPrototype)
       if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
       app __x2__ = (WrapCompletion __x1__)
       return __x2__

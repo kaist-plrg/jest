@@ -11,11 +11,11 @@ object RunJobs {
     __x0__
     app __x1__ = (EnqueueJob "ScriptJobs" ScriptEvaluationJob (new [script, hostDefined]))
     while true {
-      GLOBAL_context = null
       if (= GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 1i)] GLOBAL_context) {
         __x2__ = (- GLOBAL_executionStack["length"] 1i)
         (pop GLOBAL_executionStack __x2__)
-      } else {}
+        if (= GLOBAL_executionStack["length"] 0i) GLOBAL_context = null else GLOBAL_context = GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 1i)]
+      } else GLOBAL_context = null
       if (= GLOBAL_jobQueue["length"] 0.0) return (new Completion("Type" -> CONST_normal, "Value" -> undefined, "Target" -> CONST_empty)) else {}
       let nextQueue = GLOBAL_jobQueue
       let nextPending = (pop nextQueue 0i)

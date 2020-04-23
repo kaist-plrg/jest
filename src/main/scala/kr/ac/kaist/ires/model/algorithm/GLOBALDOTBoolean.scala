@@ -14,7 +14,7 @@ object GLOBALDOTBoolean {
       app __x2__ = (WrapCompletion b)
       return __x2__
     } else {}
-    app __x3__ = (OrdinaryCreateFromConstructor NewTarget "%BooleanPrototype%" (new ["BooleanData"]))
+    app __x3__ = (OrdinaryCreateFromConstructor NewTarget INTRINSIC_BooleanPrototype (new ["BooleanData"]))
     if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
     let O = __x3__
     O["BooleanData"] = b

@@ -6,10 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object DebuggerStatement0Evaluation0 {
   val length: Int = 0
   val func: Func = parseFunc(""""DebuggerStatement0Evaluation0" (this) => {
-    if !!! "ImplDependent" {
-      !!! "Etc"
-      !!! "Etc"
-    } else {
+    if false {} else {
       app __x0__ = (NormalCompletion CONST_empty)
       let result = __x0__
     }

@@ -105,7 +105,7 @@ object AssignmentExpression5Evaluation0 {
       app __x15__ = (ToNumber rval)
       if (is-completion __x15__) if (= __x15__["Type"] CONST_normal) __x15__ = __x15__["Value"] else return __x15__ else {}
       __x11__ = (* __x14__ __x15__)
-    } else !!! "assign operator"
+    } else assert "invalid assign operator"
     let r = __x11__
     app __x20__ = (PutValue lref r)
     if (is-completion __x20__) if (= __x20__["Type"] CONST_normal) __x20__ = __x20__["Value"] else return __x20__ else {}

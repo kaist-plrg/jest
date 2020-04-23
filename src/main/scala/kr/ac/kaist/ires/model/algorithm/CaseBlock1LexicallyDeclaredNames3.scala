@@ -19,6 +19,13 @@ object CaseBlock1LexicallyDeclaredNames3 {
       __x3__ = (+ __x3__ 1i)
     }
     if (= CaseClauses1 absent) return names else {}
-    !!! "Etc"
+    access __x5__ = (CaseClauses1 "LexicallyDeclaredNames")
+    let __x6__ = 0i
+    while (< __x6__ __x5__["length"]) {
+      let __x7__ = __x5__[__x6__]
+      append __x7__ -> names
+      __x6__ = (+ __x6__ 1i)
+    }
+    return names
   }""")
 }

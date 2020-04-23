@@ -142,9 +142,9 @@ trait Walker {
   // objects
   def walk(obj: Obj): Obj = obj match {
     case IRSymbol(desc) => IRSymbol(walk(desc))
-    case IRMap(ty, props) => IRMap(
+    case IRMap(ty, props, _) => IRMap(
       walk(ty),
-      walkMap[Value, Value](props, walk, walk)
+      walkMap[Value, (Value, Long)](props, walk, (x) => (walk(x._1), x._2))
     )
     case IRList(values) => IRList(
       walkList[Value](values.toList, walk).toVector

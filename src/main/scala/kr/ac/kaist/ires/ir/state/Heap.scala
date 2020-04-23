@@ -62,7 +62,7 @@ case class Heap(
   def keys(addr: Addr): (Addr, Heap) = this(addr) match {
     case (m: IRMap) =>
       val newAddr = DynamicAddr(size)
-      val newL = m.props.keys.toVector
+      val newL = m.props.toList.sortBy(_._2._2).map(_._1).toVector
       val newMap = map + (newAddr -> IRList(newL))
       val newSize = size + 1
       (newAddr, Heap(newMap, newSize))
@@ -75,7 +75,10 @@ case class Heap(
   ): (Addr, Heap) = {
     val newAddr = DynamicAddr(size)
     val newM = tyMap.getOrElse(ty.name, Map()) ++ m
-    val newMap = map + (newAddr -> IRMap(ty, newM))
+    val newIRMap = newM.foldLeft(IRMap(ty, Map())) {
+      case (m, (k, v)) => m.updated(k, v)
+    }
+    val newMap = map + (newAddr -> newIRMap)
     val newSize = size + 1
     (newAddr, Heap(newMap, newSize))
   }

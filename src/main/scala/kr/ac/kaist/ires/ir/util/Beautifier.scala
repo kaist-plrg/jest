@@ -265,9 +265,9 @@ object Beautifier {
     override def walk(obj: Obj): Unit = obj match {
       case IRSymbol(desc) =>
         walk("(Symbol "); walk(desc); walk(")")
-      case IRMap(ty, props) => oneDepth({
+      case IRMap(ty, props, _) => oneDepth({
         walk("(TYPE = "); walk(ty); walk(")")
-        walkMap[Value, Value](props, walk, walk)
+        walkMap[Value, Value](props.map { case (k, v) => (k, v._1) }, walk, walk)
       })
       case IRList(values) => oneDepth({
         walk("(List [length = "); walk(values.length.toString); walk("])")

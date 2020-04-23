@@ -72,16 +72,16 @@ class Test262Test extends IRESTest {
     case Long => (FilterMeta.test262LongconfigSummary, new IREvalConfig(timeout = None))
     case VeryLong => (FilterMeta.test262VeryLongconfigSummary, new IREvalConfig(timeout = None))
   }
-  val initInclude = List("assert.js", "sta.js").foldLeft(Map[String, List[StatementListItem]]()) {
+  val initInclude = List("assert.js", "sta.js").foldLeft(Map[String, Either[String, List[StatementListItem]]]()) {
     case (imm, s) => {
       val includeName = s"${dir.toString}/harness/$s"
       val jsConfig = aseConfig.copy(fileNames = List(includeName))
       val stmtList = ModelHelper.flattenStatement(Parse((), jsConfig))
-      imm + (s -> stmtList)
+      imm + (s -> Right(stmtList))
     }
 
   }
-  val includeMap: Map[String, List[StatementListItem]] = config.normal.foldLeft(initInclude) {
+  val includeMap: Map[String, Either[String, List[StatementListItem]]] = config.normal.foldLeft(initInclude) {
     case (im, NormalTestConfig(_, includes)) =>
       includes.foldLeft(im) {
         case (imm, s) => if (imm contains s) {
@@ -89,27 +89,44 @@ class Test262Test extends IRESTest {
         } else {
           val includeName = s"${dir.toString}/harness/$s"
           val jsConfig = aseConfig.copy(fileNames = List(includeName))
-          val stmtList = ModelHelper.flattenStatement(Parse((), jsConfig))
-          imm + (s -> stmtList)
+          val ast = Parse((), jsConfig)
+          val eStmtList = try {
+            ModelHelper.checkSupported(ast)
+            val stmtList = ModelHelper.flattenStatement(ast)
+            Right(stmtList)
+          } catch {
+            case NotSupported(msg) => Left(msg)
+          }
+          imm + (s -> eStmtList)
         }
       }
   }
 
   def init: Unit = {
-    val initStList = includeMap("assert.js") ++ includeMap("sta.js")
+    val initStList = for {
+      x <- includeMap("assert.js")
+      y <- includeMap("sta.js")
+    } yield x ++ y
     val noParseSet = NoParse.failed.toSet ++ NoParse.long.toSet
     for (NormalTestConfig(filename, includes) <- shuffle(config.normal)) {
       val jsName = s"${dir.toString}/test/$filename".replace("//", "/")
       val name = removedExt(jsName).drop(dir.toString.length)
       if (!noParseSet.contains(name)) check("Test262Eval", name, {
-        val jsConfig = aseConfig.copy(fileNames = List(jsName))
+        val includeList = includes.foldLeft(initStList) {
+          case (li, s) => for {
+            x <- li
+            y <- includeMap(s)
+          } yield x ++ y
+        } match {
+          case Right(l) => l
+          case Left(msg) => throw NotSupported(msg)
+        }
 
+        val jsConfig = aseConfig.copy(fileNames = List(jsName))
         val ast = Parse((), jsConfig)
         ModelHelper.checkSupported(ast)
 
-        val stList = includes.foldLeft(initStList) {
-          case (li, s) => li ++ includeMap(s)
-        } ++ ModelHelper.flattenStatement(ast)
+        val stList = includeList ++ ModelHelper.flattenStatement(ast)
         val st = IREval(Load(ModelHelper.mergeStatement(stList), jsConfig), jsConfig, evalConfig)
         evalJSTest(st)
       })

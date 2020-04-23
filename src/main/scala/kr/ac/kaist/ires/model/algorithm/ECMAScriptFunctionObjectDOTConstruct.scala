@@ -11,7 +11,7 @@ object ECMAScriptFunctionObjectDOTConstruct {
     let callerContext = GLOBAL_context
     let kind = F["ConstructorKind"]
     if (= kind "base") {
-      app __x1__ = (OrdinaryCreateFromConstructor newTarget "%ObjectPrototype%")
+      app __x1__ = (OrdinaryCreateFromConstructor newTarget INTRINSIC_ObjectPrototype)
       if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
       let thisArgument = __x1__
     } else {}

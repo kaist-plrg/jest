@@ -27,7 +27,7 @@ object GLOBALDOTString {
       app __x6__ = (WrapCompletion s)
       return __x6__
     } else {}
-    app __x7__ = (GetPrototypeFromConstructor NewTarget "%StringPrototype%")
+    app __x7__ = (GetPrototypeFromConstructor NewTarget INTRINSIC_StringPrototype)
     if (is-completion __x7__) if (= __x7__["Type"] CONST_normal) __x7__ = __x7__["Value"] else return __x7__ else {}
     app __x8__ = (StringCreate s __x7__)
     if (is-completion __x8__) if (= __x8__["Type"] CONST_normal) __x8__ = __x8__["Value"] else return __x8__ else {}

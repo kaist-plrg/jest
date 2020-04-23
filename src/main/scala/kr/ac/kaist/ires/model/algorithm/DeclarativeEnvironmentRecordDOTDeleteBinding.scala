@@ -8,9 +8,12 @@ object DeclarativeEnvironmentRecordDOTDeleteBinding {
   val func: Func = parseFunc(""""DeclarativeEnvironmentRecord.DeleteBinding" (this, N) => {
     let envRec = this
     assert (! (= envRec["SubMap"][N] absent))
-    !!! "Etc"
-    !!! "Etc"
-    app __x0__ = (WrapCompletion true)
-    return __x0__
+    if false {
+      app __x0__ = (WrapCompletion false)
+      return __x0__
+    } else {}
+    delete envRec["SubMap"][N]
+    app __x1__ = (WrapCompletion true)
+    return __x1__
   }""")
 }

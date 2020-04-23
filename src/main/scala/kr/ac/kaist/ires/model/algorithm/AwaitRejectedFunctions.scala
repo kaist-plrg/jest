@@ -9,8 +9,6 @@ object AwaitRejectedFunctions {
     let F = GLOBAL_context["Function"]
     let asyncContext = F["AsyncContext"]
     let prevContext = GLOBAL_context
-    GLOBAL_context = null
-    prevContext = null
     append asyncContext -> GLOBAL_executionStack
     GLOBAL_context = GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 1i)]
     app __x0__ = (ThrowCompletion reason)

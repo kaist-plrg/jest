@@ -17,7 +17,7 @@ object GLOBALDOTPromise {
       app __x3__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
       return __x3__
     } else {}
-    app __x4__ = (OrdinaryCreateFromConstructor NewTarget "%PromisePrototype%" (new ["PromiseState", "PromiseResult", "PromiseFulfillReactions", "PromiseRejectReactions", "PromiseIsHandled"]))
+    app __x4__ = (OrdinaryCreateFromConstructor NewTarget INTRINSIC_PromisePrototype (new ["PromiseState", "PromiseResult", "PromiseFulfillReactions", "PromiseRejectReactions", "PromiseIsHandled"]))
     if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
     let promise = __x4__
     promise["PromiseState"] = "pending"

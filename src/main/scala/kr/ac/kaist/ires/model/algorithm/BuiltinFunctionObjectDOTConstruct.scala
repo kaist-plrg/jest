@@ -7,10 +7,7 @@ object BuiltinFunctionObjectDOTConstruct {
   val length: Int = 2
   val func: Func = parseFunc(""""BuiltinFunctionObject.Construct" (F, argumentsList, newTarget) => {
     let callerContext = GLOBAL_context
-    if (= callerContext null) {
-      GLOBAL_context = null
-      callerContext = null
-    } else {}
+    if (= callerContext null) {} else {}
     let calleeContext = (new ExecutionContext("SubMap" -> (new SubMap())))
     calleeContext["Function"] = F
     let calleeRealm = F["Realm"]

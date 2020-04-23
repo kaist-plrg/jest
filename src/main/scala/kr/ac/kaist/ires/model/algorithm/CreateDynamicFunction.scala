@@ -16,20 +16,20 @@ object CreateDynamicFunction {
     if (= kind "normal") {
       let goal = "FunctionBody"
       let parameterGoal = "FormalParameters"
-      let fallbackProto = "%FunctionPrototype%"
+      let fallbackProto = INTRINSIC_FunctionPrototype
     } else if (= kind "generator") {
       let goal = "GeneratorBody"
       let parameterGoal = "FormalParameters"
-      let fallbackProto = "%Generator%"
+      let fallbackProto = INTRINSIC_Generator
     } else if (= kind "async") {
       let goal = "AsyncFunctionBody"
       let parameterGoal = "FormalParameters"
-      let fallbackProto = "%AsyncFunctionPrototype%"
+      let fallbackProto = INTRINSIC_AsyncFunctionPrototype
     } else {
       assert (= kind "async generator")
       let goal = "AsyncGeneratorBody"
       let parameterGoal = "FormalParameters"
-      let fallbackProto = "%AsyncGenerator%"
+      let fallbackProto = INTRINSIC_AsyncGenerator
     }
     let argCount = args["length"]
     let P = ""

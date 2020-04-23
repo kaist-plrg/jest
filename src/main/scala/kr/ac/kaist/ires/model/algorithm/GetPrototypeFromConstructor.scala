@@ -16,7 +16,7 @@ object GetPrototypeFromConstructor {
       app __x3__ = (GetFunctionRealm constructor)
       if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
       let realm = __x3__
-      !!! "Etc"
+      proto = intrinsicDefaultProto
     } else {}
     app __x4__ = (WrapCompletion proto)
     return __x4__

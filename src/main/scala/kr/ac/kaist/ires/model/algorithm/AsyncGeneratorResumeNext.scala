@@ -60,8 +60,6 @@ object AsyncGeneratorResumeNext {
     assert (|| (= state "suspendedStart") (= state "suspendedYield"))
     let genContext = generator["AsyncGeneratorContext"]
     let callerContext = GLOBAL_context
-    GLOBAL_context = null
-    callerContext = null
     generator["AsyncGeneratorState"] = "executing"
     append genContext -> GLOBAL_executionStack
     GLOBAL_context = GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 1i)]

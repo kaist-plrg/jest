@@ -30,8 +30,6 @@ object GLOBALDOTGeneratorResumeAbrupt {
     assert (= state "suspendedYield")
     let genContext = generator["GeneratorContext"]
     let methodContext = GLOBAL_context
-    GLOBAL_context = null
-    methodContext = null
     generator["GeneratorState"] = "executing"
     append genContext -> GLOBAL_executionStack
     GLOBAL_context = GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 1i)]

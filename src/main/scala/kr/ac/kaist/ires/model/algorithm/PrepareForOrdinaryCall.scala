@@ -18,10 +18,7 @@ object PrepareForOrdinaryCall {
     let localEnv = __x1__
     calleeContext["LexicalEnvironment"] = localEnv
     calleeContext["VariableEnvironment"] = localEnv
-    if (= callerContext null) {
-      GLOBAL_context = null
-      callerContext = null
-    } else {}
+    if (= callerContext null) {} else {}
     append calleeContext -> GLOBAL_executionStack
     GLOBAL_context = GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 1i)]
     app __x2__ = (WrapCompletion calleeContext)

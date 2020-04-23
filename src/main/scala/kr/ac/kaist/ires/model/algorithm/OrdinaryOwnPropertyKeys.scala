@@ -47,8 +47,6 @@ object OrdinaryOwnPropertyKeys {
       __x15__ = (+ __x15__ 1i)
     }
     return keys
-    !!! "Etc"
-    !!! "Etc"
     app __x16__ = (WrapCompletion keys)
     return __x16__
   }""")

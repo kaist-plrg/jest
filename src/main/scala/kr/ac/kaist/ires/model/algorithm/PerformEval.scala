@@ -54,10 +54,7 @@ object PerformEval {
       let varEnv = evalRealm["GlobalEnv"]
     }
     if (= strictEval true) varEnv = lexEnv else {}
-    if (= ctx null) {
-      GLOBAL_context = null
-      ctx = null
-    } else {}
+    if (= ctx null) {} else {}
     let evalCxt = (new ExecutionContext("SubMap" -> (new SubMap())))
     evalCxt["Function"] = null
     evalCxt["Realm"] = evalRealm
@@ -76,11 +73,11 @@ object PerformEval {
       app __x15__ = (NormalCompletion undefined)
       result = __x15__
     } else {}
-    GLOBAL_context = null
     if (= GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 1i)] evalCxt) {
       __x16__ = (- GLOBAL_executionStack["length"] 1i)
       (pop GLOBAL_executionStack __x16__)
-    } else {}
+      if (= GLOBAL_executionStack["length"] 0i) GLOBAL_context = null else GLOBAL_context = GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 1i)]
+    } else GLOBAL_context = null
     GLOBAL_context = GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 1i)]
     app __x17__ = (Completion result)
     app __x18__ = (WrapCompletion __x17__)

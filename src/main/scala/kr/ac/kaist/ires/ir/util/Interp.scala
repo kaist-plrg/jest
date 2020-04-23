@@ -100,7 +100,7 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
           case Str(msg) =>
             error(s"\n${beautify(s0.globals.get(Id("__filename__")).getOrElse(Str("unknown")))} - ${s0.context.name}: Error occured : $msg"); s0
           case addr: Addr => s0.get(addr) match {
-            case Some(IRMap(Ty("Completion"), m)) => m(Str("Value")) match {
+            case Some(IRMap(Ty("Completion"), m, _)) => m(Str("Value"))._1 match {
               case Bool(true) => s0
               case Bool(false) =>
                 error(s"\n${beautify(s0.globals.get(Id("__filename__")).getOrElse(Str("unknown")))} - ${s0.context.name}: assertion failure: ${beautify(expr)}"); s0
@@ -170,7 +170,7 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
         val (p, s2) = interp(expr, true)(s1)
         (base, p) match {
           case (addr: Addr, p) => s2.get(addr) match {
-            case Some(IRMap(Ty("Completion"), m)) if !m.contains(p) => m(Str("Value")) match {
+            case Some(IRMap(Ty("Completion"), m, _)) if !m.contains(p) => m(Str("Value"))._1 match {
               case a: Addr => s2.define(id, s2.heap(a, p))
               case Str(s) => p match {
                 case Str("length") => s2.define(id, INum(s.length))
@@ -281,7 +281,7 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
       val (refV, s0) = interp(ref)(st)
       interp(refV)(s0) match {
         case (addr: DynamicAddr, s) => if (escapeCompletion) s.get(addr) match {
-          case Some(IRMap(Ty("Completion"), m)) => (m(Str("Value")), s)
+          case Some(IRMap(Ty("Completion"), m, _)) => (m(Str("Value"))._1, s)
           case _ => (addr, s)
         }
         else (addr, s)
@@ -305,7 +305,7 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
       (Str(v match {
         case addr: Addr => s0.heap.map.getOrElse(addr, error(s"unknown address: $addr")) match {
           case IRNotSupported(tyname, desc) => tyname
-          case IRMap(Ty("Completion"), m) => m(Str("Value")) match {
+          case IRMap(Ty("Completion"), m, _) => m(Str("Value"))._1 match {
             case addr: Addr => s0.heap.map.getOrElse(addr, error(s"unknown address: $addr")) match {
               case IRNotSupported(tyname, desc) => tyname
               case obj => obj.ty.name
@@ -339,7 +339,7 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
       val (v, s0) = interp(expr)(st)
       (Bool(v match {
         case addr: Addr => s0.heap.map.getOrElse(addr, error(s"unknown address: $addr")) match {
-          case IRMap(Ty("Completion"), _) => true
+          case IRMap(Ty("Completion"), _, _) => true
           case _ => false
         }
         case _ => false
@@ -477,7 +477,7 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
       val (p, s2) = interp(expr, true)(s1)
       ((base, p) match {
         case (addr: Addr, p) => s2.get(addr) match {
-          case Some(IRMap(Ty("Completion"), m)) if !m.contains(p) => m(Str("Value")) match {
+          case Some(IRMap(Ty("Completion"), m, _)) if !m.contains(p) => m(Str("Value"))._1 match {
             case a: Addr => RefValueProp(a, p)
             case Str(s) => RefValueString(s, p)
             case _ => error(s"Completion does not have value: $ref[$expr]")

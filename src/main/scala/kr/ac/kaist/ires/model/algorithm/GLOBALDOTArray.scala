@@ -9,7 +9,7 @@ object GLOBALDOTArray {
     let numberOfArgs = argumentsList["length"]
     assert (= numberOfArgs 0i)
     if (= NewTarget undefined) let newTarget = GLOBAL_context["Function"] else let newTarget = NewTarget
-    app __x0__ = (GetPrototypeFromConstructor newTarget "%ArrayPrototype%")
+    app __x0__ = (GetPrototypeFromConstructor newTarget INTRINSIC_ArrayPrototype)
     if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
     let proto = __x0__
     app __x1__ = (ArrayCreate 0i proto)
@@ -22,7 +22,7 @@ object GLOBALDOTArray {
     let numberOfArgs = argumentsList["length"]
     assert (= numberOfArgs 1i)
     if (= NewTarget undefined) let newTarget = GLOBAL_context["Function"] else let newTarget = NewTarget
-    app __x4__ = (GetPrototypeFromConstructor newTarget "%ArrayPrototype%")
+    app __x4__ = (GetPrototypeFromConstructor newTarget INTRINSIC_ArrayPrototype)
     if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
     let proto = __x4__
     app __x5__ = (ArrayCreate 0i proto)
@@ -51,7 +51,7 @@ object GLOBALDOTArray {
     let numberOfArgs = argumentsList["length"]
     assert (! (< numberOfArgs 2i))
     if (= NewTarget undefined) let newTarget = GLOBAL_context["Function"] else let newTarget = NewTarget
-    app __x12__ = (GetPrototypeFromConstructor newTarget "%ArrayPrototype%")
+    app __x12__ = (GetPrototypeFromConstructor newTarget INTRINSIC_ArrayPrototype)
     if (is-completion __x12__) if (= __x12__["Type"] CONST_normal) __x12__ = __x12__["Value"] else return __x12__ else {}
     let proto = __x12__
     app __x13__ = (ArrayCreate numberOfArgs proto)
