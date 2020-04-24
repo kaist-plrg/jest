@@ -188,18 +188,7 @@ case object FilterMeta extends PhaseObj[Unit, FilterMetaConfig, Unit] {
 
   lazy val manualDebatable = List(
     ("/built-ins/Object/defineProperties/15.2.3.7-6-a-127", "Array length of -0"),
-    ("/built-ins/Object/defineProperty/15.2.3.6-4-131", "Array length of -0"),
-    ("/built-ins/Object/defineProperty/15.2.3.6-4-625gs", "this.prototype may not be ObjectPrototype"),
-    ("/built-ins/Object/getPrototypeOf/15.2.3.2-2-30", "this.prototype may not be ObjectPrototype"),
-    ("/built-ins/String/prototype/split/S15.5.4.14_A1_T3", "this.prototype may not be ObjectPrototype"),
-    ("/built-ins/decodeURI/S15.1.3.1_A5.5", "this.prototype may not be ObjectPrototype"),
-    ("/built-ins/decodeURIComponent/S15.1.3.2_A5.5", "this.prototype may not be ObjectPrototype"),
-    ("/built-ins/encodeURI/S15.1.3.3_A5.5", "this.prototype may not be ObjectPrototype"),
-    ("/built-ins/encodeURIComponent/S15.1.3.4_A5.5", "this.prototype may not be ObjectPrototype"),
-    ("/built-ins/eval/prop-desc-enumerable", "this.prototype may not be ObjectPrototype"),
-    ("/built-ins/parseFloat/S15.1.2.3_A7.5", "this.prototype may not be ObjectPrototype"),
-    ("/built-ins/parseInt/S15.1.2.2_A9.5", "this.prototype may not be ObjectPrototype"),
-    ("/language/global-code/decl-lex", "this.prototype may not be ObjectPrototype")
+    ("/built-ins/Object/defineProperty/15.2.3.6-4-131", "Array length of -0")
   )
 
   lazy val longTest = List(
