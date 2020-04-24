@@ -28,6 +28,7 @@ class Test262Test extends IRESTest {
   case object Basic extends TestKind
   case object Long extends TestKind
   case object VeryLong extends TestKind
+  case object Manual extends TestKind
 
   // tag name
   val tag: String = "test262Test"
@@ -71,6 +72,7 @@ class Test262Test extends IRESTest {
     case Basic => (FilterMeta.test262configSummary, new IREvalConfig(timeout = Some(10)))
     case Long => (FilterMeta.test262LongconfigSummary, new IREvalConfig(timeout = None))
     case VeryLong => (FilterMeta.test262VeryLongconfigSummary, new IREvalConfig(timeout = None))
+    case Manual => (FilterMeta.test262ManualconfigSummary, new IREvalConfig(timeout = Some(10)))
   }
   val initInclude = List("assert.js", "sta.js").foldLeft(Map[String, Either[String, List[StatementListItem]]]()) {
     case (imm, s) => {
@@ -141,4 +143,8 @@ class Test262LongTest extends Test262Test {
 
 class Test262VeryLongTest extends Test262Test {
   override def testKind = VeryLong
+}
+
+class Test262ManualTest extends Test262Test {
+  override def testKind = Manual
 }

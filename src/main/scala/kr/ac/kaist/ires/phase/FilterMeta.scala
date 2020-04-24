@@ -289,6 +289,8 @@ case object FilterMeta extends PhaseObj[Unit, FilterMetaConfig, Unit] {
     .remove("non veryLongTest", m => !(veryLongTest contains removedExt(m.name)))
     .getSummary
 
+  lazy val test262ManualconfigSummary = readFile(s"$TEST_DIR/test262.json").parseJson.convertTo[Test262ConfigSummary]
+
   def apply(
     unit: Unit,
     iresConfig: IRESConfig,

@@ -17,6 +17,7 @@ lazy val jsTest = taskKey[Unit]("Launch JavaScript language interpreter tests")
 lazy val test262Test = taskKey[Unit]("Launch test262 tests")
 lazy val test262LongTest = taskKey[Unit]("Launch long test262 tests")
 lazy val test262VeryLongTest = taskKey[Unit]("Launch very long test262 tests")
+lazy val test262ManualTest = taskKey[Unit]("Launch manual test262 tests")
 lazy val test262ParseTest = taskKey[Unit]("Launch test262 parsing tests")
 lazy val test262AllParseTest = taskKey[Unit]("Launch test262 parsing tests")
 
@@ -49,6 +50,7 @@ lazy val ires = (project in file("."))
     test262Test := (testOnly in Test).toTask(" kr.ac.kaist.ires.Test262Test").value,
     test262LongTest := (testOnly in Test).toTask(" kr.ac.kaist.ires.Test262LongTest").value,
     test262VeryLongTest := (testOnly in Test).toTask(" kr.ac.kaist.ires.Test262VeryLongTest").value,
+    test262ManualTest := (testOnly in Test).toTask(" kr.ac.kaist.ires.Test262ManualTest").value,
     test262ParseTest := (testOnly in Test).toTask(" kr.ac.kaist.ires.Test262ParseTest").value,
     test262AllParseTest := (testOnly in Test).toTask(" kr.ac.kaist.ires.Test262AllParseTest").value
   )
