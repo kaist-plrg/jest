@@ -289,11 +289,6 @@ case object FilterMeta extends PhaseObj[Unit, FilterMetaConfig, Unit] {
     .remove("non veryLongTest", m => !(veryLongTest contains removedExt(m.name)))
     .getSummary
 
-  lazy val test262propconfigSummary =
-    getTests("optional-chaining" :: standardFeatures)
-      .remove("non optional-chaining", m => !(m.features contains "optional-chaining"))
-      .getSummary
-
   def apply(
     unit: Unit,
     iresConfig: IRESConfig,
