@@ -3,7 +3,7 @@ package kr.ac.kaist.ires
 import java.io._
 import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.error.NotSupported
-import kr.ac.kaist.ires.model.{ Parser => JSParser, StatementListItem, ModelHelper, NoParse }
+import kr.ac.kaist.ires.model.{ Parser => JSParser, StatementListItem, ModelHelper }
 import kr.ac.kaist.ires.util.Useful._
 import kr.ac.kaist.ires.phase._
 import org.scalatest._
@@ -71,11 +71,10 @@ class Test262PropTest extends IRESTest {
 
   def init: Unit = {
     val initStList = includeMap("assert.js") ++ includeMap("sta.js")
-    val noParseSet = NoParse.failed.toSet ++ NoParse.long.toSet
     for (NormalTestConfig(filename, includes) <- shuffle(config.normal)) {
       val jsName = s"${dir.toString}/test/$filename".replace("//", "/")
       val name = removedExt(jsName).drop(dir.toString.length)
-      if (!(noParseSet contains name)) check("Test262PropEval", name, {
+      check("Test262PropEval", name, {
         val jsConfig = aseConfig.copy(fileNames = List(jsName))
 
         val ast = Parse((), jsConfig)

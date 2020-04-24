@@ -30,5 +30,5 @@ case object IRREPL extends PhaseObj[State, IRREPLConfig, Unit] {
 case class IRREPLConfig(
     var detail: Boolean = false,
     var debugir: Boolean = false,
-    var timeout: Option[Long] = Some(3)
+    var timeout: Option[Long] = Some(10)
 ) extends Config

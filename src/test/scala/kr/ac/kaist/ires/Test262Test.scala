@@ -4,7 +4,7 @@ import java.io._
 import scala.io.Source
 import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.error.NotSupported
-import kr.ac.kaist.ires.model.{ Parser => JSParser, StatementListItem, ModelHelper, NoParse }
+import kr.ac.kaist.ires.model.{ Parser => JSParser, StatementListItem, ModelHelper }
 import kr.ac.kaist.ires.util.Useful._
 import kr.ac.kaist.ires.phase._
 import org.scalatest._
@@ -68,7 +68,7 @@ class Test262Test extends IRESTest {
   // registration
   val dir = new File(test262Dir)
   val (config, evalConfig) = testKind match {
-    case Basic => (FilterMeta.test262configSummary, new IREvalConfig(timeout = Some(3)))
+    case Basic => (FilterMeta.test262configSummary, new IREvalConfig(timeout = Some(10)))
     case Long => (FilterMeta.test262LongconfigSummary, new IREvalConfig(timeout = None))
     case VeryLong => (FilterMeta.test262VeryLongconfigSummary, new IREvalConfig(timeout = None))
   }
@@ -107,11 +107,10 @@ class Test262Test extends IRESTest {
       x <- includeMap("assert.js")
       y <- includeMap("sta.js")
     } yield x ++ y
-    val noParseSet = NoParse.failed.toSet ++ NoParse.long.toSet
     for (NormalTestConfig(filename, includes) <- shuffle(config.normal)) {
       val jsName = s"${dir.toString}/test/$filename".replace("//", "/")
       val name = removedExt(jsName).drop(dir.toString.length)
-      if (!noParseSet.contains(name)) check("Test262Eval", name, {
+      check("Test262Eval", name, {
         val includeList = includes.foldLeft(initStList) {
           case (li, s) => for {
             x <- li

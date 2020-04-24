@@ -27,5 +27,5 @@ case object IREval extends PhaseObj[State, IREvalConfig, State] {
 // IREval phase config
 case class IREvalConfig(
     var debugir: Boolean = false,
-    var timeout: Option[Long] = Some(3)
+    var timeout: Option[Long] = Some(10)
 ) extends Config
