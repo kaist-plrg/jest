@@ -573,6 +573,12 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
     case (OEq, Num(l), Num(r)) => Bool(l equals r)
     case (OEq, l, r) => Bool(l == r)
 
+    // double equality operations
+    case (OEqual, INum(l), Num(r)) => Bool(l == r)
+    case (OEqual, Num(l), INum(r)) => Bool(l == r)
+    case (OEqual, Num(l), Num(r)) => Bool(l == r)
+    case (OEqual, l, r) => Bool(l == r)
+
     case (_, lval, rval) => error(s"wrong type: $lval $bop $rval")
   }
   private def modulo(l: Double, r: Double): Double = {

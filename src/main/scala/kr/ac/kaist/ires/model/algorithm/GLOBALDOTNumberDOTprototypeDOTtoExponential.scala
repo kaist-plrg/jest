@@ -23,7 +23,7 @@ object GLOBALDOTNumberDOTprototypeDOTtoExponential {
       s = "-"
       x = (- x)
     } else {}
-    if (= x Infinity) {
+    if (== x Infinity) {
       app __x4__ = (WrapCompletion (+ s "Infinity"))
       return __x4__
     } else {}
@@ -31,18 +31,18 @@ object GLOBALDOTNumberDOTprototypeDOTtoExponential {
       app __x5__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_RangeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
       return __x5__
     } else {}
-    if (= x 0i) {
+    if (== x 0i) {
       let m = !!! "StringOp"
       let e = 0i
     } else {
       if (! (= fractionDigits undefined)) !!! "Etc" else !!! "Etc"
       let m = !!! "StringOp"
     }
-    if (! (= f 0i)) {
+    if (! (== f 0i)) {
       !!! "Etc"
       m = (+ (+ a ".") b)
     } else {}
-    if (= e 0i) {
+    if (== e 0i) {
       let c = "+"
       let d = "0"
     } else {

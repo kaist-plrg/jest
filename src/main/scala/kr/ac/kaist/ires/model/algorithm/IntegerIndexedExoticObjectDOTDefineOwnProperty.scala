@@ -19,7 +19,7 @@ object IntegerIndexedExoticObjectDOTDefineOwnProperty {
           app __x4__ = (WrapCompletion false)
           return __x4__
         } else {}
-        if (= numericIndex -0.0) {
+        if (== numericIndex -0.0) {
           app __x5__ = (WrapCompletion false)
           return __x5__
         } else {}

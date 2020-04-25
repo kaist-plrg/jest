@@ -33,8 +33,8 @@ object GLOBALDOTNumberDOTprototypeDOTtoFixed {
       let m = __x5__
     } else {
       !!! "Etc"
-      if (= n 0i) let m = "0" else let m = !!! "StringOp"
-      if (! (= f 0i)) {
+      if (== n 0i) let m = "0" else let m = !!! "StringOp"
+      if (! (== f 0i)) {
         let k = m["length"]
         if (! (< f k)) {
           let z = !!! "StringOp"

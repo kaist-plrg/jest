@@ -33,7 +33,7 @@ object CreateDynamicFunction {
     }
     let argCount = args["length"]
     let P = ""
-    if (= argCount 0i) let bodyText = "" else if (= argCount 1i) let bodyText = args[0i] else {
+    if (== argCount 0i) let bodyText = "" else if (== argCount 1i) let bodyText = args[0i] else {
       let firstArg = args[0i]
       app __x1__ = (ToString firstArg)
       if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}

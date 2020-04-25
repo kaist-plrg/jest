@@ -31,7 +31,7 @@ object GLOBALDOTINTRINSIC_StringIteratorPrototypeDOTnext {
       return __x6__
     } else {}
     let first = !!! "StringOp"
-    if (|| (< first 55296i) (|| (< 56319i first) (= (+ position 1i) len))) let resultString = first else {
+    if (|| (< first 55296i) (|| (< 56319i first) (== (+ position 1i) len))) let resultString = first else {
       let second = !!! "StringOp"
       if (|| (< second 56320i) (< 57343i second)) let resultString = first else let resultString = (+ first second)
     }

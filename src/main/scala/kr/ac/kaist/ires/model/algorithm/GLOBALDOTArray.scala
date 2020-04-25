@@ -5,9 +5,9 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTArray {
   val length: Int = 0
-  val func: Func = parseFunc(""""GLOBAL.Array" (this, argumentsList, NewTarget) => if (= argumentsList["length"] 0i) {
+  val func: Func = parseFunc(""""GLOBAL.Array" (this, argumentsList, NewTarget) => if (== argumentsList["length"] 0i) {
     let numberOfArgs = argumentsList["length"]
-    assert (= numberOfArgs 0i)
+    assert (== numberOfArgs 0i)
     if (= NewTarget undefined) let newTarget = GLOBAL_context["Function"] else let newTarget = NewTarget
     app __x0__ = (GetPrototypeFromConstructor newTarget INTRINSIC_ArrayPrototype)
     if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
@@ -16,11 +16,11 @@ object GLOBALDOTArray {
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
     app __x2__ = (WrapCompletion __x1__)
     return __x2__
-  } else if (= argumentsList["length"] 1i) {
+  } else if (== argumentsList["length"] 1i) {
     app __x3__ = (GetArgument argumentsList 0i)
     let len = __x3__
     let numberOfArgs = argumentsList["length"]
-    assert (= numberOfArgs 1i)
+    assert (== numberOfArgs 1i)
     if (= NewTarget undefined) let newTarget = GLOBAL_context["Function"] else let newTarget = NewTarget
     app __x4__ = (GetPrototypeFromConstructor newTarget INTRINSIC_ArrayPrototype)
     if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
@@ -37,7 +37,7 @@ object GLOBALDOTArray {
     } else {
       app __x8__ = (ToUint32 len)
       let intLen = __x8__
-      if (! (= intLen len)) {
+      if (! (== intLen len)) {
         app __x9__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_RangeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
         return __x9__
       } else {}

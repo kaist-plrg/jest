@@ -25,7 +25,7 @@ object IntegerIndexedExoticObjectDOTHasProperty {
           app __x6__ = (WrapCompletion false)
           return __x6__
         } else {}
-        if (= numericIndex -0.0) {
+        if (== numericIndex -0.0) {
           app __x7__ = (WrapCompletion false)
           return __x7__
         } else {}

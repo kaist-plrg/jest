@@ -11,6 +11,7 @@ case object OUMod extends BOp
 case object OMod extends BOp
 case object OLt extends BOp
 case object OEq extends BOp
+case object OEqual extends BOp
 case object OAnd extends BOp
 case object OOr extends BOp
 case object OXor extends BOp

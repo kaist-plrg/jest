@@ -16,7 +16,7 @@ object GLOBALDOTparseFloat {
     !!! "Etc"
     access __x2__ = (numberString "MV")
     let mathFloat = __x2__
-    if (= mathFloat 0i) {
+    if (== mathFloat 0i) {
       !!! "Etc"
       app __x3__ = (WrapCompletion 0i)
       return __x3__

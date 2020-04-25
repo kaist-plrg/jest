@@ -20,7 +20,7 @@ object GLOBALDOTNumberDOTprototypeDOTtoString {
       app __x3__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_RangeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
       return __x3__
     } else {}
-    if (= radixNumber 10i) {
+    if (== radixNumber 10i) {
       app __x4__ = (ToString x)
       if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
       app __x5__ = (WrapCompletion __x4__)

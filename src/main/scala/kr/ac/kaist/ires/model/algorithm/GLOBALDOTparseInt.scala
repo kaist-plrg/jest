@@ -21,12 +21,12 @@ object GLOBALDOTparseInt {
     if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
     let R = __x3__
     let stripPrefix = true
-    if (! (= R 0i)) {
+    if (! (== R 0i)) {
       if (|| (< R 2i) (< 36i R)) {
         app __x4__ = (WrapCompletion NaN)
         return __x4__
       } else {}
-      if (! (= R 16i)) stripPrefix = false else {}
+      if (! (== R 16i)) stripPrefix = false else {}
     } else R = 10i
     if (= stripPrefix true) !!! "Etc" else {}
     !!! "StringOp"
@@ -35,8 +35,8 @@ object GLOBALDOTparseInt {
       return __x5__
     } else {}
     let mathInt = !!! "NumberOp"
-    if (= mathInt 0i) {
-      if (= sign (- 1i)) {
+    if (== mathInt 0i) {
+      if (== sign (- 1i)) {
         app __x6__ = (WrapCompletion -0.0)
         return __x6__
       } else {}

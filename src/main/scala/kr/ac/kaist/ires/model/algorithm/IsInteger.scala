@@ -18,7 +18,7 @@ object IsInteger {
     app __x3__ = (abs argument)
     app __x4__ = (floor __x3__)
     app __x5__ = (abs argument)
-    if (! (= __x4__ __x5__)) {
+    if (! (== __x4__ __x5__)) {
       app __x6__ = (WrapCompletion false)
       return __x6__
     } else {}

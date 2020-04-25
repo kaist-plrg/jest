@@ -39,7 +39,7 @@ object GLOBALDOTStringDOTraw {
       if (is-completion __x9__) if (= __x9__["Type"] CONST_normal) __x9__ = __x9__["Value"] else return __x9__ else {}
       let nextSeg = __x9__
       !!! "Etc"
-      if (= (+ nextIndex 1i) literalSegments) {
+      if (== (+ nextIndex 1i) literalSegments) {
         app __x10__ = (WrapCompletion !!! "StringOp")
         return __x10__
       } else {}

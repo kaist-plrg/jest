@@ -18,7 +18,7 @@ object ArraySetLength {
     app __x3__ = (ToNumber Desc["Value"])
     if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
     let numberLen = __x3__
-    if (! (= newLen numberLen)) {
+    if (! (== newLen numberLen)) {
       app __x4__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_RangeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
       return __x4__
     } else {}

@@ -41,7 +41,7 @@ object GLOBALDOTStringDOTprototypeDOTsplit {
     app __x9__ = (ToString separator)
     if (is-completion __x9__) if (= __x9__["Type"] CONST_normal) __x9__ = __x9__["Value"] else return __x9__ else {}
     let R = __x9__
-    if (= lim 0i) {
+    if (== lim 0i) {
       app __x10__ = (WrapCompletion A)
       return __x10__
     } else {}
@@ -52,7 +52,7 @@ object GLOBALDOTStringDOTprototypeDOTsplit {
       app __x12__ = (WrapCompletion A)
       return __x12__
     } else {}
-    if (= s 0i) {
+    if (== s 0i) {
       app __x13__ = (SplitMatch S 0i R)
       let z = __x13__
       if (! (= z false)) {
@@ -66,10 +66,10 @@ object GLOBALDOTStringDOTprototypeDOTsplit {
       return __x16__
     } else {}
     let q = p
-    while (! (= q s)) {
+    while (! (== q s)) {
       app __x17__ = (SplitMatch S q R)
       let e = __x17__
-      if (= e false) q = (+ q 1i) else if (= e p) q = (+ q 1i) else {
+      if (= e false) q = (+ q 1i) else if (== e p) q = (+ q 1i) else {
         !!! "Etc"
         app __x18__ = (ToString lengthA)
         if (is-completion __x18__) if (= __x18__["Type"] CONST_normal) __x18__ = __x18__["Value"] else return __x18__ else {}
@@ -77,7 +77,7 @@ object GLOBALDOTStringDOTprototypeDOTsplit {
         if (is-completion __x19__) if (= __x19__["Type"] CONST_normal) __x19__ = __x19__["Value"] else return __x19__ else {}
         __x19__
         lengthA = (+ lengthA 1i)
-        if (= lengthA lim) {
+        if (== lengthA lim) {
           app __x20__ = (WrapCompletion A)
           return __x20__
         } else {}

@@ -23,7 +23,7 @@ object GLOBALDOTStringDOTprototypeDOTcodePointAt {
       return __x4__
     } else {}
     let first = !!! "StringOp"
-    if (|| (< first 55296i) (|| (< 56319i first) (= (+ position 1i) size))) {
+    if (|| (< first 55296i) (|| (< 56319i first) (== (+ position 1i) size))) {
       app __x5__ = (WrapCompletion first)
       return __x5__
     } else {}

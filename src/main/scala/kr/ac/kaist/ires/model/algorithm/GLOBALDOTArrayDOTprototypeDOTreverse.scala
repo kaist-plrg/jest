@@ -17,7 +17,7 @@ object GLOBALDOTArrayDOTprototypeDOTreverse {
     app __x3__ = (floor (/ len 2i))
     let middle = __x3__
     let lower = 0i
-    while (! (= lower middle)) {
+    while (! (== lower middle)) {
       let upper = (- (- len lower) 1i)
       app __x4__ = (ToString upper)
       if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}

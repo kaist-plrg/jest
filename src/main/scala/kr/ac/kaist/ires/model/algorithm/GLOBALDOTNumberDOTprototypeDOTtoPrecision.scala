@@ -29,7 +29,7 @@ object GLOBALDOTNumberDOTprototypeDOTtoPrecision {
       s = "-"
       x = (- x)
     } else {}
-    if (= x Infinity) {
+    if (== x Infinity) {
       app __x6__ = (WrapCompletion (+ s "Infinity"))
       return __x6__
     } else {}
@@ -37,15 +37,15 @@ object GLOBALDOTNumberDOTprototypeDOTtoPrecision {
       app __x7__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_RangeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
       return __x7__
     } else {}
-    if (= x 0i) {
+    if (== x 0i) {
       let m = !!! "StringOp"
       let e = 0i
     } else {
       !!! "Etc"
       let m = !!! "StringOp"
       if (|| (< e (- 6i)) (! (< e p))) {
-        assert (! (= e 0i))
-        if (! (= p 1i)) {
+        assert (! (== e 0i))
+        if (! (== p 1i)) {
           !!! "Etc"
           m = (+ (+ a ".") b)
         } else {}
@@ -58,7 +58,7 @@ object GLOBALDOTNumberDOTprototypeDOTtoPrecision {
         return __x8__
       } else {}
     }
-    if (= e (- p 1i)) {
+    if (== e (- p 1i)) {
       app __x9__ = (WrapCompletion (+ s m))
       return __x9__
     } else {}

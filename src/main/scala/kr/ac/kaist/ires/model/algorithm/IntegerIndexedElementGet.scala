@@ -19,7 +19,7 @@ object IntegerIndexedElementGet {
       app __x4__ = (WrapCompletion undefined)
       return __x4__
     } else {}
-    if (= index -0.0) {
+    if (== index -0.0) {
       app __x5__ = (WrapCompletion undefined)
       return __x5__
     } else {}
