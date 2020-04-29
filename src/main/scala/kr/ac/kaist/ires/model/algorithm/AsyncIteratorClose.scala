@@ -8,6 +8,7 @@ object AsyncIteratorClose {
   val func: Func = parseFunc(""""AsyncIteratorClose" (iteratorRecord, completion) => {
     app __x0__ = (Type iteratorRecord["Iterator"])
     assert (= __x0__ Object)
+    assert (is-completion completion)
     let iterator = iteratorRecord["Iterator"]
     app __x1__ = (GetMethod iterator "return")
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}

@@ -6,6 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object AsyncGeneratorEnqueue {
   val length: Int = 2
   val func: Func = parseFunc(""""AsyncGeneratorEnqueue" (generator, completion) => {
+    assert (is-completion completion)
     app __x0__ = (NewPromiseCapability INTRINSIC_Promise)
     if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
     let promiseCapability = __x0__

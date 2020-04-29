@@ -10,6 +10,7 @@ object GLOBALDOTAsyncGeneratorEnqueue {
     let generator = __x0__
     app __x1__ = (GetArgument argumentsList 1i)
     let completion = __x1__
+    assert (is-completion completion)
     app __x2__ = (NewPromiseCapability INTRINSIC_Promise)
     if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     let promiseCapability = __x2__

@@ -8,7 +8,7 @@ object OrdinaryGetOwnProperty {
   val func: Func = parseFunc(""""OrdinaryGetOwnProperty" (O, P) => {
     app __x0__ = (IsPropertyKey P)
     assert (= __x0__ true)
-    if (! (! (= O["SubMap"][P] absent))) return undefined else {}
+    if (= O["SubMap"][P] absent) return undefined else {}
     let D = (new PropertyDescriptor("SubMap" -> (new SubMap())))
     let X = O["SubMap"][P]
     app __x1__ = (IsDataDescriptor X)

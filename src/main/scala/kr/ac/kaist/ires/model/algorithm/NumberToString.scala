@@ -23,7 +23,6 @@ object NumberToString {
     if (= m Infinity) {
       app __x4__ = (WrapCompletion "Infinity")
       return __x4__
-    } else {}
-    return (convert m num2str )
+    } else return (convert m num2str )
   }""")
 }
