@@ -9,45 +9,48 @@ object SameValueNonNumber {
     app __x0__ = (Type x)
     assert (! (= __x0__ Number))
     app __x1__ = (Type x)
-    if (= __x1__ Undefined) {
-      app __x2__ = (WrapCompletion true)
-      return __x2__
-    } else {}
+    app __x2__ = (Type y)
+    assert (= __x1__ __x2__)
     app __x3__ = (Type x)
-    if (= __x3__ Null) {
+    if (= __x3__ Undefined) {
       app __x4__ = (WrapCompletion true)
       return __x4__
     } else {}
     app __x5__ = (Type x)
-    if (= __x5__ String) if (= x y) {
+    if (= __x5__ Null) {
       app __x6__ = (WrapCompletion true)
       return __x6__
-    } else {
-      app __x7__ = (WrapCompletion false)
-      return __x7__
     } else {}
-    app __x8__ = (Type x)
-    if (= __x8__ Boolean) if (|| (&& (= x true) (= y true)) (&& (= x false) (= y false))) {
-      app __x9__ = (WrapCompletion true)
+    app __x7__ = (Type x)
+    if (= __x7__ String) if (= x y) {
+      app __x8__ = (WrapCompletion true)
+      return __x8__
+    } else {
+      app __x9__ = (WrapCompletion false)
       return __x9__
-    } else {
-      app __x10__ = (WrapCompletion false)
-      return __x10__
     } else {}
-    app __x11__ = (Type x)
-    if (= __x11__ Symbol) if (= x y) {
-      app __x12__ = (WrapCompletion true)
+    app __x10__ = (Type x)
+    if (= __x10__ Boolean) if (|| (&& (= x true) (= y true)) (&& (= x false) (= y false))) {
+      app __x11__ = (WrapCompletion true)
+      return __x11__
+    } else {
+      app __x12__ = (WrapCompletion false)
       return __x12__
-    } else {
-      app __x13__ = (WrapCompletion false)
-      return __x13__
     } else {}
-    if (= x y) {
+    app __x13__ = (Type x)
+    if (= __x13__ Symbol) if (= x y) {
       app __x14__ = (WrapCompletion true)
       return __x14__
     } else {
       app __x15__ = (WrapCompletion false)
       return __x15__
+    } else {}
+    if (= x y) {
+      app __x16__ = (WrapCompletion true)
+      return __x16__
+    } else {
+      app __x17__ = (WrapCompletion false)
+      return __x17__
     }
   }""")
 }

@@ -8,7 +8,13 @@ object SuperProperty1Contains0 {
   val func: Func = parseFunc(""""SuperProperty1Contains0" (this, IdentifierName, symbol) => {
     if (= (get-syntax symbol) "super") return true else {}
     if (is-instance-of symbol ReservedWord) return false else {}
-    if (&& (is-instance-of symbol Identifier) (= (get-syntax symbol) (get-syntax IdentifierName))) return true else {}
+    let __x0__ = (is-instance-of symbol Identifier)
+    if __x0__ {
+      access __x1__ = (symbol "StringValue")
+      access __x2__ = (IdentifierName "StringValue")
+      __x0__ = (= __x1__ __x2__)
+    } else {}
+    if __x0__ return true else {}
     return false
   }""")
 }
