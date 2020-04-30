@@ -16,6 +16,8 @@ object FunctionRestParameter0IteratorBindingInitialization0 {
     let currentContext = GLOBAL_context
     access __x4__ = (currentContext "VariableEnvironment")
     let originalEnv = __x4__
+    assert (= currentContext["VariableEnvironment"] currentContext["LexicalEnvironment"])
+    assert (= environment originalEnv)
     app __x5__ = (NewDeclarativeEnvironment originalEnv)
     let paramVarEnv = __x5__
     currentContext["VariableEnvironment"] = paramVarEnv
