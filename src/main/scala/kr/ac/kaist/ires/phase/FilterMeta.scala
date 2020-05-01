@@ -186,11 +186,6 @@ case object FilterMeta extends PhaseObj[Unit, FilterMetaConfig, Unit] {
     ("/built-ins/RegExp/lookBehind/sliced-strings", "substr")
   )
 
-  lazy val manualDebatable = List(
-    ("/built-ins/Object/defineProperties/15.2.3.7-6-a-127", "Array length of -0"),
-    ("/built-ins/Object/defineProperty/15.2.3.6-4-131", "Array length of -0")
-  )
-
   lazy val longTest = List(
     "/built-ins/Array/prototype/Symbol.unscopables/value",
     "/built-ins/Array/prototype/concat/Array.prototype.concat_spreadable-sparse-object",
@@ -257,13 +252,13 @@ case object FilterMeta extends PhaseObj[Unit, FilterMetaConfig, Unit] {
       (m.name startsWith "/language/module-code/") ||
       (m.name startsWith "/language/expressions/dynamic-import/") ||
       (m.name startsWith "/language/expressions/import.meta/")
-    )).remove("[[CanBlock]]", m => (
+    ))
+    .remove("early errors", m => !m.negative.isEmpty || (manualEarlyError contains removedExt(m.name)))
+    .remove("inessential built-in objects", m => (
       (m.flags contains "CanBlockIsFalse") ||
-      (m.flags contains "CanBlockIsTrue")
-    )).remove("locale", !_.locales.isEmpty)
-    .remove("negative", !_.negative.isEmpty)
-    .remove("manualEarlyError", m => manualEarlyError contains removedExt(m.name))
-    .remove("manualDebatable", m => manualDebatable.map(_._1) contains removedExt(m.name))
+      (m.flags contains "CanBlockIsTrue") ||
+      !m.locales.isEmpty
+    ))
 
   lazy val test262configSummary = getTests(standardFeatures)
     .remove("longTest", m => longTest contains removedExt(m.name))
