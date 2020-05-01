@@ -881,7 +881,6 @@ object Model {
     Id("IterationStatement8VarScopedDeclarations0") -> IterationStatement8VarScopedDeclarations0.func,
     Id("IterationStatement12VarScopedDeclarations0") -> IterationStatement12VarScopedDeclarations0.func,
     Id("IterationStatement9VarScopedDeclarations0") -> IterationStatement9VarScopedDeclarations0.func,
-    Id("IterationStatement12VarScopedDeclarations0") -> IterationStatement12VarScopedDeclarations0.func,
     Id("IterationStatement10VarScopedDeclarations0") -> IterationStatement10VarScopedDeclarations0.func,
     Id("IterationStatement13VarScopedDeclarations0") -> IterationStatement13VarScopedDeclarations0.func,
     Id("ForDeclaration0BindingInitialization0") -> ForDeclaration0BindingInitialization0.func,
