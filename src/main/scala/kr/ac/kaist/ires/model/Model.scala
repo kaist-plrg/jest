@@ -1040,7 +1040,6 @@ object Model {
     Id("IsAnonymousFunctionDefinition") -> IsAnonymousFunctionDefinition.func,
     Id("FunctionDeclaration0IsConstantDeclaration0") -> FunctionDeclaration0IsConstantDeclaration0.func,
     Id("FunctionDeclaration1IsConstantDeclaration0") -> FunctionDeclaration1IsConstantDeclaration0.func,
-    Id("FunctionExpression0IsFunctionDefinition0") -> FunctionExpression0IsFunctionDefinition0.func,
     Id("FunctionExpression0IsFunctionDefinition1") -> FunctionExpression0IsFunctionDefinition1.func,
     Id("FormalParameters0IsSimpleParameterList0") -> FormalParameters0IsSimpleParameterList0.func,
     Id("FormalParameters4IsSimpleParameterList0") -> FormalParameters4IsSimpleParameterList0.func,
