@@ -48,24 +48,21 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
         s0.define(id, value)
       case IAssign(ref, expr) =>
         val (refV, s0) = interp(ref)(st)
-        val (value, s1) = interp(expr, (refV match {
-          case RefValueId(_) => false
-          case _ => true
-        }))(s0)
+        val (value, s1) = interp(expr)(s0)
         s1.updated(refV, value)
       case IDelete(ref) =>
         val (refV, s0) = interp(ref)(st)
         s0.deleted(refV)
       case IAppend(expr, list) =>
-        val (exprV, s0) = interp(expr, true)(st)
-        val (listV, s1) = interp(list, true)(s0)
+        val (exprV, s0) = escapeCompletion(interp(expr)(st))
+        val (listV, s1) = escapeCompletion(interp(list)(s0))
         listV match {
           case addr: Addr => s1.append(addr, exprV)
           case v => error(s"not an address: $v")
         }
       case IPrepend(expr, list) =>
-        val (exprV, s0) = interp(expr, true)(st)
-        val (listV, s1) = interp(list, true)(s0)
+        val (exprV, s0) = escapeCompletion(interp(expr)(st))
+        val (listV, s1) = escapeCompletion(interp(list)(s0))
         listV match {
           case addr: Addr => s1.prepend(addr, exprV)
           case v => error(s"not an address: $v")
@@ -77,14 +74,14 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
           case ctx :: rest => s0.copy(context = ctx.copy(locals = ctx.locals + (ctx.retId -> value)), ctxStack = rest)
         }
       case IIf(cond, thenInst, elseInst) =>
-        val (v, s0) = interp(cond, true)(st)
+        val (v, s0) = escapeCompletion(interp(cond)(st))
         v match {
           case Bool(true) => s0.copy(context = s0.context.copy(insts = thenInst :: s0.context.insts))
           case Bool(false) => s0.copy(context = s0.context.copy(insts = elseInst :: s0.context.insts))
           case v => error(s"not a boolean: $v")
         }
       case IWhile(cond, body) =>
-        val (v, s0) = interp(cond, true)(st)
+        val (v, s0) = escapeCompletion(interp(cond)(st))
         v match {
           case Bool(true) => s0.copy(context = s0.context.copy(insts = body :: inst :: s0.context.insts))
           case Bool(false) => s0
@@ -167,7 +164,7 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
         }
       case IAccess(id, bexpr, expr) =>
         val (base, s1) = interp(bexpr)(st)
-        val (p, s2) = interp(expr, true)(s1)
+        val (p, s2) = escapeCompletion(interp(expr)(s1))
         (base, p) match {
           case (addr: Addr, p) => s2.get(addr) match {
             case Some(IRMap(Ty("Completion"), m, _)) if !m.contains(p) => m(Str("Value"))._1 match {
@@ -241,7 +238,7 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
   }
 
   // expresssions
-  def interp(expr: Expr, escapeCompletion: Boolean = false): State => (Value, State) = st => expr match {
+  def interp(expr: Expr): State => (Value, State) = st => expr match {
     case ENum(n) => (Num(n), st)
     case EINum(n) => (INum(n), st)
     case EStr(str) => (Str(str), st)
@@ -253,52 +250,45 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
       val (addr, s0) = st.allocMap(ty)
       (addr, props.foldLeft(s0) {
         case (st, (e1, e2)) =>
-          val (k, s0) = interp(e1, true)(st)
-          val (v, s1) = interp(e2, false)(s0)
+          val (k, s0) = escapeCompletion(interp(e1)(st))
+          val (v, s1) = interp(e2)(s0)
           s1.updated(addr, k, v)
       })
     case EList(exprs) =>
       val (vs, s0) = exprs.foldLeft(List[Value](), st) {
         case ((vs, st), expr) =>
-          val (v, s0) = interp(expr, false)(st)
+          val (v, s0) = interp(expr)(st)
           (v :: vs, s0)
       }
       s0.allocList(vs.reverse)
     case ESymbol(desc) =>
-      interp(desc, true)(st) match {
+      escapeCompletion(interp(desc)(st)) match {
         case (Str(str), st) => st.allocSymbol(Str(str))
         case (Undef, st) => st.allocSymbol(Undef)
         case (v, _) => error(s"not a string: $v")
       }
     case EPop(list, idx) =>
-      val (l, s0) = interp(list, true)(st)
-      val (k, s1) = interp(idx, true)(s0)
+      val (l, s0) = escapeCompletion(interp(list)(st))
+      val (k, s1) = escapeCompletion(interp(idx)(s0))
       l match {
         case addr: Addr => s1.pop(addr, k)
         case v => error(s"not an address: $v")
       }
     case ERef(ref) =>
       val (refV, s0) = interp(ref)(st)
-      interp(refV)(s0) match {
-        case (addr: DynamicAddr, s) => if (escapeCompletion) s.get(addr) match {
-          case Some(IRMap(Ty("Completion"), m, _)) => (m(Str("Value"))._1, s)
-          case _ => (addr, s)
-        }
-        else (addr, s)
-        case (v, s) => (v, s)
-      }
+      interp(refV)(s0)
     case ECont(params, body) =>
       (Cont(params, body, st.context, st.ctxStack), st)
     case EUOp(uop, expr) =>
-      val (v, s0) = interp(expr, true)(st)
+      val (v, s0) = escapeCompletion(interp(expr)(st))
       (interp(uop)(v), s0)
 
     // logical operations
     case EBOp(OAnd, left, right) => shortCircuit(OAnd, false, _ && _, left, right, st)
     case EBOp(OOr, left, right) => shortCircuit(OOr, true, _ || _, left, right, st)
     case EBOp(bop, left, right) =>
-      val (lv, s0) = interp(left, true)(st)
-      val (rv, s1) = interp(right, true)(s0)
+      val (lv, s0) = escapeCompletion(interp(left)(st))
+      val (rv, s1) = escapeCompletion(interp(right)(s0))
       (interp(bop)(lv, rv), s1)
     case ETypeOf(expr) => {
       val (v, s0) = interp(expr)(st)
@@ -345,22 +335,22 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
         case _ => false
       }), s0)
     }
-    case EIsInstanceOf(base, kind) => interp(base, true)(st) match {
+    case EIsInstanceOf(base, kind) => escapeCompletion(interp(base)(st)) match {
       case (ASTVal(ast), s0) => (Bool(ast.name == kind || ast.getKinds.contains(kind)), s0)
       case (Str(str), s0) => (Bool(str == kind), s0)
       case (v, _) => error(s"not an AST value: $v")
     }
-    case EGetElems(base, kind) => interp(base, true)(st) match {
+    case EGetElems(base, kind) => escapeCompletion(interp(base)(st)) match {
       case (ASTVal(ast), s0) => s0.allocList(ast.getElems(kind).map(ASTVal(_)))
       case (v, _) => error(s"not an AST value: $v")
     }
-    case EGetSyntax(base) => interp(base, true)(st) match {
+    case EGetSyntax(base) => escapeCompletion(interp(base)(st)) match {
       case (ASTVal(ast), s0) => (Str(ast.toString), s0)
       case (v, s0) => error(s"not an AST value: $v")
     }
     case EParseSyntax(code, rule, flags) =>
-      val (v, s0) = interp(code, true)(st)
-      val (p, s1) = interp(rule, true)(st) match {
+      val (v, s0) = escapeCompletion(interp(code)(st))
+      val (p, s1) = escapeCompletion(interp(rule)(st)) match {
         case (Str(str), st) => (ESParser.rules.getOrElse(str, error(s"not exist parse rule: $rule")), st)
         case (v, _) => error(s"not a string: $v")
       }
@@ -403,7 +393,7 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
           (newVal, s2)
         case v => error(s"not an AST value or a string: $v")
       }
-    case EConvert(expr, cop, l) => interp(expr, true)(st) match {
+    case EConvert(expr, cop, l) => escapeCompletion(interp(expr)(st)) match {
       case (Str(s), s0) => {
         (cop match {
           case CStrToNum => Num(ESValueParser.str2num(s))
@@ -412,7 +402,7 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
       }
       case (INum(n), s0) => {
         val (radix, s1) = l match {
-          case e :: rest => interp(e, true)(s0) match {
+          case e :: rest => escapeCompletion(interp(e)(s0)) match {
             case (INum(n), s1) => (n.toInt, s1)
             case (Num(n), s1) => (n.toInt, s1)
             case _ => error("radix is not int")
@@ -427,7 +417,7 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
       }
       case (Num(n), s0) => {
         val (radix, s1) = l match {
-          case e :: rest => interp(e, true)(s0) match {
+          case e :: rest => escapeCompletion(interp(e)(s0)) match {
             case (INum(n), s1) => (n.toInt, s1)
             case (Num(n), s1) => (n.toInt, s1)
             case _ => error("radix is not int")
@@ -443,24 +433,24 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
       case (v, s0) => error(s"not an convertable value: $v")
     }
     case EContains(list, elem) =>
-      val (l, s0) = interp(list, true)(st)
+      val (l, s0) = escapeCompletion(interp(list)(st))
       l match {
         case (addr: Addr) => s0.heap(addr) match {
           case IRList(vs) =>
-            val (v, s1) = interp(elem, true)(st)
+            val (v, s1) = escapeCompletion(interp(elem)(st))
             (Bool(vs contains v), s1)
           case obj => error(s"not a list: $obj")
         }
         case v => error(s"not an address: $v")
       }
     case ECopy(expr) =>
-      val (v, s0) = interp(expr, true)(st)
+      val (v, s0) = escapeCompletion(interp(expr)(st))
       v match {
         case (addr: Addr) => s0.copyObj(addr)
         case v => error(s"not an address: $v")
       }
     case EKeys(expr) =>
-      val (v, s0) = interp(expr, true)(st)
+      val (v, s0) = escapeCompletion(interp(expr)(st))
       v match {
         case (addr: Addr) => s0.keys(addr)
         case v => error(s"not an address: $v")
@@ -474,7 +464,7 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
     case RefProp(ref, expr) =>
       val (refV, s0) = interp(ref)(st)
       val (base, s1) = interp(refV)(s0)
-      val (p, s2) = interp(expr, true)(s1)
+      val (p, s2) = escapeCompletion(interp(expr)(s1))
       ((base, p) match {
         case (addr: Addr, p) => s2.get(addr) match {
           case Some(IRMap(Ty("Completion"), m, _)) if !m.contains(p) => m(Str("Value"))._1 match {
@@ -605,6 +595,15 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
         case (Bool(l), Bool(r)) => (Bool(op(l, r)), s1)
         case (lval, rval) => error(s"wrong type: $lval $bop $rval")
       }
+  }
+
+  // escape completions
+  def escapeCompletion(pair: (Value, State)): (Value, State) = pair match {
+    case (addr: Addr, s: State) => s.get(addr) match {
+      case Some(IRMap(Ty("Completion"), m, _)) => (m(Str("Value"))._1, s)
+      case _ => pair
+    }
+    case _ => pair
   }
 }
 
