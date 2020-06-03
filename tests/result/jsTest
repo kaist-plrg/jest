@@ -1,15 +1,15 @@
   JSCheck:
-    PASS : 101
+    PASS : 100
     Yet  : 0
     FAIL : 0
-    TOTAL: 101
+    TOTAL: 100
   JSEval:
-    PASS : 101
+    PASS : 100
     Yet  : 0
     FAIL : 0
-    TOTAL: 101
+    TOTAL: 100
   JSParse:
-    PASS : 101
+    PASS : 100
     Yet  : 0
     FAIL : 0
-    TOTAL: 101
+    TOTAL: 100
