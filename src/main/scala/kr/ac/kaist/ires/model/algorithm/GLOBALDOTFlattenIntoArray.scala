@@ -33,8 +33,8 @@ object GLOBALDOTFlattenIntoArray {
         app __x9__ = (Get source P)
         if (is-completion __x9__) if (= __x9__["Type"] CONST_normal) __x9__ = __x9__["Value"] else return __x9__ else {}
         let element = __x9__
-        if (! (= argumentsList[5i] absent)) {
-          assert (! (= argumentsList[6i] absent))
+        if (! (= mapperFunction absent)) {
+          assert (! (= thisArg absent))
           app __x10__ = (Call mapperFunction thisArg (new [element, sourceIndex, source]))
           if (is-completion __x10__) if (= __x10__["Type"] CONST_normal) __x10__ = __x10__["Value"] else return __x10__ else {}
           element = __x10__

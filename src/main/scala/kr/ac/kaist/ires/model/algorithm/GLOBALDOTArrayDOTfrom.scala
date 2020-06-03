@@ -19,7 +19,7 @@ object GLOBALDOTArrayDOTfrom {
         app __x4__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
         return __x4__
       } else {}
-      if (! (= argumentsList[2i] absent)) let T = thisArg else let T = undefined
+      if (! (= thisArg absent)) let T = thisArg else let T = undefined
       let mapping = true
     }
     app __x5__ = (GetMethod items SYMBOL_iterator)
