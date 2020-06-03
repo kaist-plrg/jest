@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ClassDeclaration1BindingClassDeclarationEvaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ClassDeclaration1BindingClassDeclarationEvaluation0" (this, ClassTail) => {
     access __x0__ = (ClassTail "ClassDefinitionEvaluation")
     app __x1__ = (__x0__ undefined "default")

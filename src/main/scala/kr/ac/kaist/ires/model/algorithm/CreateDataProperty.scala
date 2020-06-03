@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object CreateDataProperty {
   val length: Int = 3
+  val lang: Boolean = true
   val func: Func = parseFunc(""""CreateDataProperty" (O, P, V) => {
     app __x0__ = (Type O)
     assert (= __x0__ Object)

@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object CaseClause0Evaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""CaseClause0Evaluation0" (this, Expression) => {
     app __x0__ = (NormalCompletion CONST_empty)
     app __x1__ = (WrapCompletion __x0__)

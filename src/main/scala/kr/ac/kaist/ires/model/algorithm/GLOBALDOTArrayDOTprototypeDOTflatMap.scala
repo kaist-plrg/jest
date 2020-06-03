@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTArrayDOTprototypeDOTflatMap {
   val length: Int = 1
+  val lang: Boolean = false
   val func: Func = parseFunc(""""GLOBAL.Array.prototype.flatMap" (this, argumentsList, NewTarget) => {
     app __x0__ = (GetArgument argumentsList 0i)
     let mapperFunction = __x0__

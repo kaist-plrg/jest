@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object TemplateSpans0Evaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""TemplateSpans0Evaluation0" (this, TemplateTail) => {
     access __x0__ = (TemplateTail "TV")
     let tail = __x0__

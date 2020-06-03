@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object TryStatement2VarScopedDeclarations0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""TryStatement2VarScopedDeclarations0" (this, Block, Catch, Finally) => {
     access __x0__ = (Block "VarScopedDeclarations")
     let declarations = __x0__

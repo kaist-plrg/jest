@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object BindingList1Evaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""BindingList1Evaluation0" (this, BindingList, LexicalBinding) => {
     access __x0__ = (BindingList "Evaluation")
     let next = __x0__

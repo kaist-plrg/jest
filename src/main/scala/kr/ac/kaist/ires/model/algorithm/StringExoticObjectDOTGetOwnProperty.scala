@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object StringExoticObjectDOTGetOwnProperty {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""StringExoticObject.GetOwnProperty" (S, P) => {
     app __x0__ = (IsPropertyKey P)
     assert (= __x0__ true)

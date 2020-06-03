@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object LogicalANDExpression1HasCallInTailPosition0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""LogicalANDExpression1HasCallInTailPosition0" (this, LogicalANDExpression, BitwiseORExpression, call) => {
     access __x0__ = (BitwiseORExpression "HasCallInTailPosition")
     app __x1__ = (__x0__ call)

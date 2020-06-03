@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object CompletePropertyDescriptor {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""CompletePropertyDescriptor" (Desc) => {
     assert (= (typeof Desc) "PropertyDescriptor")
     let like = (new Record("Value" -> undefined, "Writable" -> false, "Get" -> undefined, "Set" -> undefined, "Enumerable" -> false, "Configurable" -> false))

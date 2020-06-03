@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GlobalEnvironmentRecordDOTHasLexicalDeclaration {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""GlobalEnvironmentRecord.HasLexicalDeclaration" (this, N) => {
     let envRec = this
     let DclRec = envRec["DeclarativeRecord"]

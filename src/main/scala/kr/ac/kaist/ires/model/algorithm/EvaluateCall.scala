@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object EvaluateCall {
   val length: Int = 4
+  val lang: Boolean = true
   val func: Func = parseFunc(""""EvaluateCall" (func, ref, arguments, tailPosition) => {
     if (is-completion ref) if (= ref["Type"] CONST_normal) ref = ref["Value"] else return ref else {}
     ref

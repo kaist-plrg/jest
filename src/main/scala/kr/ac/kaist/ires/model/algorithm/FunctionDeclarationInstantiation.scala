@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object FunctionDeclarationInstantiation {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""FunctionDeclarationInstantiation" (func, argumentsList) => {
     let calleeContext = GLOBAL_context
     access __x0__ = (calleeContext "LexicalEnvironment")

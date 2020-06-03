@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object AsyncGeneratorMethod0PropertyDefinitionEvaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""AsyncGeneratorMethod0PropertyDefinitionEvaluation0" (this, PropertyName, UniqueFormalParameters, AsyncGeneratorBody, object, enumerable) => {
     access __x0__ = (PropertyName "Evaluation")
     let propKey = __x0__

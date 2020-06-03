@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object IntegerIndexedObjectCreate {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""IntegerIndexedObjectCreate" (prototype, internalSlotsList) => {
     let A = (new OrdinaryObject("SubMap" -> (new SubMap())))
     let __x0__ = internalSlotsList

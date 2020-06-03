@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object PerformPromiseRace {
   val length: Int = 3
+  val lang: Boolean = false
   val func: Func = parseFunc(""""PerformPromiseRace" (iteratorRecord, constructor, resultCapability) => {
     app __x0__ = (IsConstructor constructor)
     assert (= __x0__ true)

@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object AssignmentRestProperty0RestDestructuringAssignmentEvaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""AssignmentRestProperty0RestDestructuringAssignmentEvaluation0" (this, DestructuringAssignmentTarget, value, excludedNames) => {
     access __x0__ = (DestructuringAssignmentTarget "Evaluation")
     let lref = __x0__

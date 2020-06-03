@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object CreateIntrinsics {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""CreateIntrinsics" (realmRec) => {
     let intrinsics = (new Record("SubMap" -> (new SubMap())))
     realmRec["Intrinsics"] = intrinsics

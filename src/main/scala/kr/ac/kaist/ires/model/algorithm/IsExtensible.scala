@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object IsExtensible {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""IsExtensible" (O) => {
     app __x0__ = (Type O)
     assert (= __x0__ Object)

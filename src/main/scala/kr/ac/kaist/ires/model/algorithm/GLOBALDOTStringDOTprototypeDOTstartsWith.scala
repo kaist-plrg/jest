@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTStringDOTprototypeDOTstartsWith {
   val length: Int = 1
+  val lang: Boolean = false
   val func: Func = parseFunc(""""GLOBAL.String.prototype.startsWith" (this, argumentsList, NewTarget) => {
     app __x0__ = (GetArgument argumentsList 0i)
     let searchString = __x0__

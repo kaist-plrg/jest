@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object AddEntriesFromIterable {
   val length: Int = 3
+  val lang: Boolean = true
   val func: Func = parseFunc(""""AddEntriesFromIterable" (target, iterable, adder) => {
     app __x0__ = (IsCallable adder)
     if (= __x0__ false) {

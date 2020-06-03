@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object thisBooleanValue {
   val length: Int = 0
+  val lang: Boolean = false
   val func: Func = parseFunc(""""thisBooleanValue" (value) => {
     app __x0__ = (Type value)
     if (= __x0__ Boolean) {

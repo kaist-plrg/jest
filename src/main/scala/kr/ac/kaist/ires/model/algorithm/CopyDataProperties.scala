@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object CopyDataProperties {
   val length: Int = 3
+  val lang: Boolean = true
   val func: Func = parseFunc(""""CopyDataProperties" (target, source, excludedItems) => {
     app __x0__ = (Type target)
     assert (= __x0__ Object)

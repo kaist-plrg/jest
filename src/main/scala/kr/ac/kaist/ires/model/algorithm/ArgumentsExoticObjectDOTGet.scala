@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ArgumentsExoticObjectDOTGet {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ArgumentsExoticObject.Get" (args, P, Receiver) => {
     let args = args
     let map = args["ParameterMap"]

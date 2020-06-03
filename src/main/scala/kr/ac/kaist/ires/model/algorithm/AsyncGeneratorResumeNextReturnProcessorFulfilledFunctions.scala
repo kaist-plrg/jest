@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object AsyncGeneratorResumeNextReturnProcessorFulfilledFunctions {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""AsyncGeneratorResumeNextReturnProcessorFulfilledFunctions" () => {
     let F = GLOBAL_context["Function"]
     F["Generator"]["AsyncGeneratorState"] = "completed"

@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ModuleNamespaceExoticObjectDOTHasProperty {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ModuleNamespaceExoticObject.HasProperty" (O, P) => {
     app __x0__ = (Type P)
     if (= __x0__ Symbol) {

@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object UnaryExpression3Evaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""UnaryExpression3Evaluation0" (this, UnaryExpression) => {
     access __x0__ = (UnaryExpression "Evaluation")
     let val = __x0__

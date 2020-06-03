@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object MakeConstructor {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""MakeConstructor" (F, writablePrototype, prototype) => {
     app __x0__ = (IsConstructor F)
     assert (= __x0__ true)

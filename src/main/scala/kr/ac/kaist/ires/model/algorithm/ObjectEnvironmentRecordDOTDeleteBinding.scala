@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ObjectEnvironmentRecordDOTDeleteBinding {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ObjectEnvironmentRecord.DeleteBinding" (this, N) => {
     let envRec = this
     let bindings = envRec["BindingObject"]

@@ -5,5 +5,6 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object AsyncConciseBody0VarDeclaredNames0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""AsyncConciseBody0VarDeclaredNames0" (this, AssignmentExpression) => return (new [])""")
 }

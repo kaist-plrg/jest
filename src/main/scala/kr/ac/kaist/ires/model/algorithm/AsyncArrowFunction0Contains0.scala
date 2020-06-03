@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object AsyncArrowFunction0Contains0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""AsyncArrowFunction0Contains0" (this, AsyncArrowBindingIdentifier, AsyncConciseBody, symbol) => {
     if (! (|| (|| (|| (|| (is-instance-of symbol NewTarget) (is-instance-of symbol SuperProperty)) (is-instance-of symbol SuperCall)) (= symbol "super")) (= symbol "this"))) return false else {}
     access __x0__ = (AsyncConciseBody "Contains")

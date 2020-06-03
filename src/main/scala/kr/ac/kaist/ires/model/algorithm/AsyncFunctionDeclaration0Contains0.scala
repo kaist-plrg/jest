@@ -5,5 +5,6 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object AsyncFunctionDeclaration0Contains0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""AsyncFunctionDeclaration0Contains0" (this, BindingIdentifier, FormalParameters, AsyncFunctionBody, symbol) => return false""")
 }

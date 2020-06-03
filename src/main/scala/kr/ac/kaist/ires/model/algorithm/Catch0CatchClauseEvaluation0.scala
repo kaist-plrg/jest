@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object Catch0CatchClauseEvaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""Catch0CatchClauseEvaluation0" (this, CatchParameter, Block, thrownValue) => {
     let oldEnv = GLOBAL_context["LexicalEnvironment"]
     app __x0__ = (NewDeclarativeEnvironment oldEnv)

@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object PropertyDefinitionList1PropertyNameList0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""PropertyDefinitionList1PropertyNameList0" (this, PropertyDefinitionList, PropertyDefinition) => {
     access __x0__ = (PropertyDefinitionList "PropertyNameList")
     let list = __x0__

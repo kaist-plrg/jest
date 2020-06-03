@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object NewModuleEnvironment {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""NewModuleEnvironment" (E) => {
     let env = (new LexicalEnvironment("SubMap" -> (new SubMap())))
     !!! "Etc"

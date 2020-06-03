@@ -5,5 +5,6 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object CoverParenthesizedExpressionAndArrowParameterList3CoveredFormalsList0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""CoverParenthesizedExpressionAndArrowParameterList3CoveredFormalsList0" (this, BindingIdentifier) => return (parse-syntax this "ArrowFormalParameters" )""")
 }

@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTArray {
   val length: Int = 0
+  val lang: Boolean = false
   val func: Func = parseFunc(""""GLOBAL.Array" (this, argumentsList, NewTarget) => if (== argumentsList["length"] 0i) {
     let numberOfArgs = argumentsList["length"]
     assert (== numberOfArgs 0i)

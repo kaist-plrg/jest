@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ObjectDefineProperties {
   val length: Int = 2
+  val lang: Boolean = false
   val func: Func = parseFunc(""""ObjectDefineProperties" (O, Properties) => {
     app __x0__ = (Type O)
     if (! (= __x0__ Object)) {

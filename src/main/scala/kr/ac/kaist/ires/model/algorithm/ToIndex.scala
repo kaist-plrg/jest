@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ToIndex {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ToIndex" (value) => {
     if (= value undefined) let index = 0i else {
       app __x0__ = (ToInteger value)

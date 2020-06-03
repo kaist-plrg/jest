@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GetSubstitution {
   val length: Int = 6
+  val lang: Boolean = false
   val func: Func = parseFunc(""""GetSubstitution" (matched, str, position, captures, namedCaptures, replacement) => {
     app __x0__ = (Type matched)
     assert (= __x0__ String)

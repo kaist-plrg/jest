@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GlobalEnvironmentRecordDOTHasRestrictedGlobalProperty {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""GlobalEnvironmentRecord.HasRestrictedGlobalProperty" (this, N) => {
     let envRec = this
     let ObjRec = envRec["ObjectRecord"]

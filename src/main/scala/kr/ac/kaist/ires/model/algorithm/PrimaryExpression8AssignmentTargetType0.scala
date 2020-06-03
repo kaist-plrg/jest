@@ -5,5 +5,6 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object PrimaryExpression8AssignmentTargetType0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""PrimaryExpression8AssignmentTargetType0" (this, AsyncFunctionExpression) => return CONST_invalid""")
 }

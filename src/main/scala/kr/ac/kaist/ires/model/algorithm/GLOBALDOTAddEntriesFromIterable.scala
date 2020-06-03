@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTAddEntriesFromIterable {
   val length: Int = 3
+  val lang: Boolean = false
   val func: Func = parseFunc(""""GLOBAL.AddEntriesFromIterable" (this, argumentsList, NewTarget) => {
     app __x0__ = (GetArgument argumentsList 0i)
     let target = __x0__

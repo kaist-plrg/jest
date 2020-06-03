@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object CaseClauseIsSelected {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""CaseClauseIsSelected" (C, input) => {
     access __x0__ = (C "Expression")
     access __x1__ = (__x0__ "Evaluation")

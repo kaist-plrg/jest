@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTArrayDOTprototypeDOTSYMBOL_unscopables {
   val length: Int = 0
+  val lang: Boolean = false
   val func: Func = parseFunc(""""GLOBAL.Array.prototype.SYMBOL_unscopables" (this, argumentsList, NewTarget) => {
     app __x0__ = (ObjectCreate null)
     let unscopableList = __x0__

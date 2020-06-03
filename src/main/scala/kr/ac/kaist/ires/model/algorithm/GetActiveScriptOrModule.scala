@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GetActiveScriptOrModule {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""GetActiveScriptOrModule" () => {
     if (= GLOBAL_executionStack["length"] 0i) {
       app __x0__ = (WrapCompletion null)

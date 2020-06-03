@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GetFunctionRealm {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""GetFunctionRealm" (obj) => {
     if (! (= obj["Realm"] absent)) {
       app __x0__ = (WrapCompletion obj["Realm"])

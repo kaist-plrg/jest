@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ClassElementList1ComputedPropertyContains0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ClassElementList1ComputedPropertyContains0" (this, ClassElementList, ClassElement, symbol) => {
     access __x0__ = (ClassElementList "ComputedPropertyContains")
     app __x1__ = (__x0__ symbol)

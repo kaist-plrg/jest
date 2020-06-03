@@ -5,5 +5,6 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GeneratorExpression0IsFunctionDefinition1 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""GeneratorExpression0IsFunctionDefinition1" (this, BindingIdentifier, FormalParameters, GeneratorBody) => return true""")
 }

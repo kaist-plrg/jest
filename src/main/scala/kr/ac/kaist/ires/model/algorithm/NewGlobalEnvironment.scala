@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object NewGlobalEnvironment {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""NewGlobalEnvironment" (G, thisValue) => {
     let env = (new LexicalEnvironment("SubMap" -> (new SubMap())))
     let objRec = (new ObjectEnvironmentRecord("SubMap" -> (new SubMap()), "BindingObject" -> G))

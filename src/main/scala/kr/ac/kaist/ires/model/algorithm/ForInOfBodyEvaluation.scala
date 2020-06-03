@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ForInOfBodyEvaluation {
   val length: Int = 6
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ForInOfBodyEvaluation" (lhs, stmt, iteratorRecord, iterationKind, lhsKind, labelSet, iteratorKind) => {
     if (= iteratorKind absent) iteratorKind = CONST_sync else {}
     let oldEnv = GLOBAL_context["LexicalEnvironment"]

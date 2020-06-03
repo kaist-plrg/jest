@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object TryStatement2ContainsDuplicateLabels0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""TryStatement2ContainsDuplicateLabels0" (this, Block, Catch, Finally, labelSet) => {
     access __x0__ = (Block "ContainsDuplicateLabels")
     app __x1__ = (__x0__ labelSet)

@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object SpeciesConstructor {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""SpeciesConstructor" (O, defaultConstructor) => {
     app __x0__ = (Type O)
     assert (= __x0__ Object)

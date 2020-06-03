@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object FormalParameterList1BoundNames0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""FormalParameterList1BoundNames0" (this, FormalParameterList, FormalParameter) => {
     access __x0__ = (FormalParameterList "BoundNames")
     let names = __x0__

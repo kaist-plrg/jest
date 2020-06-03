@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object IterationStatement0LabelledEvaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""IterationStatement0LabelledEvaluation0" (this, Statement, Expression, labelSet) => {
     let V = undefined
     while true {

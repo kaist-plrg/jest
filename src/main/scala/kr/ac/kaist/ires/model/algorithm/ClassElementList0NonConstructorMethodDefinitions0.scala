@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ClassElementList0NonConstructorMethodDefinitions0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ClassElementList0NonConstructorMethodDefinitions0" (this, ClassElement) => {
     if (is-instance-of ClassElement ClassElement2) return (new []) else {}
     access __x0__ = (ClassElement "IsStatic")

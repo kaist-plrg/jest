@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object OrdinarySet {
   val length: Int = 4
+  val lang: Boolean = true
   val func: Func = parseFunc(""""OrdinarySet" (O, P, V, Receiver) => {
     app __x0__ = (IsPropertyKey P)
     assert (= __x0__ true)

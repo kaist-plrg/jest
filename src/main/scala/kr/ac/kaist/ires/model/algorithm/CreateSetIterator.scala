@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object CreateSetIterator {
   val length: Int = 2
+  val lang: Boolean = false
   val func: Func = parseFunc(""""CreateSetIterator" (set, kind) => {
     app __x0__ = (Type set)
     if (! (= __x0__ Object)) {

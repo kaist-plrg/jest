@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ResolveBinding {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ResolveBinding" (name, env) => {
     if (|| (= env absent) (= env undefined)) env = GLOBAL_context["LexicalEnvironment"] else {}
     assert (= (typeof env) "LexicalEnvironment")

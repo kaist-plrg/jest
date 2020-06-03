@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTStringDOTfromCodePoint {
   val length: Int = 1
+  val lang: Boolean = false
   val func: Func = parseFunc(""""GLOBAL.String.fromCodePoint" (this, argumentsList, NewTarget) => {
     !!! "Etc"
     let length = codePoints["length"]

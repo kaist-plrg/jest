@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object SetImmutablePrototype {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""SetImmutablePrototype" (O, V) => {
     app __x0__ = (O["GetPrototypeOf"] O)
     if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}

@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object AgentSignifier {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""AgentSignifier" () => {
     !!! "Etc"
     app __x0__ = (WrapCompletion AR["Signifier"])

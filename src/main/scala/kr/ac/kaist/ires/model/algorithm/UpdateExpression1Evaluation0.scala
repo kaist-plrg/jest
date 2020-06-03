@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object UpdateExpression1Evaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""UpdateExpression1Evaluation0" (this, LeftHandSideExpression) => {
     access __x0__ = (LeftHandSideExpression "Evaluation")
     let lhs = __x0__

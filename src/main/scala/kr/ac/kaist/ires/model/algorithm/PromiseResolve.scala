@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object PromiseResolve {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""PromiseResolve" (C, x) => {
     app __x0__ = (Type C)
     assert (= __x0__ Object)

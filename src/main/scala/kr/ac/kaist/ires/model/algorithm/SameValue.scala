@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object SameValue {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""SameValue" (x, y) => {
     app __x0__ = (Type x)
     app __x1__ = (Type y)

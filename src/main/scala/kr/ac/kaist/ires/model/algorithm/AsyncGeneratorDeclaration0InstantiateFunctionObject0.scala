@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object AsyncGeneratorDeclaration0InstantiateFunctionObject0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""AsyncGeneratorDeclaration0InstantiateFunctionObject0" (this, BindingIdentifier, FormalParameters, AsyncGeneratorBody, scope) => {
     if true let strict = true else let strict = false
     access __x0__ = (BindingIdentifier "StringValue")

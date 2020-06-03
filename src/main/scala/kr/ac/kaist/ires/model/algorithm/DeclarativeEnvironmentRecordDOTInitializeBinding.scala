@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object DeclarativeEnvironmentRecordDOTInitializeBinding {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""DeclarativeEnvironmentRecord.InitializeBinding" (this, N, V) => {
     let envRec = this
     envRec["SubMap"][N]["BoundValue"] = V

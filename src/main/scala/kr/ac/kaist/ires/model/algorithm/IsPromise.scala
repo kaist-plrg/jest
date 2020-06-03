@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object IsPromise {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""IsPromise" (x) => {
     app __x0__ = (Type x)
     if (! (= __x0__ Object)) {

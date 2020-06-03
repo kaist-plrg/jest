@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ToPropertyDescriptor {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ToPropertyDescriptor" (Obj) => {
     app __x0__ = (Type Obj)
     if (! (= __x0__ Object)) {

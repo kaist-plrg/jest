@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ArgumentsExoticObjectDOTGetOwnProperty {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ArgumentsExoticObject.GetOwnProperty" (args, P) => {
     let args = args
     app __x0__ = (OrdinaryGetOwnProperty args P)

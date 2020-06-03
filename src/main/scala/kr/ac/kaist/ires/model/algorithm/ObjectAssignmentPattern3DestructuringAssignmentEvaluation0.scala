@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ObjectAssignmentPattern3DestructuringAssignmentEvaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ObjectAssignmentPattern3DestructuringAssignmentEvaluation0" (this, AssignmentPropertyList, value) => {
     app __x0__ = (RequireObjectCoercible value)
     if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}

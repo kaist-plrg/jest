@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object DefaultClause0LexicallyDeclaredNames1 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""DefaultClause0LexicallyDeclaredNames1" (this, StatementList) => {
     if (! (= StatementList absent)) {
       access __x0__ = (StatementList "LexicallyDeclaredNames")

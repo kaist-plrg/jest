@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object PromiseRejectFunctions {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""PromiseRejectFunctions" () => {
     let F = GLOBAL_context["Function"]
     let promise = F["Promise"]

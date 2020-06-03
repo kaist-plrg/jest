@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object CaseClauses1ContainsDuplicateLabels0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""CaseClauses1ContainsDuplicateLabels0" (this, CaseClauses, CaseClause, labelSet) => {
     access __x0__ = (CaseClauses "ContainsDuplicateLabels")
     app __x1__ = (__x0__ labelSet)

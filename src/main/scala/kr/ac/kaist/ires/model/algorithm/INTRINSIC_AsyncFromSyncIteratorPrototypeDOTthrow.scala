@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object INTRINSIC_AsyncFromSyncIteratorPrototypeDOTthrow {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""INTRINSIC_AsyncFromSyncIteratorPrototype.throw" (value) => {
     let O = this
     app __x0__ = (NewPromiseCapability INTRINSIC_Promise)

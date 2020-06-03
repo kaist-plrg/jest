@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object SuperProperty1Contains0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""SuperProperty1Contains0" (this, IdentifierName, symbol) => {
     if (= (get-syntax symbol) "super") return true else {}
     if (is-instance-of symbol ReservedWord) return false else {}

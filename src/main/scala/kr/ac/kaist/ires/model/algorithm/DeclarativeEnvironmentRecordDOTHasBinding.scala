@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object DeclarativeEnvironmentRecordDOTHasBinding {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""DeclarativeEnvironmentRecord.HasBinding" (this, N) => {
     let envRec = this
     if (! (= envRec["SubMap"][N] absent)) {

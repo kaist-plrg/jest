@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object CaseClause0ContainsUndefinedContinueTarget1 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""CaseClause0ContainsUndefinedContinueTarget1" (this, Expression, StatementList, iterationSet, labelSet) => {
     if (! (= StatementList absent)) {
       access __x0__ = (StatementList "ContainsUndefinedContinueTarget")

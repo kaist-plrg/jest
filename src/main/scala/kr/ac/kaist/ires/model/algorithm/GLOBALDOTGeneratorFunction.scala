@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTGeneratorFunction {
   val length: Int = 5
+  val lang: Boolean = false
   val func: Func = parseFunc(""""GLOBAL.GeneratorFunction" (this, argumentsList, NewTarget) => {
     let C = GLOBAL_context["Function"]
     let args = argumentsList

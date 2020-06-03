@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ArrayBindingPattern2BoundNames3 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ArrayBindingPattern2BoundNames3" (this, BindingElementList, Elision, BindingRestElement) => {
     access __x0__ = (BindingElementList "BoundNames")
     let names = __x0__

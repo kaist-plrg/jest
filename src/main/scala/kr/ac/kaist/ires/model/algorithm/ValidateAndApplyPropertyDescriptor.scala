@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ValidateAndApplyPropertyDescriptor {
   val length: Int = 5
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ValidateAndApplyPropertyDescriptor" (O, P, extensible, Desc, current) => {
     if (= current undefined) {
       if (= extensible false) {

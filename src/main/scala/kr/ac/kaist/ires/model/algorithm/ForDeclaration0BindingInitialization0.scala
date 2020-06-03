@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ForDeclaration0BindingInitialization0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ForDeclaration0BindingInitialization0" (this, LetOrConst, ForBinding, value, environment) => {
     access __x0__ = (ForBinding "BindingInitialization")
     app __x1__ = (__x0__ value environment)

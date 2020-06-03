@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object Construct {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""Construct" (F, argumentsList, newTarget) => {
     if (= newTarget absent) newTarget = F else {}
     if (= argumentsList absent) argumentsList = (new []) else {}

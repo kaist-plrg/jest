@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object AsyncArrowFunction0NamedEvaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""AsyncArrowFunction0NamedEvaluation0" (this, AsyncArrowBindingIdentifier, AsyncConciseBody, name) => {
     access __x0__ = (this "Evaluation")
     let closure = __x0__

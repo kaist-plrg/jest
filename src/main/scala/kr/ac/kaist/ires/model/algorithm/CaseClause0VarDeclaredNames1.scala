@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object CaseClause0VarDeclaredNames1 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""CaseClause0VarDeclaredNames1" (this, Expression, StatementList) => {
     if (! (= StatementList absent)) {
       access __x0__ = (StatementList "VarDeclaredNames")

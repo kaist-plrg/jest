@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object SingleNameBinding0KeyedBindingInitialization1 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""SingleNameBinding0KeyedBindingInitialization1" (this, BindingIdentifier, Initializer, value, environment, propertyName) => {
     access __x0__ = (BindingIdentifier "StringValue")
     let bindingId = __x0__

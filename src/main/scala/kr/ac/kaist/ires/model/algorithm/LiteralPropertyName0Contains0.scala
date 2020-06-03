@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object LiteralPropertyName0Contains0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""LiteralPropertyName0Contains0" (this, IdentifierName, symbol) => {
     if (is-instance-of symbol ReservedWord) return false else {}
     let __x0__ = (is-instance-of symbol Identifier)

@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object CanonicalNumericIndexString {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""CanonicalNumericIndexString" (argument) => {
     app __x0__ = (Type argument)
     assert (= __x0__ String)

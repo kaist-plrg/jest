@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object CaseBlock1CaseBlockEvaluation3 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""CaseBlock1CaseBlockEvaluation3" (this, CaseClauses0, DefaultClause, CaseClauses1, input) => {
     let V = undefined
     if (! (= CaseClauses0 absent)) let A = (get-elems CaseClauses0 CaseClause) else let A = (new [])

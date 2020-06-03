@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object PrimaryExpression10Evaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""PrimaryExpression10Evaluation0" (this, RegularExpressionLiteral) => {
     access __x0__ = (RegularExpressionLiteral "BodyText")
     let pattern = __x0__

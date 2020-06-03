@@ -5,5 +5,6 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ArrayBindingPattern0BoundNames2 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ArrayBindingPattern0BoundNames2" (this, Elision) => return (new [])""")
 }

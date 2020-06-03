@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object UpdateEmpty {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""UpdateEmpty" (completionRecord, value) => {
     if (! (= completionRecord["Value"] CONST_empty)) {
       app __x0__ = (Completion completionRecord)

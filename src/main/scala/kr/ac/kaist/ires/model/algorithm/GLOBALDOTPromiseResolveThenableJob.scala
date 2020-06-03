@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTPromiseResolveThenableJob {
   val length: Int = 3
+  val lang: Boolean = false
   val func: Func = parseFunc(""""GLOBAL.PromiseResolveThenableJob" (this, argumentsList, NewTarget) => {
     app __x0__ = (GetArgument argumentsList 0i)
     let promiseToResolve = __x0__

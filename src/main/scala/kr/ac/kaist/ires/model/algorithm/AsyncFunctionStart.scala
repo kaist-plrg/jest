@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object AsyncFunctionStart {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""AsyncFunctionStart" (promiseCapability, asyncFunctionBody) => {
     let runningContext = GLOBAL_context
     let asyncContext = (copy-obj runningContext)

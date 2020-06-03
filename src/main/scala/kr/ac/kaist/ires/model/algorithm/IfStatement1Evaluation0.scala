@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object IfStatement1Evaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""IfStatement1Evaluation0" (this, Expression, Statement) => {
     access __x0__ = (Expression "Evaluation")
     let exprRef = __x0__

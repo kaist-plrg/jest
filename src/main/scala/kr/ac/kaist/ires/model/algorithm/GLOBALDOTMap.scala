@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTMap {
   val length: Int = 0
+  val lang: Boolean = false
   val func: Func = parseFunc(""""GLOBAL.Map" (this, argumentsList, NewTarget) => {
     app __x0__ = (GetArgument argumentsList 0i)
     let iterable = __x0__

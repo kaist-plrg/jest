@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object OrdinaryToPrimitive {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""OrdinaryToPrimitive" (O, hint) => {
     app __x0__ = (Type O)
     assert (= __x0__ Object)

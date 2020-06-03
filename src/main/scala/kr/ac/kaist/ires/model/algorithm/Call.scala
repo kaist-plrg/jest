@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object Call {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""Call" (F, V, argumentsList) => {
     if (= argumentsList absent) argumentsList = (new []) else {}
     app __x0__ = (IsCallable F)

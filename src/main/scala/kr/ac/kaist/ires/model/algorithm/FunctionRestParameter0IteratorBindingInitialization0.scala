@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object FunctionRestParameter0IteratorBindingInitialization0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""FunctionRestParameter0IteratorBindingInitialization0" (this, BindingRestElement, iteratorRecord, environment) => {
     access __x0__ = (BindingRestElement "ContainsExpression")
     if (= __x0__ false) {

@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ArgGetter {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ArgGetter" (_0, _1, _2, f) => {
     let f = GLOBAL_context["Function"]
     let name = f["Name"]

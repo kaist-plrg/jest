@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object BreakableStatement0ContainsUndefinedContinueTarget0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""BreakableStatement0ContainsUndefinedContinueTarget0" (this, IterationStatement, iterationSet, labelSet) => {
     let __x0__ = (copy-obj iterationSet)
     let __x1__ = labelSet

@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ObjectEnvironmentRecordDOTWithBaseObject {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ObjectEnvironmentRecord.WithBaseObject" (this) => {
     let envRec = this
     if (= envRec["withEnvironment"] true) {

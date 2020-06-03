@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object MemberExpression3Evaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""MemberExpression3Evaluation0" (this, MemberExpression, TemplateLiteral) => {
     access __x0__ = (MemberExpression "Evaluation")
     let tagRef = __x0__

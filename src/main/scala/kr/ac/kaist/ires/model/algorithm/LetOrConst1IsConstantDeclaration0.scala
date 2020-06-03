@@ -5,5 +5,6 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object LetOrConst1IsConstantDeclaration0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""LetOrConst1IsConstantDeclaration0" (this) => return true""")
 }

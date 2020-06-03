@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ScriptEvaluation {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ScriptEvaluation" (scriptRecord) => {
     let globalEnv = scriptRecord["Realm"]["GlobalEnv"]
     let scriptCxt = (new ExecutionContext("SubMap" -> (new SubMap())))

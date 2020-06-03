@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object FromPropertyDescriptor {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""FromPropertyDescriptor" (Desc) => {
     if (= Desc undefined) {
       app __x0__ = (WrapCompletion undefined)

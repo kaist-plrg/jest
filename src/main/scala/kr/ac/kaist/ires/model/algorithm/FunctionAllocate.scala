@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object FunctionAllocate {
   val length: Int = 3
+  val lang: Boolean = true
   val func: Func = parseFunc(""""FunctionAllocate" (functionPrototype, strict, functionKind) => {
     app __x0__ = (Type functionPrototype)
     assert (= __x0__ Object)

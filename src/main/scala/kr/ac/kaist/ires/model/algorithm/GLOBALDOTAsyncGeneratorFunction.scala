@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTAsyncGeneratorFunction {
   val length: Int = 2
+  val lang: Boolean = false
   val func: Func = parseFunc(""""GLOBAL.AsyncGeneratorFunction" (this, argumentsList, NewTarget) => {
     let args = argumentsList
     app __x0__ = (CreateDynamicFunction C NewTarget "async generator" args)

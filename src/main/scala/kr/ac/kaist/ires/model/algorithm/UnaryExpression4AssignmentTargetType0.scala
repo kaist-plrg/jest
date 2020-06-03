@@ -5,5 +5,6 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object UnaryExpression4AssignmentTargetType0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""UnaryExpression4AssignmentTargetType0" (this, UnaryExpression) => return CONST_invalid""")
 }

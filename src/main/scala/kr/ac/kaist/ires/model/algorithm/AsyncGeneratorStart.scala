@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object AsyncGeneratorStart {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""AsyncGeneratorStart" (generator, generatorBody) => {
     assert (= generator["AsyncGeneratorState"] undefined)
     let genContext = GLOBAL_context

@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object MakeSuperPropertyReference {
   val length: Int = 3
+  val lang: Boolean = true
   val func: Func = parseFunc(""""MakeSuperPropertyReference" (actualThis, propertyKey, strict) => {
     app __x0__ = (GetThisEnvironment )
     let env = __x0__

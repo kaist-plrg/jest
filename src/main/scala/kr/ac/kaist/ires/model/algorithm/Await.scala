@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object Await {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""Await" (value) => {
     let asyncContext = GLOBAL_context
     app __x0__ = (PromiseResolve INTRINSIC_Promise value)

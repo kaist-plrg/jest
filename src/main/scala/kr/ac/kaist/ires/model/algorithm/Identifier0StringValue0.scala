@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object Identifier0StringValue0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""Identifier0StringValue0" (this, IdentifierName) => {
     access __x0__ = (IdentifierName "StringValue")
     return __x0__

@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object CallExpression5Evaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""CallExpression5Evaluation0" (this, CallExpression, TemplateLiteral) => {
     access __x0__ = (CallExpression "Evaluation")
     let tagRef = __x0__

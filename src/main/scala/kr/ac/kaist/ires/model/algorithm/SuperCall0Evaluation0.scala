@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object SuperCall0Evaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""SuperCall0Evaluation0" (this, Arguments) => {
     app __x0__ = (GetNewTarget )
     let newTarget = __x0__

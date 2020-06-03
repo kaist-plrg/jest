@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object FunctionEnvironmentRecordDOTHasThisBinding {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""FunctionEnvironmentRecord.HasThisBinding" (this) => {
     let envRec = this
     if (= envRec["ThisBindingStatus"] "lexical") {

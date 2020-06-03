@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GetGeneratorKind {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""GetGeneratorKind" () => {
     let genContext = GLOBAL_context
     if (= genContext["Generator"] absent) {

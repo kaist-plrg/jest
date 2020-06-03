@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ProxyExoticObjectDOTConstruct {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ProxyExoticObject.Construct" (O, argumentsList, newTarget) => {
     let handler = O["ProxyHandler"]
     if (= handler null) {

@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object FunctionInitialize {
   val length: Int = 5
+  val lang: Boolean = true
   val func: Func = parseFunc(""""FunctionInitialize" (F, kind, ParameterList, Body, Scope) => {
     access __x0__ = (ParameterList "ExpectedArgumentCount")
     let len = __x0__

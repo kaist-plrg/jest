@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object BindingProperty1PropertyBindingInitialization0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""BindingProperty1PropertyBindingInitialization0" (this, PropertyName, BindingElement, value, environment) => {
     access __x0__ = (PropertyName "Evaluation")
     let P = __x0__

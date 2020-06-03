@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ForBodyEvaluation {
   val length: Int = 5
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ForBodyEvaluation" (test, increment, stmt, perIterationBindings, labelSet) => {
     let V = undefined
     app __x0__ = (CreatePerIterationEnvironment perIterationBindings)

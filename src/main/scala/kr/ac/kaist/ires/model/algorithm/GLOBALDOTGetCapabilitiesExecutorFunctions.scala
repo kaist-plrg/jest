@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTGetCapabilitiesExecutorFunctions {
   val length: Int = 2
+  val lang: Boolean = false
   val func: Func = parseFunc(""""GLOBAL.GetCapabilitiesExecutorFunctions" (this, argumentsList, NewTarget) => {
     app __x0__ = (GetArgument argumentsList 0i)
     let resolve = __x0__

@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object IsLabelledFunction {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""IsLabelledFunction" (stmt) => {
     if (! (is-instance-of stmt LabelledStatement)) return false else {}
     access __x0__ = (stmt "LabelledItem")

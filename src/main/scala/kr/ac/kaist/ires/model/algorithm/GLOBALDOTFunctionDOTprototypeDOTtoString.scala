@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTFunctionDOTprototypeDOTtoString {
   val length: Int = 0
+  val lang: Boolean = false
   val func: Func = parseFunc(""""GLOBAL.Function.prototype.toString" (this, argumentsList, NewTarget) => {
     let func = this
     if (|| (= (typeof func) "BoundFunctionExoticObject") (= (typeof func) "BuiltinFunctionObject")) {

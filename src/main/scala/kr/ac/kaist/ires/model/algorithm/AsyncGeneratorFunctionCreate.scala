@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object AsyncGeneratorFunctionCreate {
   val length: Int = 5
+  val lang: Boolean = true
   val func: Func = parseFunc(""""AsyncGeneratorFunctionCreate" (kind, ParameterList, Body, Scope, Strict) => {
     let functionPrototype = INTRINSIC_AsyncGenerator
     app __x0__ = (FunctionAllocate functionPrototype Strict "generator")

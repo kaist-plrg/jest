@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object IsAnonymousFunctionDefinition {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""IsAnonymousFunctionDefinition" (expr) => {
     access __x0__ = (expr "IsFunctionDefinition")
     if (= __x0__ false) return false else {}

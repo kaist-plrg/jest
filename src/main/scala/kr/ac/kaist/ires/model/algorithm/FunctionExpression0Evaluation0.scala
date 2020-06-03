@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object FunctionExpression0Evaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""FunctionExpression0Evaluation0" (this, FormalParameters, FunctionBody) => {
     if true let strict = true else let strict = false
     access __x0__ = (GLOBAL_context "LexicalEnvironment")

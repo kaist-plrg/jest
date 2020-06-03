@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object DeletePropertyOrThrow {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""DeletePropertyOrThrow" (O, P) => {
     app __x0__ = (Type O)
     assert (= __x0__ Object)

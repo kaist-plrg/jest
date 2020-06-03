@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object FormalParameter0IteratorBindingInitialization0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""FormalParameter0IteratorBindingInitialization0" (this, BindingElement, iteratorRecord, environment) => {
     access __x0__ = (BindingElement "ContainsExpression")
     if (= __x0__ false) {

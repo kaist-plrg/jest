@@ -5,5 +5,6 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object SingleNameBinding0HasInitializer0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""SingleNameBinding0HasInitializer0" (this, BindingIdentifier) => return false""")
 }

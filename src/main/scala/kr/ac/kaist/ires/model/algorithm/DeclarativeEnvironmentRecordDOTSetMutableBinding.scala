@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object DeclarativeEnvironmentRecordDOTSetMutableBinding {
   val length: Int = 3
+  val lang: Boolean = true
   val func: Func = parseFunc(""""DeclarativeEnvironmentRecord.SetMutableBinding" (this, N, V, S) => {
     let envRec = this
     if (= absent envRec["SubMap"][N]) {

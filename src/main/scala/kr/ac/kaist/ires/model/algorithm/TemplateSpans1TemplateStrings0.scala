@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object TemplateSpans1TemplateStrings0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""TemplateSpans1TemplateStrings0" (this, TemplateMiddleList, TemplateTail, raw) => {
     access __x0__ = (TemplateMiddleList "TemplateStrings")
     app __x1__ = (__x0__ raw)

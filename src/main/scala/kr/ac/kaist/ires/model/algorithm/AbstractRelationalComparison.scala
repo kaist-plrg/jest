@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object AbstractRelationalComparison {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""AbstractRelationalComparison" (x, y, LeftFirst) => {
     if (= LeftFirst absent) let LeftFirst = true else {}
     if (= LeftFirst true) {

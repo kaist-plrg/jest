@@ -5,5 +5,6 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object RelationalExpression4IsFunctionDefinition0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""RelationalExpression4IsFunctionDefinition0" (this, RelationalExpression, ShiftExpression) => return false""")
 }

@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object CreateIterResultObject {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""CreateIterResultObject" (value, done) => {
     app __x0__ = (Type done)
     assert (= __x0__ Boolean)

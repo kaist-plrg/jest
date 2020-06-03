@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GetIterator {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""GetIterator" (obj, hint, method) => {
     if (= hint absent) hint = CONST_sync else {}
     assert (|| (= hint CONST_sync) (= hint CONST_async))

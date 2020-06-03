@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ScriptEvaluationJob {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ScriptEvaluationJob" (sourceText, hostDefined) => {
     let realm = REALM
     app __x0__ = (ParseScript sourceText realm hostDefined)

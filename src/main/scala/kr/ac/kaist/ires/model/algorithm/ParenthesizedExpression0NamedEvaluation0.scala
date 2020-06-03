@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ParenthesizedExpression0NamedEvaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ParenthesizedExpression0NamedEvaluation0" (this, Expression, name) => {
     app __x0__ = (IsAnonymousFunctionDefinition Expression)
     assert (= __x0__ true)

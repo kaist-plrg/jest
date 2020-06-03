@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object CallExpression5HasCallInTailPosition0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""CallExpression5HasCallInTailPosition0" (this, CallExpression, TemplateLiteral, call) => {
     if (= this call) {
       app __x0__ = (WrapCompletion true)

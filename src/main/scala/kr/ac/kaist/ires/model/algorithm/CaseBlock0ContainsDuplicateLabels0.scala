@@ -5,5 +5,6 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object CaseBlock0ContainsDuplicateLabels0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""CaseBlock0ContainsDuplicateLabels0" (this, labelSet) => return false""")
 }

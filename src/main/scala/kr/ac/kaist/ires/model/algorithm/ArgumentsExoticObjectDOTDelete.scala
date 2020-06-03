@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ArgumentsExoticObjectDOTDelete {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ArgumentsExoticObject.Delete" (args, P) => {
     let args = args
     let map = args["ParameterMap"]

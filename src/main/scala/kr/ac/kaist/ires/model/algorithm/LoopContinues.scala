@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object LoopContinues {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""LoopContinues" (completion, labelSet) => {
     if (= completion["Type"] CONST_normal) {
       app __x0__ = (WrapCompletion true)

@@ -5,5 +5,6 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object AsyncArrowBindingIdentifier0ContainsExpression0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""AsyncArrowBindingIdentifier0ContainsExpression0" (this, BindingIdentifier) => return false""")
 }

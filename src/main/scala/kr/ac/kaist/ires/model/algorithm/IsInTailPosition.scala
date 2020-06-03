@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object IsInTailPosition {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""IsInTailPosition" (call) => {
     if false return false else {}
     let __x0__ = true

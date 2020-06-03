@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object IterationStatement9VarDeclaredNames0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""IterationStatement9VarDeclaredNames0" (this, ForBinding, AssignmentExpression, Statement) => {
     access __x0__ = (ForBinding "BoundNames")
     let names = __x0__

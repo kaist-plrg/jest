@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object thisStringValue {
   val length: Int = 0
+  val lang: Boolean = false
   val func: Func = parseFunc(""""thisStringValue" (value) => {
     app __x0__ = (Type value)
     if (= __x0__ String) {

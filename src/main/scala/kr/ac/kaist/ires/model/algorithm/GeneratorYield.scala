@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GeneratorYield {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""GeneratorYield" (iterNextObj) => {
     let genContext = GLOBAL_context
     let generator = genContext["Generator"]

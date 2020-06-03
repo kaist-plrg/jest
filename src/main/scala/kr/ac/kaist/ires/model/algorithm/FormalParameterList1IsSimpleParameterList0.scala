@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object FormalParameterList1IsSimpleParameterList0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""FormalParameterList1IsSimpleParameterList0" (this, FormalParameterList, FormalParameter) => {
     access __x0__ = (FormalParameterList "IsSimpleParameterList")
     if (= __x0__ false) return false else {}

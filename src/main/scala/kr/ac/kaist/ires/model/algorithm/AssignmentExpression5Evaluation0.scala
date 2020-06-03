@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object AssignmentExpression5Evaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""AssignmentExpression5Evaluation0" (this, LeftHandSideExpression, AssignmentOperator, AssignmentExpression) => {
     access __x0__ = (LeftHandSideExpression "Evaluation")
     let lref = __x0__

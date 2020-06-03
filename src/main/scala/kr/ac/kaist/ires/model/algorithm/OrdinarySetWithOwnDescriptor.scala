@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object OrdinarySetWithOwnDescriptor {
   val length: Int = 5
+  val lang: Boolean = true
   val func: Func = parseFunc(""""OrdinarySetWithOwnDescriptor" (O, P, V, Receiver, ownDesc) => {
     app __x0__ = (IsPropertyKey P)
     assert (= __x0__ true)

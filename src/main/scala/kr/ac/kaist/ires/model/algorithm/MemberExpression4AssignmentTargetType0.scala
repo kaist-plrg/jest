@@ -5,5 +5,6 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object MemberExpression4AssignmentTargetType0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""MemberExpression4AssignmentTargetType0" (this, SuperProperty) => return CONST_simple""")
 }

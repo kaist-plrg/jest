@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object IsConstructor {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""IsConstructor" (argument) => {
     app __x0__ = (Type argument)
     if (! (= __x0__ Object)) {

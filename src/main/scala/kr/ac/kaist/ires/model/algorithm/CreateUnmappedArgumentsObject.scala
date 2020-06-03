@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object CreateUnmappedArgumentsObject {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""CreateUnmappedArgumentsObject" (argumentsList) => {
     let len = argumentsList["length"]
     app __x0__ = (ObjectCreate INTRINSIC_ObjectPrototype (new ["ParameterMap"]))

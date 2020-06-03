@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object CreateBuiltinFunction {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""CreateBuiltinFunction" (steps, internalSlotsList, realm, prototype) => {
     if (= realm absent) realm = REALM else {}
     assert (= (typeof realm) "RealmRecord")

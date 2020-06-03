@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GlobalEnvironmentRecordDOTCreateGlobalFunctionBinding {
   val length: Int = 3
+  val lang: Boolean = true
   val func: Func = parseFunc(""""GlobalEnvironmentRecord.CreateGlobalFunctionBinding" (this, N, V, D) => {
     let envRec = this
     let ObjRec = envRec["ObjectRecord"]

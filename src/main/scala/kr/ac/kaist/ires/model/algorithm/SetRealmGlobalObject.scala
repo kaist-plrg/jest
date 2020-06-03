@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object SetRealmGlobalObject {
   val length: Int = 3
+  val lang: Boolean = true
   val func: Func = parseFunc(""""SetRealmGlobalObject" (realmRec, globalObj, thisValue) => {
     if (= globalObj undefined) {
       let intrinsics = realmRec["Intrinsics"]

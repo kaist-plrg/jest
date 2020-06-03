@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object PrimaryExpression12Evaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""PrimaryExpression12Evaluation0" (this, CoverParenthesizedExpressionAndArrowParameterList) => {
     access __x0__ = (CoverParenthesizedExpressionAndArrowParameterList "CoveredParenthesizedExpression")
     let expr = __x0__

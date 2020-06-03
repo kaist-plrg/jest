@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ClassTail0Contains3 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ClassTail0Contains3" (this, ClassHeritage, ClassBody, symbol) => {
     if (is-instance-of symbol ClassBody) return true else {}
     if (is-instance-of symbol ClassHeritage) if (! (= ClassHeritage absent)) return true else return false else {}

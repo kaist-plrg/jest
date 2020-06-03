@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object FunctionEnvironmentRecordDOTGetSuperBase {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""FunctionEnvironmentRecord.GetSuperBase" (this) => {
     let envRec = this
     let home = envRec["HomeObject"]

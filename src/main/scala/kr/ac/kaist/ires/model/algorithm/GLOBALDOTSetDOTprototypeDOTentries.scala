@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTSetDOTprototypeDOTentries {
   val length: Int = 0
+  val lang: Boolean = false
   val func: Func = parseFunc(""""GLOBAL.Set.prototype.entries" (this, argumentsList, NewTarget) => {
     let S = this
     app __x0__ = (CreateSetIterator S "key+value")

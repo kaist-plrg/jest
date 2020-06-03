@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTMapDOTprototypeDOTkeys {
   val length: Int = 0
+  val lang: Boolean = false
   val func: Func = parseFunc(""""GLOBAL.Map.prototype.keys" (this, argumentsList, NewTarget) => {
     let M = this
     app __x0__ = (CreateMapIterator M "key")

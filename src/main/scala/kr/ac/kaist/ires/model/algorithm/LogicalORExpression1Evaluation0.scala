@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object LogicalORExpression1Evaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""LogicalORExpression1Evaluation0" (this, LogicalORExpression, LogicalANDExpression) => {
     access __x0__ = (LogicalORExpression "Evaluation")
     let lref = __x0__

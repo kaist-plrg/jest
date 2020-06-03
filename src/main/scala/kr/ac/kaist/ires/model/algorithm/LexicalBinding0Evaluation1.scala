@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object LexicalBinding0Evaluation1 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""LexicalBinding0Evaluation1" (this, BindingIdentifier, Initializer) => {
     access __x0__ = (BindingIdentifier "StringValue")
     let bindingId = __x0__

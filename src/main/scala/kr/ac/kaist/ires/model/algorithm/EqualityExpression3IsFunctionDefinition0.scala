@@ -5,5 +5,6 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object EqualityExpression3IsFunctionDefinition0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""EqualityExpression3IsFunctionDefinition0" (this, EqualityExpression, RelationalExpression) => return false""")
 }

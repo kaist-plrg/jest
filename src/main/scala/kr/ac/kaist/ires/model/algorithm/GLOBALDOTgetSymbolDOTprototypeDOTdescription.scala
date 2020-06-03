@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTgetSymbolDOTprototypeDOTdescription {
   val length: Int = 0
+  val lang: Boolean = false
   val func: Func = parseFunc(""""GLOBAL.getSymbol.prototype.description" (this, argumentsList, NewTarget) => {
     let s = this
     app __x0__ = (thisSymbolValue s)

@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ToPrimitive {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ToPrimitive" (input, PreferredType) => {
     app __x0__ = (Type input)
     if (= __x0__ Object) {

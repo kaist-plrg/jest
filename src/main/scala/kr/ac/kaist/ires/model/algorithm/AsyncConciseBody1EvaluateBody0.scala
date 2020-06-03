@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object AsyncConciseBody1EvaluateBody0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""AsyncConciseBody1EvaluateBody0" (this, AsyncFunctionBody, functionObject, argumentsList) => {
     access __x0__ = (AsyncFunctionBody "EvaluateBody")
     app __x1__ = (__x0__ functionObject argumentsList)

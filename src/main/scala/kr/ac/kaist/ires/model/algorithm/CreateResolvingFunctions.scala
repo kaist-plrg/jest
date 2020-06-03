@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object CreateResolvingFunctions {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""CreateResolvingFunctions" (promise) => {
     let alreadyResolved = (new Record("Value" -> false))
     let stepsResolve = (new algorithm("name" -> "", "length" -> 1i, "step" -> GLOBALDOTPromiseResolveFunctions))

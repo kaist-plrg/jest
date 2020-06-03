@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object NewTarget0Evaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""NewTarget0Evaluation0" (this) => {
     app __x0__ = (GetNewTarget )
     app __x1__ = (WrapCompletion __x0__)

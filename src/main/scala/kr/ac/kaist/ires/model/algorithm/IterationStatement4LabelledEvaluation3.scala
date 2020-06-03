@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object IterationStatement4LabelledEvaluation3 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""IterationStatement4LabelledEvaluation3" (this, LexicalDeclaration, Expression0, Expression1, Statement, labelSet) => {
     let oldEnv = GLOBAL_context["LexicalEnvironment"]
     app __x0__ = (NewDeclarativeEnvironment oldEnv)

@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object CreateDynamicFunction {
   val length: Int = 4
+  val lang: Boolean = false
   val func: Func = parseFunc(""""CreateDynamicFunction" (constructor, newTarget, kind, args) => {
     let callerContext = GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 2i)]
     let callerRealm = callerContext["Realm"]

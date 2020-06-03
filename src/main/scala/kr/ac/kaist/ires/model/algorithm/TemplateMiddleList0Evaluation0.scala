@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object TemplateMiddleList0Evaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""TemplateMiddleList0Evaluation0" (this, TemplateMiddle, Expression) => {
     access __x0__ = (TemplateMiddle "TV")
     let head = __x0__

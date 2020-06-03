@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object DeclarativeEnvironmentRecordDOTGetBindingValue {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""DeclarativeEnvironmentRecord.GetBindingValue" (this, N, S) => {
     let envRec = this
     if (= envRec["SubMap"][N]["initialized"] false) {

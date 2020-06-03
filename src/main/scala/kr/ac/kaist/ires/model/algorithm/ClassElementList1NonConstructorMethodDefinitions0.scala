@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ClassElementList1NonConstructorMethodDefinitions0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ClassElementList1NonConstructorMethodDefinitions0" (this, ClassElementList, ClassElement) => {
     access __x0__ = (ClassElementList "NonConstructorMethodDefinitions")
     let list = __x0__

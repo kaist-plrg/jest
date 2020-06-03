@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object NewFunctionEnvironment {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""NewFunctionEnvironment" (F, newTarget) => {
     app __x0__ = (Type newTarget)
     assert (|| (= __x0__ Undefined) (= __x0__ Object))

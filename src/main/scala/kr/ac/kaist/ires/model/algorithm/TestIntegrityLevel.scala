@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object TestIntegrityLevel {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""TestIntegrityLevel" (O, level) => {
     app __x0__ = (Type O)
     assert (= __x0__ Object)

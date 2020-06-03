@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object OrdinaryObjectDOTIsExtensible {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""OrdinaryObject.IsExtensible" (O) => {
     app __x0__ = (OrdinaryIsExtensible O)
     if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}

@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object CaseClauses1VarDeclaredNames0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""CaseClauses1VarDeclaredNames0" (this, CaseClauses, CaseClause) => {
     access __x0__ = (CaseClauses "VarDeclaredNames")
     let names = __x0__

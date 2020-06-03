@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object CreateByteDataBlock {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""CreateByteDataBlock" (size) => {
     assert (! (< size 0i))
     !!! "Etc"

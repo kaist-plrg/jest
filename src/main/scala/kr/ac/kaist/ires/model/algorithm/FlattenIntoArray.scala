@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object FlattenIntoArray {
   val length: Int = 5
+  val lang: Boolean = true
   val func: Func = parseFunc(""""FlattenIntoArray" (target, source, sourceLen, start, depth, mapperFunction, thisArg) => {
     let targetIndex = start
     let sourceIndex = 0i

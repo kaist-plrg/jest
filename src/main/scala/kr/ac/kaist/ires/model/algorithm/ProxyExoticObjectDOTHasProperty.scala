@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ProxyExoticObjectDOTHasProperty {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ProxyExoticObject.HasProperty" (O, P) => {
     app __x0__ = (IsPropertyKey P)
     assert (= __x0__ true)

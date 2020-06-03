@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object CopyDataBlockBytes {
   val length: Int = 5
+  val lang: Boolean = true
   val func: Func = parseFunc(""""CopyDataBlockBytes" (toBlock, toIndex, fromBlock, fromIndex, count) => {
     !!! "Etc"
     assert (! (< fromSize (+ fromIndex count)))

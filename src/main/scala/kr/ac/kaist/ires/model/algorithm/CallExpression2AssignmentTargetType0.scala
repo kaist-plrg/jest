@@ -5,5 +5,6 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object CallExpression2AssignmentTargetType0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""CallExpression2AssignmentTargetType0" (this, CallExpression, Arguments) => return CONST_invalid""")
 }

@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object NewDeclarativeEnvironment {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""NewDeclarativeEnvironment" (E) => {
     let env = (new LexicalEnvironment("SubMap" -> (new SubMap())))
     let envRec = (new DeclarativeEnvironmentRecord("SubMap" -> (new SubMap())))

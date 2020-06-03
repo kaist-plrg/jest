@@ -5,5 +5,6 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object HoistableDeclaration1DeclarationPart0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""HoistableDeclaration1DeclarationPart0" (this, GeneratorDeclaration) => return GeneratorDeclaration""")
 }

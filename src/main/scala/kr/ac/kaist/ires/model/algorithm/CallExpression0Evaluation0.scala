@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object CallExpression0Evaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""CallExpression0Evaluation0" (this, CoverCallExpressionAndAsyncArrowHead) => {
     access __x0__ = (CoverCallExpressionAndAsyncArrowHead "CoveredCallExpression")
     let expr = __x0__

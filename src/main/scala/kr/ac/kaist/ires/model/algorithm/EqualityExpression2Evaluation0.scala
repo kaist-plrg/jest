@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object EqualityExpression2Evaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""EqualityExpression2Evaluation0" (this, EqualityExpression, RelationalExpression) => {
     access __x0__ = (EqualityExpression "Evaluation")
     let lref = __x0__

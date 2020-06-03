@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ElementList3ArrayAccumulation1 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ElementList3ArrayAccumulation1" (this, ElementList, Elision, SpreadElement, array, nextIndex) => {
     access __x0__ = (ElementList "ArrayAccumulation")
     app __x1__ = (__x0__ array nextIndex)

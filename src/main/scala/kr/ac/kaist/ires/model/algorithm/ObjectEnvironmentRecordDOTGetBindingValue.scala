@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ObjectEnvironmentRecordDOTGetBindingValue {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ObjectEnvironmentRecord.GetBindingValue" (this, N, S) => {
     let envRec = this
     let bindings = envRec["BindingObject"]

@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object BoundFunctionExoticObjectDOTCall {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""BoundFunctionExoticObject.Call" (F, thisArgument, argumentsList) => {
     let target = F["BoundTargetFunction"]
     let boundThis = F["BoundThis"]

@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object LabelledStatement0Evaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""LabelledStatement0Evaluation0" (this, LabelIdentifier, LabelledItem) => {
     let newLabelSet = (new [])
     access __x0__ = (this "LabelledEvaluation")

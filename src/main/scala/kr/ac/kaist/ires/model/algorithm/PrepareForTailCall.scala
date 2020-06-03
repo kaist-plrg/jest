@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object PrepareForTailCall {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""PrepareForTailCall" () => {
     let leafContext = GLOBAL_context
     if (= GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 1i)] leafContext) {

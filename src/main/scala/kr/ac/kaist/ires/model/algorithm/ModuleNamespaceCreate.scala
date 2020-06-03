@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ModuleNamespaceCreate {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ModuleNamespaceCreate" (module, exports) => {
     assert (= module["Namespace"] undefined)
     let M = (new OrdinaryObject("SubMap" -> (new SubMap())))

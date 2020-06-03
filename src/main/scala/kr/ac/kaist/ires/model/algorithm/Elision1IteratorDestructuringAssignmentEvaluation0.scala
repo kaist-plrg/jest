@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object Elision1IteratorDestructuringAssignmentEvaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""Elision1IteratorDestructuringAssignmentEvaluation0" (this, Elision, iteratorRecord) => {
     access __x0__ = (Elision "IteratorDestructuringAssignmentEvaluation")
     app __x1__ = (__x0__ iteratorRecord)

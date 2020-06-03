@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object CreateRealm {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""CreateRealm" () => {
     let realmRec = REALM
     app __x0__ = (CreateIntrinsics realmRec)

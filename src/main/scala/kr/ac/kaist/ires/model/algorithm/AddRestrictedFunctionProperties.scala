@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object AddRestrictedFunctionProperties {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""AddRestrictedFunctionProperties" (F, realm) => {
     let thrower = realm["Intrinsics"]["INTRINSIC_ThrowTypeError"]
     app __x0__ = (DefinePropertyOrThrow F "caller" (new PropertyDescriptor("Get" -> thrower, "Set" -> thrower, "Enumerable" -> false, "Configurable" -> true)))

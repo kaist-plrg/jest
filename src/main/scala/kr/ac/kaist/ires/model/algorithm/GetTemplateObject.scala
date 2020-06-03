@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GetTemplateObject {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""GetTemplateObject" (templateLiteral) => {
     access __x0__ = (templateLiteral "TemplateStrings")
     app __x1__ = (__x0__ true)

@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ClassElementList1ConstructorMethod0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ClassElementList1ConstructorMethod0" (this, ClassElementList, ClassElement) => {
     access __x0__ = (ClassElementList "ConstructorMethod")
     let head = __x0__

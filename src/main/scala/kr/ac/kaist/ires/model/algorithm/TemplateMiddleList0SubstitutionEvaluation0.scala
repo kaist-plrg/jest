@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object TemplateMiddleList0SubstitutionEvaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""TemplateMiddleList0SubstitutionEvaluation0" (this, TemplateMiddle, Expression) => {
     access __x0__ = (Expression "Evaluation")
     let subRef = __x0__

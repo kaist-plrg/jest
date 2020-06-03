@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ArraySetLength {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ArraySetLength" (A, Desc) => {
     if (= Desc["Value"] absent) {
       app __x0__ = (OrdinaryDefineOwnProperty A "length" Desc)

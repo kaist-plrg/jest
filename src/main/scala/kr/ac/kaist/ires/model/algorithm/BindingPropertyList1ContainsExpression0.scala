@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object BindingPropertyList1ContainsExpression0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""BindingPropertyList1ContainsExpression0" (this, BindingPropertyList, BindingProperty) => {
     access __x0__ = (BindingPropertyList "ContainsExpression")
     let has = __x0__

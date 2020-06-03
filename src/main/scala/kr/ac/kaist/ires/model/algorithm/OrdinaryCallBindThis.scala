@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object OrdinaryCallBindThis {
   val length: Int = 3
+  val lang: Boolean = true
   val func: Func = parseFunc(""""OrdinaryCallBindThis" (F, calleeContext, thisArgument) => {
     let thisMode = F["ThisMode"]
     if (= thisMode CONST_lexical) {

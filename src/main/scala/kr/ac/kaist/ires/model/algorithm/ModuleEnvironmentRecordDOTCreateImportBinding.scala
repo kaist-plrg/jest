@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ModuleEnvironmentRecordDOTCreateImportBinding {
   val length: Int = 3
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ModuleEnvironmentRecord.CreateImportBinding" (this, N, M, N2) => {
     !!! "Etc"
     !!! "Etc"

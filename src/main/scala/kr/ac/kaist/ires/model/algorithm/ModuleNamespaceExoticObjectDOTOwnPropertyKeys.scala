@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ModuleNamespaceExoticObjectDOTOwnPropertyKeys {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ModuleNamespaceExoticObject.OwnPropertyKeys" (O) => {
     let exports = (copy-obj O["Exports"])
     app __x0__ = (OrdinaryOwnPropertyKeys O)

@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GetValue {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""GetValue" (V) => {
     if (is-completion V) if (= V["Type"] CONST_normal) V = V["Value"] else return V else {}
     V

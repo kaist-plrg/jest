@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object IsGenericDescriptor {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""IsGenericDescriptor" (Desc) => {
     if (= Desc undefined) {
       app __x0__ = (WrapCompletion false)

@@ -5,5 +5,6 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ForBinding0IsDestructuring0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ForBinding0IsDestructuring0" (this, BindingIdentifier) => return false""")
 }

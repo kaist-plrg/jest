@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object MethodDefinition4ComputedPropertyContains0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""MethodDefinition4ComputedPropertyContains0" (this, PropertyName, FunctionBody, symbol) => {
     access __x0__ = (PropertyName "ComputedPropertyContains")
     app __x1__ = (__x0__ symbol)

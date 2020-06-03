@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object AwaitRejectedFunctions {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""AwaitRejectedFunctions" () => {
     let F = GLOBAL_context["Function"]
     let asyncContext = F["AsyncContext"]

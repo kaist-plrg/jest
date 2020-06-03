@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTObjectDOTis {
   val length: Int = 2
+  val lang: Boolean = false
   val func: Func = parseFunc(""""GLOBAL.Object.is" (this, argumentsList, NewTarget) => {
     app __x0__ = (GetArgument argumentsList 0i)
     let value1 = __x0__

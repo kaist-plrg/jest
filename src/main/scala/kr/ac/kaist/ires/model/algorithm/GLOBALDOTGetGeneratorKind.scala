@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTGetGeneratorKind {
   val length: Int = 0
+  val lang: Boolean = false
   val func: Func = parseFunc(""""GLOBAL.GetGeneratorKind" (this, argumentsList, NewTarget) => {
     let genContext = GLOBAL_context
     if (= genContext["Generator"] absent) {

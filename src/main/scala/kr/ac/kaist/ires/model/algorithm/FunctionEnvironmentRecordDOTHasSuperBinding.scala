@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object FunctionEnvironmentRecordDOTHasSuperBinding {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""FunctionEnvironmentRecord.HasSuperBinding" (this) => {
     let envRec = this
     if (= envRec["ThisBindingStatus"] "lexical") {

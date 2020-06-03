@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object BindingIdentifier1IteratorBindingInitialization0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""BindingIdentifier1IteratorBindingInitialization0" (BindingIdentifier, iteratorRecord, environment) => {
     assert (= iteratorRecord["Done"] false)
     app __x0__ = (IteratorStep iteratorRecord)

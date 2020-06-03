@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ForDeclaration0BindingInstantiation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ForDeclaration0BindingInstantiation0" (this, LetOrConst, ForBinding, environment) => {
     let envRec = environment["EnvironmentRecord"]
     assert (= (typeof envRec) "DeclarativeEnvironmentRecord")

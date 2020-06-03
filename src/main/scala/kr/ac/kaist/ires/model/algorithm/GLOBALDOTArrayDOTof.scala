@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTArrayDOTof {
   val length: Int = 0
+  val lang: Boolean = false
   val func: Func = parseFunc(""""GLOBAL.Array.of" (this, argumentsList, NewTarget) => {
     let len = argumentsList["length"]
     let items = argumentsList

@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object FunctionExpression0NamedEvaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""FunctionExpression0NamedEvaluation0" (this, FormalParameters, FunctionBody, name) => {
     access __x0__ = (this "Evaluation")
     let closure = __x0__

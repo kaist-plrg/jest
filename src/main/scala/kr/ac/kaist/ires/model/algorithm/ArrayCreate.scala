@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ArrayCreate {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ArrayCreate" (length, proto) => {
     if (= length -0.0) length = 0i else {}
     if (< (- 4294967296i 1i) length) {

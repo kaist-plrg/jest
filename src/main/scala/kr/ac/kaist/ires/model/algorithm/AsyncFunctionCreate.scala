@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object AsyncFunctionCreate {
   val length: Int = 5
+  val lang: Boolean = true
   val func: Func = parseFunc(""""AsyncFunctionCreate" (kind, parameters, body, Scope, Strict) => {
     let functionPrototype = INTRINSIC_AsyncFunctionPrototype
     app __x0__ = (FunctionAllocate functionPrototype Strict "async")

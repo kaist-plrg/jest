@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ModuleEnvironmentRecordDOTGetBindingValue {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ModuleEnvironmentRecord.GetBindingValue" (this, N, S) => {
     assert (= S true)
     !!! "Etc"

@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ArrowParameters1Contains0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ArrowParameters1Contains0" (this, CoverParenthesizedExpressionAndArrowParameterList, symbol) => {
     access __x0__ = (CoverParenthesizedExpressionAndArrowParameterList "CoveredFormalsList")
     let formals = __x0__

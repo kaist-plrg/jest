@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GetIdentifierReference {
   val length: Int = 3
+  val lang: Boolean = true
   val func: Func = parseFunc(""""GetIdentifierReference" (lex, name, strict) => {
     if (= lex null) {
       app __x0__ = (WrapCompletion (new Reference("BaseValue" -> undefined, "ReferencedName" -> name, "StrictReference" -> strict)))

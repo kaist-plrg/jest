@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GeneratorMethod0HasDirectSuper0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""GeneratorMethod0HasDirectSuper0" (this, PropertyName, UniqueFormalParameters, GeneratorBody) => {
     access __x0__ = (UniqueFormalParameters "Contains")
     app __x1__ = (__x0__ "SuperCall")

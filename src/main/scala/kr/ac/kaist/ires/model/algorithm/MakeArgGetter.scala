@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object MakeArgGetter {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""MakeArgGetter" (name, env) => {
     let steps = ArgGetter
     app __x0__ = (CreateBuiltinFunction steps (new ["Name", "Env"]))

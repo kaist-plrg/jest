@@ -5,5 +5,6 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object Block0VarScopedDeclarations0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""Block0VarScopedDeclarations0" (this) => return (new [])""")
 }

@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object TemplateSpans1Evaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""TemplateSpans1Evaluation0" (this, TemplateMiddleList, TemplateTail) => {
     access __x0__ = (TemplateMiddleList "Evaluation")
     let head = __x0__

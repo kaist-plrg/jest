@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object CreateMappedArgumentsObject {
   val length: Int = 4
+  val lang: Boolean = true
   val func: Func = parseFunc(""""CreateMappedArgumentsObject" (func, formals, argumentsList, env) => {
     let len = argumentsList["length"]
     let obj = (new ArgumentsExoticObject("SubMap" -> (new SubMap()), "ParameterMap" -> undefined))

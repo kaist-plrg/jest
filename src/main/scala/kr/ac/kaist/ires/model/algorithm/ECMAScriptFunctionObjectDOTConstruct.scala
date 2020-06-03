@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ECMAScriptFunctionObjectDOTConstruct {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ECMAScriptFunctionObject.Construct" (F, argumentsList, newTarget) => {
     app __x0__ = (Type newTarget)
     assert (= __x0__ Object)

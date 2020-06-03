@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTStringDOTprototypeDOTsubstring {
   val length: Int = 2
+  val lang: Boolean = false
   val func: Func = parseFunc(""""GLOBAL.String.prototype.substring" (this, argumentsList, NewTarget) => {
     app __x0__ = (GetArgument argumentsList 0i)
     let start = __x0__

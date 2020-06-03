@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object StatementListItem0TopLevelVarScopedDeclarations0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""StatementListItem0TopLevelVarScopedDeclarations0" (this, Statement) => {
     if (is-instance-of Statement Statement10) {
       access LabelledStatement = (Statement "LabelledStatement")

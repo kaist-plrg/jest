@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTThenFinallyFunctions {
   val length: Int = 0
+  val lang: Boolean = false
   val func: Func = parseFunc(""""GLOBAL.ThenFinallyFunctions" (this, argumentsList, NewTarget) => {
     let F = GLOBAL_context["Function"]
     let onFinally = F["OnFinally"]

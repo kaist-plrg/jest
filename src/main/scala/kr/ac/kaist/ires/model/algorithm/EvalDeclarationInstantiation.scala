@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object EvalDeclarationInstantiation {
   val length: Int = 4
+  val lang: Boolean = false
   val func: Func = parseFunc(""""EvalDeclarationInstantiation" (body, varEnv, lexEnv, strict) => {
     access __x0__ = (body "VarDeclaredNames")
     let varNames = __x0__

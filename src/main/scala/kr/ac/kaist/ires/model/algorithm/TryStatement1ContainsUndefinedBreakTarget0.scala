@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object TryStatement1ContainsUndefinedBreakTarget0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""TryStatement1ContainsUndefinedBreakTarget0" (this, Block, Finally, labelSet) => {
     access __x0__ = (Block "ContainsUndefinedBreakTarget")
     app __x1__ = (__x0__ labelSet)

@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object PrimaryExpression12HasCallInTailPosition0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""PrimaryExpression12HasCallInTailPosition0" (this, CoverParenthesizedExpressionAndArrowParameterList, call) => {
     access __x0__ = (CoverParenthesizedExpressionAndArrowParameterList "CoveredParenthesizedExpression")
     let expr = __x0__

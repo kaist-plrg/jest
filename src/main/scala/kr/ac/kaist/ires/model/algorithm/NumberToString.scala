@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object NumberToString {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""NumberToString" (m) => {
     if (= m NaN) {
       app __x0__ = (WrapCompletion "NaN")

@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object AsyncGeneratorEnqueue {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""AsyncGeneratorEnqueue" (generator, completion) => {
     assert (is-completion completion)
     app __x0__ = (NewPromiseCapability INTRINSIC_Promise)

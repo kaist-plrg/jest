@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object MethodDefinition0PropertyDefinitionEvaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""MethodDefinition0PropertyDefinitionEvaluation0" (this, PropertyName, UniqueFormalParameters, FunctionBody, object, enumerable) => {
     access __x0__ = (this "DefineMethod")
     app __x1__ = (__x0__ object)

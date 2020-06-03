@@ -5,5 +5,6 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object AsyncArrowFunction0HasName0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""AsyncArrowFunction0HasName0" (this, AsyncArrowBindingIdentifier, AsyncConciseBody) => return false""")
 }

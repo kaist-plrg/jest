@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object FunctionCreate {
   val length: Int = 5
+  val lang: Boolean = true
   val func: Func = parseFunc(""""FunctionCreate" (kind, ParameterList, Body, Scope, Strict, prototype) => {
     if (= prototype absent) prototype = INTRINSIC_FunctionPrototype else {}
     if (! (= kind CONST_Normal)) let allocKind = "non-constructor" else let allocKind = "normal"

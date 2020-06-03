@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTStringDOTprototypeDOTtrimStart {
   val length: Int = 0
+  val lang: Boolean = false
   val func: Func = parseFunc(""""GLOBAL.String.prototype.trimStart" (this, argumentsList, NewTarget) => {
     let S = this
     app __x0__ = (TrimString S "start")

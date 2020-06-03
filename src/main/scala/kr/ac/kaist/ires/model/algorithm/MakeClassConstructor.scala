@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object MakeClassConstructor {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""MakeClassConstructor" (F) => {
     assert (= F["FunctionKind"] "normal")
     F["FunctionKind"] = "classConstructor"

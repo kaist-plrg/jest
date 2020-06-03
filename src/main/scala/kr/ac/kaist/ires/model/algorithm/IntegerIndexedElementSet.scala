@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object IntegerIndexedElementSet {
   val length: Int = 3
+  val lang: Boolean = true
   val func: Func = parseFunc(""""IntegerIndexedElementSet" (O, index, value) => {
     app __x0__ = (Type index)
     assert (= __x0__ Number)

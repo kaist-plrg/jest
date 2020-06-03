@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object AsyncGeneratorReject {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""AsyncGeneratorReject" (generator, exception) => {
     let queue = generator["AsyncGeneratorQueue"]
     assert (< 0i queue["length"])

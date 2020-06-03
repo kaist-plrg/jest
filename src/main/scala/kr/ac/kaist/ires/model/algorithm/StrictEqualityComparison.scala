@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object StrictEqualityComparison {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""StrictEqualityComparison" (x, y) => {
     app __x0__ = (Type x)
     app __x1__ = (Type y)

@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object TryStatement0ContainsUndefinedContinueTarget0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""TryStatement0ContainsUndefinedContinueTarget0" (this, Block, Catch, iterationSet, labelSet) => {
     access __x0__ = (Block "ContainsUndefinedContinueTarget")
     app __x1__ = (__x0__ iterationSet (new []))

@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object BreakStatement1Evaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""BreakStatement1Evaluation0" (this, LabelIdentifier) => {
     access __x0__ = (LabelIdentifier "StringValue")
     let label = __x0__

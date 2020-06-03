@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object BindingElementList1IteratorBindingInitialization0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""BindingElementList1IteratorBindingInitialization0" (this, BindingElementList, BindingElisionElement, iteratorRecord, environment) => {
     access __x0__ = (BindingElementList "IteratorBindingInitialization")
     app __x1__ = (__x0__ iteratorRecord environment)

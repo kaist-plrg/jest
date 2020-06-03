@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object IterationStatement10LabelledEvaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""IterationStatement10LabelledEvaluation0" (this, ForDeclaration, AssignmentExpression, Statement, labelSet) => {
     access __x0__ = (ForDeclaration "BoundNames")
     app __x1__ = (ForInOfHeadEvaluation __x0__ AssignmentExpression CONST_iterate)

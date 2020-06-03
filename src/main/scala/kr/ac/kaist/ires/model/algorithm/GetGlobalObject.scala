@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GetGlobalObject {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""GetGlobalObject" () => {
     let ctx = GLOBAL_context
     let currentRealm = ctx["Realm"]

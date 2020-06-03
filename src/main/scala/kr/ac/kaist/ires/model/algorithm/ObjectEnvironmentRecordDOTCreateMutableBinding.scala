@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ObjectEnvironmentRecordDOTCreateMutableBinding {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ObjectEnvironmentRecord.CreateMutableBinding" (this, N, D) => {
     let envRec = this
     let bindings = envRec["BindingObject"]

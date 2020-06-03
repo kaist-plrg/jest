@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object FulfillPromise {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""FulfillPromise" (promise, value) => {
     assert (= promise["PromiseState"] "pending")
     let reactions = promise["PromiseFulfillReactions"]

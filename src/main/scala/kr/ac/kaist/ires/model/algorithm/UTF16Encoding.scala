@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object UTF16Encoding {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""UTF16Encoding" (cp) => {
     assert (&& (! (< cp 0i)) (! (< 1114111i cp)))
     if (! (< 65535i cp)) return cp else {}

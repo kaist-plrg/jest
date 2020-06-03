@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object AsyncFromSyncIteratorContinuation {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""AsyncFromSyncIteratorContinuation" (result, promiseCapability) => {
     app __x0__ = (IteratorComplete result)
     let done = __x0__

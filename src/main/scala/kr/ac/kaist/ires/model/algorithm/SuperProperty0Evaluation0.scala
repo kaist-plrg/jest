@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object SuperProperty0Evaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""SuperProperty0Evaluation0" (this, Expression) => {
     app __x0__ = (GetThisEnvironment )
     let env = __x0__

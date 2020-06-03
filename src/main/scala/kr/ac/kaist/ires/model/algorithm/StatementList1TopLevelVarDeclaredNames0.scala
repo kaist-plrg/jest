@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object StatementList1TopLevelVarDeclaredNames0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""StatementList1TopLevelVarDeclaredNames0" (this, StatementList, StatementListItem) => {
     access __x0__ = (StatementList "TopLevelVarDeclaredNames")
     let names = __x0__

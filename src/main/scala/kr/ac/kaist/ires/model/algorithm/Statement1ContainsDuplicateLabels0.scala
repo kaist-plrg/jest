@@ -5,5 +5,6 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object Statement1ContainsDuplicateLabels0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""Statement1ContainsDuplicateLabels0" (this, VariableStatement, labelSet) => return false""")
 }

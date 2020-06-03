@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object InitializeBoundName {
   val length: Int = 3
+  val lang: Boolean = true
   val func: Func = parseFunc(""""InitializeBoundName" (name, value, environment) => {
     app __x0__ = (Type name)
     assert (= __x0__ String)

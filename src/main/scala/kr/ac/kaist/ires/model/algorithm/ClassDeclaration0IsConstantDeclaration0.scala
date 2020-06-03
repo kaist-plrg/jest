@@ -5,5 +5,6 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ClassDeclaration0IsConstantDeclaration0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ClassDeclaration0IsConstantDeclaration0" (this, BindingIdentifier, ClassTail) => return false""")
 }

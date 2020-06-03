@@ -5,5 +5,6 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object Statement7VarDeclaredNames0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""Statement7VarDeclaredNames0" (this, BreakStatement) => return (new [])""")
 }

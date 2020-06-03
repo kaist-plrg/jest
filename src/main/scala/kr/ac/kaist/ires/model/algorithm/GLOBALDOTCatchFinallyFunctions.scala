@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTCatchFinallyFunctions {
   val length: Int = 0
+  val lang: Boolean = false
   val func: Func = parseFunc(""""GLOBAL.CatchFinallyFunctions" (this, argumentsList, NewTarget) => {
     let F = GLOBAL_context["Function"]
     let onFinally = F["OnFinally"]

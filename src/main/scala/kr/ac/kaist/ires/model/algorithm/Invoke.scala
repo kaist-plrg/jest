@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object Invoke {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""Invoke" (V, P, argumentsList) => {
     app __x0__ = (IsPropertyKey P)
     assert (= __x0__ true)

@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object EnqueueJob {
   val length: Int = 3
+  val lang: Boolean = true
   val func: Func = parseFunc(""""EnqueueJob" (queueName, job, arguments) => {
     let callerContext = GLOBAL_context
     let callerRealm = callerContext["Realm"]

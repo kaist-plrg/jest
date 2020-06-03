@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object OrdinaryDelete {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""OrdinaryDelete" (O, P) => {
     app __x0__ = (IsPropertyKey P)
     assert (= __x0__ true)

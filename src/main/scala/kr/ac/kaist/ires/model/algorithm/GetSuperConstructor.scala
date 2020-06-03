@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GetSuperConstructor {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""GetSuperConstructor" () => {
     app __x0__ = (GetThisEnvironment )
     let envRec = __x0__

@@ -5,5 +5,6 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object MemberExpression3IsFunctionDefinition0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""MemberExpression3IsFunctionDefinition0" (this, MemberExpression, TemplateLiteral) => return false""")
 }

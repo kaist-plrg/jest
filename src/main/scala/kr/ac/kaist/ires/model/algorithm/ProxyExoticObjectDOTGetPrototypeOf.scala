@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ProxyExoticObjectDOTGetPrototypeOf {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ProxyExoticObject.GetPrototypeOf" (O) => {
     let handler = O["ProxyHandler"]
     if (= handler null) {

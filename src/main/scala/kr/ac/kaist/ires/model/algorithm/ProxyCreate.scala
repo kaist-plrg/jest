@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ProxyCreate {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ProxyCreate" (target, handler) => {
     app __x0__ = (Type target)
     if (! (= __x0__ Object)) {

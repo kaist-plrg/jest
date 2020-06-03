@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object Literal1Evaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""Literal1Evaluation0" (this, BooleanLiteral) => {
     if (= (get-syntax BooleanLiteral) "false") {
       app __x0__ = (WrapCompletion false)

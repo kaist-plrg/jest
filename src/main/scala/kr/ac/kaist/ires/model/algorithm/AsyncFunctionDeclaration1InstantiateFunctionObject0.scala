@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object AsyncFunctionDeclaration1InstantiateFunctionObject0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""AsyncFunctionDeclaration1InstantiateFunctionObject0" (this, FormalParameters, AsyncFunctionBody, scope) => {
     if true let strict = true else let strict = false
     app __x0__ = (AsyncFunctionCreate CONST_Normal FormalParameters AsyncFunctionBody scope strict)

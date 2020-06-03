@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ClassTail0ClassDefinitionEvaluation3 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ClassTail0ClassDefinitionEvaluation3" (this, ClassHeritage, ClassBody, classBinding, className) => {
     access __x0__ = (GLOBAL_context "LexicalEnvironment")
     let lex = __x0__

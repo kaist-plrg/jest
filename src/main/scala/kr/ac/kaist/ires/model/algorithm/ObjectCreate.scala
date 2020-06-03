@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ObjectCreate {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ObjectCreate" (proto, internalSlotsList) => {
     if (= internalSlotsList absent) internalSlotsList = (new []) else {}
     let obj = (new OrdinaryObject("SubMap" -> (new SubMap())))

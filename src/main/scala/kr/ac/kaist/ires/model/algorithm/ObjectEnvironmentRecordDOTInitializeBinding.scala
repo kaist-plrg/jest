@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ObjectEnvironmentRecordDOTInitializeBinding {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ObjectEnvironmentRecord.InitializeBinding" (this, N, V) => {
     let envRec = this
     if (! (= envRec["SubMap"][N] absent)) envRec["SubMap"][N]["initialized"] = true else {}

@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object SetDefaultGlobalBindings {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""SetDefaultGlobalBindings" (realmRec) => {
     let global = realmRec["GlobalObject"]
     let __x0__ = (map-keys GLOBAL)

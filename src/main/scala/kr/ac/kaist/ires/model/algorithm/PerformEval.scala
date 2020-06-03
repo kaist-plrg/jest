@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object PerformEval {
   val length: Int = 4
+  val lang: Boolean = false
   val func: Func = parseFunc(""""PerformEval" (x, evalRealm, strictCaller, direct) => {
     app __x0__ = (Type x)
     if (! (= __x0__ String)) {

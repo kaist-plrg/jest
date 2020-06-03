@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ClassExpression0Evaluation1 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ClassExpression0Evaluation1" (this, BindingIdentifier, ClassTail) => {
     if (= BindingIdentifier absent) let className = undefined else {
       access __x0__ = (BindingIdentifier "StringValue")

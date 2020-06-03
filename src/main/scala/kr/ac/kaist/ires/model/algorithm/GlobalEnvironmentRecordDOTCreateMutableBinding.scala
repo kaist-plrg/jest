@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GlobalEnvironmentRecordDOTCreateMutableBinding {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""GlobalEnvironmentRecord.CreateMutableBinding" (this, N, D) => {
     let envRec = this
     let DclRec = envRec["DeclarativeRecord"]

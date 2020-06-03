@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object DeclarativeEnvironmentRecordDOTDeleteBinding {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""DeclarativeEnvironmentRecord.DeleteBinding" (this, N) => {
     let envRec = this
     assert (! (= envRec["SubMap"][N] absent))

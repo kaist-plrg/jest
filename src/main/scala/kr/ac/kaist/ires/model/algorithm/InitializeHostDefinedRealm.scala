@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object InitializeHostDefinedRealm {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""InitializeHostDefinedRealm" () => {
     app __x0__ = (CreateRealm )
     let realm = __x0__

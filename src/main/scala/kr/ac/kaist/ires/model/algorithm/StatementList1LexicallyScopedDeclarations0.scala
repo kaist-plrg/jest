@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object StatementList1LexicallyScopedDeclarations0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""StatementList1LexicallyScopedDeclarations0" (this, StatementList, StatementListItem) => {
     access __x0__ = (StatementList "LexicallyScopedDeclarations")
     let declarations = __x0__

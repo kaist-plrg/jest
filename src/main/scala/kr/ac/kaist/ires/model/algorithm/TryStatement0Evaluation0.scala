@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object TryStatement0Evaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""TryStatement0Evaluation0" (this, Block, Catch) => {
     access __x0__ = (Block "Evaluation")
     let B = __x0__

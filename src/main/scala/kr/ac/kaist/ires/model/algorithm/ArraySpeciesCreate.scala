@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ArraySpeciesCreate {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ArraySpeciesCreate" (originalArray, length) => {
     if (= length -0.0) length = 0i else {}
     app __x0__ = (IsArray originalArray)

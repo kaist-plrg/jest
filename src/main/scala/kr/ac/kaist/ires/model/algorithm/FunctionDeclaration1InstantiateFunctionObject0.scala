@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object FunctionDeclaration1InstantiateFunctionObject0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""FunctionDeclaration1InstantiateFunctionObject0" (this, FormalParameters, FunctionBody, scope) => {
     app __x0__ = (FunctionCreate CONST_Normal FormalParameters FunctionBody scope true)
     let F = __x0__

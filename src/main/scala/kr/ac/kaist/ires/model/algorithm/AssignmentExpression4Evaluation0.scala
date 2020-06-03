@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object AssignmentExpression4Evaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""AssignmentExpression4Evaluation0" (this, LeftHandSideExpression, AssignmentExpression) => {
     if (! (|| (is-instance-of LeftHandSideExpression ObjectLiteral) (is-instance-of LeftHandSideExpression ArrayLiteral))) {
       access __x0__ = (LeftHandSideExpression "Evaluation")

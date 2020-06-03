@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ArgumentList1ArgumentListEvaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ArgumentList1ArgumentListEvaluation0" (this, AssignmentExpression) => {
     let list = (new [])
     access __x0__ = (AssignmentExpression "Evaluation")

@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ReturnStatement1HasCallInTailPosition0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ReturnStatement1HasCallInTailPosition0" (this, Expression, call) => {
     access __x0__ = (Expression "HasCallInTailPosition")
     app __x1__ = (__x0__ call)

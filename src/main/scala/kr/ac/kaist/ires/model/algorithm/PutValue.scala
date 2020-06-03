@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object PutValue {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""PutValue" (V, W) => {
     if (is-completion V) if (= V["Type"] CONST_normal) V = V["Value"] else return V else {}
     V

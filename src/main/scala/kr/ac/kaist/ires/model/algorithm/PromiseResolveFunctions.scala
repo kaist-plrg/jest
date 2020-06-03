@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object PromiseResolveFunctions {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""PromiseResolveFunctions" () => {
     let F = GLOBAL_context["Function"]
     let promise = F["Promise"]

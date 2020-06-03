@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object TemplateLiteral0TemplateStrings0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""TemplateLiteral0TemplateStrings0" (this, NoSubstitutionTemplate, raw) => {
     if (= raw false) {
       access __x0__ = (NoSubstitutionTemplate "TV")

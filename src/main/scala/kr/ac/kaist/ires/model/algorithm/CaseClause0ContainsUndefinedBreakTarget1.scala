@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object CaseClause0ContainsUndefinedBreakTarget1 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""CaseClause0ContainsUndefinedBreakTarget1" (this, Expression, StatementList, labelSet) => {
     if (! (= StatementList absent)) {
       access __x0__ = (StatementList "ContainsUndefinedBreakTarget")

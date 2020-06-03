@@ -5,5 +5,6 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object Statement8VarScopedDeclarations0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""Statement8VarScopedDeclarations0" (this, ReturnStatement) => return (new [])""")
 }

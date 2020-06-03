@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ModuleNamespaceExoticObjectDOTGetOwnProperty {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ModuleNamespaceExoticObject.GetOwnProperty" (O, P) => {
     app __x0__ = (Type P)
     if (= __x0__ Symbol) {

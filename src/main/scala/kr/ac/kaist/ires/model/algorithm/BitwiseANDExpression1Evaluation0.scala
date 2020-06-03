@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object BitwiseANDExpression1Evaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""BitwiseANDExpression1Evaluation0" (this, A, B) => {
     access __x0__ = (A "Evaluation")
     let lref = __x0__

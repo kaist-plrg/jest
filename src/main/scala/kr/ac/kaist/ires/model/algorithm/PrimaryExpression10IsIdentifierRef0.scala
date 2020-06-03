@@ -5,5 +5,6 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object PrimaryExpression10IsIdentifierRef0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""PrimaryExpression10IsIdentifierRef0" (this, RegularExpressionLiteral) => return false""")
 }

@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GlobalDeclarationInstantiation {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""GlobalDeclarationInstantiation" (script, env) => {
     let envRec = env["EnvironmentRecord"]
     assert (= (typeof envRec) "GlobalEnvironmentRecord")

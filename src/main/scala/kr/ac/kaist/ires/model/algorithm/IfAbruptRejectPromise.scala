@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object IfAbruptRejectPromise {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""IfAbruptRejectPromise" (value, capability) => {
     if (is-completion value) if (= value["Type"] CONST_normal) value = value["Value"] else {
       app __x0__ = (Call capability["Reject"] undefined (new [value["Value"]]))

@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object FunctionDeclaration0InstantiateFunctionObject0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""FunctionDeclaration0InstantiateFunctionObject0" (this, BindingIdentifier, FormalParameters, FunctionBody, scope) => {
     if true let strict = true else let strict = false
     access __x0__ = (BindingIdentifier "StringValue")

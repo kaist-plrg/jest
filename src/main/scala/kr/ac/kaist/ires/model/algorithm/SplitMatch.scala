@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object SplitMatch {
   val length: Int = 3
+  val lang: Boolean = false
   val func: Func = parseFunc(""""SplitMatch" (S, q, R) => {
     app __x0__ = (Type R)
     assert (= __x0__ String)

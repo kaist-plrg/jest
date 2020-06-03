@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object PropertyDefinition0PropertyDefinitionEvaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""PropertyDefinition0PropertyDefinitionEvaluation0" (this, IdentifierReference, object, enumerable) => {
     access __x0__ = (IdentifierReference "StringValue")
     let propName = __x0__

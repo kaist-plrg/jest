@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object LiteralPropertyName2PropName0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""LiteralPropertyName2PropName0" (this, NumericLiteral) => {
     access __x0__ = (NumericLiteral "MV")
     let nbr = __x0__

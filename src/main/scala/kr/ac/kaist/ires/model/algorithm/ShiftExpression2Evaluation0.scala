@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ShiftExpression2Evaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ShiftExpression2Evaluation0" (this, ShiftExpression, AdditiveExpression) => {
     access __x0__ = (ShiftExpression "Evaluation")
     let lref = __x0__

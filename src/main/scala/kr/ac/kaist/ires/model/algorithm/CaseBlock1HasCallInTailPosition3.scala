@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object CaseBlock1HasCallInTailPosition3 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""CaseBlock1HasCallInTailPosition3" (this, CaseClauses0, DefaultClause, CaseClauses1, call) => {
     let has = false
     if (! (= CaseClauses0 absent)) {

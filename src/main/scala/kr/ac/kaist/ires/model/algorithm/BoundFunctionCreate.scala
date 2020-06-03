@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object BoundFunctionCreate {
   val length: Int = 3
+  val lang: Boolean = true
   val func: Func = parseFunc(""""BoundFunctionCreate" (targetFunction, boundThis, boundArgs) => {
     app __x0__ = (Type targetFunction)
     assert (= __x0__ Object)

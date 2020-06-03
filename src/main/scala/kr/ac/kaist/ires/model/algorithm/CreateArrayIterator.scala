@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object CreateArrayIterator {
   val length: Int = 2
+  val lang: Boolean = false
   val func: Func = parseFunc(""""CreateArrayIterator" (array, kind) => {
     app __x0__ = (Type array)
     assert (= __x0__ Object)

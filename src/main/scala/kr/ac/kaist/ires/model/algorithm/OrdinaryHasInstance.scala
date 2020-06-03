@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object OrdinaryHasInstance {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""OrdinaryHasInstance" (C, O) => {
     app __x0__ = (IsCallable C)
     if (= __x0__ false) {

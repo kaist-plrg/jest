@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object AsyncGeneratorResolve {
   val length: Int = 3
+  val lang: Boolean = true
   val func: Func = parseFunc(""""AsyncGeneratorResolve" (generator, value, done) => {
     let queue = generator["AsyncGeneratorQueue"]
     assert (< 0i queue["length"])

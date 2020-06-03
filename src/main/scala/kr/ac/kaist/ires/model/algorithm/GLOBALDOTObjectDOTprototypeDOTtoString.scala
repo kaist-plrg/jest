@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTObjectDOTprototypeDOTtoString {
   val length: Int = 0
+  val lang: Boolean = false
   val func: Func = parseFunc(""""GLOBAL.Object.prototype.toString" (this, argumentsList, NewTarget) => {
     if (= this undefined) {
       app __x0__ = (WrapCompletion "[object Undefined]")

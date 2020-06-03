@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ComputedPropertyName0Evaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ComputedPropertyName0Evaluation0" (this, AssignmentExpression) => {
     access __x0__ = (AssignmentExpression "Evaluation")
     let exprValue = __x0__

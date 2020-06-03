@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object MemberExpression2Contains0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""MemberExpression2Contains0" (this, MemberExpression, IdentifierName, symbol) => {
     access __x0__ = (MemberExpression "Contains")
     app __x1__ = (__x0__ symbol)

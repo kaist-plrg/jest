@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object NewPromiseCapability {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""NewPromiseCapability" (C) => {
     app __x0__ = (IsConstructor C)
     if (= __x0__ false) {

@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ObjectBindingPattern1BindingInitialization0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ObjectBindingPattern1BindingInitialization0" (this, BindingRestProperty, value, environment) => {
     let excludedNames = (new [])
     access __x0__ = (BindingRestProperty "RestBindingInitialization")

@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GetCapabilitiesExecutorFunctions {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""GetCapabilitiesExecutorFunctions" () => {
     let F = GLOBAL_context["Function"]
     let promiseCapability = F["Capability"]

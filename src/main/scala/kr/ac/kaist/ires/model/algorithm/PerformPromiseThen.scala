@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object PerformPromiseThen {
   val length: Int = 3
+  val lang: Boolean = true
   val func: Func = parseFunc(""""PerformPromiseThen" (promise, onFulfilled, onRejected, resultCapability) => {
     app __x0__ = (IsPromise promise)
     assert (= __x0__ true)

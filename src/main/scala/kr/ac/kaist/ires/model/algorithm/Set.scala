@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object Set {
   val length: Int = 4
+  val lang: Boolean = true
   val func: Func = parseFunc(""""Set" (O, P, V, Throw) => {
     app __x0__ = (Type O)
     assert (= __x0__ Object)

@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ArrayBindingPattern2ContainsExpression3 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ArrayBindingPattern2ContainsExpression3" (this, BindingElementList, Elision, BindingRestElement) => {
     access __x0__ = (BindingElementList "ContainsExpression")
     let has = __x0__

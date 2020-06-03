@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GeneratorValidate {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""GeneratorValidate" (generator) => {
     app __x0__ = (Type generator)
     if (! (= __x0__ Object)) {

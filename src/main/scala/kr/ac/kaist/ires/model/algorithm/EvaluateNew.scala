@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object EvaluateNew {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""EvaluateNew" (constructExpr, arguments) => {
     assert (|| (is-instance-of constructExpr NewExpression) (is-instance-of constructExpr MemberExpression))
     assert (|| (= arguments CONST_empty) (is-instance-of arguments Arguments))

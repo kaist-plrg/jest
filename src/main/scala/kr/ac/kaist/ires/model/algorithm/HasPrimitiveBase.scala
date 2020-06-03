@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object HasPrimitiveBase {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""HasPrimitiveBase" (V) => {
     app __x0__ = (Type V)
     assert (= __x0__ Reference)

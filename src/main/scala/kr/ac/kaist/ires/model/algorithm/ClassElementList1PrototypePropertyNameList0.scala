@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ClassElementList1PrototypePropertyNameList0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ClassElementList1PrototypePropertyNameList0" (this, ClassElementList, ClassElement) => {
     access __x0__ = (ClassElementList "PrototypePropertyNameList")
     let list = __x0__

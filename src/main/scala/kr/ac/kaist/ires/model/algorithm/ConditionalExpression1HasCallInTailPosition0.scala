@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ConditionalExpression1HasCallInTailPosition0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ConditionalExpression1HasCallInTailPosition0" (this, LogicalORExpression, AssignmentExpression0, AssignmentExpression1, call) => {
     access __x0__ = (AssignmentExpression0 "HasCallInTailPosition")
     app __x1__ = (__x0__ call)

@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object PromiseReactionJob {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""PromiseReactionJob" (reaction, argument) => {
     let promiseCapability = reaction["Capability"]
     let type = reaction["Type"]

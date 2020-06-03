@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object CreatePerIterationEnvironment {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""CreatePerIterationEnvironment" (perIterationBindings) => {
     if (< 0i perIterationBindings["length"]) {
       let lastIterationEnv = GLOBAL_context["LexicalEnvironment"]

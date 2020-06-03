@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object DeclarativeEnvironmentRecordDOTCreateImmutableBinding {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""DeclarativeEnvironmentRecord.CreateImmutableBinding" (this, N, S) => {
     let envRec = this
     envRec["SubMap"][N] = (new ImmutableBinding("initialized" -> false, "strict" -> S))

@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object IterationStatement12LabelledEvaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""IterationStatement12LabelledEvaluation0" (this, ForBinding, AssignmentExpression, Statement, labelSet) => {
     app __x0__ = (ForInOfHeadEvaluation (new []) AssignmentExpression CONST_asynciterate)
     if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}

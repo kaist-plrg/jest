@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GlobalEnvironmentRecordDOTHasVarDeclaration {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""GlobalEnvironmentRecord.HasVarDeclaration" (this, N) => {
     let envRec = this
     let varDeclaredNames = envRec["VarNames"]

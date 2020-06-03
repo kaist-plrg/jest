@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object BuiltinFunctionObjectDOTConstruct {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""BuiltinFunctionObject.Construct" (F, argumentsList, newTarget) => {
     let callerContext = GLOBAL_context
     if (= callerContext null) {} else {}

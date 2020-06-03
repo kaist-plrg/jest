@@ -5,5 +5,6 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object UpdateExpression4IsFunctionDefinition0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""UpdateExpression4IsFunctionDefinition0" (this, UnaryExpression) => return false""")
 }

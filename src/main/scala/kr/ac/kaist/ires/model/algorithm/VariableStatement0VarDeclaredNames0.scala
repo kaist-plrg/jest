@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object VariableStatement0VarDeclaredNames0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""VariableStatement0VarDeclaredNames0" (this, VariableDeclarationList) => {
     access __x0__ = (VariableDeclarationList "BoundNames")
     return __x0__

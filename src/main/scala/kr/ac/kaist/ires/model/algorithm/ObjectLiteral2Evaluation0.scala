@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ObjectLiteral2Evaluation0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ObjectLiteral2Evaluation0" (this, PropertyDefinitionList) => {
     app __x0__ = (ObjectCreate INTRINSIC_ObjectPrototype)
     let obj = __x0__

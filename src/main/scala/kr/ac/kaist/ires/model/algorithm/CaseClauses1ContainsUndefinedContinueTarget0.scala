@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object CaseClauses1ContainsUndefinedContinueTarget0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""CaseClauses1ContainsUndefinedContinueTarget0" (this, CaseClauses, CaseClause, iterationSet, labelSet) => {
     access __x0__ = (CaseClauses "ContainsUndefinedContinueTarget")
     app __x1__ = (__x0__ iterationSet (new []))

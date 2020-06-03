@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object Encode {
   val length: Int = 2
+  val lang: Boolean = false
   val func: Func = parseFunc(""""Encode" (string, unescapedSet) => {
     let strLen = string["length"]
     let R = ""

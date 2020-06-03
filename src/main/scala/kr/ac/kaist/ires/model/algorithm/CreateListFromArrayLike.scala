@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object CreateListFromArrayLike {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""CreateListFromArrayLike" (obj, elementTypes) => {
     if (= elementTypes absent) elementTypes = (new [Undefined, Null, Boolean, String, Symbol, Number, Object]) else {}
     app __x0__ = (Type obj)

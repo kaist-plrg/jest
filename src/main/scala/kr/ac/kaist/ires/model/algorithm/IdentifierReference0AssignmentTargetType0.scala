@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object IdentifierReference0AssignmentTargetType0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""IdentifierReference0AssignmentTargetType0" (this, Identifier) => {
     let __x0__ = true
     if __x0__ {

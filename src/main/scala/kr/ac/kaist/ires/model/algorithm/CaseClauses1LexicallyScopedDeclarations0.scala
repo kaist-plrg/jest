@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object CaseClauses1LexicallyScopedDeclarations0 {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""CaseClauses1LexicallyScopedDeclarations0" (this, CaseClauses, CaseClause) => {
     access __x0__ = (CaseClauses "LexicallyScopedDeclarations")
     let declarations = __x0__

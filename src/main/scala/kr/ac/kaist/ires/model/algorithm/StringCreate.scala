@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object StringCreate {
   val length: Int = 2
+  val lang: Boolean = true
   val func: Func = parseFunc(""""StringCreate" (value, prototype) => {
     app __x0__ = (Type value)
     assert (= __x0__ String)

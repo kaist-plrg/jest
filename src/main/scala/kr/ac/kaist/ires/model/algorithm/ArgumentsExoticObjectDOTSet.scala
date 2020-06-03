@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ArgumentsExoticObjectDOTSet {
   val length: Int = 3
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ArgumentsExoticObject.Set" (args, P, V, Receiver) => {
     let args = args
     app __x0__ = (SameValue args Receiver)

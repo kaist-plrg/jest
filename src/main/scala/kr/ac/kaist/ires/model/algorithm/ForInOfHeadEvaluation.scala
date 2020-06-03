@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object ForInOfHeadEvaluation {
   val length: Int = 3
+  val lang: Boolean = true
   val func: Func = parseFunc(""""ForInOfHeadEvaluation" (TDZnames, expr, iterationKind) => {
     let oldEnv = GLOBAL_context["LexicalEnvironment"]
     if (< 0i TDZnames["length"]) {

@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object GetThisEnvironment {
   val length: Int = 0
+  val lang: Boolean = true
   val func: Func = parseFunc(""""GetThisEnvironment" () => {
     let lex = GLOBAL_context["LexicalEnvironment"]
     while true {

@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object AsyncGeneratorResumeNext {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""AsyncGeneratorResumeNext" (generator) => {
     let state = generator["AsyncGeneratorState"]
     assert (! (= state "executing"))

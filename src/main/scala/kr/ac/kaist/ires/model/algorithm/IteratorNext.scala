@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object IteratorNext {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""IteratorNext" (iteratorRecord, value) => {
     if (= value absent) {
       app __x0__ = (Call iteratorRecord["NextMethod"] iteratorRecord["Iterator"] (new []))

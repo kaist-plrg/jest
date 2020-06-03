@@ -5,6 +5,7 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object CreateListIteratorRecord {
   val length: Int = 1
+  val lang: Boolean = true
   val func: Func = parseFunc(""""CreateListIteratorRecord" (list) => {
     app __x0__ = (ObjectCreate INTRINSIC_IteratorPrototype (new ["IteratedList", "ListIteratorNextIndex"]))
     let iterator = __x0__
