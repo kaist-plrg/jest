@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object ProxyExoticObjectDOTHasProperty extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ProxyExoticObject.HasProperty" (O, P) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ProxyExoticObject.HasProperty" (O, P) => {
     app __x0__ = (IsPropertyKey P)
     assert (= __x0__ true)
     let handler = O["ProxyHandler"]
@@ -50,5 +50,5 @@ object ProxyExoticObjectDOTHasProperty extends Algorithm {
     } else {}
     app __x12__ = (WrapCompletion booleanTrapResult)
     return __x12__
-  }""")
+  }"""))
 }

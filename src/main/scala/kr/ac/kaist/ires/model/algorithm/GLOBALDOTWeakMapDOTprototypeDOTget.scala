@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GLOBALDOTWeakMapDOTprototypeDOTget extends Algorithm {
   val length: Int = 1
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GLOBAL.WeakMap.prototype.get" (this, argumentsList, NewTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.WeakMap.prototype.get" (this, argumentsList, NewTarget) => {
     app __x0__ = (GetArgument argumentsList 0i)
     let key = __x0__
     let M = this
@@ -42,5 +42,5 @@ object GLOBALDOTWeakMapDOTprototypeDOTget extends Algorithm {
     }
     app __x11__ = (WrapCompletion undefined)
     return __x11__
-  }""")
+  }"""))
 }

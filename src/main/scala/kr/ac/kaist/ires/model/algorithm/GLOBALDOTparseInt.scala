@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GLOBALDOTparseInt extends Algorithm {
   val length: Int = 2
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GLOBAL.parseInt" (this, argumentsList, NewTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.parseInt" (this, argumentsList, NewTarget) => {
     app __x0__ = (GetArgument argumentsList 0i)
     let string = __x0__
     app __x1__ = (GetArgument argumentsList 1i)
@@ -47,5 +47,5 @@ object GLOBALDOTparseInt extends Algorithm {
     !!! "Etc"
     app __x8__ = (WrapCompletion (* sign number))
     return __x8__
-  }""")
+  }"""))
 }

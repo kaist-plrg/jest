@@ -6,5 +6,5 @@ import kr.ac.kaist.ires.ir.Parser._
 object PrimaryExpression3IsFunctionDefinition0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""PrimaryExpression3IsFunctionDefinition0" (this, ArrayLiteral) => return false""")
+  val func: Func = FixUIdWalker(parseFunc(""""PrimaryExpression3IsFunctionDefinition0" (this, ArrayLiteral) => return false"""))
 }

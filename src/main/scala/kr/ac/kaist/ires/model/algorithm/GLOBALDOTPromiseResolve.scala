@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GLOBALDOTPromiseResolve extends Algorithm {
   val length: Int = 2
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GLOBAL.PromiseResolve" (this, argumentsList, NewTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.PromiseResolve" (this, argumentsList, NewTarget) => {
     app __x0__ = (GetArgument argumentsList 0i)
     let C = __x0__
     app __x1__ = (GetArgument argumentsList 1i)
@@ -32,5 +32,5 @@ object GLOBALDOTPromiseResolve extends Algorithm {
     __x8__
     app __x9__ = (WrapCompletion promiseCapability["Promise"])
     return __x9__
-  }""")
+  }"""))
 }

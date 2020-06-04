@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GLOBALDOTNumberDOTprototypeDOTtoString extends Algorithm {
   val length: Int = 1
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GLOBAL.Number.prototype.toString" (this, argumentsList, NewTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Number.prototype.toString" (this, argumentsList, NewTarget) => {
     app __x0__ = (GetArgument argumentsList 0i)
     let radix = __x0__
     app __x1__ = (thisNumberValue this)
@@ -51,5 +51,5 @@ object GLOBALDOTNumberDOTprototypeDOTtoString extends Algorithm {
     }
     app __x7__ = (WrapCompletion __x6__)
     return __x7__
-  }""")
+  }"""))
 }

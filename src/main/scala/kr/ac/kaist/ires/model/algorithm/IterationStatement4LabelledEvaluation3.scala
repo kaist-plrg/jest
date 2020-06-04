@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object IterationStatement4LabelledEvaluation3 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""IterationStatement4LabelledEvaluation3" (this, LexicalDeclaration, Expression0, Expression1, Statement, labelSet) => {
+  val func: Func = FixUIdWalker(parseFunc(""""IterationStatement4LabelledEvaluation3" (this, LexicalDeclaration, Expression0, Expression1, Statement, labelSet) => {
     let oldEnv = GLOBAL_context["LexicalEnvironment"]
     app __x0__ = (NewDeclarativeEnvironment oldEnv)
     let loopEnv = __x0__
@@ -47,5 +47,5 @@ object IterationStatement4LabelledEvaluation3 extends Algorithm {
     app __x12__ = (Completion bodyResult)
     app __x13__ = (WrapCompletion __x12__)
     return __x13__
-  }""")
+  }"""))
 }

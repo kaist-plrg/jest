@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object IsSuperReference extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""IsSuperReference" (V) => {
+  val func: Func = FixUIdWalker(parseFunc(""""IsSuperReference" (V) => {
     app __x0__ = (Type V)
     assert (= __x0__ Reference)
     if (! (= V["thisValue"] absent)) {
@@ -16,5 +16,5 @@ object IsSuperReference extends Algorithm {
       app __x2__ = (WrapCompletion false)
       return __x2__
     }
-  }""")
+  }"""))
 }

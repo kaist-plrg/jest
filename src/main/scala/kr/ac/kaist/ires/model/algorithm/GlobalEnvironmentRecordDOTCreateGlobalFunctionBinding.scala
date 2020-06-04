@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GlobalEnvironmentRecordDOTCreateGlobalFunctionBinding extends Algorithm {
   val length: Int = 3
   val lang: Boolean = true
-  val func: Func = parseFunc(""""GlobalEnvironmentRecord.CreateGlobalFunctionBinding" (this, N, V, D) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GlobalEnvironmentRecord.CreateGlobalFunctionBinding" (this, N, V, D) => {
     let envRec = this
     let ObjRec = envRec["ObjectRecord"]
     let globalObject = ObjRec["BindingObject"]
@@ -26,5 +26,5 @@ object GlobalEnvironmentRecordDOTCreateGlobalFunctionBinding extends Algorithm {
     app __x3__ = (NormalCompletion CONST_empty)
     app __x4__ = (WrapCompletion __x3__)
     return __x4__
-  }""")
+  }"""))
 }

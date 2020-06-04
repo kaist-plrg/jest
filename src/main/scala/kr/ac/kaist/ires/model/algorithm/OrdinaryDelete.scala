@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object OrdinaryDelete extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
-  val func: Func = parseFunc(""""OrdinaryDelete" (O, P) => {
+  val func: Func = FixUIdWalker(parseFunc(""""OrdinaryDelete" (O, P) => {
     app __x0__ = (IsPropertyKey P)
     assert (= __x0__ true)
     app __x1__ = (O["GetOwnProperty"] O P)
@@ -23,5 +23,5 @@ object OrdinaryDelete extends Algorithm {
     } else {}
     app __x4__ = (WrapCompletion false)
     return __x4__
-  }""")
+  }"""))
 }

@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object FromPropertyDescriptor extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""FromPropertyDescriptor" (Desc) => {
+  val func: Func = FixUIdWalker(parseFunc(""""FromPropertyDescriptor" (Desc) => {
     if (= Desc undefined) {
       app __x0__ = (WrapCompletion undefined)
       return __x0__
@@ -39,5 +39,5 @@ object FromPropertyDescriptor extends Algorithm {
     } else {}
     app __x8__ = (WrapCompletion obj)
     return __x8__
-  }""")
+  }"""))
 }

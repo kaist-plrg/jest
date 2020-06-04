@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GLOBALDOTArrayDOTprototypeDOTcopyWithin extends Algorithm {
   val length: Int = 2
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GLOBAL.Array.prototype.copyWithin" (this, argumentsList, NewTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Array.prototype.copyWithin" (this, argumentsList, NewTarget) => {
     app __x0__ = (GetArgument argumentsList 0i)
     let target = __x0__
     app __x1__ = (GetArgument argumentsList 1i)
@@ -88,5 +88,5 @@ object GLOBALDOTArrayDOTprototypeDOTcopyWithin extends Algorithm {
     }
     app __x22__ = (WrapCompletion O)
     return __x22__
-  }""")
+  }"""))
 }

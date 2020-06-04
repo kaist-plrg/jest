@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object ObjectEnvironmentRecordDOTHasBinding extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ObjectEnvironmentRecord.HasBinding" (this, N) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ObjectEnvironmentRecord.HasBinding" (this, N) => {
     let envRec = this
     let bindings = envRec["BindingObject"]
     app __x0__ = (HasProperty bindings N)
@@ -36,5 +36,5 @@ object ObjectEnvironmentRecordDOTHasBinding extends Algorithm {
     } else {}
     app __x8__ = (WrapCompletion true)
     return __x8__
-  }""")
+  }"""))
 }

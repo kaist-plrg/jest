@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object AwaitFulfilledFunctions extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""AwaitFulfilledFunctions" () => {
+  val func: Func = FixUIdWalker(parseFunc(""""AwaitFulfilledFunctions" () => {
     let F = GLOBAL_context["Function"]
     let asyncContext = F["AsyncContext"]
     let prevContext = GLOBAL_context
@@ -20,5 +20,5 @@ object AwaitFulfilledFunctions extends Algorithm {
     }
     app __x3__ = (WrapCompletion undefined)
     return __x3__
-  }""")
+  }"""))
 }

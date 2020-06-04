@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object AssignmentElement0IteratorDestructuringAssignmentEvaluation1 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""AssignmentElement0IteratorDestructuringAssignmentEvaluation1" (this, DestructuringAssignmentTarget, Initializer, iteratorRecord) => {
+  val func: Func = FixUIdWalker(parseFunc(""""AssignmentElement0IteratorDestructuringAssignmentEvaluation1" (this, DestructuringAssignmentTarget, Initializer, iteratorRecord) => {
     if (! (|| (is-instance-of DestructuringAssignmentTarget ObjectLiteral) (is-instance-of DestructuringAssignmentTarget ArrayLiteral))) {
       access __x0__ = (DestructuringAssignmentTarget "Evaluation")
       let lref = __x0__
@@ -57,5 +57,5 @@ object AssignmentElement0IteratorDestructuringAssignmentEvaluation1 extends Algo
     if (is-completion __x15__) if (= __x15__["Type"] CONST_normal) __x15__ = __x15__["Value"] else return __x15__ else {}
     app __x16__ = (WrapCompletion __x15__)
     return __x16__
-  }""")
+  }"""))
 }

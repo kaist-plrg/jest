@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object AssignmentExpression5Evaluation0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""AssignmentExpression5Evaluation0" (this, LeftHandSideExpression, AssignmentOperator, AssignmentExpression) => {
+  val func: Func = FixUIdWalker(parseFunc(""""AssignmentExpression5Evaluation0" (this, LeftHandSideExpression, AssignmentOperator, AssignmentExpression) => {
     access __x0__ = (LeftHandSideExpression "Evaluation")
     let lref = __x0__
     app __x1__ = (GetValue lref)
@@ -113,5 +113,5 @@ object AssignmentExpression5Evaluation0 extends Algorithm {
     __x20__
     app __x21__ = (WrapCompletion r)
     return __x21__
-  }""")
+  }"""))
 }

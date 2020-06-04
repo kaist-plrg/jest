@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object NewGlobalEnvironment extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
-  val func: Func = parseFunc(""""NewGlobalEnvironment" (G, thisValue) => {
+  val func: Func = FixUIdWalker(parseFunc(""""NewGlobalEnvironment" (G, thisValue) => {
     let env = (new LexicalEnvironment("SubMap" -> (new SubMap())))
     let objRec = (new ObjectEnvironmentRecord("SubMap" -> (new SubMap()), "BindingObject" -> G))
     let dclRec = (new DeclarativeEnvironmentRecord("SubMap" -> (new SubMap())))
@@ -19,5 +19,5 @@ object NewGlobalEnvironment extends Algorithm {
     env["Outer"] = null
     app __x0__ = (WrapCompletion env)
     return __x0__
-  }""")
+  }"""))
 }

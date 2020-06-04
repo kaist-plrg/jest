@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object FormalParameterList1BoundNames0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""FormalParameterList1BoundNames0" (this, FormalParameterList, FormalParameter) => {
+  val func: Func = FixUIdWalker(parseFunc(""""FormalParameterList1BoundNames0" (this, FormalParameterList, FormalParameter) => {
     access __x0__ = (FormalParameterList "BoundNames")
     let names = __x0__
     access __x1__ = (FormalParameter "BoundNames")
@@ -18,5 +18,5 @@ object FormalParameterList1BoundNames0 extends Algorithm {
       __x3__ = (+ __x3__ 1i)
     }
     return names
-  }""")
+  }"""))
 }

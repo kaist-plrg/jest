@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object Invoke extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
-  val func: Func = parseFunc(""""Invoke" (V, P, argumentsList) => {
+  val func: Func = FixUIdWalker(parseFunc(""""Invoke" (V, P, argumentsList) => {
     app __x0__ = (IsPropertyKey P)
     assert (= __x0__ true)
     if (= argumentsList absent) argumentsList = (new []) else {}
@@ -17,5 +17,5 @@ object Invoke extends Algorithm {
     if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     app __x3__ = (WrapCompletion __x2__)
     return __x3__
-  }""")
+  }"""))
 }

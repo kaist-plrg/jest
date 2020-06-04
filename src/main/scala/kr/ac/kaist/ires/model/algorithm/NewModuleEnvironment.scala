@@ -6,12 +6,12 @@ import kr.ac.kaist.ires.ir.Parser._
 object NewModuleEnvironment extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""NewModuleEnvironment" (E) => {
+  val func: Func = FixUIdWalker(parseFunc(""""NewModuleEnvironment" (E) => {
     let env = (new LexicalEnvironment("SubMap" -> (new SubMap())))
     !!! "Etc"
     env["EnvironmentRecord"] = envRec
     env["Outer"] = E
     app __x0__ = (WrapCompletion env)
     return __x0__
-  }""")
+  }"""))
 }

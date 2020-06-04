@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object EvaluateCall extends Algorithm {
   val length: Int = 4
   val lang: Boolean = true
-  val func: Func = parseFunc(""""EvaluateCall" (func, ref, arguments, tailPosition) => {
+  val func: Func = FixUIdWalker(parseFunc(""""EvaluateCall" (func, ref, arguments, tailPosition) => {
     if (is-completion ref) if (= ref["Type"] CONST_normal) ref = ref["Value"] else return ref else {}
     ref
     app __x0__ = (Type ref)
@@ -44,5 +44,5 @@ object EvaluateCall extends Algorithm {
     let result = __x11__
     app __x12__ = (WrapCompletion result)
     return __x12__
-  }""")
+  }"""))
 }

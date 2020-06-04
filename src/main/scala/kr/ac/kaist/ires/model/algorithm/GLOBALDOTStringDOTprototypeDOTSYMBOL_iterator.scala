@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GLOBALDOTStringDOTprototypeDOTSYMBOL_iterator extends Algorithm {
   val length: Int = 0
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GLOBAL.String.prototype.SYMBOL_iterator" (this, argumentsList, NewTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.String.prototype.SYMBOL_iterator" (this, argumentsList, NewTarget) => {
     app __x0__ = (RequireObjectCoercible this)
     if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
     let O = __x0__
@@ -16,5 +16,5 @@ object GLOBALDOTStringDOTprototypeDOTSYMBOL_iterator extends Algorithm {
     app __x2__ = (CreateStringIterator S)
     app __x3__ = (WrapCompletion __x2__)
     return __x3__
-  }""")
+  }"""))
 }

@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GLOBALDOTFunctionDOTprototypeDOTtoString extends Algorithm {
   val length: Int = 0
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GLOBAL.Function.prototype.toString" (this, argumentsList, NewTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Function.prototype.toString" (this, argumentsList, NewTarget) => {
     let func = this
     if (|| (= (typeof func) "BoundFunctionExoticObject") (= (typeof func) "BuiltinFunctionObject")) {
       app __x0__ = (WrapCompletion "")
@@ -44,5 +44,5 @@ object GLOBALDOTFunctionDOTprototypeDOTtoString extends Algorithm {
     } else {}
     app __x12__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
     return __x12__
-  }""")
+  }"""))
 }

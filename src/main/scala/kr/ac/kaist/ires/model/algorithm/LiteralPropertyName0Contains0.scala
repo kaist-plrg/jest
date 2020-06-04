@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object LiteralPropertyName0Contains0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""LiteralPropertyName0Contains0" (this, IdentifierName, symbol) => {
+  val func: Func = FixUIdWalker(parseFunc(""""LiteralPropertyName0Contains0" (this, IdentifierName, symbol) => {
     if (is-instance-of symbol ReservedWord) return false else {}
     let __x0__ = (is-instance-of symbol Identifier)
     if __x0__ {
@@ -16,5 +16,5 @@ object LiteralPropertyName0Contains0 extends Algorithm {
     } else {}
     if __x0__ return true else {}
     return false
-  }""")
+  }"""))
 }

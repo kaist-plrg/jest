@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GetTemplateObject extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""GetTemplateObject" (templateLiteral) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GetTemplateObject" (templateLiteral) => {
     access __x0__ = (templateLiteral "TemplateStrings")
     app __x1__ = (__x0__ true)
     let rawStrings = __x1__
@@ -52,5 +52,5 @@ object GetTemplateObject extends Algorithm {
     append (new Record("Site" -> templateLiteral, "Array" -> template)) -> templateRegistry
     app __x14__ = (WrapCompletion template)
     return __x14__
-  }""")
+  }"""))
 }

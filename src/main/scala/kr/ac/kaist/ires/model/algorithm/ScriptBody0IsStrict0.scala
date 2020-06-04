@@ -6,5 +6,5 @@ import kr.ac.kaist.ires.ir.Parser._
 object ScriptBody0IsStrict0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ScriptBody0IsStrict0" (this, StatementList) => if true return true else return false""")
+  val func: Func = FixUIdWalker(parseFunc(""""ScriptBody0IsStrict0" (this, StatementList) => if true return true else return false"""))
 }

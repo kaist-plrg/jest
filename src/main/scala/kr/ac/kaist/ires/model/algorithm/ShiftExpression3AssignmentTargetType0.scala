@@ -6,5 +6,5 @@ import kr.ac.kaist.ires.ir.Parser._
 object ShiftExpression3AssignmentTargetType0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ShiftExpression3AssignmentTargetType0" (this, ShiftExpression, AdditiveExpression) => return CONST_invalid""")
+  val func: Func = FixUIdWalker(parseFunc(""""ShiftExpression3AssignmentTargetType0" (this, ShiftExpression, AdditiveExpression) => return CONST_invalid"""))
 }

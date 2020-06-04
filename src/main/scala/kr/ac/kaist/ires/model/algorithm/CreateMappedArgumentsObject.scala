@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object CreateMappedArgumentsObject extends Algorithm {
   val length: Int = 4
   val lang: Boolean = true
-  val func: Func = parseFunc(""""CreateMappedArgumentsObject" (func, formals, argumentsList, env) => {
+  val func: Func = FixUIdWalker(parseFunc(""""CreateMappedArgumentsObject" (func, formals, argumentsList, env) => {
     let len = argumentsList["length"]
     let obj = (new ArgumentsExoticObject("SubMap" -> (new SubMap()), "ParameterMap" -> undefined))
     obj["GetOwnProperty"] = ArgumentsExoticObjectDOTGetOwnProperty
@@ -71,5 +71,5 @@ object CreateMappedArgumentsObject extends Algorithm {
     __x10__
     app __x11__ = (WrapCompletion obj)
     return __x11__
-  }""")
+  }"""))
 }

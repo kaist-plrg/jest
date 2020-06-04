@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object CallExpression4Evaluation0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""CallExpression4Evaluation0" (this, MemberExpression, IdentifierName) => {
+  val func: Func = FixUIdWalker(parseFunc(""""CallExpression4Evaluation0" (this, MemberExpression, IdentifierName) => {
     access __x0__ = (MemberExpression "Evaluation")
     let baseReference = __x0__
     app __x1__ = (GetValue baseReference)
@@ -20,5 +20,5 @@ object CallExpression4Evaluation0 extends Algorithm {
     if true let strict = true else let strict = false
     app __x4__ = (WrapCompletion (new Reference("BaseValue" -> bv, "ReferencedName" -> propertyNameString, "StrictReference" -> strict)))
     return __x4__
-  }""")
+  }"""))
 }

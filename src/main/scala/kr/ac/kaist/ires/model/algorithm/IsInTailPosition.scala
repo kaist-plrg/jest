@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object IsInTailPosition extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""IsInTailPosition" (call) => {
+  val func: Func = FixUIdWalker(parseFunc(""""IsInTailPosition" (call) => {
     if false return false else {}
     let __x0__ = true
     let __x1__ = call
@@ -48,5 +48,5 @@ object IsInTailPosition extends Algorithm {
     access __x10__ = (body "HasCallInTailPosition")
     app __x11__ = (__x10__ call)
     return __x11__
-  }""")
+  }"""))
 }

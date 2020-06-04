@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object SpreadElement0ArrayAccumulation0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""SpreadElement0ArrayAccumulation0" (this, AssignmentExpression, array, nextIndex) => {
+  val func: Func = FixUIdWalker(parseFunc(""""SpreadElement0ArrayAccumulation0" (this, AssignmentExpression, array, nextIndex) => {
     access __x0__ = (AssignmentExpression "Evaluation")
     let spreadRef = __x0__
     app __x1__ = (GetValue spreadRef)
@@ -33,5 +33,5 @@ object SpreadElement0ArrayAccumulation0 extends Algorithm {
       assert (= status true)
       nextIndex = (+ nextIndex 1i)
     }
-  }""")
+  }"""))
 }

@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GeneratorValidate extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""GeneratorValidate" (generator) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GeneratorValidate" (generator) => {
     app __x0__ = (Type generator)
     if (! (= __x0__ Object)) {
       app __x1__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
@@ -23,5 +23,5 @@ object GeneratorValidate extends Algorithm {
     } else {}
     app __x4__ = (WrapCompletion state)
     return __x4__
-  }""")
+  }"""))
 }

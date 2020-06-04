@@ -6,5 +6,5 @@ import kr.ac.kaist.ires.ir.Parser._
 object ConciseBody0LexicallyScopedDeclarations0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ConciseBody0LexicallyScopedDeclarations0" (this, AssignmentExpression) => return (new [])""")
+  val func: Func = FixUIdWalker(parseFunc(""""ConciseBody0LexicallyScopedDeclarations0" (this, AssignmentExpression) => return (new [])"""))
 }

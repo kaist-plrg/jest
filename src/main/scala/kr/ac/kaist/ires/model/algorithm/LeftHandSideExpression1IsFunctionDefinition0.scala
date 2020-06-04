@@ -6,5 +6,5 @@ import kr.ac.kaist.ires.ir.Parser._
 object LeftHandSideExpression1IsFunctionDefinition0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""LeftHandSideExpression1IsFunctionDefinition0" (this, CallExpression) => return false""")
+  val func: Func = FixUIdWalker(parseFunc(""""LeftHandSideExpression1IsFunctionDefinition0" (this, CallExpression) => return false"""))
 }

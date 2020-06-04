@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object ProxyExoticObjectDOTSetPrototypeOf extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ProxyExoticObject.SetPrototypeOf" (O, V) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ProxyExoticObject.SetPrototypeOf" (O, V) => {
     let handler = O["ProxyHandler"]
     if (= handler null) {
       app __x0__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
@@ -49,5 +49,5 @@ object ProxyExoticObjectDOTSetPrototypeOf extends Algorithm {
     } else {}
     app __x13__ = (WrapCompletion true)
     return __x13__
-  }""")
+  }"""))
 }

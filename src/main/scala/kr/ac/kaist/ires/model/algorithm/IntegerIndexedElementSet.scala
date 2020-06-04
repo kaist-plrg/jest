@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object IntegerIndexedElementSet extends Algorithm {
   val length: Int = 3
   val lang: Boolean = true
-  val func: Func = parseFunc(""""IntegerIndexedElementSet" (O, index, value) => {
+  val func: Func = FixUIdWalker(parseFunc(""""IntegerIndexedElementSet" (O, index, value) => {
     app __x0__ = (Type index)
     assert (= __x0__ Number)
     app __x1__ = (ToNumber value)
@@ -41,5 +41,5 @@ object IntegerIndexedElementSet extends Algorithm {
     __x8__
     app __x9__ = (WrapCompletion true)
     return __x9__
-  }""")
+  }"""))
 }

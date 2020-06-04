@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GlobalDeclarationInstantiation extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
-  val func: Func = parseFunc(""""GlobalDeclarationInstantiation" (script, env) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GlobalDeclarationInstantiation" (script, env) => {
     let envRec = env["EnvironmentRecord"]
     assert (= (typeof envRec) "GlobalEnvironmentRecord")
     access __x0__ = (script "LexicallyDeclaredNames")
@@ -150,5 +150,5 @@ object GlobalDeclarationInstantiation extends Algorithm {
     app __x45__ = (NormalCompletion CONST_empty)
     app __x46__ = (WrapCompletion __x45__)
     return __x46__
-  }""")
+  }"""))
 }

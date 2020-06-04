@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object IteratorComplete extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""IteratorComplete" (iterResult) => {
+  val func: Func = FixUIdWalker(parseFunc(""""IteratorComplete" (iterResult) => {
     app __x0__ = (Type iterResult)
     assert (= __x0__ Object)
     app __x1__ = (Get iterResult "done")
@@ -14,5 +14,5 @@ object IteratorComplete extends Algorithm {
     app __x2__ = (ToBoolean __x1__)
     app __x3__ = (WrapCompletion __x2__)
     return __x3__
-  }""")
+  }"""))
 }

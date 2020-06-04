@@ -6,5 +6,5 @@ import kr.ac.kaist.ires.ir.Parser._
 object ShiftExpression3IsFunctionDefinition0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ShiftExpression3IsFunctionDefinition0" (this, ShiftExpression, AdditiveExpression) => return false""")
+  val func: Func = FixUIdWalker(parseFunc(""""ShiftExpression3IsFunctionDefinition0" (this, ShiftExpression, AdditiveExpression) => return false"""))
 }

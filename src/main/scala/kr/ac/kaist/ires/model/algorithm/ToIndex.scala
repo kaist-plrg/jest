@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object ToIndex extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ToIndex" (value) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ToIndex" (value) => {
     if (= value undefined) let index = 0i else {
       app __x0__ = (ToInteger value)
       if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
@@ -26,5 +26,5 @@ object ToIndex extends Algorithm {
     }
     app __x5__ = (WrapCompletion index)
     return __x5__
-  }""")
+  }"""))
 }

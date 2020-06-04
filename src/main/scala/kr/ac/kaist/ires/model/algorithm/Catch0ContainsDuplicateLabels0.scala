@@ -6,9 +6,9 @@ import kr.ac.kaist.ires.ir.Parser._
 object Catch0ContainsDuplicateLabels0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""Catch0ContainsDuplicateLabels0" (this, CatchParameter, Block, labelSet) => {
+  val func: Func = FixUIdWalker(parseFunc(""""Catch0ContainsDuplicateLabels0" (this, CatchParameter, Block, labelSet) => {
     access __x0__ = (Block "ContainsDuplicateLabels")
     app __x1__ = (__x0__ labelSet)
     return __x1__
-  }""")
+  }"""))
 }

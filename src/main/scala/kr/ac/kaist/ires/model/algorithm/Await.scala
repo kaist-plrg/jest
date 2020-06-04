@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object Await extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""Await" (value) => {
+  val func: Func = FixUIdWalker(parseFunc(""""Await" (value) => {
     let asyncContext = GLOBAL_context
     app __x0__ = (PromiseResolve INTRINSIC_Promise value)
     if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
@@ -32,5 +32,5 @@ object Await extends Algorithm {
     asyncContext["ResumeCont"] = (completion) [=>] return completion
     app __x5__ = (NormalCompletion undefined)
     app __x6__ = (__ret__ __x5__)
-  }""")
+  }"""))
 }

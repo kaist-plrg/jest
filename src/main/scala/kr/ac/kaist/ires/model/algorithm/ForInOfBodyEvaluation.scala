@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object ForInOfBodyEvaluation extends Algorithm {
   val length: Int = 6
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ForInOfBodyEvaluation" (lhs, stmt, iteratorRecord, iterationKind, lhsKind, labelSet, iteratorKind) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ForInOfBodyEvaluation" (lhs, stmt, iteratorRecord, iterationKind, lhsKind, labelSet, iteratorKind) => {
     if (= iteratorKind absent) iteratorKind = CONST_sync else {}
     let oldEnv = GLOBAL_context["LexicalEnvironment"]
     let V = undefined
@@ -132,5 +132,5 @@ object ForInOfBodyEvaluation extends Algorithm {
       } else {}
       if (! (= result["Value"] CONST_empty)) V = result["Value"] else {}
     }
-  }""")
+  }"""))
 }

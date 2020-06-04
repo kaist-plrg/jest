@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GLOBALDOTStringDOTprototypeDOTsplit extends Algorithm {
   val length: Int = 2
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GLOBAL.String.prototype.split" (this, argumentsList, NewTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.String.prototype.split" (this, argumentsList, NewTarget) => {
     app __x0__ = (GetArgument argumentsList 0i)
     let separator = __x0__
     app __x1__ = (GetArgument argumentsList 1i)
@@ -94,5 +94,5 @@ object GLOBALDOTStringDOTprototypeDOTsplit extends Algorithm {
     __x22__
     app __x23__ = (WrapCompletion A)
     return __x23__
-  }""")
+  }"""))
 }

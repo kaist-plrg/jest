@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GeneratorYield extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""GeneratorYield" (iterNextObj) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GeneratorYield" (iterNextObj) => {
     let genContext = GLOBAL_context
     let generator = genContext["Generator"]
     app __x0__ = (GetGeneratorKind )
@@ -23,5 +23,5 @@ object GeneratorYield extends Algorithm {
     }
     app __x3__ = (NormalCompletion iterNextObj)
     app __x4__ = ((pop genContext["ReturnCont"] 0i) __x3__)
-  }""")
+  }"""))
 }

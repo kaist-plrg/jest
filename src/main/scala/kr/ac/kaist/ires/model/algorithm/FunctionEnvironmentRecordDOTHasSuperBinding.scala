@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object FunctionEnvironmentRecordDOTHasSuperBinding extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""FunctionEnvironmentRecord.HasSuperBinding" (this) => {
+  val func: Func = FixUIdWalker(parseFunc(""""FunctionEnvironmentRecord.HasSuperBinding" (this) => {
     let envRec = this
     if (= envRec["ThisBindingStatus"] "lexical") {
       app __x0__ = (WrapCompletion false)
@@ -19,5 +19,5 @@ object FunctionEnvironmentRecordDOTHasSuperBinding extends Algorithm {
       app __x2__ = (WrapCompletion true)
       return __x2__
     }
-  }""")
+  }"""))
 }

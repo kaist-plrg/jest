@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object StatementList1Evaluation0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""StatementList1Evaluation0" (this, StatementList, StatementListItem) => {
+  val func: Func = FixUIdWalker(parseFunc(""""StatementList1Evaluation0" (this, StatementList, StatementListItem) => {
     access __x0__ = (StatementList "Evaluation")
     let sl = __x0__
     if (is-completion sl) if (= sl["Type"] CONST_normal) sl = sl["Value"] else return sl else {}
@@ -17,5 +17,5 @@ object StatementList1Evaluation0 extends Algorithm {
     app __x3__ = (Completion __x2__)
     app __x4__ = (WrapCompletion __x3__)
     return __x4__
-  }""")
+  }"""))
 }

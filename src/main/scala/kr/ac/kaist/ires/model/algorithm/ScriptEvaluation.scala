@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object ScriptEvaluation extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ScriptEvaluation" (scriptRecord) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ScriptEvaluation" (scriptRecord) => {
     let globalEnv = scriptRecord["Realm"]["GlobalEnv"]
     let scriptCxt = (new ExecutionContext("SubMap" -> (new SubMap())))
     scriptCxt["Function"] = null
@@ -37,5 +37,5 @@ object ScriptEvaluation extends Algorithm {
     app __x4__ = (Completion result)
     app __x5__ = (WrapCompletion __x4__)
     return __x5__
-  }""")
+  }"""))
 }

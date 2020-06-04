@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object OrdinarySet extends Algorithm {
   val length: Int = 4
   val lang: Boolean = true
-  val func: Func = parseFunc(""""OrdinarySet" (O, P, V, Receiver) => {
+  val func: Func = FixUIdWalker(parseFunc(""""OrdinarySet" (O, P, V, Receiver) => {
     app __x0__ = (IsPropertyKey P)
     assert (= __x0__ true)
     app __x1__ = (O["GetOwnProperty"] O P)
@@ -15,5 +15,5 @@ object OrdinarySet extends Algorithm {
     app __x2__ = (OrdinarySetWithOwnDescriptor O P V Receiver ownDesc)
     app __x3__ = (WrapCompletion __x2__)
     return __x3__
-  }""")
+  }"""))
 }

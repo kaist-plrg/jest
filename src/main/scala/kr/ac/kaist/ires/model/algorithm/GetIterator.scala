@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GetIterator extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""GetIterator" (obj, hint, method) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GetIterator" (obj, hint, method) => {
     if (= hint absent) hint = CONST_sync else {}
     assert (|| (= hint CONST_sync) (= hint CONST_async))
     if (= method absent) if (= hint CONST_async) {
@@ -44,5 +44,5 @@ object GetIterator extends Algorithm {
     let iteratorRecord = (new Record("Iterator" -> iterator, "NextMethod" -> nextMethod, "Done" -> false))
     app __x10__ = (WrapCompletion iteratorRecord)
     return __x10__
-  }""")
+  }"""))
 }

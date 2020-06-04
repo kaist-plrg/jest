@@ -6,5 +6,5 @@ import kr.ac.kaist.ires.ir.Parser._
 object CoverParenthesizedExpressionAndArrowParameterList4CoveredFormalsList0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""CoverParenthesizedExpressionAndArrowParameterList4CoveredFormalsList0" (this, BindingPattern) => return (parse-syntax this "ArrowFormalParameters" )""")
+  val func: Func = FixUIdWalker(parseFunc(""""CoverParenthesizedExpressionAndArrowParameterList4CoveredFormalsList0" (this, BindingPattern) => return (parse-syntax this "ArrowFormalParameters" )"""))
 }

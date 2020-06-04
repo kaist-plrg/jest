@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object ForInOfHeadEvaluation extends Algorithm {
   val length: Int = 3
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ForInOfHeadEvaluation" (TDZnames, expr, iterationKind) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ForInOfHeadEvaluation" (TDZnames, expr, iterationKind) => {
     let oldEnv = GLOBAL_context["LexicalEnvironment"]
     if (< 0i TDZnames["length"]) {
       app __x0__ = (NewDeclarativeEnvironment oldEnv)
@@ -49,5 +49,5 @@ object ForInOfHeadEvaluation extends Algorithm {
       app __x11__ = (WrapCompletion __x10__)
       return __x11__
     }
-  }""")
+  }"""))
 }

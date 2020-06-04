@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object InitializeBoundName extends Algorithm {
   val length: Int = 3
   val lang: Boolean = true
-  val func: Func = parseFunc(""""InitializeBoundName" (name, value, environment) => {
+  val func: Func = FixUIdWalker(parseFunc(""""InitializeBoundName" (name, value, environment) => {
     app __x0__ = (Type name)
     assert (= __x0__ String)
     if (! (= environment undefined)) {
@@ -24,5 +24,5 @@ object InitializeBoundName extends Algorithm {
       app __x6__ = (WrapCompletion __x5__)
       return __x6__
     }
-  }""")
+  }"""))
 }

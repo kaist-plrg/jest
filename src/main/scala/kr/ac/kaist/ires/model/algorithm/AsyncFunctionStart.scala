@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object AsyncFunctionStart extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
-  val func: Func = parseFunc(""""AsyncFunctionStart" (promiseCapability, asyncFunctionBody) => {
+  val func: Func = FixUIdWalker(parseFunc(""""AsyncFunctionStart" (promiseCapability, asyncFunctionBody) => {
     let runningContext = GLOBAL_context
     let asyncContext = (copy-obj runningContext)
     asyncContext["ResumeCont"] = () [=>] {
@@ -45,5 +45,5 @@ object AsyncFunctionStart extends Algorithm {
     }
     app __x9__ = (NormalCompletion undefined)
     return __x9__
-  }""")
+  }"""))
 }

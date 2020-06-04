@@ -6,5 +6,5 @@ import kr.ac.kaist.ires.ir.Parser._
 object ArrowParameters0CoveredFormalsList0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ArrowParameters0CoveredFormalsList0" (this, BindingIdentifier) => return this""")
+  val func: Func = FixUIdWalker(parseFunc(""""ArrowParameters0CoveredFormalsList0" (this, BindingIdentifier) => return this"""))
 }

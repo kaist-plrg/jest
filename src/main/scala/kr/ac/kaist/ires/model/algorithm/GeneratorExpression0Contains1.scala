@@ -6,5 +6,5 @@ import kr.ac.kaist.ires.ir.Parser._
 object GeneratorExpression0Contains1 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""GeneratorExpression0Contains1" (this, BindingIdentifier, FormalParameters, GeneratorBody, symbol) => return false""")
+  val func: Func = FixUIdWalker(parseFunc(""""GeneratorExpression0Contains1" (this, BindingIdentifier, FormalParameters, GeneratorBody, symbol) => return false"""))
 }

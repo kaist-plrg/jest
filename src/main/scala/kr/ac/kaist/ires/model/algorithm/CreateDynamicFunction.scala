@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object CreateDynamicFunction extends Algorithm {
   val length: Int = 4
   val lang: Boolean = false
-  val func: Func = parseFunc(""""CreateDynamicFunction" (constructor, newTarget, kind, args) => {
+  val func: Func = FixUIdWalker(parseFunc(""""CreateDynamicFunction" (constructor, newTarget, kind, args) => {
     let callerContext = GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 2i)]
     let callerRealm = callerContext["Realm"]
     let calleeRealm = REALM
@@ -139,5 +139,5 @@ object CreateDynamicFunction extends Algorithm {
     F["SourceText"] = sourceText
     app __x35__ = (WrapCompletion F)
     return __x35__
-  }""")
+  }"""))
 }

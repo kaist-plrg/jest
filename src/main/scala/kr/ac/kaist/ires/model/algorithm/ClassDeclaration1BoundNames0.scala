@@ -6,5 +6,5 @@ import kr.ac.kaist.ires.ir.Parser._
 object ClassDeclaration1BoundNames0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ClassDeclaration1BoundNames0" (this, ClassTail) => return (new ["*default*"])""")
+  val func: Func = FixUIdWalker(parseFunc(""""ClassDeclaration1BoundNames0" (this, ClassTail) => return (new ["*default*"])"""))
 }

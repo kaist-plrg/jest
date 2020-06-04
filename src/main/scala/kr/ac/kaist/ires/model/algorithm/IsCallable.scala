@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object IsCallable extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""IsCallable" (argument) => {
+  val func: Func = FixUIdWalker(parseFunc(""""IsCallable" (argument) => {
     app __x0__ = (Type argument)
     if (! (= __x0__ Object)) {
       app __x1__ = (WrapCompletion false)
@@ -18,5 +18,5 @@ object IsCallable extends Algorithm {
     } else {}
     app __x3__ = (WrapCompletion false)
     return __x3__
-  }""")
+  }"""))
 }

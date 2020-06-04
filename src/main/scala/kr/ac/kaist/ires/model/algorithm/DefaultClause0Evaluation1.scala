@@ -6,9 +6,9 @@ import kr.ac.kaist.ires.ir.Parser._
 object DefaultClause0Evaluation1 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""DefaultClause0Evaluation1" (this, StatementList) => {
+  val func: Func = FixUIdWalker(parseFunc(""""DefaultClause0Evaluation1" (this, StatementList) => {
     access __x0__ = (StatementList "Evaluation")
     app __x1__ = (WrapCompletion __x0__)
     return __x1__
-  }""")
+  }"""))
 }

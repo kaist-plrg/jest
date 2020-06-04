@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object ToInteger extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ToInteger" (argument) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ToInteger" (argument) => {
     app __x0__ = (ToNumber argument)
     if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
     let number = __x0__
@@ -20,5 +20,5 @@ object ToInteger extends Algorithm {
     } else {}
     app __x3__ = (WrapCompletion (convert number num2int ))
     return __x3__
-  }""")
+  }"""))
 }

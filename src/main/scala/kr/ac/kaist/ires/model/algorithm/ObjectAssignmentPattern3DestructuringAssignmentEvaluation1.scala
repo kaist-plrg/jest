@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object ObjectAssignmentPattern3DestructuringAssignmentEvaluation1 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ObjectAssignmentPattern3DestructuringAssignmentEvaluation1" (this, AssignmentPropertyList, AssignmentRestProperty, value) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ObjectAssignmentPattern3DestructuringAssignmentEvaluation1" (this, AssignmentPropertyList, AssignmentRestProperty, value) => {
     app __x0__ = (RequireObjectCoercible value)
     if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
     __x0__
@@ -18,5 +18,5 @@ object ObjectAssignmentPattern3DestructuringAssignmentEvaluation1 extends Algori
     app __x4__ = (__x3__ value excludedNames)
     app __x5__ = (WrapCompletion __x4__)
     return __x5__
-  }""")
+  }"""))
 }

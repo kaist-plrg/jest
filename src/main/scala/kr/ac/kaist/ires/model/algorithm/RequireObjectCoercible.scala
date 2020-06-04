@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object RequireObjectCoercible extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""RequireObjectCoercible" (argument) => {
+  val func: Func = FixUIdWalker(parseFunc(""""RequireObjectCoercible" (argument) => {
     if (|| (= (typeof argument) "Undefined") (= (typeof argument) "Null")) {
       return (new Completion (
         "Type" -> CONST_throw,
@@ -20,5 +20,5 @@ object RequireObjectCoercible extends Algorithm {
     } else {
       return argument
     }
-  }""")
+  }"""))
 }

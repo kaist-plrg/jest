@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object ModuleNamespaceExoticObjectDOTDefineOwnProperty extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ModuleNamespaceExoticObject.DefineOwnProperty" (O, P, Desc) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ModuleNamespaceExoticObject.DefineOwnProperty" (O, P, Desc) => {
     app __x0__ = (Type P)
     if (= __x0__ Symbol) {
       app __x1__ = (OrdinaryDefineOwnProperty O P Desc)
@@ -44,5 +44,5 @@ object ModuleNamespaceExoticObjectDOTDefineOwnProperty extends Algorithm {
     } else {}
     app __x12__ = (WrapCompletion true)
     return __x12__
-  }""")
+  }"""))
 }

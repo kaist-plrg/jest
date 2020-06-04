@@ -6,8 +6,8 @@ import kr.ac.kaist.ires.ir.Parser._
 object FunctionStatementList0VarScopedDeclarations1 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""FunctionStatementList0VarScopedDeclarations1" (this, StatementList) => {
+  val func: Func = FixUIdWalker(parseFunc(""""FunctionStatementList0VarScopedDeclarations1" (this, StatementList) => {
     access __x0__ = (StatementList "TopLevelVarScopedDeclarations")
     return __x0__
-  }""")
+  }"""))
 }

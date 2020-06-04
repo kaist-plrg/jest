@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GeneratorDeclaration0InstantiateFunctionObject0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""GeneratorDeclaration0InstantiateFunctionObject0" (this, BindingIdentifier, FormalParameters, GeneratorBody, scope) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GeneratorDeclaration0InstantiateFunctionObject0" (this, BindingIdentifier, FormalParameters, GeneratorBody, scope) => {
     if true let strict = true else let strict = false
     access __x0__ = (BindingIdentifier "StringValue")
     let name = __x0__
@@ -21,5 +21,5 @@ object GeneratorDeclaration0InstantiateFunctionObject0 extends Algorithm {
     F["SourceText"] = (get-syntax this)
     app __x5__ = (WrapCompletion F)
     return __x5__
-  }""")
+  }"""))
 }

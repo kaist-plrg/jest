@@ -6,8 +6,8 @@ import kr.ac.kaist.ires.ir.Parser._
 object GeneratorMethod0PropName0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""GeneratorMethod0PropName0" (this, PropertyName, UniqueFormalParameters, GeneratorBody) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GeneratorMethod0PropName0" (this, PropertyName, UniqueFormalParameters, GeneratorBody) => {
     access __x0__ = (PropertyName "PropName")
     return __x0__
-  }""")
+  }"""))
 }

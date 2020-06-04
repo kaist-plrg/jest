@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GLOBALDOTArrayDOTprototypeDOTreduce extends Algorithm {
   val length: Int = 1
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GLOBAL.Array.prototype.reduce" (this, argumentsList, NewTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Array.prototype.reduce" (this, argumentsList, NewTarget) => {
     app __x0__ = (GetArgument argumentsList 0i)
     let callbackfn = __x0__
     app __x1__ = (GetArgument argumentsList 1i)
@@ -70,5 +70,5 @@ object GLOBALDOTArrayDOTprototypeDOTreduce extends Algorithm {
     }
     app __x16__ = (WrapCompletion accumulator)
     return __x16__
-  }""")
+  }"""))
 }

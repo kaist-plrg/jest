@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GetThisEnvironment extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""GetThisEnvironment" () => {
+  val func: Func = FixUIdWalker(parseFunc(""""GetThisEnvironment" () => {
     let lex = GLOBAL_context["LexicalEnvironment"]
     while true {
       let envRec = lex["EnvironmentRecord"]
@@ -20,5 +20,5 @@ object GetThisEnvironment extends Algorithm {
       assert (! (= outer null))
       lex = outer
     }
-  }""")
+  }"""))
 }

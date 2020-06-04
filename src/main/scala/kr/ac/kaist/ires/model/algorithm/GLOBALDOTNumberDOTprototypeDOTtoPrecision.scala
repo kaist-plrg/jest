@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GLOBALDOTNumberDOTprototypeDOTtoPrecision extends Algorithm {
   val length: Int = 1
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GLOBAL.Number.prototype.toPrecision" (this, argumentsList, NewTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Number.prototype.toPrecision" (this, argumentsList, NewTarget) => {
     app __x0__ = (GetArgument argumentsList 0i)
     let precision = __x0__
     app __x1__ = (thisNumberValue this)
@@ -66,5 +66,5 @@ object GLOBALDOTNumberDOTprototypeDOTtoPrecision extends Algorithm {
     if (! (< e 0i)) !!! "Etc" else !!! "Etc"
     app __x10__ = (WrapCompletion (+ s m))
     return __x10__
-  }""")
+  }"""))
 }

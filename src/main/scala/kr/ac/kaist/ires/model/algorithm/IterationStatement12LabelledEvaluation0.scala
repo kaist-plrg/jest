@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object IterationStatement12LabelledEvaluation0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""IterationStatement12LabelledEvaluation0" (this, ForBinding, AssignmentExpression, Statement, labelSet) => {
+  val func: Func = FixUIdWalker(parseFunc(""""IterationStatement12LabelledEvaluation0" (this, ForBinding, AssignmentExpression, Statement, labelSet) => {
     app __x0__ = (ForInOfHeadEvaluation (new []) AssignmentExpression CONST_asynciterate)
     if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
     let keyResult = __x0__
@@ -14,5 +14,5 @@ object IterationStatement12LabelledEvaluation0 extends Algorithm {
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
     app __x2__ = (WrapCompletion __x1__)
     return __x2__
-  }""")
+  }"""))
 }

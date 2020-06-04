@@ -6,10 +6,10 @@ import kr.ac.kaist.ires.ir.Parser._
 object ClassExpression0NamedEvaluation0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ClassExpression0NamedEvaluation0" (this, ClassTail, name) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ClassExpression0NamedEvaluation0" (this, ClassTail, name) => {
     access __x0__ = (ClassTail "ClassDefinitionEvaluation")
     app __x1__ = (__x0__ undefined name)
     app __x2__ = (WrapCompletion __x1__)
     return __x2__
-  }""")
+  }"""))
 }

@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object ObjectLiteral1Evaluation0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ObjectLiteral1Evaluation0" (this, PropertyDefinitionList) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ObjectLiteral1Evaluation0" (this, PropertyDefinitionList) => {
     app __x0__ = (ObjectCreate INTRINSIC_ObjectPrototype)
     let obj = __x0__
     access __x1__ = (PropertyDefinitionList "PropertyDefinitionEvaluation")
@@ -15,5 +15,5 @@ object ObjectLiteral1Evaluation0 extends Algorithm {
     __x2__
     app __x3__ = (WrapCompletion obj)
     return __x3__
-  }""")
+  }"""))
 }

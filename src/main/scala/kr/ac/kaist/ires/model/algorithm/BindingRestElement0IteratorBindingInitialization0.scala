@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object BindingRestElement0IteratorBindingInitialization0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""BindingRestElement0IteratorBindingInitialization0" (this, BindingIdentifier, iteratorRecord, environment) => {
+  val func: Func = FixUIdWalker(parseFunc(""""BindingRestElement0IteratorBindingInitialization0" (this, BindingIdentifier, iteratorRecord, environment) => {
     access __x0__ = (BindingIdentifier "StringValue")
     app __x1__ = (ResolveBinding __x0__ environment)
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
@@ -49,5 +49,5 @@ object BindingRestElement0IteratorBindingInitialization0 extends Algorithm {
       assert (= status true)
       n = (+ n 1i)
     }
-  }""")
+  }"""))
 }

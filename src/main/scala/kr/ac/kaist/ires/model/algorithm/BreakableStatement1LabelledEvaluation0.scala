@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object BreakableStatement1LabelledEvaluation0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""BreakableStatement1LabelledEvaluation0" (this, SwitchStatement, labelSet) => {
+  val func: Func = FixUIdWalker(parseFunc(""""BreakableStatement1LabelledEvaluation0" (this, SwitchStatement, labelSet) => {
     access __x0__ = (SwitchStatement "Evaluation")
     let stmtResult = __x0__
     if (= stmtResult["Type"] CONST_break) if (= stmtResult["Target"] CONST_empty) if (= stmtResult["Value"] CONST_empty) {
@@ -19,5 +19,5 @@ object BreakableStatement1LabelledEvaluation0 extends Algorithm {
     app __x3__ = (Completion stmtResult)
     app __x4__ = (WrapCompletion __x3__)
     return __x4__
-  }""")
+  }"""))
 }

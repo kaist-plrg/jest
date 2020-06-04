@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object ToPropertyDescriptor extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ToPropertyDescriptor" (Obj) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ToPropertyDescriptor" (Obj) => {
     app __x0__ = (Type Obj)
     if (! (= __x0__ Object)) {
       app __x1__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
@@ -86,5 +86,5 @@ object ToPropertyDescriptor extends Algorithm {
     } else {} else {}
     app __x22__ = (WrapCompletion desc)
     return __x22__
-  }""")
+  }"""))
 }

@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object InitializeHostDefinedRealm extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""InitializeHostDefinedRealm" () => {
+  val func: Func = FixUIdWalker(parseFunc(""""InitializeHostDefinedRealm" () => {
     app __x0__ = (CreateRealm )
     let realm = __x0__
     let newContext = (new ExecutionContext("SubMap" -> (new SubMap())))
@@ -25,5 +25,5 @@ object InitializeHostDefinedRealm extends Algorithm {
     app __x3__ = (NormalCompletion CONST_empty)
     app __x4__ = (WrapCompletion __x3__)
     return __x4__
-  }""")
+  }"""))
 }

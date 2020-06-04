@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object TryStatement0Evaluation0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""TryStatement0Evaluation0" (this, Block, Catch) => {
+  val func: Func = FixUIdWalker(parseFunc(""""TryStatement0Evaluation0" (this, Block, Catch) => {
     access __x0__ = (Block "Evaluation")
     let B = __x0__
     if (= B["Type"] CONST_throw) {
@@ -18,5 +18,5 @@ object TryStatement0Evaluation0 extends Algorithm {
     app __x4__ = (Completion __x3__)
     app __x5__ = (WrapCompletion __x4__)
     return __x5__
-  }""")
+  }"""))
 }

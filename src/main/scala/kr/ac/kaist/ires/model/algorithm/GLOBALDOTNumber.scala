@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GLOBALDOTNumber extends Algorithm {
   val length: Int = 1
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GLOBAL.Number" (this, argumentsList, NewTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Number" (this, argumentsList, NewTarget) => {
     app __x0__ = (GetArgument argumentsList 0i)
     let value = __x0__
     if (= argumentsList["length"] 0i) let n = 0i else {
@@ -24,5 +24,5 @@ object GLOBALDOTNumber extends Algorithm {
     O["NumberData"] = n
     app __x4__ = (WrapCompletion O)
     return __x4__
-  }""")
+  }"""))
 }

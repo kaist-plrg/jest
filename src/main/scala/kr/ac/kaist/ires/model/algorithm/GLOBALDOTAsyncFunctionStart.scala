@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GLOBALDOTAsyncFunctionStart extends Algorithm {
   val length: Int = 2
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GLOBAL.AsyncFunctionStart" (this, argumentsList, NewTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.AsyncFunctionStart" (this, argumentsList, NewTarget) => {
     app __x0__ = (GetArgument argumentsList 0i)
     let promiseCapability = __x0__
     app __x1__ = (GetArgument argumentsList 1i)
@@ -49,5 +49,5 @@ object GLOBALDOTAsyncFunctionStart extends Algorithm {
     }
     app __x10__ = (NormalCompletion undefined)
     return __x10__
-  }""")
+  }"""))
 }

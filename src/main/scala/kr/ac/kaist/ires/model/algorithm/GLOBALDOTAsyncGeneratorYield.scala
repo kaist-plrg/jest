@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GLOBALDOTAsyncGeneratorYield extends Algorithm {
   val length: Int = 1
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GLOBAL.AsyncGeneratorYield" (this, argumentsList, NewTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.AsyncGeneratorYield" (this, argumentsList, NewTarget) => {
     app __x0__ = (GetArgument argumentsList 0i)
     let value = __x0__
     let genContext = GLOBAL_context
@@ -43,5 +43,5 @@ object GLOBALDOTAsyncGeneratorYield extends Algorithm {
     if (is-completion __x10__) if (= __x10__["Type"] CONST_normal) __x10__ = __x10__["Value"] else return __x10__ else {}
     app __x11__ = (WrapCompletion __x10__)
     return __x11__
-  }""")
+  }"""))
 }

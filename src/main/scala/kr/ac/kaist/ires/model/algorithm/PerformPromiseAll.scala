@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object PerformPromiseAll extends Algorithm {
   val length: Int = 3
   val lang: Boolean = false
-  val func: Func = parseFunc(""""PerformPromiseAll" (iteratorRecord, constructor, resultCapability) => {
+  val func: Func = FixUIdWalker(parseFunc(""""PerformPromiseAll" (iteratorRecord, constructor, resultCapability) => {
     app __x0__ = (IsConstructor constructor)
     assert (= __x0__ true)
     let values = (new [])
@@ -56,5 +56,5 @@ object PerformPromiseAll extends Algorithm {
       __x10__
       index = (+ index 1i)
     }
-  }""")
+  }"""))
 }

@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object DeletePropertyOrThrow extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
-  val func: Func = parseFunc(""""DeletePropertyOrThrow" (O, P) => {
+  val func: Func = FixUIdWalker(parseFunc(""""DeletePropertyOrThrow" (O, P) => {
     app __x0__ = (Type O)
     assert (= __x0__ Object)
     app __x1__ = (IsPropertyKey P)
@@ -20,5 +20,5 @@ object DeletePropertyOrThrow extends Algorithm {
     } else {}
     app __x4__ = (WrapCompletion success)
     return __x4__
-  }""")
+  }"""))
 }

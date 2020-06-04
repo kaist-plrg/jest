@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GLOBALDOTSetDOTprototypeDOTadd extends Algorithm {
   val length: Int = 1
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GLOBAL.Set.prototype.add" (this, argumentsList, NewTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Set.prototype.add" (this, argumentsList, NewTarget) => {
     app __x0__ = (GetArgument argumentsList 0i)
     let value = __x0__
     let S = this
@@ -39,5 +39,5 @@ object GLOBALDOTSetDOTprototypeDOTadd extends Algorithm {
     append value -> entries
     app __x9__ = (WrapCompletion S)
     return __x9__
-  }""")
+  }"""))
 }

@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object IsDuplicate extends Algorithm {
   val length: Int = 1
   val lang: Boolean = false
-  val func: Func = parseFunc(""""IsDuplicate" (list) => {
+  val func: Func = FixUIdWalker(parseFunc(""""IsDuplicate" (list) => {
     let i = 0i
     let len = list.length
     while (< i len) {
@@ -19,5 +19,5 @@ object IsDuplicate extends Algorithm {
       i = (+ i 1i)
     }
     return false
-  }""")
+  }"""))
 }

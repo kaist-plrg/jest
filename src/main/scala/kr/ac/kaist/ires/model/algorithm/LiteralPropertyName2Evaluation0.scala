@@ -6,12 +6,12 @@ import kr.ac.kaist.ires.ir.Parser._
 object LiteralPropertyName2Evaluation0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""LiteralPropertyName2Evaluation0" (this, NumericLiteral) => {
+  val func: Func = FixUIdWalker(parseFunc(""""LiteralPropertyName2Evaluation0" (this, NumericLiteral) => {
     access __x0__ = (NumericLiteral "MV")
     let nbr = __x0__
     app __x1__ = (ToString nbr)
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
     app __x2__ = (WrapCompletion __x1__)
     return __x2__
-  }""")
+  }"""))
 }

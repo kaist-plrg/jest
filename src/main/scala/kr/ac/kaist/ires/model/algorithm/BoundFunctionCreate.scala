@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object BoundFunctionCreate extends Algorithm {
   val length: Int = 3
   val lang: Boolean = true
-  val func: Func = parseFunc(""""BoundFunctionCreate" (targetFunction, boundThis, boundArgs) => {
+  val func: Func = FixUIdWalker(parseFunc(""""BoundFunctionCreate" (targetFunction, boundThis, boundArgs) => {
     app __x0__ = (Type targetFunction)
     assert (= __x0__ Object)
     app __x1__ = (targetFunction["GetPrototypeOf"] targetFunction)
@@ -34,5 +34,5 @@ object BoundFunctionCreate extends Algorithm {
     obj["BoundArguments"] = boundArgs
     app __x3__ = (WrapCompletion obj)
     return __x3__
-  }""")
+  }"""))
 }

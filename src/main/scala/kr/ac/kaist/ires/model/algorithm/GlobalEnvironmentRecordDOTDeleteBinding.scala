@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GlobalEnvironmentRecordDOTDeleteBinding extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""GlobalEnvironmentRecord.DeleteBinding" (this, N) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GlobalEnvironmentRecord.DeleteBinding" (this, N) => {
     let envRec = this
     let DclRec = envRec["DeclarativeRecord"]
     app __x0__ = (DclRec["HasBinding"] DclRec N)
@@ -36,5 +36,5 @@ object GlobalEnvironmentRecordDOTDeleteBinding extends Algorithm {
     } else {}
     app __x8__ = (WrapCompletion true)
     return __x8__
-  }""")
+  }"""))
 }

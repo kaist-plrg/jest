@@ -6,12 +6,12 @@ import kr.ac.kaist.ires.ir.Parser._
 object MakeMethod extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
-  val func: Func = parseFunc(""""MakeMethod" (F, homeObject) => {
+  val func: Func = FixUIdWalker(parseFunc(""""MakeMethod" (F, homeObject) => {
     app __x0__ = (Type homeObject)
     assert (= __x0__ Object)
     F["HomeObject"] = homeObject
     app __x1__ = (NormalCompletion undefined)
     app __x2__ = (WrapCompletion __x1__)
     return __x2__
-  }""")
+  }"""))
 }

@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object ForBodyEvaluation extends Algorithm {
   val length: Int = 5
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ForBodyEvaluation" (test, increment, stmt, perIterationBindings, labelSet) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ForBodyEvaluation" (test, increment, stmt, perIterationBindings, labelSet) => {
     let V = undefined
     app __x0__ = (CreatePerIterationEnvironment perIterationBindings)
     if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
@@ -46,5 +46,5 @@ object ForBodyEvaluation extends Algorithm {
         __x13__
       } else {}
     }
-  }""")
+  }"""))
 }

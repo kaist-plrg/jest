@@ -6,9 +6,9 @@ import kr.ac.kaist.ires.ir.Parser._
 object TemplateLiteral0Evaluation0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""TemplateLiteral0Evaluation0" (this, NoSubstitutionTemplate) => {
+  val func: Func = FixUIdWalker(parseFunc(""""TemplateLiteral0Evaluation0" (this, NoSubstitutionTemplate) => {
     access __x0__ = (NoSubstitutionTemplate "TV")
     app __x1__ = (WrapCompletion __x0__)
     return __x1__
-  }""")
+  }"""))
 }

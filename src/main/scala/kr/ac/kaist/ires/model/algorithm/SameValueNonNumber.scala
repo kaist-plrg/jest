@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object SameValueNonNumber extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
-  val func: Func = parseFunc(""""SameValueNonNumber" (x, y) => {
+  val func: Func = FixUIdWalker(parseFunc(""""SameValueNonNumber" (x, y) => {
     app __x0__ = (Type x)
     assert (! (= __x0__ Number))
     app __x1__ = (Type x)
@@ -53,5 +53,5 @@ object SameValueNonNumber extends Algorithm {
       app __x17__ = (WrapCompletion false)
       return __x17__
     }
-  }""")
+  }"""))
 }

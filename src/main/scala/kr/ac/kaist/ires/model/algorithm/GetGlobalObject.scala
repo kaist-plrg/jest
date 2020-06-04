@@ -6,10 +6,10 @@ import kr.ac.kaist.ires.ir.Parser._
 object GetGlobalObject extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""GetGlobalObject" () => {
+  val func: Func = FixUIdWalker(parseFunc(""""GetGlobalObject" () => {
     let ctx = GLOBAL_context
     let currentRealm = ctx["Realm"]
     app __x0__ = (WrapCompletion currentRealm["GlobalObject"])
     return __x0__
-  }""")
+  }"""))
 }

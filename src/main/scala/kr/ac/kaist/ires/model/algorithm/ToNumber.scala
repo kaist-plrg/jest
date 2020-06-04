@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object ToNumber extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ToNumber" (argument) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ToNumber" (argument) => {
     app atype = (Type argument)
     if (= atype "Undefined") return NaN
     else if (= atype "Null") return 0
@@ -35,5 +35,5 @@ object ToNumber extends Algorithm {
       } else {}
       return __x1__
     }
-  }""")
+  }"""))
 }

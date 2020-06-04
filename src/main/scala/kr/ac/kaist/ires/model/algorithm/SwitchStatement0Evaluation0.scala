@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object SwitchStatement0Evaluation0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""SwitchStatement0Evaluation0" (this, Expression, CaseBlock) => {
+  val func: Func = FixUIdWalker(parseFunc(""""SwitchStatement0Evaluation0" (this, Expression, CaseBlock) => {
     access __x0__ = (Expression "Evaluation")
     let exprRef = __x0__
     app __x1__ = (GetValue exprRef)
@@ -24,5 +24,5 @@ object SwitchStatement0Evaluation0 extends Algorithm {
     GLOBAL_context["LexicalEnvironment"] = oldEnv
     app __x6__ = (WrapCompletion R)
     return __x6__
-  }""")
+  }"""))
 }

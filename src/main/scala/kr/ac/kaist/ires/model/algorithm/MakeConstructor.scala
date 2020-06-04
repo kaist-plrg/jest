@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object MakeConstructor extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""MakeConstructor" (F, writablePrototype, prototype) => {
+  val func: Func = FixUIdWalker(parseFunc(""""MakeConstructor" (F, writablePrototype, prototype) => {
     app __x0__ = (IsConstructor F)
     assert (= __x0__ true)
     if (= writablePrototype absent) writablePrototype = true else {}
@@ -23,5 +23,5 @@ object MakeConstructor extends Algorithm {
     app __x4__ = (NormalCompletion undefined)
     app __x5__ = (WrapCompletion __x4__)
     return __x5__
-  }""")
+  }"""))
 }

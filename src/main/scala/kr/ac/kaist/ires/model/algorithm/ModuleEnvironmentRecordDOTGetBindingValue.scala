@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object ModuleEnvironmentRecordDOTGetBindingValue extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ModuleEnvironmentRecord.GetBindingValue" (this, N, S) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ModuleEnvironmentRecord.GetBindingValue" (this, N, S) => {
     assert (= S true)
     !!! "Etc"
     !!! "Etc"
@@ -16,5 +16,5 @@ object ModuleEnvironmentRecordDOTGetBindingValue extends Algorithm {
     } else {}
     app __x1__ = (WrapCompletion envRec["SubMap"][N]["BoundValue"])
     return __x1__
-  }""")
+  }"""))
 }

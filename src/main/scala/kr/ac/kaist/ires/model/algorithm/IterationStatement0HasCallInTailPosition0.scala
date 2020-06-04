@@ -6,10 +6,10 @@ import kr.ac.kaist.ires.ir.Parser._
 object IterationStatement0HasCallInTailPosition0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""IterationStatement0HasCallInTailPosition0" (this, Statement, Expression, call) => {
+  val func: Func = FixUIdWalker(parseFunc(""""IterationStatement0HasCallInTailPosition0" (this, Statement, Expression, call) => {
     access __x0__ = (Statement "HasCallInTailPosition")
     app __x1__ = (__x0__ call)
     app __x2__ = (WrapCompletion __x1__)
     return __x2__
-  }""")
+  }"""))
 }

@@ -6,8 +6,8 @@ import kr.ac.kaist.ires.ir.Parser._
 object GlobalEnvironmentRecordDOTHasSuperBinding extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""GlobalEnvironmentRecord.HasSuperBinding" (this) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GlobalEnvironmentRecord.HasSuperBinding" (this) => {
     app __x0__ = (WrapCompletion false)
     return __x0__
-  }""")
+  }"""))
 }

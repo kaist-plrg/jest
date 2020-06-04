@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object StringGetOwnProperty extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
-  val func: Func = parseFunc(""""StringGetOwnProperty" (S, P) => {
+  val func: Func = FixUIdWalker(parseFunc(""""StringGetOwnProperty" (S, P) => {
     app __x0__ = (IsPropertyKey P)
     assert (= __x0__ true)
     app __x1__ = (Type P)
@@ -41,5 +41,5 @@ object StringGetOwnProperty extends Algorithm {
     let resultStr = str[index]
     app __x10__ = (WrapCompletion (new PropertyDescriptor("Value" -> resultStr, "Writable" -> false, "Enumerable" -> true, "Configurable" -> false)))
     return __x10__
-  }""")
+  }"""))
 }

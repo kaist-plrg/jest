@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GlobalEnvironmentRecordDOTCreateImmutableBinding extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
-  val func: Func = parseFunc(""""GlobalEnvironmentRecord.CreateImmutableBinding" (this, N, S) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GlobalEnvironmentRecord.CreateImmutableBinding" (this, N, S) => {
     let envRec = this
     let DclRec = envRec["DeclarativeRecord"]
     app __x0__ = (DclRec["HasBinding"] DclRec N)
@@ -17,5 +17,5 @@ object GlobalEnvironmentRecordDOTCreateImmutableBinding extends Algorithm {
     app __x2__ = (DclRec["CreateImmutableBinding"] DclRec N S)
     app __x3__ = (WrapCompletion __x2__)
     return __x3__
-  }""")
+  }"""))
 }

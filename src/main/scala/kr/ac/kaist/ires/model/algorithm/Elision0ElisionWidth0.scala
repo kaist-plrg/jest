@@ -6,5 +6,5 @@ import kr.ac.kaist.ires.ir.Parser._
 object Elision0ElisionWidth0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""Elision0ElisionWidth0" (this) => return 1i""")
+  val func: Func = FixUIdWalker(parseFunc(""""Elision0ElisionWidth0" (this) => return 1i"""))
 }

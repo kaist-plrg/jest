@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GeneratorStart extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
-  val func: Func = parseFunc(""""GeneratorStart" (generator, generatorBody) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GeneratorStart" (generator, generatorBody) => {
     assert (= generator["GeneratorState"] undefined)
     let genContext = GLOBAL_context
     genContext["Generator"] = generator
@@ -34,5 +34,5 @@ object GeneratorStart extends Algorithm {
     app __x6__ = (NormalCompletion undefined)
     app __x7__ = (WrapCompletion __x6__)
     return __x7__
-  }""")
+  }"""))
 }

@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object SymbolDescriptiveString extends Algorithm {
   val length: Int = 1
   val lang: Boolean = false
-  val func: Func = parseFunc(""""SymbolDescriptiveString" (sym) => {
+  val func: Func = FixUIdWalker(parseFunc(""""SymbolDescriptiveString" (sym) => {
     app __x0__ = (Type sym)
     assert (= __x0__ Symbol)
     let desc = sym["Description"]
@@ -15,5 +15,5 @@ object SymbolDescriptiveString extends Algorithm {
     assert (= __x1__ String)
     app __x2__ = (WrapCompletion (+ (+ "Symbol(" desc) ")"))
     return __x2__
-  }""")
+  }"""))
 }

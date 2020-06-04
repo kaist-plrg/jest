@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object ElementList3ArrayAccumulation1 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ElementList3ArrayAccumulation1" (this, ElementList, Elision, SpreadElement, array, nextIndex) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ElementList3ArrayAccumulation1" (this, ElementList, Elision, SpreadElement, array, nextIndex) => {
     access __x0__ = (ElementList "ArrayAccumulation")
     app __x1__ = (__x0__ array nextIndex)
     let postIndex = __x1__
@@ -20,5 +20,5 @@ object ElementList3ArrayAccumulation1 extends Algorithm {
     app __x4__ = (__x3__ array (+ postIndex padding))
     app __x5__ = (WrapCompletion __x4__)
     return __x5__
-  }""")
+  }"""))
 }

@@ -6,12 +6,12 @@ import kr.ac.kaist.ires.ir.Parser._
 object ArgGetter extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ArgGetter" (_0, _1, _2, f) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ArgGetter" (_0, _1, _2, f) => {
     let f = GLOBAL_context["Function"]
     let name = f["Name"]
     let env = f["Env"]
     app __x0__ = (env["GetBindingValue"] env name false)
     app __x1__ = (WrapCompletion __x0__)
     return __x1__
-  }""")
+  }"""))
 }

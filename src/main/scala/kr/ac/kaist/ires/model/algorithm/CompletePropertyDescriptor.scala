@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object CompletePropertyDescriptor extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""CompletePropertyDescriptor" (Desc) => {
+  val func: Func = FixUIdWalker(parseFunc(""""CompletePropertyDescriptor" (Desc) => {
     assert (= (typeof Desc) "PropertyDescriptor")
     let like = (new Record("Value" -> undefined, "Writable" -> false, "Get" -> undefined, "Set" -> undefined, "Enumerable" -> false, "Configurable" -> false))
     app __x0__ = (IsGenericDescriptor Desc)
@@ -26,5 +26,5 @@ object CompletePropertyDescriptor extends Algorithm {
     if (= Desc["Configurable"] absent) Desc["Configurable"] = like["Configurable"] else {}
     app __x3__ = (WrapCompletion Desc)
     return __x3__
-  }""")
+  }"""))
 }

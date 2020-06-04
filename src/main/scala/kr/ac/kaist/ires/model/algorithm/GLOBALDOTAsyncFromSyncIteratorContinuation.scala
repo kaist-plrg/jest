@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GLOBALDOTAsyncFromSyncIteratorContinuation extends Algorithm {
   val length: Int = 2
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GLOBAL.AsyncFromSyncIteratorContinuation" (this, argumentsList, NewTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.AsyncFromSyncIteratorContinuation" (this, argumentsList, NewTarget) => {
     app __x0__ = (GetArgument argumentsList 0i)
     let result = __x0__
     app __x1__ = (GetArgument argumentsList 1i)
@@ -39,5 +39,5 @@ object GLOBALDOTAsyncFromSyncIteratorContinuation extends Algorithm {
     __x8__
     app __x9__ = (WrapCompletion promiseCapability["Promise"])
     return __x9__
-  }""")
+  }"""))
 }

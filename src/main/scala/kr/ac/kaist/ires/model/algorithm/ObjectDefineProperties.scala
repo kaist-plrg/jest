@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object ObjectDefineProperties extends Algorithm {
   val length: Int = 2
   val lang: Boolean = false
-  val func: Func = parseFunc(""""ObjectDefineProperties" (O, Properties) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ObjectDefineProperties" (O, Properties) => {
     app __x0__ = (Type O)
     if (! (= __x0__ Object)) {
       app __x1__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
@@ -50,5 +50,5 @@ object ObjectDefineProperties extends Algorithm {
     }
     app __x12__ = (WrapCompletion O)
     return __x12__
-  }""")
+  }"""))
 }

@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object FunctionRestParameter0IteratorBindingInitialization0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""FunctionRestParameter0IteratorBindingInitialization0" (this, BindingRestElement, iteratorRecord, environment) => {
+  val func: Func = FixUIdWalker(parseFunc(""""FunctionRestParameter0IteratorBindingInitialization0" (this, BindingRestElement, iteratorRecord, environment) => {
     access __x0__ = (BindingRestElement "ContainsExpression")
     if (= __x0__ false) {
       access __x1__ = (BindingRestElement "IteratorBindingInitialization")
@@ -30,5 +30,5 @@ object FunctionRestParameter0IteratorBindingInitialization0 extends Algorithm {
     currentContext["LexicalEnvironment"] = originalEnv
     app __x8__ = (WrapCompletion result)
     return __x8__
-  }""")
+  }"""))
 }

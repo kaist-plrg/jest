@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object ClassTail0ClassDefinitionEvaluation3 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ClassTail0ClassDefinitionEvaluation3" (this, ClassHeritage, ClassBody, classBinding, className) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ClassTail0ClassDefinitionEvaluation3" (this, ClassHeritage, ClassBody, classBinding, className) => {
     access __x0__ = (GLOBAL_context "LexicalEnvironment")
     let lex = __x0__
     app __x1__ = (NewDeclarativeEnvironment lex)
@@ -109,5 +109,5 @@ object ClassTail0ClassDefinitionEvaluation3 extends Algorithm {
     } else {}
     app __x31__ = (WrapCompletion F)
     return __x31__
-  }""")
+  }"""))
 }

@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object IteratorClose extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
-  val func: Func = parseFunc(""""IteratorClose" (iteratorRecord, completion) => {
+  val func: Func = FixUIdWalker(parseFunc(""""IteratorClose" (iteratorRecord, completion) => {
     app __x0__ = (Type iteratorRecord["Iterator"])
     assert (= __x0__ Object)
     assert (is-completion completion)
@@ -39,5 +39,5 @@ object IteratorClose extends Algorithm {
     app __x11__ = (Completion completion)
     app __x12__ = (WrapCompletion __x11__)
     return __x12__
-  }""")
+  }"""))
 }

@@ -6,12 +6,12 @@ import kr.ac.kaist.ires.ir.Parser._
 object IsAnonymousFunctionDefinition extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""IsAnonymousFunctionDefinition" (expr) => {
+  val func: Func = FixUIdWalker(parseFunc(""""IsAnonymousFunctionDefinition" (expr) => {
     access __x0__ = (expr "IsFunctionDefinition")
     if (= __x0__ false) return false else {}
     access __x1__ = (expr "HasName")
     let hasName = __x1__
     if (= hasName true) return false else {}
     return true
-  }""")
+  }"""))
 }

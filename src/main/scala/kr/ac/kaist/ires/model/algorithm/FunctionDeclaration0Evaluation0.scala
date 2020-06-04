@@ -6,9 +6,9 @@ import kr.ac.kaist.ires.ir.Parser._
 object FunctionDeclaration0Evaluation0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""FunctionDeclaration0Evaluation0" (this, BindingIdentifier, FormalParameters, FunctionBody) => {
+  val func: Func = FixUIdWalker(parseFunc(""""FunctionDeclaration0Evaluation0" (this, BindingIdentifier, FormalParameters, FunctionBody) => {
     app __x0__ = (NormalCompletion CONST_empty)
     app __x1__ = (WrapCompletion __x0__)
     return __x1__
-  }""")
+  }"""))
 }

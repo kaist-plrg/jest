@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object SpeciesConstructor extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
-  val func: Func = parseFunc(""""SpeciesConstructor" (O, defaultConstructor) => {
+  val func: Func = FixUIdWalker(parseFunc(""""SpeciesConstructor" (O, defaultConstructor) => {
     app __x0__ = (Type O)
     assert (= __x0__ Object)
     app __x1__ = (Get O "constructor")
@@ -35,5 +35,5 @@ object SpeciesConstructor extends Algorithm {
     } else {}
     app __x9__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
     return __x9__
-  }""")
+  }"""))
 }

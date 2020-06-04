@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object PropertyDefinitionList1PropertyNameList0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""PropertyDefinitionList1PropertyNameList0" (this, PropertyDefinitionList, PropertyDefinition) => {
+  val func: Func = FixUIdWalker(parseFunc(""""PropertyDefinitionList1PropertyNameList0" (this, PropertyDefinitionList, PropertyDefinition) => {
     access __x0__ = (PropertyDefinitionList "PropertyNameList")
     let list = __x0__
     access __x1__ = (PropertyDefinition "PropName")
@@ -14,5 +14,5 @@ object PropertyDefinitionList1PropertyNameList0 extends Algorithm {
     access __x2__ = (PropertyDefinition "PropName")
     append __x2__ -> list
     return list
-  }""")
+  }"""))
 }

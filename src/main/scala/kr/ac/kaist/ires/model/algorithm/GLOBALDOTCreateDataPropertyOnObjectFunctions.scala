@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GLOBALDOTCreateDataPropertyOnObjectFunctions extends Algorithm {
   val length: Int = 0
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GLOBAL.CreateDataPropertyOnObjectFunctions" (this, argumentsList, NewTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.CreateDataPropertyOnObjectFunctions" (this, argumentsList, NewTarget) => {
     let O = this
     app __x0__ = (Type O)
     assert (= __x0__ Object)
@@ -18,5 +18,5 @@ object GLOBALDOTCreateDataPropertyOnObjectFunctions extends Algorithm {
     __x2__
     app __x3__ = (WrapCompletion undefined)
     return __x3__
-  }""")
+  }"""))
 }

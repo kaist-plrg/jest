@@ -6,5 +6,5 @@ import kr.ac.kaist.ires.ir.Parser._
 object MemberExpression5IsDestructuring0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""MemberExpression5IsDestructuring0" (this, MetaProperty) => return false""")
+  val func: Func = FixUIdWalker(parseFunc(""""MemberExpression5IsDestructuring0" (this, MetaProperty) => return false"""))
 }

@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object FunctionInitialize extends Algorithm {
   val length: Int = 5
   val lang: Boolean = true
-  val func: Func = parseFunc(""""FunctionInitialize" (F, kind, ParameterList, Body, Scope) => {
+  val func: Func = FixUIdWalker(parseFunc(""""FunctionInitialize" (F, kind, ParameterList, Body, Scope) => {
     access __x0__ = (ParameterList "ExpectedArgumentCount")
     let len = __x0__
     app __x1__ = (SetFunctionLength F len)
@@ -21,5 +21,5 @@ object FunctionInitialize extends Algorithm {
     if (= kind CONST_Arrow) F["ThisMode"] = CONST_lexical else if (= Strict true) F["ThisMode"] = CONST_strict else F["ThisMode"] = CONST_global
     app __x3__ = (WrapCompletion F)
     return __x3__
-  }""")
+  }"""))
 }

@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GetTypeOf extends Algorithm {
   val length: Int = 0
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GetTypeOf" (argument) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GetTypeOf" (argument) => {
     let t = (typeof argument)
     if (= t "Undefined") return "undefined"
     else if (= t "Null") return "object"
@@ -18,5 +18,5 @@ object GetTypeOf extends Algorithm {
       if (= argument.Call absent) return "object"
       else return "function"
     }
-  }""")
+  }"""))
 }

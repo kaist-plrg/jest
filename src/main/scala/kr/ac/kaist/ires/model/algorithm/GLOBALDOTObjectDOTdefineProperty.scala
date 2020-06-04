@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GLOBALDOTObjectDOTdefineProperty extends Algorithm {
   val length: Int = 3
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GLOBAL.Object.defineProperty" (this, argumentsList, NewTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Object.defineProperty" (this, argumentsList, NewTarget) => {
     app __x0__ = (GetArgument argumentsList 0i)
     let O = __x0__
     app __x1__ = (GetArgument argumentsList 1i)
@@ -29,5 +29,5 @@ object GLOBALDOTObjectDOTdefineProperty extends Algorithm {
     __x7__
     app __x8__ = (WrapCompletion O)
     return __x8__
-  }""")
+  }"""))
 }

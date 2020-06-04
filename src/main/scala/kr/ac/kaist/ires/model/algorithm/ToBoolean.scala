@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object ToBoolean extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ToBoolean" (argument) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ToBoolean" (argument) => {
     app atype = (Type argument)
     if (= atype "Undefined") {
       return false
@@ -25,5 +25,5 @@ object ToBoolean extends Algorithm {
     } else {
       return true
     }
-  }""")
+  }"""))
 }

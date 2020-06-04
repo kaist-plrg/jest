@@ -6,5 +6,5 @@ import kr.ac.kaist.ires.ir.Parser._
 object Expression1AssignmentTargetType0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""Expression1AssignmentTargetType0" (this, Expression, AssignmentExpression) => return CONST_invalid""")
+  val func: Func = FixUIdWalker(parseFunc(""""Expression1AssignmentTargetType0" (this, Expression, AssignmentExpression) => return CONST_invalid"""))
 }

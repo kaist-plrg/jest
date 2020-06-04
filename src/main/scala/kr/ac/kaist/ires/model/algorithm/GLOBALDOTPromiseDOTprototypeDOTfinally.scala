@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GLOBALDOTPromiseDOTprototypeDOTfinally extends Algorithm {
   val length: Int = 1
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GLOBAL.Promise.prototype.finally" (this, argumentsList, NewTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Promise.prototype.finally" (this, argumentsList, NewTarget) => {
     app __x0__ = (GetArgument argumentsList 0i)
     let onFinally = __x0__
     let promise = this
@@ -40,5 +40,5 @@ object GLOBALDOTPromiseDOTprototypeDOTfinally extends Algorithm {
     if (is-completion __x8__) if (= __x8__["Type"] CONST_normal) __x8__ = __x8__["Value"] else return __x8__ else {}
     app __x9__ = (WrapCompletion __x8__)
     return __x9__
-  }""")
+  }"""))
 }

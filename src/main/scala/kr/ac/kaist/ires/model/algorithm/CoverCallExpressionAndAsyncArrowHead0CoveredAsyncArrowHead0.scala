@@ -6,5 +6,5 @@ import kr.ac.kaist.ires.ir.Parser._
 object CoverCallExpressionAndAsyncArrowHead0CoveredAsyncArrowHead0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""CoverCallExpressionAndAsyncArrowHead0CoveredAsyncArrowHead0" (this, MemberExpression, Arguments) => return (parse-syntax this "AsyncArrowHead" )""")
+  val func: Func = FixUIdWalker(parseFunc(""""CoverCallExpressionAndAsyncArrowHead0CoveredAsyncArrowHead0" (this, MemberExpression, Arguments) => return (parse-syntax this "AsyncArrowHead" )"""))
 }

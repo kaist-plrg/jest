@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object SetFunctionName extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
-  val func: Func = parseFunc(""""SetFunctionName" (F, name, prefix) => {
+  val func: Func = FixUIdWalker(parseFunc(""""SetFunctionName" (F, name, prefix) => {
     app __x0__ = (Type name)
     assert (|| (= __x0__ Symbol) (= __x0__ String))
     app __x1__ = (Type name)
@@ -19,5 +19,5 @@ object SetFunctionName extends Algorithm {
     if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     app __x3__ = (WrapCompletion __x2__)
     return __x3__
-  }""")
+  }"""))
 }

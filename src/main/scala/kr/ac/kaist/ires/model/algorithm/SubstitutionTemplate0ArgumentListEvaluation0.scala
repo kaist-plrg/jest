@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object SubstitutionTemplate0ArgumentListEvaluation0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""SubstitutionTemplate0ArgumentListEvaluation0" (this, TemplateHead, Expression, TemplateSpans) => {
+  val func: Func = FixUIdWalker(parseFunc(""""SubstitutionTemplate0ArgumentListEvaluation0" (this, TemplateHead, Expression, TemplateSpans) => {
     let templateLiteral = this
     app __x0__ = (GetTemplateObject templateLiteral)
     let siteObj = __x0__
@@ -24,5 +24,5 @@ object SubstitutionTemplate0ArgumentListEvaluation0 extends Algorithm {
     prepend siteObj -> __x4__
     app __x5__ = (WrapCompletion __x4__)
     return __x5__
-  }""")
+  }"""))
 }

@@ -6,5 +6,5 @@ import kr.ac.kaist.ires.ir.Parser._
 object LabelIdentifier1StringValue0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""LabelIdentifier1StringValue0" (this) => return "yield"""")
+  val func: Func = FixUIdWalker(parseFunc(""""LabelIdentifier1StringValue0" (this) => return "yield""""))
 }

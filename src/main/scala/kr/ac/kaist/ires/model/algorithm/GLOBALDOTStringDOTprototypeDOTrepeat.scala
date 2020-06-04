@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GLOBALDOTStringDOTprototypeDOTrepeat extends Algorithm {
   val length: Int = 1
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GLOBAL.String.prototype.repeat" (this, argumentsList, NewTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.String.prototype.repeat" (this, argumentsList, NewTarget) => {
     app __x0__ = (GetArgument argumentsList 0i)
     let count = __x0__
     app __x1__ = (RequireObjectCoercible this)
@@ -32,5 +32,5 @@ object GLOBALDOTStringDOTprototypeDOTrepeat extends Algorithm {
     } else {}
     app __x7__ = (WrapCompletion !!! "StringOp")
     return __x7__
-  }""")
+  }"""))
 }

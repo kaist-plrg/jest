@@ -6,5 +6,5 @@ import kr.ac.kaist.ires.ir.Parser._
 object ObjectBindingPattern0ContainsExpression0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ObjectBindingPattern0ContainsExpression0" (this) => return false""")
+  val func: Func = FixUIdWalker(parseFunc(""""ObjectBindingPattern0ContainsExpression0" (this) => return false"""))
 }

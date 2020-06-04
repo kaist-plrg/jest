@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object AbstractRelationalComparison extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""AbstractRelationalComparison" (x, y, LeftFirst) => {
+  val func: Func = FixUIdWalker(parseFunc(""""AbstractRelationalComparison" (x, y, LeftFirst) => {
     if (= LeftFirst absent) let LeftFirst = true else {}
     if (= LeftFirst true) {
       app __x0__ = (ToPrimitive x Number)
@@ -74,5 +74,5 @@ object AbstractRelationalComparison extends Algorithm {
       } else {}
       return (< nx ny)
     }
-  }""")
+  }"""))
 }

@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object PerformPromiseThen extends Algorithm {
   val length: Int = 3
   val lang: Boolean = true
-  val func: Func = parseFunc(""""PerformPromiseThen" (promise, onFulfilled, onRejected, resultCapability) => {
+  val func: Func = FixUIdWalker(parseFunc(""""PerformPromiseThen" (promise, onFulfilled, onRejected, resultCapability) => {
     app __x0__ = (IsPromise promise)
     assert (= __x0__ true)
     if (! (= resultCapability absent)) {} else resultCapability = undefined
@@ -41,5 +41,5 @@ object PerformPromiseThen extends Algorithm {
       app __x7__ = (WrapCompletion resultCapability["Promise"])
       return __x7__
     }
-  }""")
+  }"""))
 }

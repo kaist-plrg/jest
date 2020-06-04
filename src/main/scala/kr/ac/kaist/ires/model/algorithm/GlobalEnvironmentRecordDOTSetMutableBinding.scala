@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GlobalEnvironmentRecordDOTSetMutableBinding extends Algorithm {
   val length: Int = 3
   val lang: Boolean = true
-  val func: Func = parseFunc(""""GlobalEnvironmentRecord.SetMutableBinding" (this, N, V, S) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GlobalEnvironmentRecord.SetMutableBinding" (this, N, V, S) => {
     let envRec = this
     let DclRec = envRec["DeclarativeRecord"]
     app __x0__ = (DclRec["HasBinding"] DclRec N)
@@ -20,5 +20,5 @@ object GlobalEnvironmentRecordDOTSetMutableBinding extends Algorithm {
     if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
     app __x4__ = (WrapCompletion __x3__)
     return __x4__
-  }""")
+  }"""))
 }

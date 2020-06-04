@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GLOBALDOTNumberDOTprototypeDOTtoExponential extends Algorithm {
   val length: Int = 1
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GLOBAL.Number.prototype.toExponential" (this, argumentsList, NewTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Number.prototype.toExponential" (this, argumentsList, NewTarget) => {
     app __x0__ = (GetArgument argumentsList 0i)
     let fractionDigits = __x0__
     app __x1__ = (thisNumberValue this)
@@ -56,5 +56,5 @@ object GLOBALDOTNumberDOTprototypeDOTtoExponential extends Algorithm {
     m = (+ (+ (+ m "e") c) d)
     app __x6__ = (WrapCompletion (+ s m))
     return __x6__
-  }""")
+  }"""))
 }

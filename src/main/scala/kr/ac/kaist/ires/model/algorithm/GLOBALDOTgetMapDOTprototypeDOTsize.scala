@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GLOBALDOTgetMapDOTprototypeDOTsize extends Algorithm {
   val length: Int = 0
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GLOBAL.getMap.prototype.size" (this, argumentsList, NewTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.getMap.prototype.size" (this, argumentsList, NewTarget) => {
     let M = this
     app __x0__ = (Type M)
     if (! (= __x0__ Object)) {
@@ -28,5 +28,5 @@ object GLOBALDOTgetMapDOTprototypeDOTsize extends Algorithm {
     }
     app __x5__ = (WrapCompletion count)
     return __x5__
-  }""")
+  }"""))
 }

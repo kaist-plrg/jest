@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GeneratorResume extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
-  val func: Func = parseFunc(""""GeneratorResume" (generator, value) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GeneratorResume" (generator, value) => {
     app __x0__ = (GeneratorValidate generator)
     if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
     let state = __x0__
@@ -30,5 +30,5 @@ object GeneratorResume extends Algorithm {
     app __x6__ = (Completion result)
     app __x7__ = (WrapCompletion __x6__)
     return __x7__
-  }""")
+  }"""))
 }

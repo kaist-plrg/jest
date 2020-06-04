@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object ConditionalExpression1Evaluation0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ConditionalExpression1Evaluation0" (this, LogicalORExpression, AssignmentExpression0, AssignmentExpression1) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ConditionalExpression1Evaluation0" (this, LogicalORExpression, AssignmentExpression0, AssignmentExpression1) => {
     access __x0__ = (LogicalORExpression "Evaluation")
     let lref = __x0__
     app __x1__ = (GetValue lref)
@@ -28,5 +28,5 @@ object ConditionalExpression1Evaluation0 extends Algorithm {
       app __x8__ = (WrapCompletion __x7__)
       return __x8__
     }
-  }""")
+  }"""))
 }

@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object ArrayBindingPattern2BoundNames3 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ArrayBindingPattern2BoundNames3" (this, BindingElementList, Elision, BindingRestElement) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ArrayBindingPattern2BoundNames3" (this, BindingElementList, Elision, BindingRestElement) => {
     access __x0__ = (BindingElementList "BoundNames")
     let names = __x0__
     access __x1__ = (BindingRestElement "BoundNames")
@@ -18,5 +18,5 @@ object ArrayBindingPattern2BoundNames3 extends Algorithm {
       __x3__ = (+ __x3__ 1i)
     }
     return names
-  }""")
+  }"""))
 }

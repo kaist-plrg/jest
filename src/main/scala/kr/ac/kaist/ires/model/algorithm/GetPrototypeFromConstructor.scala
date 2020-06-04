@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GetPrototypeFromConstructor extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
-  val func: Func = parseFunc(""""GetPrototypeFromConstructor" (constructor, intrinsicDefaultProto) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GetPrototypeFromConstructor" (constructor, intrinsicDefaultProto) => {
     app __x0__ = (IsCallable constructor)
     assert (= __x0__ true)
     app __x1__ = (Get constructor "prototype")
@@ -21,5 +21,5 @@ object GetPrototypeFromConstructor extends Algorithm {
     } else {}
     app __x4__ = (WrapCompletion proto)
     return __x4__
-  }""")
+  }"""))
 }

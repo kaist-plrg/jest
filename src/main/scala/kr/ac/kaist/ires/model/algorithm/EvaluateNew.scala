@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object EvaluateNew extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
-  val func: Func = parseFunc(""""EvaluateNew" (constructExpr, arguments) => {
+  val func: Func = FixUIdWalker(parseFunc(""""EvaluateNew" (constructExpr, arguments) => {
     assert (|| (is-instance-of constructExpr NewExpression) (is-instance-of constructExpr MemberExpression))
     assert (|| (= arguments CONST_empty) (is-instance-of arguments Arguments))
     access __x0__ = (constructExpr "Evaluation")
@@ -29,5 +29,5 @@ object EvaluateNew extends Algorithm {
     if (is-completion __x5__) if (= __x5__["Type"] CONST_normal) __x5__ = __x5__["Value"] else return __x5__ else {}
     app __x6__ = (WrapCompletion __x5__)
     return __x6__
-  }""")
+  }"""))
 }

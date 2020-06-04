@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object SetDefaultGlobalBindings extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""SetDefaultGlobalBindings" (realmRec) => {
+  val func: Func = FixUIdWalker(parseFunc(""""SetDefaultGlobalBindings" (realmRec) => {
     let global = realmRec["GlobalObject"]
     let __x0__ = (map-keys GLOBAL)
     let __x1__ = 0i
@@ -19,5 +19,5 @@ object SetDefaultGlobalBindings extends Algorithm {
     }
     app __x3__ = (WrapCompletion global)
     return __x3__
-  }""")
+  }"""))
 }

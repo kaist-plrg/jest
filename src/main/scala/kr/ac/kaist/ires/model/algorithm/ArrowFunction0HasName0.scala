@@ -6,5 +6,5 @@ import kr.ac.kaist.ires.ir.Parser._
 object ArrowFunction0HasName0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ArrowFunction0HasName0" (this, ArrowParameters, ConciseBody) => return false""")
+  val func: Func = FixUIdWalker(parseFunc(""""ArrowFunction0HasName0" (this, ArrowParameters, ConciseBody) => return false"""))
 }

@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object OrdinarySetPrototypeOf extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
-  val func: Func = parseFunc(""""OrdinarySetPrototypeOf" (O, V) => {
+  val func: Func = FixUIdWalker(parseFunc(""""OrdinarySetPrototypeOf" (O, V) => {
     let extensible = O["Extensible"]
     let current = O["Prototype"]
     app __x0__ = (SameValue V current)
@@ -30,5 +30,5 @@ object OrdinarySetPrototypeOf extends Algorithm {
     O["Prototype"] = V
     app __x5__ = (WrapCompletion true)
     return __x5__
-  }""")
+  }"""))
 }

@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object FunctionExpression0Evaluation1 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""FunctionExpression0Evaluation1" (this, BindingIdentifier, FormalParameters, FunctionBody) => {
+  val func: Func = FixUIdWalker(parseFunc(""""FunctionExpression0Evaluation1" (this, BindingIdentifier, FormalParameters, FunctionBody) => {
     if true let strict = true else let strict = false
     let scope = GLOBAL_context["LexicalEnvironment"]
     app __x0__ = (NewDeclarativeEnvironment scope)
@@ -27,5 +27,5 @@ object FunctionExpression0Evaluation1 extends Algorithm {
     __x6__
     app __x7__ = (WrapCompletion closure)
     return __x7__
-  }""")
+  }"""))
 }

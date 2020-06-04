@@ -6,8 +6,8 @@ import kr.ac.kaist.ires.ir.Parser._
 object IterationStatement5VarDeclaredNames0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""IterationStatement5VarDeclaredNames0" (this, LeftHandSideExpression, Expression, Statement) => {
+  val func: Func = FixUIdWalker(parseFunc(""""IterationStatement5VarDeclaredNames0" (this, LeftHandSideExpression, Expression, Statement) => {
     access __x0__ = (Statement "VarDeclaredNames")
     return __x0__
-  }""")
+  }"""))
 }

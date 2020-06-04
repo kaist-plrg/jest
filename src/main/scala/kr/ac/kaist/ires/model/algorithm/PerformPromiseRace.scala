@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object PerformPromiseRace extends Algorithm {
   val length: Int = 3
   val lang: Boolean = false
-  val func: Func = parseFunc(""""PerformPromiseRace" (iteratorRecord, constructor, resultCapability) => {
+  val func: Func = FixUIdWalker(parseFunc(""""PerformPromiseRace" (iteratorRecord, constructor, resultCapability) => {
     app __x0__ = (IsConstructor constructor)
     assert (= __x0__ true)
     while true {
@@ -34,5 +34,5 @@ object PerformPromiseRace extends Algorithm {
       if (is-completion __x7__) if (= __x7__["Type"] CONST_normal) __x7__ = __x7__["Value"] else return __x7__ else {}
       __x7__
     }
-  }""")
+  }"""))
 }

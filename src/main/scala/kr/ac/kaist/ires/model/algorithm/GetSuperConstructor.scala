@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GetSuperConstructor extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""GetSuperConstructor" () => {
+  val func: Func = FixUIdWalker(parseFunc(""""GetSuperConstructor" () => {
     app __x0__ = (GetThisEnvironment )
     let envRec = __x0__
     assert (= (typeof envRec) "FunctionEnvironmentRecord")
@@ -21,5 +21,5 @@ object GetSuperConstructor extends Algorithm {
     } else {}
     app __x4__ = (WrapCompletion superConstructor)
     return __x4__
-  }""")
+  }"""))
 }

@@ -6,5 +6,5 @@ import kr.ac.kaist.ires.ir.Parser._
 object UnaryExpression6IsFunctionDefinition0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""UnaryExpression6IsFunctionDefinition0" (this, UnaryExpression) => return false""")
+  val func: Func = FixUIdWalker(parseFunc(""""UnaryExpression6IsFunctionDefinition0" (this, UnaryExpression) => return false"""))
 }

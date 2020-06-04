@@ -6,8 +6,8 @@ import kr.ac.kaist.ires.ir.Parser._
 object UnaryExpression5HasCallInTailPosition0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""UnaryExpression5HasCallInTailPosition0" (this, UnaryExpression, call) => {
+  val func: Func = FixUIdWalker(parseFunc(""""UnaryExpression5HasCallInTailPosition0" (this, UnaryExpression, call) => {
     app __x0__ = (WrapCompletion false)
     return __x0__
-  }""")
+  }"""))
 }

@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object SuperProperty1Evaluation0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""SuperProperty1Evaluation0" (this, IdentifierName) => {
+  val func: Func = FixUIdWalker(parseFunc(""""SuperProperty1Evaluation0" (this, IdentifierName) => {
     app __x0__ = (GetThisEnvironment )
     let env = __x0__
     app __x1__ = (env["GetThisBinding"] env)
@@ -19,5 +19,5 @@ object SuperProperty1Evaluation0 extends Algorithm {
     if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
     app __x4__ = (WrapCompletion __x3__)
     return __x4__
-  }""")
+  }"""))
 }

@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object ValidateAndApplyPropertyDescriptor extends Algorithm {
   val length: Int = 5
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ValidateAndApplyPropertyDescriptor" (O, P, extensible, Desc, current) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ValidateAndApplyPropertyDescriptor" (O, P, extensible, Desc, current) => {
     if (= current undefined) {
       if (= extensible false) {
         app __x0__ = (WrapCompletion false)
@@ -122,5 +122,5 @@ object ValidateAndApplyPropertyDescriptor extends Algorithm {
     } else {}
     app __x32__ = (WrapCompletion true)
     return __x32__
-  }""")
+  }"""))
 }

@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GLOBALDOTSymbolDOTfor extends Algorithm {
   val length: Int = 1
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GLOBAL.Symbol.for" (this, argumentsList, NewTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Symbol.for" (this, argumentsList, NewTarget) => {
     app __x0__ = (GetArgument argumentsList 0i)
     let key = __x0__
     app __x1__ = (ToString key)
@@ -17,5 +17,5 @@ object GLOBALDOTSymbolDOTfor extends Algorithm {
     !!! "Etc"
     app __x2__ = (WrapCompletion newSymbol)
     return __x2__
-  }""")
+  }"""))
 }

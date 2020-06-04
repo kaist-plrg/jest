@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object Encode extends Algorithm {
   val length: Int = 2
   val lang: Boolean = false
-  val func: Func = parseFunc(""""Encode" (string, unescapedSet) => {
+  val func: Func = FixUIdWalker(parseFunc(""""Encode" (string, unescapedSet) => {
     let strLen = string["length"]
     let R = ""
     let k = 0i
@@ -44,5 +44,5 @@ object Encode extends Algorithm {
       }
       k = (+ k 1i)
     }
-  }""")
+  }"""))
 }

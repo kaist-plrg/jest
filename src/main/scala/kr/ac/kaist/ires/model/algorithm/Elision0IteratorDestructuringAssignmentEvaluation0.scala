@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object Elision0IteratorDestructuringAssignmentEvaluation0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""Elision0IteratorDestructuringAssignmentEvaluation0" (this, iteratorRecord) => {
+  val func: Func = FixUIdWalker(parseFunc(""""Elision0IteratorDestructuringAssignmentEvaluation0" (this, iteratorRecord) => {
     if (= iteratorRecord["Done"] false) {
       app __x0__ = (IteratorStep iteratorRecord)
       let next = __x0__
@@ -19,5 +19,5 @@ object Elision0IteratorDestructuringAssignmentEvaluation0 extends Algorithm {
     app __x2__ = (NormalCompletion CONST_empty)
     app __x3__ = (WrapCompletion __x2__)
     return __x3__
-  }""")
+  }"""))
 }

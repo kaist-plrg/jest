@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GLOBALDOTINTRINSIC_AsyncFromSyncIteratorPrototypeDOTreturn extends Algorithm {
   val length: Int = 1
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GLOBAL.INTRINSIC_AsyncFromSyncIteratorPrototype.return" (this, argumentsList, NewTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.INTRINSIC_AsyncFromSyncIteratorPrototype.return" (this, argumentsList, NewTarget) => {
     app __x0__ = (GetArgument argumentsList 0i)
     let value = __x0__
     let O = this
@@ -61,5 +61,5 @@ object GLOBALDOTINTRINSIC_AsyncFromSyncIteratorPrototypeDOTreturn extends Algori
     if (is-completion __x15__) if (= __x15__["Type"] CONST_normal) __x15__ = __x15__["Value"] else return __x15__ else {}
     app __x16__ = (WrapCompletion __x15__)
     return __x16__
-  }""")
+  }"""))
 }

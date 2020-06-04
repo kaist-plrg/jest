@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object VariableDeclaration1Evaluation0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""VariableDeclaration1Evaluation0" (this, BindingPattern, Initializer) => {
+  val func: Func = FixUIdWalker(parseFunc(""""VariableDeclaration1Evaluation0" (this, BindingPattern, Initializer) => {
     access __x0__ = (Initializer "Evaluation")
     let rhs = __x0__
     app __x1__ = (GetValue rhs)
@@ -16,5 +16,5 @@ object VariableDeclaration1Evaluation0 extends Algorithm {
     app __x3__ = (__x2__ rval undefined)
     app __x4__ = (WrapCompletion __x3__)
     return __x4__
-  }""")
+  }"""))
 }

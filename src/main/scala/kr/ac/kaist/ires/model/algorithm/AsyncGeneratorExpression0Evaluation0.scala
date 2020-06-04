@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object AsyncGeneratorExpression0Evaluation0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""AsyncGeneratorExpression0Evaluation0" (this, FormalParameters, AsyncGeneratorBody) => {
+  val func: Func = FixUIdWalker(parseFunc(""""AsyncGeneratorExpression0Evaluation0" (this, FormalParameters, AsyncGeneratorBody) => {
     if true let strict = true else let strict = false
     access __x0__ = (GLOBAL_context "LexicalEnvironment")
     let scope = __x0__
@@ -22,5 +22,5 @@ object AsyncGeneratorExpression0Evaluation0 extends Algorithm {
     closure["SourceText"] = (get-syntax this)
     app __x4__ = (WrapCompletion closure)
     return __x4__
-  }""")
+  }"""))
 }

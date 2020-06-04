@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object EqualityExpression3Evaluation0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""EqualityExpression3Evaluation0" (this, EqualityExpression, RelationalExpression) => {
+  val func: Func = FixUIdWalker(parseFunc(""""EqualityExpression3Evaluation0" (this, EqualityExpression, RelationalExpression) => {
     access __x0__ = (EqualityExpression "Evaluation")
     let lref = __x0__
     app __x1__ = (GetValue lref)
@@ -20,5 +20,5 @@ object EqualityExpression3Evaluation0 extends Algorithm {
     app __x4__ = (StrictEqualityComparison rval lval)
     app __x5__ = (WrapCompletion __x4__)
     return __x5__
-  }""")
+  }"""))
 }

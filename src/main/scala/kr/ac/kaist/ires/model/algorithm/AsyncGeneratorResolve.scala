@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object AsyncGeneratorResolve extends Algorithm {
   val length: Int = 3
   val lang: Boolean = true
-  val func: Func = parseFunc(""""AsyncGeneratorResolve" (generator, value, done) => {
+  val func: Func = FixUIdWalker(parseFunc(""""AsyncGeneratorResolve" (generator, value, done) => {
     let queue = generator["AsyncGeneratorQueue"]
     assert (< 0i queue["length"])
     let next = (pop queue 0i)
@@ -22,5 +22,5 @@ object AsyncGeneratorResolve extends Algorithm {
     __x2__
     app __x3__ = (WrapCompletion undefined)
     return __x3__
-  }""")
+  }"""))
 }

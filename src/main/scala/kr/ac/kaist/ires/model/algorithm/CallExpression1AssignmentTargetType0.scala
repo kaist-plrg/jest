@@ -6,5 +6,5 @@ import kr.ac.kaist.ires.ir.Parser._
 object CallExpression1AssignmentTargetType0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""CallExpression1AssignmentTargetType0" (this, SuperCall) => return CONST_invalid""")
+  val func: Func = FixUIdWalker(parseFunc(""""CallExpression1AssignmentTargetType0" (this, SuperCall) => return CONST_invalid"""))
 }

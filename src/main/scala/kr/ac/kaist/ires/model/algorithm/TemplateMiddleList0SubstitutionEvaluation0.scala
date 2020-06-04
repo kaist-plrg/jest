@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object TemplateMiddleList0SubstitutionEvaluation0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""TemplateMiddleList0SubstitutionEvaluation0" (this, TemplateMiddle, Expression) => {
+  val func: Func = FixUIdWalker(parseFunc(""""TemplateMiddleList0SubstitutionEvaluation0" (this, TemplateMiddle, Expression) => {
     access __x0__ = (Expression "Evaluation")
     let subRef = __x0__
     app __x1__ = (GetValue subRef)
@@ -14,5 +14,5 @@ object TemplateMiddleList0SubstitutionEvaluation0 extends Algorithm {
     let sub = __x1__
     app __x2__ = (WrapCompletion (new [sub]))
     return __x2__
-  }""")
+  }"""))
 }

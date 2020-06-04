@@ -6,5 +6,5 @@ import kr.ac.kaist.ires.ir.Parser._
 object AsyncGeneratorExpression0IsFunctionDefinition1 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""AsyncGeneratorExpression0IsFunctionDefinition1" (this, BindingIdentifier, FormalParameters, AsyncGeneratorBody) => return true""")
+  val func: Func = FixUIdWalker(parseFunc(""""AsyncGeneratorExpression0IsFunctionDefinition1" (this, BindingIdentifier, FormalParameters, AsyncGeneratorBody) => return true"""))
 }

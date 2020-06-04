@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GetGeneratorKind extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""GetGeneratorKind" () => {
+  val func: Func = FixUIdWalker(parseFunc(""""GetGeneratorKind" () => {
     let genContext = GLOBAL_context
     if (= genContext["Generator"] absent) {
       app __x0__ = (WrapCompletion CONST_nongenerator)
@@ -20,5 +20,5 @@ object GetGeneratorKind extends Algorithm {
       app __x2__ = (WrapCompletion CONST_sync)
       return __x2__
     }
-  }""")
+  }"""))
 }

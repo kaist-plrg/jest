@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GLOBALDOTWeakSetDOTprototypeDOTdelete extends Algorithm {
   val length: Int = 1
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GLOBAL.WeakSet.prototype.delete" (this, argumentsList, NewTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.WeakSet.prototype.delete" (this, argumentsList, NewTarget) => {
     app __x0__ = (GetArgument argumentsList 0i)
     let value = __x0__
     let S = this
@@ -43,5 +43,5 @@ object GLOBALDOTWeakSetDOTprototypeDOTdelete extends Algorithm {
     }
     app __x11__ = (WrapCompletion false)
     return __x11__
-  }""")
+  }"""))
 }

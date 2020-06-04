@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object CreatePerIterationEnvironment extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""CreatePerIterationEnvironment" (perIterationBindings) => {
+  val func: Func = FixUIdWalker(parseFunc(""""CreatePerIterationEnvironment" (perIterationBindings) => {
     if (< 0i perIterationBindings["length"]) {
       let lastIterationEnv = GLOBAL_context["LexicalEnvironment"]
       let lastIterationEnvRec = lastIterationEnv["EnvironmentRecord"]
@@ -33,5 +33,5 @@ object CreatePerIterationEnvironment extends Algorithm {
     } else {}
     app __x6__ = (WrapCompletion undefined)
     return __x6__
-  }""")
+  }"""))
 }

@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GLOBALDOTArrayDOTprototypeDOTshift extends Algorithm {
   val length: Int = 0
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GLOBAL.Array.prototype.shift" (this, argumentsList, NewTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Array.prototype.shift" (this, argumentsList, NewTarget) => {
     app __x0__ = (ToObject this)
     if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
     let O = __x0__
@@ -60,5 +60,5 @@ object GLOBALDOTArrayDOTprototypeDOTshift extends Algorithm {
     __x14__
     app __x15__ = (WrapCompletion first)
     return __x15__
-  }""")
+  }"""))
 }

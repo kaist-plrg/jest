@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GLOBALDOTINTRINSIC_SetIteratorPrototypeDOTnext extends Algorithm {
   val length: Int = 0
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GLOBAL.INTRINSIC_SetIteratorPrototype.next" (this, argumentsList, NewTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.INTRINSIC_SetIteratorPrototype.next" (this, argumentsList, NewTarget) => {
     let O = this
     app __x0__ = (Type O)
     if (! (= __x0__ Object)) {
@@ -45,5 +45,5 @@ object GLOBALDOTINTRINSIC_SetIteratorPrototypeDOTnext extends Algorithm {
     app __x9__ = (CreateIterResultObject undefined true)
     app __x10__ = (WrapCompletion __x9__)
     return __x10__
-  }""")
+  }"""))
 }

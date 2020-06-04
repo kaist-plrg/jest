@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object IntegerIndexedExoticObjectDOTDefineOwnProperty extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
-  val func: Func = parseFunc(""""IntegerIndexedExoticObject.DefineOwnProperty" (O, P, Desc) => {
+  val func: Func = FixUIdWalker(parseFunc(""""IntegerIndexedExoticObject.DefineOwnProperty" (O, P, Desc) => {
     app __x0__ = (IsPropertyKey P)
     assert (= __x0__ true)
     app __x1__ = (Type P)
@@ -65,5 +65,5 @@ object IntegerIndexedExoticObjectDOTDefineOwnProperty extends Algorithm {
     if (is-completion __x16__) if (= __x16__["Type"] CONST_normal) __x16__ = __x16__["Value"] else return __x16__ else {}
     app __x17__ = (WrapCompletion __x16__)
     return __x17__
-  }""")
+  }"""))
 }

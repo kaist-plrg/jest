@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GLOBALDOTArrayDOTprototypeDOTfilter extends Algorithm {
   val length: Int = 1
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GLOBAL.Array.prototype.filter" (this, argumentsList, NewTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Array.prototype.filter" (this, argumentsList, NewTarget) => {
     app __x0__ = (GetArgument argumentsList 0i)
     let callbackfn = __x0__
     app __x1__ = (GetArgument argumentsList 1i)
@@ -58,5 +58,5 @@ object GLOBALDOTArrayDOTprototypeDOTfilter extends Algorithm {
     }
     app __x15__ = (WrapCompletion A)
     return __x15__
-  }""")
+  }"""))
 }

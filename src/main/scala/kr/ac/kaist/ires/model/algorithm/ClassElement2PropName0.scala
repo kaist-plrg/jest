@@ -6,5 +6,5 @@ import kr.ac.kaist.ires.ir.Parser._
 object ClassElement2PropName0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ClassElement2PropName0" (this) => return CONST_empty""")
+  val func: Func = FixUIdWalker(parseFunc(""""ClassElement2PropName0" (this) => return CONST_empty"""))
 }

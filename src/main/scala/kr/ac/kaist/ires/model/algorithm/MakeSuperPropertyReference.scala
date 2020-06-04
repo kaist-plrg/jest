@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object MakeSuperPropertyReference extends Algorithm {
   val length: Int = 3
   val lang: Boolean = true
-  val func: Func = parseFunc(""""MakeSuperPropertyReference" (actualThis, propertyKey, strict) => {
+  val func: Func = FixUIdWalker(parseFunc(""""MakeSuperPropertyReference" (actualThis, propertyKey, strict) => {
     app __x0__ = (GetThisEnvironment )
     let env = __x0__
     app __x1__ = (env["HasSuperBinding"] env)
@@ -19,5 +19,5 @@ object MakeSuperPropertyReference extends Algorithm {
     let bv = __x3__
     app __x4__ = (WrapCompletion (new Reference("BaseValue" -> bv, "ReferencedName" -> propertyKey, "thisValue" -> actualThis, "StrictReference" -> strict)))
     return __x4__
-  }""")
+  }"""))
 }

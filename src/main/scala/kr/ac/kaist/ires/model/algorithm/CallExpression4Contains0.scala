@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object CallExpression4Contains0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""CallExpression4Contains0" (this, CallExpression, IdentifierName, symbol) => {
+  val func: Func = FixUIdWalker(parseFunc(""""CallExpression4Contains0" (this, CallExpression, IdentifierName, symbol) => {
     access __x0__ = (CallExpression "Contains")
     app __x1__ = (__x0__ symbol)
     if (= __x1__ true) return true else {}
@@ -19,5 +19,5 @@ object CallExpression4Contains0 extends Algorithm {
     } else {}
     if __x2__ return true else {}
     return false
-  }""")
+  }"""))
 }

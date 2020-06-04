@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object BoundFunctionExoticObjectDOTConstruct extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
-  val func: Func = parseFunc(""""BoundFunctionExoticObject.Construct" (F, argumentsList, newTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""BoundFunctionExoticObject.Construct" (F, argumentsList, newTarget) => {
     let target = F["BoundTargetFunction"]
     app __x0__ = (IsConstructor target)
     assert (= __x0__ true)
@@ -26,5 +26,5 @@ object BoundFunctionExoticObjectDOTConstruct extends Algorithm {
     if (is-completion __x6__) if (= __x6__["Type"] CONST_normal) __x6__ = __x6__["Value"] else return __x6__ else {}
     app __x7__ = (WrapCompletion __x6__)
     return __x7__
-  }""")
+  }"""))
 }

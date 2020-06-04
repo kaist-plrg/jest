@@ -6,8 +6,8 @@ import kr.ac.kaist.ires.ir.Parser._
 object MethodDefinition0PropName0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""MethodDefinition0PropName0" (this, PropertyName, UniqueFormalParameters, FunctionBody) => {
+  val func: Func = FixUIdWalker(parseFunc(""""MethodDefinition0PropName0" (this, PropertyName, UniqueFormalParameters, FunctionBody) => {
     access __x0__ = (PropertyName "PropName")
     return __x0__
-  }""")
+  }"""))
 }

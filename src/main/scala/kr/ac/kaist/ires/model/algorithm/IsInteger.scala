@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object IsInteger extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""IsInteger" (argument) => {
+  val func: Func = FixUIdWalker(parseFunc(""""IsInteger" (argument) => {
     app __x0__ = (Type argument)
     if (! (= __x0__ Number)) {
       app __x1__ = (WrapCompletion false)
@@ -25,5 +25,5 @@ object IsInteger extends Algorithm {
     } else {}
     app __x7__ = (WrapCompletion true)
     return __x7__
-  }""")
+  }"""))
 }

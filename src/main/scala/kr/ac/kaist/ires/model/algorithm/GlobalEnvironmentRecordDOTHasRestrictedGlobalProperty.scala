@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GlobalEnvironmentRecordDOTHasRestrictedGlobalProperty extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""GlobalEnvironmentRecord.HasRestrictedGlobalProperty" (this, N) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GlobalEnvironmentRecord.HasRestrictedGlobalProperty" (this, N) => {
     let envRec = this
     let ObjRec = envRec["ObjectRecord"]
     let globalObject = ObjRec["BindingObject"]
@@ -23,5 +23,5 @@ object GlobalEnvironmentRecordDOTHasRestrictedGlobalProperty extends Algorithm {
     } else {}
     app __x3__ = (WrapCompletion true)
     return __x3__
-  }""")
+  }"""))
 }

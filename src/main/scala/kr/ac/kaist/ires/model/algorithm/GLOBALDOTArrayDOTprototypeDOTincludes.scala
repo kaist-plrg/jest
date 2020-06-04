@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GLOBALDOTArrayDOTprototypeDOTincludes extends Algorithm {
   val length: Int = 1
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GLOBAL.Array.prototype.includes" (this, argumentsList, NewTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Array.prototype.includes" (this, argumentsList, NewTarget) => {
     app __x0__ = (GetArgument argumentsList 0i)
     let searchElement = __x0__
     app __x1__ = (GetArgument argumentsList 1i)
@@ -45,5 +45,5 @@ object GLOBALDOTArrayDOTprototypeDOTincludes extends Algorithm {
     }
     app __x11__ = (WrapCompletion false)
     return __x11__
-  }""")
+  }"""))
 }

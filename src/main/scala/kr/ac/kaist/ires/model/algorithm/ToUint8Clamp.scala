@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object ToUint8Clamp extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ToUint8Clamp" (argument) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ToUint8Clamp" (argument) => {
     app __x0__ = (ToNumber argument)
     if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
     let number = __x0__
@@ -35,5 +35,5 @@ object ToUint8Clamp extends Algorithm {
     !!! "Etc"
     app __x7__ = (WrapCompletion f)
     return __x7__
-  }""")
+  }"""))
 }

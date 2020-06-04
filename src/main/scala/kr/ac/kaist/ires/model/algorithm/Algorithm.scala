@@ -7,8 +7,10 @@ trait Algorithm {
   val lang: Boolean
   val func: Func
 }
+
 object Algorithm {
-  val getAll: List[Algorithm] = List(
+  lazy val languages: List[Algorithm] = all.filter(_.lang)
+  lazy val all: List[Algorithm] = List(
     AbstractEqualityComparison,
     AbstractRelationalComparison,
     AddEntriesFromIterable,

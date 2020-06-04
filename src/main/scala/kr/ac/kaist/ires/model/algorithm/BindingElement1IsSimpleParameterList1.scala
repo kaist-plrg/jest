@@ -6,5 +6,5 @@ import kr.ac.kaist.ires.ir.Parser._
 object BindingElement1IsSimpleParameterList1 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""BindingElement1IsSimpleParameterList1" (this, BindingPattern, Initializer) => return false""")
+  val func: Func = FixUIdWalker(parseFunc(""""BindingElement1IsSimpleParameterList1" (this, BindingPattern, Initializer) => return false"""))
 }

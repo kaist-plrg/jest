@@ -6,5 +6,5 @@ import kr.ac.kaist.ires.ir.Parser._
 object Script0VarDeclaredNames0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""Script0VarDeclaredNames0" () => return (new [])""")
+  val func: Func = FixUIdWalker(parseFunc(""""Script0VarDeclaredNames0" () => return (new [])"""))
 }

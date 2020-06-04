@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object BindingRestProperty0RestBindingInitialization0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""BindingRestProperty0RestBindingInitialization0" (this, BindingIdentifier, value, environment, excludedNames) => {
+  val func: Func = FixUIdWalker(parseFunc(""""BindingRestProperty0RestBindingInitialization0" (this, BindingIdentifier, value, environment, excludedNames) => {
     access __x0__ = (BindingIdentifier "StringValue")
     app __x1__ = (ResolveBinding __x0__ environment)
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
@@ -24,5 +24,5 @@ object BindingRestProperty0RestBindingInitialization0 extends Algorithm {
     app __x6__ = (InitializeReferencedBinding lhs restObj)
     app __x7__ = (WrapCompletion __x6__)
     return __x7__
-  }""")
+  }"""))
 }

@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object ProxyExoticObjectDOTSet extends Algorithm {
   val length: Int = 3
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ProxyExoticObject.Set" (O, P, V, Receiver) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ProxyExoticObject.Set" (O, P, V, Receiver) => {
     app __x0__ = (IsPropertyKey P)
     assert (= __x0__ true)
     let handler = O["ProxyHandler"]
@@ -54,5 +54,5 @@ object ProxyExoticObjectDOTSet extends Algorithm {
     } else {}
     app __x15__ = (WrapCompletion true)
     return __x15__
-  }""")
+  }"""))
 }

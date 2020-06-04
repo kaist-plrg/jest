@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object SetIntegrityLevel extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
-  val func: Func = parseFunc(""""SetIntegrityLevel" (O, level) => {
+  val func: Func = FixUIdWalker(parseFunc(""""SetIntegrityLevel" (O, level) => {
     app __x0__ = (Type O)
     assert (= __x0__ Object)
     assert (|| (= level "sealed") (= level "frozen"))
@@ -50,5 +50,5 @@ object SetIntegrityLevel extends Algorithm {
     }
     app __x12__ = (WrapCompletion true)
     return __x12__
-  }""")
+  }"""))
 }

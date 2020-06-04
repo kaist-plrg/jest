@@ -6,5 +6,5 @@ import kr.ac.kaist.ires.ir.Parser._
 object IdentifierReference2StringValue0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""IdentifierReference2StringValue0" (this) => return "await"""")
+  val func: Func = FixUIdWalker(parseFunc(""""IdentifierReference2StringValue0" (this) => return "await""""))
 }

@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GLOBALDOTAsyncGeneratorResumeNext extends Algorithm {
   val length: Int = 1
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GLOBAL.AsyncGeneratorResumeNext" (this, argumentsList, NewTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.AsyncGeneratorResumeNext" (this, argumentsList, NewTarget) => {
     app __x0__ = (GetArgument argumentsList 0i)
     let generator = __x0__
     let state = generator["AsyncGeneratorState"]
@@ -73,5 +73,5 @@ object GLOBALDOTAsyncGeneratorResumeNext extends Algorithm {
     }
     app __x15__ = (WrapCompletion undefined)
     return __x15__
-  }""")
+  }"""))
 }

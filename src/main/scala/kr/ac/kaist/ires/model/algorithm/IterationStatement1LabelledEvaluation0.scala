@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object IterationStatement1LabelledEvaluation0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""IterationStatement1LabelledEvaluation0" (this, Expression, Statement, labelSet) => {
+  val func: Func = FixUIdWalker(parseFunc(""""IterationStatement1LabelledEvaluation0" (this, Expression, Statement, labelSet) => {
     let V = undefined
     while true {
       access __x0__ = (Expression "Evaluation")
@@ -31,5 +31,5 @@ object IterationStatement1LabelledEvaluation0 extends Algorithm {
       } else {}
       if (! (= stmtResult["Value"] CONST_empty)) V = stmtResult["Value"] else {}
     }
-  }""")
+  }"""))
 }

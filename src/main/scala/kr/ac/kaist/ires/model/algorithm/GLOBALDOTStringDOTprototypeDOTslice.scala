@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GLOBALDOTStringDOTprototypeDOTslice extends Algorithm {
   val length: Int = 2
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GLOBAL.String.prototype.slice" (this, argumentsList, NewTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.String.prototype.slice" (this, argumentsList, NewTarget) => {
     app __x0__ = (GetArgument argumentsList 0i)
     let start = __x0__
     app __x1__ = (GetArgument argumentsList 1i)
@@ -44,5 +44,5 @@ object GLOBALDOTStringDOTprototypeDOTslice extends Algorithm {
     let span = __x10__
     app __x11__ = (WrapCompletion !!! "StringOp")
     return __x11__
-  }""")
+  }"""))
 }

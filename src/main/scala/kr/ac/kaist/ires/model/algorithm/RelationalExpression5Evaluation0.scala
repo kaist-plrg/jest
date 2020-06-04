@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object RelationalExpression5Evaluation0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""RelationalExpression5Evaluation0" (this, RelationalExpression, ShiftExpression) => {
+  val func: Func = FixUIdWalker(parseFunc(""""RelationalExpression5Evaluation0" (this, RelationalExpression, ShiftExpression) => {
     access __x0__ = (RelationalExpression "Evaluation")
     let lref = __x0__
     app __x1__ = (GetValue lref)
@@ -21,5 +21,5 @@ object RelationalExpression5Evaluation0 extends Algorithm {
     if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
     app __x5__ = (WrapCompletion __x4__)
     return __x5__
-  }""")
+  }"""))
 }

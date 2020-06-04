@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object TryStatement0VarScopedDeclarations0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""TryStatement0VarScopedDeclarations0" (this, Block, Catch) => {
+  val func: Func = FixUIdWalker(parseFunc(""""TryStatement0VarScopedDeclarations0" (this, Block, Catch) => {
     access __x0__ = (Block "VarScopedDeclarations")
     let declarations = __x0__
     access __x1__ = (Catch "VarScopedDeclarations")
@@ -18,5 +18,5 @@ object TryStatement0VarScopedDeclarations0 extends Algorithm {
       __x3__ = (+ __x3__ 1i)
     }
     return declarations
-  }""")
+  }"""))
 }

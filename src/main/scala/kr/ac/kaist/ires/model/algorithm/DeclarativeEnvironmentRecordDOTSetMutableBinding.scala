@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object DeclarativeEnvironmentRecordDOTSetMutableBinding extends Algorithm {
   val length: Int = 3
   val lang: Boolean = true
-  val func: Func = parseFunc(""""DeclarativeEnvironmentRecord.SetMutableBinding" (this, N, V, S) => {
+  val func: Func = FixUIdWalker(parseFunc(""""DeclarativeEnvironmentRecord.SetMutableBinding" (this, N, V, S) => {
     let envRec = this
     if (= absent envRec["SubMap"][N]) {
       if (= S true) {
@@ -32,5 +32,5 @@ object DeclarativeEnvironmentRecordDOTSetMutableBinding extends Algorithm {
     app __x7__ = (NormalCompletion CONST_empty)
     app __x8__ = (WrapCompletion __x7__)
     return __x8__
-  }""")
+  }"""))
 }

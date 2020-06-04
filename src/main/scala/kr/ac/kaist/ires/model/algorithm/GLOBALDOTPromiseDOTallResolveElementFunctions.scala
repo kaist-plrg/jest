@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GLOBALDOTPromiseDOTallResolveElementFunctions extends Algorithm {
   val length: Int = 0
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GLOBAL.Promise.allResolveElementFunctions" (this, argumentsList, NewTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Promise.allResolveElementFunctions" (this, argumentsList, NewTarget) => {
     let F = GLOBAL_context["Function"]
     let alreadyCalled = F["AlreadyCalled"]
     if (= alreadyCalled["Value"] true) {
@@ -30,5 +30,5 @@ object GLOBALDOTPromiseDOTallResolveElementFunctions extends Algorithm {
     } else {}
     app __x4__ = (WrapCompletion undefined)
     return __x4__
-  }""")
+  }"""))
 }

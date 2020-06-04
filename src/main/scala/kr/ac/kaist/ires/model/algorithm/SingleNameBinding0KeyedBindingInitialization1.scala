@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object SingleNameBinding0KeyedBindingInitialization1 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""SingleNameBinding0KeyedBindingInitialization1" (this, BindingIdentifier, Initializer, value, environment, propertyName) => {
+  val func: Func = FixUIdWalker(parseFunc(""""SingleNameBinding0KeyedBindingInitialization1" (this, BindingIdentifier, Initializer, value, environment, propertyName) => {
     access __x0__ = (BindingIdentifier "StringValue")
     let bindingId = __x0__
     app __x1__ = (ResolveBinding bindingId environment)
@@ -38,5 +38,5 @@ object SingleNameBinding0KeyedBindingInitialization1 extends Algorithm {
     app __x10__ = (InitializeReferencedBinding lhs v)
     app __x11__ = (WrapCompletion __x10__)
     return __x11__
-  }""")
+  }"""))
 }

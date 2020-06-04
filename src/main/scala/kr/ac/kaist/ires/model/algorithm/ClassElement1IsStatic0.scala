@@ -6,5 +6,5 @@ import kr.ac.kaist.ires.ir.Parser._
 object ClassElement1IsStatic0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ClassElement1IsStatic0" (this, MethodDefinition) => return true""")
+  val func: Func = FixUIdWalker(parseFunc(""""ClassElement1IsStatic0" (this, MethodDefinition) => return true"""))
 }

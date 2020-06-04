@@ -6,5 +6,5 @@ import kr.ac.kaist.ires.ir.Parser._
 object Statement8VarScopedDeclarations0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""Statement8VarScopedDeclarations0" (this, ReturnStatement) => return (new [])""")
+  val func: Func = FixUIdWalker(parseFunc(""""Statement8VarScopedDeclarations0" (this, ReturnStatement) => return (new [])"""))
 }

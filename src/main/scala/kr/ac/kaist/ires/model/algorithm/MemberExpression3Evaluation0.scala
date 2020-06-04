@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object MemberExpression3Evaluation0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""MemberExpression3Evaluation0" (this, MemberExpression, TemplateLiteral) => {
+  val func: Func = FixUIdWalker(parseFunc(""""MemberExpression3Evaluation0" (this, MemberExpression, TemplateLiteral) => {
     access __x0__ = (MemberExpression "Evaluation")
     let tagRef = __x0__
     app __x1__ = (GetValue tagRef)
@@ -19,5 +19,5 @@ object MemberExpression3Evaluation0 extends Algorithm {
     if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
     app __x4__ = (WrapCompletion __x3__)
     return __x4__
-  }""")
+  }"""))
 }

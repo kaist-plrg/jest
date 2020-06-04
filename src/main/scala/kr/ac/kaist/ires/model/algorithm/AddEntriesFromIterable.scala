@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object AddEntriesFromIterable extends Algorithm {
   val length: Int = 3
   val lang: Boolean = true
-  val func: Func = parseFunc(""""AddEntriesFromIterable" (target, iterable, adder) => {
+  val func: Func = FixUIdWalker(parseFunc(""""AddEntriesFromIterable" (target, iterable, adder) => {
     app __x0__ = (IsCallable adder)
     if (= __x0__ false) {
       app __x1__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
@@ -63,5 +63,5 @@ object AddEntriesFromIterable extends Algorithm {
         return __x21__
       } else {}
     }
-  }""")
+  }"""))
 }

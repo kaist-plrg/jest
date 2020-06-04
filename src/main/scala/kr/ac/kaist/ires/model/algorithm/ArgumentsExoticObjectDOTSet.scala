@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object ArgumentsExoticObjectDOTSet extends Algorithm {
   val length: Int = 3
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ArgumentsExoticObject.Set" (args, P, V, Receiver) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ArgumentsExoticObject.Set" (args, P, V, Receiver) => {
     let args = args
     app __x0__ = (SameValue args Receiver)
     if (= __x0__ false) let isMapped = false else {
@@ -23,5 +23,5 @@ object ArgumentsExoticObjectDOTSet extends Algorithm {
     if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
     app __x4__ = (WrapCompletion __x3__)
     return __x4__
-  }""")
+  }"""))
 }

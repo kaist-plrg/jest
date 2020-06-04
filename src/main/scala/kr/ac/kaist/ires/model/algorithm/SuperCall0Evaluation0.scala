@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object SuperCall0Evaluation0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""SuperCall0Evaluation0" (this, Arguments) => {
+  val func: Func = FixUIdWalker(parseFunc(""""SuperCall0Evaluation0" (this, Arguments) => {
     app __x0__ = (GetNewTarget )
     let newTarget = __x0__
     app __x1__ = (Type newTarget)
@@ -27,5 +27,5 @@ object SuperCall0Evaluation0 extends Algorithm {
     if (is-completion __x6__) if (= __x6__["Type"] CONST_normal) __x6__ = __x6__["Value"] else return __x6__ else {}
     app __x7__ = (WrapCompletion __x6__)
     return __x7__
-  }""")
+  }"""))
 }

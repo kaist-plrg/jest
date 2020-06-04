@@ -6,5 +6,5 @@ import kr.ac.kaist.ires.ir.Parser._
 object PropertyName0IsComputedPropertyKey0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""PropertyName0IsComputedPropertyKey0" (this, LiteralPropertyName) => return false""")
+  val func: Func = FixUIdWalker(parseFunc(""""PropertyName0IsComputedPropertyKey0" (this, LiteralPropertyName) => return false"""))
 }

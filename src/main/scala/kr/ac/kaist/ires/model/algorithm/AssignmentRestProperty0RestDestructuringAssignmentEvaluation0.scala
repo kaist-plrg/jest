@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object AssignmentRestProperty0RestDestructuringAssignmentEvaluation0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""AssignmentRestProperty0RestDestructuringAssignmentEvaluation0" (this, DestructuringAssignmentTarget, value, excludedNames) => {
+  val func: Func = FixUIdWalker(parseFunc(""""AssignmentRestProperty0RestDestructuringAssignmentEvaluation0" (this, DestructuringAssignmentTarget, value, excludedNames) => {
     access __x0__ = (DestructuringAssignmentTarget "Evaluation")
     let lref = __x0__
     if (is-completion lref) if (= lref["Type"] CONST_normal) lref = lref["Value"] else return lref else {}
@@ -19,5 +19,5 @@ object AssignmentRestProperty0RestDestructuringAssignmentEvaluation0 extends Alg
     app __x3__ = (PutValue lref restObj)
     app __x4__ = (WrapCompletion __x3__)
     return __x4__
-  }""")
+  }"""))
 }

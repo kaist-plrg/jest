@@ -6,5 +6,5 @@ import kr.ac.kaist.ires.ir.Parser._
 object PrimaryExpression11IsIdentifierRef0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""PrimaryExpression11IsIdentifierRef0" (this, TemplateLiteral) => return false""")
+  val func: Func = FixUIdWalker(parseFunc(""""PrimaryExpression11IsIdentifierRef0" (this, TemplateLiteral) => return false"""))
 }

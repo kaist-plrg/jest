@@ -6,9 +6,9 @@ import kr.ac.kaist.ires.ir.Parser._
 object ObjectBindingPattern0BindingInitialization0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ObjectBindingPattern0BindingInitialization0" (this, value, environment) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ObjectBindingPattern0BindingInitialization0" (this, value, environment) => {
     app __x0__ = (NormalCompletion CONST_empty)
     app __x1__ = (WrapCompletion __x0__)
     return __x1__
-  }""")
+  }"""))
 }

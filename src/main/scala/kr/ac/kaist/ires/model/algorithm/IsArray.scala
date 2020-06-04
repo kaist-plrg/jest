@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object IsArray extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""IsArray" (argument) => {
+  val func: Func = FixUIdWalker(parseFunc(""""IsArray" (argument) => {
     app __x0__ = (Type argument)
     if (! (= __x0__ Object)) {
       app __x1__ = (WrapCompletion false)
@@ -29,5 +29,5 @@ object IsArray extends Algorithm {
     } else {}
     app __x6__ = (WrapCompletion false)
     return __x6__
-  }""")
+  }"""))
 }

@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object AbstractEqualityComparison extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""AbstractEqualityComparison" (x, y) => {
+  val func: Func = FixUIdWalker(parseFunc(""""AbstractEqualityComparison" (x, y) => {
     app __x0__ = (Type x)
     app __x1__ = (Type y)
     if (= __x0__ __x1__) {
@@ -92,5 +92,5 @@ object AbstractEqualityComparison extends Algorithm {
     } else {}
     app __x38__ = (WrapCompletion false)
     return __x38__
-  }""")
+  }"""))
 }

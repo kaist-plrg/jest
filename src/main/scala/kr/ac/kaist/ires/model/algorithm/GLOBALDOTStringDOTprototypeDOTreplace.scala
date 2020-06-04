@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GLOBALDOTStringDOTprototypeDOTreplace extends Algorithm {
   val length: Int = 2
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GLOBAL.String.prototype.replace" (this, argumentsList, NewTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.String.prototype.replace" (this, argumentsList, NewTarget) => {
     app __x0__ = (GetArgument argumentsList 0i)
     let searchValue = __x0__
     app __x1__ = (GetArgument argumentsList 1i)
@@ -55,5 +55,5 @@ object GLOBALDOTStringDOTprototypeDOTreplace extends Algorithm {
     !!! "Etc"
     app __x13__ = (WrapCompletion newString)
     return __x13__
-  }""")
+  }"""))
 }

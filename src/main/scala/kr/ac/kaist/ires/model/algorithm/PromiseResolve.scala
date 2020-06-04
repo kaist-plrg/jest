@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object PromiseResolve extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
-  val func: Func = parseFunc(""""PromiseResolve" (C, x) => {
+  val func: Func = FixUIdWalker(parseFunc(""""PromiseResolve" (C, x) => {
     app __x0__ = (Type C)
     assert (= __x0__ Object)
     app __x1__ = (IsPromise x)
@@ -28,5 +28,5 @@ object PromiseResolve extends Algorithm {
     __x6__
     app __x7__ = (WrapCompletion promiseCapability["Promise"])
     return __x7__
-  }""")
+  }"""))
 }

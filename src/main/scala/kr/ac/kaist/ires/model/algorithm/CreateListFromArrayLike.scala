@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object CreateListFromArrayLike extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""CreateListFromArrayLike" (obj, elementTypes) => {
+  val func: Func = FixUIdWalker(parseFunc(""""CreateListFromArrayLike" (obj, elementTypes) => {
     if (= elementTypes absent) elementTypes = (new [Undefined, Null, Boolean, String, Symbol, Number, Object]) else {}
     app __x0__ = (Type obj)
     if (! (= __x0__ Object)) {
@@ -37,5 +37,5 @@ object CreateListFromArrayLike extends Algorithm {
     }
     app __x8__ = (WrapCompletion list)
     return __x8__
-  }""")
+  }"""))
 }

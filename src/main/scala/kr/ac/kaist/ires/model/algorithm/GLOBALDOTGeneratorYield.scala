@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GLOBALDOTGeneratorYield extends Algorithm {
   val length: Int = 1
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GLOBAL.GeneratorYield" (this, argumentsList, NewTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.GeneratorYield" (this, argumentsList, NewTarget) => {
     app __x0__ = (GetArgument argumentsList 0i)
     let iterNextObj = __x0__
     let genContext = GLOBAL_context
@@ -26,5 +26,5 @@ object GLOBALDOTGeneratorYield extends Algorithm {
     app __x4__ = (NormalCompletion iterNextObj)
     app __x5__ = (WrapCompletion __x4__)
     return __x5__
-  }""")
+  }"""))
 }

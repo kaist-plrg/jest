@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object YieldExpression0Evaluation0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""YieldExpression0Evaluation0" (this) => {
+  val func: Func = FixUIdWalker(parseFunc(""""YieldExpression0Evaluation0" (this) => {
     app __x0__ = (GetGeneratorKind )
     if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
     let generatorKind = __x0__
@@ -22,5 +22,5 @@ object YieldExpression0Evaluation0 extends Algorithm {
       app __x5__ = (WrapCompletion __x4__)
       return __x5__
     }
-  }""")
+  }"""))
 }

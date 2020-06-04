@@ -6,8 +6,8 @@ import kr.ac.kaist.ires.ir.Parser._
 object BindingProperty1BoundNames0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""BindingProperty1BoundNames0" (this, PropertyName, BindingElement) => {
+  val func: Func = FixUIdWalker(parseFunc(""""BindingProperty1BoundNames0" (this, PropertyName, BindingElement) => {
     access __x0__ = (BindingElement "BoundNames")
     return __x0__
-  }""")
+  }"""))
 }

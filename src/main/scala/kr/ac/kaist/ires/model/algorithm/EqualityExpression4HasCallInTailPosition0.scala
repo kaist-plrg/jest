@@ -6,8 +6,8 @@ import kr.ac.kaist.ires.ir.Parser._
 object EqualityExpression4HasCallInTailPosition0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""EqualityExpression4HasCallInTailPosition0" (this, EqualityExpression, RelationalExpression, call) => {
+  val func: Func = FixUIdWalker(parseFunc(""""EqualityExpression4HasCallInTailPosition0" (this, EqualityExpression, RelationalExpression, call) => {
     app __x0__ = (WrapCompletion false)
     return __x0__
-  }""")
+  }"""))
 }

@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object AsyncArrowFunction1Evaluation0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""AsyncArrowFunction1Evaluation0" (this, CoverCallExpressionAndAsyncArrowHead, AsyncConciseBody) => {
+  val func: Func = FixUIdWalker(parseFunc(""""AsyncArrowFunction1Evaluation0" (this, CoverCallExpressionAndAsyncArrowHead, AsyncConciseBody) => {
     if true let strict = true else let strict = false
     access __x0__ = (GLOBAL_context "LexicalEnvironment")
     let scope = __x0__
@@ -19,5 +19,5 @@ object AsyncArrowFunction1Evaluation0 extends Algorithm {
     let closure = __x3__
     app __x4__ = (WrapCompletion closure)
     return __x4__
-  }""")
+  }"""))
 }

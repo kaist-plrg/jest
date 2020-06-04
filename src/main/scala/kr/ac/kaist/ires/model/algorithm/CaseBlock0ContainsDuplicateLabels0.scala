@@ -6,5 +6,5 @@ import kr.ac.kaist.ires.ir.Parser._
 object CaseBlock0ContainsDuplicateLabels0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""CaseBlock0ContainsDuplicateLabels0" (this, labelSet) => return false""")
+  val func: Func = FixUIdWalker(parseFunc(""""CaseBlock0ContainsDuplicateLabels0" (this, labelSet) => return false"""))
 }

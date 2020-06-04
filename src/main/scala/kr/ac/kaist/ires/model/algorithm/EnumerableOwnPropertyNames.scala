@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object EnumerableOwnPropertyNames extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
-  val func: Func = parseFunc(""""EnumerableOwnPropertyNames" (O, kind) => {
+  val func: Func = FixUIdWalker(parseFunc(""""EnumerableOwnPropertyNames" (O, kind) => {
     app __x0__ = (Type O)
     assert (= __x0__ Object)
     app __x1__ = (O["OwnPropertyKeys"] O)
@@ -38,5 +38,5 @@ object EnumerableOwnPropertyNames extends Algorithm {
     }
     app __x8__ = (WrapCompletion properties)
     return __x8__
-  }""")
+  }"""))
 }

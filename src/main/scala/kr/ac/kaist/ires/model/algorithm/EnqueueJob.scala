@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object EnqueueJob extends Algorithm {
   val length: Int = 3
   val lang: Boolean = true
-  val func: Func = parseFunc(""""EnqueueJob" (queueName, job, arguments) => {
+  val func: Func = FixUIdWalker(parseFunc(""""EnqueueJob" (queueName, job, arguments) => {
     let callerContext = GLOBAL_context
     let callerRealm = callerContext["Realm"]
     let callerScriptOrModule = callerContext["ScriptOrModule"]
@@ -15,5 +15,5 @@ object EnqueueJob extends Algorithm {
     app __x0__ = (NormalCompletion CONST_empty)
     app __x1__ = (WrapCompletion __x0__)
     return __x1__
-  }""")
+  }"""))
 }

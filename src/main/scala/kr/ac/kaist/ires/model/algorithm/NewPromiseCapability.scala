@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object NewPromiseCapability extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""NewPromiseCapability" (C) => {
+  val func: Func = FixUIdWalker(parseFunc(""""NewPromiseCapability" (C) => {
     app __x0__ = (IsConstructor C)
     if (= __x0__ false) {
       app __x1__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
@@ -33,5 +33,5 @@ object NewPromiseCapability extends Algorithm {
     promiseCapability["Promise"] = promise
     app __x8__ = (WrapCompletion promiseCapability)
     return __x8__
-  }""")
+  }"""))
 }

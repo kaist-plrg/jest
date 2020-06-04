@@ -6,5 +6,5 @@ import kr.ac.kaist.ires.ir.Parser._
 object StatementListItem0TopLevelLexicallyDeclaredNames0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""StatementListItem0TopLevelLexicallyDeclaredNames0" (this, Statement) => return (new [])""")
+  val func: Func = FixUIdWalker(parseFunc(""""StatementListItem0TopLevelLexicallyDeclaredNames0" (this, Statement) => return (new [])"""))
 }

@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object BoundFunctionExoticObjectDOTCall extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
-  val func: Func = parseFunc(""""BoundFunctionExoticObject.Call" (F, thisArgument, argumentsList) => {
+  val func: Func = FixUIdWalker(parseFunc(""""BoundFunctionExoticObject.Call" (F, thisArgument, argumentsList) => {
     let target = F["BoundTargetFunction"]
     let boundThis = F["BoundThis"]
     let boundArgs = F["BoundArguments"]
@@ -23,5 +23,5 @@ object BoundFunctionExoticObjectDOTCall extends Algorithm {
     if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
     app __x5__ = (WrapCompletion __x4__)
     return __x5__
-  }""")
+  }"""))
 }

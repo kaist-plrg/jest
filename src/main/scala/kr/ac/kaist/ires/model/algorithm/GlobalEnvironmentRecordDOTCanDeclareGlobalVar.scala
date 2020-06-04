@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GlobalEnvironmentRecordDOTCanDeclareGlobalVar extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""GlobalEnvironmentRecord.CanDeclareGlobalVar" (this, N) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GlobalEnvironmentRecord.CanDeclareGlobalVar" (this, N) => {
     let envRec = this
     let ObjRec = envRec["ObjectRecord"]
     let globalObject = ObjRec["BindingObject"]
@@ -21,5 +21,5 @@ object GlobalEnvironmentRecordDOTCanDeclareGlobalVar extends Algorithm {
     if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     app __x3__ = (WrapCompletion __x2__)
     return __x3__
-  }""")
+  }"""))
 }

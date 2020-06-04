@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object ArgumentsExoticObjectDOTDelete extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ArgumentsExoticObject.Delete" (args, P) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ArgumentsExoticObject.Delete" (args, P) => {
     let args = args
     let map = args["ParameterMap"]
     app __x0__ = (HasOwnProperty map P)
@@ -21,5 +21,5 @@ object ArgumentsExoticObjectDOTDelete extends Algorithm {
     } else {}
     app __x3__ = (WrapCompletion result)
     return __x3__
-  }""")
+  }"""))
 }

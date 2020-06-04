@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object FunctionAllocate extends Algorithm {
   val length: Int = 3
   val lang: Boolean = true
-  val func: Func = parseFunc(""""FunctionAllocate" (functionPrototype, strict, functionKind) => {
+  val func: Func = FixUIdWalker(parseFunc(""""FunctionAllocate" (functionPrototype, strict, functionKind) => {
     app __x0__ = (Type functionPrototype)
     assert (= __x0__ Object)
     assert (|| (|| (|| (|| (= functionKind "normal") (= functionKind "non-constructor")) (= functionKind "generator")) (= functionKind "async")) (= functionKind "async generator"))
@@ -38,5 +38,5 @@ object FunctionAllocate extends Algorithm {
     F["Realm"] = REALM
     app __x1__ = (WrapCompletion F)
     return __x1__
-  }""")
+  }"""))
 }

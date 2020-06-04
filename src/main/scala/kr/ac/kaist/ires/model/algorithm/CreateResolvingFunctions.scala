@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object CreateResolvingFunctions extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""CreateResolvingFunctions" (promise) => {
+  val func: Func = FixUIdWalker(parseFunc(""""CreateResolvingFunctions" (promise) => {
     let alreadyResolved = (new Record("Value" -> false))
     let stepsResolve = (new algorithm("name" -> "", "length" -> 1i, "step" -> GLOBALDOTPromiseResolveFunctions))
     app __x0__ = (CreateBuiltinFunction stepsResolve (new ["Promise", "AlreadyResolved"]))
@@ -20,5 +20,5 @@ object CreateResolvingFunctions extends Algorithm {
     reject["AlreadyResolved"] = alreadyResolved
     app __x2__ = (WrapCompletion (new Record("Resolve" -> resolve, "Reject" -> reject)))
     return __x2__
-  }""")
+  }"""))
 }

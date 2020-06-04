@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object TryStatement1ContainsUndefinedContinueTarget0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""TryStatement1ContainsUndefinedContinueTarget0" (this, Block, Finally, iterationSet, labelSet) => {
+  val func: Func = FixUIdWalker(parseFunc(""""TryStatement1ContainsUndefinedContinueTarget0" (this, Block, Finally, iterationSet, labelSet) => {
     access __x0__ = (Block "ContainsUndefinedContinueTarget")
     app __x1__ = (__x0__ iterationSet (new []))
     let hasUndefinedLabels = __x1__
@@ -14,5 +14,5 @@ object TryStatement1ContainsUndefinedContinueTarget0 extends Algorithm {
     access __x2__ = (Finally "ContainsUndefinedContinueTarget")
     app __x3__ = (__x2__ iterationSet (new []))
     return __x3__
-  }""")
+  }"""))
 }

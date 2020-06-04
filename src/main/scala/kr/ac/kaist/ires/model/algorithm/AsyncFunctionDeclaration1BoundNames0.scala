@@ -6,5 +6,5 @@ import kr.ac.kaist.ires.ir.Parser._
 object AsyncFunctionDeclaration1BoundNames0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""AsyncFunctionDeclaration1BoundNames0" (this, FormalParameters, AsyncFunctionBody) => return (new ["*default*"])""")
+  val func: Func = FixUIdWalker(parseFunc(""""AsyncFunctionDeclaration1BoundNames0" (this, FormalParameters, AsyncFunctionBody) => return (new ["*default*"])"""))
 }

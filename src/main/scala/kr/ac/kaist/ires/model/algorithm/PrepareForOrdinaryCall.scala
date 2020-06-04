@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object PrepareForOrdinaryCall extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
-  val func: Func = parseFunc(""""PrepareForOrdinaryCall" (F, newTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""PrepareForOrdinaryCall" (F, newTarget) => {
     app __x0__ = (Type newTarget)
     assert (|| (= __x0__ Undefined) (= __x0__ Object))
     let callerContext = GLOBAL_context
@@ -24,5 +24,5 @@ object PrepareForOrdinaryCall extends Algorithm {
     GLOBAL_context = GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 1i)]
     app __x2__ = (WrapCompletion calleeContext)
     return __x2__
-  }""")
+  }"""))
 }

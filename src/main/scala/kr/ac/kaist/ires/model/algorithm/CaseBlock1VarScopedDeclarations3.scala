@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object CaseBlock1VarScopedDeclarations3 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""CaseBlock1VarScopedDeclarations3" (this, CaseClauses0, DefaultClause, CaseClauses1) => {
+  val func: Func = FixUIdWalker(parseFunc(""""CaseBlock1VarScopedDeclarations3" (this, CaseClauses0, DefaultClause, CaseClauses1) => {
     if (! (= CaseClauses0 absent)) {
       access __x0__ = (CaseClauses0 "VarScopedDeclarations")
       let declarations = __x0__
@@ -28,5 +28,5 @@ object CaseBlock1VarScopedDeclarations3 extends Algorithm {
       __x6__ = (+ __x6__ 1i)
     }
     return declarations
-  }""")
+  }"""))
 }

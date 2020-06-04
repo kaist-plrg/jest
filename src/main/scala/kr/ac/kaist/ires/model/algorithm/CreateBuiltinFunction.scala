@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object CreateBuiltinFunction extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
-  val func: Func = parseFunc(""""CreateBuiltinFunction" (steps, internalSlotsList, realm, prototype) => {
+  val func: Func = FixUIdWalker(parseFunc(""""CreateBuiltinFunction" (steps, internalSlotsList, realm, prototype) => {
     if (= realm absent) realm = REALM else {}
     assert (= (typeof realm) "RealmRecord")
     if (= prototype absent) prototype = realm["Intrinsics"]["INTRINSIC_FunctionPrototype"] else {}
@@ -22,5 +22,5 @@ object CreateBuiltinFunction extends Algorithm {
     func["ScriptOrModule"] = null
     app __x0__ = (WrapCompletion func)
     return __x0__
-  }""")
+  }"""))
 }

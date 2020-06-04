@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GLOBALDOTStringDOTprototypeDOTpadStart extends Algorithm {
   val length: Int = 1
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GLOBAL.String.prototype.padStart" (this, argumentsList, NewTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.String.prototype.padStart" (this, argumentsList, NewTarget) => {
     app __x0__ = (GetArgument argumentsList 0i)
     let maxLength = __x0__
     app __x1__ = (GetArgument argumentsList 1i)
@@ -35,5 +35,5 @@ object GLOBALDOTStringDOTprototypeDOTpadStart extends Algorithm {
     let truncatedStringFiller = !!! "StringOp"
     app __x7__ = (WrapCompletion (+ truncatedStringFiller S))
     return __x7__
-  }""")
+  }"""))
 }

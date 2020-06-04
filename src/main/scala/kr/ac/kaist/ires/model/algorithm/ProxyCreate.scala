@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object ProxyCreate extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ProxyCreate" (target, handler) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ProxyCreate" (target, handler) => {
     app __x0__ = (Type target)
     if (! (= __x0__ Object)) {
       app __x1__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
@@ -41,5 +41,5 @@ object ProxyCreate extends Algorithm {
     P["ProxyHandler"] = handler
     app __x6__ = (WrapCompletion P)
     return __x6__
-  }""")
+  }"""))
 }

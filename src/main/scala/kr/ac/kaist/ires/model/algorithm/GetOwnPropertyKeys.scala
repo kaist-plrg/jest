@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GetOwnPropertyKeys extends Algorithm {
   val length: Int = 2
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GetOwnPropertyKeys" (O, type) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GetOwnPropertyKeys" (O, type) => {
     app __x0__ = (ToObject O)
     if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
     let obj = __x0__
@@ -25,5 +25,5 @@ object GetOwnPropertyKeys extends Algorithm {
     app __x5__ = (CreateArrayFromList nameList)
     app __x6__ = (WrapCompletion __x5__)
     return __x6__
-  }""")
+  }"""))
 }

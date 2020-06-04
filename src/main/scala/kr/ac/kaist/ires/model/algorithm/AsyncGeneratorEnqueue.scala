@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object AsyncGeneratorEnqueue extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
-  val func: Func = parseFunc(""""AsyncGeneratorEnqueue" (generator, completion) => {
+  val func: Func = FixUIdWalker(parseFunc(""""AsyncGeneratorEnqueue" (generator, completion) => {
     assert (is-completion completion)
     app __x0__ = (NewPromiseCapability INTRINSIC_Promise)
     if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
@@ -31,5 +31,5 @@ object AsyncGeneratorEnqueue extends Algorithm {
     } else {}
     app __x5__ = (WrapCompletion promiseCapability["Promise"])
     return __x5__
-  }""")
+  }"""))
 }

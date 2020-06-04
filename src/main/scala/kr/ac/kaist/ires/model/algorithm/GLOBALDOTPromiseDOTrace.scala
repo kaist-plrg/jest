@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GLOBALDOTPromiseDOTrace extends Algorithm {
   val length: Int = 1
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GLOBAL.Promise.race" (this, argumentsList, NewTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Promise.race" (this, argumentsList, NewTarget) => {
     app __x0__ = (GetArgument argumentsList 0i)
     let iterable = __x0__
     let C = this
@@ -44,5 +44,5 @@ object GLOBALDOTPromiseDOTrace extends Algorithm {
     app __x10__ = (Completion result)
     app __x11__ = (WrapCompletion __x10__)
     return __x11__
-  }""")
+  }"""))
 }

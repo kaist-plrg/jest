@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object ConciseBody0EvaluateBody0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ConciseBody0EvaluateBody0" (this, AssignmentExpression, functionObject, argumentsList) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ConciseBody0EvaluateBody0" (this, AssignmentExpression, functionObject, argumentsList) => {
     app __x0__ = (FunctionDeclarationInstantiation functionObject argumentsList)
     if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
     __x0__
@@ -17,5 +17,5 @@ object ConciseBody0EvaluateBody0 extends Algorithm {
     let exprValue = __x2__
     app __x3__ = (WrapCompletion (new Completion("Type" -> CONST_return, "Value" -> exprValue, "Target" -> CONST_empty)))
     return __x3__
-  }""")
+  }"""))
 }

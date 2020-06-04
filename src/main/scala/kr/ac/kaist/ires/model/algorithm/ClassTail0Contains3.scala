@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object ClassTail0Contains3 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ClassTail0Contains3" (this, ClassHeritage, ClassBody, symbol) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ClassTail0Contains3" (this, ClassHeritage, ClassBody, symbol) => {
     if (is-instance-of symbol ClassBody) return true else {}
     if (is-instance-of symbol ClassHeritage) if (! (= ClassHeritage absent)) return true else return false else {}
     access __x0__ = (ClassHeritage "Contains")
@@ -16,5 +16,5 @@ object ClassTail0Contains3 extends Algorithm {
     access __x2__ = (ClassBody "ComputedPropertyContains")
     app __x3__ = (__x2__ symbol)
     return __x3__
-  }""")
+  }"""))
 }

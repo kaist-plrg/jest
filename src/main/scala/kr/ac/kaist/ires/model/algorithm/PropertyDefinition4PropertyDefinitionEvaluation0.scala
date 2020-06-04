@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object PropertyDefinition4PropertyDefinitionEvaluation0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""PropertyDefinition4PropertyDefinitionEvaluation0" (this, AssignmentExpression, object, enumerable) => {
+  val func: Func = FixUIdWalker(parseFunc(""""PropertyDefinition4PropertyDefinitionEvaluation0" (this, AssignmentExpression, object, enumerable) => {
     access __x0__ = (AssignmentExpression "Evaluation")
     let exprValue = __x0__
     app __x1__ = (GetValue exprValue)
@@ -17,5 +17,5 @@ object PropertyDefinition4PropertyDefinitionEvaluation0 extends Algorithm {
     if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     app __x3__ = (WrapCompletion __x2__)
     return __x3__
-  }""")
+  }"""))
 }

@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GeneratorMethod0PropertyDefinitionEvaluation0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""GeneratorMethod0PropertyDefinitionEvaluation0" (this, PropertyName, UniqueFormalParameters, GeneratorBody, object, enumerable) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GeneratorMethod0PropertyDefinitionEvaluation0" (this, PropertyName, UniqueFormalParameters, GeneratorBody, object, enumerable) => {
     access __x0__ = (PropertyName "Evaluation")
     let propKey = __x0__
     if (is-completion propKey) if (= propKey["Type"] CONST_normal) propKey = propKey["Value"] else return propKey else {}
@@ -29,5 +29,5 @@ object GeneratorMethod0PropertyDefinitionEvaluation0 extends Algorithm {
     if (is-completion __x6__) if (= __x6__["Type"] CONST_normal) __x6__ = __x6__["Value"] else return __x6__ else {}
     app __x7__ = (WrapCompletion __x6__)
     return __x7__
-  }""")
+  }"""))
 }

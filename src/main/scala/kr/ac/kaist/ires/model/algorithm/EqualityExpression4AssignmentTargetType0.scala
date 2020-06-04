@@ -6,5 +6,5 @@ import kr.ac.kaist.ires.ir.Parser._
 object EqualityExpression4AssignmentTargetType0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""EqualityExpression4AssignmentTargetType0" (this, EqualityExpression, RelationalExpression) => return CONST_invalid""")
+  val func: Func = FixUIdWalker(parseFunc(""""EqualityExpression4AssignmentTargetType0" (this, EqualityExpression, RelationalExpression) => return CONST_invalid"""))
 }

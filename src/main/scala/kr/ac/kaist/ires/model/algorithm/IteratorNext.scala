@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object IteratorNext extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""IteratorNext" (iteratorRecord, value) => {
+  val func: Func = FixUIdWalker(parseFunc(""""IteratorNext" (iteratorRecord, value) => {
     if (= value absent) {
       app __x0__ = (Call iteratorRecord["NextMethod"] iteratorRecord["Iterator"] (new []))
       if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
@@ -23,5 +23,5 @@ object IteratorNext extends Algorithm {
     } else {}
     app __x4__ = (WrapCompletion result)
     return __x4__
-  }""")
+  }"""))
 }

@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object ModuleNamespaceExoticObjectDOTHasProperty extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ModuleNamespaceExoticObject.HasProperty" (O, P) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ModuleNamespaceExoticObject.HasProperty" (O, P) => {
     app __x0__ = (Type P)
     if (= __x0__ Symbol) {
       app __x1__ = (OrdinaryHasProperty O P)
@@ -20,5 +20,5 @@ object ModuleNamespaceExoticObjectDOTHasProperty extends Algorithm {
     } else {}
     app __x4__ = (WrapCompletion false)
     return __x4__
-  }""")
+  }"""))
 }

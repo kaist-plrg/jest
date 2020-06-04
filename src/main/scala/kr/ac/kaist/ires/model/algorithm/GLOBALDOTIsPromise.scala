@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GLOBALDOTIsPromise extends Algorithm {
   val length: Int = 1
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GLOBAL.IsPromise" (this, argumentsList, NewTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.IsPromise" (this, argumentsList, NewTarget) => {
     app __x0__ = (GetArgument argumentsList 0i)
     let x = __x0__
     app __x1__ = (Type x)
@@ -20,5 +20,5 @@ object GLOBALDOTIsPromise extends Algorithm {
     } else {}
     app __x4__ = (WrapCompletion true)
     return __x4__
-  }""")
+  }"""))
 }

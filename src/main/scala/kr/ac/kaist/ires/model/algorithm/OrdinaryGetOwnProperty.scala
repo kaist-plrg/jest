@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object OrdinaryGetOwnProperty extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
-  val func: Func = parseFunc(""""OrdinaryGetOwnProperty" (O, P) => {
+  val func: Func = FixUIdWalker(parseFunc(""""OrdinaryGetOwnProperty" (O, P) => {
     app __x0__ = (IsPropertyKey P)
     assert (= __x0__ true)
     if (= O["SubMap"][P] absent) return undefined else {}
@@ -23,5 +23,5 @@ object OrdinaryGetOwnProperty extends Algorithm {
     D["Enumerable"] = X["Enumerable"]
     D["Configurable"] = X["Configurable"]
     return D
-  }""")
+  }"""))
 }

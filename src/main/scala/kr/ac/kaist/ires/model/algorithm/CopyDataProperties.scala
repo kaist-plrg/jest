@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object CopyDataProperties extends Algorithm {
   val length: Int = 3
   val lang: Boolean = true
-  val func: Func = parseFunc(""""CopyDataProperties" (target, source, excludedItems) => {
+  val func: Func = FixUIdWalker(parseFunc(""""CopyDataProperties" (target, source, excludedItems) => {
     app __x0__ = (Type target)
     assert (= __x0__ Object)
     if (|| (= source undefined) (= source null)) {
@@ -49,5 +49,5 @@ object CopyDataProperties extends Algorithm {
     }
     app __x12__ = (WrapCompletion target)
     return __x12__
-  }""")
+  }"""))
 }

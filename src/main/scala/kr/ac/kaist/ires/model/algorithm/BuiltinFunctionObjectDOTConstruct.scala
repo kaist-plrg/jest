@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object BuiltinFunctionObjectDOTConstruct extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
-  val func: Func = parseFunc(""""BuiltinFunctionObject.Construct" (F, argumentsList, newTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""BuiltinFunctionObject.Construct" (F, argumentsList, newTarget) => {
     let callerContext = GLOBAL_context
     if (= callerContext null) {} else {}
     let calleeContext = (new ExecutionContext("SubMap" -> (new SubMap())))
@@ -28,5 +28,5 @@ object BuiltinFunctionObjectDOTConstruct extends Algorithm {
     GLOBAL_context = GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 1i)]
     app __x2__ = (WrapCompletion result)
     return __x2__
-  }""")
+  }"""))
 }

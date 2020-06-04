@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object MakeArgGetter extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
-  val func: Func = parseFunc(""""MakeArgGetter" (name, env) => {
+  val func: Func = FixUIdWalker(parseFunc(""""MakeArgGetter" (name, env) => {
     let steps = ArgGetter
     app __x0__ = (CreateBuiltinFunction steps (new ["Name", "Env"]))
     let getter = __x0__
@@ -14,5 +14,5 @@ object MakeArgGetter extends Algorithm {
     getter["Env"] = env
     app __x1__ = (WrapCompletion getter)
     return __x1__
-  }""")
+  }"""))
 }

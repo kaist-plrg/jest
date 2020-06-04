@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object ListIteratornext extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ListIteratornext" (this) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ListIteratornext" (this) => {
     let O = this
     app __x0__ = (Type O)
     assert (= __x0__ Object)
@@ -23,5 +23,5 @@ object ListIteratornext extends Algorithm {
     app __x3__ = (CreateIterResultObject list[index] false)
     app __x4__ = (WrapCompletion __x3__)
     return __x4__
-  }""")
+  }"""))
 }

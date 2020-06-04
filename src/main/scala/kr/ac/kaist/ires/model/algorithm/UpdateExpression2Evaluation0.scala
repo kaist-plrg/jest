@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object UpdateExpression2Evaluation0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""UpdateExpression2Evaluation0" (this, LeftHandSideExpression) => {
+  val func: Func = FixUIdWalker(parseFunc(""""UpdateExpression2Evaluation0" (this, LeftHandSideExpression) => {
     access __x0__ = (LeftHandSideExpression "Evaluation")
     let lhs = __x0__
     app __x1__ = (GetValue lhs)
@@ -20,5 +20,5 @@ object UpdateExpression2Evaluation0 extends Algorithm {
     __x3__
     app __x4__ = (WrapCompletion oldValue)
     return __x4__
-  }""")
+  }"""))
 }

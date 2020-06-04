@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object BlockDeclarationInstantiation extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
-  val func: Func = parseFunc(""""BlockDeclarationInstantiation" (code, env) => {
+  val func: Func = FixUIdWalker(parseFunc(""""BlockDeclarationInstantiation" (code, env) => {
     let envRec = env["EnvironmentRecord"]
     assert (= (typeof envRec) "DeclarativeEnvironmentRecord")
     access __x0__ = (code "LexicallyScopedDeclarations")
@@ -43,5 +43,5 @@ object BlockDeclarationInstantiation extends Algorithm {
       } else {}
       __x2__ = (+ __x2__ 1i)
     }
-  }""")
+  }"""))
 }

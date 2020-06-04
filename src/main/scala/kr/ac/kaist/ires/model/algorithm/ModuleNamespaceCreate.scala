@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object ModuleNamespaceCreate extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ModuleNamespaceCreate" (module, exports) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ModuleNamespaceCreate" (module, exports) => {
     assert (= module["Namespace"] undefined)
     let M = (new OrdinaryObject("SubMap" -> (new SubMap())))
     if (= M["HasProperty"] absent) M["HasProperty"] = OrdinaryObjectDOTHasProperty else {}
@@ -27,5 +27,5 @@ object ModuleNamespaceCreate extends Algorithm {
     module["Namespace"] = M
     app __x0__ = (WrapCompletion M)
     return __x0__
-  }""")
+  }"""))
 }

@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object CreateMapIterator extends Algorithm {
   val length: Int = 2
   val lang: Boolean = false
-  val func: Func = parseFunc(""""CreateMapIterator" (map, kind) => {
+  val func: Func = FixUIdWalker(parseFunc(""""CreateMapIterator" (map, kind) => {
     app __x0__ = (Type map)
     if (! (= __x0__ Object)) {
       app __x1__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
@@ -23,5 +23,5 @@ object CreateMapIterator extends Algorithm {
     iterator["MapIterationKind"] = kind
     app __x4__ = (WrapCompletion iterator)
     return __x4__
-  }""")
+  }"""))
 }

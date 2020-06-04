@@ -6,5 +6,5 @@ import kr.ac.kaist.ires.ir.Parser._
 object VariableDeclarationList0VarScopedDeclarations0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""VariableDeclarationList0VarScopedDeclarations0" (this, VariableDeclaration) => return (new [VariableDeclaration])""")
+  val func: Func = FixUIdWalker(parseFunc(""""VariableDeclarationList0VarScopedDeclarations0" (this, VariableDeclaration) => return (new [VariableDeclaration])"""))
 }

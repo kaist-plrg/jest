@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object CreateUnmappedArgumentsObject extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""CreateUnmappedArgumentsObject" (argumentsList) => {
+  val func: Func = FixUIdWalker(parseFunc(""""CreateUnmappedArgumentsObject" (argumentsList) => {
     let len = argumentsList["length"]
     app __x0__ = (ObjectCreate INTRINSIC_ObjectPrototype (new ["ParameterMap"]))
     let obj = __x0__
@@ -30,5 +30,5 @@ object CreateUnmappedArgumentsObject extends Algorithm {
     __x5__
     app __x6__ = (WrapCompletion obj)
     return __x6__
-  }""")
+  }"""))
 }

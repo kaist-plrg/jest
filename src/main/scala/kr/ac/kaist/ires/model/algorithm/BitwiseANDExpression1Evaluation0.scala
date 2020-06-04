@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object BitwiseANDExpression1Evaluation0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""BitwiseANDExpression1Evaluation0" (this, A, B) => {
+  val func: Func = FixUIdWalker(parseFunc(""""BitwiseANDExpression1Evaluation0" (this, A, B) => {
     access __x0__ = (A "Evaluation")
     let lref = __x0__
     app __x1__ = (GetValue lref)
@@ -25,5 +25,5 @@ object BitwiseANDExpression1Evaluation0 extends Algorithm {
     let rnum = __x5__
     app __x6__ = (WrapCompletion (& lnum rnum))
     return __x6__
-  }""")
+  }"""))
 }

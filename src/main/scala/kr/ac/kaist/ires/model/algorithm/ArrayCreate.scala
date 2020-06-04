@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object ArrayCreate extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ArrayCreate" (length, proto) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ArrayCreate" (length, proto) => {
     if (= length -0.0) length = 0i else {}
     if (< (- 4294967296i 1i) length) {
       app __x0__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_RangeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
@@ -33,5 +33,5 @@ object ArrayCreate extends Algorithm {
     __x1__
     app __x2__ = (WrapCompletion A)
     return __x2__
-  }""")
+  }"""))
 }

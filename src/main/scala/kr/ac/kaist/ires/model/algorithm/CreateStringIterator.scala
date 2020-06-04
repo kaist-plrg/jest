@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object CreateStringIterator extends Algorithm {
   val length: Int = 1
   val lang: Boolean = false
-  val func: Func = parseFunc(""""CreateStringIterator" (string) => {
+  val func: Func = FixUIdWalker(parseFunc(""""CreateStringIterator" (string) => {
     app __x0__ = (Type string)
     assert (= __x0__ String)
     app __x1__ = (ObjectCreate INTRINSIC_StringIteratorPrototype (new ["IteratedString", "StringIteratorNextIndex"]))
@@ -15,5 +15,5 @@ object CreateStringIterator extends Algorithm {
     iterator["StringIteratorNextIndex"] = 0i
     app __x2__ = (WrapCompletion iterator)
     return __x2__
-  }""")
+  }"""))
 }

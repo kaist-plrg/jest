@@ -6,8 +6,8 @@ import kr.ac.kaist.ires.ir.Parser._
 object ModuleNamespaceExoticObjectDOTPreventExtensions extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ModuleNamespaceExoticObject.PreventExtensions" (O) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ModuleNamespaceExoticObject.PreventExtensions" (O) => {
     app __x0__ = (WrapCompletion true)
     return __x0__
-  }""")
+  }"""))
 }

@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object INTRINSIC_AsyncFromSyncIteratorPrototypeDOTthrow extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""INTRINSIC_AsyncFromSyncIteratorPrototype.throw" (value) => {
+  val func: Func = FixUIdWalker(parseFunc(""""INTRINSIC_AsyncFromSyncIteratorPrototype.throw" (value) => {
     let O = this
     app __x0__ = (NewPromiseCapability INTRINSIC_Promise)
     if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
@@ -56,5 +56,5 @@ object INTRINSIC_AsyncFromSyncIteratorPrototypeDOTthrow extends Algorithm {
     if (is-completion __x13__) if (= __x13__["Type"] CONST_normal) __x13__ = __x13__["Value"] else return __x13__ else {}
     app __x14__ = (WrapCompletion __x13__)
     return __x14__
-  }""")
+  }"""))
 }

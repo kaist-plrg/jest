@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object TryStatement2ContainsDuplicateLabels0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""TryStatement2ContainsDuplicateLabels0" (this, Block, Catch, Finally, labelSet) => {
+  val func: Func = FixUIdWalker(parseFunc(""""TryStatement2ContainsDuplicateLabels0" (this, Block, Catch, Finally, labelSet) => {
     access __x0__ = (Block "ContainsDuplicateLabels")
     app __x1__ = (__x0__ labelSet)
     let hasDuplicates = __x1__
@@ -18,5 +18,5 @@ object TryStatement2ContainsDuplicateLabels0 extends Algorithm {
     access __x4__ = (Finally "ContainsDuplicateLabels")
     app __x5__ = (__x4__ labelSet)
     return __x5__
-  }""")
+  }"""))
 }

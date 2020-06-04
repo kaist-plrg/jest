@@ -6,9 +6,9 @@ import kr.ac.kaist.ires.ir.Parser._
 object AsyncMethod0ComputedPropertyContains0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""AsyncMethod0ComputedPropertyContains0" (this, PropertyName, UniqueFormalParameters, AsyncFunctionBody, symbol) => {
+  val func: Func = FixUIdWalker(parseFunc(""""AsyncMethod0ComputedPropertyContains0" (this, PropertyName, UniqueFormalParameters, AsyncFunctionBody, symbol) => {
     access __x0__ = (PropertyName "ComputedPropertyContains")
     app __x1__ = (__x0__ symbol)
     return __x1__
-  }""")
+  }"""))
 }

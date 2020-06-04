@@ -6,5 +6,5 @@ import kr.ac.kaist.ires.ir.Parser._
 object HoistableDeclaration0DeclarationPart0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""HoistableDeclaration0DeclarationPart0" (this, FunctionDeclaration) => return FunctionDeclaration""")
+  val func: Func = FixUIdWalker(parseFunc(""""HoistableDeclaration0DeclarationPart0" (this, FunctionDeclaration) => return FunctionDeclaration"""))
 }

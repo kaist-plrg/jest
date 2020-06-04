@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object ModuleNamespaceExoticObjectDOTDelete extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ModuleNamespaceExoticObject.Delete" (O, P) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ModuleNamespaceExoticObject.Delete" (O, P) => {
     app __x0__ = (IsPropertyKey P)
     assert (= __x0__ true)
     app __x1__ = (Type P)
@@ -23,5 +23,5 @@ object ModuleNamespaceExoticObjectDOTDelete extends Algorithm {
     } else {}
     app __x5__ = (WrapCompletion true)
     return __x5__
-  }""")
+  }"""))
 }

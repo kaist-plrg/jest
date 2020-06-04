@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GlobalEnvironmentRecordDOTHasVarDeclaration extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""GlobalEnvironmentRecord.HasVarDeclaration" (this, N) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GlobalEnvironmentRecord.HasVarDeclaration" (this, N) => {
     let envRec = this
     let varDeclaredNames = envRec["VarNames"]
     if (contains varDeclaredNames N) {
@@ -15,5 +15,5 @@ object GlobalEnvironmentRecordDOTHasVarDeclaration extends Algorithm {
     } else {}
     app __x1__ = (WrapCompletion false)
     return __x1__
-  }""")
+  }"""))
 }

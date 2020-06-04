@@ -6,9 +6,9 @@ import kr.ac.kaist.ires.ir.Parser._
 object MethodDefinition5ComputedPropertyContains0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""MethodDefinition5ComputedPropertyContains0" (this, PropertyName, PropertySetParameterList, FunctionBody, symbol) => {
+  val func: Func = FixUIdWalker(parseFunc(""""MethodDefinition5ComputedPropertyContains0" (this, PropertyName, PropertySetParameterList, FunctionBody, symbol) => {
     access __x0__ = (PropertyName "ComputedPropertyContains")
     app __x1__ = (__x0__ symbol)
     return __x1__
-  }""")
+  }"""))
 }

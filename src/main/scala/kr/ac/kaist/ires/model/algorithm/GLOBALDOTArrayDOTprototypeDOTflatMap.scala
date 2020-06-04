@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GLOBALDOTArrayDOTprototypeDOTflatMap extends Algorithm {
   val length: Int = 1
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GLOBAL.Array.prototype.flatMap" (this, argumentsList, NewTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Array.prototype.flatMap" (this, argumentsList, NewTarget) => {
     app __x0__ = (GetArgument argumentsList 0i)
     let mapperFunction = __x0__
     app __x1__ = (GetArgument argumentsList 1i)
@@ -33,5 +33,5 @@ object GLOBALDOTArrayDOTprototypeDOTflatMap extends Algorithm {
     __x8__
     app __x9__ = (WrapCompletion A)
     return __x9__
-  }""")
+  }"""))
 }

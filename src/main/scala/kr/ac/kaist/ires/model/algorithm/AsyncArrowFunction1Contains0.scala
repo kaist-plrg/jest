@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object AsyncArrowFunction1Contains0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""AsyncArrowFunction1Contains0" (this, CoverCallExpressionAndAsyncArrowHead, AsyncConciseBody, symbol) => {
+  val func: Func = FixUIdWalker(parseFunc(""""AsyncArrowFunction1Contains0" (this, CoverCallExpressionAndAsyncArrowHead, AsyncConciseBody, symbol) => {
     if (! (|| (|| (|| (|| (is-instance-of symbol NewTarget) (is-instance-of symbol SuperProperty)) (is-instance-of symbol SuperCall)) (= symbol "super")) (= symbol "this"))) return false else {}
     access __x0__ = (CoverCallExpressionAndAsyncArrowHead "CoveredAsyncArrowHead")
     let head = __x0__
@@ -16,5 +16,5 @@ object AsyncArrowFunction1Contains0 extends Algorithm {
     access __x3__ = (AsyncConciseBody "Contains")
     app __x4__ = (__x3__ symbol)
     return __x4__
-  }""")
+  }"""))
 }

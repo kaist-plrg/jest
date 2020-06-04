@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GetActiveScriptOrModule extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""GetActiveScriptOrModule" () => {
+  val func: Func = FixUIdWalker(parseFunc(""""GetActiveScriptOrModule" () => {
     if (= GLOBAL_executionStack["length"] 0i) {
       app __x0__ = (WrapCompletion null)
       return __x0__
@@ -19,5 +19,5 @@ object GetActiveScriptOrModule extends Algorithm {
       if (! (= ec["ScriptOrModule"] null)) return ec["ScriptOrModule"] else {}
     }
     return null
-  }""")
+  }"""))
 }

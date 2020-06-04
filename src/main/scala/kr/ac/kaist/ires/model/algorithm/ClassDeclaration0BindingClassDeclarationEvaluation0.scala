@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object ClassDeclaration0BindingClassDeclarationEvaluation0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ClassDeclaration0BindingClassDeclarationEvaluation0" (this, BindingIdentifier, ClassTail) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ClassDeclaration0BindingClassDeclarationEvaluation0" (this, BindingIdentifier, ClassTail) => {
     access __x0__ = (BindingIdentifier "StringValue")
     let className = __x0__
     access __x1__ = (ClassTail "ClassDefinitionEvaluation")
@@ -21,5 +21,5 @@ object ClassDeclaration0BindingClassDeclarationEvaluation0 extends Algorithm {
     __x3__
     app __x4__ = (WrapCompletion value)
     return __x4__
-  }""")
+  }"""))
 }

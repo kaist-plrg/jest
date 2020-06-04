@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object IsAccessorDescriptor extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""IsAccessorDescriptor" (Desc) => {
+  val func: Func = FixUIdWalker(parseFunc(""""IsAccessorDescriptor" (Desc) => {
     if (= Desc undefined) {
       app __x0__ = (WrapCompletion false)
       return __x0__
@@ -17,5 +17,5 @@ object IsAccessorDescriptor extends Algorithm {
     } else {}
     app __x2__ = (WrapCompletion true)
     return __x2__
-  }""")
+  }"""))
 }

@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object Catch0CatchClauseEvaluation0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""Catch0CatchClauseEvaluation0" (this, CatchParameter, Block, thrownValue) => {
+  val func: Func = FixUIdWalker(parseFunc(""""Catch0CatchClauseEvaluation0" (this, CatchParameter, Block, thrownValue) => {
     let oldEnv = GLOBAL_context["LexicalEnvironment"]
     app __x0__ = (NewDeclarativeEnvironment oldEnv)
     let catchEnv = __x0__
@@ -38,5 +38,5 @@ object Catch0CatchClauseEvaluation0 extends Algorithm {
     app __x11__ = (Completion B)
     app __x12__ = (WrapCompletion __x11__)
     return __x12__
-  }""")
+  }"""))
 }

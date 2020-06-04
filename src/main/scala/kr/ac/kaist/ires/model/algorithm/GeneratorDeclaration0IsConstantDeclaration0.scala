@@ -6,5 +6,5 @@ import kr.ac.kaist.ires.ir.Parser._
 object GeneratorDeclaration0IsConstantDeclaration0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""GeneratorDeclaration0IsConstantDeclaration0" (this, BindingIdentifier, FormalParameters, GeneratorBody) => return false""")
+  val func: Func = FixUIdWalker(parseFunc(""""GeneratorDeclaration0IsConstantDeclaration0" (this, BindingIdentifier, FormalParameters, GeneratorBody) => return false"""))
 }

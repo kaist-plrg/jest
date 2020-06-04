@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object IsUnresolvableReference extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""IsUnresolvableReference" (V) => {
+  val func: Func = FixUIdWalker(parseFunc(""""IsUnresolvableReference" (V) => {
     app __x0__ = (Type V)
     assert (= __x0__ Reference)
     if (= V["BaseValue"] undefined) {
@@ -16,5 +16,5 @@ object IsUnresolvableReference extends Algorithm {
       app __x2__ = (WrapCompletion false)
       return __x2__
     }
-  }""")
+  }"""))
 }

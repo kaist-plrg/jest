@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object ArraySpeciesCreate extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ArraySpeciesCreate" (originalArray, length) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ArraySpeciesCreate" (originalArray, length) => {
     if (= length -0.0) length = 0i else {}
     app __x0__ = (IsArray originalArray)
     if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
@@ -53,5 +53,5 @@ object ArraySpeciesCreate extends Algorithm {
     if (is-completion __x13__) if (= __x13__["Type"] CONST_normal) __x13__ = __x13__["Value"] else return __x13__ else {}
     app __x14__ = (WrapCompletion __x13__)
     return __x14__
-  }""")
+  }"""))
 }

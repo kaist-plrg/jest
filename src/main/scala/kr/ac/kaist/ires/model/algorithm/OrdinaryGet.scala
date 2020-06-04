@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object OrdinaryGet extends Algorithm {
   val length: Int = 3
   val lang: Boolean = true
-  val func: Func = parseFunc(""""OrdinaryGet" (O, P, Receiver) => {
+  val func: Func = FixUIdWalker(parseFunc(""""OrdinaryGet" (O, P, Receiver) => {
     app __x0__ = (IsPropertyKey P)
     assert (= __x0__ true)
     app __x1__ = (O["GetOwnProperty"] O P)
@@ -41,5 +41,5 @@ object OrdinaryGet extends Algorithm {
     if (is-completion __x10__) if (= __x10__["Type"] CONST_normal) __x10__ = __x10__["Value"] else return __x10__ else {}
     app __x11__ = (WrapCompletion __x10__)
     return __x11__
-  }""")
+  }"""))
 }

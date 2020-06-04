@@ -6,5 +6,5 @@ import kr.ac.kaist.ires.ir.Parser._
 object SingleNameBinding0HasInitializer0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""SingleNameBinding0HasInitializer0" (this, BindingIdentifier) => return false""")
+  val func: Func = FixUIdWalker(parseFunc(""""SingleNameBinding0HasInitializer0" (this, BindingIdentifier) => return false"""))
 }

@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object FlattenIntoArray extends Algorithm {
   val length: Int = 5
   val lang: Boolean = true
-  val func: Func = parseFunc(""""FlattenIntoArray" (target, source, sourceLen, start, depth, mapperFunction, thisArg) => {
+  val func: Func = FixUIdWalker(parseFunc(""""FlattenIntoArray" (target, source, sourceLen, start, depth, mapperFunction, thisArg) => {
     let targetIndex = start
     let sourceIndex = 0i
     while (< sourceIndex sourceLen) {
@@ -58,5 +58,5 @@ object FlattenIntoArray extends Algorithm {
     }
     app __x11__ = (WrapCompletion targetIndex)
     return __x11__
-  }""")
+  }"""))
 }

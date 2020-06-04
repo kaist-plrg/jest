@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object CreateListIteratorRecord extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""CreateListIteratorRecord" (list) => {
+  val func: Func = FixUIdWalker(parseFunc(""""CreateListIteratorRecord" (list) => {
     app __x0__ = (ObjectCreate INTRINSIC_IteratorPrototype (new ["IteratedList", "ListIteratorNextIndex"]))
     let iterator = __x0__
     iterator["IteratedList"] = list
@@ -16,5 +16,5 @@ object CreateListIteratorRecord extends Algorithm {
     let next = __x1__
     app __x2__ = (WrapCompletion (new Record("Iterator" -> iterator, "NextMethod" -> next, "Done" -> false)))
     return __x2__
-  }""")
+  }"""))
 }

@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object FunctionEnvironmentRecordDOTBindThisValue extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""FunctionEnvironmentRecord.BindThisValue" (this, V) => {
+  val func: Func = FixUIdWalker(parseFunc(""""FunctionEnvironmentRecord.BindThisValue" (this, V) => {
     let envRec = this
     assert (! (= envRec["ThisBindingStatus"] "lexical"))
     if (= envRec["ThisBindingStatus"] "initialized") {
@@ -17,5 +17,5 @@ object FunctionEnvironmentRecordDOTBindThisValue extends Algorithm {
     envRec["ThisBindingStatus"] = "initialized"
     app __x1__ = (WrapCompletion V)
     return __x1__
-  }""")
+  }"""))
 }

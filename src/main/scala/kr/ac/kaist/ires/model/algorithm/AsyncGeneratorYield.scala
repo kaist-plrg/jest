@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object AsyncGeneratorYield extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""AsyncGeneratorYield" (value) => {
+  val func: Func = FixUIdWalker(parseFunc(""""AsyncGeneratorYield" (value) => {
     let genContext = GLOBAL_context
     let generator = genContext["Generator"]
     app __x0__ = (GetGeneratorKind )
@@ -40,5 +40,5 @@ object AsyncGeneratorYield extends Algorithm {
     app __x9__ = (AsyncGeneratorResolve generator value false)
     if (is-completion __x9__) if (= __x9__["Type"] CONST_normal) __x9__ = __x9__["Value"] else return __x9__ else {}
     app __x10__ = ((pop genContext["ReturnCont"] 0i) __x9__)
-  }""")
+  }"""))
 }

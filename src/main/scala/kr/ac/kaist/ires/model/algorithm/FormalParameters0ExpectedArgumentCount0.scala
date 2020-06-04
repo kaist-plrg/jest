@@ -6,5 +6,5 @@ import kr.ac.kaist.ires.ir.Parser._
 object FormalParameters0ExpectedArgumentCount0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""FormalParameters0ExpectedArgumentCount0" (this) => return 0i""")
+  val func: Func = FixUIdWalker(parseFunc(""""FormalParameters0ExpectedArgumentCount0" (this) => return 0i"""))
 }

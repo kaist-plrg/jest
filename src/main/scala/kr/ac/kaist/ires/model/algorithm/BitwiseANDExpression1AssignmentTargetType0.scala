@@ -6,5 +6,5 @@ import kr.ac.kaist.ires.ir.Parser._
 object BitwiseANDExpression1AssignmentTargetType0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""BitwiseANDExpression1AssignmentTargetType0" (this, BitwiseANDExpression, EqualityExpression) => return CONST_invalid""")
+  val func: Func = FixUIdWalker(parseFunc(""""BitwiseANDExpression1AssignmentTargetType0" (this, BitwiseANDExpression, EqualityExpression) => return CONST_invalid"""))
 }

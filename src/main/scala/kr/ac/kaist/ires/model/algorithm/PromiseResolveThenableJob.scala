@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object PromiseResolveThenableJob extends Algorithm {
   val length: Int = 3
   val lang: Boolean = true
-  val func: Func = parseFunc(""""PromiseResolveThenableJob" (promiseToResolve, thenable, then) => {
+  val func: Func = FixUIdWalker(parseFunc(""""PromiseResolveThenableJob" (promiseToResolve, thenable, then) => {
     app __x0__ = (CreateResolvingFunctions promiseToResolve)
     let resolvingFunctions = __x0__
     app __x1__ = (Call then thenable (new [resolvingFunctions["Resolve"], resolvingFunctions["Reject"]]))
@@ -22,5 +22,5 @@ object PromiseResolveThenableJob extends Algorithm {
     app __x6__ = (Completion thenCallResult)
     app __x7__ = (WrapCompletion __x6__)
     return __x7__
-  }""")
+  }"""))
 }

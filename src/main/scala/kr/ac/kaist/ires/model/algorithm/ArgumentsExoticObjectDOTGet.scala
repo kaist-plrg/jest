@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object ArgumentsExoticObjectDOTGet extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ArgumentsExoticObject.Get" (args, P, Receiver) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ArgumentsExoticObject.Get" (args, P, Receiver) => {
     let args = args
     let map = args["ParameterMap"]
     app __x0__ = (HasOwnProperty map P)
@@ -22,5 +22,5 @@ object ArgumentsExoticObjectDOTGet extends Algorithm {
       app __x4__ = (WrapCompletion __x3__)
       return __x4__
     }
-  }""")
+  }"""))
 }

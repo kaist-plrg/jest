@@ -6,5 +6,5 @@ import kr.ac.kaist.ires.ir.Parser._
 object MethodDefinition1SpecialMethod0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""MethodDefinition1SpecialMethod0" (this, GeneratorMethod) => return true""")
+  val func: Func = FixUIdWalker(parseFunc(""""MethodDefinition1SpecialMethod0" (this, GeneratorMethod) => return true"""))
 }

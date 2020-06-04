@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object StatementList1TopLevelLexicallyDeclaredNames0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""StatementList1TopLevelLexicallyDeclaredNames0" (this, StatementList, StatementListItem) => {
+  val func: Func = FixUIdWalker(parseFunc(""""StatementList1TopLevelLexicallyDeclaredNames0" (this, StatementList, StatementListItem) => {
     access __x0__ = (StatementList "TopLevelLexicallyDeclaredNames")
     let names = __x0__
     access __x1__ = (StatementListItem "TopLevelLexicallyDeclaredNames")
@@ -18,5 +18,5 @@ object StatementList1TopLevelLexicallyDeclaredNames0 extends Algorithm {
       __x3__ = (+ __x3__ 1i)
     }
     return names
-  }""")
+  }"""))
 }

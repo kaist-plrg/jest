@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object ClassElementList1NonConstructorMethodDefinitions0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""ClassElementList1NonConstructorMethodDefinitions0" (this, ClassElementList, ClassElement) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ClassElementList1NonConstructorMethodDefinitions0" (this, ClassElementList, ClassElement) => {
     access __x0__ = (ClassElementList "NonConstructorMethodDefinitions")
     let list = __x0__
     if (is-instance-of ClassElement ClassElement2) return list else {}
@@ -19,5 +19,5 @@ object ClassElementList1NonConstructorMethodDefinitions0 extends Algorithm {
     if __x2__ return list else {}
     append ClassElement -> list
     return list
-  }""")
+  }"""))
 }

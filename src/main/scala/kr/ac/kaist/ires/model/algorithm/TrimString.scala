@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object TrimString extends Algorithm {
   val length: Int = 2
   val lang: Boolean = false
-  val func: Func = parseFunc(""""TrimString" (string, where) => {
+  val func: Func = FixUIdWalker(parseFunc(""""TrimString" (string, where) => {
     app __x0__ = (RequireObjectCoercible string)
     if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
     let str = __x0__
@@ -19,5 +19,5 @@ object TrimString extends Algorithm {
     }
     app __x2__ = (WrapCompletion T)
     return __x2__
-  }""")
+  }"""))
 }

@@ -6,9 +6,9 @@ import kr.ac.kaist.ires.ir.Parser._
 object AgentCanSuspend extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""AgentCanSuspend" () => {
+  val func: Func = FixUIdWalker(parseFunc(""""AgentCanSuspend" () => {
     !!! "Etc"
     app __x0__ = (WrapCompletion AR["CanBlock"])
     return __x0__
-  }""")
+  }"""))
 }

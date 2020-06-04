@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object AsyncFunctionDeclaration1InstantiateFunctionObject0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""AsyncFunctionDeclaration1InstantiateFunctionObject0" (this, FormalParameters, AsyncFunctionBody, scope) => {
+  val func: Func = FixUIdWalker(parseFunc(""""AsyncFunctionDeclaration1InstantiateFunctionObject0" (this, FormalParameters, AsyncFunctionBody, scope) => {
     if true let strict = true else let strict = false
     app __x0__ = (AsyncFunctionCreate CONST_Normal FormalParameters AsyncFunctionBody scope strict)
     if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
@@ -17,5 +17,5 @@ object AsyncFunctionDeclaration1InstantiateFunctionObject0 extends Algorithm {
     F["SourceText"] = (get-syntax this)
     app __x2__ = (WrapCompletion F)
     return __x2__
-  }""")
+  }"""))
 }

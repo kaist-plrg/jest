@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object IsRegExp extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = parseFunc(""""IsRegExp" (argument) => {
+  val func: Func = FixUIdWalker(parseFunc(""""IsRegExp" (argument) => {
     app __x0__ = (Type argument)
     if (! (= __x0__ Object)) {
       app __x1__ = (WrapCompletion false)
@@ -26,5 +26,5 @@ object IsRegExp extends Algorithm {
     } else {}
     app __x6__ = (WrapCompletion false)
     return __x6__
-  }""")
+  }"""))
 }

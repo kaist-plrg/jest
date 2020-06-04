@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GLOBALDOTMapDOTprototypeDOTclear extends Algorithm {
   val length: Int = 0
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GLOBAL.Map.prototype.clear" (this, argumentsList, NewTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Map.prototype.clear" (this, argumentsList, NewTarget) => {
     let M = this
     app __x0__ = (Type M)
     if (! (= __x0__ Object)) {
@@ -28,5 +28,5 @@ object GLOBALDOTMapDOTprototypeDOTclear extends Algorithm {
     }
     app __x5__ = (WrapCompletion undefined)
     return __x5__
-  }""")
+  }"""))
 }

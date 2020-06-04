@@ -6,5 +6,5 @@ import kr.ac.kaist.ires.ir.Parser._
 object RelationalExpression3IsFunctionDefinition0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""RelationalExpression3IsFunctionDefinition0" (this, RelationalExpression, ShiftExpression) => return false""")
+  val func: Func = FixUIdWalker(parseFunc(""""RelationalExpression3IsFunctionDefinition0" (this, RelationalExpression, ShiftExpression) => return false"""))
 }

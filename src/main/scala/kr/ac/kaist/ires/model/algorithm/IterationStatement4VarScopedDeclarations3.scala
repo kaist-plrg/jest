@@ -6,8 +6,8 @@ import kr.ac.kaist.ires.ir.Parser._
 object IterationStatement4VarScopedDeclarations3 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""IterationStatement4VarScopedDeclarations3" (this, LexicalDeclaration, Expression0, Expression1, Statement) => {
+  val func: Func = FixUIdWalker(parseFunc(""""IterationStatement4VarScopedDeclarations3" (this, LexicalDeclaration, Expression0, Expression1, Statement) => {
     access __x0__ = (Statement "VarScopedDeclarations")
     return __x0__
-  }""")
+  }"""))
 }

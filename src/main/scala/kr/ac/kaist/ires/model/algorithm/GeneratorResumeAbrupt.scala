@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GeneratorResumeAbrupt extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
-  val func: Func = parseFunc(""""GeneratorResumeAbrupt" (generator, abruptCompletion) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GeneratorResumeAbrupt" (generator, abruptCompletion) => {
     app __x0__ = (GeneratorValidate generator)
     if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
     let state = __x0__
@@ -38,5 +38,5 @@ object GeneratorResumeAbrupt extends Algorithm {
     app __x7__ = (Completion result)
     app __x8__ = (WrapCompletion __x7__)
     return __x8__
-  }""")
+  }"""))
 }

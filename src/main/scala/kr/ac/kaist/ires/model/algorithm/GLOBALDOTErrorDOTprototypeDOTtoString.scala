@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GLOBALDOTErrorDOTprototypeDOTtoString extends Algorithm {
   val length: Int = 0
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GLOBAL.Error.prototype.toString" (this, argumentsList, NewTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Error.prototype.toString" (this, argumentsList, NewTarget) => {
     let O = this
     app __x0__ = (Type O)
     if (! (= __x0__ Object)) {
@@ -39,5 +39,5 @@ object GLOBALDOTErrorDOTprototypeDOTtoString extends Algorithm {
     } else {}
     app __x8__ = (WrapCompletion (+ (+ (+ name ":") " ") msg))
     return __x8__
-  }""")
+  }"""))
 }

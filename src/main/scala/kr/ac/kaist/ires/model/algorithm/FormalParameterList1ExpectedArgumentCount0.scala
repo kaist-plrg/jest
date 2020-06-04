@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object FormalParameterList1ExpectedArgumentCount0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""FormalParameterList1ExpectedArgumentCount0" (this, FormalParameterList, FormalParameter) => {
+  val func: Func = FixUIdWalker(parseFunc(""""FormalParameterList1ExpectedArgumentCount0" (this, FormalParameterList, FormalParameter) => {
     access __x0__ = (FormalParameterList "ExpectedArgumentCount")
     let count = __x0__
     access __x1__ = (FormalParameterList "HasInitializer")
@@ -17,5 +17,5 @@ object FormalParameterList1ExpectedArgumentCount0 extends Algorithm {
     }
     if __x2__ return count else {}
     return (+ count 1i)
-  }""")
+  }"""))
 }

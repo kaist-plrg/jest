@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GLOBALDOTArray extends Algorithm {
   val length: Int = 0
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GLOBAL.Array" (this, argumentsList, NewTarget) => if (== argumentsList["length"] 0i) {
+  val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Array" (this, argumentsList, NewTarget) => if (== argumentsList["length"] 0i) {
     let numberOfArgs = argumentsList["length"]
     assert (== numberOfArgs 0i)
     if (= NewTarget undefined) let newTarget = GLOBAL_context["Function"] else let newTarget = NewTarget
@@ -72,5 +72,5 @@ object GLOBALDOTArray extends Algorithm {
     }
     app __x16__ = (WrapCompletion array)
     return __x16__
-  }""")
+  }"""))
 }

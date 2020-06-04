@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GLOBALDOTObjectDOTprototypeDOTpropertyIsEnumerable extends Algorithm {
   val length: Int = 1
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GLOBAL.Object.prototype.propertyIsEnumerable" (this, argumentsList, NewTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Object.prototype.propertyIsEnumerable" (this, argumentsList, NewTarget) => {
     app __x0__ = (GetArgument argumentsList 0i)
     let V = __x0__
     app __x1__ = (ToPropertyKey V)
@@ -24,5 +24,5 @@ object GLOBALDOTObjectDOTprototypeDOTpropertyIsEnumerable extends Algorithm {
     } else {}
     app __x5__ = (WrapCompletion desc["Enumerable"])
     return __x5__
-  }""")
+  }"""))
 }

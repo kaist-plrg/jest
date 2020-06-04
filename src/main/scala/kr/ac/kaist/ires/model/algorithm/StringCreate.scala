@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object StringCreate extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
-  val func: Func = parseFunc(""""StringCreate" (value, prototype) => {
+  val func: Func = FixUIdWalker(parseFunc(""""StringCreate" (value, prototype) => {
     app __x0__ = (Type value)
     assert (= __x0__ String)
     let S = (new StringExoticObject("SubMap" -> (new SubMap())))
@@ -33,5 +33,5 @@ object StringCreate extends Algorithm {
     __x1__
     app __x2__ = (WrapCompletion S)
     return __x2__
-  }""")
+  }"""))
 }

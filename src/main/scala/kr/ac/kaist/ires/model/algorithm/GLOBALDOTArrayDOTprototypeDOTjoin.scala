@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object GLOBALDOTArrayDOTprototypeDOTjoin extends Algorithm {
   val length: Int = 1
   val lang: Boolean = false
-  val func: Func = parseFunc(""""GLOBAL.Array.prototype.join" (this, argumentsList, NewTarget) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Array.prototype.join" (this, argumentsList, NewTarget) => {
     app __x0__ = (GetArgument argumentsList 0i)
     let separator = __x0__
     app __x1__ = (ToObject this)
@@ -41,5 +41,5 @@ object GLOBALDOTArrayDOTprototypeDOTjoin extends Algorithm {
     }
     app __x8__ = (WrapCompletion R)
     return __x8__
-  }""")
+  }"""))
 }

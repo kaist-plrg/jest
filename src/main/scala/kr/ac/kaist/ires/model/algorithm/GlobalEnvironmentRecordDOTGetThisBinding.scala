@@ -6,9 +6,9 @@ import kr.ac.kaist.ires.ir.Parser._
 object GlobalEnvironmentRecordDOTGetThisBinding extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""GlobalEnvironmentRecord.GetThisBinding" (this) => {
+  val func: Func = FixUIdWalker(parseFunc(""""GlobalEnvironmentRecord.GetThisBinding" (this) => {
     let envRec = this
     app __x0__ = (WrapCompletion envRec["GlobalThisValue"])
     return __x0__
-  }""")
+  }"""))
 }

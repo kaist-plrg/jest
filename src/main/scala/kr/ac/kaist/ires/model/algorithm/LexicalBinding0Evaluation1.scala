@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Parser._
 object LexicalBinding0Evaluation1 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = parseFunc(""""LexicalBinding0Evaluation1" (this, BindingIdentifier, Initializer) => {
+  val func: Func = FixUIdWalker(parseFunc(""""LexicalBinding0Evaluation1" (this, BindingIdentifier, Initializer) => {
     access __x0__ = (BindingIdentifier "StringValue")
     let bindingId = __x0__
     app __x1__ = (ResolveBinding bindingId)
@@ -26,5 +26,5 @@ object LexicalBinding0Evaluation1 extends Algorithm {
     app __x7__ = (InitializeReferencedBinding lhs value)
     app __x8__ = (WrapCompletion __x7__)
     return __x8__
-  }""")
+  }"""))
 }
