@@ -1,9 +1,10 @@
 package kr.ac.kaist.ires.model
 
+import kr.ac.kaist.ires.Algorithm
 import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
-object PropertyDefinitionList1PropertyDefinitionEvaluation0 {
+object PropertyDefinitionList1PropertyDefinitionEvaluation0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = parseFunc(""""PropertyDefinitionList1PropertyDefinitionEvaluation0" (this, PropertyDefinitionList, PropertyDefinition, object, enumerable) => {

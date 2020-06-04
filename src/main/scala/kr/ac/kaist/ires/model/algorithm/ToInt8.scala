@@ -1,9 +1,10 @@
 package kr.ac.kaist.ires.model
 
+import kr.ac.kaist.ires.Algorithm
 import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
-object ToInt8 {
+object ToInt8 extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
   val func: Func = parseFunc(""""ToInt8" (argument) => {

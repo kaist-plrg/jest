@@ -1,9 +1,10 @@
 package kr.ac.kaist.ires.model
 
+import kr.ac.kaist.ires.Algorithm
 import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
-object GLOBALDOTNumberDOTprototypeDOTvalueOf {
+object GLOBALDOTNumberDOTprototypeDOTvalueOf extends Algorithm {
   val length: Int = 0
   val lang: Boolean = false
   val func: Func = parseFunc(""""GLOBAL.Number.prototype.valueOf" (this, argumentsList, NewTarget) => {

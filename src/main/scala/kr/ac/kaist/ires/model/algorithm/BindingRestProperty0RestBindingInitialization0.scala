@@ -1,9 +1,10 @@
 package kr.ac.kaist.ires.model
 
+import kr.ac.kaist.ires.Algorithm
 import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
-object BindingRestProperty0RestBindingInitialization0 {
+object BindingRestProperty0RestBindingInitialization0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = parseFunc(""""BindingRestProperty0RestBindingInitialization0" (this, BindingIdentifier, value, environment, excludedNames) => {

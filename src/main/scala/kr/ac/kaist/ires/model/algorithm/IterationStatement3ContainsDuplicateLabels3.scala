@@ -1,9 +1,10 @@
 package kr.ac.kaist.ires.model
 
+import kr.ac.kaist.ires.Algorithm
 import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
-object IterationStatement3ContainsDuplicateLabels3 {
+object IterationStatement3ContainsDuplicateLabels3 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = parseFunc(""""IterationStatement3ContainsDuplicateLabels3" (this, VariableDeclarationList, Expression0, Expression1, Statement, labelSet) => {

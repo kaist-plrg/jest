@@ -1,9 +1,10 @@
 package kr.ac.kaist.ires.model
 
+import kr.ac.kaist.ires.Algorithm
 import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
-object ArrayAssignmentPattern0DestructuringAssignmentEvaluation3 {
+object ArrayAssignmentPattern0DestructuringAssignmentEvaluation3 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = parseFunc(""""ArrayAssignmentPattern0DestructuringAssignmentEvaluation3" (this, Elision, AssignmentRestElement, value) => {

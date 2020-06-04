@@ -1,9 +1,10 @@
 package kr.ac.kaist.ires.model
 
+import kr.ac.kaist.ires.Algorithm
 import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
-object HoistableDeclaration1Evaluation0 {
+object HoistableDeclaration1Evaluation0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = parseFunc(""""HoistableDeclaration1Evaluation0" (this, GeneratorDeclaration) => {

@@ -1,9 +1,10 @@
 package kr.ac.kaist.ires.model
 
+import kr.ac.kaist.ires.Algorithm
 import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
-object ForBinding0IsDestructuring0 {
+object ForBinding0IsDestructuring0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = parseFunc(""""ForBinding0IsDestructuring0" (this, BindingIdentifier) => return false""")

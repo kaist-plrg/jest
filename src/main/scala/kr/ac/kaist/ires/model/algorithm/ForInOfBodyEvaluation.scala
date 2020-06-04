@@ -1,9 +1,10 @@
 package kr.ac.kaist.ires.model
 
+import kr.ac.kaist.ires.Algorithm
 import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
-object ForInOfBodyEvaluation {
+object ForInOfBodyEvaluation extends Algorithm {
   val length: Int = 6
   val lang: Boolean = true
   val func: Func = parseFunc(""""ForInOfBodyEvaluation" (lhs, stmt, iteratorRecord, iterationKind, lhsKind, labelSet, iteratorKind) => {

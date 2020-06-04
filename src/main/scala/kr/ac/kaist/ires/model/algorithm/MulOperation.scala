@@ -1,18 +1,21 @@
 package kr.ac.kaist.ires.model
 
+import kr.ac.kaist.ires.Algorithm
 import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
-object MulOperation {
-  val func: Func = Func("MulOperation", List(Id("op"), Id("lnum"), Id("rnum")), None, parseInst(
-    s"""if (= op "*") {
-          return ( * lnum rnum )
-        } else if (= op "/") {
-          return ( / lnum rnum )
-        } else if (= op "%") {
-          return ( % lnum rnum )
-        } else {
-          return undefined
-        }"""
-  ))
+object MulOperation extends Algorithm {
+  val length: Int = 3
+  val lang: Boolean = true
+  val func: Func = parseFunc(""""MulOperation" (op, lnum, rnum) => {
+    if (= op "*") {
+      return ( * lnum rnum )
+    } else if (= op "/") {
+      return ( / lnum rnum )
+    } else if (= op "%") {
+      return ( % lnum rnum )
+    } else {
+      return undefined
+    }
+  }""")
 }

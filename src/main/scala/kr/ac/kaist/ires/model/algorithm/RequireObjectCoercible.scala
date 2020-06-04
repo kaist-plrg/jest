@@ -1,11 +1,14 @@
 package kr.ac.kaist.ires.model
 
+import kr.ac.kaist.ires.Algorithm
 import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
-object RequireObjectCoercible {
-  val func: Func = Func("RequireObjectCoercible", List(Id("argument")), None, parseInst(
-    s"""if (|| (= (typeof argument) "Undefined") (= (typeof argument) "Null")) {
+object RequireObjectCoercible extends Algorithm {
+  val length: Int = 1
+  val lang: Boolean = true
+  val func: Func = parseFunc(""""RequireObjectCoercible" (argument) => {
+    if (|| (= (typeof argument) "Undefined") (= (typeof argument) "Null")) {
       return (new Completion (
         "Type" -> CONST_throw,
         "Value" -> (new OrdinaryObject(
@@ -17,6 +20,6 @@ object RequireObjectCoercible {
       ))
     } else {
       return argument
-    }"""
-  ))
+    }
+  }""")
 }

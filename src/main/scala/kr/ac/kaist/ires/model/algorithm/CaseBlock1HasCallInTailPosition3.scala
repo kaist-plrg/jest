@@ -1,9 +1,10 @@
 package kr.ac.kaist.ires.model
 
+import kr.ac.kaist.ires.Algorithm
 import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
-object CaseBlock1HasCallInTailPosition3 {
+object CaseBlock1HasCallInTailPosition3 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = parseFunc(""""CaseBlock1HasCallInTailPosition3" (this, CaseClauses0, DefaultClause, CaseClauses1, call) => {

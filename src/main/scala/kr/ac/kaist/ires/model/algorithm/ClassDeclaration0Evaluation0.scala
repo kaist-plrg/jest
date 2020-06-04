@@ -1,9 +1,10 @@
 package kr.ac.kaist.ires.model
 
+import kr.ac.kaist.ires.Algorithm
 import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
-object ClassDeclaration0Evaluation0 {
+object ClassDeclaration0Evaluation0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = parseFunc(""""ClassDeclaration0Evaluation0" (this, BindingIdentifier, ClassTail) => {

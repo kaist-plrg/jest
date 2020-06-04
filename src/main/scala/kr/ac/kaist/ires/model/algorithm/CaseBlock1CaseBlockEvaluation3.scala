@@ -1,9 +1,10 @@
 package kr.ac.kaist.ires.model
 
+import kr.ac.kaist.ires.Algorithm
 import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
-object CaseBlock1CaseBlockEvaluation3 {
+object CaseBlock1CaseBlockEvaluation3 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = parseFunc(""""CaseBlock1CaseBlockEvaluation3" (this, CaseClauses0, DefaultClause, CaseClauses1, input) => {

@@ -1,9 +1,12 @@
 package kr.ac.kaist.ires.model
 
+import kr.ac.kaist.ires.Algorithm
 import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
-object GetTypeOf {
+object GetTypeOf extends Algorithm {
+  val length: Int = 0
+  val lang: Boolean = false
   val func: Func = parseFunc(""""GetTypeOf" (argument) => {
     let t = (typeof argument)
     if (= t "Undefined") return "undefined"

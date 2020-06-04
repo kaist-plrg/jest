@@ -1,9 +1,10 @@
 package kr.ac.kaist.ires.model
 
+import kr.ac.kaist.ires.Algorithm
 import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
-object OrdinarySetWithOwnDescriptor {
+object OrdinarySetWithOwnDescriptor extends Algorithm {
   val length: Int = 5
   val lang: Boolean = true
   val func: Func = parseFunc(""""OrdinarySetWithOwnDescriptor" (O, P, V, Receiver, ownDesc) => {

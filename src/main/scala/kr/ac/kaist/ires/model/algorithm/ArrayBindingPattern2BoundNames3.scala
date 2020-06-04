@@ -1,9 +1,10 @@
 package kr.ac.kaist.ires.model
 
+import kr.ac.kaist.ires.Algorithm
 import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
-object ArrayBindingPattern2BoundNames3 {
+object ArrayBindingPattern2BoundNames3 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = parseFunc(""""ArrayBindingPattern2BoundNames3" (this, BindingElementList, Elision, BindingRestElement) => {
