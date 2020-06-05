@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object AsyncMethod0PropertyDefinitionEvaluation0 extends Algorithm {
+  val name: String = "AsyncMethod0PropertyDefinitionEvaluation0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""AsyncMethod0PropertyDefinitionEvaluation0" (this, PropertyName, UniqueFormalParameters, AsyncFunctionBody, object, enumerable) => {
@@ -29,5 +30,5 @@ object AsyncMethod0PropertyDefinitionEvaluation0 extends Algorithm {
     if (is-completion __x5__) if (= __x5__["Type"] CONST_normal) __x5__ = __x5__["Value"] else return __x5__ else {}
     app __x6__ = (WrapCompletion __x5__)
     return __x6__
-  }"""))
+  }"""), this)
 }

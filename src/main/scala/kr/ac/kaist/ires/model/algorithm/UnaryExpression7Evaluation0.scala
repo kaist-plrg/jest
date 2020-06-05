@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object UnaryExpression7Evaluation0 extends Algorithm {
+  val name: String = "UnaryExpression7Evaluation0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""UnaryExpression7Evaluation0" (this, UnaryExpression) => {
@@ -19,5 +20,5 @@ object UnaryExpression7Evaluation0 extends Algorithm {
     } else {}
     app __x4__ = (WrapCompletion true)
     return __x4__
-  }"""))
+  }"""), this)
 }

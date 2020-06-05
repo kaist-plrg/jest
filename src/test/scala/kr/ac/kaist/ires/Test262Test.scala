@@ -22,7 +22,7 @@ import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent._
 import scala.concurrent.duration._
 
-class Test262Test extends IRESTest {
+class Test262Test extends IRESTest with EvalTest {
 
   sealed trait TestKind
   case object Basic extends TestKind
@@ -47,6 +47,8 @@ class Test262Test extends IRESTest {
       case (k, v) => jpw.println(s"$k: $v")
     }
     jpw.close()
+
+    if (COVERAGE_MODE) CoverageCheck.showResult(detail = true)
   }
 
   // tests for js-interpreter

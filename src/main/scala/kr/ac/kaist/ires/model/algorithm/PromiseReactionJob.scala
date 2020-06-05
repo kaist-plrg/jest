@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object PromiseReactionJob extends Algorithm {
+  val name: String = "PromiseReactionJob"
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""PromiseReactionJob" (reaction, argument) => {
@@ -39,5 +40,5 @@ object PromiseReactionJob extends Algorithm {
     app __x9__ = (Completion status)
     app __x10__ = (WrapCompletion __x9__)
     return __x10__
-  }"""))
+  }"""), this)
 }

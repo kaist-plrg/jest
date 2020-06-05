@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object IsConstructor extends Algorithm {
+  val name: String = "IsConstructor"
   val length: Int = 1
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""IsConstructor" (argument) => {
@@ -18,5 +19,5 @@ object IsConstructor extends Algorithm {
     } else {}
     app __x3__ = (WrapCompletion false)
     return __x3__
-  }"""))
+  }"""), this)
 }

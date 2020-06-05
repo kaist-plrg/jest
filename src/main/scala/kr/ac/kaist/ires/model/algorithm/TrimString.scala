@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object TrimString extends Algorithm {
+  val name: String = "TrimString"
   val length: Int = 2
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""TrimString" (string, where) => {
@@ -19,5 +20,5 @@ object TrimString extends Algorithm {
     }
     app __x2__ = (WrapCompletion T)
     return __x2__
-  }"""))
+  }"""), this)
 }

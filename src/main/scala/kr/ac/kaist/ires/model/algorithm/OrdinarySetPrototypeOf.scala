@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object OrdinarySetPrototypeOf extends Algorithm {
+  val name: String = "OrdinarySetPrototypeOf"
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""OrdinarySetPrototypeOf" (O, V) => {
@@ -30,5 +31,5 @@ object OrdinarySetPrototypeOf extends Algorithm {
     O["Prototype"] = V
     app __x5__ = (WrapCompletion true)
     return __x5__
-  }"""))
+  }"""), this)
 }

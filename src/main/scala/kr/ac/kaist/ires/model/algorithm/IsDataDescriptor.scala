@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object IsDataDescriptor extends Algorithm {
+  val name: String = "IsDataDescriptor"
   val length: Int = 1
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""IsDataDescriptor" (Desc) => {
@@ -17,5 +18,5 @@ object IsDataDescriptor extends Algorithm {
     } else {}
     app __x2__ = (WrapCompletion true)
     return __x2__
-  }"""))
+  }"""), this)
 }

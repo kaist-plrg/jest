@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object OrdinaryOwnPropertyKeys extends Algorithm {
+  val name: String = "OrdinaryOwnPropertyKeys"
   val length: Int = 1
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""OrdinaryOwnPropertyKeys" (O) => {
@@ -50,5 +51,5 @@ object OrdinaryOwnPropertyKeys extends Algorithm {
     return keys
     app __x16__ = (WrapCompletion keys)
     return __x16__
-  }"""))
+  }"""), this)
 }

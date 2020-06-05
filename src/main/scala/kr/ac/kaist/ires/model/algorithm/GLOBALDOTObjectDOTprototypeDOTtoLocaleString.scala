@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTObjectDOTprototypeDOTtoLocaleString extends Algorithm {
+  val name: String = "GLOBALDOTObjectDOTprototypeDOTtoLocaleString"
   val length: Int = 0
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Object.prototype.toLocaleString" (this, argumentsList, NewTarget) => {
@@ -16,5 +17,5 @@ object GLOBALDOTObjectDOTprototypeDOTtoLocaleString extends Algorithm {
     if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     app __x3__ = (WrapCompletion __x2__)
     return __x3__
-  }"""))
+  }"""), this)
 }

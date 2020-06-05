@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GeneratorValidate extends Algorithm {
+  val name: String = "GeneratorValidate"
   val length: Int = 1
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""GeneratorValidate" (generator) => {
@@ -23,5 +24,5 @@ object GeneratorValidate extends Algorithm {
     } else {}
     app __x4__ = (WrapCompletion state)
     return __x4__
-  }"""))
+  }"""), this)
 }

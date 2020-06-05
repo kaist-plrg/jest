@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object OrdinarySetWithOwnDescriptor extends Algorithm {
+  val name: String = "OrdinarySetWithOwnDescriptor"
   val length: Int = 5
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""OrdinarySetWithOwnDescriptor" (O, P, V, Receiver, ownDesc) => {
@@ -68,5 +69,5 @@ object OrdinarySetWithOwnDescriptor extends Algorithm {
     __x18__
     app __x19__ = (WrapCompletion true)
     return __x19__
-  }"""))
+  }"""), this)
 }

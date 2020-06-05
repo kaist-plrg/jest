@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object FunctionAllocate extends Algorithm {
+  val name: String = "FunctionAllocate"
   val length: Int = 3
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""FunctionAllocate" (functionPrototype, strict, functionKind) => {
@@ -38,5 +39,5 @@ object FunctionAllocate extends Algorithm {
     F["Realm"] = REALM
     app __x1__ = (WrapCompletion F)
     return __x1__
-  }"""))
+  }"""), this)
 }

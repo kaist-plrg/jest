@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object AsyncFunctionExpression0NamedEvaluation0 extends Algorithm {
+  val name: String = "AsyncFunctionExpression0NamedEvaluation0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""AsyncFunctionExpression0NamedEvaluation0" (this, FormalParameters, AsyncFunctionBody, name) => {
@@ -13,5 +14,5 @@ object AsyncFunctionExpression0NamedEvaluation0 extends Algorithm {
     __x1__
     app __x2__ = (WrapCompletion closure)
     return __x2__
-  }"""))
+  }"""), this)
 }

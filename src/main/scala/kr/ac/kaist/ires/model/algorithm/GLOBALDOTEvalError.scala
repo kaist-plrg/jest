@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTEvalError extends Algorithm {
+  val name: String = "GLOBALDOTEvalError"
   val length: Int = 1
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.EvalError" (this, argumentsList, NewTarget) => {
@@ -24,5 +25,5 @@ object GLOBALDOTEvalError extends Algorithm {
     } else {}
     app __x4__ = (WrapCompletion O)
     return __x4__
-  }"""))
+  }"""), this)
 }

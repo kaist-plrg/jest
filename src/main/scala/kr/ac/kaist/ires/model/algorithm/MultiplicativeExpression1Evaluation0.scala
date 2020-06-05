@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object MultiplicativeExpression1Evaluation0 extends Algorithm {
+  val name: String = "MultiplicativeExpression1Evaluation0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""MultiplicativeExpression1Evaluation0" (this, MultiplicativeExpression, MultiplicativeOperator, ExponentiationExpression) => {
@@ -26,5 +27,5 @@ object MultiplicativeExpression1Evaluation0 extends Algorithm {
     app __x6__ = (MulOperation (get-syntax MultiplicativeOperator) lnum rnum)
     app __x7__ = (WrapCompletion __x6__)
     return __x7__
-  }"""))
+  }"""), this)
 }

@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GetThisEnvironment extends Algorithm {
+  val name: String = "GetThisEnvironment"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""GetThisEnvironment" () => {
@@ -20,5 +21,5 @@ object GetThisEnvironment extends Algorithm {
       assert (! (= outer null))
       lex = outer
     }
-  }"""))
+  }"""), this)
 }

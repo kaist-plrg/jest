@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTObjectDOTgetOwnPropertyDescriptors extends Algorithm {
+  val name: String = "GLOBALDOTObjectDOTgetOwnPropertyDescriptors"
   val length: Int = 1
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Object.getOwnPropertyDescriptors" (this, argumentsList, NewTarget) => {
@@ -37,5 +38,5 @@ object GLOBALDOTObjectDOTgetOwnPropertyDescriptors extends Algorithm {
     }
     app __x9__ = (WrapCompletion descriptors)
     return __x9__
-  }"""))
+  }"""), this)
 }

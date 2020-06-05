@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object AsyncConciseBody0EvaluateBody0 extends Algorithm {
+  val name: String = "AsyncConciseBody0EvaluateBody0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""AsyncConciseBody0EvaluateBody0" (this, AssignmentExpression, functionObject, argumentsList) => {
@@ -24,5 +25,5 @@ object AsyncConciseBody0EvaluateBody0 extends Algorithm {
     }
     app __x5__ = (WrapCompletion (new Completion("Type" -> CONST_return, "Value" -> promiseCapability["Promise"], "Target" -> CONST_empty)))
     return __x5__
-  }"""))
+  }"""), this)
 }

@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object CreateIterResultObject extends Algorithm {
+  val name: String = "CreateIterResultObject"
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""CreateIterResultObject" (value, done) => {
@@ -17,5 +18,5 @@ object CreateIterResultObject extends Algorithm {
     __x3__
     app __x4__ = (WrapCompletion obj)
     return __x4__
-  }"""))
+  }"""), this)
 }

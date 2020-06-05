@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object BindingPropertyList1ContainsExpression0 extends Algorithm {
+  val name: String = "BindingPropertyList1ContainsExpression0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""BindingPropertyList1ContainsExpression0" (this, BindingPropertyList, BindingProperty) => {
@@ -12,5 +13,5 @@ object BindingPropertyList1ContainsExpression0 extends Algorithm {
     if (= has true) return true else {}
     access __x1__ = (BindingProperty "ContainsExpression")
     return __x1__
-  }"""))
+  }"""), this)
 }

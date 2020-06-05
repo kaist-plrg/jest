@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTStringDOTprototypeDOTindexOf extends Algorithm {
+  val name: String = "GLOBALDOTStringDOTprototypeDOTindexOf"
   val length: Int = 1
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.String.prototype.indexOf" (this, argumentsList, NewTarget) => {
@@ -30,5 +31,5 @@ object GLOBALDOTStringDOTprototypeDOTindexOf extends Algorithm {
     let searchLen = searchStr["length"]
     app __x8__ = (WrapCompletion !!! "NumberOp")
     return __x8__
-  }"""))
+  }"""), this)
 }

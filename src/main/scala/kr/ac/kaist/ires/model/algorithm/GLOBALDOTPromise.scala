@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTPromise extends Algorithm {
+  val name: String = "GLOBALDOTPromise"
   val length: Int = 1
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Promise" (this, argumentsList, NewTarget) => {
@@ -37,5 +38,5 @@ object GLOBALDOTPromise extends Algorithm {
     } else {}
     app __x9__ = (WrapCompletion promise)
     return __x9__
-  }"""))
+  }"""), this)
 }

@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object MemberExpression1Evaluation0 extends Algorithm {
+  val name: String = "MemberExpression1Evaluation0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""MemberExpression1Evaluation0" (this, MemberExpression, Expression) => {
@@ -26,5 +27,5 @@ object MemberExpression1Evaluation0 extends Algorithm {
     if true let strict = true else let strict = false
     app __x6__ = (WrapCompletion (new Reference("BaseValue" -> bv, "ReferencedName" -> propertyKey, "StrictReference" -> strict)))
     return __x6__
-  }"""))
+  }"""), this)
 }

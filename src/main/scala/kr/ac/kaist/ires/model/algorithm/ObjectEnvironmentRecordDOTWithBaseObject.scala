@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object ObjectEnvironmentRecordDOTWithBaseObject extends Algorithm {
+  val name: String = "ObjectEnvironmentRecordDOTWithBaseObject"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""ObjectEnvironmentRecord.WithBaseObject" (this) => {
@@ -15,5 +16,5 @@ object ObjectEnvironmentRecordDOTWithBaseObject extends Algorithm {
       app __x1__ = (WrapCompletion undefined)
       return __x1__
     }
-  }"""))
+  }"""), this)
 }

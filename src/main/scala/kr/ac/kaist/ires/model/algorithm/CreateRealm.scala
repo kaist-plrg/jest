@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object CreateRealm extends Algorithm {
+  val name: String = "CreateRealm"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""CreateRealm" () => {
@@ -15,5 +16,5 @@ object CreateRealm extends Algorithm {
     realmRec["TemplateMap"] = (new [])
     app __x1__ = (WrapCompletion realmRec)
     return __x1__
-  }"""))
+  }"""), this)
 }

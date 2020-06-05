@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object ToPropertyDescriptor extends Algorithm {
+  val name: String = "ToPropertyDescriptor"
   val length: Int = 1
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""ToPropertyDescriptor" (Obj) => {
@@ -86,5 +87,5 @@ object ToPropertyDescriptor extends Algorithm {
     } else {} else {}
     app __x22__ = (WrapCompletion desc)
     return __x22__
-  }"""))
+  }"""), this)
 }

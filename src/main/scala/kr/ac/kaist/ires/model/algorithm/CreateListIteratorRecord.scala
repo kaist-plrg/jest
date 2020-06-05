@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object CreateListIteratorRecord extends Algorithm {
+  val name: String = "CreateListIteratorRecord"
   val length: Int = 1
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""CreateListIteratorRecord" (list) => {
@@ -16,5 +17,5 @@ object CreateListIteratorRecord extends Algorithm {
     let next = __x1__
     app __x2__ = (WrapCompletion (new Record("Iterator" -> iterator, "NextMethod" -> next, "Done" -> false)))
     return __x2__
-  }"""))
+  }"""), this)
 }

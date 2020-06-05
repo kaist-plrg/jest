@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object ArrowParameters1IsSimpleParameterList0 extends Algorithm {
+  val name: String = "ArrowParameters1IsSimpleParameterList0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""ArrowParameters1IsSimpleParameterList0" (this, CoverParenthesizedExpressionAndArrowParameterList) => {
@@ -11,5 +12,5 @@ object ArrowParameters1IsSimpleParameterList0 extends Algorithm {
     let formals = __x0__
     access __x1__ = (formals "IsSimpleParameterList")
     return __x1__
-  }"""))
+  }"""), this)
 }

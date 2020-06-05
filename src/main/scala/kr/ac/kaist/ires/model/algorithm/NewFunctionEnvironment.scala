@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object NewFunctionEnvironment extends Algorithm {
+  val name: String = "NewFunctionEnvironment"
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""NewFunctionEnvironment" (F, newTarget) => {
@@ -20,5 +21,5 @@ object NewFunctionEnvironment extends Algorithm {
     env["Outer"] = F["Environment"]
     app __x1__ = (WrapCompletion env)
     return __x1__
-  }"""))
+  }"""), this)
 }

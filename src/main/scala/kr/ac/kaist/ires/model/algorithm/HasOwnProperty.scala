@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object HasOwnProperty extends Algorithm {
+  val name: String = "HasOwnProperty"
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""HasOwnProperty" (O, P) => {
@@ -20,5 +21,5 @@ object HasOwnProperty extends Algorithm {
     } else {}
     app __x4__ = (WrapCompletion true)
     return __x4__
-  }"""))
+  }"""), this)
 }

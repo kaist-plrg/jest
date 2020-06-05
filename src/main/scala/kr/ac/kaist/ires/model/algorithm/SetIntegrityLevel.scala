@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object SetIntegrityLevel extends Algorithm {
+  val name: String = "SetIntegrityLevel"
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""SetIntegrityLevel" (O, level) => {
@@ -50,5 +51,5 @@ object SetIntegrityLevel extends Algorithm {
     }
     app __x12__ = (WrapCompletion true)
     return __x12__
-  }"""))
+  }"""), this)
 }

@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object BindingPropertyList1PropertyBindingInitialization0 extends Algorithm {
+  val name: String = "BindingPropertyList1PropertyBindingInitialization0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""BindingPropertyList1PropertyBindingInitialization0" (this, BindingPropertyList, BindingProperty, value, environment) => {
@@ -24,5 +25,5 @@ object BindingPropertyList1PropertyBindingInitialization0 extends Algorithm {
     }
     app __x7__ = (WrapCompletion boundNames)
     return __x7__
-  }"""))
+  }"""), this)
 }

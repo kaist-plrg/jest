@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GetCapabilitiesExecutorFunctions extends Algorithm {
+  val name: String = "GetCapabilitiesExecutorFunctions"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""GetCapabilitiesExecutorFunctions" () => {
@@ -21,5 +22,5 @@ object GetCapabilitiesExecutorFunctions extends Algorithm {
     promiseCapability["Reject"] = reject
     app __x2__ = (WrapCompletion undefined)
     return __x2__
-  }"""))
+  }"""), this)
 }

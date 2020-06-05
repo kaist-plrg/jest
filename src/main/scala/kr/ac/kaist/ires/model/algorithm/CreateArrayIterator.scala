@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object CreateArrayIterator extends Algorithm {
+  val name: String = "CreateArrayIterator"
   val length: Int = 2
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""CreateArrayIterator" (array, kind) => {
@@ -16,5 +17,5 @@ object CreateArrayIterator extends Algorithm {
     iterator["ArrayIterationKind"] = kind
     app __x2__ = (WrapCompletion iterator)
     return __x2__
-  }"""))
+  }"""), this)
 }

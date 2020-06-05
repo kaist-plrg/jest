@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object AsyncGeneratorResumeNext extends Algorithm {
+  val name: String = "AsyncGeneratorResumeNext"
   val length: Int = 1
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""AsyncGeneratorResumeNext" (generator) => {
@@ -71,5 +72,5 @@ object AsyncGeneratorResumeNext extends Algorithm {
     }
     app __x14__ = (WrapCompletion undefined)
     return __x14__
-  }"""))
+  }"""), this)
 }

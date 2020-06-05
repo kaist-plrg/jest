@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object TriggerPromiseReactions extends Algorithm {
+  val name: String = "TriggerPromiseReactions"
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""TriggerPromiseReactions" (reactions, argument) => {
@@ -17,5 +18,5 @@ object TriggerPromiseReactions extends Algorithm {
     }
     app __x3__ = (WrapCompletion undefined)
     return __x3__
-  }"""))
+  }"""), this)
 }

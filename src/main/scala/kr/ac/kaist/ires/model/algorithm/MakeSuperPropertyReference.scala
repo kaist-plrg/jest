@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object MakeSuperPropertyReference extends Algorithm {
+  val name: String = "MakeSuperPropertyReference"
   val length: Int = 3
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""MakeSuperPropertyReference" (actualThis, propertyKey, strict) => {
@@ -19,5 +20,5 @@ object MakeSuperPropertyReference extends Algorithm {
     let bv = __x3__
     app __x4__ = (WrapCompletion (new Reference("BaseValue" -> bv, "ReferencedName" -> propertyKey, "thisValue" -> actualThis, "StrictReference" -> strict)))
     return __x4__
-  }"""))
+  }"""), this)
 }

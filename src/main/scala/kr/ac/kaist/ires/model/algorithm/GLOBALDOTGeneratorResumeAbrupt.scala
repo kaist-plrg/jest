@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTGeneratorResumeAbrupt extends Algorithm {
+  val name: String = "GLOBALDOTGeneratorResumeAbrupt"
   val length: Int = 2
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.GeneratorResumeAbrupt" (this, argumentsList, NewTarget) => {
@@ -42,5 +43,5 @@ object GLOBALDOTGeneratorResumeAbrupt extends Algorithm {
     app __x9__ = (Completion result)
     app __x10__ = (WrapCompletion __x9__)
     return __x10__
-  }"""))
+  }"""), this)
 }

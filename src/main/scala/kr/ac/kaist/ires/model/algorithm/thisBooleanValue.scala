@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object thisBooleanValue extends Algorithm {
+  val name: String = "thisBooleanValue"
   val length: Int = 0
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""thisBooleanValue" (value) => {
@@ -22,5 +23,5 @@ object thisBooleanValue extends Algorithm {
     } else {}
     app __x5__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
     return __x5__
-  }"""))
+  }"""), this)
 }

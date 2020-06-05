@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GetNewTarget extends Algorithm {
+  val name: String = "GetNewTarget"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""GetNewTarget" () => {
@@ -12,5 +13,5 @@ object GetNewTarget extends Algorithm {
     assert (! (= envRec["NewTarget"] absent))
     app __x1__ = (WrapCompletion envRec["NewTarget"])
     return __x1__
-  }"""))
+  }"""), this)
 }

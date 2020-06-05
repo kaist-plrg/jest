@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GetSubstitution extends Algorithm {
+  val name: String = "GetSubstitution"
   val length: Int = 6
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GetSubstitution" (matched, str, position, captures, namedCaptures, replacement) => {
@@ -26,5 +27,5 @@ object GetSubstitution extends Algorithm {
     !!! "Etc"
     app __x4__ = (WrapCompletion result)
     return __x4__
-  }"""))
+  }"""), this)
 }

@@ -5,7 +5,8 @@ import scala.concurrent._
 import scala.concurrent.duration._
 import scala.concurrent.ExecutionContext.Implicits.global
 
-import kr.ac.kaist.ires.{ DEBUG_INTERP, IRES, Lexical }
+import kr.ac.kaist.ires.{ DEBUG_INTERP, IRES, COVERAGE_MODE, Lexical }
+import kr.ac.kaist.ires.coverage.CoverageCheck
 import kr.ac.kaist.ires.error.NotSupported
 import kr.ac.kaist.ires.model.{ Parser => ESParser, ESValueParser, ModelHelper }
 
@@ -73,15 +74,17 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
           case Nil => s0.copy(context = s0.context.copy(locals = s0.context.locals + (s0.context.retId -> value), insts = Nil))
           case ctx :: rest => s0.copy(context = ctx.copy(locals = ctx.locals + (ctx.retId -> value)), ctxStack = rest)
         }
-      case IIf(cond, thenInst, elseInst) =>
+      case c @ IIf(cond, thenInst, elseInst) =>
         val (v, s0) = escapeCompletion(interp(cond)(st))
+        if (COVERAGE_MODE) CoverageCheck.add(c, v)
         v match {
           case Bool(true) => s0.copy(context = s0.context.copy(insts = thenInst :: s0.context.insts))
           case Bool(false) => s0.copy(context = s0.context.copy(insts = elseInst :: s0.context.insts))
           case v => error(s"not a boolean: $v")
         }
-      case IWhile(cond, body) =>
+      case c @ IWhile(cond, body) =>
         val (v, s0) = escapeCompletion(interp(cond)(st))
+        if (COVERAGE_MODE) CoverageCheck.add(c, v)
         v match {
           case Bool(true) => s0.copy(context = s0.context.copy(insts = body :: inst :: s0.context.insts))
           case Bool(false) => s0
@@ -233,6 +236,9 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
         s0.copy(context = s0.context.copy(insts = List(body)))
       }
     }
+
+    if (instCount % 1000 == 0) CoverageCheck.updateTime
+
     if (instCount % 100000 == 0) GC.gc(res)
     else res
   }
@@ -606,4 +612,3 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
     case _ => pair
   }
 }
-

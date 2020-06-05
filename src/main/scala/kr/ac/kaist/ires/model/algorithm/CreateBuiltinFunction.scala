@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object CreateBuiltinFunction extends Algorithm {
+  val name: String = "CreateBuiltinFunction"
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""CreateBuiltinFunction" (steps, internalSlotsList, realm, prototype) => {
@@ -22,5 +23,5 @@ object CreateBuiltinFunction extends Algorithm {
     func["ScriptOrModule"] = null
     app __x0__ = (WrapCompletion func)
     return __x0__
-  }"""))
+  }"""), this)
 }

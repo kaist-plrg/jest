@@ -1,25 +1,39 @@
 package kr.ac.kaist.ires.ir
 
 import kr.ac.kaist.ires.COVERAGE_MODE
-import kr.ac.kaist.ires.error.CoverageError
+import kr.ac.kaist.ires.model.Algorithm
 import scala.collection.mutable.{ Map => MMap }
 
 // IR Instructions
 sealed trait Inst extends IRNode {
-  lazy val uid: Int = if (COVERAGE_MODE) {
-    val id = Inst.size
-    Inst._insts +:= this
-    id
-  } else throw CoverageError(s"`uid` of Inst should be only used in the coverage mode")
+  private var algo: Option[Algorithm] = None
+  lazy val uid: Int = algo match {
+    case Some(algo) if COVERAGE_MODE =>
+      val id = Inst.size
+      Inst._insts :+= this
+      Inst._instToAlgo :+= algo
+      Inst._algoCounts += algo -> (Inst._algoCounts.getOrElse(algo, 0) + 1)
+      id
+    case _ => -1
+  }
+
+  def setAlgo(algo: Algorithm): Unit = this.algo = Some(algo)
 }
 object Inst {
   private var _insts: Vector[Inst] = Vector()
-  def size: Int = insts.length
   def insts: Vector[Inst] = _insts
-  def conds: Vector[CondInst] = insts.flatMap(_ match {
-    case (condInst: CondInst) => Some(condInst)
+  def size: Int = insts.length
+
+  private var _instToAlgo: Vector[Algorithm] = Vector()
+  def instToAlgo: Vector[Algorithm] = _instToAlgo
+
+  private var _algoCounts: Map[Algorithm, Int] = Map()
+  def algoCounts: Map[Algorithm, Int] = _algoCounts
+
+  def conds: Set[Int] = insts.flatMap(_ match {
+    case (condInst: CondInst) => Some(condInst.uid)
     case _ => None
-  })
+  }).toSet
 }
 
 // conditional instructions

@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object NewPromiseCapability extends Algorithm {
+  val name: String = "NewPromiseCapability"
   val length: Int = 1
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""NewPromiseCapability" (C) => {
@@ -33,5 +34,5 @@ object NewPromiseCapability extends Algorithm {
     promiseCapability["Promise"] = promise
     app __x8__ = (WrapCompletion promiseCapability)
     return __x8__
-  }"""))
+  }"""), this)
 }

@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GetGeneratorKind extends Algorithm {
+  val name: String = "GetGeneratorKind"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""GetGeneratorKind" () => {
@@ -20,5 +21,5 @@ object GetGeneratorKind extends Algorithm {
       app __x2__ = (WrapCompletion CONST_sync)
       return __x2__
     }
-  }"""))
+  }"""), this)
 }

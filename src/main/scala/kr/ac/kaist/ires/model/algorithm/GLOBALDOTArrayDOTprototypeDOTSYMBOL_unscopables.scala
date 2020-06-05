@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTArrayDOTprototypeDOTSYMBOL_unscopables extends Algorithm {
+  val name: String = "GLOBALDOTArrayDOTprototypeDOTSYMBOL_unscopables"
   val length: Int = 0
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Array.prototype.SYMBOL_unscopables" (this, argumentsList, NewTarget) => {
@@ -31,5 +32,5 @@ object GLOBALDOTArrayDOTprototypeDOTSYMBOL_unscopables extends Algorithm {
     __x10__
     app __x11__ = (WrapCompletion unscopableList)
     return __x11__
-  }"""))
+  }"""), this)
 }

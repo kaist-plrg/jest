@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object BitwiseORExpression1Evaluation0 extends Algorithm {
+  val name: String = "BitwiseORExpression1Evaluation0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""BitwiseORExpression1Evaluation0" (this, A, B) => {
@@ -25,5 +26,5 @@ object BitwiseORExpression1Evaluation0 extends Algorithm {
     let rnum = __x5__
     app __x6__ = (WrapCompletion (| lnum rnum))
     return __x6__
-  }"""))
+  }"""), this)
 }

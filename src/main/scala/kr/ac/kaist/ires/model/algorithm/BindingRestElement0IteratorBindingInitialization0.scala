@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object BindingRestElement0IteratorBindingInitialization0 extends Algorithm {
+  val name: String = "BindingRestElement0IteratorBindingInitialization0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""BindingRestElement0IteratorBindingInitialization0" (this, BindingIdentifier, iteratorRecord, environment) => {
@@ -49,5 +50,5 @@ object BindingRestElement0IteratorBindingInitialization0 extends Algorithm {
       assert (= status true)
       n = (+ n 1i)
     }
-  }"""))
+  }"""), this)
 }

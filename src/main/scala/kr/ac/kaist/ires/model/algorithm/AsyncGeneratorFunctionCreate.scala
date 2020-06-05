@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object AsyncGeneratorFunctionCreate extends Algorithm {
+  val name: String = "AsyncGeneratorFunctionCreate"
   val length: Int = 5
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""AsyncGeneratorFunctionCreate" (kind, ParameterList, Body, Scope, Strict) => {
@@ -15,5 +16,5 @@ object AsyncGeneratorFunctionCreate extends Algorithm {
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
     app __x2__ = (WrapCompletion __x1__)
     return __x2__
-  }"""))
+  }"""), this)
 }

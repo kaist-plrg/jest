@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object AddEntriesFromIterable extends Algorithm {
+  val name: String = "AddEntriesFromIterable"
   val length: Int = 3
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""AddEntriesFromIterable" (target, iterable, adder) => {
@@ -63,5 +64,5 @@ object AddEntriesFromIterable extends Algorithm {
         return __x21__
       } else {}
     }
-  }"""))
+  }"""), this)
 }

@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object MethodDefinition5HasDirectSuper0 extends Algorithm {
+  val name: String = "MethodDefinition5HasDirectSuper0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""MethodDefinition5HasDirectSuper0" (this, PropertyName, PropertySetParameterList, FunctionBody) => {
@@ -13,5 +14,5 @@ object MethodDefinition5HasDirectSuper0 extends Algorithm {
     access __x2__ = (FunctionBody "Contains")
     app __x3__ = (__x2__ "SuperCall")
     return __x3__
-  }"""))
+  }"""), this)
 }

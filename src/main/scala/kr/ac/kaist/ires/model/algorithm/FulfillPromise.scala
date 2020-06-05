@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object FulfillPromise extends Algorithm {
+  val name: String = "FulfillPromise"
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""FulfillPromise" (promise, value) => {
@@ -16,5 +17,5 @@ object FulfillPromise extends Algorithm {
     app __x0__ = (TriggerPromiseReactions reactions value)
     app __x1__ = (WrapCompletion __x0__)
     return __x1__
-  }"""))
+  }"""), this)
 }

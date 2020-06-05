@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object OrdinaryGet extends Algorithm {
+  val name: String = "OrdinaryGet"
   val length: Int = 3
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""OrdinaryGet" (O, P, Receiver) => {
@@ -41,5 +42,5 @@ object OrdinaryGet extends Algorithm {
     if (is-completion __x10__) if (= __x10__["Type"] CONST_normal) __x10__ = __x10__["Value"] else return __x10__ else {}
     app __x11__ = (WrapCompletion __x10__)
     return __x11__
-  }"""))
+  }"""), this)
 }

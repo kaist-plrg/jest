@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object ToPrimitive extends Algorithm {
+  val name: String = "ToPrimitive"
   val length: Int = 1
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""ToPrimitive" (input, PreferredType) => {
@@ -33,5 +34,5 @@ object ToPrimitive extends Algorithm {
     } else {}
     app __x8__ = (WrapCompletion input)
     return __x8__
-  }"""))
+  }"""), this)
 }

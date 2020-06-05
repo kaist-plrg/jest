@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTStringDOTprototypeDOTconcat extends Algorithm {
+  val name: String = "GLOBALDOTStringDOTprototypeDOTconcat"
   val length: Int = 1
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.String.prototype.concat" (this, argumentsList, NewTarget) => {
@@ -24,5 +25,5 @@ object GLOBALDOTStringDOTprototypeDOTconcat extends Algorithm {
     }
     app __x3__ = (WrapCompletion R)
     return __x3__
-  }"""))
+  }"""), this)
 }

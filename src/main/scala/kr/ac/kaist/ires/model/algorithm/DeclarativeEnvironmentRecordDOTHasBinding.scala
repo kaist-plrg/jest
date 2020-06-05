@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object DeclarativeEnvironmentRecordDOTHasBinding extends Algorithm {
+  val name: String = "DeclarativeEnvironmentRecordDOTHasBinding"
   val length: Int = 1
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""DeclarativeEnvironmentRecord.HasBinding" (this, N) => {
@@ -14,5 +15,5 @@ object DeclarativeEnvironmentRecordDOTHasBinding extends Algorithm {
     } else {}
     app __x1__ = (WrapCompletion false)
     return __x1__
-  }"""))
+  }"""), this)
 }

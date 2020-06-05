@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTCreateDataPropertyOnObjectFunctions extends Algorithm {
+  val name: String = "GLOBALDOTCreateDataPropertyOnObjectFunctions"
   val length: Int = 0
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.CreateDataPropertyOnObjectFunctions" (this, argumentsList, NewTarget) => {
@@ -18,5 +19,5 @@ object GLOBALDOTCreateDataPropertyOnObjectFunctions extends Algorithm {
     __x2__
     app __x3__ = (WrapCompletion undefined)
     return __x3__
-  }"""))
+  }"""), this)
 }

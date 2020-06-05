@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GlobalEnvironmentRecordDOTCanDeclareGlobalFunction extends Algorithm {
+  val name: String = "GlobalEnvironmentRecordDOTCanDeclareGlobalFunction"
   val length: Int = 1
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""GlobalEnvironmentRecord.CanDeclareGlobalFunction" (this, N) => {
@@ -26,5 +27,5 @@ object GlobalEnvironmentRecordDOTCanDeclareGlobalFunction extends Algorithm {
     !!! "Etc"
     app __x4__ = (WrapCompletion false)
     return __x4__
-  }"""))
+  }"""), this)
 }

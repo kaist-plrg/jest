@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTStringDOTprototypeDOTlocaleCompare extends Algorithm {
+  val name: String = "GLOBALDOTStringDOTprototypeDOTlocaleCompare"
   val length: Int = 1
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.String.prototype.localeCompare" (this, argumentsList, NewTarget) => {
@@ -22,5 +23,5 @@ object GLOBALDOTStringDOTprototypeDOTlocaleCompare extends Algorithm {
     app __x5__ = (ToString that)
     if (is-completion __x5__) if (= __x5__["Type"] CONST_normal) __x5__ = __x5__["Value"] else return __x5__ else {}
     let That = __x5__
-  }"""))
+  }"""), this)
 }

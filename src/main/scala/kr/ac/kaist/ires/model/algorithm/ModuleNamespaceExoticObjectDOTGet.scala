@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object ModuleNamespaceExoticObjectDOTGet extends Algorithm {
+  val name: String = "ModuleNamespaceExoticObjectDOTGet"
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""ModuleNamespaceExoticObject.Get" (O, P, Receiver) => {
@@ -38,5 +39,5 @@ object ModuleNamespaceExoticObjectDOTGet extends Algorithm {
     if (is-completion __x7__) if (= __x7__["Type"] CONST_normal) __x7__ = __x7__["Value"] else return __x7__ else {}
     app __x8__ = (WrapCompletion __x7__)
     return __x8__
-  }"""))
+  }"""), this)
 }

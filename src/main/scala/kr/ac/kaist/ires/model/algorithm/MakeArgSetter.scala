@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object MakeArgSetter extends Algorithm {
+  val name: String = "MakeArgSetter"
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""MakeArgSetter" (name, env) => {
@@ -14,5 +15,5 @@ object MakeArgSetter extends Algorithm {
     setter["Env"] = env
     app __x1__ = (WrapCompletion setter)
     return __x1__
-  }"""))
+  }"""), this)
 }

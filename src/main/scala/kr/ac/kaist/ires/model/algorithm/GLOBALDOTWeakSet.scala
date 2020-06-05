@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTWeakSet extends Algorithm {
+  val name: String = "GLOBALDOTWeakSet"
   val length: Int = 0
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.WeakSet" (this, argumentsList, NewTarget) => {
@@ -54,5 +55,5 @@ object GLOBALDOTWeakSet extends Algorithm {
         return __x14__
       } else {}
     }
-  }"""))
+  }"""), this)
 }

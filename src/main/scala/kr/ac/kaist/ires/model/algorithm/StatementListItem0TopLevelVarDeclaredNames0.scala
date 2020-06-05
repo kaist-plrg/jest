@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object StatementListItem0TopLevelVarDeclaredNames0 extends Algorithm {
+  val name: String = "StatementListItem0TopLevelVarDeclaredNames0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""StatementListItem0TopLevelVarDeclaredNames0" (this, Statement) => {
@@ -14,5 +15,5 @@ object StatementListItem0TopLevelVarDeclaredNames0 extends Algorithm {
     } else {}
     access __x1__ = (Statement "VarDeclaredNames")
     return __x1__
-  }"""))
+  }"""), this)
 }

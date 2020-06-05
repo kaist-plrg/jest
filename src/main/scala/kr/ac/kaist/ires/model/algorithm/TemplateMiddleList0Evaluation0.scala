@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object TemplateMiddleList0Evaluation0 extends Algorithm {
+  val name: String = "TemplateMiddleList0Evaluation0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""TemplateMiddleList0Evaluation0" (this, TemplateMiddle, Expression) => {
@@ -19,5 +20,5 @@ object TemplateMiddleList0Evaluation0 extends Algorithm {
     let middle = __x3__
     app __x4__ = (WrapCompletion (+ head middle))
     return __x4__
-  }"""))
+  }"""), this)
 }

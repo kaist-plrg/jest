@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object CreateListFromArrayLike extends Algorithm {
+  val name: String = "CreateListFromArrayLike"
   val length: Int = 1
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""CreateListFromArrayLike" (obj, elementTypes) => {
@@ -37,5 +38,5 @@ object CreateListFromArrayLike extends Algorithm {
     }
     app __x8__ = (WrapCompletion list)
     return __x8__
-  }"""))
+  }"""), this)
 }

@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object BlockDeclarationInstantiation extends Algorithm {
+  val name: String = "BlockDeclarationInstantiation"
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""BlockDeclarationInstantiation" (code, env) => {
@@ -43,5 +44,5 @@ object BlockDeclarationInstantiation extends Algorithm {
       } else {}
       __x2__ = (+ __x2__ 1i)
     }
-  }"""))
+  }"""), this)
 }

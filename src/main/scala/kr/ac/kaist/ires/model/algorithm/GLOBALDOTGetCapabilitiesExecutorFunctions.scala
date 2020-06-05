@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTGetCapabilitiesExecutorFunctions extends Algorithm {
+  val name: String = "GLOBALDOTGetCapabilitiesExecutorFunctions"
   val length: Int = 2
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.GetCapabilitiesExecutorFunctions" (this, argumentsList, NewTarget) => {
@@ -25,5 +26,5 @@ object GLOBALDOTGetCapabilitiesExecutorFunctions extends Algorithm {
     promiseCapability["Reject"] = reject
     app __x4__ = (WrapCompletion undefined)
     return __x4__
-  }"""))
+  }"""), this)
 }

@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object FlattenIntoArray extends Algorithm {
+  val name: String = "FlattenIntoArray"
   val length: Int = 5
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""FlattenIntoArray" (target, source, sourceLen, start, depth, mapperFunction, thisArg) => {
@@ -58,5 +59,5 @@ object FlattenIntoArray extends Algorithm {
     }
     app __x11__ = (WrapCompletion targetIndex)
     return __x11__
-  }"""))
+  }"""), this)
 }

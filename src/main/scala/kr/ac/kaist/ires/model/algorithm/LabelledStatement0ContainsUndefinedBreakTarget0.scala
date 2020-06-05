@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object LabelledStatement0ContainsUndefinedBreakTarget0 extends Algorithm {
+  val name: String = "LabelledStatement0ContainsUndefinedBreakTarget0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""LabelledStatement0ContainsUndefinedBreakTarget0" (this, LabelIdentifier, LabelledItem, labelSet) => {
@@ -15,5 +16,5 @@ object LabelledStatement0ContainsUndefinedBreakTarget0 extends Algorithm {
     access __x2__ = (LabelledItem "ContainsUndefinedBreakTarget")
     app __x3__ = (__x2__ newLabelSet)
     return __x3__
-  }"""))
+  }"""), this)
 }

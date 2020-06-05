@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object LoopContinues extends Algorithm {
+  val name: String = "LoopContinues"
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""LoopContinues" (completion, labelSet) => {
@@ -25,5 +26,5 @@ object LoopContinues extends Algorithm {
     } else {}
     app __x4__ = (WrapCompletion false)
     return __x4__
-  }"""))
+  }"""), this)
 }

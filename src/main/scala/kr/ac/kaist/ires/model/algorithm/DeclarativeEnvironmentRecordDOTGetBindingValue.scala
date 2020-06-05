@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object DeclarativeEnvironmentRecordDOTGetBindingValue extends Algorithm {
+  val name: String = "DeclarativeEnvironmentRecordDOTGetBindingValue"
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""DeclarativeEnvironmentRecord.GetBindingValue" (this, N, S) => {
@@ -14,5 +15,5 @@ object DeclarativeEnvironmentRecordDOTGetBindingValue extends Algorithm {
     } else {}
     app __x1__ = (WrapCompletion envRec["SubMap"][N]["BoundValue"])
     return __x1__
-  }"""))
+  }"""), this)
 }

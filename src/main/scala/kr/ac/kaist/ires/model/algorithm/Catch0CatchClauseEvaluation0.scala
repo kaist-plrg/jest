@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object Catch0CatchClauseEvaluation0 extends Algorithm {
+  val name: String = "Catch0CatchClauseEvaluation0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""Catch0CatchClauseEvaluation0" (this, CatchParameter, Block, thrownValue) => {
@@ -38,5 +39,5 @@ object Catch0CatchClauseEvaluation0 extends Algorithm {
     app __x11__ = (Completion B)
     app __x12__ = (WrapCompletion __x11__)
     return __x12__
-  }"""))
+  }"""), this)
 }

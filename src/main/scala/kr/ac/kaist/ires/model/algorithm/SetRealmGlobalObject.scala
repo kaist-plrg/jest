@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object SetRealmGlobalObject extends Algorithm {
+  val name: String = "SetRealmGlobalObject"
   val length: Int = 3
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""SetRealmGlobalObject" (realmRec, globalObj, thisValue) => {
@@ -21,5 +22,5 @@ object SetRealmGlobalObject extends Algorithm {
     realmRec["GlobalEnv"] = newGlobalEnv
     app __x3__ = (WrapCompletion realmRec)
     return __x3__
-  }"""))
+  }"""), this)
 }

@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object PrimaryExpression12HasCallInTailPosition0 extends Algorithm {
+  val name: String = "PrimaryExpression12HasCallInTailPosition0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""PrimaryExpression12HasCallInTailPosition0" (this, CoverParenthesizedExpressionAndArrowParameterList, call) => {
@@ -13,5 +14,5 @@ object PrimaryExpression12HasCallInTailPosition0 extends Algorithm {
     app __x2__ = (__x1__ call)
     app __x3__ = (WrapCompletion __x2__)
     return __x3__
-  }"""))
+  }"""), this)
 }

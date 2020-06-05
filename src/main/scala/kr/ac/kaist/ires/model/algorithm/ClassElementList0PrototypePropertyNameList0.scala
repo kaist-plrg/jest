@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object ClassElementList0PrototypePropertyNameList0 extends Algorithm {
+  val name: String = "ClassElementList0PrototypePropertyNameList0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""ClassElementList0PrototypePropertyNameList0" (this, ClassElement) => {
@@ -13,5 +14,5 @@ object ClassElementList0PrototypePropertyNameList0 extends Algorithm {
     if (= __x1__ true) return (new []) else {}
     access __x2__ = (ClassElement "PropName")
     return (new [__x2__])
-  }"""))
+  }"""), this)
 }

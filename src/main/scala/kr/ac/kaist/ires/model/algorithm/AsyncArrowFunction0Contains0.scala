@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object AsyncArrowFunction0Contains0 extends Algorithm {
+  val name: String = "AsyncArrowFunction0Contains0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""AsyncArrowFunction0Contains0" (this, AsyncArrowBindingIdentifier, AsyncConciseBody, symbol) => {
@@ -11,5 +12,5 @@ object AsyncArrowFunction0Contains0 extends Algorithm {
     access __x0__ = (AsyncConciseBody "Contains")
     app __x1__ = (__x0__ symbol)
     return __x1__
-  }"""))
+  }"""), this)
 }

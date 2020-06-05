@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object CaseBlock1CaseBlockEvaluation3 extends Algorithm {
+  val name: String = "CaseBlock1CaseBlockEvaluation3"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""CaseBlock1CaseBlockEvaluation3" (this, CaseClauses0, DefaultClause, CaseClauses1, input) => {
@@ -94,5 +95,5 @@ object CaseBlock1CaseBlockEvaluation3 extends Algorithm {
     app __x30__ = (NormalCompletion V)
     app __x31__ = (WrapCompletion __x30__)
     return __x31__
-  }"""))
+  }"""), this)
 }

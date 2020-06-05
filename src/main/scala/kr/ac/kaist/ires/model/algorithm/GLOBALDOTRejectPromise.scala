@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTRejectPromise extends Algorithm {
+  val name: String = "GLOBALDOTRejectPromise"
   val length: Int = 2
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.RejectPromise" (this, argumentsList, NewTarget) => {
@@ -24,5 +25,5 @@ object GLOBALDOTRejectPromise extends Algorithm {
     app __x3__ = (TriggerPromiseReactions reactions reason)
     app __x4__ = (WrapCompletion __x3__)
     return __x4__
-  }"""))
+  }"""), this)
 }

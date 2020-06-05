@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object IsGenericDescriptor extends Algorithm {
+  val name: String = "IsGenericDescriptor"
   val length: Int = 1
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""IsGenericDescriptor" (Desc) => {
@@ -19,5 +20,5 @@ object IsGenericDescriptor extends Algorithm {
     } else {}
     app __x4__ = (WrapCompletion false)
     return __x4__
-  }"""))
+  }"""), this)
 }

@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTINTRINSIC_MapIteratorPrototypeDOTnext extends Algorithm {
+  val name: String = "GLOBALDOTINTRINSIC_MapIteratorPrototypeDOTnext"
   val length: Int = 0
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.INTRINSIC_MapIteratorPrototype.next" (this, argumentsList, NewTarget) => {
@@ -44,5 +45,5 @@ object GLOBALDOTINTRINSIC_MapIteratorPrototypeDOTnext extends Algorithm {
     app __x7__ = (CreateIterResultObject undefined true)
     app __x8__ = (WrapCompletion __x7__)
     return __x8__
-  }"""))
+  }"""), this)
 }

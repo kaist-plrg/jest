@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object ToLength extends Algorithm {
+  val name: String = "ToLength"
   val length: Int = 1
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""ToLength" (argument) => {
@@ -17,5 +18,5 @@ object ToLength extends Algorithm {
     app __x2__ = (min len (- 9007199254740992i 1i))
     app __x3__ = (WrapCompletion __x2__)
     return __x3__
-  }"""))
+  }"""), this)
 }

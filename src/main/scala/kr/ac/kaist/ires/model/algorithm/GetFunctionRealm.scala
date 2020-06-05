@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GetFunctionRealm extends Algorithm {
+  val name: String = "GetFunctionRealm"
   val length: Int = 1
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""GetFunctionRealm" (obj) => {
@@ -31,5 +32,5 @@ object GetFunctionRealm extends Algorithm {
     } else {}
     app __x6__ = (WrapCompletion REALM)
     return __x6__
-  }"""))
+  }"""), this)
 }

@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTStringDOTprototypeDOTstartsWith extends Algorithm {
+  val name: String = "GLOBALDOTStringDOTprototypeDOTstartsWith"
   val length: Int = 1
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.String.prototype.startsWith" (this, argumentsList, NewTarget) => {
@@ -41,5 +42,5 @@ object GLOBALDOTStringDOTprototypeDOTstartsWith extends Algorithm {
     } else {}
     !!! "Etc"
     !!! "Etc"
-  }"""))
+  }"""), this)
 }

@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object IntegerIndexedObjectCreate extends Algorithm {
+  val name: String = "IntegerIndexedObjectCreate"
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""IntegerIndexedObjectCreate" (prototype, internalSlotsList) => {
@@ -36,5 +37,5 @@ object IntegerIndexedObjectCreate extends Algorithm {
     A["Extensible"] = true
     app __x3__ = (WrapCompletion A)
     return __x3__
-  }"""))
+  }"""), this)
 }

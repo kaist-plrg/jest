@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object BuiltinFunctionObjectDOTCall extends Algorithm {
+  val name: String = "BuiltinFunctionObjectDOTCall"
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""BuiltinFunctionObject.Call" (F, thisArgument, argumentsList) => {
@@ -28,5 +29,5 @@ object BuiltinFunctionObjectDOTCall extends Algorithm {
     GLOBAL_context = GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 1i)]
     app __x2__ = (WrapCompletion result)
     return __x2__
-  }"""))
+  }"""), this)
 }

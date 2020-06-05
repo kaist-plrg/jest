@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTAwaitRejectedFunctions extends Algorithm {
+  val name: String = "GLOBALDOTAwaitRejectedFunctions"
   val length: Int = 1
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.AwaitRejectedFunctions" (this, argumentsList, NewTarget) => {
@@ -22,5 +23,5 @@ object GLOBALDOTAwaitRejectedFunctions extends Algorithm {
     }
     app __x4__ = (WrapCompletion undefined)
     return __x4__
-  }"""))
+  }"""), this)
 }

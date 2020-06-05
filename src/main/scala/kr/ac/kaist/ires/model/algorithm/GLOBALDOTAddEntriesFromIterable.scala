@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTAddEntriesFromIterable extends Algorithm {
+  val name: String = "GLOBALDOTAddEntriesFromIterable"
   val length: Int = 3
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.AddEntriesFromIterable" (this, argumentsList, NewTarget) => {
@@ -69,5 +70,5 @@ object GLOBALDOTAddEntriesFromIterable extends Algorithm {
         return __x24__
       } else {}
     }
-  }"""))
+  }"""), this)
 }

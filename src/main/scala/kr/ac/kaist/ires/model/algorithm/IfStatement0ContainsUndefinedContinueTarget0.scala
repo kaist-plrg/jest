@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object IfStatement0ContainsUndefinedContinueTarget0 extends Algorithm {
+  val name: String = "IfStatement0ContainsUndefinedContinueTarget0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""IfStatement0ContainsUndefinedContinueTarget0" (this, Expression, Statement0, Statement1, iterationSet, labelSet) => {
@@ -14,5 +15,5 @@ object IfStatement0ContainsUndefinedContinueTarget0 extends Algorithm {
     access __x2__ = (Statement1 "ContainsUndefinedContinueTarget")
     app __x3__ = (__x2__ iterationSet (new []))
     return __x3__
-  }"""))
+  }"""), this)
 }

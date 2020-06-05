@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object IsLabelledFunction extends Algorithm {
+  val name: String = "IsLabelledFunction"
   val length: Int = 1
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""IsLabelledFunction" (stmt) => {
@@ -18,5 +19,5 @@ object IsLabelledFunction extends Algorithm {
     let subStmt = __x1__
     app __x2__ = (IsLabelledFunction subStmt)
     return __x2__
-  }"""))
+  }"""), this)
 }

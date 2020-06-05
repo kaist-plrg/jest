@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object SubstitutionTemplate0TemplateStrings0 extends Algorithm {
+  val name: String = "SubstitutionTemplate0TemplateStrings0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""SubstitutionTemplate0TemplateStrings0" (this, TemplateHead, Expression, TemplateSpans, raw) => {
@@ -18,5 +19,5 @@ object SubstitutionTemplate0TemplateStrings0 extends Algorithm {
     app __x3__ = (__x2__ raw)
     let tail = __x3__
     return (new [head, tail])
-  }"""))
+  }"""), this)
 }

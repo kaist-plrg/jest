@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object StatementListItem0LexicallyScopedDeclarations0 extends Algorithm {
+  val name: String = "StatementListItem0LexicallyScopedDeclarations0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""StatementListItem0LexicallyScopedDeclarations0" (this, Statement) => {
@@ -13,5 +14,5 @@ object StatementListItem0LexicallyScopedDeclarations0 extends Algorithm {
       return __x0__
     } else {}
     return (new [])
-  }"""))
+  }"""), this)
 }

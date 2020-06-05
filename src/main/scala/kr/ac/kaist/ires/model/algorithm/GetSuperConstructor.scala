@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GetSuperConstructor extends Algorithm {
+  val name: String = "GetSuperConstructor"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""GetSuperConstructor" () => {
@@ -21,5 +22,5 @@ object GetSuperConstructor extends Algorithm {
     } else {}
     app __x4__ = (WrapCompletion superConstructor)
     return __x4__
-  }"""))
+  }"""), this)
 }

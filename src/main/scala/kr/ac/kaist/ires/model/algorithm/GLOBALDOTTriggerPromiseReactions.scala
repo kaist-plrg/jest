@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTTriggerPromiseReactions extends Algorithm {
+  val name: String = "GLOBALDOTTriggerPromiseReactions"
   val length: Int = 2
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.TriggerPromiseReactions" (this, argumentsList, NewTarget) => {
@@ -21,5 +22,5 @@ object GLOBALDOTTriggerPromiseReactions extends Algorithm {
     }
     app __x5__ = (WrapCompletion undefined)
     return __x5__
-  }"""))
+  }"""), this)
 }

@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object CaseBlock1ContainsUndefinedContinueTarget3 extends Algorithm {
+  val name: String = "CaseBlock1ContainsUndefinedContinueTarget3"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""CaseBlock1ContainsUndefinedContinueTarget3" (this, CaseClauses0, DefaultClause, CaseClauses1, iterationSet, labelSet) => {
@@ -21,5 +22,5 @@ object CaseBlock1ContainsUndefinedContinueTarget3 extends Algorithm {
     access __x4__ = (CaseClauses1 "ContainsUndefinedContinueTarget")
     app __x5__ = (__x4__ iterationSet (new []))
     return __x5__
-  }"""))
+  }"""), this)
 }

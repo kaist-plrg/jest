@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTINTRINSIC_StringIteratorPrototypeDOTnext extends Algorithm {
+  val name: String = "GLOBALDOTINTRINSIC_StringIteratorPrototypeDOTnext"
   val length: Int = 0
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.INTRINSIC_StringIteratorPrototype.next" (this, argumentsList, NewTarget) => {
@@ -41,5 +42,5 @@ object GLOBALDOTINTRINSIC_StringIteratorPrototypeDOTnext extends Algorithm {
     app __x7__ = (CreateIterResultObject resultString false)
     app __x8__ = (WrapCompletion __x7__)
     return __x8__
-  }"""))
+  }"""), this)
 }

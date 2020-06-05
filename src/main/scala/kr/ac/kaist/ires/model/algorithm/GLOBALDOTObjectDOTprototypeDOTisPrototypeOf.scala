@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTObjectDOTprototypeDOTisPrototypeOf extends Algorithm {
+  val name: String = "GLOBALDOTObjectDOTprototypeDOTisPrototypeOf"
   val length: Int = 1
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Object.prototype.isPrototypeOf" (this, argumentsList, NewTarget) => {
@@ -31,5 +32,5 @@ object GLOBALDOTObjectDOTprototypeDOTisPrototypeOf extends Algorithm {
         return __x7__
       } else {}
     }
-  }"""))
+  }"""), this)
 }

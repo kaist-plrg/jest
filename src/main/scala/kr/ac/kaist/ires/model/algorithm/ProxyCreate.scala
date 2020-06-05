@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object ProxyCreate extends Algorithm {
+  val name: String = "ProxyCreate"
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""ProxyCreate" (target, handler) => {
@@ -41,5 +42,5 @@ object ProxyCreate extends Algorithm {
     P["ProxyHandler"] = handler
     app __x6__ = (WrapCompletion P)
     return __x6__
-  }"""))
+  }"""), this)
 }

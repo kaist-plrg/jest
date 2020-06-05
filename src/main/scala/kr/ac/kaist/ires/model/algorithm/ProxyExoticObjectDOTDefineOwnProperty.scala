@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object ProxyExoticObjectDOTDefineOwnProperty extends Algorithm {
+  val name: String = "ProxyExoticObjectDOTDefineOwnProperty"
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""ProxyExoticObject.DefineOwnProperty" (O, P, Desc) => {
@@ -65,5 +66,5 @@ object ProxyExoticObjectDOTDefineOwnProperty extends Algorithm {
     }
     app __x17__ = (WrapCompletion true)
     return __x17__
-  }"""))
+  }"""), this)
 }

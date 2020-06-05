@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object MakeMethod extends Algorithm {
+  val name: String = "MakeMethod"
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""MakeMethod" (F, homeObject) => {
@@ -13,5 +14,5 @@ object MakeMethod extends Algorithm {
     app __x1__ = (NormalCompletion undefined)
     app __x2__ = (WrapCompletion __x1__)
     return __x2__
-  }"""))
+  }"""), this)
 }

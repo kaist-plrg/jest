@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object StatementList1HasCallInTailPosition0 extends Algorithm {
+  val name: String = "StatementList1HasCallInTailPosition0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""StatementList1HasCallInTailPosition0" (this, StatementList, StatementListItem, call) => {
@@ -18,5 +19,5 @@ object StatementList1HasCallInTailPosition0 extends Algorithm {
     app __x4__ = (__x3__ call)
     app __x5__ = (WrapCompletion __x4__)
     return __x5__
-  }"""))
+  }"""), this)
 }

@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTCatchFinallyFunctions extends Algorithm {
+  val name: String = "GLOBALDOTCatchFinallyFunctions"
   val length: Int = 0
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.CatchFinallyFunctions" (this, argumentsList, NewTarget) => {
@@ -25,5 +26,5 @@ object GLOBALDOTCatchFinallyFunctions extends Algorithm {
     if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
     app __x5__ = (WrapCompletion __x4__)
     return __x5__
-  }"""))
+  }"""), this)
 }

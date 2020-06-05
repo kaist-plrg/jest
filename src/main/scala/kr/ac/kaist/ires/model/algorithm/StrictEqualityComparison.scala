@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object StrictEqualityComparison extends Algorithm {
+  val name: String = "StrictEqualityComparison"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""StrictEqualityComparison" (x, y) => {
@@ -41,5 +42,5 @@ object StrictEqualityComparison extends Algorithm {
     app __x10__ = (SameValueNonNumber x y)
     app __x11__ = (WrapCompletion __x10__)
     return __x11__
-  }"""))
+  }"""), this)
 }

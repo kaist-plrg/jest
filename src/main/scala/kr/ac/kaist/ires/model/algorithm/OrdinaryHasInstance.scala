@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object OrdinaryHasInstance extends Algorithm {
+  val name: String = "OrdinaryHasInstance"
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""OrdinaryHasInstance" (C, O) => {
@@ -46,5 +47,5 @@ object OrdinaryHasInstance extends Algorithm {
         return __x12__
       } else {}
     }
-  }"""))
+  }"""), this)
 }

@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object max extends Algorithm {
+  val name: String = "max"
   val length: Int = 0
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""max" (...args) => {
@@ -17,5 +18,5 @@ object max extends Algorithm {
       x = (+ x 1i)
     }
     return res
-  }"""))
+  }"""), this)
 }

@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object OrdinaryCallBindThis extends Algorithm {
+  val name: String = "OrdinaryCallBindThis"
   val length: Int = 3
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""OrdinaryCallBindThis" (F, calleeContext, thisArgument) => {
@@ -31,5 +32,5 @@ object OrdinaryCallBindThis extends Algorithm {
     app __x4__ = (envRec["BindThisValue"] envRec thisValue)
     app __x5__ = (WrapCompletion __x4__)
     return __x5__
-  }"""))
+  }"""), this)
 }

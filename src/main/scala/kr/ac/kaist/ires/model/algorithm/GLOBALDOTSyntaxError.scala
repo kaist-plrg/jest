@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTSyntaxError extends Algorithm {
+  val name: String = "GLOBALDOTSyntaxError"
   val length: Int = 1
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.SyntaxError" (this, argumentsList, NewTarget) => {
@@ -24,5 +25,5 @@ object GLOBALDOTSyntaxError extends Algorithm {
     } else {}
     app __x4__ = (WrapCompletion O)
     return __x4__
-  }"""))
+  }"""), this)
 }

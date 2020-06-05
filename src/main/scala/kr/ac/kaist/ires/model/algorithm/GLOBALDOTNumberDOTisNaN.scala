@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTNumberDOTisNaN extends Algorithm {
+  val name: String = "GLOBALDOTNumberDOTisNaN"
   val length: Int = 1
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Number.isNaN" (this, argumentsList, NewTarget) => {
@@ -21,5 +22,5 @@ object GLOBALDOTNumberDOTisNaN extends Algorithm {
       app __x4__ = (WrapCompletion false)
       return __x4__
     }
-  }"""))
+  }"""), this)
 }

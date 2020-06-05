@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object InitializeHostDefinedRealm extends Algorithm {
+  val name: String = "InitializeHostDefinedRealm"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""InitializeHostDefinedRealm" () => {
@@ -25,5 +26,5 @@ object InitializeHostDefinedRealm extends Algorithm {
     app __x3__ = (NormalCompletion CONST_empty)
     app __x4__ = (WrapCompletion __x3__)
     return __x4__
-  }"""))
+  }"""), this)
 }

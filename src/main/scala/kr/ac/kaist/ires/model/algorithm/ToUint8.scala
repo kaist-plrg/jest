@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object ToUint8 extends Algorithm {
+  val name: String = "ToUint8"
   val length: Int = 1
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""ToUint8" (argument) => {
@@ -18,5 +19,5 @@ object ToUint8 extends Algorithm {
     let int8bit = (%% int 256i)
     app __x2__ = (WrapCompletion int8bit)
     return __x2__
-  }"""))
+  }"""), this)
 }

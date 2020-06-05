@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object StringExoticObjectDOTOwnPropertyKeys extends Algorithm {
+  val name: String = "StringExoticObjectDOTOwnPropertyKeys"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""StringExoticObject.OwnPropertyKeys" (O) => {
@@ -18,5 +19,5 @@ object StringExoticObjectDOTOwnPropertyKeys extends Algorithm {
     !!! "Etc"
     app __x1__ = (WrapCompletion keys)
     return __x1__
-  }"""))
+  }"""), this)
 }

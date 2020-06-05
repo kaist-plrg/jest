@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object TemplateSpans1Evaluation0 extends Algorithm {
+  val name: String = "TemplateSpans1Evaluation0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""TemplateSpans1Evaluation0" (this, TemplateMiddleList, TemplateTail) => {
@@ -15,5 +16,5 @@ object TemplateSpans1Evaluation0 extends Algorithm {
     let tail = __x1__
     app __x2__ = (WrapCompletion (+ head tail))
     return __x2__
-  }"""))
+  }"""), this)
 }

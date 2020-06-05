@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTArrayDOTprototypeDOTunshift extends Algorithm {
+  val name: String = "GLOBALDOTArrayDOTprototypeDOTunshift"
   val length: Int = 1
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Array.prototype.unshift" (this, argumentsList, NewTarget) => {
@@ -63,5 +64,5 @@ object GLOBALDOTArrayDOTprototypeDOTunshift extends Algorithm {
     __x12__
     app __x13__ = (WrapCompletion (+ len argCount))
     return __x13__
-  }"""))
+  }"""), this)
 }

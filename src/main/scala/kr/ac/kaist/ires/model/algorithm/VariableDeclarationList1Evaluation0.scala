@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object VariableDeclarationList1Evaluation0 extends Algorithm {
+  val name: String = "VariableDeclarationList1Evaluation0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""VariableDeclarationList1Evaluation0" (this, VariableDeclarationList, VariableDeclaration) => {
@@ -14,5 +15,5 @@ object VariableDeclarationList1Evaluation0 extends Algorithm {
     access __x1__ = (VariableDeclaration "Evaluation")
     app __x2__ = (WrapCompletion __x1__)
     return __x2__
-  }"""))
+  }"""), this)
 }

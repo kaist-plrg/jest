@@ -4,7 +4,8 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object MultiplicativeExpression1AssignmentTargetType0 extends Algorithm {
+  val name: String = "MultiplicativeExpression1AssignmentTargetType0"
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = FixUIdWalker(parseFunc(""""MultiplicativeExpression1AssignmentTargetType0" (this, MultiplicativeExpression, MultiplicativeOperator, ExponentiationExpression) => return CONST_invalid"""))
+  val func: Func = FixUIdWalker(parseFunc(""""MultiplicativeExpression1AssignmentTargetType0" (this, MultiplicativeExpression, MultiplicativeOperator, ExponentiationExpression) => return CONST_invalid"""), this)
 }

@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object OrdinaryHasProperty extends Algorithm {
+  val name: String = "OrdinaryHasProperty"
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""OrdinaryHasProperty" (O, P) => {
@@ -27,5 +28,5 @@ object OrdinaryHasProperty extends Algorithm {
     } else {}
     app __x6__ = (WrapCompletion false)
     return __x6__
-  }"""))
+  }"""), this)
 }

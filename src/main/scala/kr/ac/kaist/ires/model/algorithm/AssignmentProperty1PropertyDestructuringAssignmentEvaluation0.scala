@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object AssignmentProperty1PropertyDestructuringAssignmentEvaluation0 extends Algorithm {
+  val name: String = "AssignmentProperty1PropertyDestructuringAssignmentEvaluation0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""AssignmentProperty1PropertyDestructuringAssignmentEvaluation0" (this, PropertyName, AssignmentElement, value) => {
@@ -17,5 +18,5 @@ object AssignmentProperty1PropertyDestructuringAssignmentEvaluation0 extends Alg
     __x2__
     app __x3__ = (WrapCompletion (new [name]))
     return __x3__
-  }"""))
+  }"""), this)
 }

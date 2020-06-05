@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object OrdinaryCreateFromConstructor extends Algorithm {
+  val name: String = "OrdinaryCreateFromConstructor"
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""OrdinaryCreateFromConstructor" (constructor, intrinsicDefaultProto, internalSlotsList) => {
@@ -13,5 +14,5 @@ object OrdinaryCreateFromConstructor extends Algorithm {
     app __x1__ = (ObjectCreate proto internalSlotsList)
     app __x2__ = (WrapCompletion __x1__)
     return __x2__
-  }"""))
+  }"""), this)
 }

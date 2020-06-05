@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTPromiseDOTprototypeDOTthen extends Algorithm {
+  val name: String = "GLOBALDOTPromiseDOTprototypeDOTthen"
   val length: Int = 2
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Promise.prototype.then" (this, argumentsList, NewTarget) => {
@@ -26,5 +27,5 @@ object GLOBALDOTPromiseDOTprototypeDOTthen extends Algorithm {
     app __x6__ = (PerformPromiseThen promise onFulfilled onRejected resultCapability)
     app __x7__ = (WrapCompletion __x6__)
     return __x7__
-  }"""))
+  }"""), this)
 }

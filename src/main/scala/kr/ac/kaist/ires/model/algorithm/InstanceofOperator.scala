@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object InstanceofOperator extends Algorithm {
+  val name: String = "InstanceofOperator"
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""InstanceofOperator" (V, target) => {
@@ -31,5 +32,5 @@ object InstanceofOperator extends Algorithm {
     if (is-completion __x8__) if (= __x8__["Type"] CONST_normal) __x8__ = __x8__["Value"] else return __x8__ else {}
     app __x9__ = (WrapCompletion __x8__)
     return __x9__
-  }"""))
+  }"""), this)
 }

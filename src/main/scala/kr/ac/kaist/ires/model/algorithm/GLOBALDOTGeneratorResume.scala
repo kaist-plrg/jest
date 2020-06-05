@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTGeneratorResume extends Algorithm {
+  val name: String = "GLOBALDOTGeneratorResume"
   val length: Int = 2
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.GeneratorResume" (this, argumentsList, NewTarget) => {
@@ -34,5 +35,5 @@ object GLOBALDOTGeneratorResume extends Algorithm {
     app __x8__ = (Completion result)
     app __x9__ = (WrapCompletion __x8__)
     return __x9__
-  }"""))
+  }"""), this)
 }

@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object FunctionDeclarationInstantiation extends Algorithm {
+  val name: String = "FunctionDeclarationInstantiation"
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""FunctionDeclarationInstantiation" (func, argumentsList) => {
@@ -193,5 +194,5 @@ object FunctionDeclarationInstantiation extends Algorithm {
     app __x53__ = (NormalCompletion CONST_empty)
     app __x54__ = (WrapCompletion __x53__)
     return __x54__
-  }"""))
+  }"""), this)
 }

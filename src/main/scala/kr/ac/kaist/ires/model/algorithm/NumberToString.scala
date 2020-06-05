@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object NumberToString extends Algorithm {
+  val name: String = "NumberToString"
   val length: Int = 1
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""NumberToString" (m) => {
@@ -25,5 +26,5 @@ object NumberToString extends Algorithm {
       app __x4__ = (WrapCompletion "Infinity")
       return __x4__
     } else return (convert m num2str )
-  }"""))
+  }"""), this)
 }

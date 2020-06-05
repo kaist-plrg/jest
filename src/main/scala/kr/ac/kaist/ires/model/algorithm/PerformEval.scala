@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object PerformEval extends Algorithm {
+  val name: String = "PerformEval"
   val length: Int = 4
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""PerformEval" (x, evalRealm, strictCaller, direct) => {
@@ -83,5 +84,5 @@ object PerformEval extends Algorithm {
     app __x17__ = (Completion result)
     app __x18__ = (WrapCompletion __x17__)
     return __x18__
-  }"""))
+  }"""), this)
 }

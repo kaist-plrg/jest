@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object AsyncFromSyncIteratorContinuation extends Algorithm {
+  val name: String = "AsyncFromSyncIteratorContinuation"
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""AsyncFromSyncIteratorContinuation" (result, promiseCapability) => {
@@ -35,5 +36,5 @@ object AsyncFromSyncIteratorContinuation extends Algorithm {
     __x6__
     app __x7__ = (WrapCompletion promiseCapability["Promise"])
     return __x7__
-  }"""))
+  }"""), this)
 }

@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object EvaluateNew extends Algorithm {
+  val name: String = "EvaluateNew"
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""EvaluateNew" (constructExpr, arguments) => {
@@ -29,5 +30,5 @@ object EvaluateNew extends Algorithm {
     if (is-completion __x5__) if (= __x5__["Type"] CONST_normal) __x5__ = __x5__["Value"] else return __x5__ else {}
     app __x6__ = (WrapCompletion __x5__)
     return __x6__
-  }"""))
+  }"""), this)
 }

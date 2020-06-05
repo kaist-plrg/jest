@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object IntegerIndexedElementGet extends Algorithm {
+  val name: String = "IntegerIndexedElementGet"
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""IntegerIndexedElementGet" (O, index) => {
@@ -37,5 +38,5 @@ object IntegerIndexedElementGet extends Algorithm {
     app __x7__ = (GetValueFromBuffer buffer indexedPosition elementType true "Unordered")
     app __x8__ = (WrapCompletion __x7__)
     return __x8__
-  }"""))
+  }"""), this)
 }

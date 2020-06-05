@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object ClassElementList1NonConstructorMethodDefinitions0 extends Algorithm {
+  val name: String = "ClassElementList1NonConstructorMethodDefinitions0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""ClassElementList1NonConstructorMethodDefinitions0" (this, ClassElementList, ClassElement) => {
@@ -19,5 +20,5 @@ object ClassElementList1NonConstructorMethodDefinitions0 extends Algorithm {
     if __x2__ return list else {}
     append ClassElement -> list
     return list
-  }"""))
+  }"""), this)
 }

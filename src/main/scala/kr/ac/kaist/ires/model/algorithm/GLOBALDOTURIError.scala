@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTURIError extends Algorithm {
+  val name: String = "GLOBALDOTURIError"
   val length: Int = 1
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.URIError" (this, argumentsList, NewTarget) => {
@@ -24,5 +25,5 @@ object GLOBALDOTURIError extends Algorithm {
     } else {}
     app __x4__ = (WrapCompletion O)
     return __x4__
-  }"""))
+  }"""), this)
 }

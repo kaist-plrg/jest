@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GetThisValue extends Algorithm {
+  val name: String = "GetThisValue"
   val length: Int = 1
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""GetThisValue" (V) => {
@@ -17,5 +18,5 @@ object GetThisValue extends Algorithm {
     app __x3__ = (GetBase V)
     app __x4__ = (WrapCompletion __x3__)
     return __x4__
-  }"""))
+  }"""), this)
 }

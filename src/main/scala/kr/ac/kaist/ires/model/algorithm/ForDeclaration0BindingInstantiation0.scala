@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object ForDeclaration0BindingInstantiation0 extends Algorithm {
+  val name: String = "ForDeclaration0BindingInstantiation0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""ForDeclaration0BindingInstantiation0" (this, LetOrConst, ForBinding, environment) => {
@@ -26,5 +27,5 @@ object ForDeclaration0BindingInstantiation0 extends Algorithm {
       }
       __x2__ = (+ __x2__ 1i)
     }
-  }"""))
+  }"""), this)
 }

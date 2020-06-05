@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object ECMAScriptFunctionObjectDOTConstruct extends Algorithm {
+  val name: String = "ECMAScriptFunctionObjectDOTConstruct"
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""ECMAScriptFunctionObject.Construct" (F, argumentsList, newTarget) => {
@@ -56,5 +57,5 @@ object ECMAScriptFunctionObjectDOTConstruct extends Algorithm {
     if (is-completion __x13__) if (= __x13__["Type"] CONST_normal) __x13__ = __x13__["Value"] else return __x13__ else {}
     app __x14__ = (WrapCompletion __x13__)
     return __x14__
-  }"""))
+  }"""), this)
 }

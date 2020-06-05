@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object DeclarativeEnvironmentRecordDOTDeleteBinding extends Algorithm {
+  val name: String = "DeclarativeEnvironmentRecordDOTDeleteBinding"
   val length: Int = 1
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""DeclarativeEnvironmentRecord.DeleteBinding" (this, N) => {
@@ -16,5 +17,5 @@ object DeclarativeEnvironmentRecordDOTDeleteBinding extends Algorithm {
     delete envRec["SubMap"][N]
     app __x1__ = (WrapCompletion true)
     return __x1__
-  }"""))
+  }"""), this)
 }

@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTNumberDOTisFinite extends Algorithm {
+  val name: String = "GLOBALDOTNumberDOTisFinite"
   val length: Int = 1
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Number.isFinite" (this, argumentsList, NewTarget) => {
@@ -21,5 +22,5 @@ object GLOBALDOTNumberDOTisFinite extends Algorithm {
       app __x4__ = (WrapCompletion true)
       return __x4__
     }
-  }"""))
+  }"""), this)
 }

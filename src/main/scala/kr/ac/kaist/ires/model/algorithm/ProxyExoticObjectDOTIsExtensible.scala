@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object ProxyExoticObjectDOTIsExtensible extends Algorithm {
+  val name: String = "ProxyExoticObjectDOTIsExtensible"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""ProxyExoticObject.IsExtensible" (O) => {
@@ -38,5 +39,5 @@ object ProxyExoticObjectDOTIsExtensible extends Algorithm {
     } else {}
     app __x10__ = (WrapCompletion booleanTrapResult)
     return __x10__
-  }"""))
+  }"""), this)
 }

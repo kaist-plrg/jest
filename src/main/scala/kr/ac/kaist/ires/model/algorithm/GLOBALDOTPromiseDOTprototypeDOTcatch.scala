@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTPromiseDOTprototypeDOTcatch extends Algorithm {
+  val name: String = "GLOBALDOTPromiseDOTprototypeDOTcatch"
   val length: Int = 1
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Promise.prototype.catch" (this, argumentsList, NewTarget) => {
@@ -14,5 +15,5 @@ object GLOBALDOTPromiseDOTprototypeDOTcatch extends Algorithm {
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
     app __x2__ = (WrapCompletion __x1__)
     return __x2__
-  }"""))
+  }"""), this)
 }

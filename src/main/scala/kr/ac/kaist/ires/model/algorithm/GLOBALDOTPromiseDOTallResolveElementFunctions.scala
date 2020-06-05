@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTPromiseDOTallResolveElementFunctions extends Algorithm {
+  val name: String = "GLOBALDOTPromiseDOTallResolveElementFunctions"
   val length: Int = 0
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Promise.allResolveElementFunctions" (this, argumentsList, NewTarget) => {
@@ -30,5 +31,5 @@ object GLOBALDOTPromiseDOTallResolveElementFunctions extends Algorithm {
     } else {}
     app __x4__ = (WrapCompletion undefined)
     return __x4__
-  }"""))
+  }"""), this)
 }

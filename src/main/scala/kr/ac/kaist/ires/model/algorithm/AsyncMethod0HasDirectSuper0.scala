@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object AsyncMethod0HasDirectSuper0 extends Algorithm {
+  val name: String = "AsyncMethod0HasDirectSuper0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""AsyncMethod0HasDirectSuper0" (this, PropertyName, UniqueFormalParameters, AsyncFunctionBody) => {
@@ -13,5 +14,5 @@ object AsyncMethod0HasDirectSuper0 extends Algorithm {
     access __x2__ = (AsyncFunctionBody "Contains")
     app __x3__ = (__x2__ "SuperCall")
     return __x3__
-  }"""))
+  }"""), this)
 }

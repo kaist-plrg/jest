@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object DefinePropertyOrThrow extends Algorithm {
+  val name: String = "DefinePropertyOrThrow"
   val length: Int = 3
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""DefinePropertyOrThrow" (O, P, desc) => {
@@ -20,5 +21,5 @@ object DefinePropertyOrThrow extends Algorithm {
     } else {}
     app __x4__ = (WrapCompletion success)
     return __x4__
-  }"""))
+  }"""), this)
 }

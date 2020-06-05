@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object CanonicalNumericIndexString extends Algorithm {
+  val name: String = "CanonicalNumericIndexString"
   val length: Int = 1
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""CanonicalNumericIndexString" (argument) => {
@@ -25,5 +26,5 @@ object CanonicalNumericIndexString extends Algorithm {
     } else {}
     app __x6__ = (WrapCompletion n)
     return __x6__
-  }"""))
+  }"""), this)
 }

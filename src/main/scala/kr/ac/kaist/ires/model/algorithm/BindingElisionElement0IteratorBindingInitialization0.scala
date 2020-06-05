@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object BindingElisionElement0IteratorBindingInitialization0 extends Algorithm {
+  val name: String = "BindingElisionElement0IteratorBindingInitialization0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""BindingElisionElement0IteratorBindingInitialization0" (this, BindingElement, iteratorRecord, environment) => {
@@ -11,5 +12,5 @@ object BindingElisionElement0IteratorBindingInitialization0 extends Algorithm {
     app __x1__ = (__x0__ iteratorRecord environment)
     app __x2__ = (WrapCompletion __x1__)
     return __x2__
-  }"""))
+  }"""), this)
 }

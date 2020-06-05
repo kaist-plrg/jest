@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object ClassDeclaration1BindingClassDeclarationEvaluation0 extends Algorithm {
+  val name: String = "ClassDeclaration1BindingClassDeclarationEvaluation0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""ClassDeclaration1BindingClassDeclarationEvaluation0" (this, ClassTail) => {
@@ -15,5 +16,5 @@ object ClassDeclaration1BindingClassDeclarationEvaluation0 extends Algorithm {
     value["SourceText"] = (get-syntax this)
     app __x2__ = (WrapCompletion value)
     return __x2__
-  }"""))
+  }"""), this)
 }

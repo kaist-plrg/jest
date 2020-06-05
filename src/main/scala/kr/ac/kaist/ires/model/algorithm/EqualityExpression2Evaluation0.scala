@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object EqualityExpression2Evaluation0 extends Algorithm {
+  val name: String = "EqualityExpression2Evaluation0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""EqualityExpression2Evaluation0" (this, EqualityExpression, RelationalExpression) => {
@@ -28,5 +29,5 @@ object EqualityExpression2Evaluation0 extends Algorithm {
       app __x6__ = (WrapCompletion true)
       return __x6__
     }
-  }"""))
+  }"""), this)
 }

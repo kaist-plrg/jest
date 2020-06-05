@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object MemberExpression2Contains0 extends Algorithm {
+  val name: String = "MemberExpression2Contains0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""MemberExpression2Contains0" (this, MemberExpression, IdentifierName, symbol) => {
@@ -19,5 +20,5 @@ object MemberExpression2Contains0 extends Algorithm {
     } else {}
     if __x2__ return true else {}
     return false
-  }"""))
+  }"""), this)
 }

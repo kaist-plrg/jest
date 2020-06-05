@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object ArrayBindingPattern2ContainsExpression3 extends Algorithm {
+  val name: String = "ArrayBindingPattern2ContainsExpression3"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""ArrayBindingPattern2ContainsExpression3" (this, BindingElementList, Elision, BindingRestElement) => {
@@ -12,5 +13,5 @@ object ArrayBindingPattern2ContainsExpression3 extends Algorithm {
     if (= has true) return true else {}
     access __x1__ = (BindingRestElement "ContainsExpression")
     return __x1__
-  }"""))
+  }"""), this)
 }

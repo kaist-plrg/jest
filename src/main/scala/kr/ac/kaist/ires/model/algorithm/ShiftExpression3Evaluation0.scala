@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object ShiftExpression3Evaluation0 extends Algorithm {
+  val name: String = "ShiftExpression3Evaluation0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""ShiftExpression3Evaluation0" (this, ShiftExpression, AdditiveExpression) => {
@@ -26,5 +27,5 @@ object ShiftExpression3Evaluation0 extends Algorithm {
     let shiftCount = (& rnum 31i)
     app __x6__ = (WrapCompletion (>>> lnum shiftCount))
     return __x6__
-  }"""))
+  }"""), this)
 }

@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object CaseClause0HasCallInTailPosition1 extends Algorithm {
+  val name: String = "CaseClause0HasCallInTailPosition1"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""CaseClause0HasCallInTailPosition1" (this, Expression, StatementList, call) => {
@@ -15,5 +16,5 @@ object CaseClause0HasCallInTailPosition1 extends Algorithm {
     } else {}
     app __x3__ = (WrapCompletion false)
     return __x3__
-  }"""))
+  }"""), this)
 }

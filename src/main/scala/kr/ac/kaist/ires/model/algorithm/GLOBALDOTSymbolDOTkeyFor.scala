@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTSymbolDOTkeyFor extends Algorithm {
+  val name: String = "GLOBALDOTSymbolDOTkeyFor"
   val length: Int = 1
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Symbol.keyFor" (this, argumentsList, NewTarget) => {
@@ -17,5 +18,5 @@ object GLOBALDOTSymbolDOTkeyFor extends Algorithm {
     !!! "Etc"
     app __x3__ = (WrapCompletion undefined)
     return __x3__
-  }"""))
+  }"""), this)
 }

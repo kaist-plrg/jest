@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object ToIndex extends Algorithm {
+  val name: String = "ToIndex"
   val length: Int = 1
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""ToIndex" (value) => {
@@ -26,5 +27,5 @@ object ToIndex extends Algorithm {
     }
     app __x5__ = (WrapCompletion index)
     return __x5__
-  }"""))
+  }"""), this)
 }

@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object CreateResolvingFunctions extends Algorithm {
+  val name: String = "CreateResolvingFunctions"
   val length: Int = 1
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""CreateResolvingFunctions" (promise) => {
@@ -20,5 +21,5 @@ object CreateResolvingFunctions extends Algorithm {
     reject["AlreadyResolved"] = alreadyResolved
     app __x2__ = (WrapCompletion (new Record("Resolve" -> resolve, "Reject" -> reject)))
     return __x2__
-  }"""))
+  }"""), this)
 }

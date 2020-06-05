@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object Await extends Algorithm {
+  val name: String = "Await"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""Await" (value) => {
@@ -32,5 +33,5 @@ object Await extends Algorithm {
     asyncContext["ResumeCont"] = (completion) [=>] return completion
     app __x5__ = (NormalCompletion undefined)
     app __x6__ = (__ret__ __x5__)
-  }"""))
+  }"""), this)
 }

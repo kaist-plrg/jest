@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object SameValueNonNumber extends Algorithm {
+  val name: String = "SameValueNonNumber"
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""SameValueNonNumber" (x, y) => {
@@ -53,5 +54,5 @@ object SameValueNonNumber extends Algorithm {
       app __x17__ = (WrapCompletion false)
       return __x17__
     }
-  }"""))
+  }"""), this)
 }

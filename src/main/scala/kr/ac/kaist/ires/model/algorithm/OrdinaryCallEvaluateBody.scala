@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object OrdinaryCallEvaluateBody extends Algorithm {
+  val name: String = "OrdinaryCallEvaluateBody"
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""OrdinaryCallEvaluateBody" (F, argumentsList) => {
@@ -11,5 +12,5 @@ object OrdinaryCallEvaluateBody extends Algorithm {
     app __x1__ = (__x0__ F argumentsList)
     app __x2__ = (WrapCompletion __x1__)
     return __x2__
-  }"""))
+  }"""), this)
 }

@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object AbstractRelationalComparison extends Algorithm {
+  val name: String = "AbstractRelationalComparison"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""AbstractRelationalComparison" (x, y, LeftFirst) => {
@@ -74,5 +75,5 @@ object AbstractRelationalComparison extends Algorithm {
       } else {}
       return (< nx ny)
     }
-  }"""))
+  }"""), this)
 }

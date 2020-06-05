@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object ObjectCreate extends Algorithm {
+  val name: String = "ObjectCreate"
   val length: Int = 1
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""ObjectCreate" (proto, internalSlotsList) => {
@@ -31,5 +32,5 @@ object ObjectCreate extends Algorithm {
     obj["Extensible"] = true
     app __x3__ = (WrapCompletion obj)
     return __x3__
-  }"""))
+  }"""), this)
 }

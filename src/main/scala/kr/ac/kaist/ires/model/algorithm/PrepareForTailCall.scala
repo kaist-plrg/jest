@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object PrepareForTailCall extends Algorithm {
+  val name: String = "PrepareForTailCall"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""PrepareForTailCall" () => {
@@ -13,5 +14,5 @@ object PrepareForTailCall extends Algorithm {
       (pop GLOBAL_executionStack __x0__)
       if (= GLOBAL_executionStack["length"] 0i) GLOBAL_context = null else GLOBAL_context = GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 1i)]
     } else GLOBAL_context = null
-  }"""))
+  }"""), this)
 }

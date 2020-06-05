@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTNumberDOTisInteger extends Algorithm {
+  val name: String = "GLOBALDOTNumberDOTisInteger"
   val length: Int = 1
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Number.isInteger" (this, argumentsList, NewTarget) => {
@@ -28,5 +29,5 @@ object GLOBALDOTNumberDOTisInteger extends Algorithm {
       app __x6__ = (WrapCompletion true)
       return __x6__
     }
-  }"""))
+  }"""), this)
 }

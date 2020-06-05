@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object Block0Evaluation1 extends Algorithm {
+  val name: String = "Block0Evaluation1"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""Block0Evaluation1" (this, StatementList) => {
@@ -18,5 +19,5 @@ object Block0Evaluation1 extends Algorithm {
     GLOBAL_context["LexicalEnvironment"] = oldEnv
     app __x3__ = (WrapCompletion blockValue)
     return __x3__
-  }"""))
+  }"""), this)
 }

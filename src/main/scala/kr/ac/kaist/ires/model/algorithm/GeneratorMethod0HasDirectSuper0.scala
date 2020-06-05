@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GeneratorMethod0HasDirectSuper0 extends Algorithm {
+  val name: String = "GeneratorMethod0HasDirectSuper0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""GeneratorMethod0HasDirectSuper0" (this, PropertyName, UniqueFormalParameters, GeneratorBody) => {
@@ -13,5 +14,5 @@ object GeneratorMethod0HasDirectSuper0 extends Algorithm {
     access __x2__ = (GeneratorBody "Contains")
     app __x3__ = (__x2__ "SuperCall")
     return __x3__
-  }"""))
+  }"""), this)
 }

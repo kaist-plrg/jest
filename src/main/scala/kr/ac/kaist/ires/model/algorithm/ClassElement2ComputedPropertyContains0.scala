@@ -4,7 +4,8 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object ClassElement2ComputedPropertyContains0 extends Algorithm {
+  val name: String = "ClassElement2ComputedPropertyContains0"
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = FixUIdWalker(parseFunc(""""ClassElement2ComputedPropertyContains0" (this, symbol) => return false"""))
+  val func: Func = FixUIdWalker(parseFunc(""""ClassElement2ComputedPropertyContains0" (this, symbol) => return false"""), this)
 }

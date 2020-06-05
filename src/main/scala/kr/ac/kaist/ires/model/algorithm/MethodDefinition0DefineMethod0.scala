@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object MethodDefinition0DefineMethod0 extends Algorithm {
+  val name: String = "MethodDefinition0DefineMethod0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""MethodDefinition0DefineMethod0" (this, PropertyName, UniqueFormalParameters, FunctionBody, object, functionPrototype) => {
@@ -27,5 +28,5 @@ object MethodDefinition0DefineMethod0 extends Algorithm {
     closure["SourceText"] = (get-syntax this)
     app __x3__ = (WrapCompletion (new Record("Key" -> propKey, "Closure" -> closure)))
     return __x3__
-  }"""))
+  }"""), this)
 }

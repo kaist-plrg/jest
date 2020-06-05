@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object AsyncFunctionDeclaration0InstantiateFunctionObject0 extends Algorithm {
+  val name: String = "AsyncFunctionDeclaration0InstantiateFunctionObject0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""AsyncFunctionDeclaration0InstantiateFunctionObject0" (this, BindingIdentifier, FormalParameters, AsyncFunctionBody, scope) => {
@@ -19,5 +20,5 @@ object AsyncFunctionDeclaration0InstantiateFunctionObject0 extends Algorithm {
     F["SourceText"] = (get-syntax this)
     app __x3__ = (WrapCompletion F)
     return __x3__
-  }"""))
+  }"""), this)
 }

@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object IsPropertyReference extends Algorithm {
+  val name: String = "IsPropertyReference"
   val length: Int = 1
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""IsPropertyReference" (V) => {
@@ -18,5 +19,5 @@ object IsPropertyReference extends Algorithm {
       app __x4__ = (WrapCompletion false)
       return __x4__
     }
-  }"""))
+  }"""), this)
 }

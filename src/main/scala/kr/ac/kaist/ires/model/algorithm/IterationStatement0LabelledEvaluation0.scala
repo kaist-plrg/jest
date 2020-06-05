@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object IterationStatement0LabelledEvaluation0 extends Algorithm {
+  val name: String = "IterationStatement0LabelledEvaluation0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""IterationStatement0LabelledEvaluation0" (this, Statement, Expression, labelSet) => {
@@ -31,5 +32,5 @@ object IterationStatement0LabelledEvaluation0 extends Algorithm {
         return __x9__
       } else {}
     }
-  }"""))
+  }"""), this)
 }

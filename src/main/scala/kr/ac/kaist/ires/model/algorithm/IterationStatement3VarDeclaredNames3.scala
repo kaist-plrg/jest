@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object IterationStatement3VarDeclaredNames3 extends Algorithm {
+  val name: String = "IterationStatement3VarDeclaredNames3"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""IterationStatement3VarDeclaredNames3" (this, VariableDeclarationList, Expression0, Expression1, Statement) => {
@@ -18,5 +19,5 @@ object IterationStatement3VarDeclaredNames3 extends Algorithm {
       __x3__ = (+ __x3__ 1i)
     }
     return names
-  }"""))
+  }"""), this)
 }

@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object ToInt16 extends Algorithm {
+  val name: String = "ToInt16"
   val length: Int = 1
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""ToInt16" (argument) => {
@@ -23,5 +24,5 @@ object ToInt16 extends Algorithm {
       app __x3__ = (WrapCompletion int16bit)
       return __x3__
     }
-  }"""))
+  }"""), this)
 }

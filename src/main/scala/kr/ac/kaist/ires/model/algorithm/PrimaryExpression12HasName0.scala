@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object PrimaryExpression12HasName0 extends Algorithm {
+  val name: String = "PrimaryExpression12HasName0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""PrimaryExpression12HasName0" (this, CoverParenthesizedExpressionAndArrowParameterList) => {
@@ -13,5 +14,5 @@ object PrimaryExpression12HasName0 extends Algorithm {
     if (= __x1__ false) return false else {}
     access __x2__ = (expr "HasName")
     return __x2__
-  }"""))
+  }"""), this)
 }

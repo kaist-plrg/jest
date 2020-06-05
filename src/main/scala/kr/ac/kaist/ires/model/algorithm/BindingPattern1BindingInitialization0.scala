@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object BindingPattern1BindingInitialization0 extends Algorithm {
+  val name: String = "BindingPattern1BindingInitialization0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""BindingPattern1BindingInitialization0" (this, ArrayBindingPattern, value, environment) => {
@@ -21,5 +22,5 @@ object BindingPattern1BindingInitialization0 extends Algorithm {
     } else {}
     app __x5__ = (WrapCompletion result)
     return __x5__
-  }"""))
+  }"""), this)
 }

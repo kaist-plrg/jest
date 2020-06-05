@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object CopyDataBlockBytes extends Algorithm {
+  val name: String = "CopyDataBlockBytes"
   val length: Int = 5
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""CopyDataBlockBytes" (toBlock, toIndex, fromBlock, fromIndex, count) => {
@@ -30,5 +31,5 @@ object CopyDataBlockBytes extends Algorithm {
     app __x0__ = (NormalCompletion CONST_empty)
     app __x1__ = (WrapCompletion __x0__)
     return __x1__
-  }"""))
+  }"""), this)
 }

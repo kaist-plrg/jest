@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object RunJobs extends Algorithm {
+  val name: String = "RunJobs"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""RunJobs" () => {
@@ -34,5 +35,5 @@ object RunJobs extends Algorithm {
         __x5__
       } else {}
     }
-  }"""))
+  }"""), this)
 }

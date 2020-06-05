@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTStringDOTprototypeDOTcodePointAt extends Algorithm {
+  val name: String = "GLOBALDOTStringDOTprototypeDOTcodePointAt"
   val length: Int = 1
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.String.prototype.codePointAt" (this, argumentsList, NewTarget) => {
@@ -36,5 +37,5 @@ object GLOBALDOTStringDOTprototypeDOTcodePointAt extends Algorithm {
     app __x7__ = (UTF16Decode first second)
     app __x8__ = (WrapCompletion __x7__)
     return __x8__
-  }"""))
+  }"""), this)
 }

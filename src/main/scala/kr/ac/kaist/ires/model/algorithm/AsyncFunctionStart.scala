@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object AsyncFunctionStart extends Algorithm {
+  val name: String = "AsyncFunctionStart"
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""AsyncFunctionStart" (promiseCapability, asyncFunctionBody) => {
@@ -45,5 +46,5 @@ object AsyncFunctionStart extends Algorithm {
     }
     app __x9__ = (NormalCompletion undefined)
     return __x9__
-  }"""))
+  }"""), this)
 }

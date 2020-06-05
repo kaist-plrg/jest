@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTArrayDOTof extends Algorithm {
+  val name: String = "GLOBALDOTArrayDOTof"
   val length: Int = 0
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Array.of" (this, argumentsList, NewTarget) => {
@@ -36,5 +37,5 @@ object GLOBALDOTArrayDOTof extends Algorithm {
     __x5__
     app __x6__ = (WrapCompletion A)
     return __x6__
-  }"""))
+  }"""), this)
 }

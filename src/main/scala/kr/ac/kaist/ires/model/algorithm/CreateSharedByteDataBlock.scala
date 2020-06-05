@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object CreateSharedByteDataBlock extends Algorithm {
+  val name: String = "CreateSharedByteDataBlock"
   val length: Int = 1
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""CreateSharedByteDataBlock" (size) => {
@@ -21,5 +22,5 @@ object CreateSharedByteDataBlock extends Algorithm {
     }
     app __x2__ = (WrapCompletion db)
     return __x2__
-  }"""))
+  }"""), this)
 }

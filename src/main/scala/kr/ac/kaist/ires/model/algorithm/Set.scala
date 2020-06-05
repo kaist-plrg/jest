@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object Set extends Algorithm {
+  val name: String = "Set"
   val length: Int = 4
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""Set" (O, P, V, Throw) => {
@@ -22,5 +23,5 @@ object Set extends Algorithm {
     } else {}
     app __x5__ = (WrapCompletion success)
     return __x5__
-  }"""))
+  }"""), this)
 }

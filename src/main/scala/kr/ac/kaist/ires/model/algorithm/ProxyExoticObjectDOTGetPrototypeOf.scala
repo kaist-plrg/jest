@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object ProxyExoticObjectDOTGetPrototypeOf extends Algorithm {
+  val name: String = "ProxyExoticObjectDOTGetPrototypeOf"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""ProxyExoticObject.GetPrototypeOf" (O) => {
@@ -49,5 +50,5 @@ object ProxyExoticObjectDOTGetPrototypeOf extends Algorithm {
     } else {}
     app __x13__ = (WrapCompletion handlerProto)
     return __x13__
-  }"""))
+  }"""), this)
 }

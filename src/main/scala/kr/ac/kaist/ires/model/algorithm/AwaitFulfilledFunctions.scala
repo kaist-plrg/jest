@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object AwaitFulfilledFunctions extends Algorithm {
+  val name: String = "AwaitFulfilledFunctions"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""AwaitFulfilledFunctions" () => {
@@ -20,5 +21,5 @@ object AwaitFulfilledFunctions extends Algorithm {
     }
     app __x3__ = (WrapCompletion undefined)
     return __x3__
-  }"""))
+  }"""), this)
 }

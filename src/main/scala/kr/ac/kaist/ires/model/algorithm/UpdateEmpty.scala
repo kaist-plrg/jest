@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object UpdateEmpty extends Algorithm {
+  val name: String = "UpdateEmpty"
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""UpdateEmpty" (completionRecord, value) => {
@@ -14,5 +15,5 @@ object UpdateEmpty extends Algorithm {
     } else {}
     app __x2__ = (WrapCompletion (new Completion("Type" -> completionRecord["Type"], "Value" -> value, "Target" -> completionRecord["Target"])))
     return __x2__
-  }"""))
+  }"""), this)
 }

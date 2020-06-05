@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object SwitchStatement0Evaluation0 extends Algorithm {
+  val name: String = "SwitchStatement0Evaluation0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""SwitchStatement0Evaluation0" (this, Expression, CaseBlock) => {
@@ -24,5 +25,5 @@ object SwitchStatement0Evaluation0 extends Algorithm {
     GLOBAL_context["LexicalEnvironment"] = oldEnv
     app __x6__ = (WrapCompletion R)
     return __x6__
-  }"""))
+  }"""), this)
 }

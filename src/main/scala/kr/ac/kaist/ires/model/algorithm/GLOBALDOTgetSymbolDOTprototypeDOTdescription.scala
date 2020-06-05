@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTgetSymbolDOTprototypeDOTdescription extends Algorithm {
+  val name: String = "GLOBALDOTgetSymbolDOTprototypeDOTdescription"
   val length: Int = 0
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.getSymbol.prototype.description" (this, argumentsList, NewTarget) => {
@@ -13,5 +14,5 @@ object GLOBALDOTgetSymbolDOTprototypeDOTdescription extends Algorithm {
     let sym = __x0__
     app __x1__ = (WrapCompletion sym["Description"])
     return __x1__
-  }"""))
+  }"""), this)
 }

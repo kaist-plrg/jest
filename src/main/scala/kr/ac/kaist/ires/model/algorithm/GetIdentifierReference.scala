@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GetIdentifierReference extends Algorithm {
+  val name: String = "GetIdentifierReference"
   val length: Int = 3
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""GetIdentifierReference" (lex, name, strict) => {
@@ -25,5 +26,5 @@ object GetIdentifierReference extends Algorithm {
       app __x4__ = (WrapCompletion __x3__)
       return __x4__
     }
-  }"""))
+  }"""), this)
 }

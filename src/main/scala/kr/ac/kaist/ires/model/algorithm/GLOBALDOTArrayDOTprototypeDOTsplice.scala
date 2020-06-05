@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTArrayDOTprototypeDOTsplice extends Algorithm {
+  val name: String = "GLOBALDOTArrayDOTprototypeDOTsplice"
   val length: Int = 2
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Array.prototype.splice" (this, argumentsList, NewTarget) => {
@@ -157,5 +158,5 @@ object GLOBALDOTArrayDOTprototypeDOTsplice extends Algorithm {
     __x35__
     app __x36__ = (WrapCompletion A)
     return __x36__
-  }"""))
+  }"""), this)
 }

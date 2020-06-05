@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object DeclarativeEnvironmentRecordDOTSetMutableBinding extends Algorithm {
+  val name: String = "DeclarativeEnvironmentRecordDOTSetMutableBinding"
   val length: Int = 3
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""DeclarativeEnvironmentRecord.SetMutableBinding" (this, N, V, S) => {
@@ -32,5 +33,5 @@ object DeclarativeEnvironmentRecordDOTSetMutableBinding extends Algorithm {
     app __x7__ = (NormalCompletion CONST_empty)
     app __x8__ = (WrapCompletion __x7__)
     return __x8__
-  }"""))
+  }"""), this)
 }

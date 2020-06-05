@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object IfAbruptRejectPromise extends Algorithm {
+  val name: String = "IfAbruptRejectPromise"
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""IfAbruptRejectPromise" (value, capability) => {
@@ -13,5 +14,5 @@ object IfAbruptRejectPromise extends Algorithm {
       return capability["Promise"]
     } else {}
     value
-  }"""))
+  }"""), this)
 }

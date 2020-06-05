@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object CaseClauseIsSelected extends Algorithm {
+  val name: String = "CaseClauseIsSelected"
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""CaseClauseIsSelected" (C, input) => {
@@ -16,5 +17,5 @@ object CaseClauseIsSelected extends Algorithm {
     app __x3__ = (StrictEqualityComparison input clauseSelector)
     app __x4__ = (WrapCompletion __x3__)
     return __x4__
-  }"""))
+  }"""), this)
 }

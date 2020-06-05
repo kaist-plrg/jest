@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTArrayDOTprototypeDOTreduce extends Algorithm {
+  val name: String = "GLOBALDOTArrayDOTprototypeDOTreduce"
   val length: Int = 1
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Array.prototype.reduce" (this, argumentsList, NewTarget) => {
@@ -70,5 +71,5 @@ object GLOBALDOTArrayDOTprototypeDOTreduce extends Algorithm {
     }
     app __x16__ = (WrapCompletion accumulator)
     return __x16__
-  }"""))
+  }"""), this)
 }

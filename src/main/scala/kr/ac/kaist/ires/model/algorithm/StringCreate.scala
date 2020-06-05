@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object StringCreate extends Algorithm {
+  val name: String = "StringCreate"
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""StringCreate" (value, prototype) => {
@@ -33,5 +34,5 @@ object StringCreate extends Algorithm {
     __x1__
     app __x2__ = (WrapCompletion S)
     return __x2__
-  }"""))
+  }"""), this)
 }

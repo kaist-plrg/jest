@@ -3,6 +3,7 @@ package kr.ac.kaist.ires.model
 import kr.ac.kaist.ires.ir.Func
 
 trait Algorithm {
+  val name: String
   val length: Int
   val lang: Boolean
   val func: Func

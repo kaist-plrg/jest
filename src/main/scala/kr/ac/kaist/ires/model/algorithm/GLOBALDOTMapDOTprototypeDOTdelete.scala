@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTMapDOTprototypeDOTdelete extends Algorithm {
+  val name: String = "GLOBALDOTMapDOTprototypeDOTdelete"
   val length: Int = 1
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Map.prototype.delete" (this, argumentsList, NewTarget) => {
@@ -39,5 +40,5 @@ object GLOBALDOTMapDOTprototypeDOTdelete extends Algorithm {
     }
     app __x9__ = (WrapCompletion false)
     return __x9__
-  }"""))
+  }"""), this)
 }

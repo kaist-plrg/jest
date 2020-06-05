@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object OrdinaryGetOwnProperty extends Algorithm {
+  val name: String = "OrdinaryGetOwnProperty"
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""OrdinaryGetOwnProperty" (O, P) => {
@@ -23,5 +24,5 @@ object OrdinaryGetOwnProperty extends Algorithm {
     D["Enumerable"] = X["Enumerable"]
     D["Configurable"] = X["Configurable"]
     return D
-  }"""))
+  }"""), this)
 }

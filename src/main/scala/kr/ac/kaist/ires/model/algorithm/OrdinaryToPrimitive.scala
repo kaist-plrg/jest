@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object OrdinaryToPrimitive extends Algorithm {
+  val name: String = "OrdinaryToPrimitive"
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""OrdinaryToPrimitive" (O, hint) => {
@@ -32,5 +33,5 @@ object OrdinaryToPrimitive extends Algorithm {
     }
     app __x8__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
     return __x8__
-  }"""))
+  }"""), this)
 }

@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GeneratorResume extends Algorithm {
+  val name: String = "GeneratorResume"
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""GeneratorResume" (generator, value) => {
@@ -30,5 +31,5 @@ object GeneratorResume extends Algorithm {
     app __x6__ = (Completion result)
     app __x7__ = (WrapCompletion __x6__)
     return __x7__
-  }"""))
+  }"""), this)
 }

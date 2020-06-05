@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object CreateAsyncFromSyncIterator extends Algorithm {
+  val name: String = "CreateAsyncFromSyncIterator"
   val length: Int = 1
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""CreateAsyncFromSyncIterator" (syncIteratorRecord) => {
@@ -15,5 +16,5 @@ object CreateAsyncFromSyncIterator extends Algorithm {
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
     app __x2__ = (WrapCompletion __x1__)
     return __x2__
-  }"""))
+  }"""), this)
 }

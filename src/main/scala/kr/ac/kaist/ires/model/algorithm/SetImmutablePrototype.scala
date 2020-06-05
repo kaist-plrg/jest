@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object SetImmutablePrototype extends Algorithm {
+  val name: String = "SetImmutablePrototype"
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""SetImmutablePrototype" (O, V) => {
@@ -17,5 +18,5 @@ object SetImmutablePrototype extends Algorithm {
     } else {}
     app __x3__ = (WrapCompletion false)
     return __x3__
-  }"""))
+  }"""), this)
 }

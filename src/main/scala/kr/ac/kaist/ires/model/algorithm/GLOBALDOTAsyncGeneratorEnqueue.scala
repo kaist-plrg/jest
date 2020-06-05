@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTAsyncGeneratorEnqueue extends Algorithm {
+  val name: String = "GLOBALDOTAsyncGeneratorEnqueue"
   val length: Int = 2
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.AsyncGeneratorEnqueue" (this, argumentsList, NewTarget) => {
@@ -35,5 +36,5 @@ object GLOBALDOTAsyncGeneratorEnqueue extends Algorithm {
     } else {}
     app __x7__ = (WrapCompletion promiseCapability["Promise"])
     return __x7__
-  }"""))
+  }"""), this)
 }

@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object AsyncGeneratorStart extends Algorithm {
+  val name: String = "AsyncGeneratorStart"
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""AsyncGeneratorStart" (generator, generatorBody) => {
@@ -38,5 +39,5 @@ object AsyncGeneratorStart extends Algorithm {
     generator["AsyncGeneratorQueue"] = (new [])
     app __x6__ = (WrapCompletion undefined)
     return __x6__
-  }"""))
+  }"""), this)
 }

@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GLOBALDOTAsyncGeneratorResolve extends Algorithm {
+  val name: String = "GLOBALDOTAsyncGeneratorResolve"
   val length: Int = 3
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.AsyncGeneratorResolve" (this, argumentsList, NewTarget) => {
@@ -28,5 +29,5 @@ object GLOBALDOTAsyncGeneratorResolve extends Algorithm {
     __x5__
     app __x6__ = (WrapCompletion undefined)
     return __x6__
-  }"""))
+  }"""), this)
 }

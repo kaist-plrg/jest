@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object ScriptEvaluation extends Algorithm {
+  val name: String = "ScriptEvaluation"
   val length: Int = 1
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""ScriptEvaluation" (scriptRecord) => {
@@ -37,5 +38,5 @@ object ScriptEvaluation extends Algorithm {
     app __x4__ = (Completion result)
     app __x5__ = (WrapCompletion __x4__)
     return __x5__
-  }"""))
+  }"""), this)
 }

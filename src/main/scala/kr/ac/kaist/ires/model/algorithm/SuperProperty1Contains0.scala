@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object SuperProperty1Contains0 extends Algorithm {
+  val name: String = "SuperProperty1Contains0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""SuperProperty1Contains0" (this, IdentifierName, symbol) => {
@@ -17,5 +18,5 @@ object SuperProperty1Contains0 extends Algorithm {
     } else {}
     if __x0__ return true else {}
     return false
-  }"""))
+  }"""), this)
 }

@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object ForBodyEvaluation extends Algorithm {
+  val name: String = "ForBodyEvaluation"
   val length: Int = 5
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""ForBodyEvaluation" (test, increment, stmt, perIterationBindings, labelSet) => {
@@ -46,5 +47,5 @@ object ForBodyEvaluation extends Algorithm {
         __x13__
       } else {}
     }
-  }"""))
+  }"""), this)
 }

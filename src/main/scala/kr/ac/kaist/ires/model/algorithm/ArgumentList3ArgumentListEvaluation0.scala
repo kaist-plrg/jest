@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object ArgumentList3ArgumentListEvaluation0 extends Algorithm {
+  val name: String = "ArgumentList3ArgumentListEvaluation0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""ArgumentList3ArgumentListEvaluation0" (this, ArgumentList, AssignmentExpression) => {
@@ -31,5 +32,5 @@ object ArgumentList3ArgumentListEvaluation0 extends Algorithm {
       let nextArg = __x6__
       append nextArg -> precedingArgs
     }
-  }"""))
+  }"""), this)
 }

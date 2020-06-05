@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object GeneratorExpression0Evaluation1 extends Algorithm {
+  val name: String = "GeneratorExpression0Evaluation1"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""GeneratorExpression0Evaluation1" (this, BindingIdentifier, FormalParameters, GeneratorBody) => {
@@ -29,5 +30,5 @@ object GeneratorExpression0Evaluation1 extends Algorithm {
     closure["SourceText"] = (get-syntax this)
     app __x8__ = (WrapCompletion closure)
     return __x8__
-  }"""))
+  }"""), this)
 }

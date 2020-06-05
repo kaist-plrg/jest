@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object SplitMatch extends Algorithm {
+  val name: String = "SplitMatch"
   val length: Int = 3
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""SplitMatch" (S, q, R) => {
@@ -18,5 +19,5 @@ object SplitMatch extends Algorithm {
     !!! "NumberOp"
     app __x2__ = (WrapCompletion (+ q r))
     return __x2__
-  }"""))
+  }"""), this)
 }

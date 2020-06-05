@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object OrdinaryDelete extends Algorithm {
+  val name: String = "OrdinaryDelete"
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""OrdinaryDelete" (O, P) => {
@@ -23,5 +24,5 @@ object OrdinaryDelete extends Algorithm {
     } else {}
     app __x4__ = (WrapCompletion false)
     return __x4__
-  }"""))
+  }"""), this)
 }

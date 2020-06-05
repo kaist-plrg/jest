@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object ModuleNamespaceExoticObjectDOTGetOwnProperty extends Algorithm {
+  val name: String = "ModuleNamespaceExoticObjectDOTGetOwnProperty"
   val length: Int = 1
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""ModuleNamespaceExoticObject.GetOwnProperty" (O, P) => {
@@ -23,5 +24,5 @@ object ModuleNamespaceExoticObjectDOTGetOwnProperty extends Algorithm {
     let value = __x4__
     app __x5__ = (WrapCompletion (new PropertyDescriptor("Value" -> value, "Writable" -> true, "Enumerable" -> true, "Configurable" -> false)))
     return __x5__
-  }"""))
+  }"""), this)
 }

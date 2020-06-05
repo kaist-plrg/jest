@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object ExponentiationExpression1Evaluation0 extends Algorithm {
+  val name: String = "ExponentiationExpression1Evaluation0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""ExponentiationExpression1Evaluation0" (this, UpdateExpression, ExponentiationExpression) => {
@@ -25,5 +26,5 @@ object ExponentiationExpression1Evaluation0 extends Algorithm {
     let exponent = __x5__
     app __x6__ = (WrapCompletion (** base exponent))
     return __x6__
-  }"""))
+  }"""), this)
 }

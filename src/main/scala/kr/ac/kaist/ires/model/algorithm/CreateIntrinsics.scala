@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object CreateIntrinsics extends Algorithm {
+  val name: String = "CreateIntrinsics"
   val length: Int = 1
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""CreateIntrinsics" (realmRec) => {
@@ -16,5 +17,5 @@ object CreateIntrinsics extends Algorithm {
     __x0__
     app __x1__ = (WrapCompletion intrinsics)
     return __x1__
-  }"""))
+  }"""), this)
 }

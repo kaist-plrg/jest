@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object ECMAScriptFunctionObjectDOTCall extends Algorithm {
+  val name: String = "ECMAScriptFunctionObjectDOTCall"
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""ECMAScriptFunctionObject.Call" (F, thisArgument, argumentsList) => {
@@ -33,5 +34,5 @@ object ECMAScriptFunctionObjectDOTCall extends Algorithm {
     app __x7__ = (NormalCompletion undefined)
     app __x8__ = (WrapCompletion __x7__)
     return __x8__
-  }"""))
+  }"""), this)
 }

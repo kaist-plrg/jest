@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object ForInOfHeadEvaluation extends Algorithm {
+  val name: String = "ForInOfHeadEvaluation"
   val length: Int = 3
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""ForInOfHeadEvaluation" (TDZnames, expr, iterationKind) => {
@@ -49,5 +50,5 @@ object ForInOfHeadEvaluation extends Algorithm {
       app __x11__ = (WrapCompletion __x10__)
       return __x11__
     }
-  }"""))
+  }"""), this)
 }

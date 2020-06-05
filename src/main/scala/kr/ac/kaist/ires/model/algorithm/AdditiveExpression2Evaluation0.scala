@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object AdditiveExpression2Evaluation0 extends Algorithm {
+  val name: String = "AdditiveExpression2Evaluation0"
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""AdditiveExpression2Evaluation0" (this, AdditiveExpression, MultiplicativeExpression) => {
@@ -25,5 +26,5 @@ object AdditiveExpression2Evaluation0 extends Algorithm {
     let rnum = __x5__
     app __x6__ = (WrapCompletion (- lnum rnum))
     return __x6__
-  }"""))
+  }"""), this)
 }

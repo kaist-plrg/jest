@@ -4,6 +4,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 
 object ArraySetLength extends Algorithm {
+  val name: String = "ArraySetLength"
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""ArraySetLength" (A, Desc) => {
@@ -71,5 +72,5 @@ object ArraySetLength extends Algorithm {
     } else {}
     app __x17__ = (WrapCompletion true)
     return __x17__
-  }"""))
+  }"""), this)
 }

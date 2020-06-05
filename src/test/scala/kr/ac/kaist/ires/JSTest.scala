@@ -8,7 +8,7 @@ import kr.ac.kaist.ires.phase._
 import org.scalatest._
 import scala.util.Random.shuffle
 
-class JSTest extends IRTest {
+class JSTest extends IRTest with EvalTest {
   // tag name
   val tag: String = "jsTest"
 
