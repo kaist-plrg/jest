@@ -32,6 +32,7 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
   // instructions
   def interp(inst: Inst): State => State = st => {
     instCount = instCount + 1
+    if (COVERAGE_MODE) CoverageCheck.add(inst.uid)
     if (instCount % 10000 == 0) timeLimit match {
       case Some(timeout) => if ((System.currentTimeMillis - startTime) > timeout * 1000) error("timeoutInst")
       case _ => ()
@@ -74,17 +75,17 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
           case Nil => s0.copy(context = s0.context.copy(locals = s0.context.locals + (s0.context.retId -> value), insts = Nil))
           case ctx :: rest => s0.copy(context = ctx.copy(locals = ctx.locals + (ctx.retId -> value)), ctxStack = rest)
         }
-      case c @ IIf(cond, thenInst, elseInst) =>
+      case IIf(cond, thenInst, elseInst) =>
         val (v, s0) = escapeCompletion(interp(cond)(st))
-        if (COVERAGE_MODE) CoverageCheck.add(c, v)
+        if (COVERAGE_MODE) CoverageCheck.add(inst.uid, v)
         v match {
           case Bool(true) => s0.copy(context = s0.context.copy(insts = thenInst :: s0.context.insts))
           case Bool(false) => s0.copy(context = s0.context.copy(insts = elseInst :: s0.context.insts))
           case v => error(s"not a boolean: $v")
         }
-      case c @ IWhile(cond, body) =>
+      case IWhile(cond, body) =>
         val (v, s0) = escapeCompletion(interp(cond)(st))
-        if (COVERAGE_MODE) CoverageCheck.add(c, v)
+        if (COVERAGE_MODE) CoverageCheck.add(inst.uid, v)
         v match {
           case Bool(true) => s0.copy(context = s0.context.copy(insts = body :: inst :: s0.context.insts))
           case Bool(false) => s0

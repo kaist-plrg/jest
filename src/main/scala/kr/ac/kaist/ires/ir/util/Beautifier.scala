@@ -95,6 +95,9 @@ object Beautifier {
     override def walk(program: Program): Unit =
       walkList[Inst](program.insts, walk)
 
+    def detailWalk(inst: Inst): Unit =
+      if (detail) walk(inst) else walk("...")
+
     // instructions
     override def walk(inst: Inst): Unit = inst match {
       case IExpr(expr) =>
@@ -112,24 +115,29 @@ object Beautifier {
       case IReturn(expr) =>
         walk("return "); walk(expr)
       case IIf(cond, thenInst, elseInst) =>
-        walk("if "); walk(cond); walk(" "); walk(thenInst)
-        walk(" else "); walk(elseInst)
+        walk("if "); walk(cond); walk(" "); detailWalk(thenInst)
+        walk(" else "); detailWalk(elseInst)
       case IWhile(cond, body) =>
         walk("while "); walk(cond); walk(" "); walk(body)
       case ISeq(insts) =>
         walk("{");
-        if (insts.length > 0) { walkList[Inst](insts, walk); walk(indent); }
+        if (insts.length > 0) {
+          if (detail) { walkList[Inst](insts, walk); walk(indent); }
+          else walk(" ... ")
+        }
         walk("}")
       case IAssert(expr) =>
         walk("assert "); walk(expr)
       case IPrint(expr) =>
         walk("print "); walk(expr)
       case IApp(id, fexpr, args) =>
-        walk("app "); walk(id); walk(" = ("); walk(fexpr); walk(" "); walkListSep[Expr](args, " ", walk); walk(")")
+        walk("app "); walk(id); walk(" = ("); walk(fexpr);
+        walk(" "); walkListSep[Expr](args, " ", walk); walk(")")
       case IAccess(id, bexpr, expr) =>
         walk("access "); walk(id); walk(" = ("); walk(bexpr); walk(" "); walk(expr); walk(")")
       case IWithCont(id, params, inst) =>
-        walk("withcont "); walk(id); walk(" ("); walkListSep[Id](params, ", ", walk); walk(") ="); walk(inst)
+        walk("withcont "); walk(id); walk(" (");
+        walkListSep[Id](params, ", ", walk); walk(") ="); detailWalk(inst)
     }
 
     // expressions
@@ -155,8 +163,7 @@ object Beautifier {
       case ECont(params, body) =>
         walk("("); walkListSep[Id](params, ", ", walk);
         walk(") [=>] ")
-        if (detail) walk(body)
-        else walk("...")
+        detailWalk(body)
       case EUOp(uop, expr) =>
         walk("("); walk(uop); walk(" "); walk(expr); walk(")")
       case EBOp(bop, left, right) =>

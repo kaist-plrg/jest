@@ -17,6 +17,6 @@ trait EvalTest extends IRESTest {
   // show results for coverage
   override def afterAll(): Unit = {
     super.afterAll
-    if (COVERAGE_MODE) CoverageCheck.showResult(detail = true)
+    if (COVERAGE_MODE) CoverageCheck.dumpResult
   }
 }

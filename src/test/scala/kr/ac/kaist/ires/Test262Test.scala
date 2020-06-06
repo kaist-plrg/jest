@@ -49,7 +49,7 @@ class Test262Test extends IRESTest with EvalTest {
     }
     jpw.close()
 
-    if (COVERAGE_MODE) CoverageCheck.showResult(detail = true)
+    if (COVERAGE_MODE) CoverageCheck.dumpResult
   }
 
   // tests for js-interpreter

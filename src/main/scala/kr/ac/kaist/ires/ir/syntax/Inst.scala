@@ -8,12 +8,11 @@ import scala.collection.mutable.{ Map => MMap }
 sealed trait Inst extends IRNode {
   private var algo: Option[Algorithm] = None
   lazy val uid: Int = algo match {
-    case Some(algo) if COVERAGE_MODE =>
-      val id = Inst.size
+    case Some(algo) if COVERAGE_MODE && algo.lang =>
+      val uid = Inst.insts.size
       Inst._insts :+= this
       Inst._instToAlgo :+= algo
-      Inst._algoCounts += algo -> (Inst._algoCounts.getOrElse(algo, 0) + 1)
-      id
+      uid
     case _ => -1
   }
 
@@ -22,18 +21,9 @@ sealed trait Inst extends IRNode {
 object Inst {
   private var _insts: Vector[Inst] = Vector()
   def insts: Vector[Inst] = _insts
-  def size: Int = insts.length
 
   private var _instToAlgo: Vector[Algorithm] = Vector()
   def instToAlgo: Vector[Algorithm] = _instToAlgo
-
-  private var _algoCounts: Map[Algorithm, Int] = Map()
-  def algoCounts: Map[Algorithm, Int] = _algoCounts
-
-  def conds: Set[Int] = insts.flatMap(_ match {
-    case (condInst: CondInst) => Some(condInst.uid)
-    case _ => None
-  }).toSet
 }
 
 // conditional instructions
