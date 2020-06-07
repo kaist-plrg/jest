@@ -45,7 +45,3 @@ bin/ires
 .bloop
 .metals
 project/metals.sbt
-
-# coverage
-coverage/*.json
-coverage/summary

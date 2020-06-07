@@ -32,4 +32,5 @@ package object ires {
 
   // Coverage check mode
   val COVERAGE_MODE: Boolean = true
+  val COVERAGE_DIR = s"$BASE_DIR/coverage"
 }
