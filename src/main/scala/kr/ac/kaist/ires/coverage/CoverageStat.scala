@@ -29,11 +29,12 @@ case class CoverageStat(coverage: Coverage) extends CoverageProtocol {
   val partialVisit = allAlgo -- fullVisit -- neverVisit
 
   // meaningful failed cases
-  val onlyMeaningfulFailed = cases.filter(c => partialVisit.contains(c.algo) && (c match {
+  val meaningfulFailed = cases.filter(c => partialVisit.contains(c.algo) && (c match {
     case _: Base => false
     case c: Cond =>
       !c.cond.startsWith("(is-completion") &&
         !c.cond.contains(" CONST_normal)") &&
+        c.cond != "true" &&
         (!c.thenCovered || !c.elseCovered)
   }))
 
@@ -45,7 +46,8 @@ case class CoverageStat(coverage: Coverage) extends CoverageProtocol {
       s"Visit Algorithm:" + LINE_SEP +
       s"- Never  : ${getPercent(neverVisit, allAlgo)}" + LINE_SEP +
       s"- Partial: ${getPercent(partialVisit, allAlgo)}" + LINE_SEP +
-      s"- Full   : ${getPercent(fullVisit, allAlgo)}"
+      s"- Full   : ${getPercent(fullVisit, allAlgo)}" + LINE_SEP +
+      s"Meaningful Failed: ${getPercent(meaningfulFailed, condTotal)}"
   }
 
   // dump statistics
@@ -62,8 +64,8 @@ case class CoverageStat(coverage: Coverage) extends CoverageProtocol {
     // fully covered algorithms
     dumpJson(fullVisit.toList.sorted, s"$COVERAGE_DIR/full-visit.json")
 
-    // only meaningful failed cases
-    dumpJson(onlyMeaningfulFailed, s"$COVERAGE_DIR/only-meaningful-failed.json")
+    // meaningful failed cases
+    dumpJson(meaningfulFailed, s"$COVERAGE_DIR/meaningful-failed.json")
 
     // summary
     dumpFile(summary, s"$COVERAGE_DIR/summary")

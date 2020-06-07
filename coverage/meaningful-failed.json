@@ -13,67 +13,11 @@
   "inst": "if (= __x10__ true) ... else ...",
   "thenCovered": true
 }, {
-  "algo": "CallExpression0Evaluation0",
-  "cond": "true",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "if true ... else ...",
-  "thenCovered": true
-}, {
-  "algo": "FunctionDeclaration0InstantiateFunctionObject0",
-  "cond": "true",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "if true ... else ...",
-  "thenCovered": true
-}, {
-  "algo": "MemberExpression2Evaluation0",
-  "cond": "true",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "if true ... else ...",
-  "thenCovered": true
-}, {
-  "algo": "FunctionExpression0Evaluation0",
-  "cond": "true",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "if true ... else ...",
-  "thenCovered": true
-}, {
-  "algo": "FunctionExpression0Evaluation1",
-  "cond": "true",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "if true ... else ...",
-  "thenCovered": true
-}, {
   "algo": "AssignmentExpression5Evaluation0",
   "cond": "(= op \"*\")",
   "covered": true,
   "elseCovered": false,
   "inst": "if (= op \"*\") ... else ...",
-  "thenCovered": true
-}, {
-  "algo": "ScriptBody0IsStrict0",
-  "cond": "true",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "if true ... else ...",
-  "thenCovered": true
-}, {
-  "algo": "MemberExpression1Evaluation0",
-  "cond": "true",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "if true ... else ...",
-  "thenCovered": true
-}, {
-  "algo": "IterationStatement1LabelledEvaluation0",
-  "cond": "true",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "while true { ... }",
   "thenCovered": true
 }, {
   "algo": "PrimaryExpression12HasName0",
@@ -103,13 +47,6 @@
   "elseCovered": true,
   "inst": "if (= __x7__ true) ... else ...",
   "thenCovered": false
-}, {
-  "algo": "CallExpression4Evaluation0",
-  "cond": "true",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "if true ... else ...",
-  "thenCovered": true
 }, {
   "algo": "BindingElement1IteratorBindingInitialization1",
   "cond": "(= iteratorRecord[\"Done\"] false)",
@@ -145,34 +82,6 @@
   "elseCovered": true,
   "inst": "if __x3__ ... else ...",
   "thenCovered": false
-}, {
-  "algo": "ArrowFunction0Evaluation0",
-  "cond": "true",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "if true ... else ...",
-  "thenCovered": true
-}, {
-  "algo": "AddEntriesFromIterable",
-  "cond": "true",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "while true { ... }",
-  "thenCovered": true
-}, {
-  "algo": "ArgumentList1ArgumentListEvaluation0",
-  "cond": "true",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "while true { ... }",
-  "thenCovered": true
-}, {
-  "algo": "ArgumentList3ArgumentListEvaluation0",
-  "cond": "true",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "while true { ... }",
-  "thenCovered": true
 }, {
   "algo": "ArrayCreate",
   "cond": "(= length -0.0)",
@@ -300,39 +209,11 @@
   "inst": "if __x5__ ... else ...",
   "thenCovered": false
 }, {
-  "algo": "AsyncArrowFunction1Evaluation0",
-  "cond": "true",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "if true ... else ...",
-  "thenCovered": true
-}, {
   "algo": "AsyncConciseBody0EvaluateBody0",
   "cond": "(! __x2__)",
   "covered": true,
   "elseCovered": false,
   "inst": "if (! __x2__) ... else ...",
-  "thenCovered": true
-}, {
-  "algo": "AsyncFunctionDeclaration0InstantiateFunctionObject0",
-  "cond": "true",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "if true ... else ...",
-  "thenCovered": true
-}, {
-  "algo": "AsyncFunctionExpression0Evaluation0",
-  "cond": "true",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "if true ... else ...",
-  "thenCovered": true
-}, {
-  "algo": "AsyncFunctionExpression1Evaluation0",
-  "cond": "true",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "if true ... else ...",
   "thenCovered": true
 }, {
   "algo": "AsyncFunctionStart",
@@ -347,34 +228,6 @@
   "covered": true,
   "elseCovered": false,
   "inst": "if (= asyncContext[\"ReturnCont\"] absent) ... else ...",
-  "thenCovered": true
-}, {
-  "algo": "AsyncGeneratorDeclaration0InstantiateFunctionObject0",
-  "cond": "true",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "if true ... else ...",
-  "thenCovered": true
-}, {
-  "algo": "AsyncGeneratorExpression0Evaluation0",
-  "cond": "true",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "if true ... else ...",
-  "thenCovered": true
-}, {
-  "algo": "AsyncGeneratorExpression0Evaluation1",
-  "cond": "true",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "if true ... else ...",
-  "thenCovered": true
-}, {
-  "algo": "AsyncGeneratorMethod0PropertyDefinitionEvaluation0",
-  "cond": "true",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "if true ... else ...",
   "thenCovered": true
 }, {
   "algo": "AsyncGeneratorResumeNext",
@@ -426,32 +279,11 @@
   "inst": "if (! (= __x10__ Object)) ... else ...",
   "thenCovered": false
 }, {
-  "algo": "AsyncMethod0PropertyDefinitionEvaluation0",
-  "cond": "true",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "if true ... else ...",
-  "thenCovered": true
-}, {
   "algo": "Await",
   "cond": "(= GLOBAL_executionStack[(- GLOBAL_executionStack[\"length\"] 1i)] asyncContext)",
   "covered": true,
   "elseCovered": false,
   "inst": "if (= GLOBAL_executionStack[(- GLOBAL_executionStack[\"length\"] 1i)] asyncContext) ... else ...",
-  "thenCovered": true
-}, {
-  "algo": "BindingRestElement0IteratorBindingInitialization0",
-  "cond": "true",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "while true { ... }",
-  "thenCovered": true
-}, {
-  "algo": "BindingRestElement1IteratorBindingInitialization0",
-  "cond": "true",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "while true { ... }",
   "thenCovered": true
 }, {
   "algo": "BindingRestElement1IteratorBindingInitialization0",
@@ -585,13 +417,6 @@
   "covered": true,
   "elseCovered": false,
   "inst": "if (= GLOBAL_executionStack[(- GLOBAL_executionStack[\"length\"] 1i)] calleeContext) ... else ...",
-  "thenCovered": true
-}, {
-  "algo": "CallExpression3Evaluation0",
-  "cond": "true",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "if true ... else ...",
   "thenCovered": true
 }, {
   "algo": "CanonicalNumericIndexString",
@@ -824,20 +649,6 @@
   "elseCovered": true,
   "inst": "if (! (< targetIndex (- 9007199254740992i 1i))) ... else ...",
   "thenCovered": false
-}, {
-  "algo": "ForBodyEvaluation",
-  "cond": "true",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "while true { ... }",
-  "thenCovered": true
-}, {
-  "algo": "ForInOfBodyEvaluation",
-  "cond": "true",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "while true { ... }",
-  "thenCovered": true
 }, {
   "algo": "ForInOfBodyEvaluation",
   "cond": "(! (= __x3__ Object))",
@@ -1075,34 +886,6 @@
   "covered": true,
   "elseCovered": false,
   "inst": "if (= __x0__ false) ... else ...",
-  "thenCovered": true
-}, {
-  "algo": "GeneratorDeclaration0InstantiateFunctionObject0",
-  "cond": "true",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "if true ... else ...",
-  "thenCovered": true
-}, {
-  "algo": "GeneratorExpression0Evaluation0",
-  "cond": "true",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "if true ... else ...",
-  "thenCovered": true
-}, {
-  "algo": "GeneratorExpression0Evaluation1",
-  "cond": "true",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "if true ... else ...",
-  "thenCovered": true
-}, {
-  "algo": "GeneratorMethod0PropertyDefinitionEvaluation0",
-  "cond": "true",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "if true ... else ...",
   "thenCovered": true
 }, {
   "algo": "GeneratorResumeAbrupt",
@@ -1406,13 +1189,6 @@
   "inst": "if (! (= argument[\"RegExpMatcher\"] absent)) ... else ...",
   "thenCovered": false
 }, {
-  "algo": "IterationStatement0LabelledEvaluation0",
-  "cond": "true",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "while true { ... }",
-  "thenCovered": true
-}, {
   "algo": "IterationStatement12VarDeclaredNames0",
   "cond": "(< __x3__ __x2__[\"length\"])",
   "covered": true,
@@ -1453,27 +1229,6 @@
   "covered": true,
   "elseCovered": false,
   "inst": "if (= this call) ... else ...",
-  "thenCovered": true
-}, {
-  "algo": "MethodDefinition0DefineMethod0",
-  "cond": "true",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "if true ... else ...",
-  "thenCovered": true
-}, {
-  "algo": "MethodDefinition4PropertyDefinitionEvaluation0",
-  "cond": "true",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "if true ... else ...",
-  "thenCovered": true
-}, {
-  "algo": "MethodDefinition5PropertyDefinitionEvaluation0",
-  "cond": "true",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "if true ... else ...",
   "thenCovered": true
 }, {
   "algo": "MulOperation",
@@ -1616,13 +1371,6 @@
   "inst": "if (|| (= thisArgument undefined) (= thisArgument null)) ... else ...",
   "thenCovered": false
 }, {
-  "algo": "OrdinaryHasInstance",
-  "cond": "true",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "while true { ... }",
-  "thenCovered": true
-}, {
   "algo": "OrdinarySetPrototypeOf",
   "cond": "(= __x0__ true)",
   "covered": true,
@@ -1691,20 +1439,6 @@
   "covered": true,
   "elseCovered": false,
   "inst": "if (= __x4__ true) ... else ...",
-  "thenCovered": true
-}, {
-  "algo": "ResolveBinding",
-  "cond": "true",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "if true ... else ...",
-  "thenCovered": true
-}, {
-  "algo": "RunJobs",
-  "cond": "true",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "while true { ... }",
   "thenCovered": true
 }, {
   "algo": "RunJobs",
@@ -1798,13 +1532,6 @@
   "inst": "if (= __x7__ true) ... else ...",
   "thenCovered": true
 }, {
-  "algo": "SpreadElement0ArrayAccumulation0",
-  "cond": "true",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "while true { ... }",
-  "thenCovered": true
-}, {
   "algo": "StringCreate",
   "cond": "(= S[\"HasProperty\"] absent)",
   "covered": true,
@@ -1895,20 +1622,6 @@
   "elseCovered": true,
   "inst": "if (= index -0.0) ... else ...",
   "thenCovered": false
-}, {
-  "algo": "SuperProperty0Evaluation0",
-  "cond": "true",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "if true ... else ...",
-  "thenCovered": true
-}, {
-  "algo": "SuperProperty1Evaluation0",
-  "cond": "true",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "if true ... else ...",
-  "thenCovered": true
 }, {
   "algo": "TestIntegrityLevel",
   "cond": "(! (= currentDesc undefined))",
@@ -2055,13 +1768,6 @@
   "covered": true,
   "elseCovered": false,
   "inst": "if (! (= O undefined)) ... else ...",
-  "thenCovered": true
-}, {
-  "algo": "YieldExpression2Evaluation0",
-  "cond": "true",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "while true if (= received[\"Type\"] CONST_normal) ... else ...",
   "thenCovered": true
 }, {
   "algo": "YieldExpression2Evaluation0",
