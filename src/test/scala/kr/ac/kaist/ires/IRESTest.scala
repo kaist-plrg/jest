@@ -52,6 +52,7 @@ abstract class IRESTest extends FunSuite with BeforeAndAfterAll {
         }) match {
           case Some(msg) =>
             resMap += tag -> (res + (name -> Yet(msg)))
+            fail(e.toString)
           case None =>
             resMap += tag -> (res + (name -> Fail))
             fail(e.toString)

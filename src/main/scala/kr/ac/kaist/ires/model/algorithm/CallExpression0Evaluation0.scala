@@ -21,13 +21,42 @@ object CallExpression0Evaluation0 extends Algorithm {
     app __x4__ = (GetValue ref)
     if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
     let func = __x4__
-    !!! "If Type ( id:{ref} ) is Reference , IsPropertyReference ( id:{ref} ) is value:{false} , and GetReferencedName ( id:{ref} ) is value:{\"eval\"} , then step-list:{...}"
+    app __x5__ = (Type ref)
+    let __x6__ = (= __x5__ Reference)
+    if __x6__ {
+      app __x7__ = (IsPropertyReference ref)
+      let __x8__ = (= __x7__ false)
+      if __x8__ {
+        app __x9__ = (GetReferencedName ref)
+        __x8__ = (= __x9__ "eval")
+      } else {}
+      __x6__ = __x8__
+    } else {}
+    if __x6__ {
+      app __x10__ = (SameValue func INTRINSIC_eval)
+      if (= __x10__ true) {
+        access __x11__ = (arguments "ArgumentListEvaluation")
+        if (is-completion __x11__) if (= __x11__["Type"] CONST_normal) __x11__ = __x11__["Value"] else return __x11__ else {}
+        let argList = __x11__
+        if (= argList["length"] 0i) {
+          app __x12__ = (WrapCompletion undefined)
+          return __x12__
+        } else {}
+        let evalArg = argList[0i]
+        if true let strictCaller = true else let strictCaller = false
+        let evalRealm = REALM
+        app __x14__ = (PerformEval evalArg evalRealm strictCaller true)
+        if (is-completion __x14__) if (= __x14__["Type"] CONST_normal) __x14__ = __x14__["Value"] else return __x14__ else {}
+        app __x15__ = (WrapCompletion __x14__)
+        return __x15__
+      } else {}
+    } else {}
     let thisCall = this
-    app __x5__ = (IsInTailPosition thisCall)
-    let tailCall = __x5__
-    app __x6__ = (EvaluateCall func ref arguments tailCall)
-    if (is-completion __x6__) if (= __x6__["Type"] CONST_normal) __x6__ = __x6__["Value"] else return __x6__ else {}
-    app __x7__ = (WrapCompletion __x6__)
-    return __x7__
+    app __x16__ = (IsInTailPosition thisCall)
+    let tailCall = __x16__
+    app __x17__ = (EvaluateCall func ref arguments tailCall)
+    if (is-completion __x17__) if (= __x17__["Type"] CONST_normal) __x17__ = __x17__["Value"] else return __x17__ else {}
+    app __x18__ = (WrapCompletion __x17__)
+    return __x18__
   }"""), this)
 }

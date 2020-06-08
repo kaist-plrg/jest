@@ -20,13 +20,14 @@ object BuiltinFunctionObjectDOTCall extends Algorithm {
     calleeContext["VariableEnvironment"] = localEnv
     append calleeContext -> GLOBAL_executionStack
     GLOBAL_context = GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 1i)]
-    !!! "Let id:{result} be the Completion Record that is the result of evaluating id:{F} in a manner that conforms to the specification of id:{F} . id:{thisArgument} is the value:{this} value , id:{argumentsList} provides the named parameters , and the NewTarget value is value:{undefined} ."
+    app __x0__ = (F["Code"] thisArgument argumentsList undefined F)
+    let result = __x0__
     if (= GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 1i)] calleeContext) {
-      __x0__ = (- GLOBAL_executionStack["length"] 1i)
-      (pop GLOBAL_executionStack __x0__)
+      __x1__ = (- GLOBAL_executionStack["length"] 1i)
+      (pop GLOBAL_executionStack __x1__)
     } else {}
     GLOBAL_context = GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 1i)]
-    app __x1__ = (WrapCompletion result)
-    return __x1__
+    app __x2__ = (WrapCompletion result)
+    return __x2__
   }"""), this)
 }

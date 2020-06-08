@@ -731,7 +731,7 @@ object Parser extends ESParsers {
   lazy val CallExpression: ESParser[CallExpression] = memo(args => {
     val List(pYield, pAwait) = getArgsN("CallExpression", args, 2)
     log(resolveLL((
-      log(MATCH ~ CoverCallExpressionAndAsyncArrowHead(List()) ^^ { case _ ~ x0 => CallExpression0(x0, args) })("CallExpression0") |
+      log(MATCH ~ CoverCallExpressionAndAsyncArrowHead(List(pYield, pAwait)) ^^ { case _ ~ x0 => CallExpression0(x0, args) })("CallExpression0") |
       log(MATCH ~ SuperCall(List(pYield, pAwait)) ^^ { case _ ~ x0 => CallExpression1(x0, args) })("CallExpression1") |
       log(MATCH ~ ImportCall(List(pYield, pAwait)) ^^ { case _ ~ x0 => CallExpression2(x0, args) })("CallExpression2")
     ), (
@@ -1532,7 +1532,7 @@ object Parser extends ESParsers {
     val List(pIn, pYield, pAwait) = getArgsN("AsyncArrowFunction", args, 3)
     log((
       log(((((MATCH <~ t("async")) <~ NoLineTerminator) ~ AsyncArrowBindingIdentifier(List(pYield)) <~ NoLineTerminator) <~ t("=>")) ~ AsyncConciseBody(List(pIn)) ^^ { case _ ~ x0 ~ x1 => AsyncArrowFunction0(x0, x1, args) })("AsyncArrowFunction0") |
-      log(((MATCH ~ CoverCallExpressionAndAsyncArrowHead(List()) <~ NoLineTerminator) <~ t("=>")) ~ AsyncConciseBody(List(pIn)) ^^ { case _ ~ x0 ~ x1 => AsyncArrowFunction1(x0, x1, args) })("AsyncArrowFunction1")
+      log(((MATCH ~ CoverCallExpressionAndAsyncArrowHead(List(pAwait, pYield)) <~ NoLineTerminator) <~ t("=>")) ~ AsyncConciseBody(List(pIn)) ^^ { case _ ~ x0 ~ x1 => AsyncArrowFunction1(x0, x1, args) })("AsyncArrowFunction1")
     ))("AsyncArrowFunction")
   })
   lazy val AsyncConciseBody: ESParser[AsyncConciseBody] = memo(args => {
@@ -1549,8 +1549,9 @@ object Parser extends ESParsers {
     ))("AsyncArrowBindingIdentifier")
   })
   lazy val CoverCallExpressionAndAsyncArrowHead: ESParser[CoverCallExpressionAndAsyncArrowHead] = memo(args => {
+    val List(pYield, pAwait) = getArgsN("CoverCallExpressionAndAsyncArrowHead", args, 2)
     log((
-      log(MATCH ~ MemberExpression(List(false, false)) ~ Arguments(List(false, false)) ^^ { case _ ~ x0 ~ x1 => CoverCallExpressionAndAsyncArrowHead0(x0, x1, args) })("CoverCallExpressionAndAsyncArrowHead0")
+      log(MATCH ~ MemberExpression(List(pYield, pAwait)) ~ Arguments(List(pYield, pAwait)) ^^ { case _ ~ x0 ~ x1 => CoverCallExpressionAndAsyncArrowHead0(x0, x1, args) })("CoverCallExpressionAndAsyncArrowHead0")
     ))("CoverCallExpressionAndAsyncArrowHead")
   })
   lazy val AsyncArrowHead: ESParser[AsyncArrowHead] = memo(args => {

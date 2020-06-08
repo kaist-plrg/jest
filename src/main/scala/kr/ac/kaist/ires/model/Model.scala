@@ -1683,7 +1683,7 @@ object Model {
     Id("GLOBALDOTPromiseDOTprototypeDOTthen") -> GLOBALDOTPromiseDOTprototypeDOTthen.func,
     Id("GLOBALDOTPerformPromiseThen") -> GLOBALDOTPerformPromiseThen.func,
     Id("GLOBALDOTAsyncFunction") -> GLOBALDOTAsyncFunction.func,
-    Id("GLOBALDOTAsyncFunctionStart") -> GLOBALDOTAsyncFunctionStart.func,
+    Id("AsyncFunctionStart") -> AsyncFunctionStart.func,
     Id("DeclarativeEnvironmentRecordDOTHasBinding") -> DeclarativeEnvironmentRecordDOTHasBinding.func,
     Id("DeclarativeEnvironmentRecordDOTCreateMutableBinding") -> DeclarativeEnvironmentRecordDOTCreateMutableBinding.func,
     Id("DeclarativeEnvironmentRecordDOTCreateImmutableBinding") -> DeclarativeEnvironmentRecordDOTCreateImmutableBinding.func,
@@ -2180,8 +2180,7 @@ object Model {
     ("GLOBAL.ThenFinallyFunctions", GLOBALDOTThenFinallyFunctions.length, GLOBALDOTThenFinallyFunctions.func),
     ("GLOBAL.CatchFinallyFunctions", GLOBALDOTCatchFinallyFunctions.length, GLOBALDOTCatchFinallyFunctions.func),
     ("GLOBAL.Promise.prototype.then", GLOBALDOTPromiseDOTprototypeDOTthen.length, GLOBALDOTPromiseDOTprototypeDOTthen.func),
-    ("GLOBAL.PerformPromiseThen", GLOBALDOTPerformPromiseThen.length, GLOBALDOTPerformPromiseThen.func),
-    ("GLOBAL.AsyncFunctionStart", GLOBALDOTAsyncFunctionStart.length, GLOBALDOTAsyncFunctionStart.func)
+    ("GLOBAL.PerformPromiseThen", GLOBALDOTPerformPromiseThen.length, GLOBALDOTPerformPromiseThen.func)
   )
   lazy val initHeap: Heap = Heap(BaseHeap.get ++ BuiltinHeap.get ++ primitiveMap ++ Map(
     NamedAddr("CONST_Reject") -> IRSymbol(Str("CONST_Reject")),

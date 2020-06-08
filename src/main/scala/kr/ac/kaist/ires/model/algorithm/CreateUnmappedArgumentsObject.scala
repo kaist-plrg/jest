@@ -9,7 +9,7 @@ object CreateUnmappedArgumentsObject extends Algorithm {
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""CreateUnmappedArgumentsObject" (argumentsList) => {
     let len = argumentsList["length"]
-    !!! "Let id:{obj} be OrdinaryObjectCreate ( % Object . prototype % , « [ [ ParameterMap ] ] » ) ."
+    app obj = (OrdinaryObjectCreate INTRINSIC_ObjectPrototype (new ["ParameterMap"]))
     obj["ParameterMap"] = undefined
     app __x0__ = (DefinePropertyOrThrow obj "length" (new PropertyDescriptor("Value" -> len, "Writable" -> true, "Enumerable" -> false, "Configurable" -> true)))
     __x0__
@@ -23,7 +23,7 @@ object CreateUnmappedArgumentsObject extends Algorithm {
       __x2__
       index = (+ index 1i)
     }
-    !!! "Perform ! DefinePropertyOrThrow ( id:{obj} , @ @ iterator , PropertyDescriptor { [ [ Value ] ] : % Array . prototype . values % , [ [ Writable ] ] : value:{true} , [ [ Enumerable ] ] : value:{false} , [ [ Configurable ] ] : value:{true} } ) ."
+    app result = (DefinePropertyOrThrow obj SYMBOL_iterator (new PropertyDescriptor ("Value" -> INTRINSIC_ArrayProto_values, "Writable" -> true, "Enumerable" -> false, "Configurable" -> true)))
     app __x3__ = (DefinePropertyOrThrow obj "callee" (new PropertyDescriptor("Get" -> INTRINSIC_ThrowTypeError, "Set" -> INTRINSIC_ThrowTypeError, "Enumerable" -> false, "Configurable" -> false)))
     if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
     __x3__

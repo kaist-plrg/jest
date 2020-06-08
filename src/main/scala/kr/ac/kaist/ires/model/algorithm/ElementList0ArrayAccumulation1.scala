@@ -7,7 +7,7 @@ object ElementList0ArrayAccumulation1 extends Algorithm {
   val name: String = "ElementList0ArrayAccumulation1"
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = FixUIdWalker(parseFunc(""""ElementList0ArrayAccumulation1" (this, Elision, AssignmentExpression) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ElementList0ArrayAccumulation1" (this, Elision, AssignmentExpression, array, nextIndex) => {
     if (! (= Elision absent)) {
       access __x0__ = (Elision "ArrayAccumulation")
       app __x1__ = (__x0__ array nextIndex)

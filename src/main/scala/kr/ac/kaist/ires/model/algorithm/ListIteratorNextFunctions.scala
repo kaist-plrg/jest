@@ -7,7 +7,7 @@ object ListIteratorNextFunctions extends Algorithm {
   val name: String = "ListIteratorNextFunctions"
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = FixUIdWalker(parseFunc(""""ListIteratorNextFunctions" () => {
+  val func: Func = FixUIdWalker(parseFunc(""""ListIteratorNextFunctions" (this) => {
     let O = this
     app __x0__ = (Type O)
     assert (= __x0__ Object)

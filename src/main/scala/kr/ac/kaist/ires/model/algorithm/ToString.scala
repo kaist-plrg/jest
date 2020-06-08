@@ -13,8 +13,9 @@ object ToString extends Algorithm {
     else if (= atype "Null") return "null"
     else if (= atype "Boolean") if argument return "true" else return "false"
     else if (= atype "Number") {
-      app __x0__ = (NumberToString argument)
-      return __x0__
+      app result = (PRIMITIVES.Number.toString argument)
+      ! result
+      return result
     }
     else if (= atype "String") return argument
     else if (= atype "Symbol") return (new Completion (
@@ -25,7 +26,11 @@ object ToString extends Algorithm {
         "SubMap" -> (new SubMap())
       )),
       "Target" -> CONST_empty
-    )) else {
+    )) else if (= atype "BigInt") {
+      app result = (PRIMITIVES.BigInt.toString argument)
+      ! result
+      return result
+    } else {
       app __x0__ = (ToPrimitive argument "String")
       if (is-completion __x0__) {
         if (= __x0__.Type CONST_normal) __x0__ = __x0__.Value

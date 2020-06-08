@@ -12,7 +12,13 @@ object GetActiveScriptOrModule extends Algorithm {
       app __x0__ = (WrapCompletion null)
       return __x0__
     } else {}
-    !!! "Let id:{ec} be the topmost execution context on the execution context stack whose ScriptOrModule component is not value:{null} ."
-    !!! "If no such execution context exists , return value:{null} . Otherwise , return id:{ec} ' s ScriptOrModule ."
+    let len = GLOBAL_executionStack.length
+    let k = (- len 1i)
+    while (! (< k 0i)) {
+      let ec = GLOBAL_executionStack[k]
+      if (! (= ec.ScriptOrModule null)) return ec.ScriptOrModule
+      else k = (- k 1i)
+    }
+    return null
   }"""), this)
 }

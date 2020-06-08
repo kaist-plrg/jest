@@ -12,7 +12,7 @@ object CreateListIteratorRecord extends Algorithm {
     let iterator = __x0__
     iterator["IteratedList"] = list
     iterator["ListNextIndex"] = 0i
-    let steps = !!! "Algorithms"
+    let steps = (new algorithm("name" -> "next", "length" -> 0i, "step" -> ListIteratorNextFunctions))
     app __x1__ = (CreateBuiltinFunction steps (new []))
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
     let next = __x1__

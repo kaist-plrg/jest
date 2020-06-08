@@ -16,7 +16,10 @@ object GLOBALDOTObject extends Algorithm {
       app __x2__ = (WrapCompletion __x1__)
       return __x2__
     } else {}
-    !!! "If id:{value} is value:{undefined} or value:{null} , return OrdinaryObjectCreate ( % Object . prototype % ) ."
+    if (|| (= value undefined) (= value null)) {
+      app obj = (OrdinaryObjectCreate INTRINSIC_ObjectPrototype)
+      return obj
+    } else {}
     app __x3__ = (ToObject value)
     if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
     app __x4__ = (WrapCompletion __x3__)

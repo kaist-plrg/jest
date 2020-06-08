@@ -12,7 +12,7 @@ object GeneratorDeclaration0InstantiateFunctionObject0 extends Algorithm {
     let name = __x0__
     app __x1__ = (OrdinaryFunctionCreate INTRINSIC_Generator FormalParameters GeneratorBody CONST_nonlexicalthis scope)
     let F = __x1__
-    !!! "Let id:{prototype} be OrdinaryObjectCreate ( % Generator . prototype % ) ."
+    app id = (OrdinaryObjectCreate INTRINSIC_GeneratorPrototype)
     app __x2__ = (DefinePropertyOrThrow F "prototype" (new PropertyDescriptor("Value" -> prototype, "Writable" -> true, "Enumerable" -> false, "Configurable" -> false)))
     __x2__
     app __x3__ = (SetFunctionName F name)

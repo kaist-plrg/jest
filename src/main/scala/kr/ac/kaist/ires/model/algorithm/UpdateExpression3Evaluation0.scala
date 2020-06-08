@@ -20,7 +20,7 @@ object UpdateExpression3Evaluation0 extends Algorithm {
     ! __x4__
     let newValue = __x4__
     app __x5__ = (PutValue expr newValue)
-    if (is-completion __x5__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
+    if (is-completion __x5__) if (= __x5__["Type"] CONST_normal) __x5__ = __x5__["Value"] else return __x5__ else {}
     __x5__
     app __x6__ = (WrapCompletion newValue)
     return __x6__

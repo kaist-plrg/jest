@@ -13,7 +13,16 @@ object GLOBALDOTFunctionDOTprototypeDOTtoString extends Algorithm {
       app __x0__ = (WrapCompletion "")
       return __x0__
     } else {}
-    !!! "If Type ( id:{func} ) is Object and id:{func} has a [ [ SourceText ] ] internal slot and id:{func} . [ [ SourceText ] ] is a sequence of Unicode code points and ! HostHasSourceTextAvailable ( id:{func} ) is value:{true} , then step-list:{...}"
+    app T = (Type func)
+    if (&& (= T "Object") (! (= func.SourceText absent))) {
+      app T = (Type func.SourceText)
+      app available = (HostHasSourceTextAvailable func)
+      ! available
+      if (&& (= T "String") available) {
+        app wrapped = (WrapCompletion func.SourceText)
+        return wrapped
+      } else {}
+    } else {}
     app __x1__ = (Type func)
     let __x2__ = (= __x1__ Object)
     if __x2__ {

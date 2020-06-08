@@ -12,7 +12,7 @@ object ArrowFunction0Evaluation0 extends Algorithm {
     let scope = __x0__
     access __x1__ = (ArrowParameters "CoveredFormalsList")
     let parameters = __x1__
-    !!! "Let id:{closure} be OrdinaryFunctionCreate ( % Function . prototype % , id:{parameters} , nt:{ConciseBody} , const:{lexical-this} , id:{scope} ) ."
+    app closure = (OrdinaryFunctionCreate INTRINSIC_FunctionPrototype parameters ConciseBody CONST_lexicalthis scope)
     closure["SourceText"] = (get-syntax this)
     app __x2__ = (WrapCompletion closure)
     return __x2__

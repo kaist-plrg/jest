@@ -14,7 +14,7 @@ object GLOBALDOTINTRINSIC_ArrayIteratorPrototypeDOTnext extends Algorithm {
       app __x1__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
       return __x1__
     } else {}
-    if (|| (= absent O["IteratedObject"]) (|| (= absent O["ArrayIteratorNextIndex"]) (= absent O["ArrayIterationKind"]))) {
+    if (|| (= absent O["IteratedArrayLike"]) (|| (= absent O["ArrayLikeNextIndex"]) (= absent O["ArrayLikeIterationKind"]))) {
       app __x2__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
       return __x2__
     } else {}

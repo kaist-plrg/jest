@@ -10,7 +10,7 @@ object OrdinaryFunctionCreate extends Algorithm {
   val func: Func = FixUIdWalker(parseFunc(""""OrdinaryFunctionCreate" (functionPrototype, ParameterList, Body, thisMode, Scope) => {
     app __x0__ = (Type functionPrototype)
     assert (= __x0__ Object)
-    !!! "Let id:{internalSlotsList} be the internal slots listed in Table 27 ."
+    let internalSlotsList = (new ["Environment", "FormalParameters", "ECMAScriptCode", "ConstructorKind", "Realm", "ScriptOrModule", "ThisMode", "Strict", "HomeObject", "SourceText", "IsClassConstructor"])
     app __x1__ = (OrdinaryObjectCreate functionPrototype internalSlotsList)
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
     let F = __x1__

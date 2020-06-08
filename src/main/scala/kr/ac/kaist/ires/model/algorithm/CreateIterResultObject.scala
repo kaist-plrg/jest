@@ -10,7 +10,7 @@ object CreateIterResultObject extends Algorithm {
   val func: Func = FixUIdWalker(parseFunc(""""CreateIterResultObject" (value, done) => {
     app __x0__ = (Type done)
     assert (= __x0__ Boolean)
-    !!! "Let id:{obj} be OrdinaryObjectCreate ( % Object . prototype % ) ."
+    app obj = (OrdinaryObjectCreate INTRINSIC_ObjectPrototype)
     app __x1__ = (CreateDataPropertyOrThrow obj "value" value)
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
     __x1__

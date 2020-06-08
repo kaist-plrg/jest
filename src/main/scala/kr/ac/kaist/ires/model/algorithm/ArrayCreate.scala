@@ -16,7 +16,7 @@ object ArrayCreate extends Algorithm {
       app __x1__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_RangeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
       return __x1__
     } else {}
-    !!! "If id:{proto} is not present , set id:{proto} to % Array . prototype % ."
+    if (= proto absent) proto = INTRINSIC_ArrayPrototype else {}
     app __x2__ = (MakeBasicObject (new ["Prototype", "Extensible"]))
     if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     let A = __x2__

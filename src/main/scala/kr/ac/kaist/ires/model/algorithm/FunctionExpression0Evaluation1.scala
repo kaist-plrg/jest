@@ -16,7 +16,7 @@ object FunctionExpression0Evaluation1 extends Algorithm {
     let name = __x1__
     app __x2__ = (envRec["CreateImmutableBinding"] envRec name false)
     __x2__
-    !!! "Let id:{closure} be OrdinaryFunctionCreate ( % Function . prototype % , nt:{FormalParameters} , nt:{FunctionBody} , const:{non-lexical-this} , id:{funcEnv} ) ."
+    app closure = (OrdinaryFunctionCreate INTRINSIC_FunctionPrototype FormalParameters FunctionBody CONST_nonlexicalthis funcEnv)
     app __x3__ = (MakeConstructor closure)
     __x3__
     app __x4__ = (SetFunctionName closure name)

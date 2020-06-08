@@ -12,7 +12,7 @@ object FromPropertyDescriptor extends Algorithm {
       app __x0__ = (WrapCompletion undefined)
       return __x0__
     } else {}
-    !!! "Let id:{obj} be OrdinaryObjectCreate ( % Object . prototype % ) ."
+    app obj = (OrdinaryObjectCreate INTRINSIC_ObjectPrototype)
     if (! (= Desc["Value"] absent)) {
       app __x1__ = (CreateDataPropertyOrThrow obj "value" Desc["Value"])
       if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}

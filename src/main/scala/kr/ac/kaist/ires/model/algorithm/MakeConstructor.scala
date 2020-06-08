@@ -14,7 +14,7 @@ object MakeConstructor extends Algorithm {
     F["ConstructorKind"] = CONST_base
     if (= writablePrototype absent) writablePrototype = true else {}
     if (= prototype absent) {
-      !!! "Set id:{prototype} to OrdinaryObjectCreate ( % Object . prototype % ) ."
+      app prototype = (OrdinaryObjectCreate INTRINSIC_ObjectPrototype)
       app __x1__ = (DefinePropertyOrThrow prototype "constructor" (new PropertyDescriptor("Value" -> F, "Writable" -> writablePrototype, "Enumerable" -> false, "Configurable" -> true)))
       if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
       __x1__

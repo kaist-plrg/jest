@@ -14,8 +14,8 @@ object GLOBALDOTNumber extends Algorithm {
       app __x1__ = (ToNumeric value)
       if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
       let prim = __x1__
-      !!! "If Type ( id:{prim} ) is BigInt , let id:{n} be the Number value for the mathematical value of id:{prim} ."
-      !!! "Otherwise , let id:{n} be id:{prim} ."
+      app T = (Type prim)
+      if (= T BigInt) let n = (convert prim bigint2num ) else let n = prim
     } else let n = 0i
     if (= NewTarget undefined) {
       app __x2__ = (WrapCompletion n)

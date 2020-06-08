@@ -11,7 +11,7 @@ object GLOBALDOTReferenceError extends Algorithm {
     app __x0__ = (GetArgument argumentsList 0i)
     let message = __x0__
     if (= NewTarget undefined) let newTarget = GLOBAL_context["Function"] else let newTarget = NewTarget
-    app __x1__ = (OrdinaryCreateFromConstructor newTarget INTRINSIC_ReferenceErrorPrototype (new ["ErrorData"]))
+    app __x1__ = (OrdinaryCreateFromConstructor newTarget "%ReferenceError.prototype%" (new ["ErrorData"]))
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
     let O = __x1__
     if (! (= message undefined)) {

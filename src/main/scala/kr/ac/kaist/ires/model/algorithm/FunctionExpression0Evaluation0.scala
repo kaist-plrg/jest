@@ -10,7 +10,7 @@ object FunctionExpression0Evaluation0 extends Algorithm {
   val func: Func = FixUIdWalker(parseFunc(""""FunctionExpression0Evaluation0" (this, FormalParameters, FunctionBody) => {
     access __x0__ = (GLOBAL_context "LexicalEnvironment")
     let scope = __x0__
-    !!! "Let id:{closure} be OrdinaryFunctionCreate ( % Function . prototype % , nt:{FormalParameters} , nt:{FunctionBody} , const:{non-lexical-this} , id:{scope} ) ."
+    app closure = (OrdinaryFunctionCreate INTRINSIC_FunctionPrototype FormalParameters FunctionBody CONST_nonlexicalthis scope)
     app __x1__ = (MakeConstructor closure)
     __x1__
     closure["SourceText"] = (get-syntax this)

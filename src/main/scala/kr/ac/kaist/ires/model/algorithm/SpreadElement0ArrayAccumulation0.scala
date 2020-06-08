@@ -7,7 +7,7 @@ object SpreadElement0ArrayAccumulation0 extends Algorithm {
   val name: String = "SpreadElement0ArrayAccumulation0"
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = FixUIdWalker(parseFunc(""""SpreadElement0ArrayAccumulation0" (this, AssignmentExpression) => {
+  val func: Func = FixUIdWalker(parseFunc(""""SpreadElement0ArrayAccumulation0" (this, AssignmentExpression, array, nextIndex) => {
     access __x0__ = (AssignmentExpression "Evaluation")
     let spreadRef = __x0__
     app __x1__ = (GetValue spreadRef)

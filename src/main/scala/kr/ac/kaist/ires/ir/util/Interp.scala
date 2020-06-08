@@ -576,9 +576,13 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
     case (OXor, Bool(l), Bool(r)) => Bool(l ^ r)
 
     // equality operations
+    case (OEq, ASTVal(l), Str(r)) => Bool(l.toString == r)
+    case (OEq, Str(l), ASTVal(r)) => Bool(l == r.toString)
     case (OEq, INum(l), Num(r)) => Bool(!(r equals -0.0) && l == r)
     case (OEq, Num(l), INum(r)) => Bool(!(l equals -0.0) && l == r)
     case (OEq, Num(l), Num(r)) => Bool(l equals r)
+    case (OEq, Num(l), BigINum(r)) => Bool(l == r)
+    case (OEq, BigINum(l), Num(r)) => Bool(l == r)
     case (OEq, l, r) => Bool(l == r)
 
     // double equality operations
