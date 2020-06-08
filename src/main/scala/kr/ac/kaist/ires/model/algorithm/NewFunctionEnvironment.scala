@@ -13,7 +13,7 @@ object NewFunctionEnvironment extends Algorithm {
     let env = (new LexicalEnvironment("SubMap" -> (new SubMap())))
     let envRec = (new FunctionEnvironmentRecord("SubMap" -> (new SubMap())))
     envRec["FunctionObject"] = F
-    if (= F["ThisMode"] CONST_lexical) envRec["ThisBindingStatus"] = "lexical" else envRec["ThisBindingStatus"] = "uninitialized"
+    if (= F["ThisMode"] CONST_lexical) envRec["ThisBindingStatus"] = CONST_lexical else envRec["ThisBindingStatus"] = CONST_uninitialized
     let home = F["HomeObject"]
     envRec["HomeObject"] = home
     envRec["NewTarget"] = newTarget

@@ -15,15 +15,15 @@ object GLOBALDOTGeneratorResume extends Algorithm {
     app __x2__ = (GeneratorValidate generator)
     if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     let state = __x2__
-    if (= state "completed") {
+    if (= state CONST_completed) {
       app __x3__ = (CreateIterResultObject undefined true)
       app __x4__ = (WrapCompletion __x3__)
       return __x4__
     } else {}
-    assert (|| (= state "suspendedStart") (= state "suspendedYield"))
+    assert (|| (= state CONST_suspendedStart) (= state CONST_suspendedYield))
     let genContext = generator["GeneratorContext"]
     let methodContext = GLOBAL_context
-    generator["GeneratorState"] = "executing"
+    generator["GeneratorState"] = CONST_executing
     append genContext -> GLOBAL_executionStack
     GLOBAL_context = GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 1i)]
     app __x5__ = (NormalCompletion value)

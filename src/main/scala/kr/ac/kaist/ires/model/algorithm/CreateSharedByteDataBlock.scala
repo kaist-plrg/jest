@@ -17,7 +17,7 @@ object CreateSharedByteDataBlock extends Algorithm {
     let __x1__ = 0i
     while (< __x1__ __x0__["length"]) {
       let i = __x0__[__x1__]
-      append (new WriteSharedMemory("Order" -> "Init", "NoTear" -> true, "Block" -> db, "ByteIndex" -> i, "ElementSize" -> 1i, "Payload" -> zero)) -> eventList
+      append (new WriteSharedMemory("Order" -> CONST_Init, "NoTear" -> true, "Block" -> db, "ByteIndex" -> i, "ElementSize" -> 1i, "Payload" -> zero)) -> eventList
       __x1__ = (+ __x1__ 1i)
     }
     app __x2__ = (WrapCompletion db)

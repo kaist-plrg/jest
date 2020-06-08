@@ -8,7 +8,6 @@ object GeneratorExpression0Evaluation1 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""GeneratorExpression0Evaluation1" (this, BindingIdentifier, FormalParameters, GeneratorBody) => {
-    if true let strict = true else let strict = false
     let scope = GLOBAL_context["LexicalEnvironment"]
     app __x0__ = (NewDeclarativeEnvironment scope)
     let funcEnv = __x0__
@@ -17,18 +16,17 @@ object GeneratorExpression0Evaluation1 extends Algorithm {
     let name = __x1__
     app __x2__ = (envRec["CreateImmutableBinding"] envRec name false)
     __x2__
-    app __x3__ = (GeneratorFunctionCreate CONST_Normal FormalParameters GeneratorBody funcEnv strict)
+    app __x3__ = (OrdinaryFunctionCreate INTRINSIC_Generator FormalParameters GeneratorBody CONST_nonlexicalthis funcEnv)
     let closure = __x3__
-    app __x4__ = (ObjectCreate INTRINSIC_GeneratorPrototype)
-    let prototype = __x4__
-    app __x5__ = (DefinePropertyOrThrow closure "prototype" (new PropertyDescriptor("Value" -> prototype, "Writable" -> true, "Enumerable" -> false, "Configurable" -> false)))
+    !!! "Let id:{prototype} be OrdinaryObjectCreate ( % Generator . prototype % ) ."
+    app __x4__ = (DefinePropertyOrThrow closure "prototype" (new PropertyDescriptor("Value" -> prototype, "Writable" -> true, "Enumerable" -> false, "Configurable" -> false)))
+    __x4__
+    app __x5__ = (SetFunctionName closure name)
     __x5__
-    app __x6__ = (SetFunctionName closure name)
+    app __x6__ = (envRec["InitializeBinding"] envRec name closure)
     __x6__
-    app __x7__ = (envRec["InitializeBinding"] envRec name closure)
-    __x7__
     closure["SourceText"] = (get-syntax this)
-    app __x8__ = (WrapCompletion closure)
-    return __x8__
+    app __x7__ = (WrapCompletion closure)
+    return __x7__
   }"""), this)
 }

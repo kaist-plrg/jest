@@ -14,7 +14,7 @@ object GLOBALDOTArrayDOTprototypeDOTtoString extends Algorithm {
     app __x1__ = (Get array "join")
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
     let func = __x1__
-    !!! "Etc"
+    !!! "If IsCallable ( id:{func} ) is value:{false} , set id:{func} to the intrinsic function % Object . prototype . toString % ."
     app __x2__ = (Call func array)
     if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     app __x3__ = (WrapCompletion __x2__)

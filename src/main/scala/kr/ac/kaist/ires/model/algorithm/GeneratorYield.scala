@@ -12,7 +12,7 @@ object GeneratorYield extends Algorithm {
     let generator = genContext["Generator"]
     app __x0__ = (GetGeneratorKind )
     assert (= __x0__ CONST_sync)
-    generator["GeneratorState"] = "suspendedYield"
+    generator["GeneratorState"] = CONST_suspendedYield
     if (= GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 1i)] genContext) {
       __x1__ = (- GLOBAL_executionStack["length"] 1i)
       (pop GLOBAL_executionStack __x1__)

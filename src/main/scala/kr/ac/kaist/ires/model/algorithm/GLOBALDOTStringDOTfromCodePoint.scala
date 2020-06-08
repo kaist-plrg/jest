@@ -17,28 +17,27 @@ object GLOBALDOTStringDOTfromCodePoint extends Algorithm {
       app __x0__ = (ToNumber next)
       if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
       let nextCP = __x0__
-      app __x1__ = (ToInteger nextCP)
+      app __x1__ = (IsInteger nextCP)
       if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
-      app __x2__ = (SameValue nextCP __x1__)
-      if (= __x2__ false) {
+      if (= __x1__ false) {
+        app __x2__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_RangeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
+        return __x2__
+      } else {}
+      if (|| (< nextCP 0i) (< 1114111i nextCP)) {
         app __x3__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_RangeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
         return __x3__
       } else {}
-      if (|| (< nextCP 0i) (< 1114111i nextCP)) {
-        app __x4__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_RangeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
-        return __x4__
-      } else {}
-      access __x5__ = (nextCP "UTF16Encoding")
-      let __x6__ = __x5__
-      let __x7__ = 0i
-      while (< __x7__ __x6__["length"]) {
-        let __x8__ = __x6__[__x7__]
-        append __x8__ -> elements
-        __x7__ = (+ __x7__ 1i)
+      access __x4__ = (nextCP "UTF16Encoding")
+      let __x5__ = __x4__
+      let __x6__ = 0i
+      while (< __x6__ __x5__["length"]) {
+        let __x7__ = __x5__[__x6__]
+        append __x7__ -> elements
+        __x6__ = (+ __x6__ 1i)
       }
       nextIndex = (+ nextIndex 1i)
     }
-    app __x9__ = (WrapCompletion !!! "StringOp")
-    return __x9__
+    app __x8__ = (WrapCompletion !!! "StringOp")
+    return __x8__
   }"""), this)
 }

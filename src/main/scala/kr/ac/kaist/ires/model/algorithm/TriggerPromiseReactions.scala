@@ -12,11 +12,13 @@ object TriggerPromiseReactions extends Algorithm {
     let __x1__ = 0i
     while (< __x1__ __x0__["length"]) {
       let reaction = __x0__[__x1__]
-      app __x2__ = (EnqueueJob "PromiseJobs" PromiseReactionJob (new [reaction, argument]))
-      __x2__
+      app __x2__ = (NewPromiseReactionJob reaction argument)
+      let job = __x2__
+      app __x3__ = (HostEnqueuePromiseJob job["Job"] job["Realm"])
+      __x3__
       __x1__ = (+ __x1__ 1i)
     }
-    app __x3__ = (WrapCompletion undefined)
-    return __x3__
+    app __x4__ = (WrapCompletion undefined)
+    return __x4__
   }"""), this)
 }

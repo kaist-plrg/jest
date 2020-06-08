@@ -13,7 +13,7 @@ object GLOBALDOTencodeURI extends Algorithm {
     app __x1__ = (ToString uri)
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
     let uriString = __x1__
-    !!! "Etc"
+    !!! "Let id:{unescapedURISet} be a String containing one instance of each code unit valid in nt:{uriReserved} and nt:{uriUnescaped} plus value:{\"#\"} ."
     app __x2__ = (Encode uriString unescapedURISet)
     if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     app __x3__ = (WrapCompletion __x2__)

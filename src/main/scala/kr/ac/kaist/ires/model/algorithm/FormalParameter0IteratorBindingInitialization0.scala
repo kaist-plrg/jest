@@ -8,28 +8,9 @@ object FormalParameter0IteratorBindingInitialization0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""FormalParameter0IteratorBindingInitialization0" (this, BindingElement, iteratorRecord, environment) => {
-    access __x0__ = (BindingElement "ContainsExpression")
-    if (= __x0__ false) {
-      access __x1__ = (BindingElement "IteratorBindingInitialization")
-      app __x2__ = (__x1__ iteratorRecord environment)
-      app __x3__ = (WrapCompletion __x2__)
-      return __x3__
-    } else {}
-    let currentContext = GLOBAL_context
-    access __x4__ = (currentContext "VariableEnvironment")
-    let originalEnv = __x4__
-    assert (= currentContext["VariableEnvironment"] currentContext["LexicalEnvironment"])
-    assert (= environment originalEnv)
-    app __x5__ = (NewDeclarativeEnvironment originalEnv)
-    let paramVarEnv = __x5__
-    currentContext["VariableEnvironment"] = paramVarEnv
-    currentContext["LexicalEnvironment"] = paramVarEnv
-    access __x6__ = (BindingElement "IteratorBindingInitialization")
-    app __x7__ = (__x6__ iteratorRecord environment)
-    let result = __x7__
-    currentContext["VariableEnvironment"] = originalEnv
-    currentContext["LexicalEnvironment"] = originalEnv
-    app __x8__ = (WrapCompletion result)
-    return __x8__
+    access __x0__ = (BindingElement "IteratorBindingInitialization")
+    app __x1__ = (__x0__ iteratorRecord environment)
+    app __x2__ = (WrapCompletion __x1__)
+    return __x2__
   }"""), this)
 }

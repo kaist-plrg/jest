@@ -46,9 +46,11 @@ object GLOBALDOTPromiseResolveFunctions extends Algorithm {
       app __x14__ = (WrapCompletion __x13__)
       return __x14__
     } else {}
-    app __x15__ = (EnqueueJob "PromiseJobs" PromiseResolveThenableJob (new [promise, resolution, thenAction]))
-    __x15__
-    app __x16__ = (WrapCompletion undefined)
-    return __x16__
+    app __x15__ = (NewPromiseResolveThenableJob promise resolution thenAction)
+    let job = __x15__
+    app __x16__ = (HostEnqueuePromiseJob job["Job"] job["Realm"])
+    __x16__
+    app __x17__ = (WrapCompletion undefined)
+    return __x17__
   }"""), this)
 }

@@ -15,32 +15,10 @@ object StrictEqualityComparison extends Algorithm {
       return __x2__
     } else {}
     app __x3__ = (Type x)
-    if (= __x3__ Number) {
-      if (= x NaN) {
-        app __x4__ = (WrapCompletion false)
-        return __x4__
-      } else {}
-      if (= y NaN) {
-        app __x5__ = (WrapCompletion false)
-        return __x5__
-      } else {}
-      if (= x y) {
-        app __x6__ = (WrapCompletion true)
-        return __x6__
-      } else {}
-      if (&& (= x 0i) (= y -0.0)) {
-        app __x7__ = (WrapCompletion true)
-        return __x7__
-      } else {}
-      if (&& (= x -0.0) (= y 0i)) {
-        app __x8__ = (WrapCompletion true)
-        return __x8__
-      } else {}
-      app __x9__ = (WrapCompletion false)
-      return __x9__
-    } else {}
-    app __x10__ = (SameValueNonNumber x y)
-    app __x11__ = (WrapCompletion __x10__)
-    return __x11__
+    if (|| (= __x3__ Number) (= __x3__ BigInt)) !!! "Return ! Type ( id:{x} ) : : equal ( id:{x} , id:{y} ) ." else {}
+    app __x4__ = (SameValueNonNumeric x y)
+    if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
+    app __x5__ = (WrapCompletion __x4__)
+    return __x5__
   }"""), this)
 }

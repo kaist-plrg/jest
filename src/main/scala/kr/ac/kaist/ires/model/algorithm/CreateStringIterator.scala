@@ -10,10 +10,10 @@ object CreateStringIterator extends Algorithm {
   val func: Func = FixUIdWalker(parseFunc(""""CreateStringIterator" (string) => {
     app __x0__ = (Type string)
     assert (= __x0__ String)
-    app __x1__ = (ObjectCreate INTRINSIC_StringIteratorPrototype (new ["IteratedString", "StringIteratorNextIndex"]))
+    app __x1__ = (OrdinaryObjectCreate INTRINSIC_StringIteratorPrototype (new ["IteratedString", "StringNextIndex"]))
     let iterator = __x1__
     iterator["IteratedString"] = string
-    iterator["StringIteratorNextIndex"] = 0i
+    iterator["StringNextIndex"] = 0i
     app __x2__ = (WrapCompletion iterator)
     return __x2__
   }"""), this)

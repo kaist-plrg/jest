@@ -36,9 +36,9 @@ object BindingRestElement1IteratorBindingInitialization0 extends Algorithm {
       nextValue
       app __x8__ = (ToString n)
       if (is-completion __x8__) if (= __x8__["Type"] CONST_normal) __x8__ = __x8__["Value"] else return __x8__ else {}
-      app __x9__ = (CreateDataProperty A __x8__ nextValue)
-      let status = __x9__
-      assert (= status true)
+      app __x9__ = (CreateDataPropertyOrThrow A __x8__ nextValue)
+      if (is-completion __x9__) if (= __x9__["Type"] CONST_normal) __x9__ = __x9__["Value"] else return __x9__ else {}
+      __x9__
       n = (+ n 1i)
     }
   }"""), this)

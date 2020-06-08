@@ -22,22 +22,19 @@ object GLOBALDOTNumberDOTprototypeDOTtoPrecision extends Algorithm {
     app __x4__ = (ToInteger precision)
     if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
     let p = __x4__
-    if (= x NaN) {
-      app __x5__ = (WrapCompletion "NaN")
-      return __x5__
-    } else {}
+    !!! "If id:{x} is value:{NaN} , return the String value:{\"NaN\"} ."
     let s = ""
     if (< x 0i) {
       s = "-"
       x = (- x)
     } else {}
     if (== x Infinity) {
-      app __x6__ = (WrapCompletion (+ s "Infinity"))
-      return __x6__
+      app __x5__ = (WrapCompletion (+ s "Infinity"))
+      return __x5__
     } else {}
     if (|| (< p 1i) (< 100i p)) {
-      app __x7__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_RangeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
-      return __x7__
+      app __x6__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_RangeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
+      return __x6__
     } else {}
     if (== x 0i) {
       let m = !!! "StringOp"
@@ -52,20 +49,21 @@ object GLOBALDOTNumberDOTprototypeDOTtoPrecision extends Algorithm {
           m = (+ (+ a ".") b)
         } else {}
         if (< 0i e) let c = "+" else {
+          assert (< e 0i)
           let c = "-"
           e = (- e)
         }
         let d = !!! "StringOp"
-        app __x8__ = (WrapCompletion (+ (+ (+ (+ s m) "e") c) d))
-        return __x8__
+        app __x7__ = (WrapCompletion (+ (+ (+ (+ s m) "e") c) d))
+        return __x7__
       } else {}
     }
     if (== e (- p 1i)) {
-      app __x9__ = (WrapCompletion (+ s m))
-      return __x9__
+      app __x8__ = (WrapCompletion (+ s m))
+      return __x8__
     } else {}
     if (! (< e 0i)) !!! "Etc" else !!! "Etc"
-    app __x10__ = (WrapCompletion (+ s m))
-    return __x10__
+    app __x9__ = (WrapCompletion (+ s m))
+    return __x9__
   }"""), this)
 }

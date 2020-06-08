@@ -8,13 +8,13 @@ object OrdinarySetPrototypeOf extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""OrdinarySetPrototypeOf" (O, V) => {
-    let extensible = O["Extensible"]
     let current = O["Prototype"]
     app __x0__ = (SameValue V current)
     if (= __x0__ true) {
       app __x1__ = (WrapCompletion true)
       return __x1__
     } else {}
+    let extensible = O["Extensible"]
     if (= extensible false) {
       app __x2__ = (WrapCompletion false)
       return __x2__

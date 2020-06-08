@@ -43,6 +43,9 @@ object ArrowParameters1 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "BoundNames0" -> ArrowParameters1BoundNames0.func,
     "Contains0" -> ArrowParameters1Contains0.func,
-    "IsSimpleParameterList0" -> ArrowParameters1IsSimpleParameterList0.func
+    "ContainsExpression0" -> ArrowParameters1ContainsExpression0.func,
+    "ExpectedArgumentCount0" -> ArrowParameters1ExpectedArgumentCount0.func,
+    "IsSimpleParameterList0" -> ArrowParameters1IsSimpleParameterList0.func,
+    "IteratorBindingInitialization0" -> ArrowParameters1IteratorBindingInitialization0.func
   )
 }

@@ -18,9 +18,9 @@ object CreateArrayFromList extends Algorithm {
       let e = __x1__[__x2__]
       app __x3__ = (ToString n)
       if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
-      app __x4__ = (CreateDataProperty array __x3__ e)
-      let status = __x4__
-      assert (= status true)
+      app __x4__ = (CreateDataPropertyOrThrow array __x3__ e)
+      if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
+      __x4__
       n = (+ n 1i)
       __x2__ = (+ __x2__ 1i)
     }

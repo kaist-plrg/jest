@@ -41,6 +41,8 @@ object FormalParameters1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "ExpectedArgumentCount0" -> FormalParameters1ExpectedArgumentCount0.func,
+    "ExpectedArgumentCount0" -> FormalParameters1ExpectedArgumentCount0.func,
+    "IsSimpleParameterList0" -> FormalParameters1IsSimpleParameterList0.func,
     "IsSimpleParameterList0" -> FormalParameters1IsSimpleParameterList0.func
   )
 }

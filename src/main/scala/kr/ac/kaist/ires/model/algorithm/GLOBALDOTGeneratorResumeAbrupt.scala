@@ -15,11 +15,11 @@ object GLOBALDOTGeneratorResumeAbrupt extends Algorithm {
     app __x2__ = (GeneratorValidate generator)
     if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     let state = __x2__
-    if (= state "suspendedStart") {
-      generator["GeneratorState"] = "completed"
-      state = "completed"
+    if (= state CONST_suspendedStart) {
+      generator["GeneratorState"] = CONST_completed
+      state = CONST_completed
     } else {}
-    if (= state "completed") {
+    if (= state CONST_completed) {
       if (= abruptCompletion["Type"] CONST_return) {
         app __x3__ = (CreateIterResultObject abruptCompletion["Value"] true)
         app __x4__ = (WrapCompletion __x3__)
@@ -29,10 +29,10 @@ object GLOBALDOTGeneratorResumeAbrupt extends Algorithm {
       app __x6__ = (WrapCompletion __x5__)
       return __x6__
     } else {}
-    assert (= state "suspendedYield")
+    assert (= state CONST_suspendedYield)
     let genContext = generator["GeneratorContext"]
     let methodContext = GLOBAL_context
-    generator["GeneratorState"] = "executing"
+    generator["GeneratorState"] = CONST_executing
     append genContext -> GLOBAL_executionStack
     GLOBAL_context = GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 1i)]
     withcont __x7__ (result) ={

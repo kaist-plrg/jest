@@ -21,32 +21,34 @@ object ArrayExoticObjectDOTDefineOwnProperty extends Algorithm {
         app __x4__ = (OrdinaryGetOwnProperty A "length")
         let oldLenDesc = __x4__
         let oldLen = oldLenDesc["Value"]
-        app __x5__ = (ToUint32 P)
-        if (is-completion __x5__) if (= __x5__["Type"] CONST_normal) __x5__ = __x5__["Value"] else return __x5__ else {}
-        let index = __x5__
+        app __x5__ = (IsNonNegativeInteger oldLen)
+        assert (= __x5__ true)
+        app __x6__ = (ToUint32 P)
+        if (is-completion __x6__) if (= __x6__["Type"] CONST_normal) __x6__ = __x6__["Value"] else return __x6__ else {}
+        let index = __x6__
         if (&& (! (< index oldLen)) (= oldLenDesc["Writable"] false)) {
-          app __x6__ = (WrapCompletion false)
-          return __x6__
+          app __x7__ = (WrapCompletion false)
+          return __x7__
         } else {}
-        app __x7__ = (OrdinaryDefineOwnProperty A P Desc)
-        if (is-completion __x7__) if (= __x7__["Type"] CONST_normal) __x7__ = __x7__["Value"] else return __x7__ else {}
-        let succeeded = __x7__
+        app __x8__ = (OrdinaryDefineOwnProperty A P Desc)
+        if (is-completion __x8__) if (= __x8__["Type"] CONST_normal) __x8__ = __x8__["Value"] else return __x8__ else {}
+        let succeeded = __x8__
         if (= succeeded false) {
-          app __x8__ = (WrapCompletion false)
-          return __x8__
+          app __x9__ = (WrapCompletion false)
+          return __x9__
         } else {}
         if (! (< index oldLen)) {
           oldLenDesc["Value"] = (+ index 1i)
-          app __x9__ = (OrdinaryDefineOwnProperty A "length" oldLenDesc)
-          let succeeded = __x9__
+          app __x10__ = (OrdinaryDefineOwnProperty A "length" oldLenDesc)
+          let succeeded = __x10__
           assert (= succeeded true)
         } else {}
-        app __x10__ = (WrapCompletion true)
-        return __x10__
+        app __x11__ = (WrapCompletion true)
+        return __x11__
       } else {}
     }
-    app __x11__ = (OrdinaryDefineOwnProperty A P Desc)
-    app __x12__ = (WrapCompletion __x11__)
-    return __x12__
+    app __x12__ = (OrdinaryDefineOwnProperty A P Desc)
+    app __x13__ = (WrapCompletion __x12__)
+    return __x13__
   }"""), this)
 }

@@ -25,7 +25,7 @@ object GLOBALDOTAsyncGeneratorStart extends Algorithm {
         (pop GLOBAL_executionStack __x3__)
       } else {}
       GLOBAL_context = GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 1i)]
-      generator["AsyncGeneratorState"] = "completed"
+      generator["AsyncGeneratorState"] = CONST_completed
       if (&& (is-completion result) (= result["Type"] CONST_normal)) let resultValue = undefined else {
         let resultValue = result["Value"]
         if (! (= result["Type"] CONST_return)) {
@@ -41,7 +41,7 @@ object GLOBALDOTAsyncGeneratorStart extends Algorithm {
       return __x7__
     }
     generator["AsyncGeneratorContext"] = genContext
-    generator["AsyncGeneratorState"] = "suspendedStart"
+    generator["AsyncGeneratorState"] = CONST_suspendedStart
     generator["AsyncGeneratorQueue"] = (new [])
     app __x8__ = (WrapCompletion undefined)
     return __x8__

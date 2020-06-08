@@ -41,7 +41,7 @@ object CopyDataProperties extends Algorithm {
           app __x10__ = (Get from nextKey)
           if (is-completion __x10__) if (= __x10__["Type"] CONST_normal) __x10__ = __x10__["Value"] else return __x10__ else {}
           let propValue = __x10__
-          app __x11__ = (CreateDataProperty target nextKey propValue)
+          app __x11__ = (CreateDataPropertyOrThrow target nextKey propValue)
           if (is-completion __x11__) if (= __x11__["Type"] CONST_normal) __x11__ = __x11__["Value"] else return __x11__ else {}
           __x11__
         } else {}

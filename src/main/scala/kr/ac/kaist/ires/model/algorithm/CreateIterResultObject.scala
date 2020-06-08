@@ -10,13 +10,14 @@ object CreateIterResultObject extends Algorithm {
   val func: Func = FixUIdWalker(parseFunc(""""CreateIterResultObject" (value, done) => {
     app __x0__ = (Type done)
     assert (= __x0__ Boolean)
-    app __x1__ = (ObjectCreate INTRINSIC_ObjectPrototype)
-    let obj = __x1__
-    app __x2__ = (CreateDataProperty obj "value" value)
+    !!! "Let id:{obj} be OrdinaryObjectCreate ( % Object . prototype % ) ."
+    app __x1__ = (CreateDataPropertyOrThrow obj "value" value)
+    if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
+    __x1__
+    app __x2__ = (CreateDataPropertyOrThrow obj "done" done)
+    if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     __x2__
-    app __x3__ = (CreateDataProperty obj "done" done)
-    __x3__
-    app __x4__ = (WrapCompletion obj)
-    return __x4__
+    app __x3__ = (WrapCompletion obj)
+    return __x3__
   }"""), this)
 }

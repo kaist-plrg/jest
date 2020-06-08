@@ -8,21 +8,15 @@ object CreateMapIterator extends Algorithm {
   val length: Int = 2
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""CreateMapIterator" (map, kind) => {
-    app __x0__ = (Type map)
-    if (! (= __x0__ Object)) {
-      app __x1__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
-      return __x1__
-    } else {}
-    if (= map["MapData"] absent) {
-      app __x2__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
-      return __x2__
-    } else {}
-    app __x3__ = (ObjectCreate INTRINSIC_MapIteratorPrototype (new ["Map", "MapNextIndex", "MapIterationKind"]))
-    let iterator = __x3__
-    iterator["Map"] = map
+    app __x0__ = (RequireInternalSlot map "MapData")
+    if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
+    __x0__
+    app __x1__ = (OrdinaryObjectCreate INTRINSIC_MapIteratorPrototype (new ["IteratedMap", "MapNextIndex", "MapIterationKind"]))
+    let iterator = __x1__
+    iterator["IteratedMap"] = map
     iterator["MapNextIndex"] = 0i
     iterator["MapIterationKind"] = kind
-    app __x4__ = (WrapCompletion iterator)
-    return __x4__
+    app __x2__ = (WrapCompletion iterator)
+    return __x2__
   }"""), this)
 }

@@ -8,15 +8,12 @@ object AsyncFunctionDeclaration1InstantiateFunctionObject0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""AsyncFunctionDeclaration1InstantiateFunctionObject0" (this, FormalParameters, AsyncFunctionBody, scope) => {
-    if true let strict = true else let strict = false
-    app __x0__ = (AsyncFunctionCreate CONST_Normal FormalParameters AsyncFunctionBody scope strict)
+    !!! "Let id:{F} be ! OrdinaryFunctionCreate ( % AsyncFunction . prototype % , nt:{FormalParameters} , nt:{AsyncFunctionBody} , const:{non-lexical-this} , id:{scope} ) ."
+    app __x0__ = (SetFunctionName F "default")
     if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
-    let F = __x0__
-    app __x1__ = (SetFunctionName F "default")
-    if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
-    __x1__
+    __x0__
     F["SourceText"] = (get-syntax this)
-    app __x2__ = (WrapCompletion F)
-    return __x2__
+    app __x1__ = (WrapCompletion F)
+    return __x1__
   }"""), this)
 }

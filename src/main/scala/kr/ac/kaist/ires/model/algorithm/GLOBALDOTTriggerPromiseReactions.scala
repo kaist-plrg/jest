@@ -16,11 +16,13 @@ object GLOBALDOTTriggerPromiseReactions extends Algorithm {
     let __x3__ = 0i
     while (< __x3__ __x2__["length"]) {
       let reaction = __x2__[__x3__]
-      app __x4__ = (EnqueueJob "PromiseJobs" PromiseReactionJob (new [reaction, argument]))
-      __x4__
+      app __x4__ = (NewPromiseReactionJob reaction argument)
+      let job = __x4__
+      app __x5__ = (HostEnqueuePromiseJob job["Job"] job["Realm"])
+      __x5__
       __x3__ = (+ __x3__ 1i)
     }
-    app __x5__ = (WrapCompletion undefined)
-    return __x5__
+    app __x6__ = (WrapCompletion undefined)
+    return __x6__
   }"""), this)
 }

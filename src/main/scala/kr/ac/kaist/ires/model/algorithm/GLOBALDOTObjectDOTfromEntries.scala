@@ -13,14 +13,14 @@ object GLOBALDOTObjectDOTfromEntries extends Algorithm {
     app __x1__ = (RequireObjectCoercible iterable)
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
     __x1__
-    app __x2__ = (ObjectCreate INTRINSIC_ObjectPrototype)
-    let obj = __x2__
+    !!! "Let id:{obj} be OrdinaryObjectCreate ( % Object . prototype % ) ."
     let stepsDefine = !!! "Algorithms"
-    app __x3__ = (CreateBuiltinFunction stepsDefine (new []))
-    let adder = __x3__
-    app __x4__ = (AddEntriesFromIterable obj iterable adder)
-    if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
-    app __x5__ = (WrapCompletion __x4__)
-    return __x5__
+    app __x2__ = (CreateBuiltinFunction stepsDefine (new []))
+    if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
+    let adder = __x2__
+    app __x3__ = (AddEntriesFromIterable obj iterable adder)
+    if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
+    app __x4__ = (WrapCompletion __x3__)
+    return __x4__
   }"""), this)
 }

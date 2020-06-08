@@ -23,6 +23,7 @@ object GLOBALDOTPromiseDOTallResolveElementFunctions extends Algorithm {
     remainingElementsCount["Value"] = (- remainingElementsCount["Value"] 1i)
     if (= remainingElementsCount["Value"] 0i) {
       app __x1__ = (CreateArrayFromList values)
+      if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
       let valuesArray = __x1__
       app __x2__ = (Call promiseCapability["Resolve"] undefined (new [valuesArray]))
       if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}

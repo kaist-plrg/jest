@@ -7,27 +7,30 @@ object ElementList2ArrayAccumulation1 extends Algorithm {
   val name: String = "ElementList2ArrayAccumulation1"
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = FixUIdWalker(parseFunc(""""ElementList2ArrayAccumulation1" (this, ElementList, Elision, AssignmentExpression, array, nextIndex) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ElementList2ArrayAccumulation1" (this, ElementList, Elision, AssignmentExpression) => {
     access __x0__ = (ElementList "ArrayAccumulation")
     app __x1__ = (__x0__ array nextIndex)
-    let postIndex = __x1__
-    if (is-completion postIndex) if (= postIndex["Type"] CONST_normal) postIndex = postIndex["Value"] else return postIndex else {}
-    postIndex
-    if (= Elision absent) let padding = 0i else {
-      access __x2__ = (Elision "ElisionWidth")
-      let padding = __x2__
-    }
-    access __x3__ = (AssignmentExpression "Evaluation")
-    let initResult = __x3__
-    app __x4__ = (GetValue initResult)
-    if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
-    let initValue = __x4__
-    app __x5__ = (ToUint32 (+ postIndex padding))
-    app __x6__ = (ToString __x5__)
-    app __x7__ = (CreateDataProperty array __x6__ initValue)
+    nextIndex = __x1__
+    if (is-completion nextIndex) if (= nextIndex["Type"] CONST_normal) nextIndex = nextIndex["Value"] else return nextIndex else {}
+    nextIndex
+    if (! (= Elision absent)) {
+      access __x2__ = (Elision "ArrayAccumulation")
+      app __x3__ = (__x2__ array nextIndex)
+      nextIndex = __x3__
+      if (is-completion nextIndex) if (= nextIndex["Type"] CONST_normal) nextIndex = nextIndex["Value"] else return nextIndex else {}
+      nextIndex
+    } else {}
+    access __x4__ = (AssignmentExpression "Evaluation")
+    let initResult = __x4__
+    app __x5__ = (GetValue initResult)
+    if (is-completion __x5__) if (= __x5__["Type"] CONST_normal) __x5__ = __x5__["Value"] else return __x5__ else {}
+    let initValue = __x5__
+    app __x6__ = (ToString nextIndex)
+    if (is-completion __x6__) if (= __x6__["Type"] CONST_normal) __x6__ = __x6__["Value"] else return __x6__ else {}
+    app __x7__ = (CreateDataPropertyOrThrow array __x6__ initValue)
+    if (is-completion __x7__) if (= __x7__["Type"] CONST_normal) __x7__ = __x7__["Value"] else return __x7__ else {}
     let created = __x7__
-    assert (= created true)
-    app __x8__ = (WrapCompletion (+ (+ postIndex padding) 1i))
+    app __x8__ = (WrapCompletion (+ nextIndex 1i))
     return __x8__
   }"""), this)
 }

@@ -25,7 +25,7 @@ object AsyncGeneratorEnqueue extends Algorithm {
     let request = (new AsyncGeneratorRequest("Completion" -> completion, "Capability" -> promiseCapability))
     append request -> queue
     let state = generator["AsyncGeneratorState"]
-    if (! (= state "executing")) {
+    if (! (= state CONST_executing)) {
       app __x4__ = (AsyncGeneratorResumeNext generator)
       if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
       __x4__

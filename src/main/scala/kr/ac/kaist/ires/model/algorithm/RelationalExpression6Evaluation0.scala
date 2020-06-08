@@ -24,6 +24,7 @@ object RelationalExpression6Evaluation0 extends Algorithm {
       return __x5__
     } else {}
     app __x6__ = (ToPropertyKey lval)
+    if (is-completion __x6__) if (= __x6__["Type"] CONST_normal) __x6__ = __x6__["Value"] else return __x6__ else {}
     app __x7__ = (HasProperty rval __x6__)
     if (is-completion __x7__) if (= __x7__["Type"] CONST_normal) __x7__ = __x7__["Value"] else return __x7__ else {}
     app __x8__ = (WrapCompletion __x7__)

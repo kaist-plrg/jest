@@ -11,14 +11,14 @@ object ArrayLiteral0Evaluation1 extends Algorithm {
     app __x0__ = (ArrayCreate 0i)
     if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
     let array = __x0__
-    if (= Elision absent) let pad = 0i else {
-      access __x1__ = (Elision "ElisionWidth")
-      let pad = __x1__
-    }
-    app __x2__ = (ToUint32 pad)
-    app __x3__ = (Set array "length" __x2__ false)
-    __x3__
-    app __x4__ = (WrapCompletion array)
-    return __x4__
+    if (! (= Elision absent)) {
+      access __x1__ = (Elision "ArrayAccumulation")
+      app __x2__ = (__x1__ array 0i)
+      let len = __x2__
+      if (is-completion len) if (= len["Type"] CONST_normal) len = len["Value"] else return len else {}
+      len
+    } else {}
+    app __x3__ = (WrapCompletion array)
+    return __x3__
   }"""), this)
 }

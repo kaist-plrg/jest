@@ -11,37 +11,31 @@ object GLOBALDOTWeakSetDOTprototypeDOThas extends Algorithm {
     app __x0__ = (GetArgument argumentsList 0i)
     let value = __x0__
     let S = this
-    app __x1__ = (Type S)
-    if (! (= __x1__ Object)) {
-      app __x2__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
-      return __x2__
-    } else {}
-    if (= S["WeakSetData"] absent) {
-      app __x3__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
+    app __x1__ = (RequireInternalSlot S "WeakSetData")
+    if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
+    __x1__
+    let entries = S["WeakSetData"]
+    app __x2__ = (Type value)
+    if (! (= __x2__ Object)) {
+      app __x3__ = (WrapCompletion false)
       return __x3__
     } else {}
-    let entries = S["WeakSetData"]
-    app __x4__ = (Type value)
-    if (! (= __x4__ Object)) {
-      app __x5__ = (WrapCompletion false)
-      return __x5__
-    } else {}
-    let __x6__ = entries
-    let __x7__ = 0i
-    while (< __x7__ __x6__["length"]) {
-      let e = __x6__[__x7__]
-      let __x8__ = (! (= e CONST_empty))
-      if __x8__ {
-        app __x9__ = (SameValue e value)
-        __x8__ = (= __x9__ true)
+    let __x4__ = entries
+    let __x5__ = 0i
+    while (< __x5__ __x4__["length"]) {
+      let e = __x4__[__x5__]
+      let __x6__ = (! (= e CONST_empty))
+      if __x6__ {
+        app __x7__ = (SameValue e value)
+        __x6__ = (= __x7__ true)
       } else {}
-      if __x8__ {
-        app __x10__ = (WrapCompletion true)
-        return __x10__
+      if __x6__ {
+        app __x8__ = (WrapCompletion true)
+        return __x8__
       } else {}
-      __x7__ = (+ __x7__ 1i)
+      __x5__ = (+ __x5__ 1i)
     }
-    app __x11__ = (WrapCompletion false)
-    return __x11__
+    app __x9__ = (WrapCompletion false)
+    return __x9__
   }"""), this)
 }

@@ -22,6 +22,7 @@ object Script0 extends ASTInfo {
   val maxK: Int = 1
   val semMap: Map[String, Func] = Map(
     "Evaluation0" -> Script0Evaluation0.func,
+    "IsStrict1" -> Script0IsStrict1.func,
     "LexicallyDeclaredNames0" -> Script0LexicallyDeclaredNames0.func,
     "LexicallyScopedDeclarations0" -> Script0LexicallyScopedDeclarations0.func,
     "VarDeclaredNames0" -> Script0VarDeclaredNames0.func,

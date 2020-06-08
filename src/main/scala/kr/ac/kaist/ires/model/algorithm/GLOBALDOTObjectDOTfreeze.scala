@@ -15,7 +15,7 @@ object GLOBALDOTObjectDOTfreeze extends Algorithm {
       app __x2__ = (WrapCompletion O)
       return __x2__
     } else {}
-    app __x3__ = (SetIntegrityLevel O "frozen")
+    app __x3__ = (SetIntegrityLevel O CONST_frozen)
     if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
     let status = __x3__
     if (= status false) {

@@ -16,22 +16,19 @@ object GLOBALDOTNumberDOTprototypeDOTtoExponential extends Algorithm {
     app __x2__ = (ToInteger fractionDigits)
     if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     let f = __x2__
-    if (= x NaN) {
-      app __x3__ = (WrapCompletion "NaN")
-      return __x3__
-    } else {}
+    !!! "If id:{x} is value:{NaN} , return the String value:{\"NaN\"} ."
     let s = ""
     if (< x 0i) {
       s = "-"
       x = (- x)
     } else {}
     if (== x Infinity) {
-      app __x4__ = (WrapCompletion (+ s "Infinity"))
-      return __x4__
+      app __x3__ = (WrapCompletion (+ s "Infinity"))
+      return __x3__
     } else {}
     if (|| (< f 0i) (< 100i f)) {
-      app __x5__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_RangeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
-      return __x5__
+      app __x4__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_RangeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
+      return __x4__
     } else {}
     if (== x 0i) {
       let m = !!! "StringOp"
@@ -49,13 +46,14 @@ object GLOBALDOTNumberDOTprototypeDOTtoExponential extends Algorithm {
       let d = "0"
     } else {
       if (< 0i e) let c = "+" else {
+        assert (< e 0i)
         let c = "-"
         e = (- e)
       }
       let d = !!! "StringOp"
     }
     m = (+ (+ (+ m "e") c) d)
-    app __x6__ = (WrapCompletion (+ s m))
-    return __x6__
+    app __x5__ = (WrapCompletion (+ s m))
+    return __x5__
   }"""), this)
 }

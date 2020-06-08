@@ -5,28 +5,13 @@ import kr.ac.kaist.ires.ir.Parser._
 
 object IntegerIndexedObjectCreate extends Algorithm {
   val name: String = "IntegerIndexedObjectCreate"
-  val length: Int = 2
+  val length: Int = 1
   val lang: Boolean = true
-  val func: Func = FixUIdWalker(parseFunc(""""IntegerIndexedObjectCreate" (prototype, internalSlotsList) => {
-    let A = (new OrdinaryObject("SubMap" -> (new SubMap())))
-    let __x0__ = internalSlotsList
-    let __x1__ = 0i
-    while (< __x1__ __x0__["length"]) {
-      let __x2__ = __x0__[__x1__]
-      A[__x2__] = undefined
-      __x1__ = (+ __x1__ 1i)
-    }
-    if (= A["HasProperty"] absent) A["HasProperty"] = OrdinaryObjectDOTHasProperty else {}
-    if (= A["DefineOwnProperty"] absent) A["DefineOwnProperty"] = OrdinaryObjectDOTDefineOwnProperty else {}
-    if (= A["Set"] absent) A["Set"] = OrdinaryObjectDOTSet else {}
-    if (= A["SetPrototypeOf"] absent) A["SetPrototypeOf"] = OrdinaryObjectDOTSetPrototypeOf else {}
-    if (= A["Get"] absent) A["Get"] = OrdinaryObjectDOTGet else {}
-    if (= A["PreventExtensions"] absent) A["PreventExtensions"] = OrdinaryObjectDOTPreventExtensions else {}
-    if (= A["Delete"] absent) A["Delete"] = OrdinaryObjectDOTDelete else {}
-    if (= A["GetOwnProperty"] absent) A["GetOwnProperty"] = OrdinaryObjectDOTGetOwnProperty else {}
-    if (= A["OwnPropertyKeys"] absent) A["OwnPropertyKeys"] = OrdinaryObjectDOTOwnPropertyKeys else {}
-    if (= A["GetPrototypeOf"] absent) A["GetPrototypeOf"] = OrdinaryObjectDOTGetPrototypeOf else {}
-    if (= A["IsExtensible"] absent) A["IsExtensible"] = OrdinaryObjectDOTIsExtensible else {}
+  val func: Func = FixUIdWalker(parseFunc(""""IntegerIndexedObjectCreate" (prototype) => {
+    let internalSlotsList = (new ["Prototype", "Extensible", "ViewedArrayBuffer", "TypedArrayName", "ContentType", "ByteLength", "ByteOffset", "ArrayLength"])
+    app __x0__ = (MakeBasicObject internalSlotsList)
+    if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
+    let A = __x0__
     A["GetOwnProperty"] = IntegerIndexedExoticObjectDOTGetOwnProperty
     A["HasProperty"] = IntegerIndexedExoticObjectDOTHasProperty
     A["DefineOwnProperty"] = IntegerIndexedExoticObjectDOTDefineOwnProperty
@@ -34,8 +19,7 @@ object IntegerIndexedObjectCreate extends Algorithm {
     A["Set"] = IntegerIndexedExoticObjectDOTSet
     A["OwnPropertyKeys"] = IntegerIndexedExoticObjectDOTOwnPropertyKeys
     A["Prototype"] = prototype
-    A["Extensible"] = true
-    app __x3__ = (WrapCompletion A)
-    return __x3__
+    app __x1__ = (WrapCompletion A)
+    return __x1__
   }"""), this)
 }

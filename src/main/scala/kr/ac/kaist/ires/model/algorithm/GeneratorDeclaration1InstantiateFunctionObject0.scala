@@ -8,16 +8,15 @@ object GeneratorDeclaration1InstantiateFunctionObject0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""GeneratorDeclaration1InstantiateFunctionObject0" (this, FormalParameters, GeneratorBody, scope) => {
-    app __x0__ = (GeneratorFunctionCreate CONST_Normal FormalParameters GeneratorBody scope true)
+    app __x0__ = (OrdinaryFunctionCreate INTRINSIC_Generator FormalParameters GeneratorBody CONST_nonlexicalthis scope)
     let F = __x0__
-    app __x1__ = (ObjectCreate INTRINSIC_GeneratorPrototype)
-    let prototype = __x1__
-    app __x2__ = (DefinePropertyOrThrow F "prototype" (new PropertyDescriptor("Value" -> prototype, "Writable" -> true, "Enumerable" -> false, "Configurable" -> false)))
+    !!! "Let id:{prototype} be OrdinaryObjectCreate ( % Generator . prototype % ) ."
+    app __x1__ = (DefinePropertyOrThrow F "prototype" (new PropertyDescriptor("Value" -> prototype, "Writable" -> true, "Enumerable" -> false, "Configurable" -> false)))
+    __x1__
+    app __x2__ = (SetFunctionName F "default")
     __x2__
-    app __x3__ = (SetFunctionName F "default")
-    __x3__
     F["SourceText"] = (get-syntax this)
-    app __x4__ = (WrapCompletion F)
-    return __x4__
+    app __x3__ = (WrapCompletion F)
+    return __x3__
   }"""), this)
 }

@@ -9,9 +9,8 @@ object ArgumentList2ArgumentListEvaluation0 extends Algorithm {
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""ArgumentList2ArgumentListEvaluation0" (this, ArgumentList, AssignmentExpression) => {
     access __x0__ = (ArgumentList "ArgumentListEvaluation")
+    if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
     let precedingArgs = __x0__
-    if (is-completion precedingArgs) if (= precedingArgs["Type"] CONST_normal) precedingArgs = precedingArgs["Value"] else return precedingArgs else {}
-    precedingArgs
     access __x1__ = (AssignmentExpression "Evaluation")
     let ref = __x1__
     app __x2__ = (GetValue ref)

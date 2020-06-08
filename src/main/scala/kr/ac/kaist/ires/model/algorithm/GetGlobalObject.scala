@@ -8,8 +8,7 @@ object GetGlobalObject extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""GetGlobalObject" () => {
-    let ctx = GLOBAL_context
-    let currentRealm = ctx["Realm"]
+    let currentRealm = REALM
     app __x0__ = (WrapCompletion currentRealm["GlobalObject"])
     return __x0__
   }"""), this)

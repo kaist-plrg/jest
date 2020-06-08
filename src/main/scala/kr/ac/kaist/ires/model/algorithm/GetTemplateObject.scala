@@ -44,11 +44,11 @@ object GetTemplateObject extends Algorithm {
       __x10__
       index = (+ index 1i)
     }
-    app __x11__ = (SetIntegrityLevel rawObj "frozen")
+    app __x11__ = (SetIntegrityLevel rawObj CONST_frozen)
     __x11__
     app __x12__ = (template["DefineOwnProperty"] template "raw" (new PropertyDescriptor("Value" -> rawObj, "Writable" -> false, "Enumerable" -> false, "Configurable" -> false)))
     __x12__
-    app __x13__ = (SetIntegrityLevel template "frozen")
+    app __x13__ = (SetIntegrityLevel template CONST_frozen)
     __x13__
     append (new Record("Site" -> templateLiteral, "Array" -> template)) -> templateRegistry
     app __x14__ = (WrapCompletion template)

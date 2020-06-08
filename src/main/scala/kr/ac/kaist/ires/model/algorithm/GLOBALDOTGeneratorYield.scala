@@ -14,7 +14,7 @@ object GLOBALDOTGeneratorYield extends Algorithm {
     let generator = genContext["Generator"]
     app __x1__ = (GetGeneratorKind )
     assert (= __x1__ CONST_sync)
-    generator["GeneratorState"] = "suspendedYield"
+    generator["GeneratorState"] = CONST_suspendedYield
     if (= GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 1i)] genContext) {
       __x2__ = (- GLOBAL_executionStack["length"] 1i)
       (pop GLOBAL_executionStack __x2__)

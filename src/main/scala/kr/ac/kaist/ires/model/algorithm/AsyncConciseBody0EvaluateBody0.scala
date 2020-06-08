@@ -7,7 +7,7 @@ object AsyncConciseBody0EvaluateBody0 extends Algorithm {
   val name: String = "AsyncConciseBody0EvaluateBody0"
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = FixUIdWalker(parseFunc(""""AsyncConciseBody0EvaluateBody0" (this, AssignmentExpression, functionObject, argumentsList) => {
+  val func: Func = FixUIdWalker(parseFunc(""""AsyncConciseBody0EvaluateBody0" (this, ExpressionBody, functionObject, argumentsList) => {
     app __x0__ = (NewPromiseCapability INTRINSIC_Promise)
     if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
     let promiseCapability = __x0__
@@ -15,7 +15,7 @@ object AsyncConciseBody0EvaluateBody0 extends Algorithm {
     let declResult = __x1__
     app __x2__ = (IsAbruptCompletion declResult)
     if (! __x2__) {
-      app __x3__ = (AsyncFunctionStart promiseCapability AssignmentExpression)
+      app __x3__ = (AsyncFunctionStart promiseCapability ExpressionBody)
       if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
       __x3__
     } else {

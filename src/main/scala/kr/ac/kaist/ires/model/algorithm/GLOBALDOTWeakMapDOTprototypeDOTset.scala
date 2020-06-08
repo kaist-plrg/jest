@@ -13,40 +13,34 @@ object GLOBALDOTWeakMapDOTprototypeDOTset extends Algorithm {
     app __x1__ = (GetArgument argumentsList 1i)
     let value = __x1__
     let M = this
-    app __x2__ = (Type M)
-    if (! (= __x2__ Object)) {
-      app __x3__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
-      return __x3__
-    } else {}
-    if (= M["WeakMapData"] absent) {
+    app __x2__ = (RequireInternalSlot M "WeakMapData")
+    if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
+    __x2__
+    let entries = M["WeakMapData"]
+    app __x3__ = (Type key)
+    if (! (= __x3__ Object)) {
       app __x4__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
       return __x4__
     } else {}
-    let entries = M["WeakMapData"]
-    app __x5__ = (Type key)
-    if (! (= __x5__ Object)) {
-      app __x6__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
-      return __x6__
-    } else {}
-    let __x7__ = entries
-    let __x8__ = 0i
-    while (< __x8__ __x7__["length"]) {
-      let p = __x7__[__x8__]
-      let __x9__ = (! (= p["Key"] CONST_empty))
-      if __x9__ {
-        app __x10__ = (SameValue p["Key"] key)
-        __x9__ = (= __x10__ true)
+    let __x5__ = entries
+    let __x6__ = 0i
+    while (< __x6__ __x5__["length"]) {
+      let p = __x5__[__x6__]
+      let __x7__ = (! (= p["Key"] CONST_empty))
+      if __x7__ {
+        app __x8__ = (SameValue p["Key"] key)
+        __x7__ = (= __x8__ true)
       } else {}
-      if __x9__ {
+      if __x7__ {
         p["Value"] = value
-        app __x11__ = (WrapCompletion M)
-        return __x11__
+        app __x9__ = (WrapCompletion M)
+        return __x9__
       } else {}
-      __x8__ = (+ __x8__ 1i)
+      __x6__ = (+ __x6__ 1i)
     }
     let p = (new Record("Key" -> key, "Value" -> value))
     append p -> entries
-    app __x12__ = (WrapCompletion M)
-    return __x12__
+    app __x10__ = (WrapCompletion M)
+    return __x10__
   }"""), this)
 }

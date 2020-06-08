@@ -15,46 +15,44 @@ object GLOBALDOTArrayDOTprototypeDOTlastIndexOf extends Algorithm {
     app __x2__ = (ToObject this)
     if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     let O = __x2__
-    app __x3__ = (Get O "length")
+    app __x3__ = (LengthOfArrayLike O)
     if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
-    app __x4__ = (ToLength __x3__)
-    if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
-    let len = __x4__
+    let len = __x3__
     if (= len 0i) {
-      app __x5__ = (WrapCompletion (- 1i))
-      return __x5__
+      app __x4__ = (WrapCompletion (- 1i))
+      return __x4__
     } else {}
     if (! (= argumentsList[1i] absent)) {
-      app __x6__ = (ToInteger fromIndex)
-      if (is-completion __x6__) if (= __x6__["Type"] CONST_normal) __x6__ = __x6__["Value"] else return __x6__ else {}
-      let n = __x6__
+      app __x5__ = (ToInteger fromIndex)
+      if (is-completion __x5__) if (= __x5__["Type"] CONST_normal) __x5__ = __x5__["Value"] else return __x5__ else {}
+      let n = __x5__
     } else let n = (- len 1i)
-    if (! (< n 0i)) if (= n -0.0) let k = 0i else {
-      app __x7__ = (min n (- len 1i))
-      let k = __x7__
+    if (! (< n 0i)) {
+      app __x6__ = (min n (- len 1i))
+      let k = __x6__
     } else let k = (+ len n)
     while (! (< k 0i)) {
-      app __x8__ = (ToString k)
+      app __x7__ = (ToString k)
+      if (is-completion __x7__) if (= __x7__["Type"] CONST_normal) __x7__ = __x7__["Value"] else return __x7__ else {}
+      app __x8__ = (HasProperty O __x7__)
       if (is-completion __x8__) if (= __x8__["Type"] CONST_normal) __x8__ = __x8__["Value"] else return __x8__ else {}
-      app __x9__ = (HasProperty O __x8__)
-      if (is-completion __x9__) if (= __x9__["Type"] CONST_normal) __x9__ = __x9__["Value"] else return __x9__ else {}
-      let kPresent = __x9__
+      let kPresent = __x8__
       if (= kPresent true) {
-        app __x10__ = (ToString k)
+        app __x9__ = (ToString k)
+        if (is-completion __x9__) if (= __x9__["Type"] CONST_normal) __x9__ = __x9__["Value"] else return __x9__ else {}
+        app __x10__ = (Get O __x9__)
         if (is-completion __x10__) if (= __x10__["Type"] CONST_normal) __x10__ = __x10__["Value"] else return __x10__ else {}
-        app __x11__ = (Get O __x10__)
-        if (is-completion __x11__) if (= __x11__["Type"] CONST_normal) __x11__ = __x11__["Value"] else return __x11__ else {}
-        let elementK = __x11__
-        app __x12__ = (StrictEqualityComparison searchElement elementK)
-        let same = __x12__
+        let elementK = __x10__
+        app __x11__ = (StrictEqualityComparison searchElement elementK)
+        let same = __x11__
         if (= same true) {
-          app __x13__ = (WrapCompletion k)
-          return __x13__
+          app __x12__ = (WrapCompletion k)
+          return __x12__
         } else {}
       } else {}
       k = (- k 1i)
     }
-    app __x14__ = (WrapCompletion (- 1i))
-    return __x14__
+    app __x13__ = (WrapCompletion (- 1i))
+    return __x13__
   }"""), this)
 }

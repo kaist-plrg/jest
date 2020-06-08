@@ -8,13 +8,12 @@ object ObjectLiteral2Evaluation0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""ObjectLiteral2Evaluation0" (this, PropertyDefinitionList) => {
-    app __x0__ = (ObjectCreate INTRINSIC_ObjectPrototype)
-    let obj = __x0__
-    access __x1__ = (PropertyDefinitionList "PropertyDefinitionEvaluation")
-    app __x2__ = (__x1__ obj true)
-    if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
-    __x2__
-    app __x3__ = (WrapCompletion obj)
-    return __x3__
+    !!! "Let id:{obj} be OrdinaryObjectCreate ( % Object . prototype % ) ."
+    access __x0__ = (PropertyDefinitionList "PropertyDefinitionEvaluation")
+    app __x1__ = (__x0__ obj true)
+    if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
+    __x1__
+    app __x2__ = (WrapCompletion obj)
+    return __x2__
   }"""), this)
 }

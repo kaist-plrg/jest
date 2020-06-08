@@ -7,7 +7,7 @@ object ConditionalExpression1HasCallInTailPosition0 extends Algorithm {
   val name: String = "ConditionalExpression1HasCallInTailPosition0"
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = FixUIdWalker(parseFunc(""""ConditionalExpression1HasCallInTailPosition0" (this, LogicalORExpression, AssignmentExpression0, AssignmentExpression1, call) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ConditionalExpression1HasCallInTailPosition0" (this, ShortCircuitExpression, AssignmentExpression0, AssignmentExpression1, call) => {
     access __x0__ = (AssignmentExpression0 "HasCallInTailPosition")
     app __x1__ = (__x0__ call)
     let has = __x1__

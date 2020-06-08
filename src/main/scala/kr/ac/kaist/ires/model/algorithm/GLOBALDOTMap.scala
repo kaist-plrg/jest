@@ -14,11 +14,11 @@ object GLOBALDOTMap extends Algorithm {
       app __x1__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
       return __x1__
     } else {}
-    app __x2__ = (OrdinaryCreateFromConstructor NewTarget INTRINSIC_MapPrototype (new ["MapData"]))
+    app __x2__ = (OrdinaryCreateFromConstructor NewTarget "%Map.prototype%" (new ["MapData"]))
     if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     let map = __x2__
     map["MapData"] = (new [])
-    if (|| (= argumentsList[0i] absent) (|| (= argumentsList[0i] undefined) (= argumentsList[0i] null))) {
+    if (|| (= iterable undefined) (= iterable null)) {
       app __x3__ = (WrapCompletion map)
       return __x3__
     } else {}

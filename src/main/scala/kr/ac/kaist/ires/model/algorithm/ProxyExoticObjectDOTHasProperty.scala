@@ -30,6 +30,7 @@ object ProxyExoticObjectDOTHasProperty extends Algorithm {
     app __x6__ = (Call trap handler (new [target, P]))
     if (is-completion __x6__) if (= __x6__["Type"] CONST_normal) __x6__ = __x6__["Value"] else return __x6__ else {}
     app __x7__ = (ToBoolean __x6__)
+    if (is-completion __x7__) if (= __x7__["Type"] CONST_normal) __x7__ = __x7__["Value"] else return __x7__ else {}
     let booleanTrapResult = __x7__
     if (= booleanTrapResult false) {
       app __x8__ = (target["GetOwnProperty"] target P)

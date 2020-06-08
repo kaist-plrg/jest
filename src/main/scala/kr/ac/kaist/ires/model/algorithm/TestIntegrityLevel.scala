@@ -10,11 +10,11 @@ object TestIntegrityLevel extends Algorithm {
   val func: Func = FixUIdWalker(parseFunc(""""TestIntegrityLevel" (O, level) => {
     app __x0__ = (Type O)
     assert (= __x0__ Object)
-    assert (|| (= level "sealed") (= level "frozen"))
+    assert (|| (= level CONST_sealed) (= level CONST_frozen))
     app __x1__ = (IsExtensible O)
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
-    let status = __x1__
-    if (= status true) {
+    let extensible = __x1__
+    if (= extensible true) {
       app __x2__ = (WrapCompletion false)
       return __x2__
     } else {}
@@ -33,7 +33,7 @@ object TestIntegrityLevel extends Algorithm {
           app __x7__ = (WrapCompletion false)
           return __x7__
         } else {}
-        let __x8__ = (= level "frozen")
+        let __x8__ = (= level CONST_frozen)
         if __x8__ {
           app __x9__ = (IsDataDescriptor currentDesc)
           __x8__ = (= __x9__ true)

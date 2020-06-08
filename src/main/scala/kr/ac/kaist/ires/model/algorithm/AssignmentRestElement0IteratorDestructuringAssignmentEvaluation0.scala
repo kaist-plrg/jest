@@ -34,9 +34,9 @@ object AssignmentRestElement0IteratorDestructuringAssignmentEvaluation0 extends 
         nextValue
         app __x6__ = (ToString n)
         if (is-completion __x6__) if (= __x6__["Type"] CONST_normal) __x6__ = __x6__["Value"] else return __x6__ else {}
-        app __x7__ = (CreateDataProperty A __x6__ nextValue)
-        let status = __x7__
-        assert (= status true)
+        app __x7__ = (CreateDataPropertyOrThrow A __x6__ nextValue)
+        if (is-completion __x7__) if (= __x7__["Type"] CONST_normal) __x7__ = __x7__["Value"] else return __x7__ else {}
+        __x7__
         n = (+ n 1i)
       }
     }

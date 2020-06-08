@@ -9,7 +9,10 @@ object ModuleNamespaceCreate extends Algorithm {
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""ModuleNamespaceCreate" (module, exports) => {
     assert (= module["Namespace"] undefined)
-    let M = (new OrdinaryObject("SubMap" -> (new SubMap())))
+    !!! "Let id:{internalSlotsList} be the internal slots listed in Table 29 ."
+    app __x0__ = (MakeBasicObject internalSlotsList)
+    if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
+    let M = __x0__
     if (= M["HasProperty"] absent) M["HasProperty"] = OrdinaryObjectDOTHasProperty else {}
     if (= M["DefineOwnProperty"] absent) M["DefineOwnProperty"] = OrdinaryObjectDOTDefineOwnProperty else {}
     if (= M["Set"] absent) M["Set"] = OrdinaryObjectDOTSet else {}
@@ -21,12 +24,13 @@ object ModuleNamespaceCreate extends Algorithm {
     if (= M["OwnPropertyKeys"] absent) M["OwnPropertyKeys"] = OrdinaryObjectDOTOwnPropertyKeys else {}
     if (= M["GetPrototypeOf"] absent) M["GetPrototypeOf"] = OrdinaryObjectDOTGetPrototypeOf else {}
     if (= M["IsExtensible"] absent) M["IsExtensible"] = OrdinaryObjectDOTIsExtensible else {}
+    M["Prototype"] = null
     M["Module"] = module
     !!! "Etc"
     M["Exports"] = sortedExports
     !!! "Etc"
     module["Namespace"] = M
-    app __x0__ = (WrapCompletion M)
-    return __x0__
+    app __x1__ = (WrapCompletion M)
+    return __x1__
   }"""), this)
 }

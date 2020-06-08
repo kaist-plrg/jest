@@ -7,19 +7,22 @@ object ElementList3ArrayAccumulation1 extends Algorithm {
   val name: String = "ElementList3ArrayAccumulation1"
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = FixUIdWalker(parseFunc(""""ElementList3ArrayAccumulation1" (this, ElementList, Elision, SpreadElement, array, nextIndex) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ElementList3ArrayAccumulation1" (this, ElementList, Elision, SpreadElement) => {
     access __x0__ = (ElementList "ArrayAccumulation")
     app __x1__ = (__x0__ array nextIndex)
-    let postIndex = __x1__
-    if (is-completion postIndex) if (= postIndex["Type"] CONST_normal) postIndex = postIndex["Value"] else return postIndex else {}
-    postIndex
-    if (= Elision absent) let padding = 0i else {
-      access __x2__ = (Elision "ElisionWidth")
-      let padding = __x2__
-    }
-    access __x3__ = (SpreadElement "ArrayAccumulation")
-    app __x4__ = (__x3__ array (+ postIndex padding))
-    app __x5__ = (WrapCompletion __x4__)
-    return __x5__
+    nextIndex = __x1__
+    if (is-completion nextIndex) if (= nextIndex["Type"] CONST_normal) nextIndex = nextIndex["Value"] else return nextIndex else {}
+    nextIndex
+    if (! (= Elision absent)) {
+      access __x2__ = (Elision "ArrayAccumulation")
+      app __x3__ = (__x2__ array nextIndex)
+      nextIndex = __x3__
+      if (is-completion nextIndex) if (= nextIndex["Type"] CONST_normal) nextIndex = nextIndex["Value"] else return nextIndex else {}
+      nextIndex
+    } else {}
+    access __x4__ = (SpreadElement "ArrayAccumulation")
+    app __x5__ = (__x4__ array nextIndex)
+    app __x6__ = (WrapCompletion __x5__)
+    return __x6__
   }"""), this)
 }

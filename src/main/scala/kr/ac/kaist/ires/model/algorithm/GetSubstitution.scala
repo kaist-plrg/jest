@@ -14,17 +14,15 @@ object GetSubstitution extends Algorithm {
     app __x1__ = (Type str)
     assert (= __x1__ String)
     let stringLength = str["length"]
+    app __x2__ = (IsNonNegativeInteger position)
+    if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
+    assert (= __x2__ true)
     assert (! (< stringLength position))
-    app __x2__ = (Type replacement)
-    assert (= __x2__ String)
+    app __x3__ = (Type replacement)
+    assert (= __x3__ String)
     let tailPos = (+ position matchLength)
     let m = captures["length"]
-    if (! (= namedCaptures undefined)) {
-      app __x3__ = (ToObject namedCaptures)
-      if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
-      namedCaptures = __x3__
-    } else {}
-    !!! "Etc"
+    !!! "Let id:{result} be the String value derived from id:{replacement} by copying code unit elements from id:{replacement} to id:{result} while performing replacements as specified in Table 52 . These code:{$} replacements are done left - to - right , and , once such a replacement is performed , the new replacement text is not subject to further replacements ."
     app __x4__ = (WrapCompletion result)
     return __x4__
   }"""), this)

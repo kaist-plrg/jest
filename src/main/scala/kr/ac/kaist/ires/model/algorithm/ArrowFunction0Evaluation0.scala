@@ -8,15 +8,13 @@ object ArrowFunction0Evaluation0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""ArrowFunction0Evaluation0" (this, ArrowParameters, ConciseBody) => {
-    if true let strict = true else let strict = false
     access __x0__ = (GLOBAL_context "LexicalEnvironment")
     let scope = __x0__
     access __x1__ = (ArrowParameters "CoveredFormalsList")
     let parameters = __x1__
-    app __x2__ = (FunctionCreate CONST_Arrow parameters ConciseBody scope strict)
-    let closure = __x2__
+    !!! "Let id:{closure} be OrdinaryFunctionCreate ( % Function . prototype % , id:{parameters} , nt:{ConciseBody} , const:{lexical-this} , id:{scope} ) ."
     closure["SourceText"] = (get-syntax this)
-    app __x3__ = (WrapCompletion closure)
-    return __x3__
+    app __x2__ = (WrapCompletion closure)
+    return __x2__
   }"""), this)
 }

@@ -21,7 +21,7 @@ object AsyncGeneratorStart extends Algorithm {
         (pop GLOBAL_executionStack __x1__)
       } else {}
       GLOBAL_context = GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 1i)]
-      generator["AsyncGeneratorState"] = "completed"
+      generator["AsyncGeneratorState"] = CONST_completed
       if (&& (is-completion result) (= result["Type"] CONST_normal)) let resultValue = undefined else {
         let resultValue = result["Value"]
         if (! (= result["Type"] CONST_return)) {
@@ -35,7 +35,7 @@ object AsyncGeneratorStart extends Algorithm {
       app __x5__ = (__ret__ __x4__)
     }
     generator["AsyncGeneratorContext"] = genContext
-    generator["AsyncGeneratorState"] = "suspendedStart"
+    generator["AsyncGeneratorState"] = CONST_suspendedStart
     generator["AsyncGeneratorQueue"] = (new [])
     app __x6__ = (WrapCompletion undefined)
     return __x6__

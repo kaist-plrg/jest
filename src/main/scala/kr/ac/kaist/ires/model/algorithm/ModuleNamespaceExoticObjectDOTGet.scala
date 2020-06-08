@@ -23,21 +23,27 @@ object ModuleNamespaceExoticObjectDOTGet extends Algorithm {
       return __x4__
     } else {}
     let m = O["Module"]
-    app __x5__ = (m["ResolveExport"] m P (new []))
+    app __x5__ = (m["ResolveExport"] m P)
     if (is-completion __x5__) if (= __x5__["Type"] CONST_normal) __x5__ = __x5__["Value"] else return __x5__ else {}
     let binding = __x5__
     assert (= (typeof binding) "ResolvedBindingRecord")
     let targetModule = binding["Module"]
     assert (! (= targetModule undefined))
+    if (= binding["BindingName"] "*namespace*") {
+      app __x6__ = (GetModuleNamespace targetModule)
+      if (is-completion __x6__) if (= __x6__["Type"] CONST_normal) __x6__ = __x6__["Value"] else return __x6__ else {}
+      app __x7__ = (WrapCompletion __x6__)
+      return __x7__
+    } else {}
     let targetEnv = targetModule["Environment"]
     if (= targetEnv undefined) {
-      app __x6__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_ReferenceErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
-      return __x6__
+      app __x8__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_ReferenceErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
+      return __x8__
     } else {}
     let targetEnvRec = targetEnv["EnvironmentRecord"]
-    app __x7__ = (targetEnvRec["GetBindingValue"] targetEnvRec binding["BindingName"] true)
-    if (is-completion __x7__) if (= __x7__["Type"] CONST_normal) __x7__ = __x7__["Value"] else return __x7__ else {}
-    app __x8__ = (WrapCompletion __x7__)
-    return __x8__
+    app __x9__ = (targetEnvRec["GetBindingValue"] targetEnvRec binding["BindingName"] true)
+    if (is-completion __x9__) if (= __x9__["Type"] CONST_normal) __x9__ = __x9__["Value"] else return __x9__ else {}
+    app __x10__ = (WrapCompletion __x9__)
+    return __x10__
   }"""), this)
 }

@@ -7,5 +7,5 @@ object CoverCallExpressionAndAsyncArrowHead0CoveredCallExpression0 extends Algor
   val name: String = "CoverCallExpressionAndAsyncArrowHead0CoveredCallExpression0"
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = FixUIdWalker(parseFunc(""""CoverCallExpressionAndAsyncArrowHead0CoveredCallExpression0" (this, CoverCallExpressionAndAsyncArrowHead) => return (parse-syntax this "CallMemberExpression" )"""), this)
+  val func: Func = FixUIdWalker(parseFunc(""""CoverCallExpressionAndAsyncArrowHead0CoveredCallExpression0" (this, MemberExpression, Arguments) => return (parse-syntax this "CallMemberExpression" )"""), this)
 }

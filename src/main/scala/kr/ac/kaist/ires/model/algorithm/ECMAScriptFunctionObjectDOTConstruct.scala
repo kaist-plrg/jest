@@ -12,14 +12,14 @@ object ECMAScriptFunctionObjectDOTConstruct extends Algorithm {
     assert (= __x0__ Object)
     let callerContext = GLOBAL_context
     let kind = F["ConstructorKind"]
-    if (= kind "base") {
-      app __x1__ = (OrdinaryCreateFromConstructor newTarget INTRINSIC_ObjectPrototype)
+    if (= kind CONST_base) {
+      app __x1__ = (OrdinaryCreateFromConstructor newTarget "%Object.prototype%")
       if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
       let thisArgument = __x1__
     } else {}
     app __x2__ = (PrepareForOrdinaryCall F newTarget)
     let calleeContext = __x2__
-    if (= kind "base") {
+    if (= kind CONST_base) {
       app __x3__ = (OrdinaryCallBindThis F calleeContext thisArgument)
       __x3__
     } else {}
@@ -40,7 +40,7 @@ object ECMAScriptFunctionObjectDOTConstruct extends Algorithm {
         app __x9__ = (WrapCompletion __x8__)
         return __x9__
       } else {}
-      if (= kind "base") {
+      if (= kind CONST_base) {
         app __x10__ = (NormalCompletion thisArgument)
         app __x11__ = (WrapCompletion __x10__)
         return __x11__

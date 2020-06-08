@@ -7,7 +7,7 @@ object SpreadElement0ArrayAccumulation0 extends Algorithm {
   val name: String = "SpreadElement0ArrayAccumulation0"
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = FixUIdWalker(parseFunc(""""SpreadElement0ArrayAccumulation0" (this, AssignmentExpression, array, nextIndex) => {
+  val func: Func = FixUIdWalker(parseFunc(""""SpreadElement0ArrayAccumulation0" (this, AssignmentExpression) => {
     access __x0__ = (AssignmentExpression "Evaluation")
     let spreadRef = __x0__
     app __x1__ = (GetValue spreadRef)
@@ -27,11 +27,11 @@ object SpreadElement0ArrayAccumulation0 extends Algorithm {
       app __x5__ = (IteratorValue next)
       if (is-completion __x5__) if (= __x5__["Type"] CONST_normal) __x5__ = __x5__["Value"] else return __x5__ else {}
       let nextValue = __x5__
-      app __x6__ = (ToUint32 nextIndex)
-      app __x7__ = (ToString __x6__)
-      app __x8__ = (CreateDataProperty array __x7__ nextValue)
-      let status = __x8__
-      assert (= status true)
+      app __x6__ = (ToString nextIndex)
+      if (is-completion __x6__) if (= __x6__["Type"] CONST_normal) __x6__ = __x6__["Value"] else return __x6__ else {}
+      app __x7__ = (CreateDataPropertyOrThrow array __x6__ nextValue)
+      if (is-completion __x7__) if (= __x7__["Type"] CONST_normal) __x7__ = __x7__["Value"] else return __x7__ else {}
+      __x7__
       nextIndex = (+ nextIndex 1i)
     }
   }"""), this)

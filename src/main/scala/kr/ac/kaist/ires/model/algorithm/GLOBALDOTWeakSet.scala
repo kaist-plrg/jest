@@ -14,11 +14,10 @@ object GLOBALDOTWeakSet extends Algorithm {
       app __x1__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
       return __x1__
     } else {}
-    app __x2__ = (OrdinaryCreateFromConstructor NewTarget INTRINSIC_WeakSetPrototype (new ["WeakSetData"]))
+    app __x2__ = (OrdinaryCreateFromConstructor NewTarget "%WeakSet.prototype%" (new ["WeakSetData"]))
     if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     let set = __x2__
     set["WeakSetData"] = (new [])
-    if (= argumentsList[0i] absent) iterable = undefined else {}
     if (|| (= iterable undefined) (= iterable null)) {
       app __x3__ = (WrapCompletion set)
       return __x3__

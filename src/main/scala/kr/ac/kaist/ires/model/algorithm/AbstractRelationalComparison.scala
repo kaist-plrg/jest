@@ -31,47 +31,73 @@ object AbstractRelationalComparison extends Algorithm {
       __x5__ = (= __x6__ String)
     } else {}
     if __x5__ return (< px py) else {
-      app __x7__ = (ToNumber px)
-      if (is-completion __x7__) if (= __x7__["Type"] CONST_normal) __x7__ = __x7__["Value"] else return __x7__ else {}
-      let nx = __x7__
-      app __x8__ = (ToNumber py)
-      if (is-completion __x8__) if (= __x8__["Type"] CONST_normal) __x8__ = __x8__["Value"] else return __x8__ else {}
-      let ny = __x8__
-      if (= nx NaN) {
-        app __x9__ = (WrapCompletion undefined)
-        return __x9__
+      app __x7__ = (Type px)
+      let __x8__ = (= __x7__ BigInt)
+      if __x8__ {
+        app __x9__ = (Type py)
+        __x8__ = (= __x9__ String)
       } else {}
-      if (= ny NaN) {
-        app __x10__ = (WrapCompletion undefined)
-        return __x10__
+      if __x8__ {
+        app __x10__ = (StringToBigInt py)
+        if (is-completion __x10__) if (= __x10__["Type"] CONST_normal) __x10__ = __x10__["Value"] else return __x10__ else {}
+        let ny = __x10__
+        if (= ny NaN) {
+          app __x11__ = (WrapCompletion undefined)
+          return __x11__
+        } else {}
+        !!! "Return BigInt : : lessThan ( id:{px} , id:{ny} ) ."
       } else {}
-      if (= nx ny) {
-        app __x11__ = (WrapCompletion false)
-        return __x11__
+      app __x12__ = (Type px)
+      let __x13__ = (= __x12__ String)
+      if __x13__ {
+        app __x14__ = (Type py)
+        __x13__ = (= __x14__ BigInt)
       } else {}
-      if (&& (= nx 0i) (= ny -0.0)) {
-        app __x12__ = (WrapCompletion false)
-        return __x12__
+      if __x13__ {
+        app __x15__ = (StringToBigInt px)
+        if (is-completion __x15__) if (= __x15__["Type"] CONST_normal) __x15__ = __x15__["Value"] else return __x15__ else {}
+        let nx = __x15__
+        if (= nx NaN) {
+          app __x16__ = (WrapCompletion undefined)
+          return __x16__
+        } else {}
+        !!! "Return BigInt : : lessThan ( id:{nx} , id:{py} ) ."
       } else {}
-      if (&& (= nx -0.0) (= ny 0i)) {
-        app __x13__ = (WrapCompletion false)
-        return __x13__
+      app __x17__ = (ToNumeric px)
+      if (is-completion __x17__) if (= __x17__["Type"] CONST_normal) __x17__ = __x17__["Value"] else return __x17__ else {}
+      let nx = __x17__
+      app __x18__ = (ToNumeric py)
+      if (is-completion __x18__) if (= __x18__["Type"] CONST_normal) __x18__ = __x18__["Value"] else return __x18__ else {}
+      let ny = __x18__
+      !!! "If Type ( id:{nx} ) is the same as Type ( id:{ny} ) , return Type ( id:{nx} ) : : lessThan ( id:{nx} , id:{ny} ) ."
+      app __x19__ = (Type nx)
+      let __x20__ = (= __x19__ BigInt)
+      if __x20__ {
+        app __x21__ = (Type ny)
+        let __x22__ = (= __x21__ Number)
+        if __x22__ {} else {
+          app __x23__ = (Type nx)
+          let __x24__ = (= __x23__ Number)
+          if __x24__ {
+            app __x25__ = (Type ny)
+            __x24__ = (= __x25__ BigInt)
+          } else {}
+          __x22__ = __x24__
+        }
+        __x20__ = __x22__
       } else {}
-      if (= nx Infinity) {
-        app __x14__ = (WrapCompletion false)
-        return __x14__
+      assert __x20__
+      if (|| (= nx NaN) (= ny NaN)) {
+        app __x26__ = (WrapCompletion undefined)
+        return __x26__
       } else {}
-      if (= ny Infinity) {
-        app __x15__ = (WrapCompletion true)
-        return __x15__
+      if (|| (= nx -Infinity) (= ny Infinity)) {
+        app __x27__ = (WrapCompletion true)
+        return __x27__
       } else {}
-      if (= ny -Infinity) {
-        app __x16__ = (WrapCompletion false)
-        return __x16__
-      } else {}
-      if (= nx -Infinity) {
-        app __x17__ = (WrapCompletion true)
-        return __x17__
+      if (|| (= nx Infinity) (= ny -Infinity)) {
+        app __x28__ = (WrapCompletion false)
+        return __x28__
       } else {}
       return (< nx ny)
     }

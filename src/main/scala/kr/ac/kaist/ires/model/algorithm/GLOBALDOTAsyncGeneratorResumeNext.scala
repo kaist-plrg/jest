@@ -11,8 +11,8 @@ object GLOBALDOTAsyncGeneratorResumeNext extends Algorithm {
     app __x0__ = (GetArgument argumentsList 0i)
     let generator = __x0__
     let state = generator["AsyncGeneratorState"]
-    assert (! (= state "executing"))
-    if (= state "awaiting-return") {
+    assert (! (= state CONST_executing))
+    if (= state CONST_awaitingreturn) {
       app __x1__ = (WrapCompletion undefined)
       return __x1__
     } else {}
@@ -25,21 +25,23 @@ object GLOBALDOTAsyncGeneratorResumeNext extends Algorithm {
     let completion = next["Completion"]
     app __x3__ = (IsAbruptCompletion completion)
     if __x3__ {
-      if (= state "suspendedStart") {
-        generator["AsyncGeneratorState"] = "completed"
-        state = "completed"
+      if (= state CONST_suspendedStart) {
+        generator["AsyncGeneratorState"] = CONST_completed
+        state = CONST_completed
       } else {}
-      if (= state "completed") if (= completion["Type"] CONST_return) {
-        generator["AsyncGeneratorState"] = "awaiting-return"
-        app __x4__ = (PromiseResolve INTRINSIC_Promise (new [completion["Value"]]))
+      if (= state CONST_completed) if (= completion["Type"] CONST_return) {
+        generator["AsyncGeneratorState"] = CONST_awaitingreturn
+        app __x4__ = (PromiseResolve INTRINSIC_Promise completion["Value"])
         if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
         let promise = __x4__
         let stepsFulfilled = (new algorithm("name" -> "", "length" -> 1i, "step" -> GLOBALDOTAsyncGeneratorResumeNextReturnProcessorFulfilledFunctions))
         app __x5__ = (CreateBuiltinFunction stepsFulfilled (new ["Generator"]))
+        if (is-completion __x5__) if (= __x5__["Type"] CONST_normal) __x5__ = __x5__["Value"] else return __x5__ else {}
         let onFulfilled = __x5__
         onFulfilled["Generator"] = generator
         let stepsRejected = (new algorithm("name" -> "", "length" -> 1i, "step" -> GLOBALDOTAsyncGeneratorResumeNextReturnProcessorRejectedFunctions))
         app __x6__ = (CreateBuiltinFunction stepsRejected (new ["Generator"]))
+        if (is-completion __x6__) if (= __x6__["Type"] CONST_normal) __x6__ = __x6__["Value"] else return __x6__ else {}
         let onRejected = __x6__
         onRejected["Generator"] = generator
         app __x7__ = (PerformPromiseThen promise onFulfilled onRejected)
@@ -55,16 +57,16 @@ object GLOBALDOTAsyncGeneratorResumeNext extends Algorithm {
         app __x10__ = (WrapCompletion undefined)
         return __x10__
       } else {}
-    } else if (= state "completed") {
+    } else if (= state CONST_completed) {
       app __x11__ = (AsyncGeneratorResolve generator undefined true)
       if (is-completion __x11__) if (= __x11__["Type"] CONST_normal) __x11__ = __x11__["Value"] else return __x11__ else {}
       app __x12__ = (WrapCompletion __x11__)
       return __x12__
     } else {}
-    assert (|| (= state "suspendedStart") (= state "suspendedYield"))
+    assert (|| (= state CONST_suspendedStart) (= state CONST_suspendedYield))
     let genContext = generator["AsyncGeneratorContext"]
     let callerContext = GLOBAL_context
-    generator["AsyncGeneratorState"] = "executing"
+    generator["AsyncGeneratorState"] = CONST_executing
     append genContext -> GLOBAL_executionStack
     GLOBAL_context = GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 1i)]
     withcont __x13__ (result) ={

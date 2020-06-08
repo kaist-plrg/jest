@@ -9,42 +9,34 @@ object CreateMappedArgumentsObject extends Algorithm {
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""CreateMappedArgumentsObject" (func, formals, argumentsList, env) => {
     let len = argumentsList["length"]
-    let obj = (new ArgumentsExoticObject("SubMap" -> (new SubMap()), "ParameterMap" -> undefined))
+    app __x0__ = (MakeBasicObject (new ["Prototype", "Extensible", "ParameterMap"]))
+    if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
+    let obj = __x0__
     obj["GetOwnProperty"] = ArgumentsExoticObjectDOTGetOwnProperty
     obj["DefineOwnProperty"] = ArgumentsExoticObjectDOTDefineOwnProperty
     obj["Get"] = ArgumentsExoticObjectDOTGet
     obj["Set"] = ArgumentsExoticObjectDOTSet
     obj["Delete"] = ArgumentsExoticObjectDOTDelete
-    if (= obj["HasProperty"] absent) obj["HasProperty"] = OrdinaryObjectDOTHasProperty else {}
-    if (= obj["DefineOwnProperty"] absent) obj["DefineOwnProperty"] = OrdinaryObjectDOTDefineOwnProperty else {}
-    if (= obj["Set"] absent) obj["Set"] = OrdinaryObjectDOTSet else {}
-    if (= obj["SetPrototypeOf"] absent) obj["SetPrototypeOf"] = OrdinaryObjectDOTSetPrototypeOf else {}
-    if (= obj["Get"] absent) obj["Get"] = OrdinaryObjectDOTGet else {}
-    if (= obj["PreventExtensions"] absent) obj["PreventExtensions"] = OrdinaryObjectDOTPreventExtensions else {}
-    if (= obj["Delete"] absent) obj["Delete"] = OrdinaryObjectDOTDelete else {}
-    if (= obj["GetOwnProperty"] absent) obj["GetOwnProperty"] = OrdinaryObjectDOTGetOwnProperty else {}
-    if (= obj["OwnPropertyKeys"] absent) obj["OwnPropertyKeys"] = OrdinaryObjectDOTOwnPropertyKeys else {}
-    if (= obj["GetPrototypeOf"] absent) obj["GetPrototypeOf"] = OrdinaryObjectDOTGetPrototypeOf else {}
-    if (= obj["IsExtensible"] absent) obj["IsExtensible"] = OrdinaryObjectDOTIsExtensible else {}
-    obj["Prototype"] = INTRINSIC_ObjectPrototype
-    obj["Extensible"] = true
-    app __x0__ = (ObjectCreate null)
-    let map = __x0__
+    !!! "Set id:{obj} . [ [ Prototype ] ] to % Object . prototype % ."
+    app __x1__ = (OrdinaryObjectCreate null)
+    let map = __x1__
     obj["ParameterMap"] = map
-    access __x1__ = (formals "BoundNames")
-    let parameterNames = __x1__
+    access __x2__ = (formals "BoundNames")
+    let parameterNames = __x2__
     let numberOfParameters = parameterNames["length"]
     let index = 0i
     while (< index len) {
       let val = argumentsList[index]
-      app __x2__ = (ToString index)
-      if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
-      app __x3__ = (CreateDataProperty obj __x2__ val)
-      __x3__
+      app __x3__ = (ToString index)
+      if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
+      app __x4__ = (CreateDataPropertyOrThrow obj __x3__ val)
+      if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
+      __x4__
       index = (+ index 1i)
     }
-    app __x4__ = (DefinePropertyOrThrow obj "length" (new PropertyDescriptor("Value" -> len, "Writable" -> true, "Enumerable" -> false, "Configurable" -> true)))
-    __x4__
+    app __x5__ = (DefinePropertyOrThrow obj "length" (new PropertyDescriptor("Value" -> len, "Writable" -> true, "Enumerable" -> false, "Configurable" -> true)))
+    if (is-completion __x5__) if (= __x5__["Type"] CONST_normal) __x5__ = __x5__["Value"] else return __x5__ else {}
+    __x5__
     let mappedNames = (new [])
     let index = (- numberOfParameters 1i)
     while (! (< index 0i)) {
@@ -52,21 +44,19 @@ object CreateMappedArgumentsObject extends Algorithm {
       if (! (contains mappedNames name)) {
         append name -> mappedNames
         if (< index len) {
-          app __x5__ = (MakeArgGetter name env)
-          let g = __x5__
-          app __x6__ = (MakeArgSetter name env)
-          let p = __x6__
-          app __x7__ = (ToString index)
-          if (is-completion __x7__) if (= __x7__["Type"] CONST_normal) __x7__ = __x7__["Value"] else return __x7__ else {}
-          app __x8__ = (map["DefineOwnProperty"] map __x7__ (new PropertyDescriptor("Set" -> p, "Get" -> g, "Enumerable" -> false, "Configurable" -> true)))
-          __x8__
+          app __x6__ = (MakeArgGetter name env)
+          let g = __x6__
+          app __x7__ = (MakeArgSetter name env)
+          let p = __x7__
+          app __x8__ = (ToString index)
+          if (is-completion __x8__) if (= __x8__["Type"] CONST_normal) __x8__ = __x8__["Value"] else return __x8__ else {}
+          app __x9__ = (map["DefineOwnProperty"] map __x8__ (new PropertyDescriptor("Set" -> p, "Get" -> g, "Enumerable" -> false, "Configurable" -> true)))
+          __x9__
         } else {}
       } else {}
       index = (- index 1i)
     }
-    app __x9__ = (DefinePropertyOrThrow obj SYMBOL_iterator (new PropertyDescriptor("Value" -> INTRINSIC_ArrayProto_values, "Writable" -> true, "Enumerable" -> false, "Configurable" -> true)))
-    if (is-completion __x9__) if (= __x9__["Type"] CONST_normal) __x9__ = __x9__["Value"] else return __x9__ else {}
-    __x9__
+    !!! "Perform ! DefinePropertyOrThrow ( id:{obj} , @ @ iterator , PropertyDescriptor { [ [ Value ] ] : % Array . prototype . values % , [ [ Writable ] ] : value:{true} , [ [ Enumerable ] ] : value:{false} , [ [ Configurable ] ] : value:{true} } ) ."
     app __x10__ = (DefinePropertyOrThrow obj "callee" (new PropertyDescriptor("Value" -> func, "Writable" -> true, "Enumerable" -> false, "Configurable" -> true)))
     if (is-completion __x10__) if (= __x10__["Type"] CONST_normal) __x10__ = __x10__["Value"] else return __x10__ else {}
     __x10__

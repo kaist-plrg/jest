@@ -12,12 +12,12 @@ object GLOBALDOTRejectPromise extends Algorithm {
     let promise = __x0__
     app __x1__ = (GetArgument argumentsList 1i)
     let reason = __x1__
-    assert (= promise["PromiseState"] "pending")
+    assert (= promise["PromiseState"] CONST_pending)
     let reactions = promise["PromiseRejectReactions"]
     promise["PromiseResult"] = reason
     promise["PromiseFulfillReactions"] = undefined
     promise["PromiseRejectReactions"] = undefined
-    promise["PromiseState"] = "rejected"
+    promise["PromiseState"] = CONST_rejected
     if (= promise["PromiseIsHandled"] false) {
       app __x2__ = (HostPromiseRejectionTracker promise "reject")
       __x2__

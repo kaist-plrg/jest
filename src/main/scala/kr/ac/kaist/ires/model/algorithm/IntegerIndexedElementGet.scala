@@ -16,27 +16,19 @@ object IntegerIndexedElementGet extends Algorithm {
       app __x2__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
       return __x2__
     } else {}
-    app __x3__ = (IsInteger index)
+    app __x3__ = (IsValidIntegerIndex O index)
+    if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
     if (= __x3__ false) {
       app __x4__ = (WrapCompletion undefined)
       return __x4__
     } else {}
-    if (== index -0.0) {
-      app __x5__ = (WrapCompletion undefined)
-      return __x5__
-    } else {}
-    let length = O["ArrayLength"]
-    if (|| (< index 0i) (! (< index length))) {
-      app __x6__ = (WrapCompletion undefined)
-      return __x6__
-    } else {}
     let offset = O["ByteOffset"]
     let arrayTypeName = O["TypedArrayName"]
-    !!! "Etc"
+    let elementSize = GLOBAL_typedArrayInfo[arrayTypeName]["ElementSize"]
     let indexedPosition = (+ (* index elementSize) offset)
-    !!! "Etc"
-    app __x7__ = (GetValueFromBuffer buffer indexedPosition elementType true "Unordered")
-    app __x8__ = (WrapCompletion __x7__)
-    return __x8__
+    let elementType = GLOBAL_typedArrayInfo[arrayTypeName]["ElementType"]
+    app __x5__ = (GetValueFromBuffer buffer indexedPosition elementType true CONST_Unordered)
+    app __x6__ = (WrapCompletion __x5__)
+    return __x6__
   }"""), this)
 }

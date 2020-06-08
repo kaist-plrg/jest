@@ -9,7 +9,7 @@ object IteratorNext extends Algorithm {
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""IteratorNext" (iteratorRecord, value) => {
     if (= value absent) {
-      app __x0__ = (Call iteratorRecord["NextMethod"] iteratorRecord["Iterator"] (new []))
+      app __x0__ = (Call iteratorRecord["NextMethod"] iteratorRecord["Iterator"])
       if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
       let result = __x0__
     } else {

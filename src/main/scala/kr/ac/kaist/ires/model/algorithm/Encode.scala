@@ -18,32 +18,26 @@ object Encode extends Algorithm {
       } else {}
       !!! "Etc"
       if (contains unescapedSet C) {
-        let S = !!! "StringOp"
-        R = (+ R S)
+        k = (+ k 1i)
+        R = (+ R C)
       } else {
-        !!! "Etc"
-        if !!! "StringOp" !!! "Etc" else {
-          k = (+ k 1i)
-          if (= k strLen) {
-            app __x1__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_URIErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
-            return __x1__
-          } else {}
-          !!! "Etc"
-          !!! "Etc"
-          app __x2__ = (UTF16Decode C kChar)
-          let V = __x2__
-        }
-        !!! "Etc"
+        app __x1__ = (CodePointAt string k)
+        if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
+        let cp = __x1__
+        if (= cp["IsUnpairedSurrogate"] true) {
+          app __x2__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_URIErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
+          return __x2__
+        } else {}
+        k = (+ k cp["CodeUnitCount"])
+        !!! "Let id:{Octets} be the List of octets resulting by applying the UTF - 8 transformation to id:{cp} . [ [ CodePoint ] ] ."
         let __x3__ = Octets
         let __x4__ = 0i
         while (< __x4__ __x3__["length"]) {
           let octet = __x3__[__x4__]
           !!! "Etc"
-          R = (+ R S)
           __x4__ = (+ __x4__ 1i)
         }
       }
-      k = (+ k 1i)
     }
   }"""), this)
 }

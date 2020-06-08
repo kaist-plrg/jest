@@ -18,8 +18,8 @@ object ClassTail0ClassDefinitionEvaluation3 extends Algorithm {
       __x2__
     } else {}
     if (= ClassHeritage absent) {
-      let protoParent = INTRINSIC_ObjectPrototype
-      let constructorParent = INTRINSIC_FunctionPrototype
+      !!! "Let id:{protoParent} be % Object . prototype % ."
+      !!! "Let id:{constructorParent} be % Function . prototype % ."
     } else {
       GLOBAL_context["LexicalEnvironment"] = classScope
       access __x3__ = (ClassHeritage "Evaluation")
@@ -30,7 +30,7 @@ object ClassTail0ClassDefinitionEvaluation3 extends Algorithm {
       let superclass = __x4__
       if (= superclass null) {
         let protoParent = null
-        let constructorParent = INTRINSIC_FunctionPrototype
+        !!! "Let id:{constructorParent} be % Function . prototype % ."
       } else {
         app __x5__ = (IsConstructor superclass)
         if (= __x5__ false) {
@@ -49,66 +49,65 @@ object ClassTail0ClassDefinitionEvaluation3 extends Algorithm {
         }
       }
     }
-    app __x10__ = (ObjectCreate protoParent)
+    app __x10__ = (OrdinaryObjectCreate protoParent)
     let proto = __x10__
     if (= ClassBody absent) let constructor = CONST_empty else {
       access __x11__ = (ClassBody "ConstructorMethod")
       let constructor = __x11__
     }
-    if (= constructor CONST_empty) if (! (= ClassHeritage absent)) constructor = (parse-syntax "constructor(... args){ super (...args);}" "MethodDefinition" false false) else constructor = (parse-syntax "constructor(){ }" "MethodDefinition" false false) else {}
+    if (= constructor CONST_empty) if (! (= ClassHeritage absent)) constructor = (parse-syntax "constructor(...args) { super(...args); }" "MethodDefinition" false false) else constructor = (parse-syntax "constructor() {}" "MethodDefinition" false false) else {}
     GLOBAL_context["LexicalEnvironment"] = classScope
     access __x12__ = (constructor "DefineMethod")
     app __x13__ = (__x12__ proto constructorParent)
+    if (is-completion __x13__) if (= __x13__["Type"] CONST_normal) __x13__ = __x13__["Value"] else return __x13__ else {}
     let constructorInfo = __x13__
     if (is-completion constructorInfo) if (= constructorInfo["Type"] CONST_normal) constructorInfo = constructorInfo["Value"] else return constructorInfo else {}
     constructorInfo
-    app __x14__ = (IsAbruptCompletion constructorInfo)
-    assert (! __x14__)
     let F = constructorInfo["Closure"]
-    if (! (= ClassHeritage absent)) F["ConstructorKind"] = "derived" else {}
-    app __x15__ = (MakeConstructor F false proto)
+    app __x14__ = (MakeConstructor F false proto)
+    __x14__
+    if (! (= ClassHeritage absent)) F["ConstructorKind"] = CONST_derived else {}
+    app __x15__ = (MakeClassConstructor F)
     __x15__
-    app __x16__ = (MakeClassConstructor F)
-    __x16__
     if (! (= className undefined)) {
-      app __x17__ = (SetFunctionName F className)
-      __x17__
+      app __x16__ = (SetFunctionName F className)
+      __x16__
     } else {}
-    app __x18__ = (CreateMethodProperty proto "constructor" F)
-    __x18__
+    app __x17__ = (CreateMethodProperty proto "constructor" F)
+    __x17__
     if (= ClassBody absent) let methods = (new []) else {
-      access __x19__ = (ClassBody "NonConstructorMethodDefinitions")
-      let methods = __x19__
+      access __x18__ = (ClassBody "NonConstructorMethodDefinitions")
+      let methods = __x18__
     }
-    let __x20__ = methods
-    let __x21__ = 0i
-    while (< __x21__ __x20__["length"]) {
-      let m = __x20__[__x21__]
-      access __x22__ = (m "IsStatic")
-      if (= __x22__ false) {
-        access __x23__ = (m "PropertyDefinitionEvaluation")
-        app __x24__ = (__x23__ proto false)
-        let status = __x24__
+    let __x19__ = methods
+    let __x20__ = 0i
+    while (< __x20__ __x19__["length"]) {
+      let m = __x19__[__x20__]
+      access __x21__ = (m "IsStatic")
+      if (= __x21__ false) {
+        access __x22__ = (m "PropertyDefinitionEvaluation")
+        app __x23__ = (__x22__ proto false)
+        let status = __x23__
       } else {
-        access __x25__ = (m "PropertyDefinitionEvaluation")
-        app __x26__ = (__x25__ F false)
-        let status = __x26__
+        access __x24__ = (m "PropertyDefinitionEvaluation")
+        app __x25__ = (__x24__ F false)
+        let status = __x25__
       }
-      app __x27__ = (IsAbruptCompletion status)
-      if __x27__ {
+      app __x26__ = (IsAbruptCompletion status)
+      if __x26__ {
         GLOBAL_context["LexicalEnvironment"] = lex
-        app __x28__ = (Completion status)
-        app __x29__ = (WrapCompletion __x28__)
-        return __x29__
+        app __x27__ = (Completion status)
+        app __x28__ = (WrapCompletion __x27__)
+        return __x28__
       } else {}
-      __x21__ = (+ __x21__ 1i)
+      __x20__ = (+ __x20__ 1i)
     }
     GLOBAL_context["LexicalEnvironment"] = lex
     if (! (= classBinding undefined)) {
-      app __x30__ = (classScopeEnvRec["InitializeBinding"] classScopeEnvRec classBinding F)
-      __x30__
+      app __x29__ = (classScopeEnvRec["InitializeBinding"] classScopeEnvRec classBinding F)
+      __x29__
     } else {}
-    app __x31__ = (WrapCompletion F)
-    return __x31__
+    app __x30__ = (WrapCompletion F)
+    return __x30__
   }"""), this)
 }

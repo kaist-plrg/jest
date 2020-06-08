@@ -9,13 +9,13 @@ object FunctionEnvironmentRecordDOTBindThisValue extends Algorithm {
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""FunctionEnvironmentRecord.BindThisValue" (this, V) => {
     let envRec = this
-    assert (! (= envRec["ThisBindingStatus"] "lexical"))
-    if (= envRec["ThisBindingStatus"] "initialized") {
+    assert (! (= envRec["ThisBindingStatus"] CONST_lexical))
+    if (= envRec["ThisBindingStatus"] CONST_initialized) {
       app __x0__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_ReferenceErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
       return __x0__
     } else {}
     envRec["ThisValue"] = V
-    envRec["ThisBindingStatus"] = "initialized"
+    envRec["ThisBindingStatus"] = CONST_initialized
     app __x1__ = (WrapCompletion V)
     return __x1__
   }"""), this)

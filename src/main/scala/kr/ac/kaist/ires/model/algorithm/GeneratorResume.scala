@@ -11,15 +11,15 @@ object GeneratorResume extends Algorithm {
     app __x0__ = (GeneratorValidate generator)
     if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
     let state = __x0__
-    if (= state "completed") {
+    if (= state CONST_completed) {
       app __x1__ = (CreateIterResultObject undefined true)
       app __x2__ = (WrapCompletion __x1__)
       return __x2__
     } else {}
-    assert (|| (= state "suspendedStart") (= state "suspendedYield"))
+    assert (|| (= state CONST_suspendedStart) (= state CONST_suspendedYield))
     let genContext = generator["GeneratorContext"]
     let methodContext = GLOBAL_context
-    generator["GeneratorState"] = "executing"
+    generator["GeneratorState"] = CONST_executing
     append genContext -> GLOBAL_executionStack
     GLOBAL_context = GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 1i)]
     app __x3__ = (NormalCompletion value)

@@ -11,7 +11,7 @@ object GLOBALDOTArray extends Algorithm {
     let numberOfArgs = argumentsList["length"]
     assert (== numberOfArgs 0i)
     if (= NewTarget undefined) let newTarget = GLOBAL_context["Function"] else let newTarget = NewTarget
-    app __x0__ = (GetPrototypeFromConstructor newTarget INTRINSIC_ArrayPrototype)
+    app __x0__ = (GetPrototypeFromConstructor newTarget "%Array.prototype%")
     if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
     let proto = __x0__
     app __x1__ = (ArrayCreate 0i proto)
@@ -24,7 +24,7 @@ object GLOBALDOTArray extends Algorithm {
     let numberOfArgs = argumentsList["length"]
     assert (== numberOfArgs 1i)
     if (= NewTarget undefined) let newTarget = GLOBAL_context["Function"] else let newTarget = NewTarget
-    app __x4__ = (GetPrototypeFromConstructor newTarget INTRINSIC_ArrayPrototype)
+    app __x4__ = (GetPrototypeFromConstructor newTarget "%Array.prototype%")
     if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
     let proto = __x4__
     app __x5__ = (ArrayCreate 0i proto)
@@ -32,9 +32,9 @@ object GLOBALDOTArray extends Algorithm {
     let array = __x5__
     app __x6__ = (Type len)
     if (! (= __x6__ Number)) {
-      app __x7__ = (CreateDataProperty array "0" len)
-      let defineStatus = __x7__
-      assert (= defineStatus true)
+      app __x7__ = (CreateDataPropertyOrThrow array "0" len)
+      if (is-completion __x7__) if (= __x7__["Type"] CONST_normal) __x7__ = __x7__["Value"] else return __x7__ else {}
+      __x7__
       let intLen = 1i
     } else {
       app __x8__ = (ToUint32 len)
@@ -53,7 +53,7 @@ object GLOBALDOTArray extends Algorithm {
     let numberOfArgs = argumentsList["length"]
     assert (! (< numberOfArgs 2i))
     if (= NewTarget undefined) let newTarget = GLOBAL_context["Function"] else let newTarget = NewTarget
-    app __x12__ = (GetPrototypeFromConstructor newTarget INTRINSIC_ArrayPrototype)
+    app __x12__ = (GetPrototypeFromConstructor newTarget "%Array.prototype%")
     if (is-completion __x12__) if (= __x12__["Type"] CONST_normal) __x12__ = __x12__["Value"] else return __x12__ else {}
     let proto = __x12__
     app __x13__ = (ArrayCreate numberOfArgs proto)
@@ -66,9 +66,9 @@ object GLOBALDOTArray extends Algorithm {
       if (is-completion __x14__) if (= __x14__["Type"] CONST_normal) __x14__ = __x14__["Value"] else return __x14__ else {}
       let Pk = __x14__
       let itemK = items[k]
-      app __x15__ = (CreateDataProperty array Pk itemK)
-      let defineStatus = __x15__
-      assert (= defineStatus true)
+      app __x15__ = (CreateDataPropertyOrThrow array Pk itemK)
+      if (is-completion __x15__) if (= __x15__["Type"] CONST_normal) __x15__ = __x15__["Value"] else return __x15__ else {}
+      __x15__
       k = (+ k 1i)
     }
     app __x16__ = (WrapCompletion array)

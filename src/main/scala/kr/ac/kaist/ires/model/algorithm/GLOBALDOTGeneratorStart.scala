@@ -25,7 +25,7 @@ object GLOBALDOTGeneratorStart extends Algorithm {
         (pop GLOBAL_executionStack __x3__)
       } else {}
       GLOBAL_context = GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 1i)]
-      generator["GeneratorState"] = "completed"
+      generator["GeneratorState"] = CONST_completed
       if (= result["Type"] CONST_normal) let resultValue = undefined else if (= result["Type"] CONST_return) let resultValue = result["Value"] else {
         assert (= result["Type"] CONST_throw)
         app __x4__ = (Completion result)
@@ -37,7 +37,7 @@ object GLOBALDOTGeneratorStart extends Algorithm {
       return __x7__
     }
     generator["GeneratorContext"] = genContext
-    generator["GeneratorState"] = "suspendedStart"
+    generator["GeneratorState"] = CONST_suspendedStart
     app __x8__ = (NormalCompletion undefined)
     app __x9__ = (WrapCompletion __x8__)
     return __x9__

@@ -19,7 +19,8 @@ object ToIndex extends Algorithm {
       app __x2__ = (ToLength integerIndex)
       if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
       let index = __x2__
-      app __x3__ = (SameValueZero integerIndex index)
+      app __x3__ = (SameValue integerIndex index)
+      if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
       if (= __x3__ false) {
         app __x4__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_RangeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
         return __x4__

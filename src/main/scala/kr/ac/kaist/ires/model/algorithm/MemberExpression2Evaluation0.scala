@@ -13,13 +13,10 @@ object MemberExpression2Evaluation0 extends Algorithm {
     app __x1__ = (GetValue baseReference)
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
     let baseValue = __x1__
-    app __x2__ = (RequireObjectCoercible baseValue)
-    if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
-    let bv = __x2__
-    access __x3__ = (IdentifierName "StringValue")
-    let propertyNameString = __x3__
     if true let strict = true else let strict = false
-    app __x4__ = (WrapCompletion (new Reference("BaseValue" -> bv, "ReferencedName" -> propertyNameString, "StrictReference" -> strict)))
-    return __x4__
+    app __x2__ = (EvaluatePropertyAccessWithIdentifierKey baseValue IdentifierName strict)
+    if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
+    app __x3__ = (WrapCompletion __x2__)
+    return __x3__
   }"""), this)
 }

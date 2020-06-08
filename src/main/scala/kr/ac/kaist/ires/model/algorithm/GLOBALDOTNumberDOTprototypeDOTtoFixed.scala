@@ -20,22 +20,19 @@ object GLOBALDOTNumberDOTprototypeDOTtoFixed extends Algorithm {
       app __x3__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_RangeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
       return __x3__
     } else {}
-    if (= x NaN) {
-      app __x4__ = (WrapCompletion "NaN")
-      return __x4__
-    } else {}
+    !!! "If id:{x} is value:{NaN} , return the String value:{\"NaN\"} ."
     let s = ""
     if (< x 0i) {
       s = "-"
       x = (- x)
     } else {}
     if (! (< x 9223372036854775807i)) {
-      app __x5__ = (ToString x)
-      if (is-completion __x5__) if (= __x5__["Type"] CONST_normal) __x5__ = __x5__["Value"] else return __x5__ else {}
-      let m = __x5__
+      app __x4__ = (ToString x)
+      if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
+      let m = __x4__
     } else {
       !!! "Etc"
-      if (== n 0i) let m = "0" else let m = !!! "StringOp"
+      !!! "If id:{n} = 0 , let id:{m} be the String value:{\"0\"} . Otherwise , let id:{m} be the String value consisting of the digits of the decimal representation of id:{n} ( in order , with no leading zeroes ) ."
       if (! (== f 0i)) {
         let k = m["length"]
         if (! (< f k)) {
@@ -47,7 +44,7 @@ object GLOBALDOTNumberDOTprototypeDOTtoFixed extends Algorithm {
         m = (+ (+ a ".") b)
       } else {}
     }
-    app __x6__ = (WrapCompletion (+ s m))
-    return __x6__
+    app __x5__ = (WrapCompletion (+ s m))
+    return __x5__
   }"""), this)
 }

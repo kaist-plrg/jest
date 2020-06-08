@@ -291,6 +291,7 @@ object IterationStatement11 extends ASTInfo {
     "ContainsDuplicateLabels0" -> IterationStatement11ContainsDuplicateLabels0.func,
     "ContainsUndefinedBreakTarget0" -> IterationStatement11ContainsUndefinedBreakTarget0.func,
     "ContainsUndefinedContinueTarget0" -> IterationStatement11ContainsUndefinedContinueTarget0.func,
+    "HasCallInTailPosition0" -> IterationStatement11HasCallInTailPosition0.func,
     "LabelledEvaluation0" -> IterationStatement11LabelledEvaluation0.func,
     "VarDeclaredNames0" -> IterationStatement11VarDeclaredNames0.func,
     "VarScopedDeclarations0" -> IterationStatement11VarScopedDeclarations0.func
@@ -314,6 +315,7 @@ object IterationStatement12 extends ASTInfo {
     "ContainsDuplicateLabels0" -> IterationStatement12ContainsDuplicateLabels0.func,
     "ContainsUndefinedBreakTarget0" -> IterationStatement12ContainsUndefinedBreakTarget0.func,
     "ContainsUndefinedContinueTarget0" -> IterationStatement12ContainsUndefinedContinueTarget0.func,
+    "HasCallInTailPosition0" -> IterationStatement12HasCallInTailPosition0.func,
     "LabelledEvaluation0" -> IterationStatement12LabelledEvaluation0.func,
     "VarDeclaredNames0" -> IterationStatement12VarDeclaredNames0.func,
     "VarScopedDeclarations0" -> IterationStatement12VarScopedDeclarations0.func
@@ -337,6 +339,7 @@ object IterationStatement13 extends ASTInfo {
     "ContainsDuplicateLabels0" -> IterationStatement13ContainsDuplicateLabels0.func,
     "ContainsUndefinedBreakTarget0" -> IterationStatement13ContainsUndefinedBreakTarget0.func,
     "ContainsUndefinedContinueTarget0" -> IterationStatement13ContainsUndefinedContinueTarget0.func,
+    "HasCallInTailPosition0" -> IterationStatement13HasCallInTailPosition0.func,
     "LabelledEvaluation0" -> IterationStatement13LabelledEvaluation0.func,
     "VarDeclaredNames0" -> IterationStatement13VarDeclaredNames0.func,
     "VarScopedDeclarations0" -> IterationStatement13VarScopedDeclarations0.func

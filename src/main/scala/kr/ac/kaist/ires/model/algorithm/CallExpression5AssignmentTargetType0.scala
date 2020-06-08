@@ -7,5 +7,5 @@ object CallExpression5AssignmentTargetType0 extends Algorithm {
   val name: String = "CallExpression5AssignmentTargetType0"
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = FixUIdWalker(parseFunc(""""CallExpression5AssignmentTargetType0" (this, CallExpression, TemplateLiteral) => return CONST_invalid"""), this)
+  val func: Func = FixUIdWalker(parseFunc(""""CallExpression5AssignmentTargetType0" (this, CallExpression, IdentifierName) => return CONST_simple"""), this)
 }

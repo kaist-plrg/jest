@@ -71,11 +71,17 @@ object ProxyExoticObjectDOTGetOwnProperty extends Algorithm {
       app __x19__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
       return __x19__
     } else {}
-    if (= resultDesc["Configurable"] false) if (|| (= targetDesc undefined) (= targetDesc["Configurable"] true)) {
-      app __x20__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
-      return __x20__
-    } else {} else {}
-    app __x21__ = (WrapCompletion resultDesc)
-    return __x21__
+    if (= resultDesc["Configurable"] false) {
+      if (|| (= targetDesc undefined) (= targetDesc["Configurable"] true)) {
+        app __x20__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
+        return __x20__
+      } else {}
+      if (&& (! (= resultDesc["Writable"] absent)) (= resultDesc["Writable"] false)) if (= targetDesc["Writable"] true) {
+        app __x21__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
+        return __x21__
+      } else {} else {}
+    } else {}
+    app __x22__ = (WrapCompletion resultDesc)
+    return __x22__
   }"""), this)
 }

@@ -7,12 +7,13 @@ object ConditionalExpression1Evaluation0 extends Algorithm {
   val name: String = "ConditionalExpression1Evaluation0"
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = FixUIdWalker(parseFunc(""""ConditionalExpression1Evaluation0" (this, LogicalORExpression, AssignmentExpression0, AssignmentExpression1) => {
-    access __x0__ = (LogicalORExpression "Evaluation")
+  val func: Func = FixUIdWalker(parseFunc(""""ConditionalExpression1Evaluation0" (this, ShortCircuitExpression, AssignmentExpression0, AssignmentExpression1) => {
+    access __x0__ = (ShortCircuitExpression "Evaluation")
     let lref = __x0__
     app __x1__ = (GetValue lref)
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
     app __x2__ = (ToBoolean __x1__)
+    if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     let lval = __x2__
     if (= lval true) {
       access __x3__ = (AssignmentExpression0 "Evaluation")

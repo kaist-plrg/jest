@@ -40,13 +40,20 @@ object AdditiveExpression1Evaluation0 extends Algorithm {
       app __x11__ = (WrapCompletion (+ lstr rstr))
       return __x11__
     } else {}
-    app __x12__ = (ToNumber lprim)
+    app __x12__ = (ToNumeric lprim)
     if (is-completion __x12__) if (= __x12__["Type"] CONST_normal) __x12__ = __x12__["Value"] else return __x12__ else {}
     let lnum = __x12__
-    app __x13__ = (ToNumber rprim)
+    app __x13__ = (ToNumeric rprim)
     if (is-completion __x13__) if (= __x13__["Type"] CONST_normal) __x13__ = __x13__["Value"] else return __x13__ else {}
     let rnum = __x13__
-    app __x14__ = (WrapCompletion (+ lnum rnum))
-    return __x14__
+    app __x14__ = (Type lnum)
+    app __x15__ = (Type rnum)
+    if (! (= __x14__ __x15__)) {
+      app __x16__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
+      return __x16__
+    } else {}
+    app __x17__ = (Type lnum)
+    let T = __x17__
+    !!! "Return id:{T} : : add ( id:{lnum} , id:{rnum} ) ."
   }"""), this)
 }

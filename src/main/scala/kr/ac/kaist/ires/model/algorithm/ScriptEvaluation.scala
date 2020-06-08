@@ -9,13 +9,13 @@ object ScriptEvaluation extends Algorithm {
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""ScriptEvaluation" (scriptRecord) => {
     let globalEnv = scriptRecord["Realm"]["GlobalEnv"]
-    let scriptCxt = (new ExecutionContext("SubMap" -> (new SubMap())))
-    scriptCxt["Function"] = null
-    scriptCxt["Realm"] = scriptRecord["Realm"]
-    scriptCxt["ScriptOrModule"] = scriptRecord
-    scriptCxt["VariableEnvironment"] = globalEnv
-    scriptCxt["LexicalEnvironment"] = globalEnv
-    append scriptCxt -> GLOBAL_executionStack
+    let scriptContext = (new ExecutionContext("SubMap" -> (new SubMap())))
+    scriptContext["Function"] = null
+    scriptContext["Realm"] = scriptRecord["Realm"]
+    scriptContext["ScriptOrModule"] = scriptRecord
+    scriptContext["VariableEnvironment"] = globalEnv
+    scriptContext["LexicalEnvironment"] = globalEnv
+    append scriptContext -> GLOBAL_executionStack
     GLOBAL_context = GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 1i)]
     let scriptBody = scriptRecord["ECMAScriptCode"]
     app __x0__ = (GlobalDeclarationInstantiation scriptBody globalEnv)
@@ -28,7 +28,7 @@ object ScriptEvaluation extends Algorithm {
       app __x2__ = (NormalCompletion undefined)
       result = __x2__
     } else {}
-    if (= GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 1i)] scriptCxt) {
+    if (= GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 1i)] scriptContext) {
       __x3__ = (- GLOBAL_executionStack["length"] 1i)
       (pop GLOBAL_executionStack __x3__)
       if (= GLOBAL_executionStack["length"] 0i) GLOBAL_context = null else GLOBAL_context = GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 1i)]

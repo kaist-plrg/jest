@@ -29,5 +29,12 @@ object EqualityExpression2Evaluation0 extends Algorithm {
       app __x6__ = (WrapCompletion true)
       return __x6__
     }
+    if (= r true) {
+      app __x7__ = (WrapCompletion false)
+      return __x7__
+    } else {
+      app __x8__ = (WrapCompletion true)
+      return __x8__
+    }
   }"""), this)
 }

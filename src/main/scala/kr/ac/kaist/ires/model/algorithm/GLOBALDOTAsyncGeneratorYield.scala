@@ -17,7 +17,7 @@ object GLOBALDOTAsyncGeneratorYield extends Algorithm {
     app __x2__ = (Await value)
     if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     value = __x2__
-    generator["AsyncGeneratorState"] = "suspendedYield"
+    generator["AsyncGeneratorState"] = CONST_suspendedYield
     if (= GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 1i)] genContext) {
       __x3__ = (- GLOBAL_executionStack["length"] 1i)
       (pop GLOBAL_executionStack __x3__)

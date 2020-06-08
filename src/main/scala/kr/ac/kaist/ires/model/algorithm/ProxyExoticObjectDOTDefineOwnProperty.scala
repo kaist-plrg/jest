@@ -32,6 +32,7 @@ object ProxyExoticObjectDOTDefineOwnProperty extends Algorithm {
     app __x7__ = (Call trap handler (new [target, P, descObj]))
     if (is-completion __x7__) if (= __x7__["Type"] CONST_normal) __x7__ = __x7__["Value"] else return __x7__ else {}
     app __x8__ = (ToBoolean __x7__)
+    if (is-completion __x8__) if (= __x8__["Type"] CONST_normal) __x8__ = __x8__["Value"] else return __x8__ else {}
     let booleanTrapResult = __x8__
     if (= booleanTrapResult false) {
       app __x9__ = (WrapCompletion false)
@@ -63,6 +64,7 @@ object ProxyExoticObjectDOTDefineOwnProperty extends Algorithm {
         app __x16__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
         return __x16__
       } else {}
+      !!! "If IsDataDescriptor ( id:{targetDesc} ) is value:{true} , id:{targetDesc} . [ [ Configurable ] ] is value:{false} , and id:{targetDesc} . [ [ Writable ] ] is value:{true} , then step-list:{...}"
     }
     app __x17__ = (WrapCompletion true)
     return __x17__

@@ -15,7 +15,7 @@ object AsyncGeneratorYield extends Algorithm {
     app __x1__ = (Await value)
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
     value = __x1__
-    generator["AsyncGeneratorState"] = "suspendedYield"
+    generator["AsyncGeneratorState"] = CONST_suspendedYield
     if (= GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 1i)] genContext) {
       __x2__ = (- GLOBAL_executionStack["length"] 1i)
       (pop GLOBAL_executionStack __x2__)

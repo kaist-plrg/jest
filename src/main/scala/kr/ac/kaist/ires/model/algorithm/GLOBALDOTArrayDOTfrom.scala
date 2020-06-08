@@ -21,7 +21,6 @@ object GLOBALDOTArrayDOTfrom extends Algorithm {
         app __x4__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
         return __x4__
       } else {}
-      if (! (= thisArg absent)) let T = thisArg else let T = undefined
       let mapping = true
     }
     app __x5__ = (GetMethod items SYMBOL_iterator)
@@ -68,7 +67,7 @@ object GLOBALDOTArrayDOTfrom extends Algorithm {
         if (is-completion __x17__) if (= __x17__["Type"] CONST_normal) __x17__ = __x17__["Value"] else return __x17__ else {}
         let nextValue = __x17__
         if (= mapping true) {
-          app __x18__ = (Call mapfn T (new [nextValue, k]))
+          app __x18__ = (Call mapfn thisArg (new [nextValue, k]))
           let mappedValue = __x18__
           app __x19__ = (IsAbruptCompletion mappedValue)
           if __x19__ {
@@ -93,43 +92,41 @@ object GLOBALDOTArrayDOTfrom extends Algorithm {
     app __x26__ = (ToObject items)
     if (is-completion __x26__) if (= __x26__["Type"] CONST_normal) __x26__ = __x26__["Value"] else return __x26__ else {}
     let arrayLike = __x26__
-    app __x27__ = (Get arrayLike "length")
+    app __x27__ = (LengthOfArrayLike arrayLike)
     if (is-completion __x27__) if (= __x27__["Type"] CONST_normal) __x27__ = __x27__["Value"] else return __x27__ else {}
-    app __x28__ = (ToLength __x27__)
-    if (is-completion __x28__) if (= __x28__["Type"] CONST_normal) __x28__ = __x28__["Value"] else return __x28__ else {}
-    let len = __x28__
-    app __x29__ = (IsConstructor C)
-    if (= __x29__ true) {
-      app __x30__ = (Construct C (new [len]))
+    let len = __x27__
+    app __x28__ = (IsConstructor C)
+    if (= __x28__ true) {
+      app __x29__ = (Construct C (new [len]))
+      if (is-completion __x29__) if (= __x29__["Type"] CONST_normal) __x29__ = __x29__["Value"] else return __x29__ else {}
+      let A = __x29__
+    } else {
+      app __x30__ = (ArrayCreate len)
       if (is-completion __x30__) if (= __x30__["Type"] CONST_normal) __x30__ = __x30__["Value"] else return __x30__ else {}
       let A = __x30__
-    } else {
-      app __x31__ = (ArrayCreate len)
-      if (is-completion __x31__) if (= __x31__["Type"] CONST_normal) __x31__ = __x31__["Value"] else return __x31__ else {}
-      let A = __x31__
     }
     let k = 0i
     while (< k len) {
-      app __x32__ = (ToString k)
+      app __x31__ = (ToString k)
+      if (is-completion __x31__) if (= __x31__["Type"] CONST_normal) __x31__ = __x31__["Value"] else return __x31__ else {}
+      let Pk = __x31__
+      app __x32__ = (Get arrayLike Pk)
       if (is-completion __x32__) if (= __x32__["Type"] CONST_normal) __x32__ = __x32__["Value"] else return __x32__ else {}
-      let Pk = __x32__
-      app __x33__ = (Get arrayLike Pk)
-      if (is-completion __x33__) if (= __x33__["Type"] CONST_normal) __x33__ = __x33__["Value"] else return __x33__ else {}
-      let kValue = __x33__
+      let kValue = __x32__
       if (= mapping true) {
-        app __x34__ = (Call mapfn T (new [kValue, k]))
-        if (is-completion __x34__) if (= __x34__["Type"] CONST_normal) __x34__ = __x34__["Value"] else return __x34__ else {}
-        let mappedValue = __x34__
+        app __x33__ = (Call mapfn thisArg (new [kValue, k]))
+        if (is-completion __x33__) if (= __x33__["Type"] CONST_normal) __x33__ = __x33__["Value"] else return __x33__ else {}
+        let mappedValue = __x33__
       } else let mappedValue = kValue
-      app __x35__ = (CreateDataPropertyOrThrow A Pk mappedValue)
-      if (is-completion __x35__) if (= __x35__["Type"] CONST_normal) __x35__ = __x35__["Value"] else return __x35__ else {}
-      __x35__
+      app __x34__ = (CreateDataPropertyOrThrow A Pk mappedValue)
+      if (is-completion __x34__) if (= __x34__["Type"] CONST_normal) __x34__ = __x34__["Value"] else return __x34__ else {}
+      __x34__
       k = (+ k 1i)
     }
-    app __x36__ = (Set A "length" len true)
-    if (is-completion __x36__) if (= __x36__["Type"] CONST_normal) __x36__ = __x36__["Value"] else return __x36__ else {}
-    __x36__
-    app __x37__ = (WrapCompletion A)
-    return __x37__
+    app __x35__ = (Set A "length" len true)
+    if (is-completion __x35__) if (= __x35__["Type"] CONST_normal) __x35__ = __x35__["Value"] else return __x35__ else {}
+    __x35__
+    app __x36__ = (WrapCompletion A)
+    return __x36__
   }"""), this)
 }

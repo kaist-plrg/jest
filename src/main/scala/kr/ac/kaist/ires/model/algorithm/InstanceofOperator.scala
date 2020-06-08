@@ -20,6 +20,7 @@ object InstanceofOperator extends Algorithm {
       app __x3__ = (Call instOfHandler target (new [V]))
       if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
       app __x4__ = (ToBoolean __x3__)
+      if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
       app __x5__ = (WrapCompletion __x4__)
       return __x5__
     } else {}

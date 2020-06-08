@@ -13,27 +13,18 @@ object BoundFunctionCreate extends Algorithm {
     app __x1__ = (targetFunction["GetPrototypeOf"] targetFunction)
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
     let proto = __x1__
-    let obj = (new OrdinaryObject("SubMap" -> (new SubMap())))
-    if (= obj["HasProperty"] absent) obj["HasProperty"] = OrdinaryObjectDOTHasProperty else {}
-    if (= obj["DefineOwnProperty"] absent) obj["DefineOwnProperty"] = OrdinaryObjectDOTDefineOwnProperty else {}
-    if (= obj["Set"] absent) obj["Set"] = OrdinaryObjectDOTSet else {}
-    if (= obj["SetPrototypeOf"] absent) obj["SetPrototypeOf"] = OrdinaryObjectDOTSetPrototypeOf else {}
-    if (= obj["Get"] absent) obj["Get"] = OrdinaryObjectDOTGet else {}
-    if (= obj["PreventExtensions"] absent) obj["PreventExtensions"] = OrdinaryObjectDOTPreventExtensions else {}
-    if (= obj["Delete"] absent) obj["Delete"] = OrdinaryObjectDOTDelete else {}
-    if (= obj["GetOwnProperty"] absent) obj["GetOwnProperty"] = OrdinaryObjectDOTGetOwnProperty else {}
-    if (= obj["OwnPropertyKeys"] absent) obj["OwnPropertyKeys"] = OrdinaryObjectDOTOwnPropertyKeys else {}
-    if (= obj["GetPrototypeOf"] absent) obj["GetPrototypeOf"] = OrdinaryObjectDOTGetPrototypeOf else {}
-    if (= obj["IsExtensible"] absent) obj["IsExtensible"] = OrdinaryObjectDOTIsExtensible else {}
-    obj["Call"] = BoundFunctionExoticObjectDOTCall
-    app __x2__ = (IsConstructor targetFunction)
-    if (= __x2__ true) obj["Construct"] = BoundFunctionExoticObjectDOTConstruct else {}
+    !!! "Let id:{internalSlotsList} be the internal slots listed in Table 28 , plus [ [ Prototype ] ] and [ [ Extensible ] ] ."
+    app __x2__ = (MakeBasicObject internalSlotsList)
+    if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
+    let obj = __x2__
     obj["Prototype"] = proto
-    obj["Extensible"] = true
+    obj["Call"] = BoundFunctionExoticObjectDOTCall
+    app __x3__ = (IsConstructor targetFunction)
+    if (= __x3__ true) obj["Construct"] = BoundFunctionExoticObjectDOTConstruct else {}
     obj["BoundTargetFunction"] = targetFunction
     obj["BoundThis"] = boundThis
     obj["BoundArguments"] = boundArgs
-    app __x3__ = (WrapCompletion obj)
-    return __x3__
+    app __x4__ = (WrapCompletion obj)
+    return __x4__
   }"""), this)
 }

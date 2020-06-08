@@ -17,7 +17,7 @@ object GLOBALDOTObjectDOTcreate extends Algorithm {
       app __x3__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
       return __x3__
     } else {}
-    app __x4__ = (ObjectCreate O)
+    app __x4__ = (OrdinaryObjectCreate O)
     let obj = __x4__
     if (! (= Properties undefined)) {
       app __x5__ = (ObjectDefineProperties obj Properties)

@@ -15,7 +15,7 @@ object GLOBALDOTObjectDOTisFrozen extends Algorithm {
       app __x2__ = (WrapCompletion true)
       return __x2__
     } else {}
-    app __x3__ = (TestIntegrityLevel O "frozen")
+    app __x3__ = (TestIntegrityLevel O CONST_frozen)
     if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
     app __x4__ = (WrapCompletion __x3__)
     return __x4__

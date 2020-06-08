@@ -50,6 +50,7 @@ object GLOBALDOTStringDOTprototypeDOTreplace extends Algorithm {
     } else {
       let captures = (new [])
       app __x12__ = (GetSubstitution matched string pos captures undefined replaceValue)
+      if (is-completion __x12__) if (= __x12__["Type"] CONST_normal) __x12__ = __x12__["Value"] else return __x12__ else {}
       let replStr = __x12__
     }
     let tailPos = (+ pos matched["length"])

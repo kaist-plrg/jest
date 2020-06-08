@@ -12,12 +12,12 @@ object GLOBALDOTFulfillPromise extends Algorithm {
     let promise = __x0__
     app __x1__ = (GetArgument argumentsList 1i)
     let value = __x1__
-    assert (= promise["PromiseState"] "pending")
+    assert (= promise["PromiseState"] CONST_pending)
     let reactions = promise["PromiseFulfillReactions"]
     promise["PromiseResult"] = value
     promise["PromiseFulfillReactions"] = undefined
     promise["PromiseRejectReactions"] = undefined
-    promise["PromiseState"] = "fulfilled"
+    promise["PromiseState"] = CONST_fulfilled
     app __x2__ = (TriggerPromiseReactions reactions value)
     app __x3__ = (WrapCompletion __x2__)
     return __x3__

@@ -15,7 +15,7 @@ object GLOBALDOTINTRINSIC_MapIteratorPrototypeDOTnext extends Algorithm {
       return __x1__
     } else {}
     !!! "Etc"
-    let m = O["Map"]
+    let m = O["IteratedMap"]
     let index = O["MapNextIndex"]
     let itemKind = O["MapIterationKind"]
     if (= m undefined) {
@@ -31,9 +31,10 @@ object GLOBALDOTINTRINSIC_MapIteratorPrototypeDOTnext extends Algorithm {
       index = (+ index 1i)
       O["MapNextIndex"] = index
       if (! (= e["Key"] CONST_empty)) {
-        if (= itemKind "key") let result = e["Key"] else if (= itemKind "value") let result = e["Value"] else {
-          assert (= itemKind "key+value")
+        if (= itemKind CONST_key) let result = e["Key"] else if (= itemKind CONST_value) let result = e["Value"] else {
+          assert (= itemKind CONST_key+value)
           app __x4__ = (CreateArrayFromList (new [e["Key"], e["Value"]]))
+          if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
           let result = __x4__
         }
         app __x5__ = (CreateIterResultObject result false)
@@ -41,7 +42,7 @@ object GLOBALDOTINTRINSIC_MapIteratorPrototypeDOTnext extends Algorithm {
         return __x6__
       } else {}
     }
-    O["Map"] = undefined
+    O["IteratedMap"] = undefined
     app __x7__ = (CreateIterResultObject undefined true)
     app __x8__ = (WrapCompletion __x7__)
     return __x8__

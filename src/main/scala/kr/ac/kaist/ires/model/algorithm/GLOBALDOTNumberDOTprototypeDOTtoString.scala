@@ -13,7 +13,7 @@ object GLOBALDOTNumberDOTprototypeDOTtoString extends Algorithm {
     app __x1__ = (thisNumberValue this)
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
     let x = __x1__
-    if (= argumentsList[0i] absent) let radixNumber = 10i else if (= radix undefined) let radixNumber = 10i else {
+    if (= radix undefined) let radixNumber = 10i else {
       app __x2__ = (ToInteger radix)
       if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
       let radixNumber = __x2__

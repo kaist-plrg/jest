@@ -44,9 +44,11 @@ object PromiseResolveFunctions extends Algorithm {
       app __x13__ = (WrapCompletion __x12__)
       return __x13__
     } else {}
-    app __x14__ = (EnqueueJob "PromiseJobs" PromiseResolveThenableJob (new [promise, resolution, thenAction]))
-    __x14__
-    app __x15__ = (WrapCompletion undefined)
-    return __x15__
+    app __x14__ = (NewPromiseResolveThenableJob promise resolution thenAction)
+    let job = __x14__
+    app __x15__ = (HostEnqueuePromiseJob job["Job"] job["Realm"])
+    __x15__
+    app __x16__ = (WrapCompletion undefined)
+    return __x16__
   }"""), this)
 }

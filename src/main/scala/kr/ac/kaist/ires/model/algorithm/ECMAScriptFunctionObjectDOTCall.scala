@@ -8,7 +8,7 @@ object ECMAScriptFunctionObjectDOTCall extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""ECMAScriptFunctionObject.Call" (F, thisArgument, argumentsList) => {
-    if (= F["FunctionKind"] "classConstructor") {
+    if (= F["IsClassConstructor"] true) {
       app __x0__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
       return __x0__
     } else {}

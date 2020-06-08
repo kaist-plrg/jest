@@ -7,18 +7,16 @@ object CallExpression5Evaluation0 extends Algorithm {
   val name: String = "CallExpression5Evaluation0"
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = FixUIdWalker(parseFunc(""""CallExpression5Evaluation0" (this, CallExpression, TemplateLiteral) => {
+  val func: Func = FixUIdWalker(parseFunc(""""CallExpression5Evaluation0" (this, CallExpression, IdentifierName) => {
     access __x0__ = (CallExpression "Evaluation")
-    let tagRef = __x0__
-    app __x1__ = (GetValue tagRef)
+    let baseReference = __x0__
+    app __x1__ = (GetValue baseReference)
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
-    let tagFunc = __x1__
-    let thisCall = this
-    app __x2__ = (IsInTailPosition thisCall)
-    let tailCall = __x2__
-    app __x3__ = (EvaluateCall tagFunc tagRef TemplateLiteral tailCall)
-    if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
-    app __x4__ = (WrapCompletion __x3__)
-    return __x4__
+    let baseValue = __x1__
+    if true let strict = true else let strict = false
+    app __x2__ = (EvaluatePropertyAccessWithIdentifierKey baseValue IdentifierName strict)
+    if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
+    app __x3__ = (WrapCompletion __x2__)
+    return __x3__
   }"""), this)
 }

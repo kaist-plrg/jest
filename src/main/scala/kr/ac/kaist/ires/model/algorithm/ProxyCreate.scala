@@ -20,7 +20,9 @@ object ProxyCreate extends Algorithm {
       return __x3__
     } else {}
     !!! "Etc"
-    let P = (new OrdinaryObject("SubMap" -> (new SubMap())))
+    app __x4__ = (MakeBasicObject (new ["ProxyHandler", "ProxyTarget"]))
+    if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
+    let P = __x4__
     if (= P["HasProperty"] absent) P["HasProperty"] = OrdinaryObjectDOTHasProperty else {}
     if (= P["DefineOwnProperty"] absent) P["DefineOwnProperty"] = OrdinaryObjectDOTDefineOwnProperty else {}
     if (= P["Set"] absent) P["Set"] = OrdinaryObjectDOTSet else {}
@@ -32,15 +34,15 @@ object ProxyCreate extends Algorithm {
     if (= P["OwnPropertyKeys"] absent) P["OwnPropertyKeys"] = OrdinaryObjectDOTOwnPropertyKeys else {}
     if (= P["GetPrototypeOf"] absent) P["GetPrototypeOf"] = OrdinaryObjectDOTGetPrototypeOf else {}
     if (= P["IsExtensible"] absent) P["IsExtensible"] = OrdinaryObjectDOTIsExtensible else {}
-    app __x4__ = (IsCallable target)
-    if (= __x4__ true) {
+    app __x5__ = (IsCallable target)
+    if (= __x5__ true) {
       P["Call"] = ProxyExoticObjectDOTCall
-      app __x5__ = (IsConstructor target)
-      if (= __x5__ true) P["Construct"] = ProxyExoticObjectDOTConstruct else {}
+      app __x6__ = (IsConstructor target)
+      if (= __x6__ true) P["Construct"] = ProxyExoticObjectDOTConstruct else {}
     } else {}
     P["ProxyTarget"] = target
     P["ProxyHandler"] = handler
-    app __x6__ = (WrapCompletion P)
-    return __x6__
+    app __x7__ = (WrapCompletion P)
+    return __x7__
   }"""), this)
 }

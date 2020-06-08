@@ -9,20 +9,21 @@ object MakeConstructor extends Algorithm {
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""MakeConstructor" (F, writablePrototype, prototype) => {
     app __x0__ = (IsConstructor F)
-    assert (= __x0__ true)
+    assert (= __x0__ false)
+    F["Construct"] = ECMAScriptFunctionObjectDOTConstruct
+    F["ConstructorKind"] = CONST_base
     if (= writablePrototype absent) writablePrototype = true else {}
     if (= prototype absent) {
-      app __x1__ = (ObjectCreate INTRINSIC_ObjectPrototype)
-      prototype = __x1__
-      app __x2__ = (DefinePropertyOrThrow prototype "constructor" (new PropertyDescriptor("Value" -> F, "Writable" -> writablePrototype, "Enumerable" -> false, "Configurable" -> true)))
-      if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
-      __x2__
+      !!! "Set id:{prototype} to OrdinaryObjectCreate ( % Object . prototype % ) ."
+      app __x1__ = (DefinePropertyOrThrow prototype "constructor" (new PropertyDescriptor("Value" -> F, "Writable" -> writablePrototype, "Enumerable" -> false, "Configurable" -> true)))
+      if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
+      __x1__
     } else {}
-    app __x3__ = (DefinePropertyOrThrow F "prototype" (new PropertyDescriptor("Value" -> prototype, "Writable" -> writablePrototype, "Enumerable" -> false, "Configurable" -> false)))
-    if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
-    __x3__
-    app __x4__ = (NormalCompletion undefined)
-    app __x5__ = (WrapCompletion __x4__)
-    return __x5__
+    app __x2__ = (DefinePropertyOrThrow F "prototype" (new PropertyDescriptor("Value" -> prototype, "Writable" -> writablePrototype, "Enumerable" -> false, "Configurable" -> false)))
+    if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
+    __x2__
+    app __x3__ = (NormalCompletion undefined)
+    app __x4__ = (WrapCompletion __x3__)
+    return __x4__
   }"""), this)
 }

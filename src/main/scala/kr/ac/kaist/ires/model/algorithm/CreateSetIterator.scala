@@ -8,21 +8,15 @@ object CreateSetIterator extends Algorithm {
   val length: Int = 2
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""CreateSetIterator" (set, kind) => {
-    app __x0__ = (Type set)
-    if (! (= __x0__ Object)) {
-      app __x1__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
-      return __x1__
-    } else {}
-    if (= set["SetData"] absent) {
-      app __x2__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
-      return __x2__
-    } else {}
-    app __x3__ = (ObjectCreate INTRINSIC_SetIteratorPrototype (new ["IteratedSet", "SetNextIndex", "SetIterationKind"]))
-    let iterator = __x3__
+    app __x0__ = (RequireInternalSlot set "SetData")
+    if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
+    __x0__
+    app __x1__ = (OrdinaryObjectCreate INTRINSIC_SetIteratorPrototype (new ["IteratedSet", "SetNextIndex", "SetIterationKind"]))
+    let iterator = __x1__
     iterator["IteratedSet"] = set
     iterator["SetNextIndex"] = 0i
     iterator["SetIterationKind"] = kind
-    app __x4__ = (WrapCompletion iterator)
-    return __x4__
+    app __x2__ = (WrapCompletion iterator)
+    return __x2__
   }"""), this)
 }

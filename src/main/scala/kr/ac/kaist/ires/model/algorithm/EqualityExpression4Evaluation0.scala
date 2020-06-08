@@ -20,7 +20,8 @@ object EqualityExpression4Evaluation0 extends Algorithm {
     let rval = __x3__
     app __x4__ = (StrictEqualityComparison rval lval)
     let r = __x4__
-    if (= r true) {
+    assert (&& (is-completion r) (= r["Type"] CONST_normal))
+    if (= r["Value"] true) {
       app __x5__ = (WrapCompletion false)
       return __x5__
     } else {

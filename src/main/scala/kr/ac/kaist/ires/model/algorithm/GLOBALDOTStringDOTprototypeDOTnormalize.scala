@@ -16,10 +16,11 @@ object GLOBALDOTStringDOTprototypeDOTnormalize extends Algorithm {
     app __x2__ = (ToString O)
     if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     let S = __x2__
-    if (|| (= argumentsList[0i] absent) (= form undefined)) form = "NFC" else {}
-    app __x3__ = (ToString form)
-    if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
-    let f = __x3__
+    if (= form undefined) let f = "NFC" else {
+      app __x3__ = (ToString form)
+      if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
+      let f = __x3__
+    }
     if (! (|| (|| (|| (= f "NFC") (= f "NFD")) (= f "NFKC")) (= f "NFKD"))) {
       app __x4__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_RangeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
       return __x4__

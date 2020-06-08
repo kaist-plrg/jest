@@ -28,6 +28,7 @@ object ProxyExoticObjectDOTSetPrototypeOf extends Algorithm {
     app __x5__ = (Call trap handler (new [target, V]))
     if (is-completion __x5__) if (= __x5__["Type"] CONST_normal) __x5__ = __x5__["Value"] else return __x5__ else {}
     app __x6__ = (ToBoolean __x5__)
+    if (is-completion __x6__) if (= __x6__["Type"] CONST_normal) __x6__ = __x6__["Value"] else return __x6__ else {}
     let booleanTrapResult = __x6__
     if (= booleanTrapResult false) {
       app __x7__ = (WrapCompletion false)

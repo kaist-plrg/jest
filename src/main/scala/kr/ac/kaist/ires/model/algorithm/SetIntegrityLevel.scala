@@ -10,7 +10,7 @@ object SetIntegrityLevel extends Algorithm {
   val func: Func = FixUIdWalker(parseFunc(""""SetIntegrityLevel" (O, level) => {
     app __x0__ = (Type O)
     assert (= __x0__ Object)
-    assert (|| (= level "sealed") (= level "frozen"))
+    assert (|| (= level CONST_sealed) (= level CONST_frozen))
     app __x1__ = (O["PreventExtensions"] O)
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
     let status = __x1__
@@ -21,7 +21,7 @@ object SetIntegrityLevel extends Algorithm {
     app __x3__ = (O["OwnPropertyKeys"] O)
     if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
     let keys = __x3__
-    if (= level "sealed") {
+    if (= level CONST_sealed) {
       let __x4__ = keys
       let __x5__ = 0i
       while (< __x5__ __x4__["length"]) {
@@ -32,6 +32,7 @@ object SetIntegrityLevel extends Algorithm {
         __x5__ = (+ __x5__ 1i)
       }
     } else {
+      assert (= level CONST_frozen)
       let __x7__ = keys
       let __x8__ = 0i
       while (< __x8__ __x7__["length"]) {

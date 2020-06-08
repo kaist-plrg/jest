@@ -9,7 +9,7 @@ object FunctionEnvironmentRecordDOTHasSuperBinding extends Algorithm {
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""FunctionEnvironmentRecord.HasSuperBinding" (this) => {
     let envRec = this
-    if (= envRec["ThisBindingStatus"] "lexical") {
+    if (= envRec["ThisBindingStatus"] CONST_lexical) {
       app __x0__ = (WrapCompletion false)
       return __x0__
     } else {}

@@ -21,6 +21,7 @@ case class FormalParameterList0(x0: FormalParameter, parserParams: List[Boolean]
 object FormalParameterList0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
+    "ExpectedArgumentCount0" -> FormalParameterList0ExpectedArgumentCount0.func,
     "ExpectedArgumentCount0" -> FormalParameterList0ExpectedArgumentCount0.func
   )
 }

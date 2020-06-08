@@ -10,7 +10,7 @@ object GLOBALDOTString extends Algorithm {
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.String" (this, argumentsList, NewTarget) => {
     app __x0__ = (GetArgument argumentsList 0i)
     let value = __x0__
-    if (= argumentsList["length"] 0i) let s = "" else {
+    if (= argumentsList[0i] absent) let s = "" else {
       let __x1__ = (= NewTarget undefined)
       if __x1__ {
         app __x2__ = (Type value)
@@ -29,7 +29,7 @@ object GLOBALDOTString extends Algorithm {
       app __x6__ = (WrapCompletion s)
       return __x6__
     } else {}
-    app __x7__ = (GetPrototypeFromConstructor NewTarget INTRINSIC_StringPrototype)
+    app __x7__ = (GetPrototypeFromConstructor NewTarget "%String.prototype%")
     if (is-completion __x7__) if (= __x7__["Type"] CONST_normal) __x7__ = __x7__["Value"] else return __x7__ else {}
     app __x8__ = (StringCreate s __x7__)
     if (is-completion __x8__) if (= __x8__["Type"] CONST_normal) __x8__ = __x8__["Value"] else return __x8__ else {}

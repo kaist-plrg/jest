@@ -11,34 +11,28 @@ object GLOBALDOTSetDOTprototypeDOTadd extends Algorithm {
     app __x0__ = (GetArgument argumentsList 0i)
     let value = __x0__
     let S = this
-    app __x1__ = (Type S)
-    if (! (= __x1__ Object)) {
-      app __x2__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
-      return __x2__
-    } else {}
-    if (= S["SetData"] absent) {
-      app __x3__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
-      return __x3__
-    } else {}
+    app __x1__ = (RequireInternalSlot S "SetData")
+    if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
+    __x1__
     let entries = S["SetData"]
-    let __x4__ = entries
-    let __x5__ = 0i
-    while (< __x5__ __x4__["length"]) {
-      let e = __x4__[__x5__]
-      let __x6__ = (! (= e CONST_empty))
-      if __x6__ {
-        app __x7__ = (SameValueZero e value)
-        __x6__ = (= __x7__ true)
+    let __x2__ = entries
+    let __x3__ = 0i
+    while (< __x3__ __x2__["length"]) {
+      let e = __x2__[__x3__]
+      let __x4__ = (! (= e CONST_empty))
+      if __x4__ {
+        app __x5__ = (SameValueZero e value)
+        __x4__ = (= __x5__ true)
       } else {}
-      if __x6__ {
-        app __x8__ = (WrapCompletion S)
-        return __x8__
+      if __x4__ {
+        app __x6__ = (WrapCompletion S)
+        return __x6__
       } else {}
-      __x5__ = (+ __x5__ 1i)
+      __x3__ = (+ __x3__ 1i)
     }
     if (= value -0.0) value = 0i else {}
     append value -> entries
-    app __x9__ = (WrapCompletion S)
-    return __x9__
+    app __x7__ = (WrapCompletion S)
+    return __x7__
   }"""), this)
 }

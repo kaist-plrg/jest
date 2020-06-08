@@ -13,17 +13,17 @@ object ArrayLiteral2Evaluation1 extends Algorithm {
     let array = __x0__
     access __x1__ = (ElementList "ArrayAccumulation")
     app __x2__ = (__x1__ array 0i)
-    let len = __x2__
-    if (is-completion len) if (= len["Type"] CONST_normal) len = len["Value"] else return len else {}
-    len
-    if (= Elision absent) let padding = 0i else {
-      access __x3__ = (Elision "ElisionWidth")
-      let padding = __x3__
-    }
-    app __x4__ = (ToUint32 (+ padding len))
-    app __x5__ = (Set array "length" __x4__ false)
-    __x5__
-    app __x6__ = (WrapCompletion array)
-    return __x6__
+    let nextIndex = __x2__
+    if (is-completion nextIndex) if (= nextIndex["Type"] CONST_normal) nextIndex = nextIndex["Value"] else return nextIndex else {}
+    nextIndex
+    if (! (= Elision absent)) {
+      access __x3__ = (Elision "ArrayAccumulation")
+      app __x4__ = (__x3__ array nextIndex)
+      let len = __x4__
+      if (is-completion len) if (= len["Type"] CONST_normal) len = len["Value"] else return len else {}
+      len
+    } else {}
+    app __x5__ = (WrapCompletion array)
+    return __x5__
   }"""), this)
 }

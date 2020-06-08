@@ -48,7 +48,7 @@ object GLOBALDOTStringDOTprototypeDOTsplit extends Algorithm {
       return __x10__
     } else {}
     if (= separator undefined) {
-      app __x11__ = (CreateDataProperty A "0" S)
+      app __x11__ = (CreateDataPropertyOrThrow A "0" S)
       if (is-completion __x11__) if (= __x11__["Type"] CONST_normal) __x11__ = __x11__["Value"] else return __x11__ else {}
       __x11__
       app __x12__ = (WrapCompletion A)
@@ -61,7 +61,7 @@ object GLOBALDOTStringDOTprototypeDOTsplit extends Algorithm {
         app __x14__ = (WrapCompletion A)
         return __x14__
       } else {}
-      app __x15__ = (CreateDataProperty A "0" S)
+      app __x15__ = (CreateDataPropertyOrThrow A "0" S)
       if (is-completion __x15__) if (= __x15__["Type"] CONST_normal) __x15__ = __x15__["Value"] else return __x15__ else {}
       __x15__
       app __x16__ = (WrapCompletion A)
@@ -71,26 +71,29 @@ object GLOBALDOTStringDOTprototypeDOTsplit extends Algorithm {
     while (! (== q s)) {
       app __x17__ = (SplitMatch S q R)
       let e = __x17__
-      if (= e false) q = (+ q 1i) else if (== e p) q = (+ q 1i) else {
-        !!! "Etc"
-        app __x18__ = (ToString lengthA)
-        if (is-completion __x18__) if (= __x18__["Type"] CONST_normal) __x18__ = __x18__["Value"] else return __x18__ else {}
-        app __x19__ = (CreateDataProperty A __x18__ T)
-        if (is-completion __x19__) if (= __x19__["Type"] CONST_normal) __x19__ = __x19__["Value"] else return __x19__ else {}
-        __x19__
-        lengthA = (+ lengthA 1i)
-        if (== lengthA lim) {
-          app __x20__ = (WrapCompletion A)
-          return __x20__
-        } else {}
-        p = e
-        q = p
+      if (= e false) q = (+ q 1i) else {
+        assert !!! "NumberOp"
+        if (== e p) q = (+ q 1i) else {
+          !!! "Etc"
+          app __x18__ = (ToString lengthA)
+          if (is-completion __x18__) if (= __x18__["Type"] CONST_normal) __x18__ = __x18__["Value"] else return __x18__ else {}
+          app __x19__ = (CreateDataPropertyOrThrow A __x18__ T)
+          if (is-completion __x19__) if (= __x19__["Type"] CONST_normal) __x19__ = __x19__["Value"] else return __x19__ else {}
+          __x19__
+          lengthA = (+ lengthA 1i)
+          if (== lengthA lim) {
+            app __x20__ = (WrapCompletion A)
+            return __x20__
+          } else {}
+          p = e
+          q = p
+        }
       }
     }
     !!! "Etc"
     app __x21__ = (ToString lengthA)
     if (is-completion __x21__) if (= __x21__["Type"] CONST_normal) __x21__ = __x21__["Value"] else return __x21__ else {}
-    app __x22__ = (CreateDataProperty A __x21__ T)
+    app __x22__ = (CreateDataPropertyOrThrow A __x21__ T)
     if (is-completion __x22__) if (= __x22__["Type"] CONST_normal) __x22__ = __x22__["Value"] else return __x22__ else {}
     __x22__
     app __x23__ = (WrapCompletion A)

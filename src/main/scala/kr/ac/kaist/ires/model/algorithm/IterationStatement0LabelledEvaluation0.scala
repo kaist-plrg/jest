@@ -26,6 +26,7 @@ object IterationStatement0LabelledEvaluation0 extends Algorithm {
       if (is-completion __x6__) if (= __x6__["Type"] CONST_normal) __x6__ = __x6__["Value"] else return __x6__ else {}
       let exprValue = __x6__
       app __x7__ = (ToBoolean exprValue)
+      if (is-completion __x7__) if (= __x7__["Type"] CONST_normal) __x7__ = __x7__["Value"] else return __x7__ else {}
       if (= __x7__ false) {
         app __x8__ = (NormalCompletion V)
         app __x9__ = (WrapCompletion __x8__)

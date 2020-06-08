@@ -20,7 +20,7 @@ object IteratorClose extends Algorithm {
       app __x3__ = (WrapCompletion __x2__)
       return __x3__
     } else {}
-    app __x4__ = (Call return iterator (new []))
+    app __x4__ = (Call return iterator)
     let innerResult = __x4__
     if (= completion["Type"] CONST_throw) {
       app __x5__ = (Completion completion)

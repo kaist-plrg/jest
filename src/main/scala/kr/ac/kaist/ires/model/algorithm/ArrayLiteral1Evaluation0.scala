@@ -16,10 +16,7 @@ object ArrayLiteral1Evaluation0 extends Algorithm {
     let len = __x2__
     if (is-completion len) if (= len["Type"] CONST_normal) len = len["Value"] else return len else {}
     len
-    app __x3__ = (ToUint32 len)
-    app __x4__ = (Set array "length" __x3__ false)
-    __x4__
-    app __x5__ = (WrapCompletion array)
-    return __x5__
+    app __x3__ = (WrapCompletion array)
+    return __x3__
   }"""), this)
 }

@@ -15,28 +15,10 @@ object SameValueZero extends Algorithm {
       return __x2__
     } else {}
     app __x3__ = (Type x)
-    if (= __x3__ Number) {
-      if (&& (= x NaN) (= y NaN)) {
-        app __x4__ = (WrapCompletion true)
-        return __x4__
-      } else {}
-      if (&& (= x 0i) (= y -0.0)) {
-        app __x5__ = (WrapCompletion true)
-        return __x5__
-      } else {}
-      if (&& (= x -0.0) (= y 0i)) {
-        app __x6__ = (WrapCompletion true)
-        return __x6__
-      } else {}
-      if (= x y) {
-        app __x7__ = (WrapCompletion true)
-        return __x7__
-      } else {}
-      app __x8__ = (WrapCompletion false)
-      return __x8__
-    } else {}
-    app __x9__ = (SameValueNonNumber x y)
-    app __x10__ = (WrapCompletion __x9__)
-    return __x10__
+    if (|| (= __x3__ Number) (= __x3__ BigInt)) !!! "Return ! Type ( id:{x} ) : : sameValueZero ( id:{x} , id:{y} ) ." else {}
+    app __x4__ = (SameValueNonNumeric x y)
+    if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
+    app __x5__ = (WrapCompletion __x4__)
+    return __x5__
   }"""), this)
 }

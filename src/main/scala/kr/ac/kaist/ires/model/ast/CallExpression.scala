@@ -43,34 +43,31 @@ object CallExpression1 extends ASTInfo {
     "HasCallInTailPosition0" -> CallExpression1HasCallInTailPosition0.func
   )
 }
-case class CallExpression2(x0: CallExpression, x1: Arguments, parserParams: List[Boolean]) extends CallExpression {
+case class CallExpression2(x0: ImportCall, parserParams: List[Boolean]) extends CallExpression {
   x0.parent = Some(this)
-  x1.parent = Some(this)
   val name: String = "CallExpression2"
   override def toString: String = {
-    s"$x0 $x1"
+    s"$x0"
   }
-  val k: Int = d(x1, d(x0, 0))
-  val fullList: List[(String, Value)] = l("Arguments", x1, l("CallExpression", x0, Nil)).reverse
+  val k: Int = d(x0, 0)
+  val fullList: List[(String, Value)] = l("ImportCall", x0, Nil).reverse
   val info: ASTInfo = CallExpression2
 }
 object CallExpression2 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "AssignmentTargetType0" -> CallExpression2AssignmentTargetType0.func,
-    "Evaluation0" -> CallExpression2Evaluation0.func,
-    "HasCallInTailPosition0" -> CallExpression2HasCallInTailPosition0.func
+    "AssignmentTargetType0" -> CallExpression2AssignmentTargetType0.func
   )
 }
-case class CallExpression3(x0: CallExpression, x2: Expression, parserParams: List[Boolean]) extends CallExpression {
+case class CallExpression3(x0: CallExpression, x1: Arguments, parserParams: List[Boolean]) extends CallExpression {
   x0.parent = Some(this)
-  x2.parent = Some(this)
+  x1.parent = Some(this)
   val name: String = "CallExpression3"
   override def toString: String = {
-    s"$x0 [ $x2 ]"
+    s"$x0 $x1"
   }
-  val k: Int = d(x2, d(x0, 0))
-  val fullList: List[(String, Value)] = l("Expression", x2, l("CallExpression", x0, Nil)).reverse
+  val k: Int = d(x1, d(x0, 0))
+  val fullList: List[(String, Value)] = l("Arguments", x1, l("CallExpression", x0, Nil)).reverse
   val info: ASTInfo = CallExpression3
 }
 object CallExpression3 extends ASTInfo {
@@ -81,42 +78,61 @@ object CallExpression3 extends ASTInfo {
     "HasCallInTailPosition0" -> CallExpression3HasCallInTailPosition0.func
   )
 }
-case class CallExpression4(x0: CallExpression, x2: Lexical, parserParams: List[Boolean]) extends CallExpression {
+case class CallExpression4(x0: CallExpression, x2: Expression, parserParams: List[Boolean]) extends CallExpression {
   x0.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "CallExpression4"
   override def toString: String = {
-    s"$x0 . $x2"
+    s"$x0 [ $x2 ]"
   }
   val k: Int = d(x2, d(x0, 0))
-  val fullList: List[(String, Value)] = l("Lexical", x2, l("CallExpression", x0, Nil)).reverse
+  val fullList: List[(String, Value)] = l("Expression", x2, l("CallExpression", x0, Nil)).reverse
   val info: ASTInfo = CallExpression4
 }
 object CallExpression4 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> CallExpression4AssignmentTargetType0.func,
-    "Contains0" -> CallExpression4Contains0.func,
     "Evaluation0" -> CallExpression4Evaluation0.func,
     "HasCallInTailPosition0" -> CallExpression4HasCallInTailPosition0.func
   )
 }
-case class CallExpression5(x0: CallExpression, x1: TemplateLiteral, parserParams: List[Boolean]) extends CallExpression {
+case class CallExpression5(x0: CallExpression, x2: Lexical, parserParams: List[Boolean]) extends CallExpression {
   x0.parent = Some(this)
-  x1.parent = Some(this)
+  x2.parent = Some(this)
   val name: String = "CallExpression5"
   override def toString: String = {
-    s"$x0 $x1"
+    s"$x0 . $x2"
   }
-  val k: Int = d(x1, d(x0, 0))
-  val fullList: List[(String, Value)] = l("TemplateLiteral", x1, l("CallExpression", x0, Nil)).reverse
+  val k: Int = d(x2, d(x0, 0))
+  val fullList: List[(String, Value)] = l("Lexical", x2, l("CallExpression", x0, Nil)).reverse
   val info: ASTInfo = CallExpression5
 }
 object CallExpression5 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "AssignmentTargetType0" -> CallExpression5AssignmentTargetType0.func,
+    "Contains0" -> CallExpression5Contains0.func,
     "Evaluation0" -> CallExpression5Evaluation0.func,
     "HasCallInTailPosition0" -> CallExpression5HasCallInTailPosition0.func
+  )
+}
+case class CallExpression6(x0: CallExpression, x1: TemplateLiteral, parserParams: List[Boolean]) extends CallExpression {
+  x0.parent = Some(this)
+  x1.parent = Some(this)
+  val name: String = "CallExpression6"
+  override def toString: String = {
+    s"$x0 $x1"
+  }
+  val k: Int = d(x1, d(x0, 0))
+  val fullList: List[(String, Value)] = l("TemplateLiteral", x1, l("CallExpression", x0, Nil)).reverse
+  val info: ASTInfo = CallExpression6
+}
+object CallExpression6 extends ASTInfo {
+  val maxK: Int = 0
+  val semMap: Map[String, Func] = Map(
+    "AssignmentTargetType0" -> CallExpression6AssignmentTargetType0.func,
+    "Evaluation0" -> CallExpression6Evaluation0.func,
+    "HasCallInTailPosition0" -> CallExpression6HasCallInTailPosition0.func
   )
 }

@@ -18,6 +18,7 @@ object IsConcatSpreadable extends Algorithm {
     let spreadable = __x2__
     if (! (= spreadable undefined)) {
       app __x3__ = (ToBoolean spreadable)
+      if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
       app __x4__ = (WrapCompletion __x3__)
       return __x4__
     } else {}

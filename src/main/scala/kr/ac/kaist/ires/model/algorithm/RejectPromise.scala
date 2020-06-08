@@ -8,12 +8,12 @@ object RejectPromise extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""RejectPromise" (promise, reason) => {
-    assert (= promise["PromiseState"] "pending")
+    assert (= promise["PromiseState"] CONST_pending)
     let reactions = promise["PromiseRejectReactions"]
     promise["PromiseResult"] = reason
     promise["PromiseFulfillReactions"] = undefined
     promise["PromiseRejectReactions"] = undefined
-    promise["PromiseState"] = "rejected"
+    promise["PromiseState"] = CONST_rejected
     if (= promise["PromiseIsHandled"] false) {
       app __x0__ = (HostPromiseRejectionTracker promise "reject")
       __x0__

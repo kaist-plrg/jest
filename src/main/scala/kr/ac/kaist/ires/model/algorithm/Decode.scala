@@ -27,6 +27,7 @@ object Decode extends Algorithm {
           !!! "Etc"
           if (! (contains reservedSet C)) let S = !!! "StringOp" else !!! "Etc"
         } else {
+          assert !!! "NumberOp"
           !!! "Etc"
           if (|| (= n 1i) (< 4i n)) {
             app __x1__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_URIErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))

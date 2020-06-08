@@ -11,11 +11,11 @@ object GeneratorResumeAbrupt extends Algorithm {
     app __x0__ = (GeneratorValidate generator)
     if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
     let state = __x0__
-    if (= state "suspendedStart") {
-      generator["GeneratorState"] = "completed"
-      state = "completed"
+    if (= state CONST_suspendedStart) {
+      generator["GeneratorState"] = CONST_completed
+      state = CONST_completed
     } else {}
-    if (= state "completed") {
+    if (= state CONST_completed) {
       if (= abruptCompletion["Type"] CONST_return) {
         app __x1__ = (CreateIterResultObject abruptCompletion["Value"] true)
         app __x2__ = (WrapCompletion __x1__)
@@ -25,10 +25,10 @@ object GeneratorResumeAbrupt extends Algorithm {
       app __x4__ = (WrapCompletion __x3__)
       return __x4__
     } else {}
-    assert (= state "suspendedYield")
+    assert (= state CONST_suspendedYield)
     let genContext = generator["GeneratorContext"]
     let methodContext = GLOBAL_context
-    generator["GeneratorState"] = "executing"
+    generator["GeneratorState"] = CONST_executing
     append genContext -> GLOBAL_executionStack
     GLOBAL_context = GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 1i)]
     withcont __x5__ (result) ={

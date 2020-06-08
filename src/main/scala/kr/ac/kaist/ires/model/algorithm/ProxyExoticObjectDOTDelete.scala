@@ -30,6 +30,7 @@ object ProxyExoticObjectDOTDelete extends Algorithm {
     app __x6__ = (Call trap handler (new [target, P]))
     if (is-completion __x6__) if (= __x6__["Type"] CONST_normal) __x6__ = __x6__["Value"] else return __x6__ else {}
     app __x7__ = (ToBoolean __x6__)
+    if (is-completion __x7__) if (= __x7__["Type"] CONST_normal) __x7__ = __x7__["Value"] else return __x7__ else {}
     let booleanTrapResult = __x7__
     if (= booleanTrapResult false) {
       app __x8__ = (WrapCompletion false)
@@ -46,7 +47,14 @@ object ProxyExoticObjectDOTDelete extends Algorithm {
       app __x11__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
       return __x11__
     } else {}
-    app __x12__ = (WrapCompletion true)
-    return __x12__
+    app __x12__ = (IsExtensible target)
+    if (is-completion __x12__) if (= __x12__["Type"] CONST_normal) __x12__ = __x12__["Value"] else return __x12__ else {}
+    let extensibleTarget = __x12__
+    if (= extensibleTarget false) {
+      app __x13__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
+      return __x13__
+    } else {}
+    app __x14__ = (WrapCompletion true)
+    return __x14__
   }"""), this)
 }

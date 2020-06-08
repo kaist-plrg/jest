@@ -7,12 +7,5 @@ object CallExpression5HasCallInTailPosition0 extends Algorithm {
   val name: String = "CallExpression5HasCallInTailPosition0"
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = FixUIdWalker(parseFunc(""""CallExpression5HasCallInTailPosition0" (this, CallExpression, TemplateLiteral, call) => {
-    if (= this call) {
-      app __x0__ = (WrapCompletion true)
-      return __x0__
-    } else {}
-    app __x1__ = (WrapCompletion false)
-    return __x1__
-  }"""), this)
+  val func: Func = FixUIdWalker(parseFunc(""""CallExpression5HasCallInTailPosition0" (this, CallExpression, IdentifierName, call) => !!! "Return value:{false} this""""), this)
 }

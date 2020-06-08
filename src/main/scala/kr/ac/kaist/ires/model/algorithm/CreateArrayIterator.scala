@@ -10,11 +10,12 @@ object CreateArrayIterator extends Algorithm {
   val func: Func = FixUIdWalker(parseFunc(""""CreateArrayIterator" (array, kind) => {
     app __x0__ = (Type array)
     assert (= __x0__ Object)
-    app __x1__ = (ObjectCreate INTRINSIC_ArrayIteratorPrototype (new ["IteratedObject", "ArrayIteratorNextIndex", "ArrayIterationKind"]))
+    assert (|| (|| (= kind CONST_key+value) (= kind CONST_key)) (= kind CONST_value))
+    app __x1__ = (OrdinaryObjectCreate INTRINSIC_ArrayIteratorPrototype (new ["IteratedArrayLike", "ArrayLikeNextIndex", "ArrayLikeIterationKind"]))
     let iterator = __x1__
-    iterator["IteratedObject"] = array
-    iterator["ArrayIteratorNextIndex"] = 0i
-    iterator["ArrayIterationKind"] = kind
+    iterator["IteratedArrayLike"] = array
+    iterator["ArrayLikeNextIndex"] = 0i
+    iterator["ArrayLikeIterationKind"] = kind
     app __x2__ = (WrapCompletion iterator)
     return __x2__
   }"""), this)

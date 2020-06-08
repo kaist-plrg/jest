@@ -8,14 +8,11 @@ object AsyncFunctionExpression0Evaluation0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""AsyncFunctionExpression0Evaluation0" (this, FormalParameters, AsyncFunctionBody) => {
-    if true let strict = true else let strict = false
     access __x0__ = (GLOBAL_context "LexicalEnvironment")
     let scope = __x0__
-    app __x1__ = (AsyncFunctionCreate CONST_Normal FormalParameters AsyncFunctionBody scope strict)
-    if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
-    let closure = __x1__
+    !!! "Let id:{closure} be ! OrdinaryFunctionCreate ( % AsyncFunction . prototype % , nt:{FormalParameters} , nt:{AsyncFunctionBody} , const:{non-lexical-this} , id:{scope} ) ."
     closure["SourceText"] = (get-syntax this)
-    app __x2__ = (WrapCompletion closure)
-    return __x2__
+    app __x1__ = (WrapCompletion closure)
+    return __x1__
   }"""), this)
 }

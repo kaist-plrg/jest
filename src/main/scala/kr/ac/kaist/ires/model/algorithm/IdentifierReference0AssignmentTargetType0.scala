@@ -13,7 +13,7 @@ object IdentifierReference0AssignmentTargetType0 extends Algorithm {
       access __x1__ = (Identifier "StringValue")
       __x0__ = (|| (= __x1__ "eval") (= __x1__ "arguments"))
     } else {}
-    if __x0__ return CONST_strict else {}
+    if __x0__ return CONST_invalid else {}
     return CONST_simple
   }"""), this)
 }

@@ -97,12 +97,6 @@ object Parser extends ESParsers {
     IDContinue
   )
   lazy val ReservedWord: Lexer = (
-    Keyword |||
-    FutureReservedWord |||
-    NullLiteral |||
-    BooleanLiteral
-  )
-  lazy val Keyword: Lexer = (
     "await" |||
     "break" |||
     "case" |||
@@ -115,8 +109,10 @@ object Parser extends ESParsers {
     "delete" |||
     "do" |||
     "else" |||
+    "enum" |||
     "export" |||
     "extends" |||
+    "false" |||
     "finally" |||
     "for" |||
     "function" |||
@@ -125,11 +121,13 @@ object Parser extends ESParsers {
     "in" |||
     "instanceof" |||
     "new" |||
+    "null" |||
     "return" |||
     "super" |||
     "switch" |||
     "this" |||
     "throw" |||
+    "true" |||
     "try" |||
     "typeof" |||
     "var" |||
@@ -138,10 +136,14 @@ object Parser extends ESParsers {
     "with" |||
     "yield"
   )
-  lazy val FutureReservedWord: Lexer = (
-    "enum"
-  )
   lazy val Punctuator: Lexer = (
+    OptionalChainingPunctuator |||
+    OtherPunctuator
+  )
+  lazy val OptionalChainingPunctuator: Lexer = (
+    "?." % -(DecimalDigit)
+  )
+  lazy val OtherPunctuator: Lexer = (
     "{" |||
     "(" |||
     ")" |||
@@ -176,6 +178,7 @@ object Parser extends ESParsers {
     "~" |||
     "&&" |||
     "||" |||
+    "??" |||
     "?" |||
     ":" |||
     "=" |||
@@ -208,9 +211,21 @@ object Parser extends ESParsers {
   )
   lazy val NumericLiteral: Lexer = (
     DecimalLiteral |||
+    DecimalBigIntegerLiteral |||
+    NonDecimalIntegerLiteral |||
+    NonDecimalIntegerLiteral % BigIntLiteralSuffix
+  )
+  lazy val DecimalBigIntegerLiteral: Lexer = (
+    "0" % BigIntLiteralSuffix |||
+    NonZeroDigit % DecimalDigits.opt % BigIntLiteralSuffix
+  )
+  lazy val NonDecimalIntegerLiteral: Lexer = (
     BinaryIntegerLiteral |||
     OctalIntegerLiteral |||
     HexIntegerLiteral
+  )
+  lazy val BigIntLiteralSuffix: Lexer = (
+    "n"
   )
   lazy val DecimalLiteral: Lexer = (
     DecimalIntegerLiteral % "." % DecimalDigits.opt % ExponentPart.opt |||
@@ -496,17 +511,6 @@ object Parser extends ESParsers {
       log((MATCH <~ t("await")) ^^ { case _ => BindingIdentifier2(args) })("BindingIdentifier2")
     ))("BindingIdentifier")
   })
-  lazy val Identifier: ESParser[Identifier] = memo(args => {
-    log((
-      log(MATCH ~ nt("""(IdentifierName \ (ReservedWord))""", (IdentifierName \ (ReservedWord))) ^^ { case _ ~ x0 => Identifier0(x0, args) })("Identifier0")
-    ))("Identifier")
-  })
-  lazy val AsyncArrowBindingIdentifier: ESParser[AsyncArrowBindingIdentifier] = memo(args => {
-    val List(pYield) = getArgsN("AsyncArrowBindingIdentifier", args, 1)
-    log((
-      log(MATCH ~ BindingIdentifier(List(pYield, true)) ^^ { case _ ~ x0 => AsyncArrowBindingIdentifier0(x0, args) })("AsyncArrowBindingIdentifier0")
-    ))("AsyncArrowBindingIdentifier")
-  })
   lazy val LabelIdentifier: ESParser[LabelIdentifier] = memo(args => {
     val List(pYield, pAwait) = getArgsN("LabelIdentifier", args, 2)
     log((
@@ -514,6 +518,11 @@ object Parser extends ESParsers {
       log((if (!pYield) (MATCH <~ t("yield")) ^^ { case _ => LabelIdentifier1(args) } else MISMATCH))("LabelIdentifier1") |
       log((if (!pAwait) (MATCH <~ t("await")) ^^ { case _ => LabelIdentifier2(args) } else MISMATCH))("LabelIdentifier2")
     ))("LabelIdentifier")
+  })
+  lazy val Identifier: ESParser[Identifier] = memo(args => {
+    log((
+      log(MATCH ~ nt("""(IdentifierName \ (ReservedWord))""", (IdentifierName \ (ReservedWord))) ^^ { case _ ~ x0 => Identifier0(x0, args) })("Identifier0")
+    ))("Identifier")
   })
   lazy val PrimaryExpression: ESParser[PrimaryExpression] = memo(args => {
     val List(pYield, pAwait) = getArgsN("PrimaryExpression", args, 2)
@@ -698,13 +707,19 @@ object Parser extends ESParsers {
   })
   lazy val MetaProperty: ESParser[MetaProperty] = memo(args => {
     log((
-      log(MATCH ~ NewTarget(List()) ^^ { case _ ~ x0 => MetaProperty0(x0, args) })("MetaProperty0")
+      log(MATCH ~ NewTarget(List()) ^^ { case _ ~ x0 => MetaProperty0(x0, args) })("MetaProperty0") |
+      log(MATCH ~ ImportMeta(List()) ^^ { case _ ~ x0 => MetaProperty1(x0, args) })("MetaProperty1")
     ))("MetaProperty")
   })
   lazy val NewTarget: ESParser[NewTarget] = memo(args => {
     log((
       log((((MATCH <~ t("new")) <~ t(".")) <~ t("target")) ^^ { case _ => NewTarget0(args) })("NewTarget0")
     ))("NewTarget")
+  })
+  lazy val ImportMeta: ESParser[ImportMeta] = memo(args => {
+    log((
+      log((((MATCH <~ t("import")) <~ t(".")) <~ t("meta")) ^^ { case _ => ImportMeta0(args) })("ImportMeta0")
+    ))("ImportMeta")
   })
   lazy val NewExpression: ESParser[NewExpression] = memo(args => {
     val List(pYield, pAwait) = getArgsN("NewExpression", args, 2)
@@ -716,20 +731,15 @@ object Parser extends ESParsers {
   lazy val CallExpression: ESParser[CallExpression] = memo(args => {
     val List(pYield, pAwait) = getArgsN("CallExpression", args, 2)
     log(resolveLL((
-      log(MATCH ~ CoverCallExpressionAndAsyncArrowHead(List(pYield, pAwait)) ^^ { case _ ~ x0 => CallExpression0(x0, args) })("CallExpression0") |
-      log(MATCH ~ SuperCall(List(pYield, pAwait)) ^^ { case _ ~ x0 => CallExpression1(x0, args) })("CallExpression1")
+      log(MATCH ~ CoverCallExpressionAndAsyncArrowHead(List()) ^^ { case _ ~ x0 => CallExpression0(x0, args) })("CallExpression0") |
+      log(MATCH ~ SuperCall(List(pYield, pAwait)) ^^ { case _ ~ x0 => CallExpression1(x0, args) })("CallExpression1") |
+      log(MATCH ~ ImportCall(List(pYield, pAwait)) ^^ { case _ ~ x0 => CallExpression2(x0, args) })("CallExpression2")
     ), (
-      log(MATCH ~ Arguments(List(pYield, pAwait)) ^^ { case _ ~ x0 => ((x: CallExpression) => CallExpression2(x, x0, args)) })("CallExpression2") |
-      log(((MATCH <~ t("[")) ~ Expression(List(true, pYield, pAwait)) <~ t("]")) ^^ { case _ ~ x0 => ((x: CallExpression) => CallExpression3(x, x0, args)) })("CallExpression3") |
-      log((MATCH <~ t(".")) ~ nt("IdentifierName", IdentifierName) ^^ { case _ ~ x0 => ((x: CallExpression) => CallExpression4(x, x0, args)) })("CallExpression4") |
-      log(MATCH ~ TemplateLiteral(List(pYield, pAwait, true)) ^^ { case _ ~ x0 => ((x: CallExpression) => CallExpression5(x, x0, args)) })("CallExpression5")
+      log(MATCH ~ Arguments(List(pYield, pAwait)) ^^ { case _ ~ x0 => ((x: CallExpression) => CallExpression3(x, x0, args)) })("CallExpression3") |
+      log(((MATCH <~ t("[")) ~ Expression(List(true, pYield, pAwait)) <~ t("]")) ^^ { case _ ~ x0 => ((x: CallExpression) => CallExpression4(x, x0, args)) })("CallExpression4") |
+      log((MATCH <~ t(".")) ~ nt("IdentifierName", IdentifierName) ^^ { case _ ~ x0 => ((x: CallExpression) => CallExpression5(x, x0, args)) })("CallExpression5") |
+      log(MATCH ~ TemplateLiteral(List(pYield, pAwait, true)) ^^ { case _ ~ x0 => ((x: CallExpression) => CallExpression6(x, x0, args)) })("CallExpression6")
     )))("CallExpression")
-  })
-  lazy val CoverCallExpressionAndAsyncArrowHead: ESParser[CoverCallExpressionAndAsyncArrowHead] = memo(args => {
-    val List(pYield, pAwait) = getArgsN("CoverCallExpressionAndAsyncArrowHead", args, 2)
-    log((
-      log(MATCH ~ MemberExpression(List(pYield, pAwait)) ~ Arguments(List(pYield, pAwait)) ^^ { case _ ~ x0 ~ x1 => CoverCallExpressionAndAsyncArrowHead0(x0, x1, args) })("CoverCallExpressionAndAsyncArrowHead0")
-    ))("CoverCallExpressionAndAsyncArrowHead")
   })
   lazy val CallMemberExpression: ESParser[CallMemberExpression] = memo(args => {
     val List(pYield, pAwait) = getArgsN("CallMemberExpression", args, 2)
@@ -742,6 +752,12 @@ object Parser extends ESParsers {
     log((
       log((MATCH <~ t("super")) ~ Arguments(List(pYield, pAwait)) ^^ { case _ ~ x0 => SuperCall0(x0, args) })("SuperCall0")
     ))("SuperCall")
+  })
+  lazy val ImportCall: ESParser[ImportCall] = memo(args => {
+    val List(pYield, pAwait) = getArgsN("ImportCall", args, 2)
+    log((
+      log((((MATCH <~ t("import")) <~ t("(")) ~ AssignmentExpression(List(true, pYield, pAwait)) <~ t(")")) ^^ { case _ ~ x0 => ImportCall0(x0, args) })("ImportCall0")
+    ))("ImportCall")
   })
   lazy val Arguments: ESParser[Arguments] = memo(args => {
     val List(pYield, pAwait) = getArgsN("Arguments", args, 2)
@@ -761,11 +777,35 @@ object Parser extends ESParsers {
       log(((MATCH <~ t(",")) <~ t("...")) ~ AssignmentExpression(List(true, pYield, pAwait)) ^^ { case _ ~ x0 => ((x: ArgumentList) => ArgumentList3(x, x0, args)) })("ArgumentList3")
     )))("ArgumentList")
   })
+  lazy val OptionalExpression: ESParser[OptionalExpression] = memo(args => {
+    val List(pYield, pAwait) = getArgsN("OptionalExpression", args, 2)
+    log(resolveLL((
+      log(MATCH ~ MemberExpression(List(pYield, pAwait)) ~ OptionalChain(List(pYield, pAwait)) ^^ { case _ ~ x0 ~ x1 => OptionalExpression0(x0, x1, args) })("OptionalExpression0") |
+      log(MATCH ~ CallExpression(List(pYield, pAwait)) ~ OptionalChain(List(pYield, pAwait)) ^^ { case _ ~ x0 ~ x1 => OptionalExpression1(x0, x1, args) })("OptionalExpression1")
+    ), (
+      log(MATCH ~ OptionalChain(List(pYield, pAwait)) ^^ { case _ ~ x0 => ((x: OptionalExpression) => OptionalExpression2(x, x0, args)) })("OptionalExpression2")
+    )))("OptionalExpression")
+  })
+  lazy val OptionalChain: ESParser[OptionalChain] = memo(args => {
+    val List(pYield, pAwait) = getArgsN("OptionalChain", args, 2)
+    log(resolveLL((
+      log((MATCH <~ t("?.")) ~ Arguments(List(pYield, pAwait)) ^^ { case _ ~ x0 => OptionalChain0(x0, args) })("OptionalChain0") |
+      log((((MATCH <~ t("?.")) <~ t("[")) ~ Expression(List(true, pYield, pAwait)) <~ t("]")) ^^ { case _ ~ x0 => OptionalChain1(x0, args) })("OptionalChain1") |
+      log((MATCH <~ t("?.")) ~ nt("IdentifierName", IdentifierName) ^^ { case _ ~ x0 => OptionalChain2(x0, args) })("OptionalChain2") |
+      log((MATCH <~ t("?.")) ~ TemplateLiteral(List(pYield, pAwait, true)) ^^ { case _ ~ x0 => OptionalChain3(x0, args) })("OptionalChain3")
+    ), (
+      log(MATCH ~ Arguments(List(pYield, pAwait)) ^^ { case _ ~ x0 => ((x: OptionalChain) => OptionalChain4(x, x0, args)) })("OptionalChain4") |
+      log(((MATCH <~ t("[")) ~ Expression(List(true, pYield, pAwait)) <~ t("]")) ^^ { case _ ~ x0 => ((x: OptionalChain) => OptionalChain5(x, x0, args)) })("OptionalChain5") |
+      log((MATCH <~ t(".")) ~ nt("IdentifierName", IdentifierName) ^^ { case _ ~ x0 => ((x: OptionalChain) => OptionalChain6(x, x0, args)) })("OptionalChain6") |
+      log(MATCH ~ TemplateLiteral(List(pYield, pAwait, true)) ^^ { case _ ~ x0 => ((x: OptionalChain) => OptionalChain7(x, x0, args)) })("OptionalChain7")
+    )))("OptionalChain")
+  })
   lazy val LeftHandSideExpression: ESParser[LeftHandSideExpression] = memo(args => {
     val List(pYield, pAwait) = getArgsN("LeftHandSideExpression", args, 2)
     log((
       log(MATCH ~ NewExpression(List(pYield, pAwait)) ^^ { case _ ~ x0 => LeftHandSideExpression0(x0, args) })("LeftHandSideExpression0") |
-      log(MATCH ~ CallExpression(List(pYield, pAwait)) ^^ { case _ ~ x0 => LeftHandSideExpression1(x0, args) })("LeftHandSideExpression1")
+      log(MATCH ~ CallExpression(List(pYield, pAwait)) ^^ { case _ ~ x0 => LeftHandSideExpression1(x0, args) })("LeftHandSideExpression1") |
+      log(MATCH ~ OptionalExpression(List(pYield, pAwait)) ^^ { case _ ~ x0 => LeftHandSideExpression2(x0, args) })("LeftHandSideExpression2")
     ))("LeftHandSideExpression")
   })
   lazy val UpdateExpression: ESParser[UpdateExpression] = memo(args => {
@@ -897,11 +937,31 @@ object Parser extends ESParsers {
       log((MATCH <~ t("||")) ~ LogicalANDExpression(List(pIn, pYield, pAwait)) ^^ { case _ ~ x0 => ((x: LogicalORExpression) => LogicalORExpression1(x, x0, args)) })("LogicalORExpression1")
     )))("LogicalORExpression")
   })
+  lazy val CoalesceExpression: ESParser[CoalesceExpression] = memo(args => {
+    val List(pIn, pYield, pAwait) = getArgsN("CoalesceExpression", args, 3)
+    log((
+      log((MATCH ~ CoalesceExpressionHead(List(pIn, pYield, pAwait)) <~ t("??")) ~ BitwiseORExpression(List(pIn, pYield, pAwait)) ^^ { case _ ~ x0 ~ x1 => CoalesceExpression0(x0, x1, args) })("CoalesceExpression0")
+    ))("CoalesceExpression")
+  })
+  lazy val CoalesceExpressionHead: ESParser[CoalesceExpressionHead] = memo(args => {
+    val List(pIn, pYield, pAwait) = getArgsN("CoalesceExpressionHead", args, 3)
+    log((
+      log(MATCH ~ CoalesceExpression(List(pIn, pYield, pAwait)) ^^ { case _ ~ x0 => CoalesceExpressionHead0(x0, args) })("CoalesceExpressionHead0") |
+      log(MATCH ~ BitwiseORExpression(List(pIn, pYield, pAwait)) ^^ { case _ ~ x0 => CoalesceExpressionHead1(x0, args) })("CoalesceExpressionHead1")
+    ))("CoalesceExpressionHead")
+  })
+  lazy val ShortCircuitExpression: ESParser[ShortCircuitExpression] = memo(args => {
+    val List(pIn, pYield, pAwait) = getArgsN("ShortCircuitExpression", args, 3)
+    log((
+      log(MATCH ~ LogicalORExpression(List(pIn, pYield, pAwait)) ^^ { case _ ~ x0 => ShortCircuitExpression0(x0, args) })("ShortCircuitExpression0") |
+      log(MATCH ~ CoalesceExpression(List(pIn, pYield, pAwait)) ^^ { case _ ~ x0 => ShortCircuitExpression1(x0, args) })("ShortCircuitExpression1")
+    ))("ShortCircuitExpression")
+  })
   lazy val ConditionalExpression: ESParser[ConditionalExpression] = memo(args => {
     val List(pIn, pYield, pAwait) = getArgsN("ConditionalExpression", args, 3)
     log((
-      log(MATCH ~ LogicalORExpression(List(pIn, pYield, pAwait)) ^^ { case _ ~ x0 => ConditionalExpression0(x0, args) })("ConditionalExpression0") |
-      log(((MATCH ~ LogicalORExpression(List(pIn, pYield, pAwait)) <~ t("?")) ~ AssignmentExpression(List(true, pYield, pAwait)) <~ t(":")) ~ AssignmentExpression(List(pIn, pYield, pAwait)) ^^ { case _ ~ x0 ~ x1 ~ x2 => ConditionalExpression1(x0, x1, x2, args) })("ConditionalExpression1")
+      log(MATCH ~ ShortCircuitExpression(List(pIn, pYield, pAwait)) ^^ { case _ ~ x0 => ConditionalExpression0(x0, args) })("ConditionalExpression0") |
+      log(((MATCH ~ ShortCircuitExpression(List(pIn, pYield, pAwait)) <~ t("?")) ~ AssignmentExpression(List(true, pYield, pAwait)) <~ t(":")) ~ AssignmentExpression(List(pIn, pYield, pAwait)) ^^ { case _ ~ x0 ~ x1 ~ x2 => ConditionalExpression1(x0, x1, x2, args) })("ConditionalExpression1")
     ))("ConditionalExpression")
   })
   lazy val AssignmentExpression: ESParser[AssignmentExpression] = memo(args => {
@@ -914,6 +974,22 @@ object Parser extends ESParsers {
       log((MATCH ~ LeftHandSideExpression(List(pYield, pAwait)) <~ t("=")) ~ AssignmentExpression(List(pIn, pYield, pAwait)) ^^ { case _ ~ x0 ~ x1 => AssignmentExpression4(x0, x1, args) })("AssignmentExpression4") |
       log(MATCH ~ LeftHandSideExpression(List(pYield, pAwait)) ~ AssignmentOperator(List()) ~ AssignmentExpression(List(pIn, pYield, pAwait)) ^^ { case _ ~ x0 ~ x1 ~ x2 => AssignmentExpression5(x0, x1, x2, args) })("AssignmentExpression5")
     ))("AssignmentExpression")
+  })
+  lazy val AssignmentOperator: ESParser[AssignmentOperator] = memo(args => {
+    log((
+      log((MATCH <~ t("*=")) ^^ { case _ => AssignmentOperator0(args) })("AssignmentOperator0") |
+      log((MATCH <~ t("/=")) ^^ { case _ => AssignmentOperator1(args) })("AssignmentOperator1") |
+      log((MATCH <~ t("%=")) ^^ { case _ => AssignmentOperator2(args) })("AssignmentOperator2") |
+      log((MATCH <~ t("+=")) ^^ { case _ => AssignmentOperator3(args) })("AssignmentOperator3") |
+      log((MATCH <~ t("-=")) ^^ { case _ => AssignmentOperator4(args) })("AssignmentOperator4") |
+      log((MATCH <~ t("<<=")) ^^ { case _ => AssignmentOperator5(args) })("AssignmentOperator5") |
+      log((MATCH <~ t(">>=")) ^^ { case _ => AssignmentOperator6(args) })("AssignmentOperator6") |
+      log((MATCH <~ t(">>>=")) ^^ { case _ => AssignmentOperator7(args) })("AssignmentOperator7") |
+      log((MATCH <~ t("&=")) ^^ { case _ => AssignmentOperator8(args) })("AssignmentOperator8") |
+      log((MATCH <~ t("^=")) ^^ { case _ => AssignmentOperator9(args) })("AssignmentOperator9") |
+      log((MATCH <~ t("|=")) ^^ { case _ => AssignmentOperator10(args) })("AssignmentOperator10") |
+      log((MATCH <~ t("**=")) ^^ { case _ => AssignmentOperator11(args) })("AssignmentOperator11")
+    ))("AssignmentOperator")
   })
   lazy val AssignmentPattern: ESParser[AssignmentPattern] = memo(args => {
     val List(pYield, pAwait) = getArgsN("AssignmentPattern", args, 2)
@@ -991,22 +1067,6 @@ object Parser extends ESParsers {
     log((
       log(MATCH ~ LeftHandSideExpression(List(pYield, pAwait)) ^^ { case _ ~ x0 => DestructuringAssignmentTarget0(x0, args) })("DestructuringAssignmentTarget0")
     ))("DestructuringAssignmentTarget")
-  })
-  lazy val AssignmentOperator: ESParser[AssignmentOperator] = memo(args => {
-    log((
-      log((MATCH <~ t("*=")) ^^ { case _ => AssignmentOperator0(args) })("AssignmentOperator0") |
-      log((MATCH <~ t("/=")) ^^ { case _ => AssignmentOperator1(args) })("AssignmentOperator1") |
-      log((MATCH <~ t("%=")) ^^ { case _ => AssignmentOperator2(args) })("AssignmentOperator2") |
-      log((MATCH <~ t("+=")) ^^ { case _ => AssignmentOperator3(args) })("AssignmentOperator3") |
-      log((MATCH <~ t("-=")) ^^ { case _ => AssignmentOperator4(args) })("AssignmentOperator4") |
-      log((MATCH <~ t("<<=")) ^^ { case _ => AssignmentOperator5(args) })("AssignmentOperator5") |
-      log((MATCH <~ t(">>=")) ^^ { case _ => AssignmentOperator6(args) })("AssignmentOperator6") |
-      log((MATCH <~ t(">>>=")) ^^ { case _ => AssignmentOperator7(args) })("AssignmentOperator7") |
-      log((MATCH <~ t("&=")) ^^ { case _ => AssignmentOperator8(args) })("AssignmentOperator8") |
-      log((MATCH <~ t("^=")) ^^ { case _ => AssignmentOperator9(args) })("AssignmentOperator9") |
-      log((MATCH <~ t("|=")) ^^ { case _ => AssignmentOperator10(args) })("AssignmentOperator10") |
-      log((MATCH <~ t("**=")) ^^ { case _ => AssignmentOperator11(args) })("AssignmentOperator11")
-    ))("AssignmentOperator")
   })
   lazy val Expression: ESParser[Expression] = memo(args => {
     val List(pIn, pYield, pAwait) = getArgsN("Expression", args, 3)
@@ -1451,9 +1511,15 @@ object Parser extends ESParsers {
   lazy val ConciseBody: ESParser[ConciseBody] = memo(args => {
     val List(pIn) = getArgsN("ConciseBody", args, 1)
     log((
-      log((MATCH <~ -ntl(("{"))) ~ AssignmentExpression(List(pIn, false, false)) ^^ { case _ ~ x0 => ConciseBody0(x0, args) })("ConciseBody0") |
+      log((MATCH <~ -ntl(("{"))) ~ ExpressionBody(List(pIn, false)) ^^ { case _ ~ x0 => ConciseBody0(x0, args) })("ConciseBody0") |
       log(((MATCH <~ t("{")) ~ FunctionBody(List(false, false)) <~ t("}")) ^^ { case _ ~ x0 => ConciseBody1(x0, args) })("ConciseBody1")
     ))("ConciseBody")
+  })
+  lazy val ExpressionBody: ESParser[ExpressionBody] = memo(args => {
+    val List(pIn, pAwait) = getArgsN("ExpressionBody", args, 2)
+    log((
+      log(MATCH ~ AssignmentExpression(List(pIn, false, pAwait)) ^^ { case _ ~ x0 => ExpressionBody0(x0, args) })("ExpressionBody0")
+    ))("ExpressionBody")
   })
   lazy val ArrowFormalParameters: ESParser[ArrowFormalParameters] = memo(args => {
     val List(pYield, pAwait) = getArgsN("ArrowFormalParameters", args, 2)
@@ -1465,15 +1531,26 @@ object Parser extends ESParsers {
     val List(pIn, pYield, pAwait) = getArgsN("AsyncArrowFunction", args, 3)
     log((
       log(((((MATCH <~ t("async")) <~ NoLineTerminator) ~ AsyncArrowBindingIdentifier(List(pYield)) <~ NoLineTerminator) <~ t("=>")) ~ AsyncConciseBody(List(pIn)) ^^ { case _ ~ x0 ~ x1 => AsyncArrowFunction0(x0, x1, args) })("AsyncArrowFunction0") |
-      log(((MATCH ~ CoverCallExpressionAndAsyncArrowHead(List(pYield, pAwait)) <~ NoLineTerminator) <~ t("=>")) ~ AsyncConciseBody(List(pIn)) ^^ { case _ ~ x0 ~ x1 => AsyncArrowFunction1(x0, x1, args) })("AsyncArrowFunction1")
+      log(((MATCH ~ CoverCallExpressionAndAsyncArrowHead(List()) <~ NoLineTerminator) <~ t("=>")) ~ AsyncConciseBody(List(pIn)) ^^ { case _ ~ x0 ~ x1 => AsyncArrowFunction1(x0, x1, args) })("AsyncArrowFunction1")
     ))("AsyncArrowFunction")
   })
   lazy val AsyncConciseBody: ESParser[AsyncConciseBody] = memo(args => {
     val List(pIn) = getArgsN("AsyncConciseBody", args, 1)
     log((
-      log((MATCH <~ -ntl(("{"))) ~ AssignmentExpression(List(pIn, false, true)) ^^ { case _ ~ x0 => AsyncConciseBody0(x0, args) })("AsyncConciseBody0") |
+      log((MATCH <~ -ntl(("{"))) ~ ExpressionBody(List(pIn, true)) ^^ { case _ ~ x0 => AsyncConciseBody0(x0, args) })("AsyncConciseBody0") |
       log(((MATCH <~ t("{")) ~ AsyncFunctionBody(List()) <~ t("}")) ^^ { case _ ~ x0 => AsyncConciseBody1(x0, args) })("AsyncConciseBody1")
     ))("AsyncConciseBody")
+  })
+  lazy val AsyncArrowBindingIdentifier: ESParser[AsyncArrowBindingIdentifier] = memo(args => {
+    val List(pYield) = getArgsN("AsyncArrowBindingIdentifier", args, 1)
+    log((
+      log(MATCH ~ BindingIdentifier(List(pYield, true)) ^^ { case _ ~ x0 => AsyncArrowBindingIdentifier0(x0, args) })("AsyncArrowBindingIdentifier0")
+    ))("AsyncArrowBindingIdentifier")
+  })
+  lazy val CoverCallExpressionAndAsyncArrowHead: ESParser[CoverCallExpressionAndAsyncArrowHead] = memo(args => {
+    log((
+      log(MATCH ~ MemberExpression(List(false, false)) ~ Arguments(List(false, false)) ^^ { case _ ~ x0 ~ x1 => CoverCallExpressionAndAsyncArrowHead0(x0, x1, args) })("CoverCallExpressionAndAsyncArrowHead0")
+    ))("CoverCallExpressionAndAsyncArrowHead")
   })
   lazy val AsyncArrowHead: ESParser[AsyncArrowHead] = memo(args => {
     log((
@@ -1550,12 +1627,6 @@ object Parser extends ESParsers {
       log(MATCH ~ FunctionBody(List(true, true)) ^^ { case _ ~ x0 => AsyncGeneratorBody0(x0, args) })("AsyncGeneratorBody0")
     ))("AsyncGeneratorBody")
   })
-  lazy val AsyncMethod: ESParser[AsyncMethod] = memo(args => {
-    val List(pYield, pAwait) = getArgsN("AsyncMethod", args, 2)
-    log((
-      log(((((((MATCH <~ t("async")) <~ NoLineTerminator) ~ PropertyName(List(pYield, pAwait)) <~ t("(")) ~ UniqueFormalParameters(List(false, true)) <~ t(")")) <~ t("{")) ~ AsyncFunctionBody(List()) <~ t("}")) ^^ { case _ ~ x0 ~ x1 ~ x2 => AsyncMethod0(x0, x1, x2, args) })("AsyncMethod0")
-    ))("AsyncMethod")
-  })
   lazy val AsyncFunctionDeclaration: ESParser[AsyncFunctionDeclaration] = memo(args => {
     val List(pYield, pAwait, pDefault) = getArgsN("AsyncFunctionDeclaration", args, 3)
     log((
@@ -1568,6 +1639,12 @@ object Parser extends ESParsers {
       log((((((((MATCH <~ t("async")) <~ NoLineTerminator) <~ t("function")) <~ t("(")) ~ FormalParameters(List(false, true)) <~ t(")")) <~ t("{")) ~ AsyncFunctionBody(List()) <~ t("}")) ^^ { case _ ~ x0 ~ x1 => AsyncFunctionExpression0(x0, x1, args) })("AsyncFunctionExpression0") |
       log((((((((MATCH <~ t("async")) <~ NoLineTerminator) <~ t("function")) ~ BindingIdentifier(List(false, true)) <~ t("(")) ~ FormalParameters(List(false, true)) <~ t(")")) <~ t("{")) ~ AsyncFunctionBody(List()) <~ t("}")) ^^ { case _ ~ x0 ~ x1 ~ x2 => AsyncFunctionExpression1(x0, x1, x2, args) })("AsyncFunctionExpression1")
     ))("AsyncFunctionExpression")
+  })
+  lazy val AsyncMethod: ESParser[AsyncMethod] = memo(args => {
+    val List(pYield, pAwait) = getArgsN("AsyncMethod", args, 2)
+    log((
+      log(((((((MATCH <~ t("async")) <~ NoLineTerminator) ~ PropertyName(List(pYield, pAwait)) <~ t("(")) ~ UniqueFormalParameters(List(false, true)) <~ t(")")) <~ t("{")) ~ AsyncFunctionBody(List()) <~ t("}")) ^^ { case _ ~ x0 ~ x1 ~ x2 => AsyncMethod0(x0, x1, x2, args) })("AsyncMethod0")
+    ))("AsyncMethod")
   })
   lazy val AsyncFunctionBody: ESParser[AsyncFunctionBody] = memo(args => {
     log((
@@ -1723,22 +1800,28 @@ object Parser extends ESParsers {
   })
   lazy val ExportDeclaration: ESParser[ExportDeclaration] = memo(args => {
     log((
-      log((((MATCH <~ t("export")) <~ t("*")) ~ FromClause(List()) <~ t(";")) ^^ { case _ ~ x0 => ExportDeclaration0(x0, args) })("ExportDeclaration0") |
-      log(((MATCH <~ t("export")) ~ ExportClause(List()) ~ FromClause(List()) <~ t(";")) ^^ { case _ ~ x0 ~ x1 => ExportDeclaration1(x0, x1, args) })("ExportDeclaration1") |
-      log(((MATCH <~ t("export")) ~ ExportClause(List()) <~ t(";")) ^^ { case _ ~ x0 => ExportDeclaration2(x0, args) })("ExportDeclaration2") |
-      log((MATCH <~ t("export")) ~ VariableStatement(List(false, false)) ^^ { case _ ~ x0 => ExportDeclaration3(x0, args) })("ExportDeclaration3") |
-      log((MATCH <~ t("export")) ~ Declaration(List(false, false)) ^^ { case _ ~ x0 => ExportDeclaration4(x0, args) })("ExportDeclaration4") |
-      log(((MATCH <~ t("export")) <~ t("default")) ~ HoistableDeclaration(List(false, false, true)) ^^ { case _ ~ x0 => ExportDeclaration5(x0, args) })("ExportDeclaration5") |
-      log(((MATCH <~ t("export")) <~ t("default")) ~ ClassDeclaration(List(false, false, true)) ^^ { case _ ~ x0 => ExportDeclaration6(x0, args) })("ExportDeclaration6") |
-      log(((((MATCH <~ t("export")) <~ t("default")) <~ -ntl((("function" <~ not(IDContinue))) | (("async" <~ not(IDContinue)) %% strNoLineTerminator %% ("function" <~ not(IDContinue))) | (("class" <~ not(IDContinue))))) ~ AssignmentExpression(List(true, false, false)) <~ t(";")) ^^ { case _ ~ x0 => ExportDeclaration7(x0, args) })("ExportDeclaration7")
+      log(((MATCH <~ t("export")) ~ ExportFromClause(List()) ~ FromClause(List()) <~ t(";")) ^^ { case _ ~ x0 ~ x1 => ExportDeclaration0(x0, x1, args) })("ExportDeclaration0") |
+      log(((MATCH <~ t("export")) ~ NamedExports(List()) <~ t(";")) ^^ { case _ ~ x0 => ExportDeclaration1(x0, args) })("ExportDeclaration1") |
+      log((MATCH <~ t("export")) ~ VariableStatement(List(false, false)) ^^ { case _ ~ x0 => ExportDeclaration2(x0, args) })("ExportDeclaration2") |
+      log((MATCH <~ t("export")) ~ Declaration(List(false, false)) ^^ { case _ ~ x0 => ExportDeclaration3(x0, args) })("ExportDeclaration3") |
+      log(((MATCH <~ t("export")) <~ t("default")) ~ HoistableDeclaration(List(false, false, true)) ^^ { case _ ~ x0 => ExportDeclaration4(x0, args) })("ExportDeclaration4") |
+      log(((MATCH <~ t("export")) <~ t("default")) ~ ClassDeclaration(List(false, false, true)) ^^ { case _ ~ x0 => ExportDeclaration5(x0, args) })("ExportDeclaration5") |
+      log(((((MATCH <~ t("export")) <~ t("default")) <~ -ntl((("function" <~ not(IDContinue))) | (("async" <~ not(IDContinue)) %% strNoLineTerminator %% ("function" <~ not(IDContinue))) | (("class" <~ not(IDContinue))))) ~ AssignmentExpression(List(true, false, false)) <~ t(";")) ^^ { case _ ~ x0 => ExportDeclaration6(x0, args) })("ExportDeclaration6")
     ))("ExportDeclaration")
   })
-  lazy val ExportClause: ESParser[ExportClause] = memo(args => {
+  lazy val ExportFromClause: ESParser[ExportFromClause] = memo(args => {
     log((
-      log(((MATCH <~ t("{")) <~ t("}")) ^^ { case _ => ExportClause0(args) })("ExportClause0") |
-      log(((MATCH <~ t("{")) ~ ExportsList(List()) <~ t("}")) ^^ { case _ ~ x0 => ExportClause1(x0, args) })("ExportClause1") |
-      log((((MATCH <~ t("{")) ~ ExportsList(List()) <~ t(",")) <~ t("}")) ^^ { case _ ~ x0 => ExportClause2(x0, args) })("ExportClause2")
-    ))("ExportClause")
+      log((MATCH <~ t("*")) ^^ { case _ => ExportFromClause0(args) })("ExportFromClause0") |
+      log(((MATCH <~ t("*")) <~ t("as")) ~ nt("IdentifierName", IdentifierName) ^^ { case _ ~ x0 => ExportFromClause1(x0, args) })("ExportFromClause1") |
+      log(MATCH ~ NamedExports(List()) ^^ { case _ ~ x0 => ExportFromClause2(x0, args) })("ExportFromClause2")
+    ))("ExportFromClause")
+  })
+  lazy val NamedExports: ESParser[NamedExports] = memo(args => {
+    log((
+      log(((MATCH <~ t("{")) <~ t("}")) ^^ { case _ => NamedExports0(args) })("NamedExports0") |
+      log(((MATCH <~ t("{")) ~ ExportsList(List()) <~ t("}")) ^^ { case _ ~ x0 => NamedExports1(x0, args) })("NamedExports1") |
+      log((((MATCH <~ t("{")) ~ ExportsList(List()) <~ t(",")) <~ t("}")) ^^ { case _ ~ x0 => NamedExports2(x0, args) })("NamedExports2")
+    ))("NamedExports")
   })
   lazy val ExportsList: ESParser[ExportsList] = memo(args => {
     log(resolveLL((
@@ -1757,7 +1840,6 @@ object Parser extends ESParsers {
     "%=" |||
     "^=" |||
     "?" |||
-    ">>>" |||
     "var" |||
     "import" |||
     ">>>=" |||
@@ -1765,6 +1847,7 @@ object Parser extends ESParsers {
     "default" |||
     "static" |||
     "continue" |||
+    "meta" |||
     "+" |||
     "get" |||
     "extends" |||
@@ -1803,6 +1886,8 @@ object Parser extends ESParsers {
     "+=" |||
     "." |||
     "^" |||
+    ">>>" |||
+    "?." <~ not(DecimalDigit) |||
     "%" |||
     "const" |||
     "await" |||
@@ -1812,6 +1897,7 @@ object Parser extends ESParsers {
     "--" |||
     "new" |||
     "++" |||
+    "??" |||
     "!=" |||
     "[" |||
     "target" |||
@@ -1853,9 +1939,8 @@ object Parser extends ESParsers {
   val rules: Map[String, ESParser[AST]] = Map(
     "IdentifierReference" -> IdentifierReference,
     "BindingIdentifier" -> BindingIdentifier,
-    "Identifier" -> Identifier,
-    "AsyncArrowBindingIdentifier" -> AsyncArrowBindingIdentifier,
     "LabelIdentifier" -> LabelIdentifier,
+    "Identifier" -> Identifier,
     "PrimaryExpression" -> PrimaryExpression,
     "CoverParenthesizedExpressionAndArrowParameterList" -> CoverParenthesizedExpressionAndArrowParameterList,
     "ParenthesizedExpression" -> ParenthesizedExpression,
@@ -1880,13 +1965,16 @@ object Parser extends ESParsers {
     "SuperProperty" -> SuperProperty,
     "MetaProperty" -> MetaProperty,
     "NewTarget" -> NewTarget,
+    "ImportMeta" -> ImportMeta,
     "NewExpression" -> NewExpression,
     "CallExpression" -> CallExpression,
-    "CoverCallExpressionAndAsyncArrowHead" -> CoverCallExpressionAndAsyncArrowHead,
     "CallMemberExpression" -> CallMemberExpression,
     "SuperCall" -> SuperCall,
+    "ImportCall" -> ImportCall,
     "Arguments" -> Arguments,
     "ArgumentList" -> ArgumentList,
+    "OptionalExpression" -> OptionalExpression,
+    "OptionalChain" -> OptionalChain,
     "LeftHandSideExpression" -> LeftHandSideExpression,
     "UpdateExpression" -> UpdateExpression,
     "UnaryExpression" -> UnaryExpression,
@@ -1902,8 +1990,12 @@ object Parser extends ESParsers {
     "BitwiseORExpression" -> BitwiseORExpression,
     "LogicalANDExpression" -> LogicalANDExpression,
     "LogicalORExpression" -> LogicalORExpression,
+    "CoalesceExpression" -> CoalesceExpression,
+    "CoalesceExpressionHead" -> CoalesceExpressionHead,
+    "ShortCircuitExpression" -> ShortCircuitExpression,
     "ConditionalExpression" -> ConditionalExpression,
     "AssignmentExpression" -> AssignmentExpression,
+    "AssignmentOperator" -> AssignmentOperator,
     "AssignmentPattern" -> AssignmentPattern,
     "ObjectAssignmentPattern" -> ObjectAssignmentPattern,
     "ArrayAssignmentPattern" -> ArrayAssignmentPattern,
@@ -1915,7 +2007,6 @@ object Parser extends ESParsers {
     "AssignmentElement" -> AssignmentElement,
     "AssignmentRestElement" -> AssignmentRestElement,
     "DestructuringAssignmentTarget" -> DestructuringAssignmentTarget,
-    "AssignmentOperator" -> AssignmentOperator,
     "Expression" -> Expression,
     "Statement" -> Statement,
     "Declaration" -> Declaration,
@@ -1978,9 +2069,12 @@ object Parser extends ESParsers {
     "ArrowFunction" -> ArrowFunction,
     "ArrowParameters" -> ArrowParameters,
     "ConciseBody" -> ConciseBody,
+    "ExpressionBody" -> ExpressionBody,
     "ArrowFormalParameters" -> ArrowFormalParameters,
     "AsyncArrowFunction" -> AsyncArrowFunction,
     "AsyncConciseBody" -> AsyncConciseBody,
+    "AsyncArrowBindingIdentifier" -> AsyncArrowBindingIdentifier,
+    "CoverCallExpressionAndAsyncArrowHead" -> CoverCallExpressionAndAsyncArrowHead,
     "AsyncArrowHead" -> AsyncArrowHead,
     "MethodDefinition" -> MethodDefinition,
     "PropertySetParameterList" -> PropertySetParameterList,
@@ -1993,9 +2087,9 @@ object Parser extends ESParsers {
     "AsyncGeneratorDeclaration" -> AsyncGeneratorDeclaration,
     "AsyncGeneratorExpression" -> AsyncGeneratorExpression,
     "AsyncGeneratorBody" -> AsyncGeneratorBody,
-    "AsyncMethod" -> AsyncMethod,
     "AsyncFunctionDeclaration" -> AsyncFunctionDeclaration,
     "AsyncFunctionExpression" -> AsyncFunctionExpression,
+    "AsyncMethod" -> AsyncMethod,
     "AsyncFunctionBody" -> AsyncFunctionBody,
     "AwaitExpression" -> AwaitExpression,
     "ClassDeclaration" -> ClassDeclaration,
@@ -2022,7 +2116,8 @@ object Parser extends ESParsers {
     "ModuleSpecifier" -> ModuleSpecifier,
     "ImportedBinding" -> ImportedBinding,
     "ExportDeclaration" -> ExportDeclaration,
-    "ExportClause" -> ExportClause,
+    "ExportFromClause" -> ExportFromClause,
+    "NamedExports" -> NamedExports,
     "ExportsList" -> ExportsList,
     "ExportSpecifier" -> ExportSpecifier
   )

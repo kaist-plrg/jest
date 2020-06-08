@@ -7,22 +7,22 @@ object ForInOfHeadEvaluation extends Algorithm {
   val name: String = "ForInOfHeadEvaluation"
   val length: Int = 3
   val lang: Boolean = true
-  val func: Func = FixUIdWalker(parseFunc(""""ForInOfHeadEvaluation" (TDZnames, expr, iterationKind) => {
+  val func: Func = FixUIdWalker(parseFunc(""""ForInOfHeadEvaluation" (uninitializedBoundNames, expr, iterationKind) => {
     let oldEnv = GLOBAL_context["LexicalEnvironment"]
-    if (< 0i TDZnames["length"]) {
+    if (< 0i uninitializedBoundNames["length"]) {
       app __x0__ = (NewDeclarativeEnvironment oldEnv)
-      let TDZ = __x0__
-      let TDZEnvRec = TDZ["EnvironmentRecord"]
-      let __x1__ = TDZnames
+      let newEnv = __x0__
+      let newEnvRec = newEnv["EnvironmentRecord"]
+      let __x1__ = uninitializedBoundNames
       let __x2__ = 0i
       while (< __x2__ __x1__["length"]) {
         let name = __x1__[__x2__]
-        app __x3__ = (TDZEnvRec["CreateMutableBinding"] TDZEnvRec name false)
+        app __x3__ = (newEnvRec["CreateMutableBinding"] newEnvRec name false)
         if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
         __x3__
         __x2__ = (+ __x2__ 1i)
       }
-      GLOBAL_context["LexicalEnvironment"] = TDZ
+      GLOBAL_context["LexicalEnvironment"] = newEnv
     } else {}
     access __x4__ = (expr "Evaluation")
     let exprRef = __x4__

@@ -18,13 +18,18 @@ object BitwiseXORExpression1Evaluation0 extends Algorithm {
     app __x3__ = (GetValue rref)
     if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
     let rval = __x3__
-    app __x4__ = (ToInt32 lval)
+    app __x4__ = (ToNumeric lval)
     if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
     let lnum = __x4__
-    app __x5__ = (ToInt32 rval)
+    app __x5__ = (ToNumeric rval)
     if (is-completion __x5__) if (= __x5__["Type"] CONST_normal) __x5__ = __x5__["Value"] else return __x5__ else {}
     let rnum = __x5__
     app __x6__ = (WrapCompletion (^ lnum rnum))
     return __x6__
+    app __x7__ = (Type lnum)
+    let T = __x7__
+    !!! "If @ is code:{&} , return id:{T} : : bitwiseAND ( id:{lnum} , id:{rnum} ) ."
+    !!! "If @ is code:{|} , return id:{T} : : bitwiseOR ( id:{lnum} , id:{rnum} ) ."
+    !!! "Else , step-list:{...}"
   }"""), this)
 }

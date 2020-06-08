@@ -29,7 +29,7 @@ object GLOBALDOTAsyncGeneratorEnqueue extends Algorithm {
     let request = (new AsyncGeneratorRequest("Completion" -> completion, "Capability" -> promiseCapability))
     append request -> queue
     let state = generator["AsyncGeneratorState"]
-    if (! (= state "executing")) {
+    if (! (= state CONST_executing)) {
       app __x6__ = (AsyncGeneratorResumeNext generator)
       if (is-completion __x6__) if (= __x6__["Type"] CONST_normal) __x6__ = __x6__["Value"] else return __x6__ else {}
       __x6__

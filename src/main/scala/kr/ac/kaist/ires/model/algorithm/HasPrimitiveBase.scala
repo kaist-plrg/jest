@@ -11,7 +11,7 @@ object HasPrimitiveBase extends Algorithm {
     app __x0__ = (Type V)
     assert (= __x0__ Reference)
     app __x1__ = (Type V["BaseValue"])
-    if (|| (|| (|| (= __x1__ Boolean) (= __x1__ String)) (= __x1__ Symbol)) (= __x1__ Number)) {
+    if (|| (|| (|| (|| (= __x1__ Boolean) (= __x1__ String)) (= __x1__ Symbol)) (= __x1__ BigInt)) (= __x1__ Number)) {
       app __x2__ = (WrapCompletion true)
       return __x2__
     } else {

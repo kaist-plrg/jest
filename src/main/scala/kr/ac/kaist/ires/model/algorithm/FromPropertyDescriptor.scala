@@ -12,33 +12,38 @@ object FromPropertyDescriptor extends Algorithm {
       app __x0__ = (WrapCompletion undefined)
       return __x0__
     } else {}
-    app __x1__ = (ObjectCreate INTRINSIC_ObjectPrototype)
-    let obj = __x1__
+    !!! "Let id:{obj} be OrdinaryObjectCreate ( % Object . prototype % ) ."
     if (! (= Desc["Value"] absent)) {
-      app __x2__ = (CreateDataProperty obj "value" Desc["Value"])
-      __x2__
+      app __x1__ = (CreateDataPropertyOrThrow obj "value" Desc["Value"])
+      if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
+      __x1__
     } else {}
     if (! (= Desc["Writable"] absent)) {
-      app __x3__ = (CreateDataProperty obj "writable" Desc["Writable"])
-      __x3__
+      app __x2__ = (CreateDataPropertyOrThrow obj "writable" Desc["Writable"])
+      if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
+      __x2__
     } else {}
     if (! (= Desc["Get"] absent)) {
-      app __x4__ = (CreateDataProperty obj "get" Desc["Get"])
-      __x4__
+      app __x3__ = (CreateDataPropertyOrThrow obj "get" Desc["Get"])
+      if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
+      __x3__
     } else {}
     if (! (= Desc["Set"] absent)) {
-      app __x5__ = (CreateDataProperty obj "set" Desc["Set"])
-      __x5__
+      app __x4__ = (CreateDataPropertyOrThrow obj "set" Desc["Set"])
+      if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
+      __x4__
     } else {}
     if (! (= Desc["Enumerable"] absent)) {
-      app __x6__ = (CreateDataProperty obj "enumerable" Desc["Enumerable"])
-      __x6__
+      app __x5__ = (CreateDataPropertyOrThrow obj "enumerable" Desc["Enumerable"])
+      if (is-completion __x5__) if (= __x5__["Type"] CONST_normal) __x5__ = __x5__["Value"] else return __x5__ else {}
+      __x5__
     } else {}
     if (! (= Desc["Configurable"] absent)) {
-      app __x7__ = (CreateDataProperty obj "configurable" Desc["Configurable"])
-      __x7__
+      app __x6__ = (CreateDataPropertyOrThrow obj "configurable" Desc["Configurable"])
+      if (is-completion __x6__) if (= __x6__["Type"] CONST_normal) __x6__ = __x6__["Value"] else return __x6__ else {}
+      __x6__
     } else {}
-    app __x8__ = (WrapCompletion obj)
-    return __x8__
+    app __x7__ = (WrapCompletion obj)
+    return __x7__
   }"""), this)
 }
