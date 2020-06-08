@@ -18,6 +18,7 @@ object IRES {
     // IRESError: print the error message.
     case ex: IRESError =>
       Console.err.println(ex.getMessage)
+      Console.err.println(ex.getStackTrace.mkString(LINE_SEP)) // XXX remove
     // Unexpected: print the stack trace.
     case ex: Throwable =>
       Console.err.println("* Unexpected error occurred.")

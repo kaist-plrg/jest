@@ -11,7 +11,7 @@ object GLOBALDOTArrayDOTprototypeDOTentries extends Algorithm {
     app __x0__ = (ToObject this)
     if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
     let O = __x0__
-    app __x1__ = (CreateArrayIterator O CONST_key+value)
+    app __x1__ = (CreateArrayIterator O CONST_keyPLUSvalue)
     app __x2__ = (WrapCompletion __x1__)
     return __x2__
   }"""), this)

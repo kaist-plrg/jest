@@ -57,7 +57,7 @@ object GLOBALDOTINTRINSIC_ArrayIteratorPrototypeDOTnext extends Algorithm {
     if (is-completion __x13__) if (= __x13__["Type"] CONST_normal) __x13__ = __x13__["Value"] else return __x13__ else {}
     let elementValue = __x13__
     if (= itemKind CONST_value) let result = elementValue else {
-      assert (= itemKind CONST_key+value)
+      assert (= itemKind CONST_keyPLUSvalue)
       app __x14__ = (CreateArrayFromList (new [index, elementValue]))
       if (is-completion __x14__) if (= __x14__["Type"] CONST_normal) __x14__ = __x14__["Value"] else return __x14__ else {}
       let result = __x14__

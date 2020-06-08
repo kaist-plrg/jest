@@ -31,7 +31,7 @@ object GLOBALDOTINTRINSIC_SetIteratorPrototypeDOTnext extends Algorithm {
       index = (+ index 1i)
       O["SetNextIndex"] = index
       if (! (= e CONST_empty)) {
-        if (= itemKind CONST_key+value) {
+        if (= itemKind CONST_keyPLUSvalue) {
           app __x4__ = (CreateArrayFromList (new [e, e]))
           app __x5__ = (CreateIterResultObject __x4__ false)
           app __x6__ = (WrapCompletion __x5__)

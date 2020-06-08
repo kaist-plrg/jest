@@ -28,7 +28,7 @@ object EnumerableOwnPropertyNames extends Algorithm {
           if (is-completion __x6__) if (= __x6__["Type"] CONST_normal) __x6__ = __x6__["Value"] else return __x6__ else {}
           let value = __x6__
           if (= kind CONST_value) append value -> properties else {
-            assert (= kind CONST_key+value)
+            assert (= kind CONST_keyPLUSvalue)
             app __x7__ = (CreateArrayFromList (new [key, value]))
             if (is-completion __x7__) if (= __x7__["Type"] CONST_normal) __x7__ = __x7__["Value"] else return __x7__ else {}
             let entry = __x7__
