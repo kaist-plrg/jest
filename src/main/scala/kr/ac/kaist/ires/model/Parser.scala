@@ -945,10 +945,11 @@ object Parser extends ESParsers {
   })
   lazy val CoalesceExpressionHead: ESParser[CoalesceExpressionHead] = memo(args => {
     val List(pIn, pYield, pAwait) = getArgsN("CoalesceExpressionHead", args, 3)
-    log((
-      log(MATCH ~ CoalesceExpression(List(pIn, pYield, pAwait)) ^^ { case _ ~ x0 => CoalesceExpressionHead0(x0, args) })("CoalesceExpressionHead0") |
+    log(resolveLL((
       log(MATCH ~ BitwiseORExpression(List(pIn, pYield, pAwait)) ^^ { case _ ~ x0 => CoalesceExpressionHead1(x0, args) })("CoalesceExpressionHead1")
-    ))("CoalesceExpressionHead")
+    ), (
+      log((MATCH <~ t("??")) ~ BitwiseORExpression(List(pIn, pYield, pAwait)) ^^ { case _ ~ x0 => ((x: CoalesceExpressionHead) => CoalesceExpressionHead0(CoalesceExpression0(x, x0, args), args)) })("CoalesceExpressionHead0")
+    )))("CoalesceExpressionHead")
   })
   lazy val ShortCircuitExpression: ESParser[ShortCircuitExpression] = memo(args => {
     val List(pIn, pYield, pAwait) = getArgsN("ShortCircuitExpression", args, 3)
