@@ -8,8 +8,15 @@ object BigIntCOLONCOLONtoString extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""BigInt::toString" (x) => {
-    !!! "If id:{x} is less than zero , return the string - concatenation of the String value:{\"-\"} and ! BigInt : : toString ( - id:{x} ) ."
-    app __x0__ = (WrapCompletion !!! "StringOp")
-    return __x0__
+    if (< x 0i) {
+      access __x0__ = (PRIMITIVES BigInt)
+      access __x1__ = (__x0__ "toString")
+      app __x2__ = (__x1__ (- x))
+      if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
+      app __x3__ = (WrapCompletion (+ "-" __x2__))
+      return __x3__
+    } else {}
+    app __x4__ = (WrapCompletion (convert x num2str ))
+    return __x4__
   }"""), this)
 }

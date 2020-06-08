@@ -9,7 +9,7 @@ object OrdinaryObjectCreate extends Algorithm {
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""OrdinaryObjectCreate" (proto, additionalInternalSlotsList) => {
     let internalSlotsList = (new ["Prototype", "Extensible"])
-    !!! "If id:{additionalInternalSlotsList} is present , append each of its elements to id:{internalSlotsList} ."
+    if (! (= additionalInternalSlotsList absent)) app _ = (append internalSlotsList additionalInternalSlotsList) else {}
     app __x0__ = (MakeBasicObject internalSlotsList)
     if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
     let O = __x0__

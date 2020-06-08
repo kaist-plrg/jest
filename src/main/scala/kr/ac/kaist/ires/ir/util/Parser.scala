@@ -71,6 +71,8 @@ object Parser extends JavaTokenParsers with RegexParsers {
       ("app " ~> id <~ "=") ~ ("(" ~> expr) ~ (rep(expr) <~ ")") ^^ { case x ~ f ~ as => IApp(x, f, as) } |
       ("access " ~> id <~ "=") ~ ("(" ~> expr) ~ (expr <~ ")") ^^ { case x ~ e1 ~ e2 => IAccess(x, e1, e2) } |
       ("withcont " ~> id) ~ ("(" ~> repsep(id, ",") <~ ")" <~ "=") ~ inst ^^ { case x ~ ps ~ b => IWithCont(x, ps, b) } |
+      ("?" ~> ident) ^^ { case x => parseInst(s"if (is-completion $x) if (= $x.Type CONST_normal) $x = $x.Value else return $x else {}") } |
+      ("!" ~> ident) ^^ { case x => parseInst(s"if (is-completion $x) $x = $x.Value else {}") } |
       (ref <~ "=") ~ expr ^^ { case r ~ e => IAssign(r, e) } |
       expr ^^ { case e => IExpr(e) }
   }
@@ -79,6 +81,7 @@ object Parser extends JavaTokenParsers with RegexParsers {
   lazy private val expr: Parser[Expr] = {
     ref ^^ { ERef(_) } |
       "(0|-?[1-9]\\d*)i".r ^^ { case s => EINum(s.dropRight(1).toLong) } |
+      "(0|-?[1-9]\\d*)n".r ^^ { case s => EBigINum(BigInt(s.dropRight(1).toLong)) } |
       floatingPointNumber ^^ { case s => ENum(s.toDouble) } |
       "Infinity" ^^ { case s => ENum(Double.PositiveInfinity) } |
       "+Infinity" ^^ { case s => ENum(Double.PositiveInfinity) } |
@@ -173,8 +176,11 @@ object Parser extends JavaTokenParsers with RegexParsers {
   // convert operators
   lazy private val cop: Parser[COp] = (
     "str2num" ^^^ CStrToNum |
+    "str2bigint" ^^^ CStrToBigInt |
     "num2str" ^^^ CNumToStr |
-    "num2int" ^^^ CNumToInt
+    "num2int" ^^^ CNumToInt |
+    "num2bigint" ^^^ CNumToBigInt |
+    "bigint2num" ^^^ CBigIntToNum
   )
 
   ////////////////////////////////////////////////////////////////////////////////
@@ -185,6 +191,7 @@ object Parser extends JavaTokenParsers with RegexParsers {
     func |
       addr |
       "(0|-?[1-9]\\d*)i".r ^^ { case s => INum(s.dropRight(1).toLong) } |
+      "(0|-?[1-9]\\d*)n".r ^^ { case s => BigINum(BigInt(s.dropRight(1).toLong)) } |
       floatingPointNumber ^^ { case n => Num(n.toDouble) } |
       string ^^ { Str(_) } |
       "true" ^^^ { Bool(true) } |

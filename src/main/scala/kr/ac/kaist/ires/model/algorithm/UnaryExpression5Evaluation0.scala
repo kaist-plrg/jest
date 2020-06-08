@@ -17,6 +17,9 @@ object UnaryExpression5Evaluation0 extends Algorithm {
     let oldValue = __x2__
     app __x3__ = (Type oldValue)
     let T = __x3__
-    !!! "Return ! id:{T} : : unaryMinus ( id:{oldValue} ) ."
+    app result = (PRIMITIVES[T].unaryMinus oldValue)
+    ! result
+    app wrapped = (WrapCompletion result)
+    return wrapped
   }"""), this)
 }

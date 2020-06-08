@@ -241,6 +241,7 @@ object Model {
     Id("NewGlobalEnvironment") -> NewGlobalEnvironment.func,
     Id("NewModuleEnvironment") -> NewModuleEnvironment.func,
     Id("CreateRealm") -> CreateRealm.func,
+    Id("CreateIntrinsics") -> CreateIntrinsics.func,
     Id("SetRealmGlobalObject") -> SetRealmGlobalObject.func,
     Id("SetDefaultGlobalBindings") -> SetDefaultGlobalBindings.func,
     Id("GetActiveScriptOrModule") -> GetActiveScriptOrModule.func,
@@ -249,6 +250,9 @@ object Model {
     Id("ResolveThisBinding") -> ResolveThisBinding.func,
     Id("GetNewTarget") -> GetNewTarget.func,
     Id("GetGlobalObject") -> GetGlobalObject.func,
+    Id("RunJobs") -> RunJobs.func,
+    Id("EnqueueJob") -> EnqueueJob.func,
+    Id("ScriptEvaluationJob") -> ScriptEvaluationJob.func,
     Id("InitializeHostDefinedRealm") -> InitializeHostDefinedRealm.func,
     Id("AgentSignifier") -> AgentSignifier.func,
     Id("AgentCanSuspend") -> AgentCanSuspend.func,
@@ -2179,7 +2183,7 @@ object Model {
     ("GLOBAL.PerformPromiseThen", GLOBALDOTPerformPromiseThen.length, GLOBALDOTPerformPromiseThen.func),
     ("GLOBAL.AsyncFunctionStart", GLOBALDOTAsyncFunctionStart.length, GLOBALDOTAsyncFunctionStart.func)
   )
-  lazy val initHeap: Heap = Heap(BaseHeap.get ++ BuiltinHeap.get ++ Map(
+  lazy val initHeap: Heap = Heap(BaseHeap.get ++ BuiltinHeap.get ++ primitiveMap ++ Map(
     NamedAddr("CONST_Reject") -> IRSymbol(Str("CONST_Reject")),
     NamedAddr("CONST_uninitialized") -> IRSymbol(Str("CONST_uninitialized")),
     NamedAddr("CONST_BigUint64") -> IRSymbol(Str("CONST_BigUint64")),
@@ -2272,5 +2276,13 @@ object Model {
     ("GlobalEnvironmentRecord" -> GlobalEnvironmentRecord.map),
     ("IntegerIndexedExoticObject" -> IntegerIndexedExoticObject.map),
     ("BoundFunctionExoticObject" -> BoundFunctionExoticObject.map)
+  )
+  lazy val primitiveMap: Map[Addr, Obj] = Map(
+    NamedAddr("PRIMITIVES") -> IRMap.create(Ty("Primitive"), Map(
+      Str("BigInt") -> NamedAddr("PrimitiveBigInt"),
+      Str("Number") -> NamedAddr("PrimitiveNumber")
+    )),
+    NamedAddr("PrimitiveBigInt") -> IRMap.create(Ty("Primitive"), PrimitiveBigInt.map),
+    NamedAddr("PrimitiveNumber") -> IRMap.create(Ty("Primitive"), PrimitiveNumber.map)
   )
 }

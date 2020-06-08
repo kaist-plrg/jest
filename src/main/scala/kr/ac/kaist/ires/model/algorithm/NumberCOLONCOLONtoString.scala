@@ -8,10 +8,26 @@ object NumberCOLONCOLONtoString extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""Number::toString" (x) => {
-    !!! "If id:{x} is value:{NaN} , return the String value:{\"NaN\"} ."
-    !!! "If id:{x} is value:{+0} or value:{-0} , return the String value:{\"0\"} ."
-    !!! "If id:{x} is less than zero , return the string - concatenation of value:{\"-\"} and ! Number : : toString ( - id:{x} ) ."
-    !!! "If id:{x} is value:{+∞} , return the String value:{\"Infinity\"} ."
-    !!! "Otherwise , let id:{n} , id:{k} , and id:{s} be integers such that id:{k} ≥ 1 , 10 sup:{id:{k} - 1 } ≤ id:{s} < 10 sup:{id:{k} } , the Number value for ℝ ( id:{s} ) × 10 ℝ sup:{ℝ ( id:{n} ) - ℝ ( id:{k} ) } is id:{x} , and id:{k} is as small as possible . Note that id:{k} is the number of digits in the decimal representation of id:{s} , that id:{s} is not divisible by 10 ℝ , and that the least significant digit of id:{s} is not necessarily uniquely determined by these criteria ."
+    if (= x NaN) {
+      app __x0__ = (WrapCompletion "NaN")
+      return __x0__
+    } else {}
+    if (|| (= x 0i) (= x -0.0)) {
+      app __x1__ = (WrapCompletion "0")
+      return __x1__
+    } else {}
+    if (< x 0i) {
+      access __x2__ = (PRIMITIVES Number)
+      access __x3__ = (__x2__ "toString")
+      app __x4__ = (__x3__ (- x))
+      if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
+      app __x5__ = (WrapCompletion (+ "-" __x4__))
+      return __x5__
+    } else {}
+    if (= x Infinity) {
+      app __x6__ = (WrapCompletion "Infinity")
+      return __x6__
+    } else {}
+    return (convert x num2str)
   }"""), this)
 }

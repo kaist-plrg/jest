@@ -32,6 +32,8 @@ object ShiftExpression1Evaluation0 extends Algorithm {
     } else {}
     app __x9__ = (Type lnum)
     let T = __x9__
-    !!! "Return id:{T} : : leftShift ( id:{lnum} , id:{rnum} ) ."
+    app result = (PRIMITIVES[T].leftShift lnum rnum)
+    app wrapped = (WrapCompletion result)
+    return wrapped
   }"""), this)
 }

@@ -54,6 +54,9 @@ object AdditiveExpression1Evaluation0 extends Algorithm {
     } else {}
     app __x17__ = (Type lnum)
     let T = __x17__
-    !!! "Return id:{T} : : add ( id:{lnum} , id:{rnum} ) ."
+    app __x18__ = (PRIMITIVES[T].add lnum rnum)
+    app __x19__ = (WrapCompletion __x18__)
+    return __x19__
+
   }"""), this)
 }

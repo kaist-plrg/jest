@@ -16,8 +16,11 @@ object BaseGlobal {
     "ToNumber" -> ToNumber.func,
     "ToBoolean" -> ToBoolean.func,
     "ToObject" -> ToObject.func,
+    "ToBigInt" -> ToBigInt.func,
+    "StringToBigInt" -> StringToBigInt.func,
     "ToString" -> ToString.func,
     "Number" -> Str("Number"),
+    "BigInt" -> Str("BigInt"),
     "Undefined" -> Str("Undefined"),
     "Null" -> Str("Null"),
     "String" -> Str("String"),
@@ -28,6 +31,7 @@ object BaseGlobal {
     "max" -> max.func,
     "min" -> min.func,
     "abs" -> abs.func,
+    "append" -> append.func,
     "floor" -> floor.func,
     "MulOperation" -> MulOperation.func,
     "Completion" -> Completion.func,
@@ -49,7 +53,8 @@ object BaseGlobal {
     "GLOBAL_jobQueue" -> NamedAddr("jobQueue"),
     "GLOBAL_context" -> Null,
     "GLOBAL" -> NamedAddr("GLOBAL"),
-    "REALM" -> NamedAddr("REALM")
+    "REALM" -> NamedAddr("REALM"),
+    "PRIMITIVES" -> NamedAddr("PRIMITIVES")
   )
 
   lazy val get: Map[Id, Value] = map.map {

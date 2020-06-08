@@ -17,6 +17,9 @@ object UnaryExpression6Evaluation0 extends Algorithm {
     let oldValue = __x2__
     app __x3__ = (Type oldValue)
     let T = __x3__
-    !!! "Return ! id:{T} : : bitwiseNOT ( id:{oldValue} ) ."
+    app result = (PRIMITIVES[T].bitwiseNOT oldValue)
+    ! result
+    app wrapped = (WrapCompletion result)
+    return result
   }"""), this)
 }

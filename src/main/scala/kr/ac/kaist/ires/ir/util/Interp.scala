@@ -185,7 +185,7 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
           }
           case (ASTVal(Lexical(kind, str)), Str(name)) => s2.define(id, (kind, name) match {
             case ("(IdentifierName \\ (ReservedWord))" | "IdentifierName", "StringValue") => Str(ESValueParser.parseIdentifier(str))
-            case ("NumericLiteral", "MV") => Num(ESValueParser.parseNumber(str))
+            case ("NumericLiteral", "MV" | "NumericValue") => ESValueParser.parseNumber(str)
             case ("StringLiteral", "SV" | "StringValue") => Str(ESValueParser.parseString(str))
             case ("NoSubstitutionTemplate", "TV") => Str(ESValueParser.parseTVNoSubstitutionTemplate(str))
             case ("TemplateHead", "TV") => Str(ESValueParser.parseTVTemplateHead(str))
@@ -245,6 +245,7 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
   def interp(expr: Expr): State => (Value, State) = st => expr match {
     case ENum(n) => (Num(n), st)
     case EINum(n) => (INum(n), st)
+    case EBigINum(b) => (BigINum(b), st)
     case EStr(str) => (Str(str), st)
     case EBool(b) => (Bool(b), st)
     case EUndef => (Undef, st)
@@ -305,6 +306,7 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
               case obj => obj.ty.name
             }
             case Num(_) | INum(_) => "Number"
+            case BigINum(_) => "BigInt"
             case Str(_) => "String"
             case Bool(_) => "Boolean"
             case Undef => "Undefined"
@@ -318,6 +320,7 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
           case obj => obj.ty.name
         }
         case Num(_) | INum(_) => "Number"
+        case BigINum(_) => "BigInt"
         case Str(_) => "String"
         case Bool(_) => "Boolean"
         case Undef => "Undefined"
@@ -401,6 +404,7 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
       case (Str(s), s0) => {
         (cop match {
           case CStrToNum => Num(ESValueParser.str2num(s))
+          case CStrToBigInt => ESValueParser.str2bigint(s)
           case _ => error(s"not convertable option: Str to $cop")
         }, s0)
       }
@@ -416,6 +420,7 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
         (cop match {
           case CNumToStr => Str(Helper.toStringHelper(n, radix))
           case CNumToInt => INum(n)
+          case CNumToBigInt => BigINum(BigInt(n))
           case _ => error(s"not convertable option: Num to $cop")
         }, s1)
       }
@@ -431,8 +436,17 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
         (cop match {
           case CNumToStr => Str(Helper.toStringHelper(n, radix))
           case CNumToInt => INum((math.signum(n) * math.floor(math.abs(n))).toLong)
+          case CNumToBigInt => BigINum(BigInt(new java.math.BigDecimal(n).toBigInteger))
           case _ => error(s"not convertable option: Num to $cop")
         }, s1)
+      }
+      case (BigINum(b), s0) => {
+        (cop match {
+          case CNumToBigInt => BigINum(b)
+          case CNumToStr => Str(b.toString)
+          case CBigIntToNum => Num(b.toDouble)
+          case _ => error(s"not convertable option: Num to $cop")
+        }, s0)
       }
       case (v, s0) => error(s"not an convertable value: $v")
     }

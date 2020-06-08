@@ -15,7 +15,13 @@ object StrictEqualityComparison extends Algorithm {
       return __x2__
     } else {}
     app __x3__ = (Type x)
-    if (|| (= __x3__ Number) (= __x3__ BigInt)) !!! "Return ! Type ( id:{x} ) : : equal ( id:{x} , id:{y} ) ." else {}
+    if (|| (= __x3__ Number) (= __x3__ BigInt)) {
+      app T = (Type x)
+      app result = (PRIMITIVES[T].equal x y)
+      ! result
+      app wrapped = (WrapCompletion result)
+      return wrapped
+    } else {}
     app __x4__ = (SameValueNonNumeric x y)
     if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
     app __x5__ = (WrapCompletion __x4__)

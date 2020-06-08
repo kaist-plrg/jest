@@ -6,6 +6,7 @@ import kr.ac.kaist.ires.error._
 import kr.ac.kaist.ires.util.Useful._
 import kr.ac.kaist.ires.parser.UnicodeRegex
 
+import java.math.BigDecimal
 import scala.util.matching.Regex
 import scala.util.parsing.combinator._
 import scala.util.parsing.input._
@@ -14,7 +15,7 @@ object ESValueParser extends RegexParsers with UnicodeRegex {
   // parsing
   def parseIdentifier(str: String): String = get("SV.IdentifierName", SV.IdentifierName, str)
   def parseString(str: String): String = get("SV.StringLiteral", SV.StringLiteral, str)
-  def parseNumber(str: String): Double = get("MV.NumericLiteral", MV.NumericLiteral, str)
+  def parseNumber(str: String): Value = get("NumericValue.NumericLiteral", NumericValue.NumericLiteral, str)
   def parseTVNoSubstitutionTemplate(str: String): String = get("TV.NoSubstitutionTemplate", TV.NoSubstitutionTemplate, str)
   def parseTRVNoSubstitutionTemplate(str: String): String = get("TRV.NoSubstitutionTemplate", TRV.NoSubstitutionTemplate, str)
   def parseTVTemplateHead(str: String): String = get("TV.TemplateHead", TV.TemplateHead, str)
@@ -24,8 +25,13 @@ object ESValueParser extends RegexParsers with UnicodeRegex {
   def parseTVTemplateTail(str: String): String = get("TV.TemplateTail", TV.TemplateTail, str)
   def parseTRVTemplateTail(str: String): String = get("TRV.TemplateTail", TRV.TemplateTail, str)
   def str2num(str: String): Double = parseAll(MV.StringNumericLiteral, str) match {
-    case Success(n, _) => n
+    case Success(`zeroBigDecimal`, _) if str.trim.startsWith("-") => -0.0
+    case Success(n, _) => n.doubleValue
     case _ => Double.NaN
+  }
+  def str2bigint(str: String): Value = parseAll(MV.StringNumericLiteralForBigInt, str) match {
+    case Success(n, _) => BigINum(BigInt(n.toBigInteger))
+    case _ => Num(Double.NaN)
   }
   private def get[T](name: String, rule: Parser[T], str: String): T = parseAll(rule, str) match {
     case Success(res, _) => res
@@ -75,10 +81,6 @@ object ESValueParser extends RegexParsers with UnicodeRegex {
     lazy val DoubleStringCharacter: S = (
       // The SV of DoubleStringCharacter::SourceCharacterbut not one of " or \ or LineTerminator is the UTF16Encoding of the code point value of SourceCharacter.
       notChars("\"" | "\\" | Predef.LineTerminator) |||
-      // The SV of DoubleStringCharacter::<LS> is the code unit 0x2028 (LINE SEPARATOR).
-      Predef.LS |||
-      // The SV of DoubleStringCharacter::<PS> is the code unit 0x2029 (PARAGRAPH SEPARATOR).
-      Predef.PS |||
       // The SV of DoubleStringCharacter::\EscapeSequence is the SV of the EscapeSequence.
       "\\" ~> SV.EscapeSequence |||
       // The SV of DoubleStringCharacter::LineContinuation is the empty code unit sequence.
@@ -87,10 +89,6 @@ object ESValueParser extends RegexParsers with UnicodeRegex {
     lazy val SingleStringCharacter: S = (
       // The SV of SingleStringCharacter::SourceCharacterbut not one of ' or \ or LineTerminator is the UTF16Encoding of the code point value of SourceCharacter.
       notChars("'" | "\\" | Predef.LineTerminator) |||
-      // The SV of SingleStringCharacter::<LS> is the code unit 0x2028 (LINE SEPARATOR).
-      Predef.LS |||
-      // The SV of SingleStringCharacter::<PS> is the code unit 0x2029 (PARAGRAPH SEPARATOR).
-      Predef.PS |||
       // The SV of SingleStringCharacter::\EscapeSequence is the SV of the EscapeSequence.
       "\\" ~> SV.EscapeSequence |||
       // The SV of SingleStringCharacter::LineContinuation is the empty code unit sequence.
@@ -127,98 +125,105 @@ object ESValueParser extends RegexParsers with UnicodeRegex {
     lazy val HexEscapeSequence: S = (
       // The SV of HexEscapeSequence::xHexDigitHexDigit is the code unit whose value is (16 times the MV of the first HexDigit) plus the MV of the second HexDigit.
       "x" ~> MV.HexDigit ~ MV.HexDigit ^^ {
-        case x ~ y => Character.toChars(16 * x.toInt + y.toInt).mkString
+        case x ~ y => Character.toChars(16 * x.intValue + y.intValue).mkString
       }
     )
     lazy val UnicodeEscapeSequence: S = (
       // The SV of UnicodeEscapeSequence::uHex4Digits is the SV of Hex4Digits.
       "u" ~> SV.Hex4Digits |||
       // The SV of UnicodeEscapeSequence::u{CodePoint} is the UTF16Encoding of the MV of CodePoint(HexDigits).
-      "u{" ~> MV.CodePoint <~ "}" ^^ { case n => Character.toChars(n.toInt).mkString }
+      "u{" ~> MV.CodePoint <~ "}" ^^ { case n => Character.toChars(n.intValue).mkString }
     )
     lazy val Hex4Digits: S = (
       // The SV of Hex4Digits::HexDigitHexDigitHexDigitHexDigit is the code unit whose value is (0x1000 times the MV of the first HexDigit) plus (0x100 times the MV of the second HexDigit) plus (0x10 times the MV of the third HexDigit) plus the MV of the fourth HexDigit.
       MV.HexDigit ~ MV.HexDigit ~ MV.HexDigit ~ MV.HexDigit ^^ {
         case a ~ b ~ c ~ d => Character.toChars(
-          a.toInt * 0x1000 +
-            b.toInt * 0x100 +
-            c.toInt * 0x10 +
-            d.toInt * 0x1
+          a.intValue * 0x1000 +
+            b.intValue * 0x100 +
+            c.intValue * 0x10 +
+            d.intValue * 0x1
         ).mkString
       }
     )
   }
 
+  val toNumber: BigDecimal => Num = d => Num(d.doubleValue)
+  val toBigInt: BigDecimal => BigINum = d => BigINum(BigInt(d.toBigInteger))
+  val zeroBigDecimal = new BigDecimal(0)
+  val bigDecimalFromString: String => BigDecimal = str => new BigDecimal(str)
+  val bigDecimalFromInt: Int => BigDecimal = int => new BigDecimal(int)
+
+  // Numeric Value
+  object NumericValue {
+    lazy val NumericLiteral: V = (
+      MV.DecimalLiteral ^^ toNumber |||
+      NumericValue.DecimalBigIntegerLiteral |||
+      MV.NonDecimalIntegerLiteral ^^ toNumber |||
+      MV.NonDecimalIntegerLiteral <~ Predef.BigIntLiteralSuffix ^^ toBigInt
+    )
+
+    lazy val DecimalBigIntegerLiteral: V =
+      ("0" ||| Predef.NonZeroDigit ~ opt(Predef.DecimalDigits) ^^ {
+        case x ~ y => x + y.getOrElse("")
+      }) <~ Predef.BigIntLiteralSuffix ^^ { s => BigINum(BigInt(s)) }
+  }
+
   // Mathematical Value
   object MV {
-    lazy val NumericLiteral: D = (
-      // The MV of NumericLiteral::DecimalLiteral is the MV of DecimalLiteral.
-      MV.DecimalLiteral |||
-      // The MV of NumericLiteral::BinaryIntegerLiteral is the MV of BinaryIntegerLiteral.
+    lazy val DecimalLiteral: D = Predef.DecimalLiteral ^^ bigDecimalFromString
+    lazy val NonDecimalIntegerLiteral: D = (
       MV.BinaryIntegerLiteral |||
-      // The MV of NumericLiteral::OctalIntegerLiteral is the MV of OctalIntegerLiteral.
       MV.OctalIntegerLiteral |||
-      // The MV of NumericLiteral::HexIntegerLiteral is the MV of HexIntegerLiteral.
       MV.HexIntegerLiteral
     )
-    lazy val DecimalLiteral: D = Predef.DecimalLiteral ^^ { _.toDouble }
-    lazy val HexDigit: D = (
-      "[0-9]".r ^^ { _.toDouble } |||
-      "[a-fA-F]".r ^^ { s => s"0x${s}p0".toDouble }
-    )
-    lazy val BinaryIntegerLiteral: D = (
-      // The MV of BinaryIntegerLiteral::0bBinaryDigits is the MV of BinaryDigits.
-      "0b" ~> MV.BinaryDigits |||
-      // The MV of BinaryIntegerLiteral::0BBinaryDigits is the MV of BinaryDigits.
-      "0B" ~> MV.BinaryDigits
-    )
+    lazy val NonZeroDigit: D = Predef.NonZeroDigit ^^ bigDecimalFromString
+    lazy val DecimalDigits: D = Predef.DecimalDigits ^^ bigDecimalFromString
+    lazy val BinaryIntegerLiteral: D = ("0b" | "0B") ~> MV.BinaryDigits
     lazy val BinaryDigits: D = rep1("0" | "1") ^^ {
-      case list => list.foldLeft(0.0) {
-        case (x, s) => x * 2 + s.toInt
+      case list => list.foldLeft(zeroBigDecimal) {
+        case (x, s) => x.multiply(bigDecimalFromInt(2)).add(bigDecimalFromString(s))
       }
     }
-    lazy val OctalIntegerLiteral: D = (
-      // The MV of OctalIntegerLiteral::0oOctalDigits is the MV of OctalDigits.
-      "0o" ~> MV.OctalDigits |||
-      // The MV of OctalIntegerLiteral::0OOctalDigits is the MV of OctalDigits.
-      "0O" ~> MV.OctalDigits
-    )
+    lazy val OctalIntegerLiteral: D = ("0o" | "0O") ~> MV.OctalDigits
     lazy val OctalDigits: D = rep1("[0-7]".r) ^^ {
-      case list => list.foldLeft(0.0) {
-        case (x, s) => x * 8 + s.toInt
+      case list => list.foldLeft(zeroBigDecimal) {
+        case (x, s) => x.multiply(bigDecimalFromInt(8)).add(bigDecimalFromString(s))
       }
     }
-    lazy val HexIntegerLiteral: D = (
-      // The MV of HexIntegerLiteral::0xHexDigits is the MV of HexDigits.
-      "0x" ~> MV.HexDigits |||
-      // The MV of HexIntegerLiteral::0XHexDigits is the MV of HexDigits.
-      "0X" ~> MV.HexDigits
-    )
-    lazy val CodePoint: D = MV.HexDigits.filter(_ <= 0x10ffff)
-    lazy val HexDigits: D = rep1(MV.HexDigit) ^^ {
-      case list => list.foldLeft(0.0) {
-        case (x, s) => x * 16 + s.toInt
+    lazy val HexIntegerLiteral: D = ("0x" | "0X") ~> MV.HexDigits
+    lazy val HexDigits: D = rep1(HexDigit) ^^ {
+      case list => list.foldLeft(zeroBigDecimal) {
+        case (x, y) => x.multiply(bigDecimalFromInt(16)).add(y)
       }
     }
     lazy val StringNumericLiteral: D = (
-      // The MV of StringNumericLiteral:::[empty] is 0.
-      "" ^^^ 0.0 |||
-      // The MV of StringNumericLiteral:::StrWhiteSpace is 0.
-      Predef.StrWhiteSpace ^^^ 0.0 |||
-      // The MV of StringNumericLiteral:::StrWhiteSpaceStrNumericLiteralStrWhiteSpace is the MV of StrNumericLiteral, no matter whether white space is present or not.
-      sOpt(Predef.StrWhiteSpace) ~> MV.StrNumericLiteral <~ sOpt(Predef.StrWhiteSpace)
+      opt(Predef.StrWhiteSpace) ^^^ zeroBigDecimal |||
+      opt(Predef.StrWhiteSpace) ~> MV.StrNumericLiteral <~ opt(Predef.StrWhiteSpace)
     )
     lazy val StrNumericLiteral: D = (
-      // The MV of StrNumericLiteral:::StrDecimalLiteral is the MV of StrDecimalLiteral.
       MV.StrDecimalLiteral |||
-      // The MV of StrNumericLiteral:::BinaryIntegerLiteral is the MV of BinaryIntegerLiteral.
-      MV.BinaryIntegerLiteral |||
-      // The MV of StrNumericLiteral:::OctalIntegerLiteral is the MV of OctalIntegerLiteral.
-      MV.OctalIntegerLiteral |||
-      // The MV of StrNumericLiteral:::HexIntegerLiteral is the MV of HexIntegerLiteral.
-      MV.HexIntegerLiteral
+      MV.NonDecimalIntegerLiteral
     )
-    lazy val StrDecimalLiteral: D = Predef.StrDecimalLiteral ^^ { _.toDouble }
+    lazy val StrDecimalLiteral: D = Predef.StrDecimalLiteral ^^ bigDecimalFromString
+    lazy val StringNumericLiteralForBigInt: D = (
+      opt(Predef.StrWhiteSpace) ^^^ zeroBigDecimal |||
+      opt(Predef.StrWhiteSpace) ~> MV.StrNumericLiteralForBigInt <~ opt(Predef.StrWhiteSpace)
+    )
+    lazy val StrNumericLiteralForBigInt: D = (
+      MV.StrDecimalLiteralForBigInt |||
+      MV.NonDecimalIntegerLiteral
+    )
+    lazy val StrDecimalLiteralForBigInt: D = Predef.StrDecimalLiteralForBigInt ^^ bigDecimalFromString
+    lazy val CodePoint: D = MV.HexDigits.filter(_.compareTo(bigDecimalFromInt(0x10ffff)) <= 0)
+    lazy val HexDigit: D = "[0-9a-fA-F]".r ^^ {
+      case s =>
+        val ch = s.head
+        bigDecimalFromInt({
+          if (ch.isUpper) ch - 'A' + 10
+          else if (ch.isLower) ch - 'a' + 10
+          else ch - '0'
+        })
+    }
   }
 
   // Template Value
@@ -411,7 +416,8 @@ object ESValueParser extends RegexParsers with UnicodeRegex {
 
   // types
   type S = Parser[String]
-  type D = Parser[Double]
+  type D = Parser[BigDecimal]
+  type V = Parser[Value]
 
   // predefined parsers
   object Predef {
@@ -450,8 +456,13 @@ object ESValueParser extends RegexParsers with UnicodeRegex {
       seq("+", StrUnsignedDecimalLiteral) |||
       seq("-", StrUnsignedDecimalLiteral)
     )
+    lazy val StrDecimalLiteralForBigInt: S = (
+      DecimalDigits |||
+      seq("+", DecimalDigits) |||
+      seq("-", DecimalDigits)
+    )
     lazy val StrUnsignedDecimalLiteral: S = (
-      "Infinity" |||
+      "Infinity" ^^^ "1e10000" |||
       seq(DecimalDigits, ".", sOpt(DecimalDigits), sOpt(ExponentPart)) |||
       seq(".", DecimalDigits, sOpt(ExponentPart)) |||
       seq(DecimalDigits, sOpt(ExponentPart))
@@ -484,8 +495,9 @@ object ESValueParser extends RegexParsers with UnicodeRegex {
     )
     lazy val HexDigits: S = seq(HexDigit, sOpt(HexDigits))
     lazy val HexDigit: S = "[0-9a-fA-F]".r
-    lazy val CodePoint: S = HexDigits.filter(s => parseAll(MV.HexDigits, s).get <= 0x10ffff)
-    lazy val NotCodePoint: S = HexDigits.filter(s => parseAll(MV.HexDigits, s).get > 0x10ffff)
+    lazy val CodePoint: S = HexDigits.filter(s => parseAll(MV.HexDigits, s).get.compareTo(bigDecimalFromInt(0x10ffff)) <= 0)
+    lazy val NotCodePoint: S = HexDigits.filter(s => parseAll(MV.HexDigits, s).get.compareTo(bigDecimalFromInt(0x10ffff)) > 0)
+    lazy val BigIntLiteralSuffix: S = "n"
   }
 
   // sequences

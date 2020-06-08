@@ -17,6 +17,9 @@ case class ENum(n: Double) extends Expr {
 case class EINum(n: Long) extends Expr {
   override def toString: String = s"EINum(${n}L)"
 }
+case class EBigINum(b: BigInt) extends Expr {
+  override def toString: String = s"""EBigINum(BigInt("$b"))"""
+}
 case class EStr(str: String) extends Expr {
   override def toString: String = s"EStr($TRIPLE$str$TRIPLE)"
 }
@@ -54,5 +57,8 @@ case class ENotSupported(msg: String) extends Expr {
 
 sealed trait COp extends IRNode
 case object CStrToNum extends COp
+case object CStrToBigInt extends COp
 case object CNumToStr extends COp
 case object CNumToInt extends COp
+case object CNumToBigInt extends COp
+case object CBigIntToNum extends COp

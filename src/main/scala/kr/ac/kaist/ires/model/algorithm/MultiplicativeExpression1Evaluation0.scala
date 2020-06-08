@@ -32,8 +32,20 @@ object MultiplicativeExpression1Evaluation0 extends Algorithm {
     } else {}
     app __x9__ = (Type lnum)
     let T = __x9__
-    !!! "If nt:{MultiplicativeOperator} is code:{*} , return id:{T} : : multiply ( id:{lnum} , id:{rnum} ) ."
-    !!! "If nt:{MultiplicativeOperator} is code:{/} , return id:{T} : : divide ( id:{lnum} , id:{rnum} ) ."
-    !!! "Else , step-list:{...}"
+    if (= MultiplicativeOperator "*") {
+      app result = (PRIMITIVES[T].multiply lnum rnum)
+      app wrapped = (WrapCompletion result)
+      return wrapped
+    } else {}
+    if (= MultiplicativeOperator "/") {
+      app result = (PRIMITIVES[T].divide lnum rnum)
+      app wrapped = (WrapCompletion result)
+      return wrapped
+    } else {
+      assert (= MultiplicativeOperator "%")
+      app result = (PRIMITIVES[T].remainder lnum rnum)
+      app wrapped = (WrapCompletion result)
+      return wrapped
+    }
   }"""), this)
 }

@@ -45,7 +45,9 @@ object AbstractRelationalComparison extends Algorithm {
           app __x11__ = (WrapCompletion undefined)
           return __x11__
         } else {}
-        !!! "Return BigInt : : lessThan ( id:{px} , id:{ny} ) ."
+        app result = (PRIMITIVES.BigInt.lessThan px ny)
+        app wrapped = (WrapCompletion result)
+        return wrapped
       } else {}
       app __x12__ = (Type px)
       let __x13__ = (= __x12__ String)
@@ -61,7 +63,9 @@ object AbstractRelationalComparison extends Algorithm {
           app __x16__ = (WrapCompletion undefined)
           return __x16__
         } else {}
-        !!! "Return BigInt : : lessThan ( id:{nx} , id:{py} ) ."
+        app result = (PRIMITIVES.BigInt.lessThan nx py)
+        app wrapped = (WrapCompletion result)
+        return wrapped
       } else {}
       app __x17__ = (ToNumeric px)
       if (is-completion __x17__) if (= __x17__["Type"] CONST_normal) __x17__ = __x17__["Value"] else return __x17__ else {}
@@ -69,7 +73,13 @@ object AbstractRelationalComparison extends Algorithm {
       app __x18__ = (ToNumeric py)
       if (is-completion __x18__) if (= __x18__["Type"] CONST_normal) __x18__ = __x18__["Value"] else return __x18__ else {}
       let ny = __x18__
-      !!! "If Type ( id:{nx} ) is the same as Type ( id:{ny} ) , return Type ( id:{nx} ) : : lessThan ( id:{nx} , id:{ny} ) ."
+      app nxT = (Type nx)
+      app nyT = (Type ny)
+      if (= nxT nyT) {
+        app result = (PRIMITIVES[nxT].lessThan nx ny)
+        app wrapped = (WrapCompletion result)
+        return wrapped
+      } else {}
       app __x19__ = (Type nx)
       let __x20__ = (= __x19__ BigInt)
       if __x20__ {

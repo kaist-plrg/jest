@@ -8,7 +8,7 @@ object Type extends Algorithm {
   val length: Int = 1
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""Type" (argument) => {
-    val t = (typeof argument)
+    let t = (typeof argument)
     if (|| (= t "ArgumentsExoticObject")
       (|| (= t "ArrayExoticObject")
       (|| (= t "BoundFunctionExoticObject")

@@ -7,5 +7,9 @@ object BigIntCOLONCOLONsameValueZero extends Algorithm {
   val name: String = "BigIntCOLONCOLONsameValueZero"
   val length: Int = 2
   val lang: Boolean = true
-  val func: Func = FixUIdWalker(parseFunc(""""BigInt::sameValueZero" (x, y) => !!! "Return BigInt : : equal ( id:{x} , id:{y} ) .""""), this)
+  val func: Func = FixUIdWalker(parseFunc(""""BigInt::sameValueZero" (x, y) => {
+    app result = (PRIMITIVES.BigInt.equal x y)
+    app wrapped = (WrapCompletion result)
+    return wrapped
+  }"""), this)
 }

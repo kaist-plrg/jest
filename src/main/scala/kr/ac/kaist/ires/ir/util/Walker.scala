@@ -70,7 +70,7 @@ trait Walker {
 
   // expressions
   def walk(expr: Expr): Expr = expr match {
-    case ENum(_) | EINum(_) | EStr(_) | EBool(_) | EUndef | ENull | EAbsent => expr
+    case ENum(_) | EINum(_) | EBigINum(_) | EStr(_) | EBool(_) | EUndef | ENull | EAbsent => expr
     case EMap(ty, props) => EMap(
       walk(ty),
       walkList[(Expr, Expr)](props, { case (x, y) => (walk(x), walk(y)) })
@@ -159,7 +159,7 @@ trait Walker {
     case ASTMethod(func, locals) => ASTMethod(walk(func), walkMap[Id, Value](locals, walk, walk))
     case func: Func => walk(func)
     case cont: Cont => walk(cont)
-    case Num(_) | INum(_) | Str(_) | Bool(_) | Undef | Null | Absent => value
+    case Num(_) | INum(_) | BigINum(_) | Str(_) | Bool(_) | Undef | Null | Absent => value
   }
 
   // addresses

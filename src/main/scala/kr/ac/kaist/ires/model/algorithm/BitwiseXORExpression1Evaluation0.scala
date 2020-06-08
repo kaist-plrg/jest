@@ -28,8 +28,8 @@ object BitwiseXORExpression1Evaluation0 extends Algorithm {
     return __x6__
     app __x7__ = (Type lnum)
     let T = __x7__
-    !!! "If @ is code:{&} , return id:{T} : : bitwiseAND ( id:{lnum} , id:{rnum} ) ."
-    !!! "If @ is code:{|} , return id:{T} : : bitwiseOR ( id:{lnum} , id:{rnum} ) ."
-    !!! "Else , step-list:{...}"
+    app result = (PRIMITIVES[T].bitwiseXOR lnum rnum)
+    app wrapped = (WrapCompletion result)
+    return wrapped
   }"""), this)
 }

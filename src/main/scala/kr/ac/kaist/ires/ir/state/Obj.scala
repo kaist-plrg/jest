@@ -29,6 +29,11 @@ case class IRMap(ty: Ty, props: Map[Value, (Value, Long)], size: Long = 0L) exte
   // deletes
   def deleted(prop: Value): IRMap = copy(props = props - prop)
 }
+object IRMap {
+  def create(ty: Ty, props: Map[Value, Value]): IRMap = props.foldLeft(IRMap(ty, Map())) {
+    case (obj, (k, v)) => obj.updated(k, v)
+  }
+}
 
 // Unordered IR map helper
 object IRUMap {

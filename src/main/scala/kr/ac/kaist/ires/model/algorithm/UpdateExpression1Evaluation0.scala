@@ -15,7 +15,9 @@ object UpdateExpression1Evaluation0 extends Algorithm {
     app __x2__ = (ToNumeric __x1__)
     if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     let oldValue = __x2__
-    !!! "Let id:{newValue} be ! Type ( id:{oldvalue} ) : : add ( id:{oldValue} , Type ( id:{oldValue} ) : : unit ) ."
+    app T = (Type oldValue)
+    app newValue = (PRIMITIVES[T].add oldValue PRIMITIVES[T].unit)
+    ! newValue
     app __x3__ = (PutValue lhs newValue)
     if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
     __x3__

@@ -30,6 +30,10 @@ object ExponentiationExpression1Evaluation0 extends Algorithm {
       app __x8__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
       return __x8__
     } else {}
-    !!! "Return ? Type ( id:{base} ) : : exponentiate ( id:{base} , id:{exponent} ) ."
+    app T = (Type base)
+    app result = (PRIMITIVES[T].exponentiate base exponent)
+    ? result
+    app wrapped = (WrapCompletion result)
+    return wrapped
   }"""), this)
 }
