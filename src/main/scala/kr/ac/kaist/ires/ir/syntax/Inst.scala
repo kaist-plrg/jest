@@ -45,3 +45,4 @@ case class IPrint(expr: Expr) extends Inst
 case class IApp(id: Id, fexpr: Expr, args: List[Expr]) extends Inst
 case class IAccess(id: Id, bexpr: Expr, expr: Expr) extends Inst
 case class IWithCont(id: Id, params: List[Id], bodyInst: Inst) extends Inst
+case class ISetType(expr: Expr, ty: Ty) extends Inst

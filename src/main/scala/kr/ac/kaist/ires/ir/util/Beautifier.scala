@@ -138,6 +138,8 @@ object Beautifier {
       case IWithCont(id, params, inst) =>
         walk("withcont "); walk(id); walk(" (");
         walkListSep[Id](params, ", ", walk); walk(") ="); detailWalk(inst)
+      case ISetType(expr, ty) =>
+        walk("set-type "); walk(expr); walk(" "); walk(ty)
     }
 
     // expressions

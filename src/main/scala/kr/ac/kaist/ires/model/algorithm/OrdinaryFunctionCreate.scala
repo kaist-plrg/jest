@@ -14,6 +14,7 @@ object OrdinaryFunctionCreate extends Algorithm {
     app __x1__ = (OrdinaryObjectCreate functionPrototype internalSlotsList)
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
     let F = __x1__
+    set-type F ECMAScriptFunctionObject
     F["Call"] = ECMAScriptFunctionObjectDOTCall
     F["FormalParameters"] = ParameterList
     F["ECMAScriptCode"] = Body

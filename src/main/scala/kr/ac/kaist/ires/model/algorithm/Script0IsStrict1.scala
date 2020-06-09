@@ -7,5 +7,5 @@ object Script0IsStrict1 extends Algorithm {
   val name: String = "Script0IsStrict1"
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = FixUIdWalker(parseFunc(""""Script0IsStrict1" (this, ScriptBody) => !!! "If nt:{ScriptBody} is present and the Directive Prologue of nt:{ScriptBody} contains a Use Strict Directive , return value:{true} ; otherwise , return value:{false} .""""), this)
+  val func: Func = FixUIdWalker(parseFunc(""""Script0IsStrict1" (this, ScriptBody) => return true"""), this)
 }

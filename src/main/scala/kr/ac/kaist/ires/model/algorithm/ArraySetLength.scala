@@ -48,46 +48,23 @@ object ArraySetLength extends Algorithm {
       app __x10__ = (WrapCompletion false)
       return __x10__
     } else {}
-    let __x11__ = (new [])
-    let __x12__ = (new [])
-    let __x13__ = (new [])
-    let __x14__ = (map-keys O["SubMap"])
-    let __x15__ = __x14__
-    let __x16__ = 0i
-    while (< __x16__ __x15__["length"]) {
-      let __x17__ = __x15__[__x16__]
-      if (= (typeof __x17__) "Symbol") append __x17__ -> __x11__ else {
-        app __x18__ = (CanonicalNumericIndexString __x17__)
-        if (|| (= __x18__ undefined) (|| (< __x18__ 0.0) (< 4.294967295E9 __x18__))) append __x17__ -> __x12__ else append __x18__ -> __x13__
-      }
-      __x16__ = (+ __x16__ 1i)
+    while (< newLen oldLen) {
+      oldLen = (- oldLen 1i)
+      app __x11__ = (ToString oldLen)
+      if (is-completion __x11__) if (= __x11__["Type"] CONST_normal) __x11__ = __x11__["Value"] else return __x11__ else {}
+      app __x12__ = (A["Delete"] A __x11__)
+      if (is-completion __x12__) if (= __x12__["Type"] CONST_normal) __x12__ = __x12__["Value"] else return __x12__ else {}
+      let deleteSucceeded = __x12__
+      if (= deleteSucceeded false) {
+        newLenDesc["Value"] = (+ oldLen 1i)
+        if (= newWritable false) newLenDesc["Writable"] = false else {}
+        app __x13__ = (OrdinaryDefineOwnProperty A "length" newLenDesc)
+        if (is-completion __x13__) if (= __x13__["Type"] CONST_normal) __x13__ = __x13__["Value"] else return __x13__ else {}
+        __x13__
+        app __x14__ = (WrapCompletion false)
+        return __x14__
+      } else {}
     }
-    while (< 0i __x13__["length"]) {
-      let __x19__ = 0i
-      let __x20__ = 0i
-      while (< __x20__ __x13__["length"]) {
-        if (< __x13__[__x20__] __x13__[__x19__]) __x19__ = __x20__ else {}
-        __x20__ = (+ __x20__ 1i)
-      }
-      let __x21__ = (pop __x13__ __x19__)
-      app __x22__ = (ToString __x21__)
-      append __x22__ -> keys
-    }
-    let __x23__ = __x12__
-    let __x24__ = 0i
-    while (< __x24__ __x23__["length"]) {
-      let __x17__ = __x23__[__x24__]
-      append __x17__ -> keys
-      __x24__ = (+ __x24__ 1i)
-    }
-    let __x25__ = __x11__
-    let __x26__ = 0i
-    while (< __x26__ __x25__["length"]) {
-      let __x17__ = __x25__[__x26__]
-      append __x17__ -> keys
-      __x26__ = (+ __x26__ 1i)
-    }
-    return keys
     if (= newWritable false) {
       app __x27__ = (OrdinaryDefineOwnProperty A "length" (new PropertyDescriptor("Writable" -> false)))
       app __x28__ = (WrapCompletion __x27__)

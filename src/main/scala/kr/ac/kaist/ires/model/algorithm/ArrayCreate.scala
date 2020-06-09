@@ -20,6 +20,7 @@ object ArrayCreate extends Algorithm {
     app __x2__ = (MakeBasicObject (new ["Prototype", "Extensible"]))
     if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     let A = __x2__
+    set-type A ArrayExoticObject
     A["Prototype"] = proto
     A["DefineOwnProperty"] = ArrayExoticObjectDOTDefineOwnProperty
     app __x3__ = (OrdinaryDefineOwnProperty A "length" (new PropertyDescriptor("Value" -> length, "Writable" -> true, "Enumerable" -> false, "Configurable" -> false)))

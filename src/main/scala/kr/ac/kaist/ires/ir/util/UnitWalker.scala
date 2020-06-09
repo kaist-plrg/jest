@@ -82,6 +82,8 @@ trait UnitWalker {
       walk(id); walk(bexpr); walk(expr)
     case IWithCont(id, params, body) =>
       walk(id); walkList[Id](params, walk); walk(body)
+    case ISetType(expr, ty) =>
+      walk(expr); walk(ty)
   }
 
   // expressions

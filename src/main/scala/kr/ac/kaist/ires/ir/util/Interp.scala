@@ -236,6 +236,16 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
         val s0 = st.define(id, Cont(params, ISeq(st.context.insts), st.context, st.ctxStack))
         s0.copy(context = s0.context.copy(insts = List(body)))
       }
+      case ISetType(expr, ty) => escapeCompletion(interp(expr)(st)) match {
+        case (addr: Addr, st) => st.heap.map.getOrElse(addr, error(s"unknown address: $addr")) match {
+          case (map: IRMap) =>
+            val heap = st.heap
+            val newHeap = heap.copy(map = heap.map + (addr -> map.copy(ty = ty)))
+            st.copy(heap = newHeap)
+          case obj => error(s"not a map structure: $obj")
+        }
+        case (v, _) => error(s"not an address: $v")
+      }
     }
     if (instCount % 100000 == 0) GC.gc(res)
     else res

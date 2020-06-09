@@ -31,7 +31,11 @@ object PerformEval extends Algorithm {
       let inMethod = false
       let inDerivedConstructor = false
     }
-    !!! "Let id:{script} be the ECMAScript code that is the result of parsing ! UTF16DecodeString ( id:{x} ) , for the goal symbol nt:{Script} . If the parse fails , throw a value:{SyntaxError} exception . If any early errors are detected , throw a value:{SyntaxError} exception ( but see also clause 16 ) ."
+    let script = (parse-syntax x "Script" )
+    if (= script absent) {
+      app error = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_SyntaxErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
+      return error
+    } else {}
     access __x5__ = (script "Contains")
     app __x6__ = (__x5__ "ScriptBody")
     if (= __x6__ false) {

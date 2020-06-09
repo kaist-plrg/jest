@@ -66,6 +66,7 @@ trait Walker {
     case IApp(id, fexpr, args) => IApp(walk(id), walk(fexpr), walkList[Expr](args, walk))
     case IAccess(id, bexpr, expr) => IAccess(walk(id), walk(bexpr), walk(expr))
     case IWithCont(id, params, body) => IWithCont(walk(id), walkList[Id](params, walk), walk(body))
+    case ISetType(expr, ty) => ISetType(walk(expr), walk(ty))
   }
 
   // expressions

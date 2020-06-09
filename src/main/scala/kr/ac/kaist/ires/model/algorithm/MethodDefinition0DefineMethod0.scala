@@ -13,7 +13,7 @@ object MethodDefinition0DefineMethod0 extends Algorithm {
     if (is-completion propKey) if (= propKey["Type"] CONST_normal) propKey = propKey["Value"] else return propKey else {}
     propKey
     let scope = GLOBAL_context["LexicalEnvironment"]
-    if (! (= functionPrototype absent)) let prototype = functionPrototype else !!! "Let id:{prototype} be % Function . prototype % ."
+    if (! (= functionPrototype absent)) let prototype = functionPrototype else let prototype = INTRINSIC_FunctionPrototype
     app __x1__ = (OrdinaryFunctionCreate prototype UniqueFormalParameters FunctionBody CONST_nonlexicalthis scope)
     let closure = __x1__
     app __x2__ = (MakeMethod closure object)

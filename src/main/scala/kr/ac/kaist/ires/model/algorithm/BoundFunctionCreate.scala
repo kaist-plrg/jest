@@ -13,10 +13,11 @@ object BoundFunctionCreate extends Algorithm {
     app __x1__ = (targetFunction["GetPrototypeOf"] targetFunction)
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
     let proto = __x1__
-    !!! "Let id:{internalSlotsList} be the internal slots listed in Table 28 , plus [ [ Prototype ] ] and [ [ Extensible ] ] ."
+    let internalSlotsList = (new ["BoundTargetFunction", "BoundThis", "BoundArguments", "Prototype", "Extensible"])
     app __x2__ = (MakeBasicObject internalSlotsList)
     if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     let obj = __x2__
+    set-type obj BoundFunctionExoticObject
     obj["Prototype"] = proto
     obj["Call"] = BoundFunctionExoticObjectDOTCall
     app __x3__ = (IsConstructor targetFunction)
