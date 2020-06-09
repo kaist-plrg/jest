@@ -66,6 +66,10 @@ object Useful {
   def readFile(filename: String): String =
     Source.fromFile(filename).mkString
 
+  // read JSON
+  def readJson[T](filename: String)(implicit reader: JsonReader[T]): T =
+    readFile(filename).parseJson.convertTo[T]
+
   // get first filename
   def getFirstFilename(iresConfig: IRESConfig, job: String): String =
     iresConfig.fileNames.headOption.getOrElse(throw NoFileError(job))

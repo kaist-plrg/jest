@@ -15,6 +15,9 @@ package object ires {
   // Source directory root
   val SRC_DIR = s"${BASE_DIR}/src/main"
 
+  // Source directory root
+  val RESOURCE_DIR = s"${SRC_DIR}/resources"
+
   // Scala source directory root
   val SCALA_DIR = s"${SRC_DIR}/scala/kr/ac/kaist/ires"
 

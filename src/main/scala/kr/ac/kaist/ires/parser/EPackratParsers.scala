@@ -9,7 +9,8 @@ trait EPackratParsers extends Parsers {
   type ParseCase[+T]
   case class Container(
       var cache: Map[ParseCase[_], ParseResult[_]] = Map(),
-      var rightmostFailedPos: Option[(Position, List[Elem])] = None
+      var rightmostFailedPos: Option[(Position, List[Elem])] = None,
+      var rightmostDoWhileClose: Option[Position] = None
   )
 
   case class EPos(underlying: Position, emptyMatched: Boolean) extends Position {

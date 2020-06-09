@@ -59,7 +59,10 @@ trait ESParsers extends LAParsers {
 
         // 1-3. The previous token is ')' and the inserted semicolon would then be
         //      parsed as the terminating semicolon of a do-while statement (13.7.2).
-        // TODO
+        reader.container.rightmostDoWhileClose match {
+          case Some(doWhilePos) if doWhilePos == pos => return insert
+          case _ =>
+        }
 
         // 3. the restricted token is separated from the previous token
         //    by at least one LineTerminator, then a semicolon is automatically
@@ -79,6 +82,21 @@ trait ESParsers extends LAParsers {
         else t
       } <~ +follow.parser
     }, FirstTerms() + t))(t)
+  }
+  val doWhileCloseT: LAParser[String] = {
+    val p = t(")")
+    new LAParser(follow => Parser { rawIn =>
+      val in = rawIn.asInstanceOf[EPackratReader[Char]]
+      val c = ParseCase(p, follow, in.pos)
+      val container = in.container
+      container.cache.get(c) match {
+        case Some(res) => res.asInstanceOf[ParseResult[String]]
+        case None =>
+          val res = recordDoWhileClose(p.parser(follow), in)
+          container.cache += c -> res
+          res
+      }
+    }, p.first)
   }
   val nt = cached[(String, Lexer), LAParser[Lexical]] {
     case (name, nt) => log(new LAParser(
@@ -136,6 +154,20 @@ trait ESParsers extends LAParsers {
         container.rightmostFailedPos = Some((cur.pos, cur.rev))
       case (f @ Failure(_, cur: EPackratReader[_]), None) =>
         container.rightmostFailedPos = Some((cur.pos, cur.rev))
+      case _ =>
+    }
+    res
+  }
+
+  // record right-most do-while close token positions
+  protected def recordDoWhileClose[T](parser: Parser[T], in: EPackratReader[Char]): ParseResult[T] = {
+    val container = in.container
+    val res = parser(in)
+    (res, container.rightmostDoWhileClose) match {
+      case (f @ Failure(_, cur: EPackratReader[_]), Some(origPos)) if origPos < cur.pos =>
+        container.rightmostDoWhileClose = Some(cur.pos)
+      case (f @ Failure(_, cur: EPackratReader[_]), None) =>
+        container.rightmostDoWhileClose = Some(cur.pos)
       case _ =>
     }
     res
