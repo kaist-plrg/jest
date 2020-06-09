@@ -8,7 +8,7 @@ object NewPromiseReactionJob extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""NewPromiseReactionJob" (reaction, argument) => {
-    !!! "Let id:{job} be a new Job abstract closure with no parameters that captures id:{reaction} and id:{argument} and performs the following steps when called : step-list:{...}"
+    let job = (new Job ("Closure" -> PromiseReactionJob, "Captured" -> (new [reaction, argument])))
     let handlerRealm = null
     if (! (= reaction["Handler"] undefined)) {
       app __x0__ = (GetFunctionRealm reaction["Handler"])

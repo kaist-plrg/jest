@@ -13,7 +13,8 @@ object AsyncGeneratorDeclaration0InstantiateFunctionObject0 extends Algorithm {
     app __x1__ = (OrdinaryFunctionCreate INTRINSIC_AsyncGenerator FormalParameters AsyncGeneratorBody CONST_nonlexicalthis scope)
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
     let F = __x1__
-    !!! "Let id:{prototype} be ! OrdinaryObjectCreate ( % AsyncGenerator . prototype % ) ."
+    app prototype = (OrdinaryObjectCreate INTRINSIC_AsyncGeneratorPrototype)
+    ! prototype
     app __x2__ = (DefinePropertyOrThrow F "prototype" (new PropertyDescriptor("Value" -> prototype, "Writable" -> true, "Enumerable" -> false, "Configurable" -> false)))
     if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     __x2__

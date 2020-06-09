@@ -8,7 +8,8 @@ object LiteralPropertyName1Evaluation0 extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""LiteralPropertyName1Evaluation0" (this, StringLiteral) => {
-    app __x0__ = (WrapCompletion !!! "StringOp")
-    return __x0__
+    access result = (StringLiteral "SV")
+    app wrapped = (WrapCompletion result)
+    return wrapped
   }"""), this)
 }

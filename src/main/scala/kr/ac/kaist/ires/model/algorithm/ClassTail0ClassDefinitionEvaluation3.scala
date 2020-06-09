@@ -18,8 +18,8 @@ object ClassTail0ClassDefinitionEvaluation3 extends Algorithm {
       __x2__
     } else {}
     if (= ClassHeritage absent) {
-      !!! "Let id:{protoParent} be % Object . prototype % ."
-      !!! "Let id:{constructorParent} be % Function . prototype % ."
+      let protoParent = INTRINSIC_ObjectPrototype
+      let constructorParent = INTRINSIC_FunctionPrototype
     } else {
       GLOBAL_context["LexicalEnvironment"] = classScope
       access __x3__ = (ClassHeritage "Evaluation")
@@ -30,7 +30,7 @@ object ClassTail0ClassDefinitionEvaluation3 extends Algorithm {
       let superclass = __x4__
       if (= superclass null) {
         let protoParent = null
-        !!! "Let id:{constructorParent} be % Function . prototype % ."
+        let constructorParent = INTRINSIC_FunctionPrototype
       } else {
         app __x5__ = (IsConstructor superclass)
         if (= __x5__ false) {
