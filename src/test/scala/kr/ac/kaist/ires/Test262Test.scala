@@ -27,8 +27,8 @@ class Test262Test extends IRESTest with EvalTest {
 
   sealed trait TestKind
   case object Basic extends TestKind
-  case object Long extends TestKind
-  case object VeryLong extends TestKind
+  // case object Long extends TestKind
+  // case object VeryLong extends TestKind
   case object Manual extends TestKind
 
   // tag name
@@ -73,8 +73,8 @@ class Test262Test extends IRESTest with EvalTest {
   val dir = new File(test262Dir)
   val (config, evalConfig) = testKind match {
     case Basic => (FilterMeta.test262configSummary, new IREvalConfig(timeout = Some(10)))
-    case Long => (FilterMeta.test262LongconfigSummary, new IREvalConfig(timeout = None))
-    case VeryLong => (FilterMeta.test262VeryLongconfigSummary, new IREvalConfig(timeout = None))
+    // case Long => (FilterMeta.test262LongconfigSummary, new IREvalConfig(timeout = None))
+    // case VeryLong => (FilterMeta.test262VeryLongconfigSummary, new IREvalConfig(timeout = None))
     case Manual => (FilterMeta.test262ManualconfigSummary, new IREvalConfig(timeout = Some(10)))
   }
   val initInclude = List("assert.js", "sta.js").foldLeft(Map[String, Either[String, List[StatementListItem]]]()) {
@@ -87,8 +87,8 @@ class Test262Test extends IRESTest with EvalTest {
 
   }
   val includeMap: Map[String, Either[String, List[StatementListItem]]] = config.normal.foldLeft(initInclude) {
-    case (im, NormalTestConfig(_, includes)) =>
-      includes.foldLeft(im) {
+    case (im, filename) =>
+      config(filename).includes.foldLeft(im) {
         case (imm, s) => if (imm contains s) {
           imm
         } else {
@@ -112,7 +112,8 @@ class Test262Test extends IRESTest with EvalTest {
       x <- includeMap("assert.js")
       y <- includeMap("sta.js")
     } yield x ++ y
-    for (NormalTestConfig(filename, includes) <- shuffle(config.normal)) {
+    for (filename <- shuffle(config.normal)) {
+      val includes = config(filename).includes
       val jsName = s"${dir.toString}/test/$filename".replace("//", "/")
       val name = removedExt(jsName).drop(dir.toString.length)
       check("Test262Eval", name, {
@@ -140,13 +141,13 @@ class Test262Test extends IRESTest with EvalTest {
   init
 }
 
-class Test262LongTest extends Test262Test {
-  override def testKind = Long
-}
+// class Test262LongTest extends Test262Test {
+//   override def testKind = Long
+// }
 
-class Test262VeryLongTest extends Test262Test {
-  override def testKind = VeryLong
-}
+// class Test262VeryLongTest extends Test262Test {
+//   override def testKind = VeryLong
+// }
 
 class Test262ManualTest extends Test262Test {
   override def testKind = Manual

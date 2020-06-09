@@ -1,21 +1,22 @@
 package kr.ac.kaist.ires.util
 
 import kr.ac.kaist.ires.DEBUG_FILTER
-import kr.ac.kaist.ires.parser.{ MetaParser, MetaData }
+import kr.ac.kaist.ires.parser.{ MetaParser, MetaData, Negative }
 import spray.json._
 
-case class Test262Config(name: String, negative: Option[String], includes: List[String])
-
-case class NormalTestConfig(name: String, includes: List[String])
-
-case class ErrorTestConfig(name: String, errorName: String, includes: List[String])
-
-case class Test262ConfigSummary(normal: List[NormalTestConfig], error: List[ErrorTestConfig])
+case class Test262Config(negative: Option[Negative], includes: List[String], flags: List[String])
+case class Test262ConfigSummary(summary: Map[String, Test262Config]) {
+  def normal: List[String] = summary.toList.flatMap {
+    case (name, Test262Config(None, _, _)) => Some(name)
+    case _ => None
+  }
+  def apply(filename: String): Test262Config = summary(filename)
+}
 
 object TestConfigJsonProtocol extends DefaultJsonProtocol {
-  implicit val normalTestConfigFormat = jsonFormat2(NormalTestConfig)
-  implicit val errorTestConfigFormat = jsonFormat3(ErrorTestConfig)
-  implicit val test262ConfigFormat = jsonFormat2(Test262ConfigSummary)
+  implicit val negativeFormat = jsonFormat2(Negative)
+  implicit val test262ConfigFormat = jsonFormat3(Test262Config)
+  implicit val test262ConfigSummaryFormat = jsonFormat1(Test262ConfigSummary)
 }
 
 case class TestList(list: List[MetaData]) {
@@ -29,13 +30,7 @@ case class TestList(list: List[MetaData]) {
     if (DEBUG_FILTER) println(f"$desc%-30s: $removed tests are removed")
     TestList(filtered.reverse)
   }
-  def getSummary: Test262ConfigSummary = {
-    val (normalL, errorL) = list.map {
-      case MetaData(name, n, _, i, _, _) => Test262Config(name, n, i)
-    }.partition(_.negative.isEmpty)
-    Test262ConfigSummary(
-      normalL.map(x => NormalTestConfig(x.name, x.includes)),
-      errorL.collect { case Test262Config(name, Some(n), in) => ErrorTestConfig(name, n, in) }
-    )
-  }
+  def getSummary: Test262ConfigSummary = Test262ConfigSummary(list.map {
+    case MetaData(name, n, f, i, _, _) => name -> Test262Config(n, i, f)
+  }.toMap)
 }

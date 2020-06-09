@@ -10,10 +10,10 @@ object MetaParser {
       case Nil => Nil
       case _ :: rest => rest.takeWhile((x) => !(x contains "---*/"))
     }
-    val (negative, flags, includes, locales, features, _, _) = metadata.foldLeft[(Option[String], List[String], List[String], List[String], List[String], Boolean, Boolean)]((None, List(), List(), List(), List(), false, false)) {
-      case ((negative, flags, includes, locales, features, isNeg, isInclude), line) => {
-        val isNegn = if (line contains "negative:") true else isNeg
-        val negativen = if ((line contains "type:") && isNeg) Some(line.split(' ').last) else negative
+    val (phase, ty, flags, includes, locales, features, _) = metadata.foldLeft[(String, String, List[String], List[String], List[String], List[String], Boolean)](("", "", List(), List(), List(), List(), false)) {
+      case ((phase, ty, flags, includes, locales, features, isInclude), line) => {
+        val phasen = if (line contains "phase:") line.split(' ').last else phase
+        val tyn = if (line contains "type:") line.split(' ').last else ty
         val flagsn = if (line contains "flags:") line.dropWhile(_ != '[').tail.takeWhile(_ != ']').split(", ").toList else flags
         val (includesn, isIncluden) = if (line contains "includes:") line.dropWhile(_ != '[') match {
           case "" => (List(), true)
@@ -27,13 +27,15 @@ object MetaParser {
           case s => s.tail.takeWhile(_ != ']').split(", ").toList
         }
         else features
-        (negativen, flagsn, includesn2, localesn, featuresn, isNegn, isIncluden)
+        (phasen, tyn, flagsn, includesn2, localesn, featuresn, isIncluden)
       }
     }
+    val negative = if (phase != "" || ty != "") Some(Negative(phase, ty)) else None
     val newIncludes = if (flags contains "async") includes :+ "doneprintHandle.js" else includes
     MetaData(relName, negative, flags, newIncludes, locales, features)
   }
 }
 
-case class MetaData(name: String, negative: Option[String], flags: List[String], includes: List[String], locales: List[String], features: List[String])
+case class MetaData(name: String, negative: Option[Negative], flags: List[String], includes: List[String], locales: List[String], features: List[String])
 
+case class Negative(phase: String, ty: String)
