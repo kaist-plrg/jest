@@ -10,7 +10,7 @@ object AsyncGeneratorDeclaration1InstantiateFunctionObject0 extends Algorithm {
   val func: Func = FixUIdWalker(parseFunc(""""AsyncGeneratorDeclaration1InstantiateFunctionObject0" (this, FormalParameters, AsyncGeneratorBody, scope) => {
     app __x0__ = (OrdinaryFunctionCreate INTRINSIC_AsyncGenerator FormalParameters AsyncGeneratorBody CONST_nonlexicalthis scope)
     let F = __x0__
-    !!! "Let id:{prototype} be OrdinaryObjectCreate ( % AsyncGenerator . prototype % ) ."
+    app prototype = (OrdinaryObjectCreate INTRINSIC_AsyncGeneratorPrototype)
     app __x1__ = (DefinePropertyOrThrow F "prototype" (new PropertyDescriptor("Value" -> prototype, "Writable" -> true, "Enumerable" -> false, "Configurable" -> false)))
     __x1__
     app __x2__ = (SetFunctionName F "default")

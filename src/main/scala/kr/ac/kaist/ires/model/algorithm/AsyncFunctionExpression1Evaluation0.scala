@@ -19,7 +19,8 @@ object AsyncFunctionExpression1Evaluation0 extends Algorithm {
     app __x3__ = (envRec["CreateImmutableBinding"] envRec name false)
     if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
     __x3__
-    !!! "Let id:{closure} be ! OrdinaryFunctionCreate ( % AsyncFunction . prototype % , nt:{FormalParameters} , nt:{AsyncFunctionBody} , const:{non-lexical-this} , id:{funcEnv} ) ."
+    app closure = (OrdinaryFunctionCreate INTRINSIC_AsyncFunctionPrototype FormalParameters AsyncFunctionBody CONST_nonlexicalthis funcEnv)
+    ! closure
     app __x4__ = (SetFunctionName closure name)
     if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
     __x4__

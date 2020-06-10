@@ -11,7 +11,8 @@ object AsyncArrowFunction0Evaluation0 extends Algorithm {
     access __x0__ = (GLOBAL_context "LexicalEnvironment")
     let scope = __x0__
     let parameters = AsyncArrowBindingIdentifier
-    !!! "Let id:{closure} be ! OrdinaryFunctionCreate ( % AsyncFunction . prototype % , id:{parameters} , nt:{AsyncConciseBody} , const:{lexical-this} , id:{scope} ) ."
+    app closure = (OrdinaryFunctionCreate INTRINSIC_AsyncFunctionPrototype parameters AsyncConciseBody CONST_lexicalthis scope)
+    ! closure
     closure["SourceText"] = (get-syntax this)
     app __x1__ = (WrapCompletion closure)
     return __x1__

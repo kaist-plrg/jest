@@ -119,19 +119,19 @@ case object FilterMeta extends PhaseObj[Unit, FilterMetaConfig, Unit] {
     walkTree(test262Dir)
       .toList
       .filter(f => jsFilter(f.getName))
-      .map(x => MetaParser(x.toString, test262Dir.toString))
+      .map(x => MetaParser(x.toString, BASE_DIR))
   )
 
   def getTests(features: List[String]): TestList = allTests
-    .remove("harness", _.name startsWith "/harness")
-    .remove("internationalisation", _.name startsWith "/intl")
-    .remove("annex", _.name startsWith "/annex")
+    .remove("harness", _.name startsWith s"$test262Dir/harness")
+    .remove("internationalisation", _.name startsWith s"$test262Dir/intl")
+    .remove("annex", _.name startsWith s"$test262Dir/annex")
     .remove("in-progress features", m => (!m.features.forall(features contains _)))
     .remove("module", m => (
       (m.flags contains "module") ||
-      (m.name startsWith "/language/module-code/") ||
-      (m.name startsWith "/language/expressions/dynamic-import/") ||
-      (m.name startsWith "/language/expressions/import.meta/")
+      (m.name startsWith s"$test262Dir/language/module-code/") ||
+      (m.name startsWith s"$test262Dir/language/expressions/dynamic-import/") ||
+      (m.name startsWith s"$test262Dir/language/expressions/import.meta/")
     ))
     .remove("inessential built-in objects", m => (
       (m.flags contains "CanBlockIsFalse") ||
@@ -152,7 +152,14 @@ case object FilterMeta extends PhaseObj[Unit, FilterMetaConfig, Unit] {
   //   .remove("non veryLongTest", m => !(veryLongTest contains removedExt(m.name)))
   //   .getSummary
 
-  lazy val test262ManualconfigSummary = readFile(s"$TEST_DIR/test262.json").parseJson.convertTo[Test262ConfigSummary]
+  lazy val test262ManualSet: Set[String] = try {
+    readFile(s"$TEST_DIR/manual.json").parseJson.convertTo[Set[String]]
+  } catch {
+    case e: Throwable => Set()
+  }
+  lazy val test262ManualconfigSummary = allTests
+    .remove("not-candidate", m => !(test262ManualSet contains m.name))
+    .getSummary
 
   def apply(
     unit: Unit,
@@ -160,11 +167,8 @@ case object FilterMeta extends PhaseObj[Unit, FilterMetaConfig, Unit] {
     config: FilterMetaConfig
   ): Unit = {
     println(s"Total ${allTests.length} tests")
-    val summary = test262configSummary
+    val summary = getTests(standardFeatures).getSummary
     println(s"applicable tests: ${summary.summary.size}")
-    val pw = new PrintWriter(new File(s"$TEST_DIR/test262.json"))
-    pw.println(summary.toJson.prettyPrint)
-    pw.close()
   }
 
   def defaultConfig: FilterMetaConfig = FilterMetaConfig()

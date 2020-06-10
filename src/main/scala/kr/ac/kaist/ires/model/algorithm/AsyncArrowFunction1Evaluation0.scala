@@ -14,7 +14,8 @@ object AsyncArrowFunction1Evaluation0 extends Algorithm {
     let head = __x1__
     access __x2__ = (head "ArrowFormalParameters")
     let parameters = __x2__
-    !!! "Let id:{closure} be ! OrdinaryFunctionCreate ( % AsyncFunction . prototype % , id:{parameters} , nt:{AsyncConciseBody} , const:{lexical-this} , id:{scope} ) ."
+    app closure = (OrdinaryFunctionCreate INTRINSIC_AsyncFunctionPrototype parameters AsyncConciseBody CONST_lexicalthis scope)
+    ! closure
     closure["SourceText"] = (get-syntax this)
     app __x3__ = (WrapCompletion closure)
     return __x3__

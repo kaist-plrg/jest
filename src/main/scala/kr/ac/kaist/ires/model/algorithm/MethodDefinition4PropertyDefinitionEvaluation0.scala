@@ -14,7 +14,7 @@ object MethodDefinition4PropertyDefinitionEvaluation0 extends Algorithm {
     propKey
     let scope = GLOBAL_context["LexicalEnvironment"]
     let formalParameterList = (parse-syntax "" "FormalParameters" false false)
-    !!! "Let id:{closure} be OrdinaryFunctionCreate ( % Function . prototype % , id:{formalParameterList} , nt:{FunctionBody} , const:{non-lexical-this} , id:{scope} ) ."
+    app closure = (OrdinaryFunctionCreate INTRINSIC_FunctionPrototype formalParameterList FunctionBody CONST_nonlexicalthis scope)
     app __x1__ = (MakeMethod closure object)
     __x1__
     app __x2__ = (SetFunctionName closure propKey "get")

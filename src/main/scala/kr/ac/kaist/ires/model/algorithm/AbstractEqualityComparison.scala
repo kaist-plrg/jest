@@ -145,8 +145,14 @@ object AbstractEqualityComparison extends Algorithm {
       __x55__ = __x57__
     } else {}
     if __x55__ {
-      !!! "If id:{x} or id:{y} are any of value:{NaN} , value:{+∞} , or value:{-∞} , return value:{false} ."
-      !!! "If the mathematical value of id:{x} is equal to the mathematical value of id:{y} , return value:{true} ; otherwise return value:{false} ."
+      if (= x NaN) return false
+      else if (= x +Infinity) return false
+      else if (= x -Infinity) return false
+      else if (= y NaN) return false
+      else if (= y +Infinity) return false
+      else if (= y -Infinity) return false
+      else if (= x y) return true
+      else return false
     } else {}
     app __x61__ = (WrapCompletion false)
     return __x61__

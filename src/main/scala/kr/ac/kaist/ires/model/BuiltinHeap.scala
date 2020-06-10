@@ -163,6 +163,8 @@ object BuiltinHeap {
         "undefined" -> DataProperty(Undef, F, F, F),
         "Array" -> DataProperty(NamedAddr("GLOBAL.Array"), T, F, T),
         "ArrayBuffer" -> DataProperty(NamedAddr("GLOBAL.ArrayBuffer"), T, F, T),
+        "BigInt64Array" -> DataProperty(NamedAddr("GLOBAL.BigInt64Array"), T, F, T),
+        "BigUint64Array" -> DataProperty(NamedAddr("GLOBAL.BigUint64Array"), T, F, T),
         "Boolean" -> DataProperty(NamedAddr("GLOBAL.Boolean"), T, F, T),
         "DataView" -> DataProperty(NamedAddr("GLOBAL.DataView"), T, F, T),
         "Date" -> DataProperty(NamedAddr("GLOBAL.Date"), T, F, T),
@@ -904,6 +906,8 @@ object BuiltinHeap {
 
   private val notSupportedInfo: List[String] = List(
     "ArrayBuffer",
+    "BigInt64Array",
+    "BigUint64Array",
     "DataView",
     "Date",
     "Float32Array",
@@ -918,6 +922,7 @@ object BuiltinHeap {
     "Uint8ClampedArray",
     "Uint16Array",
     "Uint32Array",
+    // others
     "Atomics",
     "JSON",
     "Math",

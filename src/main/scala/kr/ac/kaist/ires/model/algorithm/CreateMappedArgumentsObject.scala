@@ -17,7 +17,7 @@ object CreateMappedArgumentsObject extends Algorithm {
     obj["Get"] = ArgumentsExoticObjectDOTGet
     obj["Set"] = ArgumentsExoticObjectDOTSet
     obj["Delete"] = ArgumentsExoticObjectDOTDelete
-    !!! "Set id:{obj} . [ [ Prototype ] ] to % Object . prototype % ."
+    obj.Prototype = INTRINSIC_ObjectPrototype
     app __x1__ = (OrdinaryObjectCreate null)
     let map = __x1__
     obj["ParameterMap"] = map
@@ -56,7 +56,8 @@ object CreateMappedArgumentsObject extends Algorithm {
       } else {}
       index = (- index 1i)
     }
-    !!! "Perform ! DefinePropertyOrThrow ( id:{obj} , @ @ iterator , PropertyDescriptor { [ [ Value ] ] : % Array . prototype . values % , [ [ Writable ] ] : value:{true} , [ [ Enumerable ] ] : value:{false} , [ [ Configurable ] ] : value:{true} } ) ."
+    app result = (DefinePropertyOrThrow obj SYMBOL_iterator (new PropertyDescriptor ("Value" -> INTRINSIC_ArrayProto_values, "Writable" -> true, "Enumerable" -> false, "Configurable" -> true)))
+    ! result
     app __x10__ = (DefinePropertyOrThrow obj "callee" (new PropertyDescriptor("Value" -> func, "Writable" -> true, "Enumerable" -> false, "Configurable" -> true)))
     if (is-completion __x10__) if (= __x10__["Type"] CONST_normal) __x10__ = __x10__["Value"] else return __x10__ else {}
     __x10__

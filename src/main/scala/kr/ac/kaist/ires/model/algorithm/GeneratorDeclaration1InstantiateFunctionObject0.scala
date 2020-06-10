@@ -10,7 +10,7 @@ object GeneratorDeclaration1InstantiateFunctionObject0 extends Algorithm {
   val func: Func = FixUIdWalker(parseFunc(""""GeneratorDeclaration1InstantiateFunctionObject0" (this, FormalParameters, GeneratorBody, scope) => {
     app __x0__ = (OrdinaryFunctionCreate INTRINSIC_Generator FormalParameters GeneratorBody CONST_nonlexicalthis scope)
     let F = __x0__
-    !!! "Let id:{prototype} be OrdinaryObjectCreate ( % Generator . prototype % ) ."
+    app prototype = (OrdinaryObjectCreate INTRINSIC_GeneratorPrototype)
     app __x1__ = (DefinePropertyOrThrow F "prototype" (new PropertyDescriptor("Value" -> prototype, "Writable" -> true, "Enumerable" -> false, "Configurable" -> false)))
     __x1__
     app __x2__ = (SetFunctionName F "default")

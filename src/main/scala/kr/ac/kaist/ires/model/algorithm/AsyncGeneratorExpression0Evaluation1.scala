@@ -21,7 +21,8 @@ object AsyncGeneratorExpression0Evaluation1 extends Algorithm {
     app __x3__ = (OrdinaryFunctionCreate INTRINSIC_AsyncGenerator FormalParameters AsyncGeneratorBody CONST_nonlexicalthis funcEnv)
     if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
     let closure = __x3__
-    !!! "Let id:{prototype} be ! OrdinaryObjectCreate ( % AsyncGenerator . prototype % ) ."
+    app prototype = (OrdinaryFunctionCreate INTRINSIC_AsyncGeneratorPrototype)
+    ! prototype
     app __x4__ = (DefinePropertyOrThrow closure "prototype" (new PropertyDescriptor("Value" -> prototype, "Writable" -> true, "Enumerable" -> false, "Configurable" -> false)))
     if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
     __x4__

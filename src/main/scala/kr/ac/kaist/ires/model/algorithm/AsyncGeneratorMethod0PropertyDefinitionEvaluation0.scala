@@ -19,7 +19,8 @@ object AsyncGeneratorMethod0PropertyDefinitionEvaluation0 extends Algorithm {
     app __x2__ = (MakeMethod closure object)
     if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     __x2__
-    !!! "Let id:{prototype} be ! OrdinaryObjectCreate ( % AsyncGenerator . prototype % ) ."
+    app prototype = (OrdinaryObjectCreate INTRINSIC_AsyncGeneratorPrototype)
+    ! prototype
     app __x3__ = (DefinePropertyOrThrow closure "prototype" (new PropertyDescriptor("Value" -> prototype, "Writable" -> true, "Enumerable" -> false, "Configurable" -> false)))
     if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
     __x3__

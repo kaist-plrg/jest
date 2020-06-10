@@ -18,7 +18,7 @@ object GeneratorExpression0Evaluation1 extends Algorithm {
     __x2__
     app __x3__ = (OrdinaryFunctionCreate INTRINSIC_Generator FormalParameters GeneratorBody CONST_nonlexicalthis funcEnv)
     let closure = __x3__
-    !!! "Let id:{prototype} be OrdinaryObjectCreate ( % Generator . prototype % ) ."
+    app prototype = (OrdinaryObjectCreate INTRINSIC_GeneratorPrototype)
     app __x4__ = (DefinePropertyOrThrow closure "prototype" (new PropertyDescriptor("Value" -> prototype, "Writable" -> true, "Enumerable" -> false, "Configurable" -> false)))
     __x4__
     app __x5__ = (SetFunctionName closure name)

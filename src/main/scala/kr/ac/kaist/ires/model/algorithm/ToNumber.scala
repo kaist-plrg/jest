@@ -14,7 +14,7 @@ object ToNumber extends Algorithm {
     else if (= atype "Boolean") if argument return 1 else return 0
     else if (= atype "Number") return argument
     else if (= atype "String") return (convert argument str2num)
-    else if (= atype "Symbol") return (new Completion (
+    else if (|| (= atype "Symbol") (= atype "BigInt")) return (new Completion (
       "Type" -> CONST_throw,
       "Value" -> (new OrdinaryObject(
         "Prototype" -> INTRINSIC_TypeErrorPrototype,

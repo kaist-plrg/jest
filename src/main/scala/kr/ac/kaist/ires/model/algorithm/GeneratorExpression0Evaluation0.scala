@@ -12,7 +12,7 @@ object GeneratorExpression0Evaluation0 extends Algorithm {
     let scope = __x0__
     app __x1__ = (OrdinaryFunctionCreate INTRINSIC_Generator FormalParameters GeneratorBody CONST_nonlexicalthis scope)
     let closure = __x1__
-    !!! "Let id:{prototype} be OrdinaryObjectCreate ( % Generator . prototype % ) ."
+    app prototype = (OrdinaryObjectCreate INTRINSIC_GeneratorPrototype)
     app __x2__ = (DefinePropertyOrThrow closure "prototype" (new PropertyDescriptor("Value" -> prototype, "Writable" -> true, "Enumerable" -> false, "Configurable" -> false)))
     __x2__
     closure["SourceText"] = (get-syntax this)

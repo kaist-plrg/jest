@@ -14,7 +14,8 @@ object AsyncMethod0PropertyDefinitionEvaluation0 extends Algorithm {
     propKey
     access __x1__ = (GLOBAL_context "LexicalEnvironment")
     let scope = __x1__
-    !!! "Let id:{closure} be ! OrdinaryFunctionCreate ( % AsyncFunction . prototype % , nt:{UniqueFormalParameters} , nt:{AsyncFunctionBody} , const:{non-lexical-this} , id:{scope} ) ."
+    app closure = (OrdinaryFunctionCreate INTRINSIC_AsyncFunctionPrototype UniqueFormalParameters AsyncFunctionBody CONST_nonlexicalthis scope)
+    ! closure
     app __x2__ = (MakeMethod closure object)
     if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     __x2__

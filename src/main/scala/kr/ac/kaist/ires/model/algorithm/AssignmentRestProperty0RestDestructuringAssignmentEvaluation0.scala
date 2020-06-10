@@ -12,7 +12,7 @@ object AssignmentRestProperty0RestDestructuringAssignmentEvaluation0 extends Alg
     let lref = __x0__
     if (is-completion lref) if (= lref["Type"] CONST_normal) lref = lref["Value"] else return lref else {}
     lref
-    !!! "Let id:{restObj} be OrdinaryObjectCreate ( % Object . prototype % ) ."
+    app restObj = (OrdinaryObjectCreate INTRINSIC_ObjectPrototype)
     app __x1__ = (CopyDataProperties restObj value excludedNames)
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
     __x1__

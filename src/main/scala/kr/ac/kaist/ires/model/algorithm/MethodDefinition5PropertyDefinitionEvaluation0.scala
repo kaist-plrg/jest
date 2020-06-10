@@ -13,7 +13,7 @@ object MethodDefinition5PropertyDefinitionEvaluation0 extends Algorithm {
     if (is-completion propKey) if (= propKey["Type"] CONST_normal) propKey = propKey["Value"] else return propKey else {}
     propKey
     let scope = GLOBAL_context["LexicalEnvironment"]
-    !!! "Let id:{closure} be OrdinaryFunctionCreate ( % Function . prototype % , nt:{PropertySetParameterList} , nt:{FunctionBody} , const:{non-lexical-this} , id:{scope} ) ."
+    app closure = (OrdinaryFunctionCreate INTRINSIC_FunctionPrototype PropertySetParameterList FunctionBody CONST_nonlexicalthis scope)
     app __x1__ = (MakeMethod closure object)
     __x1__
     app __x2__ = (SetFunctionName closure propKey "set")

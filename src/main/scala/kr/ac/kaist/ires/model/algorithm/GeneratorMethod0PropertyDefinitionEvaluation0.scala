@@ -17,7 +17,7 @@ object GeneratorMethod0PropertyDefinitionEvaluation0 extends Algorithm {
     let closure = __x1__
     app __x2__ = (MakeMethod closure object)
     __x2__
-    !!! "Let id:{prototype} be OrdinaryObjectCreate ( % Generator . prototype % ) ."
+    app prototype = (OrdinaryObjectCreate INTRINSIC_GeneratorPrototype)
     app __x3__ = (DefinePropertyOrThrow closure "prototype" (new PropertyDescriptor("Value" -> prototype, "Writable" -> true, "Enumerable" -> false, "Configurable" -> false)))
     __x3__
     app __x4__ = (SetFunctionName closure propKey)
