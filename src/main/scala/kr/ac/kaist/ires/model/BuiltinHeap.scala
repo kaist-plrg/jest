@@ -178,6 +178,7 @@ object BuiltinHeap {
         "Int32Array" -> DataProperty(NamedAddr("GLOBAL.Int32Array"), T, F, T),
         "Map" -> DataProperty(NamedAddr("GLOBAL.Map"), T, F, T),
         "Number" -> DataProperty(NamedAddr("GLOBAL.Number"), T, F, T),
+        "BigInt" -> DataProperty(NamedAddr("GLOBAL.BigInt"), T, F, T),
         "Object" -> DataProperty(NamedAddr("GLOBAL.Object"), T, F, T),
         "Promise" -> DataProperty(NamedAddr("GLOBAL.Promise"), T, F, T),
         "Proxy" -> DataProperty(NamedAddr("GLOBAL.Proxy"), T, F, T),
@@ -434,6 +435,30 @@ object BuiltinHeap {
       nmap = NMap(
         "constructor" -> DataProperty(NamedAddr("GLOBAL.Number"), T, F, T)
       )
+    ),
+    "GLOBAL.BigInt" -> Struct(
+      typeName = "BuiltinFunctionObject",
+      imap = IMap(
+        "Extensible" -> Bool(true),
+        "Prototype" -> NamedAddr("GLOBAL.Function.prototype"),
+        "Code" -> GLOBALDOTBigInt.func,
+        "Construct" -> BuiltinFunctionObjectDOTConstruct.func
+      ),
+      nmap = NMap(
+        "prototype" -> DataProperty(NamedAddr("GLOBAL.BigInt.prototype"), F, F, F)
+      )
+    ),
+    "GLOBAL.BigInt.prototype" -> Struct(
+      typeName = "OrdinaryObject",
+      imap = IMap(
+        "Extensible" -> Bool(true),
+        "Prototype" -> NamedAddr("GLOBAL.Object.prototype")
+      ),
+      nmap = NMap(
+        "constructor" -> DataProperty(NamedAddr("GLOBAL.BigInt"), T, F, T)
+      ) ++ Map(
+          NamedAddr("GLOBAL.Symbol.toStringTag") -> DataProperty(Str("BigInt"), F, F, T)
+        )
     ),
     "GLOBAL.String" -> Struct(
       typeName = "BuiltinFunctionObject",
