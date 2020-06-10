@@ -133,7 +133,9 @@ case object FilterMeta extends PhaseObj[Unit, FilterMetaConfig, Unit] {
       (m.name startsWith "language/expressions/dynamic-import/") ||
       (m.name startsWith "language/expressions/import.meta/")
     ))
-    .remove("inessential built-in objects", m => (
+    .remove("special flags", m => (
+      (m.flags contains "raw") ||
+      (m.flags contains "async") ||
       (m.flags contains "CanBlockIsFalse") ||
       (m.flags contains "CanBlockIsTrue") ||
       !m.locales.isEmpty

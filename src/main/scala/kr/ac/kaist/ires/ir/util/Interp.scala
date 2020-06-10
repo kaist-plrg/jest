@@ -381,6 +381,10 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
             case e: TimeoutException => error("parser timeout")
             case e: Throwable => error("parsing failed")
           }
+          newVal match {
+            case ASTVal(s) => ModelHelper.checkSupported(s)
+            case _ =>
+          }
           (newVal, s1)
         case Str(str) =>
           val (s2, parserParams) = flags.foldLeft(s1, List[Boolean]()) {
@@ -398,6 +402,10 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
           } catch {
             case e: TimeoutException => error("parser timeout")
             case e: Throwable => error("parsing failed")
+          }
+          newVal match {
+            case ASTVal(s) => ModelHelper.checkSupported(s)
+            case _ =>
           }
           (newVal, s2)
         case v => error(s"not an AST value or a string: $v")

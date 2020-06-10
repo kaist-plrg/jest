@@ -112,6 +112,7 @@ class Test262Test extends IRESTest with EvalTest {
 
         val jsConfig = iresConfig.copy(fileNames = List(jsName))
         val ast = Parse((), jsConfig)
+        ModelHelper.checkSupported(ast)
 
         val stList = includeList ++ ModelHelper.flattenStatement(ast)
         val st = IREval(Load(ModelHelper.mergeStatement(stList), jsConfig), jsConfig, evalConfig)
