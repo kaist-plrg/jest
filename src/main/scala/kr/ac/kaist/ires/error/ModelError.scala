@@ -14,6 +14,10 @@ case class WrongNumberOfParserParams(name: String, list: List[Boolean]) extends 
   s"wrong number of parameters for $name: $list"
 })
 
+case class NotYetModeled(msg: String) extends ModelError({
+  s"[NotYetModeled]: $msg"
+})
+
 case class NotSupported(msg: String) extends ModelError({
   s"[NotSupported]: $msg"
 })

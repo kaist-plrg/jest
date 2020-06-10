@@ -12,7 +12,7 @@ import spray.json._
 
 abstract class IRESTest extends FunSuite with BeforeAndAfterAll {
   // IRES configuration
-  lazy val aseConfig: IRESConfig = IRESConfig(CmdBase, Nil, true)
+  lazy val iresConfig: IRESConfig = IRESConfig(CmdBase, Nil, true)
 
   // results
   trait Result
@@ -52,7 +52,6 @@ abstract class IRESTest extends FunSuite with BeforeAndAfterAll {
         }) match {
           case Some(msg) =>
             resMap += tag -> (res + (name -> Yet(msg)))
-            fail(e.toString)
           case None =>
             resMap += tag -> (res + (name -> Fail))
             fail(e.toString)

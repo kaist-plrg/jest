@@ -19,7 +19,7 @@ class BasicIRTest extends IRTest {
     val filename = file.getName
     if (irFilter(filename)) {
       lazy val name = file.toString
-      lazy val config = aseConfig.copy(fileNames = List(name))
+      lazy val config = iresConfig.copy(fileNames = List(name))
 
       lazy val pgm = IRParse((), config)
       check("IRParse", filename, parseIRTest(pgm))

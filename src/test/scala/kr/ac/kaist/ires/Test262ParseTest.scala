@@ -46,7 +46,7 @@ class Test262ParseTest extends IRESTest {
       val jsName = s"${dir.toString}/test/$filename"
       val name = removedExt(jsName).drop(dir.toString.length + 1)
       check("Test262Parse", name, {
-        val jsConfig = aseConfig.copy(fileNames = List(jsName))
+        val jsConfig = iresConfig.copy(fileNames = List(jsName))
         parseJSTest(Parse((), jsConfig))
       })
     }

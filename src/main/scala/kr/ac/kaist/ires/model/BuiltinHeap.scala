@@ -32,13 +32,15 @@ object BuiltinHeap {
     case name => (NamedAddr("GLOBAL." + name) -> IRNotSupported("OrdinaryObject", name))
   }.toMap)
 
+  // additional builtin methods
+  // TODO manually handle in algorithms
   val builtinMethods: List[(String, Int, Func)] = List(
-    ("GLOBAL.String.prototype.toUpperCase", 0, Func("", List(), None, IExpr(ENotSupported("toUpperCase")))),
     ("GLOBAL.String.prototype.toLocaleLowerCase", 0, Func("", List(), None, IExpr(ENotSupported("toLocaleLowerCase")))),
     ("GLOBAL.String.prototype.toLocaleUpperCase", 0, Func("", List(), None, IExpr(ENotSupported("toLocaleUpperCase")))),
     ("GLOBAL.String.prototype.localeCompare", 1, Func("", List(), None, IExpr(ENotSupported("localeCompare")))),
     ("GLOBAL.Number.prototype.toLocaleString", 0, Func("", List(), None, IExpr(ENotSupported("toLocaleString")))),
-    ("GLOBAL.Array.prototype.sort", 1, Func("", List(), None, IExpr(ENotSupported("sort"))))
+    ("GLOBAL.String.prototype.toUpperCase", 0, Func("", List(), None, IExpr(ENotSupported("toUpperCase")))), // TODO
+    ("GLOBAL.Array.prototype.sort", 1, Func("", List(), None, IExpr(ENotSupported("sort")))) // TODO
   )
 
   private def addDesc(
@@ -921,7 +923,7 @@ object BuiltinHeap {
     "Math",
     "Reflect",
     // test262
-    // "print",
+    "print",
     "$262"
   )
 }

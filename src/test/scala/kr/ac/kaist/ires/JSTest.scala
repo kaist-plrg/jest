@@ -40,7 +40,7 @@ class JSTest extends IRTest with EvalTest {
     if (jsFilter(filename)) {
       lazy val name = removedExt(filename)
       lazy val jsName = file.toString
-      lazy val jsConfig = aseConfig.copy(fileNames = List(jsName))
+      lazy val jsConfig = iresConfig.copy(fileNames = List(jsName))
 
       lazy val ast = Parse((), jsConfig)
       check("JSParse", name, parseJSTest(ast))
@@ -49,7 +49,7 @@ class JSTest extends IRTest with EvalTest {
       check("JSEval", name, evalJSTest(st))
 
       lazy val irName = js2ir(jsName)
-      lazy val irConfig = aseConfig.copy(fileNames = List(irName))
+      lazy val irConfig = iresConfig.copy(fileNames = List(irName))
 
       lazy val pgm = IRParse((), irConfig)
       lazy val irSt = IREval(st.copy(context = st.context.copy(insts = pgm.insts)), irConfig)

@@ -7,7 +7,7 @@ import scala.concurrent.ExecutionContext.Implicits.global
 
 import kr.ac.kaist.ires.{ DEBUG_INTERP, IRES, COVERAGE_MODE, Lexical }
 import kr.ac.kaist.ires.coverage.Coverage
-import kr.ac.kaist.ires.error.NotSupported
+import kr.ac.kaist.ires.error.{ NotSupported, NotYetModeled }
 import kr.ac.kaist.ires.model.{ Parser => ESParser, ESValueParser, ModelHelper }
 
 // IR Interpreter
@@ -379,11 +379,7 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
             ), timeLimit.map(_.seconds).getOrElse(Duration.Inf)))
           } catch {
             case e: TimeoutException => error("parser timeout")
-            case e: Throwable => Absent
-          }
-          newVal match {
-            case ASTVal(s) => ModelHelper.checkSupported(s)
-            case _ => ()
+            case e: Throwable => error("parsing failed")
           }
           (newVal, s1)
         case Str(str) =>
@@ -401,11 +397,7 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
             ), timeLimit.map(_.seconds).getOrElse(Duration.Inf)))
           } catch {
             case e: TimeoutException => error("parser timeout")
-            case e: Throwable => Absent
-          }
-          newVal match {
-            case ASTVal(s) => ModelHelper.checkSupported(s)
-            case _ => ()
+            case e: Throwable => error("parsing failed")
           }
           (newVal, s2)
         case v => error(s"not an AST value or a string: $v")
@@ -483,6 +475,7 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
         case (addr: Addr) => s0.keys(addr)
         case v => error(s"not an address: $v")
       }
+    case ENotYetModeled(msg) => throw NotYetModeled(msg)
     case ENotSupported(msg) => throw NotSupported(msg)
   }
 
