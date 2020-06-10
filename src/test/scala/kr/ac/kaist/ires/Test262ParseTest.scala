@@ -41,7 +41,7 @@ class Test262ParseTest extends IRESTest {
 
   // initialize tests
   def init: Unit = {
-    for (filename <- shuffle(config.normal)) {
+    for (filename <- shuffle(config.nameList)) {
       val includes = config(filename).includes
       val jsName = s"${dir.toString}/test/$filename"
       val name = removedExt(jsName).drop(dir.toString.length + 1)

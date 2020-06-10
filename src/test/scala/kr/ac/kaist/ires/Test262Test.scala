@@ -86,7 +86,7 @@ class Test262Test extends IRESTest with EvalTest {
     }
 
   }
-  val includeMap: Map[String, Either[String, List[StatementListItem]]] = config.normal.foldLeft(initInclude) {
+  val includeMap: Map[String, Either[String, List[StatementListItem]]] = config.nameList.foldLeft(initInclude) {
     case (im, filename) =>
       config(filename).includes.foldLeft(im) {
         case (imm, s) => if (imm contains s) {
@@ -112,7 +112,7 @@ class Test262Test extends IRESTest with EvalTest {
       x <- includeMap("assert.js")
       y <- includeMap("sta.js")
     } yield x ++ y
-    for (filename <- shuffle(config.normal)) {
+    for (filename <- shuffle(config.nameList)) {
       val includes = config(filename).includes
       val jsName = s"${dir.toString}/test/$filename".replace("//", "/")
       val name = removedExt(jsName).drop(dir.toString.length)

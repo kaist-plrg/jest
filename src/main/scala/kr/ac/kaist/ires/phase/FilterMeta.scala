@@ -133,14 +133,16 @@ case object FilterMeta extends PhaseObj[Unit, FilterMetaConfig, Unit] {
       (m.name startsWith "/language/expressions/dynamic-import/") ||
       (m.name startsWith "/language/expressions/import.meta/")
     ))
-    .remove("negative", m => !m.negative.isEmpty)
     .remove("inessential built-in objects", m => (
       (m.flags contains "CanBlockIsFalse") ||
       (m.flags contains "CanBlockIsTrue") ||
       !m.locales.isEmpty
     ))
 
-  lazy val test262configSummary = getTests(standardFeatures).getSummary
+  lazy val test262configSummary =
+    getTests(standardFeatures)
+      .remove("negative", m => !m.negative.isEmpty)
+      .getSummary
 
   // lazy val test262LongconfigSummary = getTests(standardFeatures)
   //   .remove("non longTest", m => !(longTest contains removedExt(m.name)))

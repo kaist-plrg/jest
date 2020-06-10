@@ -6,10 +6,7 @@ import spray.json._
 
 case class Test262Config(negative: Option[Negative], includes: List[String], flags: List[String])
 case class Test262ConfigSummary(summary: Map[String, Test262Config]) {
-  def normal: List[String] = summary.toList.flatMap {
-    case (name, Test262Config(None, _, _)) => Some(name)
-    case _ => None
-  }
+  def nameList: List[String] = summary.toList.map { case (name, _) => name }
   def apply(filename: String): Test262Config = summary(filename)
 }
 
