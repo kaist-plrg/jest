@@ -11,7 +11,7 @@ object BigIntBitwiseOp extends Algorithm {
     assert (|| (|| (= op "&") (= op "|")) (= op "^"))
     let result = 0n
     let shift = 0i
-    !!! "Repeat , until ( id:{x} = 0 or id:{x} = - 1 ) and ( id:{y} = 0 or id:{y} = - 1 ) , step-list:{...}"
+    if (= op "&") return (& x y) else if (= op "|") return (| x y) else return (^ x y)
     if (= op "&") {
       app __x0__ = (BinaryAnd (%% x 2i) (%% y 2i))
       let tmp = __x0__
@@ -23,7 +23,7 @@ object BigIntBitwiseOp extends Algorithm {
       app __x2__ = (BinaryXor (%% x 2i) (%% y 2i))
       let tmp = __x2__
     }
-    if (! (== tmp 0i)) !!! "Set id:{result} to id:{result} - 2 sup:{id:{shift} } ." else {}
+    if (! (== tmp 0i)) !!! "Let id:{result} be id:{result} - 2 sup:{id:{shift} } . NOTE : This extends the sign ." else {}
     app __x3__ = (WrapCompletion result)
     return __x3__
   }"""), this)

@@ -16,6 +16,6 @@ object BigIntCOLONCOLONexponentiate extends Algorithm {
       app __x1__ = (WrapCompletion 1n)
       return __x1__
     } else {}
-    !!! "Return the BigInt value that represents the mathematical value of id:{base} raised to the power id:{exponent} ."
+    return (** base exponent)
   }"""), this)
 }

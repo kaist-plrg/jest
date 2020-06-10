@@ -517,9 +517,11 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
   def interp(uop: UOp): Value => Value = (uop, _) match {
     case (ONeg, Num(n)) => Num(-n)
     case (ONeg, INum(n)) => INum(-n)
+    case (ONeg, BigINum(b)) => BigINum(-b)
     case (ONot, Bool(b)) => Bool(!b)
     case (OBNot, Num(n)) => INum(~(n.toInt))
     case (OBNot, INum(n)) => INum(~n)
+    case (OBNot, BigINum(b)) => BigINum(~b)
     case (_, value) => error(s"wrong type of value for the operator $uop: $value")
   }
 
@@ -594,7 +596,40 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
     case (OEqual, Num(l), Num(r)) => Bool(l == r)
     case (OEqual, l, r) => Bool(l == r)
 
+    // double with big integers
+    case (OLt, BigINum(l), Num(r)) =>
+      Bool(new java.math.BigDecimal(l.bigInteger).compareTo(new java.math.BigDecimal(r)) < 0)
+    case (OLt, BigINum(l), INum(r)) =>
+      Bool(new java.math.BigDecimal(l.bigInteger).compareTo(new java.math.BigDecimal(r)) < 0)
+    case (OLt, Num(l), BigINum(r)) =>
+      Bool(new java.math.BigDecimal(l).compareTo(new java.math.BigDecimal(r.bigInteger)) < 0)
+    case (OLt, INum(l), BigINum(r)) =>
+      Bool(new java.math.BigDecimal(l).compareTo(new java.math.BigDecimal(r.bigInteger)) < 0)
+
+    // big integers
+    case (OPlus, BigINum(l), BigINum(r)) => BigINum(l + r)
+    case (OLShift, BigINum(l), BigINum(r)) => BigINum(l << r.toInt)
+    case (OSRShift, BigINum(l), BigINum(r)) => BigINum(l >> r.toInt)
+    case (OSub, BigINum(l), BigINum(r)) => BigINum(l - r)
+    case (OMul, BigINum(l), BigINum(r)) => BigINum(l * r)
+    case (ODiv, BigINum(l), BigINum(r)) => BigINum(l / r)
+    case (OMod, BigINum(l), BigINum(r)) => BigINum(modulo(l, r))
+    case (OUMod, BigINum(l), BigINum(r)) => BigINum(unsigned_modulo(l, r))
+    case (OLt, BigINum(l), BigINum(r)) => Bool(l < r)
+    case (OBAnd, BigINum(l), BigINum(r)) => BigINum(l & r)
+    case (OBOr, BigINum(l), BigINum(r)) => BigINum(l | r)
+    case (OBXOr, BigINum(l), BigINum(r)) => BigINum(l ^ r)
+    case (OPow, BigINum(l), BigINum(r)) => BigINum(l.pow(r.toInt))
+
     case (_, lval, rval) => error(s"wrong type: $lval $bop $rval")
+  }
+  private def modulo(l: BigInt, r: BigInt): BigInt = {
+    l % r
+  }
+  private def unsigned_modulo(l: BigInt, r: BigInt): BigInt = {
+    val m = l % r
+    if (m * r < 0) m + r
+    else m
   }
   private def modulo(l: Double, r: Double): Double = {
     l % r

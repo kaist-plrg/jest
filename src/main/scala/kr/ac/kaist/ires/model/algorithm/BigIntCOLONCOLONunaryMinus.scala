@@ -8,10 +8,10 @@ object BigIntCOLONCOLONunaryMinus extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""BigInt::unaryMinus" (x) => {
-    if (= x !!! "0n") {
-      app __x0__ = (WrapCompletion !!! "0n")
+    if (= x 0n) {
+      app __x0__ = (WrapCompletion 0n)
       return __x0__
     } else {}
-    !!! "Return the BigInt value that represents the mathematical value of negating id:{x} ."
+    return (- (convert x num2bigint ))
   }"""), this)
 }
