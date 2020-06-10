@@ -103,7 +103,7 @@ class Test262Test extends IRESTest with EvalTest {
     val initStList = includeMap("assert.js") ++ includeMap("sta.js")
     for (filename <- shuffle(config.nameList)) {
       val includes = config(filename).includes
-      val jsName = s"$BASE_DIR/$filename"
+      val jsName = s"$test262Dir/test/$filename"
       val name = removedExt(jsName).drop(dir.toString.length)
       check("Test262Eval", name, {
         val includeList = includes.foldLeft(initStList) {

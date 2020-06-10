@@ -114,24 +114,24 @@ case object FilterMeta extends PhaseObj[Unit, FilterMetaConfig, Unit] {
       "for-in-order"
     )
 
-  lazy val test262Dir = new File(s"$TEST_DIR/test262/test")
+  lazy val test262Dir = s"$TEST_DIR/test262/test"
   lazy val allTests = TestList(
-    walkTree(test262Dir)
+    walkTree(new File(test262Dir))
       .toList
       .filter(f => jsFilter(f.getName))
-      .map(x => MetaParser(x.toString, BASE_DIR))
+      .map(x => MetaParser(x.toString, test262Dir))
   )
 
   def getTests(features: List[String]): TestList = allTests
-    .remove("harness", _.name startsWith s"$test262Dir/harness")
-    .remove("internationalisation", _.name startsWith s"$test262Dir/intl")
-    .remove("annex", _.name startsWith s"$test262Dir/annex")
+    .remove("harness", _.name startsWith "harness")
+    .remove("internationalisation", _.name startsWith "intl")
+    .remove("annex", _.name startsWith "annex")
     .remove("in-progress features", m => (!m.features.forall(features contains _)))
     .remove("module", m => (
       (m.flags contains "module") ||
-      (m.name startsWith s"$test262Dir/language/module-code/") ||
-      (m.name startsWith s"$test262Dir/language/expressions/dynamic-import/") ||
-      (m.name startsWith s"$test262Dir/language/expressions/import.meta/")
+      (m.name startsWith "language/module-code/") ||
+      (m.name startsWith "language/expressions/dynamic-import/") ||
+      (m.name startsWith "language/expressions/import.meta/")
     ))
     .remove("inessential built-in objects", m => (
       (m.flags contains "CanBlockIsFalse") ||
