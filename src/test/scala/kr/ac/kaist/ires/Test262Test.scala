@@ -41,13 +41,17 @@ class Test262Test extends IRESTest with EvalTest {
   // print results after all tests
   override def afterAll(): Unit = {
     val suffix = new SimpleDateFormat("yyMMddHHmm").format(new Date())
-    val filename = s"$TEST_DIR/result/${tag}_${suffix}"
+    val map = resMap("Test262Eval")
 
+    val filename = s"$TEST_DIR/result/${tag}_${suffix}"
     val jpw = getPrintWriter(filename)
-    resMap("Test262Eval").toList.sortBy { case (k, v) => k }.foreach {
+    map.toList.sortBy { case (k, v) => k }.foreach {
       case (k, v) => jpw.println(s"$k: $v")
     }
     jpw.close()
+
+    val failed = map.keySet.toList.sorted.filter(k => map(k) == Fail)
+    dumpJson(failed, s"$TEST_DIR/manual.json")
 
     if (COVERAGE_MODE) Coverage.dumpStat
   }
@@ -81,7 +85,7 @@ class Test262Test extends IRESTest with EvalTest {
     case (imm, s) => {
       val includeName = s"${dir.toString}/harness/$s"
       val jsConfig = iresConfig.copy(fileNames = List(includeName))
-      val stmtList = ModelHelper.flattenStatement(Parse((), jsConfig))
+      val stmtList = ModelHelper.flattenAST(Parse((), jsConfig))
       imm + (s -> stmtList)
     }
 
@@ -93,7 +97,7 @@ class Test262Test extends IRESTest with EvalTest {
           val includeName = s"${dir.toString}/harness/$s"
           val jsConfig = iresConfig.copy(fileNames = List(includeName))
           val ast = Parse((), jsConfig)
-          val stmtList = ModelHelper.flattenStatement(ast)
+          val stmtList = ModelHelper.flattenAST(ast)
           imm + (s -> stmtList)
         }
       }
@@ -102,10 +106,10 @@ class Test262Test extends IRESTest with EvalTest {
   def init: Unit = {
     val initStList = includeMap("assert.js") ++ includeMap("sta.js")
     for (filename <- shuffle(config.nameList)) {
-      val includes = config(filename).includes
+      val Test262Config(negative, includes, flags) = config(filename)
       val jsName = s"$test262Dir/test/$filename"
       val name = removedExt(jsName).drop(dir.toString.length)
-      check("Test262Eval", name, {
+      check("Test262Eval", filename, {
         val includeList = includes.foldLeft(initStList) {
           case (li, s) => li ++ includeMap(s)
         }
@@ -114,7 +118,7 @@ class Test262Test extends IRESTest with EvalTest {
         val ast = Parse((), jsConfig)
         ModelHelper.checkSupported(ast)
 
-        val stList = includeList ++ ModelHelper.flattenStatement(ast)
+        val stList = includeList ++ ModelHelper.flattenAST(ast)
         val st = IREval(Load(ModelHelper.mergeStatement(stList), jsConfig), jsConfig, evalConfig)
         evalJSTest(st)
       })

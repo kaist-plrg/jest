@@ -445,7 +445,9 @@ object BuiltinHeap {
         "Construct" -> BuiltinFunctionObjectDOTConstruct.func
       ),
       nmap = NMap(
-        "prototype" -> DataProperty(NamedAddr("GLOBAL.BigInt.prototype"), F, F, F)
+        "prototype" -> DataProperty(NamedAddr("GLOBAL.BigInt.prototype"), F, F, F),
+        "asIntN" -> DataProperty(NamedAddr("GLOBAL.BigInt.asIntN"), T, F, T),
+        "asUintN" -> DataProperty(NamedAddr("GLOBAL.BigInt.asUintN"), T, F, T)
       )
     ),
     "GLOBAL.BigInt.prototype" -> Struct(

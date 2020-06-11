@@ -8,6 +8,7 @@ object GetSubstitution extends Algorithm {
   val length: Int = 6
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GetSubstitution" (matched, str, position, captures, namedCaptures, replacement) => {
+    !!! "GetSubstitution"
     app __x0__ = (Type matched)
     assert (= __x0__ String)
     let matchLength = matched["length"]

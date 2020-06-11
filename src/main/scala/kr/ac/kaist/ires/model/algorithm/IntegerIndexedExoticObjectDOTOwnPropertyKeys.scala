@@ -8,6 +8,7 @@ object IntegerIndexedExoticObjectDOTOwnPropertyKeys extends Algorithm {
   val length: Int = 0
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""IntegerIndexedExoticObject.OwnPropertyKeys" (O) => {
+    !!! "IntegerIndexedExoticObject"
     let keys = (new [])
     let len = O["ArrayLength"]
     !!! "Etc"

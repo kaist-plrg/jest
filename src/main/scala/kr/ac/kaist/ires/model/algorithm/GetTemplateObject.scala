@@ -8,6 +8,7 @@ object GetTemplateObject extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""GetTemplateObject" (templateLiteral) => {
+    !!! "GetTemplateObject"
     access __x0__ = (templateLiteral "TemplateStrings")
     app __x1__ = (__x0__ true)
     let rawStrings = __x1__

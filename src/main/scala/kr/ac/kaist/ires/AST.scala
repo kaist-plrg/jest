@@ -1,8 +1,10 @@
 package kr.ac.kaist.ires
 
 import kr.ac.kaist.ires.ir._
+import kr.ac.kaist.ires.model.{ Parser, ModelHelper, ClassDeclaration, ClassExpression }
 
 trait AST {
+  var strict: Boolean = false
   var parent: Option[AST] = None
   val kind: String
   val name: String
@@ -97,6 +99,25 @@ trait AST {
     case None => (name.substring(7, name.length - 1), Absent) :: list
     case a: AST => (name, ASTVal(a)) :: list
     case _ => list
+  }
+
+  // for strict mode
+  def setStrict: Unit = {
+    this.strict = true
+    list.foreach {
+      case (_, ASTVal(ast)) => ast.setStrict
+      case _ =>
+    }
+  }
+  def checkStrict: Unit = if (this match {
+    case _ if ModelHelper.containsStrictDirective(this) =>
+      println(this)
+      true
+    case (_: ClassDeclaration | _: ClassExpression) => true
+    case _ => false
+  }) this.setStrict else list.foreach {
+    case (_, ASTVal(ast)) => ast.checkStrict
+    case _ =>
   }
 }
 

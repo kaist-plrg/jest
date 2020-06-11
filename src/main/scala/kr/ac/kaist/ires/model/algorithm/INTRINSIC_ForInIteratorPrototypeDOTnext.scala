@@ -31,7 +31,26 @@ object INTRINSIC_ForInIteratorPrototypeDOTnext extends Algorithm {
       } else {}
       while (< 0i remaining["length"]) {
         let r = (pop remaining 0i)
-        !!! "If there does not exist an element id:{v} of id:{visited} such that SameValue ( id:{r} , id:{v} ) is value:{true} , then step-list:{...}"
+
+        let idx = 0i
+        let len = visited.length
+        let exist = false
+        while (< idx len) {
+          let v = visited[idx]
+          app result = (SameValue r v)
+          exist = (|| exist result)
+        }
+        if exist {
+          app desc = (object.GetOwnProperty object r)
+          ? desc
+          if (! (= desc undefined)) {
+            append r -> visited
+            if (= desc.Enumerable true) {
+              app result = (CreateIterResultObject r false)
+              return result
+            } else {}
+          } else {}
+        } else {}
       }
       app __x5__ = (object["GetPrototypeOf"] object)
       if (is-completion __x5__) if (= __x5__["Type"] CONST_normal) __x5__ = __x5__["Value"] else return __x5__ else {}

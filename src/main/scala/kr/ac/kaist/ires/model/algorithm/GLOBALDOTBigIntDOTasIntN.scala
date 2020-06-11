@@ -18,7 +18,7 @@ object GLOBALDOTBigIntDOTasIntN extends Algorithm {
     app __x3__ = (ToBigInt bigint)
     if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
     let bigint = __x3__
-    !!! "Let id:{mod} be the BigInt value that represents id:{bigint} modulo 2 sup:{id:{bits} } ."
-    !!! "If id:{mod} ≥ 2 sup:{id:{bits} - 1 } , return id:{mod} - 2 sup:{id:{bits} } ; otherwise , return id:{mod} ."
+    let mod = (%% bigint (<< 2n bits))
+    if (! (< mod (<< 2n (- bits 1)))) return (- mod (<< 2n bits)) else return mod
   }"""), this)
 }

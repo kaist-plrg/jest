@@ -78,31 +78,19 @@ object AbstractEqualityComparison extends Algorithm {
       app __x29__ = (WrapCompletion __x28__)
       return __x29__
     } else {}
-    app __x30__ = (Type x)
-    let __x31__ = (|| (|| (= __x30__ String) (= __x30__ Number)) (= __x30__ Symbol))
-    if __x31__ {
-      app __x32__ = (Type y)
-      __x31__ = (= __x32__ Object)
+    app xT = (Type x)
+    app yT = (Type y)
+    if (= xT Boolean) {
+      app xN = (ToNumber x)
+      ! xN
+      app result = (AbstractEqualityComparison xN y)
+      return result
     } else {}
-    if __x31__ {
-      app __x33__ = (ToPrimitive y)
-      if (is-completion __x33__) if (= __x33__["Type"] CONST_normal) __x33__ = __x33__["Value"] else return __x33__ else {}
-      app __x34__ = (AbstractEqualityComparison x __x33__)
-      app __x35__ = (WrapCompletion __x34__)
-      return __x35__
-    } else {}
-    app __x36__ = (Type x)
-    let __x37__ = (= __x36__ Object)
-    if __x37__ {
-      app __x38__ = (Type y)
-      __x37__ = (|| (|| (= __x38__ String) (= __x38__ Number)) (= __x38__ Symbol))
-    } else {}
-    if __x37__ {
-      app __x39__ = (ToPrimitive x)
-      if (is-completion __x39__) if (= __x39__["Type"] CONST_normal) __x39__ = __x39__["Value"] else return __x39__ else {}
-      app __x40__ = (AbstractEqualityComparison __x39__ y)
-      app __x41__ = (WrapCompletion __x40__)
-      return __x41__
+    if (= yT Boolean) {
+      app yN = (ToNumber y)
+      ! yN
+      app result = (AbstractEqualityComparison x yN)
+      return result
     } else {}
     app __x42__ = (Type x)
     let __x43__ = (|| (|| (|| (= __x42__ String) (= __x42__ Number)) (= __x42__ BigInt)) (= __x42__ Symbol))

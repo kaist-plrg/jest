@@ -14,7 +14,7 @@ object GLOBALDOTINTRINSIC_StringIteratorPrototypeDOTnext extends Algorithm {
       app __x1__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
       return __x1__
     } else {}
-    if (|| (= O["IteratedString"] absent) (= O["StringIteratorNextIndex"] absent)) {
+    if (|| (= O["IteratedString"] absent) (= O["StringNextIndex"] absent)) {
       app __x2__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
       return __x2__
     } else {}

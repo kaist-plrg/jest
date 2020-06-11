@@ -33,7 +33,7 @@ object ToUint8Clamp extends Algorithm {
       app __x6__ = (WrapCompletion f)
       return __x6__
     } else {}
-    !!! "Etc"
+    if (= (% f 2i) 1i) return (+ f 1i)
     app __x7__ = (WrapCompletion f)
     return __x7__
   }"""), this)

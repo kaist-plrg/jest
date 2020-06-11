@@ -24,7 +24,8 @@ object GlobalEnvironmentRecordDOTCanDeclareGlobalFunction extends Algorithm {
       app __x3__ = (WrapCompletion true)
       return __x3__
     } else {}
-    !!! "Etc"
+    app result = (IsDataDescriptor existingProp)
+    if (&& (&& (= result true) (= existingProp.Writable true)) (= existingProp.Enumerable true)) return true else {}
     app __x4__ = (WrapCompletion false)
     return __x4__
   }"""), this)

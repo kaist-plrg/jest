@@ -7,11 +7,5 @@ object CreateByteDataBlock extends Algorithm {
   val name: String = "CreateByteDataBlock"
   val length: Int = 1
   val lang: Boolean = true
-  val func: Func = FixUIdWalker(parseFunc(""""CreateByteDataBlock" (size) => {
-    assert (! (< size 0i))
-    !!! "Etc"
-    !!! "Etc"
-    app __x0__ = (WrapCompletion db)
-    return __x0__
-  }"""), this)
+  val func: Func = FixUIdWalker(parseFunc(""""CreateByteDataBlock" (size) => ??? "CreateByteDataBlock""""), this)
 }

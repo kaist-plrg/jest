@@ -16,8 +16,11 @@ object GLOBALDOTArrayDOTprototypeDOTjoin extends Algorithm {
     app __x2__ = (LengthOfArrayLike O)
     if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     let len = __x2__
-    !!! "If id:{separator} is value:{undefined} , let id:{sep} be the single - element String value:{\",\"} ."
-    !!! "Else , let id:{sep} be ? ToString ( id:{separator} ) ."
+    if (= separator undefined) let sep = ","
+    else {
+      app sep = (ToString separator)
+      ? sep
+    }
     let R = ""
     let k = 0i
     while (< k len) {

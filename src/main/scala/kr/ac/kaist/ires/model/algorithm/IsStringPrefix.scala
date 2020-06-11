@@ -8,6 +8,7 @@ object IsStringPrefix extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""IsStringPrefix" (p, q) => {
+    !!! "IsStringPrefix"
     app __x0__ = (Type p)
     assert (= __x0__ String)
     app __x1__ = (Type q)

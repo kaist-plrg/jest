@@ -1,21 +1,77 @@
 package kr.ac.kaist.ires.model
 
 import kr.ac.kaist.ires.AST
-import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.error._
-import kr.ac.kaist.ires.util.Useful._
+import kr.ac.kaist.ires.ir._
+import kr.ac.kaist.ires.model.Parser.{ parseAll, StringLiteral }
 import kr.ac.kaist.ires.parser.UnicodeRegex
+import kr.ac.kaist.ires.util.Useful._
 
 object ModelHelper {
   def flattenStList(s: StatementList): List[StatementListItem] = s match {
     case StatementList0(x0, _) => List(x0)
     case StatementList1(x0, x1, _) => flattenStList(x0) :+ x1
   }
+  def flattenAST(ast: AST): List[StatementListItem] = ast match {
+    case Script0(Some(body), _) => flattenAST(body)
+    case ScriptBody0(list, _) => flattenAST(list)
 
-  def flattenStatement(s: Script) = s match {
-    case Script0(Some(ScriptBody0(stlist, _)), _) =>
-      flattenStList(stlist)
-    case _ => List()
+    case FunctionDeclaration0(_, _, body, _) => flattenAST(body)
+    case FunctionDeclaration1(_, body, _) => flattenAST(body)
+    case FunctionExpression0(_, _, body, _) => flattenAST(body)
+    case FunctionBody0(list, _) => flattenAST(list)
+    case FunctionStatementList0(Some(list), _) => flattenAST(list)
+
+    case GeneratorDeclaration0(_, _, body, _) => flattenAST(body)
+    case GeneratorDeclaration1(_, body, _) => flattenAST(body)
+    case GeneratorExpression0(_, _, body, _) => flattenAST(body)
+    case GeneratorMethod0(_, _, body, _) => flattenAST(body)
+    case GeneratorBody0(body, _) => flattenAST(body)
+
+    case AsyncFunctionDeclaration0(_, _, body, _) => flattenAST(body)
+    case AsyncFunctionDeclaration1(_, body, _) => flattenAST(body)
+    case AsyncFunctionExpression0(_, body, _) => flattenAST(body)
+    case AsyncFunctionExpression1(_, _, body, _) => flattenAST(body)
+    case AsyncMethod0(_, _, body, _) => flattenAST(body)
+    case AsyncFunctionBody0(body, _) => flattenAST(body)
+
+    case AsyncGeneratorDeclaration0(_, _, body, _) => flattenAST(body)
+    case AsyncGeneratorDeclaration1(_, body, _) => flattenAST(body)
+    case AsyncGeneratorExpression0(_, _, body, _) => flattenAST(body)
+    case AsyncGeneratorMethod0(_, _, body, _) => flattenAST(body)
+    case AsyncGeneratorBody0(body, _) => flattenAST(body)
+
+    case MethodDefinition0(_, _, body, _) => flattenAST(body)
+    case MethodDefinition1(method, _) => flattenAST(method)
+    case MethodDefinition2(method, _) => flattenAST(method)
+    case MethodDefinition3(method, _) => flattenAST(method)
+    case MethodDefinition4(_, body, _) => flattenAST(body)
+    case MethodDefinition5(_, _, body, _) => flattenAST(body)
+
+    case ArrowFunction0(_, body, _) => flattenAST(body)
+    case ConciseBody1(body, _) => flattenAST(body)
+
+    case AsyncArrowFunction0(_, body, _) => flattenAST(body)
+    case AsyncArrowFunction1(_, body, _) => flattenAST(body)
+    case AsyncConciseBody1(body, _) => flattenAST(body)
+
+    case StatementList0(x0, _) => List(x0)
+    case StatementList1(x0, x1, _) => flattenAST(x0) :+ x1
+    case _ => Nil
+  }
+
+  def containsStrictDirective(ast: AST): Boolean = {
+    for (item <- flattenAST(ast)) item match {
+      case StatementListItem0(Statement3(exprStmt, _), _) =>
+        val str = exprStmt.toString.dropRight(2)
+        val result = parseAll(StringLiteral, str)
+        if (result.successful) {
+          val str = result.get
+          if (str == "\"use strict\"" || str == "'use strict'") return true
+        }
+      case _ =>
+    }
+    false
   }
 
   def mergeStatement(l: List[StatementListItem]): Script = Script0(l match {

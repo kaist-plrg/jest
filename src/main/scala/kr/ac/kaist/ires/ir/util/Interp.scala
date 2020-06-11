@@ -379,7 +379,7 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
             ), timeLimit.map(_.seconds).getOrElse(Duration.Inf)))
           } catch {
             case e: TimeoutException => error("parser timeout")
-            case e: Throwable => error("parsing failed")
+            case e: Throwable => Absent
           }
           newVal match {
             case ASTVal(s) => ModelHelper.checkSupported(s)
@@ -401,7 +401,7 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
             ), timeLimit.map(_.seconds).getOrElse(Duration.Inf)))
           } catch {
             case e: TimeoutException => error("parser timeout")
-            case e: Throwable => error("parsing failed")
+            case e: Throwable => Absent
           }
           newVal match {
             case ASTVal(s) => ModelHelper.checkSupported(s)
