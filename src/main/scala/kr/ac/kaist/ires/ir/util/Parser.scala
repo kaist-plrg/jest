@@ -115,7 +115,8 @@ object Parser extends JavaTokenParsers with RegexParsers {
         case e ~ x => EGetElems(e, x)
       } |
       "(" ~> "get-syntax" ~> expr <~ ")" ^^ { case e => EGetSyntax(e) } |
-      "(" ~> "parse-syntax" ~> expr ~ expr ~ rep(expr) <~ ")" ^^ { case e ~ r ~ le => EParseSyntax(e, r, le) } |
+      "(" ~> "parse-syntax" ~> expr ~ expr <~ ")" ^^ { case e ~ r => EParseSyntax(e, r, EAbsent) } |
+      "(" ~> "parse-syntax" ~> expr ~ expr ~ expr <~ ")" ^^ { case e ~ r ~ le => EParseSyntax(e, r, le) } |
       "(" ~> "convert" ~> expr ~ cop ~ rep(expr) <~ ")" ^^ { case e ~ r ~ l => EConvert(e, r, l) } |
       "(" ~> "contains" ~> expr ~ expr <~ ")" ^^ { case l ~ e => EContains(l, e) } |
       "(" ~> "copy-obj" ~> expr <~ ")" ^^ { case e => ECopy(e) } |

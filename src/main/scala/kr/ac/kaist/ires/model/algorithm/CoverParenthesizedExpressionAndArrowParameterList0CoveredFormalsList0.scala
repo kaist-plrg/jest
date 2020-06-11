@@ -7,5 +7,5 @@ object CoverParenthesizedExpressionAndArrowParameterList0CoveredFormalsList0 ext
   val name: String = "CoverParenthesizedExpressionAndArrowParameterList0CoveredFormalsList0"
   val length: Int = 0
   val lang: Boolean = true
-  val func: Func = FixUIdWalker(parseFunc(""""CoverParenthesizedExpressionAndArrowParameterList0CoveredFormalsList0" (this, Expression) => return (parse-syntax this "ArrowFormalParameters" )"""), this)
+  val func: Func = FixUIdWalker(parseFunc(""""CoverParenthesizedExpressionAndArrowParameterList0CoveredFormalsList0" (this, Expression) => return (parse-syntax this "ArrowFormalParameters")"""), this)
 }

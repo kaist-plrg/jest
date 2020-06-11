@@ -13,7 +13,7 @@ object MethodDefinition4PropertyDefinitionEvaluation0 extends Algorithm {
     if (is-completion propKey) if (= propKey["Type"] CONST_normal) propKey = propKey["Value"] else return propKey else {}
     propKey
     let scope = GLOBAL_context["LexicalEnvironment"]
-    let formalParameterList = (parse-syntax "" "FormalParameters" false false)
+    let formalParameterList = (parse-syntax "" "FormalParameters" (new [false, false]))
     app closure = (OrdinaryFunctionCreate INTRINSIC_FunctionPrototype formalParameterList FunctionBody CONST_nonlexicalthis scope)
     app __x1__ = (MakeMethod closure object)
     __x1__

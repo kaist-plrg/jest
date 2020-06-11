@@ -48,7 +48,7 @@ object AssignmentElement0IteratorDestructuringAssignmentEvaluation1 extends Algo
       }
     } else let v = value
     if (|| (is-instance-of DestructuringAssignmentTarget ObjectLiteral) (is-instance-of DestructuringAssignmentTarget ArrayLiteral)) {
-      let nestedAssignmentPattern = (parse-syntax DestructuringAssignmentTarget "AssignmentPattern" )
+      let nestedAssignmentPattern = (parse-syntax DestructuringAssignmentTarget "AssignmentPattern")
       access __x12__ = (nestedAssignmentPattern "DestructuringAssignmentEvaluation")
       app __x13__ = (__x12__ v)
       app __x14__ = (WrapCompletion __x13__)

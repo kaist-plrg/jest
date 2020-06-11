@@ -18,7 +18,6 @@ case object Parse extends PhaseObj[Unit, ParseConfig, Script] {
   ): Script = {
     val filename = getFirstFilename(iresConfig, "parse")
     val ast = Parser.parse(Parser.Script(Nil), fileReader(filename)).get
-    ast.checkStrict
     config.jsonFile match {
       case Some(name) =>
         val nf = getPrintWriter(name)

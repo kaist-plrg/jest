@@ -33,7 +33,7 @@ object AssignmentExpression4Evaluation0 extends Algorithm {
       app __x9__ = (WrapCompletion rval)
       return __x9__
     } else {}
-    let assignmentPattern = (parse-syntax LeftHandSideExpression "AssignmentPattern" )
+    let assignmentPattern = (parse-syntax LeftHandSideExpression "AssignmentPattern")
     access __x10__ = (AssignmentExpression "Evaluation")
     let rref = __x10__
     app __x11__ = (GetValue rref)

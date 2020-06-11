@@ -31,7 +31,7 @@ object PerformEval extends Algorithm {
       let inMethod = false
       let inDerivedConstructor = false
     }
-    let script = (parse-syntax x "Script" )
+    let script = (parse-syntax x "Script" (new []))
     if (= script absent) {
       app error = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_SyntaxErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
       return error

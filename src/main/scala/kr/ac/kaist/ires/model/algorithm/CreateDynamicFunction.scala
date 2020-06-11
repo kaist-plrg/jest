@@ -56,6 +56,7 @@ object CreateDynamicFunction extends Algorithm {
     if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
     let bodyString = (+ (+ "\n" __x3__) "\n")
 
+    let parameters = (parse-syntax bodyString parameterGoal.Goal parameterGoal.Arguments)
     if (= parameters absent) {
       app __x7__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_SyntaxErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
       return __x7__

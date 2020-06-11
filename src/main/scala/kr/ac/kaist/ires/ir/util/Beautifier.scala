@@ -182,7 +182,7 @@ object Beautifier {
       case EGetSyntax(base) =>
         walk("(get-syntax "); walk(base); walk(")")
       case EParseSyntax(code, rule, flags) =>
-        walk("(parse-syntax "); walk(code); walk(" "); walk(rule); walk(" "); walkListSep[Expr](flags, " ", walk); walk(")")
+        walk("(parse-syntax "); walk(code); walk(" "); walk(rule); walk(" "); walk(flags); walk(")")
       case EConvert(expr, cop, list) =>
         walk("(convert "); walk(expr); walk(" "); walk(cop); walk(" "); walkListSep[Expr](list, " ", walk); walk(")")
       case EContains(list, elem) =>

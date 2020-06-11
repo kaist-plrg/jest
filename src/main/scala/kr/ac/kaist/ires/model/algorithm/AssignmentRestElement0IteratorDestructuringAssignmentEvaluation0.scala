@@ -46,7 +46,7 @@ object AssignmentRestElement0IteratorDestructuringAssignmentEvaluation0 extends 
       app __x9__ = (WrapCompletion __x8__)
       return __x9__
     } else {}
-    let nestedAssignmentPattern = (parse-syntax DestructuringAssignmentTarget "AssignmentPattern" )
+    let nestedAssignmentPattern = (parse-syntax DestructuringAssignmentTarget "AssignmentPattern")
     access __x10__ = (nestedAssignmentPattern "DestructuringAssignmentEvaluation")
     app __x11__ = (__x10__ A)
     app __x12__ = (WrapCompletion __x11__)

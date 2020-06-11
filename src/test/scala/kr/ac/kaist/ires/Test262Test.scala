@@ -85,7 +85,7 @@ class Test262Test extends IRESTest with EvalTest {
     case (imm, s) => {
       val includeName = s"${dir.toString}/harness/$s"
       val jsConfig = iresConfig.copy(fileNames = List(includeName))
-      val stmtList = ModelHelper.flattenAST(Parse((), jsConfig))
+      val stmtList = ModelHelper.flattenStatement(Parse((), jsConfig))
       imm + (s -> stmtList)
     }
 
@@ -97,7 +97,7 @@ class Test262Test extends IRESTest with EvalTest {
           val includeName = s"${dir.toString}/harness/$s"
           val jsConfig = iresConfig.copy(fileNames = List(includeName))
           val ast = Parse((), jsConfig)
-          val stmtList = ModelHelper.flattenAST(ast)
+          val stmtList = ModelHelper.flattenStatement(ast)
           imm + (s -> stmtList)
         }
       }
@@ -118,7 +118,7 @@ class Test262Test extends IRESTest with EvalTest {
         val ast = Parse((), jsConfig)
         ModelHelper.checkSupported(ast)
 
-        val stList = includeList ++ ModelHelper.flattenAST(ast)
+        val stList = includeList ++ ModelHelper.flattenStatement(ast)
         val st = IREval(Load(ModelHelper.mergeStatement(stList), jsConfig), jsConfig, evalConfig)
         evalJSTest(st)
       })

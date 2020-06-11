@@ -55,7 +55,7 @@ object ClassTail0ClassDefinitionEvaluation3 extends Algorithm {
       access __x11__ = (ClassBody "ConstructorMethod")
       let constructor = __x11__
     }
-    if (= constructor CONST_empty) if (! (= ClassHeritage absent)) constructor = (parse-syntax "constructor(...args) { super(...args); }" "MethodDefinition" false false) else constructor = (parse-syntax "constructor() {}" "MethodDefinition" false false) else {}
+    if (= constructor CONST_empty) if (! (= ClassHeritage absent)) constructor = (parse-syntax "constructor(...args) { super(...args); }" "MethodDefinition" (new [false, false])) else constructor = (parse-syntax "constructor() {}" "MethodDefinition" (new [false, false])) else {}
     GLOBAL_context["LexicalEnvironment"] = classScope
     access __x12__ = (constructor "DefineMethod")
     app __x13__ = (__x12__ proto constructorParent)

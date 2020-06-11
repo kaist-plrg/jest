@@ -15,7 +15,7 @@ object ForInOfBodyEvaluation extends Algorithm {
     let destructuring = __x0__
     if (&& (= destructuring true) (= lhsKind CONST_assignment)) {
       assert (is-instance-of lhs LeftHandSideExpression)
-      let assignmentPattern = (parse-syntax lhs "AssignmentPattern" )
+      let assignmentPattern = (parse-syntax lhs "AssignmentPattern")
     } else {}
     while true {
       app __x1__ = (Call iteratorRecord["NextMethod"] iteratorRecord["Iterator"])

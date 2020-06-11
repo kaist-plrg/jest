@@ -117,7 +117,7 @@ trait UnitWalker {
     case EGetSyntax(base) =>
       walk(base)
     case EParseSyntax(code, rule, flags) =>
-      walk(code); walk(rule); walkList[Expr](flags, walk)
+      walk(code); walk(rule); walk(flags)
     case EConvert(expr, cop, list) =>
       walk(expr); walk(cop); walkList[Expr](list, walk)
     case EContains(list, elem) =>

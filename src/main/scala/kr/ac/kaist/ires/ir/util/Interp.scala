@@ -387,13 +387,15 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
           }
           (newVal, s1)
         case Str(str) =>
-          val (s2, parserParams) = flags.foldLeft(s1, List[Boolean]()) {
-            case ((st, ps), param) =>
-              val (av, s1) = interp(param)(st)
-              av match {
-                case Bool(v) => (s1, ps :+ v)
-                case _ => error(s"parserParams should be boolean")
-              }
+          val (s2, parserParams) = interp(flags)(s1) match {
+            case (addr: Addr, st) => st.heap(addr) match {
+              case IRList(vs) => (st, vs.toList.map {
+                case Bool(b) => b
+                case v => error(s"not a boolean: $v")
+              })
+              case obj => error(s"not a list: $obj")
+            }
+            case v => error(s"not an address: $v")
           }
           val newVal = try {
             ASTVal(Await.result(Future(

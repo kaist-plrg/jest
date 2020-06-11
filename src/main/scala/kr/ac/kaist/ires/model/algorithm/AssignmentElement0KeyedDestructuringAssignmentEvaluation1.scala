@@ -34,7 +34,7 @@ object AssignmentElement0KeyedDestructuringAssignmentEvaluation1 extends Algorit
       }
     } else let rhsValue = v
     if (|| (is-instance-of DestructuringAssignmentTarget ObjectLiteral) (is-instance-of DestructuringAssignmentTarget ArrayLiteral)) {
-      let assignmentPattern = (parse-syntax DestructuringAssignmentTarget "AssignmentPattern" )
+      let assignmentPattern = (parse-syntax DestructuringAssignmentTarget "AssignmentPattern")
       access __x9__ = (assignmentPattern "DestructuringAssignmentEvaluation")
       app __x10__ = (__x9__ rhsValue)
       app __x11__ = (WrapCompletion __x10__)

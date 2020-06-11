@@ -44,9 +44,7 @@ case class EGetElems(base: Expr, name: String) extends Expr {
   override def toString: String = s"EGetElems($base, $TRIPLE$name$TRIPLE)"
 }
 case class EGetSyntax(base: Expr) extends Expr
-case class EParseSyntax(code: Expr, rule: Expr, flags: List[Expr]) extends Expr {
-  override def toString: String = s"EParseSyntax($code, $rule, $flags)"
-}
+case class EParseSyntax(code: Expr, rule: Expr, flags: Expr) extends Expr
 case class EConvert(source: Expr, target: COp, flags: List[Expr]) extends Expr
 case class EContains(list: Expr, elem: Expr) extends Expr
 case class ECopy(obj: Expr) extends Expr
