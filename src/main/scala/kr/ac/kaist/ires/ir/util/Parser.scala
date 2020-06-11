@@ -72,6 +72,12 @@ object Parser extends JavaTokenParsers with RegexParsers {
       ("access " ~> id <~ "=") ~ ("(" ~> expr) ~ (expr <~ ")") ^^ { case x ~ e1 ~ e2 => IAccess(x, e1, e2) } |
       ("withcont " ~> id) ~ ("(" ~> repsep(id, ",") <~ ")" <~ "=") ~ inst ^^ { case x ~ ps ~ b => IWithCont(x, ps, b) } |
       ("set-type" ~> expr ~ ty) ^^ { case e ~ t => ISetType(e, t) } |
+      ("throw" ~> ident) ^^ {
+        case x => parseInst(s"""{
+        app _ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_${x}Prototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
+        return _
+      }""")
+      } |
       ("?" ~> ident) ^^ { case x => parseInst(s"if (is-completion $x) if (= $x.Type CONST_normal) $x = $x.Value else return $x else {}") } |
       ("!" ~> ident) ^^ { case x => parseInst(s"if (is-completion $x) $x = $x.Value else {}") } |
       (ref <~ "=") ~ expr ^^ { case r ~ e => IAssign(r, e) } |

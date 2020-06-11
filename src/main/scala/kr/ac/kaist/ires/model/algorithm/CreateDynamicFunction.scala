@@ -56,7 +56,7 @@ object CreateDynamicFunction extends Algorithm {
     if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
     let bodyString = (+ (+ "\n" __x3__) "\n")
 
-    let parameters = (parse-syntax bodyString parameterGoal.Goal parameterGoal.Arguments)
+    let parameters = (parse-syntax P parameterGoal.Goal parameterGoal.Arguments)
     if (= parameters absent) {
       app __x7__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_SyntaxErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
       return __x7__
@@ -68,19 +68,22 @@ object CreateDynamicFunction extends Algorithm {
       return __x7__
     } else {}
 
-    access __x4__ = (body "ContainsUseStrict")
-    let strict = __x4__
-    !!! "If id:{strict} is value:{true} , the Early Error rules for grammar:{UniqueFormalParameters0} are applied ."
-    let __x5__ = (= strict true)
-    if __x5__ {
-      access __x6__ = (parameters "IsSimpleParameterList")
-      __x5__ = (= __x6__ false)
-    } else {}
-    if __x5__ {
+    access __x6__ = (parameters "IsSimpleParameterList")
+    if (= __x6__ false) {
       app __x7__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_SyntaxErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
       return __x7__
     } else {}
-    !!! "If any element of the BoundNames of parameters also occurs in the LexicallyDeclaredNames of body, throw a SyntaxError exception."
+
+    access boundNames = (parameters "BoundNames")
+    let idx = 0i
+    let len = boundNames.length
+    access declNames = (body "LexicallyDeclaredNames")
+    while (< idx len) {
+      let name = boundNames[idx]
+      if (contains declNames name) throw SyntaxError else {}
+      idx = (+ idx 1i)
+    }
+
     access __x8__ = (body "Contains")
     app __x9__ = (__x8__ "SuperCall")
     if (= __x9__ true) {
@@ -121,7 +124,16 @@ object CreateDynamicFunction extends Algorithm {
         return __x25__
       } else {}
     } else {}
-    if (= strict true) !!! "If BoundNames of parameters contains any duplicate elements, throw a SyntaxError exception." else {}
+
+    let tempList = (new [])
+    idx = 0i
+    while (< idx len) {
+      name = boundNames[idx]
+      if (contains tempList name) throw SyntaxError else {}
+      append name -> tempList
+      idx = (+ idx 1i)
+    }
+
     app __x26__ = (GetPrototypeFromConstructor newTarget fallbackProto)
     if (is-completion __x26__) if (= __x26__["Type"] CONST_normal) __x26__ = __x26__["Value"] else return __x26__ else {}
     let proto = __x26__
@@ -147,7 +159,7 @@ object CreateDynamicFunction extends Algorithm {
     if (|| (= kind CONST_normal) (= kind CONST_generator)) let prefix = "function"
     else if (|| (= kind CONST_async) (= kind CONST_asyncGenerator)) let prefix = "async function"
     let sourceString = (+ (+ (+ (+ (+ (+ prefix " anonymous(") P) "\n") ") {") bodyString) "}")
-    app __x32__ = (UTF16DecodeString sourceString)
+    app __x32__ = sourceString
     if (is-completion __x32__) if (= __x32__["Type"] CONST_normal) __x32__ = __x32__["Value"] else return __x32__ else {}
     F["SourceText"] = __x32__
     app __x33__ = (WrapCompletion F)
