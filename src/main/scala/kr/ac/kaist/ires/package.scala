@@ -30,7 +30,7 @@ package object ires {
   // Debugging mode
   val DEBUG_SEMI_INSERT: Boolean = false
   val DEBUG_PARSER: Boolean = false
-  val DEBUG_INTERP: Boolean = false
+  val DEBUG_INTERP: Boolean = true
   val DEBUG_FILTER: Boolean = false
 
   // Coverage check mode

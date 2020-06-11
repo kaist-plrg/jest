@@ -12,7 +12,7 @@ import spray.json._
 object Useful {
   // file reader
   def fileReader(filename: String): Reader =
-    Source.fromFile(filename).bufferedReader
+    Source.fromFile(filename, "UTF-8").bufferedReader
 
   // indentation
   def indentation(s: StringBuilder, str: String, indent: Int): Unit = {
@@ -64,7 +64,7 @@ object Useful {
 
   // read file
   def readFile(filename: String): String =
-    Source.fromFile(filename).mkString
+    Source.fromFile(filename, "UTF-8").mkString
 
   // read JSON
   def readJson[T](filename: String)(implicit reader: JsonReader[T]): T =

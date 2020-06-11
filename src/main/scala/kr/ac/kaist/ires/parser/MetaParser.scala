@@ -4,7 +4,7 @@ import scala.io.Source
 object MetaParser {
   def apply(filename: String, dirname: String) = {
     val relName = (filename split dirname).last.drop(1)
-    val source = scala.io.Source.fromFile(filename)
+    val source = scala.io.Source.fromFile(filename, "UTF-8")
     val lines = try source.getLines.toList finally source.close()
     val metadata = lines.dropWhile((x) => !(x contains "/*---")) match {
       case Nil => Nil

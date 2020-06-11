@@ -54,7 +54,7 @@ class ArgParser(cmd: Command, iresConfig: IRESConfig) extends RegexParsers {
     // setting options using a JSON file.
     lazy val json: Parser[Unit] = ("-config=" ~> str) ^^ {
       case fileName => {
-        Source.fromFile(fileName)("UTF-8").mkString.parseJson match {
+        Source.fromFile(fileName, "UTF-8").mkString.parseJson match {
           case (obj: JsObject) => obj.fields.foreach {
             case (phase, value: JsObject) => {
               if (IRES.phases.map(_.name).contains(phase))
