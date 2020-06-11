@@ -10,7 +10,7 @@ object ToBigInt extends Algorithm {
   val func: Func = FixUIdWalker(parseFunc(""""ToBigInt" (argument) => {
     app prim = (ToPrimitive argument Number)
     ? prim
-    app atype = (Type argument)
+    app atype = (Type prim)
     let typeError = (new Completion (
       "Type" -> CONST_throw,
       "Value" -> (new OrdinaryObject(
@@ -22,7 +22,7 @@ object ToBigInt extends Algorithm {
     ))
     if (= atype "Undefined") return typeError
     else if (= atype "Null") reutrn typeError
-    else if (= atype "Boolean") if prim 1n else 0n
+    else if (= atype "Boolean") if prim return 1n else return 0n
     else if (= atype "BigInt") return prim
     else if (= atype "Number") return typeError
     else if (= atype "String") {
@@ -36,7 +36,7 @@ object ToBigInt extends Algorithm {
           "SubMap" -> (new SubMap())
         )),
         "Target" -> CONST_empty
-      ))
+      )) else {}
       return n
     } else return typeError
   }"""), this)
