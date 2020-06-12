@@ -10,6 +10,7 @@ import kr.ac.kaist.ires.util.Useful._
 import kr.ac.kaist.ires.phase._
 import org.scalatest._
 import scala.util.Random.shuffle
+import scala.util.{ Try, Success, Failure }
 
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -87,37 +88,32 @@ class Test262Test extends IRESTest with EvalTest {
     // case VeryLong => (FilterMeta.test262VeryLongconfigSummary, new IREvalConfig(timeout = None))
     case Manual => (FilterMeta.test262ManualconfigSummary, new IREvalConfig(timeout = Some(10)))
   }
-  val initInclude = List("assert.js", "sta.js").foldLeft(Map[String, List[StatementListItem]]()) {
-    case (imm, s) => {
+  val includeNames = (config.nameList.foldLeft(Set("sta.js", "assert.js")) {
+    case (set, filename) => set ++ config(filename).includes
+  }).toList
+
+  val includeMap: Map[String, Try[List[StatementListItem]]] = includeNames.foldLeft(Map[String, Try[List[StatementListItem]]]()) {
+    case (imm, s) => if (imm contains s) imm else {
       val includeName = s"${dir.toString}/harness/$s"
       val jsConfig = iresConfig.copy(fileNames = List(includeName))
-      val stmtList = ModelHelper.flattenStatement(Parse((), jsConfig))
+      val ast = Parse((), jsConfig)
+      val stmtList = Try({
+        ModelHelper.checkSupported(ast)
+        ModelHelper.flattenStatement(ast)
+      })
       imm + (s -> stmtList)
     }
-
-  }
-  val includeMap: Map[String, List[StatementListItem]] = config.nameList.foldLeft(initInclude) {
-    case (im, filename) =>
-      config(filename).includes.foldLeft(im) {
-        case (imm, s) => if (imm contains s) imm else {
-          val includeName = s"${dir.toString}/harness/$s"
-          val jsConfig = iresConfig.copy(fileNames = List(includeName))
-          val ast = Parse((), jsConfig)
-          val stmtList = ModelHelper.flattenStatement(ast)
-          imm + (s -> stmtList)
-        }
-      }
   }
 
   def init: Unit = {
-    val initStList = includeMap("assert.js") ++ includeMap("sta.js")
+    val initStList = includeMap("sta.js").get ++ includeMap("assert.js").get
     for (filename <- shuffle(config.nameList)) {
       val Test262Config(negative, includes, flags) = config(filename)
       val jsName = s"$test262Dir/test/$filename"
       val name = removedExt(jsName).drop(dir.toString.length)
       check("Test262Eval", filename, {
         val includeList = includes.foldLeft(initStList) {
-          case (li, s) => li ++ includeMap(s)
+          case (li, s) => li ++ includeMap(s).get
         }
 
         val jsConfig = iresConfig.copy(fileNames = List(jsName))
