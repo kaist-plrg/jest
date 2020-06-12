@@ -8,6 +8,7 @@ object GLOBALDOTparseInt extends Algorithm {
   val length: Int = 2
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.parseInt" (this, argumentsList, NewTarget) => {
+    ??? "GLOBAL.parseInt"
     app __x0__ = (GetArgument argumentsList 0i)
     let string = __x0__
     app __x1__ = (GetArgument argumentsList 1i)

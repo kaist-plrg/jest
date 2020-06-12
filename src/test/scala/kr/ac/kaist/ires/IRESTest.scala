@@ -47,6 +47,7 @@ abstract class IRESTest extends FunSuite with BeforeAndAfterAll {
           resMap += tag -> (res + (name -> Pass))
         case Failure(e) => (e match {
           case NotSupported(msg) => Some(msg)
+          case Timeout => Some("TIMEOUT")
           case ModelNotYetGenerated => Some("Incomplete Modeling")
           case _ => None
         }) match {

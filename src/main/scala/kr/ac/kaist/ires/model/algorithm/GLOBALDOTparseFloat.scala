@@ -8,6 +8,7 @@ object GLOBALDOTparseFloat extends Algorithm {
   val length: Int = 1
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.parseFloat" (this, argumentsList, NewTarget) => {
+    ??? "GLOBAL.parseFloat"
     app __x0__ = (GetArgument argumentsList 0i)
     let string = __x0__
     app __x1__ = (ToString string)

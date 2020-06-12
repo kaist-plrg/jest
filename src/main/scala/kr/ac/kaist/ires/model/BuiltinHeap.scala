@@ -956,7 +956,6 @@ object BuiltinHeap {
     "Math",
     "Reflect",
     // test262
-    "print",
     "$262"
   )
 }

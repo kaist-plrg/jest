@@ -21,3 +21,7 @@ case class NotYetModeled(msg: String) extends ModelError({
 case class NotSupported(msg: String) extends ModelError({
   s"[NotSupported]: $msg"
 })
+
+case object Timeout extends ModelError({
+  s"[Timeout]"
+})

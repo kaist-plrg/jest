@@ -51,7 +51,13 @@ class Test262Test extends IRESTest with EvalTest {
     jpw.close()
 
     val failed = map.keySet.toList.sorted.filter(k => map(k) == Fail)
-    dumpJson(failed, s"$TEST_DIR/manual.json")
+    dumpJson(failed, s"$TEST_DIR/failed.json")
+
+    val yet = map.flatMap {
+      case (k, Yet(msg)) => Some(k -> msg)
+      case _ => None
+    }
+    dumpJson(yet, s"$TEST_DIR/yet.json")
 
     if (COVERAGE_MODE) Coverage.dumpStat
   }

@@ -7,7 +7,7 @@ import scala.concurrent.ExecutionContext.Implicits.global
 
 import kr.ac.kaist.ires.{ DEBUG_INTERP, IRES, COVERAGE_MODE, Lexical }
 import kr.ac.kaist.ires.coverage.Coverage
-import kr.ac.kaist.ires.error.{ NotSupported, NotYetModeled }
+import kr.ac.kaist.ires.error.{ NotSupported, NotYetModeled, Timeout }
 import kr.ac.kaist.ires.model.{ Parser => ESParser, ESValueParser, ModelHelper }
 
 // IR Interpreter
@@ -34,7 +34,7 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
     instCount = instCount + 1
     if (COVERAGE_MODE) Coverage.add(inst.uid)
     if (instCount % 10000 == 0) timeLimit match {
-      case Some(timeout) => if ((System.currentTimeMillis - startTime) > timeout * 1000) error("timeoutInst")
+      case Some(timeout) => if ((System.currentTimeMillis - startTime) > timeout * 1000) throw Timeout
       case _ => ()
     }
     if (DEBUG_INTERP || isDebug) inst match {
@@ -196,7 +196,7 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
             case ("TemplateMiddle", "TRV") => Str(ESValueParser.parseTRVTemplateMiddle(str))
             case ("TemplateTail", "TRV") => Str(ESValueParser.parseTRVTemplateTail(str))
             case (_, "Contains") => Func("", Nil, None, IReturn(EBool(false)))
-            case _ => throw new Error(s"$kind, $str, $name")
+            case _ => error(s"$kind, $str, $name")
           })
           case (astV: ASTVal, Str(name)) =>
             val ASTVal(ast) = astV
