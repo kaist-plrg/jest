@@ -22,7 +22,16 @@ object GLOBALDOTMapDOTprototypeDOTforEach extends Algorithm {
       return __x4__
     } else {}
     let entries = M["MapData"]
-    !!! "Etc"
+    let idx = 0i
+    let len = entries.length
+    while (< idx len) {
+      let e = entries[idx]
+      if (! (= e.Key CONST_empty)) {
+        app result = (Call callbackfn thisArg (new [e.Value, e.Key, M]))
+        ? result
+      } else {}
+      idx = (+ idx 1i)
+    }
     app __x5__ = (WrapCompletion undefined)
     return __x5__
   }"""), this)

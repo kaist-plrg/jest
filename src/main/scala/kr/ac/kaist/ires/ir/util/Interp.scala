@@ -568,6 +568,7 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
     // string operations
     case (OPlus, Str(l), Str(r)) => Str(l + r)
     case (OSub, Str(l), INum(r)) => Str(l.dropRight(r.toInt))
+    case (OMul, Str(l), INum(r)) => Str(l * r.toInt)
     case (OLt, Str(l), Str(r)) => Bool(l < r)
 
     // long operations

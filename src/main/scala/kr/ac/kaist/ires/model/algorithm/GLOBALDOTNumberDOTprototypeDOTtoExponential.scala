@@ -8,6 +8,8 @@ object GLOBALDOTNumberDOTprototypeDOTtoExponential extends Algorithm {
   val length: Int = 1
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Number.prototype.toExponential" (this, argumentsList, NewTarget) => {
+    ??? "GLOBAL.Number.prototype.toExponential"
+
     app __x0__ = (GetArgument argumentsList 0i)
     let fractionDigits = __x0__
     app __x1__ = (thisNumberValue this)

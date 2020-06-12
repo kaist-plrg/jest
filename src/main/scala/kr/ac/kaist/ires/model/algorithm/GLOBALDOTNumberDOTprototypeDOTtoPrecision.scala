@@ -8,6 +8,8 @@ object GLOBALDOTNumberDOTprototypeDOTtoPrecision extends Algorithm {
   val length: Int = 1
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Number.prototype.toPrecision" (this, argumentsList, NewTarget) => {
+    ??? "GLOBAL.Number.prototype.toPrecision"
+
     app __x0__ = (GetArgument argumentsList 0i)
     let precision = __x0__
     app __x1__ = (thisNumberValue this)
