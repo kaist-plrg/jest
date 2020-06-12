@@ -62,6 +62,11 @@ object ToObject extends Algorithm {
       obj.SymbolData = argument
       obj.SubMap = (new SubMap())
       return obj
+    } else if (= atype "BigInt") {
+      let obj = (new OrdinaryObject("Prototype" -> INTRINSIC_BigInt.SubMap.prototype.Value, "Extensible" -> true))
+      obj.BigIntData = argument
+      obj.SubMap = (new SubMap())
+      return obj
     } else {
       return argument
     }

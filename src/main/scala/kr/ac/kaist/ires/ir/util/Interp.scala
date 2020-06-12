@@ -553,7 +553,7 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
     case (OMul, INum(l), Num(r)) => Num(l * r)
     case (ODiv, INum(l), Num(r)) => Num(l / r)
     case (OMod, INum(l), Num(r)) => Num(modulo(l, r))
-    case (OPow, INum(l), Num(r)) => Num(scala.math.pow(l, r))
+    case (OPow, INum(l), Num(r)) => Num(math.pow(l, r))
     case (OUMod, INum(l), Num(r)) => Num(unsigned_modulo(l, r))
     case (OLt, INum(l), Num(r)) => Bool(l < r)
     case (OPlus, Num(l), INum(r)) => Num(l + r)
@@ -575,6 +575,9 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
     case (OSub, INum(l), INum(r)) => INum(l - r)
     case (OMul, INum(l), INum(r)) => INum(l * r)
     case (ODiv, INum(l), INum(r)) => INum(l / r)
+    case (OPow, INum(l), INum(r)) =>
+      val x = math.pow(l, r)
+      if (x.toLong == x) INum(x.toLong) else Num(x)
     case (OUMod, INum(l), INum(r)) => INum(unsigned_modulo(l, r).toLong)
     case (OMod, INum(l), INum(r)) => INum(modulo(l, r).toLong)
     case (OLt, INum(l), INum(r)) => Bool(l < r)
@@ -621,29 +624,36 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
     case (OLShift, BigINum(l), BigINum(r)) => BigINum(l << r.toInt)
     case (OSRShift, BigINum(l), BigINum(r)) => BigINum(l >> r.toInt)
     case (OSub, BigINum(l), BigINum(r)) => BigINum(l - r)
+    case (OSub, BigINum(l), INum(r)) => BigINum(l - r)
     case (OMul, BigINum(l), BigINum(r)) => BigINum(l * r)
     case (ODiv, BigINum(l), BigINum(r)) => BigINum(l / r)
     case (OMod, BigINum(l), BigINum(r)) => BigINum(modulo(l, r))
     case (OUMod, BigINum(l), BigINum(r)) => BigINum(unsigned_modulo(l, r))
+    case (OUMod, BigINum(l), INum(r)) => BigINum(unsigned_modulo(l, r))
     case (OLt, BigINum(l), BigINum(r)) => Bool(l < r)
     case (OBAnd, BigINum(l), BigINum(r)) => BigINum(l & r)
     case (OBOr, BigINum(l), BigINum(r)) => BigINum(l | r)
     case (OBXOr, BigINum(l), BigINum(r)) => BigINum(l ^ r)
     case (OPow, BigINum(l), BigINum(r)) => BigINum(l.pow(r.toInt))
+    case (OPow, BigINum(l), INum(r)) => BigINum(l.pow(r.toInt))
+    case (OPow, BigINum(l), Num(r)) =>
+      if (r.toInt < 0) Num(math.pow(l.toDouble, r)) else BigINum(l.pow(r.toInt))
 
     case (_, lval, rval) => error(s"wrong type: $lval $bop $rval")
   }
-  private def modulo(l: BigInt, r: BigInt): BigInt = {
-    l % r
-  }
+  private def modulo(l: BigInt, r: BigInt): BigInt = l % r
   private def unsigned_modulo(l: BigInt, r: BigInt): BigInt = {
     val m = l % r
     if (m * r < 0) m + r
     else m
   }
-  private def modulo(l: Double, r: Double): Double = {
-    l % r
+  private def modulo(l: BigInt, r: Long): BigInt = l % r
+  private def unsigned_modulo(l: BigInt, r: Long): BigInt = {
+    val m = l % r
+    if (m * r < 0) m + r
+    else m
   }
+  private def modulo(l: Double, r: Double): Double = l % r
   private def unsigned_modulo(l: Double, r: Double): Double = {
     val m = l % r
     if (m * r < 0.0) m + r
