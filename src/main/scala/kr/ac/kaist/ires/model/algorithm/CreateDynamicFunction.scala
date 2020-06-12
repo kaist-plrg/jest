@@ -8,6 +8,8 @@ object CreateDynamicFunction extends Algorithm {
   val length: Int = 4
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""CreateDynamicFunction" (constructor, newTarget, kind, args) => {
+    ??? "CreateDynamicFunction"
+
     let callerContext = GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 2i)]
     let callerRealm = callerContext["Realm"]
     let calleeRealm = REALM
