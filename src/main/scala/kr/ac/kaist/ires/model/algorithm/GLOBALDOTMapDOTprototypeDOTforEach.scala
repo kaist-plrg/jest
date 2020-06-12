@@ -23,8 +23,7 @@ object GLOBALDOTMapDOTprototypeDOTforEach extends Algorithm {
     } else {}
     let entries = M["MapData"]
     let idx = 0i
-    let len = entries.length
-    while (< idx len) {
+    while (< idx entries.length) {
       let e = entries[idx]
       if (! (= e.Key CONST_empty)) {
         app result = (Call callbackfn thisArg (new [e.Value, e.Key, M]))

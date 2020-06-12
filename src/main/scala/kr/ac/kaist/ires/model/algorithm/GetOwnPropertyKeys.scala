@@ -19,17 +19,9 @@ object GetOwnPropertyKeys extends Algorithm {
     let __x3__ = 0i
     while (< __x3__ __x2__["length"]) {
       let nextKey = __x2__[__x3__]
-      app __x4__ = (Type nextKey)
-      let __x5__ = (= __x4__ Symbol)
-      if __x5__ {
-        let __x6__ = (= type CONST_symbol)
-        if __x6__ {} else {
-          app __x7__ = (Type nextKey)
-          __x6__ = (&& (= __x7__ String) (= type CONST_string))
-        }
-        __x5__ = __x6__
-      } else {}
-      if __x5__ append nextKey -> nameList else {}
+      app T = (Type nextKey)
+      let valid = (|| (&& (= T "Symbol") (= type CONST_symbol)) (&& (= T "String") (= type CONST_string)))
+      if valid append nextKey -> nameList else {}
       __x3__ = (+ __x3__ 1i)
     }
     app __x8__ = (CreateArrayFromList nameList)
