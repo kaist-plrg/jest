@@ -8,6 +8,8 @@ object GLOBALDOTStringDOTfromCodePoint extends Algorithm {
   val length: Int = 1
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.String.fromCodePoint" (this, argumentsList, NewTarget) => {
+    ??? "GLOBAL.String.fromCodePoint"
+
     !!! "Etc"
     let length = codePoints["length"]
     let elements = (new [])

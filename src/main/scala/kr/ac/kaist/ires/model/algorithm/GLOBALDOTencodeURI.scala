@@ -8,6 +8,8 @@ object GLOBALDOTencodeURI extends Algorithm {
   val length: Int = 1
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.encodeURI" (this, argumentsList, NewTarget) => {
+    ??? "GLOBAL.encodeURI"
+
     app __x0__ = (GetArgument argumentsList 0i)
     let uri = __x0__
     app __x1__ = (ToString uri)

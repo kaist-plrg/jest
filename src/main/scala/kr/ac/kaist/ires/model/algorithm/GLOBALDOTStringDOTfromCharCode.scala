@@ -8,6 +8,8 @@ object GLOBALDOTStringDOTfromCharCode extends Algorithm {
   val length: Int = 1
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.String.fromCharCode" (this, argumentsList, NewTarget) => {
+    ??? "GLOBAL.String.fromCharCode"
+
     !!! "Etc"
     let length = codeUnits["length"]
     let elements = (new [])

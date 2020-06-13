@@ -8,6 +8,8 @@ object GLOBALDOTStringDOTprototypeDOTpadEnd extends Algorithm {
   val length: Int = 1
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.String.prototype.padEnd" (this, argumentsList, NewTarget) => {
+    ??? "GLOBAL.String.prototype.padEnd"
+
     app __x0__ = (GetArgument argumentsList 0i)
     let maxLength = __x0__
     app __x1__ = (GetArgument argumentsList 1i)

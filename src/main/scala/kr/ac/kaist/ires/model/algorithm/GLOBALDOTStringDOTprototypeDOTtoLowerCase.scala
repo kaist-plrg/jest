@@ -8,6 +8,8 @@ object GLOBALDOTStringDOTprototypeDOTtoLowerCase extends Algorithm {
   val length: Int = 0
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.String.prototype.toLowerCase" (this, argumentsList, NewTarget) => {
+    ??? "GLOBAL.String.prototype.toLowerCase"
+
     app __x0__ = (RequireObjectCoercible this)
     if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
     let O = __x0__

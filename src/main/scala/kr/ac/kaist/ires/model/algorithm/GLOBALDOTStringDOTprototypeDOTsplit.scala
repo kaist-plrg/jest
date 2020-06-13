@@ -8,6 +8,8 @@ object GLOBALDOTStringDOTprototypeDOTsplit extends Algorithm {
   val length: Int = 2
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.String.prototype.split" (this, argumentsList, NewTarget) => {
+    ??? "GLOBAL.String.prototype.split"
+
     app __x0__ = (GetArgument argumentsList 0i)
     let separator = __x0__
     app __x1__ = (GetArgument argumentsList 1i)

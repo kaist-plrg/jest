@@ -8,6 +8,8 @@ object GLOBALDOTStringDOTprototypeDOTlastIndexOf extends Algorithm {
   val length: Int = 1
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.String.prototype.lastIndexOf" (this, argumentsList, NewTarget) => {
+    ??? "GLOBAL.String.prototype.lastIndexOf"
+
     app __x0__ = (GetArgument argumentsList 0i)
     let searchString = __x0__
     app __x1__ = (GetArgument argumentsList 1i)

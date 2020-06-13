@@ -8,6 +8,8 @@ object GLOBALDOTdecodeURIComponent extends Algorithm {
   val length: Int = 1
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.decodeURIComponent" (this, argumentsList, NewTarget) => {
+    ??? "GLOBAL.decodeURIComponent"
+
     app __x0__ = (GetArgument argumentsList 0i)
     let encodedURIComponent = __x0__
     app __x1__ = (ToString encodedURIComponent)
