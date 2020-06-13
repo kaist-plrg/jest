@@ -10,12 +10,9 @@ object EnumerateObjectPropertiesHelper extends Algorithm {
   val func: Func = FixUIdWalker(parseFunc(""""EnumerateObjectPropertiesHelper" ( O , listAll, listEnum ) => {
     app a = (O.OwnPropertyKeys O)
     ? a
-    print a
     let __x0__ = 0i
     while (< __x0__ a.length) {
       let P = a[__x0__]
-      print O.SubMap
-      print P
       if (&& (= (typeof P) "String") (! (contains listAll P))) {
         append P -> listAll
         app desc = (O.GetOwnProperty O P)
