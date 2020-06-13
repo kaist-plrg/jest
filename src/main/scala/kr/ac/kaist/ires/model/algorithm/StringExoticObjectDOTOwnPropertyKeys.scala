@@ -43,22 +43,18 @@ object StringExoticObjectDOTOwnPropertyKeys extends Algorithm {
       i = (+ i 1i)
     }
 
-    i = 0i
     len = arrayIndexKeys.length
-    while (< i len) {
-      let j = (+ i 1i)
+    while (< 0i len) {
+      let min = 0i
+      let j = 1i
       while (< j len) {
-        if (< arrayIndexKeys[j] arrayIndexKeys[i]) {
-          let tmp = arrayIndexKeys[i]
-          arrayIndexKeys[i] = arrayIndexKeys[j]
-          arrayIndexKeys[j] = tmp
-        } else {}
+        if (< arrayIndexKeys[j] arrayIndexKeys[min]) min = j else {}
         j = (+ j 1i)
       }
-      app P = (ToString arrayIndexKeys[i])
+      app P = (ToString (pop arrayIndexKeys min))
       ! P
       append P -> keys
-      i = (+ i 1i)
+      len = (- len 1i)
     }
 
     i = 0i

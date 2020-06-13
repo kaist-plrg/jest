@@ -16,7 +16,8 @@ object GLOBALDOTObjectDOTgetOwnPropertyDescriptors extends Algorithm {
     app __x2__ = (obj["OwnPropertyKeys"] obj)
     if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     let ownKeys = __x2__
-    !!! "Let id:{descriptors} be ! OrdinaryObjectCreate ( % Object . prototype % ) ."
+    app descriptors = (OrdinaryObjectCreate INTRINSIC_ObjectPrototype)
+    ! descriptors
     let __x3__ = ownKeys
     let __x4__ = 0i
     while (< __x4__ __x3__["length"]) {
