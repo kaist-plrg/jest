@@ -8,7 +8,7 @@ object MakeArgSetter extends Algorithm {
   val length: Int = 2
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""MakeArgSetter" (name, env) => {
-    let steps = ArgSetter
+    let steps = (new algorithm ("step" -> ArgSetter))
     app __x0__ = (CreateBuiltinFunction steps (new ["Name", "Env"]))
     if (is-completion __x0__) if (= __x0__["Type"] CONST_normal) __x0__ = __x0__["Value"] else return __x0__ else {}
     let setter = __x0__

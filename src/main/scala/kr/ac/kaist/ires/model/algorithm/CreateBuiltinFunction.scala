@@ -15,8 +15,8 @@ object CreateBuiltinFunction extends Algorithm {
     let func = (new BuiltinFunctionObject("SubMap" -> (new SubMap())))
     delete func["Construct"]
     func["Code"] = steps["step"]
-    if (= steps["name"] "") {} else func["SubMap"]["name"] = (new DataProperty("Value" -> steps["name"], "Writable" -> false, "Enumerable" -> false, "Configurable" -> true))
-    func["SubMap"]["length"] = (new DataProperty("Value" -> steps["length"], "Writable" -> false, "Enumerable" -> false, "Configurable" -> true))
+    if (|| (= steps.name absent) (= steps.name "")) {} else func["SubMap"]["name"] = (new DataProperty("Value" -> steps["name"], "Writable" -> false, "Enumerable" -> false, "Configurable" -> true))
+    if (= steps.length absent) {} else func["SubMap"]["length"] = (new DataProperty("Value" -> steps["length"], "Writable" -> false, "Enumerable" -> false, "Configurable" -> true))
     func["Realm"] = realm
     func["Prototype"] = prototype
     func["Extensible"] = true

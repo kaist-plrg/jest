@@ -26,13 +26,13 @@ object GLOBALDOTPromiseDOTprototypeDOTfinally extends Algorithm {
       let thenFinally = onFinally
       let catchFinally = onFinally
     } else {
-      let stepsThenFinally = !!! "Algorithms"
+      let stepsThenFinally = (new algorithm ("length" -> 1i, "step" -> GLOBALDOTThenFinallyFunctions))
       app __x6__ = (CreateBuiltinFunction stepsThenFinally (new ["Constructor", "OnFinally"]))
       if (is-completion __x6__) if (= __x6__["Type"] CONST_normal) __x6__ = __x6__["Value"] else return __x6__ else {}
       let thenFinally = __x6__
       thenFinally["Constructor"] = C
       thenFinally["OnFinally"] = onFinally
-      let stepsCatchFinally = !!! "Algorithms"
+      let stepsCatchFinally = (new algorithm ("length" -> 1i, "step" -> GLOBALDOTCatchFinallyFunctions))
       app __x7__ = (CreateBuiltinFunction stepsCatchFinally (new ["Constructor", "OnFinally"]))
       if (is-completion __x7__) if (= __x7__["Type"] CONST_normal) __x7__ = __x7__["Value"] else return __x7__ else {}
       let catchFinally = __x7__

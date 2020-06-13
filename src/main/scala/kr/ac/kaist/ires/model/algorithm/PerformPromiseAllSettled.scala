@@ -53,7 +53,7 @@ object PerformPromiseAllSettled extends Algorithm {
       app __x11__ = (Call promiseResolve constructor (new [nextValue]))
       if (is-completion __x11__) if (= __x11__["Type"] CONST_normal) __x11__ = __x11__["Value"] else return __x11__ else {}
       let nextPromise = __x11__
-      let steps = !!! "Algorithms"
+      let steps = (new algorithm ("length" -> 1i, "step" -> GLOBALDOTPromiseDOTallSettledResolveElementFunctions))
       app __x12__ = (CreateBuiltinFunction steps (new ["AlreadyCalled", "Index", "Values", "Capability", "RemainingElements"]))
       if (is-completion __x12__) if (= __x12__["Type"] CONST_normal) __x12__ = __x12__["Value"] else return __x12__ else {}
       let resolveElement = __x12__
@@ -63,7 +63,7 @@ object PerformPromiseAllSettled extends Algorithm {
       resolveElement["Values"] = values
       resolveElement["Capability"] = resultCapability
       resolveElement["RemainingElements"] = remainingElementsCount
-      let rejectSteps = !!! "Algorithms"
+      let rejectSteps = (new algorithm ("length" -> 1i, "step" -> GLOBALDOTPromiseDOTallSettledRejectElementFunctions))
       app __x13__ = (CreateBuiltinFunction rejectSteps (new ["AlreadyCalled", "Index", "Values", "Capability", "RemainingElements"]))
       if (is-completion __x13__) if (= __x13__["Type"] CONST_normal) __x13__ = __x13__["Value"] else return __x13__ else {}
       let rejectElement = __x13__

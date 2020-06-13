@@ -13,8 +13,8 @@ object GLOBALDOTObjectDOTfromEntries extends Algorithm {
     app __x1__ = (RequireObjectCoercible iterable)
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
     __x1__
-    !!! "Let id:{obj} be OrdinaryObjectCreate ( % Object . prototype % ) ."
-    let stepsDefine = !!! "Algorithms"
+    app obj = (OrdinaryObjectCreate INTRINSIC_ObjectPrototype)
+    let stepsDefine = (new algorithm ("name" -> "", "length" -> 1i, "step" -> GLOBALDOTCreateDataPropertyOnObjectFunctions))
     app __x2__ = (CreateBuiltinFunction stepsDefine (new []))
     if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     let adder = __x2__
