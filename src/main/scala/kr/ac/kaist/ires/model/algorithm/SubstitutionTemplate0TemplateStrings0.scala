@@ -18,6 +18,7 @@ object SubstitutionTemplate0TemplateStrings0 extends Algorithm {
     access __x2__ = (TemplateSpans "TemplateStrings")
     app __x3__ = (__x2__ raw)
     let tail = __x3__
-    return (new [head, tail])
+    prepend head -> tail
+    return tail
   }"""), this)
 }

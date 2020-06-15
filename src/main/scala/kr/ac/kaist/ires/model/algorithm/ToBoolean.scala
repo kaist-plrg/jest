@@ -23,6 +23,8 @@ object ToBoolean extends Algorithm {
       else return true
     } else if (= atype "Symbol") {
       return true
+    } else if (= atype "BigInt") {
+      return (! (= argument 0n))
     } else {
       return true
     }

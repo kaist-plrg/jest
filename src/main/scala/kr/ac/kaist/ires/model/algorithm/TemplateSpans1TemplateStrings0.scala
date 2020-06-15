@@ -18,6 +18,12 @@ object TemplateSpans1TemplateStrings0 extends Algorithm {
       access __x3__ = (TemplateTail "TRV")
       let tail = __x3__
     }
-    return (new [middle, tail])
+    let idx = 0i
+    let len = tail.length
+    while (< idx len) {
+      append tail[idx] -> middle
+      idx = (+ idx 1i)
+    }
+    return middle
   }"""), this)
 }

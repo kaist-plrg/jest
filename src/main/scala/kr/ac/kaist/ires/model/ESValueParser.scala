@@ -81,6 +81,10 @@ object ESValueParser extends RegexParsers with UnicodeRegex {
     lazy val DoubleStringCharacter: S = (
       // The SV of DoubleStringCharacter::SourceCharacterbut not one of " or \ or LineTerminator is the UTF16Encoding of the code point value of SourceCharacter.
       notChars("\"" | "\\" | Predef.LineTerminator) |||
+      // The SV of DoubleStringCharacter::<LS> is the code unit 0x2028 (LINE SEPARATOR).
+      Predef.LS |||
+      // The SV of DoubleStringCharacter::<PS> is the code unit 0x2029 (PARAGRAPH SEPARATOR)
+      Predef.PS |||
       // The SV of DoubleStringCharacter::\EscapeSequence is the SV of the EscapeSequence.
       "\\" ~> SV.EscapeSequence |||
       // The SV of DoubleStringCharacter::LineContinuation is the empty code unit sequence.
@@ -89,6 +93,10 @@ object ESValueParser extends RegexParsers with UnicodeRegex {
     lazy val SingleStringCharacter: S = (
       // The SV of SingleStringCharacter::SourceCharacterbut not one of ' or \ or LineTerminator is the UTF16Encoding of the code point value of SourceCharacter.
       notChars("'" | "\\" | Predef.LineTerminator) |||
+      // The SV of SingleStringCharacter::<LS> is the code unit 0x2028 (LINE SEPARATOR).
+      Predef.LS |||
+      // The SV of SingleStringCharacter::<PS> is the code unit 0x2029 (PARAGRAPH SEPARATOR).
+      Predef.PS |||
       // The SV of SingleStringCharacter::\EscapeSequence is the SV of the EscapeSequence.
       "\\" ~> SV.EscapeSequence |||
       // The SV of SingleStringCharacter::LineContinuation is the empty code unit sequence.
@@ -253,22 +261,22 @@ object ESValueParser extends RegexParsers with UnicodeRegex {
       "}`" ^^^ ""
     )
     lazy val TemplateCharacter: S = (
+      // The TV of TemplateCharacter::SourceCharacterbut not one of ` or \ or $ or LineTerminator is the UTF16Encoding of the code point value of SourceCharacter.
+      notChars("`" | "\\" | "$" | Predef.LineTerminator) |||
       // The TV of TemplateCharacter::$ is the code unit 0x0024 (DOLLAR SIGN).
       "$" <~ not("{") |||
+      // The TV of TemplateCharacter::\EscapeSequence is the SV of EscapeSequence.
+      "\\" ~> SV.EscapeSequence |||
+      // The TV of TemplateCharacter::\NotEscapeSequence is undefined.
+      "\\" ~> Predef.NotEscapeSequence ^^^ { throw ParseFailed("") } |||
       // The TV of TemplateCharacter::LineContinuation is the TV of LineContinuation.
       TV.LineContinuation |||
       // The TV of TemplateCharacter::LineTerminatorSequence is the TRV of LineTerminatorSequence.
-      TRV.LineTerminatorSequence |||
-      // The TV of TemplateCharacter::SourceCharacterbut not one of ` or \ or $ or LineTerminator is the UTF16Encoding of the code point value of SourceCharacter.
-      notChars("`" | "\\" | "$" | Predef.LineTerminator) |||
-      // The TV of TemplateCharacter::\EscapeSequence is the SV of EscapeSequence.
-      "\\" ~> SV.EscapeSequence
+      TRV.LineTerminatorSequence
     )
     lazy val TemplateCharacters: S = (
       // The TV of TemplateCharacters::TemplateCharacter is the TV of TemplateCharacter.
       TV.TemplateCharacter |||
-      // XXX The TV of TemplateCharacter::\NotEscapeSequence is undefined.
-      // XXX The TV of TemplateCharacters::TemplateCharacterTemplateCharacters is undefined if either the TV of TemplateCharacter is undefined or the TV of TemplateCharacters is undefined.
       // Otherwise, it is a sequence consisting of the code units of the TV of TemplateCharacter followed by the code units of the TV of TemplateCharacters.
       seq(TemplateCharacter, TemplateCharacters)
     )
@@ -291,10 +299,10 @@ object ESValueParser extends RegexParsers with UnicodeRegex {
       "[0-9]".r
     )
     lazy val EscapeSequence: S = (
-      // The TRV of EscapeSequence::0 is the code unit 0x0030 (DIGIT ZERO).
-      "0" |||
       // The TRV of EscapeSequence::CharacterEscapeSequence is the TRV of the CharacterEscapeSequence.
       TRV.CharacterEscapeSequence |||
+      // The TRV of EscapeSequence::0 is the code unit 0x0030 (DIGIT ZERO).
+      "0" <~ not(Predef.DecimalDigit) |||
       // The TRV of EscapeSequence::HexEscapeSequence is the TRV of the HexEscapeSequence.
       TRV.HexEscapeSequence |||
       // The TRV of EscapeSequence::UnicodeEscapeSequence is the TRV of the UnicodeEscapeSequence.
@@ -314,7 +322,7 @@ object ESValueParser extends RegexParsers with UnicodeRegex {
     )
     lazy val HexEscapeSequence: S = (
       // The TRV of HexEscapeSequence::xHexDigitHexDigit is the sequence consisting of the code unit 0x0078 (LATIN SMALL LETTER X) followed by TRV of the first HexDigit followed by the TRV of the second HexDigit.
-      "x" ~> seq(TRV.HexDigit, TRV.HexDigit)
+      seq("x", TRV.HexDigit, TRV.HexDigit)
     )
     lazy val LineContinuation: S = (
       // The TRV of LineContinuation::\LineTerminatorSequence is the sequence consisting of the code unit 0x005C (REVERSE SOLIDUS) followed by the code units of TRV of LineTerminatorSequence.
@@ -341,6 +349,8 @@ object ESValueParser extends RegexParsers with UnicodeRegex {
     lazy val NotEscapeSequence: S = (
       // The TRV of NotEscapeSequence::0DecimalDigit is the sequence consisting of the code unit 0x0030 (DIGIT ZERO) followed by the code units of the TRV of DecimalDigit.
       seq("0", TRV.DecimalDigit) |||
+      // The TRV of NotEscapeSequence::DecimalDigit not 0 is the code units of the TRV of DecimalDigit.
+      TRV.DecimalDigit.filter(_ != "0") |||
       // The TRV of NotEscapeSequence::uHexDigitHexDigitHexDigit[lookahead ∉ HexDigit] is the sequence consisting of the code unit 0x0075 (LATIN SMALL LETTER U) followed by the code units of the TRV of the first HexDigit followed by the code units of the TRV of the second HexDigit followed by the code units of the TRV of the third HexDigit.
       seq("u", TRV.HexDigit, TRV.HexDigit, TRV.HexDigit) <~ not(Predef.HexDigit) |||
       // The TRV of NotEscapeSequence::uHexDigitHexDigit[lookahead ∉ HexDigit] is the sequence consisting of the code unit 0x0075 (LATIN SMALL LETTER U) followed by the code units of the TRV of the first HexDigit followed by the code units of the TRV of the second HexDigit.
@@ -358,7 +368,7 @@ object ESValueParser extends RegexParsers with UnicodeRegex {
       // The TRV of NotEscapeSequence::xHexDigit[lookahead ∉ HexDigit] is the sequence consisting of the code unit 0x0078 (LATIN SMALL LETTER X) followed by the code units of the TRV of HexDigit.
       seq("x", TRV.HexDigit) <~ not(HexDigit) |||
       // The TRV of NotEscapeSequence::x[lookahead ∉ HexDigit] is the code unit 0x0078 (LATIN SMALL LETTER X).
-      "x[" <~ not(HexDigit)
+      "x" <~ not(HexDigit)
     )
     lazy val SingleEscapeCharacter: S = (
       // The TRV of SingleEscapeCharacter::one of'"\bfnrtv is the SV of the SourceCharacter that is that single code point.
@@ -445,6 +455,19 @@ object ESValueParser extends RegexParsers with UnicodeRegex {
       DecimalDigit |||
       "x" |||
       "u"
+    )
+    lazy val NotEscapeSequence: S = (
+      seq("0", DecimalDigit) |||
+      DecimalDigit.filter(_ != "0") |||
+      "x" <~ not(HexDigit) |||
+      seq("x", HexDigit <~ not(HexDigit)) |||
+      "u" <~ not(HexDigit | "{") |||
+      seq("u", HexDigit <~ not(HexDigit)) |||
+      seq("u", HexDigit, HexDigit <~ not(HexDigit)) |||
+      seq("u", HexDigit, HexDigit, HexDigit <~ not(HexDigit)) |||
+      "u{" <~ not(HexDigit) |||
+      seq("u{", NotCodePoint <~ not(HexDigit)) |||
+      seq("u{", CodePoint <~ not(HexDigit | "}"))
     )
     lazy val DecimalLiteral: S = (
       seq(DecimalIntegerLiteral, ".", sOpt(DecimalDigits), sOpt(ExponentPart)) |||

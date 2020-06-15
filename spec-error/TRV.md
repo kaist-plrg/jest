@@ -1,0 +1,2 @@
+- TRV of NotEscapeSequence에서 `DecimalDigitbut not 0`에 대해서 cover하고 있지 않음
+- language/expressions/tagged-template/invalid-escape-sequences.js

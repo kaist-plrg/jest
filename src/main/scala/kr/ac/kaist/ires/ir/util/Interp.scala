@@ -187,10 +187,10 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
             case ("(IdentifierName \\ (ReservedWord))" | "IdentifierName", "StringValue") => Str(ESValueParser.parseIdentifier(str))
             case ("NumericLiteral", "MV" | "NumericValue") => ESValueParser.parseNumber(str)
             case ("StringLiteral", "SV" | "StringValue") => Str(ESValueParser.parseString(str))
-            case ("NoSubstitutionTemplate", "TV") => Str(ESValueParser.parseTVNoSubstitutionTemplate(str))
-            case ("TemplateHead", "TV") => Str(ESValueParser.parseTVTemplateHead(str))
-            case ("TemplateMiddle", "TV") => Str(ESValueParser.parseTVTemplateMiddle(str))
-            case ("TemplateTail", "TV") => Str(ESValueParser.parseTVTemplateTail(str))
+            case ("NoSubstitutionTemplate", "TV") => catchUndef(Str(ESValueParser.parseTVNoSubstitutionTemplate(str)))
+            case ("TemplateHead", "TV") => catchUndef(Str(ESValueParser.parseTVTemplateHead(str)))
+            case ("TemplateMiddle", "TV") => catchUndef(Str(ESValueParser.parseTVTemplateMiddle(str)))
+            case ("TemplateTail", "TV") => catchUndef(Str(ESValueParser.parseTVTemplateTail(str)))
             case ("NoSubstitutionTemplate", "TRV") => Str(ESValueParser.parseTRVNoSubstitutionTemplate(str))
             case ("TemplateHead", "TRV") => Str(ESValueParser.parseTRVTemplateHead(str))
             case ("TemplateMiddle", "TRV") => Str(ESValueParser.parseTRVTemplateMiddle(str))
@@ -688,4 +688,7 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
     }
     case _ => pair
   }
+
+  // catch and set undefined
+  def catchUndef(v: => Value): Value = try v catch { case _: Throwable => Undef }
 }

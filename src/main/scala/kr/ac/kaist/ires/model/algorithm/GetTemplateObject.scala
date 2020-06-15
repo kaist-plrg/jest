@@ -8,7 +8,6 @@ object GetTemplateObject extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""GetTemplateObject" (templateLiteral) => {
-    !!! "GetTemplateObject"
     access __x0__ = (templateLiteral "TemplateStrings")
     app __x1__ = (__x0__ true)
     let rawStrings = __x1__
@@ -18,13 +17,13 @@ object GetTemplateObject extends Algorithm {
     let __x3__ = 0i
     while (< __x3__ __x2__["length"]) {
       let e = __x2__[__x3__]
-      !!! "Etc"
+      if (= e.Site templateLiteral) return e.Array else {}
       __x3__ = (+ __x3__ 1i)
     }
     access __x4__ = (templateLiteral "TemplateStrings")
     app __x5__ = (__x4__ false)
     let cookedStrings = __x5__
-    !!! "Etc"
+    let count = cookedStrings.length
     assert (! (< (- 4294967296i 1i) count))
     app __x6__ = (ArrayCreate count)
     if (is-completion __x6__) if (= __x6__["Type"] CONST_normal) __x6__ = __x6__["Value"] else return __x6__ else {}
@@ -37,10 +36,10 @@ object GetTemplateObject extends Algorithm {
       app __x8__ = (ToString index)
       if (is-completion __x8__) if (= __x8__["Type"] CONST_normal) __x8__ = __x8__["Value"] else return __x8__ else {}
       let prop = __x8__
-      !!! "Etc"
+      let cookedValue = cookedStrings[index]
       app __x9__ = (template["DefineOwnProperty"] template prop (new PropertyDescriptor("Value" -> cookedValue, "Writable" -> false, "Enumerable" -> true, "Configurable" -> false)))
       __x9__
-      !!! "Etc"
+      let rawValue = rawStrings[index]
       app __x10__ = (rawObj["DefineOwnProperty"] rawObj prop (new PropertyDescriptor("Value" -> rawValue, "Writable" -> false, "Enumerable" -> true, "Configurable" -> false)))
       __x10__
       index = (+ index 1i)

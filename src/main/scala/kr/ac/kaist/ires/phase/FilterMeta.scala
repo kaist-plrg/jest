@@ -114,6 +114,14 @@ case object FilterMeta extends PhaseObj[Unit, FilterMetaConfig, Unit] {
       "for-in-order"
     )
 
+  lazy val manualDebatable = Set(
+    // IteratorClose
+    "language/statements/for-of/iterator-close-throw-get-method-abrupt.js",
+    "language/statements/for-of/iterator-close-throw-get-method-non-callable.js",
+    // Test262
+    "language/global-code/decl-lex-configurable-global.js"
+  )
+
   lazy val manualNonstrict = Set(
     "language/eval-code/indirect/always-non-strict",
     "language/eval-code/indirect/non-definable-global-function",
@@ -181,6 +189,7 @@ case object FilterMeta extends PhaseObj[Unit, FilterMetaConfig, Unit] {
       (m.name startsWith "language/expressions/import.meta/")
     ))
     .remove("manual", m => (
+      (manualDebatable contains m.name) ||
       (manualEarlyError contains m.name) ||
       (manualNonstrict contains m.name)
     ))
