@@ -15,7 +15,14 @@ object GLOBALDOTSymbolDOTkeyFor extends Algorithm {
       app __x2__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
       return __x2__
     } else {}
-    !!! "Etc"
+    let idx = 0i
+    let len = GLOBAL_GlobalSymbolRegistry.length
+    while (< idx len) {
+      let e = GLOBAL_GlobalSymbolRegistry[idx]
+      app cond = (SameValue e.Symbol sym)
+      if (= cond true) return e.Key
+      else idx = (+ idx 1i)
+    }
     app __x3__ = (WrapCompletion undefined)
     return __x3__
   }"""), this)

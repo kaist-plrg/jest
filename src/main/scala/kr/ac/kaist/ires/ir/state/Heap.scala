@@ -21,7 +21,8 @@ case class Heap(
   // setters
   def updated(addr: Addr, prop: Value, value: Value): Heap = this(addr) match {
     case (m: IRMap) => copy(map = map + (addr -> m.updated(prop, value)))
-    case v => error(s"not a map: $v")
+    case (l: IRList) => copy(map = map + (addr -> l.updated(prop, value)))
+    case v => error(s"not a map or list: $v")
   }
 
   // deletes

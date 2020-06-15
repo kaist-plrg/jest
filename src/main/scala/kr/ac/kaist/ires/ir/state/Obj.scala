@@ -60,6 +60,15 @@ case class IRList(values: Vector[Value]) extends Obj {
     case v => error(s"not an integer key: $v")
   }
 
+  // setters
+  def updated(key: Value, value: Value): IRList = key match {
+    case INum(long) =>
+      val idx = long.toInt
+      if (idx < 0 || idx >= values.length) error(s"Out of range: $idx of $this")
+      copy(values = values.updated(idx, value))
+    case v => error(s"not an integer key: $v")
+  }
+
   // appends
   def append(value: Value): IRList = IRList(values :+ value)
 

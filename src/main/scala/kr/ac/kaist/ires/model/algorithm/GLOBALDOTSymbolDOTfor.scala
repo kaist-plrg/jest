@@ -13,9 +13,16 @@ object GLOBALDOTSymbolDOTfor extends Algorithm {
     app __x1__ = (ToString key)
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
     let stringKey = __x1__
-    !!! "Etc"
+    let idx = 0i
+    let len = GLOBAL_GlobalSymbolRegistry.length
+    while (< idx len) {
+      let e = GLOBAL_GlobalSymbolRegistry[idx]
+      app cond = (SameValue e.Key stringKey)
+      if (= cond true) return e.Symbol
+      else idx = (+ idx 1i)
+    }
     let newSymbol = (new 'stringKey)
-    !!! "Etc"
+    append (new GlobalSymbolRegistryRecord ("Key" -> stringKey, "Symbol" -> newSymbol)) -> GLOBAL_GlobalSymbolRegistry
     app __x2__ = (WrapCompletion newSymbol)
     return __x2__
   }"""), this)

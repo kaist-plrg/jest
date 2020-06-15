@@ -25,7 +25,7 @@ object GLOBALDOTSetDOTprototypeDOTdelete extends Algorithm {
         __x4__ = (= __x5__ true)
       } else {}
       if __x4__ {
-        !!! "Etc"
+        __x2__[__x3__] = CONST_empty
         app __x6__ = (WrapCompletion true)
         return __x6__
       } else {}

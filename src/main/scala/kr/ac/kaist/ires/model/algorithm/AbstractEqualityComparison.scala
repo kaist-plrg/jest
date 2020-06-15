@@ -100,6 +100,7 @@ object AbstractEqualityComparison extends Algorithm {
     } else {}
     if __x43__ {
       app __x45__ = (ToPrimitive y)
+      ? __x45__
       app __x46__ = (AbstractEqualityComparison x __x45__)
       app __x47__ = (WrapCompletion __x46__)
       return __x47__
@@ -112,27 +113,12 @@ object AbstractEqualityComparison extends Algorithm {
     } else {}
     if __x49__ {
       app __x51__ = (ToPrimitive x)
+      ? __x51__
       app __x52__ = (AbstractEqualityComparison __x51__ y)
       app __x53__ = (WrapCompletion __x52__)
       return __x53__
     } else {}
-    app __x54__ = (Type x)
-    let __x55__ = (= __x54__ BigInt)
-    if __x55__ {
-      app __x56__ = (Type y)
-      let __x57__ = (= __x56__ Number)
-      if __x57__ {} else {
-        app __x58__ = (Type x)
-        let __x59__ = (= __x58__ Number)
-        if __x59__ {
-          app __x60__ = (Type y)
-          __x59__ = (= __x60__ BigInt)
-        } else {}
-        __x57__ = __x59__
-      }
-      __x55__ = __x57__
-    } else {}
-    if __x55__ {
+    if (|| (&& (= __x0__ BigInt) (= __x1__ Number)) (&& (= __x0__ Number) (= __x1__ BigInt))) {
       if (= x NaN) return false
       else if (= x +Infinity) return false
       else if (= x -Infinity) return false

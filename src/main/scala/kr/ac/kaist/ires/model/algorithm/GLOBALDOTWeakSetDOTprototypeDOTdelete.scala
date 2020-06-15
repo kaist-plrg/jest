@@ -30,7 +30,7 @@ object GLOBALDOTWeakSetDOTprototypeDOTdelete extends Algorithm {
         __x6__ = (= __x7__ true)
       } else {}
       if __x6__ {
-        !!! "Etc"
+        __x4__[__x5__] = CONST_empty
         app __x8__ = (WrapCompletion true)
         return __x8__
       } else {}

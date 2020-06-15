@@ -8,6 +8,7 @@ import kr.ac.kaist.ires.parser.UnicodeRegex
 
 object BaseHeap {
   private val map: Map[String, Obj] = Map(
+    "GlobalSymbolRegistry" -> IRList(Vector()),
     "executionStack" -> IRList(Vector()),
     "jobQueue" -> IRList(Vector())
   )

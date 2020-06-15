@@ -16,8 +16,7 @@ object GLOBALDOTSetDOTprototypeDOTclear extends Algorithm {
     let __x1__ = entries
     let __x2__ = 0i
     while (< __x2__ __x1__["length"]) {
-      let e = __x1__[__x2__]
-      !!! "Etc"
+      __x1__[__x2__] = CONST_empty
       __x2__ = (+ __x2__ 1i)
     }
     app __x3__ = (WrapCompletion undefined)

@@ -602,6 +602,8 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
     case (OEq, Num(l), Num(r)) => Bool(l equals r)
     case (OEq, Num(l), BigINum(r)) => Bool(l == r)
     case (OEq, BigINum(l), Num(r)) => Bool(l == r)
+    case (OEq, INum(l), BigINum(r)) => Bool(l == r)
+    case (OEq, BigINum(l), INum(r)) => Bool(l == r)
     case (OEq, l, r) => Bool(l == r)
 
     // double equality operations

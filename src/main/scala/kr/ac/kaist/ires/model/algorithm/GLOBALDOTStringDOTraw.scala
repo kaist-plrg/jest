@@ -8,6 +8,8 @@ object GLOBALDOTStringDOTraw extends Algorithm {
   val length: Int = 1
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.String.raw" (this, argumentsList, NewTarget) => {
+    ??? "GLOBAL.String.raw"
+
     app __x0__ = (GetArgument argumentsList 0i)
     let template = __x0__
     !!! "Etc"
