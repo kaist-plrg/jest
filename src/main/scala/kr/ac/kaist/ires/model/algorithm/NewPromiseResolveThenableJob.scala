@@ -8,7 +8,7 @@ object NewPromiseResolveThenableJob extends Algorithm {
   val length: Int = 3
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""NewPromiseResolveThenableJob" (promiseToResolve, thenable, then) => {
-    !!! "Let id:{job} be a new Job abstract closure with no parameters that captures id:{promiseToResolve} , id:{thenable} , and id:{then} and performs the following steps when called : step-list:{...}"
+    let job = (new Job ("Closure" -> PromiseResolveThenableJob, "Captured" -> (new [promiseToResolve, thenable, then])))
     app __x0__ = (GetFunctionRealm then)
     let getThenRealmResult = __x0__
     if (&& (is-completion getThenRealmResult) (= getThenRealmResult["Type"] CONST_normal)) let thenRealm = getThenRealmResult["Value"] else let thenRealm = null

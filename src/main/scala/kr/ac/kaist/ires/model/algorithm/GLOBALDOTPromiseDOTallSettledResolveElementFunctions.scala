@@ -8,6 +8,7 @@ object GLOBALDOTPromiseDOTallSettledResolveElementFunctions extends Algorithm {
   val length: Int = 0
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Promise.allSettledResolveElementFunctions" (this, argumentsList, NewTarget) => {
+    let x = argumentsList[0i]
     let F = GLOBAL_context["Function"]
     let alreadyCalled = F["AlreadyCalled"]
     if (= alreadyCalled["Value"] true) {
@@ -19,7 +20,8 @@ object GLOBALDOTPromiseDOTallSettledResolveElementFunctions extends Algorithm {
     let values = F["Values"]
     let promiseCapability = F["Capability"]
     let remainingElementsCount = F["RemainingElements"]
-    !!! "Let id:{obj} be ! OrdinaryObjectCreate ( % Object . prototype % ) ."
+    app obj = (OrdinaryObjectCreate INTRINSIC_ObjectPrototype)
+    ! obj
     app __x1__ = (CreateDataPropertyOrThrow obj "status" "fulfilled")
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
     __x1__

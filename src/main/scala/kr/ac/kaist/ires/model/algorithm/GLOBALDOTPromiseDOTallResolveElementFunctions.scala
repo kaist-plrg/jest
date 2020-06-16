@@ -8,6 +8,7 @@ object GLOBALDOTPromiseDOTallResolveElementFunctions extends Algorithm {
   val length: Int = 0
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Promise.allResolveElementFunctions" (this, argumentsList, NewTarget) => {
+    let x = argumentsList[0i]
     let F = GLOBAL_context["Function"]
     let alreadyCalled = F["AlreadyCalled"]
     if (= alreadyCalled["Value"] true) {

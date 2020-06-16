@@ -118,24 +118,45 @@ case object FilterMeta extends PhaseObj[Unit, FilterMetaConfig, Unit] {
     // IteratorClose
     "language/statements/for-of/iterator-close-throw-get-method-abrupt.js",
     "language/statements/for-of/iterator-close-throw-get-method-non-callable.js",
+    // Function Names
+    "built-ins/Promise/all/resolve-element-function-name.js",
+    "built-ins/Promise/allSettled/reject-element-function-name.js",
+    "built-ins/Promise/allSettled/resolve-element-function-name.js",
+    "built-ins/Promise/executor-function-name.js",
+    "built-ins/Promise/reject-function-name.js",
+    "built-ins/Promise/resolve-function-name.js",
+    "built-ins/ThrowTypeError/name.js",
+    "language/expressions/arrow-function/name.js",
+    "language/expressions/assignment/fn-name-lhs-cover.js",
+    "language/expressions/assignment/fn-name-lhs-member.js",
+    "language/expressions/async-arrow-function/name.js",
+    "language/expressions/async-function/name.js",
+    "language/expressions/async-generator/name.js",
+    "language/expressions/class/name.js",
+    "language/expressions/function/name.js",
+    "language/expressions/generators/name.js",
+    // Class Property Orders
+    "language/computed-property-names/class/static/method-number.js",
+    "language/computed-property-names/class/static/method-string.js",
+    "language/computed-property-names/class/static/method-symbol.js",
     // Test262
     "language/global-code/decl-lex-configurable-global.js"
   )
 
   lazy val manualNonstrict = Set(
-    "language/eval-code/indirect/always-non-strict",
-    "language/eval-code/indirect/non-definable-global-function",
-    "language/eval-code/indirect/non-definable-global-generator",
-    "language/eval-code/indirect/non-definable-global-var",
-    "language/eval-code/indirect/var-env-func-init-global-new",
-    "language/eval-code/indirect/var-env-func-init-global-update-configurable",
-    "language/eval-code/indirect/var-env-func-init-multi",
-    "language/eval-code/indirect/var-env-func-non-strict",
-    "language/eval-code/indirect/var-env-global-lex-non-strict",
-    "language/eval-code/indirect/var-env-var-init-global-exstng",
-    "language/eval-code/indirect/var-env-var-init-global-new",
-    "language/eval-code/indirect/var-env-var-non-strict",
-    "language/statements/variable/12.2.1-21-s"
+    "language/eval-code/indirect/always-non-strict.js",
+    "language/eval-code/indirect/non-definable-global-function.js",
+    "language/eval-code/indirect/non-definable-global-generator.js",
+    "language/eval-code/indirect/non-definable-global-var.js",
+    "language/eval-code/indirect/var-env-func-init-global-new.js",
+    "language/eval-code/indirect/var-env-func-init-global-update-configurable.js",
+    "language/eval-code/indirect/var-env-func-init-multi.js",
+    "language/eval-code/indirect/var-env-func-non-strict.js",
+    "language/eval-code/indirect/var-env-global-lex-non-strict.js",
+    "language/eval-code/indirect/var-env-var-init-global-exstng.js",
+    "language/eval-code/indirect/var-env-var-init-global-new.js",
+    "language/eval-code/indirect/var-env-var-non-strict.js",
+    "language/statements/variable/12.2.1-21-s.js"
   )
 
   lazy val manualEarlyError = Set(
@@ -160,7 +181,6 @@ case object FilterMeta extends PhaseObj[Unit, FilterMetaConfig, Unit] {
     "language/statements/variable/12.2.1-18-s.js",
     "language/statements/variable/12.2.1-19-s.js",
     "language/statements/variable/12.2.1-2-s.js",
-    "language/statements/variable/12.2.1-21-s.js",
     "language/statements/variable/12.2.1-22-s.js",
     "language/statements/variable/12.2.1-3-s.js",
     "language/statements/variable/12.2.1-4-s.js",

@@ -595,6 +595,7 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
     case (OXor, Bool(l), Bool(r)) => Bool(l ^ r)
 
     // equality operations
+    case (OEq, ASTVal(l), ASTVal(r)) => Bool(l eq r)
     case (OEq, ASTVal(l), Str(r)) => Bool(l.toString == r)
     case (OEq, Str(l), ASTVal(r)) => Bool(l == r.toString)
     case (OEq, INum(l), Num(r)) => Bool(!(r equals -0.0) && l == r)

@@ -80,23 +80,7 @@ object AbstractRelationalComparison extends Algorithm {
         app wrapped = (WrapCompletion result)
         return wrapped
       } else {}
-      app __x19__ = (Type nx)
-      let __x20__ = (= __x19__ BigInt)
-      if __x20__ {
-        app __x21__ = (Type ny)
-        let __x22__ = (= __x21__ Number)
-        if __x22__ {} else {
-          app __x23__ = (Type nx)
-          let __x24__ = (= __x23__ Number)
-          if __x24__ {
-            app __x25__ = (Type ny)
-            __x24__ = (= __x25__ BigInt)
-          } else {}
-          __x22__ = __x24__
-        }
-        __x20__ = __x22__
-      } else {}
-      assert __x20__
+      assert (|| (&& (= nxT BigInt) (= nyT Number)) (&& (= nxT Number) (= nyT BigInt)))
       if (|| (= nx NaN) (= ny NaN)) {
         app __x26__ = (WrapCompletion undefined)
         return __x26__

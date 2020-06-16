@@ -11,11 +11,11 @@ object PromiseReactionJob extends Algorithm {
     let promiseCapability = reaction["Capability"]
     let type = reaction["Type"]
     let handler = reaction["Handler"]
-    if (= handler undefined) if (= type "Fulfill") {
+    if (= handler undefined) if (= type CONST_Fulfill) {
       app __x0__ = (NormalCompletion argument)
       let handlerResult = __x0__
     } else {
-      assert (= type "Reject")
+      assert (= type CONST_Reject)
       app __x1__ = (ThrowCompletion argument)
       let handlerResult = __x1__
     } else {

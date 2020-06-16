@@ -8,6 +8,7 @@ object GLOBALDOTThenFinallyFunctions extends Algorithm {
   val length: Int = 0
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.ThenFinallyFunctions" (this, argumentsList, NewTarget) => {
+    let value = argumentsList[0i]
     let F = GLOBAL_context["Function"]
     let onFinally = F["OnFinally"]
     app __x0__ = (IsCallable onFinally)
@@ -21,7 +22,9 @@ object GLOBALDOTThenFinallyFunctions extends Algorithm {
     app __x3__ = (PromiseResolve C result)
     if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
     let promise = __x3__
-    !!! "Etc"
+    let valueThunk = (new OrdinaryObject("SubMap" -> (new SubMap())))
+    valueThunk.Call = ReturnCaptured
+    valueThunk.Captured = value
     app __x4__ = (Invoke promise "then" (new [valueThunk]))
     if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
     app __x5__ = (WrapCompletion __x4__)
