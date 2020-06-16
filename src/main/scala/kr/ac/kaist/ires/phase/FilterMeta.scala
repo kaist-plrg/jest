@@ -208,11 +208,6 @@ case object FilterMeta extends PhaseObj[Unit, FilterMetaConfig, Unit] {
       (m.name startsWith "language/expressions/dynamic-import/") ||
       (m.name startsWith "language/expressions/import.meta/")
     ))
-    .remove("manual", m => (
-      (manualDebatable contains m.name) ||
-      (manualEarlyError contains m.name) ||
-      (manualNonstrict contains m.name)
-    ))
     .remove("not supported flags", m => (
       (m.flags contains "CanBlockIsFalse") ||
       (m.flags contains "CanBlockIsTrue") ||
@@ -222,10 +217,14 @@ case object FilterMeta extends PhaseObj[Unit, FilterMetaConfig, Unit] {
       !m.locales.isEmpty
     ))
 
-  lazy val test262configSummary =
-    getTests(standardFeatures)
-      .remove("negative", m => !m.negative.isEmpty)
-      .getSummary
+  lazy val test262configSummary = getTests(standardFeatures)
+    .remove("negative", m => !m.negative.isEmpty)
+    .remove("manual", m => (
+      (manualDebatable contains m.name) ||
+      (manualEarlyError contains m.name) ||
+      (manualNonstrict contains m.name)
+    ))
+    .getSummary
 
   // lazy val test262LongconfigSummary = getTests(standardFeatures)
   //   .remove("non longTest", m => !(longTest contains removedExt(m.name)))
@@ -250,8 +249,7 @@ case object FilterMeta extends PhaseObj[Unit, FilterMetaConfig, Unit] {
     config: FilterMetaConfig
   ): Unit = {
     println(s"Total ${allTests.length} tests")
-    val summary = getTests(standardFeatures).getSummary
-    println(s"applicable tests: ${summary.summary.size}")
+    println(s"applicable tests: ${test262configSummary.summary.size}")
   }
 
   def defaultConfig: FilterMetaConfig = FilterMetaConfig()
