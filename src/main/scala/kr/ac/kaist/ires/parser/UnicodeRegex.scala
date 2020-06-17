@@ -38,3 +38,6 @@ trait UnicodeRegex extends DefaultJsonProtocol { this: RegexParsers =>
   lazy val IDContinueSet = readJson[Set[Int]](s"$RESOURCE_DIR/ID_Continue.json")
   lazy val IDContinue = Unicode.filter(ch => IDContinueSet contains ch.codePointAt(0))
 }
+object UnicodeRegex {
+  val WSLT = "[\uFEFF\u0009\u000B\u000C\u0020\u00A0\u1680\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u202F\u205F\u3000\u000A\u000D\u2028\u2029]".r
+}

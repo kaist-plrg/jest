@@ -1,5 +1,7 @@
 package kr.ac.kaist.ires.ir
 
+import java.text.Normalizer._
+
 import scala.annotation.tailrec
 import scala.concurrent._
 import scala.concurrent.duration._
@@ -9,6 +11,7 @@ import kr.ac.kaist.ires.{ DEBUG_INTERP, IRES, COVERAGE_MODE, Lexical }
 import kr.ac.kaist.ires.coverage.Coverage
 import kr.ac.kaist.ires.error.{ NotSupported, NotYetModeled, Timeout }
 import kr.ac.kaist.ires.model.{ Parser => ESParser, ESValueParser, ModelHelper }
+import kr.ac.kaist.ires.parser.UnicodeRegex.WSLT
 
 // IR Interpreter
 class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
@@ -173,12 +176,7 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
           case (addr: Addr, p) => s2.get(addr) match {
             case Some(IRMap(Ty("Completion"), m, _)) if !m.contains(p) => m(Str("Value"))._1 match {
               case a: Addr => s2.define(id, s2.heap(a, p))
-              case Str(s) => p match {
-                case Str("length") => s2.define(id, INum(s.length))
-                case INum(k) => s2.define(id, Str(s(k.toInt).toString))
-                case Num(k) => s2.define(id, Str(s(k.toInt).toString))
-                case v => error(s"wrong access of string reference: $s.$p")
-              }
+              case Str(s) => s2.define(id, stringOp(s, p))
               case _ => error(s"Completion does not have value: $bexpr[$expr]")
             }
             case _ => s2.define(id, s2.heap(addr, p))
@@ -224,12 +222,7 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
                   }
                 }
             }
-          case (Str(str), p) => p match {
-            case Str("length") => s2.define(id, INum(str.length))
-            case INum(k) => s2.define(id, Str(str(k.toInt).toString))
-            case Num(k) => s2.define(id, Str(str(k.toInt).toString))
-            case v => error(s"wrong access of string reference: $str.$p")
-          }
+          case (Str(str), p) => s2.define(id, stringOp(str, p))
           case v => error(s"not an address: $v")
         }
       case IWithCont(id, params, body) => {
@@ -515,12 +508,7 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
       (st.context.locals.getOrElse(id, st.globals.getOrElse(id, Absent)), st)
     case RefValueProp(addr, value) =>
       (st.heap(addr, value), st)
-    case RefValueString(str, value) => value match {
-      case Str("length") => (INum(str.length), st)
-      case INum(k) => (Str(str(k.toInt).toString), st)
-      case Num(k) => (Str(str(k.toInt).toString), st)
-      case v => error(s"wrong access of string reference: $str.$value")
-    }
+    case RefValueString(str, value) => (stringOp(str, value), st)
   }
 
   // unary operators
@@ -692,4 +680,18 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
 
   // catch and set undefined
   def catchUndef(v: => Value): Value = try v catch { case _: Throwable => Undef }
+
+  // string operations
+  def stringOp(str: String, prop: Value): Value = prop match {
+    case Str("length") => INum(str.length)
+    case Str("ltrim") => Str(str.replaceAll(s"^$WSLT+", ""))
+    case Str("rtrim") => Str(str.replaceAll(s"$WSLT+$$", ""))
+    case Str("normNFC") => Str(normalize(str, Form.NFC))
+    case Str("normNFD") => Str(normalize(str, Form.NFD))
+    case Str("normNFKC") => Str(normalize(str, Form.NFKC))
+    case Str("normNFKD") => Str(normalize(str, Form.NFKD))
+    case INum(k) => Str(str(k.toInt).toString)
+    case Num(k) => Str(str(k.toInt).toString)
+    case v => error(s"wrong access of string reference: $str.$v")
+  }
 }

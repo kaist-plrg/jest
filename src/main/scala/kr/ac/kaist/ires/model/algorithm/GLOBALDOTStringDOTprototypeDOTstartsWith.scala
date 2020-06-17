@@ -8,8 +8,6 @@ object GLOBALDOTStringDOTprototypeDOTstartsWith extends Algorithm {
   val length: Int = 1
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.String.prototype.startsWith" (this, argumentsList, NewTarget) => {
-    ??? "GLOBAL.String.prototype.startsWith"
-
     app __x0__ = (GetArgument argumentsList 0i)
     let searchString = __x0__
     app __x1__ = (GetArgument argumentsList 1i)
@@ -42,7 +40,11 @@ object GLOBALDOTStringDOTprototypeDOTstartsWith extends Algorithm {
       app __x10__ = (WrapCompletion false)
       return __x10__
     } else {}
-    !!! "Etc"
-    !!! "Etc"
+    let idx = 0i
+    while (< idx searchLength) {
+      if (! (= S[(+ start idx)] searchStr[idx])) return false
+      else idx = (+ idx 1i)
+    }
+    return true
   }"""), this)
 }

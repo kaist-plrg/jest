@@ -8,8 +8,6 @@ object GLOBALDOTStringDOTprototypeDOTincludes extends Algorithm {
   val length: Int = 1
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.String.prototype.includes" (this, argumentsList, NewTarget) => {
-    ??? "GLOBAL.String.prototype.includes"
-
     app __x0__ = (GetArgument argumentsList 0i)
     let searchString = __x0__
     app __x1__ = (GetArgument argumentsList 1i)
@@ -38,6 +36,17 @@ object GLOBALDOTStringDOTprototypeDOTincludes extends Algorithm {
     app __x9__ = (min __x8__ len)
     let start = __x9__
     let searchLen = searchStr["length"]
-    !!! "NumberOp"
+    let k = start
+    while (< (- (+ k searchLen) 1i) len) {
+      let success = true
+      let j = 0i
+      while (&& success (< j searchLen)) {
+        success = (= S[(+ k j)] searchStr[j])
+        j = (+ j 1i)
+      }
+      if success return true
+      else k = (+ k 1i)
+    }
+    return false
   }"""), this)
 }

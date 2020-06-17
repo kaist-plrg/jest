@@ -16,8 +16,8 @@ object StringPad extends Algorithm {
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
     let intMaxLength = __x1__
     let stringLength = S["length"]
-    !!! "Etc"
-    if (= fillString undefined) let filler = !!! "StringOp" else {
+    if (! (< stringLength intMaxLength)) return S else {}
+    if (= fillString undefined) let filler = " "  else {
       app __x2__ = (ToString fillString)
       if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
       let filler = __x2__
@@ -27,7 +27,13 @@ object StringPad extends Algorithm {
       return __x3__
     } else {}
     let fillLen = (- intMaxLength stringLength)
-    let truncatedStringFiller = !!! "StringOp"
+    let truncatedStringFiller = ""
+    let idx = 0i
+    let mod = filler.length
+    while (< idx fillLen) {
+      truncatedStringFiller = (+ truncatedStringFiller filler[(% idx mod)])
+      idx = (+ idx 1i)
+    }
     if (= placement CONST_start) {
       app __x4__ = (WrapCompletion (+ truncatedStringFiller S))
       return __x4__

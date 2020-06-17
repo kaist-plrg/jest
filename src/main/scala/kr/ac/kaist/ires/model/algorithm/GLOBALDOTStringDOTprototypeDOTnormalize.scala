@@ -8,8 +8,6 @@ object GLOBALDOTStringDOTprototypeDOTnormalize extends Algorithm {
   val length: Int = 0
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.String.prototype.normalize" (this, argumentsList, NewTarget) => {
-    ??? "GLOBAL.String.prototype.normalize"
-
     app __x0__ = (GetArgument argumentsList 0i)
     let form = __x0__
     app __x1__ = (RequireObjectCoercible this)
@@ -23,11 +21,15 @@ object GLOBALDOTStringDOTprototypeDOTnormalize extends Algorithm {
       if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
       let f = __x3__
     }
-    if (! (|| (|| (|| (= f "NFC") (= f "NFD")) (= f "NFKC")) (= f "NFKD"))) {
-      app __x4__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_RangeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))
-      return __x4__
-    } else {}
-    let ns = !!! "StringOp"
+    if (= f "NFC") {
+      let ns = S.normNFC
+    } else if (= f "NFD") {
+      let ns = S.normNFD
+    } else if (= f "NFKC") {
+      let ns = S.normNFKC
+    } else if (= f "NFKD") {
+      let ns = S.normNFKD
+    } else throw RangeError
     app __x5__ = (WrapCompletion ns)
     return __x5__
   }"""), this)

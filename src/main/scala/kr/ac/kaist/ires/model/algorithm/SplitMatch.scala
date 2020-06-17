@@ -16,7 +16,11 @@ object SplitMatch extends Algorithm {
       app __x1__ = (WrapCompletion false)
       return __x1__
     } else {}
-    !!! "NumberOp"
+    let i = 0i
+    while (< i r) {
+      if (! (= S[(+ q i)] R[i])) return false
+      else i = (+ i 1i)
+    }
     app __x2__ = (WrapCompletion (+ q r))
     return __x2__
   }"""), this)

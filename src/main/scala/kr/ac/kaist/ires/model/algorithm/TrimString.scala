@@ -14,9 +14,11 @@ object TrimString extends Algorithm {
     app __x1__ = (ToString str)
     if (is-completion __x1__) if (= __x1__["Type"] CONST_normal) __x1__ = __x1__["Value"] else return __x1__ else {}
     let S = __x1__
-    if (= where CONST_start) let T = !!! "StringOp" else if (= where CONST_end) let T = !!! "StringOp" else {
+    if (= where CONST_start) let T = S.ltrim
+    else if (= where CONST_end) let T = S.rtrim
+    else {
       assert (= where CONST_startPLUSend)
-      let T = !!! "StringOp"
+      let T = S.ltrim.rtrim
     }
     app __x2__ = (WrapCompletion T)
     return __x2__

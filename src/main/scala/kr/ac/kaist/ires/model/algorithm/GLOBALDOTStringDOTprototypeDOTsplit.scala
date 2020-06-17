@@ -8,8 +8,6 @@ object GLOBALDOTStringDOTprototypeDOTsplit extends Algorithm {
   val length: Int = 2
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.String.prototype.split" (this, argumentsList, NewTarget) => {
-    ??? "GLOBAL.String.prototype.split"
-
     app __x0__ = (GetArgument argumentsList 0i)
     let separator = __x0__
     app __x1__ = (GetArgument argumentsList 1i)
@@ -74,9 +72,13 @@ object GLOBALDOTStringDOTprototypeDOTsplit extends Algorithm {
       app __x17__ = (SplitMatch S q R)
       let e = __x17__
       if (= e false) q = (+ q 1i) else {
-        assert !!! "NumberOp"
         if (== e p) q = (+ q 1i) else {
-          !!! "Etc"
+          let T = ""
+          let idx = p
+          while (< idx q) {
+            T = (+ T S[idx])
+            idx = (+ idx 1i)
+          }
           app __x18__ = (ToString lengthA)
           if (is-completion __x18__) if (= __x18__["Type"] CONST_normal) __x18__ = __x18__["Value"] else return __x18__ else {}
           app __x19__ = (CreateDataPropertyOrThrow A __x18__ T)
@@ -92,7 +94,12 @@ object GLOBALDOTStringDOTprototypeDOTsplit extends Algorithm {
         }
       }
     }
-    !!! "Etc"
+    let T = ""
+    let idx = p
+    while (< idx s) {
+      T = (+ T S[idx])
+      idx = (+ idx 1i)
+    }
     app __x21__ = (ToString lengthA)
     if (is-completion __x21__) if (= __x21__["Type"] CONST_normal) __x21__ = __x21__["Value"] else return __x21__ else {}
     app __x22__ = (CreateDataPropertyOrThrow A __x21__ T)

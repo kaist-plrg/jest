@@ -8,8 +8,6 @@ object GLOBALDOTStringDOTprototypeDOTrepeat extends Algorithm {
   val length: Int = 1
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.String.prototype.repeat" (this, argumentsList, NewTarget) => {
-    ??? "GLOBAL.String.prototype.repeat"
-
     app __x0__ = (GetArgument argumentsList 0i)
     let count = __x0__
     app __x1__ = (RequireObjectCoercible this)
@@ -33,7 +31,6 @@ object GLOBALDOTStringDOTprototypeDOTrepeat extends Algorithm {
       app __x6__ = (WrapCompletion "")
       return __x6__
     } else {}
-    app __x7__ = (WrapCompletion !!! "StringOp")
-    return __x7__
+    return (* S n)
   }"""), this)
 }

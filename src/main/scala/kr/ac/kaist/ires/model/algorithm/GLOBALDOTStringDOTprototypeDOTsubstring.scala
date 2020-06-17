@@ -8,8 +8,6 @@ object GLOBALDOTStringDOTprototypeDOTsubstring extends Algorithm {
   val length: Int = 2
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.String.prototype.substring" (this, argumentsList, NewTarget) => {
-    ??? "GLOBAL.String.prototype.substring"
-
     app __x0__ = (GetArgument argumentsList 0i)
     let start = __x0__
     app __x1__ = (GetArgument argumentsList 1i)
@@ -39,7 +37,11 @@ object GLOBALDOTStringDOTprototypeDOTsubstring extends Algorithm {
     let from = __x10__
     app __x11__ = (max finalStart finalEnd)
     let to = __x11__
-    app __x12__ = (WrapCompletion !!! "StringOp")
-    return __x12__
+    let result = ""
+    while (< from to) {
+      result = (+ result S[from])
+      from = (+ from 1i)
+    }
+    return result
   }"""), this)
 }

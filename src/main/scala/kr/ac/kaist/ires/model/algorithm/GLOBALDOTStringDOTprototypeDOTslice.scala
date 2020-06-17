@@ -8,8 +8,6 @@ object GLOBALDOTStringDOTprototypeDOTslice extends Algorithm {
   val length: Int = 2
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.String.prototype.slice" (this, argumentsList, NewTarget) => {
-    ??? "GLOBAL.String.prototype.slice"
-
     app __x0__ = (GetArgument argumentsList 0i)
     let start = __x0__
     app __x1__ = (GetArgument argumentsList 1i)
@@ -45,7 +43,12 @@ object GLOBALDOTStringDOTprototypeDOTslice extends Algorithm {
     }
     app __x10__ = (max (- to from) 0i)
     let span = __x10__
-    app __x11__ = (WrapCompletion !!! "StringOp")
-    return __x11__
+    let result = ""
+    let idx = 0i
+    while (< idx span) {
+      result = (+ result S[(+ from idx)])
+      idx = (+ idx 1i)
+    }
+    return result
   }"""), this)
 }

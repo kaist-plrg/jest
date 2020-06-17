@@ -8,8 +8,6 @@ object GLOBALDOTStringDOTprototypeDOTindexOf extends Algorithm {
   val length: Int = 1
   val lang: Boolean = false
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.String.prototype.indexOf" (this, argumentsList, NewTarget) => {
-    ??? "GLOBAL.String.prototype.indexOf"
-
     app __x0__ = (GetArgument argumentsList 0i)
     let searchString = __x0__
     app __x1__ = (GetArgument argumentsList 1i)
@@ -31,7 +29,17 @@ object GLOBALDOTStringDOTprototypeDOTindexOf extends Algorithm {
     app __x7__ = (min __x6__ len)
     let start = __x7__
     let searchLen = searchStr["length"]
-    app __x8__ = (WrapCompletion !!! "NumberOp")
-    return __x8__
+    let k = start
+    while (< (- (+ k searchLen) 1i) len) {
+      let success = true
+      let j = 0i
+      while (&& success (< j searchLen)) {
+        success = (= S[(+ k j)] searchStr[j])
+        j = (+ j 1i)
+      }
+      if success return k
+      else k = (+ k 1i)
+    }
+    return -1i
   }"""), this)
 }
