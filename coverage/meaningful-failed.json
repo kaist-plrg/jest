@@ -1,4 +1,60 @@
 [{
+  "algo": "ReturnStatement1Evaluation0",
+  "cond": "(= __x2__ CONST_async)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= __x2__ CONST_async) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "MemberExpression2Contains0",
+  "cond": "(= __x1__ true)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= __x1__ true) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "MemberExpression2Contains0",
+  "cond": "(is-instance-of symbol ReservedWord)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (is-instance-of symbol ReservedWord) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "MemberExpression2Contains0",
+  "cond": "__x2__",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if __x2__ ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "MemberExpression2Contains0",
+  "cond": "__x2__",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if __x2__ ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "LiteralPropertyName0Contains0",
+  "cond": "(is-instance-of symbol ReservedWord)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (is-instance-of symbol ReservedWord) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "LiteralPropertyName0Contains0",
+  "cond": "__x0__",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if __x0__ ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "LiteralPropertyName0Contains0",
+  "cond": "__x0__",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if __x0__ ... else ...",
+  "thenCovered": false
+}, {
   "algo": "Literal1Evaluation0",
   "cond": "(= (get-syntax BooleanLiteral) \"true\")",
   "covered": true,
@@ -27,6 +83,55 @@
   "inst": "if (= __x1__ false) ... else ...",
   "thenCovered": false
 }, {
+  "algo": "CallExpression5Contains0",
+  "cond": "(= __x1__ true)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= __x1__ true) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "CallExpression5Contains0",
+  "cond": "(is-instance-of symbol ReservedWord)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (is-instance-of symbol ReservedWord) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "CallExpression5Contains0",
+  "cond": "__x2__",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if __x2__ ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "CallExpression5Contains0",
+  "cond": "__x2__",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if __x2__ ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "IfStatement0HasCallInTailPosition0",
+  "cond": "(= has true)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= has true) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "ArrowFunction0Contains0",
+  "cond": "(! (|| (|| (|| (|| (is-instance-of symbol NewTarget) (is-instance-of symbol SuperProperty)) (is-instance-of symbol SuperCall)) (= symbol \"super\")) (= symbol \"this\")))",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (! (|| (|| (|| (|| (is-instance-of symbol NewTarget) (is-instance-of symbol SuperProperty)) (is-instance-of symbol SuperCall)) (= symbol \"super\")) (= symbol \"this\"))) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "ArrowFunction0Contains0",
+  "cond": "(= __x1__ true)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= __x1__ true) ... else ...",
+  "thenCovered": false
+}, {
   "algo": "UnaryExpression1Evaluation0",
   "cond": "(= __x3__ true)",
   "covered": true,
@@ -41,11 +146,18 @@
   "inst": "if (= __x6__ true) ... else ...",
   "thenCovered": true
 }, {
-  "algo": "UnaryExpression1Evaluation0",
-  "cond": "(= __x7__ true)",
+  "algo": "ArrowParameters0IteratorBindingInitialization0",
+  "cond": "__x1__",
   "covered": true,
   "elseCovered": true,
-  "inst": "if (= __x7__ true) ... else ...",
+  "inst": "if __x1__ ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "ArrowParameters0IteratorBindingInitialization0",
+  "cond": "__x3__",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if __x3__ ... else ...",
   "thenCovered": false
 }, {
   "algo": "BindingElement1IteratorBindingInitialization1",
@@ -69,102 +181,11 @@
   "inst": "if __x3__ ... else ...",
   "thenCovered": false
 }, {
-  "algo": "ArrowParameters0IteratorBindingInitialization0",
-  "cond": "__x1__",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if __x1__ ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "ArrowParameters0IteratorBindingInitialization0",
-  "cond": "__x3__",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if __x3__ ... else ...",
-  "thenCovered": false
-}, {
   "algo": "ArrayCreate",
   "cond": "(= length -0.0)",
   "covered": true,
   "elseCovered": true,
   "inst": "if (= length -0.0) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "ArrayCreate",
-  "cond": "(= A[\"HasProperty\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= A[\"HasProperty\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "ArrayCreate",
-  "cond": "(= A[\"DefineOwnProperty\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= A[\"DefineOwnProperty\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "ArrayCreate",
-  "cond": "(= A[\"Set\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= A[\"Set\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "ArrayCreate",
-  "cond": "(= A[\"SetPrototypeOf\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= A[\"SetPrototypeOf\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "ArrayCreate",
-  "cond": "(= A[\"Get\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= A[\"Get\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "ArrayCreate",
-  "cond": "(= A[\"PreventExtensions\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= A[\"PreventExtensions\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "ArrayCreate",
-  "cond": "(= A[\"Delete\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= A[\"Delete\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "ArrayCreate",
-  "cond": "(= A[\"GetOwnProperty\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= A[\"GetOwnProperty\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "ArrayCreate",
-  "cond": "(= A[\"OwnPropertyKeys\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= A[\"OwnPropertyKeys\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "ArrayCreate",
-  "cond": "(= A[\"GetPrototypeOf\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= A[\"GetPrototypeOf\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "ArrayCreate",
-  "cond": "(= A[\"IsExtensible\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= A[\"IsExtensible\"] absent) ... else ...",
   "thenCovered": false
 }, {
   "algo": "ArraySetLength",
@@ -189,10 +210,10 @@
   "thenCovered": false
 }, {
   "algo": "ArraySpeciesCreate",
-  "cond": "(= __x6__ true)",
+  "cond": "(= __x7__ true)",
   "covered": false,
   "elseCovered": false,
-  "inst": "if (= __x6__ true) ... else ...",
+  "inst": "if (= __x7__ true) ... else ...",
   "thenCovered": false
 }, {
   "algo": "AssignmentElement0IteratorDestructuringAssignmentEvaluation1",
@@ -209,7 +230,7 @@
   "inst": "if __x5__ ... else ...",
   "thenCovered": false
 }, {
-  "algo": "AsyncConciseBody0EvaluateBody0",
+  "algo": "AsyncFunctionBody0EvaluateBody0",
   "cond": "(! __x2__)",
   "covered": true,
   "elseCovered": false,
@@ -224,18 +245,74 @@
   "thenCovered": true
 }, {
   "algo": "AsyncFunctionStart",
+  "cond": "(= result[\"Type\"] CONST_return)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= result[\"Type\"] CONST_return) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "AsyncFunctionStart",
   "cond": "(= asyncContext[\"ReturnCont\"] absent)",
   "covered": true,
   "elseCovered": false,
   "inst": "if (= asyncContext[\"ReturnCont\"] absent) ... else ...",
   "thenCovered": true
 }, {
-  "algo": "AsyncGeneratorResumeNext",
-  "cond": "(= state \"awaiting-return\")",
+  "algo": "AsyncGeneratorEnqueue",
+  "cond": "(|| (! (= __x1__ Object)) (= generator[\"AsyncGeneratorState\"] absent))",
   "covered": true,
   "elseCovered": true,
-  "inst": "if (= state \"awaiting-return\") ... else ...",
+  "inst": "if (|| (! (= __x1__ Object)) (= generator[\"AsyncGeneratorState\"] absent)) ... else ...",
   "thenCovered": false
+}, {
+  "algo": "AsyncGeneratorEnqueue",
+  "cond": "(! (= state CONST_executing))",
+  "covered": true,
+  "elseCovered": false,
+  "inst": "if (! (= state CONST_executing)) ... else ...",
+  "thenCovered": true
+}, {
+  "algo": "AsyncGeneratorResumeNext",
+  "cond": "(= state CONST_awaitingreturn)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= state CONST_awaitingreturn) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "AsyncGeneratorResumeNext",
+  "cond": "(= state CONST_suspendedStart)",
+  "covered": true,
+  "elseCovered": false,
+  "inst": "if (= state CONST_suspendedStart) ... else ...",
+  "thenCovered": true
+}, {
+  "algo": "AsyncGeneratorResumeNext",
+  "cond": "(= state CONST_completed)",
+  "covered": true,
+  "elseCovered": false,
+  "inst": "if (= state CONST_completed) ... else ...",
+  "thenCovered": true
+}, {
+  "algo": "AsyncGeneratorResumeNext",
+  "cond": "(= completion[\"Type\"] CONST_return)",
+  "covered": true,
+  "elseCovered": false,
+  "inst": "if (= completion[\"Type\"] CONST_return) ... else ...",
+  "thenCovered": true
+}, {
+  "algo": "AsyncGeneratorResumeNext",
+  "cond": "(= state CONST_completed)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= state CONST_completed) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "AsyncGeneratorResumeNext",
+  "cond": "(= genContext[\"ReturnCont\"] absent)",
+  "covered": true,
+  "elseCovered": false,
+  "inst": "if (= genContext[\"ReturnCont\"] absent) ... else ...",
+  "thenCovered": true
 }, {
   "algo": "AsyncGeneratorStart",
   "cond": "(= GLOBAL_executionStack[(- GLOBAL_executionStack[\"length\"] 1i)] genContext)",
@@ -244,39 +321,11 @@
   "inst": "if (= GLOBAL_executionStack[(- GLOBAL_executionStack[\"length\"] 1i)] genContext) ... else ...",
   "thenCovered": true
 }, {
-  "algo": "AsyncGeneratorYield",
-  "cond": "(= GLOBAL_executionStack[(- GLOBAL_executionStack[\"length\"] 1i)] genContext)",
-  "covered": true,
+  "algo": "AsyncGeneratorStart",
+  "cond": "(! (= result[\"Type\"] CONST_return))",
+  "covered": false,
   "elseCovered": false,
-  "inst": "if (= GLOBAL_executionStack[(- GLOBAL_executionStack[\"length\"] 1i)] genContext) ... else ...",
-  "thenCovered": true
-}, {
-  "algo": "AsyncGeneratorYield",
-  "cond": "(= awaited[\"Type\"] CONST_throw)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= awaited[\"Type\"] CONST_throw) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "AsyncIteratorClose",
-  "cond": "(= return undefined)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= return undefined) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "AsyncIteratorClose",
-  "cond": "(= innerResult[\"Type\"] CONST_throw)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= innerResult[\"Type\"] CONST_throw) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "AsyncIteratorClose",
-  "cond": "(! (= __x10__ Object))",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (! (= __x10__ Object)) ... else ...",
+  "inst": "if (! (= result[\"Type\"] CONST_return)) ... else ...",
   "thenCovered": false
 }, {
   "algo": "Await",
@@ -285,6 +334,13 @@
   "elseCovered": false,
   "inst": "if (= GLOBAL_executionStack[(- GLOBAL_executionStack[\"length\"] 1i)] asyncContext) ... else ...",
   "thenCovered": true
+}, {
+  "algo": "BigIntCOLONCOLONremainder",
+  "cond": "(= n 0n)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= n 0n) ... else ...",
+  "thenCovered": false
 }, {
   "algo": "BindingRestElement1IteratorBindingInitialization0",
   "cond": "(= iteratorRecord[\"Done\"] false)",
@@ -305,83 +361,6 @@
   "covered": true,
   "elseCovered": true,
   "inst": "if __x7__ ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "BoundFunctionCreate",
-  "cond": "(= obj[\"HasProperty\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= obj[\"HasProperty\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "BoundFunctionCreate",
-  "cond": "(= obj[\"DefineOwnProperty\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= obj[\"DefineOwnProperty\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "BoundFunctionCreate",
-  "cond": "(= obj[\"Set\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= obj[\"Set\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "BoundFunctionCreate",
-  "cond": "(= obj[\"SetPrototypeOf\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= obj[\"SetPrototypeOf\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "BoundFunctionCreate",
-  "cond": "(= obj[\"Get\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= obj[\"Get\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "BoundFunctionCreate",
-  "cond": "(= obj[\"PreventExtensions\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= obj[\"PreventExtensions\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "BoundFunctionCreate",
-  "cond": "(= obj[\"Delete\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= obj[\"Delete\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "BoundFunctionCreate",
-  "cond": "(= obj[\"GetOwnProperty\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= obj[\"GetOwnProperty\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "BoundFunctionCreate",
-  "cond": "(= obj[\"OwnPropertyKeys\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= obj[\"OwnPropertyKeys\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "BoundFunctionCreate",
-  "cond": "(= obj[\"GetPrototypeOf\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= obj[\"GetPrototypeOf\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "BoundFunctionCreate",
-  "cond": "(= obj[\"IsExtensible\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= obj[\"IsExtensible\"] absent) ... else ...",
   "thenCovered": false
 }, {
   "algo": "BreakableStatement1LabelledEvaluation0",
@@ -424,27 +403,6 @@
   "covered": true,
   "elseCovered": true,
   "inst": "if (= argument \"-0\") ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "CaseBlock1HasCallInTailPosition3",
-  "cond": "(! (= CaseClauses0 absent))",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "if (! (= CaseClauses0 absent)) ... else ...",
-  "thenCovered": true
-}, {
-  "algo": "CaseBlock1HasCallInTailPosition3",
-  "cond": "(= has true)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= has true) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "CaseBlock1HasCallInTailPosition3",
-  "cond": "(= has true)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= has true) ... else ...",
   "thenCovered": false
 }, {
   "algo": "CaseBlock1HasCallInTailPosition3",
@@ -524,6 +482,48 @@
   "inst": "if (is-instance-of ClassElement ClassElement2) ... else ...",
   "thenCovered": false
 }, {
+  "algo": "ClassTail0Contains3",
+  "cond": "(is-instance-of symbol ClassBody)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (is-instance-of symbol ClassBody) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "ClassTail0Contains3",
+  "cond": "(is-instance-of symbol ClassHeritage)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (is-instance-of symbol ClassHeritage) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "ClassTail0Contains3",
+  "cond": "(! (= ClassHeritage absent))",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (! (= ClassHeritage absent)) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "ClassTail0Contains3",
+  "cond": "(= ClassHeritage absent)",
+  "covered": true,
+  "elseCovered": false,
+  "inst": "if (= ClassHeritage absent) ... else ...",
+  "thenCovered": true
+}, {
+  "algo": "ClassTail0Contains3",
+  "cond": "(= inHeritage true)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= inHeritage true) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "ClassTail0Contains3",
+  "cond": "(= ClassBody absent)",
+  "covered": true,
+  "elseCovered": false,
+  "inst": "if (= ClassBody absent) ... else ...",
+  "thenCovered": true
+}, {
   "algo": "CreateBuiltinFunction",
   "cond": "(= realm absent)",
   "covered": true,
@@ -538,6 +538,174 @@
   "inst": "if (= prototype absent) ... else ...",
   "thenCovered": true
 }, {
+  "algo": "CreateBuiltinFunction",
+  "cond": "(= steps[\"length\"] absent)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= steps[\"length\"] absent) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "CreateDynamicFunction",
+  "cond": "(= newTarget undefined)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (= newTarget undefined) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "CreateDynamicFunction",
+  "cond": "(= kind CONST_generator)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (= kind CONST_generator) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "CreateDynamicFunction",
+  "cond": "(= kind CONST_async)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (= kind CONST_async) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "CreateDynamicFunction",
+  "cond": "(== argCount 0i)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (== argCount 0i) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "CreateDynamicFunction",
+  "cond": "(== argCount 1i)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (== argCount 1i) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "CreateDynamicFunction",
+  "cond": "(< k (- argCount 1i))",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "while (< k (- argCount 1i)) { ... }",
+  "thenCovered": false
+}, {
+  "algo": "CreateDynamicFunction",
+  "cond": "(= parameters absent)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (= parameters absent) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "CreateDynamicFunction",
+  "cond": "(= body absent)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (= body absent) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "CreateDynamicFunction",
+  "cond": "(= __x6__ false)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (= __x6__ false) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "CreateDynamicFunction",
+  "cond": "(< idx len)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "while (< idx len) { ... }",
+  "thenCovered": false
+}, {
+  "algo": "CreateDynamicFunction",
+  "cond": "(contains declNames name)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (contains declNames name) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "CreateDynamicFunction",
+  "cond": "(= __x9__ true)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (= __x9__ true) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "CreateDynamicFunction",
+  "cond": "(= __x12__ true)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (= __x12__ true) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "CreateDynamicFunction",
+  "cond": "(= __x15__ true)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (= __x15__ true) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "CreateDynamicFunction",
+  "cond": "(= __x18__ true)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (= __x18__ true) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "CreateDynamicFunction",
+  "cond": "(|| (= kind CONST_generator) (= kind CONST_asyncGenerator))",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (|| (= kind CONST_generator) (= kind CONST_asyncGenerator)) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "CreateDynamicFunction",
+  "cond": "(= __x21__ true)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (= __x21__ true) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "CreateDynamicFunction",
+  "cond": "(|| (= kind CONST_async) (= kind CONST_asyncGenerator))",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (|| (= kind CONST_async) (= kind CONST_asyncGenerator)) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "CreateDynamicFunction",
+  "cond": "(= __x24__ true)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (= __x24__ true) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "CreateDynamicFunction",
+  "cond": "(< idx len)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "while (< idx len) { ... }",
+  "thenCovered": false
+}, {
+  "algo": "CreateDynamicFunction",
+  "cond": "(contains tempList name)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (contains tempList name) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "CreateDynamicFunction",
+  "cond": "(= kind CONST_generator)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (= kind CONST_generator) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "CreateDynamicFunction",
+  "cond": "(= kind CONST_asyncGenerator)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (= kind CONST_asyncGenerator) ... else ...",
+  "thenCovered": false
+}, {
   "algo": "CreateListFromArrayLike",
   "cond": "(= elementTypes absent)",
   "covered": true,
@@ -546,17 +714,10 @@
   "thenCovered": true
 }, {
   "algo": "CreateListFromArrayLike",
-  "cond": "(! (= __x0__ Object))",
+  "cond": "(! (contains elementTypes __x5__))",
   "covered": true,
   "elseCovered": true,
-  "inst": "if (! (= __x0__ Object)) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "CreateListFromArrayLike",
-  "cond": "(! (contains elementTypes __x6__))",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (! (contains elementTypes __x6__)) ... else ...",
+  "inst": "if (! (contains elementTypes __x5__)) ... else ...",
   "thenCovered": false
 }, {
   "algo": "DeclarativeEnvironmentRecordDOTInitializeBinding",
@@ -595,18 +756,18 @@
   "thenCovered": true
 }, {
   "algo": "ElementList1ArrayAccumulation1",
-  "cond": "(= Elision absent)",
+  "cond": "(! (= Elision absent))",
   "covered": true,
-  "elseCovered": false,
-  "inst": "if (= Elision absent) ... else ...",
-  "thenCovered": true
+  "elseCovered": true,
+  "inst": "if (! (= Elision absent)) ... else ...",
+  "thenCovered": false
 }, {
   "algo": "ElementList3ArrayAccumulation1",
-  "cond": "(= Elision absent)",
+  "cond": "(! (= Elision absent))",
   "covered": true,
-  "elseCovered": false,
-  "inst": "if (= Elision absent) ... else ...",
-  "thenCovered": true
+  "elseCovered": true,
+  "inst": "if (! (= Elision absent)) ... else ...",
+  "thenCovered": false
 }, {
   "algo": "Elision0IteratorDestructuringAssignmentEvaluation0",
   "cond": "(= iteratorRecord[\"Done\"] false)",
@@ -636,11 +797,144 @@
   "inst": "if (= next false) ... else ...",
   "thenCovered": false
 }, {
-  "algo": "FlattenIntoArray",
-  "cond": "(= exists true)",
+  "algo": "EqualityExpression2Evaluation0",
+  "cond": "(= r true)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (= r true) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "EvalDeclarationInstantiation",
+  "cond": "(= strict false)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= strict false) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "EvalDeclarationInstantiation",
+  "cond": "(= (typeof varEnvRec) \"GlobalEnvironmentRecord\")",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (= (typeof varEnvRec) \"GlobalEnvironmentRecord\") ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "EvalDeclarationInstantiation",
+  "cond": "(< __x3__ __x2__[\"length\"])",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "while (< __x3__ __x2__[\"length\"]) { ... }",
+  "thenCovered": false
+}, {
+  "algo": "EvalDeclarationInstantiation",
+  "cond": "(= __x4__ true)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (= __x4__ true) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "EvalDeclarationInstantiation",
+  "cond": "(! (= thisLex varEnv))",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "while (! (= thisLex varEnv)) { ... }",
+  "thenCovered": false
+}, {
+  "algo": "EvalDeclarationInstantiation",
+  "cond": "(! (= (typeof thisEnvRec) \"ObjectEnvironmentRecord\"))",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (! (= (typeof thisEnvRec) \"ObjectEnvironmentRecord\")) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "EvalDeclarationInstantiation",
+  "cond": "(< __x7__ __x6__[\"length\"])",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "while (< __x7__ __x6__[\"length\"]) { ... }",
+  "thenCovered": false
+}, {
+  "algo": "EvalDeclarationInstantiation",
+  "cond": "(= __x8__ true)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (= __x8__ true) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "EvalDeclarationInstantiation",
+  "cond": "(! (contains declaredFunctionNames fn))",
   "covered": true,
   "elseCovered": false,
-  "inst": "if (= exists true) ... else ...",
+  "inst": "if (! (contains declaredFunctionNames fn)) ... else ...",
+  "thenCovered": true
+}, {
+  "algo": "EvalDeclarationInstantiation",
+  "cond": "(= (typeof varEnvRec) \"GlobalEnvironmentRecord\")",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= (typeof varEnvRec) \"GlobalEnvironmentRecord\") ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "EvalDeclarationInstantiation",
+  "cond": "(= fnDefinable false)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (= fnDefinable false) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "EvalDeclarationInstantiation",
+  "cond": "(! (contains declaredFunctionNames vn))",
+  "covered": true,
+  "elseCovered": false,
+  "inst": "if (! (contains declaredFunctionNames vn)) ... else ...",
+  "thenCovered": true
+}, {
+  "algo": "EvalDeclarationInstantiation",
+  "cond": "(= (typeof varEnvRec) \"GlobalEnvironmentRecord\")",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= (typeof varEnvRec) \"GlobalEnvironmentRecord\") ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "EvalDeclarationInstantiation",
+  "cond": "(= vnDefinable false)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (= vnDefinable false) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "EvalDeclarationInstantiation",
+  "cond": "(! (contains declaredVarNames vn))",
+  "covered": true,
+  "elseCovered": false,
+  "inst": "if (! (contains declaredVarNames vn)) ... else ...",
+  "thenCovered": true
+}, {
+  "algo": "EvalDeclarationInstantiation",
+  "cond": "(= (typeof varEnvRec) \"GlobalEnvironmentRecord\")",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= (typeof varEnvRec) \"GlobalEnvironmentRecord\") ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "EvalDeclarationInstantiation",
+  "cond": "(= bindingExists false)",
+  "covered": true,
+  "elseCovered": false,
+  "inst": "if (= bindingExists false) ... else ...",
+  "thenCovered": true
+}, {
+  "algo": "EvalDeclarationInstantiation",
+  "cond": "(= (typeof varEnvRec) \"GlobalEnvironmentRecord\")",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= (typeof varEnvRec) \"GlobalEnvironmentRecord\") ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "EvalDeclarationInstantiation",
+  "cond": "(= bindingExists false)",
+  "covered": true,
+  "elseCovered": false,
+  "inst": "if (= bindingExists false) ... else ...",
   "thenCovered": true
 }, {
   "algo": "FlattenIntoArray",
@@ -648,6 +942,20 @@
   "covered": true,
   "elseCovered": true,
   "inst": "if (! (< targetIndex (- 9007199254740992i 1i))) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "ForInOfBodyEvaluation",
+  "cond": "(= iteratorKind absent)",
+  "covered": true,
+  "elseCovered": false,
+  "inst": "if (= iteratorKind absent) ... else ...",
+  "thenCovered": true
+}, {
+  "algo": "ForInOfBodyEvaluation",
+  "cond": "(= iteratorKind CONST_async)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= iteratorKind CONST_async) ... else ...",
   "thenCovered": false
 }, {
   "algo": "ForInOfBodyEvaluation",
@@ -665,10 +973,31 @@
   "thenCovered": false
 }, {
   "algo": "ForInOfBodyEvaluation",
+  "cond": "(= iteratorKind CONST_async)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= iteratorKind CONST_async) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "ForInOfBodyEvaluation",
   "cond": "(= iterationKind CONST_enumerate)",
   "covered": true,
   "elseCovered": true,
   "inst": "if (= iterationKind CONST_enumerate) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "ForInOfBodyEvaluation",
+  "cond": "(= iteratorKind CONST_async)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= iteratorKind CONST_async) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "ForInOfHeadEvaluation",
+  "cond": "(= iterationKind CONST_asynciterate)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= iterationKind CONST_asynciterate) ... else ...",
   "thenCovered": false
 }, {
   "algo": "FormalParameters4ContainsExpression0",
@@ -692,88 +1021,11 @@
   "inst": "if (! (= Desc[\"Configurable\"] absent)) ... else ...",
   "thenCovered": true
 }, {
-  "algo": "FunctionAllocate",
-  "cond": "(= F[\"HasProperty\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= F[\"HasProperty\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "FunctionAllocate",
-  "cond": "(= F[\"DefineOwnProperty\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= F[\"DefineOwnProperty\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "FunctionAllocate",
-  "cond": "(= F[\"Set\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= F[\"Set\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "FunctionAllocate",
-  "cond": "(= F[\"SetPrototypeOf\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= F[\"SetPrototypeOf\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "FunctionAllocate",
-  "cond": "(= F[\"Get\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= F[\"Get\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "FunctionAllocate",
-  "cond": "(= F[\"PreventExtensions\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= F[\"PreventExtensions\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "FunctionAllocate",
-  "cond": "(= F[\"Delete\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= F[\"Delete\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "FunctionAllocate",
-  "cond": "(= F[\"GetOwnProperty\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= F[\"GetOwnProperty\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "FunctionAllocate",
-  "cond": "(= F[\"OwnPropertyKeys\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= F[\"OwnPropertyKeys\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "FunctionAllocate",
-  "cond": "(= F[\"GetPrototypeOf\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= F[\"GetPrototypeOf\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "FunctionAllocate",
-  "cond": "(= F[\"IsExtensible\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= F[\"IsExtensible\"] absent) ... else ...",
-  "thenCovered": false
-}, {
   "algo": "FunctionDeclarationInstantiation",
-  "cond": "__x2__",
+  "cond": "__x1__",
   "covered": true,
   "elseCovered": true,
-  "inst": "if __x2__ ... else ...",
+  "inst": "if __x1__ ... else ...",
   "thenCovered": false
 }, {
   "algo": "FunctionDeclarationInstantiation",
@@ -796,6 +1048,13 @@
   "elseCovered": true,
   "inst": "if (|| (contains functionNames \"arguments\") (contains lexicalNames \"arguments\")) ... else ...",
   "thenCovered": false
+}, {
+  "algo": "FunctionDeclarationInstantiation",
+  "cond": "(|| (= strict true) (= hasParameterExpressions false))",
+  "covered": true,
+  "elseCovered": false,
+  "inst": "if (|| (= strict true) (= hasParameterExpressions false)) ... else ...",
+  "thenCovered": true
 }, {
   "algo": "FunctionDeclarationInstantiation",
   "cond": "(= alreadyDeclared false)",
@@ -861,32 +1120,620 @@
   "thenCovered": false
 }, {
   "algo": "FunctionEnvironmentRecordDOTHasSuperBinding",
-  "cond": "(= envRec[\"ThisBindingStatus\"] \"lexical\")",
+  "cond": "(= envRec[\"ThisBindingStatus\"] CONST_lexical)",
   "covered": true,
   "elseCovered": true,
-  "inst": "if (= envRec[\"ThisBindingStatus\"] \"lexical\") ... else ...",
+  "inst": "if (= envRec[\"ThisBindingStatus\"] CONST_lexical) ... else ...",
   "thenCovered": false
 }, {
-  "algo": "FunctionEnvironmentRecordDOTHasSuperBinding",
-  "cond": "(= envRec[\"HomeObject\"] undefined)",
+  "algo": "GLOBALDOTArrayDOTfrom",
+  "cond": "(! (< k (- 9007199254740992i 1i)))",
   "covered": true,
   "elseCovered": true,
-  "inst": "if (= envRec[\"HomeObject\"] undefined) ... else ...",
+  "inst": "if (! (< k (- 9007199254740992i 1i))) ... else ...",
   "thenCovered": false
 }, {
-  "algo": "FunctionInitialize",
-  "cond": "(= Strict true)",
+  "algo": "GLOBALDOTArrayDOTfrom",
+  "cond": "(= __x28__ true)",
   "covered": true,
   "elseCovered": false,
-  "inst": "if (= Strict true) ... else ...",
+  "inst": "if (= __x28__ true) ... else ...",
   "thenCovered": true
 }, {
-  "algo": "FunctionRestParameter0IteratorBindingInitialization0",
-  "cond": "(= __x0__ false)",
+  "algo": "GLOBALDOTArrayDOTprototypeDOTconcat",
+  "cond": "(! (< n (- 9007199254740992i 1i)))",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (! (< n (- 9007199254740992i 1i))) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTArrayDOTprototypeDOTfind",
+  "cond": "(= __x4__ false)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= __x4__ false) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTArrayDOTprototypeDOTfindIndex",
+  "cond": "(= __x4__ false)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= __x4__ false) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTArrayDOTprototypeDOTslice",
+  "cond": "(= kPresent true)",
   "covered": true,
   "elseCovered": false,
-  "inst": "if (= __x0__ false) ... else ...",
+  "inst": "if (= kPresent true) ... else ...",
   "thenCovered": true
+}, {
+  "algo": "GLOBALDOTArrayDOTprototypeDOTsplice",
+  "cond": "(= fromPresent true)",
+  "covered": true,
+  "elseCovered": false,
+  "inst": "if (= fromPresent true) ... else ...",
+  "thenCovered": true
+}, {
+  "algo": "GLOBALDOTArrayDOTprototypeDOTtoString",
+  "cond": "(= result false)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= result false) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTAwaitFulfilledFunctions",
+  "cond": "(= asyncContext[\"ReturnCont\"] absent)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= asyncContext[\"ReturnCont\"] absent) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTBigIntDOTprototypeDOTtoString",
+  "cond": "(= x NaN)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= x NaN) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTBigIntDOTprototypeDOTtoString",
+  "cond": "(= x Infinity)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= x Infinity) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTBigIntDOTprototypeDOTtoString",
+  "cond": "(= x Infinity)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= x Infinity) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTFunctionDOTprototypeDOTbind",
+  "cond": "(= targetHasLength true)",
+  "covered": true,
+  "elseCovered": false,
+  "inst": "if (= targetHasLength true) ... else ...",
+  "thenCovered": true
+}, {
+  "algo": "GLOBALDOTFunctionDOTprototypeDOTbind",
+  "cond": "(! (= __x6__ Number))",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (! (= __x6__ Number)) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTFunctionDOTprototypeDOTtoString",
+  "cond": "(&& (= T \"String\") available)",
+  "covered": true,
+  "elseCovered": false,
+  "inst": "if (&& (= T \"String\") available) ... else ...",
+  "thenCovered": true
+}, {
+  "algo": "GLOBALDOTFunctionDOTprototypeDOTtoString",
+  "cond": "__x2__",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if __x2__ ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTINTRINSIC_ArrayIteratorPrototypeDOTnext",
+  "cond": "(! (= __x0__ Object))",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (! (= __x0__ Object)) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTINTRINSIC_ArrayIteratorPrototypeDOTnext",
+  "cond": "(! (= a[\"TypedArrayName\"] absent))",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (! (= a[\"TypedArrayName\"] absent)) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTINTRINSIC_ArrayIteratorPrototypeDOTnext",
+  "cond": "(= __x5__ true)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (= __x5__ true) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTINTRINSIC_StringIteratorPrototypeDOTnext",
+  "cond": "(! (= __x0__ Object))",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (! (= __x0__ Object)) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTINTRINSIC_StringIteratorPrototypeDOTnext",
+  "cond": "(= s undefined)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= s undefined) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTNumberDOTisSafeInteger",
+  "cond": "(! (< (- 9007199254740992i 1i) __x2__))",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (! (< (- 9007199254740992i 1i) __x2__)) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTNumberDOTprototypeDOTtoExponential",
+  "cond": "(< x 0i)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (< x 0i) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTNumberDOTprototypeDOTtoExponential",
+  "cond": "(== x Infinity)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (== x Infinity) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTNumberDOTprototypeDOTtoExponential",
+  "cond": "(|| (< f 0i) (< 100i f))",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (|| (< f 0i) (< 100i f)) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTNumberDOTprototypeDOTtoExponential",
+  "cond": "(== x 0i)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (== x 0i) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTNumberDOTprototypeDOTtoExponential",
+  "cond": "(! (= fractionDigits undefined))",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (! (= fractionDigits undefined)) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTNumberDOTprototypeDOTtoExponential",
+  "cond": "(! (== f 0i))",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (! (== f 0i)) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTNumberDOTprototypeDOTtoExponential",
+  "cond": "(== e 0i)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (== e 0i) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTNumberDOTprototypeDOTtoExponential",
+  "cond": "(< 0i e)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (< 0i e) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTNumberDOTprototypeDOTtoFixed",
+  "cond": "(|| (< f 0i) (< 100i f))",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (|| (< f 0i) (< 100i f)) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTNumberDOTprototypeDOTtoFixed",
+  "cond": "(< x 0i)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (< x 0i) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTNumberDOTprototypeDOTtoFixed",
+  "cond": "(! (< x 9223372036854775807i))",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (! (< x 9223372036854775807i)) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTNumberDOTprototypeDOTtoFixed",
+  "cond": "(! (== f 0i))",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (! (== f 0i)) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTNumberDOTprototypeDOTtoFixed",
+  "cond": "(! (< f k))",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (! (< f k)) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTNumberDOTprototypeDOTtoPrecision",
+  "cond": "(= precision undefined)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (= precision undefined) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTNumberDOTprototypeDOTtoPrecision",
+  "cond": "(< x 0i)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (< x 0i) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTNumberDOTprototypeDOTtoPrecision",
+  "cond": "(== x Infinity)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (== x Infinity) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTNumberDOTprototypeDOTtoPrecision",
+  "cond": "(|| (< p 1i) (< 100i p))",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (|| (< p 1i) (< 100i p)) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTNumberDOTprototypeDOTtoPrecision",
+  "cond": "(== x 0i)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (== x 0i) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTNumberDOTprototypeDOTtoPrecision",
+  "cond": "(|| (< e (- 6i)) (! (< e p)))",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (|| (< e (- 6i)) (! (< e p))) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTNumberDOTprototypeDOTtoPrecision",
+  "cond": "(! (== p 1i))",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (! (== p 1i)) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTNumberDOTprototypeDOTtoPrecision",
+  "cond": "(< 0i e)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (< 0i e) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTNumberDOTprototypeDOTtoPrecision",
+  "cond": "(== e (- p 1i))",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (== e (- p 1i)) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTNumberDOTprototypeDOTtoPrecision",
+  "cond": "(! (< e 0i))",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (! (< e 0i)) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTObjectDOTfreeze",
+  "cond": "(= status false)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= status false) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTObjectDOTgetOwnPropertyDescriptors",
+  "cond": "(! (= descriptor undefined))",
+  "covered": true,
+  "elseCovered": false,
+  "inst": "if (! (= descriptor undefined)) ... else ...",
+  "thenCovered": true
+}, {
+  "algo": "GLOBALDOTObjectDOTpreventExtensions",
+  "cond": "(= status false)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= status false) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTObjectDOTprototypeDOTtoString",
+  "cond": "(! (= O[\"DateValue\"] absent))",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (! (= O[\"DateValue\"] absent)) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTObjectDOTprototypeDOTtoString",
+  "cond": "(! (= O[\"RegExpMatcher\"] absent))",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (! (= O[\"RegExpMatcher\"] absent)) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTObjectDOTseal",
+  "cond": "(= status false)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= status false) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTPromise",
+  "cond": "__x7__",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if __x7__ ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTPromiseDOTallSettledRejectElementFunctions",
+  "cond": "(= alreadyCalled[\"Value\"] true)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= alreadyCalled[\"Value\"] true) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTPromiseDOTallSettledRejectElementFunctions",
+  "cond": "(= remainingElementsCount[\"Value\"] 0i)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= remainingElementsCount[\"Value\"] 0i) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTPromiseResolveFunctions",
+  "cond": "(= __x2__ true)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= __x2__ true) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTPromiseResolveFunctions",
+  "cond": "__x9__",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if __x9__ ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTSetDOTprototypeDOTdelete",
+  "cond": "__x4__",
+  "covered": true,
+  "elseCovered": false,
+  "inst": "if __x4__ ... else ...",
+  "thenCovered": true
+}, {
+  "algo": "GLOBALDOTStringDOTfromCharCode",
+  "cond": "(< nextIndex length)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "while (< nextIndex length) { ... }",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTStringDOTfromCodePoint",
+  "cond": "(< nextIndex length)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "while (< nextIndex length) { ... }",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTStringDOTfromCodePoint",
+  "cond": "(= __x1__ false)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (= __x1__ false) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTStringDOTfromCodePoint",
+  "cond": "(|| (< nextCP 0i) (< 1114111i nextCP))",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (|| (< nextCP 0i) (< 1114111i nextCP)) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTStringDOTfromCodePoint",
+  "cond": "(< __x6__ __x5__[\"length\"])",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "while (< __x6__ __x5__[\"length\"]) { ... }",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTStringDOTprototypeDOTcharCodeAt",
+  "cond": "(|| (< position 0i) (! (< position size)))",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (|| (< position 0i) (! (< position size))) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTStringDOTprototypeDOTendsWith",
+  "cond": "(= isRegExp true)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= isRegExp true) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTStringDOTprototypeDOTincludes",
+  "cond": "(= isRegExp true)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= isRegExp true) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTStringDOTprototypeDOTmatchAll",
+  "cond": "(= isRegExp true)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= isRegExp true) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTStringDOTprototypeDOTmatchAll",
+  "cond": "(! (contains __x5__ \"g\"))",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (! (contains __x5__ \"g\")) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTStringDOTprototypeDOTmatchAll",
+  "cond": "(! (= matcher undefined))",
+  "covered": true,
+  "elseCovered": false,
+  "inst": "if (! (= matcher undefined)) ... else ...",
+  "thenCovered": true
+}, {
+  "algo": "GLOBALDOTStringDOTprototypeDOTreplace",
+  "cond": "(! (|| (= searchValue undefined) (= searchValue null)))",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (! (|| (= searchValue undefined) (= searchValue null))) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTStringDOTprototypeDOTreplace",
+  "cond": "(! (= replacer undefined))",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (! (= replacer undefined)) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTStringDOTprototypeDOTreplace",
+  "cond": "(= functionalReplace false)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (= functionalReplace false) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTStringDOTprototypeDOTreplace",
+  "cond": "(= functionalReplace true)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (= functionalReplace true) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTStringDOTprototypeDOTstartsWith",
+  "cond": "(= isRegExp true)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= isRegExp true) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTStringDOTraw",
+  "cond": "(! (< 0i literalSegments))",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (! (< 0i literalSegments)) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTStringDOTraw",
+  "cond": "(== (+ nextIndex 1i) literalSegments)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (== (+ nextIndex 1i) literalSegments) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTStringDOTraw",
+  "cond": "(< nextIndex numberOfSubstitutions)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (< nextIndex numberOfSubstitutions) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTSymbolDOTkeyFor",
+  "cond": "(= cond true)",
+  "covered": true,
+  "elseCovered": false,
+  "inst": "if (= cond true) ... else ...",
+  "thenCovered": true
+}, {
+  "algo": "GLOBALDOTSyntaxError",
+  "cond": "(= NewTarget undefined)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= NewTarget undefined) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTWeakMapDOTprototypeDOTdelete",
+  "cond": "__x6__",
+  "covered": true,
+  "elseCovered": false,
+  "inst": "if __x6__ ... else ...",
+  "thenCovered": true
+}, {
+  "algo": "GLOBALDOTWeakSetDOTprototypeDOTadd",
+  "cond": "__x6__",
+  "covered": true,
+  "elseCovered": false,
+  "inst": "if __x6__ ... else ...",
+  "thenCovered": true
+}, {
+  "algo": "GLOBALDOTWeakSetDOTprototypeDOTdelete",
+  "cond": "__x6__",
+  "covered": true,
+  "elseCovered": false,
+  "inst": "if __x6__ ... else ...",
+  "thenCovered": true
+}, {
+  "algo": "GLOBALDOTWeakSetDOTprototypeDOTdelete",
+  "cond": "__x6__",
+  "covered": true,
+  "elseCovered": false,
+  "inst": "if __x6__ ... else ...",
+  "thenCovered": true
+}, {
+  "algo": "GLOBALDOTparseInt",
+  "cond": "(! (== R 0i))",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (! (== R 0i)) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTparseInt",
+  "cond": "(|| (< R 2i) (< 36i R))",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (|| (< R 2i) (< 36i R)) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTparseInt",
+  "cond": "(! (== R 16i))",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (! (== R 16i)) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTparseInt",
+  "cond": "(= stripPrefix true)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (= stripPrefix true) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GLOBALDOTparseInt",
+  "cond": "(= Z[\"length\"] 0i)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (= Z[\"length\"] 0i) ... else ...",
+  "thenCovered": false
 }, {
   "algo": "GeneratorResumeAbrupt",
   "cond": "(= genContext[\"ReturnCont\"] absent)",
@@ -917,30 +1764,23 @@
   "thenCovered": false
 }, {
   "algo": "GetActiveScriptOrModule",
-  "cond": "(< 0i __x2__)",
+  "cond": "(! (< k 0i))",
   "covered": true,
   "elseCovered": false,
-  "inst": "while (< 0i __x2__) { ... }",
-  "thenCovered": true
-}, {
-  "algo": "GetFunctionRealm",
-  "cond": "(! (= obj[\"Realm\"] absent))",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "if (! (= obj[\"Realm\"] absent)) ... else ...",
+  "inst": "while (! (< k 0i)) { ... }",
   "thenCovered": true
 }, {
   "algo": "GetFunctionRealm",
   "cond": "(= (typeof obj) \"BoundFunctionExoticObject\")",
-  "covered": false,
-  "elseCovered": false,
+  "covered": true,
+  "elseCovered": true,
   "inst": "if (= (typeof obj) \"BoundFunctionExoticObject\") ... else ...",
   "thenCovered": false
 }, {
   "algo": "GetFunctionRealm",
   "cond": "(= (typeof obj) \"ProxyExoticObject\")",
-  "covered": false,
-  "elseCovered": false,
+  "covered": true,
+  "elseCovered": true,
   "inst": "if (= (typeof obj) \"ProxyExoticObject\") ... else ...",
   "thenCovered": false
 }, {
@@ -951,18 +1791,123 @@
   "inst": "if (= obj[\"ProxyHandler\"] null) ... else ...",
   "thenCovered": false
 }, {
-  "algo": "GetTemplateObject",
-  "cond": "(< __x3__ __x2__[\"length\"])",
+  "algo": "GetIterator",
+  "cond": "(= method undefined)",
+  "covered": true,
+  "elseCovered": false,
+  "inst": "if (= method undefined) ... else ...",
+  "thenCovered": true
+}, {
+  "algo": "GetPrototypeFromConstructor",
+  "cond": "(= intrinsicDefaultProto \"%String.prototype%\")",
   "covered": true,
   "elseCovered": true,
-  "inst": "while (< __x3__ __x2__[\"length\"]) { ... }",
+  "inst": "if (= intrinsicDefaultProto \"%String.prototype%\") ... else ...",
   "thenCovered": false
 }, {
-  "algo": "GetTemplateObject",
-  "cond": "(< index count)",
+  "algo": "GetPrototypeFromConstructor",
+  "cond": "(= intrinsicDefaultProto \"%Array.prototype%\")",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= intrinsicDefaultProto \"%Array.prototype%\") ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GetPrototypeFromConstructor",
+  "cond": "(= intrinsicDefaultProto \"%Boolean.prototype%\")",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= intrinsicDefaultProto \"%Boolean.prototype%\") ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GetPrototypeFromConstructor",
+  "cond": "(= intrinsicDefaultProto \"%Number.prototype%\")",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= intrinsicDefaultProto \"%Number.prototype%\") ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GetPrototypeFromConstructor",
+  "cond": "(= intrinsicDefaultProto \"%Map.prototype%\")",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= intrinsicDefaultProto \"%Map.prototype%\") ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GetPrototypeFromConstructor",
+  "cond": "(= intrinsicDefaultProto \"%Set.prototype%\")",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= intrinsicDefaultProto \"%Set.prototype%\") ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GetPrototypeFromConstructor",
+  "cond": "(= intrinsicDefaultProto \"%WeakMap.prototype%\")",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= intrinsicDefaultProto \"%WeakMap.prototype%\") ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GetPrototypeFromConstructor",
+  "cond": "(= intrinsicDefaultProto \"%WeakSet.prototype%\")",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= intrinsicDefaultProto \"%WeakSet.prototype%\") ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GetPrototypeFromConstructor",
+  "cond": "(= intrinsicDefaultProto \"%Error.prototype%\")",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= intrinsicDefaultProto \"%Error.prototype%\") ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GetPrototypeFromConstructor",
+  "cond": "(= intrinsicDefaultProto \"%EvalError.prototype%\")",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= intrinsicDefaultProto \"%EvalError.prototype%\") ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GetPrototypeFromConstructor",
+  "cond": "(= intrinsicDefaultProto \"%ReferenceError.prototype%\")",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= intrinsicDefaultProto \"%ReferenceError.prototype%\") ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GetPrototypeFromConstructor",
+  "cond": "(= intrinsicDefaultProto \"%SyntaxError.prototype%\")",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= intrinsicDefaultProto \"%SyntaxError.prototype%\") ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GetPrototypeFromConstructor",
+  "cond": "(= intrinsicDefaultProto \"%TypeError.prototype%\")",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= intrinsicDefaultProto \"%TypeError.prototype%\") ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GetPrototypeFromConstructor",
+  "cond": "(= intrinsicDefaultProto \"%URIError.prototype%\")",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= intrinsicDefaultProto \"%URIError.prototype%\") ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "GetPrototypeFromConstructor",
+  "cond": "(= intrinsicDefaultProto \"%AsyncGenerator.prototype%\")",
+  "covered": true,
+  "elseCovered": false,
+  "inst": "if (= intrinsicDefaultProto \"%AsyncGenerator.prototype%\") ... else ...",
+  "thenCovered": true
+}, {
+  "algo": "GetPrototypeFromConstructor",
+  "cond": "(= intrinsicDefaultProto \"%Promise.prototype%\")",
   "covered": false,
   "elseCovered": false,
-  "inst": "while (< index count) { ... }",
+  "inst": "if (= intrinsicDefaultProto \"%Promise.prototype%\") ... else ...",
   "thenCovered": false
 }, {
   "algo": "GlobalDeclarationInstantiation",
@@ -1014,6 +1959,13 @@
   "inst": "if (= existingProp[\"Configurable\"] true) ... else ...",
   "thenCovered": true
 }, {
+  "algo": "GlobalEnvironmentRecordDOTCanDeclareGlobalFunction",
+  "cond": "(&& (&& (= result true) (= existingProp[\"Writable\"] true)) (= existingProp[\"Enumerable\"] true))",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (&& (&& (= result true) (= existingProp[\"Writable\"] true)) (= existingProp[\"Enumerable\"] true)) ... else ...",
+  "thenCovered": false
+}, {
   "algo": "GlobalEnvironmentRecordDOTCreateGlobalFunctionBinding",
   "cond": "(|| (= existingProp undefined) (= existingProp[\"Configurable\"] true))",
   "covered": true,
@@ -1057,11 +2009,18 @@
   "thenCovered": false
 }, {
   "algo": "GlobalEnvironmentRecordDOTHasRestrictedGlobalProperty",
-  "cond": "(= existingProp[\"Configurable\"] true)",
+  "cond": "(= existingProp undefined)",
   "covered": true,
   "elseCovered": false,
-  "inst": "if (= existingProp[\"Configurable\"] true) ... else ...",
+  "inst": "if (= existingProp undefined) ... else ...",
   "thenCovered": true
+}, {
+  "algo": "GlobalEnvironmentRecordDOTHasRestrictedGlobalProperty",
+  "cond": "(= existingProp[\"Configurable\"] true)",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (= existingProp[\"Configurable\"] true) ... else ...",
+  "thenCovered": false
 }, {
   "algo": "GlobalEnvironmentRecordDOTHasVarDeclaration",
   "cond": "(contains varDeclaredNames N)",
@@ -1119,6 +2078,13 @@
   "inst": "if (= Desc undefined) ... else ...",
   "thenCovered": false
 }, {
+  "algo": "IsDuplicate",
+  "cond": "(= list[i] list[j])",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= list[i] list[j]) ... else ...",
+  "thenCovered": false
+}, {
   "algo": "IsGenericDescriptor",
   "cond": "(= Desc undefined)",
   "covered": true,
@@ -1154,19 +2120,12 @@
   "inst": "if (is-instance-of body AsyncConciseBody) ... else ...",
   "thenCovered": false
 }, {
-  "algo": "IsInteger",
-  "cond": "(! (= __x0__ Number))",
+  "algo": "IsNonNegativeInteger",
+  "cond": "(&& (= __x0__ true) (! (< argument 0i)))",
   "covered": true,
-  "elseCovered": true,
-  "inst": "if (! (= __x0__ Number)) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "IsInteger",
-  "cond": "(! (== __x4__ __x5__))",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (! (== __x4__ __x5__)) ... else ...",
-  "thenCovered": false
+  "elseCovered": false,
+  "inst": "if (&& (= __x0__ true) (! (< argument 0i))) ... else ...",
+  "thenCovered": true
 }, {
   "algo": "IsPropertyKey",
   "cond": "(= __x2__ Symbol)",
@@ -1189,27 +2148,6 @@
   "inst": "if (! (= argument[\"RegExpMatcher\"] absent)) ... else ...",
   "thenCovered": false
 }, {
-  "algo": "IterationStatement12VarDeclaredNames0",
-  "cond": "(< __x3__ __x2__[\"length\"])",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "while (< __x3__ __x2__[\"length\"]) { ... }",
-  "thenCovered": false
-}, {
-  "algo": "IterationStatement12VarScopedDeclarations0",
-  "cond": "(< __x2__ __x1__[\"length\"])",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "while (< __x2__ __x1__[\"length\"]) { ... }",
-  "thenCovered": false
-}, {
-  "algo": "IteratorNext",
-  "cond": "(! (= __x2__ Object))",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (! (= __x2__ Object)) ... else ...",
-  "thenCovered": false
-}, {
   "algo": "LabelledItem0TopLevelVarDeclaredNames0",
   "cond": "(is-instance-of Statement Statement10)",
   "covered": true,
@@ -1224,96 +2162,19 @@
   "inst": "if (is-instance-of Statement Statement10) ... else ...",
   "thenCovered": false
 }, {
+  "algo": "MakeBasicObject",
+  "cond": "(contains internalSlotsList \"Extensible\")",
+  "covered": true,
+  "elseCovered": false,
+  "inst": "if (contains internalSlotsList \"Extensible\") ... else ...",
+  "thenCovered": true
+}, {
   "algo": "MemberExpression3HasCallInTailPosition0",
   "cond": "(= this call)",
   "covered": true,
   "elseCovered": false,
   "inst": "if (= this call) ... else ...",
   "thenCovered": true
-}, {
-  "algo": "MulOperation",
-  "cond": "(= op \"%\")",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "if (= op \"%\") ... else ...",
-  "thenCovered": true
-}, {
-  "algo": "ObjectCreate",
-  "cond": "(= obj[\"HasProperty\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= obj[\"HasProperty\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "ObjectCreate",
-  "cond": "(= obj[\"DefineOwnProperty\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= obj[\"DefineOwnProperty\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "ObjectCreate",
-  "cond": "(= obj[\"Set\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= obj[\"Set\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "ObjectCreate",
-  "cond": "(= obj[\"SetPrototypeOf\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= obj[\"SetPrototypeOf\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "ObjectCreate",
-  "cond": "(= obj[\"Get\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= obj[\"Get\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "ObjectCreate",
-  "cond": "(= obj[\"PreventExtensions\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= obj[\"PreventExtensions\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "ObjectCreate",
-  "cond": "(= obj[\"Delete\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= obj[\"Delete\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "ObjectCreate",
-  "cond": "(= obj[\"GetOwnProperty\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= obj[\"GetOwnProperty\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "ObjectCreate",
-  "cond": "(= obj[\"OwnPropertyKeys\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= obj[\"OwnPropertyKeys\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "ObjectCreate",
-  "cond": "(= obj[\"GetPrototypeOf\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= obj[\"GetPrototypeOf\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "ObjectCreate",
-  "cond": "(= obj[\"IsExtensible\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= obj[\"IsExtensible\"] absent) ... else ...",
-  "thenCovered": false
 }, {
   "algo": "ObjectEnvironmentRecordDOTGetBindingValue",
   "cond": "(= value false)",
@@ -1371,6 +2232,13 @@
   "inst": "if (|| (= thisArgument undefined) (= thisArgument null)) ... else ...",
   "thenCovered": false
 }, {
+  "algo": "OrdinaryFunctionCreate",
+  "cond": "(= Strict true)",
+  "covered": true,
+  "elseCovered": false,
+  "inst": "if (= Strict true) ... else ...",
+  "thenCovered": true
+}, {
   "algo": "OrdinarySetPrototypeOf",
   "cond": "(= __x0__ true)",
   "covered": true,
@@ -1406,6 +2274,76 @@
   "inst": "if (= existingDescriptor[\"Writable\"] false) ... else ...",
   "thenCovered": false
 }, {
+  "algo": "PerformEval",
+  "cond": "(= F[\"ConstructorKind\"] CONST_derived)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= F[\"ConstructorKind\"] CONST_derived) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "PerformEval",
+  "cond": "__x17__",
+  "covered": true,
+  "elseCovered": false,
+  "inst": "if __x17__ ... else ...",
+  "thenCovered": true
+}, {
+  "algo": "PerformEval",
+  "cond": "(= strictEval true)",
+  "covered": true,
+  "elseCovered": false,
+  "inst": "if (= strictEval true) ... else ...",
+  "thenCovered": true
+}, {
+  "algo": "PerformEval",
+  "cond": "(= runningContext null)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= runningContext null) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "PerformEval",
+  "cond": "(= GLOBAL_executionStack[(- GLOBAL_executionStack[\"length\"] 1i)] evalContext)",
+  "covered": true,
+  "elseCovered": false,
+  "inst": "if (= GLOBAL_executionStack[(- GLOBAL_executionStack[\"length\"] 1i)] evalContext) ... else ...",
+  "thenCovered": true
+}, {
+  "algo": "PerformEval",
+  "cond": "(= GLOBAL_executionStack[\"length\"] 0i)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= GLOBAL_executionStack[\"length\"] 0i) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "PerformPromiseAll",
+  "cond": "(= __x2__ false)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= __x2__ false) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "PerformPromiseAllSettled",
+  "cond": "(= __x2__ false)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= __x2__ false) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "PerformPromiseRace",
+  "cond": "(= __x2__ false)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= __x2__ false) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "PerformPromiseThen",
+  "cond": "(= promise[\"PromiseIsHandled\"] false)",
+  "covered": true,
+  "elseCovered": false,
+  "inst": "if (= promise[\"PromiseIsHandled\"] false) ... else ...",
+  "thenCovered": true
+}, {
   "algo": "PrepareForOrdinaryCall",
   "cond": "(= callerContext null)",
   "covered": true,
@@ -1425,6 +2363,20 @@
   "covered": true,
   "elseCovered": true,
   "inst": "if (= GLOBAL_executionStack[\"length\"] 0i) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "PromiseReactionJob",
+  "cond": "(= type CONST_Fulfill)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= type CONST_Fulfill) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "PropertyDefinition3Contains0",
+  "cond": "(is-instance-of symbol MethodDefinition)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (is-instance-of symbol MethodDefinition) ... else ...",
   "thenCovered": false
 }, {
   "algo": "PutValue",
@@ -1463,10 +2415,10 @@
   "thenCovered": false
 }, {
   "algo": "ScriptEvaluation",
-  "cond": "(= GLOBAL_executionStack[(- GLOBAL_executionStack[\"length\"] 1i)] scriptCxt)",
+  "cond": "(= GLOBAL_executionStack[(- GLOBAL_executionStack[\"length\"] 1i)] scriptContext)",
   "covered": true,
   "elseCovered": false,
-  "inst": "if (= GLOBAL_executionStack[(- GLOBAL_executionStack[\"length\"] 1i)] scriptCxt) ... else ...",
+  "inst": "if (= GLOBAL_executionStack[(- GLOBAL_executionStack[\"length\"] 1i)] scriptContext) ... else ...",
   "thenCovered": true
 }, {
   "algo": "ScriptEvaluation",
@@ -1475,13 +2427,6 @@
   "elseCovered": true,
   "inst": "if (= GLOBAL_executionStack[\"length\"] 0i) ... else ...",
   "thenCovered": false
-}, {
-  "algo": "SetFunctionLength",
-  "cond": "__x1__",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "if __x1__ ... else ...",
-  "thenCovered": true
 }, {
   "algo": "SetIntegrityLevel",
   "cond": "(= status false)",
@@ -1519,101 +2464,31 @@
   "thenCovered": false
 }, {
   "algo": "SpeciesConstructor",
-  "cond": "(|| (= S undefined) (= S null))",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (|| (= S undefined) (= S null)) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "SpeciesConstructor",
   "cond": "(= __x7__ true)",
   "covered": true,
   "elseCovered": false,
   "inst": "if (= __x7__ true) ... else ...",
   "thenCovered": true
 }, {
-  "algo": "StringCreate",
-  "cond": "(= S[\"HasProperty\"] absent)",
+  "algo": "StringExoticObjectDOTOwnPropertyKeys",
+  "cond": "(! (< n str[\"length\"]))",
+  "covered": true,
+  "elseCovered": false,
+  "inst": "if (! (< n str[\"length\"])) ... else ...",
+  "thenCovered": true
+}, {
+  "algo": "StringExoticObjectDOTOwnPropertyKeys",
+  "cond": "(< j len)",
   "covered": true,
   "elseCovered": true,
-  "inst": "if (= S[\"HasProperty\"] absent) ... else ...",
+  "inst": "while (< j len) { ... }",
   "thenCovered": false
 }, {
-  "algo": "StringCreate",
-  "cond": "(= S[\"DefineOwnProperty\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= S[\"DefineOwnProperty\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "StringCreate",
-  "cond": "(= S[\"Set\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= S[\"Set\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "StringCreate",
-  "cond": "(= S[\"SetPrototypeOf\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= S[\"SetPrototypeOf\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "StringCreate",
-  "cond": "(= S[\"Get\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= S[\"Get\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "StringCreate",
-  "cond": "(= S[\"PreventExtensions\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= S[\"PreventExtensions\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "StringCreate",
-  "cond": "(= S[\"Delete\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= S[\"Delete\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "StringCreate",
-  "cond": "(= S[\"GetOwnProperty\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= S[\"GetOwnProperty\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "StringCreate",
-  "cond": "(= S[\"OwnPropertyKeys\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= S[\"OwnPropertyKeys\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "StringCreate",
-  "cond": "(= S[\"GetPrototypeOf\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= S[\"GetPrototypeOf\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "StringCreate",
-  "cond": "(= S[\"IsExtensible\"] absent)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= S[\"IsExtensible\"] absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "StringExoticObjectDOTDefineOwnProperty",
-  "cond": "(! (= stringDesc undefined))",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (! (= stringDesc undefined)) ... else ...",
+  "algo": "StringExoticObjectDOTOwnPropertyKeys",
+  "cond": "(< arrayIndexKeys[j] arrayIndexKeys[min])",
+  "covered": false,
+  "elseCovered": false,
+  "inst": "if (< arrayIndexKeys[j] arrayIndexKeys[min]) ... else ...",
   "thenCovered": false
 }, {
   "algo": "StringGetOwnProperty",
@@ -1623,12 +2498,47 @@
   "inst": "if (= index -0.0) ... else ...",
   "thenCovered": false
 }, {
+  "algo": "SuperProperty1Contains0",
+  "cond": "(= symbol \"super\")",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= symbol \"super\") ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "SuperProperty1Contains0",
+  "cond": "(is-instance-of symbol ReservedWord)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (is-instance-of symbol ReservedWord) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "SuperProperty1Contains0",
+  "cond": "__x0__",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if __x0__ ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "SuperProperty1Contains0",
+  "cond": "__x0__",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if __x0__ ... else ...",
+  "thenCovered": false
+}, {
   "algo": "TestIntegrityLevel",
   "cond": "(! (= currentDesc undefined))",
   "covered": true,
   "elseCovered": false,
   "inst": "if (! (= currentDesc undefined)) ... else ...",
   "thenCovered": true
+}, {
+  "algo": "ToInteger",
+  "cond": "(= integer -0.0)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= integer -0.0) ... else ...",
+  "thenCovered": false
 }, {
   "algo": "ToObject",
   "cond": "(= obj[\"HasProperty\"] absent)",
@@ -1763,12 +2673,54 @@
   "inst": "if (! (= O undefined)) ... else ...",
   "thenCovered": true
 }, {
-  "algo": "ValidateAndApplyPropertyDescriptor",
-  "cond": "(! (= O undefined))",
+  "algo": "YieldExpression0Evaluation0",
+  "cond": "(= generatorKind CONST_async)",
   "covered": true,
-  "elseCovered": false,
-  "inst": "if (! (= O undefined)) ... else ...",
-  "thenCovered": true
+  "elseCovered": true,
+  "inst": "if (= generatorKind CONST_async) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "YieldExpression1Evaluation0",
+  "cond": "(= generatorKind CONST_async)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= generatorKind CONST_async) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "YieldExpression2Evaluation0",
+  "cond": "(= generatorKind CONST_async)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= generatorKind CONST_async) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "YieldExpression2Evaluation0",
+  "cond": "(= generatorKind CONST_async)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= generatorKind CONST_async) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "YieldExpression2Evaluation0",
+  "cond": "(= generatorKind CONST_async)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= generatorKind CONST_async) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "YieldExpression2Evaluation0",
+  "cond": "(= generatorKind CONST_async)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= generatorKind CONST_async) ... else ...",
+  "thenCovered": false
+}, {
+  "algo": "YieldExpression2Evaluation0",
+  "cond": "(= generatorKind CONST_async)",
+  "covered": true,
+  "elseCovered": true,
+  "inst": "if (= generatorKind CONST_async) ... else ...",
+  "thenCovered": false
 }, {
   "algo": "YieldExpression2Evaluation0",
   "cond": "(= generatorKind CONST_async)",
