@@ -5,8 +5,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Inst._
 import kr.ac.kaist.ires.util.Useful._
 
-case class Coverage(cases: Vector[Case]) {
-}
+case class Coverage(cases: Vector[Case])
 object Coverage extends CoverageProtocol {
   // covered instructions
   private var instCovered: Set[Int] = Set()

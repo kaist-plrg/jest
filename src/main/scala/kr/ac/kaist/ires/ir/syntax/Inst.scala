@@ -8,7 +8,7 @@ import scala.collection.mutable.{ Map => MMap }
 sealed trait Inst extends IRNode {
   private var algo: Option[Algorithm] = None
   lazy val uid: Int = algo match {
-    case Some(algo) if COVERAGE_MODE && algo.lang =>
+    case Some(algo) if COVERAGE_MODE =>
       val uid = Inst.insts.size
       Inst._insts :+= this
       Inst._instToAlgo :+= algo
