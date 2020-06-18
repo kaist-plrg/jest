@@ -14,6 +14,10 @@ trait EvalTest extends IRESTest {
   // show results for coverage
   override def afterAll(): Unit = {
     super.afterAll
-    if (COVERAGE_MODE) Coverage.dumpStat
+    if (COVERAGE_MODE) {
+      val coverage = Coverage.getCoverage
+      println(coverage.summary)
+      coverage.dump
+    }
   }
 }

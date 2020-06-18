@@ -60,7 +60,11 @@ class Test262Test extends IRESTest with EvalTest {
     }
     dumpJson(yet, s"$TEST_DIR/yet.json")
 
-    if (COVERAGE_MODE) Coverage.dumpStat
+    if (COVERAGE_MODE) {
+      val coverage = Coverage.getCoverage
+      println(coverage.summary)
+      coverage.dump
+    }
   }
 
   // tests for js-interpreter
