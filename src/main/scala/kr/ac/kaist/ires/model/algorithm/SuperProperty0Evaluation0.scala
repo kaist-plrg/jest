@@ -21,7 +21,7 @@ object SuperProperty0Evaluation0 extends Algorithm {
     app __x4__ = (ToPropertyKey propertyNameValue)
     if (is-completion __x4__) if (= __x4__["Type"] CONST_normal) __x4__ = __x4__["Value"] else return __x4__ else {}
     let propertyKey = __x4__
-    if true let strict = true else let strict = false
+    let strict = true
     app __x5__ = (MakeSuperPropertyReference actualThis propertyKey strict)
     if (is-completion __x5__) if (= __x5__["Type"] CONST_normal) __x5__ = __x5__["Value"] else return __x5__ else {}
     app __x6__ = (WrapCompletion __x5__)

@@ -43,7 +43,7 @@ object CallExpression0Evaluation0 extends Algorithm {
           return __x12__
         } else {}
         let evalArg = argList[0i]
-        if true let strictCaller = true else let strictCaller = false
+        let strictCaller = true
         let evalRealm = REALM
         app __x14__ = (PerformEval evalArg evalRealm strictCaller true)
         if (is-completion __x14__) if (= __x14__["Type"] CONST_normal) __x14__ = __x14__["Value"] else return __x14__ else {}

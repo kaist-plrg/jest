@@ -26,7 +26,7 @@ object OrdinarySetPrototypeOf extends Algorithm {
       if (= __x3__ true) {
         app __x4__ = (WrapCompletion false)
         return __x4__
-      } else if false done = true else p = p["Prototype"]
+      } else if (! (= p.GetProtoTypeOf OrdinaryObjectDOTGetPrototypeOf)) done = true else p = p["Prototype"]
     }
     O["Prototype"] = V
     app __x5__ = (WrapCompletion true)

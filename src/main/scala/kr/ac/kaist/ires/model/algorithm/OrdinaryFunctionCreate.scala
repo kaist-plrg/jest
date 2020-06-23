@@ -18,7 +18,7 @@ object OrdinaryFunctionCreate extends Algorithm {
     F["Call"] = ECMAScriptFunctionObjectDOTCall
     F["FormalParameters"] = ParameterList
     F["ECMAScriptCode"] = Body
-    if true let Strict = true else let Strict = false
+    let Strict = true
     F["Strict"] = Strict
     if (= thisMode CONST_lexicalthis) F["ThisMode"] = CONST_lexical else if (= Strict true) F["ThisMode"] = CONST_strict else F["ThisMode"] = CONST_global
     F["IsClassConstructor"] = false

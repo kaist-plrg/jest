@@ -2093,13 +2093,6 @@
   "thenCovered": false
 }, {
   "algo": "IsInTailPosition",
-  "cond": "false",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if false ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "IsInTailPosition",
   "cond": "(is-instance-of __x1__ AsyncConciseBody)",
   "covered": true,
   "elseCovered": true,
@@ -2254,11 +2247,11 @@
   "thenCovered": false
 }, {
   "algo": "OrdinarySetPrototypeOf",
-  "cond": "false",
+  "cond": "(! (= p[\"GetProtoTypeOf\"] OrdinaryObjectDOTGetPrototypeOf))",
   "covered": true,
-  "elseCovered": true,
-  "inst": "if false ... else ...",
-  "thenCovered": false
+  "elseCovered": false,
+  "inst": "if (! (= p[\"GetProtoTypeOf\"] OrdinaryObjectDOTGetPrototypeOf)) ... else ...",
+  "thenCovered": true
 }, {
   "algo": "OrdinarySetWithOwnDescriptor",
   "cond": "(= __x9__ true)",

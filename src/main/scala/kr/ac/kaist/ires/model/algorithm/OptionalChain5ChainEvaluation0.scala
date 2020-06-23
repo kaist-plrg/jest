@@ -16,7 +16,7 @@ object OptionalChain5ChainEvaluation0 extends Algorithm {
     app __x2__ = (GetValue newReference)
     if (is-completion __x2__) if (= __x2__["Type"] CONST_normal) __x2__ = __x2__["Value"] else return __x2__ else {}
     let newValue = __x2__
-    if true let strict = true else let strict = false
+    let strict = true
     app __x3__ = (EvaluatePropertyAccessWithExpressionKey newValue Expression strict)
     if (is-completion __x3__) if (= __x3__["Type"] CONST_normal) __x3__ = __x3__["Value"] else return __x3__ else {}
     app __x4__ = (WrapCompletion __x3__)

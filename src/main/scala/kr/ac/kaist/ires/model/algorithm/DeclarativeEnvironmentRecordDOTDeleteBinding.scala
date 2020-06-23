@@ -10,7 +10,7 @@ object DeclarativeEnvironmentRecordDOTDeleteBinding extends Algorithm {
   val func: Func = FixUIdWalker(parseFunc(""""DeclarativeEnvironmentRecord.DeleteBinding" (this, N) => {
     let envRec = this
     assert (! (= envRec["SubMap"][N] absent))
-    if false {
+    if (! (= envRec.SubMap[N].maybeDeleted true)) {
       app __x0__ = (WrapCompletion false)
       return __x0__
     } else {}

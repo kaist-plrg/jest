@@ -8,7 +8,6 @@ object IsInTailPosition extends Algorithm {
   val length: Int = 1
   val lang: Boolean = true
   val func: Func = FixUIdWalker(parseFunc(""""IsInTailPosition" (call) => {
-    if false return false else {}
     let __x0__ = true
     let __x1__ = call
     while (&& (= __x0__ true) (! (= __x1__ absent))) {
