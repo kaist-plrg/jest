@@ -1,6 +1,6 @@
 package kr.ac.kaist.ires.model
 
-import kr.ac.kaist.ires.AST
+import kr.ac.kaist.ires.{ model, AST, Lexical }
 import kr.ac.kaist.ires.error._
 import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.parser.UnicodeRegex
@@ -97,12 +97,10 @@ object ModelHelper {
       )
   }
 
-  private val notSupportedSyntaxPrefixList = List("RegularExpression")
-  def checkSupported(ast: AST): Unit = ast.exists {
-    case name => notSupportedSyntaxPrefixList.exists {
-      case pre =>
-        if (name.startsWith(pre)) throw NotSupported(pre)
-        else false
-    }
+  val REGEX_NAME = "RegularExpressionLiteral"
+  def checkSupported(ast: AST): Unit = SupportedChecker.walk(ast)
+  object SupportedChecker extends model.UnitWalker {
+    override def walk(lexical: Lexical): Unit =
+      if (lexical.kind == REGEX_NAME) throw NotSupported(REGEX_NAME)
   }
 }
