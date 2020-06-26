@@ -9,9 +9,7 @@ import kr.ac.kaist.ires.parser.UnicodeRegex
 object BaseGlobal {
   private val map: Map[String, Value] = Map(
     "RequireObjectCoercible" -> RequireObjectCoercible.func,
-    "EmptyFunction" -> EmptyFunction.func,
     "EnumerateObjectPropertiesHelper" -> EnumerateObjectPropertiesHelper.func,
-    "FalseFunction" -> FalseFunction.func,
     "Type" -> Type.func,
     "ToNumber" -> ToNumber.func,
     "ToBoolean" -> ToBoolean.func,
