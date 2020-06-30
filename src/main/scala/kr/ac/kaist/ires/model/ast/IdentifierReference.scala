@@ -21,7 +21,6 @@ case class IdentifierReference0(x0: Identifier, parserParams: List[Boolean]) ext
 object IdentifierReference0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "AssignmentTargetType0" -> IdentifierReference0AssignmentTargetType0.func,
     "Evaluation0" -> IdentifierReference0Evaluation0.func
   )
 }
@@ -37,7 +36,6 @@ case class IdentifierReference1(parserParams: List[Boolean]) extends IdentifierR
 object IdentifierReference1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "AssignmentTargetType0" -> IdentifierReference1AssignmentTargetType0.func,
     "Evaluation0" -> IdentifierReference1Evaluation0.func,
     "StringValue0" -> IdentifierReference1StringValue0.func
   )
@@ -54,7 +52,6 @@ case class IdentifierReference2(parserParams: List[Boolean]) extends IdentifierR
 object IdentifierReference2 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "AssignmentTargetType0" -> IdentifierReference2AssignmentTargetType0.func,
     "Evaluation0" -> IdentifierReference2Evaluation0.func,
     "StringValue0" -> IdentifierReference2StringValue0.func
   )

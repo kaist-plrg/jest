@@ -37,7 +37,6 @@ case class MultiplicativeExpression1(x0: MultiplicativeExpression, x1: Multiplic
 object MultiplicativeExpression1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "AssignmentTargetType0" -> MultiplicativeExpression1AssignmentTargetType0.func,
     "Evaluation0" -> MultiplicativeExpression1Evaluation0.func,
     "HasCallInTailPosition0" -> MultiplicativeExpression1HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> MultiplicativeExpression1IsFunctionDefinition0.func

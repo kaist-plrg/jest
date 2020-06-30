@@ -20,7 +20,6 @@ case class BreakStatement0(parserParams: List[Boolean]) extends BreakStatement {
 object BreakStatement0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "ContainsUndefinedBreakTarget0" -> BreakStatement0ContainsUndefinedBreakTarget0.func,
     "Evaluation0" -> BreakStatement0Evaluation0.func
   )
 }
@@ -37,7 +36,6 @@ case class BreakStatement1(x2: LabelIdentifier, parserParams: List[Boolean]) ext
 object BreakStatement1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "ContainsUndefinedBreakTarget0" -> BreakStatement1ContainsUndefinedBreakTarget0.func,
     "Evaluation0" -> BreakStatement1Evaluation0.func
   )
 }

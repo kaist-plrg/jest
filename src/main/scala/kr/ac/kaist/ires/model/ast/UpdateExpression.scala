@@ -35,7 +35,6 @@ case class UpdateExpression1(x0: LeftHandSideExpression, parserParams: List[Bool
 object UpdateExpression1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "AssignmentTargetType0" -> UpdateExpression1AssignmentTargetType0.func,
     "Evaluation0" -> UpdateExpression1Evaluation0.func,
     "HasCallInTailPosition0" -> UpdateExpression1HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> UpdateExpression1IsFunctionDefinition0.func
@@ -54,7 +53,6 @@ case class UpdateExpression2(x0: LeftHandSideExpression, parserParams: List[Bool
 object UpdateExpression2 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "AssignmentTargetType0" -> UpdateExpression2AssignmentTargetType0.func,
     "Evaluation0" -> UpdateExpression2Evaluation0.func,
     "HasCallInTailPosition0" -> UpdateExpression2HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> UpdateExpression2IsFunctionDefinition0.func
@@ -73,7 +71,6 @@ case class UpdateExpression3(x1: UnaryExpression, parserParams: List[Boolean]) e
 object UpdateExpression3 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "AssignmentTargetType0" -> UpdateExpression3AssignmentTargetType0.func,
     "Evaluation0" -> UpdateExpression3Evaluation0.func,
     "HasCallInTailPosition0" -> UpdateExpression3HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> UpdateExpression3IsFunctionDefinition0.func
@@ -92,7 +89,6 @@ case class UpdateExpression4(x1: UnaryExpression, parserParams: List[Boolean]) e
 object UpdateExpression4 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "AssignmentTargetType0" -> UpdateExpression4AssignmentTargetType0.func,
     "Evaluation0" -> UpdateExpression4Evaluation0.func,
     "HasCallInTailPosition0" -> UpdateExpression4HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> UpdateExpression4IsFunctionDefinition0.func

@@ -22,9 +22,6 @@ case class LabelledStatement0(x0: LabelIdentifier, x2: LabelledItem, parserParam
 object LabelledStatement0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "ContainsDuplicateLabels0" -> LabelledStatement0ContainsDuplicateLabels0.func,
-    "ContainsUndefinedBreakTarget0" -> LabelledStatement0ContainsUndefinedBreakTarget0.func,
-    "ContainsUndefinedContinueTarget0" -> LabelledStatement0ContainsUndefinedContinueTarget0.func,
     "Evaluation0" -> LabelledStatement0Evaluation0.func,
     "HasCallInTailPosition0" -> LabelledStatement0HasCallInTailPosition0.func,
     "LabelledEvaluation0" -> LabelledStatement0LabelledEvaluation0.func,

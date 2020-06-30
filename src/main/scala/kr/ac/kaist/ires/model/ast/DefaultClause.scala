@@ -21,9 +21,6 @@ case class DefaultClause0(x2: Option[StatementList], parserParams: List[Boolean]
 object DefaultClause0 extends ASTInfo {
   val maxK: Int = 1
   val semMap: Map[String, Func] = Map(
-    "ContainsDuplicateLabels1" -> DefaultClause0ContainsDuplicateLabels1.func,
-    "ContainsUndefinedBreakTarget1" -> DefaultClause0ContainsUndefinedBreakTarget1.func,
-    "ContainsUndefinedContinueTarget1" -> DefaultClause0ContainsUndefinedContinueTarget1.func,
     "Evaluation0" -> DefaultClause0Evaluation0.func,
     "Evaluation1" -> DefaultClause0Evaluation1.func,
     "HasCallInTailPosition1" -> DefaultClause0HasCallInTailPosition1.func,

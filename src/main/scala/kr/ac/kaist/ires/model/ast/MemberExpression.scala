@@ -38,7 +38,6 @@ case class MemberExpression1(x0: MemberExpression, x2: Expression, parserParams:
 object MemberExpression1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "AssignmentTargetType0" -> MemberExpression1AssignmentTargetType0.func,
     "Evaluation0" -> MemberExpression1Evaluation0.func,
     "HasCallInTailPosition0" -> MemberExpression1HasCallInTailPosition0.func,
     "IsDestructuring0" -> MemberExpression1IsDestructuring0.func,
@@ -60,7 +59,6 @@ case class MemberExpression2(x0: MemberExpression, x2: Lexical, parserParams: Li
 object MemberExpression2 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "AssignmentTargetType0" -> MemberExpression2AssignmentTargetType0.func,
     "Contains0" -> MemberExpression2Contains0.func,
     "Evaluation0" -> MemberExpression2Evaluation0.func,
     "HasCallInTailPosition0" -> MemberExpression2HasCallInTailPosition0.func,
@@ -83,7 +81,6 @@ case class MemberExpression3(x0: MemberExpression, x1: TemplateLiteral, parserPa
 object MemberExpression3 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "AssignmentTargetType0" -> MemberExpression3AssignmentTargetType0.func,
     "Evaluation0" -> MemberExpression3Evaluation0.func,
     "HasCallInTailPosition0" -> MemberExpression3HasCallInTailPosition0.func,
     "IsDestructuring0" -> MemberExpression3IsDestructuring0.func,
@@ -104,7 +101,6 @@ case class MemberExpression4(x0: SuperProperty, parserParams: List[Boolean]) ext
 object MemberExpression4 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "AssignmentTargetType0" -> MemberExpression4AssignmentTargetType0.func,
     "HasCallInTailPosition0" -> MemberExpression4HasCallInTailPosition0.func,
     "IsDestructuring0" -> MemberExpression4IsDestructuring0.func,
     "IsFunctionDefinition0" -> MemberExpression4IsFunctionDefinition0.func,
@@ -144,7 +140,6 @@ case class MemberExpression6(x1: MemberExpression, x2: Arguments, parserParams: 
 object MemberExpression6 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "AssignmentTargetType0" -> MemberExpression6AssignmentTargetType0.func,
     "Evaluation0" -> MemberExpression6Evaluation0.func,
     "HasCallInTailPosition0" -> MemberExpression6HasCallInTailPosition0.func,
     "IsDestructuring0" -> MemberExpression6IsDestructuring0.func,

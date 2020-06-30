@@ -37,7 +37,6 @@ case class ConditionalExpression1(x0: ShortCircuitExpression, x2: AssignmentExpr
 object ConditionalExpression1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "AssignmentTargetType0" -> ConditionalExpression1AssignmentTargetType0.func,
     "Evaluation0" -> ConditionalExpression1Evaluation0.func,
     "HasCallInTailPosition0" -> ConditionalExpression1HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> ConditionalExpression1IsFunctionDefinition0.func

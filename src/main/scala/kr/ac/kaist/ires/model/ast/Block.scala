@@ -21,9 +21,6 @@ case class Block0(x1: Option[StatementList], parserParams: List[Boolean]) extend
 object Block0 extends ASTInfo {
   val maxK: Int = 1
   val semMap: Map[String, Func] = Map(
-    "ContainsDuplicateLabels0" -> Block0ContainsDuplicateLabels0.func,
-    "ContainsUndefinedBreakTarget0" -> Block0ContainsUndefinedBreakTarget0.func,
-    "ContainsUndefinedContinueTarget0" -> Block0ContainsUndefinedContinueTarget0.func,
     "Evaluation0" -> Block0Evaluation0.func,
     "Evaluation1" -> Block0Evaluation1.func,
     "HasCallInTailPosition0" -> Block0HasCallInTailPosition0.func,

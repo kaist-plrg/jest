@@ -23,9 +23,6 @@ object Catch0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "CatchClauseEvaluation0" -> Catch0CatchClauseEvaluation0.func,
-    "ContainsDuplicateLabels0" -> Catch0ContainsDuplicateLabels0.func,
-    "ContainsUndefinedBreakTarget0" -> Catch0ContainsUndefinedBreakTarget0.func,
-    "ContainsUndefinedContinueTarget0" -> Catch0ContainsUndefinedContinueTarget0.func,
     "HasCallInTailPosition0" -> Catch0HasCallInTailPosition0.func,
     "VarDeclaredNames0" -> Catch0VarDeclaredNames0.func,
     "VarScopedDeclarations0" -> Catch0VarScopedDeclarations0.func

@@ -21,7 +21,6 @@ case class ParenthesizedExpression0(x1: Expression, parserParams: List[Boolean])
 object ParenthesizedExpression0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "AssignmentTargetType0" -> ParenthesizedExpression0AssignmentTargetType0.func,
     "Evaluation0" -> ParenthesizedExpression0Evaluation0.func,
     "HasCallInTailPosition0" -> ParenthesizedExpression0HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> ParenthesizedExpression0IsFunctionDefinition0.func,

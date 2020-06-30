@@ -22,7 +22,6 @@ case class CoalesceExpression0(x0: CoalesceExpressionHead, x2: BitwiseORExpressi
 object CoalesceExpression0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "AssignmentTargetType0" -> CoalesceExpression0AssignmentTargetType0.func,
     "Evaluation0" -> CoalesceExpression0Evaluation0.func,
     "HasCallInTailPosition0" -> CoalesceExpression0HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> CoalesceExpression0IsFunctionDefinition0.func

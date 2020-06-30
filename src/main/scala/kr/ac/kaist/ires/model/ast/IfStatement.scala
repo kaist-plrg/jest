@@ -23,9 +23,6 @@ case class IfStatement0(x2: Expression, x4: Statement, x6: Statement, parserPara
 object IfStatement0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "ContainsDuplicateLabels0" -> IfStatement0ContainsDuplicateLabels0.func,
-    "ContainsUndefinedBreakTarget0" -> IfStatement0ContainsUndefinedBreakTarget0.func,
-    "ContainsUndefinedContinueTarget0" -> IfStatement0ContainsUndefinedContinueTarget0.func,
     "Evaluation0" -> IfStatement0Evaluation0.func,
     "HasCallInTailPosition0" -> IfStatement0HasCallInTailPosition0.func,
     "VarDeclaredNames0" -> IfStatement0VarDeclaredNames0.func,
@@ -46,9 +43,6 @@ case class IfStatement1(x2: Expression, x4: Statement, parserParams: List[Boolea
 object IfStatement1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "ContainsDuplicateLabels0" -> IfStatement1ContainsDuplicateLabels0.func,
-    "ContainsUndefinedBreakTarget0" -> IfStatement1ContainsUndefinedBreakTarget0.func,
-    "ContainsUndefinedContinueTarget0" -> IfStatement1ContainsUndefinedContinueTarget0.func,
     "Evaluation0" -> IfStatement1Evaluation0.func,
     "HasCallInTailPosition0" -> IfStatement1HasCallInTailPosition0.func,
     "VarDeclaredNames0" -> IfStatement1VarDeclaredNames0.func,

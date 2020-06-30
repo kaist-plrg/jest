@@ -23,9 +23,6 @@ object CaseBlock0 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "CaseBlockEvaluation0" -> CaseBlock0CaseBlockEvaluation0.func,
     "CaseBlockEvaluation1" -> CaseBlock0CaseBlockEvaluation1.func,
-    "ContainsDuplicateLabels0" -> CaseBlock0ContainsDuplicateLabels0.func,
-    "ContainsUndefinedBreakTarget0" -> CaseBlock0ContainsUndefinedBreakTarget0.func,
-    "ContainsUndefinedContinueTarget0" -> CaseBlock0ContainsUndefinedContinueTarget0.func,
     "HasCallInTailPosition0" -> CaseBlock0HasCallInTailPosition0.func,
     "LexicallyDeclaredNames0" -> CaseBlock0LexicallyDeclaredNames0.func,
     "LexicallyScopedDeclarations0" -> CaseBlock0LexicallyScopedDeclarations0.func,
@@ -49,9 +46,6 @@ object CaseBlock1 extends ASTInfo {
   val maxK: Int = 3
   val semMap: Map[String, Func] = Map(
     "CaseBlockEvaluation3" -> CaseBlock1CaseBlockEvaluation3.func,
-    "ContainsDuplicateLabels3" -> CaseBlock1ContainsDuplicateLabels3.func,
-    "ContainsUndefinedBreakTarget3" -> CaseBlock1ContainsUndefinedBreakTarget3.func,
-    "ContainsUndefinedContinueTarget3" -> CaseBlock1ContainsUndefinedContinueTarget3.func,
     "HasCallInTailPosition3" -> CaseBlock1HasCallInTailPosition3.func,
     "LexicallyDeclaredNames3" -> CaseBlock1LexicallyDeclaredNames3.func,
     "LexicallyScopedDeclarations3" -> CaseBlock1LexicallyScopedDeclarations3.func,

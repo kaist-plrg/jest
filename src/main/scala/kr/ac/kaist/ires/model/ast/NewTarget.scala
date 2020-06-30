@@ -20,7 +20,6 @@ case class NewTarget0(parserParams: List[Boolean]) extends NewTarget {
 object NewTarget0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "AssignmentTargetType0" -> NewTarget0AssignmentTargetType0.func,
     "Evaluation0" -> NewTarget0Evaluation0.func
   )
 }

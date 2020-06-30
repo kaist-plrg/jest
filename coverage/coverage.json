@@ -963,10 +963,6 @@
   "covered": true,
   "inst": "return __x1__"
 }, {
-  "algo": "PrimaryExpression2AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
-}, {
   "algo": "PrimaryExpression2HasCallInTailPosition0",
   "covered": true,
   "inst": "{ ... }"
@@ -1009,10 +1005,6 @@
   "algo": "MemberExpression0IsDestructuring0",
   "covered": true,
   "inst": "return false"
-}, {
-  "algo": "UnaryExpression5AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
 }, {
   "algo": "UnaryExpression5Evaluation0",
   "covered": true,
@@ -1314,18 +1306,6 @@
   "covered": true,
   "inst": "return __x2__"
 }, {
-  "algo": "Statement8ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "return false"
-}, {
-  "algo": "Statement8ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return false"
-}, {
-  "algo": "Statement8ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return false"
-}, {
   "algo": "Statement8VarDeclaredNames0",
   "covered": true,
   "inst": "return (new [])"
@@ -1489,18 +1469,6 @@
   "algo": "StatementListItem0TopLevelVarScopedDeclarations0",
   "covered": true,
   "inst": "return __x1__"
-}, {
-  "algo": "FunctionStatementList0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "return false"
-}, {
-  "algo": "FunctionStatementList0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return false"
-}, {
-  "algo": "FunctionStatementList0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return false"
 }, {
   "algo": "FunctionStatementList0Evaluation0",
   "covered": true,
@@ -1808,10 +1776,6 @@
   "covered": true,
   "inst": "return __x2__"
 }, {
-  "algo": "PrimaryExpression5AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
-}, {
   "algo": "PrimaryExpression5HasCallInTailPosition0",
   "covered": false,
   "inst": "{ ... }"
@@ -2003,56 +1967,6 @@
   "covered": true,
   "inst": "return __x6__"
 }, {
-  "algo": "IdentifierReference0AssignmentTargetType0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IdentifierReference0AssignmentTargetType0",
-  "covered": false,
-  "inst": "let __x0__ = true"
-}, {
-  "algo": "IdentifierReference0AssignmentTargetType0",
-  "cond": "__x0__",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if __x0__ ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "IdentifierReference0AssignmentTargetType0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IdentifierReference0AssignmentTargetType0",
-  "covered": false,
-  "inst": "access __x1__ = (Identifier \"StringValue\")"
-}, {
-  "algo": "IdentifierReference0AssignmentTargetType0",
-  "covered": false,
-  "inst": "__x0__ = (|| (= __x1__ \"eval\") (= __x1__ \"arguments\"))"
-}, {
-  "algo": "IdentifierReference0AssignmentTargetType0",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "IdentifierReference0AssignmentTargetType0",
-  "cond": "__x0__",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if __x0__ ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "IdentifierReference0AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
-}, {
-  "algo": "IdentifierReference0AssignmentTargetType0",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "IdentifierReference0AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_simple"
-}, {
   "algo": "IdentifierReference0Evaluation0",
   "covered": true,
   "inst": "{ ... }"
@@ -2118,10 +2032,6 @@
   "algo": "PrimaryExpression1IsIdentifierRef0",
   "covered": true,
   "inst": "return true"
-}, {
-  "algo": "MemberExpression2AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_simple"
 }, {
   "algo": "MemberExpression2Contains0",
   "covered": true,
@@ -2326,10 +2236,6 @@
   "algo": "MemberExpression2IsIdentifierRef0",
   "covered": true,
   "inst": "return false"
-}, {
-  "algo": "MultiplicativeExpression1AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
 }, {
   "algo": "MultiplicativeExpression1Evaluation0",
   "covered": true,
@@ -3003,10 +2909,6 @@
   "covered": true,
   "inst": "return __x2__"
 }, {
-  "algo": "PrimaryExpression4AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
-}, {
   "algo": "PrimaryExpression4HasCallInTailPosition0",
   "covered": true,
   "inst": "{ ... }"
@@ -3556,10 +3458,6 @@
   "covered": true,
   "inst": "return __x5__"
 }, {
-  "algo": "PrimaryExpression3AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
-}, {
   "algo": "PrimaryExpression3HasCallInTailPosition0",
   "covered": false,
   "inst": "{ ... }"
@@ -3835,18 +3733,6 @@
   "covered": true,
   "inst": "return __x0__"
 }, {
-  "algo": "Statement1ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "return false"
-}, {
-  "algo": "Statement1ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return false"
-}, {
-  "algo": "Statement1ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return false"
-}, {
   "algo": "Statement1HasCallInTailPosition0",
   "covered": true,
   "inst": "{ ... }"
@@ -3858,10 +3744,6 @@
   "algo": "Statement1HasCallInTailPosition0",
   "covered": true,
   "inst": "return __x0__"
-}, {
-  "algo": "RelationalExpression1AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
 }, {
   "algo": "RelationalExpression1Evaluation0",
   "covered": true,
@@ -4036,10 +3918,6 @@
   "covered": true,
   "inst": "return false"
 }, {
-  "algo": "UpdateExpression3AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
-}, {
   "algo": "UpdateExpression3Evaluation0",
   "covered": true,
   "inst": "{ ... }"
@@ -4200,10 +4078,6 @@
   "algo": "UpdateExpression3IsFunctionDefinition0",
   "covered": true,
   "inst": "return false"
-}, {
-  "algo": "MemberExpression1AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_simple"
 }, {
   "algo": "MemberExpression1Evaluation0",
   "covered": true,
@@ -4418,10 +4292,6 @@
   "algo": "CoverCallExpressionAndAsyncArrowHead0IsSimpleParameterList0",
   "covered": false,
   "inst": "return __x1__"
-}, {
-  "algo": "CallExpression0AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
 }, {
   "algo": "CallExpression0Evaluation0",
   "covered": true,
@@ -4869,18 +4739,6 @@
   "covered": true,
   "inst": "return __x2__"
 }, {
-  "algo": "Statement3ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "return false"
-}, {
-  "algo": "Statement3ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return false"
-}, {
-  "algo": "Statement3ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return false"
-}, {
   "algo": "Statement3HasCallInTailPosition0",
   "covered": true,
   "inst": "{ ... }"
@@ -4900,18 +4758,6 @@
   "algo": "Statement3VarScopedDeclarations0",
   "covered": true,
   "inst": "return (new [])"
-}, {
-  "algo": "Block0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "return false"
-}, {
-  "algo": "Block0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return false"
-}, {
-  "algo": "Block0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return false"
 }, {
   "algo": "Block0Evaluation0",
   "covered": true,
@@ -5012,10 +4858,6 @@
   "algo": "Block0VarScopedDeclarations0",
   "covered": true,
   "inst": "return (new [])"
-}, {
-  "algo": "AdditiveExpression1AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
 }, {
   "algo": "AdditiveExpression1Evaluation0",
   "covered": true,
@@ -5429,10 +5271,6 @@
   "algo": "AdditiveExpression1IsFunctionDefinition0",
   "covered": true,
   "inst": "return false"
-}, {
-  "algo": "AssignmentExpression5AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
 }, {
   "algo": "AssignmentExpression5Evaluation0",
   "covered": true,
@@ -6705,18 +6543,6 @@
   "covered": true,
   "inst": "return __x3__"
 }, {
-  "algo": "Statement11ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "return false"
-}, {
-  "algo": "Statement11ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return false"
-}, {
-  "algo": "Statement11ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return false"
-}, {
   "algo": "Statement11HasCallInTailPosition0",
   "covered": true,
   "inst": "{ ... }"
@@ -6736,135 +6562,6 @@
   "algo": "Statement11VarScopedDeclarations0",
   "covered": true,
   "inst": "return (new [])"
-}, {
-  "algo": "StatementList1ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "StatementList1ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "access __x0__ = (StatementList \"ContainsDuplicateLabels\")"
-}, {
-  "algo": "StatementList1ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "StatementList1ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "let hasDuplicates = __x1__"
-}, {
-  "algo": "StatementList1ContainsDuplicateLabels0",
-  "cond": "(= hasDuplicates true)",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (= hasDuplicates true) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "StatementList1ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "return true"
-}, {
-  "algo": "StatementList1ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "StatementList1ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "access __x2__ = (StatementListItem \"ContainsDuplicateLabels\")"
-}, {
-  "algo": "StatementList1ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "app __x3__ = (__x2__ labelSet)"
-}, {
-  "algo": "StatementList1ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "return __x3__"
-}, {
-  "algo": "StatementList1ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "StatementList1ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (StatementList \"ContainsUndefinedBreakTarget\")"
-}, {
-  "algo": "StatementList1ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "StatementList1ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "let hasUndefinedLabels = __x1__"
-}, {
-  "algo": "StatementList1ContainsUndefinedBreakTarget0",
-  "cond": "(= hasUndefinedLabels true)",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (= hasUndefinedLabels true) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "StatementList1ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return true"
-}, {
-  "algo": "StatementList1ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "StatementList1ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "access __x2__ = (StatementListItem \"ContainsUndefinedBreakTarget\")"
-}, {
-  "algo": "StatementList1ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "app __x3__ = (__x2__ labelSet)"
-}, {
-  "algo": "StatementList1ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return __x3__"
-}, {
-  "algo": "StatementList1ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "StatementList1ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (StatementList \"ContainsUndefinedContinueTarget\")"
-}, {
-  "algo": "StatementList1ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ iterationSet (new []))"
-}, {
-  "algo": "StatementList1ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "let hasUndefinedLabels = __x1__"
-}, {
-  "algo": "StatementList1ContainsUndefinedContinueTarget0",
-  "cond": "(= hasUndefinedLabels true)",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (= hasUndefinedLabels true) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "StatementList1ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return true"
-}, {
-  "algo": "StatementList1ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "StatementList1ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "access __x2__ = (StatementListItem \"ContainsUndefinedContinueTarget\")"
-}, {
-  "algo": "StatementList1ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "app __x3__ = (__x2__ iterationSet (new []))"
-}, {
-  "algo": "StatementList1ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return __x3__"
 }, {
   "algo": "StatementList1Evaluation0",
   "covered": true,
@@ -7555,54 +7252,6 @@
   "covered": true,
   "inst": "return __x12__"
 }, {
-  "algo": "Catch0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "Catch0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "access __x0__ = (Block \"ContainsDuplicateLabels\")"
-}, {
-  "algo": "Catch0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "Catch0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
-  "algo": "Catch0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "Catch0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (Block \"ContainsUndefinedBreakTarget\")"
-}, {
-  "algo": "Catch0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "Catch0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
-  "algo": "Catch0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "Catch0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (Block \"ContainsUndefinedContinueTarget\")"
-}, {
-  "algo": "Catch0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ iterationSet (new []))"
-}, {
-  "algo": "Catch0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
   "algo": "Catch0HasCallInTailPosition0",
   "covered": true,
   "inst": "{ ... }"
@@ -7646,135 +7295,6 @@
   "algo": "Catch0VarScopedDeclarations0",
   "covered": true,
   "inst": "return __x0__"
-}, {
-  "algo": "TryStatement0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "TryStatement0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "access __x0__ = (Block \"ContainsDuplicateLabels\")"
-}, {
-  "algo": "TryStatement0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "TryStatement0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "let hasDuplicates = __x1__"
-}, {
-  "algo": "TryStatement0ContainsDuplicateLabels0",
-  "cond": "(= hasDuplicates true)",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (= hasDuplicates true) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "TryStatement0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "return true"
-}, {
-  "algo": "TryStatement0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "TryStatement0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "access __x2__ = (Catch \"ContainsDuplicateLabels\")"
-}, {
-  "algo": "TryStatement0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "app __x3__ = (__x2__ labelSet)"
-}, {
-  "algo": "TryStatement0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "return __x3__"
-}, {
-  "algo": "TryStatement0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "TryStatement0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (Block \"ContainsUndefinedBreakTarget\")"
-}, {
-  "algo": "TryStatement0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "TryStatement0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "let hasUndefinedLabels = __x1__"
-}, {
-  "algo": "TryStatement0ContainsUndefinedBreakTarget0",
-  "cond": "(= hasUndefinedLabels true)",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (= hasUndefinedLabels true) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "TryStatement0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return true"
-}, {
-  "algo": "TryStatement0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "TryStatement0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "access __x2__ = (Catch \"ContainsUndefinedBreakTarget\")"
-}, {
-  "algo": "TryStatement0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "app __x3__ = (__x2__ labelSet)"
-}, {
-  "algo": "TryStatement0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return __x3__"
-}, {
-  "algo": "TryStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "TryStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (Block \"ContainsUndefinedContinueTarget\")"
-}, {
-  "algo": "TryStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ iterationSet (new []))"
-}, {
-  "algo": "TryStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "let hasUndefinedLabels = __x1__"
-}, {
-  "algo": "TryStatement0ContainsUndefinedContinueTarget0",
-  "cond": "(= hasUndefinedLabels true)",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (= hasUndefinedLabels true) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "TryStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return true"
-}, {
-  "algo": "TryStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "TryStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "access __x2__ = (Catch \"ContainsUndefinedContinueTarget\")"
-}, {
-  "algo": "TryStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "app __x3__ = (__x2__ iterationSet (new []))"
-}, {
-  "algo": "TryStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return __x3__"
 }, {
   "algo": "TryStatement0Evaluation0",
   "covered": true,
@@ -7952,54 +7472,6 @@
   "algo": "TryStatement0VarScopedDeclarations0",
   "covered": true,
   "inst": "return declarations"
-}, {
-  "algo": "IterationStatement3ContainsDuplicateLabels3",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IterationStatement3ContainsDuplicateLabels3",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsDuplicateLabels\")"
-}, {
-  "algo": "IterationStatement3ContainsDuplicateLabels3",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "IterationStatement3ContainsDuplicateLabels3",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
-  "algo": "IterationStatement3ContainsUndefinedBreakTarget3",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IterationStatement3ContainsUndefinedBreakTarget3",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsUndefinedBreakTarget\")"
-}, {
-  "algo": "IterationStatement3ContainsUndefinedBreakTarget3",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "IterationStatement3ContainsUndefinedBreakTarget3",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
-  "algo": "IterationStatement3ContainsUndefinedContinueTarget3",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IterationStatement3ContainsUndefinedContinueTarget3",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsUndefinedContinueTarget\")"
-}, {
-  "algo": "IterationStatement3ContainsUndefinedContinueTarget3",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ iterationSet (new []))"
-}, {
-  "algo": "IterationStatement3ContainsUndefinedContinueTarget3",
-  "covered": false,
-  "inst": "return __x1__"
 }, {
   "algo": "IterationStatement3HasCallInTailPosition3",
   "covered": true,
@@ -8202,61 +7674,6 @@
   "algo": "IterationStatement3VarScopedDeclarations3",
   "covered": true,
   "inst": "return declarations"
-}, {
-  "algo": "BreakableStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "BreakableStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "let __x0__ = (copy-obj iterationSet)"
-}, {
-  "algo": "BreakableStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "let __x1__ = labelSet"
-}, {
-  "algo": "BreakableStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "let __x2__ = 0i"
-}, {
-  "algo": "BreakableStatement0ContainsUndefinedContinueTarget0",
-  "cond": "(< __x2__ __x1__[\"length\"])",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "while (< __x2__ __x1__[\"length\"]) { ... }",
-  "thenCovered": false
-}, {
-  "algo": "BreakableStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "BreakableStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "let __x3__ = __x1__[__x2__]"
-}, {
-  "algo": "BreakableStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "append __x3__ -> __x0__"
-}, {
-  "algo": "BreakableStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "__x2__ = (+ __x2__ 1i)"
-}, {
-  "algo": "BreakableStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "let newIterationSet = __x0__"
-}, {
-  "algo": "BreakableStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "access __x4__ = (IterationStatement \"ContainsUndefinedContinueTarget\")"
-}, {
-  "algo": "BreakableStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "app __x5__ = (__x4__ newIterationSet (new []))"
-}, {
-  "algo": "BreakableStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return __x5__"
 }, {
   "algo": "BreakableStatement0Evaluation0",
   "covered": true,
@@ -8463,18 +7880,6 @@
   "covered": true,
   "inst": "return __x1__"
 }, {
-  "algo": "StatementListItem1ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "return false"
-}, {
-  "algo": "StatementListItem1ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return false"
-}, {
-  "algo": "StatementListItem1ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return false"
-}, {
   "algo": "StatementListItem1HasCallInTailPosition0",
   "covered": true,
   "inst": "{ ... }"
@@ -8658,10 +8063,6 @@
   "algo": "StatementListItem1VarScopedDeclarations0",
   "covered": true,
   "inst": "return (new [])"
-}, {
-  "algo": "AdditiveExpression2AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
 }, {
   "algo": "AdditiveExpression2Evaluation0",
   "covered": true,
@@ -8898,10 +8299,6 @@
   "covered": true,
   "inst": "return __x0__"
 }, {
-  "algo": "MemberExpression6AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
-}, {
   "algo": "MemberExpression6Evaluation0",
   "covered": true,
   "inst": "{ ... }"
@@ -8968,10 +8365,6 @@
   "covered": false,
   "inst": "return false"
 }, {
-  "algo": "NewExpression1AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
-}, {
   "algo": "NewExpression1Evaluation0",
   "covered": true,
   "inst": "{ ... }"
@@ -9037,10 +8430,6 @@
   "algo": "NewExpression1IsIdentifierRef0",
   "covered": false,
   "inst": "return false"
-}, {
-  "algo": "PrimaryExpression10AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
 }, {
   "algo": "PrimaryExpression10Evaluation0",
   "covered": false,
@@ -9590,10 +8979,6 @@
   "covered": true,
   "inst": "return __x4__"
 }, {
-  "algo": "LogicalORExpression1AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
-}, {
   "algo": "LogicalORExpression1Evaluation0",
   "covered": true,
   "inst": "{ ... }"
@@ -9766,10 +9151,6 @@
   "algo": "LogicalORExpression1IsFunctionDefinition0",
   "covered": true,
   "inst": "return false"
-}, {
-  "algo": "AssignmentExpression4AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
 }, {
   "algo": "AssignmentExpression4Evaluation0",
   "covered": true,
@@ -10184,10 +9565,6 @@
   "covered": true,
   "inst": "return declarations"
 }, {
-  "algo": "UpdateExpression1AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
-}, {
   "algo": "UpdateExpression1Evaluation0",
   "covered": true,
   "inst": "{ ... }"
@@ -10357,10 +9734,6 @@
   "covered": true,
   "inst": "return __x0__"
 }, {
-  "algo": "UnaryExpression7AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
-}, {
   "algo": "UnaryExpression7Evaluation0",
   "covered": true,
   "inst": "{ ... }"
@@ -10491,26 +9864,6 @@
   "algo": "CoverParenthesizedExpressionAndArrowParameterList0CoveredParenthesizedExpression0",
   "covered": true,
   "inst": "return (parse-syntax this \"ParenthesizedExpression\" absent)"
-}, {
-  "algo": "PrimaryExpression12AssignmentTargetType0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "PrimaryExpression12AssignmentTargetType0",
-  "covered": false,
-  "inst": "access __x0__ = (CoverParenthesizedExpressionAndArrowParameterList \"CoveredParenthesizedExpression\")"
-}, {
-  "algo": "PrimaryExpression12AssignmentTargetType0",
-  "covered": false,
-  "inst": "let expr = __x0__"
-}, {
-  "algo": "PrimaryExpression12AssignmentTargetType0",
-  "covered": false,
-  "inst": "access __x1__ = (expr \"AssignmentTargetType\")"
-}, {
-  "algo": "PrimaryExpression12AssignmentTargetType0",
-  "covered": false,
-  "inst": "return __x1__"
 }, {
   "algo": "PrimaryExpression12Evaluation0",
   "covered": true,
@@ -10747,54 +10100,6 @@
   "covered": true,
   "inst": "return __x3__"
 }, {
-  "algo": "IterationStatement2ContainsDuplicateLabels7",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IterationStatement2ContainsDuplicateLabels7",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsDuplicateLabels\")"
-}, {
-  "algo": "IterationStatement2ContainsDuplicateLabels7",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "IterationStatement2ContainsDuplicateLabels7",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
-  "algo": "IterationStatement2ContainsUndefinedBreakTarget7",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IterationStatement2ContainsUndefinedBreakTarget7",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsUndefinedBreakTarget\")"
-}, {
-  "algo": "IterationStatement2ContainsUndefinedBreakTarget7",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "IterationStatement2ContainsUndefinedBreakTarget7",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
-  "algo": "IterationStatement2ContainsUndefinedContinueTarget7",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IterationStatement2ContainsUndefinedContinueTarget7",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsUndefinedContinueTarget\")"
-}, {
-  "algo": "IterationStatement2ContainsUndefinedContinueTarget7",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ iterationSet (new []))"
-}, {
-  "algo": "IterationStatement2ContainsUndefinedContinueTarget7",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
   "algo": "IterationStatement2HasCallInTailPosition7",
   "covered": true,
   "inst": "{ ... }"
@@ -10937,10 +10242,6 @@
   "algo": "IterationStatement2VarScopedDeclarations7",
   "covered": true,
   "inst": "return __x0__"
-}, {
-  "algo": "EqualityExpression4AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
 }, {
   "algo": "EqualityExpression4Evaluation0",
   "covered": true,
@@ -11088,54 +10389,6 @@
   "algo": "EqualityExpression4IsFunctionDefinition0",
   "covered": true,
   "inst": "return false"
-}, {
-  "algo": "IfStatement1ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IfStatement1ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsDuplicateLabels\")"
-}, {
-  "algo": "IfStatement1ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "IfStatement1ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
-  "algo": "IfStatement1ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IfStatement1ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsUndefinedBreakTarget\")"
-}, {
-  "algo": "IfStatement1ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "IfStatement1ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
-  "algo": "IfStatement1ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IfStatement1ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsUndefinedContinueTarget\")"
-}, {
-  "algo": "IfStatement1ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ iterationSet (new []))"
-}, {
-  "algo": "IfStatement1ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return __x1__"
 }, {
   "algo": "IfStatement1Evaluation0",
   "covered": true,
@@ -11308,10 +10561,6 @@
   "covered": true,
   "inst": "return __x0__"
 }, {
-  "algo": "EqualityExpression3AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
-}, {
   "algo": "EqualityExpression3Evaluation0",
   "covered": true,
   "inst": "{ ... }"
@@ -11427,10 +10676,6 @@
   "algo": "EqualityExpression3IsFunctionDefinition0",
   "covered": true,
   "inst": "return false"
-}, {
-  "algo": "LogicalANDExpression1AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
 }, {
   "algo": "LogicalANDExpression1Evaluation0",
   "covered": true,
@@ -11604,10 +10849,6 @@
   "algo": "LogicalANDExpression1IsFunctionDefinition0",
   "covered": true,
   "inst": "return false"
-}, {
-  "algo": "CallExpression5AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_simple"
 }, {
   "algo": "CallExpression5Contains0",
   "covered": true,
@@ -11792,10 +11033,6 @@
   "algo": "CallExpression5HasCallInTailPosition0",
   "covered": false,
   "inst": "return false"
-}, {
-  "algo": "CallExpression3AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
 }, {
   "algo": "CallExpression3Evaluation0",
   "covered": true,
@@ -12287,10 +11524,6 @@
   "algo": "SubstitutionTemplate0TemplateStrings0",
   "covered": true,
   "inst": "return tail"
-}, {
-  "algo": "PrimaryExpression11AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
 }, {
   "algo": "PrimaryExpression11HasCallInTailPosition0",
   "covered": true,
@@ -12934,10 +12167,6 @@
   "covered": true,
   "inst": "return middle"
 }, {
-  "algo": "PrimaryExpression0AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
-}, {
   "algo": "PrimaryExpression0Evaluation0",
   "covered": true,
   "inst": "{ ... }"
@@ -12999,10 +12228,6 @@
   "algo": "PrimaryExpression0IsIdentifierRef0",
   "covered": false,
   "inst": "return false"
-}, {
-  "algo": "ConditionalExpression1AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
 }, {
   "algo": "ConditionalExpression1Evaluation0",
   "covered": true,
@@ -13477,10 +12702,6 @@
   "covered": true,
   "inst": "return LexicalDeclaration"
 }, {
-  "algo": "Expression1AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
-}, {
   "algo": "Expression1Evaluation0",
   "covered": true,
   "inst": "{ ... }"
@@ -13726,135 +12947,6 @@
   "inst": "app __x3__ = (WrapCompletion __x2__)"
 }, {
   "algo": "ArrowParameters1IteratorBindingInitialization0",
-  "covered": false,
-  "inst": "return __x3__"
-}, {
-  "algo": "IfStatement0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IfStatement0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "access __x0__ = (Statement0 \"ContainsDuplicateLabels\")"
-}, {
-  "algo": "IfStatement0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "IfStatement0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "let hasDuplicate = __x1__"
-}, {
-  "algo": "IfStatement0ContainsDuplicateLabels0",
-  "cond": "(= hasDuplicate true)",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (= hasDuplicate true) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "IfStatement0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "return true"
-}, {
-  "algo": "IfStatement0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "IfStatement0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "access __x2__ = (Statement1 \"ContainsDuplicateLabels\")"
-}, {
-  "algo": "IfStatement0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "app __x3__ = (__x2__ labelSet)"
-}, {
-  "algo": "IfStatement0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "return __x3__"
-}, {
-  "algo": "IfStatement0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IfStatement0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (Statement0 \"ContainsUndefinedBreakTarget\")"
-}, {
-  "algo": "IfStatement0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "IfStatement0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "let hasUndefinedLabels = __x1__"
-}, {
-  "algo": "IfStatement0ContainsUndefinedBreakTarget0",
-  "cond": "(= hasUndefinedLabels true)",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (= hasUndefinedLabels true) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "IfStatement0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return true"
-}, {
-  "algo": "IfStatement0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "IfStatement0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "access __x2__ = (Statement1 \"ContainsUndefinedBreakTarget\")"
-}, {
-  "algo": "IfStatement0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "app __x3__ = (__x2__ labelSet)"
-}, {
-  "algo": "IfStatement0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return __x3__"
-}, {
-  "algo": "IfStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IfStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (Statement0 \"ContainsUndefinedContinueTarget\")"
-}, {
-  "algo": "IfStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ iterationSet (new []))"
-}, {
-  "algo": "IfStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "let hasUndefinedLabels = __x1__"
-}, {
-  "algo": "IfStatement0ContainsUndefinedContinueTarget0",
-  "cond": "(= hasUndefinedLabels true)",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (= hasUndefinedLabels true) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "IfStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return true"
-}, {
-  "algo": "IfStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "IfStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "access __x2__ = (Statement1 \"ContainsUndefinedContinueTarget\")"
-}, {
-  "algo": "IfStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "app __x3__ = (__x2__ iterationSet (new []))"
-}, {
-  "algo": "IfStatement0ContainsUndefinedContinueTarget0",
   "covered": false,
   "inst": "return __x3__"
 }, {
@@ -14260,10 +13352,6 @@
   "covered": true,
   "inst": "return __x2__"
 }, {
-  "algo": "AssignmentExpression2AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
-}, {
   "algo": "AssignmentExpression2HasCallInTailPosition0",
   "covered": false,
   "inst": "{ ... }"
@@ -14279,10 +13367,6 @@
   "algo": "AssignmentExpression2IsFunctionDefinition0",
   "covered": true,
   "inst": "return true"
-}, {
-  "algo": "RelationalExpression2AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
 }, {
   "algo": "RelationalExpression2Evaluation0",
   "covered": true,
@@ -14456,10 +13540,6 @@
   "algo": "RelationalExpression2IsFunctionDefinition0",
   "covered": true,
   "inst": "return false"
-}, {
-  "algo": "UnaryExpression3AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
 }, {
   "algo": "UnaryExpression3Evaluation0",
   "covered": true,
@@ -14713,10 +13793,6 @@
   "algo": "ArrayLiteral0Evaluation1",
   "covered": true,
   "inst": "return __x3__"
-}, {
-  "algo": "UnaryExpression1AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
 }, {
   "algo": "UnaryExpression1Evaluation0",
   "covered": true,
@@ -15068,10 +14144,6 @@
   "covered": true,
   "inst": "return false"
 }, {
-  "algo": "RelationalExpression5AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
-}, {
   "algo": "RelationalExpression5Evaluation0",
   "covered": true,
   "inst": "{ ... }"
@@ -15268,10 +14340,6 @@
   "covered": true,
   "inst": "return false"
 }, {
-  "algo": "BreakStatement0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return false"
-}, {
   "algo": "BreakStatement0Evaluation0",
   "covered": true,
   "inst": "{ ... }"
@@ -15283,14 +14351,6 @@
   "algo": "BreakStatement0Evaluation0",
   "covered": true,
   "inst": "return __x0__"
-}, {
-  "algo": "Statement7ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "return false"
-}, {
-  "algo": "Statement7ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return false"
 }, {
   "algo": "Statement7HasCallInTailPosition0",
   "covered": true,
@@ -15311,54 +14371,6 @@
   "algo": "Statement7VarScopedDeclarations0",
   "covered": true,
   "inst": "return (new [])"
-}, {
-  "algo": "IterationStatement6ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IterationStatement6ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsDuplicateLabels\")"
-}, {
-  "algo": "IterationStatement6ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "IterationStatement6ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
-  "algo": "IterationStatement6ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IterationStatement6ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsUndefinedBreakTarget\")"
-}, {
-  "algo": "IterationStatement6ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "IterationStatement6ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
-  "algo": "IterationStatement6ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IterationStatement6ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsUndefinedContinueTarget\")"
-}, {
-  "algo": "IterationStatement6ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ iterationSet (new []))"
-}, {
-  "algo": "IterationStatement6ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return __x1__"
 }, {
   "algo": "IterationStatement6HasCallInTailPosition0",
   "covered": true,
@@ -16617,10 +15629,6 @@
   "covered": true,
   "inst": "return __x2__"
 }, {
-  "algo": "RelationalExpression3AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
-}, {
   "algo": "RelationalExpression3Evaluation0",
   "covered": true,
   "inst": "{ ... }"
@@ -16793,54 +15801,6 @@
   "algo": "RelationalExpression3IsFunctionDefinition0",
   "covered": true,
   "inst": "return false"
-}, {
-  "algo": "IterationStatement4ContainsDuplicateLabels3",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IterationStatement4ContainsDuplicateLabels3",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsDuplicateLabels\")"
-}, {
-  "algo": "IterationStatement4ContainsDuplicateLabels3",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "IterationStatement4ContainsDuplicateLabels3",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
-  "algo": "IterationStatement4ContainsUndefinedBreakTarget3",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IterationStatement4ContainsUndefinedBreakTarget3",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsUndefinedBreakTarget\")"
-}, {
-  "algo": "IterationStatement4ContainsUndefinedBreakTarget3",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "IterationStatement4ContainsUndefinedBreakTarget3",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
-  "algo": "IterationStatement4ContainsUndefinedContinueTarget3",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IterationStatement4ContainsUndefinedContinueTarget3",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsUndefinedContinueTarget\")"
-}, {
-  "algo": "IterationStatement4ContainsUndefinedContinueTarget3",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ iterationSet (new []))"
-}, {
-  "algo": "IterationStatement4ContainsUndefinedContinueTarget3",
-  "covered": false,
-  "inst": "return __x1__"
 }, {
   "algo": "IterationStatement4HasCallInTailPosition3",
   "covered": true,
@@ -17292,54 +16252,6 @@
   "covered": true,
   "inst": "return __x0__"
 }, {
-  "algo": "IterationStatement10ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IterationStatement10ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsDuplicateLabels\")"
-}, {
-  "algo": "IterationStatement10ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "IterationStatement10ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
-  "algo": "IterationStatement10ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IterationStatement10ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsUndefinedBreakTarget\")"
-}, {
-  "algo": "IterationStatement10ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "IterationStatement10ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
-  "algo": "IterationStatement10ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IterationStatement10ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsUndefinedContinueTarget\")"
-}, {
-  "algo": "IterationStatement10ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ iterationSet (new []))"
-}, {
-  "algo": "IterationStatement10ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
   "algo": "IterationStatement10HasCallInTailPosition0",
   "covered": true,
   "inst": "{ ... }"
@@ -17479,10 +16391,6 @@
   "algo": "ReturnStatement0HasCallInTailPosition0",
   "covered": true,
   "inst": "return __x0__"
-}, {
-  "algo": "BitwiseANDExpression1AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
 }, {
   "algo": "BitwiseANDExpression1Evaluation0",
   "covered": true,
@@ -17703,54 +16611,6 @@
   "covered": false,
   "inst": "return false"
 }, {
-  "algo": "IterationStatement1ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IterationStatement1ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsDuplicateLabels\")"
-}, {
-  "algo": "IterationStatement1ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "IterationStatement1ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
-  "algo": "IterationStatement1ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IterationStatement1ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsUndefinedBreakTarget\")"
-}, {
-  "algo": "IterationStatement1ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "IterationStatement1ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
-  "algo": "IterationStatement1ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IterationStatement1ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsUndefinedContinueTarget\")"
-}, {
-  "algo": "IterationStatement1ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ iterationSet (new []))"
-}, {
-  "algo": "IterationStatement1ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
   "algo": "IterationStatement1HasCallInTailPosition0",
   "covered": true,
   "inst": "{ ... }"
@@ -17970,10 +16830,6 @@
   "algo": "IterationStatement1VarScopedDeclarations0",
   "covered": true,
   "inst": "return __x0__"
-}, {
-  "algo": "ShiftExpression2AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
 }, {
   "algo": "ShiftExpression2Evaluation0",
   "covered": true,
@@ -18197,10 +17053,6 @@
   "algo": "ShiftExpression2IsFunctionDefinition0",
   "covered": true,
   "inst": "return false"
-}, {
-  "algo": "EqualityExpression1AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
 }, {
   "algo": "EqualityExpression1Evaluation0",
   "covered": true,
@@ -24884,10 +23736,6 @@
   "covered": true,
   "inst": "return __x4__"
 }, {
-  "algo": "AssignmentExpression1AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
-}, {
   "algo": "AssignmentExpression1HasCallInTailPosition0",
   "covered": false,
   "inst": "{ ... }"
@@ -24903,10 +23751,6 @@
   "algo": "AssignmentExpression1IsFunctionDefinition0",
   "covered": true,
   "inst": "return false"
-}, {
-  "algo": "AssignmentExpression3AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
 }, {
   "algo": "AssignmentExpression3HasCallInTailPosition0",
   "covered": false,
@@ -28538,45 +27382,6 @@
   "covered": false,
   "inst": "return __x1__"
 }, {
-  "algo": "AsyncGeneratorMethod0HasDirectSuper0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "AsyncGeneratorMethod0HasDirectSuper0",
-  "covered": false,
-  "inst": "access __x0__ = (UniqueFormalParameters \"Contains\")"
-}, {
-  "algo": "AsyncGeneratorMethod0HasDirectSuper0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ \"SuperCall\")"
-}, {
-  "algo": "AsyncGeneratorMethod0HasDirectSuper0",
-  "cond": "(= __x1__ true)",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (= __x1__ true) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "AsyncGeneratorMethod0HasDirectSuper0",
-  "covered": false,
-  "inst": "return true"
-}, {
-  "algo": "AsyncGeneratorMethod0HasDirectSuper0",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "AsyncGeneratorMethod0HasDirectSuper0",
-  "covered": false,
-  "inst": "access __x2__ = (AsyncGeneratorBody \"Contains\")"
-}, {
-  "algo": "AsyncGeneratorMethod0HasDirectSuper0",
-  "covered": false,
-  "inst": "app __x3__ = (__x2__ \"SuperCall\")"
-}, {
-  "algo": "AsyncGeneratorMethod0HasDirectSuper0",
-  "covered": false,
-  "inst": "return __x3__"
-}, {
   "algo": "AsyncGeneratorMethod0PropName0",
   "covered": true,
   "inst": "{ ... }"
@@ -30236,45 +29041,6 @@
   "algo": "AsyncMethod0ComputedPropertyContains0",
   "covered": false,
   "inst": "return __x1__"
-}, {
-  "algo": "AsyncMethod0HasDirectSuper0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "AsyncMethod0HasDirectSuper0",
-  "covered": false,
-  "inst": "access __x0__ = (UniqueFormalParameters \"Contains\")"
-}, {
-  "algo": "AsyncMethod0HasDirectSuper0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ \"SuperCall\")"
-}, {
-  "algo": "AsyncMethod0HasDirectSuper0",
-  "cond": "(= __x1__ true)",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (= __x1__ true) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "AsyncMethod0HasDirectSuper0",
-  "covered": false,
-  "inst": "return true"
-}, {
-  "algo": "AsyncMethod0HasDirectSuper0",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "AsyncMethod0HasDirectSuper0",
-  "covered": false,
-  "inst": "access __x2__ = (AsyncFunctionBody \"Contains\")"
-}, {
-  "algo": "AsyncMethod0HasDirectSuper0",
-  "covered": false,
-  "inst": "app __x3__ = (__x2__ \"SuperCall\")"
-}, {
-  "algo": "AsyncMethod0HasDirectSuper0",
-  "covered": false,
-  "inst": "return __x3__"
 }, {
   "algo": "AsyncMethod0PropName0",
   "covered": true,
@@ -33262,10 +32028,6 @@
   "covered": true,
   "inst": "return __x6__"
 }, {
-  "algo": "BitwiseORExpression1AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
-}, {
   "algo": "BitwiseORExpression1Evaluation0",
   "covered": true,
   "inst": "{ ... }"
@@ -33484,10 +32246,6 @@
   "algo": "BitwiseORExpression1IsFunctionDefinition0",
   "covered": false,
   "inst": "return false"
-}, {
-  "algo": "BitwiseXORExpression1AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
 }, {
   "algo": "BitwiseXORExpression1Evaluation0",
   "covered": true,
@@ -34260,33 +33018,6 @@
   "covered": true,
   "inst": "return __x7__"
 }, {
-  "algo": "BreakStatement1ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "BreakStatement1ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (LabelIdentifier \"StringValue\")"
-}, {
-  "algo": "BreakStatement1ContainsUndefinedBreakTarget0",
-  "cond": "(! (contains labelSet __x0__))",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (! (contains labelSet __x0__)) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "BreakStatement1ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return true"
-}, {
-  "algo": "BreakStatement1ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "BreakStatement1ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return false"
-}, {
   "algo": "BreakStatement1Evaluation0",
   "covered": true,
   "inst": "{ ... }"
@@ -34704,10 +33435,6 @@
   "covered": true,
   "inst": "return __x3__"
 }, {
-  "algo": "CallExpression1AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
-}, {
   "algo": "CallExpression1HasCallInTailPosition0",
   "covered": true,
   "inst": "{ ... }"
@@ -34719,14 +33446,6 @@
   "algo": "CallExpression1HasCallInTailPosition0",
   "covered": true,
   "inst": "return __x0__"
-}, {
-  "algo": "CallExpression2AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
-}, {
-  "algo": "CallExpression4AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_simple"
 }, {
   "algo": "CallExpression4Evaluation0",
   "covered": true,
@@ -34827,10 +33546,6 @@
   "algo": "CallExpression4HasCallInTailPosition0",
   "covered": false,
   "inst": "return __x0__"
-}, {
-  "algo": "CallExpression6AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
 }, {
   "algo": "CallExpression6Evaluation0",
   "covered": true,
@@ -35289,18 +34004,6 @@
   "algo": "CaseBlock0CaseBlockEvaluation1",
   "covered": true,
   "inst": "return __x9__"
-}, {
-  "algo": "CaseBlock0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "return false"
-}, {
-  "algo": "CaseBlock0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return false"
-}, {
-  "algo": "CaseBlock0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return false"
 }, {
   "algo": "CaseBlock0HasCallInTailPosition0",
   "covered": false,
@@ -35870,306 +34573,6 @@
   "algo": "CaseBlock1CaseBlockEvaluation3",
   "covered": true,
   "inst": "return __x31__"
-}, {
-  "algo": "CaseBlock1ContainsDuplicateLabels3",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "CaseBlock1ContainsDuplicateLabels3",
-  "cond": "(! (= CaseClauses0 absent))",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (! (= CaseClauses0 absent)) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "CaseBlock1ContainsDuplicateLabels3",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "CaseBlock1ContainsDuplicateLabels3",
-  "covered": false,
-  "inst": "access __x0__ = (CaseClauses0 \"ContainsDuplicateLabels\")"
-}, {
-  "algo": "CaseBlock1ContainsDuplicateLabels3",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "CaseBlock1ContainsDuplicateLabels3",
-  "covered": false,
-  "inst": "let hasDuplicates = __x1__"
-}, {
-  "algo": "CaseBlock1ContainsDuplicateLabels3",
-  "cond": "(= hasDuplicates true)",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (= hasDuplicates true) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "CaseBlock1ContainsDuplicateLabels3",
-  "covered": false,
-  "inst": "return true"
-}, {
-  "algo": "CaseBlock1ContainsDuplicateLabels3",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "CaseBlock1ContainsDuplicateLabels3",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "CaseBlock1ContainsDuplicateLabels3",
-  "covered": false,
-  "inst": "access __x2__ = (DefaultClause \"ContainsDuplicateLabels\")"
-}, {
-  "algo": "CaseBlock1ContainsDuplicateLabels3",
-  "covered": false,
-  "inst": "app __x3__ = (__x2__ labelSet)"
-}, {
-  "algo": "CaseBlock1ContainsDuplicateLabels3",
-  "covered": false,
-  "inst": "let hasDuplicates = __x3__"
-}, {
-  "algo": "CaseBlock1ContainsDuplicateLabels3",
-  "cond": "(= hasDuplicates true)",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (= hasDuplicates true) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "CaseBlock1ContainsDuplicateLabels3",
-  "covered": false,
-  "inst": "return true"
-}, {
-  "algo": "CaseBlock1ContainsDuplicateLabels3",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "CaseBlock1ContainsDuplicateLabels3",
-  "cond": "(= CaseClauses1 absent)",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (= CaseClauses1 absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "CaseBlock1ContainsDuplicateLabels3",
-  "covered": false,
-  "inst": "return false"
-}, {
-  "algo": "CaseBlock1ContainsDuplicateLabels3",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "CaseBlock1ContainsDuplicateLabels3",
-  "covered": false,
-  "inst": "access __x4__ = (CaseClauses1 \"ContainsDuplicateLabels\")"
-}, {
-  "algo": "CaseBlock1ContainsDuplicateLabels3",
-  "covered": false,
-  "inst": "app __x5__ = (__x4__ labelSet)"
-}, {
-  "algo": "CaseBlock1ContainsDuplicateLabels3",
-  "covered": false,
-  "inst": "return __x5__"
-}, {
-  "algo": "CaseBlock1ContainsUndefinedBreakTarget3",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "CaseBlock1ContainsUndefinedBreakTarget3",
-  "cond": "(! (= CaseClauses0 absent))",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (! (= CaseClauses0 absent)) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "CaseBlock1ContainsUndefinedBreakTarget3",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "CaseBlock1ContainsUndefinedBreakTarget3",
-  "covered": false,
-  "inst": "access __x0__ = (CaseClauses0 \"ContainsUndefinedBreakTarget\")"
-}, {
-  "algo": "CaseBlock1ContainsUndefinedBreakTarget3",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "CaseBlock1ContainsUndefinedBreakTarget3",
-  "covered": false,
-  "inst": "let hasUndefinedLabels = __x1__"
-}, {
-  "algo": "CaseBlock1ContainsUndefinedBreakTarget3",
-  "cond": "(= hasUndefinedLabels true)",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (= hasUndefinedLabels true) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "CaseBlock1ContainsUndefinedBreakTarget3",
-  "covered": false,
-  "inst": "return true"
-}, {
-  "algo": "CaseBlock1ContainsUndefinedBreakTarget3",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "CaseBlock1ContainsUndefinedBreakTarget3",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "CaseBlock1ContainsUndefinedBreakTarget3",
-  "covered": false,
-  "inst": "access __x2__ = (DefaultClause \"ContainsUndefinedBreakTarget\")"
-}, {
-  "algo": "CaseBlock1ContainsUndefinedBreakTarget3",
-  "covered": false,
-  "inst": "app __x3__ = (__x2__ labelSet)"
-}, {
-  "algo": "CaseBlock1ContainsUndefinedBreakTarget3",
-  "covered": false,
-  "inst": "let hasUndefinedLabels = __x3__"
-}, {
-  "algo": "CaseBlock1ContainsUndefinedBreakTarget3",
-  "cond": "(= hasUndefinedLabels true)",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (= hasUndefinedLabels true) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "CaseBlock1ContainsUndefinedBreakTarget3",
-  "covered": false,
-  "inst": "return true"
-}, {
-  "algo": "CaseBlock1ContainsUndefinedBreakTarget3",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "CaseBlock1ContainsUndefinedBreakTarget3",
-  "cond": "(= CaseClauses1 absent)",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (= CaseClauses1 absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "CaseBlock1ContainsUndefinedBreakTarget3",
-  "covered": false,
-  "inst": "return false"
-}, {
-  "algo": "CaseBlock1ContainsUndefinedBreakTarget3",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "CaseBlock1ContainsUndefinedBreakTarget3",
-  "covered": false,
-  "inst": "access __x4__ = (CaseClauses1 \"ContainsUndefinedBreakTarget\")"
-}, {
-  "algo": "CaseBlock1ContainsUndefinedBreakTarget3",
-  "covered": false,
-  "inst": "app __x5__ = (__x4__ labelSet)"
-}, {
-  "algo": "CaseBlock1ContainsUndefinedBreakTarget3",
-  "covered": false,
-  "inst": "return __x5__"
-}, {
-  "algo": "CaseBlock1ContainsUndefinedContinueTarget3",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "CaseBlock1ContainsUndefinedContinueTarget3",
-  "cond": "(! (= CaseClauses0 absent))",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (! (= CaseClauses0 absent)) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "CaseBlock1ContainsUndefinedContinueTarget3",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "CaseBlock1ContainsUndefinedContinueTarget3",
-  "covered": false,
-  "inst": "access __x0__ = (CaseClauses0 \"ContainsUndefinedContinueTarget\")"
-}, {
-  "algo": "CaseBlock1ContainsUndefinedContinueTarget3",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ iterationSet (new []))"
-}, {
-  "algo": "CaseBlock1ContainsUndefinedContinueTarget3",
-  "covered": false,
-  "inst": "let hasUndefinedLabels = __x1__"
-}, {
-  "algo": "CaseBlock1ContainsUndefinedContinueTarget3",
-  "cond": "(= hasUndefinedLabels true)",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (= hasUndefinedLabels true) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "CaseBlock1ContainsUndefinedContinueTarget3",
-  "covered": false,
-  "inst": "return true"
-}, {
-  "algo": "CaseBlock1ContainsUndefinedContinueTarget3",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "CaseBlock1ContainsUndefinedContinueTarget3",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "CaseBlock1ContainsUndefinedContinueTarget3",
-  "covered": false,
-  "inst": "access __x2__ = (DefaultClause \"ContainsUndefinedContinueTarget\")"
-}, {
-  "algo": "CaseBlock1ContainsUndefinedContinueTarget3",
-  "covered": false,
-  "inst": "app __x3__ = (__x2__ iterationSet (new []))"
-}, {
-  "algo": "CaseBlock1ContainsUndefinedContinueTarget3",
-  "covered": false,
-  "inst": "let hasUndefinedLabels = __x3__"
-}, {
-  "algo": "CaseBlock1ContainsUndefinedContinueTarget3",
-  "cond": "(= hasUndefinedLabels true)",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (= hasUndefinedLabels true) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "CaseBlock1ContainsUndefinedContinueTarget3",
-  "covered": false,
-  "inst": "return true"
-}, {
-  "algo": "CaseBlock1ContainsUndefinedContinueTarget3",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "CaseBlock1ContainsUndefinedContinueTarget3",
-  "cond": "(= CaseClauses1 absent)",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (= CaseClauses1 absent) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "CaseBlock1ContainsUndefinedContinueTarget3",
-  "covered": false,
-  "inst": "return false"
-}, {
-  "algo": "CaseBlock1ContainsUndefinedContinueTarget3",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "CaseBlock1ContainsUndefinedContinueTarget3",
-  "covered": false,
-  "inst": "access __x4__ = (CaseClauses1 \"ContainsUndefinedContinueTarget\")"
-}, {
-  "algo": "CaseBlock1ContainsUndefinedContinueTarget3",
-  "covered": false,
-  "inst": "app __x5__ = (__x4__ iterationSet (new []))"
-}, {
-  "algo": "CaseBlock1ContainsUndefinedContinueTarget3",
-  "covered": false,
-  "inst": "return __x5__"
 }, {
   "algo": "CaseBlock1HasCallInTailPosition3",
   "covered": true,
@@ -36747,111 +35150,6 @@
   "covered": true,
   "inst": "return declarations"
 }, {
-  "algo": "CaseClause0ContainsDuplicateLabels1",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "CaseClause0ContainsDuplicateLabels1",
-  "cond": "(! (= StatementList absent))",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (! (= StatementList absent)) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "CaseClause0ContainsDuplicateLabels1",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "CaseClause0ContainsDuplicateLabels1",
-  "covered": false,
-  "inst": "access __x0__ = (StatementList \"ContainsDuplicateLabels\")"
-}, {
-  "algo": "CaseClause0ContainsDuplicateLabels1",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "CaseClause0ContainsDuplicateLabels1",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
-  "algo": "CaseClause0ContainsDuplicateLabels1",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "CaseClause0ContainsDuplicateLabels1",
-  "covered": false,
-  "inst": "return false"
-}, {
-  "algo": "CaseClause0ContainsUndefinedBreakTarget1",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "CaseClause0ContainsUndefinedBreakTarget1",
-  "cond": "(! (= StatementList absent))",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (! (= StatementList absent)) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "CaseClause0ContainsUndefinedBreakTarget1",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "CaseClause0ContainsUndefinedBreakTarget1",
-  "covered": false,
-  "inst": "access __x0__ = (StatementList \"ContainsUndefinedBreakTarget\")"
-}, {
-  "algo": "CaseClause0ContainsUndefinedBreakTarget1",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "CaseClause0ContainsUndefinedBreakTarget1",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
-  "algo": "CaseClause0ContainsUndefinedBreakTarget1",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "CaseClause0ContainsUndefinedBreakTarget1",
-  "covered": false,
-  "inst": "return false"
-}, {
-  "algo": "CaseClause0ContainsUndefinedContinueTarget1",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "CaseClause0ContainsUndefinedContinueTarget1",
-  "cond": "(! (= StatementList absent))",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (! (= StatementList absent)) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "CaseClause0ContainsUndefinedContinueTarget1",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "CaseClause0ContainsUndefinedContinueTarget1",
-  "covered": false,
-  "inst": "access __x0__ = (StatementList \"ContainsUndefinedContinueTarget\")"
-}, {
-  "algo": "CaseClause0ContainsUndefinedContinueTarget1",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ iterationSet (new []))"
-}, {
-  "algo": "CaseClause0ContainsUndefinedContinueTarget1",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
-  "algo": "CaseClause0ContainsUndefinedContinueTarget1",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "CaseClause0ContainsUndefinedContinueTarget1",
-  "covered": false,
-  "inst": "return false"
-}, {
   "algo": "CaseClause0Evaluation0",
   "covered": true,
   "inst": "{ ... }"
@@ -37112,135 +35410,6 @@
   "algo": "CaseClauseIsSelected",
   "covered": true,
   "inst": "return __x4__"
-}, {
-  "algo": "CaseClauses1ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "CaseClauses1ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "access __x0__ = (CaseClauses \"ContainsDuplicateLabels\")"
-}, {
-  "algo": "CaseClauses1ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "CaseClauses1ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "let hasDuplicates = __x1__"
-}, {
-  "algo": "CaseClauses1ContainsDuplicateLabels0",
-  "cond": "(= hasDuplicates true)",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (= hasDuplicates true) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "CaseClauses1ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "return true"
-}, {
-  "algo": "CaseClauses1ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "CaseClauses1ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "access __x2__ = (CaseClause \"ContainsDuplicateLabels\")"
-}, {
-  "algo": "CaseClauses1ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "app __x3__ = (__x2__ labelSet)"
-}, {
-  "algo": "CaseClauses1ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "return __x3__"
-}, {
-  "algo": "CaseClauses1ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "CaseClauses1ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (CaseClauses \"ContainsUndefinedBreakTarget\")"
-}, {
-  "algo": "CaseClauses1ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "CaseClauses1ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "let hasUndefinedLabels = __x1__"
-}, {
-  "algo": "CaseClauses1ContainsUndefinedBreakTarget0",
-  "cond": "(= hasUndefinedLabels true)",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (= hasUndefinedLabels true) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "CaseClauses1ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return true"
-}, {
-  "algo": "CaseClauses1ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "CaseClauses1ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "access __x2__ = (CaseClause \"ContainsUndefinedBreakTarget\")"
-}, {
-  "algo": "CaseClauses1ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "app __x3__ = (__x2__ labelSet)"
-}, {
-  "algo": "CaseClauses1ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return __x3__"
-}, {
-  "algo": "CaseClauses1ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "CaseClauses1ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (CaseClauses \"ContainsUndefinedContinueTarget\")"
-}, {
-  "algo": "CaseClauses1ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ iterationSet (new []))"
-}, {
-  "algo": "CaseClauses1ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "let hasUndefinedLabels = __x1__"
-}, {
-  "algo": "CaseClauses1ContainsUndefinedContinueTarget0",
-  "cond": "(= hasUndefinedLabels true)",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (= hasUndefinedLabels true) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "CaseClauses1ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return true"
-}, {
-  "algo": "CaseClauses1ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "CaseClauses1ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "access __x2__ = (CaseClause \"ContainsUndefinedContinueTarget\")"
-}, {
-  "algo": "CaseClauses1ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "app __x3__ = (__x2__ iterationSet (new []))"
-}, {
-  "algo": "CaseClauses1ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return __x3__"
 }, {
   "algo": "CaseClauses1HasCallInTailPosition0",
   "covered": true,
@@ -39069,10 +37238,6 @@
   "covered": false,
   "inst": "return __x3__"
 }, {
-  "algo": "CoalesceExpression0AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
-}, {
   "algo": "CoalesceExpression0Evaluation0",
   "covered": true,
   "inst": "{ ... }"
@@ -39626,10 +37791,6 @@
   "covered": true,
   "inst": "return __x3__"
 }, {
-  "algo": "ContinueStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return false"
-}, {
   "algo": "ContinueStatement0Evaluation0",
   "covered": true,
   "inst": "{ ... }"
@@ -39641,33 +37802,6 @@
   "algo": "ContinueStatement0Evaluation0",
   "covered": true,
   "inst": "return __x0__"
-}, {
-  "algo": "ContinueStatement1ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "ContinueStatement1ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (LabelIdentifier \"StringValue\")"
-}, {
-  "algo": "ContinueStatement1ContainsUndefinedContinueTarget0",
-  "cond": "(! (contains iterationSet __x0__))",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (! (contains iterationSet __x0__)) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "ContinueStatement1ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return true"
-}, {
-  "algo": "ContinueStatement1ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "ContinueStatement1ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return false"
 }, {
   "algo": "ContinueStatement1Evaluation0",
   "covered": true,
@@ -43514,111 +41648,6 @@
   "covered": false,
   "inst": "??? \"Decode\""
 }, {
-  "algo": "DefaultClause0ContainsDuplicateLabels1",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "DefaultClause0ContainsDuplicateLabels1",
-  "cond": "(! (= StatementList absent))",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (! (= StatementList absent)) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "DefaultClause0ContainsDuplicateLabels1",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "DefaultClause0ContainsDuplicateLabels1",
-  "covered": false,
-  "inst": "access __x0__ = (StatementList \"ContainsDuplicateLabels\")"
-}, {
-  "algo": "DefaultClause0ContainsDuplicateLabels1",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "DefaultClause0ContainsDuplicateLabels1",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
-  "algo": "DefaultClause0ContainsDuplicateLabels1",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "DefaultClause0ContainsDuplicateLabels1",
-  "covered": false,
-  "inst": "return false"
-}, {
-  "algo": "DefaultClause0ContainsUndefinedBreakTarget1",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "DefaultClause0ContainsUndefinedBreakTarget1",
-  "cond": "(! (= StatementList absent))",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (! (= StatementList absent)) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "DefaultClause0ContainsUndefinedBreakTarget1",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "DefaultClause0ContainsUndefinedBreakTarget1",
-  "covered": false,
-  "inst": "access __x0__ = (StatementList \"ContainsUndefinedBreakTarget\")"
-}, {
-  "algo": "DefaultClause0ContainsUndefinedBreakTarget1",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "DefaultClause0ContainsUndefinedBreakTarget1",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
-  "algo": "DefaultClause0ContainsUndefinedBreakTarget1",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "DefaultClause0ContainsUndefinedBreakTarget1",
-  "covered": false,
-  "inst": "return false"
-}, {
-  "algo": "DefaultClause0ContainsUndefinedContinueTarget1",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "DefaultClause0ContainsUndefinedContinueTarget1",
-  "cond": "(! (= StatementList absent))",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (! (= StatementList absent)) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "DefaultClause0ContainsUndefinedContinueTarget1",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "DefaultClause0ContainsUndefinedContinueTarget1",
-  "covered": false,
-  "inst": "access __x0__ = (StatementList \"ContainsUndefinedContinueTarget\")"
-}, {
-  "algo": "DefaultClause0ContainsUndefinedContinueTarget1",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ iterationSet (new []))"
-}, {
-  "algo": "DefaultClause0ContainsUndefinedContinueTarget1",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
-  "algo": "DefaultClause0ContainsUndefinedContinueTarget1",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "DefaultClause0ContainsUndefinedContinueTarget1",
-  "covered": false,
-  "inst": "return false"
-}, {
   "algo": "DefaultClause0Evaluation0",
   "covered": true,
   "inst": "{ ... }"
@@ -45435,10 +43464,6 @@
   "algo": "EnumerateObjectPropertiesHelper",
   "covered": true,
   "inst": "return __x1__"
-}, {
-  "algo": "EqualityExpression2AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
 }, {
   "algo": "EqualityExpression2Evaluation0",
   "covered": true,
@@ -47307,10 +45332,6 @@
   "algo": "EvaluatePropertyAccessWithIdentifierKey",
   "covered": true,
   "inst": "return __x2__"
-}, {
-  "algo": "ExponentiationExpression1AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
 }, {
   "algo": "ExponentiationExpression1Evaluation0",
   "covered": true,
@@ -91445,45 +89466,6 @@
   "covered": false,
   "inst": "return __x1__"
 }, {
-  "algo": "GeneratorMethod0HasDirectSuper0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "GeneratorMethod0HasDirectSuper0",
-  "covered": false,
-  "inst": "access __x0__ = (UniqueFormalParameters \"Contains\")"
-}, {
-  "algo": "GeneratorMethod0HasDirectSuper0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ \"SuperCall\")"
-}, {
-  "algo": "GeneratorMethod0HasDirectSuper0",
-  "cond": "(= __x1__ true)",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (= __x1__ true) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "GeneratorMethod0HasDirectSuper0",
-  "covered": false,
-  "inst": "return true"
-}, {
-  "algo": "GeneratorMethod0HasDirectSuper0",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "GeneratorMethod0HasDirectSuper0",
-  "covered": false,
-  "inst": "access __x2__ = (GeneratorBody \"Contains\")"
-}, {
-  "algo": "GeneratorMethod0HasDirectSuper0",
-  "covered": false,
-  "inst": "app __x3__ = (__x2__ \"SuperCall\")"
-}, {
-  "algo": "GeneratorMethod0HasDirectSuper0",
-  "covered": false,
-  "inst": "return __x3__"
-}, {
   "algo": "GeneratorMethod0PropName0",
   "covered": true,
   "inst": "{ ... }"
@@ -98821,10 +96803,6 @@
   "covered": true,
   "inst": "return __x0__"
 }, {
-  "algo": "IdentifierReference1AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_simple"
-}, {
   "algo": "IdentifierReference1Evaluation0",
   "covered": false,
   "inst": "{ ... }"
@@ -98870,10 +96848,6 @@
   "algo": "IdentifierReference1StringValue0",
   "covered": false,
   "inst": "return \"yield\""
-}, {
-  "algo": "IdentifierReference2AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_simple"
 }, {
   "algo": "IdentifierReference2Evaluation0",
   "covered": true,
@@ -99236,10 +97210,6 @@
   "algo": "ImportCall0Evaluation0",
   "covered": false,
   "inst": "return __x7__"
-}, {
-  "algo": "ImportMeta0AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
 }, {
   "algo": "ImportMeta0Evaluation0",
   "covered": false,
@@ -102849,72 +100819,6 @@
   "covered": true,
   "inst": "return __x7__"
 }, {
-  "algo": "IsLabelledFunction",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IsLabelledFunction",
-  "cond": "(! (is-instance-of stmt LabelledStatement))",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (! (is-instance-of stmt LabelledStatement)) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "IsLabelledFunction",
-  "covered": false,
-  "inst": "return false"
-}, {
-  "algo": "IsLabelledFunction",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "IsLabelledFunction",
-  "covered": false,
-  "inst": "access __x0__ = (stmt \"LabelledItem\")"
-}, {
-  "algo": "IsLabelledFunction",
-  "covered": false,
-  "inst": "let item = __x0__"
-}, {
-  "algo": "IsLabelledFunction",
-  "cond": "(is-instance-of item LabelledItem1)",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (is-instance-of item LabelledItem1) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "IsLabelledFunction",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IsLabelledFunction",
-  "covered": false,
-  "inst": "access FunctionDeclaration = (item \"FunctionDeclaration\")"
-}, {
-  "algo": "IsLabelledFunction",
-  "covered": false,
-  "inst": "return true"
-}, {
-  "algo": "IsLabelledFunction",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "IsLabelledFunction",
-  "covered": false,
-  "inst": "access __x1__ = (item \"Statement\")"
-}, {
-  "algo": "IsLabelledFunction",
-  "covered": false,
-  "inst": "let subStmt = __x1__"
-}, {
-  "algo": "IsLabelledFunction",
-  "covered": false,
-  "inst": "app __x2__ = (IsLabelledFunction subStmt)"
-}, {
-  "algo": "IsLabelledFunction",
-  "covered": false,
-  "inst": "return __x2__"
-}, {
   "algo": "IsNonNegativeInteger",
   "covered": true,
   "inst": "{ ... }"
@@ -103561,58 +101465,6 @@
   "covered": false,
   "inst": "return __x5__"
 }, {
-  "algo": "IsValidRegularExpressionLiteral",
-  "covered": false,
-  "inst": "??? \"IsValidRegularExpressionLiteral\""
-}, {
-  "algo": "IterationStatement0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IterationStatement0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsDuplicateLabels\")"
-}, {
-  "algo": "IterationStatement0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "IterationStatement0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
-  "algo": "IterationStatement0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IterationStatement0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsUndefinedBreakTarget\")"
-}, {
-  "algo": "IterationStatement0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "IterationStatement0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
-  "algo": "IterationStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IterationStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsUndefinedContinueTarget\")"
-}, {
-  "algo": "IterationStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ iterationSet (new []))"
-}, {
-  "algo": "IterationStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
   "algo": "IterationStatement0HasCallInTailPosition0",
   "covered": true,
   "inst": "{ ... }"
@@ -103833,54 +101685,6 @@
   "covered": true,
   "inst": "return __x0__"
 }, {
-  "algo": "IterationStatement11ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IterationStatement11ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsDuplicateLabels\")"
-}, {
-  "algo": "IterationStatement11ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "IterationStatement11ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
-  "algo": "IterationStatement11ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IterationStatement11ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsUndefinedBreakTarget\")"
-}, {
-  "algo": "IterationStatement11ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "IterationStatement11ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
-  "algo": "IterationStatement11ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IterationStatement11ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsUndefinedContinueTarget\")"
-}, {
-  "algo": "IterationStatement11ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ iterationSet (new []))"
-}, {
-  "algo": "IterationStatement11ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
   "algo": "IterationStatement11HasCallInTailPosition0",
   "covered": false,
   "inst": "{ ... }"
@@ -104000,54 +101804,6 @@
   "algo": "IterationStatement11VarScopedDeclarations0",
   "covered": false,
   "inst": "return __x0__"
-}, {
-  "algo": "IterationStatement12ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IterationStatement12ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsDuplicateLabels\")"
-}, {
-  "algo": "IterationStatement12ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "IterationStatement12ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
-  "algo": "IterationStatement12ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IterationStatement12ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsUndefinedBreakTarget\")"
-}, {
-  "algo": "IterationStatement12ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "IterationStatement12ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
-  "algo": "IterationStatement12ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IterationStatement12ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsUndefinedContinueTarget\")"
-}, {
-  "algo": "IterationStatement12ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ iterationSet (new []))"
-}, {
-  "algo": "IterationStatement12ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return __x1__"
 }, {
   "algo": "IterationStatement12HasCallInTailPosition0",
   "covered": false,
@@ -104243,54 +101999,6 @@
   "covered": false,
   "inst": "return declarations"
 }, {
-  "algo": "IterationStatement13ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IterationStatement13ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsDuplicateLabels\")"
-}, {
-  "algo": "IterationStatement13ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "IterationStatement13ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
-  "algo": "IterationStatement13ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IterationStatement13ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsUndefinedBreakTarget\")"
-}, {
-  "algo": "IterationStatement13ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "IterationStatement13ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
-  "algo": "IterationStatement13ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IterationStatement13ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsUndefinedContinueTarget\")"
-}, {
-  "algo": "IterationStatement13ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ iterationSet (new []))"
-}, {
-  "algo": "IterationStatement13ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
   "algo": "IterationStatement13HasCallInTailPosition0",
   "covered": false,
   "inst": "{ ... }"
@@ -104415,54 +102123,6 @@
   "covered": false,
   "inst": "return __x0__"
 }, {
-  "algo": "IterationStatement5ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IterationStatement5ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsDuplicateLabels\")"
-}, {
-  "algo": "IterationStatement5ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "IterationStatement5ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
-  "algo": "IterationStatement5ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IterationStatement5ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsUndefinedBreakTarget\")"
-}, {
-  "algo": "IterationStatement5ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "IterationStatement5ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
-  "algo": "IterationStatement5ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IterationStatement5ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsUndefinedContinueTarget\")"
-}, {
-  "algo": "IterationStatement5ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ iterationSet (new []))"
-}, {
-  "algo": "IterationStatement5ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
   "algo": "IterationStatement5HasCallInTailPosition0",
   "covered": false,
   "inst": "{ ... }"
@@ -104582,54 +102242,6 @@
   "algo": "IterationStatement5VarScopedDeclarations0",
   "covered": true,
   "inst": "return __x0__"
-}, {
-  "algo": "IterationStatement7ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IterationStatement7ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsDuplicateLabels\")"
-}, {
-  "algo": "IterationStatement7ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "IterationStatement7ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
-  "algo": "IterationStatement7ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IterationStatement7ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsUndefinedBreakTarget\")"
-}, {
-  "algo": "IterationStatement7ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "IterationStatement7ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
-  "algo": "IterationStatement7ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IterationStatement7ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsUndefinedContinueTarget\")"
-}, {
-  "algo": "IterationStatement7ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ iterationSet (new []))"
-}, {
-  "algo": "IterationStatement7ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return __x1__"
 }, {
   "algo": "IterationStatement7HasCallInTailPosition0",
   "covered": true,
@@ -104755,54 +102367,6 @@
   "covered": true,
   "inst": "return __x0__"
 }, {
-  "algo": "IterationStatement8ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IterationStatement8ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsDuplicateLabels\")"
-}, {
-  "algo": "IterationStatement8ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "IterationStatement8ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
-  "algo": "IterationStatement8ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IterationStatement8ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsUndefinedBreakTarget\")"
-}, {
-  "algo": "IterationStatement8ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "IterationStatement8ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
-  "algo": "IterationStatement8ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IterationStatement8ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsUndefinedContinueTarget\")"
-}, {
-  "algo": "IterationStatement8ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ iterationSet (new []))"
-}, {
-  "algo": "IterationStatement8ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
   "algo": "IterationStatement8HasCallInTailPosition0",
   "covered": false,
   "inst": "{ ... }"
@@ -104914,54 +102478,6 @@
   "algo": "IterationStatement8VarScopedDeclarations0",
   "covered": true,
   "inst": "return __x0__"
-}, {
-  "algo": "IterationStatement9ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IterationStatement9ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsDuplicateLabels\")"
-}, {
-  "algo": "IterationStatement9ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "IterationStatement9ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
-  "algo": "IterationStatement9ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IterationStatement9ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsUndefinedBreakTarget\")"
-}, {
-  "algo": "IterationStatement9ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "IterationStatement9ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
-  "algo": "IterationStatement9ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "IterationStatement9ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsUndefinedContinueTarget\")"
-}, {
-  "algo": "IterationStatement9ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ iterationSet (new []))"
-}, {
-  "algo": "IterationStatement9ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return __x1__"
 }, {
   "algo": "IterationStatement9HasCallInTailPosition0",
   "covered": true,
@@ -105823,18 +103339,6 @@
   "covered": true,
   "inst": "return __x1__"
 }, {
-  "algo": "LabelledItem1ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "return false"
-}, {
-  "algo": "LabelledItem1ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return false"
-}, {
-  "algo": "LabelledItem1ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return false"
-}, {
   "algo": "LabelledItem1HasCallInTailPosition0",
   "covered": false,
   "inst": "{ ... }"
@@ -105902,129 +103406,6 @@
   "algo": "LabelledItem1VarScopedDeclarations0",
   "covered": false,
   "inst": "return (new [])"
-}, {
-  "algo": "LabelledStatement0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "LabelledStatement0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "access __x0__ = (LabelIdentifier \"StringValue\")"
-}, {
-  "algo": "LabelledStatement0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "let label = __x0__"
-}, {
-  "algo": "LabelledStatement0ContainsDuplicateLabels0",
-  "cond": "(contains labelSet label)",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (contains labelSet label) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "LabelledStatement0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "return true"
-}, {
-  "algo": "LabelledStatement0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "LabelledStatement0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "let __x1__ = (copy-obj labelSet)"
-}, {
-  "algo": "LabelledStatement0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "append label -> __x1__"
-}, {
-  "algo": "LabelledStatement0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "let newLabelSet = __x1__"
-}, {
-  "algo": "LabelledStatement0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "access __x2__ = (LabelledItem \"ContainsDuplicateLabels\")"
-}, {
-  "algo": "LabelledStatement0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "app __x3__ = (__x2__ newLabelSet)"
-}, {
-  "algo": "LabelledStatement0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "return __x3__"
-}, {
-  "algo": "LabelledStatement0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "LabelledStatement0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (LabelIdentifier \"StringValue\")"
-}, {
-  "algo": "LabelledStatement0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "let label = __x0__"
-}, {
-  "algo": "LabelledStatement0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "let __x1__ = (copy-obj labelSet)"
-}, {
-  "algo": "LabelledStatement0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "append label -> __x1__"
-}, {
-  "algo": "LabelledStatement0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "let newLabelSet = __x1__"
-}, {
-  "algo": "LabelledStatement0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "access __x2__ = (LabelledItem \"ContainsUndefinedBreakTarget\")"
-}, {
-  "algo": "LabelledStatement0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "app __x3__ = (__x2__ newLabelSet)"
-}, {
-  "algo": "LabelledStatement0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return __x3__"
-}, {
-  "algo": "LabelledStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "LabelledStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (LabelIdentifier \"StringValue\")"
-}, {
-  "algo": "LabelledStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "let label = __x0__"
-}, {
-  "algo": "LabelledStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "let __x1__ = (copy-obj labelSet)"
-}, {
-  "algo": "LabelledStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "append label -> __x1__"
-}, {
-  "algo": "LabelledStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "let newLabelSet = __x1__"
-}, {
-  "algo": "LabelledStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "access __x2__ = (LabelledItem \"ContainsUndefinedContinueTarget\")"
-}, {
-  "algo": "LabelledStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "app __x3__ = (__x2__ iterationSet newLabelSet)"
-}, {
-  "algo": "LabelledStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return __x3__"
 }, {
   "algo": "LabelledStatement0Evaluation0",
   "covered": true,
@@ -106239,10 +103620,6 @@
   "algo": "LabelledStatement0VarScopedDeclarations0",
   "covered": true,
   "inst": "return __x0__"
-}, {
-  "algo": "LeftHandSideExpression2AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
 }, {
   "algo": "LeftHandSideExpression2IsDestructuring0",
   "covered": false,
@@ -107181,10 +104558,6 @@
   "covered": true,
   "inst": "return __x4__"
 }, {
-  "algo": "MemberExpression3AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
-}, {
   "algo": "MemberExpression3Evaluation0",
   "covered": true,
   "inst": "{ ... }"
@@ -107327,10 +104700,6 @@
   "algo": "MemberExpression3IsIdentifierRef0",
   "covered": false,
   "inst": "return false"
-}, {
-  "algo": "MemberExpression4AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_simple"
 }, {
   "algo": "MemberExpression4HasCallInTailPosition0",
   "covered": true,
@@ -107485,45 +104854,6 @@
   "covered": true,
   "inst": "return __x3__"
 }, {
-  "algo": "MethodDefinition0HasDirectSuper0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "MethodDefinition0HasDirectSuper0",
-  "covered": false,
-  "inst": "access __x0__ = (UniqueFormalParameters \"Contains\")"
-}, {
-  "algo": "MethodDefinition0HasDirectSuper0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ \"SuperCall\")"
-}, {
-  "algo": "MethodDefinition0HasDirectSuper0",
-  "cond": "(= __x1__ true)",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (= __x1__ true) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "MethodDefinition0HasDirectSuper0",
-  "covered": false,
-  "inst": "return true"
-}, {
-  "algo": "MethodDefinition0HasDirectSuper0",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "MethodDefinition0HasDirectSuper0",
-  "covered": false,
-  "inst": "access __x2__ = (FunctionBody \"Contains\")"
-}, {
-  "algo": "MethodDefinition0HasDirectSuper0",
-  "covered": false,
-  "inst": "app __x3__ = (__x2__ \"SuperCall\")"
-}, {
-  "algo": "MethodDefinition0HasDirectSuper0",
-  "covered": false,
-  "inst": "return __x3__"
-}, {
   "algo": "MethodDefinition0PropName0",
   "covered": true,
   "inst": "{ ... }"
@@ -107658,22 +104988,6 @@
 }, {
   "algo": "MethodDefinition4ComputedPropertyContains0",
   "covered": true,
-  "inst": "return __x1__"
-}, {
-  "algo": "MethodDefinition4HasDirectSuper0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "MethodDefinition4HasDirectSuper0",
-  "covered": false,
-  "inst": "access __x0__ = (FunctionBody \"Contains\")"
-}, {
-  "algo": "MethodDefinition4HasDirectSuper0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ \"SuperCall\")"
-}, {
-  "algo": "MethodDefinition4HasDirectSuper0",
-  "covered": false,
   "inst": "return __x1__"
 }, {
   "algo": "MethodDefinition4PropName0",
@@ -107823,45 +105137,6 @@
   "algo": "MethodDefinition5ComputedPropertyContains0",
   "covered": true,
   "inst": "return __x1__"
-}, {
-  "algo": "MethodDefinition5HasDirectSuper0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "MethodDefinition5HasDirectSuper0",
-  "covered": false,
-  "inst": "access __x0__ = (PropertySetParameterList \"Contains\")"
-}, {
-  "algo": "MethodDefinition5HasDirectSuper0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ \"SuperCall\")"
-}, {
-  "algo": "MethodDefinition5HasDirectSuper0",
-  "cond": "(= __x1__ true)",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (= __x1__ true) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "MethodDefinition5HasDirectSuper0",
-  "covered": false,
-  "inst": "return true"
-}, {
-  "algo": "MethodDefinition5HasDirectSuper0",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "MethodDefinition5HasDirectSuper0",
-  "covered": false,
-  "inst": "access __x2__ = (FunctionBody \"Contains\")"
-}, {
-  "algo": "MethodDefinition5HasDirectSuper0",
-  "covered": false,
-  "inst": "app __x3__ = (__x2__ \"SuperCall\")"
-}, {
-  "algo": "MethodDefinition5HasDirectSuper0",
-  "covered": false,
-  "inst": "return __x3__"
 }, {
   "algo": "MethodDefinition5PropName0",
   "covered": true,
@@ -109391,10 +106666,6 @@
   "algo": "NewPromiseResolveThenableJob",
   "covered": true,
   "inst": "return __x1__"
-}, {
-  "algo": "NewTarget0AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
 }, {
   "algo": "NewTarget0Evaluation0",
   "covered": true,
@@ -116319,18 +113590,6 @@
   "covered": true,
   "inst": "return __x8__"
 }, {
-  "algo": "ParenthesizedExpression0AssignmentTargetType0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "ParenthesizedExpression0AssignmentTargetType0",
-  "covered": false,
-  "inst": "access __x0__ = (Expression \"AssignmentTargetType\")"
-}, {
-  "algo": "ParenthesizedExpression0AssignmentTargetType0",
-  "covered": false,
-  "inst": "return __x0__"
-}, {
   "algo": "ParenthesizedExpression0Evaluation0",
   "covered": true,
   "inst": "{ ... }"
@@ -118743,10 +116002,6 @@
   "covered": false,
   "inst": "GLOBAL_context = null"
 }, {
-  "algo": "PrimaryExpression6AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
-}, {
   "algo": "PrimaryExpression6HasCallInTailPosition0",
   "covered": false,
   "inst": "{ ... }"
@@ -118762,10 +116017,6 @@
   "algo": "PrimaryExpression6IsIdentifierRef0",
   "covered": false,
   "inst": "return false"
-}, {
-  "algo": "PrimaryExpression7AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
 }, {
   "algo": "PrimaryExpression7HasCallInTailPosition0",
   "covered": false,
@@ -118783,10 +116034,6 @@
   "covered": false,
   "inst": "return false"
 }, {
-  "algo": "PrimaryExpression8AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
-}, {
   "algo": "PrimaryExpression8HasCallInTailPosition0",
   "covered": false,
   "inst": "{ ... }"
@@ -118802,10 +116049,6 @@
   "algo": "PrimaryExpression8IsIdentifierRef0",
   "covered": false,
   "inst": "return false"
-}, {
-  "algo": "PrimaryExpression9AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
 }, {
   "algo": "PrimaryExpression9HasCallInTailPosition0",
   "covered": false,
@@ -125128,10 +122371,6 @@
   "covered": true,
   "inst": "return __x2__"
 }, {
-  "algo": "RelationalExpression4AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
-}, {
   "algo": "RelationalExpression4Evaluation0",
   "covered": true,
   "inst": "{ ... }"
@@ -125304,10 +122543,6 @@
   "algo": "RelationalExpression4IsFunctionDefinition0",
   "covered": true,
   "inst": "return false"
-}, {
-  "algo": "RelationalExpression6AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
 }, {
   "algo": "RelationalExpression6Evaluation0",
   "covered": true,
@@ -127405,10 +124640,6 @@
   "covered": true,
   "inst": "return __x3__"
 }, {
-  "algo": "ShiftExpression1AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
-}, {
   "algo": "ShiftExpression1Evaluation0",
   "covered": true,
   "inst": "{ ... }"
@@ -127631,10 +124862,6 @@
   "algo": "ShiftExpression1IsFunctionDefinition0",
   "covered": true,
   "inst": "return false"
-}, {
-  "algo": "ShiftExpression3AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
 }, {
   "algo": "ShiftExpression3Evaluation0",
   "covered": true,
@@ -128378,18 +125605,6 @@
   "covered": true,
   "inst": "nextIndex = (+ nextIndex 1i)"
 }, {
-  "algo": "Statement13ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "return false"
-}, {
-  "algo": "Statement13ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return false"
-}, {
-  "algo": "Statement13ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return false"
-}, {
   "algo": "Statement13HasCallInTailPosition0",
   "covered": false,
   "inst": "{ ... }"
@@ -128410,18 +125625,6 @@
   "covered": true,
   "inst": "return (new [])"
 }, {
-  "algo": "Statement2ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "return false"
-}, {
-  "algo": "Statement2ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return false"
-}, {
-  "algo": "Statement2ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return false"
-}, {
   "algo": "Statement2HasCallInTailPosition0",
   "covered": true,
   "inst": "{ ... }"
@@ -128441,14 +125644,6 @@
   "algo": "Statement2VarScopedDeclarations0",
   "covered": true,
   "inst": "return (new [])"
-}, {
-  "algo": "Statement6ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "return false"
-}, {
-  "algo": "Statement6ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return false"
 }, {
   "algo": "Statement6HasCallInTailPosition0",
   "covered": true,
@@ -130222,54 +127417,6 @@
   "algo": "SuperProperty1Evaluation0",
   "covered": true,
   "inst": "return __x4__"
-}, {
-  "algo": "SwitchStatement0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "SwitchStatement0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "access __x0__ = (CaseBlock \"ContainsDuplicateLabels\")"
-}, {
-  "algo": "SwitchStatement0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "SwitchStatement0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
-  "algo": "SwitchStatement0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "SwitchStatement0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (CaseBlock \"ContainsUndefinedBreakTarget\")"
-}, {
-  "algo": "SwitchStatement0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "SwitchStatement0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
-  "algo": "SwitchStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "SwitchStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (CaseBlock \"ContainsUndefinedContinueTarget\")"
-}, {
-  "algo": "SwitchStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ iterationSet (new []))"
-}, {
-  "algo": "SwitchStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return __x1__"
 }, {
   "algo": "SwitchStatement0Evaluation0",
   "covered": true,
@@ -134408,135 +131555,6 @@
   "covered": true,
   "inst": "return __x2__"
 }, {
-  "algo": "TryStatement1ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "TryStatement1ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "access __x0__ = (Block \"ContainsDuplicateLabels\")"
-}, {
-  "algo": "TryStatement1ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "TryStatement1ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "let hasDuplicates = __x1__"
-}, {
-  "algo": "TryStatement1ContainsDuplicateLabels0",
-  "cond": "(= hasDuplicates true)",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (= hasDuplicates true) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "TryStatement1ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "return true"
-}, {
-  "algo": "TryStatement1ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "TryStatement1ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "access __x2__ = (Finally \"ContainsDuplicateLabels\")"
-}, {
-  "algo": "TryStatement1ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "app __x3__ = (__x2__ labelSet)"
-}, {
-  "algo": "TryStatement1ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "return __x3__"
-}, {
-  "algo": "TryStatement1ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "TryStatement1ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (Block \"ContainsUndefinedBreakTarget\")"
-}, {
-  "algo": "TryStatement1ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "TryStatement1ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "let hasUndefinedLabels = __x1__"
-}, {
-  "algo": "TryStatement1ContainsUndefinedBreakTarget0",
-  "cond": "(= hasUndefinedLabels true)",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (= hasUndefinedLabels true) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "TryStatement1ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return true"
-}, {
-  "algo": "TryStatement1ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "TryStatement1ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "access __x2__ = (Finally \"ContainsUndefinedBreakTarget\")"
-}, {
-  "algo": "TryStatement1ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "app __x3__ = (__x2__ labelSet)"
-}, {
-  "algo": "TryStatement1ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return __x3__"
-}, {
-  "algo": "TryStatement1ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "TryStatement1ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (Block \"ContainsUndefinedContinueTarget\")"
-}, {
-  "algo": "TryStatement1ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ iterationSet (new []))"
-}, {
-  "algo": "TryStatement1ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "let hasUndefinedLabels = __x1__"
-}, {
-  "algo": "TryStatement1ContainsUndefinedContinueTarget0",
-  "cond": "(= hasUndefinedLabels true)",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (= hasUndefinedLabels true) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "TryStatement1ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return true"
-}, {
-  "algo": "TryStatement1ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "TryStatement1ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "access __x2__ = (Finally \"ContainsUndefinedContinueTarget\")"
-}, {
-  "algo": "TryStatement1ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "app __x3__ = (__x2__ iterationSet (new []))"
-}, {
-  "algo": "TryStatement1ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return __x3__"
-}, {
   "algo": "TryStatement1Evaluation0",
   "covered": true,
   "inst": "{ ... }"
@@ -134709,216 +131727,6 @@
   "algo": "TryStatement1VarScopedDeclarations0",
   "covered": true,
   "inst": "return declarations"
-}, {
-  "algo": "TryStatement2ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "TryStatement2ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "access __x0__ = (Block \"ContainsDuplicateLabels\")"
-}, {
-  "algo": "TryStatement2ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "TryStatement2ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "let hasDuplicates = __x1__"
-}, {
-  "algo": "TryStatement2ContainsDuplicateLabels0",
-  "cond": "(= hasDuplicates true)",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (= hasDuplicates true) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "TryStatement2ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "return true"
-}, {
-  "algo": "TryStatement2ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "TryStatement2ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "access __x2__ = (Catch \"ContainsDuplicateLabels\")"
-}, {
-  "algo": "TryStatement2ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "app __x3__ = (__x2__ labelSet)"
-}, {
-  "algo": "TryStatement2ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "let hasDuplicates = __x3__"
-}, {
-  "algo": "TryStatement2ContainsDuplicateLabels0",
-  "cond": "(= hasDuplicates true)",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (= hasDuplicates true) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "TryStatement2ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "return true"
-}, {
-  "algo": "TryStatement2ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "TryStatement2ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "access __x4__ = (Finally \"ContainsDuplicateLabels\")"
-}, {
-  "algo": "TryStatement2ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "app __x5__ = (__x4__ labelSet)"
-}, {
-  "algo": "TryStatement2ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "return __x5__"
-}, {
-  "algo": "TryStatement2ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "TryStatement2ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (Block \"ContainsUndefinedBreakTarget\")"
-}, {
-  "algo": "TryStatement2ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "TryStatement2ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "let hasUndefinedLabels = __x1__"
-}, {
-  "algo": "TryStatement2ContainsUndefinedBreakTarget0",
-  "cond": "(= hasUndefinedLabels true)",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (= hasUndefinedLabels true) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "TryStatement2ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return true"
-}, {
-  "algo": "TryStatement2ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "TryStatement2ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "access __x2__ = (Catch \"ContainsUndefinedBreakTarget\")"
-}, {
-  "algo": "TryStatement2ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "app __x3__ = (__x2__ labelSet)"
-}, {
-  "algo": "TryStatement2ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "let hasUndefinedLabels = __x3__"
-}, {
-  "algo": "TryStatement2ContainsUndefinedBreakTarget0",
-  "cond": "(= hasUndefinedLabels true)",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (= hasUndefinedLabels true) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "TryStatement2ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return true"
-}, {
-  "algo": "TryStatement2ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "TryStatement2ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "access __x4__ = (Finally \"ContainsUndefinedBreakTarget\")"
-}, {
-  "algo": "TryStatement2ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "app __x5__ = (__x4__ labelSet)"
-}, {
-  "algo": "TryStatement2ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return __x5__"
-}, {
-  "algo": "TryStatement2ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "TryStatement2ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (Block \"ContainsUndefinedContinueTarget\")"
-}, {
-  "algo": "TryStatement2ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ iterationSet (new []))"
-}, {
-  "algo": "TryStatement2ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "let hasUndefinedLabels = __x1__"
-}, {
-  "algo": "TryStatement2ContainsUndefinedContinueTarget0",
-  "cond": "(= hasUndefinedLabels true)",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (= hasUndefinedLabels true) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "TryStatement2ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return true"
-}, {
-  "algo": "TryStatement2ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "TryStatement2ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "access __x2__ = (Catch \"ContainsUndefinedContinueTarget\")"
-}, {
-  "algo": "TryStatement2ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "app __x3__ = (__x2__ iterationSet (new []))"
-}, {
-  "algo": "TryStatement2ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "let hasUndefinedLabels = __x3__"
-}, {
-  "algo": "TryStatement2ContainsUndefinedContinueTarget0",
-  "cond": "(= hasUndefinedLabels true)",
-  "covered": false,
-  "elseCovered": false,
-  "inst": "if (= hasUndefinedLabels true) ... else ...",
-  "thenCovered": false
-}, {
-  "algo": "TryStatement2ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return true"
-}, {
-  "algo": "TryStatement2ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "TryStatement2ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "access __x4__ = (Finally \"ContainsUndefinedContinueTarget\")"
-}, {
-  "algo": "TryStatement2ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "app __x5__ = (__x4__ iterationSet (new []))"
-}, {
-  "algo": "TryStatement2ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return __x5__"
 }, {
   "algo": "TryStatement2Evaluation0",
   "covered": true,
@@ -135298,10 +132106,6 @@
   "covered": false,
   "inst": "??? \"UTF16Encoding\""
 }, {
-  "algo": "UnaryExpression2AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
-}, {
   "algo": "UnaryExpression2Evaluation0",
   "covered": true,
   "inst": "{ ... }"
@@ -135371,10 +132175,6 @@
   "algo": "UnaryExpression2IsFunctionDefinition0",
   "covered": true,
   "inst": "return false"
-}, {
-  "algo": "UnaryExpression4AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
 }, {
   "algo": "UnaryExpression4Evaluation0",
   "covered": true,
@@ -135471,10 +132271,6 @@
   "algo": "UnaryExpression4IsFunctionDefinition0",
   "covered": true,
   "inst": "return false"
-}, {
-  "algo": "UnaryExpression6AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
 }, {
   "algo": "UnaryExpression6Evaluation0",
   "covered": true,
@@ -135603,10 +132399,6 @@
   "covered": false,
   "inst": "return false"
 }, {
-  "algo": "UnaryExpression8AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
-}, {
   "algo": "UnaryExpression8HasCallInTailPosition0",
   "covered": false,
   "inst": "{ ... }"
@@ -135661,10 +132453,6 @@
   "algo": "UpdateEmpty",
   "covered": true,
   "inst": "return __x2__"
-}, {
-  "algo": "UpdateExpression2AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
 }, {
   "algo": "UpdateExpression2Evaluation0",
   "covered": true,
@@ -135822,10 +132610,6 @@
   "algo": "UpdateExpression2IsFunctionDefinition0",
   "covered": true,
   "inst": "return false"
-}, {
-  "algo": "UpdateExpression4AssignmentTargetType0",
-  "covered": false,
-  "inst": "return CONST_invalid"
 }, {
   "algo": "UpdateExpression4Evaluation0",
   "covered": true,
@@ -137076,54 +133860,6 @@
   "algo": "VariableDeclaration1Evaluation0",
   "covered": true,
   "inst": "return __x4__"
-}, {
-  "algo": "WithStatement0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "WithStatement0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsDuplicateLabels\")"
-}, {
-  "algo": "WithStatement0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "WithStatement0ContainsDuplicateLabels0",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
-  "algo": "WithStatement0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "WithStatement0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsUndefinedBreakTarget\")"
-}, {
-  "algo": "WithStatement0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ labelSet)"
-}, {
-  "algo": "WithStatement0ContainsUndefinedBreakTarget0",
-  "covered": false,
-  "inst": "return __x1__"
-}, {
-  "algo": "WithStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "WithStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "access __x0__ = (Statement \"ContainsUndefinedContinueTarget\")"
-}, {
-  "algo": "WithStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "app __x1__ = (__x0__ iterationSet (new []))"
-}, {
-  "algo": "WithStatement0ContainsUndefinedContinueTarget0",
-  "covered": false,
-  "inst": "return __x1__"
 }, {
   "algo": "WithStatement0Evaluation0",
   "covered": false,

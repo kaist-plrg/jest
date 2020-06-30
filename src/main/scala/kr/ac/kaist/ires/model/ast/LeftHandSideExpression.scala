@@ -53,7 +53,6 @@ case class LeftHandSideExpression2(x0: OptionalExpression, parserParams: List[Bo
 object LeftHandSideExpression2 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "AssignmentTargetType0" -> LeftHandSideExpression2AssignmentTargetType0.func,
     "IsDestructuring0" -> LeftHandSideExpression2IsDestructuring0.func,
     "IsFunctionDefinition0" -> LeftHandSideExpression2IsFunctionDefinition0.func,
     "IsIdentifierRef0" -> LeftHandSideExpression2IsIdentifierRef0.func

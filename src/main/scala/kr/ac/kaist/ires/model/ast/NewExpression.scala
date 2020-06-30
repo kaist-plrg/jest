@@ -35,7 +35,6 @@ case class NewExpression1(x1: NewExpression, parserParams: List[Boolean]) extend
 object NewExpression1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "AssignmentTargetType0" -> NewExpression1AssignmentTargetType0.func,
     "Evaluation0" -> NewExpression1Evaluation0.func,
     "HasCallInTailPosition0" -> NewExpression1HasCallInTailPosition0.func,
     "IsDestructuring0" -> NewExpression1IsDestructuring0.func,

@@ -36,7 +36,6 @@ case class EqualityExpression1(x0: EqualityExpression, x2: RelationalExpression,
 object EqualityExpression1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "AssignmentTargetType0" -> EqualityExpression1AssignmentTargetType0.func,
     "Evaluation0" -> EqualityExpression1Evaluation0.func,
     "HasCallInTailPosition0" -> EqualityExpression1HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> EqualityExpression1IsFunctionDefinition0.func
@@ -56,7 +55,6 @@ case class EqualityExpression2(x0: EqualityExpression, x2: RelationalExpression,
 object EqualityExpression2 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "AssignmentTargetType0" -> EqualityExpression2AssignmentTargetType0.func,
     "Evaluation0" -> EqualityExpression2Evaluation0.func,
     "HasCallInTailPosition0" -> EqualityExpression2HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> EqualityExpression2IsFunctionDefinition0.func
@@ -76,7 +74,6 @@ case class EqualityExpression3(x0: EqualityExpression, x2: RelationalExpression,
 object EqualityExpression3 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "AssignmentTargetType0" -> EqualityExpression3AssignmentTargetType0.func,
     "Evaluation0" -> EqualityExpression3Evaluation0.func,
     "HasCallInTailPosition0" -> EqualityExpression3HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> EqualityExpression3IsFunctionDefinition0.func
@@ -96,7 +93,6 @@ case class EqualityExpression4(x0: EqualityExpression, x2: RelationalExpression,
 object EqualityExpression4 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "AssignmentTargetType0" -> EqualityExpression4AssignmentTargetType0.func,
     "Evaluation0" -> EqualityExpression4Evaluation0.func,
     "HasCallInTailPosition0" -> EqualityExpression4HasCallInTailPosition0.func,
     "IsFunctionDefinition0" -> EqualityExpression4IsFunctionDefinition0.func

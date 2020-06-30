@@ -25,7 +25,6 @@ object MethodDefinition0 extends ASTInfo {
   val semMap: Map[String, Func] = Map(
     "ComputedPropertyContains0" -> MethodDefinition0ComputedPropertyContains0.func,
     "DefineMethod0" -> MethodDefinition0DefineMethod0.func,
-    "HasDirectSuper0" -> MethodDefinition0HasDirectSuper0.func,
     "PropName0" -> MethodDefinition0PropName0.func,
     "PropertyDefinitionEvaluation0" -> MethodDefinition0PropertyDefinitionEvaluation0.func,
     "SpecialMethod0" -> MethodDefinition0SpecialMethod0.func
@@ -94,7 +93,6 @@ object MethodDefinition4 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "ComputedPropertyContains0" -> MethodDefinition4ComputedPropertyContains0.func,
-    "HasDirectSuper0" -> MethodDefinition4HasDirectSuper0.func,
     "PropName0" -> MethodDefinition4PropName0.func,
     "PropertyDefinitionEvaluation0" -> MethodDefinition4PropertyDefinitionEvaluation0.func,
     "SpecialMethod0" -> MethodDefinition4SpecialMethod0.func
@@ -116,7 +114,6 @@ object MethodDefinition5 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
     "ComputedPropertyContains0" -> MethodDefinition5ComputedPropertyContains0.func,
-    "HasDirectSuper0" -> MethodDefinition5HasDirectSuper0.func,
     "PropName0" -> MethodDefinition5PropName0.func,
     "PropertyDefinitionEvaluation0" -> MethodDefinition5PropertyDefinitionEvaluation0.func,
     "SpecialMethod0" -> MethodDefinition5SpecialMethod0.func

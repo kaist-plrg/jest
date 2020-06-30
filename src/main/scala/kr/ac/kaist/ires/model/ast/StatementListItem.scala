@@ -42,9 +42,6 @@ case class StatementListItem1(x0: Declaration, parserParams: List[Boolean]) exte
 object StatementListItem1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "ContainsDuplicateLabels0" -> StatementListItem1ContainsDuplicateLabels0.func,
-    "ContainsUndefinedBreakTarget0" -> StatementListItem1ContainsUndefinedBreakTarget0.func,
-    "ContainsUndefinedContinueTarget0" -> StatementListItem1ContainsUndefinedContinueTarget0.func,
     "HasCallInTailPosition0" -> StatementListItem1HasCallInTailPosition0.func,
     "LexicallyDeclaredNames0" -> StatementListItem1LexicallyDeclaredNames0.func,
     "LexicallyScopedDeclarations0" -> StatementListItem1LexicallyScopedDeclarations0.func,

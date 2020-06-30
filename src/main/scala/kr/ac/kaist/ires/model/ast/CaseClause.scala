@@ -22,9 +22,6 @@ case class CaseClause0(x1: Expression, x3: Option[StatementList], parserParams: 
 object CaseClause0 extends ASTInfo {
   val maxK: Int = 1
   val semMap: Map[String, Func] = Map(
-    "ContainsDuplicateLabels1" -> CaseClause0ContainsDuplicateLabels1.func,
-    "ContainsUndefinedBreakTarget1" -> CaseClause0ContainsUndefinedBreakTarget1.func,
-    "ContainsUndefinedContinueTarget1" -> CaseClause0ContainsUndefinedContinueTarget1.func,
     "Evaluation0" -> CaseClause0Evaluation0.func,
     "Evaluation1" -> CaseClause0Evaluation1.func,
     "HasCallInTailPosition1" -> CaseClause0HasCallInTailPosition1.func,

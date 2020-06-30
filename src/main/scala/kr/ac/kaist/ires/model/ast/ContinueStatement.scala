@@ -20,7 +20,6 @@ case class ContinueStatement0(parserParams: List[Boolean]) extends ContinueState
 object ContinueStatement0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "ContainsUndefinedContinueTarget0" -> ContinueStatement0ContainsUndefinedContinueTarget0.func,
     "Evaluation0" -> ContinueStatement0Evaluation0.func
   )
 }
@@ -37,7 +36,6 @@ case class ContinueStatement1(x2: LabelIdentifier, parserParams: List[Boolean]) 
 object ContinueStatement1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "ContainsUndefinedContinueTarget0" -> ContinueStatement1ContainsUndefinedContinueTarget0.func,
     "Evaluation0" -> ContinueStatement1Evaluation0.func
   )
 }

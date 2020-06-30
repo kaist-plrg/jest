@@ -22,9 +22,6 @@ case class IterationStatement0(x1: Statement, x4: Expression, parserParams: List
 object IterationStatement0 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "ContainsDuplicateLabels0" -> IterationStatement0ContainsDuplicateLabels0.func,
-    "ContainsUndefinedBreakTarget0" -> IterationStatement0ContainsUndefinedBreakTarget0.func,
-    "ContainsUndefinedContinueTarget0" -> IterationStatement0ContainsUndefinedContinueTarget0.func,
     "HasCallInTailPosition0" -> IterationStatement0HasCallInTailPosition0.func,
     "LabelledEvaluation0" -> IterationStatement0LabelledEvaluation0.func,
     "VarDeclaredNames0" -> IterationStatement0VarDeclaredNames0.func,
@@ -45,9 +42,6 @@ case class IterationStatement1(x2: Expression, x4: Statement, parserParams: List
 object IterationStatement1 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "ContainsDuplicateLabels0" -> IterationStatement1ContainsDuplicateLabels0.func,
-    "ContainsUndefinedBreakTarget0" -> IterationStatement1ContainsUndefinedBreakTarget0.func,
-    "ContainsUndefinedContinueTarget0" -> IterationStatement1ContainsUndefinedContinueTarget0.func,
     "HasCallInTailPosition0" -> IterationStatement1HasCallInTailPosition0.func,
     "LabelledEvaluation0" -> IterationStatement1LabelledEvaluation0.func,
     "VarDeclaredNames0" -> IterationStatement1VarDeclaredNames0.func,
@@ -70,9 +64,6 @@ case class IterationStatement2(x3: Option[Expression], x5: Option[Expression], x
 object IterationStatement2 extends ASTInfo {
   val maxK: Int = 7
   val semMap: Map[String, Func] = Map(
-    "ContainsDuplicateLabels7" -> IterationStatement2ContainsDuplicateLabels7.func,
-    "ContainsUndefinedBreakTarget7" -> IterationStatement2ContainsUndefinedBreakTarget7.func,
-    "ContainsUndefinedContinueTarget7" -> IterationStatement2ContainsUndefinedContinueTarget7.func,
     "HasCallInTailPosition7" -> IterationStatement2HasCallInTailPosition7.func,
     "LabelledEvaluation7" -> IterationStatement2LabelledEvaluation7.func,
     "VarDeclaredNames7" -> IterationStatement2VarDeclaredNames7.func,
@@ -95,9 +86,6 @@ case class IterationStatement3(x3: VariableDeclarationList, x5: Option[Expressio
 object IterationStatement3 extends ASTInfo {
   val maxK: Int = 3
   val semMap: Map[String, Func] = Map(
-    "ContainsDuplicateLabels3" -> IterationStatement3ContainsDuplicateLabels3.func,
-    "ContainsUndefinedBreakTarget3" -> IterationStatement3ContainsUndefinedBreakTarget3.func,
-    "ContainsUndefinedContinueTarget3" -> IterationStatement3ContainsUndefinedContinueTarget3.func,
     "HasCallInTailPosition3" -> IterationStatement3HasCallInTailPosition3.func,
     "LabelledEvaluation3" -> IterationStatement3LabelledEvaluation3.func,
     "VarDeclaredNames3" -> IterationStatement3VarDeclaredNames3.func,
@@ -120,9 +108,6 @@ case class IterationStatement4(x2: LexicalDeclaration, x3: Option[Expression], x
 object IterationStatement4 extends ASTInfo {
   val maxK: Int = 3
   val semMap: Map[String, Func] = Map(
-    "ContainsDuplicateLabels3" -> IterationStatement4ContainsDuplicateLabels3.func,
-    "ContainsUndefinedBreakTarget3" -> IterationStatement4ContainsUndefinedBreakTarget3.func,
-    "ContainsUndefinedContinueTarget3" -> IterationStatement4ContainsUndefinedContinueTarget3.func,
     "HasCallInTailPosition3" -> IterationStatement4HasCallInTailPosition3.func,
     "LabelledEvaluation3" -> IterationStatement4LabelledEvaluation3.func,
     "VarDeclaredNames3" -> IterationStatement4VarDeclaredNames3.func,
@@ -144,9 +129,6 @@ case class IterationStatement5(x3: LeftHandSideExpression, x5: Expression, x7: S
 object IterationStatement5 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "ContainsDuplicateLabels0" -> IterationStatement5ContainsDuplicateLabels0.func,
-    "ContainsUndefinedBreakTarget0" -> IterationStatement5ContainsUndefinedBreakTarget0.func,
-    "ContainsUndefinedContinueTarget0" -> IterationStatement5ContainsUndefinedContinueTarget0.func,
     "HasCallInTailPosition0" -> IterationStatement5HasCallInTailPosition0.func,
     "LabelledEvaluation0" -> IterationStatement5LabelledEvaluation0.func,
     "VarDeclaredNames0" -> IterationStatement5VarDeclaredNames0.func,
@@ -168,9 +150,6 @@ case class IterationStatement6(x3: ForBinding, x5: Expression, x7: Statement, pa
 object IterationStatement6 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "ContainsDuplicateLabels0" -> IterationStatement6ContainsDuplicateLabels0.func,
-    "ContainsUndefinedBreakTarget0" -> IterationStatement6ContainsUndefinedBreakTarget0.func,
-    "ContainsUndefinedContinueTarget0" -> IterationStatement6ContainsUndefinedContinueTarget0.func,
     "HasCallInTailPosition0" -> IterationStatement6HasCallInTailPosition0.func,
     "LabelledEvaluation0" -> IterationStatement6LabelledEvaluation0.func,
     "VarDeclaredNames0" -> IterationStatement6VarDeclaredNames0.func,
@@ -192,9 +171,6 @@ case class IterationStatement7(x2: ForDeclaration, x4: Expression, x6: Statement
 object IterationStatement7 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "ContainsDuplicateLabels0" -> IterationStatement7ContainsDuplicateLabels0.func,
-    "ContainsUndefinedBreakTarget0" -> IterationStatement7ContainsUndefinedBreakTarget0.func,
-    "ContainsUndefinedContinueTarget0" -> IterationStatement7ContainsUndefinedContinueTarget0.func,
     "HasCallInTailPosition0" -> IterationStatement7HasCallInTailPosition0.func,
     "LabelledEvaluation0" -> IterationStatement7LabelledEvaluation0.func,
     "VarDeclaredNames0" -> IterationStatement7VarDeclaredNames0.func,
@@ -216,9 +192,6 @@ case class IterationStatement8(x3: LeftHandSideExpression, x5: AssignmentExpress
 object IterationStatement8 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "ContainsDuplicateLabels0" -> IterationStatement8ContainsDuplicateLabels0.func,
-    "ContainsUndefinedBreakTarget0" -> IterationStatement8ContainsUndefinedBreakTarget0.func,
-    "ContainsUndefinedContinueTarget0" -> IterationStatement8ContainsUndefinedContinueTarget0.func,
     "HasCallInTailPosition0" -> IterationStatement8HasCallInTailPosition0.func,
     "LabelledEvaluation0" -> IterationStatement8LabelledEvaluation0.func,
     "VarDeclaredNames0" -> IterationStatement8VarDeclaredNames0.func,
@@ -240,9 +213,6 @@ case class IterationStatement9(x3: ForBinding, x5: AssignmentExpression, x7: Sta
 object IterationStatement9 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "ContainsDuplicateLabels0" -> IterationStatement9ContainsDuplicateLabels0.func,
-    "ContainsUndefinedBreakTarget0" -> IterationStatement9ContainsUndefinedBreakTarget0.func,
-    "ContainsUndefinedContinueTarget0" -> IterationStatement9ContainsUndefinedContinueTarget0.func,
     "HasCallInTailPosition0" -> IterationStatement9HasCallInTailPosition0.func,
     "LabelledEvaluation0" -> IterationStatement9LabelledEvaluation0.func,
     "VarDeclaredNames0" -> IterationStatement9VarDeclaredNames0.func,
@@ -264,9 +234,6 @@ case class IterationStatement10(x2: ForDeclaration, x4: AssignmentExpression, x6
 object IterationStatement10 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "ContainsDuplicateLabels0" -> IterationStatement10ContainsDuplicateLabels0.func,
-    "ContainsUndefinedBreakTarget0" -> IterationStatement10ContainsUndefinedBreakTarget0.func,
-    "ContainsUndefinedContinueTarget0" -> IterationStatement10ContainsUndefinedContinueTarget0.func,
     "HasCallInTailPosition0" -> IterationStatement10HasCallInTailPosition0.func,
     "LabelledEvaluation0" -> IterationStatement10LabelledEvaluation0.func,
     "VarDeclaredNames0" -> IterationStatement10VarDeclaredNames0.func,
@@ -288,9 +255,6 @@ case class IterationStatement11(x4: LeftHandSideExpression, x6: AssignmentExpres
 object IterationStatement11 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "ContainsDuplicateLabels0" -> IterationStatement11ContainsDuplicateLabels0.func,
-    "ContainsUndefinedBreakTarget0" -> IterationStatement11ContainsUndefinedBreakTarget0.func,
-    "ContainsUndefinedContinueTarget0" -> IterationStatement11ContainsUndefinedContinueTarget0.func,
     "HasCallInTailPosition0" -> IterationStatement11HasCallInTailPosition0.func,
     "LabelledEvaluation0" -> IterationStatement11LabelledEvaluation0.func,
     "VarDeclaredNames0" -> IterationStatement11VarDeclaredNames0.func,
@@ -312,9 +276,6 @@ case class IterationStatement12(x4: ForBinding, x6: AssignmentExpression, x8: St
 object IterationStatement12 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "ContainsDuplicateLabels0" -> IterationStatement12ContainsDuplicateLabels0.func,
-    "ContainsUndefinedBreakTarget0" -> IterationStatement12ContainsUndefinedBreakTarget0.func,
-    "ContainsUndefinedContinueTarget0" -> IterationStatement12ContainsUndefinedContinueTarget0.func,
     "HasCallInTailPosition0" -> IterationStatement12HasCallInTailPosition0.func,
     "LabelledEvaluation0" -> IterationStatement12LabelledEvaluation0.func,
     "VarDeclaredNames0" -> IterationStatement12VarDeclaredNames0.func,
@@ -336,9 +297,6 @@ case class IterationStatement13(x3: ForDeclaration, x5: AssignmentExpression, x7
 object IterationStatement13 extends ASTInfo {
   val maxK: Int = 0
   val semMap: Map[String, Func] = Map(
-    "ContainsDuplicateLabels0" -> IterationStatement13ContainsDuplicateLabels0.func,
-    "ContainsUndefinedBreakTarget0" -> IterationStatement13ContainsUndefinedBreakTarget0.func,
-    "ContainsUndefinedContinueTarget0" -> IterationStatement13ContainsUndefinedContinueTarget0.func,
     "HasCallInTailPosition0" -> IterationStatement13HasCallInTailPosition0.func,
     "LabelledEvaluation0" -> IterationStatement13LabelledEvaluation0.func,
     "VarDeclaredNames0" -> IterationStatement13VarDeclaredNames0.func,
