@@ -30,10 +30,7 @@ object RunJobs extends Algorithm {
       app __x3__ = (nextPending["Job"] nextPending["Arguments"][0i] nextPending["Arguments"][1i] nextPending["Arguments"][2i])
       let result = __x3__
       app __x4__ = (IsAbruptCompletion result)
-      if __x4__ {
-        app __x5__ = (HostReportErrors (new [result["Value"]]))
-        __x5__
-      } else {}
+      if __x4__ return result else {}
     }
   }"""), this)
 }

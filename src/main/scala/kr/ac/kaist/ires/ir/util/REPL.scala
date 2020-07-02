@@ -76,18 +76,6 @@ object REPL {
       // fixpoint
       fixpoint
 
-      st.context.locals.get(st.context.retId) match {
-        case Some(addr: Addr) => st.heap(addr, Str("Type")) match {
-          case (addr: Addr) =>
-            if (addr != st.globals.getOrElse(Id("CONST_normal"), Absent)) {
-              stopMessage(s"$addr is not normal")
-            }
-          case v => stopMessage(s"invalid completion type: $v")
-        }
-        case Some(v) => stopMessage(s"return not an address: $v")
-        case None => stopMessage("no return value")
-      }
-
       // reader
       try {
         reader.readLine(prompt) match {
