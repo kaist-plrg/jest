@@ -1,6 +1,15 @@
 package kr.ac.kaist.ires.ir
 
 object Helper {
+  def print(st: State, value: Value): Unit = value match {
+    case addr: Addr =>
+      println(addr)
+      println(beautify(st.heap(addr)))
+    case _ => {
+      println(beautify(value))
+    }
+  }
+
   def getRadixString(d: Long): String = {
     if (d < 10) d.toString else ('a' + (d - 10)).toChar.toString
   }

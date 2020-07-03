@@ -1,5 +1,1 @@
-$assert.notThrows(function () {
-  var x;
-  ((y) => { x = y; })(() => {});
-  $assert.compareArray(Object.getOwnPropertyNames(x), ['length']);
-});
+$assert.notThrows(function () { var x  ; ( ( y ) => { x = y ; } ) ( ( ) => {  } ) ;$assert.compareArray(Object.getOwnPropertyNames(x), ["length"]);$verifyProperty(x, "length", { value: 0, writable: false, enumerable: false, configurable: true}); });

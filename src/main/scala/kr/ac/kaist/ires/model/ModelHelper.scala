@@ -7,6 +7,15 @@ import kr.ac.kaist.ires.parser.UnicodeRegex
 import kr.ac.kaist.ires.util.Useful._
 
 object ModelHelper {
+  def initState(script: Script, filename: String = "unknown"): State = {
+    Model.initState.copy(
+      context = Model.initState.context.copy(
+        insts = List(Parser.parseInst("app result = (RunJobs)"))
+      ),
+      globals = Model.initState.globals + (Id("script") -> ASTVal(script)) + (Id("__filename__") -> Str(filename))
+    )
+  }
+
   def flattenStList(s: StatementList): List[StatementListItem] = s match {
     case StatementList0(x0, _) => List(x0)
     case StatementList1(x0, x1, _) => flattenStList(x0) :+ x1

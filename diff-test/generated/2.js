@@ -1,2 +1,2 @@
 var x = [42];
-Object.defineProperty(arr, 'length', { value: 0, enumerable: true });
+Object.defineProperty(x, 'length', { value: 0, enumerable: true });

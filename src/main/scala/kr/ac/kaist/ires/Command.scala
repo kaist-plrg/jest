@@ -49,6 +49,9 @@ case object CmdEval extends CommandObj("eval", CmdLoad >> IREval)
 // repl
 case object CmdREPL extends CommandObj("repl", CmdLoad >> IRREPL)
 
+// modify
+case object CmdModify extends CommandObj("modify", CmdBase >> Modify)
+
 // parse-ir
 case object CmdIRParse extends CommandObj("parse-ir", CmdBase >> IRParse) {
   override def display(pgm: ir.Program): Unit = println(ir.beautify(pgm))

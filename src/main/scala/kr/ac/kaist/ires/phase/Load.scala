@@ -15,11 +15,9 @@ case object Load extends PhaseObj[Script, LoadConfig, State] {
     script: Script,
     iresConfig: IRESConfig,
     config: LoadConfig
-  ): State = Model.initState.copy(
-    context = Model.initState.context.copy(
-      insts = List(Parser.parseInst("app result = (RunJobs)"))
-    ),
-    globals = Model.initState.globals + (Id("script") -> ASTVal(script)) + (Id("__filename__") -> Str(iresConfig.fileNames.lift(0).getOrElse("unknown")))
+  ): State = ModelHelper.initState(
+    script,
+    iresConfig.fileNames.lift(0).getOrElse("unknown")
   )
 
   def defaultConfig: LoadConfig = LoadConfig()

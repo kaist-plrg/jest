@@ -7,4 +7,4 @@ x[Symbol.iterator] = function() {
     return: 'str'
   };
 };
-for (var x of iterable) throw 42;
+for (var y of x) throw 42;

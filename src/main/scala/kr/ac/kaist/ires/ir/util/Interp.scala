@@ -118,14 +118,7 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
         }
       case IPrint(expr) =>
         val (v, s0) = interp(expr)(st)
-        v match {
-          case addr: Addr =>
-            println(addr)
-            println(beautify(s0.heap(addr)))
-          case v => {
-            println(beautify(v))
-          }
-        }
+        Helper.print(s0, v)
         s0
       case IApp(id, fexpr, args) =>
         val (fv, s0) = interp(fexpr)(st)
@@ -489,18 +482,21 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
       val (refV, s0) = interp(ref)(st)
       val (base, s1) = interp(refV)(s0)
       val (p, s2) = escapeCompletion(interp(expr)(s1))
-      ((base, p) match {
-        case (addr: Addr, p) => s2.get(addr) match {
-          case Some(IRMap(Ty("Completion"), m, _)) if !m.contains(p) => m(Str("Value"))._1 match {
-            case a: Addr => RefValueProp(a, p)
-            case Str(s) => RefValueString(s, p)
-            case _ => error(s"Completion does not have value: $ref[$expr]")
-          }
-          case _ => RefValueProp(addr, p)
+      interp(base, p)(s2)
+  }
+  def interp(base: Value, p: Value): State => (RefValue, State) = st => {
+    ((base, p) match {
+      case (addr: Addr, p) => st.get(addr) match {
+        case Some(IRMap(Ty("Completion"), m, _)) if !m.contains(p) => m(Str("Value"))._1 match {
+          case a: Addr => RefValueProp(a, p)
+          case Str(s) => RefValueString(s, p)
+          case _ => error(s"Completion does not have value: $base[$p]")
         }
-        case (Str(str), p) => RefValueString(str, p)
-        case v => error(s"not an address: $v")
-      }, s2)
+        case _ => RefValueProp(addr, p)
+      }
+      case (Str(str), p) => RefValueString(str, p)
+      case v => error(s"not an address: $v")
+    }, st)
   }
 
   def interp(refV: RefValue): State => (Value, State) = st => refV match {
