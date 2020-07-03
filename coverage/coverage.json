@@ -17797,32 +17797,6 @@
   "inst": "app __x45__ = (ToPrimitive y)"
 }, {
   "algo": "AbstractEqualityComparison",
-  "cond": "(is-completion __x45__)",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "if (is-completion __x45__) ... else ...",
-  "thenCovered": true
-}, {
-  "algo": "AbstractEqualityComparison",
-  "cond": "(= __x45__[\"Type\"] CONST_normal)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= __x45__[\"Type\"] CONST_normal) ... else ...",
-  "thenCovered": true
-}, {
-  "algo": "AbstractEqualityComparison",
-  "covered": true,
-  "inst": "__x45__ = __x45__[\"Value\"]"
-}, {
-  "algo": "AbstractEqualityComparison",
-  "covered": true,
-  "inst": "return __x45__"
-}, {
-  "algo": "AbstractEqualityComparison",
-  "covered": false,
-  "inst": "{}"
-}, {
-  "algo": "AbstractEqualityComparison",
   "covered": true,
   "inst": "app __x46__ = (AbstractEqualityComparison x __x45__)"
 }, {
@@ -17883,32 +17857,6 @@
   "algo": "AbstractEqualityComparison",
   "covered": true,
   "inst": "app __x51__ = (ToPrimitive x)"
-}, {
-  "algo": "AbstractEqualityComparison",
-  "cond": "(is-completion __x51__)",
-  "covered": true,
-  "elseCovered": false,
-  "inst": "if (is-completion __x51__) ... else ...",
-  "thenCovered": true
-}, {
-  "algo": "AbstractEqualityComparison",
-  "cond": "(= __x51__[\"Type\"] CONST_normal)",
-  "covered": true,
-  "elseCovered": true,
-  "inst": "if (= __x51__[\"Type\"] CONST_normal) ... else ...",
-  "thenCovered": true
-}, {
-  "algo": "AbstractEqualityComparison",
-  "covered": true,
-  "inst": "__x51__ = __x51__[\"Value\"]"
-}, {
-  "algo": "AbstractEqualityComparison",
-  "covered": true,
-  "inst": "return __x51__"
-}, {
-  "algo": "AbstractEqualityComparison",
-  "covered": false,
-  "inst": "{}"
 }, {
   "algo": "AbstractEqualityComparison",
   "covered": true,
@@ -43571,7 +43519,7 @@
   "algo": "EqualityExpression2Evaluation0",
   "cond": "(= r[\"Type\"] CONST_normal)",
   "covered": true,
-  "elseCovered": true,
+  "elseCovered": false,
   "inst": "if (= r[\"Type\"] CONST_normal) ... else ...",
   "thenCovered": true
 }, {
@@ -43580,7 +43528,7 @@
   "inst": "r = r[\"Value\"]"
 }, {
   "algo": "EqualityExpression2Evaluation0",
-  "covered": true,
+  "covered": false,
   "inst": "return r"
 }, {
   "algo": "EqualityExpression2Evaluation0",
@@ -106731,7 +106679,7 @@
 }, {
   "algo": "NumberBitwiseOp",
   "covered": true,
-  "inst": "app __x1__ = (ToInt32 y)"
+  "inst": "app __x1__ = (ToUint32 y)"
 }, {
   "algo": "NumberBitwiseOp",
   "cond": "(is-completion __x1__)",
@@ -107780,7 +107728,7 @@
 }, {
   "algo": "NumberCOLONCOLONunsignedRightShift",
   "covered": true,
-  "inst": "app __x0__ = (ToUint32 x)"
+  "inst": "app __x0__ = (ToInt32 x)"
 }, {
   "algo": "NumberCOLONCOLONunsignedRightShift",
   "cond": "(is-completion __x0__)",
@@ -123102,15 +123050,7 @@
 }, {
   "algo": "RunJobs",
   "covered": false,
-  "inst": "{ ... }"
-}, {
-  "algo": "RunJobs",
-  "covered": false,
-  "inst": "app __x5__ = (HostReportErrors (new [result[\"Value\"]]))"
-}, {
-  "algo": "RunJobs",
-  "covered": false,
-  "inst": "__x5__"
+  "inst": "return result"
 }, {
   "algo": "RunJobs",
   "covered": true,

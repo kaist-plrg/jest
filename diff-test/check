@@ -1,0 +1,37 @@
+#!/bin/sh
+
+source .zshrc
+
+TARGET="./modified"
+
+function check() {
+  local filename=$1
+  local result=$2
+  local name=$3
+  local cmd=$4
+
+  if [ "$result" != "" ]; then
+    echo "[$filename] $name ($cmd) - $result";
+  fi
+}
+
+function checkFile() {
+  local filename=$1
+
+  cat helper.js "$TARGET/$filename" > temp.js
+  # XXX check "$filename" "`ires eval temp.js`" "ES2020" "ires"
+  check "$filename" "`js temp.js`" "GraalJS" "js"
+  check "$filename" "`qjs temp.js`" "QuickJS" "qjs"
+  check "$filename" "`xst temp.js`" "Moddable XS" "xst"
+  check "$filename" "`node temp.js`" "Google V8" "node"
+  rm temp.js
+}
+
+if [ $# -eq 1 ]; then
+  checkFile "$1.js"
+else
+  for filename in "$TARGET"/*
+  do
+    checkFile `basename "$filename"`
+  done
+fi

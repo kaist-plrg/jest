@@ -100,7 +100,6 @@ object AbstractEqualityComparison extends Algorithm {
     } else {}
     if __x43__ {
       app __x45__ = (ToPrimitive y)
-      ? __x45__
       app __x46__ = (AbstractEqualityComparison x __x45__)
       app __x47__ = (WrapCompletion __x46__)
       return __x47__
@@ -113,7 +112,6 @@ object AbstractEqualityComparison extends Algorithm {
     } else {}
     if __x49__ {
       app __x51__ = (ToPrimitive x)
-      ? __x51__
       app __x52__ = (AbstractEqualityComparison __x51__ y)
       app __x53__ = (WrapCompletion __x52__)
       return __x53__

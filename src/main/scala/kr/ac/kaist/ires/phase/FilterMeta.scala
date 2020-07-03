@@ -115,10 +115,21 @@ case object FilterMeta extends PhaseObj[Unit, FilterMetaConfig, Unit] {
     )
 
   lazy val manualDebatable = Set(
-    // IteratorClose
-    "language/statements/for-of/iterator-close-throw-get-method-abrupt.js",
-    "language/statements/for-of/iterator-close-throw-get-method-non-callable.js",
-    // Function Names
+    // 1. Abstract Equality Comparison
+    "language/expressions/does-not-equals/S11.9.2_A7.8.js",
+    "language/expressions/does-not-equals/S11.9.2_A7.9.js",
+    "language/expressions/equals/S11.9.1_A7.8.js",
+    "language/expressions/equals/S11.9.1_A7.9.js",
+
+    // 2. ArraySetLength
+    //    - Not Reachable
+
+    // 3. Class Property Orders
+    "language/computed-property-names/class/static/method-number.js",
+    "language/computed-property-names/class/static/method-string.js",
+    "language/computed-property-names/class/static/method-symbol.js",
+
+    // 4. Default Function Names
     "built-ins/Promise/all/resolve-element-function-name.js",
     "built-ins/Promise/allSettled/reject-element-function-name.js",
     "built-ins/Promise/allSettled/resolve-element-function-name.js",
@@ -135,11 +146,30 @@ case object FilterMeta extends PhaseObj[Unit, FilterMetaConfig, Unit] {
     "language/expressions/class/name.js",
     "language/expressions/function/name.js",
     "language/expressions/generators/name.js",
-    // Class Property Orders
-    "language/computed-property-names/class/static/method-number.js",
-    "language/computed-property-names/class/static/method-string.js",
-    "language/computed-property-names/class/static/method-symbol.js",
-    // Test262
+
+    // 5. IteratorClose
+    "language/statements/for-of/iterator-close-throw-get-method-abrupt.js",
+    "language/statements/for-of/iterator-close-throw-get-method-non-callable.js",
+
+    // 6. TRV
+    "language/expressions/tagged-template/invalid-escape-sequences.js",
+
+    // 7. Number::unsignedRightShift
+    "language/expressions/unsigned-right-shift/S11.7.3_A1.js",
+    "language/expressions/unsigned-right-shift/S11.7.3_A2.1_T1.js",
+    "language/expressions/unsigned-right-shift/S11.7.3_A2.2_T1.js",
+    "language/expressions/unsigned-right-shift/S11.7.3_A2.4_T1.js",
+    "language/expressions/unsigned-right-shift/S11.7.3_A4_T1.js",
+    "language/expressions/unsigned-right-shift/S11.7.3_A4_T2.js",
+    "language/expressions/unsigned-right-shift/S11.7.3_A4_T3.js",
+    "language/expressions/unsigned-right-shift/S11.7.3_A4_T4.js",
+    "language/expressions/unsigned-right-shift/S11.7.3_A5.2_T1.js",
+
+    // 8. NumberBitwiseOp
+    //    - Not Reachable
+
+    // Conflicts test with the initialization in 'harness/propertyHelper.js'
+    // ReferenceError: Cannot access 'Array' before initialization
     "language/global-code/decl-lex-configurable-global.js"
   )
 
