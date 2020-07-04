@@ -1,7 +1,5 @@
 #!/bin/sh
 
-source .zshrc
-
 TARGET="./modified"
 
 function check() {
