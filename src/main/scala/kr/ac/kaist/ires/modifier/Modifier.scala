@@ -55,7 +55,6 @@ case class Modifier(script: Script) {
   // handle addresses
   private var handledObjectSet = Set[Addr]()
   private def handleObject(addr: Addr, path: String): Unit = {
-    // TODO class A {}에서 A와 A.prototype.constructor가 같은데 두 번 불리는 것 같음
     if (handledObjectSet contains addr) return
     handledObjectSet += addr
     handlePropNames(addr, path)
@@ -84,12 +83,15 @@ case class Modifier(script: Script) {
         case IRMap(Ty("DataProperty"), props, _) =>
           var set = Set[String]()
           val propStr = toJSCode(p)
-          descFields.foreach(field => props.get(Str(field)).map {
+          for {
+            field <- descFields
+            (value, _) <- props.get(Str(field))
+          } interp.escapeCompletion((value, st)) match {
             case (c: Const, _) => set += s"${field.toLowerCase}: ${toJSCode(c)}"
             case (addr: Addr, _) if field == "Value" =>
               handleObject(addr, s"$path[$propStr]")
             case _ => ???
-          })
+          }
           val desc = set.mkString("{ ", ", ", "}")
           add(s"$$verifyProperty($path, $propStr, $desc);")
         case _ => ???

@@ -15,20 +15,24 @@ case object Modify extends PhaseObj[Unit, ModifyConfig, Unit] {
     unit: Unit,
     iresConfig: IRESConfig,
     config: ModifyConfig
-  ): Unit = for {
-    file <- walkTree(GENERATED_DIR)
-    name = file.getName
-    filename = file.toString if jsFilter(filename)
-    js = readFile(filename)
-    parseResult = parse(Script(Nil), fileReader(filename)) if parseResult.successful
-    script = parseResult.get
-  } {
-    val modified = Modifier(script).result
-    println(s"- $MODIFIED_DIR/$name")
-    println(s"  $script")
-    println(s"  ====>")
-    println(s"  $modified")
-    dumpFile(modified, s"$MODIFIED_DIR/$name")
+  ): Unit = iresConfig.fileNames.headOption match {
+    case Some(filename) =>
+      val parseResult = parse(Script(Nil), fileReader(filename))
+      if (parseResult.successful) dumpFile(Modifier(parseResult.get).result, filename)
+    case None => for {
+      file <- walkTree(GENERATED_DIR)
+      name = file.getName
+      filename = file.toString if jsFilter(filename)
+      parseResult = parse(Script(Nil), fileReader(filename)) if parseResult.successful
+      script = parseResult.get
+    } {
+      val modified = Modifier(script).result
+      println(s"- $MODIFIED_DIR/$name")
+      println(s"  $script")
+      println(s"  ====>")
+      println(s"  $modified")
+      dumpFile(modified, s"$MODIFIED_DIR/$name")
+    }
   }
 
   def defaultConfig: ModifyConfig = ModifyConfig()
