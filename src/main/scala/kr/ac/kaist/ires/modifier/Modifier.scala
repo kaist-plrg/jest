@@ -55,6 +55,7 @@ case class Modifier(script: Script) {
   // handle addresses
   private var handledObjectSet = Set[Addr]()
   private def handleObject(addr: Addr, path: String): Unit = {
+    // TODO class A {}에서 A와 A.prototype.constructor가 같은데 두 번 불리는 것 같음
     if (handledObjectSet contains addr) return
     handledObjectSet += addr
     handlePropNames(addr, path)
