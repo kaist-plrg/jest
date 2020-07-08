@@ -1,66 +1,56 @@
 \documentclass[10pt,conference]{IEEEtran}
+\IEEEoverridecommandlockouts
 
-\usepackage{url}
-\usepackage{amsmath, amssymb}
-\usepackage{natbib}
-\usepackage{kotex}
-\usepackage[T1]{fontenc}
-\usepackage{beramono}
-\usepackage{listings}
-\usepackage{xcolor}
-\usepackage{qtree}
-\usepackage{multirow}
-\usepackage{colortbl}
-\usepackage{ulem}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
 \usepackage{graphicx}
-\usepackage{caption}
-\usepackage{subcaption}
+\usepackage{textcomp}
+\usepackage{xcolor}
 \usepackage{listings}
-\usepackage{enumitem}
-\usepackage{algorithm}
-\usepackage[noend]{algpseudocode}
-\usepackage{booktabs}
-\usepackage{makecell}
 
 % load macros
 \input{macros}
 
 \begin{document}
 
-\title{N+1 Version Testing for ECMAScript with JavaScript Engines}
-
+\title{Automated Generation of Conformance Tests for JavaScript Engines from ECMAScript}
 
 \author{
-  \IEEEauthorblockN{Jihyeok Park}
-  \IEEEauthorblockA{\textit{School of Computing} \\
-  \textit{KAIST}\\
-  Daejeon, South Korea\\
-  jhpark0223@kaist.ac.kr}
-
-  \and
-
-  \IEEEauthorblockN{Seungmin An}
-  \IEEEauthorblockA{\textit{School of Computing} \\
-  \textit{KAIST}\\
-  Daejeon, South Korea\\
-  h2oche@kaist.ac.kr}
-
-  \and
-
-  \IEEEauthorblockN{Gyeongwon Kim}
-  \IEEEauthorblockA{\textit{School of Computing} \\
-  \textit{KAIST}\\
-  Daejeon, South Korea\\
-  sutt69@kaist.ac.kr}
-
-  \and
-
-  \IEEEauthorblockN{Sukyoung Ryu}
-  \IEEEauthorblockA{\textit{School of Computing} \\
-  \textit{KAIST}\\
-  Daejeon, South Korea\\
-  sryu.cs@kaist.ac.kr}
+  \IEEEauthorblockN{Anonymous Author(s)}
 }
+
+% \author{Anonymous Author(s)
+%   \IEEEauthorblockN{Jihyeok Park}
+%   \IEEEauthorblockA{\textit{School of Computing} \\
+%   \textit{KAIST}\\
+%   Daejeon, South Korea\\
+%   jhpark0223@kaist.ac.kr}
+% 
+%   \and
+% 
+%   \IEEEauthorblockN{Seungmin An}
+%   \IEEEauthorblockA{\textit{School of Computing} \\
+%   \textit{KAIST}\\
+%   Daejeon, South Korea\\
+%   h2oche@kaist.ac.kr}
+% 
+%   \and
+% 
+%   \IEEEauthorblockN{Gyeongwon Kim}
+%   \IEEEauthorblockA{\textit{School of Computing} \\
+%   \textit{KAIST}\\
+%   Daejeon, South Korea\\
+%   sutt69@kaist.ac.kr}
+% 
+%   \and
+% 
+%   \IEEEauthorblockN{Sukyoung Ryu}
+%   \IEEEauthorblockA{\textit{School of Computing} \\
+%   \textit{KAIST}\\
+%   Daejeon, South Korea\\
+%   sryu.cs@kaist.ac.kr}
+% }
 
 \maketitle
 
@@ -71,13 +61,15 @@ JavaScript, n+1 version testing, mechanized specification, program synthesis
 \end{IEEEkeywords}
 
 \input{intro}
-% TODO
+\input{overall}
+\input{generation}
+\input{mutation}
+\input{injection}
 \input{eval}
 \input{related}
 \input{conclusion}
 
-\normalem
-\bibliographystyle{ACM-Reference-Format}
+\bibliographystyle{IEEEtran}
 \bibliography{ref}
 
 \end{document}

@@ -3,7 +3,7 @@ TEXSRC=	main.tex abstract.tex intro.tex \
 				macros.tex ref.bib
 
 main.pdf: $(TEXSRC)
-	pdflatex main.tex  && \
+	pdflatex main.tex && \
 	bibtex main && \
 	pdflatex main.tex && \
 	pdflatex main.tex
