@@ -154,20 +154,6 @@ case object FilterMeta extends PhaseObj[Unit, FilterMetaConfig, Unit] {
     // 6. TRV
     "language/expressions/tagged-template/invalid-escape-sequences.js",
 
-    // 7. Number::unsignedRightShift
-    "language/expressions/unsigned-right-shift/S11.7.3_A1.js",
-    "language/expressions/unsigned-right-shift/S11.7.3_A2.1_T1.js",
-    "language/expressions/unsigned-right-shift/S11.7.3_A2.2_T1.js",
-    "language/expressions/unsigned-right-shift/S11.7.3_A2.4_T1.js",
-    "language/expressions/unsigned-right-shift/S11.7.3_A4_T1.js",
-    "language/expressions/unsigned-right-shift/S11.7.3_A4_T2.js",
-    "language/expressions/unsigned-right-shift/S11.7.3_A4_T3.js",
-    "language/expressions/unsigned-right-shift/S11.7.3_A4_T4.js",
-    "language/expressions/unsigned-right-shift/S11.7.3_A5.2_T1.js",
-
-    // 8. NumberBitwiseOp
-    //    - Not Reachable
-
     // Conflicts test with the initialization in 'harness/propertyHelper.js'
     // ReferenceError: Cannot access 'Array' before initialization
     "language/global-code/decl-lex-configurable-global.js"
