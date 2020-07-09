@@ -566,12 +566,12 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
     case (OUMod, INum(l), INum(r)) => INum(unsigned_modulo(l, r).toLong)
     case (OMod, INum(l), INum(r)) => INum(modulo(l, r).toLong)
     case (OLt, INum(l), INum(r)) => Bool(l < r)
-    case (OBAnd, INum(l), INum(r)) => INum(l & r)
-    case (OBOr, INum(l), INum(r)) => INum(l | r)
-    case (OBXOr, INum(l), INum(r)) => INum(l ^ r)
+    case (OBAnd, INum(l), INum(r)) => INum(l.toInt & r.toInt)
+    case (OBOr, INum(l), INum(r)) => INum(l.toInt | r.toInt)
+    case (OBXOr, INum(l), INum(r)) => INum(l.toInt ^ r.toInt)
     case (OLShift, INum(l), INum(r)) => INum((l.toInt << r.toInt).toLong)
     case (OSRShift, INum(l), INum(r)) => INum((l.toInt >> r.toInt).toLong)
-    case (OURShift, INum(l), INum(r)) => INum((l.toLong >>> r.toInt).toLong & 0xffffffffL)
+    case (OURShift, INum(l), INum(r)) => INum((l.toLong & 0xffffffffL) >>> r.toInt)
 
     // logical operations
     case (OAnd, Bool(l), Bool(r)) => Bool(l && r)
