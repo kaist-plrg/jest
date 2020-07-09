@@ -148,7 +148,7 @@ var x;
 - __Failed Test262 tests:__
   - [language/expressions/tagged-template/invalid-escape-sequences.js](https://github.com/tc39/test262/tree/master/test/language/expressions/tagged-template/invalid-escape-sequences.js)
 
-
+<!--
 ## Number::unsignedRightShift
 - __Section:__ [6.1.6.1.11 Number::unsignedRightShift](http://ecma-international.org/ecma-262/11.0/#sec-numeric-types-number-unsignedRightShift)
 - 첫 번째 step에서 `lnum`을 구할 때, [ToUint32](http://ecma-international.org/ecma-262/11.0/#sec-touint32) 대신 [ToInt32](http://ecma-international.org/ecma-262/11.0/#sec-toint32)을
@@ -181,7 +181,7 @@ var x = -1 >>> 1;
   사용하고 있다.
 - __Simple JavaScript code:__
 ```js
-var x = -1 >>> 1;
+var x = 1 | -1;
 ```
 | JS Engine | Result |
 |:-:|:-|
@@ -190,3 +190,4 @@ var x = -1 >>> 1;
 | Moddable XS | Expected 4294967295 but got -1. |
 | Google V8   | Expected 4294967295 but got -1. |
 - __Failed Test262 tests:__ 위의 경우에 대해서 cover하지 못함
+-->
