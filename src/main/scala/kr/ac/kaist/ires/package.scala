@@ -27,7 +27,7 @@ package object ires {
   // Differential testing directories
   val DIFF_TEST_DIR = s"${BASE_DIR}/diff-test"
   val GENERATED_DIR = s"${DIFF_TEST_DIR}/generated"
-  val MODIFIED_DIR = s"${DIFF_TEST_DIR}/modified"
+  val INJECTED_DIR = s"${DIFF_TEST_DIR}/injected"
 
   // Current directory root
   val CUR_DIR = System.getProperty("user.dir")

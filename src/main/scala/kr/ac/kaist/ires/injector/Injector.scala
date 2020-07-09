@@ -1,18 +1,18 @@
-package kr.ac.kaist.ires.modifier
+package kr.ac.kaist.ires.injector
 
 import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 import kr.ac.kaist.ires.model.{ Parser => JSParser, Script, ModelHelper }
 
-case class Modifier(script: Script) {
-  // modified script
+case class Injector(script: Script) {
+  // injected script
   lazy val result = {
     if (isNormal) {
       handleVariable
       handleLet
     }
     handleException
-    modified
+    injected
   }
 
   // initial state
@@ -24,15 +24,15 @@ case class Modifier(script: Script) {
   // final state
   private val st = interp(initState)
 
-  // modified script
-  private var modified = script.toString
+  // injected script
+  private var injected = script.toString
 
   //////////////////////////////////////////////////////////
   // Helper Functions
   //////////////////////////////////////////////////////////
   // add assertions
   private var assertCount = 0
-  def add(assert: String): Unit = { assertCount += 1; modified += assert }
+  def add(assert: String): Unit = { assertCount += 1; injected += assert }
 
   // handle variables
   private def handleVariable: Unit = for (x <- createdVars) {
@@ -106,7 +106,7 @@ case class Modifier(script: Script) {
     getValue(st, "result.Type")._1 == NamedAddr("CONST_normal")
   private def handleException: Unit = getValue(st, "result.Type")._1 match {
     case NamedAddr("CONST_normal") =>
-      modified = s"$$assert.notThrows(function () { $modified });"
+      injected = s"$$assert.notThrows(function () { $injected });"
     case _ =>
       val thrown = getValue(st, "result.Value")._1 match {
         case _: Addr => getValue(st, "result.Prototype")._1 match {
@@ -115,7 +115,7 @@ case class Modifier(script: Script) {
         }
         case _ => ???
       }
-      modified = s"$$assert.throws(function () { $modified }, $thrown);"
+      injected = s"$$assert.throws(function () { $injected }, $thrown);"
   }
 
   // get values

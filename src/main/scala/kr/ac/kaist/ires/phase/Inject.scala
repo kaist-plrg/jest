@@ -3,22 +3,22 @@ package kr.ac.kaist.ires.phase
 import kr.ac.kaist.ires._
 import kr.ac.kaist.ires.model._
 import kr.ac.kaist.ires.model.Parser._
-import kr.ac.kaist.ires.modifier.Modifier
+import kr.ac.kaist.ires.injector.Injector
 import kr.ac.kaist.ires.util.Useful._
 
-// Modify phase
-case object Modify extends PhaseObj[Unit, ModifyConfig, Unit] {
-  val name = "modify"
-  val help = "Modify JavaScript files with additional semantics assertions."
+// Inject phase
+case object Inject extends PhaseObj[Unit, InjectConfig, Unit] {
+  val name = "inject"
+  val help = "Inject semantics assertions into JavaScript files."
 
   def apply(
     unit: Unit,
     iresConfig: IRESConfig,
-    config: ModifyConfig
+    config: InjectConfig
   ): Unit = iresConfig.fileNames.headOption match {
     case Some(filename) =>
       val parseResult = parse(Script(Nil), fileReader(filename))
-      if (parseResult.successful) dumpFile(Modifier(parseResult.get).result, filename)
+      if (parseResult.successful) dumpFile(Injector(parseResult.get).result, filename)
     case None => for {
       file <- walkTree(GENERATED_DIR)
       name = file.getName
@@ -26,18 +26,18 @@ case object Modify extends PhaseObj[Unit, ModifyConfig, Unit] {
       parseResult = parse(Script(Nil), fileReader(filename)) if parseResult.successful
       script = parseResult.get
     } {
-      val modified = Modifier(script).result
-      println(s"- $MODIFIED_DIR/$name")
+      val injected = Injector(script).result
+      println(s"- $INJECTED_DIR/$name")
       println(s"  $script")
       println(s"  ====>")
-      println(s"  $modified")
-      dumpFile(modified, s"$MODIFIED_DIR/$name")
+      println(s"  $injected")
+      dumpFile(injected, s"$INJECTED_DIR/$name")
     }
   }
 
-  def defaultConfig: ModifyConfig = ModifyConfig()
-  val options: List[PhaseOption[ModifyConfig]] = List()
+  def defaultConfig: InjectConfig = InjectConfig()
+  val options: List[PhaseOption[InjectConfig]] = List()
 }
 
-// Modify phase config
-case class ModifyConfig() extends Config
+// Inject phase config
+case class InjectConfig() extends Config
