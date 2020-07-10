@@ -5,7 +5,9 @@ import kr.ac.kaist.ires.ir.Inst._
 
 class Visited {
   private var instCovered: Set[Int] = Set()
+  def getInstCovered: Set[Int] = instCovered
   private var condCovered: Set[(Int, Boolean)] = Set()
+  def getCondCovered: Set[(Int, Boolean)] = condCovered
 
   // add covered instructions
   def +=(uid: Int): Unit = if (uid >= 0) instCovered += uid
