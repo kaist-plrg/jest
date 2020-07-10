@@ -3,7 +3,7 @@ package kr.ac.kaist.ires
 import java.io._
 import scala.io.Source
 import kr.ac.kaist.ires.ir._
-import kr.ac.kaist.ires.coverage.Coverage
+import kr.ac.kaist.ires.coverage.Visited
 import kr.ac.kaist.ires.error.NotSupported
 import kr.ac.kaist.ires.model.{ Parser => JSParser, StatementListItem, ModelHelper }
 import kr.ac.kaist.ires.util.Useful._
@@ -61,7 +61,7 @@ class Test262Test extends IRESTest with EvalTest {
     dumpJson(yet, s"$TEST_DIR/yet.json")
 
     if (COVERAGE_MODE) {
-      val coverage = Coverage.getCoverage
+      val coverage = Visited.global.getCoverage
       println(coverage.summary)
       coverage.dump
     }

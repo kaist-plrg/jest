@@ -1,6 +1,6 @@
 package kr.ac.kaist.ires
 
-import kr.ac.kaist.ires.coverage.Coverage
+import kr.ac.kaist.ires.coverage.Visited
 import kr.ac.kaist.ires.ir.Inst
 import kr.ac.kaist.ires.model.Algorithm
 
@@ -15,7 +15,7 @@ trait EvalTest extends IRESTest {
   override def afterAll(): Unit = {
     super.afterAll
     if (COVERAGE_MODE) {
-      val coverage = Coverage.getCoverage
+      val coverage = Visited.global.getCoverage
       println(coverage.summary)
       coverage.dump
     }

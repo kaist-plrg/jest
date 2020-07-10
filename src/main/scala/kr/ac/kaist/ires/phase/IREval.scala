@@ -1,6 +1,7 @@
 package kr.ac.kaist.ires.phase
 
 import kr.ac.kaist.ires.IRESConfig
+import kr.ac.kaist.ires.coverage.Visited
 import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.util._
 
@@ -14,7 +15,7 @@ case object IREval extends PhaseObj[State, IREvalConfig, State] {
     iresConfig: IRESConfig,
     config: IREvalConfig
   ): State = {
-    val st = (new Interp(config.debugir, config.timeout))(initialSt)
+    val st = (new Interp(config.debugir, config.timeout, Visited.global))(initialSt)
     if (config.state) println(beautify(st))
     st
   }

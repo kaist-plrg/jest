@@ -8,13 +8,17 @@ import scala.concurrent.duration._
 import scala.concurrent.ExecutionContext.Implicits.global
 
 import kr.ac.kaist.ires.{ DEBUG_INTERP, IRES, COVERAGE_MODE, Lexical }
-import kr.ac.kaist.ires.coverage.Coverage
+import kr.ac.kaist.ires.coverage.Visited
 import kr.ac.kaist.ires.error.{ NotSupported, NotYetModeled, Timeout }
 import kr.ac.kaist.ires.model.{ Parser => ESParser, ESValueParser, ModelHelper }
 import kr.ac.kaist.ires.parser.UnicodeRegex.WSLT
 
 // IR Interpreter
-class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
+class Interp(
+    isDebug: Boolean = false,
+    timeLimit: Option[Long] = None,
+    val visited: Visited = new Visited
+) {
   val startTime: Long = System.currentTimeMillis
   var instCount = 0
 
@@ -35,7 +39,7 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
   // instructions
   def interp(inst: Inst): State => State = st => {
     instCount = instCount + 1
-    if (COVERAGE_MODE) Coverage.add(inst.uid)
+    if (COVERAGE_MODE) visited += inst.uid
     if (instCount % 10000 == 0) timeLimit match {
       case Some(timeout) => if ((System.currentTimeMillis - startTime) > timeout * 1000) throw Timeout
       case _ => ()
@@ -80,7 +84,7 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
         }
       case IIf(cond, thenInst, elseInst) =>
         val (v, s0) = escapeCompletion(interp(cond)(st))
-        if (COVERAGE_MODE) Coverage.add(inst.uid, v)
+        if (COVERAGE_MODE) visited += (inst.uid, v)
         v match {
           case Bool(true) => s0.copy(context = s0.context.copy(insts = thenInst :: s0.context.insts))
           case Bool(false) => s0.copy(context = s0.context.copy(insts = elseInst :: s0.context.insts))
@@ -88,7 +92,7 @@ class Interp(isDebug: Boolean, timeLimit: Option[Long]) {
         }
       case IWhile(cond, body) =>
         val (v, s0) = escapeCompletion(interp(cond)(st))
-        if (COVERAGE_MODE) Coverage.add(inst.uid, v)
+        if (COVERAGE_MODE) visited += (inst.uid, v)
         v match {
           case Bool(true) => s0.copy(context = s0.context.copy(insts = body :: inst :: s0.context.insts))
           case Bool(false) => s0

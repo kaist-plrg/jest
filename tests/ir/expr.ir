@@ -24,7 +24,7 @@ assert (= (| x y) 7i)
 assert (= (^ x y) 6i)
 assert (= (<< x y) 96i)
 assert (= (>> 16i 2i) 4i)
-assert (= (>>> -1i 60i) 15i)
+assert (= (>>> -1i 28i) 15i)
 
 // strings
 x = "abc"

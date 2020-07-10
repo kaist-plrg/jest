@@ -76,32 +76,3 @@ case class Coverage(cases: Vector[Case]) extends CoverageProtocol {
     dumpFile(summary, s"$COVERAGE_DIR/summary")
   }
 }
-object Coverage extends CoverageProtocol {
-  // covered instructions
-  private var instCovered: Set[Int] = Set()
-  def add(uid: Int): Unit = if (uid >= 0) instCovered += uid
-
-  // covered conditions
-  private var condCovered: Set[(Int, Boolean)] = Set()
-  def add(uid: Int, value: Value): Unit = if (uid >= 0) value match {
-    case Bool(b) => condCovered += ((uid, b))
-    case _ =>
-  }
-
-  // get coverage
-  def getCoverage: Coverage = Coverage(insts.map(inst => {
-    val instStr = beautify(inst, detail = false)
-    val uid = inst.uid
-    val algo = instToAlgo(uid)
-    val algoName = algo.name
-    val covered = this.instCovered.contains(uid)
-    inst match {
-      case (condInst: CondInst) =>
-        val cond = beautify(condInst.cond)
-        val thenCovered = this.condCovered.contains((uid, true))
-        val elseCovered = this.condCovered.contains((uid, false))
-        Cond(algoName, instStr, covered, cond, thenCovered, elseCovered)
-      case _ => Base(algoName, instStr, covered)
-    }
-  }))
-}
