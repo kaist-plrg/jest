@@ -1,24 +1,28 @@
 package kr.ac.kaist.ires.generator
 
 import kr.ac.kaist.ires.ir.Interp
-import kr.ac.kaist.ires.model.{ Script, ModelHelper, Parser => JSParser }
+import kr.ac.kaist.ires.mutator._
+import kr.ac.kaist.ires.model._
 import kr.ac.kaist.ires.coverage.Visited
+import kr.ac.kaist.ires.sampler._
+import kr.ac.kaist.ires.util.Useful._
+import scala.util.Random
 
 object Generator {
   // max iteration
-  val MAX_ITER = 100
+  val MAX_ITER = 1000
+  val rand: Random = new Random
 
   // generate JavaScript programs
   def generate: List[Script] = {
-    var total: List[Script] = Nil
+    var total: List[Script] = getSample
     val totalVisited: Visited = new Visited
     var condMap: Map[(Int, Boolean), Script] = Map()
 
-    for (_ <- 0 until MAX_ITER) {
-      val script = getSample
-      // TODO extend to use `mutate`
+    def add(script: Script): Unit = {
       val visited = getVisited(script)
       if (!(visited subsetOf totalVisited)) {
+        println(script)
         val newCondCovered = visited.getCondCovered -- totalVisited.getCondCovered
         for (cond <- newCondCovered) condMap += cond -> script
         totalVisited ++= visited
@@ -26,17 +30,20 @@ object Generator {
       }
     }
 
+    for (script <- total) println(script)
+    for (_ <- 0 until MAX_ITER) add(mutate(choose(total)))
+
     val coverage = totalVisited.getCoverage
     println(coverage.summary)
 
     total
   }
 
-  // TODO random sampling
-  def getSample: Script = JSParser.parse(JSParser.Script(Nil), "var x = 42").get
+  // random sampling
+  def getSample: List[Script] = ManualSampler.getSample
 
-  // TODO mutate given JavaScript program
-  def mutate(script: Script): Script = script
+  // mutate given JavaScript program
+  def mutate(script: Script): Script = SimpleExprReplacer(script)
 
   // get visited points in ECMAScript
   def getVisited(script: Script): Visited = {

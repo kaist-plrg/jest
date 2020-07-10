@@ -14,7 +14,7 @@ case object Generate extends PhaseObj[Unit, GenerateConfig, Unit] {
     unit: Unit,
     iresConfig: IRESConfig,
     config: GenerateConfig
-  ): Unit = for (script <- Generator.generate) println(script)
+  ): Unit = for (script <- Generator.generate) {}
 
   def defaultConfig: GenerateConfig = GenerateConfig()
   val options: List[PhaseOption[GenerateConfig]] = List()

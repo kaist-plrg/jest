@@ -7,6 +7,7 @@ import kr.ac.kaist.ires.{ LINE_SEP, IRESConfig }
 import scala.Console.{ RESET, RED, YELLOW, GREEN, CYAN }
 import scala.collection.mutable
 import scala.io.Source
+import scala.util.Random
 import spray.json._
 
 object Useful {
@@ -147,4 +148,8 @@ object Useful {
     val ratio = pass.toDouble / total * 100
     f"$pass / $total ($ratio%.2f%%)"
   }
+
+  // randomly choose an element in a list
+  val rand = new Random
+  def choose[T](list: List[T]): T = list(rand.nextInt(list.length))
 }
