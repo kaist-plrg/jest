@@ -15,7 +15,7 @@ object Generator {
 
     for (_ <- 0 until MAX_ITER) {
       val script = getSample
-      // TODO extend to use modify
+      // TODO extend to use `mutate`
       val visited = getVisited(script)
       if (!(visited subsetOf totalVisited)) {
         totalVisited ++= visited
@@ -29,8 +29,8 @@ object Generator {
   // TODO random sampling
   def getSample: Script = JSParser.parse(JSParser.Script(Nil), "var x = 42").get
 
-  // TODO modify given JavaScript program
-  def modify(script: Script): Script = script
+  // TODO mutate given JavaScript program
+  def mutate(script: Script): Script = script
 
   // get visited points in ECMAScript
   def getVisited(script: Script): Visited = {
