@@ -7,7 +7,7 @@ object Sampler {
   val counter = DepthCounter
   val random = new scala.util.Random
   def choose[T](seq: Seq[() => T]): T = seq(random.nextInt(seq.length))()
-  def opt[T](valid: Boolean, elem: T): Option[T] = if (valid && random.nextBoolean) Some(elem) else None
+  def opt[T](valid: Boolean, elem: => T): Option[T] = if (valid && random.nextBoolean) Some(elem) else None
   def IdentifierName(depth: Int): Lexical = Lexical("IdentifierName", (random.nextInt(26) + 'a').toChar.toString)
   def RegularExpressionLiteral(depth: Int): Lexical = Lexical("RegularExpressionLiteral", "/x/g")
   def NullLiteral(depth: Int): Lexical = Lexical("NullLiteral", "null")
