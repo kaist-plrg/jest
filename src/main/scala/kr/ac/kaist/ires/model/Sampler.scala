@@ -4,1185 +4,1369 @@ import kr.ac.kaist.ires.Lexical
 import kr.ac.kaist.ires.ir._
 
 object Sampler {
+  val counter = DepthCounter
   val random = new scala.util.Random
   def choose[T](seq: Seq[() => T]): T = seq(random.nextInt(seq.length))()
-  def opt[T](elem: T): Option[T] = if (random.nextBoolean) Some(elem) else None
-  def IdentifierName(): Lexical = Lexical("IdentifierName", (random.nextInt(26) + 'a').toChar.toString)
-  def RegularExpressionLiteral(): Lexical = Lexical("RegularExpressionLiteral", "/x/g")
-  def NullLiteral(): Lexical = Lexical("NullLiteral", "null")
-  def BooleanLiteral(): Lexical = Lexical("BooleanLiteral", random.nextBoolean.toString)
-  def NumericLiteral(): Lexical = Lexical("NumericLiteral", "0")
-  def StringLiteral(): Lexical = Lexical("StringLiteral", "''")
-  def NoSubstitutionTemplate(): Lexical = Lexical("StringLiteral", "``")
-  def TemplateHead(): Lexical = Lexical("StringLiteral", "`${")
-  def TemplateMiddle(): Lexical = Lexical("StringLiteral", "}${")
-  def TemplateTail(): Lexical = Lexical("StringLiteral", "}`")
-  def IdentifierReference(pYield: Boolean, pAwait: Boolean): IdentifierReference = {
+  def opt[T](valid: Boolean, elem: T): Option[T] = if (valid && random.nextBoolean) Some(elem) else None
+  def IdentifierName(depth: Int): Lexical = Lexical("IdentifierName", (random.nextInt(26) + 'a').toChar.toString)
+  def RegularExpressionLiteral(depth: Int): Lexical = Lexical("RegularExpressionLiteral", "/x/g")
+  def NullLiteral(depth: Int): Lexical = Lexical("NullLiteral", "null")
+  def BooleanLiteral(depth: Int): Lexical = Lexical("BooleanLiteral", random.nextBoolean.toString)
+  def NumericLiteral(depth: Int): Lexical = Lexical("NumericLiteral", "0")
+  def StringLiteral(depth: Int): Lexical = Lexical("StringLiteral", "''")
+  def NoSubstitutionTemplate(depth: Int): Lexical = Lexical("StringLiteral", "``")
+  def TemplateHead(depth: Int): Lexical = Lexical("StringLiteral", "`${")
+  def TemplateMiddle(depth: Int): Lexical = Lexical("StringLiteral", "}${")
+  def TemplateTail(depth: Int): Lexical = Lexical("StringLiteral", "}`")
+  def IdentifierReference(depth: Int, pYield: Boolean, pAwait: Boolean): IdentifierReference = {
     var candidates: Vector[() => IdentifierReference] = Vector()
-    candidates :+= { () => IdentifierReference0(Identifier(), List(pYield, pAwait)) }
-    if (!pYield) candidates :+= { () => IdentifierReference1(List(pYield, pAwait)) }
-    if (!pAwait) candidates :+= { () => IdentifierReference2(List(pYield, pAwait)) }
+    val rhsDepth = counter.IdentifierReference(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => IdentifierReference0(Identifier(depth), List(pYield, pAwait)) } }
+    if (!pYield) rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => IdentifierReference1(List(pYield, pAwait)) } }
+    if (!pAwait) rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => IdentifierReference2(List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def BindingIdentifier(pYield: Boolean, pAwait: Boolean): BindingIdentifier = {
+  def BindingIdentifier(depth: Int, pYield: Boolean, pAwait: Boolean): BindingIdentifier = {
     var candidates: Vector[() => BindingIdentifier] = Vector()
-    candidates :+= { () => BindingIdentifier0(Identifier(), List(pYield, pAwait)) }
-    candidates :+= { () => BindingIdentifier1(List(pYield, pAwait)) }
-    candidates :+= { () => BindingIdentifier2(List(pYield, pAwait)) }
+    val rhsDepth = counter.BindingIdentifier(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => BindingIdentifier0(Identifier(depth), List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => BindingIdentifier1(List(pYield, pAwait)) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => BindingIdentifier2(List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def LabelIdentifier(pYield: Boolean, pAwait: Boolean): LabelIdentifier = {
+  def LabelIdentifier(depth: Int, pYield: Boolean, pAwait: Boolean): LabelIdentifier = {
     var candidates: Vector[() => LabelIdentifier] = Vector()
-    candidates :+= { () => LabelIdentifier0(Identifier(), List(pYield, pAwait)) }
-    if (!pYield) candidates :+= { () => LabelIdentifier1(List(pYield, pAwait)) }
-    if (!pAwait) candidates :+= { () => LabelIdentifier2(List(pYield, pAwait)) }
+    val rhsDepth = counter.LabelIdentifier(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => LabelIdentifier0(Identifier(depth), List(pYield, pAwait)) } }
+    if (!pYield) rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => LabelIdentifier1(List(pYield, pAwait)) } }
+    if (!pAwait) rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => LabelIdentifier2(List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def Identifier(): Identifier = {
+  def Identifier(depth: Int): Identifier = {
     var candidates: Vector[() => Identifier] = Vector()
-    candidates :+= { () => Identifier0(IdentifierName(), List()) }
+    val rhsDepth = counter.Identifier().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => Identifier0(IdentifierName(depth - 1), List()) } }
     choose(candidates)
   }
-  def PrimaryExpression(pYield: Boolean, pAwait: Boolean): PrimaryExpression = {
+  def PrimaryExpression(depth: Int, pYield: Boolean, pAwait: Boolean): PrimaryExpression = {
     var candidates: Vector[() => PrimaryExpression] = Vector()
-    candidates :+= { () => PrimaryExpression0(List(pYield, pAwait)) }
-    candidates :+= { () => PrimaryExpression1(IdentifierReference(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => PrimaryExpression2(Literal(), List(pYield, pAwait)) }
-    candidates :+= { () => PrimaryExpression3(ArrayLiteral(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => PrimaryExpression4(ObjectLiteral(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => PrimaryExpression5(FunctionExpression(), List(pYield, pAwait)) }
-    candidates :+= { () => PrimaryExpression6(ClassExpression(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => PrimaryExpression7(GeneratorExpression(), List(pYield, pAwait)) }
-    candidates :+= { () => PrimaryExpression8(AsyncFunctionExpression(), List(pYield, pAwait)) }
-    candidates :+= { () => PrimaryExpression9(AsyncGeneratorExpression(), List(pYield, pAwait)) }
-    candidates :+= { () => PrimaryExpression10(RegularExpressionLiteral(), List(pYield, pAwait)) }
-    candidates :+= { () => PrimaryExpression11(TemplateLiteral(pYield, pAwait, false), List(pYield, pAwait)) }
-    candidates :+= { () => PrimaryExpression12(CoverParenthesizedExpressionAndArrowParameterList(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.PrimaryExpression(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => PrimaryExpression0(List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => PrimaryExpression1(IdentifierReference(depth, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => PrimaryExpression2(Literal(depth), List(pYield, pAwait)) } }
+    rhsDepth(3).collect { case d if depth >= d => candidates :+= { () => PrimaryExpression3(ArrayLiteral(depth, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(4).collect { case d if depth >= d => candidates :+= { () => PrimaryExpression4(ObjectLiteral(depth, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(5).collect { case d if depth >= d => candidates :+= { () => PrimaryExpression5(FunctionExpression(depth), List(pYield, pAwait)) } }
+    rhsDepth(6).collect { case d if depth >= d => candidates :+= { () => PrimaryExpression6(ClassExpression(depth, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(7).collect { case d if depth >= d => candidates :+= { () => PrimaryExpression7(GeneratorExpression(depth), List(pYield, pAwait)) } }
+    rhsDepth(8).collect { case d if depth >= d => candidates :+= { () => PrimaryExpression8(AsyncFunctionExpression(depth), List(pYield, pAwait)) } }
+    rhsDepth(9).collect { case d if depth >= d => candidates :+= { () => PrimaryExpression9(AsyncGeneratorExpression(depth), List(pYield, pAwait)) } }
+    rhsDepth(10).collect { case d if depth >= d => candidates :+= { () => PrimaryExpression10(RegularExpressionLiteral(depth), List(pYield, pAwait)) } }
+    rhsDepth(11).collect { case d if depth >= d => candidates :+= { () => PrimaryExpression11(TemplateLiteral(depth, pYield, pAwait, false), List(pYield, pAwait)) } }
+    rhsDepth(12).collect { case d if depth >= d => candidates :+= { () => PrimaryExpression12(CoverParenthesizedExpressionAndArrowParameterList(depth, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def CoverParenthesizedExpressionAndArrowParameterList(pYield: Boolean, pAwait: Boolean): CoverParenthesizedExpressionAndArrowParameterList = {
+  def CoverParenthesizedExpressionAndArrowParameterList(depth: Int, pYield: Boolean, pAwait: Boolean): CoverParenthesizedExpressionAndArrowParameterList = {
     var candidates: Vector[() => CoverParenthesizedExpressionAndArrowParameterList] = Vector()
-    candidates :+= { () => CoverParenthesizedExpressionAndArrowParameterList0(Expression(true, pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => CoverParenthesizedExpressionAndArrowParameterList1(Expression(true, pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => CoverParenthesizedExpressionAndArrowParameterList2(List(pYield, pAwait)) }
-    candidates :+= { () => CoverParenthesizedExpressionAndArrowParameterList3(BindingIdentifier(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => CoverParenthesizedExpressionAndArrowParameterList4(BindingPattern(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => CoverParenthesizedExpressionAndArrowParameterList5(Expression(true, pYield, pAwait), BindingIdentifier(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => CoverParenthesizedExpressionAndArrowParameterList6(Expression(true, pYield, pAwait), BindingPattern(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.CoverParenthesizedExpressionAndArrowParameterList(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => CoverParenthesizedExpressionAndArrowParameterList0(Expression(depth - 1, true, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => CoverParenthesizedExpressionAndArrowParameterList1(Expression(depth - 1, true, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => CoverParenthesizedExpressionAndArrowParameterList2(List(pYield, pAwait)) } }
+    rhsDepth(3).collect { case d if depth >= d => candidates :+= { () => CoverParenthesizedExpressionAndArrowParameterList3(BindingIdentifier(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(4).collect { case d if depth >= d => candidates :+= { () => CoverParenthesizedExpressionAndArrowParameterList4(BindingPattern(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(5).collect { case d if depth >= d => candidates :+= { () => CoverParenthesizedExpressionAndArrowParameterList5(Expression(depth - 1, true, pYield, pAwait), BindingIdentifier(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(6).collect { case d if depth >= d => candidates :+= { () => CoverParenthesizedExpressionAndArrowParameterList6(Expression(depth - 1, true, pYield, pAwait), BindingPattern(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def ParenthesizedExpression(pYield: Boolean, pAwait: Boolean): ParenthesizedExpression = {
+  def ParenthesizedExpression(depth: Int, pYield: Boolean, pAwait: Boolean): ParenthesizedExpression = {
     var candidates: Vector[() => ParenthesizedExpression] = Vector()
-    candidates :+= { () => ParenthesizedExpression0(Expression(true, pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.ParenthesizedExpression(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ParenthesizedExpression0(Expression(depth - 1, true, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def Literal(): Literal = {
+  def Literal(depth: Int): Literal = {
     var candidates: Vector[() => Literal] = Vector()
-    candidates :+= { () => Literal0(NullLiteral(), List()) }
-    candidates :+= { () => Literal1(BooleanLiteral(), List()) }
-    candidates :+= { () => Literal2(NumericLiteral(), List()) }
-    candidates :+= { () => Literal3(StringLiteral(), List()) }
+    val rhsDepth = counter.Literal().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => Literal0(NullLiteral(depth), List()) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => Literal1(BooleanLiteral(depth), List()) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => Literal2(NumericLiteral(depth), List()) } }
+    rhsDepth(3).collect { case d if depth >= d => candidates :+= { () => Literal3(StringLiteral(depth), List()) } }
     choose(candidates)
   }
-  def ArrayLiteral(pYield: Boolean, pAwait: Boolean): ArrayLiteral = {
+  def ArrayLiteral(depth: Int, pYield: Boolean, pAwait: Boolean): ArrayLiteral = {
     var candidates: Vector[() => ArrayLiteral] = Vector()
-    candidates :+= { () => ArrayLiteral0(opt(Elision()), List(pYield, pAwait)) }
-    candidates :+= { () => ArrayLiteral1(ElementList(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => ArrayLiteral2(ElementList(pYield, pAwait), opt(Elision()), List(pYield, pAwait)) }
+    val rhsDepth = counter.ArrayLiteral(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ArrayLiteral0(opt(depth - 1 >= counter.Elision().depth, Elision(depth - 1)), List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => ArrayLiteral1(ElementList(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => ArrayLiteral2(ElementList(depth - 1, pYield, pAwait), opt(depth - 1 >= counter.Elision().depth, Elision(depth - 1)), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def ElementList(pYield: Boolean, pAwait: Boolean): ElementList = {
+  def ElementList(depth: Int, pYield: Boolean, pAwait: Boolean): ElementList = {
     var candidates: Vector[() => ElementList] = Vector()
-    candidates :+= { () => ElementList0(opt(Elision()), AssignmentExpression(true, pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => ElementList1(opt(Elision()), SpreadElement(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => ElementList2(ElementList(pYield, pAwait), opt(Elision()), AssignmentExpression(true, pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => ElementList3(ElementList(pYield, pAwait), opt(Elision()), SpreadElement(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.ElementList(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ElementList0(opt(depth - 1 >= counter.Elision().depth, Elision(depth - 1)), AssignmentExpression(depth - 1, true, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => ElementList1(opt(depth - 1 >= counter.Elision().depth, Elision(depth - 1)), SpreadElement(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => ElementList2(ElementList(depth - 1, pYield, pAwait), opt(depth - 1 >= counter.Elision().depth, Elision(depth - 1)), AssignmentExpression(depth - 1, true, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(3).collect { case d if depth >= d => candidates :+= { () => ElementList3(ElementList(depth - 1, pYield, pAwait), opt(depth - 1 >= counter.Elision().depth, Elision(depth - 1)), SpreadElement(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def Elision(): Elision = {
+  def Elision(depth: Int): Elision = {
     var candidates: Vector[() => Elision] = Vector()
-    candidates :+= { () => Elision0(List()) }
-    candidates :+= { () => Elision1(Elision(), List()) }
+    val rhsDepth = counter.Elision().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => Elision0(List()) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => Elision1(Elision(depth - 1), List()) } }
     choose(candidates)
   }
-  def SpreadElement(pYield: Boolean, pAwait: Boolean): SpreadElement = {
+  def SpreadElement(depth: Int, pYield: Boolean, pAwait: Boolean): SpreadElement = {
     var candidates: Vector[() => SpreadElement] = Vector()
-    candidates :+= { () => SpreadElement0(AssignmentExpression(true, pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.SpreadElement(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => SpreadElement0(AssignmentExpression(depth - 1, true, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def ObjectLiteral(pYield: Boolean, pAwait: Boolean): ObjectLiteral = {
+  def ObjectLiteral(depth: Int, pYield: Boolean, pAwait: Boolean): ObjectLiteral = {
     var candidates: Vector[() => ObjectLiteral] = Vector()
-    candidates :+= { () => ObjectLiteral0(List(pYield, pAwait)) }
-    candidates :+= { () => ObjectLiteral1(PropertyDefinitionList(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => ObjectLiteral2(PropertyDefinitionList(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.ObjectLiteral(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ObjectLiteral0(List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => ObjectLiteral1(PropertyDefinitionList(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => ObjectLiteral2(PropertyDefinitionList(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def PropertyDefinitionList(pYield: Boolean, pAwait: Boolean): PropertyDefinitionList = {
+  def PropertyDefinitionList(depth: Int, pYield: Boolean, pAwait: Boolean): PropertyDefinitionList = {
     var candidates: Vector[() => PropertyDefinitionList] = Vector()
-    candidates :+= { () => PropertyDefinitionList0(PropertyDefinition(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => PropertyDefinitionList1(PropertyDefinitionList(pYield, pAwait), PropertyDefinition(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.PropertyDefinitionList(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => PropertyDefinitionList0(PropertyDefinition(depth, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => PropertyDefinitionList1(PropertyDefinitionList(depth - 1, pYield, pAwait), PropertyDefinition(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def PropertyDefinition(pYield: Boolean, pAwait: Boolean): PropertyDefinition = {
+  def PropertyDefinition(depth: Int, pYield: Boolean, pAwait: Boolean): PropertyDefinition = {
     var candidates: Vector[() => PropertyDefinition] = Vector()
-    candidates :+= { () => PropertyDefinition0(IdentifierReference(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => PropertyDefinition1(CoverInitializedName(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => PropertyDefinition2(PropertyName(pYield, pAwait), AssignmentExpression(true, pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => PropertyDefinition3(MethodDefinition(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => PropertyDefinition4(AssignmentExpression(true, pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.PropertyDefinition(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => PropertyDefinition0(IdentifierReference(depth, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => PropertyDefinition1(CoverInitializedName(depth, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => PropertyDefinition2(PropertyName(depth - 1, pYield, pAwait), AssignmentExpression(depth - 1, true, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(3).collect { case d if depth >= d => candidates :+= { () => PropertyDefinition3(MethodDefinition(depth, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(4).collect { case d if depth >= d => candidates :+= { () => PropertyDefinition4(AssignmentExpression(depth - 1, true, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def PropertyName(pYield: Boolean, pAwait: Boolean): PropertyName = {
+  def PropertyName(depth: Int, pYield: Boolean, pAwait: Boolean): PropertyName = {
     var candidates: Vector[() => PropertyName] = Vector()
-    candidates :+= { () => PropertyName0(LiteralPropertyName(), List(pYield, pAwait)) }
-    candidates :+= { () => PropertyName1(ComputedPropertyName(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.PropertyName(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => PropertyName0(LiteralPropertyName(depth), List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => PropertyName1(ComputedPropertyName(depth, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def LiteralPropertyName(): LiteralPropertyName = {
+  def LiteralPropertyName(depth: Int): LiteralPropertyName = {
     var candidates: Vector[() => LiteralPropertyName] = Vector()
-    candidates :+= { () => LiteralPropertyName0(IdentifierName(), List()) }
-    candidates :+= { () => LiteralPropertyName1(StringLiteral(), List()) }
-    candidates :+= { () => LiteralPropertyName2(NumericLiteral(), List()) }
+    val rhsDepth = counter.LiteralPropertyName().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => LiteralPropertyName0(IdentifierName(depth), List()) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => LiteralPropertyName1(StringLiteral(depth), List()) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => LiteralPropertyName2(NumericLiteral(depth), List()) } }
     choose(candidates)
   }
-  def ComputedPropertyName(pYield: Boolean, pAwait: Boolean): ComputedPropertyName = {
+  def ComputedPropertyName(depth: Int, pYield: Boolean, pAwait: Boolean): ComputedPropertyName = {
     var candidates: Vector[() => ComputedPropertyName] = Vector()
-    candidates :+= { () => ComputedPropertyName0(AssignmentExpression(true, pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.ComputedPropertyName(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ComputedPropertyName0(AssignmentExpression(depth - 1, true, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def CoverInitializedName(pYield: Boolean, pAwait: Boolean): CoverInitializedName = {
+  def CoverInitializedName(depth: Int, pYield: Boolean, pAwait: Boolean): CoverInitializedName = {
     var candidates: Vector[() => CoverInitializedName] = Vector()
-    candidates :+= { () => CoverInitializedName0(IdentifierReference(pYield, pAwait), Initializer(true, pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.CoverInitializedName(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => CoverInitializedName0(IdentifierReference(depth - 1, pYield, pAwait), Initializer(depth - 1, true, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def Initializer(pIn: Boolean, pYield: Boolean, pAwait: Boolean): Initializer = {
+  def Initializer(depth: Int, pIn: Boolean, pYield: Boolean, pAwait: Boolean): Initializer = {
     var candidates: Vector[() => Initializer] = Vector()
-    candidates :+= { () => Initializer0(AssignmentExpression(pIn, pYield, pAwait), List(pIn, pYield, pAwait)) }
+    val rhsDepth = counter.Initializer(pIn, pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => Initializer0(AssignmentExpression(depth - 1, pIn, pYield, pAwait), List(pIn, pYield, pAwait)) } }
     choose(candidates)
   }
-  def TemplateLiteral(pYield: Boolean, pAwait: Boolean, pTagged: Boolean): TemplateLiteral = {
+  def TemplateLiteral(depth: Int, pYield: Boolean, pAwait: Boolean, pTagged: Boolean): TemplateLiteral = {
     var candidates: Vector[() => TemplateLiteral] = Vector()
-    candidates :+= { () => TemplateLiteral0(NoSubstitutionTemplate(), List(pYield, pAwait, pTagged)) }
-    candidates :+= { () => TemplateLiteral1(SubstitutionTemplate(pYield, pAwait, pTagged), List(pYield, pAwait, pTagged)) }
+    val rhsDepth = counter.TemplateLiteral(pYield, pAwait, pTagged).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => TemplateLiteral0(NoSubstitutionTemplate(depth), List(pYield, pAwait, pTagged)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => TemplateLiteral1(SubstitutionTemplate(depth, pYield, pAwait, pTagged), List(pYield, pAwait, pTagged)) } }
     choose(candidates)
   }
-  def SubstitutionTemplate(pYield: Boolean, pAwait: Boolean, pTagged: Boolean): SubstitutionTemplate = {
+  def SubstitutionTemplate(depth: Int, pYield: Boolean, pAwait: Boolean, pTagged: Boolean): SubstitutionTemplate = {
     var candidates: Vector[() => SubstitutionTemplate] = Vector()
-    candidates :+= { () => SubstitutionTemplate0(TemplateHead(), Expression(true, pYield, pAwait), TemplateSpans(pYield, pAwait, pTagged), List(pYield, pAwait, pTagged)) }
+    val rhsDepth = counter.SubstitutionTemplate(pYield, pAwait, pTagged).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => SubstitutionTemplate0(TemplateHead(depth - 1), Expression(depth - 1, true, pYield, pAwait), TemplateSpans(depth - 1, pYield, pAwait, pTagged), List(pYield, pAwait, pTagged)) } }
     choose(candidates)
   }
-  def TemplateSpans(pYield: Boolean, pAwait: Boolean, pTagged: Boolean): TemplateSpans = {
+  def TemplateSpans(depth: Int, pYield: Boolean, pAwait: Boolean, pTagged: Boolean): TemplateSpans = {
     var candidates: Vector[() => TemplateSpans] = Vector()
-    candidates :+= { () => TemplateSpans0(TemplateTail(), List(pYield, pAwait, pTagged)) }
-    candidates :+= { () => TemplateSpans1(TemplateMiddleList(pYield, pAwait, pTagged), TemplateTail(), List(pYield, pAwait, pTagged)) }
+    val rhsDepth = counter.TemplateSpans(pYield, pAwait, pTagged).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => TemplateSpans0(TemplateTail(depth), List(pYield, pAwait, pTagged)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => TemplateSpans1(TemplateMiddleList(depth - 1, pYield, pAwait, pTagged), TemplateTail(depth - 1), List(pYield, pAwait, pTagged)) } }
     choose(candidates)
   }
-  def TemplateMiddleList(pYield: Boolean, pAwait: Boolean, pTagged: Boolean): TemplateMiddleList = {
+  def TemplateMiddleList(depth: Int, pYield: Boolean, pAwait: Boolean, pTagged: Boolean): TemplateMiddleList = {
     var candidates: Vector[() => TemplateMiddleList] = Vector()
-    candidates :+= { () => TemplateMiddleList0(TemplateMiddle(), Expression(true, pYield, pAwait), List(pYield, pAwait, pTagged)) }
-    candidates :+= { () => TemplateMiddleList1(TemplateMiddleList(pYield, pAwait, pTagged), TemplateMiddle(), Expression(true, pYield, pAwait), List(pYield, pAwait, pTagged)) }
+    val rhsDepth = counter.TemplateMiddleList(pYield, pAwait, pTagged).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => TemplateMiddleList0(TemplateMiddle(depth - 1), Expression(depth - 1, true, pYield, pAwait), List(pYield, pAwait, pTagged)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => TemplateMiddleList1(TemplateMiddleList(depth - 1, pYield, pAwait, pTagged), TemplateMiddle(depth - 1), Expression(depth - 1, true, pYield, pAwait), List(pYield, pAwait, pTagged)) } }
     choose(candidates)
   }
-  def MemberExpression(pYield: Boolean, pAwait: Boolean): MemberExpression = {
+  def MemberExpression(depth: Int, pYield: Boolean, pAwait: Boolean): MemberExpression = {
     var candidates: Vector[() => MemberExpression] = Vector()
-    candidates :+= { () => MemberExpression0(PrimaryExpression(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => MemberExpression1(MemberExpression(pYield, pAwait), Expression(true, pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => MemberExpression2(MemberExpression(pYield, pAwait), IdentifierName(), List(pYield, pAwait)) }
-    candidates :+= { () => MemberExpression3(MemberExpression(pYield, pAwait), TemplateLiteral(pYield, pAwait, true), List(pYield, pAwait)) }
-    candidates :+= { () => MemberExpression4(SuperProperty(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => MemberExpression5(MetaProperty(), List(pYield, pAwait)) }
-    candidates :+= { () => MemberExpression6(MemberExpression(pYield, pAwait), Arguments(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.MemberExpression(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => MemberExpression0(PrimaryExpression(depth, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => MemberExpression1(MemberExpression(depth - 1, pYield, pAwait), Expression(depth - 1, true, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => MemberExpression2(MemberExpression(depth - 1, pYield, pAwait), IdentifierName(depth - 1), List(pYield, pAwait)) } }
+    rhsDepth(3).collect { case d if depth >= d => candidates :+= { () => MemberExpression3(MemberExpression(depth - 1, pYield, pAwait), TemplateLiteral(depth - 1, pYield, pAwait, true), List(pYield, pAwait)) } }
+    rhsDepth(4).collect { case d if depth >= d => candidates :+= { () => MemberExpression4(SuperProperty(depth, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(5).collect { case d if depth >= d => candidates :+= { () => MemberExpression5(MetaProperty(depth), List(pYield, pAwait)) } }
+    rhsDepth(6).collect { case d if depth >= d => candidates :+= { () => MemberExpression6(MemberExpression(depth - 1, pYield, pAwait), Arguments(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def SuperProperty(pYield: Boolean, pAwait: Boolean): SuperProperty = {
+  def SuperProperty(depth: Int, pYield: Boolean, pAwait: Boolean): SuperProperty = {
     var candidates: Vector[() => SuperProperty] = Vector()
-    candidates :+= { () => SuperProperty0(Expression(true, pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => SuperProperty1(IdentifierName(), List(pYield, pAwait)) }
+    val rhsDepth = counter.SuperProperty(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => SuperProperty0(Expression(depth - 1, true, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => SuperProperty1(IdentifierName(depth - 1), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def MetaProperty(): MetaProperty = {
+  def MetaProperty(depth: Int): MetaProperty = {
     var candidates: Vector[() => MetaProperty] = Vector()
-    candidates :+= { () => MetaProperty0(NewTarget(), List()) }
-    candidates :+= { () => MetaProperty1(ImportMeta(), List()) }
+    val rhsDepth = counter.MetaProperty().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => MetaProperty0(NewTarget(depth), List()) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => MetaProperty1(ImportMeta(depth), List()) } }
     choose(candidates)
   }
-  def NewTarget(): NewTarget = {
+  def NewTarget(depth: Int): NewTarget = {
     var candidates: Vector[() => NewTarget] = Vector()
-    candidates :+= { () => NewTarget0(List()) }
+    val rhsDepth = counter.NewTarget().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => NewTarget0(List()) } }
     choose(candidates)
   }
-  def ImportMeta(): ImportMeta = {
+  def ImportMeta(depth: Int): ImportMeta = {
     var candidates: Vector[() => ImportMeta] = Vector()
-    candidates :+= { () => ImportMeta0(List()) }
+    val rhsDepth = counter.ImportMeta().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ImportMeta0(List()) } }
     choose(candidates)
   }
-  def NewExpression(pYield: Boolean, pAwait: Boolean): NewExpression = {
+  def NewExpression(depth: Int, pYield: Boolean, pAwait: Boolean): NewExpression = {
     var candidates: Vector[() => NewExpression] = Vector()
-    candidates :+= { () => NewExpression0(MemberExpression(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => NewExpression1(NewExpression(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.NewExpression(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => NewExpression0(MemberExpression(depth, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => NewExpression1(NewExpression(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def CallExpression(pYield: Boolean, pAwait: Boolean): CallExpression = {
+  def CallExpression(depth: Int, pYield: Boolean, pAwait: Boolean): CallExpression = {
     var candidates: Vector[() => CallExpression] = Vector()
-    candidates :+= { () => CallExpression0(CoverCallExpressionAndAsyncArrowHead(), List(pYield, pAwait)) }
-    candidates :+= { () => CallExpression1(SuperCall(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => CallExpression2(ImportCall(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => CallExpression3(CallExpression(pYield, pAwait), Arguments(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => CallExpression4(CallExpression(pYield, pAwait), Expression(true, pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => CallExpression5(CallExpression(pYield, pAwait), IdentifierName(), List(pYield, pAwait)) }
-    candidates :+= { () => CallExpression6(CallExpression(pYield, pAwait), TemplateLiteral(pYield, pAwait, true), List(pYield, pAwait)) }
+    val rhsDepth = counter.CallExpression(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => CallExpression0(CoverCallExpressionAndAsyncArrowHead(depth), List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => CallExpression1(SuperCall(depth, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => CallExpression2(ImportCall(depth, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(3).collect { case d if depth >= d => candidates :+= { () => CallExpression3(CallExpression(depth - 1, pYield, pAwait), Arguments(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(4).collect { case d if depth >= d => candidates :+= { () => CallExpression4(CallExpression(depth - 1, pYield, pAwait), Expression(depth - 1, true, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(5).collect { case d if depth >= d => candidates :+= { () => CallExpression5(CallExpression(depth - 1, pYield, pAwait), IdentifierName(depth - 1), List(pYield, pAwait)) } }
+    rhsDepth(6).collect { case d if depth >= d => candidates :+= { () => CallExpression6(CallExpression(depth - 1, pYield, pAwait), TemplateLiteral(depth - 1, pYield, pAwait, true), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def CallMemberExpression(pYield: Boolean, pAwait: Boolean): CallMemberExpression = {
+  def CallMemberExpression(depth: Int, pYield: Boolean, pAwait: Boolean): CallMemberExpression = {
     var candidates: Vector[() => CallMemberExpression] = Vector()
-    candidates :+= { () => CallMemberExpression0(MemberExpression(pYield, pAwait), Arguments(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.CallMemberExpression(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => CallMemberExpression0(MemberExpression(depth - 1, pYield, pAwait), Arguments(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def SuperCall(pYield: Boolean, pAwait: Boolean): SuperCall = {
+  def SuperCall(depth: Int, pYield: Boolean, pAwait: Boolean): SuperCall = {
     var candidates: Vector[() => SuperCall] = Vector()
-    candidates :+= { () => SuperCall0(Arguments(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.SuperCall(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => SuperCall0(Arguments(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def ImportCall(pYield: Boolean, pAwait: Boolean): ImportCall = {
+  def ImportCall(depth: Int, pYield: Boolean, pAwait: Boolean): ImportCall = {
     var candidates: Vector[() => ImportCall] = Vector()
-    candidates :+= { () => ImportCall0(AssignmentExpression(true, pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.ImportCall(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ImportCall0(AssignmentExpression(depth - 1, true, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def Arguments(pYield: Boolean, pAwait: Boolean): Arguments = {
+  def Arguments(depth: Int, pYield: Boolean, pAwait: Boolean): Arguments = {
     var candidates: Vector[() => Arguments] = Vector()
-    candidates :+= { () => Arguments0(List(pYield, pAwait)) }
-    candidates :+= { () => Arguments1(ArgumentList(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => Arguments2(ArgumentList(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.Arguments(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => Arguments0(List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => Arguments1(ArgumentList(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => Arguments2(ArgumentList(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def ArgumentList(pYield: Boolean, pAwait: Boolean): ArgumentList = {
+  def ArgumentList(depth: Int, pYield: Boolean, pAwait: Boolean): ArgumentList = {
     var candidates: Vector[() => ArgumentList] = Vector()
-    candidates :+= { () => ArgumentList0(AssignmentExpression(true, pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => ArgumentList1(AssignmentExpression(true, pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => ArgumentList2(ArgumentList(pYield, pAwait), AssignmentExpression(true, pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => ArgumentList3(ArgumentList(pYield, pAwait), AssignmentExpression(true, pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.ArgumentList(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ArgumentList0(AssignmentExpression(depth, true, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => ArgumentList1(AssignmentExpression(depth - 1, true, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => ArgumentList2(ArgumentList(depth - 1, pYield, pAwait), AssignmentExpression(depth - 1, true, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(3).collect { case d if depth >= d => candidates :+= { () => ArgumentList3(ArgumentList(depth - 1, pYield, pAwait), AssignmentExpression(depth - 1, true, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def OptionalExpression(pYield: Boolean, pAwait: Boolean): OptionalExpression = {
+  def OptionalExpression(depth: Int, pYield: Boolean, pAwait: Boolean): OptionalExpression = {
     var candidates: Vector[() => OptionalExpression] = Vector()
-    candidates :+= { () => OptionalExpression0(MemberExpression(pYield, pAwait), OptionalChain(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => OptionalExpression1(CallExpression(pYield, pAwait), OptionalChain(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => OptionalExpression2(OptionalExpression(pYield, pAwait), OptionalChain(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.OptionalExpression(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => OptionalExpression0(MemberExpression(depth - 1, pYield, pAwait), OptionalChain(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => OptionalExpression1(CallExpression(depth - 1, pYield, pAwait), OptionalChain(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => OptionalExpression2(OptionalExpression(depth - 1, pYield, pAwait), OptionalChain(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def OptionalChain(pYield: Boolean, pAwait: Boolean): OptionalChain = {
+  def OptionalChain(depth: Int, pYield: Boolean, pAwait: Boolean): OptionalChain = {
     var candidates: Vector[() => OptionalChain] = Vector()
-    candidates :+= { () => OptionalChain0(Arguments(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => OptionalChain1(Expression(true, pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => OptionalChain2(IdentifierName(), List(pYield, pAwait)) }
-    candidates :+= { () => OptionalChain3(TemplateLiteral(pYield, pAwait, true), List(pYield, pAwait)) }
-    candidates :+= { () => OptionalChain4(OptionalChain(pYield, pAwait), Arguments(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => OptionalChain5(OptionalChain(pYield, pAwait), Expression(true, pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => OptionalChain6(OptionalChain(pYield, pAwait), IdentifierName(), List(pYield, pAwait)) }
-    candidates :+= { () => OptionalChain7(OptionalChain(pYield, pAwait), TemplateLiteral(pYield, pAwait, true), List(pYield, pAwait)) }
+    val rhsDepth = counter.OptionalChain(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => OptionalChain0(Arguments(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => OptionalChain1(Expression(depth - 1, true, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => OptionalChain2(IdentifierName(depth - 1), List(pYield, pAwait)) } }
+    rhsDepth(3).collect { case d if depth >= d => candidates :+= { () => OptionalChain3(TemplateLiteral(depth - 1, pYield, pAwait, true), List(pYield, pAwait)) } }
+    rhsDepth(4).collect { case d if depth >= d => candidates :+= { () => OptionalChain4(OptionalChain(depth - 1, pYield, pAwait), Arguments(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(5).collect { case d if depth >= d => candidates :+= { () => OptionalChain5(OptionalChain(depth - 1, pYield, pAwait), Expression(depth - 1, true, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(6).collect { case d if depth >= d => candidates :+= { () => OptionalChain6(OptionalChain(depth - 1, pYield, pAwait), IdentifierName(depth - 1), List(pYield, pAwait)) } }
+    rhsDepth(7).collect { case d if depth >= d => candidates :+= { () => OptionalChain7(OptionalChain(depth - 1, pYield, pAwait), TemplateLiteral(depth - 1, pYield, pAwait, true), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def LeftHandSideExpression(pYield: Boolean, pAwait: Boolean): LeftHandSideExpression = {
+  def LeftHandSideExpression(depth: Int, pYield: Boolean, pAwait: Boolean): LeftHandSideExpression = {
     var candidates: Vector[() => LeftHandSideExpression] = Vector()
-    candidates :+= { () => LeftHandSideExpression0(NewExpression(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => LeftHandSideExpression1(CallExpression(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => LeftHandSideExpression2(OptionalExpression(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.LeftHandSideExpression(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => LeftHandSideExpression0(NewExpression(depth, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => LeftHandSideExpression1(CallExpression(depth, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => LeftHandSideExpression2(OptionalExpression(depth, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def UpdateExpression(pYield: Boolean, pAwait: Boolean): UpdateExpression = {
+  def UpdateExpression(depth: Int, pYield: Boolean, pAwait: Boolean): UpdateExpression = {
     var candidates: Vector[() => UpdateExpression] = Vector()
-    candidates :+= { () => UpdateExpression0(LeftHandSideExpression(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => UpdateExpression1(LeftHandSideExpression(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => UpdateExpression2(LeftHandSideExpression(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => UpdateExpression3(UnaryExpression(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => UpdateExpression4(UnaryExpression(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.UpdateExpression(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => UpdateExpression0(LeftHandSideExpression(depth, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => UpdateExpression1(LeftHandSideExpression(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => UpdateExpression2(LeftHandSideExpression(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(3).collect { case d if depth >= d => candidates :+= { () => UpdateExpression3(UnaryExpression(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(4).collect { case d if depth >= d => candidates :+= { () => UpdateExpression4(UnaryExpression(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def UnaryExpression(pYield: Boolean, pAwait: Boolean): UnaryExpression = {
+  def UnaryExpression(depth: Int, pYield: Boolean, pAwait: Boolean): UnaryExpression = {
     var candidates: Vector[() => UnaryExpression] = Vector()
-    candidates :+= { () => UnaryExpression0(UpdateExpression(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => UnaryExpression1(UnaryExpression(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => UnaryExpression2(UnaryExpression(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => UnaryExpression3(UnaryExpression(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => UnaryExpression4(UnaryExpression(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => UnaryExpression5(UnaryExpression(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => UnaryExpression6(UnaryExpression(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => UnaryExpression7(UnaryExpression(pYield, pAwait), List(pYield, pAwait)) }
-    if (pAwait) candidates :+= { () => UnaryExpression8(AwaitExpression(pYield), List(pYield, pAwait)) }
+    val rhsDepth = counter.UnaryExpression(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => UnaryExpression0(UpdateExpression(depth, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => UnaryExpression1(UnaryExpression(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => UnaryExpression2(UnaryExpression(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(3).collect { case d if depth >= d => candidates :+= { () => UnaryExpression3(UnaryExpression(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(4).collect { case d if depth >= d => candidates :+= { () => UnaryExpression4(UnaryExpression(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(5).collect { case d if depth >= d => candidates :+= { () => UnaryExpression5(UnaryExpression(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(6).collect { case d if depth >= d => candidates :+= { () => UnaryExpression6(UnaryExpression(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(7).collect { case d if depth >= d => candidates :+= { () => UnaryExpression7(UnaryExpression(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
+    if (pAwait) rhsDepth(8).collect { case d if depth >= d => candidates :+= { () => UnaryExpression8(AwaitExpression(depth, pYield), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def ExponentiationExpression(pYield: Boolean, pAwait: Boolean): ExponentiationExpression = {
+  def ExponentiationExpression(depth: Int, pYield: Boolean, pAwait: Boolean): ExponentiationExpression = {
     var candidates: Vector[() => ExponentiationExpression] = Vector()
-    candidates :+= { () => ExponentiationExpression0(UnaryExpression(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => ExponentiationExpression1(UpdateExpression(pYield, pAwait), ExponentiationExpression(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.ExponentiationExpression(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ExponentiationExpression0(UnaryExpression(depth, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => ExponentiationExpression1(UpdateExpression(depth - 1, pYield, pAwait), ExponentiationExpression(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def MultiplicativeExpression(pYield: Boolean, pAwait: Boolean): MultiplicativeExpression = {
+  def MultiplicativeExpression(depth: Int, pYield: Boolean, pAwait: Boolean): MultiplicativeExpression = {
     var candidates: Vector[() => MultiplicativeExpression] = Vector()
-    candidates :+= { () => MultiplicativeExpression0(ExponentiationExpression(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => MultiplicativeExpression1(MultiplicativeExpression(pYield, pAwait), MultiplicativeOperator(), ExponentiationExpression(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.MultiplicativeExpression(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => MultiplicativeExpression0(ExponentiationExpression(depth, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => MultiplicativeExpression1(MultiplicativeExpression(depth - 1, pYield, pAwait), MultiplicativeOperator(depth - 1), ExponentiationExpression(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def MultiplicativeOperator(): MultiplicativeOperator = {
+  def MultiplicativeOperator(depth: Int): MultiplicativeOperator = {
     var candidates: Vector[() => MultiplicativeOperator] = Vector()
-    candidates :+= { () => MultiplicativeOperator0(List()) }
-    candidates :+= { () => MultiplicativeOperator1(List()) }
-    candidates :+= { () => MultiplicativeOperator2(List()) }
+    val rhsDepth = counter.MultiplicativeOperator().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => MultiplicativeOperator0(List()) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => MultiplicativeOperator1(List()) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => MultiplicativeOperator2(List()) } }
     choose(candidates)
   }
-  def AdditiveExpression(pYield: Boolean, pAwait: Boolean): AdditiveExpression = {
+  def AdditiveExpression(depth: Int, pYield: Boolean, pAwait: Boolean): AdditiveExpression = {
     var candidates: Vector[() => AdditiveExpression] = Vector()
-    candidates :+= { () => AdditiveExpression0(MultiplicativeExpression(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => AdditiveExpression1(AdditiveExpression(pYield, pAwait), MultiplicativeExpression(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => AdditiveExpression2(AdditiveExpression(pYield, pAwait), MultiplicativeExpression(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.AdditiveExpression(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => AdditiveExpression0(MultiplicativeExpression(depth, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => AdditiveExpression1(AdditiveExpression(depth - 1, pYield, pAwait), MultiplicativeExpression(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => AdditiveExpression2(AdditiveExpression(depth - 1, pYield, pAwait), MultiplicativeExpression(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def ShiftExpression(pYield: Boolean, pAwait: Boolean): ShiftExpression = {
+  def ShiftExpression(depth: Int, pYield: Boolean, pAwait: Boolean): ShiftExpression = {
     var candidates: Vector[() => ShiftExpression] = Vector()
-    candidates :+= { () => ShiftExpression0(AdditiveExpression(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => ShiftExpression1(ShiftExpression(pYield, pAwait), AdditiveExpression(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => ShiftExpression2(ShiftExpression(pYield, pAwait), AdditiveExpression(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => ShiftExpression3(ShiftExpression(pYield, pAwait), AdditiveExpression(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.ShiftExpression(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ShiftExpression0(AdditiveExpression(depth, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => ShiftExpression1(ShiftExpression(depth - 1, pYield, pAwait), AdditiveExpression(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => ShiftExpression2(ShiftExpression(depth - 1, pYield, pAwait), AdditiveExpression(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(3).collect { case d if depth >= d => candidates :+= { () => ShiftExpression3(ShiftExpression(depth - 1, pYield, pAwait), AdditiveExpression(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def RelationalExpression(pIn: Boolean, pYield: Boolean, pAwait: Boolean): RelationalExpression = {
+  def RelationalExpression(depth: Int, pIn: Boolean, pYield: Boolean, pAwait: Boolean): RelationalExpression = {
     var candidates: Vector[() => RelationalExpression] = Vector()
-    candidates :+= { () => RelationalExpression0(ShiftExpression(pYield, pAwait), List(pIn, pYield, pAwait)) }
-    candidates :+= { () => RelationalExpression1(RelationalExpression(pIn, pYield, pAwait), ShiftExpression(pYield, pAwait), List(pIn, pYield, pAwait)) }
-    candidates :+= { () => RelationalExpression2(RelationalExpression(pIn, pYield, pAwait), ShiftExpression(pYield, pAwait), List(pIn, pYield, pAwait)) }
-    candidates :+= { () => RelationalExpression3(RelationalExpression(pIn, pYield, pAwait), ShiftExpression(pYield, pAwait), List(pIn, pYield, pAwait)) }
-    candidates :+= { () => RelationalExpression4(RelationalExpression(pIn, pYield, pAwait), ShiftExpression(pYield, pAwait), List(pIn, pYield, pAwait)) }
-    candidates :+= { () => RelationalExpression5(RelationalExpression(pIn, pYield, pAwait), ShiftExpression(pYield, pAwait), List(pIn, pYield, pAwait)) }
-    if (pIn) candidates :+= { () => RelationalExpression6(RelationalExpression(true, pYield, pAwait), ShiftExpression(pYield, pAwait), List(pIn, pYield, pAwait)) }
+    val rhsDepth = counter.RelationalExpression(pIn, pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => RelationalExpression0(ShiftExpression(depth, pYield, pAwait), List(pIn, pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => RelationalExpression1(RelationalExpression(depth - 1, pIn, pYield, pAwait), ShiftExpression(depth - 1, pYield, pAwait), List(pIn, pYield, pAwait)) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => RelationalExpression2(RelationalExpression(depth - 1, pIn, pYield, pAwait), ShiftExpression(depth - 1, pYield, pAwait), List(pIn, pYield, pAwait)) } }
+    rhsDepth(3).collect { case d if depth >= d => candidates :+= { () => RelationalExpression3(RelationalExpression(depth - 1, pIn, pYield, pAwait), ShiftExpression(depth - 1, pYield, pAwait), List(pIn, pYield, pAwait)) } }
+    rhsDepth(4).collect { case d if depth >= d => candidates :+= { () => RelationalExpression4(RelationalExpression(depth - 1, pIn, pYield, pAwait), ShiftExpression(depth - 1, pYield, pAwait), List(pIn, pYield, pAwait)) } }
+    rhsDepth(5).collect { case d if depth >= d => candidates :+= { () => RelationalExpression5(RelationalExpression(depth - 1, pIn, pYield, pAwait), ShiftExpression(depth - 1, pYield, pAwait), List(pIn, pYield, pAwait)) } }
+    if (pIn) rhsDepth(6).collect { case d if depth >= d => candidates :+= { () => RelationalExpression6(RelationalExpression(depth - 1, true, pYield, pAwait), ShiftExpression(depth - 1, pYield, pAwait), List(pIn, pYield, pAwait)) } }
     choose(candidates)
   }
-  def EqualityExpression(pIn: Boolean, pYield: Boolean, pAwait: Boolean): EqualityExpression = {
+  def EqualityExpression(depth: Int, pIn: Boolean, pYield: Boolean, pAwait: Boolean): EqualityExpression = {
     var candidates: Vector[() => EqualityExpression] = Vector()
-    candidates :+= { () => EqualityExpression0(RelationalExpression(pIn, pYield, pAwait), List(pIn, pYield, pAwait)) }
-    candidates :+= { () => EqualityExpression1(EqualityExpression(pIn, pYield, pAwait), RelationalExpression(pIn, pYield, pAwait), List(pIn, pYield, pAwait)) }
-    candidates :+= { () => EqualityExpression2(EqualityExpression(pIn, pYield, pAwait), RelationalExpression(pIn, pYield, pAwait), List(pIn, pYield, pAwait)) }
-    candidates :+= { () => EqualityExpression3(EqualityExpression(pIn, pYield, pAwait), RelationalExpression(pIn, pYield, pAwait), List(pIn, pYield, pAwait)) }
-    candidates :+= { () => EqualityExpression4(EqualityExpression(pIn, pYield, pAwait), RelationalExpression(pIn, pYield, pAwait), List(pIn, pYield, pAwait)) }
+    val rhsDepth = counter.EqualityExpression(pIn, pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => EqualityExpression0(RelationalExpression(depth, pIn, pYield, pAwait), List(pIn, pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => EqualityExpression1(EqualityExpression(depth - 1, pIn, pYield, pAwait), RelationalExpression(depth - 1, pIn, pYield, pAwait), List(pIn, pYield, pAwait)) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => EqualityExpression2(EqualityExpression(depth - 1, pIn, pYield, pAwait), RelationalExpression(depth - 1, pIn, pYield, pAwait), List(pIn, pYield, pAwait)) } }
+    rhsDepth(3).collect { case d if depth >= d => candidates :+= { () => EqualityExpression3(EqualityExpression(depth - 1, pIn, pYield, pAwait), RelationalExpression(depth - 1, pIn, pYield, pAwait), List(pIn, pYield, pAwait)) } }
+    rhsDepth(4).collect { case d if depth >= d => candidates :+= { () => EqualityExpression4(EqualityExpression(depth - 1, pIn, pYield, pAwait), RelationalExpression(depth - 1, pIn, pYield, pAwait), List(pIn, pYield, pAwait)) } }
     choose(candidates)
   }
-  def BitwiseANDExpression(pIn: Boolean, pYield: Boolean, pAwait: Boolean): BitwiseANDExpression = {
+  def BitwiseANDExpression(depth: Int, pIn: Boolean, pYield: Boolean, pAwait: Boolean): BitwiseANDExpression = {
     var candidates: Vector[() => BitwiseANDExpression] = Vector()
-    candidates :+= { () => BitwiseANDExpression0(EqualityExpression(pIn, pYield, pAwait), List(pIn, pYield, pAwait)) }
-    candidates :+= { () => BitwiseANDExpression1(BitwiseANDExpression(pIn, pYield, pAwait), EqualityExpression(pIn, pYield, pAwait), List(pIn, pYield, pAwait)) }
+    val rhsDepth = counter.BitwiseANDExpression(pIn, pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => BitwiseANDExpression0(EqualityExpression(depth, pIn, pYield, pAwait), List(pIn, pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => BitwiseANDExpression1(BitwiseANDExpression(depth - 1, pIn, pYield, pAwait), EqualityExpression(depth - 1, pIn, pYield, pAwait), List(pIn, pYield, pAwait)) } }
     choose(candidates)
   }
-  def BitwiseXORExpression(pIn: Boolean, pYield: Boolean, pAwait: Boolean): BitwiseXORExpression = {
+  def BitwiseXORExpression(depth: Int, pIn: Boolean, pYield: Boolean, pAwait: Boolean): BitwiseXORExpression = {
     var candidates: Vector[() => BitwiseXORExpression] = Vector()
-    candidates :+= { () => BitwiseXORExpression0(BitwiseANDExpression(pIn, pYield, pAwait), List(pIn, pYield, pAwait)) }
-    candidates :+= { () => BitwiseXORExpression1(BitwiseXORExpression(pIn, pYield, pAwait), BitwiseANDExpression(pIn, pYield, pAwait), List(pIn, pYield, pAwait)) }
+    val rhsDepth = counter.BitwiseXORExpression(pIn, pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => BitwiseXORExpression0(BitwiseANDExpression(depth, pIn, pYield, pAwait), List(pIn, pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => BitwiseXORExpression1(BitwiseXORExpression(depth - 1, pIn, pYield, pAwait), BitwiseANDExpression(depth - 1, pIn, pYield, pAwait), List(pIn, pYield, pAwait)) } }
     choose(candidates)
   }
-  def BitwiseORExpression(pIn: Boolean, pYield: Boolean, pAwait: Boolean): BitwiseORExpression = {
+  def BitwiseORExpression(depth: Int, pIn: Boolean, pYield: Boolean, pAwait: Boolean): BitwiseORExpression = {
     var candidates: Vector[() => BitwiseORExpression] = Vector()
-    candidates :+= { () => BitwiseORExpression0(BitwiseXORExpression(pIn, pYield, pAwait), List(pIn, pYield, pAwait)) }
-    candidates :+= { () => BitwiseORExpression1(BitwiseORExpression(pIn, pYield, pAwait), BitwiseXORExpression(pIn, pYield, pAwait), List(pIn, pYield, pAwait)) }
+    val rhsDepth = counter.BitwiseORExpression(pIn, pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => BitwiseORExpression0(BitwiseXORExpression(depth, pIn, pYield, pAwait), List(pIn, pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => BitwiseORExpression1(BitwiseORExpression(depth - 1, pIn, pYield, pAwait), BitwiseXORExpression(depth - 1, pIn, pYield, pAwait), List(pIn, pYield, pAwait)) } }
     choose(candidates)
   }
-  def LogicalANDExpression(pIn: Boolean, pYield: Boolean, pAwait: Boolean): LogicalANDExpression = {
+  def LogicalANDExpression(depth: Int, pIn: Boolean, pYield: Boolean, pAwait: Boolean): LogicalANDExpression = {
     var candidates: Vector[() => LogicalANDExpression] = Vector()
-    candidates :+= { () => LogicalANDExpression0(BitwiseORExpression(pIn, pYield, pAwait), List(pIn, pYield, pAwait)) }
-    candidates :+= { () => LogicalANDExpression1(LogicalANDExpression(pIn, pYield, pAwait), BitwiseORExpression(pIn, pYield, pAwait), List(pIn, pYield, pAwait)) }
+    val rhsDepth = counter.LogicalANDExpression(pIn, pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => LogicalANDExpression0(BitwiseORExpression(depth, pIn, pYield, pAwait), List(pIn, pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => LogicalANDExpression1(LogicalANDExpression(depth - 1, pIn, pYield, pAwait), BitwiseORExpression(depth - 1, pIn, pYield, pAwait), List(pIn, pYield, pAwait)) } }
     choose(candidates)
   }
-  def LogicalORExpression(pIn: Boolean, pYield: Boolean, pAwait: Boolean): LogicalORExpression = {
+  def LogicalORExpression(depth: Int, pIn: Boolean, pYield: Boolean, pAwait: Boolean): LogicalORExpression = {
     var candidates: Vector[() => LogicalORExpression] = Vector()
-    candidates :+= { () => LogicalORExpression0(LogicalANDExpression(pIn, pYield, pAwait), List(pIn, pYield, pAwait)) }
-    candidates :+= { () => LogicalORExpression1(LogicalORExpression(pIn, pYield, pAwait), LogicalANDExpression(pIn, pYield, pAwait), List(pIn, pYield, pAwait)) }
+    val rhsDepth = counter.LogicalORExpression(pIn, pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => LogicalORExpression0(LogicalANDExpression(depth, pIn, pYield, pAwait), List(pIn, pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => LogicalORExpression1(LogicalORExpression(depth - 1, pIn, pYield, pAwait), LogicalANDExpression(depth - 1, pIn, pYield, pAwait), List(pIn, pYield, pAwait)) } }
     choose(candidates)
   }
-  def CoalesceExpression(pIn: Boolean, pYield: Boolean, pAwait: Boolean): CoalesceExpression = {
+  def CoalesceExpression(depth: Int, pIn: Boolean, pYield: Boolean, pAwait: Boolean): CoalesceExpression = {
     var candidates: Vector[() => CoalesceExpression] = Vector()
-    candidates :+= { () => CoalesceExpression0(CoalesceExpressionHead(pIn, pYield, pAwait), BitwiseORExpression(pIn, pYield, pAwait), List(pIn, pYield, pAwait)) }
+    val rhsDepth = counter.CoalesceExpression(pIn, pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => CoalesceExpression0(CoalesceExpressionHead(depth - 1, pIn, pYield, pAwait), BitwiseORExpression(depth - 1, pIn, pYield, pAwait), List(pIn, pYield, pAwait)) } }
     choose(candidates)
   }
-  def CoalesceExpressionHead(pIn: Boolean, pYield: Boolean, pAwait: Boolean): CoalesceExpressionHead = {
+  def CoalesceExpressionHead(depth: Int, pIn: Boolean, pYield: Boolean, pAwait: Boolean): CoalesceExpressionHead = {
     var candidates: Vector[() => CoalesceExpressionHead] = Vector()
-    candidates :+= { () => CoalesceExpressionHead0(CoalesceExpression(pIn, pYield, pAwait), List(pIn, pYield, pAwait)) }
-    candidates :+= { () => CoalesceExpressionHead1(BitwiseORExpression(pIn, pYield, pAwait), List(pIn, pYield, pAwait)) }
+    val rhsDepth = counter.CoalesceExpressionHead(pIn, pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => CoalesceExpressionHead0(CoalesceExpression(depth, pIn, pYield, pAwait), List(pIn, pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => CoalesceExpressionHead1(BitwiseORExpression(depth, pIn, pYield, pAwait), List(pIn, pYield, pAwait)) } }
     choose(candidates)
   }
-  def ShortCircuitExpression(pIn: Boolean, pYield: Boolean, pAwait: Boolean): ShortCircuitExpression = {
+  def ShortCircuitExpression(depth: Int, pIn: Boolean, pYield: Boolean, pAwait: Boolean): ShortCircuitExpression = {
     var candidates: Vector[() => ShortCircuitExpression] = Vector()
-    candidates :+= { () => ShortCircuitExpression0(LogicalORExpression(pIn, pYield, pAwait), List(pIn, pYield, pAwait)) }
-    candidates :+= { () => ShortCircuitExpression1(CoalesceExpression(pIn, pYield, pAwait), List(pIn, pYield, pAwait)) }
+    val rhsDepth = counter.ShortCircuitExpression(pIn, pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ShortCircuitExpression0(LogicalORExpression(depth, pIn, pYield, pAwait), List(pIn, pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => ShortCircuitExpression1(CoalesceExpression(depth, pIn, pYield, pAwait), List(pIn, pYield, pAwait)) } }
     choose(candidates)
   }
-  def ConditionalExpression(pIn: Boolean, pYield: Boolean, pAwait: Boolean): ConditionalExpression = {
+  def ConditionalExpression(depth: Int, pIn: Boolean, pYield: Boolean, pAwait: Boolean): ConditionalExpression = {
     var candidates: Vector[() => ConditionalExpression] = Vector()
-    candidates :+= { () => ConditionalExpression0(ShortCircuitExpression(pIn, pYield, pAwait), List(pIn, pYield, pAwait)) }
-    candidates :+= { () => ConditionalExpression1(ShortCircuitExpression(pIn, pYield, pAwait), AssignmentExpression(true, pYield, pAwait), AssignmentExpression(pIn, pYield, pAwait), List(pIn, pYield, pAwait)) }
+    val rhsDepth = counter.ConditionalExpression(pIn, pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ConditionalExpression0(ShortCircuitExpression(depth, pIn, pYield, pAwait), List(pIn, pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => ConditionalExpression1(ShortCircuitExpression(depth - 1, pIn, pYield, pAwait), AssignmentExpression(depth - 1, true, pYield, pAwait), AssignmentExpression(depth - 1, pIn, pYield, pAwait), List(pIn, pYield, pAwait)) } }
     choose(candidates)
   }
-  def AssignmentExpression(pIn: Boolean, pYield: Boolean, pAwait: Boolean): AssignmentExpression = {
+  def AssignmentExpression(depth: Int, pIn: Boolean, pYield: Boolean, pAwait: Boolean): AssignmentExpression = {
     var candidates: Vector[() => AssignmentExpression] = Vector()
-    candidates :+= { () => AssignmentExpression0(ConditionalExpression(pIn, pYield, pAwait), List(pIn, pYield, pAwait)) }
-    if (pYield) candidates :+= { () => AssignmentExpression1(YieldExpression(pIn, pAwait), List(pIn, pYield, pAwait)) }
-    candidates :+= { () => AssignmentExpression2(ArrowFunction(pIn, pYield, pAwait), List(pIn, pYield, pAwait)) }
-    candidates :+= { () => AssignmentExpression3(AsyncArrowFunction(pIn, pYield, pAwait), List(pIn, pYield, pAwait)) }
-    candidates :+= { () => AssignmentExpression4(LeftHandSideExpression(pYield, pAwait), AssignmentExpression(pIn, pYield, pAwait), List(pIn, pYield, pAwait)) }
-    candidates :+= { () => AssignmentExpression5(LeftHandSideExpression(pYield, pAwait), AssignmentOperator(), AssignmentExpression(pIn, pYield, pAwait), List(pIn, pYield, pAwait)) }
+    val rhsDepth = counter.AssignmentExpression(pIn, pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => AssignmentExpression0(ConditionalExpression(depth, pIn, pYield, pAwait), List(pIn, pYield, pAwait)) } }
+    if (pYield) rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => AssignmentExpression1(YieldExpression(depth, pIn, pAwait), List(pIn, pYield, pAwait)) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => AssignmentExpression2(ArrowFunction(depth, pIn, pYield, pAwait), List(pIn, pYield, pAwait)) } }
+    rhsDepth(3).collect { case d if depth >= d => candidates :+= { () => AssignmentExpression3(AsyncArrowFunction(depth, pIn, pYield, pAwait), List(pIn, pYield, pAwait)) } }
+    rhsDepth(4).collect { case d if depth >= d => candidates :+= { () => AssignmentExpression4(LeftHandSideExpression(depth - 1, pYield, pAwait), AssignmentExpression(depth - 1, pIn, pYield, pAwait), List(pIn, pYield, pAwait)) } }
+    rhsDepth(5).collect { case d if depth >= d => candidates :+= { () => AssignmentExpression5(LeftHandSideExpression(depth - 1, pYield, pAwait), AssignmentOperator(depth - 1), AssignmentExpression(depth - 1, pIn, pYield, pAwait), List(pIn, pYield, pAwait)) } }
     choose(candidates)
   }
-  def AssignmentOperator(): AssignmentOperator = {
+  def AssignmentOperator(depth: Int): AssignmentOperator = {
     var candidates: Vector[() => AssignmentOperator] = Vector()
-    candidates :+= { () => AssignmentOperator0(List()) }
-    candidates :+= { () => AssignmentOperator1(List()) }
-    candidates :+= { () => AssignmentOperator2(List()) }
-    candidates :+= { () => AssignmentOperator3(List()) }
-    candidates :+= { () => AssignmentOperator4(List()) }
-    candidates :+= { () => AssignmentOperator5(List()) }
-    candidates :+= { () => AssignmentOperator6(List()) }
-    candidates :+= { () => AssignmentOperator7(List()) }
-    candidates :+= { () => AssignmentOperator8(List()) }
-    candidates :+= { () => AssignmentOperator9(List()) }
-    candidates :+= { () => AssignmentOperator10(List()) }
-    candidates :+= { () => AssignmentOperator11(List()) }
+    val rhsDepth = counter.AssignmentOperator().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => AssignmentOperator0(List()) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => AssignmentOperator1(List()) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => AssignmentOperator2(List()) } }
+    rhsDepth(3).collect { case d if depth >= d => candidates :+= { () => AssignmentOperator3(List()) } }
+    rhsDepth(4).collect { case d if depth >= d => candidates :+= { () => AssignmentOperator4(List()) } }
+    rhsDepth(5).collect { case d if depth >= d => candidates :+= { () => AssignmentOperator5(List()) } }
+    rhsDepth(6).collect { case d if depth >= d => candidates :+= { () => AssignmentOperator6(List()) } }
+    rhsDepth(7).collect { case d if depth >= d => candidates :+= { () => AssignmentOperator7(List()) } }
+    rhsDepth(8).collect { case d if depth >= d => candidates :+= { () => AssignmentOperator8(List()) } }
+    rhsDepth(9).collect { case d if depth >= d => candidates :+= { () => AssignmentOperator9(List()) } }
+    rhsDepth(10).collect { case d if depth >= d => candidates :+= { () => AssignmentOperator10(List()) } }
+    rhsDepth(11).collect { case d if depth >= d => candidates :+= { () => AssignmentOperator11(List()) } }
     choose(candidates)
   }
-  def AssignmentPattern(pYield: Boolean, pAwait: Boolean): AssignmentPattern = {
+  def AssignmentPattern(depth: Int, pYield: Boolean, pAwait: Boolean): AssignmentPattern = {
     var candidates: Vector[() => AssignmentPattern] = Vector()
-    candidates :+= { () => AssignmentPattern0(ObjectAssignmentPattern(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => AssignmentPattern1(ArrayAssignmentPattern(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.AssignmentPattern(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => AssignmentPattern0(ObjectAssignmentPattern(depth, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => AssignmentPattern1(ArrayAssignmentPattern(depth, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def ObjectAssignmentPattern(pYield: Boolean, pAwait: Boolean): ObjectAssignmentPattern = {
+  def ObjectAssignmentPattern(depth: Int, pYield: Boolean, pAwait: Boolean): ObjectAssignmentPattern = {
     var candidates: Vector[() => ObjectAssignmentPattern] = Vector()
-    candidates :+= { () => ObjectAssignmentPattern0(List(pYield, pAwait)) }
-    candidates :+= { () => ObjectAssignmentPattern1(AssignmentRestProperty(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => ObjectAssignmentPattern2(AssignmentPropertyList(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => ObjectAssignmentPattern3(AssignmentPropertyList(pYield, pAwait), opt(AssignmentRestProperty(pYield, pAwait)), List(pYield, pAwait)) }
+    val rhsDepth = counter.ObjectAssignmentPattern(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ObjectAssignmentPattern0(List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => ObjectAssignmentPattern1(AssignmentRestProperty(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => ObjectAssignmentPattern2(AssignmentPropertyList(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(3).collect { case d if depth >= d => candidates :+= { () => ObjectAssignmentPattern3(AssignmentPropertyList(depth - 1, pYield, pAwait), opt(depth - 1 >= counter.AssignmentRestProperty(pYield, pAwait).depth, AssignmentRestProperty(depth - 1, pYield, pAwait)), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def ArrayAssignmentPattern(pYield: Boolean, pAwait: Boolean): ArrayAssignmentPattern = {
+  def ArrayAssignmentPattern(depth: Int, pYield: Boolean, pAwait: Boolean): ArrayAssignmentPattern = {
     var candidates: Vector[() => ArrayAssignmentPattern] = Vector()
-    candidates :+= { () => ArrayAssignmentPattern0(opt(Elision()), opt(AssignmentRestElement(pYield, pAwait)), List(pYield, pAwait)) }
-    candidates :+= { () => ArrayAssignmentPattern1(AssignmentElementList(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => ArrayAssignmentPattern2(AssignmentElementList(pYield, pAwait), opt(Elision()), opt(AssignmentRestElement(pYield, pAwait)), List(pYield, pAwait)) }
+    val rhsDepth = counter.ArrayAssignmentPattern(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ArrayAssignmentPattern0(opt(depth - 1 >= counter.Elision().depth, Elision(depth - 1)), opt(depth - 1 >= counter.AssignmentRestElement(pYield, pAwait).depth, AssignmentRestElement(depth - 1, pYield, pAwait)), List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => ArrayAssignmentPattern1(AssignmentElementList(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => ArrayAssignmentPattern2(AssignmentElementList(depth - 1, pYield, pAwait), opt(depth - 1 >= counter.Elision().depth, Elision(depth - 1)), opt(depth - 1 >= counter.AssignmentRestElement(pYield, pAwait).depth, AssignmentRestElement(depth - 1, pYield, pAwait)), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def AssignmentRestProperty(pYield: Boolean, pAwait: Boolean): AssignmentRestProperty = {
+  def AssignmentRestProperty(depth: Int, pYield: Boolean, pAwait: Boolean): AssignmentRestProperty = {
     var candidates: Vector[() => AssignmentRestProperty] = Vector()
-    candidates :+= { () => AssignmentRestProperty0(DestructuringAssignmentTarget(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.AssignmentRestProperty(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => AssignmentRestProperty0(DestructuringAssignmentTarget(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def AssignmentPropertyList(pYield: Boolean, pAwait: Boolean): AssignmentPropertyList = {
+  def AssignmentPropertyList(depth: Int, pYield: Boolean, pAwait: Boolean): AssignmentPropertyList = {
     var candidates: Vector[() => AssignmentPropertyList] = Vector()
-    candidates :+= { () => AssignmentPropertyList0(AssignmentProperty(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => AssignmentPropertyList1(AssignmentPropertyList(pYield, pAwait), AssignmentProperty(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.AssignmentPropertyList(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => AssignmentPropertyList0(AssignmentProperty(depth, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => AssignmentPropertyList1(AssignmentPropertyList(depth - 1, pYield, pAwait), AssignmentProperty(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def AssignmentElementList(pYield: Boolean, pAwait: Boolean): AssignmentElementList = {
+  def AssignmentElementList(depth: Int, pYield: Boolean, pAwait: Boolean): AssignmentElementList = {
     var candidates: Vector[() => AssignmentElementList] = Vector()
-    candidates :+= { () => AssignmentElementList0(AssignmentElisionElement(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => AssignmentElementList1(AssignmentElementList(pYield, pAwait), AssignmentElisionElement(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.AssignmentElementList(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => AssignmentElementList0(AssignmentElisionElement(depth, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => AssignmentElementList1(AssignmentElementList(depth - 1, pYield, pAwait), AssignmentElisionElement(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def AssignmentElisionElement(pYield: Boolean, pAwait: Boolean): AssignmentElisionElement = {
+  def AssignmentElisionElement(depth: Int, pYield: Boolean, pAwait: Boolean): AssignmentElisionElement = {
     var candidates: Vector[() => AssignmentElisionElement] = Vector()
-    candidates :+= { () => AssignmentElisionElement0(opt(Elision()), AssignmentElement(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.AssignmentElisionElement(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => AssignmentElisionElement0(opt(depth - 1 >= counter.Elision().depth, Elision(depth - 1)), AssignmentElement(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def AssignmentProperty(pYield: Boolean, pAwait: Boolean): AssignmentProperty = {
+  def AssignmentProperty(depth: Int, pYield: Boolean, pAwait: Boolean): AssignmentProperty = {
     var candidates: Vector[() => AssignmentProperty] = Vector()
-    candidates :+= { () => AssignmentProperty0(IdentifierReference(pYield, pAwait), opt(Initializer(true, pYield, pAwait)), List(pYield, pAwait)) }
-    candidates :+= { () => AssignmentProperty1(PropertyName(pYield, pAwait), AssignmentElement(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.AssignmentProperty(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => AssignmentProperty0(IdentifierReference(depth - 1, pYield, pAwait), opt(depth - 1 >= counter.Initializer(true, pYield, pAwait).depth, Initializer(depth - 1, true, pYield, pAwait)), List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => AssignmentProperty1(PropertyName(depth - 1, pYield, pAwait), AssignmentElement(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def AssignmentElement(pYield: Boolean, pAwait: Boolean): AssignmentElement = {
+  def AssignmentElement(depth: Int, pYield: Boolean, pAwait: Boolean): AssignmentElement = {
     var candidates: Vector[() => AssignmentElement] = Vector()
-    candidates :+= { () => AssignmentElement0(DestructuringAssignmentTarget(pYield, pAwait), opt(Initializer(true, pYield, pAwait)), List(pYield, pAwait)) }
+    val rhsDepth = counter.AssignmentElement(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => AssignmentElement0(DestructuringAssignmentTarget(depth - 1, pYield, pAwait), opt(depth - 1 >= counter.Initializer(true, pYield, pAwait).depth, Initializer(depth - 1, true, pYield, pAwait)), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def AssignmentRestElement(pYield: Boolean, pAwait: Boolean): AssignmentRestElement = {
+  def AssignmentRestElement(depth: Int, pYield: Boolean, pAwait: Boolean): AssignmentRestElement = {
     var candidates: Vector[() => AssignmentRestElement] = Vector()
-    candidates :+= { () => AssignmentRestElement0(DestructuringAssignmentTarget(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.AssignmentRestElement(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => AssignmentRestElement0(DestructuringAssignmentTarget(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def DestructuringAssignmentTarget(pYield: Boolean, pAwait: Boolean): DestructuringAssignmentTarget = {
+  def DestructuringAssignmentTarget(depth: Int, pYield: Boolean, pAwait: Boolean): DestructuringAssignmentTarget = {
     var candidates: Vector[() => DestructuringAssignmentTarget] = Vector()
-    candidates :+= { () => DestructuringAssignmentTarget0(LeftHandSideExpression(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.DestructuringAssignmentTarget(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => DestructuringAssignmentTarget0(LeftHandSideExpression(depth, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def Expression(pIn: Boolean, pYield: Boolean, pAwait: Boolean): Expression = {
+  def Expression(depth: Int, pIn: Boolean, pYield: Boolean, pAwait: Boolean): Expression = {
     var candidates: Vector[() => Expression] = Vector()
-    candidates :+= { () => Expression0(AssignmentExpression(pIn, pYield, pAwait), List(pIn, pYield, pAwait)) }
-    candidates :+= { () => Expression1(Expression(pIn, pYield, pAwait), AssignmentExpression(pIn, pYield, pAwait), List(pIn, pYield, pAwait)) }
+    val rhsDepth = counter.Expression(pIn, pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => Expression0(AssignmentExpression(depth, pIn, pYield, pAwait), List(pIn, pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => Expression1(Expression(depth - 1, pIn, pYield, pAwait), AssignmentExpression(depth - 1, pIn, pYield, pAwait), List(pIn, pYield, pAwait)) } }
     choose(candidates)
   }
-  def Statement(pYield: Boolean, pAwait: Boolean, pReturn: Boolean): Statement = {
+  def Statement(depth: Int, pYield: Boolean, pAwait: Boolean, pReturn: Boolean): Statement = {
     var candidates: Vector[() => Statement] = Vector()
-    candidates :+= { () => Statement0(BlockStatement(pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) }
-    candidates :+= { () => Statement1(VariableStatement(pYield, pAwait), List(pYield, pAwait, pReturn)) }
-    candidates :+= { () => Statement2(EmptyStatement(), List(pYield, pAwait, pReturn)) }
-    candidates :+= { () => Statement3(ExpressionStatement(pYield, pAwait), List(pYield, pAwait, pReturn)) }
-    candidates :+= { () => Statement4(IfStatement(pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) }
-    candidates :+= { () => Statement5(BreakableStatement(pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) }
-    candidates :+= { () => Statement6(ContinueStatement(pYield, pAwait), List(pYield, pAwait, pReturn)) }
-    candidates :+= { () => Statement7(BreakStatement(pYield, pAwait), List(pYield, pAwait, pReturn)) }
-    if (pReturn) candidates :+= { () => Statement8(ReturnStatement(pYield, pAwait), List(pYield, pAwait, pReturn)) }
-    candidates :+= { () => Statement9(WithStatement(pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) }
-    candidates :+= { () => Statement10(LabelledStatement(pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) }
-    candidates :+= { () => Statement11(ThrowStatement(pYield, pAwait), List(pYield, pAwait, pReturn)) }
-    candidates :+= { () => Statement12(TryStatement(pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) }
-    candidates :+= { () => Statement13(DebuggerStatement(), List(pYield, pAwait, pReturn)) }
+    val rhsDepth = counter.Statement(pYield, pAwait, pReturn).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => Statement0(BlockStatement(depth, pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => Statement1(VariableStatement(depth, pYield, pAwait), List(pYield, pAwait, pReturn)) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => Statement2(EmptyStatement(depth), List(pYield, pAwait, pReturn)) } }
+    rhsDepth(3).collect { case d if depth >= d => candidates :+= { () => Statement3(ExpressionStatement(depth, pYield, pAwait), List(pYield, pAwait, pReturn)) } }
+    rhsDepth(4).collect { case d if depth >= d => candidates :+= { () => Statement4(IfStatement(depth, pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) } }
+    rhsDepth(5).collect { case d if depth >= d => candidates :+= { () => Statement5(BreakableStatement(depth, pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) } }
+    rhsDepth(6).collect { case d if depth >= d => candidates :+= { () => Statement6(ContinueStatement(depth, pYield, pAwait), List(pYield, pAwait, pReturn)) } }
+    rhsDepth(7).collect { case d if depth >= d => candidates :+= { () => Statement7(BreakStatement(depth, pYield, pAwait), List(pYield, pAwait, pReturn)) } }
+    if (pReturn) rhsDepth(8).collect { case d if depth >= d => candidates :+= { () => Statement8(ReturnStatement(depth, pYield, pAwait), List(pYield, pAwait, pReturn)) } }
+    rhsDepth(9).collect { case d if depth >= d => candidates :+= { () => Statement9(WithStatement(depth, pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) } }
+    rhsDepth(10).collect { case d if depth >= d => candidates :+= { () => Statement10(LabelledStatement(depth, pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) } }
+    rhsDepth(11).collect { case d if depth >= d => candidates :+= { () => Statement11(ThrowStatement(depth, pYield, pAwait), List(pYield, pAwait, pReturn)) } }
+    rhsDepth(12).collect { case d if depth >= d => candidates :+= { () => Statement12(TryStatement(depth, pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) } }
+    rhsDepth(13).collect { case d if depth >= d => candidates :+= { () => Statement13(DebuggerStatement(depth), List(pYield, pAwait, pReturn)) } }
     choose(candidates)
   }
-  def Declaration(pYield: Boolean, pAwait: Boolean): Declaration = {
+  def Declaration(depth: Int, pYield: Boolean, pAwait: Boolean): Declaration = {
     var candidates: Vector[() => Declaration] = Vector()
-    candidates :+= { () => Declaration0(HoistableDeclaration(pYield, pAwait, false), List(pYield, pAwait)) }
-    candidates :+= { () => Declaration1(ClassDeclaration(pYield, pAwait, false), List(pYield, pAwait)) }
-    candidates :+= { () => Declaration2(LexicalDeclaration(true, pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.Declaration(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => Declaration0(HoistableDeclaration(depth, pYield, pAwait, false), List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => Declaration1(ClassDeclaration(depth, pYield, pAwait, false), List(pYield, pAwait)) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => Declaration2(LexicalDeclaration(depth, true, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def HoistableDeclaration(pYield: Boolean, pAwait: Boolean, pDefault: Boolean): HoistableDeclaration = {
+  def HoistableDeclaration(depth: Int, pYield: Boolean, pAwait: Boolean, pDefault: Boolean): HoistableDeclaration = {
     var candidates: Vector[() => HoistableDeclaration] = Vector()
-    candidates :+= { () => HoistableDeclaration0(FunctionDeclaration(pYield, pAwait, pDefault), List(pYield, pAwait, pDefault)) }
-    candidates :+= { () => HoistableDeclaration1(GeneratorDeclaration(pYield, pAwait, pDefault), List(pYield, pAwait, pDefault)) }
-    candidates :+= { () => HoistableDeclaration2(AsyncFunctionDeclaration(pYield, pAwait, pDefault), List(pYield, pAwait, pDefault)) }
-    candidates :+= { () => HoistableDeclaration3(AsyncGeneratorDeclaration(pYield, pAwait, pDefault), List(pYield, pAwait, pDefault)) }
+    val rhsDepth = counter.HoistableDeclaration(pYield, pAwait, pDefault).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => HoistableDeclaration0(FunctionDeclaration(depth, pYield, pAwait, pDefault), List(pYield, pAwait, pDefault)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => HoistableDeclaration1(GeneratorDeclaration(depth, pYield, pAwait, pDefault), List(pYield, pAwait, pDefault)) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => HoistableDeclaration2(AsyncFunctionDeclaration(depth, pYield, pAwait, pDefault), List(pYield, pAwait, pDefault)) } }
+    rhsDepth(3).collect { case d if depth >= d => candidates :+= { () => HoistableDeclaration3(AsyncGeneratorDeclaration(depth, pYield, pAwait, pDefault), List(pYield, pAwait, pDefault)) } }
     choose(candidates)
   }
-  def BreakableStatement(pYield: Boolean, pAwait: Boolean, pReturn: Boolean): BreakableStatement = {
+  def BreakableStatement(depth: Int, pYield: Boolean, pAwait: Boolean, pReturn: Boolean): BreakableStatement = {
     var candidates: Vector[() => BreakableStatement] = Vector()
-    candidates :+= { () => BreakableStatement0(IterationStatement(pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) }
-    candidates :+= { () => BreakableStatement1(SwitchStatement(pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) }
+    val rhsDepth = counter.BreakableStatement(pYield, pAwait, pReturn).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => BreakableStatement0(IterationStatement(depth, pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => BreakableStatement1(SwitchStatement(depth, pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) } }
     choose(candidates)
   }
-  def BlockStatement(pYield: Boolean, pAwait: Boolean, pReturn: Boolean): BlockStatement = {
+  def BlockStatement(depth: Int, pYield: Boolean, pAwait: Boolean, pReturn: Boolean): BlockStatement = {
     var candidates: Vector[() => BlockStatement] = Vector()
-    candidates :+= { () => BlockStatement0(Block(pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) }
+    val rhsDepth = counter.BlockStatement(pYield, pAwait, pReturn).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => BlockStatement0(Block(depth, pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) } }
     choose(candidates)
   }
-  def Block(pYield: Boolean, pAwait: Boolean, pReturn: Boolean): Block = {
+  def Block(depth: Int, pYield: Boolean, pAwait: Boolean, pReturn: Boolean): Block = {
     var candidates: Vector[() => Block] = Vector()
-    candidates :+= { () => Block0(opt(StatementList(pYield, pAwait, pReturn)), List(pYield, pAwait, pReturn)) }
+    val rhsDepth = counter.Block(pYield, pAwait, pReturn).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => Block0(opt(depth - 1 >= counter.StatementList(pYield, pAwait, pReturn).depth, StatementList(depth - 1, pYield, pAwait, pReturn)), List(pYield, pAwait, pReturn)) } }
     choose(candidates)
   }
-  def StatementList(pYield: Boolean, pAwait: Boolean, pReturn: Boolean): StatementList = {
+  def StatementList(depth: Int, pYield: Boolean, pAwait: Boolean, pReturn: Boolean): StatementList = {
     var candidates: Vector[() => StatementList] = Vector()
-    candidates :+= { () => StatementList0(StatementListItem(pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) }
-    candidates :+= { () => StatementList1(StatementList(pYield, pAwait, pReturn), StatementListItem(pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) }
+    val rhsDepth = counter.StatementList(pYield, pAwait, pReturn).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => StatementList0(StatementListItem(depth, pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => StatementList1(StatementList(depth - 1, pYield, pAwait, pReturn), StatementListItem(depth - 1, pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) } }
     choose(candidates)
   }
-  def StatementListItem(pYield: Boolean, pAwait: Boolean, pReturn: Boolean): StatementListItem = {
+  def StatementListItem(depth: Int, pYield: Boolean, pAwait: Boolean, pReturn: Boolean): StatementListItem = {
     var candidates: Vector[() => StatementListItem] = Vector()
-    candidates :+= { () => StatementListItem0(Statement(pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) }
-    candidates :+= { () => StatementListItem1(Declaration(pYield, pAwait), List(pYield, pAwait, pReturn)) }
+    val rhsDepth = counter.StatementListItem(pYield, pAwait, pReturn).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => StatementListItem0(Statement(depth, pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => StatementListItem1(Declaration(depth, pYield, pAwait), List(pYield, pAwait, pReturn)) } }
     choose(candidates)
   }
-  def LexicalDeclaration(pIn: Boolean, pYield: Boolean, pAwait: Boolean): LexicalDeclaration = {
+  def LexicalDeclaration(depth: Int, pIn: Boolean, pYield: Boolean, pAwait: Boolean): LexicalDeclaration = {
     var candidates: Vector[() => LexicalDeclaration] = Vector()
-    candidates :+= { () => LexicalDeclaration0(LetOrConst(), BindingList(pIn, pYield, pAwait), List(pIn, pYield, pAwait)) }
+    val rhsDepth = counter.LexicalDeclaration(pIn, pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => LexicalDeclaration0(LetOrConst(depth - 1), BindingList(depth - 1, pIn, pYield, pAwait), List(pIn, pYield, pAwait)) } }
     choose(candidates)
   }
-  def LetOrConst(): LetOrConst = {
+  def LetOrConst(depth: Int): LetOrConst = {
     var candidates: Vector[() => LetOrConst] = Vector()
-    candidates :+= { () => LetOrConst0(List()) }
-    candidates :+= { () => LetOrConst1(List()) }
+    val rhsDepth = counter.LetOrConst().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => LetOrConst0(List()) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => LetOrConst1(List()) } }
     choose(candidates)
   }
-  def BindingList(pIn: Boolean, pYield: Boolean, pAwait: Boolean): BindingList = {
+  def BindingList(depth: Int, pIn: Boolean, pYield: Boolean, pAwait: Boolean): BindingList = {
     var candidates: Vector[() => BindingList] = Vector()
-    candidates :+= { () => BindingList0(LexicalBinding(pIn, pYield, pAwait), List(pIn, pYield, pAwait)) }
-    candidates :+= { () => BindingList1(BindingList(pIn, pYield, pAwait), LexicalBinding(pIn, pYield, pAwait), List(pIn, pYield, pAwait)) }
+    val rhsDepth = counter.BindingList(pIn, pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => BindingList0(LexicalBinding(depth, pIn, pYield, pAwait), List(pIn, pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => BindingList1(BindingList(depth - 1, pIn, pYield, pAwait), LexicalBinding(depth - 1, pIn, pYield, pAwait), List(pIn, pYield, pAwait)) } }
     choose(candidates)
   }
-  def LexicalBinding(pIn: Boolean, pYield: Boolean, pAwait: Boolean): LexicalBinding = {
+  def LexicalBinding(depth: Int, pIn: Boolean, pYield: Boolean, pAwait: Boolean): LexicalBinding = {
     var candidates: Vector[() => LexicalBinding] = Vector()
-    candidates :+= { () => LexicalBinding0(BindingIdentifier(pYield, pAwait), opt(Initializer(pIn, pYield, pAwait)), List(pIn, pYield, pAwait)) }
-    candidates :+= { () => LexicalBinding1(BindingPattern(pYield, pAwait), Initializer(pIn, pYield, pAwait), List(pIn, pYield, pAwait)) }
+    val rhsDepth = counter.LexicalBinding(pIn, pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => LexicalBinding0(BindingIdentifier(depth - 1, pYield, pAwait), opt(depth - 1 >= counter.Initializer(pIn, pYield, pAwait).depth, Initializer(depth - 1, pIn, pYield, pAwait)), List(pIn, pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => LexicalBinding1(BindingPattern(depth - 1, pYield, pAwait), Initializer(depth - 1, pIn, pYield, pAwait), List(pIn, pYield, pAwait)) } }
     choose(candidates)
   }
-  def VariableStatement(pYield: Boolean, pAwait: Boolean): VariableStatement = {
+  def VariableStatement(depth: Int, pYield: Boolean, pAwait: Boolean): VariableStatement = {
     var candidates: Vector[() => VariableStatement] = Vector()
-    candidates :+= { () => VariableStatement0(VariableDeclarationList(true, pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.VariableStatement(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => VariableStatement0(VariableDeclarationList(depth - 1, true, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def VariableDeclarationList(pIn: Boolean, pYield: Boolean, pAwait: Boolean): VariableDeclarationList = {
+  def VariableDeclarationList(depth: Int, pIn: Boolean, pYield: Boolean, pAwait: Boolean): VariableDeclarationList = {
     var candidates: Vector[() => VariableDeclarationList] = Vector()
-    candidates :+= { () => VariableDeclarationList0(VariableDeclaration(pIn, pYield, pAwait), List(pIn, pYield, pAwait)) }
-    candidates :+= { () => VariableDeclarationList1(VariableDeclarationList(pIn, pYield, pAwait), VariableDeclaration(pIn, pYield, pAwait), List(pIn, pYield, pAwait)) }
+    val rhsDepth = counter.VariableDeclarationList(pIn, pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => VariableDeclarationList0(VariableDeclaration(depth, pIn, pYield, pAwait), List(pIn, pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => VariableDeclarationList1(VariableDeclarationList(depth - 1, pIn, pYield, pAwait), VariableDeclaration(depth - 1, pIn, pYield, pAwait), List(pIn, pYield, pAwait)) } }
     choose(candidates)
   }
-  def VariableDeclaration(pIn: Boolean, pYield: Boolean, pAwait: Boolean): VariableDeclaration = {
+  def VariableDeclaration(depth: Int, pIn: Boolean, pYield: Boolean, pAwait: Boolean): VariableDeclaration = {
     var candidates: Vector[() => VariableDeclaration] = Vector()
-    candidates :+= { () => VariableDeclaration0(BindingIdentifier(pYield, pAwait), opt(Initializer(pIn, pYield, pAwait)), List(pIn, pYield, pAwait)) }
-    candidates :+= { () => VariableDeclaration1(BindingPattern(pYield, pAwait), Initializer(pIn, pYield, pAwait), List(pIn, pYield, pAwait)) }
+    val rhsDepth = counter.VariableDeclaration(pIn, pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => VariableDeclaration0(BindingIdentifier(depth - 1, pYield, pAwait), opt(depth - 1 >= counter.Initializer(pIn, pYield, pAwait).depth, Initializer(depth - 1, pIn, pYield, pAwait)), List(pIn, pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => VariableDeclaration1(BindingPattern(depth - 1, pYield, pAwait), Initializer(depth - 1, pIn, pYield, pAwait), List(pIn, pYield, pAwait)) } }
     choose(candidates)
   }
-  def BindingPattern(pYield: Boolean, pAwait: Boolean): BindingPattern = {
+  def BindingPattern(depth: Int, pYield: Boolean, pAwait: Boolean): BindingPattern = {
     var candidates: Vector[() => BindingPattern] = Vector()
-    candidates :+= { () => BindingPattern0(ObjectBindingPattern(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => BindingPattern1(ArrayBindingPattern(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.BindingPattern(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => BindingPattern0(ObjectBindingPattern(depth, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => BindingPattern1(ArrayBindingPattern(depth, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def ObjectBindingPattern(pYield: Boolean, pAwait: Boolean): ObjectBindingPattern = {
+  def ObjectBindingPattern(depth: Int, pYield: Boolean, pAwait: Boolean): ObjectBindingPattern = {
     var candidates: Vector[() => ObjectBindingPattern] = Vector()
-    candidates :+= { () => ObjectBindingPattern0(List(pYield, pAwait)) }
-    candidates :+= { () => ObjectBindingPattern1(BindingRestProperty(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => ObjectBindingPattern2(BindingPropertyList(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => ObjectBindingPattern3(BindingPropertyList(pYield, pAwait), opt(BindingRestProperty(pYield, pAwait)), List(pYield, pAwait)) }
+    val rhsDepth = counter.ObjectBindingPattern(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ObjectBindingPattern0(List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => ObjectBindingPattern1(BindingRestProperty(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => ObjectBindingPattern2(BindingPropertyList(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(3).collect { case d if depth >= d => candidates :+= { () => ObjectBindingPattern3(BindingPropertyList(depth - 1, pYield, pAwait), opt(depth - 1 >= counter.BindingRestProperty(pYield, pAwait).depth, BindingRestProperty(depth - 1, pYield, pAwait)), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def ArrayBindingPattern(pYield: Boolean, pAwait: Boolean): ArrayBindingPattern = {
+  def ArrayBindingPattern(depth: Int, pYield: Boolean, pAwait: Boolean): ArrayBindingPattern = {
     var candidates: Vector[() => ArrayBindingPattern] = Vector()
-    candidates :+= { () => ArrayBindingPattern0(opt(Elision()), opt(BindingRestElement(pYield, pAwait)), List(pYield, pAwait)) }
-    candidates :+= { () => ArrayBindingPattern1(BindingElementList(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => ArrayBindingPattern2(BindingElementList(pYield, pAwait), opt(Elision()), opt(BindingRestElement(pYield, pAwait)), List(pYield, pAwait)) }
+    val rhsDepth = counter.ArrayBindingPattern(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ArrayBindingPattern0(opt(depth - 1 >= counter.Elision().depth, Elision(depth - 1)), opt(depth - 1 >= counter.BindingRestElement(pYield, pAwait).depth, BindingRestElement(depth - 1, pYield, pAwait)), List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => ArrayBindingPattern1(BindingElementList(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => ArrayBindingPattern2(BindingElementList(depth - 1, pYield, pAwait), opt(depth - 1 >= counter.Elision().depth, Elision(depth - 1)), opt(depth - 1 >= counter.BindingRestElement(pYield, pAwait).depth, BindingRestElement(depth - 1, pYield, pAwait)), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def BindingRestProperty(pYield: Boolean, pAwait: Boolean): BindingRestProperty = {
+  def BindingRestProperty(depth: Int, pYield: Boolean, pAwait: Boolean): BindingRestProperty = {
     var candidates: Vector[() => BindingRestProperty] = Vector()
-    candidates :+= { () => BindingRestProperty0(BindingIdentifier(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.BindingRestProperty(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => BindingRestProperty0(BindingIdentifier(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def BindingPropertyList(pYield: Boolean, pAwait: Boolean): BindingPropertyList = {
+  def BindingPropertyList(depth: Int, pYield: Boolean, pAwait: Boolean): BindingPropertyList = {
     var candidates: Vector[() => BindingPropertyList] = Vector()
-    candidates :+= { () => BindingPropertyList0(BindingProperty(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => BindingPropertyList1(BindingPropertyList(pYield, pAwait), BindingProperty(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.BindingPropertyList(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => BindingPropertyList0(BindingProperty(depth, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => BindingPropertyList1(BindingPropertyList(depth - 1, pYield, pAwait), BindingProperty(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def BindingElementList(pYield: Boolean, pAwait: Boolean): BindingElementList = {
+  def BindingElementList(depth: Int, pYield: Boolean, pAwait: Boolean): BindingElementList = {
     var candidates: Vector[() => BindingElementList] = Vector()
-    candidates :+= { () => BindingElementList0(BindingElisionElement(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => BindingElementList1(BindingElementList(pYield, pAwait), BindingElisionElement(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.BindingElementList(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => BindingElementList0(BindingElisionElement(depth, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => BindingElementList1(BindingElementList(depth - 1, pYield, pAwait), BindingElisionElement(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def BindingElisionElement(pYield: Boolean, pAwait: Boolean): BindingElisionElement = {
+  def BindingElisionElement(depth: Int, pYield: Boolean, pAwait: Boolean): BindingElisionElement = {
     var candidates: Vector[() => BindingElisionElement] = Vector()
-    candidates :+= { () => BindingElisionElement0(opt(Elision()), BindingElement(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.BindingElisionElement(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => BindingElisionElement0(opt(depth - 1 >= counter.Elision().depth, Elision(depth - 1)), BindingElement(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def BindingProperty(pYield: Boolean, pAwait: Boolean): BindingProperty = {
+  def BindingProperty(depth: Int, pYield: Boolean, pAwait: Boolean): BindingProperty = {
     var candidates: Vector[() => BindingProperty] = Vector()
-    candidates :+= { () => BindingProperty0(SingleNameBinding(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => BindingProperty1(PropertyName(pYield, pAwait), BindingElement(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.BindingProperty(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => BindingProperty0(SingleNameBinding(depth, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => BindingProperty1(PropertyName(depth - 1, pYield, pAwait), BindingElement(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def BindingElement(pYield: Boolean, pAwait: Boolean): BindingElement = {
+  def BindingElement(depth: Int, pYield: Boolean, pAwait: Boolean): BindingElement = {
     var candidates: Vector[() => BindingElement] = Vector()
-    candidates :+= { () => BindingElement0(SingleNameBinding(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => BindingElement1(BindingPattern(pYield, pAwait), opt(Initializer(true, pYield, pAwait)), List(pYield, pAwait)) }
+    val rhsDepth = counter.BindingElement(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => BindingElement0(SingleNameBinding(depth, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => BindingElement1(BindingPattern(depth - 1, pYield, pAwait), opt(depth - 1 >= counter.Initializer(true, pYield, pAwait).depth, Initializer(depth - 1, true, pYield, pAwait)), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def SingleNameBinding(pYield: Boolean, pAwait: Boolean): SingleNameBinding = {
+  def SingleNameBinding(depth: Int, pYield: Boolean, pAwait: Boolean): SingleNameBinding = {
     var candidates: Vector[() => SingleNameBinding] = Vector()
-    candidates :+= { () => SingleNameBinding0(BindingIdentifier(pYield, pAwait), opt(Initializer(true, pYield, pAwait)), List(pYield, pAwait)) }
+    val rhsDepth = counter.SingleNameBinding(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => SingleNameBinding0(BindingIdentifier(depth - 1, pYield, pAwait), opt(depth - 1 >= counter.Initializer(true, pYield, pAwait).depth, Initializer(depth - 1, true, pYield, pAwait)), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def BindingRestElement(pYield: Boolean, pAwait: Boolean): BindingRestElement = {
+  def BindingRestElement(depth: Int, pYield: Boolean, pAwait: Boolean): BindingRestElement = {
     var candidates: Vector[() => BindingRestElement] = Vector()
-    candidates :+= { () => BindingRestElement0(BindingIdentifier(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => BindingRestElement1(BindingPattern(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.BindingRestElement(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => BindingRestElement0(BindingIdentifier(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => BindingRestElement1(BindingPattern(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def EmptyStatement(): EmptyStatement = {
+  def EmptyStatement(depth: Int): EmptyStatement = {
     var candidates: Vector[() => EmptyStatement] = Vector()
-    candidates :+= { () => EmptyStatement0(List()) }
+    val rhsDepth = counter.EmptyStatement().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => EmptyStatement0(List()) } }
     choose(candidates)
   }
-  def ExpressionStatement(pYield: Boolean, pAwait: Boolean): ExpressionStatement = {
+  def ExpressionStatement(depth: Int, pYield: Boolean, pAwait: Boolean): ExpressionStatement = {
     var candidates: Vector[() => ExpressionStatement] = Vector()
-    candidates :+= { () => ExpressionStatement0(Expression(true, pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.ExpressionStatement(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ExpressionStatement0(Expression(depth - 1, true, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def IfStatement(pYield: Boolean, pAwait: Boolean, pReturn: Boolean): IfStatement = {
+  def IfStatement(depth: Int, pYield: Boolean, pAwait: Boolean, pReturn: Boolean): IfStatement = {
     var candidates: Vector[() => IfStatement] = Vector()
-    candidates :+= { () => IfStatement0(Expression(true, pYield, pAwait), Statement(pYield, pAwait, pReturn), Statement(pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) }
-    candidates :+= { () => IfStatement1(Expression(true, pYield, pAwait), Statement(pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) }
+    val rhsDepth = counter.IfStatement(pYield, pAwait, pReturn).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => IfStatement0(Expression(depth - 1, true, pYield, pAwait), Statement(depth - 1, pYield, pAwait, pReturn), Statement(depth - 1, pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => IfStatement1(Expression(depth - 1, true, pYield, pAwait), Statement(depth - 1, pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) } }
     choose(candidates)
   }
-  def IterationStatement(pYield: Boolean, pAwait: Boolean, pReturn: Boolean): IterationStatement = {
+  def IterationStatement(depth: Int, pYield: Boolean, pAwait: Boolean, pReturn: Boolean): IterationStatement = {
     var candidates: Vector[() => IterationStatement] = Vector()
-    candidates :+= { () => IterationStatement0(Statement(pYield, pAwait, pReturn), Expression(true, pYield, pAwait), List(pYield, pAwait, pReturn)) }
-    candidates :+= { () => IterationStatement1(Expression(true, pYield, pAwait), Statement(pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) }
-    candidates :+= { () => IterationStatement2(opt(Expression(false, pYield, pAwait)), opt(Expression(true, pYield, pAwait)), opt(Expression(true, pYield, pAwait)), Statement(pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) }
-    candidates :+= { () => IterationStatement3(VariableDeclarationList(false, pYield, pAwait), opt(Expression(true, pYield, pAwait)), opt(Expression(true, pYield, pAwait)), Statement(pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) }
-    candidates :+= { () => IterationStatement4(LexicalDeclaration(false, pYield, pAwait), opt(Expression(true, pYield, pAwait)), opt(Expression(true, pYield, pAwait)), Statement(pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) }
-    candidates :+= { () => IterationStatement5(LeftHandSideExpression(pYield, pAwait), Expression(true, pYield, pAwait), Statement(pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) }
-    candidates :+= { () => IterationStatement6(ForBinding(pYield, pAwait), Expression(true, pYield, pAwait), Statement(pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) }
-    candidates :+= { () => IterationStatement7(ForDeclaration(pYield, pAwait), Expression(true, pYield, pAwait), Statement(pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) }
-    candidates :+= { () => IterationStatement8(LeftHandSideExpression(pYield, pAwait), AssignmentExpression(true, pYield, pAwait), Statement(pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) }
-    candidates :+= { () => IterationStatement9(ForBinding(pYield, pAwait), AssignmentExpression(true, pYield, pAwait), Statement(pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) }
-    candidates :+= { () => IterationStatement10(ForDeclaration(pYield, pAwait), AssignmentExpression(true, pYield, pAwait), Statement(pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) }
-    if (pAwait) candidates :+= { () => IterationStatement11(LeftHandSideExpression(pYield, pAwait), AssignmentExpression(true, pYield, pAwait), Statement(pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) }
-    if (pAwait) candidates :+= { () => IterationStatement12(ForBinding(pYield, pAwait), AssignmentExpression(true, pYield, pAwait), Statement(pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) }
-    if (pAwait) candidates :+= { () => IterationStatement13(ForDeclaration(pYield, pAwait), AssignmentExpression(true, pYield, pAwait), Statement(pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) }
+    val rhsDepth = counter.IterationStatement(pYield, pAwait, pReturn).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => IterationStatement0(Statement(depth - 1, pYield, pAwait, pReturn), Expression(depth - 1, true, pYield, pAwait), List(pYield, pAwait, pReturn)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => IterationStatement1(Expression(depth - 1, true, pYield, pAwait), Statement(depth - 1, pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => IterationStatement2(opt(depth - 1 >= counter.Expression(false, pYield, pAwait).depth, Expression(depth - 1, false, pYield, pAwait)), opt(depth - 1 >= counter.Expression(true, pYield, pAwait).depth, Expression(depth - 1, true, pYield, pAwait)), opt(depth - 1 >= counter.Expression(true, pYield, pAwait).depth, Expression(depth - 1, true, pYield, pAwait)), Statement(depth - 1, pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) } }
+    rhsDepth(3).collect { case d if depth >= d => candidates :+= { () => IterationStatement3(VariableDeclarationList(depth - 1, false, pYield, pAwait), opt(depth - 1 >= counter.Expression(true, pYield, pAwait).depth, Expression(depth - 1, true, pYield, pAwait)), opt(depth - 1 >= counter.Expression(true, pYield, pAwait).depth, Expression(depth - 1, true, pYield, pAwait)), Statement(depth - 1, pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) } }
+    rhsDepth(4).collect { case d if depth >= d => candidates :+= { () => IterationStatement4(LexicalDeclaration(depth - 1, false, pYield, pAwait), opt(depth - 1 >= counter.Expression(true, pYield, pAwait).depth, Expression(depth - 1, true, pYield, pAwait)), opt(depth - 1 >= counter.Expression(true, pYield, pAwait).depth, Expression(depth - 1, true, pYield, pAwait)), Statement(depth - 1, pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) } }
+    rhsDepth(5).collect { case d if depth >= d => candidates :+= { () => IterationStatement5(LeftHandSideExpression(depth - 1, pYield, pAwait), Expression(depth - 1, true, pYield, pAwait), Statement(depth - 1, pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) } }
+    rhsDepth(6).collect { case d if depth >= d => candidates :+= { () => IterationStatement6(ForBinding(depth - 1, pYield, pAwait), Expression(depth - 1, true, pYield, pAwait), Statement(depth - 1, pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) } }
+    rhsDepth(7).collect { case d if depth >= d => candidates :+= { () => IterationStatement7(ForDeclaration(depth - 1, pYield, pAwait), Expression(depth - 1, true, pYield, pAwait), Statement(depth - 1, pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) } }
+    rhsDepth(8).collect { case d if depth >= d => candidates :+= { () => IterationStatement8(LeftHandSideExpression(depth - 1, pYield, pAwait), AssignmentExpression(depth - 1, true, pYield, pAwait), Statement(depth - 1, pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) } }
+    rhsDepth(9).collect { case d if depth >= d => candidates :+= { () => IterationStatement9(ForBinding(depth - 1, pYield, pAwait), AssignmentExpression(depth - 1, true, pYield, pAwait), Statement(depth - 1, pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) } }
+    rhsDepth(10).collect { case d if depth >= d => candidates :+= { () => IterationStatement10(ForDeclaration(depth - 1, pYield, pAwait), AssignmentExpression(depth - 1, true, pYield, pAwait), Statement(depth - 1, pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) } }
+    if (pAwait) rhsDepth(11).collect { case d if depth >= d => candidates :+= { () => IterationStatement11(LeftHandSideExpression(depth - 1, pYield, pAwait), AssignmentExpression(depth - 1, true, pYield, pAwait), Statement(depth - 1, pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) } }
+    if (pAwait) rhsDepth(12).collect { case d if depth >= d => candidates :+= { () => IterationStatement12(ForBinding(depth - 1, pYield, pAwait), AssignmentExpression(depth - 1, true, pYield, pAwait), Statement(depth - 1, pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) } }
+    if (pAwait) rhsDepth(13).collect { case d if depth >= d => candidates :+= { () => IterationStatement13(ForDeclaration(depth - 1, pYield, pAwait), AssignmentExpression(depth - 1, true, pYield, pAwait), Statement(depth - 1, pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) } }
     choose(candidates)
   }
-  def ForDeclaration(pYield: Boolean, pAwait: Boolean): ForDeclaration = {
+  def ForDeclaration(depth: Int, pYield: Boolean, pAwait: Boolean): ForDeclaration = {
     var candidates: Vector[() => ForDeclaration] = Vector()
-    candidates :+= { () => ForDeclaration0(LetOrConst(), ForBinding(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.ForDeclaration(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ForDeclaration0(LetOrConst(depth - 1), ForBinding(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def ForBinding(pYield: Boolean, pAwait: Boolean): ForBinding = {
+  def ForBinding(depth: Int, pYield: Boolean, pAwait: Boolean): ForBinding = {
     var candidates: Vector[() => ForBinding] = Vector()
-    candidates :+= { () => ForBinding0(BindingIdentifier(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => ForBinding1(BindingPattern(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.ForBinding(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ForBinding0(BindingIdentifier(depth, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => ForBinding1(BindingPattern(depth, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def ContinueStatement(pYield: Boolean, pAwait: Boolean): ContinueStatement = {
+  def ContinueStatement(depth: Int, pYield: Boolean, pAwait: Boolean): ContinueStatement = {
     var candidates: Vector[() => ContinueStatement] = Vector()
-    candidates :+= { () => ContinueStatement0(List(pYield, pAwait)) }
-    candidates :+= { () => ContinueStatement1(LabelIdentifier(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.ContinueStatement(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ContinueStatement0(List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => ContinueStatement1(LabelIdentifier(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def BreakStatement(pYield: Boolean, pAwait: Boolean): BreakStatement = {
+  def BreakStatement(depth: Int, pYield: Boolean, pAwait: Boolean): BreakStatement = {
     var candidates: Vector[() => BreakStatement] = Vector()
-    candidates :+= { () => BreakStatement0(List(pYield, pAwait)) }
-    candidates :+= { () => BreakStatement1(LabelIdentifier(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.BreakStatement(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => BreakStatement0(List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => BreakStatement1(LabelIdentifier(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def ReturnStatement(pYield: Boolean, pAwait: Boolean): ReturnStatement = {
+  def ReturnStatement(depth: Int, pYield: Boolean, pAwait: Boolean): ReturnStatement = {
     var candidates: Vector[() => ReturnStatement] = Vector()
-    candidates :+= { () => ReturnStatement0(List(pYield, pAwait)) }
-    candidates :+= { () => ReturnStatement1(Expression(true, pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.ReturnStatement(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ReturnStatement0(List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => ReturnStatement1(Expression(depth - 1, true, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def WithStatement(pYield: Boolean, pAwait: Boolean, pReturn: Boolean): WithStatement = {
+  def WithStatement(depth: Int, pYield: Boolean, pAwait: Boolean, pReturn: Boolean): WithStatement = {
     var candidates: Vector[() => WithStatement] = Vector()
-    candidates :+= { () => WithStatement0(Expression(true, pYield, pAwait), Statement(pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) }
+    val rhsDepth = counter.WithStatement(pYield, pAwait, pReturn).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => WithStatement0(Expression(depth - 1, true, pYield, pAwait), Statement(depth - 1, pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) } }
     choose(candidates)
   }
-  def SwitchStatement(pYield: Boolean, pAwait: Boolean, pReturn: Boolean): SwitchStatement = {
+  def SwitchStatement(depth: Int, pYield: Boolean, pAwait: Boolean, pReturn: Boolean): SwitchStatement = {
     var candidates: Vector[() => SwitchStatement] = Vector()
-    candidates :+= { () => SwitchStatement0(Expression(true, pYield, pAwait), CaseBlock(pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) }
+    val rhsDepth = counter.SwitchStatement(pYield, pAwait, pReturn).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => SwitchStatement0(Expression(depth - 1, true, pYield, pAwait), CaseBlock(depth - 1, pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) } }
     choose(candidates)
   }
-  def CaseBlock(pYield: Boolean, pAwait: Boolean, pReturn: Boolean): CaseBlock = {
+  def CaseBlock(depth: Int, pYield: Boolean, pAwait: Boolean, pReturn: Boolean): CaseBlock = {
     var candidates: Vector[() => CaseBlock] = Vector()
-    candidates :+= { () => CaseBlock0(opt(CaseClauses(pYield, pAwait, pReturn)), List(pYield, pAwait, pReturn)) }
-    candidates :+= { () => CaseBlock1(opt(CaseClauses(pYield, pAwait, pReturn)), DefaultClause(pYield, pAwait, pReturn), opt(CaseClauses(pYield, pAwait, pReturn)), List(pYield, pAwait, pReturn)) }
+    val rhsDepth = counter.CaseBlock(pYield, pAwait, pReturn).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => CaseBlock0(opt(depth - 1 >= counter.CaseClauses(pYield, pAwait, pReturn).depth, CaseClauses(depth - 1, pYield, pAwait, pReturn)), List(pYield, pAwait, pReturn)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => CaseBlock1(opt(depth - 1 >= counter.CaseClauses(pYield, pAwait, pReturn).depth, CaseClauses(depth - 1, pYield, pAwait, pReturn)), DefaultClause(depth - 1, pYield, pAwait, pReturn), opt(depth - 1 >= counter.CaseClauses(pYield, pAwait, pReturn).depth, CaseClauses(depth - 1, pYield, pAwait, pReturn)), List(pYield, pAwait, pReturn)) } }
     choose(candidates)
   }
-  def CaseClauses(pYield: Boolean, pAwait: Boolean, pReturn: Boolean): CaseClauses = {
+  def CaseClauses(depth: Int, pYield: Boolean, pAwait: Boolean, pReturn: Boolean): CaseClauses = {
     var candidates: Vector[() => CaseClauses] = Vector()
-    candidates :+= { () => CaseClauses0(CaseClause(pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) }
-    candidates :+= { () => CaseClauses1(CaseClauses(pYield, pAwait, pReturn), CaseClause(pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) }
+    val rhsDepth = counter.CaseClauses(pYield, pAwait, pReturn).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => CaseClauses0(CaseClause(depth, pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => CaseClauses1(CaseClauses(depth - 1, pYield, pAwait, pReturn), CaseClause(depth - 1, pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) } }
     choose(candidates)
   }
-  def CaseClause(pYield: Boolean, pAwait: Boolean, pReturn: Boolean): CaseClause = {
+  def CaseClause(depth: Int, pYield: Boolean, pAwait: Boolean, pReturn: Boolean): CaseClause = {
     var candidates: Vector[() => CaseClause] = Vector()
-    candidates :+= { () => CaseClause0(Expression(true, pYield, pAwait), opt(StatementList(pYield, pAwait, pReturn)), List(pYield, pAwait, pReturn)) }
+    val rhsDepth = counter.CaseClause(pYield, pAwait, pReturn).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => CaseClause0(Expression(depth - 1, true, pYield, pAwait), opt(depth - 1 >= counter.StatementList(pYield, pAwait, pReturn).depth, StatementList(depth - 1, pYield, pAwait, pReturn)), List(pYield, pAwait, pReturn)) } }
     choose(candidates)
   }
-  def DefaultClause(pYield: Boolean, pAwait: Boolean, pReturn: Boolean): DefaultClause = {
+  def DefaultClause(depth: Int, pYield: Boolean, pAwait: Boolean, pReturn: Boolean): DefaultClause = {
     var candidates: Vector[() => DefaultClause] = Vector()
-    candidates :+= { () => DefaultClause0(opt(StatementList(pYield, pAwait, pReturn)), List(pYield, pAwait, pReturn)) }
+    val rhsDepth = counter.DefaultClause(pYield, pAwait, pReturn).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => DefaultClause0(opt(depth - 1 >= counter.StatementList(pYield, pAwait, pReturn).depth, StatementList(depth - 1, pYield, pAwait, pReturn)), List(pYield, pAwait, pReturn)) } }
     choose(candidates)
   }
-  def LabelledStatement(pYield: Boolean, pAwait: Boolean, pReturn: Boolean): LabelledStatement = {
+  def LabelledStatement(depth: Int, pYield: Boolean, pAwait: Boolean, pReturn: Boolean): LabelledStatement = {
     var candidates: Vector[() => LabelledStatement] = Vector()
-    candidates :+= { () => LabelledStatement0(LabelIdentifier(pYield, pAwait), LabelledItem(pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) }
+    val rhsDepth = counter.LabelledStatement(pYield, pAwait, pReturn).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => LabelledStatement0(LabelIdentifier(depth - 1, pYield, pAwait), LabelledItem(depth - 1, pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) } }
     choose(candidates)
   }
-  def LabelledItem(pYield: Boolean, pAwait: Boolean, pReturn: Boolean): LabelledItem = {
+  def LabelledItem(depth: Int, pYield: Boolean, pAwait: Boolean, pReturn: Boolean): LabelledItem = {
     var candidates: Vector[() => LabelledItem] = Vector()
-    candidates :+= { () => LabelledItem0(Statement(pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) }
-    candidates :+= { () => LabelledItem1(FunctionDeclaration(pYield, pAwait, false), List(pYield, pAwait, pReturn)) }
+    val rhsDepth = counter.LabelledItem(pYield, pAwait, pReturn).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => LabelledItem0(Statement(depth, pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => LabelledItem1(FunctionDeclaration(depth, pYield, pAwait, false), List(pYield, pAwait, pReturn)) } }
     choose(candidates)
   }
-  def ThrowStatement(pYield: Boolean, pAwait: Boolean): ThrowStatement = {
+  def ThrowStatement(depth: Int, pYield: Boolean, pAwait: Boolean): ThrowStatement = {
     var candidates: Vector[() => ThrowStatement] = Vector()
-    candidates :+= { () => ThrowStatement0(Expression(true, pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.ThrowStatement(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ThrowStatement0(Expression(depth - 1, true, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def TryStatement(pYield: Boolean, pAwait: Boolean, pReturn: Boolean): TryStatement = {
+  def TryStatement(depth: Int, pYield: Boolean, pAwait: Boolean, pReturn: Boolean): TryStatement = {
     var candidates: Vector[() => TryStatement] = Vector()
-    candidates :+= { () => TryStatement0(Block(pYield, pAwait, pReturn), Catch(pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) }
-    candidates :+= { () => TryStatement1(Block(pYield, pAwait, pReturn), Finally(pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) }
-    candidates :+= { () => TryStatement2(Block(pYield, pAwait, pReturn), Catch(pYield, pAwait, pReturn), Finally(pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) }
+    val rhsDepth = counter.TryStatement(pYield, pAwait, pReturn).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => TryStatement0(Block(depth - 1, pYield, pAwait, pReturn), Catch(depth - 1, pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => TryStatement1(Block(depth - 1, pYield, pAwait, pReturn), Finally(depth - 1, pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => TryStatement2(Block(depth - 1, pYield, pAwait, pReturn), Catch(depth - 1, pYield, pAwait, pReturn), Finally(depth - 1, pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) } }
     choose(candidates)
   }
-  def Catch(pYield: Boolean, pAwait: Boolean, pReturn: Boolean): Catch = {
+  def Catch(depth: Int, pYield: Boolean, pAwait: Boolean, pReturn: Boolean): Catch = {
     var candidates: Vector[() => Catch] = Vector()
-    candidates :+= { () => Catch0(CatchParameter(pYield, pAwait), Block(pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) }
-    candidates :+= { () => Catch1(Block(pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) }
+    val rhsDepth = counter.Catch(pYield, pAwait, pReturn).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => Catch0(CatchParameter(depth - 1, pYield, pAwait), Block(depth - 1, pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => Catch1(Block(depth - 1, pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) } }
     choose(candidates)
   }
-  def Finally(pYield: Boolean, pAwait: Boolean, pReturn: Boolean): Finally = {
+  def Finally(depth: Int, pYield: Boolean, pAwait: Boolean, pReturn: Boolean): Finally = {
     var candidates: Vector[() => Finally] = Vector()
-    candidates :+= { () => Finally0(Block(pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) }
+    val rhsDepth = counter.Finally(pYield, pAwait, pReturn).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => Finally0(Block(depth - 1, pYield, pAwait, pReturn), List(pYield, pAwait, pReturn)) } }
     choose(candidates)
   }
-  def CatchParameter(pYield: Boolean, pAwait: Boolean): CatchParameter = {
+  def CatchParameter(depth: Int, pYield: Boolean, pAwait: Boolean): CatchParameter = {
     var candidates: Vector[() => CatchParameter] = Vector()
-    candidates :+= { () => CatchParameter0(BindingIdentifier(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => CatchParameter1(BindingPattern(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.CatchParameter(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => CatchParameter0(BindingIdentifier(depth, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => CatchParameter1(BindingPattern(depth, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def DebuggerStatement(): DebuggerStatement = {
+  def DebuggerStatement(depth: Int): DebuggerStatement = {
     var candidates: Vector[() => DebuggerStatement] = Vector()
-    candidates :+= { () => DebuggerStatement0(List()) }
+    val rhsDepth = counter.DebuggerStatement().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => DebuggerStatement0(List()) } }
     choose(candidates)
   }
-  def FunctionDeclaration(pYield: Boolean, pAwait: Boolean, pDefault: Boolean): FunctionDeclaration = {
+  def FunctionDeclaration(depth: Int, pYield: Boolean, pAwait: Boolean, pDefault: Boolean): FunctionDeclaration = {
     var candidates: Vector[() => FunctionDeclaration] = Vector()
-    candidates :+= { () => FunctionDeclaration0(BindingIdentifier(pYield, pAwait), FormalParameters(false, false), FunctionBody(false, false), List(pYield, pAwait, pDefault)) }
-    if (pDefault) candidates :+= { () => FunctionDeclaration1(FormalParameters(false, false), FunctionBody(false, false), List(pYield, pAwait, pDefault)) }
+    val rhsDepth = counter.FunctionDeclaration(pYield, pAwait, pDefault).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => FunctionDeclaration0(BindingIdentifier(depth - 1, pYield, pAwait), FormalParameters(depth - 1, false, false), FunctionBody(depth - 1, false, false), List(pYield, pAwait, pDefault)) } }
+    if (pDefault) rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => FunctionDeclaration1(FormalParameters(depth - 1, false, false), FunctionBody(depth - 1, false, false), List(pYield, pAwait, pDefault)) } }
     choose(candidates)
   }
-  def FunctionExpression(): FunctionExpression = {
+  def FunctionExpression(depth: Int): FunctionExpression = {
     var candidates: Vector[() => FunctionExpression] = Vector()
-    candidates :+= { () => FunctionExpression0(opt(BindingIdentifier(false, false)), FormalParameters(false, false), FunctionBody(false, false), List()) }
+    val rhsDepth = counter.FunctionExpression().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => FunctionExpression0(opt(depth - 1 >= counter.BindingIdentifier(false, false).depth, BindingIdentifier(depth - 1, false, false)), FormalParameters(depth - 1, false, false), FunctionBody(depth - 1, false, false), List()) } }
     choose(candidates)
   }
-  def UniqueFormalParameters(pYield: Boolean, pAwait: Boolean): UniqueFormalParameters = {
+  def UniqueFormalParameters(depth: Int, pYield: Boolean, pAwait: Boolean): UniqueFormalParameters = {
     var candidates: Vector[() => UniqueFormalParameters] = Vector()
-    candidates :+= { () => UniqueFormalParameters0(FormalParameters(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.UniqueFormalParameters(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => UniqueFormalParameters0(FormalParameters(depth, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def FormalParameters(pYield: Boolean, pAwait: Boolean): FormalParameters = {
+  def FormalParameters(depth: Int, pYield: Boolean, pAwait: Boolean): FormalParameters = {
     var candidates: Vector[() => FormalParameters] = Vector()
-    candidates :+= { () => FormalParameters0(List(pYield, pAwait)) }
-    candidates :+= { () => FormalParameters1(FunctionRestParameter(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => FormalParameters2(FormalParameterList(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => FormalParameters3(FormalParameterList(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => FormalParameters4(FormalParameterList(pYield, pAwait), FunctionRestParameter(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.FormalParameters(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => FormalParameters0(List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => FormalParameters1(FunctionRestParameter(depth, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => FormalParameters2(FormalParameterList(depth, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(3).collect { case d if depth >= d => candidates :+= { () => FormalParameters3(FormalParameterList(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(4).collect { case d if depth >= d => candidates :+= { () => FormalParameters4(FormalParameterList(depth - 1, pYield, pAwait), FunctionRestParameter(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def FormalParameterList(pYield: Boolean, pAwait: Boolean): FormalParameterList = {
+  def FormalParameterList(depth: Int, pYield: Boolean, pAwait: Boolean): FormalParameterList = {
     var candidates: Vector[() => FormalParameterList] = Vector()
-    candidates :+= { () => FormalParameterList0(FormalParameter(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => FormalParameterList1(FormalParameterList(pYield, pAwait), FormalParameter(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.FormalParameterList(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => FormalParameterList0(FormalParameter(depth, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => FormalParameterList1(FormalParameterList(depth - 1, pYield, pAwait), FormalParameter(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def FunctionRestParameter(pYield: Boolean, pAwait: Boolean): FunctionRestParameter = {
+  def FunctionRestParameter(depth: Int, pYield: Boolean, pAwait: Boolean): FunctionRestParameter = {
     var candidates: Vector[() => FunctionRestParameter] = Vector()
-    candidates :+= { () => FunctionRestParameter0(BindingRestElement(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.FunctionRestParameter(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => FunctionRestParameter0(BindingRestElement(depth, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def FormalParameter(pYield: Boolean, pAwait: Boolean): FormalParameter = {
+  def FormalParameter(depth: Int, pYield: Boolean, pAwait: Boolean): FormalParameter = {
     var candidates: Vector[() => FormalParameter] = Vector()
-    candidates :+= { () => FormalParameter0(BindingElement(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.FormalParameter(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => FormalParameter0(BindingElement(depth, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def FunctionBody(pYield: Boolean, pAwait: Boolean): FunctionBody = {
+  def FunctionBody(depth: Int, pYield: Boolean, pAwait: Boolean): FunctionBody = {
     var candidates: Vector[() => FunctionBody] = Vector()
-    candidates :+= { () => FunctionBody0(FunctionStatementList(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.FunctionBody(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => FunctionBody0(FunctionStatementList(depth, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def FunctionStatementList(pYield: Boolean, pAwait: Boolean): FunctionStatementList = {
+  def FunctionStatementList(depth: Int, pYield: Boolean, pAwait: Boolean): FunctionStatementList = {
     var candidates: Vector[() => FunctionStatementList] = Vector()
-    candidates :+= { () => FunctionStatementList0(opt(StatementList(pYield, pAwait, true)), List(pYield, pAwait)) }
+    val rhsDepth = counter.FunctionStatementList(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => FunctionStatementList0(opt(depth >= counter.StatementList(pYield, pAwait, true).depth, StatementList(depth, pYield, pAwait, true)), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def ArrowFunction(pIn: Boolean, pYield: Boolean, pAwait: Boolean): ArrowFunction = {
+  def ArrowFunction(depth: Int, pIn: Boolean, pYield: Boolean, pAwait: Boolean): ArrowFunction = {
     var candidates: Vector[() => ArrowFunction] = Vector()
-    candidates :+= { () => ArrowFunction0(ArrowParameters(pYield, pAwait), ConciseBody(pIn), List(pIn, pYield, pAwait)) }
+    val rhsDepth = counter.ArrowFunction(pIn, pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ArrowFunction0(ArrowParameters(depth - 1, pYield, pAwait), ConciseBody(depth - 1, pIn), List(pIn, pYield, pAwait)) } }
     choose(candidates)
   }
-  def ArrowParameters(pYield: Boolean, pAwait: Boolean): ArrowParameters = {
+  def ArrowParameters(depth: Int, pYield: Boolean, pAwait: Boolean): ArrowParameters = {
     var candidates: Vector[() => ArrowParameters] = Vector()
-    candidates :+= { () => ArrowParameters0(BindingIdentifier(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => ArrowParameters1(CoverParenthesizedExpressionAndArrowParameterList(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.ArrowParameters(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ArrowParameters0(BindingIdentifier(depth, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => ArrowParameters1(CoverParenthesizedExpressionAndArrowParameterList(depth, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def ConciseBody(pIn: Boolean): ConciseBody = {
+  def ConciseBody(depth: Int, pIn: Boolean): ConciseBody = {
     var candidates: Vector[() => ConciseBody] = Vector()
-    candidates :+= { () => ConciseBody0(ExpressionBody(pIn, false), List(pIn)) }
-    candidates :+= { () => ConciseBody1(FunctionBody(false, false), List(pIn)) }
+    val rhsDepth = counter.ConciseBody(pIn).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ConciseBody0(ExpressionBody(depth - 1, pIn, false), List(pIn)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => ConciseBody1(FunctionBody(depth - 1, false, false), List(pIn)) } }
     choose(candidates)
   }
-  def ExpressionBody(pIn: Boolean, pAwait: Boolean): ExpressionBody = {
+  def ExpressionBody(depth: Int, pIn: Boolean, pAwait: Boolean): ExpressionBody = {
     var candidates: Vector[() => ExpressionBody] = Vector()
-    candidates :+= { () => ExpressionBody0(AssignmentExpression(pIn, false, pAwait), List(pIn, pAwait)) }
+    val rhsDepth = counter.ExpressionBody(pIn, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ExpressionBody0(AssignmentExpression(depth, pIn, false, pAwait), List(pIn, pAwait)) } }
     choose(candidates)
   }
-  def ArrowFormalParameters(pYield: Boolean, pAwait: Boolean): ArrowFormalParameters = {
+  def ArrowFormalParameters(depth: Int, pYield: Boolean, pAwait: Boolean): ArrowFormalParameters = {
     var candidates: Vector[() => ArrowFormalParameters] = Vector()
-    candidates :+= { () => ArrowFormalParameters0(UniqueFormalParameters(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.ArrowFormalParameters(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ArrowFormalParameters0(UniqueFormalParameters(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def AsyncArrowFunction(pIn: Boolean, pYield: Boolean, pAwait: Boolean): AsyncArrowFunction = {
+  def AsyncArrowFunction(depth: Int, pIn: Boolean, pYield: Boolean, pAwait: Boolean): AsyncArrowFunction = {
     var candidates: Vector[() => AsyncArrowFunction] = Vector()
-    candidates :+= { () => AsyncArrowFunction0(AsyncArrowBindingIdentifier(pYield), AsyncConciseBody(pIn), List(pIn, pYield, pAwait)) }
-    candidates :+= { () => AsyncArrowFunction1(CoverCallExpressionAndAsyncArrowHead(), AsyncConciseBody(pIn), List(pIn, pYield, pAwait)) }
+    val rhsDepth = counter.AsyncArrowFunction(pIn, pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => AsyncArrowFunction0(AsyncArrowBindingIdentifier(depth - 1, pYield), AsyncConciseBody(depth - 1, pIn), List(pIn, pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => AsyncArrowFunction1(CoverCallExpressionAndAsyncArrowHead(depth - 1), AsyncConciseBody(depth - 1, pIn), List(pIn, pYield, pAwait)) } }
     choose(candidates)
   }
-  def AsyncConciseBody(pIn: Boolean): AsyncConciseBody = {
+  def AsyncConciseBody(depth: Int, pIn: Boolean): AsyncConciseBody = {
     var candidates: Vector[() => AsyncConciseBody] = Vector()
-    candidates :+= { () => AsyncConciseBody0(ExpressionBody(pIn, true), List(pIn)) }
-    candidates :+= { () => AsyncConciseBody1(AsyncFunctionBody(), List(pIn)) }
+    val rhsDepth = counter.AsyncConciseBody(pIn).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => AsyncConciseBody0(ExpressionBody(depth - 1, pIn, true), List(pIn)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => AsyncConciseBody1(AsyncFunctionBody(depth - 1), List(pIn)) } }
     choose(candidates)
   }
-  def AsyncArrowBindingIdentifier(pYield: Boolean): AsyncArrowBindingIdentifier = {
+  def AsyncArrowBindingIdentifier(depth: Int, pYield: Boolean): AsyncArrowBindingIdentifier = {
     var candidates: Vector[() => AsyncArrowBindingIdentifier] = Vector()
-    candidates :+= { () => AsyncArrowBindingIdentifier0(BindingIdentifier(pYield, true), List(pYield)) }
+    val rhsDepth = counter.AsyncArrowBindingIdentifier(pYield).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => AsyncArrowBindingIdentifier0(BindingIdentifier(depth, pYield, true), List(pYield)) } }
     choose(candidates)
   }
-  def CoverCallExpressionAndAsyncArrowHead(): CoverCallExpressionAndAsyncArrowHead = {
+  def CoverCallExpressionAndAsyncArrowHead(depth: Int): CoverCallExpressionAndAsyncArrowHead = {
     var candidates: Vector[() => CoverCallExpressionAndAsyncArrowHead] = Vector()
-    candidates :+= { () => CoverCallExpressionAndAsyncArrowHead0(MemberExpression(false, false), Arguments(false, false), List()) }
+    val rhsDepth = counter.CoverCallExpressionAndAsyncArrowHead().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => CoverCallExpressionAndAsyncArrowHead0(MemberExpression(depth - 1, false, false), Arguments(depth - 1, false, false), List()) } }
     choose(candidates)
   }
-  def AsyncArrowHead(): AsyncArrowHead = {
+  def AsyncArrowHead(depth: Int): AsyncArrowHead = {
     var candidates: Vector[() => AsyncArrowHead] = Vector()
-    candidates :+= { () => AsyncArrowHead0(ArrowFormalParameters(false, true), List()) }
+    val rhsDepth = counter.AsyncArrowHead().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => AsyncArrowHead0(ArrowFormalParameters(depth - 1, false, true), List()) } }
     choose(candidates)
   }
-  def MethodDefinition(pYield: Boolean, pAwait: Boolean): MethodDefinition = {
+  def MethodDefinition(depth: Int, pYield: Boolean, pAwait: Boolean): MethodDefinition = {
     var candidates: Vector[() => MethodDefinition] = Vector()
-    candidates :+= { () => MethodDefinition0(PropertyName(pYield, pAwait), UniqueFormalParameters(false, false), FunctionBody(false, false), List(pYield, pAwait)) }
-    candidates :+= { () => MethodDefinition1(GeneratorMethod(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => MethodDefinition2(AsyncMethod(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => MethodDefinition3(AsyncGeneratorMethod(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => MethodDefinition4(PropertyName(pYield, pAwait), FunctionBody(false, false), List(pYield, pAwait)) }
-    candidates :+= { () => MethodDefinition5(PropertyName(pYield, pAwait), PropertySetParameterList(), FunctionBody(false, false), List(pYield, pAwait)) }
+    val rhsDepth = counter.MethodDefinition(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => MethodDefinition0(PropertyName(depth - 1, pYield, pAwait), UniqueFormalParameters(depth - 1, false, false), FunctionBody(depth - 1, false, false), List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => MethodDefinition1(GeneratorMethod(depth, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => MethodDefinition2(AsyncMethod(depth, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(3).collect { case d if depth >= d => candidates :+= { () => MethodDefinition3(AsyncGeneratorMethod(depth, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(4).collect { case d if depth >= d => candidates :+= { () => MethodDefinition4(PropertyName(depth - 1, pYield, pAwait), FunctionBody(depth - 1, false, false), List(pYield, pAwait)) } }
+    rhsDepth(5).collect { case d if depth >= d => candidates :+= { () => MethodDefinition5(PropertyName(depth - 1, pYield, pAwait), PropertySetParameterList(depth - 1), FunctionBody(depth - 1, false, false), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def PropertySetParameterList(): PropertySetParameterList = {
+  def PropertySetParameterList(depth: Int): PropertySetParameterList = {
     var candidates: Vector[() => PropertySetParameterList] = Vector()
-    candidates :+= { () => PropertySetParameterList0(FormalParameter(false, false), List()) }
+    val rhsDepth = counter.PropertySetParameterList().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => PropertySetParameterList0(FormalParameter(depth, false, false), List()) } }
     choose(candidates)
   }
-  def GeneratorMethod(pYield: Boolean, pAwait: Boolean): GeneratorMethod = {
+  def GeneratorMethod(depth: Int, pYield: Boolean, pAwait: Boolean): GeneratorMethod = {
     var candidates: Vector[() => GeneratorMethod] = Vector()
-    candidates :+= { () => GeneratorMethod0(PropertyName(pYield, pAwait), UniqueFormalParameters(true, false), GeneratorBody(), List(pYield, pAwait)) }
+    val rhsDepth = counter.GeneratorMethod(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => GeneratorMethod0(PropertyName(depth - 1, pYield, pAwait), UniqueFormalParameters(depth - 1, true, false), GeneratorBody(depth - 1), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def GeneratorDeclaration(pYield: Boolean, pAwait: Boolean, pDefault: Boolean): GeneratorDeclaration = {
+  def GeneratorDeclaration(depth: Int, pYield: Boolean, pAwait: Boolean, pDefault: Boolean): GeneratorDeclaration = {
     var candidates: Vector[() => GeneratorDeclaration] = Vector()
-    candidates :+= { () => GeneratorDeclaration0(BindingIdentifier(pYield, pAwait), FormalParameters(true, false), GeneratorBody(), List(pYield, pAwait, pDefault)) }
-    if (pDefault) candidates :+= { () => GeneratorDeclaration1(FormalParameters(true, false), GeneratorBody(), List(pYield, pAwait, pDefault)) }
+    val rhsDepth = counter.GeneratorDeclaration(pYield, pAwait, pDefault).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => GeneratorDeclaration0(BindingIdentifier(depth - 1, pYield, pAwait), FormalParameters(depth - 1, true, false), GeneratorBody(depth - 1), List(pYield, pAwait, pDefault)) } }
+    if (pDefault) rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => GeneratorDeclaration1(FormalParameters(depth - 1, true, false), GeneratorBody(depth - 1), List(pYield, pAwait, pDefault)) } }
     choose(candidates)
   }
-  def GeneratorExpression(): GeneratorExpression = {
+  def GeneratorExpression(depth: Int): GeneratorExpression = {
     var candidates: Vector[() => GeneratorExpression] = Vector()
-    candidates :+= { () => GeneratorExpression0(opt(BindingIdentifier(true, false)), FormalParameters(true, false), GeneratorBody(), List()) }
+    val rhsDepth = counter.GeneratorExpression().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => GeneratorExpression0(opt(depth - 1 >= counter.BindingIdentifier(true, false).depth, BindingIdentifier(depth - 1, true, false)), FormalParameters(depth - 1, true, false), GeneratorBody(depth - 1), List()) } }
     choose(candidates)
   }
-  def GeneratorBody(): GeneratorBody = {
+  def GeneratorBody(depth: Int): GeneratorBody = {
     var candidates: Vector[() => GeneratorBody] = Vector()
-    candidates :+= { () => GeneratorBody0(FunctionBody(true, false), List()) }
+    val rhsDepth = counter.GeneratorBody().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => GeneratorBody0(FunctionBody(depth, true, false), List()) } }
     choose(candidates)
   }
-  def YieldExpression(pIn: Boolean, pAwait: Boolean): YieldExpression = {
+  def YieldExpression(depth: Int, pIn: Boolean, pAwait: Boolean): YieldExpression = {
     var candidates: Vector[() => YieldExpression] = Vector()
-    candidates :+= { () => YieldExpression0(List(pIn, pAwait)) }
-    candidates :+= { () => YieldExpression1(AssignmentExpression(pIn, true, pAwait), List(pIn, pAwait)) }
-    candidates :+= { () => YieldExpression2(AssignmentExpression(pIn, true, pAwait), List(pIn, pAwait)) }
+    val rhsDepth = counter.YieldExpression(pIn, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => YieldExpression0(List(pIn, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => YieldExpression1(AssignmentExpression(depth - 1, pIn, true, pAwait), List(pIn, pAwait)) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => YieldExpression2(AssignmentExpression(depth - 1, pIn, true, pAwait), List(pIn, pAwait)) } }
     choose(candidates)
   }
-  def AsyncGeneratorMethod(pYield: Boolean, pAwait: Boolean): AsyncGeneratorMethod = {
+  def AsyncGeneratorMethod(depth: Int, pYield: Boolean, pAwait: Boolean): AsyncGeneratorMethod = {
     var candidates: Vector[() => AsyncGeneratorMethod] = Vector()
-    candidates :+= { () => AsyncGeneratorMethod0(PropertyName(pYield, pAwait), UniqueFormalParameters(true, true), AsyncGeneratorBody(), List(pYield, pAwait)) }
+    val rhsDepth = counter.AsyncGeneratorMethod(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => AsyncGeneratorMethod0(PropertyName(depth - 1, pYield, pAwait), UniqueFormalParameters(depth - 1, true, true), AsyncGeneratorBody(depth - 1), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def AsyncGeneratorDeclaration(pYield: Boolean, pAwait: Boolean, pDefault: Boolean): AsyncGeneratorDeclaration = {
+  def AsyncGeneratorDeclaration(depth: Int, pYield: Boolean, pAwait: Boolean, pDefault: Boolean): AsyncGeneratorDeclaration = {
     var candidates: Vector[() => AsyncGeneratorDeclaration] = Vector()
-    candidates :+= { () => AsyncGeneratorDeclaration0(BindingIdentifier(pYield, pAwait), FormalParameters(true, true), AsyncGeneratorBody(), List(pYield, pAwait, pDefault)) }
-    if (pDefault) candidates :+= { () => AsyncGeneratorDeclaration1(FormalParameters(true, true), AsyncGeneratorBody(), List(pYield, pAwait, pDefault)) }
+    val rhsDepth = counter.AsyncGeneratorDeclaration(pYield, pAwait, pDefault).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => AsyncGeneratorDeclaration0(BindingIdentifier(depth - 1, pYield, pAwait), FormalParameters(depth - 1, true, true), AsyncGeneratorBody(depth - 1), List(pYield, pAwait, pDefault)) } }
+    if (pDefault) rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => AsyncGeneratorDeclaration1(FormalParameters(depth - 1, true, true), AsyncGeneratorBody(depth - 1), List(pYield, pAwait, pDefault)) } }
     choose(candidates)
   }
-  def AsyncGeneratorExpression(): AsyncGeneratorExpression = {
+  def AsyncGeneratorExpression(depth: Int): AsyncGeneratorExpression = {
     var candidates: Vector[() => AsyncGeneratorExpression] = Vector()
-    candidates :+= { () => AsyncGeneratorExpression0(opt(BindingIdentifier(true, true)), FormalParameters(true, true), AsyncGeneratorBody(), List()) }
+    val rhsDepth = counter.AsyncGeneratorExpression().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => AsyncGeneratorExpression0(opt(depth - 1 >= counter.BindingIdentifier(true, true).depth, BindingIdentifier(depth - 1, true, true)), FormalParameters(depth - 1, true, true), AsyncGeneratorBody(depth - 1), List()) } }
     choose(candidates)
   }
-  def AsyncGeneratorBody(): AsyncGeneratorBody = {
+  def AsyncGeneratorBody(depth: Int): AsyncGeneratorBody = {
     var candidates: Vector[() => AsyncGeneratorBody] = Vector()
-    candidates :+= { () => AsyncGeneratorBody0(FunctionBody(true, true), List()) }
+    val rhsDepth = counter.AsyncGeneratorBody().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => AsyncGeneratorBody0(FunctionBody(depth, true, true), List()) } }
     choose(candidates)
   }
-  def AsyncFunctionDeclaration(pYield: Boolean, pAwait: Boolean, pDefault: Boolean): AsyncFunctionDeclaration = {
+  def AsyncFunctionDeclaration(depth: Int, pYield: Boolean, pAwait: Boolean, pDefault: Boolean): AsyncFunctionDeclaration = {
     var candidates: Vector[() => AsyncFunctionDeclaration] = Vector()
-    candidates :+= { () => AsyncFunctionDeclaration0(BindingIdentifier(pYield, pAwait), FormalParameters(false, true), AsyncFunctionBody(), List(pYield, pAwait, pDefault)) }
-    if (pDefault) candidates :+= { () => AsyncFunctionDeclaration1(FormalParameters(false, true), AsyncFunctionBody(), List(pYield, pAwait, pDefault)) }
+    val rhsDepth = counter.AsyncFunctionDeclaration(pYield, pAwait, pDefault).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => AsyncFunctionDeclaration0(BindingIdentifier(depth - 1, pYield, pAwait), FormalParameters(depth - 1, false, true), AsyncFunctionBody(depth - 1), List(pYield, pAwait, pDefault)) } }
+    if (pDefault) rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => AsyncFunctionDeclaration1(FormalParameters(depth - 1, false, true), AsyncFunctionBody(depth - 1), List(pYield, pAwait, pDefault)) } }
     choose(candidates)
   }
-  def AsyncFunctionExpression(): AsyncFunctionExpression = {
+  def AsyncFunctionExpression(depth: Int): AsyncFunctionExpression = {
     var candidates: Vector[() => AsyncFunctionExpression] = Vector()
-    candidates :+= { () => AsyncFunctionExpression0(FormalParameters(false, true), AsyncFunctionBody(), List()) }
-    candidates :+= { () => AsyncFunctionExpression1(BindingIdentifier(false, true), FormalParameters(false, true), AsyncFunctionBody(), List()) }
+    val rhsDepth = counter.AsyncFunctionExpression().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => AsyncFunctionExpression0(FormalParameters(depth - 1, false, true), AsyncFunctionBody(depth - 1), List()) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => AsyncFunctionExpression1(BindingIdentifier(depth - 1, false, true), FormalParameters(depth - 1, false, true), AsyncFunctionBody(depth - 1), List()) } }
     choose(candidates)
   }
-  def AsyncMethod(pYield: Boolean, pAwait: Boolean): AsyncMethod = {
+  def AsyncMethod(depth: Int, pYield: Boolean, pAwait: Boolean): AsyncMethod = {
     var candidates: Vector[() => AsyncMethod] = Vector()
-    candidates :+= { () => AsyncMethod0(PropertyName(pYield, pAwait), UniqueFormalParameters(false, true), AsyncFunctionBody(), List(pYield, pAwait)) }
+    val rhsDepth = counter.AsyncMethod(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => AsyncMethod0(PropertyName(depth - 1, pYield, pAwait), UniqueFormalParameters(depth - 1, false, true), AsyncFunctionBody(depth - 1), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def AsyncFunctionBody(): AsyncFunctionBody = {
+  def AsyncFunctionBody(depth: Int): AsyncFunctionBody = {
     var candidates: Vector[() => AsyncFunctionBody] = Vector()
-    candidates :+= { () => AsyncFunctionBody0(FunctionBody(false, true), List()) }
+    val rhsDepth = counter.AsyncFunctionBody().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => AsyncFunctionBody0(FunctionBody(depth, false, true), List()) } }
     choose(candidates)
   }
-  def AwaitExpression(pYield: Boolean): AwaitExpression = {
+  def AwaitExpression(depth: Int, pYield: Boolean): AwaitExpression = {
     var candidates: Vector[() => AwaitExpression] = Vector()
-    candidates :+= { () => AwaitExpression0(UnaryExpression(pYield, true), List(pYield)) }
+    val rhsDepth = counter.AwaitExpression(pYield).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => AwaitExpression0(UnaryExpression(depth - 1, pYield, true), List(pYield)) } }
     choose(candidates)
   }
-  def ClassDeclaration(pYield: Boolean, pAwait: Boolean, pDefault: Boolean): ClassDeclaration = {
+  def ClassDeclaration(depth: Int, pYield: Boolean, pAwait: Boolean, pDefault: Boolean): ClassDeclaration = {
     var candidates: Vector[() => ClassDeclaration] = Vector()
-    candidates :+= { () => ClassDeclaration0(BindingIdentifier(pYield, pAwait), ClassTail(pYield, pAwait), List(pYield, pAwait, pDefault)) }
-    if (pDefault) candidates :+= { () => ClassDeclaration1(ClassTail(pYield, pAwait), List(pYield, pAwait, pDefault)) }
+    val rhsDepth = counter.ClassDeclaration(pYield, pAwait, pDefault).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ClassDeclaration0(BindingIdentifier(depth - 1, pYield, pAwait), ClassTail(depth - 1, pYield, pAwait), List(pYield, pAwait, pDefault)) } }
+    if (pDefault) rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => ClassDeclaration1(ClassTail(depth - 1, pYield, pAwait), List(pYield, pAwait, pDefault)) } }
     choose(candidates)
   }
-  def ClassExpression(pYield: Boolean, pAwait: Boolean): ClassExpression = {
+  def ClassExpression(depth: Int, pYield: Boolean, pAwait: Boolean): ClassExpression = {
     var candidates: Vector[() => ClassExpression] = Vector()
-    candidates :+= { () => ClassExpression0(opt(BindingIdentifier(pYield, pAwait)), ClassTail(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.ClassExpression(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ClassExpression0(opt(depth - 1 >= counter.BindingIdentifier(pYield, pAwait).depth, BindingIdentifier(depth - 1, pYield, pAwait)), ClassTail(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def ClassTail(pYield: Boolean, pAwait: Boolean): ClassTail = {
+  def ClassTail(depth: Int, pYield: Boolean, pAwait: Boolean): ClassTail = {
     var candidates: Vector[() => ClassTail] = Vector()
-    candidates :+= { () => ClassTail0(opt(ClassHeritage(pYield, pAwait)), opt(ClassBody(pYield, pAwait)), List(pYield, pAwait)) }
+    val rhsDepth = counter.ClassTail(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ClassTail0(opt(depth - 1 >= counter.ClassHeritage(pYield, pAwait).depth, ClassHeritage(depth - 1, pYield, pAwait)), opt(depth - 1 >= counter.ClassBody(pYield, pAwait).depth, ClassBody(depth - 1, pYield, pAwait)), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def ClassHeritage(pYield: Boolean, pAwait: Boolean): ClassHeritage = {
+  def ClassHeritage(depth: Int, pYield: Boolean, pAwait: Boolean): ClassHeritage = {
     var candidates: Vector[() => ClassHeritage] = Vector()
-    candidates :+= { () => ClassHeritage0(LeftHandSideExpression(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.ClassHeritage(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ClassHeritage0(LeftHandSideExpression(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def ClassBody(pYield: Boolean, pAwait: Boolean): ClassBody = {
+  def ClassBody(depth: Int, pYield: Boolean, pAwait: Boolean): ClassBody = {
     var candidates: Vector[() => ClassBody] = Vector()
-    candidates :+= { () => ClassBody0(ClassElementList(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.ClassBody(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ClassBody0(ClassElementList(depth, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def ClassElementList(pYield: Boolean, pAwait: Boolean): ClassElementList = {
+  def ClassElementList(depth: Int, pYield: Boolean, pAwait: Boolean): ClassElementList = {
     var candidates: Vector[() => ClassElementList] = Vector()
-    candidates :+= { () => ClassElementList0(ClassElement(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => ClassElementList1(ClassElementList(pYield, pAwait), ClassElement(pYield, pAwait), List(pYield, pAwait)) }
+    val rhsDepth = counter.ClassElementList(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ClassElementList0(ClassElement(depth, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => ClassElementList1(ClassElementList(depth - 1, pYield, pAwait), ClassElement(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def ClassElement(pYield: Boolean, pAwait: Boolean): ClassElement = {
+  def ClassElement(depth: Int, pYield: Boolean, pAwait: Boolean): ClassElement = {
     var candidates: Vector[() => ClassElement] = Vector()
-    candidates :+= { () => ClassElement0(MethodDefinition(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => ClassElement1(MethodDefinition(pYield, pAwait), List(pYield, pAwait)) }
-    candidates :+= { () => ClassElement2(List(pYield, pAwait)) }
+    val rhsDepth = counter.ClassElement(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ClassElement0(MethodDefinition(depth, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => ClassElement1(MethodDefinition(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => ClassElement2(List(pYield, pAwait)) } }
     choose(candidates)
   }
-  def Script(): Script = {
+  def Script(depth: Int): Script = {
     var candidates: Vector[() => Script] = Vector()
-    candidates :+= { () => Script0(opt(ScriptBody()), List()) }
+    val rhsDepth = counter.Script().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => Script0(opt(depth >= counter.ScriptBody().depth, ScriptBody(depth)), List()) } }
     choose(candidates)
   }
-  def ScriptBody(): ScriptBody = {
+  def ScriptBody(depth: Int): ScriptBody = {
     var candidates: Vector[() => ScriptBody] = Vector()
-    candidates :+= { () => ScriptBody0(StatementList(false, false, false), List()) }
+    val rhsDepth = counter.ScriptBody().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ScriptBody0(StatementList(depth, false, false, false), List()) } }
     choose(candidates)
   }
-  def Module(): Module = {
+  def Module(depth: Int): Module = {
     var candidates: Vector[() => Module] = Vector()
-    candidates :+= { () => Module0(opt(ModuleBody()), List()) }
+    val rhsDepth = counter.Module().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => Module0(opt(depth >= counter.ModuleBody().depth, ModuleBody(depth)), List()) } }
     choose(candidates)
   }
-  def ModuleBody(): ModuleBody = {
+  def ModuleBody(depth: Int): ModuleBody = {
     var candidates: Vector[() => ModuleBody] = Vector()
-    candidates :+= { () => ModuleBody0(ModuleItemList(), List()) }
+    val rhsDepth = counter.ModuleBody().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ModuleBody0(ModuleItemList(depth), List()) } }
     choose(candidates)
   }
-  def ModuleItemList(): ModuleItemList = {
+  def ModuleItemList(depth: Int): ModuleItemList = {
     var candidates: Vector[() => ModuleItemList] = Vector()
-    candidates :+= { () => ModuleItemList0(ModuleItem(), List()) }
-    candidates :+= { () => ModuleItemList1(ModuleItemList(), ModuleItem(), List()) }
+    val rhsDepth = counter.ModuleItemList().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ModuleItemList0(ModuleItem(depth), List()) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => ModuleItemList1(ModuleItemList(depth - 1), ModuleItem(depth - 1), List()) } }
     choose(candidates)
   }
-  def ModuleItem(): ModuleItem = {
+  def ModuleItem(depth: Int): ModuleItem = {
     var candidates: Vector[() => ModuleItem] = Vector()
-    candidates :+= { () => ModuleItem0(ImportDeclaration(), List()) }
-    candidates :+= { () => ModuleItem1(ExportDeclaration(), List()) }
-    candidates :+= { () => ModuleItem2(StatementListItem(false, false, false), List()) }
+    val rhsDepth = counter.ModuleItem().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ModuleItem0(ImportDeclaration(depth), List()) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => ModuleItem1(ExportDeclaration(depth), List()) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => ModuleItem2(StatementListItem(depth, false, false, false), List()) } }
     choose(candidates)
   }
-  def ImportDeclaration(): ImportDeclaration = {
+  def ImportDeclaration(depth: Int): ImportDeclaration = {
     var candidates: Vector[() => ImportDeclaration] = Vector()
-    candidates :+= { () => ImportDeclaration0(ImportClause(), FromClause(), List()) }
-    candidates :+= { () => ImportDeclaration1(ModuleSpecifier(), List()) }
+    val rhsDepth = counter.ImportDeclaration().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ImportDeclaration0(ImportClause(depth - 1), FromClause(depth - 1), List()) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => ImportDeclaration1(ModuleSpecifier(depth - 1), List()) } }
     choose(candidates)
   }
-  def ImportClause(): ImportClause = {
+  def ImportClause(depth: Int): ImportClause = {
     var candidates: Vector[() => ImportClause] = Vector()
-    candidates :+= { () => ImportClause0(ImportedDefaultBinding(), List()) }
-    candidates :+= { () => ImportClause1(NameSpaceImport(), List()) }
-    candidates :+= { () => ImportClause2(NamedImports(), List()) }
-    candidates :+= { () => ImportClause3(ImportedDefaultBinding(), NameSpaceImport(), List()) }
-    candidates :+= { () => ImportClause4(ImportedDefaultBinding(), NamedImports(), List()) }
+    val rhsDepth = counter.ImportClause().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ImportClause0(ImportedDefaultBinding(depth), List()) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => ImportClause1(NameSpaceImport(depth), List()) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => ImportClause2(NamedImports(depth), List()) } }
+    rhsDepth(3).collect { case d if depth >= d => candidates :+= { () => ImportClause3(ImportedDefaultBinding(depth - 1), NameSpaceImport(depth - 1), List()) } }
+    rhsDepth(4).collect { case d if depth >= d => candidates :+= { () => ImportClause4(ImportedDefaultBinding(depth - 1), NamedImports(depth - 1), List()) } }
     choose(candidates)
   }
-  def ImportedDefaultBinding(): ImportedDefaultBinding = {
+  def ImportedDefaultBinding(depth: Int): ImportedDefaultBinding = {
     var candidates: Vector[() => ImportedDefaultBinding] = Vector()
-    candidates :+= { () => ImportedDefaultBinding0(ImportedBinding(), List()) }
+    val rhsDepth = counter.ImportedDefaultBinding().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ImportedDefaultBinding0(ImportedBinding(depth), List()) } }
     choose(candidates)
   }
-  def NameSpaceImport(): NameSpaceImport = {
+  def NameSpaceImport(depth: Int): NameSpaceImport = {
     var candidates: Vector[() => NameSpaceImport] = Vector()
-    candidates :+= { () => NameSpaceImport0(ImportedBinding(), List()) }
+    val rhsDepth = counter.NameSpaceImport().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => NameSpaceImport0(ImportedBinding(depth - 1), List()) } }
     choose(candidates)
   }
-  def NamedImports(): NamedImports = {
+  def NamedImports(depth: Int): NamedImports = {
     var candidates: Vector[() => NamedImports] = Vector()
-    candidates :+= { () => NamedImports0(List()) }
-    candidates :+= { () => NamedImports1(ImportsList(), List()) }
-    candidates :+= { () => NamedImports2(ImportsList(), List()) }
+    val rhsDepth = counter.NamedImports().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => NamedImports0(List()) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => NamedImports1(ImportsList(depth - 1), List()) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => NamedImports2(ImportsList(depth - 1), List()) } }
     choose(candidates)
   }
-  def FromClause(): FromClause = {
+  def FromClause(depth: Int): FromClause = {
     var candidates: Vector[() => FromClause] = Vector()
-    candidates :+= { () => FromClause0(ModuleSpecifier(), List()) }
+    val rhsDepth = counter.FromClause().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => FromClause0(ModuleSpecifier(depth - 1), List()) } }
     choose(candidates)
   }
-  def ImportsList(): ImportsList = {
+  def ImportsList(depth: Int): ImportsList = {
     var candidates: Vector[() => ImportsList] = Vector()
-    candidates :+= { () => ImportsList0(ImportSpecifier(), List()) }
-    candidates :+= { () => ImportsList1(ImportsList(), ImportSpecifier(), List()) }
+    val rhsDepth = counter.ImportsList().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ImportsList0(ImportSpecifier(depth), List()) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => ImportsList1(ImportsList(depth - 1), ImportSpecifier(depth - 1), List()) } }
     choose(candidates)
   }
-  def ImportSpecifier(): ImportSpecifier = {
+  def ImportSpecifier(depth: Int): ImportSpecifier = {
     var candidates: Vector[() => ImportSpecifier] = Vector()
-    candidates :+= { () => ImportSpecifier0(ImportedBinding(), List()) }
-    candidates :+= { () => ImportSpecifier1(IdentifierName(), ImportedBinding(), List()) }
+    val rhsDepth = counter.ImportSpecifier().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ImportSpecifier0(ImportedBinding(depth), List()) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => ImportSpecifier1(IdentifierName(depth - 1), ImportedBinding(depth - 1), List()) } }
     choose(candidates)
   }
-  def ModuleSpecifier(): ModuleSpecifier = {
+  def ModuleSpecifier(depth: Int): ModuleSpecifier = {
     var candidates: Vector[() => ModuleSpecifier] = Vector()
-    candidates :+= { () => ModuleSpecifier0(StringLiteral(), List()) }
+    val rhsDepth = counter.ModuleSpecifier().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ModuleSpecifier0(StringLiteral(depth), List()) } }
     choose(candidates)
   }
-  def ImportedBinding(): ImportedBinding = {
+  def ImportedBinding(depth: Int): ImportedBinding = {
     var candidates: Vector[() => ImportedBinding] = Vector()
-    candidates :+= { () => ImportedBinding0(BindingIdentifier(false, false), List()) }
+    val rhsDepth = counter.ImportedBinding().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ImportedBinding0(BindingIdentifier(depth, false, false), List()) } }
     choose(candidates)
   }
-  def ExportDeclaration(): ExportDeclaration = {
+  def ExportDeclaration(depth: Int): ExportDeclaration = {
     var candidates: Vector[() => ExportDeclaration] = Vector()
-    candidates :+= { () => ExportDeclaration0(ExportFromClause(), FromClause(), List()) }
-    candidates :+= { () => ExportDeclaration1(NamedExports(), List()) }
-    candidates :+= { () => ExportDeclaration2(VariableStatement(false, false), List()) }
-    candidates :+= { () => ExportDeclaration3(Declaration(false, false), List()) }
-    candidates :+= { () => ExportDeclaration4(HoistableDeclaration(false, false, true), List()) }
-    candidates :+= { () => ExportDeclaration5(ClassDeclaration(false, false, true), List()) }
-    candidates :+= { () => ExportDeclaration6(AssignmentExpression(true, false, false), List()) }
+    val rhsDepth = counter.ExportDeclaration().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ExportDeclaration0(ExportFromClause(depth - 1), FromClause(depth - 1), List()) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => ExportDeclaration1(NamedExports(depth - 1), List()) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => ExportDeclaration2(VariableStatement(depth - 1, false, false), List()) } }
+    rhsDepth(3).collect { case d if depth >= d => candidates :+= { () => ExportDeclaration3(Declaration(depth - 1, false, false), List()) } }
+    rhsDepth(4).collect { case d if depth >= d => candidates :+= { () => ExportDeclaration4(HoistableDeclaration(depth - 1, false, false, true), List()) } }
+    rhsDepth(5).collect { case d if depth >= d => candidates :+= { () => ExportDeclaration5(ClassDeclaration(depth - 1, false, false, true), List()) } }
+    rhsDepth(6).collect { case d if depth >= d => candidates :+= { () => ExportDeclaration6(AssignmentExpression(depth - 1, true, false, false), List()) } }
     choose(candidates)
   }
-  def ExportFromClause(): ExportFromClause = {
+  def ExportFromClause(depth: Int): ExportFromClause = {
     var candidates: Vector[() => ExportFromClause] = Vector()
-    candidates :+= { () => ExportFromClause0(List()) }
-    candidates :+= { () => ExportFromClause1(IdentifierName(), List()) }
-    candidates :+= { () => ExportFromClause2(NamedExports(), List()) }
+    val rhsDepth = counter.ExportFromClause().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ExportFromClause0(List()) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => ExportFromClause1(IdentifierName(depth - 1), List()) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => ExportFromClause2(NamedExports(depth), List()) } }
     choose(candidates)
   }
-  def NamedExports(): NamedExports = {
+  def NamedExports(depth: Int): NamedExports = {
     var candidates: Vector[() => NamedExports] = Vector()
-    candidates :+= { () => NamedExports0(List()) }
-    candidates :+= { () => NamedExports1(ExportsList(), List()) }
-    candidates :+= { () => NamedExports2(ExportsList(), List()) }
+    val rhsDepth = counter.NamedExports().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => NamedExports0(List()) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => NamedExports1(ExportsList(depth - 1), List()) } }
+    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => NamedExports2(ExportsList(depth - 1), List()) } }
     choose(candidates)
   }
-  def ExportsList(): ExportsList = {
+  def ExportsList(depth: Int): ExportsList = {
     var candidates: Vector[() => ExportsList] = Vector()
-    candidates :+= { () => ExportsList0(ExportSpecifier(), List()) }
-    candidates :+= { () => ExportsList1(ExportsList(), ExportSpecifier(), List()) }
+    val rhsDepth = counter.ExportsList().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ExportsList0(ExportSpecifier(depth), List()) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => ExportsList1(ExportsList(depth - 1), ExportSpecifier(depth - 1), List()) } }
     choose(candidates)
   }
-  def ExportSpecifier(): ExportSpecifier = {
+  def ExportSpecifier(depth: Int): ExportSpecifier = {
     var candidates: Vector[() => ExportSpecifier] = Vector()
-    candidates :+= { () => ExportSpecifier0(IdentifierName(), List()) }
-    candidates :+= { () => ExportSpecifier1(IdentifierName(), IdentifierName(), List()) }
+    val rhsDepth = counter.ExportSpecifier().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ExportSpecifier0(IdentifierName(depth), List()) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => ExportSpecifier1(IdentifierName(depth - 1), IdentifierName(depth - 1), List()) } }
     choose(candidates)
   }
 }
