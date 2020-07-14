@@ -10,5 +10,6 @@ object DebuggerStatement0Evaluation0 extends Algorithm {
   val func: Func = FixUIdWalker(parseFunc(""""DebuggerStatement0Evaluation0" (this) => {
     app __x0__ = (NormalCompletion CONST_empty)
     let result = __x0__
+    return result
   }"""), this)
 }
