@@ -231,19 +231,12 @@ object Sampler {
     var candidates: Vector[() => MetaProperty] = Vector()
     val rhsDepth = counter.MetaProperty().rhsDepth
     rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => MetaProperty0(NewTarget(depth), List()) } }
-    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => MetaProperty1(ImportMeta(depth), List()) } }
     choose(candidates)
   }
   def NewTarget(depth: Int): NewTarget = {
     var candidates: Vector[() => NewTarget] = Vector()
     val rhsDepth = counter.NewTarget().rhsDepth
     rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => NewTarget0(List()) } }
-    choose(candidates)
-  }
-  def ImportMeta(depth: Int): ImportMeta = {
-    var candidates: Vector[() => ImportMeta] = Vector()
-    val rhsDepth = counter.ImportMeta().rhsDepth
-    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ImportMeta0(List()) } }
     choose(candidates)
   }
   def NewExpression(depth: Int, pYield: Boolean, pAwait: Boolean): NewExpression = {
@@ -258,7 +251,6 @@ object Sampler {
     val rhsDepth = counter.CallExpression(pYield, pAwait).rhsDepth
     rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => CallExpression0(CoverCallExpressionAndAsyncArrowHead(depth), List(pYield, pAwait)) } }
     rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => CallExpression1(SuperCall(depth, pYield, pAwait), List(pYield, pAwait)) } }
-    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => CallExpression2(ImportCall(depth, pYield, pAwait), List(pYield, pAwait)) } }
     rhsDepth(3).collect { case d if depth >= d => candidates :+= { () => CallExpression3(CallExpression(depth - 1, pYield, pAwait), Arguments(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
     rhsDepth(4).collect { case d if depth >= d => candidates :+= { () => CallExpression4(CallExpression(depth - 1, pYield, pAwait), Expression(depth - 1, true, pYield, pAwait), List(pYield, pAwait)) } }
     rhsDepth(5).collect { case d if depth >= d => candidates :+= { () => CallExpression5(CallExpression(depth - 1, pYield, pAwait), IdentifierName(depth - 1), List(pYield, pAwait)) } }
@@ -275,12 +267,6 @@ object Sampler {
     var candidates: Vector[() => SuperCall] = Vector()
     val rhsDepth = counter.SuperCall(pYield, pAwait).rhsDepth
     rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => SuperCall0(Arguments(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
-    choose(candidates)
-  }
-  def ImportCall(depth: Int, pYield: Boolean, pAwait: Boolean): ImportCall = {
-    var candidates: Vector[() => ImportCall] = Vector()
-    val rhsDepth = counter.ImportCall(pYield, pAwait).rhsDepth
-    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ImportCall0(AssignmentExpression(depth - 1, true, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
   }
   def Arguments(depth: Int, pYield: Boolean, pAwait: Boolean): Arguments = {
@@ -1217,149 +1203,6 @@ object Sampler {
     rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ClassElement0(MethodDefinition(depth, pYield, pAwait), List(pYield, pAwait)) } }
     rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => ClassElement1(MethodDefinition(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
     rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => ClassElement2(List(pYield, pAwait)) } }
-    choose(candidates)
-  }
-  def Script(depth: Int): Script = {
-    var candidates: Vector[() => Script] = Vector()
-    val rhsDepth = counter.Script().rhsDepth
-    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => Script0(opt(depth >= counter.ScriptBody().depth, ScriptBody(depth)), List()) } }
-    choose(candidates)
-  }
-  def ScriptBody(depth: Int): ScriptBody = {
-    var candidates: Vector[() => ScriptBody] = Vector()
-    val rhsDepth = counter.ScriptBody().rhsDepth
-    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ScriptBody0(StatementList(depth, false, false, false), List()) } }
-    choose(candidates)
-  }
-  def Module(depth: Int): Module = {
-    var candidates: Vector[() => Module] = Vector()
-    val rhsDepth = counter.Module().rhsDepth
-    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => Module0(opt(depth >= counter.ModuleBody().depth, ModuleBody(depth)), List()) } }
-    choose(candidates)
-  }
-  def ModuleBody(depth: Int): ModuleBody = {
-    var candidates: Vector[() => ModuleBody] = Vector()
-    val rhsDepth = counter.ModuleBody().rhsDepth
-    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ModuleBody0(ModuleItemList(depth), List()) } }
-    choose(candidates)
-  }
-  def ModuleItemList(depth: Int): ModuleItemList = {
-    var candidates: Vector[() => ModuleItemList] = Vector()
-    val rhsDepth = counter.ModuleItemList().rhsDepth
-    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ModuleItemList0(ModuleItem(depth), List()) } }
-    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => ModuleItemList1(ModuleItemList(depth - 1), ModuleItem(depth - 1), List()) } }
-    choose(candidates)
-  }
-  def ModuleItem(depth: Int): ModuleItem = {
-    var candidates: Vector[() => ModuleItem] = Vector()
-    val rhsDepth = counter.ModuleItem().rhsDepth
-    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ModuleItem0(ImportDeclaration(depth), List()) } }
-    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => ModuleItem1(ExportDeclaration(depth), List()) } }
-    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => ModuleItem2(StatementListItem(depth, false, false, false), List()) } }
-    choose(candidates)
-  }
-  def ImportDeclaration(depth: Int): ImportDeclaration = {
-    var candidates: Vector[() => ImportDeclaration] = Vector()
-    val rhsDepth = counter.ImportDeclaration().rhsDepth
-    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ImportDeclaration0(ImportClause(depth - 1), FromClause(depth - 1), List()) } }
-    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => ImportDeclaration1(ModuleSpecifier(depth - 1), List()) } }
-    choose(candidates)
-  }
-  def ImportClause(depth: Int): ImportClause = {
-    var candidates: Vector[() => ImportClause] = Vector()
-    val rhsDepth = counter.ImportClause().rhsDepth
-    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ImportClause0(ImportedDefaultBinding(depth), List()) } }
-    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => ImportClause1(NameSpaceImport(depth), List()) } }
-    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => ImportClause2(NamedImports(depth), List()) } }
-    rhsDepth(3).collect { case d if depth >= d => candidates :+= { () => ImportClause3(ImportedDefaultBinding(depth - 1), NameSpaceImport(depth - 1), List()) } }
-    rhsDepth(4).collect { case d if depth >= d => candidates :+= { () => ImportClause4(ImportedDefaultBinding(depth - 1), NamedImports(depth - 1), List()) } }
-    choose(candidates)
-  }
-  def ImportedDefaultBinding(depth: Int): ImportedDefaultBinding = {
-    var candidates: Vector[() => ImportedDefaultBinding] = Vector()
-    val rhsDepth = counter.ImportedDefaultBinding().rhsDepth
-    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ImportedDefaultBinding0(ImportedBinding(depth), List()) } }
-    choose(candidates)
-  }
-  def NameSpaceImport(depth: Int): NameSpaceImport = {
-    var candidates: Vector[() => NameSpaceImport] = Vector()
-    val rhsDepth = counter.NameSpaceImport().rhsDepth
-    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => NameSpaceImport0(ImportedBinding(depth - 1), List()) } }
-    choose(candidates)
-  }
-  def NamedImports(depth: Int): NamedImports = {
-    var candidates: Vector[() => NamedImports] = Vector()
-    val rhsDepth = counter.NamedImports().rhsDepth
-    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => NamedImports0(List()) } }
-    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => NamedImports1(ImportsList(depth - 1), List()) } }
-    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => NamedImports2(ImportsList(depth - 1), List()) } }
-    choose(candidates)
-  }
-  def FromClause(depth: Int): FromClause = {
-    var candidates: Vector[() => FromClause] = Vector()
-    val rhsDepth = counter.FromClause().rhsDepth
-    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => FromClause0(ModuleSpecifier(depth - 1), List()) } }
-    choose(candidates)
-  }
-  def ImportsList(depth: Int): ImportsList = {
-    var candidates: Vector[() => ImportsList] = Vector()
-    val rhsDepth = counter.ImportsList().rhsDepth
-    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ImportsList0(ImportSpecifier(depth), List()) } }
-    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => ImportsList1(ImportsList(depth - 1), ImportSpecifier(depth - 1), List()) } }
-    choose(candidates)
-  }
-  def ImportSpecifier(depth: Int): ImportSpecifier = {
-    var candidates: Vector[() => ImportSpecifier] = Vector()
-    val rhsDepth = counter.ImportSpecifier().rhsDepth
-    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ImportSpecifier0(ImportedBinding(depth), List()) } }
-    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => ImportSpecifier1(IdentifierName(depth - 1), ImportedBinding(depth - 1), List()) } }
-    choose(candidates)
-  }
-  def ModuleSpecifier(depth: Int): ModuleSpecifier = {
-    var candidates: Vector[() => ModuleSpecifier] = Vector()
-    val rhsDepth = counter.ModuleSpecifier().rhsDepth
-    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ModuleSpecifier0(StringLiteral(depth), List()) } }
-    choose(candidates)
-  }
-  def ImportedBinding(depth: Int): ImportedBinding = {
-    var candidates: Vector[() => ImportedBinding] = Vector()
-    val rhsDepth = counter.ImportedBinding().rhsDepth
-    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ImportedBinding0(BindingIdentifier(depth, false, false), List()) } }
-    choose(candidates)
-  }
-  def ExportDeclaration(depth: Int): ExportDeclaration = {
-    var candidates: Vector[() => ExportDeclaration] = Vector()
-    val rhsDepth = counter.ExportDeclaration().rhsDepth
-    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ExportDeclaration0(ExportFromClause(depth - 1), FromClause(depth - 1), List()) } }
-    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => ExportDeclaration1(NamedExports(depth - 1), List()) } }
-    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => ExportDeclaration2(VariableStatement(depth - 1, false, false), List()) } }
-    rhsDepth(3).collect { case d if depth >= d => candidates :+= { () => ExportDeclaration3(Declaration(depth - 1, false, false), List()) } }
-    rhsDepth(4).collect { case d if depth >= d => candidates :+= { () => ExportDeclaration4(HoistableDeclaration(depth - 1, false, false, true), List()) } }
-    rhsDepth(5).collect { case d if depth >= d => candidates :+= { () => ExportDeclaration5(ClassDeclaration(depth - 1, false, false, true), List()) } }
-    rhsDepth(6).collect { case d if depth >= d => candidates :+= { () => ExportDeclaration6(AssignmentExpression(depth - 1, true, false, false), List()) } }
-    choose(candidates)
-  }
-  def ExportFromClause(depth: Int): ExportFromClause = {
-    var candidates: Vector[() => ExportFromClause] = Vector()
-    val rhsDepth = counter.ExportFromClause().rhsDepth
-    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ExportFromClause0(List()) } }
-    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => ExportFromClause1(IdentifierName(depth - 1), List()) } }
-    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => ExportFromClause2(NamedExports(depth), List()) } }
-    choose(candidates)
-  }
-  def NamedExports(depth: Int): NamedExports = {
-    var candidates: Vector[() => NamedExports] = Vector()
-    val rhsDepth = counter.NamedExports().rhsDepth
-    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => NamedExports0(List()) } }
-    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => NamedExports1(ExportsList(depth - 1), List()) } }
-    rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => NamedExports2(ExportsList(depth - 1), List()) } }
-    choose(candidates)
-  }
-  def ExportsList(depth: Int): ExportsList = {
-    var candidates: Vector[() => ExportsList] = Vector()
-    val rhsDepth = counter.ExportsList().rhsDepth
-    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ExportsList0(ExportSpecifier(depth), List()) } }
-    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => ExportsList1(ExportsList(depth - 1), ExportSpecifier(depth - 1), List()) } }
     choose(candidates)
   }
   def ExportSpecifier(depth: Int): ExportSpecifier = {

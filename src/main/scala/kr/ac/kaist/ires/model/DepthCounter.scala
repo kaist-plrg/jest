@@ -170,12 +170,9 @@ object DepthCounter {
     case (false, true) => Depth(2, List(Some(2), Some(2)))
   }
   def MetaProperty(): Depth = () match {
-    case () => Depth(1, List(Some(1), Some(1)))
+    case () => Depth(1, List(Some(1), None))
   }
   def NewTarget(): Depth = () match {
-    case () => Depth(1, List(Some(1)))
-  }
-  def ImportMeta(): Depth = () match {
     case () => Depth(1, List(Some(1)))
   }
   def NewExpression(pYield: Boolean, pAwait: Boolean): Depth = (pYield, pAwait) match {
@@ -185,10 +182,10 @@ object DepthCounter {
     case (false, false) => Depth(1, List(Some(1), Some(2)))
   }
   def CallExpression(pYield: Boolean, pAwait: Boolean): Depth = (pYield, pAwait) match {
-    case (false, false) => Depth(2, List(Some(2), Some(2), Some(2), Some(3), Some(3), Some(3), Some(3)))
-    case (false, true) => Depth(2, List(None, Some(2), Some(2), Some(3), Some(3), Some(3), Some(3)))
-    case (true, true) => Depth(2, List(None, Some(2), Some(2), Some(3), Some(3), Some(3), Some(3)))
-    case (true, false) => Depth(2, List(None, Some(2), Some(2), Some(3), Some(3), Some(3), Some(3)))
+    case (false, false) => Depth(2, List(Some(2), Some(2), None, Some(3), Some(3), Some(3), Some(3)))
+    case (false, true) => Depth(2, List(None, Some(2), None, Some(3), Some(3), Some(3), Some(3)))
+    case (true, true) => Depth(2, List(None, Some(2), None, Some(3), Some(3), Some(3), Some(3)))
+    case (true, false) => Depth(2, List(None, Some(2), None, Some(3), Some(3), Some(3), Some(3)))
   }
   def CallMemberExpression(pYield: Boolean, pAwait: Boolean): Depth = (pYield, pAwait) match {
     case (true, true) => Depth(2, List(Some(2)))
@@ -201,12 +198,6 @@ object DepthCounter {
     case (false, false) => Depth(2, List(Some(2)))
     case (false, true) => Depth(2, List(Some(2)))
     case (true, false) => Depth(2, List(Some(2)))
-  }
-  def ImportCall(pYield: Boolean, pAwait: Boolean): Depth = (pYield, pAwait) match {
-    case (true, true) => Depth(2, List(Some(2)))
-    case (false, false) => Depth(2, List(Some(2)))
-    case (true, false) => Depth(2, List(Some(2)))
-    case (false, true) => Depth(2, List(Some(2)))
   }
   def Arguments(pYield: Boolean, pAwait: Boolean): Depth = (pYield, pAwait) match {
     case (false, true) => Depth(1, List(Some(1), Some(2), Some(2)))
@@ -1102,66 +1093,6 @@ object DepthCounter {
     case (false, true) => Depth(1, List(Some(2), Some(3), Some(1)))
     case (true, true) => Depth(1, List(Some(2), Some(3), Some(1)))
     case (true, false) => Depth(1, List(Some(2), Some(3), Some(1)))
-  }
-  def Script(): Depth = () match {
-    case () => Depth(0, List(Some(0)))
-  }
-  def ScriptBody(): Depth = () match {
-    case () => Depth(1, List(Some(1)))
-  }
-  def Module(): Depth = () match {
-    case () => Depth(0, List(Some(0)))
-  }
-  def ModuleBody(): Depth = () match {
-    case () => Depth(1, List(Some(1)))
-  }
-  def ModuleItemList(): Depth = () match {
-    case () => Depth(1, List(Some(1), Some(2)))
-  }
-  def ModuleItem(): Depth = () match {
-    case () => Depth(1, List(Some(2), Some(2), Some(1)))
-  }
-  def ImportDeclaration(): Depth = () match {
-    case () => Depth(2, List(Some(3), Some(2)))
-  }
-  def ImportClause(): Depth = () match {
-    case () => Depth(1, List(Some(1), Some(2), Some(1), Some(3), Some(2)))
-  }
-  def ImportedDefaultBinding(): Depth = () match {
-    case () => Depth(1, List(Some(1)))
-  }
-  def NameSpaceImport(): Depth = () match {
-    case () => Depth(2, List(Some(2)))
-  }
-  def NamedImports(): Depth = () match {
-    case () => Depth(1, List(Some(1), Some(2), Some(2)))
-  }
-  def FromClause(): Depth = () match {
-    case () => Depth(2, List(Some(2)))
-  }
-  def ImportsList(): Depth = () match {
-    case () => Depth(1, List(Some(1), Some(2)))
-  }
-  def ImportSpecifier(): Depth = () match {
-    case () => Depth(1, List(Some(1), Some(2)))
-  }
-  def ModuleSpecifier(): Depth = () match {
-    case () => Depth(1, List(Some(1)))
-  }
-  def ImportedBinding(): Depth = () match {
-    case () => Depth(1, List(Some(1)))
-  }
-  def ExportDeclaration(): Depth = () match {
-    case () => Depth(2, List(Some(3), Some(2), Some(4), Some(3), Some(3), Some(3), Some(2)))
-  }
-  def ExportFromClause(): Depth = () match {
-    case () => Depth(1, List(Some(1), Some(2), Some(1)))
-  }
-  def NamedExports(): Depth = () match {
-    case () => Depth(1, List(Some(1), Some(2), Some(2)))
-  }
-  def ExportsList(): Depth = () match {
-    case () => Depth(1, List(Some(1), Some(2)))
   }
   def ExportSpecifier(): Depth = () match {
     case () => Depth(1, List(Some(1), Some(2)))
