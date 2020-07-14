@@ -10,7 +10,7 @@ import scala.util.Random
 
 object Generator {
   // max iteration
-  val MAX_ITER = 1000
+  val MAX_ITER = 10000
   val rand: Random = new Random
 
   // generate JavaScript programs
@@ -20,14 +20,15 @@ object Generator {
     var condMap: Map[(Int, Boolean), Script] = Map()
 
     def add(script: Script): Unit = {
+      print(f"$script%-50s")
       val visited = getVisited(script)
       if (!(visited subsetOf totalVisited)) {
-        println(script)
+        println(": PASS")
         val newCondCovered = visited.getCondCovered -- totalVisited.getCondCovered
         for (cond <- newCondCovered) condMap += cond -> script
         totalVisited ++= visited
         total ::= script
-      }
+      } else println(": FAIL")
     }
 
     for (script <- total) add(script)
@@ -46,6 +47,7 @@ object Generator {
   def mutate(script: Script): Script = SimpleExprReplacer(script)
 
   // get visited points in ECMAScript
+  // TODO handling infinite loop: for ( '' ; ; '' );
   def getVisited(script: Script): Visited = {
     val interp = new Interp
     val initSt = ModelHelper.initState(script)
