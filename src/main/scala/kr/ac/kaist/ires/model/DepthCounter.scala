@@ -27,10 +27,10 @@ object DepthCounter {
     case () => Depth(2, List(Some(2)))
   }
   def PrimaryExpression(pYield: Boolean, pAwait: Boolean): Depth = (pYield, pAwait) match {
-    case (true, false) => Depth(1, List(Some(1), Some(1), Some(1), Some(1), Some(1), Some(2), Some(2), Some(2), Some(2), Some(2), Some(1), Some(1), Some(1)))
-    case (false, true) => Depth(1, List(Some(1), Some(1), Some(1), Some(1), Some(1), Some(2), Some(2), Some(2), Some(2), Some(2), Some(1), Some(1), Some(1)))
-    case (false, false) => Depth(1, List(Some(1), Some(1), Some(1), Some(1), Some(1), Some(2), Some(2), Some(2), Some(2), Some(2), Some(1), Some(1), Some(1)))
-    case (true, true) => Depth(1, List(Some(1), Some(2), Some(1), Some(1), Some(1), Some(2), Some(2), Some(2), Some(2), Some(2), Some(1), Some(1), Some(1)))
+    case (true, false) => Depth(1, List(Some(1), Some(1), Some(1), Some(1), Some(1), Some(2), Some(2), Some(2), Some(2), Some(2), None, Some(1), Some(1)))
+    case (false, true) => Depth(1, List(Some(1), Some(1), Some(1), Some(1), Some(1), Some(2), Some(2), Some(2), Some(2), Some(2), None, Some(1), Some(1)))
+    case (false, false) => Depth(1, List(Some(1), Some(1), Some(1), Some(1), Some(1), Some(2), Some(2), Some(2), Some(2), Some(2), None, Some(1), Some(1)))
+    case (true, true) => Depth(1, List(Some(1), Some(2), Some(1), Some(1), Some(1), Some(2), Some(2), Some(2), Some(2), Some(2), None, Some(1), Some(1)))
   }
   def CoverParenthesizedExpressionAndArrowParameterList(pYield: Boolean, pAwait: Boolean): Depth = (pYield, pAwait) match {
     case (false, false) => Depth(1, List(Some(2), Some(2), Some(1), Some(2), Some(2), Some(2), Some(2)))
