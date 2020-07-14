@@ -14,7 +14,7 @@ object ValidityChecker {
     }
     val revised = s"'use strict'; throw '$MESSAGE'; $script"
     try {
-      engine.eval(script)
+      engine.eval(revised)
       false
     } catch {
       case e: ScriptException => e.toString.endsWith(MESSAGE)
