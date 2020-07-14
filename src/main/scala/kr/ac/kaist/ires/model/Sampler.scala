@@ -3,7 +3,7 @@ package kr.ac.kaist.ires.model
 import kr.ac.kaist.ires.Lexical
 import kr.ac.kaist.ires.ir._
 
-object Sampler {
+class Sampler {
   val counter = DepthCounter
   val random = new scala.util.Random
   def choose[T](seq: Seq[() => T]): T = seq(random.nextInt(seq.length))()
