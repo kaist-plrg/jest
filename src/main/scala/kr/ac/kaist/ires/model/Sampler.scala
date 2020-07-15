@@ -3,13 +3,12 @@ package kr.ac.kaist.ires.model
 import kr.ac.kaist.ires.Lexical
 import kr.ac.kaist.ires.ir._
 
-object Sampler {
+class Sampler {
   val counter = DepthCounter
   val random = new scala.util.Random
   def choose[T](seq: Seq[() => T]): T = seq(random.nextInt(seq.length))()
   def opt[T](valid: Boolean, elem: => T): Option[T] = if (valid && random.nextBoolean) Some(elem) else None
   def IdentifierName(depth: Int): Lexical = Lexical("IdentifierName", (random.nextInt(26) + 'a').toChar.toString)
-  def RegularExpressionLiteral(depth: Int): Lexical = Lexical("RegularExpressionLiteral", "/x/g")
   def NullLiteral(depth: Int): Lexical = Lexical("NullLiteral", "null")
   def BooleanLiteral(depth: Int): Lexical = Lexical("BooleanLiteral", random.nextBoolean.toString)
   def NumericLiteral(depth: Int): Lexical = Lexical("NumericLiteral", "0")
@@ -61,7 +60,6 @@ object Sampler {
     rhsDepth(7).collect { case d if depth >= d => candidates :+= { () => PrimaryExpression7(GeneratorExpression(depth), List(pYield, pAwait)) } }
     rhsDepth(8).collect { case d if depth >= d => candidates :+= { () => PrimaryExpression8(AsyncFunctionExpression(depth), List(pYield, pAwait)) } }
     rhsDepth(9).collect { case d if depth >= d => candidates :+= { () => PrimaryExpression9(AsyncGeneratorExpression(depth), List(pYield, pAwait)) } }
-    rhsDepth(10).collect { case d if depth >= d => candidates :+= { () => PrimaryExpression10(RegularExpressionLiteral(depth), List(pYield, pAwait)) } }
     rhsDepth(11).collect { case d if depth >= d => candidates :+= { () => PrimaryExpression11(TemplateLiteral(depth, pYield, pAwait, false), List(pYield, pAwait)) } }
     rhsDepth(12).collect { case d if depth >= d => candidates :+= { () => PrimaryExpression12(CoverParenthesizedExpressionAndArrowParameterList(depth, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)
