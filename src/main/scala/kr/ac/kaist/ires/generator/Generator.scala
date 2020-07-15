@@ -1,5 +1,6 @@
 package kr.ac.kaist.ires.generator
 
+import kr.ac.kaist.ires.error.{ NotSupported, Timeout }
 import kr.ac.kaist.ires.ir.Interp
 import kr.ac.kaist.ires.mutator._
 import kr.ac.kaist.ires.model._
@@ -15,26 +16,32 @@ object Generator {
 
   // generate JavaScript programs
   def generate: List[Script] = {
-    var total: List[Script] = getSample
+    var total: List[Script] = Nil
     val totalVisited: Visited = new Visited
     var condMap: Map[(Int, Boolean), Script] = Map()
 
     def add(script: Script): Unit = {
-      print(f"$script%-50s")
-      val visited = getVisited(script)
-      if (!(visited subsetOf totalVisited)) {
-        println(": PASS")
-        val newCondCovered = visited.getCondCovered -- totalVisited.getCondCovered
-        for (cond <- newCondCovered) condMap += cond -> script
-        totalVisited ++= visited
-        total ::= script
-      } else println(": FAIL")
+      print(f"$script%-80s")
+      getVisited(script) match {
+        case Left(visited) if !(visited subsetOf totalVisited) =>
+          println(": PASS")
+          val newCondCovered = visited.getCondCovered -- totalVisited.getCondCovered
+          for (cond <- newCondCovered) condMap += cond -> script
+          totalVisited ++= visited
+          total ::= script
+        case Left(_) => println(": FAIL")
+        case Right(msg) => println(s": $msg")
+      }
     }
 
-    for (script <- total) add(script)
+    for (script <- getSample) add(script)
     // TODO for (_ <- 0 until MAX_ITER) add(mutate(choose(total)))
 
     val coverage = totalVisited.getCoverage
+
+    println
+    total.foreach(println _)
+    println(s"TOTAL: ${total.length}")
     println(coverage.summary)
 
     total
@@ -47,11 +54,13 @@ object Generator {
   def mutate(script: Script): Script = SimpleExprReplacer(script)
 
   // get visited points in ECMAScript
-  // TODO handling infinite loop: for ( '' ; ; '' );
-  def getVisited(script: Script): Visited = {
-    val interp = new Interp
+  def getVisited(script: Script): Either[Visited, String] = try {
+    val interp = new Interp(timeLimit = Some(1))
     val initSt = ModelHelper.initState(script)
     val st = interp(initSt)
-    interp.visited
+    Left(interp.visited)
+  } catch {
+    case Timeout => Right("TIMEOUT")
+    case NotSupported(msg) => Right(s"NOT-SUPPORTED [$msg]")
   }
 }

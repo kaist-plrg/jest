@@ -2,32 +2,43 @@ package kr.ac.kaist.ires.sampler
 
 import kr.ac.kaist.ires.model.{ Parser, Sampler, Script }
 import kr.ac.kaist.ires.model.{ Expression, Expression0, AssignmentExpression, AssignmentExpression0 }
-import scala.util.Random
+import kr.ac.kaist.ires.model.{ StatementList, StatementList0, Statement, Statement2 }
+import kr.ac.kaist.ires.sampler.ValueSampler._
+import kr.ac.kaist.ires.util.Useful._
 
 object LimitedDepthSampler extends Sampler {
-  val MAX_DEPTH: Int = 2
-  val SIZE: Int = 1000
-  val rand: Random = new Random
+  val STMT_DEPTH: Int = 4
+  val EXPR_DEPTH: Int = 2
+  val SIZE: Int = 10000
 
-  val basicSampler = new Sampler
-  val assignExpr = Parser.parse(Parser.AssignmentExpression(List(false, false, false)), "''").get.asInstanceOf[AssignmentExpression0]
-  val expr = Parser.parse(Parser.Expression(List(false, false, false)), "''").get.asInstanceOf[Expression0]
-  val stmtSampler = new Sampler {
-    override def AssignmentExpression(depth: Int, pIn: Boolean, pYield: Boolean, pAwait: Boolean): AssignmentExpression =
-      assignExpr.copy(parserParams = List(pIn, pYield, pAwait))
-    override def Expression(depth: Int, pIn: Boolean, pYield: Boolean, pAwait: Boolean): Expression =
-      expr.copy(parserParams = List(pIn, pYield, pAwait))
+  object BasicSampler extends Sampler {
+    def oldStatement(depth: Int, pYield: Boolean, pAwait: Boolean, pReturn: Boolean): Statement =
+      super.Statement(depth, pYield, pAwait, pReturn)
+    def oldAssignmentExpression(depth: Int, pIn: Boolean, pYield: Boolean, pAwait: Boolean): AssignmentExpression =
+      super.AssignmentExpression(depth, pIn, pYield, pAwait)
+
+    val emptyStmtList = Parser.parse(Parser.StatementList(List(false, false, false)), ";").get.asInstanceOf[StatementList0]
+    override def StatementList(depth: Int, pYield: Boolean, pAwait: Boolean, pReturn: Boolean): StatementList = emptyStmtList
+    val emptyStmt = Parser.parse(Parser.Statement(List(false, false, false, false)), ";").get.asInstanceOf[Statement2]
+    override def Statement(depth: Int, pYield: Boolean, pAwait: Boolean, pReturn: Boolean): Statement = emptyStmt
+
+    override def AssignmentExpression(depth: Int, pIn: Boolean, pYield: Boolean, pAwait: Boolean): AssignmentExpression = choose(assignExprs)
+    override def Expression(depth: Int, pIn: Boolean, pYield: Boolean, pAwait: Boolean): Expression = choose(exprs)
   }
 
   val scripts: List[String] = {
     var set = Set[String]()
     println("Sampling...")
     while (set.size < SIZE) {
-      val script = if (rand.nextBoolean) {
-        val expr = basicSampler.AssignmentExpression(MAX_DEPTH, false, false, false).toString
+      val script = if (randBool) {
+        val expr = BasicSampler.oldAssignmentExpression(EXPR_DEPTH, false, false, false).toString
         s"var x = $expr"
-      } else stmtSampler.Statement(MAX_DEPTH, false, false, false).toString
-      if (!set.contains(script) && ValidityChecker(script)) set += script
+      } else BasicSampler.oldStatement(STMT_DEPTH, false, false, false).toString
+      if (!set.contains(script) && ValidityChecker(script)) {
+        set += script
+        if (set.size % (SIZE / 100) == 0) print("#")
+        if (set.size % (SIZE / 10) == 0) println
+      }
     }
     println("Finished Sampling")
     set.toList

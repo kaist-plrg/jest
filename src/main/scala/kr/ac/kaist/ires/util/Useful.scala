@@ -151,5 +151,6 @@ object Useful {
 
   // randomly choose an element in a list
   val rand = new Random
-  def choose[T](list: List[T]): T = list(rand.nextInt(list.length))
+  def choose[T](seq: Seq[T]): T = seq(rand.nextInt(seq.length))
+  def randBool: Boolean = rand.nextBoolean
 }
