@@ -3,6 +3,7 @@ package kr.ac.kaist.ires.phase
 import kr.ac.kaist.ires._
 import kr.ac.kaist.ires.model._
 import kr.ac.kaist.ires.generator.Generator
+import kr.ac.kaist.ires.util.BoolOption
 import kr.ac.kaist.ires.util.Useful._
 
 // generate phase
@@ -21,7 +22,10 @@ case object Generate extends PhaseObj[Unit, GenerateConfig, Unit] {
   }
 
   def defaultConfig: GenerateConfig = GenerateConfig()
-  val options: List[PhaseOption[GenerateConfig]] = List()
+  val options: List[PhaseOption[GenerateConfig]] = List(
+    ("debug", BoolOption(c => c.debug = true),
+      "print intermediate process.")
+  )
 }
 
 // Generate phase config

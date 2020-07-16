@@ -38,7 +38,6 @@ object LimitedDepthSampler extends Sampler {
   def getSample: List[Script] = getSample(false)
   def getSample(debug: Boolean): List[Script] = {
     var scripts = Set[String]()
-    println("Sampling...")
     while (scripts.size < SIZE) {
       val script = if (randBool) {
         val expr = BasicSampler.oldAssignmentExpression(EXPR_DEPTH, false, false, false).toString
@@ -52,7 +51,6 @@ object LimitedDepthSampler extends Sampler {
         }
       }
     }
-    println("Parsing samples...")
     val parser = Parser.Script(Nil)
     val result = scripts.toList.map(Parser.parse(parser, _).get)
     result

@@ -62,7 +62,9 @@ object Generator {
       }
     }
 
+    logln("Sampling...")
     val samples = getSample
+
     logln("Running samples...")
     for (script <- samples) add(script)
 
