@@ -14,11 +14,17 @@ case object Generate extends PhaseObj[Unit, GenerateConfig, Unit] {
     unit: Unit,
     iresConfig: IRESConfig,
     config: GenerateConfig
-  ): Unit = for (script <- Generator.generate) {}
+  ): Unit = for ((script, k) <- Generator.generate(config.debug).zipWithIndex) {
+    mkdir(s"$GENERATE_DIR")
+    mkdir(s"$GENERATE_DIR/scripts")
+    dumpFile(script, s"$GENERATE_DIR/scripts/$k.js")
+  }
 
   def defaultConfig: GenerateConfig = GenerateConfig()
   val options: List[PhaseOption[GenerateConfig]] = List()
 }
 
 // Generate phase config
-case class GenerateConfig() extends Config
+case class GenerateConfig(
+    var debug: Boolean = false
+) extends Config

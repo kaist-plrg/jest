@@ -53,26 +53,27 @@ case class Coverage(cases: Vector[Case]) extends CoverageProtocol {
   }
 
   // dump statistics
-  def dump: Unit = {
+  def dump: Unit = dump(COVERAGE_DIR)
+  def dump(dir: String): Unit = {
     // directory for coverage results
-    mkdir(COVERAGE_DIR)
+    mkdir(dir)
 
     // dump coverage
-    dumpJson(this, s"$COVERAGE_DIR/coverage.json")
+    dumpJson(this, s"$dir/coverage.json")
 
     // never visited algorithms
-    dumpJson(neverVisit.toList.sorted, s"$COVERAGE_DIR/never-visit.json")
+    dumpJson(neverVisit.toList.sorted, s"$dir/never-visit.json")
 
     // partially covered algorithms
-    dumpJson(partialVisit.toList.sorted, s"$COVERAGE_DIR/partial-visit.json")
+    dumpJson(partialVisit.toList.sorted, s"$dir/partial-visit.json")
 
     // fully covered algorithms
-    dumpJson(fullVisit.toList.sorted, s"$COVERAGE_DIR/full-visit.json")
+    dumpJson(fullVisit.toList.sorted, s"$dir/full-visit.json")
 
     // meaningful failed cases
-    dumpJson(meaningfulFailed, s"$COVERAGE_DIR/meaningful-failed.json")
+    dumpJson(meaningfulFailed, s"$dir/meaningful-failed.json")
 
     // summary
-    dumpFile(summary, s"$COVERAGE_DIR/summary")
+    dumpFile(summary, s"$dir/summary")
   }
 }

@@ -74,3 +74,6 @@ bin/ires
 .bloop
 .metals
 project/metals.sbt
+
+# generate directory
+generate/
