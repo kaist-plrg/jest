@@ -1078,19 +1078,19 @@ object Parser extends ESParsers {
     )))("Expression")
   })
   lazy val Statement: ESParser[Statement] = memo(args => {
-    val List(pYield, pAwait, pReturn, pElse) = getArgsN("Statement", args, 4)
+    val List(pYield, pAwait, pReturn) = getArgsN("Statement", args, 3)
     log((
       log(MATCH ~ BlockStatement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 => Statement0(x0, args) })("Statement0") |
       log(MATCH ~ VariableStatement(List(pYield, pAwait)) ^^ { case _ ~ x0 => Statement1(x0, args) })("Statement1") |
       log(MATCH ~ EmptyStatement(List()) ^^ { case _ ~ x0 => Statement2(x0, args) })("Statement2") |
       log(MATCH ~ ExpressionStatement(List(pYield, pAwait)) ^^ { case _ ~ x0 => Statement3(x0, args) })("Statement3") |
-      log(MATCH ~ IfStatement(List(pYield, pAwait, pReturn, pElse)) ^^ { case _ ~ x0 => Statement4(x0, args) })("Statement4") |
-      log(MATCH ~ BreakableStatement(List(pYield, pAwait, pReturn, pElse)) ^^ { case _ ~ x0 => Statement5(x0, args) })("Statement5") |
+      log(MATCH ~ IfStatement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 => Statement4(x0, args) })("Statement4") |
+      log(MATCH ~ BreakableStatement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 => Statement5(x0, args) })("Statement5") |
       log(MATCH ~ ContinueStatement(List(pYield, pAwait)) ^^ { case _ ~ x0 => Statement6(x0, args) })("Statement6") |
       log(MATCH ~ BreakStatement(List(pYield, pAwait)) ^^ { case _ ~ x0 => Statement7(x0, args) })("Statement7") |
       log((if (pReturn) MATCH ~ ReturnStatement(List(pYield, pAwait)) ^^ { case _ ~ x0 => Statement8(x0, args) } else MISMATCH))("Statement8") |
-      log(MATCH ~ WithStatement(List(pYield, pAwait, pReturn, pElse)) ^^ { case _ ~ x0 => Statement9(x0, args) })("Statement9") |
-      log(MATCH ~ LabelledStatement(List(pYield, pAwait, pReturn, pElse)) ^^ { case _ ~ x0 => Statement10(x0, args) })("Statement10") |
+      log(MATCH ~ WithStatement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 => Statement9(x0, args) })("Statement9") |
+      log(MATCH ~ LabelledStatement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 => Statement10(x0, args) })("Statement10") |
       log(MATCH ~ ThrowStatement(List(pYield, pAwait)) ^^ { case _ ~ x0 => Statement11(x0, args) })("Statement11") |
       log(MATCH ~ TryStatement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 => Statement12(x0, args) })("Statement12") |
       log(MATCH ~ DebuggerStatement(List()) ^^ { case _ ~ x0 => Statement13(x0, args) })("Statement13")
@@ -1114,9 +1114,9 @@ object Parser extends ESParsers {
     ))("HoistableDeclaration")
   })
   lazy val BreakableStatement: ESParser[BreakableStatement] = memo(args => {
-    val List(pYield, pAwait, pReturn, pElse) = getArgsN("BreakableStatement", args, 4)
+    val List(pYield, pAwait, pReturn) = getArgsN("BreakableStatement", args, 3)
     log((
-      log(MATCH ~ IterationStatement(List(pYield, pAwait, pReturn, pElse)) ^^ { case _ ~ x0 => BreakableStatement0(x0, args) })("BreakableStatement0") |
+      log(MATCH ~ IterationStatement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 => BreakableStatement0(x0, args) })("BreakableStatement0") |
       log(MATCH ~ SwitchStatement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 => BreakableStatement1(x0, args) })("BreakableStatement1")
     ))("BreakableStatement")
   })
@@ -1143,7 +1143,7 @@ object Parser extends ESParsers {
   lazy val StatementListItem: ESParser[StatementListItem] = memo(args => {
     val List(pYield, pAwait, pReturn) = getArgsN("StatementListItem", args, 3)
     log((
-      log(MATCH ~ Statement(List(pYield, pAwait, pReturn, false)) ^^ { case _ ~ x0 => StatementListItem0(x0, args) })("StatementListItem0") |
+      log(MATCH ~ Statement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 => StatementListItem0(x0, args) })("StatementListItem0") |
       log(MATCH ~ Declaration(List(pYield, pAwait)) ^^ { case _ ~ x0 => StatementListItem1(x0, args) })("StatementListItem1")
     ))("StatementListItem")
   })
@@ -1286,29 +1286,29 @@ object Parser extends ESParsers {
     ))("ExpressionStatement")
   })
   lazy val IfStatement: ESParser[IfStatement] = memo(args => {
-    val List(pYield, pAwait, pReturn, pElse) = getArgsN("IfStatement", args, 4)
+    val List(pYield, pAwait, pReturn) = getArgsN("IfStatement", args, 3)
     log((
-      log(((((MATCH <~ t("if")) <~ t("(")) ~ Expression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn, true)) <~ t("else")) ~ Statement(List(pYield, pAwait, pReturn, pElse)) ^^ { case _ ~ x0 ~ x1 ~ x2 => IfStatement0(x0, x1, x2, args) })("IfStatement0") |
-      log((if (!pElse) (((MATCH <~ t("if")) <~ t("(")) ~ Expression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn, false)) ^^ { case _ ~ x0 ~ x1 => IfStatement1(x0, x1, args) } else MISMATCH))("IfStatement1")
+      log(((((MATCH <~ t("if")) <~ t("(")) ~ Expression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn)) <~ t("else")) ~ Statement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 ~ x1 ~ x2 => IfStatement0(x0, x1, x2, args) })("IfStatement0") |
+      log(((((MATCH <~ t("if")) <~ t("(")) ~ Expression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn)) <~ -ntl((("else" <~ not(IDContinue))))) ^^ { case _ ~ x0 ~ x1 => IfStatement1(x0, x1, args) })("IfStatement1")
     ))("IfStatement")
   })
   lazy val IterationStatement: ESParser[IterationStatement] = memo(args => {
-    val List(pYield, pAwait, pReturn, pElse) = getArgsN("IterationStatement", args, 4)
+    val List(pYield, pAwait, pReturn) = getArgsN("IterationStatement", args, 3)
     log((
-      log((((((MATCH <~ t("do")) ~ Statement(List(pYield, pAwait, pReturn, false)) <~ t("while")) <~ t("(")) ~ Expression(List(true, pYield, pAwait)) <~ doWhileCloseT) <~ t(";")) ^^ { case _ ~ x0 ~ x1 => IterationStatement0(x0, x1, args) })("IterationStatement0") |
-      log((((MATCH <~ t("while")) <~ t("(")) ~ Expression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn, pElse)) ^^ { case _ ~ x0 ~ x1 => IterationStatement1(x0, x1, args) })("IterationStatement1") |
-      log(((((((MATCH <~ t("for")) <~ t("(")) <~ -ntl((("let" <~ not(IDContinue)) %% "["))) ~ opt(Expression(List(false, pYield, pAwait))) <~ t(";")) ~ opt(Expression(List(true, pYield, pAwait))) <~ t(";")) ~ opt(Expression(List(true, pYield, pAwait))) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn, pElse)) ^^ { case _ ~ x0 ~ x1 ~ x2 ~ x3 => IterationStatement2(x0, x1, x2, x3, args) })("IterationStatement2") |
-      log(((((((MATCH <~ t("for")) <~ t("(")) <~ t("var")) ~ VariableDeclarationList(List(false, pYield, pAwait)) <~ t(";")) ~ opt(Expression(List(true, pYield, pAwait))) <~ t(";")) ~ opt(Expression(List(true, pYield, pAwait))) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn, pElse)) ^^ { case _ ~ x0 ~ x1 ~ x2 ~ x3 => IterationStatement3(x0, x1, x2, x3, args) })("IterationStatement3") |
-      log(((((MATCH <~ t("for")) <~ t("(")) ~ LexicalDeclaration(List(false, pYield, pAwait)) ~ opt(Expression(List(true, pYield, pAwait))) <~ t(";")) ~ opt(Expression(List(true, pYield, pAwait))) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn, pElse)) ^^ { case _ ~ x0 ~ x1 ~ x2 ~ x3 => IterationStatement4(x0, x1, x2, x3, args) })("IterationStatement4") |
-      log((((((MATCH <~ t("for")) <~ t("(")) <~ -ntl((("let" <~ not(IDContinue)) %% "["))) ~ LeftHandSideExpression(List(pYield, pAwait)) <~ t("in")) ~ Expression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn, pElse)) ^^ { case _ ~ x0 ~ x1 ~ x2 => IterationStatement5(x0, x1, x2, args) })("IterationStatement5") |
-      log((((((MATCH <~ t("for")) <~ t("(")) <~ t("var")) ~ ForBinding(List(pYield, pAwait)) <~ t("in")) ~ Expression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn, pElse)) ^^ { case _ ~ x0 ~ x1 ~ x2 => IterationStatement6(x0, x1, x2, args) })("IterationStatement6") |
-      log(((((MATCH <~ t("for")) <~ t("(")) ~ ForDeclaration(List(pYield, pAwait)) <~ t("in")) ~ Expression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn, pElse)) ^^ { case _ ~ x0 ~ x1 ~ x2 => IterationStatement7(x0, x1, x2, args) })("IterationStatement7") |
-      log((((((MATCH <~ t("for")) <~ t("(")) <~ -ntl((("let" <~ not(IDContinue))))) ~ LeftHandSideExpression(List(pYield, pAwait)) <~ t("of")) ~ AssignmentExpression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn, pElse)) ^^ { case _ ~ x0 ~ x1 ~ x2 => IterationStatement8(x0, x1, x2, args) })("IterationStatement8") |
-      log((((((MATCH <~ t("for")) <~ t("(")) <~ t("var")) ~ ForBinding(List(pYield, pAwait)) <~ t("of")) ~ AssignmentExpression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn, pElse)) ^^ { case _ ~ x0 ~ x1 ~ x2 => IterationStatement9(x0, x1, x2, args) })("IterationStatement9") |
-      log(((((MATCH <~ t("for")) <~ t("(")) ~ ForDeclaration(List(pYield, pAwait)) <~ t("of")) ~ AssignmentExpression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn, pElse)) ^^ { case _ ~ x0 ~ x1 ~ x2 => IterationStatement10(x0, x1, x2, args) })("IterationStatement10") |
-      log((if (pAwait) ((((((MATCH <~ t("for")) <~ t("await")) <~ t("(")) <~ -ntl((("let" <~ not(IDContinue))))) ~ LeftHandSideExpression(List(pYield, pAwait)) <~ t("of")) ~ AssignmentExpression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn, pElse)) ^^ { case _ ~ x0 ~ x1 ~ x2 => IterationStatement11(x0, x1, x2, args) } else MISMATCH))("IterationStatement11") |
-      log((if (pAwait) ((((((MATCH <~ t("for")) <~ t("await")) <~ t("(")) <~ t("var")) ~ ForBinding(List(pYield, pAwait)) <~ t("of")) ~ AssignmentExpression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn, pElse)) ^^ { case _ ~ x0 ~ x1 ~ x2 => IterationStatement12(x0, x1, x2, args) } else MISMATCH))("IterationStatement12") |
-      log((if (pAwait) (((((MATCH <~ t("for")) <~ t("await")) <~ t("(")) ~ ForDeclaration(List(pYield, pAwait)) <~ t("of")) ~ AssignmentExpression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn, pElse)) ^^ { case _ ~ x0 ~ x1 ~ x2 => IterationStatement13(x0, x1, x2, args) } else MISMATCH))("IterationStatement13")
+      log((((((MATCH <~ t("do")) ~ Statement(List(pYield, pAwait, pReturn)) <~ t("while")) <~ t("(")) ~ Expression(List(true, pYield, pAwait)) <~ t(")")) <~ t(";")) ^^ { case _ ~ x0 ~ x1 => IterationStatement0(x0, x1, args) })("IterationStatement0") |
+      log((((MATCH <~ t("while")) <~ t("(")) ~ Expression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 ~ x1 => IterationStatement1(x0, x1, args) })("IterationStatement1") |
+      log(((((((MATCH <~ t("for")) <~ t("(")) <~ -ntl((("let" <~ not(IDContinue)) %% "["))) ~ opt(Expression(List(false, pYield, pAwait))) <~ t(";")) ~ opt(Expression(List(true, pYield, pAwait))) <~ t(";")) ~ opt(Expression(List(true, pYield, pAwait))) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 ~ x1 ~ x2 ~ x3 => IterationStatement2(x0, x1, x2, x3, args) })("IterationStatement2") |
+      log(((((((MATCH <~ t("for")) <~ t("(")) <~ t("var")) ~ VariableDeclarationList(List(false, pYield, pAwait)) <~ t(";")) ~ opt(Expression(List(true, pYield, pAwait))) <~ t(";")) ~ opt(Expression(List(true, pYield, pAwait))) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 ~ x1 ~ x2 ~ x3 => IterationStatement3(x0, x1, x2, x3, args) })("IterationStatement3") |
+      log(((((MATCH <~ t("for")) <~ t("(")) ~ LexicalDeclaration(List(false, pYield, pAwait)) ~ opt(Expression(List(true, pYield, pAwait))) <~ t(";")) ~ opt(Expression(List(true, pYield, pAwait))) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 ~ x1 ~ x2 ~ x3 => IterationStatement4(x0, x1, x2, x3, args) })("IterationStatement4") |
+      log((((((MATCH <~ t("for")) <~ t("(")) <~ -ntl((("let" <~ not(IDContinue)) %% "["))) ~ LeftHandSideExpression(List(pYield, pAwait)) <~ t("in")) ~ Expression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 ~ x1 ~ x2 => IterationStatement5(x0, x1, x2, args) })("IterationStatement5") |
+      log((((((MATCH <~ t("for")) <~ t("(")) <~ t("var")) ~ ForBinding(List(pYield, pAwait)) <~ t("in")) ~ Expression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 ~ x1 ~ x2 => IterationStatement6(x0, x1, x2, args) })("IterationStatement6") |
+      log(((((MATCH <~ t("for")) <~ t("(")) ~ ForDeclaration(List(pYield, pAwait)) <~ t("in")) ~ Expression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 ~ x1 ~ x2 => IterationStatement7(x0, x1, x2, args) })("IterationStatement7") |
+      log((((((MATCH <~ t("for")) <~ t("(")) <~ -ntl((("let" <~ not(IDContinue))))) ~ LeftHandSideExpression(List(pYield, pAwait)) <~ t("of")) ~ AssignmentExpression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 ~ x1 ~ x2 => IterationStatement8(x0, x1, x2, args) })("IterationStatement8") |
+      log((((((MATCH <~ t("for")) <~ t("(")) <~ t("var")) ~ ForBinding(List(pYield, pAwait)) <~ t("of")) ~ AssignmentExpression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 ~ x1 ~ x2 => IterationStatement9(x0, x1, x2, args) })("IterationStatement9") |
+      log(((((MATCH <~ t("for")) <~ t("(")) ~ ForDeclaration(List(pYield, pAwait)) <~ t("of")) ~ AssignmentExpression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 ~ x1 ~ x2 => IterationStatement10(x0, x1, x2, args) })("IterationStatement10") |
+      log((if (pAwait) ((((((MATCH <~ t("for")) <~ t("await")) <~ t("(")) <~ -ntl((("let" <~ not(IDContinue))))) ~ LeftHandSideExpression(List(pYield, pAwait)) <~ t("of")) ~ AssignmentExpression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 ~ x1 ~ x2 => IterationStatement11(x0, x1, x2, args) } else MISMATCH))("IterationStatement11") |
+      log((if (pAwait) ((((((MATCH <~ t("for")) <~ t("await")) <~ t("(")) <~ t("var")) ~ ForBinding(List(pYield, pAwait)) <~ t("of")) ~ AssignmentExpression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 ~ x1 ~ x2 => IterationStatement12(x0, x1, x2, args) } else MISMATCH))("IterationStatement12") |
+      log((if (pAwait) (((((MATCH <~ t("for")) <~ t("await")) <~ t("(")) ~ ForDeclaration(List(pYield, pAwait)) <~ t("of")) ~ AssignmentExpression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 ~ x1 ~ x2 => IterationStatement13(x0, x1, x2, args) } else MISMATCH))("IterationStatement13")
     ))("IterationStatement")
   })
   lazy val ForDeclaration: ESParser[ForDeclaration] = memo(args => {
@@ -1346,9 +1346,9 @@ object Parser extends ESParsers {
     ))("ReturnStatement")
   })
   lazy val WithStatement: ESParser[WithStatement] = memo(args => {
-    val List(pYield, pAwait, pReturn, pElse) = getArgsN("WithStatement", args, 4)
+    val List(pYield, pAwait, pReturn) = getArgsN("WithStatement", args, 3)
     log((
-      log((((MATCH <~ t("with")) <~ t("(")) ~ Expression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn, pElse)) ^^ { case _ ~ x0 ~ x1 => WithStatement0(x0, x1, args) })("WithStatement0")
+      log((((MATCH <~ t("with")) <~ t("(")) ~ Expression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 ~ x1 => WithStatement0(x0, x1, args) })("WithStatement0")
     ))("WithStatement")
   })
   lazy val SwitchStatement: ESParser[SwitchStatement] = memo(args => {
@@ -1385,7 +1385,7 @@ object Parser extends ESParsers {
     ))("DefaultClause")
   })
   lazy val LabelledStatement: ESParser[LabelledStatement] = memo(args => {
-    val List(pYield, pAwait, pReturn, pElse) = getArgsN("LabelledStatement", args, 4)
+    val List(pYield, pAwait, pReturn) = getArgsN("LabelledStatement", args, 3)
     log((
       log((MATCH ~ LabelIdentifier(List(pYield, pAwait)) <~ t(":")) ~ LabelledItem(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 ~ x1 => LabelledStatement0(x0, x1, args) })("LabelledStatement0")
     ))("LabelledStatement")
@@ -1393,7 +1393,7 @@ object Parser extends ESParsers {
   lazy val LabelledItem: ESParser[LabelledItem] = memo(args => {
     val List(pYield, pAwait, pReturn) = getArgsN("LabelledItem", args, 3)
     log((
-      log(MATCH ~ Statement(List(pYield, pAwait, pReturn, false)) ^^ { case _ ~ x0 => LabelledItem0(x0, args) })("LabelledItem0") |
+      log(MATCH ~ Statement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 => LabelledItem0(x0, args) })("LabelledItem0") |
       log(MATCH ~ FunctionDeclaration(List(pYield, pAwait, false)) ^^ { case _ ~ x0 => LabelledItem1(x0, args) })("LabelledItem1")
     ))("LabelledItem")
   })
@@ -1532,7 +1532,7 @@ object Parser extends ESParsers {
     val List(pIn, pYield, pAwait) = getArgsN("AsyncArrowFunction", args, 3)
     log((
       log(((((MATCH <~ t("async")) <~ NoLineTerminator) ~ AsyncArrowBindingIdentifier(List(pYield)) <~ NoLineTerminator) <~ t("=>")) ~ AsyncConciseBody(List(pIn)) ^^ { case _ ~ x0 ~ x1 => AsyncArrowFunction0(x0, x1, args) })("AsyncArrowFunction0") |
-      log(((MATCH ~ CoverCallExpressionAndAsyncArrowHead(List(pAwait, pYield)) <~ NoLineTerminator) <~ t("=>")) ~ AsyncConciseBody(List(pIn)) ^^ { case _ ~ x0 ~ x1 => AsyncArrowFunction1(x0, x1, args) })("AsyncArrowFunction1")
+      log(((MATCH ~ CoverCallExpressionAndAsyncArrowHead(List(pYield, pAwait)) <~ NoLineTerminator) <~ t("=>")) ~ AsyncConciseBody(List(pIn)) ^^ { case _ ~ x0 ~ x1 => AsyncArrowFunction1(x0, x1, args) })("AsyncArrowFunction1")
     ))("AsyncArrowFunction")
   })
   lazy val AsyncConciseBody: ESParser[AsyncConciseBody] = memo(args => {

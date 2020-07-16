@@ -183,9 +183,9 @@ object DepthCounter {
   }
   def CallExpression(pYield: Boolean, pAwait: Boolean): Depth = (pYield, pAwait) match {
     case (false, false) => Depth(2, List(Some(2), Some(2), None, Some(3), Some(3), Some(3), Some(3)))
-    case (false, true) => Depth(2, List(None, Some(2), None, Some(3), Some(3), Some(3), Some(3)))
-    case (true, true) => Depth(2, List(None, Some(2), None, Some(3), Some(3), Some(3), Some(3)))
-    case (true, false) => Depth(2, List(None, Some(2), None, Some(3), Some(3), Some(3), Some(3)))
+    case (false, true) => Depth(2, List(Some(2), Some(2), None, Some(3), Some(3), Some(3), Some(3)))
+    case (true, true) => Depth(2, List(Some(2), Some(2), None, Some(3), Some(3), Some(3), Some(3)))
+    case (true, false) => Depth(2, List(Some(2), Some(2), None, Some(3), Some(3), Some(3), Some(3)))
   }
   def CallMemberExpression(pYield: Boolean, pAwait: Boolean): Depth = (pYield, pAwait) match {
     case (true, true) => Depth(2, List(Some(2)))
@@ -940,14 +940,14 @@ object DepthCounter {
     case (true, true) => Depth(2, List(Some(2)))
   }
   def AsyncArrowFunction(pIn: Boolean, pYield: Boolean, pAwait: Boolean): Depth = (pIn, pYield, pAwait) match {
-    case (true, true, false) => Depth(3, List(Some(3), None))
-    case (true, true, true) => Depth(3, List(Some(3), None))
-    case (false, true, false) => Depth(3, List(Some(3), None))
-    case (false, true, true) => Depth(3, List(Some(3), None))
-    case (false, false, true) => Depth(3, List(Some(3), None))
+    case (true, true, false) => Depth(3, List(Some(3), Some(3)))
+    case (true, true, true) => Depth(3, List(Some(3), Some(3)))
+    case (false, true, false) => Depth(3, List(Some(3), Some(3)))
+    case (false, true, true) => Depth(3, List(Some(3), Some(3)))
+    case (false, false, true) => Depth(3, List(Some(3), Some(3)))
     case (true, false, false) => Depth(3, List(Some(3), Some(3)))
     case (false, false, false) => Depth(3, List(Some(3), Some(3)))
-    case (true, false, true) => Depth(3, List(Some(3), None))
+    case (true, false, true) => Depth(3, List(Some(3), Some(3)))
   }
   def AsyncConciseBody(pIn: Boolean): Depth = (pIn) match {
     case (false) => Depth(2, List(Some(2), Some(1)))
@@ -957,8 +957,11 @@ object DepthCounter {
     case (true) => Depth(1, List(Some(1)))
     case (false) => Depth(1, List(Some(1)))
   }
-  def CoverCallExpressionAndAsyncArrowHead(): Depth = () match {
-    case () => Depth(2, List(Some(2)))
+  def CoverCallExpressionAndAsyncArrowHead(pYield: Boolean, pAwait: Boolean): Depth = (pYield, pAwait) match {
+    case (true, true) => Depth(2, List(Some(2)))
+    case (false, false) => Depth(2, List(Some(2)))
+    case (true, false) => Depth(2, List(Some(2)))
+    case (false, true) => Depth(2, List(Some(2)))
   }
   def AsyncArrowHead(): Depth = () match {
     case () => Depth(3, List(Some(3)))
@@ -1093,6 +1096,12 @@ object DepthCounter {
     case (false, true) => Depth(1, List(Some(2), Some(3), Some(1)))
     case (true, true) => Depth(1, List(Some(2), Some(3), Some(1)))
     case (true, false) => Depth(1, List(Some(2), Some(3), Some(1)))
+  }
+  def Script(): Depth = () match {
+    case () => Depth(0, List(Some(0)))
+  }
+  def ScriptBody(): Depth = () match {
+    case () => Depth(1, List(Some(1)))
   }
   def ExportSpecifier(): Depth = () match {
     case () => Depth(1, List(Some(1), Some(2)))

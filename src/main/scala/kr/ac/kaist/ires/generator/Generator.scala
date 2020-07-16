@@ -7,7 +7,6 @@ import kr.ac.kaist.ires.mutator._
 import kr.ac.kaist.ires.model.{ Script, ModelHelper }
 import kr.ac.kaist.ires.coverage.Visited
 import kr.ac.kaist.ires.sampler._
-import kr.ac.kaist.ires.sampler.RHSElemProtocol._
 import kr.ac.kaist.ires.util.Useful._
 
 object Generator {
@@ -66,6 +65,12 @@ object Generator {
     logln("Sampling...")
     val samples = getSample
 
+    logln("Calculating syntax coverage...")
+    val tracer = new RHSTracer
+    tracer(samples)
+    logln(tracer.summary)
+    tracer.dump(s"$GENERATE_DIR/syntax")
+
     logln("Running samples...")
     for (script <- samples) add(script)
 
@@ -95,7 +100,7 @@ object Generator {
     logln(coverage.summary)
 
     // dump coverage
-    coverage.dump(GENERATE_DIR)
+    coverage.dump(s"$GENERATE_DIR/semantics")
 
     // close PrintWriter for the log file
     nf.close()

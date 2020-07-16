@@ -25,7 +25,7 @@ object LimitedDepthSampler extends Sampler {
 
     val emptyStmtList = Parser.parse(Parser.StatementList(List(false, false, false)), ";").get
     override def StatementList(depth: Int, pYield: Boolean, pAwait: Boolean, pReturn: Boolean): StatementList = emptyStmtList
-    val emptyStmt = Parser.parse(Parser.Statement(List(false, false, false, false)), ";").get
+    val emptyStmt = Parser.parse(Parser.Statement(List(false, false, false)), ";").get
     override def Statement(depth: Int, pYield: Boolean, pAwait: Boolean, pReturn: Boolean): Statement = emptyStmt
 
     val emptyString = Parser.parse(Parser.AssignmentExpression(List(false, false, false)), "''").get.asInstanceOf[AssignmentExpression0]

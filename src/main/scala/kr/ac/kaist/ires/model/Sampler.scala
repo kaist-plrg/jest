@@ -247,7 +247,7 @@ class Sampler {
   def CallExpression(depth: Int, pYield: Boolean, pAwait: Boolean): CallExpression = {
     var candidates: Vector[() => CallExpression] = Vector()
     val rhsDepth = counter.CallExpression(pYield, pAwait).rhsDepth
-    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => CallExpression0(CoverCallExpressionAndAsyncArrowHead(depth), List(pYield, pAwait)) } }
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => CallExpression0(CoverCallExpressionAndAsyncArrowHead(depth, pYield, pAwait), List(pYield, pAwait)) } }
     rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => CallExpression1(SuperCall(depth, pYield, pAwait), List(pYield, pAwait)) } }
     rhsDepth(3).collect { case d if depth >= d => candidates :+= { () => CallExpression3(CallExpression(depth - 1, pYield, pAwait), Arguments(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
     rhsDepth(4).collect { case d if depth >= d => candidates :+= { () => CallExpression4(CallExpression(depth - 1, pYield, pAwait), Expression(depth - 1, true, pYield, pAwait), List(pYield, pAwait)) } }
@@ -1022,7 +1022,7 @@ class Sampler {
     var candidates: Vector[() => AsyncArrowFunction] = Vector()
     val rhsDepth = counter.AsyncArrowFunction(pIn, pYield, pAwait).rhsDepth
     rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => AsyncArrowFunction0(AsyncArrowBindingIdentifier(depth - 1, pYield), AsyncConciseBody(depth - 1, pIn), List(pIn, pYield, pAwait)) } }
-    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => AsyncArrowFunction1(CoverCallExpressionAndAsyncArrowHead(depth - 1), AsyncConciseBody(depth - 1, pIn), List(pIn, pYield, pAwait)) } }
+    rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => AsyncArrowFunction1(CoverCallExpressionAndAsyncArrowHead(depth - 1, pYield, pAwait), AsyncConciseBody(depth - 1, pIn), List(pIn, pYield, pAwait)) } }
     choose(candidates)()
   }
   def AsyncConciseBody(depth: Int, pIn: Boolean): AsyncConciseBody = {
@@ -1038,10 +1038,10 @@ class Sampler {
     rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => AsyncArrowBindingIdentifier0(BindingIdentifier(depth, pYield, true), List(pYield)) } }
     choose(candidates)()
   }
-  def CoverCallExpressionAndAsyncArrowHead(depth: Int): CoverCallExpressionAndAsyncArrowHead = {
+  def CoverCallExpressionAndAsyncArrowHead(depth: Int, pYield: Boolean, pAwait: Boolean): CoverCallExpressionAndAsyncArrowHead = {
     var candidates: Vector[() => CoverCallExpressionAndAsyncArrowHead] = Vector()
-    val rhsDepth = counter.CoverCallExpressionAndAsyncArrowHead().rhsDepth
-    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => CoverCallExpressionAndAsyncArrowHead0(MemberExpression(depth - 1, false, false), Arguments(depth - 1, false, false), List()) } }
+    val rhsDepth = counter.CoverCallExpressionAndAsyncArrowHead(pYield, pAwait).rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => CoverCallExpressionAndAsyncArrowHead0(MemberExpression(depth - 1, pYield, pAwait), Arguments(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
     choose(candidates)()
   }
   def AsyncArrowHead(depth: Int): AsyncArrowHead = {
@@ -1201,6 +1201,18 @@ class Sampler {
     rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ClassElement0(MethodDefinition(depth, pYield, pAwait), List(pYield, pAwait)) } }
     rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => ClassElement1(MethodDefinition(depth - 1, pYield, pAwait), List(pYield, pAwait)) } }
     rhsDepth(2).collect { case d if depth >= d => candidates :+= { () => ClassElement2(List(pYield, pAwait)) } }
+    choose(candidates)()
+  }
+  def Script(depth: Int): Script = {
+    var candidates: Vector[() => Script] = Vector()
+    val rhsDepth = counter.Script().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => Script0(opt(depth >= counter.ScriptBody().depth, ScriptBody(depth)), List()) } }
+    choose(candidates)()
+  }
+  def ScriptBody(depth: Int): ScriptBody = {
+    var candidates: Vector[() => ScriptBody] = Vector()
+    val rhsDepth = counter.ScriptBody().rhsDepth
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ScriptBody0(StatementList(depth, false, false, false), List()) } }
     choose(candidates)()
   }
   def ExportSpecifier(depth: Int): ExportSpecifier = {
