@@ -11,10 +11,17 @@ class Visited {
 
   // add covered instructions
   def +=(uid: Int): Unit = if (uid >= 0) instCovered += uid
+  def -=(uid: Int): Unit = if (uid >= 0) instCovered -= uid
 
   // add covered conditions
+  def +=(pair: (Int, Boolean)): Unit = condCovered += pair
+  def -=(pair: (Int, Boolean)): Unit = condCovered -= pair
   def +=(uid: Int, value: Value): Unit = value match {
-    case Bool(b) if uid >= 0 => condCovered += ((uid, b))
+    case Bool(b) if uid >= 0 => this += ((uid, b))
+    case _ =>
+  }
+  def -=(uid: Int, value: Value): Unit = value match {
+    case Bool(b) if uid >= 0 => this -= ((uid, b))
     case _ =>
   }
 
@@ -46,6 +53,9 @@ class Visited {
       case _ => Base(algoName, instStr, covered)
     }
   }))
+
+  // simple String
+  def simpleString: String = s"(${instCovered.size}, ${condCovered.size})"
 }
 
 object Visited {

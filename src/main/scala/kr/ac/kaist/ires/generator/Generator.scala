@@ -2,7 +2,7 @@ package kr.ac.kaist.ires.generator
 
 import kr.ac.kaist.ires.GENERATE_DIR
 import kr.ac.kaist.ires.error.{ NotSupported, Timeout }
-import kr.ac.kaist.ires.ir.Interp
+import kr.ac.kaist.ires.ir.{ Interp, CondInst }
 import kr.ac.kaist.ires.mutator._
 import kr.ac.kaist.ires.model.{ Script, ModelHelper }
 import kr.ac.kaist.ires.coverage.Visited
@@ -19,29 +19,31 @@ object Generator {
   def generate: List[Script] = generate(false)
   def generate(debug: Boolean): List[Script] = {
     // log file
+    mkdir(GENERATE_DIR)
     val nf = getPrintWriter(s"$GENERATE_DIR/log")
 
     var total: List[Script] = Nil
     val totalVisited: Visited = new Visited
     var condMap: Map[(Int, Boolean), Script] = Map()
     var targets: Set[(Int, Boolean)] = Set()
+    var failed: Set[(Int, Boolean)] = Set()
     var count: Int = 0
 
-    def log(any: Any): Unit = {
+    def log(any: Any, stdout: Boolean = true): Unit = {
       nf.print(any)
-      if (debug) print(any)
+      if (stdout && debug) print(any)
     }
-    def logln(any: Any): Unit = {
+    def logln(any: Any, stdout: Boolean = true): Unit = {
       nf.println(any)
-      if (debug) println(any)
+      if (stdout && debug) println(any)
     }
 
     def add(script: Script): Boolean = {
       count += 1
-      log(f"$script%-80s")
+      log(f"$script%-80s", false)
       getVisited(script) match {
         case Left(visited) if !(visited subsetOf totalVisited) =>
-          logln(": PASS")
+          logln(": PASS", false)
           val newCondCovered = visited.getCondCovered -- totalVisited.getCondCovered
           for (cond <- newCondCovered) {
             val (x, b) = cond
@@ -54,10 +56,10 @@ object Generator {
           total ::= script
           true
         case Left(_) =>
-          logln(": FAIL")
+          logln(": FAIL", false)
           false
         case Right(msg) =>
-          logln(s": $msg")
+          logln(s": $msg", false)
           false
       }
     }
@@ -78,29 +80,39 @@ object Generator {
     for (k <- 0 until MAX_ITER) {
       var iter = 0
       var trial = 0
+      var cond = (0, true)
       val targetSeq = targets.toSeq
 
       do {
         iter += 1
         trial = 0
-        val target = condMap(choose(targetSeq))
+        cond = choose(targetSeq)
+        val target = condMap(cond)
         // val target = choose(total)
         while (trial < MAX_TRIAL && !add(mutate(target))) trial += 1
+        if (trial == MAX_TRIAL) failed += cond
       } while (iter < MAX_TRIAL_ITER && trial == MAX_TRIAL)
 
       log(s"${k + 1}th iteration: ")
       if (iter == MAX_TRIAL_ITER) logln("FAILED")
-      else logln(totalVisited.getCondCovered.size)
+      else {
+        failed -= cond
+        logln(totalVisited.simpleString)
+      }
     }
 
     val coverage = totalVisited.getCoverage
 
-    logln("")
     logln(s"TOTAL: ${total.length} / $count")
     logln(coverage.summary)
 
     // dump coverage
     coverage.dump(s"$GENERATE_DIR/semantics")
+
+    // dump failed
+    dumpJson(failed.toList.map {
+      case pair @ (uid, bool) => FailedCase(condMap(pair), uid, bool)
+    }, s"$GENERATE_DIR/failed.json")
 
     // close PrintWriter for the log file
     nf.close()

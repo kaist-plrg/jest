@@ -14,7 +14,9 @@ case class Coverage(cases: Vector[Case]) extends CoverageProtocol {
   val instCovered: Set[Int] = insts.filter(k => cases(k).covered)
 
   // conditions
-  case class Branch(id: Int, pass: Boolean)
+  case class Branch(id: Int, pass: Boolean) {
+    def neg: Branch = Branch(id, !pass)
+  }
   val conds: Set[Branch] = insts.flatMap(k => cases(k) match {
     case _: Cond => List(Branch(k, true), Branch(k, false))
     case _ => Nil
