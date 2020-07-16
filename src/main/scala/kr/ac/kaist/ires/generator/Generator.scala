@@ -63,10 +63,10 @@ object Generator {
     }
 
     val samples = getSample
-    println("Running samples...")
+    logln("Running samples...")
     for (script <- samples) add(script)
 
-    println("Mutating samples...")
+    logln("Mutating samples...")
     for (k <- 0 until MAX_ITER) {
       log(s"${k + 1}th iteration: ")
       var iter = 0
@@ -87,10 +87,9 @@ object Generator {
 
     val coverage = totalVisited.getCoverage
 
-    println
-    total.foreach(println _)
-    println(s"TOTAL: ${total.length} / $count")
-    println(coverage.summary)
+    logln("")
+    logln(s"TOTAL: ${total.length} / $count")
+    logln(coverage.summary)
 
     // dump coverage
     coverage.dump(GENERATE_DIR)
