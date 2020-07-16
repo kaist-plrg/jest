@@ -7,6 +7,7 @@ import kr.ac.kaist.ires.mutator._
 import kr.ac.kaist.ires.model.{ Script, ModelHelper }
 import kr.ac.kaist.ires.coverage.Visited
 import kr.ac.kaist.ires.sampler._
+import kr.ac.kaist.ires.sampler.RHSElemProtocol._
 import kr.ac.kaist.ires.util.Useful._
 
 object Generator {
