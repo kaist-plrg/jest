@@ -76,7 +76,6 @@ object Generator {
 
     logln("Mutating samples...")
     for (k <- 0 until MAX_ITER) {
-      log(s"${k + 1}th iteration: ")
       var iter = 0
       var trial = 0
       val targetSeq = targets.toSeq
@@ -84,11 +83,12 @@ object Generator {
       do {
         iter += 1
         trial = 0
-        // val target = condMap(choose(targetSeq))
-        val target = choose(total)
+        val target = condMap(choose(targetSeq))
+        // val target = choose(total)
         while (trial < MAX_TRIAL && !add(mutate(target))) trial += 1
       } while (iter < MAX_TRIAL_ITER && trial == MAX_TRIAL)
 
+      log(s"${k + 1}th iteration: ")
       if (iter == MAX_TRIAL_ITER) logln("FAILED")
       else logln(totalVisited.getCondCovered.size)
     }
@@ -112,7 +112,12 @@ object Generator {
   def getSample: List[Script] = LimitedDepthSampler.getSample
 
   // mutate given JavaScript program
-  def mutate(script: Script): Script = SimpleExprReplacer(script)
+  def mutate(script: Script): Script = {
+    val str = script.toString
+    var mutated = script
+    do mutated = SimpleExprReplacer(script) while (str == mutated.toString)
+    mutated
+  }
 
   // get visited points in ECMAScript
   def getVisited(script: Script): Either[Visited, String] = try {

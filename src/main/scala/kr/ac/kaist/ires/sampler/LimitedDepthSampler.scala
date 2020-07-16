@@ -1,48 +1,50 @@
 package kr.ac.kaist.ires.sampler
 
-import kr.ac.kaist.ires.model.{ Parser, Sampler, Script }
-import kr.ac.kaist.ires.model.{ Expression, Expression0, AssignmentExpression, AssignmentExpression0 }
-import kr.ac.kaist.ires.model.{ StatementList, StatementList0, Statement, Statement2 }
+import kr.ac.kaist.ires.model.{ Parser, Sampler => GenSampler, Script }
+import kr.ac.kaist.ires.model.{ Expression, Expression0, AssignmentExpression }
+import kr.ac.kaist.ires.model.{ StatementList, Statement, Declaration }
 import kr.ac.kaist.ires.sampler.ValueSampler._
 import kr.ac.kaist.ires.util.Useful._
 
-object LimitedDepthSampler extends Sampler {
-  // depth of statements
-  val STMT_DEPTH: Int = 4
-
-  // depth of expressions
-  val EXPR_DEPTH: Int = 2
+object LimitedDepthSampler extends GenSampler with Sampler {
+  // maximum depths
+  val STMT_DEPTH: Int = 3
+  val DECL_DEPTH: Int = 3
+  val EXPR_DEPTH: Int = 3
 
   // number of samples
   val SIZE: Int = 1000
 
-  // restricted sampler
-  object BasicSampler extends Sampler {
-    def oldStatement(depth: Int, pYield: Boolean, pAwait: Boolean, pReturn: Boolean): Statement =
-      super.Statement(depth, pYield, pAwait, pReturn)
-    def oldAssignmentExpression(depth: Int, pIn: Boolean, pYield: Boolean, pAwait: Boolean): AssignmentExpression =
-      super.AssignmentExpression(depth, pIn, pYield, pAwait)
+  // original samplers
+  def origStatement: Statement = super.Statement(STMT_DEPTH, false, false, false)
+  def origDeclaration: Declaration = super.Declaration(DECL_DEPTH, false, false)
+  def origAssignmentExpression: AssignmentExpression =
+    super.AssignmentExpression(EXPR_DEPTH, false, false, false)
 
-    val emptyStmtList = Parser.parse(Parser.StatementList(List(false, false, false)), ";").get
-    override def StatementList(depth: Int, pYield: Boolean, pAwait: Boolean, pReturn: Boolean): StatementList = emptyStmtList
-    val emptyStmt = Parser.parse(Parser.Statement(List(false, false, false)), ";").get
-    override def Statement(depth: Int, pYield: Boolean, pAwait: Boolean, pReturn: Boolean): Statement = emptyStmt
+  // hooking statements
+  val emptyStmtList = Parser.parse(Parser.StatementList(List(false, false, false)), ";").get
+  override def StatementList(depth: Int, pYield: Boolean, pAwait: Boolean, pReturn: Boolean): StatementList = emptyStmtList
+  val emptyStmt = Parser.parse(Parser.Statement(List(false, false, false)), ";").get
+  override def Statement(depth: Int, pYield: Boolean, pAwait: Boolean, pReturn: Boolean): Statement = emptyStmt
+  val basicDeclaration = Parser.parse(Parser.Declaration(List(false, false)), "let x;").get
+  override def Declaration(depth: Int, pYield: Boolean, pAwait: Boolean): Declaration = basicDeclaration
 
-    val emptyString = Parser.parse(Parser.AssignmentExpression(List(false, false, false)), "''").get.asInstanceOf[AssignmentExpression0]
-    override def AssignmentExpression(depth: Int, pIn: Boolean, pYield: Boolean, pAwait: Boolean): AssignmentExpression = emptyString
-    val emptyStringExpr = Expression0(emptyString, List(false, false, false))
-    override def Expression(depth: Int, pIn: Boolean, pYield: Boolean, pAwait: Boolean): Expression = emptyStringExpr
-  }
+  // hooking expressions
+  val emptyString = Parser.parse(Parser.AssignmentExpression(List(false, false, false)), "''").get
+  override def AssignmentExpression(depth: Int, pIn: Boolean, pYield: Boolean, pAwait: Boolean): AssignmentExpression = emptyString
+  val emptyStringExpr = Expression0(emptyString, List(false, false, false))
+  override def Expression(depth: Int, pIn: Boolean, pYield: Boolean, pAwait: Boolean): Expression = emptyStringExpr
 
   // get samples
   def getSample: List[Script] = getSample(false)
   def getSample(debug: Boolean): List[Script] = {
     var scripts = Set[String]()
     while (scripts.size < SIZE) {
-      val script = if (randBool) {
-        val expr = BasicSampler.oldAssignmentExpression(EXPR_DEPTH, false, false, false).toString
-        s"var x = $expr"
-      } else BasicSampler.oldStatement(STMT_DEPTH, false, false, false).toString
+      val script = choose(0 until 3) match {
+        case 0 => s"var x = ${origAssignmentExpression}"
+        case 1 => origStatement.toString
+        case 2 => origDeclaration.toString
+      }
       if (!scripts.contains(script) && ValidityChecker(script)) {
         scripts += script
         if (debug) {
