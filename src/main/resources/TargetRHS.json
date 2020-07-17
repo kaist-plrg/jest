@@ -161,150 +161,6 @@
 }, {
   "k": 0,
   "parserParams": [false, false],
-  "rhsName": "ArrayAssignmentPattern0"
-}, {
-  "k": 1,
-  "parserParams": [false, false],
-  "rhsName": "ArrayAssignmentPattern0"
-}, {
-  "k": 2,
-  "parserParams": [false, false],
-  "rhsName": "ArrayAssignmentPattern0"
-}, {
-  "k": 3,
-  "parserParams": [false, false],
-  "rhsName": "ArrayAssignmentPattern0"
-}, {
-  "k": 0,
-  "parserParams": [false, true],
-  "rhsName": "ArrayAssignmentPattern0"
-}, {
-  "k": 1,
-  "parserParams": [false, true],
-  "rhsName": "ArrayAssignmentPattern0"
-}, {
-  "k": 2,
-  "parserParams": [false, true],
-  "rhsName": "ArrayAssignmentPattern0"
-}, {
-  "k": 3,
-  "parserParams": [false, true],
-  "rhsName": "ArrayAssignmentPattern0"
-}, {
-  "k": 0,
-  "parserParams": [true, false],
-  "rhsName": "ArrayAssignmentPattern0"
-}, {
-  "k": 1,
-  "parserParams": [true, false],
-  "rhsName": "ArrayAssignmentPattern0"
-}, {
-  "k": 2,
-  "parserParams": [true, false],
-  "rhsName": "ArrayAssignmentPattern0"
-}, {
-  "k": 3,
-  "parserParams": [true, false],
-  "rhsName": "ArrayAssignmentPattern0"
-}, {
-  "k": 0,
-  "parserParams": [true, true],
-  "rhsName": "ArrayAssignmentPattern0"
-}, {
-  "k": 1,
-  "parserParams": [true, true],
-  "rhsName": "ArrayAssignmentPattern0"
-}, {
-  "k": 2,
-  "parserParams": [true, true],
-  "rhsName": "ArrayAssignmentPattern0"
-}, {
-  "k": 3,
-  "parserParams": [true, true],
-  "rhsName": "ArrayAssignmentPattern0"
-}, {
-  "k": 0,
-  "parserParams": [false, false],
-  "rhsName": "ArrayAssignmentPattern1"
-}, {
-  "k": 0,
-  "parserParams": [false, true],
-  "rhsName": "ArrayAssignmentPattern1"
-}, {
-  "k": 0,
-  "parserParams": [true, false],
-  "rhsName": "ArrayAssignmentPattern1"
-}, {
-  "k": 0,
-  "parserParams": [true, true],
-  "rhsName": "ArrayAssignmentPattern1"
-}, {
-  "k": 0,
-  "parserParams": [false, false],
-  "rhsName": "ArrayAssignmentPattern2"
-}, {
-  "k": 1,
-  "parserParams": [false, false],
-  "rhsName": "ArrayAssignmentPattern2"
-}, {
-  "k": 2,
-  "parserParams": [false, false],
-  "rhsName": "ArrayAssignmentPattern2"
-}, {
-  "k": 3,
-  "parserParams": [false, false],
-  "rhsName": "ArrayAssignmentPattern2"
-}, {
-  "k": 0,
-  "parserParams": [false, true],
-  "rhsName": "ArrayAssignmentPattern2"
-}, {
-  "k": 1,
-  "parserParams": [false, true],
-  "rhsName": "ArrayAssignmentPattern2"
-}, {
-  "k": 2,
-  "parserParams": [false, true],
-  "rhsName": "ArrayAssignmentPattern2"
-}, {
-  "k": 3,
-  "parserParams": [false, true],
-  "rhsName": "ArrayAssignmentPattern2"
-}, {
-  "k": 0,
-  "parserParams": [true, false],
-  "rhsName": "ArrayAssignmentPattern2"
-}, {
-  "k": 1,
-  "parserParams": [true, false],
-  "rhsName": "ArrayAssignmentPattern2"
-}, {
-  "k": 2,
-  "parserParams": [true, false],
-  "rhsName": "ArrayAssignmentPattern2"
-}, {
-  "k": 3,
-  "parserParams": [true, false],
-  "rhsName": "ArrayAssignmentPattern2"
-}, {
-  "k": 0,
-  "parserParams": [true, true],
-  "rhsName": "ArrayAssignmentPattern2"
-}, {
-  "k": 1,
-  "parserParams": [true, true],
-  "rhsName": "ArrayAssignmentPattern2"
-}, {
-  "k": 2,
-  "parserParams": [true, true],
-  "rhsName": "ArrayAssignmentPattern2"
-}, {
-  "k": 3,
-  "parserParams": [true, true],
-  "rhsName": "ArrayAssignmentPattern2"
-}, {
-  "k": 0,
-  "parserParams": [false, false],
   "rhsName": "ArrayBindingPattern0"
 }, {
   "k": 1,
@@ -526,22 +382,6 @@
   "k": 1,
   "parserParams": [true, true],
   "rhsName": "ArrayLiteral2"
-}, {
-  "k": 0,
-  "parserParams": [false, false],
-  "rhsName": "ArrowFormalParameters0"
-}, {
-  "k": 0,
-  "parserParams": [false, true],
-  "rhsName": "ArrowFormalParameters0"
-}, {
-  "k": 0,
-  "parserParams": [true, false],
-  "rhsName": "ArrowFormalParameters0"
-}, {
-  "k": 0,
-  "parserParams": [true, true],
-  "rhsName": "ArrowFormalParameters0"
 }, {
   "k": 0,
   "parserParams": [false, false, false],
@@ -606,102 +446,6 @@
   "k": 0,
   "parserParams": [true, true],
   "rhsName": "ArrowParameters1"
-}, {
-  "k": 0,
-  "parserParams": [false, false],
-  "rhsName": "AssignmentElement0"
-}, {
-  "k": 1,
-  "parserParams": [false, false],
-  "rhsName": "AssignmentElement0"
-}, {
-  "k": 0,
-  "parserParams": [false, true],
-  "rhsName": "AssignmentElement0"
-}, {
-  "k": 1,
-  "parserParams": [false, true],
-  "rhsName": "AssignmentElement0"
-}, {
-  "k": 0,
-  "parserParams": [true, false],
-  "rhsName": "AssignmentElement0"
-}, {
-  "k": 1,
-  "parserParams": [true, false],
-  "rhsName": "AssignmentElement0"
-}, {
-  "k": 0,
-  "parserParams": [true, true],
-  "rhsName": "AssignmentElement0"
-}, {
-  "k": 1,
-  "parserParams": [true, true],
-  "rhsName": "AssignmentElement0"
-}, {
-  "k": 0,
-  "parserParams": [false, false],
-  "rhsName": "AssignmentElementList0"
-}, {
-  "k": 0,
-  "parserParams": [false, true],
-  "rhsName": "AssignmentElementList0"
-}, {
-  "k": 0,
-  "parserParams": [true, false],
-  "rhsName": "AssignmentElementList0"
-}, {
-  "k": 0,
-  "parserParams": [true, true],
-  "rhsName": "AssignmentElementList0"
-}, {
-  "k": 0,
-  "parserParams": [false, false],
-  "rhsName": "AssignmentElementList1"
-}, {
-  "k": 0,
-  "parserParams": [false, true],
-  "rhsName": "AssignmentElementList1"
-}, {
-  "k": 0,
-  "parserParams": [true, false],
-  "rhsName": "AssignmentElementList1"
-}, {
-  "k": 0,
-  "parserParams": [true, true],
-  "rhsName": "AssignmentElementList1"
-}, {
-  "k": 0,
-  "parserParams": [false, false],
-  "rhsName": "AssignmentElisionElement0"
-}, {
-  "k": 1,
-  "parserParams": [false, false],
-  "rhsName": "AssignmentElisionElement0"
-}, {
-  "k": 0,
-  "parserParams": [false, true],
-  "rhsName": "AssignmentElisionElement0"
-}, {
-  "k": 1,
-  "parserParams": [false, true],
-  "rhsName": "AssignmentElisionElement0"
-}, {
-  "k": 0,
-  "parserParams": [true, false],
-  "rhsName": "AssignmentElisionElement0"
-}, {
-  "k": 1,
-  "parserParams": [true, false],
-  "rhsName": "AssignmentElisionElement0"
-}, {
-  "k": 0,
-  "parserParams": [true, true],
-  "rhsName": "AssignmentElisionElement0"
-}, {
-  "k": 1,
-  "parserParams": [true, true],
-  "rhsName": "AssignmentElisionElement0"
 }, {
   "k": 0,
   "parserParams": [false, false, false],
@@ -928,150 +672,6 @@
   "rhsName": "AssignmentOperator9"
 }, {
   "k": 0,
-  "parserParams": [false, false],
-  "rhsName": "AssignmentPattern0"
-}, {
-  "k": 0,
-  "parserParams": [false, true],
-  "rhsName": "AssignmentPattern0"
-}, {
-  "k": 0,
-  "parserParams": [true, false],
-  "rhsName": "AssignmentPattern0"
-}, {
-  "k": 0,
-  "parserParams": [true, true],
-  "rhsName": "AssignmentPattern0"
-}, {
-  "k": 0,
-  "parserParams": [false, false],
-  "rhsName": "AssignmentPattern1"
-}, {
-  "k": 0,
-  "parserParams": [false, true],
-  "rhsName": "AssignmentPattern1"
-}, {
-  "k": 0,
-  "parserParams": [true, false],
-  "rhsName": "AssignmentPattern1"
-}, {
-  "k": 0,
-  "parserParams": [true, true],
-  "rhsName": "AssignmentPattern1"
-}, {
-  "k": 0,
-  "parserParams": [false, false],
-  "rhsName": "AssignmentProperty0"
-}, {
-  "k": 1,
-  "parserParams": [false, false],
-  "rhsName": "AssignmentProperty0"
-}, {
-  "k": 0,
-  "parserParams": [false, true],
-  "rhsName": "AssignmentProperty0"
-}, {
-  "k": 1,
-  "parserParams": [false, true],
-  "rhsName": "AssignmentProperty0"
-}, {
-  "k": 0,
-  "parserParams": [true, false],
-  "rhsName": "AssignmentProperty0"
-}, {
-  "k": 1,
-  "parserParams": [true, false],
-  "rhsName": "AssignmentProperty0"
-}, {
-  "k": 0,
-  "parserParams": [true, true],
-  "rhsName": "AssignmentProperty0"
-}, {
-  "k": 1,
-  "parserParams": [true, true],
-  "rhsName": "AssignmentProperty0"
-}, {
-  "k": 0,
-  "parserParams": [false, false],
-  "rhsName": "AssignmentProperty1"
-}, {
-  "k": 0,
-  "parserParams": [false, true],
-  "rhsName": "AssignmentProperty1"
-}, {
-  "k": 0,
-  "parserParams": [true, false],
-  "rhsName": "AssignmentProperty1"
-}, {
-  "k": 0,
-  "parserParams": [true, true],
-  "rhsName": "AssignmentProperty1"
-}, {
-  "k": 0,
-  "parserParams": [false, false],
-  "rhsName": "AssignmentPropertyList0"
-}, {
-  "k": 0,
-  "parserParams": [false, true],
-  "rhsName": "AssignmentPropertyList0"
-}, {
-  "k": 0,
-  "parserParams": [true, false],
-  "rhsName": "AssignmentPropertyList0"
-}, {
-  "k": 0,
-  "parserParams": [true, true],
-  "rhsName": "AssignmentPropertyList0"
-}, {
-  "k": 0,
-  "parserParams": [false, false],
-  "rhsName": "AssignmentPropertyList1"
-}, {
-  "k": 0,
-  "parserParams": [false, true],
-  "rhsName": "AssignmentPropertyList1"
-}, {
-  "k": 0,
-  "parserParams": [true, false],
-  "rhsName": "AssignmentPropertyList1"
-}, {
-  "k": 0,
-  "parserParams": [true, true],
-  "rhsName": "AssignmentPropertyList1"
-}, {
-  "k": 0,
-  "parserParams": [false, false],
-  "rhsName": "AssignmentRestElement0"
-}, {
-  "k": 0,
-  "parserParams": [false, true],
-  "rhsName": "AssignmentRestElement0"
-}, {
-  "k": 0,
-  "parserParams": [true, false],
-  "rhsName": "AssignmentRestElement0"
-}, {
-  "k": 0,
-  "parserParams": [true, true],
-  "rhsName": "AssignmentRestElement0"
-}, {
-  "k": 0,
-  "parserParams": [false, false],
-  "rhsName": "AssignmentRestProperty0"
-}, {
-  "k": 0,
-  "parserParams": [false, true],
-  "rhsName": "AssignmentRestProperty0"
-}, {
-  "k": 0,
-  "parserParams": [true, false],
-  "rhsName": "AssignmentRestProperty0"
-}, {
-  "k": 0,
-  "parserParams": [true, true],
-  "rhsName": "AssignmentRestProperty0"
-}, {
-  "k": 0,
   "parserParams": [false],
   "rhsName": "AsyncArrowBindingIdentifier0"
 }, {
@@ -1142,10 +742,6 @@
   "k": 0,
   "parserParams": [true, true, true],
   "rhsName": "AsyncArrowFunction1"
-}, {
-  "k": 0,
-  "parserParams": [],
-  "rhsName": "AsyncArrowHead0"
 }, {
   "k": 0,
   "parserParams": [false],
@@ -1172,15 +768,7 @@
   "rhsName": "AsyncFunctionDeclaration0"
 }, {
   "k": 0,
-  "parserParams": [false, false, true],
-  "rhsName": "AsyncFunctionDeclaration0"
-}, {
-  "k": 0,
   "parserParams": [false, true, false],
-  "rhsName": "AsyncFunctionDeclaration0"
-}, {
-  "k": 0,
-  "parserParams": [false, true, true],
   "rhsName": "AsyncFunctionDeclaration0"
 }, {
   "k": 0,
@@ -1188,32 +776,8 @@
   "rhsName": "AsyncFunctionDeclaration0"
 }, {
   "k": 0,
-  "parserParams": [true, false, true],
-  "rhsName": "AsyncFunctionDeclaration0"
-}, {
-  "k": 0,
   "parserParams": [true, true, false],
   "rhsName": "AsyncFunctionDeclaration0"
-}, {
-  "k": 0,
-  "parserParams": [true, true, true],
-  "rhsName": "AsyncFunctionDeclaration0"
-}, {
-  "k": 0,
-  "parserParams": [false, false, true],
-  "rhsName": "AsyncFunctionDeclaration1"
-}, {
-  "k": 0,
-  "parserParams": [false, true, true],
-  "rhsName": "AsyncFunctionDeclaration1"
-}, {
-  "k": 0,
-  "parserParams": [true, false, true],
-  "rhsName": "AsyncFunctionDeclaration1"
-}, {
-  "k": 0,
-  "parserParams": [true, true, true],
-  "rhsName": "AsyncFunctionDeclaration1"
 }, {
   "k": 0,
   "parserParams": [],
@@ -1232,15 +796,7 @@
   "rhsName": "AsyncGeneratorDeclaration0"
 }, {
   "k": 0,
-  "parserParams": [false, false, true],
-  "rhsName": "AsyncGeneratorDeclaration0"
-}, {
-  "k": 0,
   "parserParams": [false, true, false],
-  "rhsName": "AsyncGeneratorDeclaration0"
-}, {
-  "k": 0,
-  "parserParams": [false, true, true],
   "rhsName": "AsyncGeneratorDeclaration0"
 }, {
   "k": 0,
@@ -1248,32 +804,8 @@
   "rhsName": "AsyncGeneratorDeclaration0"
 }, {
   "k": 0,
-  "parserParams": [true, false, true],
-  "rhsName": "AsyncGeneratorDeclaration0"
-}, {
-  "k": 0,
   "parserParams": [true, true, false],
   "rhsName": "AsyncGeneratorDeclaration0"
-}, {
-  "k": 0,
-  "parserParams": [true, true, true],
-  "rhsName": "AsyncGeneratorDeclaration0"
-}, {
-  "k": 0,
-  "parserParams": [false, false, true],
-  "rhsName": "AsyncGeneratorDeclaration1"
-}, {
-  "k": 0,
-  "parserParams": [false, true, true],
-  "rhsName": "AsyncGeneratorDeclaration1"
-}, {
-  "k": 0,
-  "parserParams": [true, false, true],
-  "rhsName": "AsyncGeneratorDeclaration1"
-}, {
-  "k": 0,
-  "parserParams": [true, true, true],
-  "rhsName": "AsyncGeneratorDeclaration1"
 }, {
   "k": 0,
   "parserParams": [],
@@ -1900,14 +1432,6 @@
   "rhsName": "Block0"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "Block0"
-}, {
-  "k": 1,
-  "parserParams": [false, true, false],
-  "rhsName": "Block0"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "Block0"
 }, {
@@ -1916,27 +1440,11 @@
   "rhsName": "Block0"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "Block0"
-}, {
-  "k": 1,
-  "parserParams": [true, false, false],
-  "rhsName": "Block0"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
   "rhsName": "Block0"
 }, {
   "k": 1,
   "parserParams": [true, false, true],
-  "rhsName": "Block0"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
-  "rhsName": "Block0"
-}, {
-  "k": 1,
-  "parserParams": [true, true, false],
   "rhsName": "Block0"
 }, {
   "k": 0,
@@ -1956,23 +1464,11 @@
   "rhsName": "BlockStatement0"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "BlockStatement0"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "BlockStatement0"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "BlockStatement0"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
-  "rhsName": "BlockStatement0"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "BlockStatement0"
 }, {
   "k": 0,
@@ -2020,23 +1516,11 @@
   "rhsName": "BreakableStatement0"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "BreakableStatement0"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "BreakableStatement0"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "BreakableStatement0"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
-  "rhsName": "BreakableStatement0"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "BreakableStatement0"
 }, {
   "k": 0,
@@ -2052,23 +1536,11 @@
   "rhsName": "BreakableStatement1"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "BreakableStatement1"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "BreakableStatement1"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "BreakableStatement1"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
-  "rhsName": "BreakableStatement1"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "BreakableStatement1"
 }, {
   "k": 0,
@@ -2172,22 +1644,6 @@
   "rhsName": "CallExpression6"
 }, {
   "k": 0,
-  "parserParams": [false, false],
-  "rhsName": "CallMemberExpression0"
-}, {
-  "k": 0,
-  "parserParams": [false, true],
-  "rhsName": "CallMemberExpression0"
-}, {
-  "k": 0,
-  "parserParams": [true, false],
-  "rhsName": "CallMemberExpression0"
-}, {
-  "k": 0,
-  "parserParams": [true, true],
-  "rhsName": "CallMemberExpression0"
-}, {
-  "k": 0,
   "parserParams": [false, false, false],
   "rhsName": "CaseBlock0"
 }, {
@@ -2204,14 +1660,6 @@
   "rhsName": "CaseBlock0"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "CaseBlock0"
-}, {
-  "k": 1,
-  "parserParams": [false, true, false],
-  "rhsName": "CaseBlock0"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "CaseBlock0"
 }, {
@@ -2220,27 +1668,11 @@
   "rhsName": "CaseBlock0"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "CaseBlock0"
-}, {
-  "k": 1,
-  "parserParams": [true, false, false],
-  "rhsName": "CaseBlock0"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
   "rhsName": "CaseBlock0"
 }, {
   "k": 1,
   "parserParams": [true, false, true],
-  "rhsName": "CaseBlock0"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
-  "rhsName": "CaseBlock0"
-}, {
-  "k": 1,
-  "parserParams": [true, true, false],
   "rhsName": "CaseBlock0"
 }, {
   "k": 0,
@@ -2284,22 +1716,6 @@
   "rhsName": "CaseBlock1"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "CaseBlock1"
-}, {
-  "k": 1,
-  "parserParams": [false, true, false],
-  "rhsName": "CaseBlock1"
-}, {
-  "k": 2,
-  "parserParams": [false, true, false],
-  "rhsName": "CaseBlock1"
-}, {
-  "k": 3,
-  "parserParams": [false, true, false],
-  "rhsName": "CaseBlock1"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "CaseBlock1"
 }, {
@@ -2316,22 +1732,6 @@
   "rhsName": "CaseBlock1"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "CaseBlock1"
-}, {
-  "k": 1,
-  "parserParams": [true, false, false],
-  "rhsName": "CaseBlock1"
-}, {
-  "k": 2,
-  "parserParams": [true, false, false],
-  "rhsName": "CaseBlock1"
-}, {
-  "k": 3,
-  "parserParams": [true, false, false],
-  "rhsName": "CaseBlock1"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
   "rhsName": "CaseBlock1"
 }, {
@@ -2345,22 +1745,6 @@
 }, {
   "k": 3,
   "parserParams": [true, false, true],
-  "rhsName": "CaseBlock1"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
-  "rhsName": "CaseBlock1"
-}, {
-  "k": 1,
-  "parserParams": [true, true, false],
-  "rhsName": "CaseBlock1"
-}, {
-  "k": 2,
-  "parserParams": [true, true, false],
-  "rhsName": "CaseBlock1"
-}, {
-  "k": 3,
-  "parserParams": [true, true, false],
   "rhsName": "CaseBlock1"
 }, {
   "k": 0,
@@ -2396,14 +1780,6 @@
   "rhsName": "CaseClause0"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "CaseClause0"
-}, {
-  "k": 1,
-  "parserParams": [false, true, false],
-  "rhsName": "CaseClause0"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "CaseClause0"
 }, {
@@ -2412,27 +1788,11 @@
   "rhsName": "CaseClause0"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "CaseClause0"
-}, {
-  "k": 1,
-  "parserParams": [true, false, false],
-  "rhsName": "CaseClause0"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
   "rhsName": "CaseClause0"
 }, {
   "k": 1,
   "parserParams": [true, false, true],
-  "rhsName": "CaseClause0"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
-  "rhsName": "CaseClause0"
-}, {
-  "k": 1,
-  "parserParams": [true, true, false],
   "rhsName": "CaseClause0"
 }, {
   "k": 0,
@@ -2452,23 +1812,11 @@
   "rhsName": "CaseClauses0"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "CaseClauses0"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "CaseClauses0"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "CaseClauses0"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
-  "rhsName": "CaseClauses0"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "CaseClauses0"
 }, {
   "k": 0,
@@ -2484,23 +1832,11 @@
   "rhsName": "CaseClauses1"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "CaseClauses1"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "CaseClauses1"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "CaseClauses1"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
-  "rhsName": "CaseClauses1"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "CaseClauses1"
 }, {
   "k": 0,
@@ -2516,23 +1852,11 @@
   "rhsName": "Catch0"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "Catch0"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "Catch0"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "Catch0"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
-  "rhsName": "Catch0"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "Catch0"
 }, {
   "k": 0,
@@ -2548,23 +1872,11 @@
   "rhsName": "Catch1"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "Catch1"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "Catch1"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "Catch1"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
-  "rhsName": "Catch1"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "Catch1"
 }, {
   "k": 0,
@@ -2624,15 +1936,7 @@
   "rhsName": "ClassDeclaration0"
 }, {
   "k": 0,
-  "parserParams": [false, false, true],
-  "rhsName": "ClassDeclaration0"
-}, {
-  "k": 0,
   "parserParams": [false, true, false],
-  "rhsName": "ClassDeclaration0"
-}, {
-  "k": 0,
-  "parserParams": [false, true, true],
   "rhsName": "ClassDeclaration0"
 }, {
   "k": 0,
@@ -2640,32 +1944,8 @@
   "rhsName": "ClassDeclaration0"
 }, {
   "k": 0,
-  "parserParams": [true, false, true],
-  "rhsName": "ClassDeclaration0"
-}, {
-  "k": 0,
   "parserParams": [true, true, false],
   "rhsName": "ClassDeclaration0"
-}, {
-  "k": 0,
-  "parserParams": [true, true, true],
-  "rhsName": "ClassDeclaration0"
-}, {
-  "k": 0,
-  "parserParams": [false, false, true],
-  "rhsName": "ClassDeclaration1"
-}, {
-  "k": 0,
-  "parserParams": [false, true, true],
-  "rhsName": "ClassDeclaration1"
-}, {
-  "k": 0,
-  "parserParams": [true, false, true],
-  "rhsName": "ClassDeclaration1"
-}, {
-  "k": 0,
-  "parserParams": [true, true, true],
-  "rhsName": "ClassDeclaration1"
 }, {
   "k": 0,
   "parserParams": [false, false],
@@ -3296,27 +2576,11 @@
   "rhsName": "DefaultClause0"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "DefaultClause0"
-}, {
-  "k": 1,
-  "parserParams": [false, true, false],
-  "rhsName": "DefaultClause0"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "DefaultClause0"
 }, {
   "k": 1,
   "parserParams": [false, true, true],
-  "rhsName": "DefaultClause0"
-}, {
-  "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "DefaultClause0"
-}, {
-  "k": 1,
-  "parserParams": [true, false, false],
   "rhsName": "DefaultClause0"
 }, {
   "k": 0,
@@ -3328,36 +2592,12 @@
   "rhsName": "DefaultClause0"
 }, {
   "k": 0,
-  "parserParams": [true, true, false],
-  "rhsName": "DefaultClause0"
-}, {
-  "k": 1,
-  "parserParams": [true, true, false],
-  "rhsName": "DefaultClause0"
-}, {
-  "k": 0,
   "parserParams": [true, true, true],
   "rhsName": "DefaultClause0"
 }, {
   "k": 1,
   "parserParams": [true, true, true],
   "rhsName": "DefaultClause0"
-}, {
-  "k": 0,
-  "parserParams": [false, false],
-  "rhsName": "DestructuringAssignmentTarget0"
-}, {
-  "k": 0,
-  "parserParams": [false, true],
-  "rhsName": "DestructuringAssignmentTarget0"
-}, {
-  "k": 0,
-  "parserParams": [true, false],
-  "rhsName": "DestructuringAssignmentTarget0"
-}, {
-  "k": 0,
-  "parserParams": [true, true],
-  "rhsName": "DestructuringAssignmentTarget0"
 }, {
   "k": 0,
   "parserParams": [false, false],
@@ -3692,14 +2932,6 @@
   "rhsName": "ExponentiationExpression1"
 }, {
   "k": 0,
-  "parserParams": [],
-  "rhsName": "ExportSpecifier0"
-}, {
-  "k": 0,
-  "parserParams": [],
-  "rhsName": "ExportSpecifier1"
-}, {
-  "k": 0,
   "parserParams": [false, false, false],
   "rhsName": "Expression0"
 }, {
@@ -3804,23 +3036,11 @@
   "rhsName": "Finally0"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "Finally0"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "Finally0"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "Finally0"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
-  "rhsName": "Finally0"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "Finally0"
 }, {
   "k": 0,
@@ -4024,15 +3244,7 @@
   "rhsName": "FunctionDeclaration0"
 }, {
   "k": 0,
-  "parserParams": [false, false, true],
-  "rhsName": "FunctionDeclaration0"
-}, {
-  "k": 0,
   "parserParams": [false, true, false],
-  "rhsName": "FunctionDeclaration0"
-}, {
-  "k": 0,
-  "parserParams": [false, true, true],
   "rhsName": "FunctionDeclaration0"
 }, {
   "k": 0,
@@ -4040,32 +3252,8 @@
   "rhsName": "FunctionDeclaration0"
 }, {
   "k": 0,
-  "parserParams": [true, false, true],
-  "rhsName": "FunctionDeclaration0"
-}, {
-  "k": 0,
   "parserParams": [true, true, false],
   "rhsName": "FunctionDeclaration0"
-}, {
-  "k": 0,
-  "parserParams": [true, true, true],
-  "rhsName": "FunctionDeclaration0"
-}, {
-  "k": 0,
-  "parserParams": [false, false, true],
-  "rhsName": "FunctionDeclaration1"
-}, {
-  "k": 0,
-  "parserParams": [false, true, true],
-  "rhsName": "FunctionDeclaration1"
-}, {
-  "k": 0,
-  "parserParams": [true, false, true],
-  "rhsName": "FunctionDeclaration1"
-}, {
-  "k": 0,
-  "parserParams": [true, true, true],
-  "rhsName": "FunctionDeclaration1"
 }, {
   "k": 0,
   "parserParams": [],
@@ -4132,15 +3320,7 @@
   "rhsName": "GeneratorDeclaration0"
 }, {
   "k": 0,
-  "parserParams": [false, false, true],
-  "rhsName": "GeneratorDeclaration0"
-}, {
-  "k": 0,
   "parserParams": [false, true, false],
-  "rhsName": "GeneratorDeclaration0"
-}, {
-  "k": 0,
-  "parserParams": [false, true, true],
   "rhsName": "GeneratorDeclaration0"
 }, {
   "k": 0,
@@ -4148,32 +3328,8 @@
   "rhsName": "GeneratorDeclaration0"
 }, {
   "k": 0,
-  "parserParams": [true, false, true],
-  "rhsName": "GeneratorDeclaration0"
-}, {
-  "k": 0,
   "parserParams": [true, true, false],
   "rhsName": "GeneratorDeclaration0"
-}, {
-  "k": 0,
-  "parserParams": [true, true, true],
-  "rhsName": "GeneratorDeclaration0"
-}, {
-  "k": 0,
-  "parserParams": [false, false, true],
-  "rhsName": "GeneratorDeclaration1"
-}, {
-  "k": 0,
-  "parserParams": [false, true, true],
-  "rhsName": "GeneratorDeclaration1"
-}, {
-  "k": 0,
-  "parserParams": [true, false, true],
-  "rhsName": "GeneratorDeclaration1"
-}, {
-  "k": 0,
-  "parserParams": [true, true, true],
-  "rhsName": "GeneratorDeclaration1"
 }, {
   "k": 0,
   "parserParams": [],
@@ -4204,15 +3360,7 @@
   "rhsName": "HoistableDeclaration0"
 }, {
   "k": 0,
-  "parserParams": [false, false, true],
-  "rhsName": "HoistableDeclaration0"
-}, {
-  "k": 0,
   "parserParams": [false, true, false],
-  "rhsName": "HoistableDeclaration0"
-}, {
-  "k": 0,
-  "parserParams": [false, true, true],
   "rhsName": "HoistableDeclaration0"
 }, {
   "k": 0,
@@ -4220,15 +3368,7 @@
   "rhsName": "HoistableDeclaration0"
 }, {
   "k": 0,
-  "parserParams": [true, false, true],
-  "rhsName": "HoistableDeclaration0"
-}, {
-  "k": 0,
   "parserParams": [true, true, false],
-  "rhsName": "HoistableDeclaration0"
-}, {
-  "k": 0,
-  "parserParams": [true, true, true],
   "rhsName": "HoistableDeclaration0"
 }, {
   "k": 0,
@@ -4236,15 +3376,7 @@
   "rhsName": "HoistableDeclaration1"
 }, {
   "k": 0,
-  "parserParams": [false, false, true],
-  "rhsName": "HoistableDeclaration1"
-}, {
-  "k": 0,
   "parserParams": [false, true, false],
-  "rhsName": "HoistableDeclaration1"
-}, {
-  "k": 0,
-  "parserParams": [false, true, true],
   "rhsName": "HoistableDeclaration1"
 }, {
   "k": 0,
@@ -4252,15 +3384,7 @@
   "rhsName": "HoistableDeclaration1"
 }, {
   "k": 0,
-  "parserParams": [true, false, true],
-  "rhsName": "HoistableDeclaration1"
-}, {
-  "k": 0,
   "parserParams": [true, true, false],
-  "rhsName": "HoistableDeclaration1"
-}, {
-  "k": 0,
-  "parserParams": [true, true, true],
   "rhsName": "HoistableDeclaration1"
 }, {
   "k": 0,
@@ -4268,15 +3392,7 @@
   "rhsName": "HoistableDeclaration2"
 }, {
   "k": 0,
-  "parserParams": [false, false, true],
-  "rhsName": "HoistableDeclaration2"
-}, {
-  "k": 0,
   "parserParams": [false, true, false],
-  "rhsName": "HoistableDeclaration2"
-}, {
-  "k": 0,
-  "parserParams": [false, true, true],
   "rhsName": "HoistableDeclaration2"
 }, {
   "k": 0,
@@ -4284,15 +3400,7 @@
   "rhsName": "HoistableDeclaration2"
 }, {
   "k": 0,
-  "parserParams": [true, false, true],
-  "rhsName": "HoistableDeclaration2"
-}, {
-  "k": 0,
   "parserParams": [true, true, false],
-  "rhsName": "HoistableDeclaration2"
-}, {
-  "k": 0,
-  "parserParams": [true, true, true],
   "rhsName": "HoistableDeclaration2"
 }, {
   "k": 0,
@@ -4300,15 +3408,7 @@
   "rhsName": "HoistableDeclaration3"
 }, {
   "k": 0,
-  "parserParams": [false, false, true],
-  "rhsName": "HoistableDeclaration3"
-}, {
-  "k": 0,
   "parserParams": [false, true, false],
-  "rhsName": "HoistableDeclaration3"
-}, {
-  "k": 0,
-  "parserParams": [false, true, true],
   "rhsName": "HoistableDeclaration3"
 }, {
   "k": 0,
@@ -4316,15 +3416,7 @@
   "rhsName": "HoistableDeclaration3"
 }, {
   "k": 0,
-  "parserParams": [true, false, true],
-  "rhsName": "HoistableDeclaration3"
-}, {
-  "k": 0,
   "parserParams": [true, true, false],
-  "rhsName": "HoistableDeclaration3"
-}, {
-  "k": 0,
-  "parserParams": [true, true, true],
   "rhsName": "HoistableDeclaration3"
 }, {
   "k": 0,
@@ -4372,23 +3464,11 @@
   "rhsName": "IfStatement0"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "IfStatement0"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "IfStatement0"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "IfStatement0"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
-  "rhsName": "IfStatement0"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "IfStatement0"
 }, {
   "k": 0,
@@ -4404,23 +3484,11 @@
   "rhsName": "IfStatement1"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "IfStatement1"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "IfStatement1"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "IfStatement1"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
-  "rhsName": "IfStatement1"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "IfStatement1"
 }, {
   "k": 0,
@@ -4468,23 +3536,11 @@
   "rhsName": "IterationStatement0"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "IterationStatement0"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "IterationStatement0"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "IterationStatement0"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
-  "rhsName": "IterationStatement0"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "IterationStatement0"
 }, {
   "k": 0,
@@ -4500,23 +3556,11 @@
   "rhsName": "IterationStatement1"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "IterationStatement1"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "IterationStatement1"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "IterationStatement1"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
-  "rhsName": "IterationStatement1"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "IterationStatement1"
 }, {
   "k": 0,
@@ -4532,15 +3576,7 @@
   "rhsName": "IterationStatement10"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "IterationStatement10"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
-  "rhsName": "IterationStatement10"
-}, {
-  "k": 0,
-  "parserParams": [true, false, false],
   "rhsName": "IterationStatement10"
 }, {
   "k": 0,
@@ -4548,23 +3584,11 @@
   "rhsName": "IterationStatement10"
 }, {
   "k": 0,
-  "parserParams": [true, true, false],
-  "rhsName": "IterationStatement10"
-}, {
-  "k": 0,
   "parserParams": [true, true, true],
   "rhsName": "IterationStatement10"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "IterationStatement11"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
-  "rhsName": "IterationStatement11"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "IterationStatement11"
 }, {
   "k": 0,
@@ -4572,15 +3596,7 @@
   "rhsName": "IterationStatement11"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "IterationStatement12"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
-  "rhsName": "IterationStatement12"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "IterationStatement12"
 }, {
   "k": 0,
@@ -4588,15 +3604,7 @@
   "rhsName": "IterationStatement12"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "IterationStatement13"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
-  "rhsName": "IterationStatement13"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "IterationStatement13"
 }, {
   "k": 0,
@@ -4668,38 +3676,6 @@
   "rhsName": "IterationStatement2"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "IterationStatement2"
-}, {
-  "k": 1,
-  "parserParams": [false, true, false],
-  "rhsName": "IterationStatement2"
-}, {
-  "k": 2,
-  "parserParams": [false, true, false],
-  "rhsName": "IterationStatement2"
-}, {
-  "k": 3,
-  "parserParams": [false, true, false],
-  "rhsName": "IterationStatement2"
-}, {
-  "k": 4,
-  "parserParams": [false, true, false],
-  "rhsName": "IterationStatement2"
-}, {
-  "k": 5,
-  "parserParams": [false, true, false],
-  "rhsName": "IterationStatement2"
-}, {
-  "k": 6,
-  "parserParams": [false, true, false],
-  "rhsName": "IterationStatement2"
-}, {
-  "k": 7,
-  "parserParams": [false, true, false],
-  "rhsName": "IterationStatement2"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "IterationStatement2"
 }, {
@@ -4732,38 +3708,6 @@
   "rhsName": "IterationStatement2"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "IterationStatement2"
-}, {
-  "k": 1,
-  "parserParams": [true, false, false],
-  "rhsName": "IterationStatement2"
-}, {
-  "k": 2,
-  "parserParams": [true, false, false],
-  "rhsName": "IterationStatement2"
-}, {
-  "k": 3,
-  "parserParams": [true, false, false],
-  "rhsName": "IterationStatement2"
-}, {
-  "k": 4,
-  "parserParams": [true, false, false],
-  "rhsName": "IterationStatement2"
-}, {
-  "k": 5,
-  "parserParams": [true, false, false],
-  "rhsName": "IterationStatement2"
-}, {
-  "k": 6,
-  "parserParams": [true, false, false],
-  "rhsName": "IterationStatement2"
-}, {
-  "k": 7,
-  "parserParams": [true, false, false],
-  "rhsName": "IterationStatement2"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
   "rhsName": "IterationStatement2"
 }, {
@@ -4793,38 +3737,6 @@
 }, {
   "k": 7,
   "parserParams": [true, false, true],
-  "rhsName": "IterationStatement2"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
-  "rhsName": "IterationStatement2"
-}, {
-  "k": 1,
-  "parserParams": [true, true, false],
-  "rhsName": "IterationStatement2"
-}, {
-  "k": 2,
-  "parserParams": [true, true, false],
-  "rhsName": "IterationStatement2"
-}, {
-  "k": 3,
-  "parserParams": [true, true, false],
-  "rhsName": "IterationStatement2"
-}, {
-  "k": 4,
-  "parserParams": [true, true, false],
-  "rhsName": "IterationStatement2"
-}, {
-  "k": 5,
-  "parserParams": [true, true, false],
-  "rhsName": "IterationStatement2"
-}, {
-  "k": 6,
-  "parserParams": [true, true, false],
-  "rhsName": "IterationStatement2"
-}, {
-  "k": 7,
-  "parserParams": [true, true, false],
   "rhsName": "IterationStatement2"
 }, {
   "k": 0,
@@ -4892,22 +3804,6 @@
   "rhsName": "IterationStatement3"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "IterationStatement3"
-}, {
-  "k": 1,
-  "parserParams": [false, true, false],
-  "rhsName": "IterationStatement3"
-}, {
-  "k": 2,
-  "parserParams": [false, true, false],
-  "rhsName": "IterationStatement3"
-}, {
-  "k": 3,
-  "parserParams": [false, true, false],
-  "rhsName": "IterationStatement3"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "IterationStatement3"
 }, {
@@ -4924,22 +3820,6 @@
   "rhsName": "IterationStatement3"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "IterationStatement3"
-}, {
-  "k": 1,
-  "parserParams": [true, false, false],
-  "rhsName": "IterationStatement3"
-}, {
-  "k": 2,
-  "parserParams": [true, false, false],
-  "rhsName": "IterationStatement3"
-}, {
-  "k": 3,
-  "parserParams": [true, false, false],
-  "rhsName": "IterationStatement3"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
   "rhsName": "IterationStatement3"
 }, {
@@ -4953,22 +3833,6 @@
 }, {
   "k": 3,
   "parserParams": [true, false, true],
-  "rhsName": "IterationStatement3"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
-  "rhsName": "IterationStatement3"
-}, {
-  "k": 1,
-  "parserParams": [true, true, false],
-  "rhsName": "IterationStatement3"
-}, {
-  "k": 2,
-  "parserParams": [true, true, false],
-  "rhsName": "IterationStatement3"
-}, {
-  "k": 3,
-  "parserParams": [true, true, false],
   "rhsName": "IterationStatement3"
 }, {
   "k": 0,
@@ -5020,22 +3884,6 @@
   "rhsName": "IterationStatement4"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "IterationStatement4"
-}, {
-  "k": 1,
-  "parserParams": [false, true, false],
-  "rhsName": "IterationStatement4"
-}, {
-  "k": 2,
-  "parserParams": [false, true, false],
-  "rhsName": "IterationStatement4"
-}, {
-  "k": 3,
-  "parserParams": [false, true, false],
-  "rhsName": "IterationStatement4"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "IterationStatement4"
 }, {
@@ -5052,22 +3900,6 @@
   "rhsName": "IterationStatement4"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "IterationStatement4"
-}, {
-  "k": 1,
-  "parserParams": [true, false, false],
-  "rhsName": "IterationStatement4"
-}, {
-  "k": 2,
-  "parserParams": [true, false, false],
-  "rhsName": "IterationStatement4"
-}, {
-  "k": 3,
-  "parserParams": [true, false, false],
-  "rhsName": "IterationStatement4"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
   "rhsName": "IterationStatement4"
 }, {
@@ -5081,22 +3913,6 @@
 }, {
   "k": 3,
   "parserParams": [true, false, true],
-  "rhsName": "IterationStatement4"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
-  "rhsName": "IterationStatement4"
-}, {
-  "k": 1,
-  "parserParams": [true, true, false],
-  "rhsName": "IterationStatement4"
-}, {
-  "k": 2,
-  "parserParams": [true, true, false],
-  "rhsName": "IterationStatement4"
-}, {
-  "k": 3,
-  "parserParams": [true, true, false],
   "rhsName": "IterationStatement4"
 }, {
   "k": 0,
@@ -5124,23 +3940,11 @@
   "rhsName": "IterationStatement5"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "IterationStatement5"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "IterationStatement5"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "IterationStatement5"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
-  "rhsName": "IterationStatement5"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "IterationStatement5"
 }, {
   "k": 0,
@@ -5156,23 +3960,11 @@
   "rhsName": "IterationStatement6"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "IterationStatement6"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "IterationStatement6"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "IterationStatement6"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
-  "rhsName": "IterationStatement6"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "IterationStatement6"
 }, {
   "k": 0,
@@ -5188,23 +3980,11 @@
   "rhsName": "IterationStatement7"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "IterationStatement7"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "IterationStatement7"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "IterationStatement7"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
-  "rhsName": "IterationStatement7"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "IterationStatement7"
 }, {
   "k": 0,
@@ -5220,23 +4000,11 @@
   "rhsName": "IterationStatement8"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "IterationStatement8"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "IterationStatement8"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "IterationStatement8"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
-  "rhsName": "IterationStatement8"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "IterationStatement8"
 }, {
   "k": 0,
@@ -5252,23 +4020,11 @@
   "rhsName": "IterationStatement9"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "IterationStatement9"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "IterationStatement9"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "IterationStatement9"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
-  "rhsName": "IterationStatement9"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "IterationStatement9"
 }, {
   "k": 0,
@@ -5316,23 +4072,11 @@
   "rhsName": "LabelledItem0"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "LabelledItem0"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "LabelledItem0"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "LabelledItem0"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
-  "rhsName": "LabelledItem0"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "LabelledItem0"
 }, {
   "k": 0,
@@ -5348,23 +4092,11 @@
   "rhsName": "LabelledItem1"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "LabelledItem1"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "LabelledItem1"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "LabelledItem1"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
-  "rhsName": "LabelledItem1"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "LabelledItem1"
 }, {
   "k": 0,
@@ -5380,23 +4112,11 @@
   "rhsName": "LabelledStatement0"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "LabelledStatement0"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "LabelledStatement0"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "LabelledStatement0"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
-  "rhsName": "LabelledStatement0"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "LabelledStatement0"
 }, {
   "k": 0,
@@ -6037,86 +4757,6 @@
 }, {
   "k": 0,
   "parserParams": [false, false],
-  "rhsName": "ObjectAssignmentPattern0"
-}, {
-  "k": 0,
-  "parserParams": [false, true],
-  "rhsName": "ObjectAssignmentPattern0"
-}, {
-  "k": 0,
-  "parserParams": [true, false],
-  "rhsName": "ObjectAssignmentPattern0"
-}, {
-  "k": 0,
-  "parserParams": [true, true],
-  "rhsName": "ObjectAssignmentPattern0"
-}, {
-  "k": 0,
-  "parserParams": [false, false],
-  "rhsName": "ObjectAssignmentPattern1"
-}, {
-  "k": 0,
-  "parserParams": [false, true],
-  "rhsName": "ObjectAssignmentPattern1"
-}, {
-  "k": 0,
-  "parserParams": [true, false],
-  "rhsName": "ObjectAssignmentPattern1"
-}, {
-  "k": 0,
-  "parserParams": [true, true],
-  "rhsName": "ObjectAssignmentPattern1"
-}, {
-  "k": 0,
-  "parserParams": [false, false],
-  "rhsName": "ObjectAssignmentPattern2"
-}, {
-  "k": 0,
-  "parserParams": [false, true],
-  "rhsName": "ObjectAssignmentPattern2"
-}, {
-  "k": 0,
-  "parserParams": [true, false],
-  "rhsName": "ObjectAssignmentPattern2"
-}, {
-  "k": 0,
-  "parserParams": [true, true],
-  "rhsName": "ObjectAssignmentPattern2"
-}, {
-  "k": 0,
-  "parserParams": [false, false],
-  "rhsName": "ObjectAssignmentPattern3"
-}, {
-  "k": 1,
-  "parserParams": [false, false],
-  "rhsName": "ObjectAssignmentPattern3"
-}, {
-  "k": 0,
-  "parserParams": [false, true],
-  "rhsName": "ObjectAssignmentPattern3"
-}, {
-  "k": 1,
-  "parserParams": [false, true],
-  "rhsName": "ObjectAssignmentPattern3"
-}, {
-  "k": 0,
-  "parserParams": [true, false],
-  "rhsName": "ObjectAssignmentPattern3"
-}, {
-  "k": 1,
-  "parserParams": [true, false],
-  "rhsName": "ObjectAssignmentPattern3"
-}, {
-  "k": 0,
-  "parserParams": [true, true],
-  "rhsName": "ObjectAssignmentPattern3"
-}, {
-  "k": 1,
-  "parserParams": [true, true],
-  "rhsName": "ObjectAssignmentPattern3"
-}, {
-  "k": 0,
-  "parserParams": [false, false],
   "rhsName": "ObjectBindingPattern0"
 }, {
   "k": 0,
@@ -6418,22 +5058,6 @@
   "k": 0,
   "parserParams": [true, true],
   "rhsName": "OptionalExpression2"
-}, {
-  "k": 0,
-  "parserParams": [false, false],
-  "rhsName": "ParenthesizedExpression0"
-}, {
-  "k": 0,
-  "parserParams": [false, true],
-  "rhsName": "ParenthesizedExpression0"
-}, {
-  "k": 0,
-  "parserParams": [true, false],
-  "rhsName": "ParenthesizedExpression0"
-}, {
-  "k": 0,
-  "parserParams": [true, true],
-  "rhsName": "ParenthesizedExpression0"
 }, {
   "k": 0,
   "parserParams": [false, false],
@@ -7212,23 +5836,11 @@
   "rhsName": "Statement0"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "Statement0"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "Statement0"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "Statement0"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
-  "rhsName": "Statement0"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "Statement0"
 }, {
   "k": 0,
@@ -7244,23 +5856,11 @@
   "rhsName": "Statement1"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "Statement1"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "Statement1"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "Statement1"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
-  "rhsName": "Statement1"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "Statement1"
 }, {
   "k": 0,
@@ -7276,23 +5876,11 @@
   "rhsName": "Statement10"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "Statement10"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "Statement10"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "Statement10"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
-  "rhsName": "Statement10"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "Statement10"
 }, {
   "k": 0,
@@ -7308,23 +5896,11 @@
   "rhsName": "Statement11"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "Statement11"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "Statement11"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "Statement11"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
-  "rhsName": "Statement11"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "Statement11"
 }, {
   "k": 0,
@@ -7340,23 +5916,11 @@
   "rhsName": "Statement12"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "Statement12"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "Statement12"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "Statement12"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
-  "rhsName": "Statement12"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "Statement12"
 }, {
   "k": 0,
@@ -7372,23 +5936,11 @@
   "rhsName": "Statement13"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "Statement13"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "Statement13"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "Statement13"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
-  "rhsName": "Statement13"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "Statement13"
 }, {
   "k": 0,
@@ -7404,23 +5956,11 @@
   "rhsName": "Statement2"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "Statement2"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "Statement2"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "Statement2"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
-  "rhsName": "Statement2"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "Statement2"
 }, {
   "k": 0,
@@ -7436,23 +5976,11 @@
   "rhsName": "Statement3"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "Statement3"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "Statement3"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "Statement3"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
-  "rhsName": "Statement3"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "Statement3"
 }, {
   "k": 0,
@@ -7468,23 +5996,11 @@
   "rhsName": "Statement4"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "Statement4"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "Statement4"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "Statement4"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
-  "rhsName": "Statement4"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "Statement4"
 }, {
   "k": 0,
@@ -7500,23 +6016,11 @@
   "rhsName": "Statement5"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "Statement5"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "Statement5"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "Statement5"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
-  "rhsName": "Statement5"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "Statement5"
 }, {
   "k": 0,
@@ -7532,23 +6036,11 @@
   "rhsName": "Statement6"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "Statement6"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "Statement6"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "Statement6"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
-  "rhsName": "Statement6"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "Statement6"
 }, {
   "k": 0,
@@ -7564,23 +6056,11 @@
   "rhsName": "Statement7"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "Statement7"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "Statement7"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "Statement7"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
-  "rhsName": "Statement7"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "Statement7"
 }, {
   "k": 0,
@@ -7612,23 +6092,11 @@
   "rhsName": "Statement9"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "Statement9"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "Statement9"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "Statement9"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
-  "rhsName": "Statement9"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "Statement9"
 }, {
   "k": 0,
@@ -7644,23 +6112,11 @@
   "rhsName": "StatementList0"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "StatementList0"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "StatementList0"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "StatementList0"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
-  "rhsName": "StatementList0"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "StatementList0"
 }, {
   "k": 0,
@@ -7676,23 +6132,11 @@
   "rhsName": "StatementList1"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "StatementList1"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "StatementList1"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "StatementList1"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
-  "rhsName": "StatementList1"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "StatementList1"
 }, {
   "k": 0,
@@ -7708,23 +6152,11 @@
   "rhsName": "StatementListItem0"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "StatementListItem0"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "StatementListItem0"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "StatementListItem0"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
-  "rhsName": "StatementListItem0"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "StatementListItem0"
 }, {
   "k": 0,
@@ -7740,23 +6172,11 @@
   "rhsName": "StatementListItem1"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "StatementListItem1"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "StatementListItem1"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "StatementListItem1"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
-  "rhsName": "StatementListItem1"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "StatementListItem1"
 }, {
   "k": 0,
@@ -7852,23 +6272,11 @@
   "rhsName": "SwitchStatement0"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "SwitchStatement0"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "SwitchStatement0"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "SwitchStatement0"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
-  "rhsName": "SwitchStatement0"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "SwitchStatement0"
 }, {
   "k": 0,
@@ -8092,23 +6500,11 @@
   "rhsName": "TryStatement0"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "TryStatement0"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "TryStatement0"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "TryStatement0"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
-  "rhsName": "TryStatement0"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "TryStatement0"
 }, {
   "k": 0,
@@ -8124,23 +6520,11 @@
   "rhsName": "TryStatement1"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "TryStatement1"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "TryStatement1"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "TryStatement1"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
-  "rhsName": "TryStatement1"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "TryStatement1"
 }, {
   "k": 0,
@@ -8156,23 +6540,11 @@
   "rhsName": "TryStatement2"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "TryStatement2"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "TryStatement2"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "TryStatement2"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
-  "rhsName": "TryStatement2"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "TryStatement2"
 }, {
   "k": 0,
@@ -8596,23 +6968,11 @@
   "rhsName": "WithStatement0"
 }, {
   "k": 0,
-  "parserParams": [false, true, false],
-  "rhsName": "WithStatement0"
-}, {
-  "k": 0,
   "parserParams": [false, true, true],
   "rhsName": "WithStatement0"
 }, {
   "k": 0,
-  "parserParams": [true, false, false],
-  "rhsName": "WithStatement0"
-}, {
-  "k": 0,
   "parserParams": [true, false, true],
-  "rhsName": "WithStatement0"
-}, {
-  "k": 0,
-  "parserParams": [true, true, false],
   "rhsName": "WithStatement0"
 }, {
   "k": 0,
