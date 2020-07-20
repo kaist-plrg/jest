@@ -1,12 +1,12 @@
 package kr.ac.kaist.ires.sampler
 
-import kr.ac.kaist.ires.model.{ Parser, Sampler => GenSampler, Script }
+import kr.ac.kaist.ires.model.{ Parser, LimitedDepthSampler, Script }
 import kr.ac.kaist.ires.model.{ Expression, Expression0, AssignmentExpression }
 import kr.ac.kaist.ires.model.{ StatementList, Statement, Declaration }
 import kr.ac.kaist.ires.sampler.ValueSampler._
 import kr.ac.kaist.ires.util.Useful._
 
-object LimitedDepthSampler extends GenSampler with Sampler {
+object LDSampler extends LimitedDepthSampler with Sampler {
   // maximum depths
   val STMT_DEPTH: Int = 3
   val DECL_DEPTH: Int = 3

@@ -7,7 +7,7 @@ import scala.collection.immutable.{ Set => ScalaSet }
 
 class NonRecursiveSampler {
   val counter = DepthCounter
-  val randomSampler = new Sampler
+  val randomSampler = new LimitedDepthSampler
   var visited: ScalaSet[(String, List[Boolean])] = ScalaSet()
 
   private def IdentifierName(): ScalaSet[Lexical] = ScalaSet(randomSampler.IdentifierName(1))

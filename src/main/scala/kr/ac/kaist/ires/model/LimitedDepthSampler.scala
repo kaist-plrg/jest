@@ -4,7 +4,7 @@ import kr.ac.kaist.ires.Lexical
 import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.util.Useful._
 
-class Sampler {
+class LimitedDepthSampler {
   val counter = DepthCounter
   val random = new scala.util.Random
   def opt[T](valid: Boolean, elem: => T): Option[T] = if (valid && random.nextBoolean) Some(elem) else None

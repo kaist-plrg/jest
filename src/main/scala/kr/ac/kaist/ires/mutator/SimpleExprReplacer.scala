@@ -11,11 +11,11 @@ object SimpleExprReplacer extends Mutator with Walker {
     else super.walk(expr)
   }
   override def walk(stmt: Statement): Statement = {
-    if (rand.nextBoolean) LimitedDepthSampler.origStatement
+    if (rand.nextBoolean) LDSampler.origStatement
     else super.walk(stmt)
   }
   override def walk(decl: Declaration): Declaration = {
-    if (rand.nextBoolean) LimitedDepthSampler.origDeclaration
+    if (rand.nextBoolean) LDSampler.origDeclaration
     else super.walk(decl)
   }
 }
