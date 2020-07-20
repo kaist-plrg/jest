@@ -44,7 +44,7 @@ class LimitedDepthSampler {
   def Identifier(depth: Int): Identifier = {
     var candidates: Vector[() => Identifier] = Vector()
     val rhsDepth = counter.Identifier().rhsDepth
-    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => Identifier0(IdentifierName(depth - 1), List()) } }
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => Identifier0(IdentifierName(depth), List()) } }
     choose(candidates)()
   }
   def PrimaryExpression(depth: Int, pYield: Boolean, pAwait: Boolean): PrimaryExpression = {
@@ -1002,7 +1002,7 @@ class LimitedDepthSampler {
   def ConciseBody(depth: Int, pIn: Boolean): ConciseBody = {
     var candidates: Vector[() => ConciseBody] = Vector()
     val rhsDepth = counter.ConciseBody(pIn).rhsDepth
-    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ConciseBody0(ExpressionBody(depth - 1, pIn, false), List(pIn)) } }
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => ConciseBody0(ExpressionBody(depth, pIn, false), List(pIn)) } }
     rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => ConciseBody1(FunctionBody(depth - 1, false, false), List(pIn)) } }
     choose(candidates)()
   }
@@ -1028,7 +1028,7 @@ class LimitedDepthSampler {
   def AsyncConciseBody(depth: Int, pIn: Boolean): AsyncConciseBody = {
     var candidates: Vector[() => AsyncConciseBody] = Vector()
     val rhsDepth = counter.AsyncConciseBody(pIn).rhsDepth
-    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => AsyncConciseBody0(ExpressionBody(depth - 1, pIn, true), List(pIn)) } }
+    rhsDepth(0).collect { case d if depth >= d => candidates :+= { () => AsyncConciseBody0(ExpressionBody(depth, pIn, true), List(pIn)) } }
     rhsDepth(1).collect { case d if depth >= d => candidates :+= { () => AsyncConciseBody1(AsyncFunctionBody(depth - 1), List(pIn)) } }
     choose(candidates)()
   }

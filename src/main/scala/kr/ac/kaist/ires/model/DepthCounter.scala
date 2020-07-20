@@ -6,31 +6,31 @@ import kr.ac.kaist.ires.ir._
 case class Depth(depth: Int, rhsDepth: List[Option[Int]])
 object DepthCounter {
   def IdentifierReference(pYield: Boolean, pAwait: Boolean): Depth = (pYield, pAwait) match {
-    case (true, false) => Depth(1, List(Some(2), None, Some(1)))
-    case (false, true) => Depth(1, List(Some(2), Some(1), None))
-    case (false, false) => Depth(1, List(Some(2), Some(1), Some(1)))
-    case (true, true) => Depth(2, List(Some(2), None, None))
+    case (true, false) => Depth(1, List(Some(1), None, Some(1)))
+    case (false, true) => Depth(1, List(Some(1), Some(1), None))
+    case (false, false) => Depth(1, List(Some(1), Some(1), Some(1)))
+    case (true, true) => Depth(1, List(Some(1), None, None))
   }
   def BindingIdentifier(pYield: Boolean, pAwait: Boolean): Depth = (pYield, pAwait) match {
-    case (false, true) => Depth(1, List(Some(2), Some(1), Some(1)))
-    case (true, false) => Depth(1, List(Some(2), Some(1), Some(1)))
-    case (false, false) => Depth(1, List(Some(2), Some(1), Some(1)))
-    case (true, true) => Depth(1, List(Some(2), Some(1), Some(1)))
+    case (false, true) => Depth(1, List(Some(1), Some(1), Some(1)))
+    case (true, false) => Depth(1, List(Some(1), Some(1), Some(1)))
+    case (false, false) => Depth(1, List(Some(1), Some(1), Some(1)))
+    case (true, true) => Depth(1, List(Some(1), Some(1), Some(1)))
   }
   def LabelIdentifier(pYield: Boolean, pAwait: Boolean): Depth = (pYield, pAwait) match {
-    case (true, false) => Depth(1, List(Some(2), None, Some(1)))
-    case (false, false) => Depth(1, List(Some(2), Some(1), Some(1)))
-    case (true, true) => Depth(2, List(Some(2), None, None))
-    case (false, true) => Depth(1, List(Some(2), Some(1), None))
+    case (true, false) => Depth(1, List(Some(1), None, Some(1)))
+    case (false, false) => Depth(1, List(Some(1), Some(1), Some(1)))
+    case (true, true) => Depth(1, List(Some(1), None, None))
+    case (false, true) => Depth(1, List(Some(1), Some(1), None))
   }
   def Identifier(): Depth = () match {
-    case () => Depth(2, List(Some(2)))
+    case () => Depth(1, List(Some(1)))
   }
   def PrimaryExpression(pYield: Boolean, pAwait: Boolean): Depth = (pYield, pAwait) match {
     case (true, false) => Depth(1, List(Some(1), Some(1), Some(1), Some(1), Some(1), Some(2), Some(2), Some(2), Some(2), Some(2), None, Some(1), Some(1)))
     case (false, true) => Depth(1, List(Some(1), Some(1), Some(1), Some(1), Some(1), Some(2), Some(2), Some(2), Some(2), Some(2), None, Some(1), Some(1)))
     case (false, false) => Depth(1, List(Some(1), Some(1), Some(1), Some(1), Some(1), Some(2), Some(2), Some(2), Some(2), Some(2), None, Some(1), Some(1)))
-    case (true, true) => Depth(1, List(Some(1), Some(2), Some(1), Some(1), Some(1), Some(2), Some(2), Some(2), Some(2), Some(2), None, Some(1), Some(1)))
+    case (true, true) => Depth(1, List(Some(1), Some(1), Some(1), Some(1), Some(1), Some(2), Some(2), Some(2), Some(2), Some(2), None, Some(1), Some(1)))
   }
   def CoverParenthesizedExpressionAndArrowParameterList(pYield: Boolean, pAwait: Boolean): Depth = (pYield, pAwait) match {
     case (false, false) => Depth(1, List(Some(2), Some(2), Some(1), Some(2), Some(2), Some(2), Some(2)))
@@ -71,20 +71,20 @@ object DepthCounter {
   def ObjectLiteral(pYield: Boolean, pAwait: Boolean): Depth = (pYield, pAwait) match {
     case (false, false) => Depth(1, List(Some(1), Some(2), Some(2)))
     case (false, true) => Depth(1, List(Some(1), Some(2), Some(2)))
-    case (true, true) => Depth(1, List(Some(1), Some(3), Some(3)))
+    case (true, true) => Depth(1, List(Some(1), Some(2), Some(2)))
     case (true, false) => Depth(1, List(Some(1), Some(2), Some(2)))
   }
   def PropertyDefinitionList(pYield: Boolean, pAwait: Boolean): Depth = (pYield, pAwait) match {
     case (false, true) => Depth(1, List(Some(1), Some(2)))
     case (true, false) => Depth(1, List(Some(1), Some(2)))
-    case (true, true) => Depth(2, List(Some(2), Some(3)))
+    case (true, true) => Depth(1, List(Some(1), Some(2)))
     case (false, false) => Depth(1, List(Some(1), Some(2)))
   }
   def PropertyDefinition(pYield: Boolean, pAwait: Boolean): Depth = (pYield, pAwait) match {
     case (false, false) => Depth(1, List(Some(1), Some(3), Some(2), Some(2), Some(2)))
     case (false, true) => Depth(1, List(Some(1), Some(3), Some(2), Some(2), Some(2)))
     case (true, false) => Depth(1, List(Some(1), Some(3), Some(2), Some(2), Some(2)))
-    case (true, true) => Depth(2, List(Some(2), Some(3), Some(2), Some(2), Some(2)))
+    case (true, true) => Depth(1, List(Some(1), Some(3), Some(2), Some(2), Some(2)))
   }
   def PropertyName(pYield: Boolean, pAwait: Boolean): Depth = (pYield, pAwait) match {
     case (true, false) => Depth(1, List(Some(1), Some(2)))
@@ -379,14 +379,14 @@ object DepthCounter {
     case (false, false, false) => Depth(1, List(Some(1), Some(2)))
   }
   def AssignmentExpression(pIn: Boolean, pYield: Boolean, pAwait: Boolean): Depth = (pIn, pYield, pAwait) match {
-    case (false, true, false) => Depth(1, List(Some(1), Some(1), Some(2), Some(3), Some(2), Some(2)))
-    case (false, false, false) => Depth(1, List(Some(1), None, Some(2), Some(3), Some(2), Some(2)))
-    case (false, true, true) => Depth(1, List(Some(1), Some(1), Some(2), Some(3), Some(2), Some(2)))
-    case (false, false, true) => Depth(1, List(Some(1), None, Some(2), Some(3), Some(2), Some(2)))
-    case (true, false, false) => Depth(1, List(Some(1), None, Some(2), Some(3), Some(2), Some(2)))
-    case (true, false, true) => Depth(1, List(Some(1), None, Some(2), Some(3), Some(2), Some(2)))
-    case (true, true, true) => Depth(1, List(Some(1), Some(1), Some(2), Some(3), Some(2), Some(2)))
-    case (true, true, false) => Depth(1, List(Some(1), Some(1), Some(2), Some(3), Some(2), Some(2)))
+    case (false, true, false) => Depth(1, List(Some(1), Some(1), Some(2), Some(2), Some(2), Some(2)))
+    case (false, false, false) => Depth(1, List(Some(1), None, Some(2), Some(2), Some(2), Some(2)))
+    case (false, true, true) => Depth(1, List(Some(1), Some(1), Some(2), Some(2), Some(2), Some(2)))
+    case (false, false, true) => Depth(1, List(Some(1), None, Some(2), Some(2), Some(2), Some(2)))
+    case (true, false, false) => Depth(1, List(Some(1), None, Some(2), Some(2), Some(2), Some(2)))
+    case (true, false, true) => Depth(1, List(Some(1), None, Some(2), Some(2), Some(2), Some(2)))
+    case (true, true, true) => Depth(1, List(Some(1), Some(1), Some(2), Some(2), Some(2), Some(2)))
+    case (true, true, false) => Depth(1, List(Some(1), Some(1), Some(2), Some(2), Some(2), Some(2)))
   }
   def AssignmentOperator(): Depth = () match {
     case () => Depth(1, List(Some(1), Some(1), Some(1), Some(1), Some(1), Some(1), Some(1), Some(1), Some(1), Some(1), Some(1), Some(1)))
@@ -401,7 +401,7 @@ object DepthCounter {
     case (false, true) => Depth(1, List(Some(1), Some(3), Some(3), Some(3)))
     case (true, false) => Depth(1, List(Some(1), Some(3), Some(3), Some(3)))
     case (false, false) => Depth(1, List(Some(1), Some(3), Some(3), Some(3)))
-    case (true, true) => Depth(1, List(Some(1), Some(3), Some(4), Some(4)))
+    case (true, true) => Depth(1, List(Some(1), Some(3), Some(3), Some(3)))
   }
   def ArrayAssignmentPattern(pYield: Boolean, pAwait: Boolean): Depth = (pYield, pAwait) match {
     case (true, false) => Depth(1, List(Some(1), Some(4), Some(4)))
@@ -416,7 +416,7 @@ object DepthCounter {
     case (false, false) => Depth(2, List(Some(2)))
   }
   def AssignmentPropertyList(pYield: Boolean, pAwait: Boolean): Depth = (pYield, pAwait) match {
-    case (true, true) => Depth(3, List(Some(3), Some(4)))
+    case (true, true) => Depth(2, List(Some(2), Some(3)))
     case (false, true) => Depth(2, List(Some(2), Some(3)))
     case (false, false) => Depth(2, List(Some(2), Some(3)))
     case (true, false) => Depth(2, List(Some(2), Some(3)))
@@ -434,7 +434,7 @@ object DepthCounter {
     case (false, true) => Depth(3, List(Some(3)))
   }
   def AssignmentProperty(pYield: Boolean, pAwait: Boolean): Depth = (pYield, pAwait) match {
-    case (true, true) => Depth(3, List(Some(3), Some(3)))
+    case (true, true) => Depth(2, List(Some(2), Some(3)))
     case (true, false) => Depth(2, List(Some(2), Some(3)))
     case (false, true) => Depth(2, List(Some(2), Some(3)))
     case (false, false) => Depth(2, List(Some(2), Some(3)))
@@ -468,11 +468,11 @@ object DepthCounter {
     case (true, false, true) => Depth(1, List(Some(1), Some(2)))
   }
   def Statement(pYield: Boolean, pAwait: Boolean, pReturn: Boolean): Depth = (pYield, pAwait, pReturn) match {
-    case (true, true, false) => Depth(1, List(Some(1), Some(3), Some(1), Some(2), Some(2), Some(2), Some(1), Some(1), None, Some(2), Some(3), Some(2), Some(3), Some(1)))
+    case (true, true, false) => Depth(1, List(Some(1), Some(3), Some(1), Some(2), Some(2), Some(2), Some(1), Some(1), None, Some(2), Some(2), Some(2), Some(3), Some(1)))
     case (false, false, true) => Depth(1, List(Some(1), Some(3), Some(1), Some(2), Some(2), Some(2), Some(1), Some(1), Some(1), Some(2), Some(2), Some(2), Some(3), Some(1)))
     case (true, false, true) => Depth(1, List(Some(1), Some(3), Some(1), Some(2), Some(2), Some(2), Some(1), Some(1), Some(1), Some(2), Some(2), Some(2), Some(3), Some(1)))
     case (true, false, false) => Depth(1, List(Some(1), Some(3), Some(1), Some(2), Some(2), Some(2), Some(1), Some(1), None, Some(2), Some(2), Some(2), Some(3), Some(1)))
-    case (true, true, true) => Depth(1, List(Some(1), Some(3), Some(1), Some(2), Some(2), Some(2), Some(1), Some(1), Some(1), Some(2), Some(3), Some(2), Some(3), Some(1)))
+    case (true, true, true) => Depth(1, List(Some(1), Some(3), Some(1), Some(2), Some(2), Some(2), Some(1), Some(1), Some(1), Some(2), Some(2), Some(2), Some(3), Some(1)))
     case (false, true, false) => Depth(1, List(Some(1), Some(3), Some(1), Some(2), Some(2), Some(2), Some(1), Some(1), None, Some(2), Some(2), Some(2), Some(3), Some(1)))
     case (false, false, false) => Depth(1, List(Some(1), Some(3), Some(1), Some(2), Some(2), Some(2), Some(1), Some(1), None, Some(2), Some(2), Some(2), Some(3), Some(1)))
     case (false, true, true) => Depth(1, List(Some(1), Some(3), Some(1), Some(2), Some(2), Some(2), Some(1), Some(1), Some(1), Some(2), Some(2), Some(2), Some(3), Some(1)))
@@ -713,13 +713,13 @@ object DepthCounter {
     case (false, true) => Depth(1, List(Some(1), Some(2)))
     case (false, false) => Depth(1, List(Some(1), Some(2)))
     case (true, false) => Depth(1, List(Some(1), Some(2)))
-    case (true, true) => Depth(1, List(Some(1), Some(3)))
+    case (true, true) => Depth(1, List(Some(1), Some(2)))
   }
   def BreakStatement(pYield: Boolean, pAwait: Boolean): Depth = (pYield, pAwait) match {
     case (false, false) => Depth(1, List(Some(1), Some(2)))
     case (false, true) => Depth(1, List(Some(1), Some(2)))
     case (true, false) => Depth(1, List(Some(1), Some(2)))
-    case (true, true) => Depth(1, List(Some(1), Some(3)))
+    case (true, true) => Depth(1, List(Some(1), Some(2)))
   }
   def ReturnStatement(pYield: Boolean, pAwait: Boolean): Depth = (pYield, pAwait) match {
     case (true, false) => Depth(1, List(Some(1), Some(2)))
@@ -793,8 +793,8 @@ object DepthCounter {
     case (false, false, true) => Depth(2, List(Some(2)))
     case (false, true, true) => Depth(2, List(Some(2)))
     case (true, false, true) => Depth(2, List(Some(2)))
-    case (true, true, true) => Depth(3, List(Some(3)))
-    case (true, true, false) => Depth(3, List(Some(3)))
+    case (true, true, true) => Depth(2, List(Some(2)))
+    case (true, true, false) => Depth(2, List(Some(2)))
     case (false, true, false) => Depth(2, List(Some(2)))
   }
   def LabelledItem(pYield: Boolean, pAwait: Boolean, pReturn: Boolean): Depth = (pYield, pAwait, pReturn) match {
@@ -924,8 +924,8 @@ object DepthCounter {
     case (true, false) => Depth(1, List(Some(1), Some(1)))
   }
   def ConciseBody(pIn: Boolean): Depth = (pIn) match {
-    case (true) => Depth(1, List(Some(2), Some(1)))
-    case (false) => Depth(1, List(Some(2), Some(1)))
+    case (true) => Depth(1, List(Some(1), Some(1)))
+    case (false) => Depth(1, List(Some(1), Some(1)))
   }
   def ExpressionBody(pIn: Boolean, pAwait: Boolean): Depth = (pIn, pAwait) match {
     case (false, true) => Depth(1, List(Some(1)))
@@ -940,18 +940,18 @@ object DepthCounter {
     case (true, true) => Depth(2, List(Some(2)))
   }
   def AsyncArrowFunction(pIn: Boolean, pYield: Boolean, pAwait: Boolean): Depth = (pIn, pYield, pAwait) match {
-    case (true, true, false) => Depth(3, List(Some(3), Some(3)))
-    case (true, true, true) => Depth(3, List(Some(3), Some(3)))
-    case (false, true, false) => Depth(3, List(Some(3), Some(3)))
-    case (false, true, true) => Depth(3, List(Some(3), Some(3)))
-    case (false, false, true) => Depth(3, List(Some(3), Some(3)))
-    case (true, false, false) => Depth(3, List(Some(3), Some(3)))
-    case (false, false, false) => Depth(3, List(Some(3), Some(3)))
-    case (true, false, true) => Depth(3, List(Some(3), Some(3)))
+    case (true, true, false) => Depth(2, List(Some(2), Some(3)))
+    case (true, true, true) => Depth(2, List(Some(2), Some(3)))
+    case (false, true, false) => Depth(2, List(Some(2), Some(3)))
+    case (false, true, true) => Depth(2, List(Some(2), Some(3)))
+    case (false, false, true) => Depth(2, List(Some(2), Some(3)))
+    case (true, false, false) => Depth(2, List(Some(2), Some(3)))
+    case (false, false, false) => Depth(2, List(Some(2), Some(3)))
+    case (true, false, true) => Depth(2, List(Some(2), Some(3)))
   }
   def AsyncConciseBody(pIn: Boolean): Depth = (pIn) match {
-    case (false) => Depth(2, List(Some(2), Some(1)))
-    case (true) => Depth(2, List(Some(2), Some(1)))
+    case (false) => Depth(1, List(Some(1), Some(1)))
+    case (true) => Depth(1, List(Some(1), Some(1)))
   }
   def AsyncArrowBindingIdentifier(pYield: Boolean): Depth = (pYield) match {
     case (true) => Depth(1, List(Some(1)))
