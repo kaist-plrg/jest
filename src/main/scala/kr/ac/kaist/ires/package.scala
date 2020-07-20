@@ -38,8 +38,11 @@ package object ires {
   val DEBUG_INTERP: Boolean = false
   val DEBUG_FILTER: Boolean = false
 
+  // Reulst directory
+  val RESULT_DIR = s"$BASE_DIR/result"
+  val GEN_RES_DIR = s"$RESULT_DIR/generated"
+  val TEST262_RES_DIR = s"$RESULT_DIR/test262"
+
   // Coverage check mode
   val COVERAGE_MODE: Boolean = true
-  val COVERAGE_DIR = s"$BASE_DIR/coverage"
-  val GENERATE_DIR = s"$BASE_DIR/generate"
 }

@@ -4,8 +4,9 @@ import java.io._
 import scala.io.Source
 import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.coverage.Visited
+import kr.ac.kaist.ires.sampler.RHSTracer
 import kr.ac.kaist.ires.error.NotSupported
-import kr.ac.kaist.ires.model.{ Parser => JSParser, StatementListItem, ModelHelper }
+import kr.ac.kaist.ires.model.{ Script, Parser => JSParser, StatementListItem, ModelHelper }
 import kr.ac.kaist.ires.util.Useful._
 import kr.ac.kaist.ires.phase._
 import org.scalatest._
@@ -31,6 +32,9 @@ class Test262Test extends IRESTest with EvalTest {
   // case object Long extends TestKind
   // case object VeryLong extends TestKind
   case object Manual extends TestKind
+
+  // target scripts
+  var scripts: List[Script] = Nil
 
   // tag name
   val tag: String = "test262Test"
@@ -61,9 +65,15 @@ class Test262Test extends IRESTest with EvalTest {
     dumpJson(yet, s"$TEST_DIR/yet.json")
 
     if (COVERAGE_MODE) {
+      // syntax coverage
+      val tracer = RHSTracer(scripts)
+      println(tracer.summary)
+      tracer.dump(s"$TEST262_RES_DIR/syntax")
+
+      // semantics coverage
       val coverage = Visited.global.getCoverage
       println(coverage.summary)
-      coverage.dump
+      coverage.dump(s"$TEST262_RES_DIR/semantics")
     }
   }
 
@@ -123,6 +133,7 @@ class Test262Test extends IRESTest with EvalTest {
         val jsConfig = iresConfig.copy(fileNames = List(jsName))
         val ast = Parse((), jsConfig)
         ModelHelper.checkSupported(ast)
+        scripts ::= ast
 
         val stList = includeList ++ ModelHelper.flattenStatement(ast)
         val st = IREval(Load(ModelHelper.mergeStatement(stList), jsConfig), jsConfig, evalConfig)

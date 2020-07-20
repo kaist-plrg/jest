@@ -17,7 +17,6 @@ trait EvalTest extends IRESTest {
     if (COVERAGE_MODE) {
       val coverage = Visited.global.getCoverage
       println(coverage.summary)
-      coverage.dump
     }
   }
 }

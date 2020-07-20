@@ -1,6 +1,6 @@
 package kr.ac.kaist.ires.generator
 
-import kr.ac.kaist.ires.GENERATE_DIR
+import kr.ac.kaist.ires.GEN_RES_DIR
 import kr.ac.kaist.ires.error.{ NotSupported, Timeout }
 import kr.ac.kaist.ires.ir.{ Interp, CondInst }
 import kr.ac.kaist.ires.mutator._
@@ -19,8 +19,8 @@ object Generator {
   def generate: List[Script] = generate(false)
   def generate(debug: Boolean): List[Script] = {
     // log file
-    mkdir(GENERATE_DIR)
-    val nf = getPrintWriter(s"$GENERATE_DIR/log")
+    mkdir(GEN_RES_DIR)
+    val nf = getPrintWriter(s"$GEN_RES_DIR/log")
 
     var total: List[Script] = Nil
     val totalVisited: Visited = new Visited
@@ -68,10 +68,9 @@ object Generator {
     val samples = getSample
 
     logln("Calculating syntax coverage...")
-    val tracer = new RHSTracer
-    tracer(samples)
+    val tracer = RHSTracer(samples)
     logln(tracer.summary)
-    tracer.dump(s"$GENERATE_DIR/syntax")
+    tracer.dump(s"$GEN_RES_DIR/syntax")
 
     logln("Running samples...")
     for (script <- samples) add(script)
@@ -107,12 +106,12 @@ object Generator {
     logln(coverage.summary)
 
     // dump coverage
-    coverage.dump(s"$GENERATE_DIR/semantics")
+    coverage.dump(s"$GEN_RES_DIR/semantics")
 
     // dump failed
     dumpJson(failed.toList.map {
       case pair @ (uid, bool) => FailedCase(condMap(pair), uid, bool)
-    }, s"$GENERATE_DIR/failed.json")
+    }, s"$GEN_RES_DIR/failed.json")
 
     // close PrintWriter for the log file
     nf.close()

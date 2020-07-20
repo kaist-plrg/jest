@@ -16,9 +16,9 @@ case object Generate extends PhaseObj[Unit, GenerateConfig, Unit] {
     iresConfig: IRESConfig,
     config: GenerateConfig
   ): Unit = for ((script, k) <- Generator.generate(config.debug).zipWithIndex) {
-    mkdir(s"$GENERATE_DIR")
-    mkdir(s"$GENERATE_DIR/scripts")
-    dumpFile(script, s"$GENERATE_DIR/scripts/$k.js")
+    mkdir(s"$GEN_RES_DIR")
+    mkdir(s"$GEN_RES_DIR/scripts")
+    dumpFile(script, s"$GEN_RES_DIR/scripts/$k.js")
   }
 
   def defaultConfig: GenerateConfig = GenerateConfig()

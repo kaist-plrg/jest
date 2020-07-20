@@ -76,4 +76,4 @@ bin/ires
 project/metals.sbt
 
 # generate directory
-generate/
+result/

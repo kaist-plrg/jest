@@ -1,8 +1,7 @@
 package kr.ac.kaist.ires.sampler
 
-import spray.json._
 import kr.ac.kaist.ires.util.Useful._
-import kr.ac.kaist.ires.{ AST, Lexical, RESOURCE_DIR }
+import kr.ac.kaist.ires.AST
 import kr.ac.kaist.ires.model.UnitWalker
 
 class RHSTracer extends UnitWalker {
@@ -18,9 +17,6 @@ class RHSTracer extends UnitWalker {
   override def beforeWalk[T <: AST](ast: T): Unit =
     _covered += RHSElem(ast.name, ast.parserParams, ast.k)
 
-  def apply[T <: AST](ast: T): Unit = walk(ast)
-  def apply[T <: AST](seq: Seq[T]): Unit = seq.foreach(walk)
-
   def dump(dir: String): Unit = {
     // directory for coverage results
     mkdir(dir)
@@ -35,14 +31,15 @@ class RHSTracer extends UnitWalker {
     dumpFile(summary, s"$dir/summary")
   }
 }
-
-case class RHSElem(rhsName: String, parserParams: List[Boolean], k: Int)
-
-object RHSElem extends DefaultJsonProtocol {
-  implicit val RHSElemFormat: JsonFormat[RHSElem] = jsonFormat3(RHSElem.apply)
-  implicit def ordering[E <: RHSElem]: Ordering[E] = new Ordering[E] {
-    override def compare(x: E, y: E): Int = x.toString.compareTo(y.toString)
+object RHSTracer {
+  def apply[T <: AST](ast: T): RHSTracer = {
+    val tracer = new RHSTracer
+    tracer.walk(ast)
+    tracer
   }
-  lazy val total: Set[RHSElem] =
-    readJson[Set[RHSElem]](s"$RESOURCE_DIR/TargetRHS.json")
+  def apply[T <: AST](seq: Seq[T]): RHSTracer = {
+    val tracer = new RHSTracer
+    seq.foreach(tracer.walk)
+    tracer
+  }
 }

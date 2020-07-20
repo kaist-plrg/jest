@@ -1,6 +1,6 @@
 package kr.ac.kaist.ires.coverage
 
-import kr.ac.kaist.ires.{ COVERAGE_DIR, LINE_SEP }
+import kr.ac.kaist.ires.LINE_SEP
 import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Inst._
 import kr.ac.kaist.ires.model.Algorithm
@@ -55,7 +55,6 @@ case class Coverage(cases: Vector[Case]) extends CoverageProtocol {
   }
 
   // dump statistics
-  def dump: Unit = dump(COVERAGE_DIR)
   def dump(dir: String): Unit = {
     // directory for coverage results
     mkdir(dir)
