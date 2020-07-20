@@ -2,23 +2,23 @@ package kr.ac.kaist.ires.model
 
 import kr.ac.kaist.ires.Lexical
 import kr.ac.kaist.ires.ir._
+import kr.ac.kaist.ires.model.{ Parser => JSParser }
 import kr.ac.kaist.ires.util.Useful._
 import scala.collection.immutable.{ Set => ScalaSet }
 
 class NonRecursiveSampler {
   val counter = DepthCounter
-  val randomSampler = new LimitedDepthSampler
   var visited: ScalaSet[(String, List[Boolean])] = ScalaSet()
 
-  private def IdentifierName(): ScalaSet[Lexical] = ScalaSet(randomSampler.IdentifierName(1))
-  private def NullLiteral(): ScalaSet[Lexical] = ScalaSet(randomSampler.NullLiteral(1))
-  private def BooleanLiteral(): ScalaSet[Lexical] = ScalaSet(randomSampler.BooleanLiteral(1))
-  private def NumericLiteral(): ScalaSet[Lexical] = ScalaSet(randomSampler.NumericLiteral(1))
-  private def StringLiteral(): ScalaSet[Lexical] = ScalaSet(randomSampler.StringLiteral(1))
-  private def NoSubstitutionTemplate(): ScalaSet[Lexical] = ScalaSet(randomSampler.NoSubstitutionTemplate(1))
-  private def TemplateHead(): ScalaSet[Lexical] = ScalaSet(randomSampler.TemplateHead(1))
-  private def TemplateMiddle(): ScalaSet[Lexical] = ScalaSet(randomSampler.TemplateMiddle(1))
-  private def TemplateTail(): ScalaSet[Lexical] = ScalaSet(randomSampler.TemplateTail(1))
+  private def IdentifierName(): ScalaSet[Lexical] = ScalaSet(Lexical("IdentifierName", MinSampler.IdentifierName()))
+  private def NullLiteral(): ScalaSet[Lexical] = ScalaSet(Lexical("NullLiteral", MinSampler.NullLiteral()))
+  private def BooleanLiteral(): ScalaSet[Lexical] = ScalaSet(Lexical("BooleanLiteral", MinSampler.BooleanLiteral()))
+  private def NumericLiteral(): ScalaSet[Lexical] = ScalaSet(Lexical("NumericLiteral", MinSampler.NumericLiteral()))
+  private def StringLiteral(): ScalaSet[Lexical] = ScalaSet(Lexical("StringLiteral", MinSampler.StringLiteral()))
+  private def NoSubstitutionTemplate(): ScalaSet[Lexical] = ScalaSet(Lexical("NoSubstitutionTemplate", MinSampler.NoSubstitutionTemplate()))
+  private def TemplateHead(): ScalaSet[Lexical] = ScalaSet(Lexical("TemplateHead", MinSampler.TemplateHead()))
+  private def TemplateMiddle(): ScalaSet[Lexical] = ScalaSet(Lexical("TemplateMiddle", MinSampler.TemplateMiddle()))
+  private def TemplateTail(): ScalaSet[Lexical] = ScalaSet(Lexical("TemplateTail", MinSampler.TemplateTail()))
   def IdentifierReference(pYield: Boolean, pAwait: Boolean): ScalaSet[IdentifierReference] = {
     if (!visited.contains("IdentifierReference", List(pYield, pAwait))) {
       visited += (("IdentifierReference", List(pYield, pAwait)))
@@ -37,8 +37,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.IdentifierReference(pYield, pAwait).depth
-      val sample = randomSampler.IdentifierReference(d, pYield, pAwait)
+      val str = MinSampler.IdentifierReference(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.IdentifierReference(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -56,8 +56,8 @@ class NonRecursiveSampler {
       s += BindingIdentifier2(List(pYield, pAwait))
       s
     } else {
-      val d = counter.BindingIdentifier(pYield, pAwait).depth
-      val sample = randomSampler.BindingIdentifier(d, pYield, pAwait)
+      val str = MinSampler.BindingIdentifier(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.BindingIdentifier(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -79,8 +79,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.LabelIdentifier(pYield, pAwait).depth
-      val sample = randomSampler.LabelIdentifier(d, pYield, pAwait)
+      val str = MinSampler.LabelIdentifier(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.LabelIdentifier(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -96,8 +96,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.Identifier().depth
-      val sample = randomSampler.Identifier(d)
+      val str = MinSampler.Identifier()
+      val sample = JSParser.parse(JSParser.Identifier(List()), str).get
       ScalaSet(sample)
     }
   }
@@ -174,8 +174,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.PrimaryExpression(pYield, pAwait).depth
-      val sample = randomSampler.PrimaryExpression(d, pYield, pAwait)
+      val str = MinSampler.PrimaryExpression(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.PrimaryExpression(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -226,8 +226,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.CoverParenthesizedExpressionAndArrowParameterList(pYield, pAwait).depth
-      val sample = randomSampler.CoverParenthesizedExpressionAndArrowParameterList(d, pYield, pAwait)
+      val str = MinSampler.CoverParenthesizedExpressionAndArrowParameterList(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.CoverParenthesizedExpressionAndArrowParameterList(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -243,8 +243,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.ParenthesizedExpression(pYield, pAwait).depth
-      val sample = randomSampler.ParenthesizedExpression(d, pYield, pAwait)
+      val str = MinSampler.ParenthesizedExpression(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.ParenthesizedExpression(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -278,8 +278,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.Literal().depth
-      val sample = randomSampler.Literal(d)
+      val str = MinSampler.Literal()
+      val sample = JSParser.parse(JSParser.Literal(List()), str).get
       ScalaSet(sample)
     }
   }
@@ -311,8 +311,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.ArrayLiteral(pYield, pAwait).depth
-      val sample = randomSampler.ArrayLiteral(d, pYield, pAwait)
+      val str = MinSampler.ArrayLiteral(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.ArrayLiteral(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -362,8 +362,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.ElementList(pYield, pAwait).depth
-      val sample = randomSampler.ElementList(d, pYield, pAwait)
+      val str = MinSampler.ElementList(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.ElementList(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -380,8 +380,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.Elision().depth
-      val sample = randomSampler.Elision(d)
+      val str = MinSampler.Elision()
+      val sample = JSParser.parse(JSParser.Elision(List()), str).get
       ScalaSet(sample)
     }
   }
@@ -397,8 +397,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.SpreadElement(pYield, pAwait).depth
-      val sample = randomSampler.SpreadElement(d, pYield, pAwait)
+      val str = MinSampler.SpreadElement(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.SpreadElement(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -421,8 +421,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.ObjectLiteral(pYield, pAwait).depth
-      val sample = randomSampler.ObjectLiteral(d, pYield, pAwait)
+      val str = MinSampler.ObjectLiteral(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.ObjectLiteral(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -446,8 +446,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.PropertyDefinitionList(pYield, pAwait).depth
-      val sample = randomSampler.PropertyDefinitionList(d, pYield, pAwait)
+      val str = MinSampler.PropertyDefinitionList(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.PropertyDefinitionList(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -489,8 +489,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.PropertyDefinition(pYield, pAwait).depth
-      val sample = randomSampler.PropertyDefinition(d, pYield, pAwait)
+      val str = MinSampler.PropertyDefinition(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.PropertyDefinition(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -512,8 +512,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.PropertyName(pYield, pAwait).depth
-      val sample = randomSampler.PropertyName(d, pYield, pAwait)
+      val str = MinSampler.PropertyName(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.PropertyName(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -541,8 +541,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.LiteralPropertyName().depth
-      val sample = randomSampler.LiteralPropertyName(d)
+      val str = MinSampler.LiteralPropertyName()
+      val sample = JSParser.parse(JSParser.LiteralPropertyName(List()), str).get
       ScalaSet(sample)
     }
   }
@@ -558,8 +558,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.ComputedPropertyName(pYield, pAwait).depth
-      val sample = randomSampler.ComputedPropertyName(d, pYield, pAwait)
+      val str = MinSampler.ComputedPropertyName(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.ComputedPropertyName(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -577,8 +577,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.CoverInitializedName(pYield, pAwait).depth
-      val sample = randomSampler.CoverInitializedName(d, pYield, pAwait)
+      val str = MinSampler.CoverInitializedName(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.CoverInitializedName(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -594,8 +594,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.Initializer(pIn, pYield, pAwait).depth
-      val sample = randomSampler.Initializer(d, pIn, pYield, pAwait)
+      val str = MinSampler.Initializer(pIn, pYield, pAwait)
+      val sample = JSParser.parse(JSParser.Initializer(List(pIn, pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -617,8 +617,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.TemplateLiteral(pYield, pAwait, pTagged).depth
-      val sample = randomSampler.TemplateLiteral(d, pYield, pAwait, pTagged)
+      val str = MinSampler.TemplateLiteral(pYield, pAwait, pTagged)
+      val sample = JSParser.parse(JSParser.TemplateLiteral(List(pYield, pAwait, pTagged)), str).get
       ScalaSet(sample)
     }
   }
@@ -638,8 +638,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.SubstitutionTemplate(pYield, pAwait, pTagged).depth
-      val sample = randomSampler.SubstitutionTemplate(d, pYield, pAwait, pTagged)
+      val str = MinSampler.SubstitutionTemplate(pYield, pAwait, pTagged)
+      val sample = JSParser.parse(JSParser.SubstitutionTemplate(List(pYield, pAwait, pTagged)), str).get
       ScalaSet(sample)
     }
   }
@@ -663,8 +663,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.TemplateSpans(pYield, pAwait, pTagged).depth
-      val sample = randomSampler.TemplateSpans(d, pYield, pAwait, pTagged)
+      val str = MinSampler.TemplateSpans(pYield, pAwait, pTagged)
+      val sample = JSParser.parse(JSParser.TemplateSpans(List(pYield, pAwait, pTagged)), str).get
       ScalaSet(sample)
     }
   }
@@ -692,8 +692,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.TemplateMiddleList(pYield, pAwait, pTagged).depth
-      val sample = randomSampler.TemplateMiddleList(d, pYield, pAwait, pTagged)
+      val str = MinSampler.TemplateMiddleList(pYield, pAwait, pTagged)
+      val sample = JSParser.parse(JSParser.TemplateMiddleList(List(pYield, pAwait, pTagged)), str).get
       ScalaSet(sample)
     }
   }
@@ -753,8 +753,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.MemberExpression(pYield, pAwait).depth
-      val sample = randomSampler.MemberExpression(d, pYield, pAwait)
+      val str = MinSampler.MemberExpression(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.MemberExpression(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -776,8 +776,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.SuperProperty(pYield, pAwait).depth
-      val sample = randomSampler.SuperProperty(d, pYield, pAwait)
+      val str = MinSampler.SuperProperty(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.SuperProperty(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -793,8 +793,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.MetaProperty().depth
-      val sample = randomSampler.MetaProperty(d)
+      val str = MinSampler.MetaProperty()
+      val sample = JSParser.parse(JSParser.MetaProperty(List()), str).get
       ScalaSet(sample)
     }
   }
@@ -805,8 +805,8 @@ class NonRecursiveSampler {
       s += NewTarget0(List())
       s
     } else {
-      val d = counter.NewTarget().depth
-      val sample = randomSampler.NewTarget(d)
+      val str = MinSampler.NewTarget()
+      val sample = JSParser.parse(JSParser.NewTarget(List()), str).get
       ScalaSet(sample)
     }
   }
@@ -828,8 +828,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.NewExpression(pYield, pAwait).depth
-      val sample = randomSampler.NewExpression(d, pYield, pAwait)
+      val str = MinSampler.NewExpression(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.NewExpression(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -883,8 +883,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.CallExpression(pYield, pAwait).depth
-      val sample = randomSampler.CallExpression(d, pYield, pAwait)
+      val str = MinSampler.CallExpression(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.CallExpression(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -902,8 +902,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.CallMemberExpression(pYield, pAwait).depth
-      val sample = randomSampler.CallMemberExpression(d, pYield, pAwait)
+      val str = MinSampler.CallMemberExpression(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.CallMemberExpression(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -919,8 +919,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.SuperCall(pYield, pAwait).depth
-      val sample = randomSampler.SuperCall(d, pYield, pAwait)
+      val str = MinSampler.SuperCall(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.SuperCall(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -943,8 +943,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.Arguments(pYield, pAwait).depth
-      val sample = randomSampler.Arguments(d, pYield, pAwait)
+      val str = MinSampler.Arguments(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.Arguments(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -982,8 +982,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.ArgumentList(pYield, pAwait).depth
-      val sample = randomSampler.ArgumentList(d, pYield, pAwait)
+      val str = MinSampler.ArgumentList(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.ArgumentList(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -1017,8 +1017,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.OptionalExpression(pYield, pAwait).depth
-      val sample = randomSampler.OptionalExpression(d, pYield, pAwait)
+      val str = MinSampler.OptionalExpression(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.OptionalExpression(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -1084,8 +1084,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.OptionalChain(pYield, pAwait).depth
-      val sample = randomSampler.OptionalChain(d, pYield, pAwait)
+      val str = MinSampler.OptionalChain(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.OptionalChain(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -1113,8 +1113,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.LeftHandSideExpression(pYield, pAwait).depth
-      val sample = randomSampler.LeftHandSideExpression(d, pYield, pAwait)
+      val str = MinSampler.LeftHandSideExpression(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.LeftHandSideExpression(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -1154,8 +1154,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.UpdateExpression(pYield, pAwait).depth
-      val sample = randomSampler.UpdateExpression(d, pYield, pAwait)
+      val str = MinSampler.UpdateExpression(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.UpdateExpression(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -1221,8 +1221,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.UnaryExpression(pYield, pAwait).depth
-      val sample = randomSampler.UnaryExpression(d, pYield, pAwait)
+      val str = MinSampler.UnaryExpression(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.UnaryExpression(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -1246,8 +1246,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.ExponentiationExpression(pYield, pAwait).depth
-      val sample = randomSampler.ExponentiationExpression(d, pYield, pAwait)
+      val str = MinSampler.ExponentiationExpression(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.ExponentiationExpression(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -1273,8 +1273,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.MultiplicativeExpression(pYield, pAwait).depth
-      val sample = randomSampler.MultiplicativeExpression(d, pYield, pAwait)
+      val str = MinSampler.MultiplicativeExpression(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.MultiplicativeExpression(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -1287,8 +1287,8 @@ class NonRecursiveSampler {
       s += MultiplicativeOperator2(List())
       s
     } else {
-      val d = counter.MultiplicativeOperator().depth
-      val sample = randomSampler.MultiplicativeOperator(d)
+      val str = MinSampler.MultiplicativeOperator()
+      val sample = JSParser.parse(JSParser.MultiplicativeOperator(List()), str).get
       ScalaSet(sample)
     }
   }
@@ -1320,8 +1320,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.AdditiveExpression(pYield, pAwait).depth
-      val sample = randomSampler.AdditiveExpression(d, pYield, pAwait)
+      val str = MinSampler.AdditiveExpression(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.AdditiveExpression(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -1361,8 +1361,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.ShiftExpression(pYield, pAwait).depth
-      val sample = randomSampler.ShiftExpression(d, pYield, pAwait)
+      val str = MinSampler.ShiftExpression(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.ShiftExpression(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -1428,8 +1428,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.RelationalExpression(pIn, pYield, pAwait).depth
-      val sample = randomSampler.RelationalExpression(d, pIn, pYield, pAwait)
+      val str = MinSampler.RelationalExpression(pIn, pYield, pAwait)
+      val sample = JSParser.parse(JSParser.RelationalExpression(List(pIn, pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -1477,8 +1477,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.EqualityExpression(pIn, pYield, pAwait).depth
-      val sample = randomSampler.EqualityExpression(d, pIn, pYield, pAwait)
+      val str = MinSampler.EqualityExpression(pIn, pYield, pAwait)
+      val sample = JSParser.parse(JSParser.EqualityExpression(List(pIn, pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -1502,8 +1502,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.BitwiseANDExpression(pIn, pYield, pAwait).depth
-      val sample = randomSampler.BitwiseANDExpression(d, pIn, pYield, pAwait)
+      val str = MinSampler.BitwiseANDExpression(pIn, pYield, pAwait)
+      val sample = JSParser.parse(JSParser.BitwiseANDExpression(List(pIn, pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -1527,8 +1527,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.BitwiseXORExpression(pIn, pYield, pAwait).depth
-      val sample = randomSampler.BitwiseXORExpression(d, pIn, pYield, pAwait)
+      val str = MinSampler.BitwiseXORExpression(pIn, pYield, pAwait)
+      val sample = JSParser.parse(JSParser.BitwiseXORExpression(List(pIn, pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -1552,8 +1552,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.BitwiseORExpression(pIn, pYield, pAwait).depth
-      val sample = randomSampler.BitwiseORExpression(d, pIn, pYield, pAwait)
+      val str = MinSampler.BitwiseORExpression(pIn, pYield, pAwait)
+      val sample = JSParser.parse(JSParser.BitwiseORExpression(List(pIn, pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -1577,8 +1577,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.LogicalANDExpression(pIn, pYield, pAwait).depth
-      val sample = randomSampler.LogicalANDExpression(d, pIn, pYield, pAwait)
+      val str = MinSampler.LogicalANDExpression(pIn, pYield, pAwait)
+      val sample = JSParser.parse(JSParser.LogicalANDExpression(List(pIn, pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -1602,8 +1602,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.LogicalORExpression(pIn, pYield, pAwait).depth
-      val sample = randomSampler.LogicalORExpression(d, pIn, pYield, pAwait)
+      val str = MinSampler.LogicalORExpression(pIn, pYield, pAwait)
+      val sample = JSParser.parse(JSParser.LogicalORExpression(List(pIn, pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -1621,8 +1621,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.CoalesceExpression(pIn, pYield, pAwait).depth
-      val sample = randomSampler.CoalesceExpression(d, pIn, pYield, pAwait)
+      val str = MinSampler.CoalesceExpression(pIn, pYield, pAwait)
+      val sample = JSParser.parse(JSParser.CoalesceExpression(List(pIn, pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -1644,8 +1644,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.CoalesceExpressionHead(pIn, pYield, pAwait).depth
-      val sample = randomSampler.CoalesceExpressionHead(d, pIn, pYield, pAwait)
+      val str = MinSampler.CoalesceExpressionHead(pIn, pYield, pAwait)
+      val sample = JSParser.parse(JSParser.CoalesceExpressionHead(List(pIn, pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -1667,8 +1667,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.ShortCircuitExpression(pIn, pYield, pAwait).depth
-      val sample = randomSampler.ShortCircuitExpression(d, pIn, pYield, pAwait)
+      val str = MinSampler.ShortCircuitExpression(pIn, pYield, pAwait)
+      val sample = JSParser.parse(JSParser.ShortCircuitExpression(List(pIn, pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -1694,8 +1694,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.ConditionalExpression(pIn, pYield, pAwait).depth
-      val sample = randomSampler.ConditionalExpression(d, pIn, pYield, pAwait)
+      val str = MinSampler.ConditionalExpression(pIn, pYield, pAwait)
+      val sample = JSParser.parse(JSParser.ConditionalExpression(List(pIn, pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -1749,8 +1749,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.AssignmentExpression(pIn, pYield, pAwait).depth
-      val sample = randomSampler.AssignmentExpression(d, pIn, pYield, pAwait)
+      val str = MinSampler.AssignmentExpression(pIn, pYield, pAwait)
+      val sample = JSParser.parse(JSParser.AssignmentExpression(List(pIn, pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -1772,8 +1772,8 @@ class NonRecursiveSampler {
       s += AssignmentOperator11(List())
       s
     } else {
-      val d = counter.AssignmentOperator().depth
-      val sample = randomSampler.AssignmentOperator(d)
+      val str = MinSampler.AssignmentOperator()
+      val sample = JSParser.parse(JSParser.AssignmentOperator(List()), str).get
       ScalaSet(sample)
     }
   }
@@ -1795,8 +1795,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.AssignmentPattern(pYield, pAwait).depth
-      val sample = randomSampler.AssignmentPattern(d, pYield, pAwait)
+      val str = MinSampler.AssignmentPattern(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.AssignmentPattern(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -1828,8 +1828,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.ObjectAssignmentPattern(pYield, pAwait).depth
-      val sample = randomSampler.ObjectAssignmentPattern(d, pYield, pAwait)
+      val str = MinSampler.ObjectAssignmentPattern(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.ObjectAssignmentPattern(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -1869,8 +1869,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.ArrayAssignmentPattern(pYield, pAwait).depth
-      val sample = randomSampler.ArrayAssignmentPattern(d, pYield, pAwait)
+      val str = MinSampler.ArrayAssignmentPattern(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.ArrayAssignmentPattern(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -1886,8 +1886,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.AssignmentRestProperty(pYield, pAwait).depth
-      val sample = randomSampler.AssignmentRestProperty(d, pYield, pAwait)
+      val str = MinSampler.AssignmentRestProperty(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.AssignmentRestProperty(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -1911,8 +1911,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.AssignmentPropertyList(pYield, pAwait).depth
-      val sample = randomSampler.AssignmentPropertyList(d, pYield, pAwait)
+      val str = MinSampler.AssignmentPropertyList(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.AssignmentPropertyList(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -1936,8 +1936,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.AssignmentElementList(pYield, pAwait).depth
-      val sample = randomSampler.AssignmentElementList(d, pYield, pAwait)
+      val str = MinSampler.AssignmentElementList(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.AssignmentElementList(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -1956,8 +1956,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.AssignmentElisionElement(pYield, pAwait).depth
-      val sample = randomSampler.AssignmentElisionElement(d, pYield, pAwait)
+      val str = MinSampler.AssignmentElisionElement(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.AssignmentElisionElement(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -1984,8 +1984,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.AssignmentProperty(pYield, pAwait).depth
-      val sample = randomSampler.AssignmentProperty(d, pYield, pAwait)
+      val str = MinSampler.AssignmentProperty(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.AssignmentProperty(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -2004,8 +2004,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.AssignmentElement(pYield, pAwait).depth
-      val sample = randomSampler.AssignmentElement(d, pYield, pAwait)
+      val str = MinSampler.AssignmentElement(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.AssignmentElement(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -2021,8 +2021,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.AssignmentRestElement(pYield, pAwait).depth
-      val sample = randomSampler.AssignmentRestElement(d, pYield, pAwait)
+      val str = MinSampler.AssignmentRestElement(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.AssignmentRestElement(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -2038,8 +2038,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.DestructuringAssignmentTarget(pYield, pAwait).depth
-      val sample = randomSampler.DestructuringAssignmentTarget(d, pYield, pAwait)
+      val str = MinSampler.DestructuringAssignmentTarget(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.DestructuringAssignmentTarget(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -2063,8 +2063,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.Expression(pIn, pYield, pAwait).depth
-      val sample = randomSampler.Expression(d, pIn, pYield, pAwait)
+      val str = MinSampler.Expression(pIn, pYield, pAwait)
+      val sample = JSParser.parse(JSParser.Expression(List(pIn, pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -2160,8 +2160,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.Statement(pYield, pAwait, pReturn).depth
-      val sample = randomSampler.Statement(d, pYield, pAwait, pReturn)
+      val str = MinSampler.Statement(pYield, pAwait, pReturn)
+      val sample = JSParser.parse(JSParser.Statement(List(pYield, pAwait, pReturn)), str).get
       ScalaSet(sample)
     }
   }
@@ -2189,8 +2189,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.Declaration(pYield, pAwait).depth
-      val sample = randomSampler.Declaration(d, pYield, pAwait)
+      val str = MinSampler.Declaration(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.Declaration(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -2224,8 +2224,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.HoistableDeclaration(pYield, pAwait, pDefault).depth
-      val sample = randomSampler.HoistableDeclaration(d, pYield, pAwait, pDefault)
+      val str = MinSampler.HoistableDeclaration(pYield, pAwait, pDefault)
+      val sample = JSParser.parse(JSParser.HoistableDeclaration(List(pYield, pAwait, pDefault)), str).get
       ScalaSet(sample)
     }
   }
@@ -2247,8 +2247,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.BreakableStatement(pYield, pAwait, pReturn).depth
-      val sample = randomSampler.BreakableStatement(d, pYield, pAwait, pReturn)
+      val str = MinSampler.BreakableStatement(pYield, pAwait, pReturn)
+      val sample = JSParser.parse(JSParser.BreakableStatement(List(pYield, pAwait, pReturn)), str).get
       ScalaSet(sample)
     }
   }
@@ -2264,8 +2264,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.BlockStatement(pYield, pAwait, pReturn).depth
-      val sample = randomSampler.BlockStatement(d, pYield, pAwait, pReturn)
+      val str = MinSampler.BlockStatement(pYield, pAwait, pReturn)
+      val sample = JSParser.parse(JSParser.BlockStatement(List(pYield, pAwait, pReturn)), str).get
       ScalaSet(sample)
     }
   }
@@ -2282,8 +2282,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.Block(pYield, pAwait, pReturn).depth
-      val sample = randomSampler.Block(d, pYield, pAwait, pReturn)
+      val str = MinSampler.Block(pYield, pAwait, pReturn)
+      val sample = JSParser.parse(JSParser.Block(List(pYield, pAwait, pReturn)), str).get
       ScalaSet(sample)
     }
   }
@@ -2307,8 +2307,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.StatementList(pYield, pAwait, pReturn).depth
-      val sample = randomSampler.StatementList(d, pYield, pAwait, pReturn)
+      val str = MinSampler.StatementList(pYield, pAwait, pReturn)
+      val sample = JSParser.parse(JSParser.StatementList(List(pYield, pAwait, pReturn)), str).get
       ScalaSet(sample)
     }
   }
@@ -2330,8 +2330,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.StatementListItem(pYield, pAwait, pReturn).depth
-      val sample = randomSampler.StatementListItem(d, pYield, pAwait, pReturn)
+      val str = MinSampler.StatementListItem(pYield, pAwait, pReturn)
+      val sample = JSParser.parse(JSParser.StatementListItem(List(pYield, pAwait, pReturn)), str).get
       ScalaSet(sample)
     }
   }
@@ -2349,8 +2349,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.LexicalDeclaration(pIn, pYield, pAwait).depth
-      val sample = randomSampler.LexicalDeclaration(d, pIn, pYield, pAwait)
+      val str = MinSampler.LexicalDeclaration(pIn, pYield, pAwait)
+      val sample = JSParser.parse(JSParser.LexicalDeclaration(List(pIn, pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -2362,8 +2362,8 @@ class NonRecursiveSampler {
       s += LetOrConst1(List())
       s
     } else {
-      val d = counter.LetOrConst().depth
-      val sample = randomSampler.LetOrConst(d)
+      val str = MinSampler.LetOrConst()
+      val sample = JSParser.parse(JSParser.LetOrConst(List()), str).get
       ScalaSet(sample)
     }
   }
@@ -2387,8 +2387,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.BindingList(pIn, pYield, pAwait).depth
-      val sample = randomSampler.BindingList(d, pIn, pYield, pAwait)
+      val str = MinSampler.BindingList(pIn, pYield, pAwait)
+      val sample = JSParser.parse(JSParser.BindingList(List(pIn, pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -2415,8 +2415,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.LexicalBinding(pIn, pYield, pAwait).depth
-      val sample = randomSampler.LexicalBinding(d, pIn, pYield, pAwait)
+      val str = MinSampler.LexicalBinding(pIn, pYield, pAwait)
+      val sample = JSParser.parse(JSParser.LexicalBinding(List(pIn, pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -2432,8 +2432,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.VariableStatement(pYield, pAwait).depth
-      val sample = randomSampler.VariableStatement(d, pYield, pAwait)
+      val str = MinSampler.VariableStatement(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.VariableStatement(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -2457,8 +2457,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.VariableDeclarationList(pIn, pYield, pAwait).depth
-      val sample = randomSampler.VariableDeclarationList(d, pIn, pYield, pAwait)
+      val str = MinSampler.VariableDeclarationList(pIn, pYield, pAwait)
+      val sample = JSParser.parse(JSParser.VariableDeclarationList(List(pIn, pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -2485,8 +2485,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.VariableDeclaration(pIn, pYield, pAwait).depth
-      val sample = randomSampler.VariableDeclaration(d, pIn, pYield, pAwait)
+      val str = MinSampler.VariableDeclaration(pIn, pYield, pAwait)
+      val sample = JSParser.parse(JSParser.VariableDeclaration(List(pIn, pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -2508,8 +2508,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.BindingPattern(pYield, pAwait).depth
-      val sample = randomSampler.BindingPattern(d, pYield, pAwait)
+      val str = MinSampler.BindingPattern(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.BindingPattern(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -2541,8 +2541,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.ObjectBindingPattern(pYield, pAwait).depth
-      val sample = randomSampler.ObjectBindingPattern(d, pYield, pAwait)
+      val str = MinSampler.ObjectBindingPattern(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.ObjectBindingPattern(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -2582,8 +2582,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.ArrayBindingPattern(pYield, pAwait).depth
-      val sample = randomSampler.ArrayBindingPattern(d, pYield, pAwait)
+      val str = MinSampler.ArrayBindingPattern(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.ArrayBindingPattern(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -2599,8 +2599,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.BindingRestProperty(pYield, pAwait).depth
-      val sample = randomSampler.BindingRestProperty(d, pYield, pAwait)
+      val str = MinSampler.BindingRestProperty(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.BindingRestProperty(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -2624,8 +2624,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.BindingPropertyList(pYield, pAwait).depth
-      val sample = randomSampler.BindingPropertyList(d, pYield, pAwait)
+      val str = MinSampler.BindingPropertyList(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.BindingPropertyList(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -2649,8 +2649,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.BindingElementList(pYield, pAwait).depth
-      val sample = randomSampler.BindingElementList(d, pYield, pAwait)
+      val str = MinSampler.BindingElementList(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.BindingElementList(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -2669,8 +2669,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.BindingElisionElement(pYield, pAwait).depth
-      val sample = randomSampler.BindingElisionElement(d, pYield, pAwait)
+      val str = MinSampler.BindingElisionElement(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.BindingElisionElement(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -2694,8 +2694,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.BindingProperty(pYield, pAwait).depth
-      val sample = randomSampler.BindingProperty(d, pYield, pAwait)
+      val str = MinSampler.BindingProperty(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.BindingProperty(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -2720,8 +2720,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.BindingElement(pYield, pAwait).depth
-      val sample = randomSampler.BindingElement(d, pYield, pAwait)
+      val str = MinSampler.BindingElement(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.BindingElement(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -2740,8 +2740,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.SingleNameBinding(pYield, pAwait).depth
-      val sample = randomSampler.SingleNameBinding(d, pYield, pAwait)
+      val str = MinSampler.SingleNameBinding(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.SingleNameBinding(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -2763,8 +2763,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.BindingRestElement(pYield, pAwait).depth
-      val sample = randomSampler.BindingRestElement(d, pYield, pAwait)
+      val str = MinSampler.BindingRestElement(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.BindingRestElement(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -2775,8 +2775,8 @@ class NonRecursiveSampler {
       s += EmptyStatement0(List())
       s
     } else {
-      val d = counter.EmptyStatement().depth
-      val sample = randomSampler.EmptyStatement(d)
+      val str = MinSampler.EmptyStatement()
+      val sample = JSParser.parse(JSParser.EmptyStatement(List()), str).get
       ScalaSet(sample)
     }
   }
@@ -2792,8 +2792,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.ExpressionStatement(pYield, pAwait).depth
-      val sample = randomSampler.ExpressionStatement(d, pYield, pAwait)
+      val str = MinSampler.ExpressionStatement(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.ExpressionStatement(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -2821,8 +2821,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.IfStatement(pYield, pAwait, pReturn).depth
-      val sample = randomSampler.IfStatement(d, pYield, pAwait, pReturn)
+      val str = MinSampler.IfStatement(pYield, pAwait, pReturn)
+      val sample = JSParser.parse(JSParser.IfStatement(List(pYield, pAwait, pReturn)), str).get
       ScalaSet(sample)
     }
   }
@@ -2993,8 +2993,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.IterationStatement(pYield, pAwait, pReturn).depth
-      val sample = randomSampler.IterationStatement(d, pYield, pAwait, pReturn)
+      val str = MinSampler.IterationStatement(pYield, pAwait, pReturn)
+      val sample = JSParser.parse(JSParser.IterationStatement(List(pYield, pAwait, pReturn)), str).get
       ScalaSet(sample)
     }
   }
@@ -3012,8 +3012,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.ForDeclaration(pYield, pAwait).depth
-      val sample = randomSampler.ForDeclaration(d, pYield, pAwait)
+      val str = MinSampler.ForDeclaration(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.ForDeclaration(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -3035,8 +3035,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.ForBinding(pYield, pAwait).depth
-      val sample = randomSampler.ForBinding(d, pYield, pAwait)
+      val str = MinSampler.ForBinding(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.ForBinding(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -3053,8 +3053,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.ContinueStatement(pYield, pAwait).depth
-      val sample = randomSampler.ContinueStatement(d, pYield, pAwait)
+      val str = MinSampler.ContinueStatement(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.ContinueStatement(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -3071,8 +3071,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.BreakStatement(pYield, pAwait).depth
-      val sample = randomSampler.BreakStatement(d, pYield, pAwait)
+      val str = MinSampler.BreakStatement(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.BreakStatement(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -3089,8 +3089,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.ReturnStatement(pYield, pAwait).depth
-      val sample = randomSampler.ReturnStatement(d, pYield, pAwait)
+      val str = MinSampler.ReturnStatement(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.ReturnStatement(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -3108,8 +3108,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.WithStatement(pYield, pAwait, pReturn).depth
-      val sample = randomSampler.WithStatement(d, pYield, pAwait, pReturn)
+      val str = MinSampler.WithStatement(pYield, pAwait, pReturn)
+      val sample = JSParser.parse(JSParser.WithStatement(List(pYield, pAwait, pReturn)), str).get
       ScalaSet(sample)
     }
   }
@@ -3127,8 +3127,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.SwitchStatement(pYield, pAwait, pReturn).depth
-      val sample = randomSampler.SwitchStatement(d, pYield, pAwait, pReturn)
+      val str = MinSampler.SwitchStatement(pYield, pAwait, pReturn)
+      val sample = JSParser.parse(JSParser.SwitchStatement(List(pYield, pAwait, pReturn)), str).get
       ScalaSet(sample)
     }
   }
@@ -3158,8 +3158,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.CaseBlock(pYield, pAwait, pReturn).depth
-      val sample = randomSampler.CaseBlock(d, pYield, pAwait, pReturn)
+      val str = MinSampler.CaseBlock(pYield, pAwait, pReturn)
+      val sample = JSParser.parse(JSParser.CaseBlock(List(pYield, pAwait, pReturn)), str).get
       ScalaSet(sample)
     }
   }
@@ -3183,8 +3183,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.CaseClauses(pYield, pAwait, pReturn).depth
-      val sample = randomSampler.CaseClauses(d, pYield, pAwait, pReturn)
+      val str = MinSampler.CaseClauses(pYield, pAwait, pReturn)
+      val sample = JSParser.parse(JSParser.CaseClauses(List(pYield, pAwait, pReturn)), str).get
       ScalaSet(sample)
     }
   }
@@ -3203,8 +3203,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.CaseClause(pYield, pAwait, pReturn).depth
-      val sample = randomSampler.CaseClause(d, pYield, pAwait, pReturn)
+      val str = MinSampler.CaseClause(pYield, pAwait, pReturn)
+      val sample = JSParser.parse(JSParser.CaseClause(List(pYield, pAwait, pReturn)), str).get
       ScalaSet(sample)
     }
   }
@@ -3221,8 +3221,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.DefaultClause(pYield, pAwait, pReturn).depth
-      val sample = randomSampler.DefaultClause(d, pYield, pAwait, pReturn)
+      val str = MinSampler.DefaultClause(pYield, pAwait, pReturn)
+      val sample = JSParser.parse(JSParser.DefaultClause(List(pYield, pAwait, pReturn)), str).get
       ScalaSet(sample)
     }
   }
@@ -3240,8 +3240,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.LabelledStatement(pYield, pAwait, pReturn).depth
-      val sample = randomSampler.LabelledStatement(d, pYield, pAwait, pReturn)
+      val str = MinSampler.LabelledStatement(pYield, pAwait, pReturn)
+      val sample = JSParser.parse(JSParser.LabelledStatement(List(pYield, pAwait, pReturn)), str).get
       ScalaSet(sample)
     }
   }
@@ -3263,8 +3263,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.LabelledItem(pYield, pAwait, pReturn).depth
-      val sample = randomSampler.LabelledItem(d, pYield, pAwait, pReturn)
+      val str = MinSampler.LabelledItem(pYield, pAwait, pReturn)
+      val sample = JSParser.parse(JSParser.LabelledItem(List(pYield, pAwait, pReturn)), str).get
       ScalaSet(sample)
     }
   }
@@ -3280,8 +3280,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.ThrowStatement(pYield, pAwait).depth
-      val sample = randomSampler.ThrowStatement(d, pYield, pAwait)
+      val str = MinSampler.ThrowStatement(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.ThrowStatement(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -3317,8 +3317,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.TryStatement(pYield, pAwait, pReturn).depth
-      val sample = randomSampler.TryStatement(d, pYield, pAwait, pReturn)
+      val str = MinSampler.TryStatement(pYield, pAwait, pReturn)
+      val sample = JSParser.parse(JSParser.TryStatement(List(pYield, pAwait, pReturn)), str).get
       ScalaSet(sample)
     }
   }
@@ -3342,8 +3342,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.Catch(pYield, pAwait, pReturn).depth
-      val sample = randomSampler.Catch(d, pYield, pAwait, pReturn)
+      val str = MinSampler.Catch(pYield, pAwait, pReturn)
+      val sample = JSParser.parse(JSParser.Catch(List(pYield, pAwait, pReturn)), str).get
       ScalaSet(sample)
     }
   }
@@ -3359,8 +3359,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.Finally(pYield, pAwait, pReturn).depth
-      val sample = randomSampler.Finally(d, pYield, pAwait, pReturn)
+      val str = MinSampler.Finally(pYield, pAwait, pReturn)
+      val sample = JSParser.parse(JSParser.Finally(List(pYield, pAwait, pReturn)), str).get
       ScalaSet(sample)
     }
   }
@@ -3382,8 +3382,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.CatchParameter(pYield, pAwait).depth
-      val sample = randomSampler.CatchParameter(d, pYield, pAwait)
+      val str = MinSampler.CatchParameter(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.CatchParameter(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -3394,8 +3394,8 @@ class NonRecursiveSampler {
       s += DebuggerStatement0(List())
       s
     } else {
-      val d = counter.DebuggerStatement().depth
-      val sample = randomSampler.DebuggerStatement(d)
+      val str = MinSampler.DebuggerStatement()
+      val sample = JSParser.parse(JSParser.DebuggerStatement(List()), str).get
       ScalaSet(sample)
     }
   }
@@ -3425,8 +3425,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.FunctionDeclaration(pYield, pAwait, pDefault).depth
-      val sample = randomSampler.FunctionDeclaration(d, pYield, pAwait, pDefault)
+      val str = MinSampler.FunctionDeclaration(pYield, pAwait, pDefault)
+      val sample = JSParser.parse(JSParser.FunctionDeclaration(List(pYield, pAwait, pDefault)), str).get
       ScalaSet(sample)
     }
   }
@@ -3447,8 +3447,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.FunctionExpression().depth
-      val sample = randomSampler.FunctionExpression(d)
+      val str = MinSampler.FunctionExpression()
+      val sample = JSParser.parse(JSParser.FunctionExpression(List()), str).get
       ScalaSet(sample)
     }
   }
@@ -3464,8 +3464,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.UniqueFormalParameters(pYield, pAwait).depth
-      val sample = randomSampler.UniqueFormalParameters(d, pYield, pAwait)
+      val str = MinSampler.UniqueFormalParameters(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.UniqueFormalParameters(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -3502,8 +3502,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.FormalParameters(pYield, pAwait).depth
-      val sample = randomSampler.FormalParameters(d, pYield, pAwait)
+      val str = MinSampler.FormalParameters(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.FormalParameters(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -3527,8 +3527,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.FormalParameterList(pYield, pAwait).depth
-      val sample = randomSampler.FormalParameterList(d, pYield, pAwait)
+      val str = MinSampler.FormalParameterList(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.FormalParameterList(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -3544,8 +3544,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.FunctionRestParameter(pYield, pAwait).depth
-      val sample = randomSampler.FunctionRestParameter(d, pYield, pAwait)
+      val str = MinSampler.FunctionRestParameter(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.FunctionRestParameter(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -3561,8 +3561,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.FormalParameter(pYield, pAwait).depth
-      val sample = randomSampler.FormalParameter(d, pYield, pAwait)
+      val str = MinSampler.FormalParameter(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.FormalParameter(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -3578,8 +3578,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.FunctionBody(pYield, pAwait).depth
-      val sample = randomSampler.FunctionBody(d, pYield, pAwait)
+      val str = MinSampler.FunctionBody(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.FunctionBody(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -3596,8 +3596,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.FunctionStatementList(pYield, pAwait).depth
-      val sample = randomSampler.FunctionStatementList(d, pYield, pAwait)
+      val str = MinSampler.FunctionStatementList(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.FunctionStatementList(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -3615,8 +3615,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.ArrowFunction(pIn, pYield, pAwait).depth
-      val sample = randomSampler.ArrowFunction(d, pIn, pYield, pAwait)
+      val str = MinSampler.ArrowFunction(pIn, pYield, pAwait)
+      val sample = JSParser.parse(JSParser.ArrowFunction(List(pIn, pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -3638,8 +3638,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.ArrowParameters(pYield, pAwait).depth
-      val sample = randomSampler.ArrowParameters(d, pYield, pAwait)
+      val str = MinSampler.ArrowParameters(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.ArrowParameters(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -3661,8 +3661,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.ConciseBody(pIn).depth
-      val sample = randomSampler.ConciseBody(d, pIn)
+      val str = MinSampler.ConciseBody(pIn)
+      val sample = JSParser.parse(JSParser.ConciseBody(List(pIn)), str).get
       ScalaSet(sample)
     }
   }
@@ -3678,8 +3678,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.ExpressionBody(pIn, pAwait).depth
-      val sample = randomSampler.ExpressionBody(d, pIn, pAwait)
+      val str = MinSampler.ExpressionBody(pIn, pAwait)
+      val sample = JSParser.parse(JSParser.ExpressionBody(List(pIn, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -3695,8 +3695,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.ArrowFormalParameters(pYield, pAwait).depth
-      val sample = randomSampler.ArrowFormalParameters(d, pYield, pAwait)
+      val str = MinSampler.ArrowFormalParameters(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.ArrowFormalParameters(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -3722,8 +3722,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.AsyncArrowFunction(pIn, pYield, pAwait).depth
-      val sample = randomSampler.AsyncArrowFunction(d, pIn, pYield, pAwait)
+      val str = MinSampler.AsyncArrowFunction(pIn, pYield, pAwait)
+      val sample = JSParser.parse(JSParser.AsyncArrowFunction(List(pIn, pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -3745,8 +3745,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.AsyncConciseBody(pIn).depth
-      val sample = randomSampler.AsyncConciseBody(d, pIn)
+      val str = MinSampler.AsyncConciseBody(pIn)
+      val sample = JSParser.parse(JSParser.AsyncConciseBody(List(pIn)), str).get
       ScalaSet(sample)
     }
   }
@@ -3762,8 +3762,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.AsyncArrowBindingIdentifier(pYield).depth
-      val sample = randomSampler.AsyncArrowBindingIdentifier(d, pYield)
+      val str = MinSampler.AsyncArrowBindingIdentifier(pYield)
+      val sample = JSParser.parse(JSParser.AsyncArrowBindingIdentifier(List(pYield)), str).get
       ScalaSet(sample)
     }
   }
@@ -3781,8 +3781,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.CoverCallExpressionAndAsyncArrowHead(pYield, pAwait).depth
-      val sample = randomSampler.CoverCallExpressionAndAsyncArrowHead(d, pYield, pAwait)
+      val str = MinSampler.CoverCallExpressionAndAsyncArrowHead(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.CoverCallExpressionAndAsyncArrowHead(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -3798,8 +3798,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.AsyncArrowHead().depth
-      val sample = randomSampler.AsyncArrowHead(d)
+      val str = MinSampler.AsyncArrowHead()
+      val sample = JSParser.parse(JSParser.AsyncArrowHead(List()), str).get
       ScalaSet(sample)
     }
   }
@@ -3855,8 +3855,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.MethodDefinition(pYield, pAwait).depth
-      val sample = randomSampler.MethodDefinition(d, pYield, pAwait)
+      val str = MinSampler.MethodDefinition(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.MethodDefinition(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -3872,8 +3872,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.PropertySetParameterList().depth
-      val sample = randomSampler.PropertySetParameterList(d)
+      val str = MinSampler.PropertySetParameterList()
+      val sample = JSParser.parse(JSParser.PropertySetParameterList(List()), str).get
       ScalaSet(sample)
     }
   }
@@ -3893,8 +3893,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.GeneratorMethod(pYield, pAwait).depth
-      val sample = randomSampler.GeneratorMethod(d, pYield, pAwait)
+      val str = MinSampler.GeneratorMethod(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.GeneratorMethod(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -3924,8 +3924,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.GeneratorDeclaration(pYield, pAwait, pDefault).depth
-      val sample = randomSampler.GeneratorDeclaration(d, pYield, pAwait, pDefault)
+      val str = MinSampler.GeneratorDeclaration(pYield, pAwait, pDefault)
+      val sample = JSParser.parse(JSParser.GeneratorDeclaration(List(pYield, pAwait, pDefault)), str).get
       ScalaSet(sample)
     }
   }
@@ -3946,8 +3946,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.GeneratorExpression().depth
-      val sample = randomSampler.GeneratorExpression(d)
+      val str = MinSampler.GeneratorExpression()
+      val sample = JSParser.parse(JSParser.GeneratorExpression(List()), str).get
       ScalaSet(sample)
     }
   }
@@ -3963,8 +3963,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.GeneratorBody().depth
-      val sample = randomSampler.GeneratorBody(d)
+      val str = MinSampler.GeneratorBody()
+      val sample = JSParser.parse(JSParser.GeneratorBody(List()), str).get
       ScalaSet(sample)
     }
   }
@@ -3987,8 +3987,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.YieldExpression(pIn, pAwait).depth
-      val sample = randomSampler.YieldExpression(d, pIn, pAwait)
+      val str = MinSampler.YieldExpression(pIn, pAwait)
+      val sample = JSParser.parse(JSParser.YieldExpression(List(pIn, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -4008,8 +4008,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.AsyncGeneratorMethod(pYield, pAwait).depth
-      val sample = randomSampler.AsyncGeneratorMethod(d, pYield, pAwait)
+      val str = MinSampler.AsyncGeneratorMethod(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.AsyncGeneratorMethod(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -4039,8 +4039,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.AsyncGeneratorDeclaration(pYield, pAwait, pDefault).depth
-      val sample = randomSampler.AsyncGeneratorDeclaration(d, pYield, pAwait, pDefault)
+      val str = MinSampler.AsyncGeneratorDeclaration(pYield, pAwait, pDefault)
+      val sample = JSParser.parse(JSParser.AsyncGeneratorDeclaration(List(pYield, pAwait, pDefault)), str).get
       ScalaSet(sample)
     }
   }
@@ -4061,8 +4061,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.AsyncGeneratorExpression().depth
-      val sample = randomSampler.AsyncGeneratorExpression(d)
+      val str = MinSampler.AsyncGeneratorExpression()
+      val sample = JSParser.parse(JSParser.AsyncGeneratorExpression(List()), str).get
       ScalaSet(sample)
     }
   }
@@ -4078,8 +4078,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.AsyncGeneratorBody().depth
-      val sample = randomSampler.AsyncGeneratorBody(d)
+      val str = MinSampler.AsyncGeneratorBody()
+      val sample = JSParser.parse(JSParser.AsyncGeneratorBody(List()), str).get
       ScalaSet(sample)
     }
   }
@@ -4109,8 +4109,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.AsyncFunctionDeclaration(pYield, pAwait, pDefault).depth
-      val sample = randomSampler.AsyncFunctionDeclaration(d, pYield, pAwait, pDefault)
+      val str = MinSampler.AsyncFunctionDeclaration(pYield, pAwait, pDefault)
+      val sample = JSParser.parse(JSParser.AsyncFunctionDeclaration(List(pYield, pAwait, pDefault)), str).get
       ScalaSet(sample)
     }
   }
@@ -4138,8 +4138,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.AsyncFunctionExpression().depth
-      val sample = randomSampler.AsyncFunctionExpression(d)
+      val str = MinSampler.AsyncFunctionExpression()
+      val sample = JSParser.parse(JSParser.AsyncFunctionExpression(List()), str).get
       ScalaSet(sample)
     }
   }
@@ -4159,8 +4159,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.AsyncMethod(pYield, pAwait).depth
-      val sample = randomSampler.AsyncMethod(d, pYield, pAwait)
+      val str = MinSampler.AsyncMethod(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.AsyncMethod(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -4176,8 +4176,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.AsyncFunctionBody().depth
-      val sample = randomSampler.AsyncFunctionBody(d)
+      val str = MinSampler.AsyncFunctionBody()
+      val sample = JSParser.parse(JSParser.AsyncFunctionBody(List()), str).get
       ScalaSet(sample)
     }
   }
@@ -4193,8 +4193,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.AwaitExpression(pYield).depth
-      val sample = randomSampler.AwaitExpression(d, pYield)
+      val str = MinSampler.AwaitExpression(pYield)
+      val sample = JSParser.parse(JSParser.AwaitExpression(List(pYield)), str).get
       ScalaSet(sample)
     }
   }
@@ -4220,8 +4220,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.ClassDeclaration(pYield, pAwait, pDefault).depth
-      val sample = randomSampler.ClassDeclaration(d, pYield, pAwait, pDefault)
+      val str = MinSampler.ClassDeclaration(pYield, pAwait, pDefault)
+      val sample = JSParser.parse(JSParser.ClassDeclaration(List(pYield, pAwait, pDefault)), str).get
       ScalaSet(sample)
     }
   }
@@ -4240,8 +4240,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.ClassExpression(pYield, pAwait).depth
-      val sample = randomSampler.ClassExpression(d, pYield, pAwait)
+      val str = MinSampler.ClassExpression(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.ClassExpression(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -4262,8 +4262,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.ClassTail(pYield, pAwait).depth
-      val sample = randomSampler.ClassTail(d, pYield, pAwait)
+      val str = MinSampler.ClassTail(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.ClassTail(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -4279,8 +4279,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.ClassHeritage(pYield, pAwait).depth
-      val sample = randomSampler.ClassHeritage(d, pYield, pAwait)
+      val str = MinSampler.ClassHeritage(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.ClassHeritage(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -4296,8 +4296,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.ClassBody(pYield, pAwait).depth
-      val sample = randomSampler.ClassBody(d, pYield, pAwait)
+      val str = MinSampler.ClassBody(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.ClassBody(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -4321,8 +4321,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.ClassElementList(pYield, pAwait).depth
-      val sample = randomSampler.ClassElementList(d, pYield, pAwait)
+      val str = MinSampler.ClassElementList(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.ClassElementList(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -4345,8 +4345,8 @@ class NonRecursiveSampler {
       s += ClassElement2(List(pYield, pAwait))
       s
     } else {
-      val d = counter.ClassElement(pYield, pAwait).depth
-      val sample = randomSampler.ClassElement(d, pYield, pAwait)
+      val str = MinSampler.ClassElement(pYield, pAwait)
+      val sample = JSParser.parse(JSParser.ClassElement(List(pYield, pAwait)), str).get
       ScalaSet(sample)
     }
   }
@@ -4363,8 +4363,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.Script().depth
-      val sample = randomSampler.Script(d)
+      val str = MinSampler.Script()
+      val sample = JSParser.parse(JSParser.Script(List()), str).get
       ScalaSet(sample)
     }
   }
@@ -4380,8 +4380,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.ScriptBody().depth
-      val sample = randomSampler.ScriptBody(d)
+      val str = MinSampler.ScriptBody()
+      val sample = JSParser.parse(JSParser.ScriptBody(List()), str).get
       ScalaSet(sample)
     }
   }
@@ -4405,8 +4405,8 @@ class NonRecursiveSampler {
       }
       s
     } else {
-      val d = counter.ExportSpecifier().depth
-      val sample = randomSampler.ExportSpecifier(d)
+      val str = MinSampler.ExportSpecifier()
+      val sample = JSParser.parse(JSParser.ExportSpecifier(List()), str).get
       ScalaSet(sample)
     }
   }
