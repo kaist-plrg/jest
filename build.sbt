@@ -14,6 +14,7 @@ ThisBuild / javacOptions ++= Seq(
 
 lazy val irTest = taskKey[Unit]("Launch IRES language interpreter tests")
 lazy val jsTest = taskKey[Unit]("Launch JavaScript language interpreter tests")
+lazy val test262SyntaxTest = taskKey[Unit]("Launch test262Syntax tests")
 lazy val test262Test = taskKey[Unit]("Launch test262 tests")
 // lazy val test262LongTest = taskKey[Unit]("Launch long test262 tests")
 // lazy val test262VeryLongTest = taskKey[Unit]("Launch very long test262 tests")
@@ -46,6 +47,7 @@ lazy val ires = (project in file("."))
     ).mkString(" ", " ", "")).value,
     irTest := (testOnly in Test).toTask(" kr.ac.kaist.ires.BasicIRTest").value,
     jsTest := (testOnly in Test).toTask(" kr.ac.kaist.ires.JSTest").value,
+    test262SyntaxTest := (testOnly in Test).toTask(" kr.ac.kaist.ires.Test262SyntaxTest").value,
     test262Test := (testOnly in Test).toTask(" kr.ac.kaist.ires.Test262Test").value,
     // test262LongTest := (testOnly in Test).toTask(" kr.ac.kaist.ires.Test262LongTest").value,
     // test262VeryLongTest := (testOnly in Test).toTask(" kr.ac.kaist.ires.Test262VeryLongTest").value,
