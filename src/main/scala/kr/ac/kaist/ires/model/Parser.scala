@@ -1295,7 +1295,7 @@ object Parser extends ESParsers {
   lazy val IterationStatement: ESParser[IterationStatement] = memo(args => {
     val List(pYield, pAwait, pReturn) = getArgsN("IterationStatement", args, 3)
     log((
-      log((((((MATCH <~ t("do")) ~ Statement(List(pYield, pAwait, pReturn)) <~ t("while")) <~ t("(")) ~ Expression(List(true, pYield, pAwait)) <~ t(")")) <~ t(";")) ^^ { case _ ~ x0 ~ x1 => IterationStatement0(x0, x1, args) })("IterationStatement0") |
+      log((((((MATCH <~ t("do")) ~ Statement(List(pYield, pAwait, pReturn)) <~ t("while")) <~ t("(")) ~ Expression(List(true, pYield, pAwait)) <~ doWhileCloseT) <~ t(";")) ^^ { case _ ~ x0 ~ x1 => IterationStatement0(x0, x1, args) })("IterationStatement0") |
       log((((MATCH <~ t("while")) <~ t("(")) ~ Expression(List(true, pYield, pAwait)) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 ~ x1 => IterationStatement1(x0, x1, args) })("IterationStatement1") |
       log(((((((MATCH <~ t("for")) <~ t("(")) <~ -ntl((("let" <~ not(IDContinue)) %% "["))) ~ opt(Expression(List(false, pYield, pAwait))) <~ t(";")) ~ opt(Expression(List(true, pYield, pAwait))) <~ t(";")) ~ opt(Expression(List(true, pYield, pAwait))) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 ~ x1 ~ x2 ~ x3 => IterationStatement2(x0, x1, x2, x3, args) })("IterationStatement2") |
       log(((((((MATCH <~ t("for")) <~ t("(")) <~ t("var")) ~ VariableDeclarationList(List(false, pYield, pAwait)) <~ t(";")) ~ opt(Expression(List(true, pYield, pAwait))) <~ t(";")) ~ opt(Expression(List(true, pYield, pAwait))) <~ t(")")) ~ Statement(List(pYield, pAwait, pReturn)) ^^ { case _ ~ x0 ~ x1 ~ x2 ~ x3 => IterationStatement3(x0, x1, x2, x3, args) })("IterationStatement3") |

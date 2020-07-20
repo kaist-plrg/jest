@@ -4618,6 +4618,7 @@
   "built-ins/String/prototype/matchAll/regexp-prototype-matchAll-invocation.js": "RegularExpressionLiteral",
   "built-ins/String/prototype/matchAll/regexp-prototype-matchAll-throws.js": "RegularExpressionLiteral",
   "built-ins/String/prototype/matchAll/toString-this-val.js": "RegularExpressionLiteral",
+  "built-ins/String/prototype/repeat/empty-string-returns-empty.js": "TIMEOUT",
   "built-ins/String/prototype/repeat/repeat-string-n-times.js": "TIMEOUT",
   "built-ins/String/prototype/replace/S15.5.4.11_A1_T1.js": "GLOBAL.String.prototype.replace",
   "built-ins/String/prototype/replace/S15.5.4.11_A1_T10.js": "GLOBAL.String.prototype.replace",
