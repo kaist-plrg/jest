@@ -15,7 +15,7 @@ class RHSTracer extends UnitWalker {
 
   // added touched AST
   override def beforeWalk[T <: AST](ast: T): Unit =
-    _covered += RHSElem(ast.name, ast.parserParams, ast.k)
+    _covered += RHSElem(ast.name, ast.k)
 
   def dump(dir: String): Unit = {
     // directory for coverage results
