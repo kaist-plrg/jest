@@ -46,20 +46,15 @@ object NRSampler extends NonRecursiveSampler with Sampler {
 
   // get samples
   def getSample: List[Script] = {
-    var scripts = origStatement.toList.map(_.toString)
-    //val parser = Parser.Script(Nil)
-    //val result = scripts.map(Parser.parse(parser, _).get)
-    List()
-  }
+    var scripts = Set[String]()
+    scripts ++= origStatement.map(_.toString)
+    scripts ++= origDeclaration.map(_.toString)
+    scripts ++= origAssignmentExpression.map(e => s"var x = $e")
 
-  def getSample2: List[Statement] = {
-    //visited = Set()
-    origStatement.toList
-  }
-  def getSample3: List[Declaration] = {
-    origDeclaration.toList
-  }
-  def getSample4: List[AssignmentExpression] = {
-    origAssignmentExpression.toList
+    val parser = Parser.Script(Nil)
+    scripts
+      .toList
+      .filter(ValidityChecker(_))
+      .map(Parser.parse(parser, _).get)
   }
 }

@@ -1,7 +1,7 @@
 package kr.ac.kaist.ires.generator
 
 import kr.ac.kaist.ires.GEN_RES_DIR
-import kr.ac.kaist.ires.error.{ NotSupported, Timeout }
+import kr.ac.kaist.ires.error.{ NotSupported, Timeout, IRError }
 import kr.ac.kaist.ires.ir.{ Interp, CondInst }
 import kr.ac.kaist.ires.mutator._
 import kr.ac.kaist.ires.model.{ Script, ModelHelper }
@@ -120,7 +120,7 @@ object Generator {
   }
 
   // random sampling
-  def getSample: List[Script] = LimitedDepthSampler.getSample
+  def getSample: List[Script] = NRSampler.getSample
 
   // mutate given JavaScript program
   def mutate(script: Script): Script = {
@@ -139,5 +139,6 @@ object Generator {
   } catch {
     case Timeout => Right("TIMEOUT")
     case NotSupported(msg) => Right(s"NOT-SUPPORTED [$msg]")
+    case IRError(msg) => Right(s"ERROR [$msg]")
   }
 }
