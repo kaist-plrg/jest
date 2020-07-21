@@ -9,7 +9,7 @@ object MinSampler {
   def IdentifierName(): String = "x"
   def BooleanLiteral(): String = "true"
   def NoSubstitutionTemplate(): String = "``"
-  def NumericLiteral(): String = "0"
+  def NumericLiteral(): String = "42"
   def IdentifierReference(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
     case (true, true) => "x"
     case (false, true) => "x"
@@ -32,10 +32,10 @@ object MinSampler {
     case () => "x"
   }
   def PrimaryExpression(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
-    case (true, false) => "0"
-    case (false, true) => "0"
-    case (true, true) => "0"
-    case (false, false) => "0"
+    case (true, false) => "x"
+    case (false, true) => "x"
+    case (true, true) => "x"
+    case (false, false) => "x"
   }
   def CoverParenthesizedExpressionAndArrowParameterList(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
     case (false, false) => "( )"
@@ -44,13 +44,13 @@ object MinSampler {
     case (false, true) => "( )"
   }
   def ParenthesizedExpression(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
-    case (true, false) => "( 0 )"
-    case (false, false) => "( 0 )"
-    case (true, true) => "( 0 )"
-    case (false, true) => "( 0 )"
+    case (true, false) => "( x )"
+    case (false, false) => "( x )"
+    case (true, true) => "( x )"
+    case (false, true) => "( x )"
   }
   def Literal(): String = () match {
-    case () => "0"
+    case () => "''"
   }
   def ArrayLiteral(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
     case (false, true) => "[  ]"
@@ -59,19 +59,19 @@ object MinSampler {
     case (false, false) => "[  ]"
   }
   def ElementList(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
-    case (true, false) => " 0"
-    case (false, true) => " 0"
-    case (true, true) => " 0"
-    case (false, false) => " 0"
+    case (true, false) => " x"
+    case (false, true) => " x"
+    case (true, true) => " x"
+    case (false, false) => " x"
   }
   def Elision(): String = () match {
     case () => ","
   }
   def SpreadElement(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
-    case (false, true) => "... 0"
-    case (true, false) => "... 0"
-    case (false, false) => "... 0"
-    case (true, true) => "... 0"
+    case (false, true) => "... x"
+    case (true, false) => "... x"
+    case (false, false) => "... x"
+    case (true, true) => "... x"
   }
   def ObjectLiteral(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
     case (true, true) => "{ }"
@@ -92,35 +92,35 @@ object MinSampler {
     case (false, true) => "x"
   }
   def PropertyName(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
-    case (true, false) => "0"
-    case (false, true) => "0"
-    case (false, false) => "0"
-    case (true, true) => "0"
+    case (true, false) => "x"
+    case (false, true) => "x"
+    case (false, false) => "x"
+    case (true, true) => "x"
   }
   def LiteralPropertyName(): String = () match {
-    case () => "0"
+    case () => "x"
   }
   def ComputedPropertyName(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
-    case (true, false) => "[ 0 ]"
-    case (true, true) => "[ 0 ]"
-    case (false, false) => "[ 0 ]"
-    case (false, true) => "[ 0 ]"
+    case (true, false) => "[ x ]"
+    case (true, true) => "[ x ]"
+    case (false, false) => "[ x ]"
+    case (false, true) => "[ x ]"
   }
   def CoverInitializedName(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
-    case (true, false) => "x = 0"
-    case (true, true) => "x = 0"
-    case (false, true) => "x = 0"
-    case (false, false) => "x = 0"
+    case (true, false) => "x = x"
+    case (true, true) => "x = x"
+    case (false, true) => "x = x"
+    case (false, false) => "x = x"
   }
   def Initializer(pIn: Boolean, pYield: Boolean, pAwait: Boolean): String = (pIn, pYield, pAwait) match {
-    case (false, true, false) => "= 0"
-    case (true, true, false) => "= 0"
-    case (false, true, true) => "= 0"
-    case (false, false, false) => "= 0"
-    case (false, false, true) => "= 0"
-    case (true, false, true) => "= 0"
-    case (true, true, true) => "= 0"
-    case (true, false, false) => "= 0"
+    case (false, true, false) => "= x"
+    case (true, true, false) => "= x"
+    case (false, true, true) => "= x"
+    case (false, false, false) => "= x"
+    case (false, false, true) => "= x"
+    case (true, false, true) => "= x"
+    case (true, true, true) => "= x"
+    case (true, false, false) => "= x"
   }
   def TemplateLiteral(pYield: Boolean, pAwait: Boolean, pTagged: Boolean): String = (pYield, pAwait, pTagged) match {
     case (false, true, false) => "``"
@@ -133,14 +133,14 @@ object MinSampler {
     case (true, true, false) => "``"
   }
   def SubstitutionTemplate(pYield: Boolean, pAwait: Boolean, pTagged: Boolean): String = (pYield, pAwait, pTagged) match {
-    case (true, true, false) => "`${ 0 }`"
-    case (false, false, true) => "`${ 0 }`"
-    case (true, false, true) => "`${ 0 }`"
-    case (false, true, true) => "`${ 0 }`"
-    case (false, false, false) => "`${ 0 }`"
-    case (true, true, true) => "`${ 0 }`"
-    case (true, false, false) => "`${ 0 }`"
-    case (false, true, false) => "`${ 0 }`"
+    case (true, true, false) => "`${ x }`"
+    case (false, false, true) => "`${ x }`"
+    case (true, false, true) => "`${ x }`"
+    case (false, true, true) => "`${ x }`"
+    case (false, false, false) => "`${ x }`"
+    case (true, true, true) => "`${ x }`"
+    case (true, false, false) => "`${ x }`"
+    case (false, true, false) => "`${ x }`"
   }
   def TemplateSpans(pYield: Boolean, pAwait: Boolean, pTagged: Boolean): String = (pYield, pAwait, pTagged) match {
     case (true, false, false) => "}`"
@@ -153,20 +153,20 @@ object MinSampler {
     case (false, true, true) => "}`"
   }
   def TemplateMiddleList(pYield: Boolean, pAwait: Boolean, pTagged: Boolean): String = (pYield, pAwait, pTagged) match {
-    case (false, true, false) => "}${ 0"
-    case (false, false, true) => "}${ 0"
-    case (true, true, false) => "}${ 0"
-    case (false, false, false) => "}${ 0"
-    case (true, false, false) => "}${ 0"
-    case (true, true, true) => "}${ 0"
-    case (false, true, true) => "}${ 0"
-    case (true, false, true) => "}${ 0"
+    case (false, true, false) => "}${ x"
+    case (false, false, true) => "}${ x"
+    case (true, true, false) => "}${ x"
+    case (false, false, false) => "}${ x"
+    case (true, false, false) => "}${ x"
+    case (true, true, true) => "}${ x"
+    case (false, true, true) => "}${ x"
+    case (true, false, true) => "}${ x"
   }
   def MemberExpression(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
-    case (true, true) => "0"
-    case (false, false) => "0"
-    case (true, false) => "0"
-    case (false, true) => "0"
+    case (true, true) => "x"
+    case (false, false) => "x"
+    case (true, false) => "x"
+    case (false, true) => "x"
   }
   def SuperProperty(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
     case (true, false) => "super . x"
@@ -181,22 +181,22 @@ object MinSampler {
     case () => "new . target"
   }
   def NewExpression(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
-    case (true, true) => "0"
-    case (false, true) => "0"
-    case (false, false) => "0"
-    case (true, false) => "0"
+    case (true, true) => "x"
+    case (false, true) => "x"
+    case (false, false) => "x"
+    case (true, false) => "x"
   }
   def CallExpression(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
-    case (true, false) => "0 ( )"
-    case (false, true) => "0 ( )"
-    case (false, false) => "0 ( )"
-    case (true, true) => "0 ( )"
+    case (true, false) => "x ( )"
+    case (false, true) => "x ( )"
+    case (false, false) => "x ( )"
+    case (true, true) => "x ( )"
   }
   def CallMemberExpression(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
-    case (false, true) => "0 ( )"
-    case (true, false) => "0 ( )"
-    case (false, false) => "0 ( )"
-    case (true, true) => "0 ( )"
+    case (false, true) => "x ( )"
+    case (true, false) => "x ( )"
+    case (false, false) => "x ( )"
+    case (true, true) => "x ( )"
   }
   def SuperCall(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
     case (true, false) => "super ( )"
@@ -211,16 +211,16 @@ object MinSampler {
     case (false, true) => "( )"
   }
   def ArgumentList(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
-    case (true, true) => "0"
-    case (false, false) => "0"
-    case (true, false) => "0"
-    case (false, true) => "0"
+    case (true, true) => "x"
+    case (false, false) => "x"
+    case (true, false) => "x"
+    case (false, true) => "x"
   }
   def OptionalExpression(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
-    case (false, false) => "0 ?. x"
-    case (true, false) => "0 ?. x"
-    case (false, true) => "0 ?. x"
-    case (true, true) => "0 ?. x"
+    case (false, false) => "x ?. x"
+    case (true, false) => "x ?. x"
+    case (false, true) => "x ?. x"
+    case (true, true) => "x ?. x"
   }
   def OptionalChain(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
     case (false, false) => "?. x"
@@ -229,169 +229,169 @@ object MinSampler {
     case (true, false) => "?. x"
   }
   def LeftHandSideExpression(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
-    case (true, false) => "0"
-    case (false, false) => "0"
-    case (false, true) => "0"
-    case (true, true) => "0"
+    case (true, false) => "x"
+    case (false, false) => "x"
+    case (false, true) => "x"
+    case (true, true) => "x"
   }
   def UpdateExpression(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
-    case (true, false) => "0"
-    case (false, true) => "0"
-    case (true, true) => "0"
-    case (false, false) => "0"
+    case (true, false) => "x"
+    case (false, true) => "x"
+    case (true, true) => "x"
+    case (false, false) => "x"
   }
   def UnaryExpression(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
-    case (false, true) => "0"
-    case (false, false) => "0"
-    case (true, true) => "0"
-    case (true, false) => "0"
+    case (false, true) => "x"
+    case (false, false) => "x"
+    case (true, true) => "x"
+    case (true, false) => "x"
   }
   def ExponentiationExpression(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
-    case (true, false) => "0"
-    case (false, true) => "0"
-    case (false, false) => "0"
-    case (true, true) => "0"
+    case (true, false) => "x"
+    case (false, true) => "x"
+    case (false, false) => "x"
+    case (true, true) => "x"
   }
   def MultiplicativeExpression(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
-    case (true, true) => "0"
-    case (false, true) => "0"
-    case (false, false) => "0"
-    case (true, false) => "0"
+    case (true, true) => "x"
+    case (false, true) => "x"
+    case (false, false) => "x"
+    case (true, false) => "x"
   }
   def MultiplicativeOperator(): String = () match {
     case () => "%"
   }
   def AdditiveExpression(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
-    case (true, true) => "0"
-    case (false, false) => "0"
-    case (false, true) => "0"
-    case (true, false) => "0"
+    case (true, true) => "x"
+    case (false, false) => "x"
+    case (false, true) => "x"
+    case (true, false) => "x"
   }
   def ShiftExpression(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
-    case (false, false) => "0"
-    case (false, true) => "0"
-    case (true, false) => "0"
-    case (true, true) => "0"
+    case (false, false) => "x"
+    case (false, true) => "x"
+    case (true, false) => "x"
+    case (true, true) => "x"
   }
   def RelationalExpression(pIn: Boolean, pYield: Boolean, pAwait: Boolean): String = (pIn, pYield, pAwait) match {
-    case (true, false, false) => "0"
-    case (false, true, true) => "0"
-    case (true, true, true) => "0"
-    case (true, true, false) => "0"
-    case (false, false, false) => "0"
-    case (false, true, false) => "0"
-    case (true, false, true) => "0"
-    case (false, false, true) => "0"
+    case (true, false, false) => "x"
+    case (false, true, true) => "x"
+    case (true, true, true) => "x"
+    case (true, true, false) => "x"
+    case (false, false, false) => "x"
+    case (false, true, false) => "x"
+    case (true, false, true) => "x"
+    case (false, false, true) => "x"
   }
   def EqualityExpression(pIn: Boolean, pYield: Boolean, pAwait: Boolean): String = (pIn, pYield, pAwait) match {
-    case (true, false, false) => "0"
-    case (true, false, true) => "0"
-    case (true, true, false) => "0"
-    case (false, true, true) => "0"
-    case (false, false, true) => "0"
-    case (false, true, false) => "0"
-    case (true, true, true) => "0"
-    case (false, false, false) => "0"
+    case (true, false, false) => "x"
+    case (true, false, true) => "x"
+    case (true, true, false) => "x"
+    case (false, true, true) => "x"
+    case (false, false, true) => "x"
+    case (false, true, false) => "x"
+    case (true, true, true) => "x"
+    case (false, false, false) => "x"
   }
   def BitwiseANDExpression(pIn: Boolean, pYield: Boolean, pAwait: Boolean): String = (pIn, pYield, pAwait) match {
-    case (false, true, true) => "0"
-    case (true, false, false) => "0"
-    case (false, false, true) => "0"
-    case (true, true, true) => "0"
-    case (true, false, true) => "0"
-    case (false, true, false) => "0"
-    case (false, false, false) => "0"
-    case (true, true, false) => "0"
+    case (false, true, true) => "x"
+    case (true, false, false) => "x"
+    case (false, false, true) => "x"
+    case (true, true, true) => "x"
+    case (true, false, true) => "x"
+    case (false, true, false) => "x"
+    case (false, false, false) => "x"
+    case (true, true, false) => "x"
   }
   def BitwiseXORExpression(pIn: Boolean, pYield: Boolean, pAwait: Boolean): String = (pIn, pYield, pAwait) match {
-    case (true, false, true) => "0"
-    case (true, true, true) => "0"
-    case (true, false, false) => "0"
-    case (false, false, true) => "0"
-    case (false, true, true) => "0"
-    case (false, false, false) => "0"
-    case (true, true, false) => "0"
-    case (false, true, false) => "0"
+    case (true, false, true) => "x"
+    case (true, true, true) => "x"
+    case (true, false, false) => "x"
+    case (false, false, true) => "x"
+    case (false, true, true) => "x"
+    case (false, false, false) => "x"
+    case (true, true, false) => "x"
+    case (false, true, false) => "x"
   }
   def BitwiseORExpression(pIn: Boolean, pYield: Boolean, pAwait: Boolean): String = (pIn, pYield, pAwait) match {
-    case (false, true, false) => "0"
-    case (false, false, false) => "0"
-    case (true, false, false) => "0"
-    case (true, true, true) => "0"
-    case (false, false, true) => "0"
-    case (true, false, true) => "0"
-    case (false, true, true) => "0"
-    case (true, true, false) => "0"
+    case (false, true, false) => "x"
+    case (false, false, false) => "x"
+    case (true, false, false) => "x"
+    case (true, true, true) => "x"
+    case (false, false, true) => "x"
+    case (true, false, true) => "x"
+    case (false, true, true) => "x"
+    case (true, true, false) => "x"
   }
   def LogicalANDExpression(pIn: Boolean, pYield: Boolean, pAwait: Boolean): String = (pIn, pYield, pAwait) match {
-    case (true, true, false) => "0"
-    case (true, false, false) => "0"
-    case (false, true, false) => "0"
-    case (false, false, true) => "0"
-    case (false, false, false) => "0"
-    case (true, false, true) => "0"
-    case (true, true, true) => "0"
-    case (false, true, true) => "0"
+    case (true, true, false) => "x"
+    case (true, false, false) => "x"
+    case (false, true, false) => "x"
+    case (false, false, true) => "x"
+    case (false, false, false) => "x"
+    case (true, false, true) => "x"
+    case (true, true, true) => "x"
+    case (false, true, true) => "x"
   }
   def LogicalORExpression(pIn: Boolean, pYield: Boolean, pAwait: Boolean): String = (pIn, pYield, pAwait) match {
-    case (true, true, false) => "0"
-    case (false, false, true) => "0"
-    case (true, false, false) => "0"
-    case (true, true, true) => "0"
-    case (false, true, true) => "0"
-    case (false, true, false) => "0"
-    case (false, false, false) => "0"
-    case (true, false, true) => "0"
+    case (true, true, false) => "x"
+    case (false, false, true) => "x"
+    case (true, false, false) => "x"
+    case (true, true, true) => "x"
+    case (false, true, true) => "x"
+    case (false, true, false) => "x"
+    case (false, false, false) => "x"
+    case (true, false, true) => "x"
   }
   def CoalesceExpression(pIn: Boolean, pYield: Boolean, pAwait: Boolean): String = (pIn, pYield, pAwait) match {
-    case (true, true, true) => "0 ?? 0"
-    case (false, false, false) => "0 ?? 0"
-    case (false, false, true) => "0 ?? 0"
-    case (true, false, true) => "0 ?? 0"
-    case (true, false, false) => "0 ?? 0"
-    case (true, true, false) => "0 ?? 0"
-    case (false, true, false) => "0 ?? 0"
-    case (false, true, true) => "0 ?? 0"
+    case (true, true, true) => "x ?? x"
+    case (false, false, false) => "x ?? x"
+    case (false, false, true) => "x ?? x"
+    case (true, false, true) => "x ?? x"
+    case (true, false, false) => "x ?? x"
+    case (true, true, false) => "x ?? x"
+    case (false, true, false) => "x ?? x"
+    case (false, true, true) => "x ?? x"
   }
   def CoalesceExpressionHead(pIn: Boolean, pYield: Boolean, pAwait: Boolean): String = (pIn, pYield, pAwait) match {
-    case (true, false, false) => "0"
-    case (false, false, false) => "0"
-    case (true, false, true) => "0"
-    case (true, true, false) => "0"
-    case (true, true, true) => "0"
-    case (false, true, false) => "0"
-    case (false, false, true) => "0"
-    case (false, true, true) => "0"
+    case (true, false, false) => "x"
+    case (false, false, false) => "x"
+    case (true, false, true) => "x"
+    case (true, true, false) => "x"
+    case (true, true, true) => "x"
+    case (false, true, false) => "x"
+    case (false, false, true) => "x"
+    case (false, true, true) => "x"
   }
   def ShortCircuitExpression(pIn: Boolean, pYield: Boolean, pAwait: Boolean): String = (pIn, pYield, pAwait) match {
-    case (true, false, false) => "0"
-    case (true, true, true) => "0"
-    case (false, true, false) => "0"
-    case (true, true, false) => "0"
-    case (true, false, true) => "0"
-    case (false, false, false) => "0"
-    case (false, true, true) => "0"
-    case (false, false, true) => "0"
+    case (true, false, false) => "x"
+    case (true, true, true) => "x"
+    case (false, true, false) => "x"
+    case (true, true, false) => "x"
+    case (true, false, true) => "x"
+    case (false, false, false) => "x"
+    case (false, true, true) => "x"
+    case (false, false, true) => "x"
   }
   def ConditionalExpression(pIn: Boolean, pYield: Boolean, pAwait: Boolean): String = (pIn, pYield, pAwait) match {
-    case (true, true, true) => "0"
-    case (false, false, true) => "0"
-    case (false, true, false) => "0"
-    case (false, false, false) => "0"
-    case (true, true, false) => "0"
-    case (true, false, true) => "0"
-    case (false, true, true) => "0"
-    case (true, false, false) => "0"
+    case (true, true, true) => "x"
+    case (false, false, true) => "x"
+    case (false, true, false) => "x"
+    case (false, false, false) => "x"
+    case (true, true, false) => "x"
+    case (true, false, true) => "x"
+    case (false, true, true) => "x"
+    case (true, false, false) => "x"
   }
   def AssignmentExpression(pIn: Boolean, pYield: Boolean, pAwait: Boolean): String = (pIn, pYield, pAwait) match {
-    case (false, false, false) => "0"
-    case (false, true, false) => "0"
-    case (true, true, false) => "0"
-    case (true, true, true) => "0"
-    case (true, false, false) => "0"
-    case (false, true, true) => "0"
-    case (true, false, true) => "0"
-    case (false, false, true) => "0"
+    case (false, false, false) => "x"
+    case (false, true, false) => "x"
+    case (true, true, false) => "x"
+    case (true, true, true) => "x"
+    case (true, false, false) => "x"
+    case (false, true, true) => "x"
+    case (true, false, true) => "x"
+    case (false, false, true) => "x"
   }
   def AssignmentOperator(): String = () match {
     case () => "%="
@@ -415,10 +415,10 @@ object MinSampler {
     case (true, false) => "[   ]"
   }
   def AssignmentRestProperty(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
-    case (true, true) => "... 0"
-    case (true, false) => "... 0"
-    case (false, true) => "... 0"
-    case (false, false) => "... 0"
+    case (true, true) => "... x"
+    case (true, false) => "... x"
+    case (false, true) => "... x"
+    case (false, false) => "... x"
   }
   def AssignmentPropertyList(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
     case (true, false) => "x "
@@ -427,16 +427,16 @@ object MinSampler {
     case (true, true) => "x "
   }
   def AssignmentElementList(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
-    case (true, true) => " 0 "
-    case (false, false) => " 0 "
-    case (false, true) => " 0 "
-    case (true, false) => " 0 "
+    case (true, true) => " x "
+    case (false, false) => " x "
+    case (false, true) => " x "
+    case (true, false) => " x "
   }
   def AssignmentElisionElement(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
-    case (false, true) => " 0 "
-    case (true, true) => " 0 "
-    case (false, false) => " 0 "
-    case (true, false) => " 0 "
+    case (false, true) => " x "
+    case (true, true) => " x "
+    case (false, false) => " x "
+    case (true, false) => " x "
   }
   def AssignmentProperty(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
     case (true, false) => "x "
@@ -445,32 +445,32 @@ object MinSampler {
     case (true, true) => "x "
   }
   def AssignmentElement(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
-    case (true, true) => "0 "
-    case (false, true) => "0 "
-    case (true, false) => "0 "
-    case (false, false) => "0 "
+    case (true, true) => "x "
+    case (false, true) => "x "
+    case (true, false) => "x "
+    case (false, false) => "x "
   }
   def AssignmentRestElement(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
-    case (true, true) => "... 0"
-    case (false, false) => "... 0"
-    case (true, false) => "... 0"
-    case (false, true) => "... 0"
+    case (true, true) => "... x"
+    case (false, false) => "... x"
+    case (true, false) => "... x"
+    case (false, true) => "... x"
   }
   def DestructuringAssignmentTarget(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
-    case (false, true) => "0"
-    case (true, false) => "0"
-    case (false, false) => "0"
-    case (true, true) => "0"
+    case (false, true) => "x"
+    case (true, false) => "x"
+    case (false, false) => "x"
+    case (true, true) => "x"
   }
   def Expression(pIn: Boolean, pYield: Boolean, pAwait: Boolean): String = (pIn, pYield, pAwait) match {
-    case (true, true, true) => "0"
-    case (true, true, false) => "0"
-    case (false, true, false) => "0"
-    case (false, false, false) => "0"
-    case (false, false, true) => "0"
-    case (false, true, true) => "0"
-    case (true, false, true) => "0"
-    case (true, false, false) => "0"
+    case (true, true, true) => "x"
+    case (true, true, false) => "x"
+    case (false, true, false) => "x"
+    case (false, false, false) => "x"
+    case (false, false, true) => "x"
+    case (false, true, true) => "x"
+    case (true, false, true) => "x"
+    case (true, false, false) => "x"
   }
   def Statement(pYield: Boolean, pAwait: Boolean, pReturn: Boolean): String = (pYield, pAwait, pReturn) match {
     case (false, true, false) => ";"
@@ -499,14 +499,14 @@ object MinSampler {
     case (true, true, true) => "function (  ) {  }"
   }
   def BreakableStatement(pYield: Boolean, pAwait: Boolean, pReturn: Boolean): String = (pYield, pAwait, pReturn) match {
-    case (true, true, false) => "while ( 0 ) ;"
-    case (false, false, true) => "while ( 0 ) ;"
-    case (false, true, true) => "while ( 0 ) ;"
-    case (true, true, true) => "while ( 0 ) ;"
-    case (true, false, true) => "while ( 0 ) ;"
-    case (false, false, false) => "while ( 0 ) ;"
-    case (false, true, false) => "while ( 0 ) ;"
-    case (true, false, false) => "while ( 0 ) ;"
+    case (true, true, false) => "while ( x ) ;"
+    case (false, false, true) => "while ( x ) ;"
+    case (false, true, true) => "while ( x ) ;"
+    case (true, true, true) => "while ( x ) ;"
+    case (true, false, true) => "while ( x ) ;"
+    case (false, false, false) => "while ( x ) ;"
+    case (false, true, false) => "while ( x ) ;"
+    case (true, false, false) => "while ( x ) ;"
   }
   def BlockStatement(pYield: Boolean, pAwait: Boolean, pReturn: Boolean): String = (pYield, pAwait, pReturn) match {
     case (true, false, false) => "{  }"
@@ -677,30 +677,30 @@ object MinSampler {
     case () => ";"
   }
   def ExpressionStatement(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
-    case (false, true) => " 0 ;"
-    case (false, false) => " 0 ;"
-    case (true, false) => " 0 ;"
-    case (true, true) => " 0 ;"
+    case (false, true) => " x ;"
+    case (false, false) => " x ;"
+    case (true, false) => " x ;"
+    case (true, true) => " x ;"
   }
   def IfStatement(pYield: Boolean, pAwait: Boolean, pReturn: Boolean): String = (pYield, pAwait, pReturn) match {
-    case (false, false, false) => "if ( 0 ) ; "
-    case (false, true, true) => "if ( 0 ) ; "
-    case (true, true, false) => "if ( 0 ) ; "
-    case (true, false, false) => "if ( 0 ) ; "
-    case (true, true, true) => "if ( 0 ) ; "
-    case (true, false, true) => "if ( 0 ) ; "
-    case (false, false, true) => "if ( 0 ) ; "
-    case (false, true, false) => "if ( 0 ) ; "
+    case (false, false, false) => "if ( x ) ; "
+    case (false, true, true) => "if ( x ) ; "
+    case (true, true, false) => "if ( x ) ; "
+    case (true, false, false) => "if ( x ) ; "
+    case (true, true, true) => "if ( x ) ; "
+    case (true, false, true) => "if ( x ) ; "
+    case (false, false, true) => "if ( x ) ; "
+    case (false, true, false) => "if ( x ) ; "
   }
   def IterationStatement(pYield: Boolean, pAwait: Boolean, pReturn: Boolean): String = (pYield, pAwait, pReturn) match {
-    case (true, true, false) => "while ( 0 ) ;"
-    case (false, false, true) => "while ( 0 ) ;"
-    case (false, true, true) => "while ( 0 ) ;"
-    case (true, false, false) => "while ( 0 ) ;"
-    case (true, true, true) => "while ( 0 ) ;"
-    case (true, false, true) => "while ( 0 ) ;"
-    case (false, true, false) => "while ( 0 ) ;"
-    case (false, false, false) => "while ( 0 ) ;"
+    case (true, true, false) => "while ( x ) ;"
+    case (false, false, true) => "while ( x ) ;"
+    case (false, true, true) => "while ( x ) ;"
+    case (true, false, false) => "while ( x ) ;"
+    case (true, true, true) => "while ( x ) ;"
+    case (true, false, true) => "while ( x ) ;"
+    case (false, true, false) => "while ( x ) ;"
+    case (false, false, false) => "while ( x ) ;"
   }
   def ForDeclaration(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
     case (true, false) => "let x"
@@ -733,24 +733,24 @@ object MinSampler {
     case (true, false) => "return ;"
   }
   def WithStatement(pYield: Boolean, pAwait: Boolean, pReturn: Boolean): String = (pYield, pAwait, pReturn) match {
-    case (false, false, true) => "with ( 0 ) ;"
-    case (false, true, true) => "with ( 0 ) ;"
-    case (true, true, false) => "with ( 0 ) ;"
-    case (true, true, true) => "with ( 0 ) ;"
-    case (false, false, false) => "with ( 0 ) ;"
-    case (true, false, false) => "with ( 0 ) ;"
-    case (true, false, true) => "with ( 0 ) ;"
-    case (false, true, false) => "with ( 0 ) ;"
+    case (false, false, true) => "with ( x ) ;"
+    case (false, true, true) => "with ( x ) ;"
+    case (true, true, false) => "with ( x ) ;"
+    case (true, true, true) => "with ( x ) ;"
+    case (false, false, false) => "with ( x ) ;"
+    case (true, false, false) => "with ( x ) ;"
+    case (true, false, true) => "with ( x ) ;"
+    case (false, true, false) => "with ( x ) ;"
   }
   def SwitchStatement(pYield: Boolean, pAwait: Boolean, pReturn: Boolean): String = (pYield, pAwait, pReturn) match {
-    case (true, false, true) => "switch ( 0 ) {  }"
-    case (false, true, false) => "switch ( 0 ) {  }"
-    case (false, false, true) => "switch ( 0 ) {  }"
-    case (true, false, false) => "switch ( 0 ) {  }"
-    case (false, true, true) => "switch ( 0 ) {  }"
-    case (false, false, false) => "switch ( 0 ) {  }"
-    case (true, true, true) => "switch ( 0 ) {  }"
-    case (true, true, false) => "switch ( 0 ) {  }"
+    case (true, false, true) => "switch ( x ) {  }"
+    case (false, true, false) => "switch ( x ) {  }"
+    case (false, false, true) => "switch ( x ) {  }"
+    case (true, false, false) => "switch ( x ) {  }"
+    case (false, true, true) => "switch ( x ) {  }"
+    case (false, false, false) => "switch ( x ) {  }"
+    case (true, true, true) => "switch ( x ) {  }"
+    case (true, true, false) => "switch ( x ) {  }"
   }
   def CaseBlock(pYield: Boolean, pAwait: Boolean, pReturn: Boolean): String = (pYield, pAwait, pReturn) match {
     case (true, true, false) => "{  }"
@@ -763,24 +763,24 @@ object MinSampler {
     case (false, false, false) => "{  }"
   }
   def CaseClauses(pYield: Boolean, pAwait: Boolean, pReturn: Boolean): String = (pYield, pAwait, pReturn) match {
-    case (false, true, true) => "case 0 : "
-    case (false, false, false) => "case 0 : "
-    case (true, true, true) => "case 0 : "
-    case (false, true, false) => "case 0 : "
-    case (false, false, true) => "case 0 : "
-    case (true, false, true) => "case 0 : "
-    case (true, true, false) => "case 0 : "
-    case (true, false, false) => "case 0 : "
+    case (false, true, true) => "case x : "
+    case (false, false, false) => "case x : "
+    case (true, true, true) => "case x : "
+    case (false, true, false) => "case x : "
+    case (false, false, true) => "case x : "
+    case (true, false, true) => "case x : "
+    case (true, true, false) => "case x : "
+    case (true, false, false) => "case x : "
   }
   def CaseClause(pYield: Boolean, pAwait: Boolean, pReturn: Boolean): String = (pYield, pAwait, pReturn) match {
-    case (false, false, true) => "case 0 : "
-    case (true, true, true) => "case 0 : "
-    case (true, false, true) => "case 0 : "
-    case (true, false, false) => "case 0 : "
-    case (true, true, false) => "case 0 : "
-    case (false, true, true) => "case 0 : "
-    case (false, true, false) => "case 0 : "
-    case (false, false, false) => "case 0 : "
+    case (false, false, true) => "case x : "
+    case (true, true, true) => "case x : "
+    case (true, false, true) => "case x : "
+    case (true, false, false) => "case x : "
+    case (true, true, false) => "case x : "
+    case (false, true, true) => "case x : "
+    case (false, true, false) => "case x : "
+    case (false, false, false) => "case x : "
   }
   def DefaultClause(pYield: Boolean, pAwait: Boolean, pReturn: Boolean): String = (pYield, pAwait, pReturn) match {
     case (true, false, true) => "default : "
@@ -813,10 +813,10 @@ object MinSampler {
     case (false, false, true) => ";"
   }
   def ThrowStatement(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
-    case (false, true) => "throw  0 ;"
-    case (true, false) => "throw  0 ;"
-    case (false, false) => "throw  0 ;"
-    case (true, true) => "throw  0 ;"
+    case (false, true) => "throw  x ;"
+    case (true, false) => "throw  x ;"
+    case (false, false) => "throw  x ;"
+    case (true, true) => "throw  x ;"
   }
   def TryStatement(pYield: Boolean, pAwait: Boolean, pReturn: Boolean): String = (pYield, pAwait, pReturn) match {
     case (false, true, false) => "try {  } catch {  }"
@@ -913,14 +913,14 @@ object MinSampler {
     case (false, true) => ""
   }
   def ArrowFunction(pIn: Boolean, pYield: Boolean, pAwait: Boolean): String = (pIn, pYield, pAwait) match {
-    case (false, true, true) => "x  =>  0"
-    case (false, true, false) => "x  =>  0"
-    case (true, false, true) => "x  =>  0"
-    case (true, true, true) => "x  =>  0"
-    case (true, false, false) => "x  =>  0"
-    case (true, true, false) => "x  =>  0"
-    case (false, false, true) => "x  =>  0"
-    case (false, false, false) => "x  =>  0"
+    case (false, true, true) => "x  =>  x"
+    case (false, true, false) => "x  =>  x"
+    case (true, false, true) => "x  =>  x"
+    case (true, true, true) => "x  =>  x"
+    case (true, false, false) => "x  =>  x"
+    case (true, true, false) => "x  =>  x"
+    case (false, false, true) => "x  =>  x"
+    case (false, false, false) => "x  =>  x"
   }
   def ArrowParameters(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
     case (true, false) => "x"
@@ -929,14 +929,14 @@ object MinSampler {
     case (false, true) => "x"
   }
   def ConciseBody(pIn: Boolean): String = (pIn) match {
-    case (false) => " 0"
-    case (true) => " 0"
+    case (false) => " x"
+    case (true) => " x"
   }
   def ExpressionBody(pIn: Boolean, pAwait: Boolean): String = (pIn, pAwait) match {
-    case (false, false) => "0"
-    case (true, true) => "0"
-    case (true, false) => "0"
-    case (false, true) => "0"
+    case (false, false) => "x"
+    case (true, true) => "x"
+    case (true, false) => "x"
+    case (false, true) => "x"
   }
   def ArrowFormalParameters(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
     case (true, false) => "(  )"
@@ -945,46 +945,46 @@ object MinSampler {
     case (true, true) => "(  )"
   }
   def AsyncArrowFunction(pIn: Boolean, pYield: Boolean, pAwait: Boolean): String = (pIn, pYield, pAwait) match {
-    case (true, true, false) => "0 ( )  =>  0"
-    case (false, true, true) => "0 ( )  =>  0"
-    case (false, false, false) => "0 ( )  =>  0"
-    case (true, false, false) => "0 ( )  =>  0"
-    case (false, true, false) => "0 ( )  =>  0"
-    case (true, false, true) => "0 ( )  =>  0"
-    case (false, false, true) => "0 ( )  =>  0"
-    case (true, true, true) => "0 ( )  =>  0"
+    case (true, true, false) => "x ( )  =>  x"
+    case (false, true, true) => "x ( )  =>  x"
+    case (false, false, false) => "x ( )  =>  x"
+    case (true, false, false) => "x ( )  =>  x"
+    case (false, true, false) => "x ( )  =>  x"
+    case (true, false, true) => "x ( )  =>  x"
+    case (false, false, true) => "x ( )  =>  x"
+    case (true, true, true) => "x ( )  =>  x"
   }
   def AsyncConciseBody(pIn: Boolean): String = (pIn) match {
-    case (false) => " 0"
-    case (true) => " 0"
+    case (false) => " x"
+    case (true) => " x"
   }
   def AsyncArrowBindingIdentifier(pYield: Boolean): String = (pYield) match {
     case (false) => "x"
     case (true) => "x"
   }
   def CoverCallExpressionAndAsyncArrowHead(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
-    case (false, true) => "0 ( )"
-    case (true, false) => "0 ( )"
-    case (false, false) => "0 ( )"
-    case (true, true) => "0 ( )"
+    case (false, true) => "x ( )"
+    case (true, false) => "x ( )"
+    case (false, false) => "x ( )"
+    case (true, true) => "x ( )"
   }
   def AsyncArrowHead(): String = () match {
     case () => "async  (  )"
   }
   def MethodDefinition(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
-    case (true, true) => "0 (  ) {  }"
-    case (false, false) => "0 (  ) {  }"
-    case (false, true) => "0 (  ) {  }"
-    case (true, false) => "0 (  ) {  }"
+    case (true, true) => "x (  ) {  }"
+    case (false, false) => "x (  ) {  }"
+    case (false, true) => "x (  ) {  }"
+    case (true, false) => "x (  ) {  }"
   }
   def PropertySetParameterList(): String = () match {
     case () => "x "
   }
   def GeneratorMethod(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
-    case (false, true) => "* 0 (  ) {  }"
-    case (true, true) => "* 0 (  ) {  }"
-    case (false, false) => "* 0 (  ) {  }"
-    case (true, false) => "* 0 (  ) {  }"
+    case (false, true) => "* x (  ) {  }"
+    case (true, true) => "* x (  ) {  }"
+    case (false, false) => "* x (  ) {  }"
+    case (true, false) => "* x (  ) {  }"
   }
   def GeneratorDeclaration(pYield: Boolean, pAwait: Boolean, pDefault: Boolean): String = (pYield, pAwait, pDefault) match {
     case (false, false, true) => "function * (  ) {  }"
@@ -1009,10 +1009,10 @@ object MinSampler {
     case (false, false) => "yield"
   }
   def AsyncGeneratorMethod(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
-    case (true, false) => "async  * 0 (  ) {  }"
-    case (false, false) => "async  * 0 (  ) {  }"
-    case (true, true) => "async  * 0 (  ) {  }"
-    case (false, true) => "async  * 0 (  ) {  }"
+    case (true, false) => "async  * x (  ) {  }"
+    case (false, false) => "async  * x (  ) {  }"
+    case (true, true) => "async  * x (  ) {  }"
+    case (false, true) => "async  * x (  ) {  }"
   }
   def AsyncGeneratorDeclaration(pYield: Boolean, pAwait: Boolean, pDefault: Boolean): String = (pYield, pAwait, pDefault) match {
     case (false, true, true) => "async  function * (  ) {  }"
@@ -1044,17 +1044,17 @@ object MinSampler {
     case () => "async  function (  ) {  }"
   }
   def AsyncMethod(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
-    case (true, true) => "async  0 (  ) {  }"
-    case (true, false) => "async  0 (  ) {  }"
-    case (false, true) => "async  0 (  ) {  }"
-    case (false, false) => "async  0 (  ) {  }"
+    case (true, true) => "async  x (  ) {  }"
+    case (true, false) => "async  x (  ) {  }"
+    case (false, true) => "async  x (  ) {  }"
+    case (false, false) => "async  x (  ) {  }"
   }
   def AsyncFunctionBody(): String = () match {
     case () => ""
   }
   def AwaitExpression(pYield: Boolean): String = (pYield) match {
-    case (true) => "await 0"
-    case (false) => "await 0"
+    case (true) => "await x"
+    case (false) => "await x"
   }
   def ClassDeclaration(pYield: Boolean, pAwait: Boolean, pDefault: Boolean): String = (pYield, pAwait, pDefault) match {
     case (true, true, false) => "class x  {  }"
@@ -1079,10 +1079,10 @@ object MinSampler {
     case (false, true) => " {  }"
   }
   def ClassHeritage(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
-    case (false, true) => "extends 0"
-    case (true, false) => "extends 0"
-    case (false, false) => "extends 0"
-    case (true, true) => "extends 0"
+    case (false, true) => "extends x"
+    case (true, false) => "extends x"
+    case (false, false) => "extends x"
+    case (true, true) => "extends x"
   }
   def ClassBody(pYield: Boolean, pAwait: Boolean): String = (pYield, pAwait) match {
     case (true, false) => ";"
