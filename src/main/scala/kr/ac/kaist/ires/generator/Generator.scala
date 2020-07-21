@@ -44,13 +44,18 @@ object Generator {
       getVisited(script) match {
         case Left(visited) if !(visited subsetOf totalVisited) =>
           logln(": PASS", false)
-          val newCondCovered = visited.getCondCovered -- totalVisited.getCondCovered
+          val visitedCond = visited.getCondCovered
+          val totalCond = totalVisited.getCondCovered
+          val newCondCovered = visitedCond -- totalCond
           for (cond <- newCondCovered) {
             val (x, b) = cond
             val neg = (x, !b)
             if (targets contains neg) targets -= neg
             else targets += cond
-            condMap += cond -> script
+          }
+          for (cond <- visitedCond) condMap.get(cond) match {
+            case Some(orig) if script.toString.length >= orig.toString.length =>
+            case _ => condMap += cond -> script
           }
           totalVisited ++= visited
           total ::= script
