@@ -4,7 +4,7 @@ import kr.ac.kaist.ires.model.Script
 import javax.script._
 
 object ValidityChecker {
-  def apply(script: String): Boolean = {
+  def apply(script: String, debug: Boolean = false): Boolean = {
     val manager = new ScriptEngineManager
     val engine = manager.getEngineByName("Graal.js")
     val MESSAGE = "IRES-EXPECTED-EXCEPTION"
@@ -18,7 +18,7 @@ object ValidityChecker {
     } catch {
       case e: ScriptException =>
         val pass = e.toString.endsWith(MESSAGE)
-        if (!pass) println(script)
+        if (debug && !pass) println(script)
         pass
     }
   }
