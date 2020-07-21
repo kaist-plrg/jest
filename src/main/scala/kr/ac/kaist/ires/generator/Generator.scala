@@ -27,7 +27,7 @@ object Generator {
     var condMap: Map[(Int, Boolean), Script] = Map()
     var targets: Set[(Int, Boolean)] = Set()
     var failed: Set[(Int, Boolean)] = Set()
-    var count: Int = 0
+    var generated: Set[String] = Set()
 
     def log(any: Any, stdout: Boolean = true): Unit = {
       nf.print(any)
@@ -39,7 +39,9 @@ object Generator {
     }
 
     def add(script: Script): Boolean = {
-      count += 1
+      val str = script.toString
+      if (generated contains str) return false
+      generated += str
       log(f"$script%-80s", false)
       getVisited(script) match {
         case Left(visited) if !(visited subsetOf totalVisited) =>
@@ -71,6 +73,7 @@ object Generator {
 
     logln("Sampling...")
     val samples = getSample
+    logln(s"# of Samples: ${samples.size}")
 
     logln("Calculating syntax coverage...")
     val tracer = RHSTracer(samples)
@@ -107,7 +110,7 @@ object Generator {
 
     val coverage = totalVisited.getCoverage
 
-    logln(s"TOTAL: ${total.length} / $count")
+    logln(s"TOTAL: ${total.length} / ${generated.size}")
     logln(coverage.summary)
 
     // dump coverage
@@ -131,7 +134,9 @@ object Generator {
   def mutate(script: Script): Script = {
     val str = script.toString
     var mutated = script
-    do mutated = SimpleExprReplacer(script) while (str == mutated.toString)
+    do mutated = SimpleExprReplacer(script) while (
+      !ValidityChecker(mutated.toString)
+    )
     mutated
   }
 
