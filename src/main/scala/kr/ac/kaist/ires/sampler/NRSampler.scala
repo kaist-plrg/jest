@@ -63,10 +63,11 @@ object NRSampler extends NonRecursiveSampler with Sampler {
     val parser = Parser.Script(Nil)
     getRawSample
       .toList
-      // .filter(ValidityChecker(_))
-      .map(rawSample => Parser.parse(parser, rawSample).getOrElse(
-        Parser.parse(parser, s"async function * a () { ${rawSample} }").getOrElse(Script0(None, Nil))
-      ))
+      .map(rawSample =>
+        if (ValidityChecker(rawSample)) rawSample
+        else s"async function * a () { ${rawSample} }")
+      .filter(ValidityChecker(_))
+      .map(Parser.parse(parser, _).getOrElse(Script0(None, Nil)))
   }
 
   def getRawSample: Set[String] = (
@@ -90,18 +91,18 @@ object NRSampler extends NonRecursiveSampler with Sampler {
     // val sampled = RHSTracer(scripts.toList)
     val samples = getSample
     val sampled = RHSTracer(samples)
-    val filtered = RHSTracer(samples.map(_.toString).filter(ValidityChecker(_)).map(Parser.parse(parser, _).get))
+    // val filtered = RHSTracer(samples.map(_.toString).filter(ValidityChecker(_)).map(Parser.parse(parser, _).get))
 
     println(s"sampled: ${sampled.summary}")
-    println(s"filtered: ${filtered.summary}")
+    // println(s"filtered: ${filtered.summary}")
     // filtered.dump(s"${ires.BASE_DIR}/asdf")
 
-    println(s"*********FILTERED*************")
+    // println(s"*********FILTERED*************")
     // scripts.map(_.toString).toList.filter(!ValidityChecker(_)).sorted.foreach(println)
-    samples.map(_.toString).toList.filter(!ValidityChecker(_)).sorted.foreach(println)
-    println(s"******************************")
+    // samples.map(_.toString).toList.filter(!ValidityChecker(_)).sorted.foreach(println)
+    // println(s"******************************")
 
     sampled.dump(s"${ires.BASE_DIR}/sampled")
-    filtered.dump(s"${ires.BASE_DIR}/filtered")
+    // filtered.dump(s"${ires.BASE_DIR}/filtered")
   }
 }
