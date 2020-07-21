@@ -1,4 +1,4 @@
-# ECMAScript 2020 Bugs (early error)
+# GraalJS Bugs (early error)
 
 ## 
 
@@ -12,4 +12,18 @@
 
 ```js
 "use strict"; var await, await;
+```
+
+## 
+
+- __Section:__
+
+- __Simple JavaScript code:__
+
+```js
+"use strict"; (...{x}) => {};
+```
+
+```js
+"use strict"; (x0, ...{x1}) => {};
 ```
