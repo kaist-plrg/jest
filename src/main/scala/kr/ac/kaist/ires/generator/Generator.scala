@@ -134,9 +134,7 @@ object Generator {
   def mutate(script: Script): Script = {
     val str = script.toString
     var mutated = script
-    do mutated = SimpleExprReplacer(script) while (
-      !ValidityChecker(mutated.toString)
-    )
+    do mutated = SimpleExprReplacer(script) while (!ValidityChecker(mutated.toString))
     mutated
   }
 
