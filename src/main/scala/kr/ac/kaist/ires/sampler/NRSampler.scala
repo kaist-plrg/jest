@@ -73,36 +73,6 @@ object NRSampler extends NonRecursiveSampler with Sampler {
   def getRawSample: Set[String] = (
     origStatement.map(_.toString) ++
     origDeclaration.map(_.toString) ++
-    origAssignmentExpression.map(e => s"var x = $e") ++
-    Set("", "function * a () { var x = yield * ''; }")
+    origAssignmentExpression.map(e => s"var x = $e")
   )
-
-  def test: Unit = {
-    // var scripts = Set[AST]()
-    // scripts ++= origStatement
-    // scripts ++= origDeclaration
-    // scripts ++= origAssignmentExpression
-
-    val parser = Parser.Script(Nil)
-    // val fScripts =
-    //   getSample
-    //     .map(Parser.parse(parser, _).getOrElse(Script0(None, Nil)))
-
-    // val sampled = RHSTracer(scripts.toList)
-    val samples = getSample
-    val sampled = RHSTracer(samples)
-    // val filtered = RHSTracer(samples.map(_.toString).filter(ValidityChecker(_)).map(Parser.parse(parser, _).get))
-
-    println(s"sampled: ${sampled.summary}")
-    // println(s"filtered: ${filtered.summary}")
-    // filtered.dump(s"${ires.BASE_DIR}/asdf")
-
-    // println(s"*********FILTERED*************")
-    // scripts.map(_.toString).toList.filter(!ValidityChecker(_)).sorted.foreach(println)
-    // samples.map(_.toString).toList.filter(!ValidityChecker(_)).sorted.foreach(println)
-    // println(s"******************************")
-
-    sampled.dump(s"${ires.BASE_DIR}/sampled")
-    // filtered.dump(s"${ires.BASE_DIR}/filtered")
-  }
 }

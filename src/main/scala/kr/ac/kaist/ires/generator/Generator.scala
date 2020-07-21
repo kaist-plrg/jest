@@ -128,7 +128,7 @@ object Generator {
   }
 
   // random sampling
-  def getSample: List[Script] = NRSampler.getSample
+  def getSample: List[Script] = NRSampler.getSample ++ ManualSampler.getSample
 
   // mutate given JavaScript program
   def mutate(script: Script): Script = {
