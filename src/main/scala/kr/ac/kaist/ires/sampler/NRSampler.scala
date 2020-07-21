@@ -36,14 +36,6 @@ object NRSampler extends NonRecursiveSampler with Sampler {
   val emptyStringExpr = Set(Parser.parse(Parser.Expression(List(false, false, false)), "''").get)
   override def Expression(pIn: Boolean, pYield: Boolean, pAwait: Boolean): Set[Expression] = emptyStringExpr
 
-  // hooking identifiers
-  override def IdentifierReference(pYield: Boolean, pAwait: Boolean): Set[IdentifierReference] =
-    Set(Parser.parse(Parser.IdentifierReference(List(pYield, pAwait)), "a").get)
-  override def BindingIdentifier(pYield: Boolean, pAwait: Boolean): Set[BindingIdentifier] =
-    Set(Parser.parse(Parser.BindingIdentifier(List(pYield, pAwait)), "a").get)
-  override def LabelIdentifier(pYield: Boolean, pAwait: Boolean): Set[LabelIdentifier] =
-    Set(Parser.parse(Parser.LabelIdentifier(List(pYield, pAwait)), "a").get)
-
   // get samples
   def getSample: List[Script] = {
     var scripts = Set[String]()
