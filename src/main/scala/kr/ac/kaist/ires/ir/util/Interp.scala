@@ -19,7 +19,7 @@ class Interp(
     timeLimit: Option[Long] = None,
     val visited: Visited = new Visited
 ) {
-  val startTime: Long = System.currentTimeMillis
+  var startTime: Long = 0
   var instCount = 0
 
   def apply(inst: Inst) = interp(inst)
@@ -38,6 +38,7 @@ class Interp(
 
   // instructions
   def interp(inst: Inst): State => State = st => {
+    if (instCount == 0) startTime = System.currentTimeMillis
     instCount = instCount + 1
     if (COVERAGE_MODE) visited += inst.uid
     if (instCount % 10000 == 0) timeLimit match {
