@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.util.Useful._
 
 object SimpleExprReplacer extends Mutator with Walker {
   def apply(script: Script): Script = walk(script)
-  lazy val exprList = NRSampler.origAssignmentExpression.toList
+  lazy val exprList = NRSampler.origAssignmentExpression.toList ++ ValueSampler.assignExprs
   override def walk(expr: AssignmentExpression): AssignmentExpression = {
     if (rand.nextBoolean) choose(exprList)
     else super.walk(expr)
