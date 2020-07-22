@@ -9,13 +9,34 @@ class Visited {
   private var condCovered: Set[(Int, Boolean)] = Set()
   def getCondCovered: Set[(Int, Boolean)] = condCovered
 
+  // check is-completion conditions
+  def checkIsCompletion(uid: Int): Boolean = insts(uid) match {
+    case (condInst: CondInst) => condInst.cond match {
+      case EIsCompletion(_) => true
+      case _ => false
+    }
+    case _ => false
+  }
+
   // add covered instructions
   def +=(uid: Int): Unit = if (uid >= 0) instCovered += uid
   def -=(uid: Int): Unit = if (uid >= 0) instCovered -= uid
 
   // add covered conditions
-  def +=(pair: (Int, Boolean)): Unit = condCovered += pair
-  def -=(pair: (Int, Boolean)): Unit = condCovered -= pair
+  def +=(pair: (Int, Boolean)): Unit = {
+    val (uid, pass) = pair
+    if (uid >= 0) {
+      condCovered += pair
+      if (checkIsCompletion(uid)) condCovered += ((uid, !pass))
+    }
+  }
+  def -=(pair: (Int, Boolean)): Unit = {
+    val (uid, pass) = pair
+    if (uid >= 0) {
+      condCovered -= pair
+      if (checkIsCompletion(uid)) condCovered -= pair
+    }
+  }
   def +=(uid: Int, value: Value): Unit = value match {
     case Bool(b) if uid >= 0 => this += ((uid, b))
     case _ =>
