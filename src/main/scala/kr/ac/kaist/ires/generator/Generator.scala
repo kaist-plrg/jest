@@ -8,6 +8,7 @@ import kr.ac.kaist.ires.model.{ Script, ModelHelper }
 import kr.ac.kaist.ires.coverage.Visited
 import kr.ac.kaist.ires.sampler._
 import kr.ac.kaist.ires.util.Useful._
+import kr.ac.kaist.ires.LINE_SEP
 
 object Generator {
   // max iteration
@@ -109,12 +110,19 @@ object Generator {
     }
 
     val coverage = totalVisited.getCoverage
+    val algoCoverages = totalVisited.getAlgoCoverages
 
     logln(s"TOTAL: ${total.length} / ${generated.size}")
     logln(coverage.summary)
+    algoCoverages.foreach(cov => logln(cov.summary))
 
     // dump coverage
     coverage.dump(s"$GEN_RES_DIR/semantics")
+
+    // dump algorithm coverages
+    val algoSummaryContent = algoCoverages.map(cov => cov.summary).mkString(LINE_SEP)
+    dumpFile(algoSummaryContent, s"$GEN_RES_DIR/semantics/algoSummary")
+    algoCoverages.foreach(cov => cov.dump(s"$GEN_RES_DIR/semantics/algorithm"))
 
     // dump failed
     dumpJson(failed.toList.map {

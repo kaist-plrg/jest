@@ -75,6 +75,21 @@ class Visited {
     }
   }))
 
+  def getAlgoCoverages: List[AlgoCoverage] =
+    insts
+      .toList
+      .groupBy(inst => instToAlgo(inst.uid).name)
+      .map {
+        case (name, algoInsts) => {
+          val uids = algoInsts.map(_.uid).toSet
+          val algoCovered = instCovered.filter(uids.contains(_))
+          val algoCondCovered = condCovered.filter(c => uids.contains(c._1))
+          AlgoCoverage(name, algoInsts, algoCovered, algoCondCovered)
+        }
+      }
+      .toList
+      .sortBy(_.name)
+
   // simple String
   def simpleString: String = s"(${instCovered.size}, ${condCovered.size})"
 }
