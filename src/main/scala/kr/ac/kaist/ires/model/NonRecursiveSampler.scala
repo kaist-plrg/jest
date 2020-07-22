@@ -7,7 +7,6 @@ import kr.ac.kaist.ires.util.Useful._
 import scala.collection.immutable.{ Set => ScalaSet }
 
 class NonRecursiveSampler {
-  val counter = DepthCounter
   var visited: ScalaSet[(String, List[Boolean])] = ScalaSet()
 
   private def IdentifierName(): ScalaSet[Lexical] = ScalaSet(Lexical("IdentifierName", MinSampler.IdentifierName()))
