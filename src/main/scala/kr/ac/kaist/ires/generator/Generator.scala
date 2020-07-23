@@ -3,6 +3,7 @@ package kr.ac.kaist.ires.generator
 import kr.ac.kaist.ires.GEN_RES_DIR
 import kr.ac.kaist.ires.error.{ NotSupported, Timeout, IRError }
 import kr.ac.kaist.ires.ir.{ Interp, CondInst }
+import kr.ac.kaist.ires.ir.Inst._
 import kr.ac.kaist.ires.mutator._
 import kr.ac.kaist.ires.model.{ Script, ModelHelper }
 import kr.ac.kaist.ires.coverage.Visited
@@ -96,8 +97,9 @@ object Generator {
         trial = 0
         cond = choose(targetSeq)
         val target = condMap(cond)
-        // val target = choose(total)
-        while (trial < MAX_TRIAL && !add(mutate(target))) trial += 1
+        val (uid, _) = cond
+        val targetMutate = if (insts(uid).toString contains "CONST_normal") mutateWithError(_) else mutate(_)
+        while (trial < MAX_TRIAL && !add(targetMutate(target))) trial += 1
         if (trial == MAX_TRIAL) failed += cond
       } while (iter < MAX_TRIAL_ITER && trial == MAX_TRIAL)
 
@@ -114,7 +116,7 @@ object Generator {
 
     logln(s"TOTAL: ${total.length} / ${generated.size}")
     logln(coverage.summary)
-    algoCoverages.foreach(cov => logln(cov.summary))
+    algoCoverages.foreach(cov => logln(cov.summary, false))
 
     // dump coverage
     coverage.dump(s"$GEN_RES_DIR/semantics")
@@ -143,6 +145,13 @@ object Generator {
     val str = script.toString
     var mutated = script
     do mutated = SimpleExprReplacer(script) while (!ValidityChecker(mutated.toString))
+    mutated
+  }
+
+  def mutateWithError(script: Script): Script = {
+    val str = script.toString
+    var mutated = script
+    do mutated = ErrorExprReplacer(script) while (!ValidityChecker(mutated.toString))
     mutated
   }
 
