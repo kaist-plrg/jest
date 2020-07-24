@@ -1,0 +1,2018 @@
+[
+  {
+    "name": "Array",
+    "param": 0,
+    "optional": 0,
+    "rest": true,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Array.from",
+    "param": 1,
+    "optional": 2,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Array.isArray",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Array.of",
+    "param": 0,
+    "optional": 0,
+    "rest": true,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Array.prototype.concat",
+    "param": 0,
+    "optional": 0,
+    "rest": true,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Array.prototype.copyWithin",
+    "param": 2,
+    "optional": 1,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Array.prototype.entries",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Array.prototype.every",
+    "param": 1,
+    "optional": 1,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Array.prototype.fill",
+    "param": 1,
+    "optional": 1,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Array.prototype.filter",
+    "param": 1,
+    "optional": 1,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Array.prototype.find",
+    "param": 1,
+    "optional": 1,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Array.prototype.findIndex",
+    "param": 1,
+    "optional": 1,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Array.prototype.flat",
+    "param": 0,
+    "optional": 1,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Array.prototype.flatMap",
+    "param": 1,
+    "optional": 1,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Array.prototype.forEach",
+    "param": 1,
+    "optional": 1,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Array.prototype.includes",
+    "param": 1,
+    "optional": 1,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Array.prototype.indexOf",
+    "param": 1,
+    "optional": 1,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Array.prototype.join",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Array.prototype.keys",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Array.prototype.lastIndexOf",
+    "param": 1,
+    "optional": 1,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Array.prototype.map",
+    "param": 1,
+    "optional": 1,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Array.prototype.pop",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Array.prototype.push",
+    "param": 0,
+    "optional": 0,
+    "rest": true,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Array.prototype.reduce",
+    "param": 1,
+    "optional": 1,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Array.prototype.reduceRight",
+    "param": 1,
+    "optional": 1,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Array.prototype.reverse",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Array.prototype.shift",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Array.prototype.slice",
+    "param": 2,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Array.prototype.some",
+    "param": 1,
+    "optional": 1,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Array.prototype.sort",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": false
+  },
+  {
+    "name": "Array.prototype.splice",
+    "param": 2,
+    "optional": 0,
+    "rest": true,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Array.prototype.toLocaleString",
+    "param": 0,
+    "optional": 2,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Array.prototype.toString",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Array.prototype.unshift",
+    "param": 0,
+    "optional": 0,
+    "rest": true,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Array.prototype.values",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Array.prototype[Symbol.iterator]",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": false
+  },
+  {
+    "name": "Array.prototype[Symbol.unscopables]",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": false,
+    "supported": true
+  },
+  {
+    "name": "BigInt",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "BigInt.asIntN",
+    "param": 2,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "BigInt.asUintN",
+    "param": 2,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "BigInt.prototype.toLocaleString",
+    "param": 0,
+    "optional": 2,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": false
+  },
+  {
+    "name": "BigInt.prototype.toString",
+    "param": 0,
+    "optional": 1,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "BigInt.prototype.valueOf",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Boolean",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Boolean.prototype.toString",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Boolean.prototype.valueOf",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Function",
+    "param": 0,
+    "optional": 0,
+    "rest": true,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Function.prototype.apply",
+    "param": 2,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Function.prototype.bind",
+    "param": 1,
+    "optional": 0,
+    "rest": true,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Function.prototype.call",
+    "param": 1,
+    "optional": 0,
+    "rest": true,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Function.prototype.toString",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Function.prototype[Symbol.hasInstance]",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Map",
+    "param": 0,
+    "optional": 1,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Map.prototype.clear",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Map.prototype.delete",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Map.prototype.entries",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Map.prototype.forEach",
+    "param": 1,
+    "optional": 1,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Map.prototype.get",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Map.prototype.has",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Map.prototype.keys",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Map.prototype.set",
+    "param": 2,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Map.prototype.values",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Map.prototype[Symbol.iterator]",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": false
+  },
+  {
+    "name": "Map.prototype[Symbol.toStringTag]",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": false,
+    "supported": false
+  },
+  {
+    "name": "Map.prototype.size",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": false,
+    "supported": false
+  },
+  {
+    "name": "Number",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Numbe.isFinite",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Number.isInteger",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Number.EPSILON",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": false,
+    "supported": false
+  },
+  {
+    "name": "Number.isNaN",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Number.isSafeInteger",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Number.MAX_SAFE_INTEGER",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": false,
+    "supported": false
+  },
+  {
+    "name": "Number.MAX_VALUE",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": false,
+    "supported": false
+  },
+  {
+    "name": "Number.MIN_SAFE_INTEGER",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": false,
+    "supported": false
+  },
+  {
+    "name": "Number.MIN_VALUE",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": false,
+    "supported": false
+  },
+  {
+    "name": "Number.NaN",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": false,
+    "supported": false
+  },
+  {
+    "name": "Number.NEGATIVE_INFINITY",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": false,
+    "supported": false
+  },
+  {
+    "name": "Number.parseFloat",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": false
+  },
+  {
+    "name": "Number.parseInt",
+    "param": 2,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": false
+  },
+  {
+    "name": "Number.POSITIVE_INFINITY",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": false,
+    "supported": false
+  },
+  {
+    "name": "Number.prototype.toExponential",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Number.prototype.toFixed",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Number.prototype.toLocaleString",
+    "param": 0,
+    "optional": 2,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": false
+  },
+  {
+    "name": "Number.prototype.toPrecision",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Number.prototype.toString",
+    "param": 0,
+    "optional": 1,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Number.prototype.valueOf",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Object",
+    "param": 0,
+    "optional": 1,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Object.assign",
+    "param": 1,
+    "optional": 0,
+    "rest": true,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Object.create",
+    "param": 2,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Object.defineProperties",
+    "param": 2,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Object.defineProperty",
+    "param": 3,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Object.entries",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Object.freeze",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Object.fromEntries",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Object.getOwnPropertyDescriptor",
+    "param": 2,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Object.getOwnPropertyDescriptors",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Object.getOwnPropertyNames",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Object.getOwnPropertySymbols",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Object.getPrototypeOf",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Object.is",
+    "param": 2,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Object.isExtensible",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Object.isFrozen",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Object.isSealed",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Object.keys",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Object.preventExtensions",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Object.seal",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Object.setPrototypeOf",
+    "param": 2,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Object.values",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Object.prototype.hasOwnProperty",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Object.prototype.isPrototypeOf",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Object.prototype.propertyIsEnumerable",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Object.prototype.toLocaleString",
+    "param": 2,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Object.prototype.toString",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Object.prototype.valueOf",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Promise",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Promise.all",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Promise.allSettled",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Promise.race",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Promise.reject",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Promise.resolve",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Promise[Symbol.species]",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": false,
+    "supported": false
+  },
+  {
+    "name": "Promise.prototype.catch",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Promise.prototype.finally",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Promise.prototype.then",
+    "param": 2,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Promise.prototype[Symbol.toStringTag]",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": false,
+    "supported": false
+  },
+  {
+    "name": "Set",
+    "param": 0,
+    "optional": 1,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Set[Symbol.species]",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": false,
+    "supported": false
+  },
+  {
+    "name": "Set.prototype.add",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Set.prototype.clear",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Set.prototype.delete",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Set.prototype.entries",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Set.prototype.forEach",
+    "param": 1,
+    "optional": 1,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Set.prototype.has",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Set.prototype.keys",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": false
+  },
+  {
+    "name": "Set.prototype.size",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": false,
+    "supported": false
+  },
+  {
+    "name": "Set.prototype.values",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Set.prototype[Symbol.iterator]",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": false
+  },
+  {
+    "name": "Set.prototype[Symbol.toStringTag]",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": false,
+    "supported": false
+  },
+  {
+    "name": "String",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "String.fromCharCode",
+    "param": 0,
+    "optional": 0,
+    "rest": true,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "String.fromCodePoint",
+    "param": 0,
+    "optional": 0,
+    "rest": true,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "String.raw",
+    "param": 1,
+    "optional": 0,
+    "rest": true,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "String.prototype.charAt",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "String.prototype.charCodeAt",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "String.prototype.codePointAt",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "String.prototype.concat",
+    "param": 0,
+    "optional": 0,
+    "rest": true,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "String.prototype.endsWith",
+    "param": 1,
+    "optional": 1,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "String.prototype.includes",
+    "param": 1,
+    "optional": 1,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "String.prototype.indexOf",
+    "param": 1,
+    "optional": 1,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "String.prototype.lastIndexOf",
+    "param": 1,
+    "optional": 1,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "String.prototype.localeCompare",
+    "param": 1,
+    "optional": 2,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "String.prototype.match",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "String.prototype.matchAll",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "String.prototype.normalize",
+    "param": 0,
+    "optional": 1,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "String.prototype.padEnd",
+    "param": 1,
+    "optional": 1,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "String.prototype.padStart",
+    "param": 1,
+    "optional": 1,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "String.prototype.repeat",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "String.prototype.replace",
+    "param": 2,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "String.prototype.search",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "String.prototype.slice",
+    "param": 2,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "String.prototype.split",
+    "param": 2,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "String.prototype.startsWith",
+    "param": 1,
+    "optional": 1,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "String.prototype.substring",
+    "param": 2,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "String.prototype.toLocaleLowerCase",
+    "param": 0,
+    "optional": 2,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": false
+  },
+  {
+    "name": "String.prototype.toLocaleUpperCase",
+    "param": 0,
+    "optional": 2,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": false
+  },
+  {
+    "name": "String.prototype.toLowerCase",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "String.prototype.toString",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "String.prototype.toUpperCase",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": false
+  },
+  {
+    "name": "String.prototype.trim",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "String.prototype.trimEnd",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "String.prototype.trimStart",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "String.prototype.valueOf",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "String.prototype[Symbol.iterator]",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Symbol",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Symbol.asyncIterator",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": false,
+    "supported": false
+  },
+  {
+    "name": "Symbol.for",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Symbol.hasInstance",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": false,
+    "supported": false
+  },
+  {
+    "name": "Symbol.isConcatSpreadable",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": false,
+    "supported": false
+  },
+  {
+    "name": "Symbol.iterator",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": false,
+    "supported": false
+  },
+  {
+    "name": "Symbol.keyFor",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Symbol.match",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": false,
+    "supported": false
+  },
+  {
+    "name": "Symbol.matchAll",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": false,
+    "supported": false
+  },
+  {
+    "name": "Symbol.replace",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": false,
+    "supported": false
+  },
+  {
+    "name": "Symbol.search",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": false,
+    "supported": false
+  },
+  {
+    "name": "Symbol.species",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": false,
+    "supported": false
+  },
+  {
+    "name": "Symbol.split",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": false,
+    "supported": false
+  },
+  {
+    "name": "Symbol.toPrimitive",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": false,
+    "supported": false
+  },
+  {
+    "name": "Symbol.toStringTag",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": false,
+    "supported": false
+  },
+  {
+    "name": "Symbol.unscopables",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": false,
+    "supported": false
+  },
+  {
+    "name": "Symbol.prototype.description",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": false,
+    "supported": false
+  },
+  {
+    "name": "Symbol.prototype.toString",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Symbol.prototype.valueOf",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Symbol.prototype[Symbol.toPrimitive]",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Symbol.prototype[Symbol.toStringTag]",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": false,
+    "supported": false
+  },
+  {
+    "name": "WeakMap",
+    "param": 0,
+    "optional": 1,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "WeakMap.prototype.delete",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "WeakMap.prototype.get",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "WeakMap.prototype.has",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "WeakMap.prototype.set",
+    "param": 2,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "WeakMap.prototype[Symbol.toStringTag]",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": false,
+    "supported": false
+  },
+  {
+    "name": "WeakSet",
+    "param": 0,
+    "optional": 1,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "WeakSet.prototype.add",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "WeakSet.prototype.delete",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "WeakSet.prototype.has",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "WeakSet.prototype[Symbol.toStringTag]",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": false,
+    "supported": false
+  },
+  {
+    "name": "Error",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "Error.prototype.message",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": false,
+    "supported": false
+  },
+  {
+    "name": "Error.prototype.name",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": false,
+    "supported": false
+  },
+  {
+    "name": "Error.prototype.toString",
+    "param": 0,
+    "optional": 0,
+    "rest": false,
+    "prototype": true,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "EvalError",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "RangeError",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "ReferenceError",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "SyntaxError",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "TypeError",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "URIError",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "eval",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "isFinite",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "isNaN",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "parseFloat",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "parseInt",
+    "param": 2,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "decodeURI",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "decodeURIComponent",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "encodeURI",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  },
+  {
+    "name": "encodeURIComponent",
+    "param": 1,
+    "optional": 0,
+    "rest": false,
+    "prototype": false,
+    "callable": true,
+    "supported": true
+  }
+]
