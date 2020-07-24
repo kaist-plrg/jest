@@ -86,7 +86,7 @@ class Visited {
         case (name, algoInsts) => {
           val uids = algoInsts.map(_.uid).toSet
           val algoCovered = instCovered.filter(uids.contains(_))
-          val algoCondCovered = condCovered.filter(c => uids.contains(c._1))
+          val algoCondCovered = condCovered.keySet.filter(c => uids.contains(c._1))
           AlgoCoverage(name, algoInsts, algoCovered, algoCondCovered)
         }
       }

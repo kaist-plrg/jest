@@ -93,8 +93,8 @@ object Generator {
         cond = choose(targetSeq)
         val target = totalVisited.getCondCovered(cond)
         val (uid, _) = cond
-        val targetMutate = if (insts(uid).toString contains "CONST_normal") mutateWithError(_) else mutate(_)
-        while (trial < MAX_TRIAL && !add(targetMutate(target))) trial += 1
+        val replacer: Mutator = if (insts(uid).toString contains "CONST_normal") SimpleExprReplacer.apply else ErrorExprReplacer.apply
+        while (trial < MAX_TRIAL && !add(mutate(target, replacer))) trial += 1
         if (trial == MAX_TRIAL) failed += cond
       } while (iter < MAX_TRIAL_ITER && trial == MAX_TRIAL)
 
@@ -136,10 +136,10 @@ object Generator {
   def getSample: List[Script] = NRSampler.getSample ++ ManualSampler.getSample
 
   // mutate given JavaScript program
-  def mutate(str: String): Script = {
+  def mutate(str: String, replacer: Mutator): Script = {
     val script = Parser.parse(Parser.Script(Nil), str).get
     var mutated = script
-    do mutated = SimpleExprReplacer(script) while (!ValidityChecker(mutated.toString))
+    do mutated = replacer(script) while (!ValidityChecker(mutated.toString))
     mutated
   }
 
