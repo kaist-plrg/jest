@@ -13,9 +13,8 @@ import kr.ac.kaist.ires.LINE_SEP
 
 object Generator {
   // max iteration
-  val MAX_ITER = 300
-  val MAX_TRIAL = 100
-  val MAX_TRIAL_ITER = 10
+  val MAX_ITER = 100
+  val MAX_TRIAL = 500
 
   // generate JavaScript programs
   def generate: List[Script] = generate(false)
@@ -82,26 +81,21 @@ object Generator {
 
     logln("Mutating samples...")
     for (k <- 0 until MAX_ITER) {
-      var iter = 0
-      var trial = 0
-      var cond = (0, true)
       val targetSeq = targets.toSeq
+      val cond = choose(targetSeq)
+      val target = totalVisited.getCondCovered(cond)
+      val (uid, _) = cond
+      val beautified = beautify(insts(uid), detail = false)
+      val replacer: Mutator = if (beautified contains "CONST_normal") ErrorExprReplacer.apply else SimpleExprReplacer.apply
 
-      do {
-        iter += 1
-        trial = 0
-        cond = choose(targetSeq)
-        val target = totalVisited.getCondCovered(cond)
-        val (uid, _) = cond
-        val beautified = beautify(insts(uid), detail = false)
-        val replacer: Mutator = if (beautified contains "CONST_normal") ErrorExprReplacer.apply else SimpleExprReplacer.apply
-        while (trial < MAX_TRIAL && !add(mutate(target, replacer))) trial += 1
-        if (trial == MAX_TRIAL) failed += cond
-      } while (iter < MAX_TRIAL_ITER && trial == MAX_TRIAL)
+      var trial = 0
+      while (trial < MAX_TRIAL && !add(mutate(target, replacer))) trial += 1
 
       log(s"${k + 1}th iteration: ")
-      if (iter == MAX_TRIAL_ITER) logln("FAILED")
-      else {
+      if (trial == MAX_TRIAL) {
+        logln("FAILED")
+        failed += cond
+      } else {
         failed -= cond
         logln(totalVisited.simpleString)
       }
@@ -141,13 +135,6 @@ object Generator {
     val script = Parser.parse(Parser.Script(Nil), str).get
     var mutated = script
     do mutated = replacer(script) while (!ValidityChecker(mutated.toString))
-    mutated
-  }
-
-  def mutateWithError(script: Script): Script = {
-    val str = script.toString
-    var mutated = script
-    do mutated = ErrorExprReplacer(script) while (!ValidityChecker(mutated.toString))
     mutated
   }
 
