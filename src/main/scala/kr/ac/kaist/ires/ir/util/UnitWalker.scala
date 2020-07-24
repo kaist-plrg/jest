@@ -160,6 +160,7 @@ trait UnitWalker {
 
   // states
   def walk(st: State): Unit = {
+    walk(st.script)
     walk(st.context)
     walkList[Context](st.ctxStack, walk)
     walkMap[Id, Value](st.globals, walk, walk)

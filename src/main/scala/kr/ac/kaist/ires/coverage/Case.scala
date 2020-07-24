@@ -16,6 +16,6 @@ case class Cond(
     inst: String,
     covered: Boolean,
     cond: String,
-    thenCovered: Boolean,
-    elseCovered: Boolean
+    thenCovered: Option[String],
+    elseCovered: Option[String]
 ) extends Case

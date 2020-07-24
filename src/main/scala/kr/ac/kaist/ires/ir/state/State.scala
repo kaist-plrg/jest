@@ -2,6 +2,7 @@ package kr.ac.kaist.ires.ir
 
 // IR States
 case class State(
+    script: String = "",
     context: Context = Context(),
     ctxStack: List[Context] = List(),
     globals: Map[Id, Value] = Map(),

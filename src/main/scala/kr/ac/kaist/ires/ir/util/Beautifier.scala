@@ -256,7 +256,8 @@ object Beautifier {
 
     // states
     override def walk(st: State): Unit = oneDepth({
-      val State(context, ctxStack, globals, heap) = st
+      val State(script, context, ctxStack, globals, heap) = st
+      walk(indent); walk("Script: "); walk(script)
       walk(indent); walk("Context: "); walk(context.name)
       walk(indent); walk("Instructions: ");
       if (detail) {

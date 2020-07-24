@@ -5,7 +5,7 @@ import kr.ac.kaist.ires.error.{ NotSupported, Timeout, IRError }
 import kr.ac.kaist.ires.ir.{ Interp, CondInst }
 import kr.ac.kaist.ires.ir.Inst._
 import kr.ac.kaist.ires.mutator._
-import kr.ac.kaist.ires.model.{ Script, ModelHelper }
+import kr.ac.kaist.ires.model.{ Script, ModelHelper, Parser }
 import kr.ac.kaist.ires.coverage.Visited
 import kr.ac.kaist.ires.sampler._
 import kr.ac.kaist.ires.util.Useful._
@@ -13,7 +13,7 @@ import kr.ac.kaist.ires.LINE_SEP
 
 object Generator {
   // max iteration
-  val MAX_ITER = 100
+  val MAX_ITER = 10
   val MAX_TRIAL = 100
   val MAX_TRIAL_ITER = 10
 
@@ -26,7 +26,6 @@ object Generator {
 
     var total: List[Script] = Nil
     val totalVisited: Visited = new Visited
-    var condMap: Map[(Int, Boolean), Script] = Map()
     var targets: Set[(Int, Boolean)] = Set()
     var failed: Set[(Int, Boolean)] = Set()
     var generated: Set[String] = Set()
@@ -48,18 +47,14 @@ object Generator {
       getVisited(script) match {
         case Left(visited) if !(visited subsetOf totalVisited) =>
           logln(": PASS", false)
-          val visitedCond = visited.getCondCovered
-          val totalCond = totalVisited.getCondCovered
+          val visitedCond = visited.getCondCovered.keySet
+          val totalCond = totalVisited.getCondCovered.keySet
           val newCondCovered = visitedCond -- totalCond
           for (cond <- newCondCovered) {
             val (x, b) = cond
             val neg = (x, !b)
             if (targets contains neg) targets -= neg
             else targets += cond
-          }
-          for (cond <- visitedCond) condMap.get(cond) match {
-            case Some(orig) if script.toString.length >= orig.toString.length =>
-            case _ => condMap += cond -> script
           }
           totalVisited ++= visited
           total ::= script
@@ -96,7 +91,7 @@ object Generator {
         iter += 1
         trial = 0
         cond = choose(targetSeq)
-        val target = condMap(cond)
+        val target = totalVisited.getCondCovered(cond)
         val (uid, _) = cond
         val targetMutate = if (insts(uid).toString contains "CONST_normal") mutateWithError(_) else mutate(_)
         while (trial < MAX_TRIAL && !add(targetMutate(target))) trial += 1
@@ -128,7 +123,7 @@ object Generator {
 
     // dump failed
     dumpJson(failed.toList.map {
-      case pair @ (uid, bool) => FailedCase(condMap(pair), uid, bool)
+      case pair @ (uid, bool) => FailedCase(totalVisited.getCondCovered(pair), uid, bool)
     }, s"$GEN_RES_DIR/failed.json")
 
     // close PrintWriter for the log file
@@ -141,8 +136,8 @@ object Generator {
   def getSample: List[Script] = NRSampler.getSample ++ ManualSampler.getSample
 
   // mutate given JavaScript program
-  def mutate(script: Script): Script = {
-    val str = script.toString
+  def mutate(str: String): Script = {
+    val script = Parser.parse(Parser.Script(Nil), str).get
     var mutated = script
     do mutated = SimpleExprReplacer(script) while (!ValidityChecker(mutated.toString))
     mutated

@@ -85,7 +85,7 @@ class Interp(
         }
       case IIf(cond, thenInst, elseInst) =>
         val (v, s0) = escapeCompletion(interp(cond)(st))
-        if (COVERAGE_MODE) visited += (inst.uid, v)
+        if (COVERAGE_MODE) visited += (st.script, inst.uid, v)
         v match {
           case Bool(true) => s0.copy(context = s0.context.copy(insts = thenInst :: s0.context.insts))
           case Bool(false) => s0.copy(context = s0.context.copy(insts = elseInst :: s0.context.insts))
@@ -93,7 +93,7 @@ class Interp(
         }
       case IWhile(cond, body) =>
         val (v, s0) = escapeCompletion(interp(cond)(st))
-        if (COVERAGE_MODE) visited += (inst.uid, v)
+        if (COVERAGE_MODE) visited += (st.script, inst.uid, v)
         v match {
           case Bool(true) => s0.copy(context = s0.context.copy(insts = body :: inst :: s0.context.insts))
           case Bool(false) => s0

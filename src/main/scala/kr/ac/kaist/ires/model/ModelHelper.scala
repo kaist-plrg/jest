@@ -9,6 +9,7 @@ import kr.ac.kaist.ires.util.Useful._
 object ModelHelper {
   def initState(script: Script, filename: String = "unknown"): State = {
     Model.initState.copy(
+      script = script.toString,
       context = Model.initState.context.copy(
         insts = List(Parser.parseInst("app result = (RunJobs)"))
       ),

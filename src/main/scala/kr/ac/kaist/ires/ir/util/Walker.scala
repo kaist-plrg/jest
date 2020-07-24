@@ -122,6 +122,7 @@ trait Walker {
 
   // states
   def walk(st: State): State = State(
+    walk(st.script),
     walk(st.context),
     walkList[Context](st.ctxStack, walk),
     walkMap[Id, Value](st.globals, walk, walk),

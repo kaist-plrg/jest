@@ -14,10 +14,10 @@ case class FailedCase(
 
 object FailedCase extends DefaultJsonProtocol {
   implicit val FailedCaseFormat: JsonFormat[FailedCase] = jsonFormat4(FailedCase.apply)
-  def apply(script: Script, uid: Int, pass: Boolean): FailedCase = {
+  def apply(script: String, uid: Int, pass: Boolean): FailedCase = {
     val algo = instToAlgo(uid)
     val algoName = algo.name
     val cond = beautify(insts(uid).asInstanceOf[CondInst].cond)
-    FailedCase(script.toString, algoName, cond, pass.toString)
+    FailedCase(script, algoName, cond, pass.toString)
   }
 }

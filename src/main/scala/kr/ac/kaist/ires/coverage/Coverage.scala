@@ -22,8 +22,8 @@ case class Coverage(cases: Vector[Case]) extends CoverageProtocol {
     case _ => Nil
   })
   val condCovered: Set[Branch] = conds.filter {
-    case Branch(k, true) => cases(k).asInstanceOf[Cond].thenCovered
-    case Branch(k, false) => cases(k).asInstanceOf[Cond].elseCovered
+    case Branch(k, true) => !cases(k).asInstanceOf[Cond].thenCovered.isEmpty
+    case Branch(k, false) => !cases(k).asInstanceOf[Cond].elseCovered.isEmpty
   }
 
   // algorithms
@@ -39,7 +39,7 @@ case class Coverage(cases: Vector[Case]) extends CoverageProtocol {
       !c.cond.startsWith("(is-completion") &&
         !c.cond.contains(" CONST_normal)") &&
         c.cond != "true" &&
-        (!c.thenCovered || !c.elseCovered)
+        (c.thenCovered.isEmpty || c.elseCovered.isEmpty)
   }))
 
   // summary
