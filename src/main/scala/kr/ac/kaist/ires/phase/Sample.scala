@@ -16,7 +16,7 @@ case object Sample extends PhaseObj[Unit, SampleConfig, Unit] {
     iresConfig: IRESConfig,
     config: SampleConfig
   ): Unit = {
-    val samples = NRSampler.getSample ++ ManualSampler.getSample
+    val samples = NRSampler.getSample ++ ManualSampler.getSample ++ BuiltinSampler.getSample
     for ((script, k) <- samples.zipWithIndex) {
       mkdir(SAMPLE_DIR)
       dumpFile(script, s"$SAMPLE_DIR/$k.js")
