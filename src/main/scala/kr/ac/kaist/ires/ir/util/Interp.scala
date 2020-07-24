@@ -564,7 +564,9 @@ class Interp(
     case (OPlus, INum(l), INum(r)) => INum(l + r)
     case (OSub, INum(l), INum(r)) => INum(l - r)
     case (OMul, INum(l), INum(r)) => INum(l * r)
-    case (ODiv, INum(l), INum(r)) => INum(l / r)
+    case (ODiv, INum(l), INum(r)) =>
+      val x = l.toDouble / r.toDouble
+      if (x.toLong == x) INum(x.toLong) else Num(x)
     case (OPow, INum(l), INum(r)) =>
       val x = math.pow(l, r)
       if (x.toLong == x) INum(x.toLong) else Num(x)
