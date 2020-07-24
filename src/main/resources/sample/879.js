@@ -1,0 +1,1 @@
+Map . prototype . keys . call ( 1 , 0 ) ;

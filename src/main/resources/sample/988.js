@@ -1,0 +1,1 @@
+Object . values ( 0 , 0 ) ;

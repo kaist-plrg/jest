@@ -1,0 +1,1 @@
+Number . prototype . toFixed . call ( 1 ) ;

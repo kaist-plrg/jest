@@ -1,0 +1,1 @@
+Array . prototype . join . call ( 1 , 0 , 0 ) ;

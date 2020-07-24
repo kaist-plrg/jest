@@ -1,0 +1,1 @@
+Set . prototype . clear . call ( 1 , 0 ) ;

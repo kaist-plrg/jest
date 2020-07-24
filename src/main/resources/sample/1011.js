@@ -1,0 +1,1 @@
+Promise . all ( 0 , 0 ) ;

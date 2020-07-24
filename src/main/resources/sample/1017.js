@@ -1,0 +1,1 @@
+Promise . race ( 0 , 0 ) ;

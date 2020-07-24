@@ -1,0 +1,1 @@
+Function . prototype . bind . call ( 1 , 0 , 0 , 0 ) ;

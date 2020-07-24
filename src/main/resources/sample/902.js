@@ -1,0 +1,1 @@
+Number . prototype . toExponential . call ( 1 , 0 ) ;

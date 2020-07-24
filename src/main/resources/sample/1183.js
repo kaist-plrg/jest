@@ -1,0 +1,1 @@
+WeakMap . prototype . has . call ( 1 ) ;

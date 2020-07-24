@@ -1,0 +1,1 @@
+Function . prototype . apply . call ( 1 ) ;

@@ -1,0 +1,1 @@
+encodeURI ( 0 , 0 ) ;
