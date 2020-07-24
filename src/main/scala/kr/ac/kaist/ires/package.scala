@@ -18,6 +18,9 @@ package object ires {
   // Source directory root
   val RESOURCE_DIR = s"${SRC_DIR}/resources"
 
+  // Sample directory
+  val SAMPLE_DIR = s"${RESOURCE_DIR}/sample"
+
   // Scala source directory root
   val SCALA_DIR = s"${SRC_DIR}/scala/kr/ac/kaist/ires"
 
@@ -38,7 +41,7 @@ package object ires {
   val DEBUG_INTERP: Boolean = false
   val DEBUG_FILTER: Boolean = false
 
-  // Reulst directory
+  // Result directory
   val RESULT_DIR = s"$BASE_DIR/result"
   val GEN_RES_DIR = s"$RESULT_DIR/generated"
   val TEST262_RES_DIR = s"$RESULT_DIR/test262"

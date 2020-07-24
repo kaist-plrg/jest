@@ -1,6 +1,6 @@
 package kr.ac.kaist.ires.generator
 
-import kr.ac.kaist.ires.GEN_RES_DIR
+import kr.ac.kaist.ires._
 import kr.ac.kaist.ires.error.{ NotSupported, Timeout, IRError }
 import kr.ac.kaist.ires.ir.{ Interp, CondInst, beautify }
 import kr.ac.kaist.ires.ir.Inst._
@@ -67,7 +67,7 @@ object Generator {
       }
     }
 
-    logln("Sampling...")
+    logln("Load Samples...")
     val samples = getSample
     logln(s"# of Samples: ${samples.size}")
 
@@ -128,7 +128,12 @@ object Generator {
   }
 
   // random sampling
-  def getSample: List[Script] = NRSampler.getSample ++ ManualSampler.getSample
+  def getSample: List[Script] = (for {
+    file <- walkTree(SAMPLE_DIR)
+    filename = file.toString if jsFilter(filename)
+    str = readFile(filename)
+    script = Parser.parse(Parser.Script(Nil), str).get
+  } yield script).toList
 
   // mutate given JavaScript program
   def mutate(str: String, replacer: Mutator): Script = {

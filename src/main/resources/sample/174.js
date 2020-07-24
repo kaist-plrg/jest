@@ -1,0 +1,1 @@
+async function * a (  ) { var x = new . target ; } ; a ( ) ;

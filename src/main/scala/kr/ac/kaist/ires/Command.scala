@@ -52,6 +52,9 @@ case object CmdREPL extends CommandObj("repl", CmdLoad >> IRREPL)
 // generate
 case object CmdGenerate extends CommandObj("generate", CmdBase >> Generate)
 
+// sample
+case object CmdSample extends CommandObj("sample", CmdBase >> Sample)
+
 // inject
 case object CmdInject extends CommandObj("inject", CmdBase >> Inject)
 
