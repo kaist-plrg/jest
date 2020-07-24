@@ -13,7 +13,7 @@ import kr.ac.kaist.ires.LINE_SEP
 
 object Generator {
   // max iteration
-  val MAX_ITER = 10
+  val MAX_ITER = 300
   val MAX_TRIAL = 100
   val MAX_TRIAL_ITER = 10
 
