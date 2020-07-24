@@ -2,7 +2,7 @@ package kr.ac.kaist.ires.generator
 
 import kr.ac.kaist.ires.GEN_RES_DIR
 import kr.ac.kaist.ires.error.{ NotSupported, Timeout, IRError }
-import kr.ac.kaist.ires.ir.{ Interp, CondInst }
+import kr.ac.kaist.ires.ir.{ Interp, CondInst, beautify }
 import kr.ac.kaist.ires.ir.Inst._
 import kr.ac.kaist.ires.mutator._
 import kr.ac.kaist.ires.model.{ Script, ModelHelper, Parser }
@@ -93,7 +93,8 @@ object Generator {
         cond = choose(targetSeq)
         val target = totalVisited.getCondCovered(cond)
         val (uid, _) = cond
-        val replacer: Mutator = if (insts(uid).toString contains "CONST_normal") SimpleExprReplacer.apply else ErrorExprReplacer.apply
+        val beautified = beautify(insts(uid), detail = false)
+        val replacer: Mutator = if (beautified contains "CONST_normal") ErrorExprReplacer.apply else SimpleExprReplacer.apply
         while (trial < MAX_TRIAL && !add(mutate(target, replacer))) trial += 1
         if (trial == MAX_TRIAL) failed += cond
       } while (iter < MAX_TRIAL_ITER && trial == MAX_TRIAL)
