@@ -136,7 +136,8 @@ class Test262Test extends IRESTest with EvalTest {
         scripts ::= ast
 
         val stList = includeList ++ ModelHelper.flattenStatement(ast)
-        val st = IREval(Load(ModelHelper.mergeStatement(stList), jsConfig), jsConfig, evalConfig)
+        val loadSt = Load(ModelHelper.mergeStatement(stList), jsConfig)
+        val st = IREval(loadSt.copy(script = ast.toString), jsConfig, evalConfig)
         evalJSTest(st)
       })
     }
