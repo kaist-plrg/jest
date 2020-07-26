@@ -13,8 +13,8 @@ import kr.ac.kaist.ires.LINE_SEP
 
 object Generator {
   // max iteration
-  val MAX_ITER = 1
-  val MAX_TRIAL = 1
+  val MAX_ITER = 100
+  val MAX_TRIAL = 500
 
   // generate JavaScript programs
   def generate: List[Script] = generate(false)
