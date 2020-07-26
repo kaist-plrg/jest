@@ -108,14 +108,20 @@ object Useful {
   def mkdir(name: String): Unit = new File(name).mkdirs
 
   // colored println
+  def decorateColor(color: String): Any => String =
+    x => color + x.toString + scala.Console.RESET
+  def decorateRed: Any => String = decorateColor(RED)
+  def decorateYellow: Any => String = decorateColor(YELLOW)
+  def decorateGreen: Any => String = decorateColor(GREEN)
+  def decorateCyan: Any => String = decorateColor(CYAN)
   def printColor(color: String): Any => Unit =
-    x => print(color + x.toString + scala.Console.RESET)
+    x => print(decorateColor(color)(x))
   def printRed: Any => Unit = printColor(RED)
   def printYellow: Any => Unit = printColor(YELLOW)
   def printGreen: Any => Unit = printColor(GREEN)
   def printCyan: Any => Unit = printColor(CYAN)
   def printlnColor(color: String): Any => Unit =
-    x => println(color + x.toString + scala.Console.RESET)
+    x => println(decorateColor(color)(x))
   def printlnRed: Any => Unit = printlnColor(RED)
   def printlnYellow: Any => Unit = printlnColor(YELLOW)
   def printlnGreen: Any => Unit = printlnColor(GREEN)

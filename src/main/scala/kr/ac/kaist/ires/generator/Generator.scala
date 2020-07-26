@@ -13,8 +13,8 @@ import kr.ac.kaist.ires.LINE_SEP
 
 object Generator {
   // max iteration
-  val MAX_ITER = 100
-  val MAX_TRIAL = 500
+  val MAX_ITER = 1
+  val MAX_TRIAL = 1
 
   // generate JavaScript programs
   def generate: List[Script] = generate(false)
@@ -113,7 +113,7 @@ object Generator {
 
     // dump algorithm coverages
     val algoSummaryContent = algoCoverages.map(cov => cov.summary).mkString(LINE_SEP)
-    dumpFile(algoSummaryContent, s"$GEN_RES_DIR/semantics/algoSummary")
+    dumpFile(algoSummaryContent + LINE_SEP, s"$GEN_RES_DIR/semantics/algoSummary")
     algoCoverages.foreach(cov => cov.dump(s"$GEN_RES_DIR/semantics/algorithm"))
 
     // dump failed
