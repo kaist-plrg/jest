@@ -29,9 +29,9 @@ object BranchExprReplacer extends Mutator with Walker {
             } while (!ValidityChecker(newScriptString))
 
             Parser.parse(Parser.Script(Nil), newScriptString).get
-          case Nil => (script)
+          case Nil => SimpleExprReplacer(script)
         }
-      case None => (script)
+      case None => SimpleExprReplacer(script)
     }
   }
 }
