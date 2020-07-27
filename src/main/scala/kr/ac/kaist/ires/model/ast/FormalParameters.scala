@@ -13,6 +13,7 @@ case class FormalParameters0(parserParams: List[Boolean]) extends FormalParamete
   def updateSpan(start: Int): Int = {
     this.start = start
     var k = start
+    k += 1
     this.end = k - 1
     this.end
   }
