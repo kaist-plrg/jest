@@ -10,7 +10,8 @@ function check() {
   local cmd=$4
 
   if [ "$result" != "" ]; then
-    echo "[$filename] $name ($cmd) - $result";
+    echo "[$filename] $name ($cmd)";
+    echo "- $result";
   fi
 }
 
@@ -19,10 +20,10 @@ function checkFile() {
 
   cat helper.js "$TARGET/$filename" > temp.js
   # XXX check "$filename" "`ires eval temp.js`" "ES2020" "ires"
-  check "$filename" "`js temp.js`" "GraalJS" "js"
-  check "$filename" "`qjs temp.js`" "QuickJS" "qjs"
-  check "$filename" "`xst temp.js`" "Moddable XS" "xst"
-  check "$filename" "`node temp.js`" "Google V8" "node"
+  check "$filename" "`js temp.js 2>&1`" "GraalJS" "js"
+  check "$filename" "`qjs temp.js 2>&1`" "QuickJS" "qjs"
+  check "$filename" "`xst temp.js 2>&1`" "Moddable XS" "xst"
+  check "$filename" "`node temp.js 2>&1`" "Google V8" "node"
   rm temp.js
 }
 
