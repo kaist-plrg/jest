@@ -11,6 +11,13 @@ trait CaseClauses extends AST {
 case class CaseClauses0(x0: CaseClause, parserParams: List[Boolean]) extends CaseClauses {
   x0.parent = Some(this)
   val name: String = "CaseClauses0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -26,6 +33,14 @@ case class CaseClauses1(x0: CaseClauses, x1: CaseClause, parserParams: List[Bool
   x0.parent = Some(this)
   x1.parent = Some(this)
   val name: String = "CaseClauses1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k = x1.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 $x1"
   }

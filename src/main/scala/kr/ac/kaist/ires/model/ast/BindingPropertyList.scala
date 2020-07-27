@@ -11,6 +11,13 @@ trait BindingPropertyList extends AST {
 case class BindingPropertyList0(x0: BindingProperty, parserParams: List[Boolean]) extends BindingPropertyList {
   x0.parent = Some(this)
   val name: String = "BindingPropertyList0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -26,6 +33,15 @@ case class BindingPropertyList1(x0: BindingPropertyList, x2: BindingProperty, pa
   x0.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "BindingPropertyList1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k += 2
+    k = x2.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 , $x2"
   }

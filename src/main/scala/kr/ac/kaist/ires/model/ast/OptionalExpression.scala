@@ -12,6 +12,14 @@ case class OptionalExpression0(x0: MemberExpression, x1: OptionalChain, parserPa
   x0.parent = Some(this)
   x1.parent = Some(this)
   val name: String = "OptionalExpression0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k = x1.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 $x1"
   }
@@ -30,6 +38,14 @@ case class OptionalExpression1(x0: CallExpression, x1: OptionalChain, parserPara
   x0.parent = Some(this)
   x1.parent = Some(this)
   val name: String = "OptionalExpression1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k = x1.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 $x1"
   }
@@ -48,6 +64,14 @@ case class OptionalExpression2(x0: OptionalExpression, x1: OptionalChain, parser
   x0.parent = Some(this)
   x1.parent = Some(this)
   val name: String = "OptionalExpression2"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k = x1.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 $x1"
   }

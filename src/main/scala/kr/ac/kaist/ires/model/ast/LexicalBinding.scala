@@ -12,6 +12,14 @@ case class LexicalBinding0(x0: BindingIdentifier, x1: Option[Initializer], parse
   x0.parent = Some(this)
   x1.foreach((m) => m.parent = Some(this))
   val name: String = "LexicalBinding0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k = x1.fold(k)(_.updateSpan(k)) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 ${x1.getOrElse("")}"
   }
@@ -31,6 +39,14 @@ case class LexicalBinding1(x0: BindingPattern, x1: Initializer, parserParams: Li
   x0.parent = Some(this)
   x1.parent = Some(this)
   val name: String = "LexicalBinding1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k = x1.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 $x1"
   }

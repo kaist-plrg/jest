@@ -12,6 +12,14 @@ case class AssignmentElement0(x0: DestructuringAssignmentTarget, x1: Option[Init
   x0.parent = Some(this)
   x1.foreach((m) => m.parent = Some(this))
   val name: String = "AssignmentElement0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k = x1.fold(k)(_.updateSpan(k)) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 ${x1.getOrElse("")}"
   }

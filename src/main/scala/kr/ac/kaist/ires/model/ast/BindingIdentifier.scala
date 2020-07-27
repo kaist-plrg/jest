@@ -11,6 +11,13 @@ trait BindingIdentifier extends AST {
 case class BindingIdentifier0(x0: Identifier, parserParams: List[Boolean]) extends BindingIdentifier {
   x0.parent = Some(this)
   val name: String = "BindingIdentifier0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -28,6 +35,13 @@ object BindingIdentifier0 extends ASTInfo {
 }
 case class BindingIdentifier1(parserParams: List[Boolean]) extends BindingIdentifier {
   val name: String = "BindingIdentifier1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 6
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"yield"
   }
@@ -46,6 +60,13 @@ object BindingIdentifier1 extends ASTInfo {
 }
 case class BindingIdentifier2(parserParams: List[Boolean]) extends BindingIdentifier {
   val name: String = "BindingIdentifier2"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 6
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"await"
   }

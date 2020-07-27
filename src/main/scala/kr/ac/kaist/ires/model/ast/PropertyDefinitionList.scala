@@ -11,6 +11,13 @@ trait PropertyDefinitionList extends AST {
 case class PropertyDefinitionList0(x0: PropertyDefinition, parserParams: List[Boolean]) extends PropertyDefinitionList {
   x0.parent = Some(this)
   val name: String = "PropertyDefinitionList0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -28,6 +35,15 @@ case class PropertyDefinitionList1(x0: PropertyDefinitionList, x2: PropertyDefin
   x0.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "PropertyDefinitionList1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k += 2
+    k = x2.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 , $x2"
   }

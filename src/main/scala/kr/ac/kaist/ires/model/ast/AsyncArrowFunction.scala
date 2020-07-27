@@ -12,6 +12,16 @@ case class AsyncArrowFunction0(x2: AsyncArrowBindingIdentifier, x5: AsyncConcise
   x2.parent = Some(this)
   x5.parent = Some(this)
   val name: String = "AsyncArrowFunction0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 6
+    k = x2.updateSpan(k) + 1
+    k += 3
+    k = x5.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"async $x2 => $x5"
   }
@@ -32,6 +42,15 @@ case class AsyncArrowFunction1(x0: CoverCallExpressionAndAsyncArrowHead, x3: Asy
   x0.parent = Some(this)
   x3.parent = Some(this)
   val name: String = "AsyncArrowFunction1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k += 3
+    k = x3.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 => $x3"
   }

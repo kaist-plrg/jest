@@ -11,6 +11,13 @@ trait ScriptBody extends AST {
 case class ScriptBody0(x0: StatementList, parserParams: List[Boolean]) extends ScriptBody {
   x0.parent = Some(this)
   val name: String = "ScriptBody0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }

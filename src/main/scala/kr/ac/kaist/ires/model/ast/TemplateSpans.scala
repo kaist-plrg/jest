@@ -11,6 +11,13 @@ trait TemplateSpans extends AST {
 case class TemplateSpans0(x0: Lexical, parserParams: List[Boolean]) extends TemplateSpans {
   x0.parent = Some(this)
   val name: String = "TemplateSpans0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -30,6 +37,14 @@ case class TemplateSpans1(x0: TemplateMiddleList, x1: Lexical, parserParams: Lis
   x0.parent = Some(this)
   x1.parent = Some(this)
   val name: String = "TemplateSpans1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k = x1.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 $x1"
   }

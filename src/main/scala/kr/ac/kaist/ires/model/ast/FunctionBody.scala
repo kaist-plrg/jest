@@ -11,6 +11,13 @@ trait FunctionBody extends AST {
 case class FunctionBody0(x0: FunctionStatementList, parserParams: List[Boolean]) extends FunctionBody {
   x0.parent = Some(this)
   val name: String = "FunctionBody0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }

@@ -11,6 +11,14 @@ trait SuperCall extends AST {
 case class SuperCall0(x1: Arguments, parserParams: List[Boolean]) extends SuperCall {
   x1.parent = Some(this)
   val name: String = "SuperCall0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 6
+    k = x1.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"super $x1"
   }

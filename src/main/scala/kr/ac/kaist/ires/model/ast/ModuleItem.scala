@@ -11,6 +11,13 @@ trait ModuleItem extends AST {
 case class ModuleItem0(x0: ImportDeclaration, parserParams: List[Boolean]) extends ModuleItem {
   x0.parent = Some(this)
   val name: String = "ModuleItem0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -25,6 +32,13 @@ object ModuleItem0 extends ASTInfo {
 case class ModuleItem1(x0: ExportDeclaration, parserParams: List[Boolean]) extends ModuleItem {
   x0.parent = Some(this)
   val name: String = "ModuleItem1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -39,6 +53,13 @@ object ModuleItem1 extends ASTInfo {
 case class ModuleItem2(x0: StatementListItem, parserParams: List[Boolean]) extends ModuleItem {
   x0.parent = Some(this)
   val name: String = "ModuleItem2"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }

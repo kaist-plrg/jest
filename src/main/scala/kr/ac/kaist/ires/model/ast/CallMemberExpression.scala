@@ -12,6 +12,14 @@ case class CallMemberExpression0(x0: MemberExpression, x1: Arguments, parserPara
   x0.parent = Some(this)
   x1.parent = Some(this)
   val name: String = "CallMemberExpression0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k = x1.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 $x1"
   }

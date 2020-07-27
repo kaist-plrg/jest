@@ -11,6 +11,13 @@ trait LogicalORExpression extends AST {
 case class LogicalORExpression0(x0: LogicalANDExpression, parserParams: List[Boolean]) extends LogicalORExpression {
   x0.parent = Some(this)
   val name: String = "LogicalORExpression0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -26,6 +33,15 @@ case class LogicalORExpression1(x0: LogicalORExpression, x2: LogicalANDExpressio
   x0.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "LogicalORExpression1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k += 3
+    k = x2.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 || $x2"
   }

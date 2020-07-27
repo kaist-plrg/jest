@@ -12,6 +12,14 @@ case class TemplateMiddleList0(x0: Lexical, x1: Expression, parserParams: List[B
   x0.parent = Some(this)
   x1.parent = Some(this)
   val name: String = "TemplateMiddleList0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k = x1.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 $x1"
   }
@@ -32,6 +40,15 @@ case class TemplateMiddleList1(x0: TemplateMiddleList, x1: Lexical, x2: Expressi
   x1.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "TemplateMiddleList1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k = x1.updateSpan(k) + 1
+    k = x2.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 $x1 $x2"
   }

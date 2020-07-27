@@ -11,6 +11,15 @@ trait CoverParenthesizedExpressionAndArrowParameterList extends AST {
 case class CoverParenthesizedExpressionAndArrowParameterList0(x1: Expression, parserParams: List[Boolean]) extends CoverParenthesizedExpressionAndArrowParameterList {
   x1.parent = Some(this)
   val name: String = "CoverParenthesizedExpressionAndArrowParameterList0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 2
+    k = x1.updateSpan(k) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"( $x1 )"
   }
@@ -28,6 +37,16 @@ object CoverParenthesizedExpressionAndArrowParameterList0 extends ASTInfo {
 case class CoverParenthesizedExpressionAndArrowParameterList1(x1: Expression, parserParams: List[Boolean]) extends CoverParenthesizedExpressionAndArrowParameterList {
   x1.parent = Some(this)
   val name: String = "CoverParenthesizedExpressionAndArrowParameterList1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 2
+    k = x1.updateSpan(k) + 1
+    k += 2
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"( $x1 , )"
   }
@@ -43,6 +62,14 @@ object CoverParenthesizedExpressionAndArrowParameterList1 extends ASTInfo {
 }
 case class CoverParenthesizedExpressionAndArrowParameterList2(parserParams: List[Boolean]) extends CoverParenthesizedExpressionAndArrowParameterList {
   val name: String = "CoverParenthesizedExpressionAndArrowParameterList2"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 2
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"( )"
   }
@@ -59,6 +86,16 @@ object CoverParenthesizedExpressionAndArrowParameterList2 extends ASTInfo {
 case class CoverParenthesizedExpressionAndArrowParameterList3(x2: BindingIdentifier, parserParams: List[Boolean]) extends CoverParenthesizedExpressionAndArrowParameterList {
   x2.parent = Some(this)
   val name: String = "CoverParenthesizedExpressionAndArrowParameterList3"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 2
+    k += 4
+    k = x2.updateSpan(k) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"( ... $x2 )"
   }
@@ -75,6 +112,16 @@ object CoverParenthesizedExpressionAndArrowParameterList3 extends ASTInfo {
 case class CoverParenthesizedExpressionAndArrowParameterList4(x2: BindingPattern, parserParams: List[Boolean]) extends CoverParenthesizedExpressionAndArrowParameterList {
   x2.parent = Some(this)
   val name: String = "CoverParenthesizedExpressionAndArrowParameterList4"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 2
+    k += 4
+    k = x2.updateSpan(k) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"( ... $x2 )"
   }
@@ -92,6 +139,18 @@ case class CoverParenthesizedExpressionAndArrowParameterList5(x1: Expression, x4
   x1.parent = Some(this)
   x4.parent = Some(this)
   val name: String = "CoverParenthesizedExpressionAndArrowParameterList5"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 2
+    k = x1.updateSpan(k) + 1
+    k += 2
+    k += 4
+    k = x4.updateSpan(k) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"( $x1 , ... $x4 )"
   }
@@ -109,6 +168,18 @@ case class CoverParenthesizedExpressionAndArrowParameterList6(x1: Expression, x4
   x1.parent = Some(this)
   x4.parent = Some(this)
   val name: String = "CoverParenthesizedExpressionAndArrowParameterList6"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 2
+    k = x1.updateSpan(k) + 1
+    k += 2
+    k += 4
+    k = x4.updateSpan(k) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"( $x1 , ... $x4 )"
   }

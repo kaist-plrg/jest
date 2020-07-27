@@ -10,6 +10,13 @@ trait ExportFromClause extends AST {
 }
 case class ExportFromClause0(parserParams: List[Boolean]) extends ExportFromClause {
   val name: String = "ExportFromClause0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"*"
   }
@@ -24,6 +31,15 @@ object ExportFromClause0 extends ASTInfo {
 case class ExportFromClause1(x2: Lexical, parserParams: List[Boolean]) extends ExportFromClause {
   x2.parent = Some(this)
   val name: String = "ExportFromClause1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 2
+    k += 3
+    k = x2.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"* as $x2"
   }
@@ -38,6 +54,13 @@ object ExportFromClause1 extends ASTInfo {
 case class ExportFromClause2(x0: NamedExports, parserParams: List[Boolean]) extends ExportFromClause {
   x0.parent = Some(this)
   val name: String = "ExportFromClause2"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }

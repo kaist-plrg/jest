@@ -10,6 +10,14 @@ trait ObjectLiteral extends AST {
 }
 case class ObjectLiteral0(parserParams: List[Boolean]) extends ObjectLiteral {
   val name: String = "ObjectLiteral0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 2
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"{ }"
   }
@@ -26,6 +34,15 @@ object ObjectLiteral0 extends ASTInfo {
 case class ObjectLiteral1(x1: PropertyDefinitionList, parserParams: List[Boolean]) extends ObjectLiteral {
   x1.parent = Some(this)
   val name: String = "ObjectLiteral1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 2
+    k = x1.updateSpan(k) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"{ $x1 }"
   }
@@ -42,6 +59,16 @@ object ObjectLiteral1 extends ASTInfo {
 case class ObjectLiteral2(x1: PropertyDefinitionList, parserParams: List[Boolean]) extends ObjectLiteral {
   x1.parent = Some(this)
   val name: String = "ObjectLiteral2"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 2
+    k = x1.updateSpan(k) + 1
+    k += 2
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"{ $x1 , }"
   }

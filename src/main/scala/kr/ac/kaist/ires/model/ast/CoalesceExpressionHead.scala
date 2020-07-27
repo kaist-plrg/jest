@@ -11,6 +11,13 @@ trait CoalesceExpressionHead extends AST {
 case class CoalesceExpressionHead0(x0: CoalesceExpression, parserParams: List[Boolean]) extends CoalesceExpressionHead {
   x0.parent = Some(this)
   val name: String = "CoalesceExpressionHead0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -25,6 +32,13 @@ object CoalesceExpressionHead0 extends ASTInfo {
 case class CoalesceExpressionHead1(x0: BitwiseORExpression, parserParams: List[Boolean]) extends CoalesceExpressionHead {
   x0.parent = Some(this)
   val name: String = "CoalesceExpressionHead1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }

@@ -13,6 +13,21 @@ case class AsyncFunctionDeclaration0(x3: BindingIdentifier, x5: FormalParameters
   x5.parent = Some(this)
   x8.parent = Some(this)
   val name: String = "AsyncFunctionDeclaration0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 6
+    k += 9
+    k = x3.updateSpan(k) + 1
+    k += 2
+    k = x5.updateSpan(k) + 1
+    k += 2
+    k += 2
+    k = x8.updateSpan(k) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"async function $x3 ( $x5 ) { $x8 }"
   }
@@ -34,6 +49,20 @@ case class AsyncFunctionDeclaration1(x4: FormalParameters, x7: AsyncFunctionBody
   x4.parent = Some(this)
   x7.parent = Some(this)
   val name: String = "AsyncFunctionDeclaration1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 6
+    k += 9
+    k += 2
+    k = x4.updateSpan(k) + 1
+    k += 2
+    k += 2
+    k = x7.updateSpan(k) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"async function ( $x4 ) { $x7 }"
   }

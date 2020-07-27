@@ -12,6 +12,15 @@ case class ClassExpression0(x1: Option[BindingIdentifier], x2: ClassTail, parser
   x1.foreach((m) => m.parent = Some(this))
   x2.parent = Some(this)
   val name: String = "ClassExpression0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 6
+    k = x1.fold(k)(_.updateSpan(k)) + 1
+    k = x2.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"class ${x1.getOrElse("")} $x2"
   }

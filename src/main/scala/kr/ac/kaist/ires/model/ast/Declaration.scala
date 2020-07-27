@@ -11,6 +11,13 @@ trait Declaration extends AST {
 case class Declaration0(x0: HoistableDeclaration, parserParams: List[Boolean]) extends Declaration {
   x0.parent = Some(this)
   val name: String = "Declaration0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -25,6 +32,13 @@ object Declaration0 extends ASTInfo {
 case class Declaration1(x0: ClassDeclaration, parserParams: List[Boolean]) extends Declaration {
   x0.parent = Some(this)
   val name: String = "Declaration1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -41,6 +55,13 @@ object Declaration1 extends ASTInfo {
 case class Declaration2(x0: LexicalDeclaration, parserParams: List[Boolean]) extends Declaration {
   x0.parent = Some(this)
   val name: String = "Declaration2"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }

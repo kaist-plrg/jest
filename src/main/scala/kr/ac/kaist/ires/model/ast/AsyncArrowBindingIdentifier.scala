@@ -11,6 +11,13 @@ trait AsyncArrowBindingIdentifier extends AST {
 case class AsyncArrowBindingIdentifier0(x0: BindingIdentifier, parserParams: List[Boolean]) extends AsyncArrowBindingIdentifier {
   x0.parent = Some(this)
   val name: String = "AsyncArrowBindingIdentifier0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }

@@ -11,6 +11,14 @@ trait OptionalChain extends AST {
 case class OptionalChain0(x1: Arguments, parserParams: List[Boolean]) extends OptionalChain {
   x1.parent = Some(this)
   val name: String = "OptionalChain0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 3
+    k = x1.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"?. $x1"
   }
@@ -28,6 +36,16 @@ object OptionalChain0 extends ASTInfo {
 case class OptionalChain1(x2: Expression, parserParams: List[Boolean]) extends OptionalChain {
   x2.parent = Some(this)
   val name: String = "OptionalChain1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 3
+    k += 2
+    k = x2.updateSpan(k) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"?. [ $x2 ]"
   }
@@ -45,6 +63,14 @@ object OptionalChain1 extends ASTInfo {
 case class OptionalChain2(x1: Lexical, parserParams: List[Boolean]) extends OptionalChain {
   x1.parent = Some(this)
   val name: String = "OptionalChain2"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 3
+    k = x1.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"?. $x1"
   }
@@ -63,6 +89,14 @@ object OptionalChain2 extends ASTInfo {
 case class OptionalChain3(x1: TemplateLiteral, parserParams: List[Boolean]) extends OptionalChain {
   x1.parent = Some(this)
   val name: String = "OptionalChain3"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 3
+    k = x1.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"?. $x1"
   }
@@ -78,6 +112,14 @@ case class OptionalChain4(x0: OptionalChain, x1: Arguments, parserParams: List[B
   x0.parent = Some(this)
   x1.parent = Some(this)
   val name: String = "OptionalChain4"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k = x1.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 $x1"
   }
@@ -96,6 +138,16 @@ case class OptionalChain5(x0: OptionalChain, x2: Expression, parserParams: List[
   x0.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "OptionalChain5"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k += 2
+    k = x2.updateSpan(k) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 [ $x2 ]"
   }
@@ -114,6 +166,15 @@ case class OptionalChain6(x0: OptionalChain, x2: Lexical, parserParams: List[Boo
   x0.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "OptionalChain6"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k += 2
+    k = x2.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 . $x2"
   }
@@ -133,6 +194,14 @@ case class OptionalChain7(x0: OptionalChain, x1: TemplateLiteral, parserParams: 
   x0.parent = Some(this)
   x1.parent = Some(this)
   val name: String = "OptionalChain7"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k = x1.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 $x1"
   }

@@ -11,6 +11,13 @@ trait BitwiseORExpression extends AST {
 case class BitwiseORExpression0(x0: BitwiseXORExpression, parserParams: List[Boolean]) extends BitwiseORExpression {
   x0.parent = Some(this)
   val name: String = "BitwiseORExpression0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -26,6 +33,15 @@ case class BitwiseORExpression1(x0: BitwiseORExpression, x2: BitwiseXORExpressio
   x0.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "BitwiseORExpression1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k += 2
+    k = x2.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 | $x2"
   }

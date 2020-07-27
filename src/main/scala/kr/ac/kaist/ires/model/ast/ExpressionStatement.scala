@@ -11,6 +11,14 @@ trait ExpressionStatement extends AST {
 case class ExpressionStatement0(x1: Expression, parserParams: List[Boolean]) extends ExpressionStatement {
   x1.parent = Some(this)
   val name: String = "ExpressionStatement0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x1.updateSpan(k) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x1 ;"
   }

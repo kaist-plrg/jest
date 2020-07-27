@@ -10,6 +10,14 @@ trait BreakStatement extends AST {
 }
 case class BreakStatement0(parserParams: List[Boolean]) extends BreakStatement {
   val name: String = "BreakStatement0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 6
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"break ;"
   }
@@ -26,6 +34,15 @@ object BreakStatement0 extends ASTInfo {
 case class BreakStatement1(x2: LabelIdentifier, parserParams: List[Boolean]) extends BreakStatement {
   x2.parent = Some(this)
   val name: String = "BreakStatement1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 6
+    k = x2.updateSpan(k) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"break $x2 ;"
   }

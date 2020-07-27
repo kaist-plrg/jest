@@ -11,6 +11,13 @@ trait ExponentiationExpression extends AST {
 case class ExponentiationExpression0(x0: UnaryExpression, parserParams: List[Boolean]) extends ExponentiationExpression {
   x0.parent = Some(this)
   val name: String = "ExponentiationExpression0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -26,6 +33,15 @@ case class ExponentiationExpression1(x0: UpdateExpression, x2: ExponentiationExp
   x0.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "ExponentiationExpression1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k += 3
+    k = x2.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 ** $x2"
   }

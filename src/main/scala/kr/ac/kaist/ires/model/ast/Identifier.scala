@@ -11,6 +11,13 @@ trait Identifier extends AST {
 case class Identifier0(x0: Lexical, parserParams: List[Boolean]) extends Identifier {
   x0.parent = Some(this)
   val name: String = "Identifier0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }

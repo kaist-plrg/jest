@@ -11,6 +11,13 @@ trait PropertyDefinition extends AST {
 case class PropertyDefinition0(x0: IdentifierReference, parserParams: List[Boolean]) extends PropertyDefinition {
   x0.parent = Some(this)
   val name: String = "PropertyDefinition0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -28,6 +35,13 @@ object PropertyDefinition0 extends ASTInfo {
 case class PropertyDefinition1(x0: CoverInitializedName, parserParams: List[Boolean]) extends PropertyDefinition {
   x0.parent = Some(this)
   val name: String = "PropertyDefinition1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -43,6 +57,15 @@ case class PropertyDefinition2(x0: PropertyName, x2: AssignmentExpression, parse
   x0.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "PropertyDefinition2"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k += 2
+    k = x2.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 : $x2"
   }
@@ -60,6 +83,13 @@ object PropertyDefinition2 extends ASTInfo {
 case class PropertyDefinition3(x0: MethodDefinition, parserParams: List[Boolean]) extends PropertyDefinition {
   x0.parent = Some(this)
   val name: String = "PropertyDefinition3"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -76,6 +106,14 @@ object PropertyDefinition3 extends ASTInfo {
 case class PropertyDefinition4(x1: AssignmentExpression, parserParams: List[Boolean]) extends PropertyDefinition {
   x1.parent = Some(this)
   val name: String = "PropertyDefinition4"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 4
+    k = x1.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"... $x1"
   }

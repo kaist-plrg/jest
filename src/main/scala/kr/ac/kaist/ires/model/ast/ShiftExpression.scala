@@ -11,6 +11,13 @@ trait ShiftExpression extends AST {
 case class ShiftExpression0(x0: AdditiveExpression, parserParams: List[Boolean]) extends ShiftExpression {
   x0.parent = Some(this)
   val name: String = "ShiftExpression0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -26,6 +33,15 @@ case class ShiftExpression1(x0: ShiftExpression, x2: AdditiveExpression, parserP
   x0.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "ShiftExpression1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k += 3
+    k = x2.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 << $x2"
   }
@@ -45,6 +61,15 @@ case class ShiftExpression2(x0: ShiftExpression, x2: AdditiveExpression, parserP
   x0.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "ShiftExpression2"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k += 3
+    k = x2.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 >> $x2"
   }
@@ -64,6 +89,15 @@ case class ShiftExpression3(x0: ShiftExpression, x2: AdditiveExpression, parserP
   x0.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "ShiftExpression3"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k += 4
+    k = x2.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 >>> $x2"
   }

@@ -13,6 +13,20 @@ case class FunctionDeclaration0(x1: BindingIdentifier, x3: FormalParameters, x6:
   x3.parent = Some(this)
   x6.parent = Some(this)
   val name: String = "FunctionDeclaration0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 9
+    k = x1.updateSpan(k) + 1
+    k += 2
+    k = x3.updateSpan(k) + 1
+    k += 2
+    k += 2
+    k = x6.updateSpan(k) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"function $x1 ( $x3 ) { $x6 }"
   }
@@ -34,6 +48,19 @@ case class FunctionDeclaration1(x2: FormalParameters, x5: FunctionBody, parserPa
   x2.parent = Some(this)
   x5.parent = Some(this)
   val name: String = "FunctionDeclaration1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 9
+    k += 2
+    k = x2.updateSpan(k) + 1
+    k += 2
+    k += 2
+    k = x5.updateSpan(k) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"function ( $x2 ) { $x5 }"
   }

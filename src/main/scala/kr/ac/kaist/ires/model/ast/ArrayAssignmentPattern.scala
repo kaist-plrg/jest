@@ -12,6 +12,16 @@ case class ArrayAssignmentPattern0(x1: Option[Elision], x2: Option[AssignmentRes
   x1.foreach((m) => m.parent = Some(this))
   x2.foreach((m) => m.parent = Some(this))
   val name: String = "ArrayAssignmentPattern0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 2
+    k = x1.fold(k)(_.updateSpan(k)) + 1
+    k = x2.fold(k)(_.updateSpan(k)) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"[ ${x1.getOrElse("")} ${x2.getOrElse("")} ]"
   }
@@ -30,6 +40,15 @@ object ArrayAssignmentPattern0 extends ASTInfo {
 case class ArrayAssignmentPattern1(x1: AssignmentElementList, parserParams: List[Boolean]) extends ArrayAssignmentPattern {
   x1.parent = Some(this)
   val name: String = "ArrayAssignmentPattern1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 2
+    k = x1.updateSpan(k) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"[ $x1 ]"
   }
@@ -48,6 +67,18 @@ case class ArrayAssignmentPattern2(x1: AssignmentElementList, x3: Option[Elision
   x3.foreach((m) => m.parent = Some(this))
   x4.foreach((m) => m.parent = Some(this))
   val name: String = "ArrayAssignmentPattern2"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 2
+    k = x1.updateSpan(k) + 1
+    k += 2
+    k = x3.fold(k)(_.updateSpan(k)) + 1
+    k = x4.fold(k)(_.updateSpan(k)) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"[ $x1 , ${x3.getOrElse("")} ${x4.getOrElse("")} ]"
   }

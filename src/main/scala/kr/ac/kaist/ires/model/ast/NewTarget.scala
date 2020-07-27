@@ -10,6 +10,15 @@ trait NewTarget extends AST {
 }
 case class NewTarget0(parserParams: List[Boolean]) extends NewTarget {
   val name: String = "NewTarget0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 4
+    k += 2
+    k += 7
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"new . target"
   }

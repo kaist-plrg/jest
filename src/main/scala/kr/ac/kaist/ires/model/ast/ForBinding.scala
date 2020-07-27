@@ -11,6 +11,13 @@ trait ForBinding extends AST {
 case class ForBinding0(x0: BindingIdentifier, parserParams: List[Boolean]) extends ForBinding {
   x0.parent = Some(this)
   val name: String = "ForBinding0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -28,6 +35,13 @@ object ForBinding0 extends ASTInfo {
 case class ForBinding1(x0: BindingPattern, parserParams: List[Boolean]) extends ForBinding {
   x0.parent = Some(this)
   val name: String = "ForBinding1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }

@@ -11,6 +11,13 @@ trait LeftHandSideExpression extends AST {
 case class LeftHandSideExpression0(x0: NewExpression, parserParams: List[Boolean]) extends LeftHandSideExpression {
   x0.parent = Some(this)
   val name: String = "LeftHandSideExpression0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -25,6 +32,13 @@ object LeftHandSideExpression0 extends ASTInfo {
 case class LeftHandSideExpression1(x0: CallExpression, parserParams: List[Boolean]) extends LeftHandSideExpression {
   x0.parent = Some(this)
   val name: String = "LeftHandSideExpression1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -43,6 +57,13 @@ object LeftHandSideExpression1 extends ASTInfo {
 case class LeftHandSideExpression2(x0: OptionalExpression, parserParams: List[Boolean]) extends LeftHandSideExpression {
   x0.parent = Some(this)
   val name: String = "LeftHandSideExpression2"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }

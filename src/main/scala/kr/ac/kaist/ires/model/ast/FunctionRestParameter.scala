@@ -11,6 +11,13 @@ trait FunctionRestParameter extends AST {
 case class FunctionRestParameter0(x0: BindingRestElement, parserParams: List[Boolean]) extends FunctionRestParameter {
   x0.parent = Some(this)
   val name: String = "FunctionRestParameter0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }

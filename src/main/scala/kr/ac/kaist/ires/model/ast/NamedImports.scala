@@ -10,6 +10,14 @@ trait NamedImports extends AST {
 }
 case class NamedImports0(parserParams: List[Boolean]) extends NamedImports {
   val name: String = "NamedImports0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 2
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"{ }"
   }
@@ -24,6 +32,15 @@ object NamedImports0 extends ASTInfo {
 case class NamedImports1(x1: ImportsList, parserParams: List[Boolean]) extends NamedImports {
   x1.parent = Some(this)
   val name: String = "NamedImports1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 2
+    k = x1.updateSpan(k) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"{ $x1 }"
   }
@@ -38,6 +55,16 @@ object NamedImports1 extends ASTInfo {
 case class NamedImports2(x1: ImportsList, parserParams: List[Boolean]) extends NamedImports {
   x1.parent = Some(this)
   val name: String = "NamedImports2"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 2
+    k = x1.updateSpan(k) + 1
+    k += 2
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"{ $x1 , }"
   }

@@ -12,6 +12,14 @@ case class SingleNameBinding0(x0: BindingIdentifier, x1: Option[Initializer], pa
   x0.parent = Some(this)
   x1.foreach((m) => m.parent = Some(this))
   val name: String = "SingleNameBinding0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k = x1.fold(k)(_.updateSpan(k)) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 ${x1.getOrElse("")}"
   }

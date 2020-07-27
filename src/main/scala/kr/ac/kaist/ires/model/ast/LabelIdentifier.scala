@@ -11,6 +11,13 @@ trait LabelIdentifier extends AST {
 case class LabelIdentifier0(x0: Identifier, parserParams: List[Boolean]) extends LabelIdentifier {
   x0.parent = Some(this)
   val name: String = "LabelIdentifier0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -24,6 +31,13 @@ object LabelIdentifier0 extends ASTInfo {
 }
 case class LabelIdentifier1(parserParams: List[Boolean]) extends LabelIdentifier {
   val name: String = "LabelIdentifier1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 6
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"yield"
   }
@@ -39,6 +53,13 @@ object LabelIdentifier1 extends ASTInfo {
 }
 case class LabelIdentifier2(parserParams: List[Boolean]) extends LabelIdentifier {
   val name: String = "LabelIdentifier2"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 6
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"await"
   }

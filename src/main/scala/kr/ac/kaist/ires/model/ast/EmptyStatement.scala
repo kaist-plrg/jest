@@ -10,6 +10,13 @@ trait EmptyStatement extends AST {
 }
 case class EmptyStatement0(parserParams: List[Boolean]) extends EmptyStatement {
   val name: String = "EmptyStatement0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s";"
   }

@@ -11,6 +11,13 @@ trait NewExpression extends AST {
 case class NewExpression0(x0: MemberExpression, parserParams: List[Boolean]) extends NewExpression {
   x0.parent = Some(this)
   val name: String = "NewExpression0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -25,6 +32,14 @@ object NewExpression0 extends ASTInfo {
 case class NewExpression1(x1: NewExpression, parserParams: List[Boolean]) extends NewExpression {
   x1.parent = Some(this)
   val name: String = "NewExpression1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 4
+    k = x1.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"new $x1"
   }

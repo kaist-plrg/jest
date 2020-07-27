@@ -12,6 +12,15 @@ case class ClassDeclaration0(x1: BindingIdentifier, x2: ClassTail, parserParams:
   x1.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "ClassDeclaration0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 6
+    k = x1.updateSpan(k) + 1
+    k = x2.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"class $x1 $x2"
   }
@@ -31,6 +40,14 @@ object ClassDeclaration0 extends ASTInfo {
 case class ClassDeclaration1(x1: ClassTail, parserParams: List[Boolean]) extends ClassDeclaration {
   x1.parent = Some(this)
   val name: String = "ClassDeclaration1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 6
+    k = x1.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"class $x1"
   }

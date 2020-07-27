@@ -11,6 +11,13 @@ trait UpdateExpression extends AST {
 case class UpdateExpression0(x0: LeftHandSideExpression, parserParams: List[Boolean]) extends UpdateExpression {
   x0.parent = Some(this)
   val name: String = "UpdateExpression0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -25,6 +32,14 @@ object UpdateExpression0 extends ASTInfo {
 case class UpdateExpression1(x0: LeftHandSideExpression, parserParams: List[Boolean]) extends UpdateExpression {
   x0.parent = Some(this)
   val name: String = "UpdateExpression1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k += 3
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 ++"
   }
@@ -43,6 +58,14 @@ object UpdateExpression1 extends ASTInfo {
 case class UpdateExpression2(x0: LeftHandSideExpression, parserParams: List[Boolean]) extends UpdateExpression {
   x0.parent = Some(this)
   val name: String = "UpdateExpression2"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k += 3
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 --"
   }
@@ -61,6 +84,14 @@ object UpdateExpression2 extends ASTInfo {
 case class UpdateExpression3(x1: UnaryExpression, parserParams: List[Boolean]) extends UpdateExpression {
   x1.parent = Some(this)
   val name: String = "UpdateExpression3"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 3
+    k = x1.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"++ $x1"
   }
@@ -79,6 +110,14 @@ object UpdateExpression3 extends ASTInfo {
 case class UpdateExpression4(x1: UnaryExpression, parserParams: List[Boolean]) extends UpdateExpression {
   x1.parent = Some(this)
   val name: String = "UpdateExpression4"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 3
+    k = x1.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"-- $x1"
   }

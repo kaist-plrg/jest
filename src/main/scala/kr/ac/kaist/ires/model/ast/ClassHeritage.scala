@@ -11,6 +11,14 @@ trait ClassHeritage extends AST {
 case class ClassHeritage0(x1: LeftHandSideExpression, parserParams: List[Boolean]) extends ClassHeritage {
   x1.parent = Some(this)
   val name: String = "ClassHeritage0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 8
+    k = x1.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"extends $x1"
   }

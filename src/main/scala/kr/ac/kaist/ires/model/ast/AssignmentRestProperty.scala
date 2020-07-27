@@ -11,6 +11,14 @@ trait AssignmentRestProperty extends AST {
 case class AssignmentRestProperty0(x1: DestructuringAssignmentTarget, parserParams: List[Boolean]) extends AssignmentRestProperty {
   x1.parent = Some(this)
   val name: String = "AssignmentRestProperty0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 4
+    k = x1.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"... $x1"
   }

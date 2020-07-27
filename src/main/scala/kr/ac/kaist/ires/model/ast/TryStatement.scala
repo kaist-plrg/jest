@@ -12,6 +12,15 @@ case class TryStatement0(x1: Block, x2: Catch, parserParams: List[Boolean]) exte
   x1.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "TryStatement0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 4
+    k = x1.updateSpan(k) + 1
+    k = x2.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"try $x1 $x2"
   }
@@ -32,6 +41,15 @@ case class TryStatement1(x1: Block, x2: Finally, parserParams: List[Boolean]) ex
   x1.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "TryStatement1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 4
+    k = x1.updateSpan(k) + 1
+    k = x2.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"try $x1 $x2"
   }
@@ -53,6 +71,16 @@ case class TryStatement2(x1: Block, x2: Catch, x3: Finally, parserParams: List[B
   x2.parent = Some(this)
   x3.parent = Some(this)
   val name: String = "TryStatement2"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 4
+    k = x1.updateSpan(k) + 1
+    k = x2.updateSpan(k) + 1
+    k = x3.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"try $x1 $x2 $x3"
   }

@@ -11,6 +11,13 @@ trait ConditionalExpression extends AST {
 case class ConditionalExpression0(x0: ShortCircuitExpression, parserParams: List[Boolean]) extends ConditionalExpression {
   x0.parent = Some(this)
   val name: String = "ConditionalExpression0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -27,6 +34,17 @@ case class ConditionalExpression1(x0: ShortCircuitExpression, x2: AssignmentExpr
   x2.parent = Some(this)
   x4.parent = Some(this)
   val name: String = "ConditionalExpression1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k += 2
+    k = x2.updateSpan(k) + 1
+    k += 2
+    k = x4.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 ? $x2 : $x4"
   }

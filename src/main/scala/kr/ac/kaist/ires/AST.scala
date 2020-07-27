@@ -12,6 +12,11 @@ trait AST {
   val info: ASTInfo
   val fullList: List[(String, Value)]
 
+  // span information
+  def updateSpan(start: Int): Int
+  var start: Int = -1
+  var end: Int = -1
+
   // to JSON format
   def toJson: String = "{" + (fullList.map {
     case (name, value) => "\"" + name + "\":" + (value match {
@@ -106,6 +111,11 @@ case class Lexical(kind: String, str: String) extends AST {
   val parserParams: List[Boolean] = Nil
   val info: ASTInfo = LexicalInfo
   val fullList: List[(String, Value)] = Nil
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    this.end = start + str.length
+    this.end
+  }
   override def toString: String = str
 }
 object LexicalInfo extends ASTInfo {

@@ -11,6 +11,13 @@ trait BindingElementList extends AST {
 case class BindingElementList0(x0: BindingElisionElement, parserParams: List[Boolean]) extends BindingElementList {
   x0.parent = Some(this)
   val name: String = "BindingElementList0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -28,6 +35,15 @@ case class BindingElementList1(x0: BindingElementList, x2: BindingElisionElement
   x0.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "BindingElementList1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k += 2
+    k = x2.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 , $x2"
   }

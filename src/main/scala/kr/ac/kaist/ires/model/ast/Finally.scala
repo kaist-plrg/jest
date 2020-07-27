@@ -11,6 +11,14 @@ trait Finally extends AST {
 case class Finally0(x1: Block, parserParams: List[Boolean]) extends Finally {
   x1.parent = Some(this)
   val name: String = "Finally0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 8
+    k = x1.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"finally $x1"
   }

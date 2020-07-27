@@ -11,6 +11,13 @@ trait ClassElement extends AST {
 case class ClassElement0(x0: MethodDefinition, parserParams: List[Boolean]) extends ClassElement {
   x0.parent = Some(this)
   val name: String = "ClassElement0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -27,6 +34,14 @@ object ClassElement0 extends ASTInfo {
 case class ClassElement1(x1: MethodDefinition, parserParams: List[Boolean]) extends ClassElement {
   x1.parent = Some(this)
   val name: String = "ClassElement1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 7
+    k = x1.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"static $x1"
   }
@@ -42,6 +57,13 @@ object ClassElement1 extends ASTInfo {
 }
 case class ClassElement2(parserParams: List[Boolean]) extends ClassElement {
   val name: String = "ClassElement2"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s";"
   }

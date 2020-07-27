@@ -11,6 +11,13 @@ trait BindingPattern extends AST {
 case class BindingPattern0(x0: ObjectBindingPattern, parserParams: List[Boolean]) extends BindingPattern {
   x0.parent = Some(this)
   val name: String = "BindingPattern0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -27,6 +34,13 @@ object BindingPattern0 extends ASTInfo {
 case class BindingPattern1(x0: ArrayBindingPattern, parserParams: List[Boolean]) extends BindingPattern {
   x0.parent = Some(this)
   val name: String = "BindingPattern1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }

@@ -11,6 +11,16 @@ trait ImportCall extends AST {
 case class ImportCall0(x2: AssignmentExpression, parserParams: List[Boolean]) extends ImportCall {
   x2.parent = Some(this)
   val name: String = "ImportCall0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 7
+    k += 2
+    k = x2.updateSpan(k) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"import ( $x2 )"
   }

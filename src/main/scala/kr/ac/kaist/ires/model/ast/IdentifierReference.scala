@@ -11,6 +11,13 @@ trait IdentifierReference extends AST {
 case class IdentifierReference0(x0: Identifier, parserParams: List[Boolean]) extends IdentifierReference {
   x0.parent = Some(this)
   val name: String = "IdentifierReference0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -26,6 +33,13 @@ object IdentifierReference0 extends ASTInfo {
 }
 case class IdentifierReference1(parserParams: List[Boolean]) extends IdentifierReference {
   val name: String = "IdentifierReference1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 6
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"yield"
   }
@@ -42,6 +56,13 @@ object IdentifierReference1 extends ASTInfo {
 }
 case class IdentifierReference2(parserParams: List[Boolean]) extends IdentifierReference {
   val name: String = "IdentifierReference2"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 6
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"await"
   }

@@ -11,6 +11,13 @@ trait ExpressionBody extends AST {
 case class ExpressionBody0(x0: AssignmentExpression, parserParams: List[Boolean]) extends ExpressionBody {
   x0.parent = Some(this)
   val name: String = "ExpressionBody0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }

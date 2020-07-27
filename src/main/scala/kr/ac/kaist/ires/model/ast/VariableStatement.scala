@@ -11,6 +11,15 @@ trait VariableStatement extends AST {
 case class VariableStatement0(x1: VariableDeclarationList, parserParams: List[Boolean]) extends VariableStatement {
   x1.parent = Some(this)
   val name: String = "VariableStatement0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 4
+    k = x1.updateSpan(k) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"var $x1 ;"
   }

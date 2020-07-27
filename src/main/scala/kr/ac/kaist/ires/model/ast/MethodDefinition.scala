@@ -13,6 +13,19 @@ case class MethodDefinition0(x0: PropertyName, x2: UniqueFormalParameters, x5: F
   x2.parent = Some(this)
   x5.parent = Some(this)
   val name: String = "MethodDefinition0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k += 2
+    k = x2.updateSpan(k) + 1
+    k += 2
+    k += 2
+    k = x5.updateSpan(k) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 ( $x2 ) { $x5 }"
   }
@@ -33,6 +46,13 @@ object MethodDefinition0 extends ASTInfo {
 case class MethodDefinition1(x0: GeneratorMethod, parserParams: List[Boolean]) extends MethodDefinition {
   x0.parent = Some(this)
   val name: String = "MethodDefinition1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -49,6 +69,13 @@ object MethodDefinition1 extends ASTInfo {
 case class MethodDefinition2(x0: AsyncMethod, parserParams: List[Boolean]) extends MethodDefinition {
   x0.parent = Some(this)
   val name: String = "MethodDefinition2"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -65,6 +92,13 @@ object MethodDefinition2 extends ASTInfo {
 case class MethodDefinition3(x0: AsyncGeneratorMethod, parserParams: List[Boolean]) extends MethodDefinition {
   x0.parent = Some(this)
   val name: String = "MethodDefinition3"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -82,6 +116,19 @@ case class MethodDefinition4(x1: PropertyName, x5: FunctionBody, parserParams: L
   x1.parent = Some(this)
   x5.parent = Some(this)
   val name: String = "MethodDefinition4"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 4
+    k = x1.updateSpan(k) + 1
+    k += 2
+    k += 2
+    k += 2
+    k = x5.updateSpan(k) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"get $x1 ( ) { $x5 }"
   }
@@ -103,6 +150,20 @@ case class MethodDefinition5(x1: PropertyName, x3: PropertySetParameterList, x6:
   x3.parent = Some(this)
   x6.parent = Some(this)
   val name: String = "MethodDefinition5"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 4
+    k = x1.updateSpan(k) + 1
+    k += 2
+    k = x3.updateSpan(k) + 1
+    k += 2
+    k += 2
+    k = x6.updateSpan(k) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"set $x1 ( $x3 ) { $x6 }"
   }

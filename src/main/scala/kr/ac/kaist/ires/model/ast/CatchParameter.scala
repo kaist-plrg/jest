@@ -11,6 +11,13 @@ trait CatchParameter extends AST {
 case class CatchParameter0(x0: BindingIdentifier, parserParams: List[Boolean]) extends CatchParameter {
   x0.parent = Some(this)
   val name: String = "CatchParameter0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -25,6 +32,13 @@ object CatchParameter0 extends ASTInfo {
 case class CatchParameter1(x0: BindingPattern, parserParams: List[Boolean]) extends CatchParameter {
   x0.parent = Some(this)
   val name: String = "CatchParameter1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }

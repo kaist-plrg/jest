@@ -11,6 +11,13 @@ trait MemberExpression extends AST {
 case class MemberExpression0(x0: PrimaryExpression, parserParams: List[Boolean]) extends MemberExpression {
   x0.parent = Some(this)
   val name: String = "MemberExpression0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -28,6 +35,16 @@ case class MemberExpression1(x0: MemberExpression, x2: Expression, parserParams:
   x0.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "MemberExpression1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k += 2
+    k = x2.updateSpan(k) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 [ $x2 ]"
   }
@@ -49,6 +66,15 @@ case class MemberExpression2(x0: MemberExpression, x2: Lexical, parserParams: Li
   x0.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "MemberExpression2"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k += 2
+    k = x2.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 . $x2"
   }
@@ -71,6 +97,14 @@ case class MemberExpression3(x0: MemberExpression, x1: TemplateLiteral, parserPa
   x0.parent = Some(this)
   x1.parent = Some(this)
   val name: String = "MemberExpression3"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k = x1.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 $x1"
   }
@@ -91,6 +125,13 @@ object MemberExpression3 extends ASTInfo {
 case class MemberExpression4(x0: SuperProperty, parserParams: List[Boolean]) extends MemberExpression {
   x0.parent = Some(this)
   val name: String = "MemberExpression4"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -110,6 +151,13 @@ object MemberExpression4 extends ASTInfo {
 case class MemberExpression5(x0: MetaProperty, parserParams: List[Boolean]) extends MemberExpression {
   x0.parent = Some(this)
   val name: String = "MemberExpression5"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -130,6 +178,15 @@ case class MemberExpression6(x1: MemberExpression, x2: Arguments, parserParams: 
   x1.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "MemberExpression6"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 4
+    k = x1.updateSpan(k) + 1
+    k = x2.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"new $x1 $x2"
   }

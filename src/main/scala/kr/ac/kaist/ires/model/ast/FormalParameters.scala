@@ -10,6 +10,12 @@ trait FormalParameters extends AST {
 }
 case class FormalParameters0(parserParams: List[Boolean]) extends FormalParameters {
   val name: String = "FormalParameters0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s""
   }
@@ -30,6 +36,13 @@ object FormalParameters0 extends ASTInfo {
 case class FormalParameters1(x0: FunctionRestParameter, parserParams: List[Boolean]) extends FormalParameters {
   x0.parent = Some(this)
   val name: String = "FormalParameters1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -49,6 +62,13 @@ object FormalParameters1 extends ASTInfo {
 case class FormalParameters2(x0: FormalParameterList, parserParams: List[Boolean]) extends FormalParameters {
   x0.parent = Some(this)
   val name: String = "FormalParameters2"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -63,6 +83,14 @@ object FormalParameters2 extends ASTInfo {
 case class FormalParameters3(x0: FormalParameterList, parserParams: List[Boolean]) extends FormalParameters {
   x0.parent = Some(this)
   val name: String = "FormalParameters3"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 ,"
   }
@@ -78,6 +106,15 @@ case class FormalParameters4(x0: FormalParameterList, x2: FunctionRestParameter,
   x0.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "FormalParameters4"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k += 2
+    k = x2.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 , $x2"
   }

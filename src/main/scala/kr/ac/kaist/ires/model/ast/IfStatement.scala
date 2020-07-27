@@ -13,6 +13,19 @@ case class IfStatement0(x2: Expression, x4: Statement, x6: Statement, parserPara
   x4.parent = Some(this)
   x6.parent = Some(this)
   val name: String = "IfStatement0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 3
+    k += 2
+    k = x2.updateSpan(k) + 1
+    k += 2
+    k = x4.updateSpan(k) + 1
+    k += 5
+    k = x6.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"if ( $x2 ) $x4 else $x6"
   }
@@ -33,6 +46,17 @@ case class IfStatement1(x2: Expression, x4: Statement, parserParams: List[Boolea
   x2.parent = Some(this)
   x4.parent = Some(this)
   val name: String = "IfStatement1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 3
+    k += 2
+    k = x2.updateSpan(k) + 1
+    k += 2
+    k = x4.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"if ( $x2 ) $x4"
   }

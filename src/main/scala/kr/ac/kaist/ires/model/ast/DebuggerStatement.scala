@@ -10,6 +10,14 @@ trait DebuggerStatement extends AST {
 }
 case class DebuggerStatement0(parserParams: List[Boolean]) extends DebuggerStatement {
   val name: String = "DebuggerStatement0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 9
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"debugger ;"
   }

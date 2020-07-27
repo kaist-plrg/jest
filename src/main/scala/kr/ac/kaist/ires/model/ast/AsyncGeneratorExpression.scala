@@ -13,6 +13,22 @@ case class AsyncGeneratorExpression0(x4: Option[BindingIdentifier], x6: FormalPa
   x6.parent = Some(this)
   x9.parent = Some(this)
   val name: String = "AsyncGeneratorExpression0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 6
+    k += 9
+    k += 2
+    k = x4.fold(k)(_.updateSpan(k)) + 1
+    k += 2
+    k = x6.updateSpan(k) + 1
+    k += 2
+    k += 2
+    k = x9.updateSpan(k) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"async function * ${x4.getOrElse("")} ( $x6 ) { $x9 }"
   }

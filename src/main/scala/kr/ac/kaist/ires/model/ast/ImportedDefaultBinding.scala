@@ -11,6 +11,13 @@ trait ImportedDefaultBinding extends AST {
 case class ImportedDefaultBinding0(x0: ImportedBinding, parserParams: List[Boolean]) extends ImportedDefaultBinding {
   x0.parent = Some(this)
   val name: String = "ImportedDefaultBinding0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }

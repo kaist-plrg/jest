@@ -11,6 +11,13 @@ trait Script extends AST {
 case class Script0(x0: Option[ScriptBody], parserParams: List[Boolean]) extends Script {
   x0.foreach((m) => m.parent = Some(this))
   val name: String = "Script0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.fold(k)(_.updateSpan(k)) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"${x0.getOrElse("")}"
   }

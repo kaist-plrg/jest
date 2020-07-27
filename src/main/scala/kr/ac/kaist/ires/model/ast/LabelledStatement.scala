@@ -12,6 +12,15 @@ case class LabelledStatement0(x0: LabelIdentifier, x2: LabelledItem, parserParam
   x0.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "LabelledStatement0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k += 2
+    k = x2.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 : $x2"
   }

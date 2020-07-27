@@ -10,6 +10,14 @@ trait Arguments extends AST {
 }
 case class Arguments0(parserParams: List[Boolean]) extends Arguments {
   val name: String = "Arguments0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 2
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"( )"
   }
@@ -26,6 +34,15 @@ object Arguments0 extends ASTInfo {
 case class Arguments1(x1: ArgumentList, parserParams: List[Boolean]) extends Arguments {
   x1.parent = Some(this)
   val name: String = "Arguments1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 2
+    k = x1.updateSpan(k) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"( $x1 )"
   }
@@ -40,6 +57,16 @@ object Arguments1 extends ASTInfo {
 case class Arguments2(x1: ArgumentList, parserParams: List[Boolean]) extends Arguments {
   x1.parent = Some(this)
   val name: String = "Arguments2"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 2
+    k = x1.updateSpan(k) + 1
+    k += 2
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"( $x1 , )"
   }

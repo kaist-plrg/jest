@@ -10,6 +10,13 @@ trait Elision extends AST {
 }
 case class Elision0(parserParams: List[Boolean]) extends Elision {
   val name: String = "Elision0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s","
   }
@@ -27,6 +34,14 @@ object Elision0 extends ASTInfo {
 case class Elision1(x0: Elision, parserParams: List[Boolean]) extends Elision {
   x0.parent = Some(this)
   val name: String = "Elision1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 ,"
   }

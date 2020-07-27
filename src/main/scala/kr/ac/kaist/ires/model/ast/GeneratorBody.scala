@@ -11,6 +11,13 @@ trait GeneratorBody extends AST {
 case class GeneratorBody0(x0: FunctionBody, parserParams: List[Boolean]) extends GeneratorBody {
   x0.parent = Some(this)
   val name: String = "GeneratorBody0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }

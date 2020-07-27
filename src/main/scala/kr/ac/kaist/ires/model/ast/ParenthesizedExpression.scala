@@ -11,6 +11,15 @@ trait ParenthesizedExpression extends AST {
 case class ParenthesizedExpression0(x1: Expression, parserParams: List[Boolean]) extends ParenthesizedExpression {
   x1.parent = Some(this)
   val name: String = "ParenthesizedExpression0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 2
+    k = x1.updateSpan(k) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"( $x1 )"
   }

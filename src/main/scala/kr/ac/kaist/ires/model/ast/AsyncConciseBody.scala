@@ -11,6 +11,13 @@ trait AsyncConciseBody extends AST {
 case class AsyncConciseBody0(x1: ExpressionBody, parserParams: List[Boolean]) extends AsyncConciseBody {
   x1.parent = Some(this)
   val name: String = "AsyncConciseBody0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x1.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x1"
   }
@@ -32,6 +39,15 @@ object AsyncConciseBody0 extends ASTInfo {
 case class AsyncConciseBody1(x1: AsyncFunctionBody, parserParams: List[Boolean]) extends AsyncConciseBody {
   x1.parent = Some(this)
   val name: String = "AsyncConciseBody1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 2
+    k = x1.updateSpan(k) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"{ $x1 }"
   }

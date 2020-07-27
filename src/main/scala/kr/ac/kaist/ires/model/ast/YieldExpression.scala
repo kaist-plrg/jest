@@ -10,6 +10,13 @@ trait YieldExpression extends AST {
 }
 case class YieldExpression0(parserParams: List[Boolean]) extends YieldExpression {
   val name: String = "YieldExpression0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 6
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"yield"
   }
@@ -26,6 +33,14 @@ object YieldExpression0 extends ASTInfo {
 case class YieldExpression1(x2: AssignmentExpression, parserParams: List[Boolean]) extends YieldExpression {
   x2.parent = Some(this)
   val name: String = "YieldExpression1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 6
+    k = x2.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"yield $x2"
   }
@@ -42,6 +57,15 @@ object YieldExpression1 extends ASTInfo {
 case class YieldExpression2(x3: AssignmentExpression, parserParams: List[Boolean]) extends YieldExpression {
   x3.parent = Some(this)
   val name: String = "YieldExpression2"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 6
+    k += 2
+    k = x3.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"yield * $x3"
   }

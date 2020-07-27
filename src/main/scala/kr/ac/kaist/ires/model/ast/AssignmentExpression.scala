@@ -11,6 +11,13 @@ trait AssignmentExpression extends AST {
 case class AssignmentExpression0(x0: ConditionalExpression, parserParams: List[Boolean]) extends AssignmentExpression {
   x0.parent = Some(this)
   val name: String = "AssignmentExpression0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -25,6 +32,13 @@ object AssignmentExpression0 extends ASTInfo {
 case class AssignmentExpression1(x0: YieldExpression, parserParams: List[Boolean]) extends AssignmentExpression {
   x0.parent = Some(this)
   val name: String = "AssignmentExpression1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -42,6 +56,13 @@ object AssignmentExpression1 extends ASTInfo {
 case class AssignmentExpression2(x0: ArrowFunction, parserParams: List[Boolean]) extends AssignmentExpression {
   x0.parent = Some(this)
   val name: String = "AssignmentExpression2"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -59,6 +80,13 @@ object AssignmentExpression2 extends ASTInfo {
 case class AssignmentExpression3(x0: AsyncArrowFunction, parserParams: List[Boolean]) extends AssignmentExpression {
   x0.parent = Some(this)
   val name: String = "AssignmentExpression3"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -77,6 +105,15 @@ case class AssignmentExpression4(x0: LeftHandSideExpression, x2: AssignmentExpre
   x0.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "AssignmentExpression4"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k += 2
+    k = x2.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 = $x2"
   }
@@ -97,6 +134,15 @@ case class AssignmentExpression5(x0: LeftHandSideExpression, x1: AssignmentOpera
   x1.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "AssignmentExpression5"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k = x1.updateSpan(k) + 1
+    k = x2.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 $x1 $x2"
   }

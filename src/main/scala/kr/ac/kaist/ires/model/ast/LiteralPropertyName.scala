@@ -11,6 +11,13 @@ trait LiteralPropertyName extends AST {
 case class LiteralPropertyName0(x0: Lexical, parserParams: List[Boolean]) extends LiteralPropertyName {
   x0.parent = Some(this)
   val name: String = "LiteralPropertyName0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -29,6 +36,13 @@ object LiteralPropertyName0 extends ASTInfo {
 case class LiteralPropertyName1(x0: Lexical, parserParams: List[Boolean]) extends LiteralPropertyName {
   x0.parent = Some(this)
   val name: String = "LiteralPropertyName1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -46,6 +60,13 @@ object LiteralPropertyName1 extends ASTInfo {
 case class LiteralPropertyName2(x0: Lexical, parserParams: List[Boolean]) extends LiteralPropertyName {
   x0.parent = Some(this)
   val name: String = "LiteralPropertyName2"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }

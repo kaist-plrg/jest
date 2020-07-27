@@ -11,6 +11,13 @@ trait FormalParameterList extends AST {
 case class FormalParameterList0(x0: FormalParameter, parserParams: List[Boolean]) extends FormalParameterList {
   x0.parent = Some(this)
   val name: String = "FormalParameterList0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -29,6 +36,15 @@ case class FormalParameterList1(x0: FormalParameterList, x2: FormalParameter, pa
   x0.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "FormalParameterList1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k += 2
+    k = x2.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 , $x2"
   }

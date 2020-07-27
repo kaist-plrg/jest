@@ -10,6 +10,13 @@ trait AssignmentOperator extends AST {
 }
 case class AssignmentOperator0(parserParams: List[Boolean]) extends AssignmentOperator {
   val name: String = "AssignmentOperator0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 3
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"*="
   }
@@ -23,6 +30,13 @@ object AssignmentOperator0 extends ASTInfo {
 }
 case class AssignmentOperator1(parserParams: List[Boolean]) extends AssignmentOperator {
   val name: String = "AssignmentOperator1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 3
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"/="
   }
@@ -36,6 +50,13 @@ object AssignmentOperator1 extends ASTInfo {
 }
 case class AssignmentOperator2(parserParams: List[Boolean]) extends AssignmentOperator {
   val name: String = "AssignmentOperator2"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 3
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"%="
   }
@@ -49,6 +70,13 @@ object AssignmentOperator2 extends ASTInfo {
 }
 case class AssignmentOperator3(parserParams: List[Boolean]) extends AssignmentOperator {
   val name: String = "AssignmentOperator3"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 3
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"+="
   }
@@ -62,6 +90,13 @@ object AssignmentOperator3 extends ASTInfo {
 }
 case class AssignmentOperator4(parserParams: List[Boolean]) extends AssignmentOperator {
   val name: String = "AssignmentOperator4"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 3
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"-="
   }
@@ -75,6 +110,13 @@ object AssignmentOperator4 extends ASTInfo {
 }
 case class AssignmentOperator5(parserParams: List[Boolean]) extends AssignmentOperator {
   val name: String = "AssignmentOperator5"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 4
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"<<="
   }
@@ -88,6 +130,13 @@ object AssignmentOperator5 extends ASTInfo {
 }
 case class AssignmentOperator6(parserParams: List[Boolean]) extends AssignmentOperator {
   val name: String = "AssignmentOperator6"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 4
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s">>="
   }
@@ -101,6 +150,13 @@ object AssignmentOperator6 extends ASTInfo {
 }
 case class AssignmentOperator7(parserParams: List[Boolean]) extends AssignmentOperator {
   val name: String = "AssignmentOperator7"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 5
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s">>>="
   }
@@ -114,6 +170,13 @@ object AssignmentOperator7 extends ASTInfo {
 }
 case class AssignmentOperator8(parserParams: List[Boolean]) extends AssignmentOperator {
   val name: String = "AssignmentOperator8"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 3
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"&="
   }
@@ -127,6 +190,13 @@ object AssignmentOperator8 extends ASTInfo {
 }
 case class AssignmentOperator9(parserParams: List[Boolean]) extends AssignmentOperator {
   val name: String = "AssignmentOperator9"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 3
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"^="
   }
@@ -140,6 +210,13 @@ object AssignmentOperator9 extends ASTInfo {
 }
 case class AssignmentOperator10(parserParams: List[Boolean]) extends AssignmentOperator {
   val name: String = "AssignmentOperator10"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 3
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"|="
   }
@@ -153,6 +230,13 @@ object AssignmentOperator10 extends ASTInfo {
 }
 case class AssignmentOperator11(parserParams: List[Boolean]) extends AssignmentOperator {
   val name: String = "AssignmentOperator11"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 4
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"**="
   }

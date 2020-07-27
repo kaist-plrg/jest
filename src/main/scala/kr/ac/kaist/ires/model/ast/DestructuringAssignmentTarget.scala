@@ -11,6 +11,13 @@ trait DestructuringAssignmentTarget extends AST {
 case class DestructuringAssignmentTarget0(x0: LeftHandSideExpression, parserParams: List[Boolean]) extends DestructuringAssignmentTarget {
   x0.parent = Some(this)
   val name: String = "DestructuringAssignmentTarget0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }

@@ -11,6 +11,15 @@ trait DefaultClause extends AST {
 case class DefaultClause0(x2: Option[StatementList], parserParams: List[Boolean]) extends DefaultClause {
   x2.foreach((m) => m.parent = Some(this))
   val name: String = "DefaultClause0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 8
+    k += 2
+    k = x2.fold(k)(_.updateSpan(k)) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"default : ${x2.getOrElse("")}"
   }

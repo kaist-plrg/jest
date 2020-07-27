@@ -10,6 +10,14 @@ trait ObjectAssignmentPattern extends AST {
 }
 case class ObjectAssignmentPattern0(parserParams: List[Boolean]) extends ObjectAssignmentPattern {
   val name: String = "ObjectAssignmentPattern0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 2
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"{ }"
   }
@@ -26,6 +34,15 @@ object ObjectAssignmentPattern0 extends ASTInfo {
 case class ObjectAssignmentPattern1(x1: AssignmentRestProperty, parserParams: List[Boolean]) extends ObjectAssignmentPattern {
   x1.parent = Some(this)
   val name: String = "ObjectAssignmentPattern1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 2
+    k = x1.updateSpan(k) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"{ $x1 }"
   }
@@ -42,6 +59,15 @@ object ObjectAssignmentPattern1 extends ASTInfo {
 case class ObjectAssignmentPattern2(x1: AssignmentPropertyList, parserParams: List[Boolean]) extends ObjectAssignmentPattern {
   x1.parent = Some(this)
   val name: String = "ObjectAssignmentPattern2"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 2
+    k = x1.updateSpan(k) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"{ $x1 }"
   }
@@ -59,6 +85,17 @@ case class ObjectAssignmentPattern3(x1: AssignmentPropertyList, x3: Option[Assig
   x1.parent = Some(this)
   x3.foreach((m) => m.parent = Some(this))
   val name: String = "ObjectAssignmentPattern3"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 2
+    k = x1.updateSpan(k) + 1
+    k += 2
+    k = x3.fold(k)(_.updateSpan(k)) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"{ $x1 , ${x3.getOrElse("")} }"
   }

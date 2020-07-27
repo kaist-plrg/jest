@@ -11,6 +11,13 @@ trait BindingElement extends AST {
 case class BindingElement0(x0: SingleNameBinding, parserParams: List[Boolean]) extends BindingElement {
   x0.parent = Some(this)
   val name: String = "BindingElement0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -28,6 +35,14 @@ case class BindingElement1(x0: BindingPattern, x1: Option[Initializer], parserPa
   x0.parent = Some(this)
   x1.foreach((m) => m.parent = Some(this))
   val name: String = "BindingElement1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k = x1.fold(k)(_.updateSpan(k)) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 ${x1.getOrElse("")}"
   }

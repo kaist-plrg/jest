@@ -11,6 +11,13 @@ trait BlockStatement extends AST {
 case class BlockStatement0(x0: Block, parserParams: List[Boolean]) extends BlockStatement {
   x0.parent = Some(this)
   val name: String = "BlockStatement0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }

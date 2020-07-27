@@ -11,6 +11,13 @@ trait AssignmentPattern extends AST {
 case class AssignmentPattern0(x0: ObjectAssignmentPattern, parserParams: List[Boolean]) extends AssignmentPattern {
   x0.parent = Some(this)
   val name: String = "AssignmentPattern0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -25,6 +32,13 @@ object AssignmentPattern0 extends ASTInfo {
 case class AssignmentPattern1(x0: ArrayAssignmentPattern, parserParams: List[Boolean]) extends AssignmentPattern {
   x0.parent = Some(this)
   val name: String = "AssignmentPattern1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }

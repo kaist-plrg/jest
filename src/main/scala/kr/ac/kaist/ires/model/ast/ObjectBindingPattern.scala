@@ -10,6 +10,14 @@ trait ObjectBindingPattern extends AST {
 }
 case class ObjectBindingPattern0(parserParams: List[Boolean]) extends ObjectBindingPattern {
   val name: String = "ObjectBindingPattern0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 2
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"{ }"
   }
@@ -28,6 +36,15 @@ object ObjectBindingPattern0 extends ASTInfo {
 case class ObjectBindingPattern1(x1: BindingRestProperty, parserParams: List[Boolean]) extends ObjectBindingPattern {
   x1.parent = Some(this)
   val name: String = "ObjectBindingPattern1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 2
+    k = x1.updateSpan(k) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"{ $x1 }"
   }
@@ -45,6 +62,15 @@ object ObjectBindingPattern1 extends ASTInfo {
 case class ObjectBindingPattern2(x1: BindingPropertyList, parserParams: List[Boolean]) extends ObjectBindingPattern {
   x1.parent = Some(this)
   val name: String = "ObjectBindingPattern2"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 2
+    k = x1.updateSpan(k) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"{ $x1 }"
   }
@@ -62,6 +88,17 @@ case class ObjectBindingPattern3(x1: BindingPropertyList, x3: Option[BindingRest
   x1.parent = Some(this)
   x3.foreach((m) => m.parent = Some(this))
   val name: String = "ObjectBindingPattern3"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 2
+    k = x1.updateSpan(k) + 1
+    k += 2
+    k = x3.fold(k)(_.updateSpan(k)) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"{ $x1 , ${x3.getOrElse("")} }"
   }

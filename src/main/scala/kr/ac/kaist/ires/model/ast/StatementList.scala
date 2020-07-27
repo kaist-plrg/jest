@@ -11,6 +11,13 @@ trait StatementList extends AST {
 case class StatementList0(x0: StatementListItem, parserParams: List[Boolean]) extends StatementList {
   x0.parent = Some(this)
   val name: String = "StatementList0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -26,6 +33,14 @@ case class StatementList1(x0: StatementList, x1: StatementListItem, parserParams
   x0.parent = Some(this)
   x1.parent = Some(this)
   val name: String = "StatementList1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k = x1.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 $x1"
   }

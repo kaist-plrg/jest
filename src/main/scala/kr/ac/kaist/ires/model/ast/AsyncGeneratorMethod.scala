@@ -13,6 +13,21 @@ case class AsyncGeneratorMethod0(x3: PropertyName, x5: UniqueFormalParameters, x
   x5.parent = Some(this)
   x8.parent = Some(this)
   val name: String = "AsyncGeneratorMethod0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 6
+    k += 2
+    k = x3.updateSpan(k) + 1
+    k += 2
+    k = x5.updateSpan(k) + 1
+    k += 2
+    k += 2
+    k = x8.updateSpan(k) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"async * $x3 ( $x5 ) { $x8 }"
   }

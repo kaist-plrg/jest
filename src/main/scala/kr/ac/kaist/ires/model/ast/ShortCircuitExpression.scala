@@ -11,6 +11,13 @@ trait ShortCircuitExpression extends AST {
 case class ShortCircuitExpression0(x0: LogicalORExpression, parserParams: List[Boolean]) extends ShortCircuitExpression {
   x0.parent = Some(this)
   val name: String = "ShortCircuitExpression0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -25,6 +32,13 @@ object ShortCircuitExpression0 extends ASTInfo {
 case class ShortCircuitExpression1(x0: CoalesceExpression, parserParams: List[Boolean]) extends ShortCircuitExpression {
   x0.parent = Some(this)
   val name: String = "ShortCircuitExpression1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }

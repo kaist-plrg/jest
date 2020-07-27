@@ -11,6 +11,13 @@ trait AsyncGeneratorBody extends AST {
 case class AsyncGeneratorBody0(x0: FunctionBody, parserParams: List[Boolean]) extends AsyncGeneratorBody {
   x0.parent = Some(this)
   val name: String = "AsyncGeneratorBody0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }

@@ -11,6 +11,13 @@ trait ImportsList extends AST {
 case class ImportsList0(x0: ImportSpecifier, parserParams: List[Boolean]) extends ImportsList {
   x0.parent = Some(this)
   val name: String = "ImportsList0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -26,6 +33,15 @@ case class ImportsList1(x0: ImportsList, x2: ImportSpecifier, parserParams: List
   x0.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "ImportsList1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k += 2
+    k = x2.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 , $x2"
   }

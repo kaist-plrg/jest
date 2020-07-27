@@ -12,6 +12,16 @@ case class CaseClause0(x1: Expression, x3: Option[StatementList], parserParams: 
   x1.parent = Some(this)
   x3.foreach((m) => m.parent = Some(this))
   val name: String = "CaseClause0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 5
+    k = x1.updateSpan(k) + 1
+    k += 2
+    k = x3.fold(k)(_.updateSpan(k)) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"case $x1 : ${x3.getOrElse("")}"
   }

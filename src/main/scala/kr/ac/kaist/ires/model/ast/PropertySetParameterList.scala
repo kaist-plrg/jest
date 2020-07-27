@@ -11,6 +11,13 @@ trait PropertySetParameterList extends AST {
 case class PropertySetParameterList0(x0: FormalParameter, parserParams: List[Boolean]) extends PropertySetParameterList {
   x0.parent = Some(this)
   val name: String = "PropertySetParameterList0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }

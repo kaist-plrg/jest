@@ -10,6 +10,14 @@ trait ContinueStatement extends AST {
 }
 case class ContinueStatement0(parserParams: List[Boolean]) extends ContinueStatement {
   val name: String = "ContinueStatement0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 9
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"continue ;"
   }
@@ -26,6 +34,15 @@ object ContinueStatement0 extends ASTInfo {
 case class ContinueStatement1(x2: LabelIdentifier, parserParams: List[Boolean]) extends ContinueStatement {
   x2.parent = Some(this)
   val name: String = "ContinueStatement1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 9
+    k = x2.updateSpan(k) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"continue $x2 ;"
   }

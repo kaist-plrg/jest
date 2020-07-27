@@ -11,6 +11,13 @@ trait ArgumentList extends AST {
 case class ArgumentList0(x0: AssignmentExpression, parserParams: List[Boolean]) extends ArgumentList {
   x0.parent = Some(this)
   val name: String = "ArgumentList0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -27,6 +34,14 @@ object ArgumentList0 extends ASTInfo {
 case class ArgumentList1(x1: AssignmentExpression, parserParams: List[Boolean]) extends ArgumentList {
   x1.parent = Some(this)
   val name: String = "ArgumentList1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 4
+    k = x1.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"... $x1"
   }
@@ -44,6 +59,15 @@ case class ArgumentList2(x0: ArgumentList, x2: AssignmentExpression, parserParam
   x0.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "ArgumentList2"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k += 2
+    k = x2.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 , $x2"
   }
@@ -61,6 +85,16 @@ case class ArgumentList3(x0: ArgumentList, x3: AssignmentExpression, parserParam
   x0.parent = Some(this)
   x3.parent = Some(this)
   val name: String = "ArgumentList3"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k += 2
+    k += 4
+    k = x3.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 , ... $x3"
   }

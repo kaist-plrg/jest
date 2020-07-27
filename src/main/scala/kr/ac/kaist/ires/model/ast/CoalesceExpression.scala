@@ -12,6 +12,15 @@ case class CoalesceExpression0(x0: CoalesceExpressionHead, x2: BitwiseORExpressi
   x0.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "CoalesceExpression0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    k += 3
+    k = x2.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0 ?? $x2"
   }

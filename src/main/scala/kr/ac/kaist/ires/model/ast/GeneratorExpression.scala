@@ -13,6 +13,21 @@ case class GeneratorExpression0(x2: Option[BindingIdentifier], x4: FormalParamet
   x4.parent = Some(this)
   x7.parent = Some(this)
   val name: String = "GeneratorExpression0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 9
+    k += 2
+    k = x2.fold(k)(_.updateSpan(k)) + 1
+    k += 2
+    k = x4.updateSpan(k) + 1
+    k += 2
+    k += 2
+    k = x7.updateSpan(k) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"function * ${x2.getOrElse("")} ( $x4 ) { $x7 }"
   }

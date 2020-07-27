@@ -13,6 +13,20 @@ case class AsyncMethod0(x2: PropertyName, x4: UniqueFormalParameters, x7: AsyncF
   x4.parent = Some(this)
   x7.parent = Some(this)
   val name: String = "AsyncMethod0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 6
+    k = x2.updateSpan(k) + 1
+    k += 2
+    k = x4.updateSpan(k) + 1
+    k += 2
+    k += 2
+    k = x7.updateSpan(k) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"async $x2 ( $x4 ) { $x7 }"
   }

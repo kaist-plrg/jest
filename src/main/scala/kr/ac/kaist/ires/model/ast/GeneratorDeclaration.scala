@@ -13,6 +13,21 @@ case class GeneratorDeclaration0(x2: BindingIdentifier, x4: FormalParameters, x7
   x4.parent = Some(this)
   x7.parent = Some(this)
   val name: String = "GeneratorDeclaration0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 9
+    k += 2
+    k = x2.updateSpan(k) + 1
+    k += 2
+    k = x4.updateSpan(k) + 1
+    k += 2
+    k += 2
+    k = x7.updateSpan(k) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"function * $x2 ( $x4 ) { $x7 }"
   }
@@ -33,6 +48,20 @@ case class GeneratorDeclaration1(x3: FormalParameters, x6: GeneratorBody, parser
   x3.parent = Some(this)
   x6.parent = Some(this)
   val name: String = "GeneratorDeclaration1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 9
+    k += 2
+    k += 2
+    k = x3.updateSpan(k) + 1
+    k += 2
+    k += 2
+    k = x6.updateSpan(k) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"function * ( $x3 ) { $x6 }"
   }

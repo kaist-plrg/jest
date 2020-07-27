@@ -11,6 +11,15 @@ trait ThrowStatement extends AST {
 case class ThrowStatement0(x2: Expression, parserParams: List[Boolean]) extends ThrowStatement {
   x2.parent = Some(this)
   val name: String = "ThrowStatement0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 6
+    k = x2.updateSpan(k) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"throw $x2 ;"
   }

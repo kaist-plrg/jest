@@ -11,6 +11,13 @@ trait BreakableStatement extends AST {
 case class BreakableStatement0(x0: IterationStatement, parserParams: List[Boolean]) extends BreakableStatement {
   x0.parent = Some(this)
   val name: String = "BreakableStatement0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -28,6 +35,13 @@ object BreakableStatement0 extends ASTInfo {
 case class BreakableStatement1(x0: SwitchStatement, parserParams: List[Boolean]) extends BreakableStatement {
   x0.parent = Some(this)
   val name: String = "BreakableStatement1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }

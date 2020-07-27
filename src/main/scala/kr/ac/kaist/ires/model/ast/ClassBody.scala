@@ -11,6 +11,13 @@ trait ClassBody extends AST {
 case class ClassBody0(x0: ClassElementList, parserParams: List[Boolean]) extends ClassBody {
   x0.parent = Some(this)
   val name: String = "ClassBody0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }

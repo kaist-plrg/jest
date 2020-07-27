@@ -11,6 +11,15 @@ trait Block extends AST {
 case class Block0(x1: Option[StatementList], parserParams: List[Boolean]) extends Block {
   x1.foreach((m) => m.parent = Some(this))
   val name: String = "Block0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 2
+    k = x1.fold(k)(_.updateSpan(k)) + 1
+    k += 2
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"{ ${x1.getOrElse("")} }"
   }

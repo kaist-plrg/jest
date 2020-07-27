@@ -12,6 +12,17 @@ case class Catch0(x2: CatchParameter, x4: Block, parserParams: List[Boolean]) ex
   x2.parent = Some(this)
   x4.parent = Some(this)
   val name: String = "Catch0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 6
+    k += 2
+    k = x2.updateSpan(k) + 1
+    k += 2
+    k = x4.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"catch ( $x2 ) $x4"
   }
@@ -31,6 +42,14 @@ object Catch0 extends ASTInfo {
 case class Catch1(x1: Block, parserParams: List[Boolean]) extends Catch {
   x1.parent = Some(this)
   val name: String = "Catch1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 6
+    k = x1.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"catch $x1"
   }

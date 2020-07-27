@@ -12,6 +12,17 @@ case class WithStatement0(x2: Expression, x4: Statement, parserParams: List[Bool
   x2.parent = Some(this)
   x4.parent = Some(this)
   val name: String = "WithStatement0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 5
+    k += 2
+    k = x2.updateSpan(k) + 1
+    k += 2
+    k = x4.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"with ( $x2 ) $x4"
   }

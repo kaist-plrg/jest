@@ -11,6 +11,13 @@ trait MetaProperty extends AST {
 case class MetaProperty0(x0: NewTarget, parserParams: List[Boolean]) extends MetaProperty {
   x0.parent = Some(this)
   val name: String = "MetaProperty0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }
@@ -25,6 +32,13 @@ object MetaProperty0 extends ASTInfo {
 case class MetaProperty1(x0: ImportMeta, parserParams: List[Boolean]) extends MetaProperty {
   x0.parent = Some(this)
   val name: String = "MetaProperty1"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k = x0.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"$x0"
   }

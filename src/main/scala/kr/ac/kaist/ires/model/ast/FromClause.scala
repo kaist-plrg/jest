@@ -11,6 +11,14 @@ trait FromClause extends AST {
 case class FromClause0(x1: ModuleSpecifier, parserParams: List[Boolean]) extends FromClause {
   x1.parent = Some(this)
   val name: String = "FromClause0"
+  def updateSpan(start: Int): Int = {
+    this.start = start
+    var k = start
+    k += 5
+    k = x1.updateSpan(k) + 1
+    this.end = k - 1
+    this.end
+  }
   override def toString: String = {
     s"from $x1"
   }
