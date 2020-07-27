@@ -1,10 +1,7 @@
 package kr.ac.kaist.ires.mutator
 
-import kr.ac.kaist.ires.AST
 import kr.ac.kaist.ires.model._
-import kr.ac.kaist.ires.ir.{ Interp, Inst }
-import kr.ac.kaist.ires.util.Useful._
-import kr.ac.kaist.ires.sampler.{ NRSampler, ValueSampler }
+import kr.ac.kaist.ires.ir.Interp
 import kr.ac.kaist.ires.sampler.ValidityChecker
 
 object BranchExprReplacer extends Mutator with Walker {
@@ -24,9 +21,6 @@ object BranchExprReplacer extends Mutator with Walker {
 
             val prefix = scriptString.substring(0, targetAst.start)
             val suffix = scriptString.substring(targetAst.end)
-
-            val algo = Inst.instToAlgo(target.get)
-            val inst = Inst.insts(target.get)
 
             var newScriptString = scriptString
             do {
