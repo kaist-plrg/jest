@@ -22,8 +22,9 @@ case object Mutate extends PhaseObj[Script, MutateConfig, Script] {
     var iter = 0
     var mutated = script
     var keep = true
+    val str = script.toString
     while (keep && iter < config.trial) {
-      mutated = Generator.mutate(mutated.toString, SimpleExprReplacer)
+      mutated = Generator.mutate(str, SimpleExprReplacer)
       iter += 1
       log(s"${iter}th iteration")
       (Generator.getVisited(mutated), config.target) match {
