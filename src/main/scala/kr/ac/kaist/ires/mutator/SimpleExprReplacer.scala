@@ -3,9 +3,11 @@ package kr.ac.kaist.ires.mutator
 import kr.ac.kaist.ires.model._
 import kr.ac.kaist.ires.sampler._
 import kr.ac.kaist.ires.util.Useful._
+import kr.ac.kaist.ires.AST
 
 object SimpleExprReplacer extends Mutator with Walker {
   def apply(script: Script): Script = walk(script)
+  def apply(script: AST): AST = walk(script)
   lazy val exprList1 = NRSampler.origAssignmentExpression.toList
   lazy val exprList2 = ValueSampler.assignExprs
   override def walk(expr: AssignmentExpression): AssignmentExpression = {

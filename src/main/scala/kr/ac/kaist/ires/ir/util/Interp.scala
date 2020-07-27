@@ -7,20 +7,26 @@ import scala.concurrent._
 import scala.concurrent.duration._
 import scala.concurrent.ExecutionContext.Implicits.global
 
-import kr.ac.kaist.ires.{ DEBUG_INTERP, IRES, COVERAGE_MODE, Lexical }
+import kr.ac.kaist.ires.{ DEBUG_INTERP, IRES, COVERAGE_MODE, Lexical, AST }
 import kr.ac.kaist.ires.coverage.Visited
 import kr.ac.kaist.ires.error.{ NotSupported, NotYetModeled, Timeout }
 import kr.ac.kaist.ires.model.{ Parser => ESParser, ESValueParser, ModelHelper }
 import kr.ac.kaist.ires.parser.UnicodeRegex.WSLT
+import scala.util.matching.Regex
 
 // IR Interpreter
 class Interp(
     isDebug: Boolean = false,
     timeLimit: Option[Long] = None,
-    val visited: Visited = new Visited
+    val visited: Visited = new Visited,
+    targetInst: Option[Int] = None
 ) {
   var startTime: Long = 0
   var instCount = 0
+  var astStack: List[AST] = List()
+  var targetAstStack: Option[List[AST]] = None
+
+  val evaluationAlgorithmPattern = new Regex(".*[0-9]+.*Evaluation[0-9]+")
 
   def apply(inst: Inst) = interp(inst)
   def apply(st: State) = fixpoint(st)
@@ -38,6 +44,10 @@ class Interp(
 
   // instructions
   def interp(inst: Inst): State => State = st => {
+    targetInst match {
+      case Some(value) => if (value == inst.uid) targetAstStack = Some(astStack)
+      case None => ()
+    }
     if (instCount == 0) startTime = System.currentTimeMillis
     instCount = instCount + 1
     if (COVERAGE_MODE) visited += inst.uid
@@ -79,6 +89,7 @@ class Interp(
         }
       case IReturn(expr) =>
         val (value, s0) = interp(expr)(st)
+        if (evaluationAlgorithmPattern.matches(st.context.name)) astStack = astStack.tail
         s0.ctxStack match {
           case Nil => s0.copy(context = s0.context.copy(locals = s0.context.locals + (s0.context.retId -> value), insts = Nil))
           case ctx :: rest => s0.copy(context = ctx.copy(locals = ctx.locals + (ctx.retId -> value)), ctxStack = rest)
@@ -206,6 +217,8 @@ class Interp(
                         (map + (param -> arg), rest)
                       case (pair, _) => pair
                     }
+                    // upd
+                    if (evaluationAlgorithmPattern.matches(fname)) astStack = ast :: astStack
                     rest match {
                       case Nil =>
                         val updatedCtx = s2.context.copy(retId = id)
@@ -373,7 +386,10 @@ class Interp(
             case e: Throwable => Absent
           }
           newVal match {
-            case ASTVal(s) => ModelHelper.checkSupported(s)
+            case ASTVal(s) =>
+              ModelHelper.checkSupported(s)
+              // use same span of the original AST
+              s.updateSpan(ast.start)
             case _ =>
           }
           (newVal, s1)
