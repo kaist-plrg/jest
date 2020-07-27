@@ -217,7 +217,6 @@ class Interp(
                         (map + (param -> arg), rest)
                       case (pair, _) => pair
                     }
-                    // upd
                     if (evaluationAlgorithmPattern.matches(fname)) astStack = ast :: astStack
                     rest match {
                       case Nil =>
