@@ -1,0 +1,63 @@
+package kr.ac.kaist.ires.phase
+
+import kr.ac.kaist.ires._
+import kr.ac.kaist.ires.model._
+import kr.ac.kaist.ires.mutator.SimpleExprReplacer
+import kr.ac.kaist.ires.generator.Generator
+import kr.ac.kaist.ires.util._
+import kr.ac.kaist.ires.util.Useful._
+
+// mutate phase
+case object Mutate extends PhaseObj[Script, MutateConfig, Script] {
+  val name = "mutate"
+  val help = "Mutate JavaScript files."
+
+  def apply(
+    script: Script,
+    iresConfig: IRESConfig,
+    config: MutateConfig
+  ): Script = {
+    implicit val debug = config.debug
+    logln(s"given: $script")
+    var iter = 0
+    var mutated = script
+    var keep = true
+    while (keep && iter < config.trial) {
+      mutated = Generator.mutate(mutated.toString, SimpleExprReplacer)
+      iter += 1
+      log(s"${iter}th iteration")
+      (Generator.getVisited(mutated), config.target) match {
+        case (Left(visited), Some(target)) if visited.getCondCovered contains target =>
+          logln(": PASS")
+          keep = false
+        case (Right(msg), _) => logln(s": $msg")
+        case _ => logln(": FAIL")
+      }
+      logln(s"script: $mutated")
+    }
+    mutated
+  }
+
+  def log(given: Any)(implicit debug: Boolean): Unit = if (debug) print(given)
+  def logln(given: Any)(implicit debug: Boolean): Unit = if (debug) println(given)
+
+  def defaultConfig: MutateConfig = MutateConfig()
+  val targetPattern = "(\\d+),(true|false)".r
+  val options: List[PhaseOption[MutateConfig]] = List(
+    ("debug", BoolOption(c => c.debug = true),
+      "print intermediate process."),
+    ("trial", NumOption((c, i) => c.trial = i),
+      "maximum number of trials for mutations (default: 100)."),
+    ("target", StrOption((c, s) => s match {
+      case targetPattern(uid, pass) => c.target = Some((uid.toInt, pass.toBoolean))
+      case _ =>
+    }), "set the target branch.")
+  )
+}
+
+// Mutate phase config
+case class MutateConfig(
+    var debug: Boolean = false,
+    var target: Option[(Int, Boolean)] = None,
+    var trial: Int = 100
+) extends Config

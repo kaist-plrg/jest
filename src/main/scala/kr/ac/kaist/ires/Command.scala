@@ -58,6 +58,9 @@ case object CmdSample extends CommandObj("sample", CmdBase >> Sample)
 // inject
 case object CmdInject extends CommandObj("inject", CmdBase >> Inject)
 
+// mutate
+case object CmdMutate extends CommandObj("mutate", CmdParse >> Mutate)
+
 // parse-ir
 case object CmdIRParse extends CommandObj("parse-ir", CmdBase >> IRParse) {
   override def display(pgm: ir.Program): Unit = println(ir.beautify(pgm))
