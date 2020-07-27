@@ -2,7 +2,7 @@ package kr.ac.kaist.ires.sampler
 
 import kr.ac.kaist.ires.model.{ Parser, NonRecursiveSampler, Script, Script0 }
 import kr.ac.kaist.ires.model.{ Expression, Expression0, AssignmentExpression }
-import kr.ac.kaist.ires.model.{ StatementList, Statement, Declaration }
+import kr.ac.kaist.ires.model.{ StatementList, Block, Statement, Declaration }
 import kr.ac.kaist.ires.model.{ IdentifierReference, BindingIdentifier, LabelIdentifier }
 import kr.ac.kaist.ires.sampler.ValueSampler._
 import kr.ac.kaist.ires.util.Useful._
@@ -44,6 +44,11 @@ object NRSampler extends NonRecursiveSampler with Sampler {
     Parser.parse(Parser.StatementList(List(false, false, false)), "; ;").get
   )
   override def StatementList(pYield: Boolean, pAwait: Boolean, pReturn: Boolean): Set[StatementList] = emptyStmtList
+  val emptyBlock = Set(
+    Parser.parse(Parser.Block(List(false, false, false)), "{ }").get,
+    Parser.parse(Parser.Block(List(false, false, false)), "{ ; }").get
+  )
+  override def Block(pYield: Boolean, pAwait: Boolean, pReturn: Boolean): Set[Block] = emptyBlock
   val emptyStmt = Set(Parser.parse(Parser.Statement(List(false, false, false)), ";").get)
   override def Statement(pYield: Boolean, pAwait: Boolean, pReturn: Boolean): Set[Statement] = emptyStmt
   val basicDeclaration = Set(Parser.parse(Parser.Declaration(List(false, false)), "let x;").get)
