@@ -43,6 +43,12 @@ object ValueSampler {
     "BigInt(0.1)" // RangeError
   )
 
+  // list of PrimaryExpression
+  val primExprs: List[PrimaryExpression] = values.map(value => {
+    val parser = Parser.PrimaryExpression(List(false, false))
+    Parser.parse(parser, value).getOrElse(Parser.parse(parser, s"($value)").get)
+  })
+
   // list of AssignmentExpression
   val assignExprs: List[AssignmentExpression] = values.map(value => {
     val parser = Parser.AssignmentExpression(List(false, false, false))

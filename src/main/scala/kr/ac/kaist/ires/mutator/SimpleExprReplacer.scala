@@ -12,7 +12,7 @@ object SimpleExprReplacer extends Mutator with Walker {
     if (rand.nextBoolean) choose(choose(List(exprList1, exprList2)))
     else super.walk(expr)
   }
-  lazy val primExprList = {
+  lazy val primExprList1 = {
     NRSampler.visited = scala.collection.immutable.Set()
     (
       NRSampler.PrimaryExpression(false, false) ++
@@ -21,8 +21,9 @@ object SimpleExprReplacer extends Mutator with Walker {
       NRSampler.PrimaryExpression(true, true)
     ).toList
   }
+  lazy val primExprList2 = ValueSampler.primExprs
   override def walk(expr: PrimaryExpression): PrimaryExpression = {
-    if (rand.nextBoolean) choose(primExprList)
+    if (rand.nextBoolean) choose(choose(List(primExprList1, primExprList2)))
     else super.walk(expr)
   }
   lazy val statementList = NRSampler.origStatement.toList
