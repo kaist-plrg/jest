@@ -86,7 +86,8 @@ object Generator {
       val target = totalVisited.getCondCovered(cond)
       val (uid, _) = cond
       val beautified = beautify(insts(uid), detail = false)
-      val replacer: Mutator = if (beautified contains "CONST_normal") ErrorExprReplacer.apply else SimpleExprReplacer.apply
+      //val replacer: Mutator = if (beautified contains "CONST_normal") ErrorExprReplacer.apply else SimpleExprReplacer.apply
+      val replacer: Mutator = SimpleExprReplacer.apply
 
       var trial = 0
       while (trial < MAX_TRIAL && !add(mutate(target, replacer))) trial += 1
