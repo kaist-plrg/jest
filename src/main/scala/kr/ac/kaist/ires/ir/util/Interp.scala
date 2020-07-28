@@ -23,9 +23,10 @@ class Interp(
 ) {
   var startTime: Long = 0
   var instCount = 0
+  var curInst: Inst = ISeq(Nil)
+
   var astStack: List[AST] = List()
   var targetAstStack: Option[List[AST]] = None
-
   val evaluationAlgorithmPattern = new Regex(".*[0-9]+.*Evaluation[0-9]+")
 
   def apply(inst: Inst) = interp(inst)
@@ -48,6 +49,7 @@ class Interp(
       case Some(value) => if (value == inst.uid) targetAstStack = Some(astStack)
       case None => ()
     }
+    curInst = inst
     if (instCount == 0) startTime = System.currentTimeMillis
     instCount = instCount + 1
     if (COVERAGE_MODE) visited += inst.uid
@@ -523,6 +525,8 @@ class Interp(
     case RefValueId(id) =>
       (st.context.locals.getOrElse(id, st.globals.getOrElse(id, Absent)), st)
     case RefValueProp(addr, value) =>
+      if (COVERAGE_MODE && addr == NamedAddr("PRIMITIVES"))
+        visited += (st.script, curInst.uid, value)
       (st.heap(addr, value), st)
     case RefValueString(str, value) => (stringOp(str, value), st)
   }

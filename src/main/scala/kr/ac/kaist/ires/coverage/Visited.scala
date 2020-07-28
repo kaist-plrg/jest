@@ -8,6 +8,8 @@ class Visited {
   def getInstCovered: Set[Int] = instCovered
   private var condCovered: Map[(Int, Boolean), String] = Map()
   def getCondCovered: Map[(Int, Boolean), String] = condCovered
+  private var kindCovered: Map[(Int, String), String] = Map()
+  def getKindCovered: Map[(Int, String), String] = kindCovered
 
   // get if the instruction is is-completion conditions
   def getIfIsCompletion(uid: Int): Option[IIf] = insts(uid) match {
@@ -25,7 +27,10 @@ class Visited {
   def +=(script: String, uid: Int, pass: Boolean): Unit = {
     val pair = (uid, pass)
     if (uid >= 0) {
-      condCovered += pair -> script
+      condCovered.get(pair) match {
+        case Some(origScript) if origScript.length <= script.length =>
+        case _ => condCovered += pair -> script
+      }
       getIfIsCompletion(uid) match {
         case Some(IIf(c, t, e)) =>
           condCovered += ((uid, !pass)) -> script
@@ -34,8 +39,16 @@ class Visited {
       }
     }
   }
-  def +=(script: String, uid: Int, value: Value): Unit = value match {
-    case Bool(b) if uid >= 0 => this += (script, uid, b)
+  def +=(script: String, uid: Int, kind: String): Unit = {
+    val pair = (uid, kind)
+    if (uid >= 0) kindCovered.get(pair) match {
+      case Some(origScript) if origScript.length <= script.length =>
+      case _ => kindCovered += pair -> script
+    }
+  }
+  def +=(script: String, uid: Int, value: Value): Unit = if (uid >= 0) value match {
+    case Bool(b) => this += (script, uid, b)
+    case Str(str) => this += (script, uid, str)
     case _ =>
   }
 
