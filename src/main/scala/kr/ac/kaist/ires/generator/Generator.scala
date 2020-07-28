@@ -22,6 +22,7 @@ object Generator {
     // log file
     mkdir(GEN_RES_DIR)
     val nf = getPrintWriter(s"$GEN_RES_DIR/log")
+    val nfSimple = getPrintWriter(s"$GEN_RES_DIR/simple_log")
 
     var total: List[Script] = Nil
     val totalVisited: Visited = new Visited
@@ -36,6 +37,12 @@ object Generator {
     def logln(any: Any, stdout: Boolean = true): Unit = {
       nf.println(any)
       if (stdout && debug) println(any)
+    }
+    def logSimple(any: Any): Unit = nfSimple.print(any.toString + "\t")
+    def loglnSimple(any: Any): Unit = nfSimple.println(any)
+    def logFlush(): Unit = {
+      nf.flush()
+      nfSimple.flush()
     }
 
     def add(script: Script): Boolean = {
@@ -67,6 +74,19 @@ object Generator {
       }
     }
 
+    lazy val st = System.currentTimeMillis
+    def logIterationSummary(k: Int): Unit = {
+      val coverage = totalVisited.getCoverage
+
+      logSimple(k + 1)
+      logSimple((System.currentTimeMillis - st) / 1000)
+      logSimple(coverage.instCovered.size)
+      logSimple(getPercent(coverage.instCovered, coverage.insts))
+      logSimple(coverage.condCovered.size)
+      logSimple(getPercent(coverage.condCovered, coverage.conds))
+      loglnSimple("")
+    }
+
     logln("Load Samples...")
     val samples = getSample
     logln(s"# of Samples: ${samples.size}")
@@ -90,17 +110,43 @@ object Generator {
         BranchExprReplacer
       }
 
+      logln(s"${k + 1}th iteration: $target")
+      logln(s"target instruction: $uid", false)
       var trial = 0
       while (trial < MAX_TRIAL && !add(mutate(target, replacer))) trial += 1
 
-      log(s"${k + 1}th iteration: ")
+      log("result: ")
       if (trial == MAX_TRIAL) {
         logln("FAILED")
         failed += cond
       } else {
         failed -= cond
         logln(totalVisited.simpleString)
+        logIterationSummary(k)
       }
+
+      if (((k + 1) % 100) == 0) {
+        val dir = s"$GEN_RES_DIR/iteration/${k + 1}"
+        mkdir(dir)
+        // dump coverage
+        totalVisited.getCoverage.dump(s"$dir/semantics")
+        // dump algorithm coverages
+        val algoCoverages = totalVisited.getAlgoCoverages
+        val algoSummaryContent = algoCoverages.map(cov => cov.summary).mkString(LINE_SEP)
+        dumpFile(algoSummaryContent, s"$dir/semantics/algoSummary")
+        algoCoverages.foreach(cov => cov.dump(s"$dir/semantics/algorithm"))
+        // dump failed
+        dumpJson(failed.toList.map {
+          case pair @ (uid, bool) => FailedCase(totalVisited.getCondCovered(pair), uid, bool)
+        }, s"$dir/failed.json")
+        //dump scripts
+        mkdir(s"$dir/scripts")
+        for ((script, k) <- total.zipWithIndex) {
+          dumpFile(script, s"$dir/scripts/$k.js")
+        }
+      }
+
+      logFlush()
     }
 
     val coverage = totalVisited.getCoverage
@@ -125,6 +171,7 @@ object Generator {
 
     // close PrintWriter for the log file
     nf.close()
+    nfSimple.close()
 
     total
   }
