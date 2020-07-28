@@ -104,8 +104,7 @@ object Generator {
       val script = totalVisited(target)
       val uid = target.uid
       val beautified = beautify(insts(uid), detail = false)
-      val replacer: Mutator =
-        if (beautified contains "CONST_normal") ErrorExprReplacer else SimpleExprReplacer
+      val replacer: Mutator = SimpleExprReplacer
 
       logln(s"${k + 1}th iteration: $script")
       logln(s"target instruction: $uid", false)
@@ -134,7 +133,7 @@ object Generator {
         algoCoverages.foreach(cov => cov.dump(s"$dir/semantics/algorithm"))
         // dump failed
         dumpJson(failed.toList.map {
-          case pair @ (uid, bool) => FailedCase(totalVisited.getCondCovered(pair), uid, bool)
+          case target => FailedCase(totalVisited(target), target.uid)
         }, s"$dir/failed.json")
         //dump scripts
         mkdir(s"$dir/scripts")
