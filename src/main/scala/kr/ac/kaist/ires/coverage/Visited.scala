@@ -4,12 +4,14 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Inst._
 
 class Visited {
-  private var instCovered: Set[Int] = Set()
-  def getInstCovered: Set[Int] = instCovered
-  private var condCovered: Map[(Int, Boolean), String] = Map()
-  def getCondCovered: Map[(Int, Boolean), String] = condCovered
-  private var kindCovered: Map[(Int, String), String] = Map()
-  def getKindCovered: Map[(Int, String), String] = kindCovered
+  private var _instCovered: Set[Int] = Set()
+  def instCovered: Set[Int] = _instCovered
+  private var _targetCovered: Map[Target, String] = Map()
+  def targetCovered: Map[Target, String] = _targetCovered
+
+  def get(target: Target): Option[String] = _targetCovered.get(target)
+  def apply(target: Target): String = _targetCovered(target)
+  def contains(target: Target): Boolean = _targetCovered contains target
 
   // get if the instruction is is-completion conditions
   def getIfIsCompletion(uid: Int): Option[IIf] = insts(uid) match {
@@ -21,50 +23,40 @@ class Visited {
   }
 
   // add/remove covered instructions
-  def +=(uid: Int): Unit = if (uid >= 0) instCovered += uid
+  def +=(uid: Int): Unit = if (uid >= 0) _instCovered += uid
 
   // add/remove covered conditions
-  def +=(script: String, uid: Int, pass: Boolean): Unit = {
-    val pair = (uid, pass)
+  def +=(script: String, target: Target): Unit = {
+    val uid = target.uid
     if (uid >= 0) {
-      condCovered.get(pair) match {
+      _targetCovered.get(target) match {
         case Some(origScript) if origScript.length <= script.length =>
-        case _ => condCovered += pair -> script
+        case _ => _targetCovered += target -> script
       }
-      getIfIsCompletion(uid) match {
-        case Some(IIf(c, t, e)) =>
-          condCovered += ((uid, !pass)) -> script
-          instCovered += e.uid
-        case None =>
+      (target, getIfIsCompletion(uid)) match {
+        case (CondTarget(_, pass), Some(IIf(c, t, e))) =>
+          _targetCovered += CondTarget(uid, !pass) -> script
+          _instCovered += e.uid
+        case _ =>
       }
-    }
-  }
-  def +=(script: String, uid: Int, kind: String): Unit = {
-    val pair = (uid, kind)
-    if (uid >= 0) kindCovered.get(pair) match {
-      case Some(origScript) if origScript.length <= script.length =>
-      case _ => kindCovered += pair -> script
     }
   }
   def +=(script: String, uid: Int, value: Value): Unit = if (uid >= 0) value match {
-    case Bool(b) => this += (script, uid, b)
-    case Str(str) => this += (script, uid, str)
+    case Bool(b) => this += (script, CondTarget(uid, b))
+    case Str(str) => this += (script, KindTarget(uid, str))
     case _ =>
   }
 
   // merge another Visited
   def ++=(that: Visited): Unit = {
-    this.instCovered ++= that.instCovered
-    for ((cond, script) <- that.condCovered) this.condCovered.get(cond) match {
-      case Some(orig) if script.length >= orig.length =>
-      case _ => condCovered += cond -> script
-    }
+    this._instCovered ++= that._instCovered
+    for ((target, script) <- that._targetCovered) this += (script, target)
   }
 
   // check subset relations
   def subsetOf(that: Visited): Boolean = (
-    (this.instCovered subsetOf that.instCovered) &&
-    (this.condCovered.keySet subsetOf that.condCovered.keySet)
+    (this._instCovered subsetOf that._instCovered) &&
+    (this._targetCovered.keySet subsetOf that._targetCovered.keySet)
   )
 
   // get coverage
@@ -73,12 +65,12 @@ class Visited {
     val uid = inst.uid
     val algo = instToAlgo(uid)
     val algoName = algo.name
-    val covered = this.instCovered.contains(uid)
+    val covered = this._instCovered.contains(uid)
     inst match {
       case (condInst: CondInst) =>
         val cond = beautify(condInst.cond)
-        val thenCovered = this.condCovered.get((uid, true))
-        val elseCovered = this.condCovered.get((uid, false))
+        val thenCovered = this._targetCovered.get(CondTarget(uid, true))
+        val elseCovered = this._targetCovered.get(CondTarget(uid, false))
         Cond(algoName, instStr, covered, cond, thenCovered, elseCovered)
       case _ => Base(algoName, instStr, covered)
     }
@@ -91,8 +83,11 @@ class Visited {
       .map {
         case (name, algoInsts) => {
           val uids = algoInsts.map(_.uid).toSet
-          val algoCovered = instCovered.filter(uids.contains(_))
-          val algoCondCovered = condCovered.keySet.filter(c => uids.contains(c._1))
+          val algoCovered = _instCovered.filter(uids.contains(_))
+          val algoCondCovered = _targetCovered.keySet.flatMap {
+            case CondTarget(uid, pass) if uids.contains(uid) => Some((uid, pass))
+            case _ => None
+          }
           AlgoCoverage(name, algoInsts, algoCovered, algoCondCovered)
         }
       }
@@ -100,7 +95,7 @@ class Visited {
       .sortBy(_.name)
 
   // simple String
-  def simpleString: String = s"(${instCovered.size}, ${condCovered.size})"
+  def simpleString: String = s"(${_instCovered.size}, ${_targetCovered.size})"
 }
 
 object Visited {

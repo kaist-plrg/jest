@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.{ Interp, CondInst, beautify }
 import kr.ac.kaist.ires.ir.Inst._
 import kr.ac.kaist.ires.mutator._
 import kr.ac.kaist.ires.model.{ Script, ModelHelper, Parser }
-import kr.ac.kaist.ires.coverage.Visited
+import kr.ac.kaist.ires.coverage._
 import kr.ac.kaist.ires.sampler._
 import kr.ac.kaist.ires.util.Useful._
 import kr.ac.kaist.ires.LINE_SEP
@@ -26,8 +26,8 @@ object Generator {
 
     var total: List[Script] = Nil
     val totalVisited: Visited = new Visited
-    var targets: Set[(Int, Boolean)] = Set()
-    var failed: Set[(Int, Boolean)] = Set()
+    var targets: Set[Target] = Set()
+    var failed: Set[Target] = Set()
     var generated: Set[String] = Set()
 
     def log(any: Any, stdout: Boolean = true): Unit = {
@@ -53,14 +53,12 @@ object Generator {
       getVisited(script) match {
         case Left(visited) if !(visited subsetOf totalVisited) =>
           logln(": PASS", false)
-          val visitedCond = visited.getCondCovered.keySet
-          val totalCond = totalVisited.getCondCovered.keySet
-          val newCondCovered = visitedCond -- totalCond
-          for (cond <- newCondCovered) {
-            val (x, b) = cond
-            val neg = (x, !b)
-            if (targets contains neg) targets -= neg
-            else targets += cond
+          val newCovered =
+            visited.targetCovered.keySet -- totalVisited.targetCovered.keySet
+          for (target <- newCovered) {
+            val others = target.others
+            if (others.forall(targets contains _)) targets --= others
+            else targets += target
           }
           totalVisited ++= visited
           total ::= script
@@ -102,25 +100,24 @@ object Generator {
     logln("Mutating samples...")
     for (k <- 0 until MAX_ITER) {
       val targetSeq = targets.toSeq
-      val cond = choose(targetSeq)
-      val target = totalVisited.getCondCovered(cond)
-      val (uid, _) = cond
-      val replacer: Mutator = {
-        BranchExprReplacer.target = Some(uid)
-        BranchExprReplacer
-      }
+      val target = choose(targetSeq)
+      val script = totalVisited(target)
+      val uid = target.uid
+      val beautified = beautify(insts(uid), detail = false)
+      val replacer: Mutator =
+        if (beautified contains "CONST_normal") ErrorExprReplacer else SimpleExprReplacer
 
-      logln(s"${k + 1}th iteration: $target")
+      logln(s"${k + 1}th iteration: $script")
       logln(s"target instruction: $uid", false)
       var trial = 0
-      while (trial < MAX_TRIAL && !add(mutate(target, replacer))) trial += 1
+      while (trial < MAX_TRIAL && !add(mutate(script, replacer))) trial += 1
 
       log("result: ")
       if (trial == MAX_TRIAL) {
         logln("FAILED")
-        failed += cond
+        failed += target
       } else {
-        failed -= cond
+        failed -= target
         logln(totalVisited.simpleString)
         logIterationSummary(k)
       }
@@ -166,7 +163,7 @@ object Generator {
 
     // dump failed
     dumpJson(failed.toList.map {
-      case pair @ (uid, bool) => FailedCase(totalVisited.getCondCovered(pair), uid, bool)
+      case target => FailedCase(totalVisited(target), target.uid)
     }, s"$GEN_RES_DIR/failed.json")
 
     // close PrintWriter for the log file

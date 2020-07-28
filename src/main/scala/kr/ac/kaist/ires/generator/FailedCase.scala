@@ -8,16 +8,16 @@ import spray.json._
 case class FailedCase(
     script: String,
     algorithm: String,
-    cond: String,
-    pass: String
+    uid: Int,
+    inst: String
 )
 
 object FailedCase extends DefaultJsonProtocol {
   implicit val FailedCaseFormat: JsonFormat[FailedCase] = jsonFormat4(FailedCase.apply)
-  def apply(script: String, uid: Int, pass: Boolean): FailedCase = {
+  def apply(script: String, uid: Int): FailedCase = {
     val algo = instToAlgo(uid)
     val algoName = algo.name
-    val cond = beautify(insts(uid).asInstanceOf[CondInst].cond)
-    FailedCase(script, algoName, cond, pass.toString)
+    val inst = beautify(insts(uid), detail = false)
+    FailedCase(script, algoName, uid, inst)
   }
 }
