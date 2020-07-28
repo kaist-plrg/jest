@@ -1,1 +1,1 @@
-Object . isFrozen ( ) ;
+Object . isFrozen ( 0 ) ;

@@ -1,1 +1,1 @@
-function await ( ... { ... x } ) { ; ; }
+for ( '' ;  ; '' ) ;

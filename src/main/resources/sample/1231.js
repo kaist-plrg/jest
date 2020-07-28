@@ -1,1 +1,1 @@
-isNaN ( ) ;
+isNaN ( 0 ) ;

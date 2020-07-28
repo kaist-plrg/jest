@@ -1,1 +1,1 @@
-Numbe . isFinite ( ) ;
+Numbe . isFinite ( 0 ) ;

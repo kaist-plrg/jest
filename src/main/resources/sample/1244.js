@@ -1,1 +1,1 @@
-decodeURIComponent ( ) ;
+decodeURIComponent ( 0 ) ;

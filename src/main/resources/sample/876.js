@@ -1,1 +1,1 @@
-Map . prototype . has . call ( 1 , 0 ) ;
+Map . prototype . has . call ( 1 , 0 , 0 ) ;

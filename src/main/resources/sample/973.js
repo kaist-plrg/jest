@@ -1,1 +1,1 @@
-Object . keys ( ) ;
+Object . keys ( 0 ) ;

@@ -1,1 +1,1 @@
-Object . create ( ) ;
+Object . create ( 0 ) ;

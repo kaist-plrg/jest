@@ -1,1 +1,1 @@
-Error ( ) ;
+Error ( 0 ) ;

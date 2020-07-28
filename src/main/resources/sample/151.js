@@ -1,1 +1,1 @@
-class x extends function *  (  ) {  } {  }
+for ( var x  ; '' , '' ; '' , '' ) ;

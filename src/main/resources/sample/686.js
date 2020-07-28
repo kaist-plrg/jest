@@ -1,1 +1,1 @@
-class x  { x (  ) { this . x0 = super [ 42 ] ; } } ;
+function x ( x0  , x1  ) {  } ;

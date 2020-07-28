@@ -1,1 +1,1 @@
-Symbol . prototype . valueOf . call ( 1 ) ;
+Symbol . prototype . valueOf . call ( 1 , 0 ) ;

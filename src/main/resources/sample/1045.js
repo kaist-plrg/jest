@@ -1,1 +1,1 @@
-Set . prototype . entries . call ( 1 ) ;
+Set . prototype . entries . call ( 1 , 0 ) ;

@@ -1,1 +1,1 @@
-for ( let x of '' ) ;
+async function x ( ... { x = '' } ) {  }

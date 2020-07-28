@@ -1,1 +1,1 @@
-debugger ;
+class x extends [  '' ] {  }

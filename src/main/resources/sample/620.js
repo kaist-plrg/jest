@@ -1,1 +1,1 @@
-for ( await in '' ) ;
+class x extends await { ; }

@@ -1,1 +1,1 @@
-Object . getOwnPropertyNames ( ) ;
+Object . getOwnPropertyNames ( 0 ) ;

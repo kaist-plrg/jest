@@ -1,1 +1,1 @@
-String . prototype . valueOf . call ( 1 , 0 ) ;
+String . prototype [ Symbol . iterator ] . call ( 1 ) ;

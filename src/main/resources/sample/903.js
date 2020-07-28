@@ -1,1 +1,1 @@
-Number . prototype . toExponential . call ( 1 , 0 , 0 ) ;
+Number . prototype . toFixed . call ( 1 ) ;

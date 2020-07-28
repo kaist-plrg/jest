@@ -1,1 +1,1 @@
-function x ( ... { x : x  } ) {  }
+async function * a (  ) { for await ( x of '' ) ; } ; a ( ) ;

@@ -1,1 +1,1 @@
-Object . prototype . propertyIsEnumerable . call ( 1 , 0 , 0 ) ;
+Object . prototype . toLocaleString . call ( 1 ) ;

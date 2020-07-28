@@ -1,1 +1,1 @@
-Object . prototype . isPrototypeOf . call ( 1 ) ;
+Object . prototype . isPrototypeOf . call ( 1 , 0 ) ;

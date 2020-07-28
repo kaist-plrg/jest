@@ -1,1 +1,1 @@
-var x = class  extends x { static x (  ) {  } } ;
+var x = { async x ( ... { } ) {  } } ;

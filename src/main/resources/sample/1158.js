@@ -1,1 +1,1 @@
-String . prototype [ Symbol . iterator ] . call ( 1 , 0 ) ;
+Symbol ( ) ;

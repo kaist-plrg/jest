@@ -1,1 +1,1 @@
-class x  { static x (  ) {  } }
+class x extends x `` { ; }

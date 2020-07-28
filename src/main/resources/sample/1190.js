@@ -1,1 +1,1 @@
-WeakSet ( ) ;
+WeakSet ( 0 ) ;

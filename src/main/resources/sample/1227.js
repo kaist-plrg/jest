@@ -1,1 +1,1 @@
-eval ( 0 , 0 ) ;
+isFinite ( ) ;

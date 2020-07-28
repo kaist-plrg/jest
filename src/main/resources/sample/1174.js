@@ -1,1 +1,1 @@
-WeakMap ( ) ;
+WeakMap ( 0 ) ;

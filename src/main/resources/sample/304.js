@@ -1,1 +1,1 @@
-var x = { * x ( ... [  ... x ] ) {  } } ;
+class x  { static x (  ) {  } }

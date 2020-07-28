@@ -1,1 +1,1 @@
-Number . prototype . toPrecision . call ( 1 , 0 ) ;
+Number . prototype . toPrecision . call ( 1 , 0 , 0 ) ;

@@ -1,1 +1,1 @@
-Symbol ( ) ;
+Symbol ( 0 ) ;

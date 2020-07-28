@@ -1,1 +1,1 @@
-let { } = x ;
+var x = void x ;

@@ -1,1 +1,1 @@
-class x extends [  x , , ... x ] { ; }
+let x  ;

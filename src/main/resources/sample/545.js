@@ -1,1 +1,1 @@
-x ;
+switch ( '' ) {  default : ; case x :  }

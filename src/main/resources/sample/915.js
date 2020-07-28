@@ -1,1 +1,1 @@
-Object ( ) ;
+Object ( 0 ) ;

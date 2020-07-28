@@ -1,1 +1,1 @@
-Promise . race ( ) ;
+Promise . race ( 0 ) ;

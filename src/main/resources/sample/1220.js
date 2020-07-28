@@ -1,1 +1,1 @@
-TypeError ( 0 ) ;
+TypeError ( 0 , 0 ) ;

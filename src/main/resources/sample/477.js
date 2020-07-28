@@ -1,1 +1,1 @@
-try {  } finally {  }
+class x extends function * x (  ) {  } {  }

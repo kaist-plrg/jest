@@ -1,1 +1,1 @@
-String . prototype . matchAll . call ( 1 ) ;
+String . prototype . matchAll . call ( 1 , 0 ) ;

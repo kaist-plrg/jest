@@ -1,1 +1,1 @@
-Boolean ( ) ;
+Boolean ( 0 ) ;

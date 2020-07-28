@@ -1,1 +1,1 @@
-while ( '' , '' ) ;
+class x extends `` { ; }

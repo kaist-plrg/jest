@@ -1,1 +1,1 @@
-var x = class   { static x (  ) {  } } ;
+var x = { async * x ( ... [ , x  ] ) {  } } ;

@@ -1,1 +1,1 @@
-String . prototype . substring . call ( 1 ) ;
+String . prototype . substring . call ( 1 , 0 ) ;

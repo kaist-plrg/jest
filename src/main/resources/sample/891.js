@@ -1,1 +1,1 @@
-Numbe . isFinite ( 0 , 0 ) ;
+Number . isInteger ( ) ;

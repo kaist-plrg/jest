@@ -1,1 +1,1 @@
-Promise . reject ( 0 , 0 ) ;
+Promise . resolve ( ) ;

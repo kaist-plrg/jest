@@ -1,1 +1,1 @@
-Array . prototype . some . call ( 1 , 0 , 0 ) ;
+Array . prototype . some . call ( 1 , 0 , 0 , 0 ) ;

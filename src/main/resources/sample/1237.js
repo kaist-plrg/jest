@@ -1,1 +1,1 @@
-parseInt ( ) ;
+parseInt ( 0 ) ;

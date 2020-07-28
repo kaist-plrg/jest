@@ -1,1 +1,1 @@
-Set ( 0 , 0 ) ;
+Set . prototype . add . call ( 1 ) ;

@@ -1,1 +1,1 @@
-BigInt ( 0 , 0 ) ;
+BigInt . asIntN ( ) ;

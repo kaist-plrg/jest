@@ -1,1 +1,1 @@
-throw x ;
+class x extends { } { ; }

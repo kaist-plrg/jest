@@ -1,1 +1,1 @@
-for ( '' ;  ;  ) ;
+async function x ( ... [   ] ) {  }

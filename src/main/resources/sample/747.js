@@ -1,1 +1,1 @@
-Array . prototype . flatMap . call ( 1 , 0 , 0 , 0 ) ;
+Array . prototype . forEach . call ( 1 ) ;

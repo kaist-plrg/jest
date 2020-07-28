@@ -1,1 +1,1 @@
-Object ( 0 , 0 ) ;
+Object . assign ( ) ;

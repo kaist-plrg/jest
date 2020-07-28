@@ -1,1 +1,1 @@
-Promise ( 0 , 0 ) ;
+Promise . all ( ) ;

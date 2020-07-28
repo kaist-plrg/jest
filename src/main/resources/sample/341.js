@@ -1,1 +1,1 @@
-for ( x ?. x [ '' , '' ] in '' ) ;
+try { ; } catch {  } finally {  }

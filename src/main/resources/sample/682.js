@@ -1,1 +1,1 @@
-for (  ;  ;  ) break ;
+LABEL : for (  ;  ;  ) break LABEL ;

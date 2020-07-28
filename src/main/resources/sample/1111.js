@@ -1,1 +1,1 @@
-String . prototype . padEnd . call ( 1 ) ;
+String . prototype . padEnd . call ( 1 , 0 ) ;

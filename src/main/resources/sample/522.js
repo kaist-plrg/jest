@@ -1,1 +1,1 @@
-function x ( ... { x = '' } ) {  }
+switch ( '' ) { case x :  case x :  }

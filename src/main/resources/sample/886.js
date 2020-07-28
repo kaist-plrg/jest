@@ -1,1 +1,1 @@
-Number ( ) ;
+Number ( 0 ) ;

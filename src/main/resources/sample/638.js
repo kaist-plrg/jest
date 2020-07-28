@@ -1,1 +1,1 @@
-var x = void x ;
+class x extends { x , x } { ; }

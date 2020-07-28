@@ -1,1 +1,1 @@
-decodeURI ( ) ;
+decodeURI ( 0 ) ;

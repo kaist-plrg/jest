@@ -1,1 +1,1 @@
-class x extends await {  }
+var x = x * x ;

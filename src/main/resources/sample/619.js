@@ -1,1 +1,1 @@
-let x  ;
+for ( await in '' ) ;

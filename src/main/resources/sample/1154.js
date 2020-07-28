@@ -1,1 +1,1 @@
-String . prototype . trimStart . call ( 1 , 0 ) ;
+String . prototype . valueOf . call ( 1 ) ;

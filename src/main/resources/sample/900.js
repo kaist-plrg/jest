@@ -1,1 +1,1 @@
-Number . isSafeInteger ( 0 , 0 ) ;
+Number . prototype . toExponential . call ( 1 ) ;

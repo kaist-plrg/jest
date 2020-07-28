@@ -1,1 +1,1 @@
-async function * a (  ) { return '' , '' ; } ; a ( ) ;
+class x extends `${ '' }` { ; }

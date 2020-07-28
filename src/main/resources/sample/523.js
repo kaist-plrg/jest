@@ -1,1 +1,1 @@
-class x extends this { ; }
+function x ( ... { x = '' } ) {  }

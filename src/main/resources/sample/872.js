@@ -1,1 +1,1 @@
-Map . prototype . get . call ( 1 ) ;
+Map . prototype . get . call ( 1 , 0 ) ;

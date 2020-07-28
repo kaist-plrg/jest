@@ -1,1 +1,1 @@
-Symbol . prototype [ Symbol . toPrimitive ] . call ( 1 , 0 ) ;
+Symbol . prototype [ Symbol . toPrimitive ] . call ( 1 , 0 , 0 ) ;

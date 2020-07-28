@@ -41,7 +41,6 @@ object NRSampler extends NonRecursiveSampler with Sampler {
   // hooking statements
   val emptyStmtList = Set(
     Parser.parse(Parser.StatementList(List(false, false, false)), ";").get,
-    Parser.parse(Parser.StatementList(List(false, false, false)), "; ;").get
   )
   override def StatementList(pYield: Boolean, pAwait: Boolean, pReturn: Boolean): Set[StatementList] = emptyStmtList
   val emptyBlock = Set(

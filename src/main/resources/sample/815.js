@@ -1,1 +1,1 @@
-BigInt ( ) ;
+BigInt ( 0 ) ;

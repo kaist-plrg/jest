@@ -1,1 +1,1 @@
-Promise . prototype . catch . call ( 1 , 0 , 0 ) ;
+Promise . prototype . finally . call ( 1 ) ;

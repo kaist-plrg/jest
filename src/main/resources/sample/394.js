@@ -1,1 +1,1 @@
-switch ( '' ) { case '' , '' :  }
+class x extends x ?. x [ '' ] {  }

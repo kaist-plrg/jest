@@ -1,1 +1,1 @@
-Object . preventExtensions ( ) ;
+Object . preventExtensions ( 0 ) ;

@@ -1,1 +1,1 @@
-class x extends class x  {  } { ; }
+class x extends class   {  } {  }

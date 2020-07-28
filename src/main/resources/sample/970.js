@@ -1,1 +1,1 @@
-Object . isSealed ( ) ;
+Object . isSealed ( 0 ) ;

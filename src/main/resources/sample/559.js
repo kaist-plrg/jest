@@ -1,1 +1,1 @@
-var x = async function (  ) {  } ;
+var x = { async x ( x  , ) {  } } ;

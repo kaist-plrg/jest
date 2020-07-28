@@ -1,1 +1,1 @@
-function * x ( ... await ) {  }
+class x extends x [ '' , '' ] { ; }

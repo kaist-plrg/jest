@@ -1,1 +1,1 @@
-var x = null ;
+var x = [  '' ] ;

@@ -1,1 +1,1 @@
-switch ( '' ) { case x :  default : ; case x :  }
+var x = [ , , ] ;

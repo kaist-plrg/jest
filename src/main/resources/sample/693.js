@@ -1,1 +1,1 @@
-let x0  , x1  ;
+delete x [ 42 ] ;

@@ -1,1 +1,1 @@
-LABEL : for (  ;  ;  ) continue LABEL ;
+for (  ;  ;  ) break ;

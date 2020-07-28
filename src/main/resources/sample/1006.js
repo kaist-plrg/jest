@@ -1,1 +1,1 @@
-Promise ( ) ;
+Promise ( 0 ) ;

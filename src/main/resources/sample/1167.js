@@ -1,1 +1,1 @@
-Symbol . prototype . toString . call ( 1 ) ;
+Symbol . prototype . toString . call ( 1 , 0 ) ;

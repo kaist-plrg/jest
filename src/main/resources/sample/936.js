@@ -1,1 +1,1 @@
-Object . entries ( 0 ) ;
+Object . entries ( 0 , 0 ) ;

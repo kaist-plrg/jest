@@ -1,1 +1,1 @@
-String . fromCharCode ( 0 , 0 ) ;
+String . fromCodePoint ( ) ;

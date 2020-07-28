@@ -1,1 +1,1 @@
-BigInt . asUintN ( 0 ) ;
+BigInt . asUintN ( 0 , 0 ) ;

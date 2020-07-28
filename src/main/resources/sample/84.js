@@ -1,1 +1,1 @@
-function * x (  ) {  }
+for ( var x of '' ) ;

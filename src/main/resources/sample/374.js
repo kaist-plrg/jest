@@ -1,1 +1,1 @@
-for ( let { } = x ;  ; '' ) ;
+function x ( x  , ) {  }

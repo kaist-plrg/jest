@@ -1,1 +1,1 @@
-String . prototype . startsWith . call ( 1 ) ;
+String . prototype . startsWith . call ( 1 , 0 ) ;

@@ -1,1 +1,1 @@
-parseFloat ( 0 , 0 ) ;
+parseInt ( ) ;

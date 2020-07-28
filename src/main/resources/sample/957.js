@@ -1,1 +1,1 @@
-Object . getPrototypeOf ( ) ;
+Object . getPrototypeOf ( 0 ) ;

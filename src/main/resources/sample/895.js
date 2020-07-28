@@ -1,1 +1,1 @@
-Number . isNaN ( ) ;
+Number . isNaN ( 0 ) ;

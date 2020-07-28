@@ -1,1 +1,1 @@
-class x extends true {  }
+try {  } finally {  }

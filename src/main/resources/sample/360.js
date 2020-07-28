@@ -1,1 +1,1 @@
-class x extends null {  }
+var x = class x extends x { static x (  ) {  } } ;

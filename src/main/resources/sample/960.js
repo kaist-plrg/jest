@@ -1,1 +1,1 @@
-Object . is ( ) ;
+Object . is ( 0 ) ;

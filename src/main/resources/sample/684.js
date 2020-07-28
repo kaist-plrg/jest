@@ -1,1 +1,1 @@
-class x extends 42 { constructor (  ) { super ( ) ; } } ;
+class x  { x (  ) { this . x0 = super . x ; } } ;

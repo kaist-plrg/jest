@@ -1,1 +1,1 @@
-RangeError ( ) ;
+RangeError ( 0 ) ;

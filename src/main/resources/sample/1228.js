@@ -1,1 +1,1 @@
-isFinite ( ) ;
+isFinite ( 0 ) ;

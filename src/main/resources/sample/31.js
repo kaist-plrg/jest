@@ -1,1 +1,1 @@
-switch ( '' , '' ) {  default :  case x :  }
+function await ( ... { ... x } ) {  }
