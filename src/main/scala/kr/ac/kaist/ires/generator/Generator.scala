@@ -85,10 +85,7 @@ object Generator {
       val cond = choose(targetSeq)
       val target = totalVisited.getCondCovered(cond)
       val (uid, _) = cond
-      val beautified = beautify(insts(uid), detail = false)
-      val replacer: Mutator = if (beautified contains "CONST_normal") {
-        ErrorExprReplacer
-      } else {
+      val replacer: Mutator = {
         BranchExprReplacer.target = Some(uid)
         BranchExprReplacer
       }
