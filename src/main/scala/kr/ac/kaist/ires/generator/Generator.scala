@@ -97,19 +97,14 @@ object Generator {
     logln("Running samples...")
     for (script <- samples) add(script)
 
-    // BranchExprReplacer.debug = debug
-    // BranchExprReplacer.nf = Some(nf)
     logln("Mutating samples...")
     for (k <- 0 until MAX_ITER) {
       val targetSeq = targets.toSeq
       val target = choose(targetSeq)
-      val scriptString = totalVisited(target)
+      val script = totalVisited(target)
       val uid = target.uid
       val beautified = beautify(insts(uid), detail = false)
       val replacer: Mutator = SimpleExprReplacer
-      val script = Parser.parse(Parser.Script(Nil), scriptString).get
-      // BranchExprReplacer.setTarget(uid, script)
-      // val replacer: Mutator = BranchExprReplacer
 
       logln(s"${k + 1}th iteration: $script")
       logln(s"target instruction: $uid", false)
@@ -188,11 +183,6 @@ object Generator {
   // mutate given JavaScript program
   def mutate(str: String, replacer: Mutator): Script = {
     val script = Parser.parse(Parser.Script(Nil), str).get
-    var mutated = script
-    do mutated = replacer(script) while (!ValidityChecker(mutated.toString))
-    mutated
-  }
-  def mutate(script: Script, replacer: Mutator): Script = {
     var mutated = script
     do mutated = replacer(script) while (!ValidityChecker(mutated.toString))
     mutated
