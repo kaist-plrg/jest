@@ -3,6 +3,7 @@ package kr.ac.kaist.ires
 import kr.ac.kaist.ires.phase._
 import kr.ac.kaist.ires.error._
 import kr.ac.kaist.ires.util._
+import kr.ac.kaist.ires.model.Algorithm
 
 object IRES {
   ////////////////////////////////////////////////////////////////////////////////
@@ -33,6 +34,9 @@ object IRES {
   ): Result = {
     // set the start time.
     val startTime = System.currentTimeMillis
+
+    // initialize Algorithm instructions unique ID
+    Algorithm.all
 
     // execute the command.
     val result: Result = runner(config)
