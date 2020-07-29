@@ -199,11 +199,6 @@ object Generator extends DefaultJsonProtocol {
     do mutated = mutator.mutate while (!ValidityChecker(mutated.toString))
     mutated
   }
-  def mutate(script: Script, mutators: List[Mutator]): Script = {
-    var mutated = script
-    do mutated = choose(mutators)(script) while (!ValidityChecker(mutated.toString))
-    mutated
-  }
 
   // get visited points in ECMAScript
   def getVisited(script: Script): Either[Visited, String] = try {
