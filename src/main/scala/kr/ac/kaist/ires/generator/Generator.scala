@@ -10,8 +10,9 @@ import kr.ac.kaist.ires.coverage._
 import kr.ac.kaist.ires.sampler._
 import kr.ac.kaist.ires.util.Useful._
 import kr.ac.kaist.ires.LINE_SEP
+import spray.json._
 
-object Generator {
+object Generator extends DefaultJsonProtocol {
   // max iteration
   val MAX_ITER = 100
   val MAX_TRIAL = 500
@@ -141,6 +142,8 @@ object Generator {
         mkdir(s"$dir/scripts")
         for ((script, k) <- total.zipWithIndex) {
           dumpFile(script, s"$dir/scripts/$k.js")
+        // dump generated
+        dumpJson(generated, s"$dir/generated.json")
         }
       }
 
@@ -166,6 +169,9 @@ object Generator {
     dumpJson(failed.toList.map {
       case target => FailedCase(totalVisited(target), target.uid)
     }, s"$GEN_RES_DIR/failed.json")
+
+    // dump generated
+    dumpJson(generated, s"$GEN_RES_DIR/generated.json")
 
     // close PrintWriter for the log file
     nf.close()
