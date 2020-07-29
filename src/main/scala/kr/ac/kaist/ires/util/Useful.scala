@@ -155,6 +155,9 @@ object Useful {
     f"$pass / $total ($ratio%.2f%%)"
   }
 
+  // existence check for files
+  def exists(filename: String): Boolean = new File(filename).exists
+
   // randomly choose an element in a list
   val rand = new Random
   def choose[T](seq: Seq[T]): T = seq(rand.nextInt(seq.length))
