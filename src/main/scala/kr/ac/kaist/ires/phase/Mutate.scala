@@ -3,7 +3,7 @@ package kr.ac.kaist.ires.phase
 import kr.ac.kaist.ires._
 import kr.ac.kaist.ires.coverage._
 import kr.ac.kaist.ires.model.Script
-import kr.ac.kaist.ires.mutator.SimpleExprReplacer
+import kr.ac.kaist.ires.mutator.SimpleReplacer
 import kr.ac.kaist.ires.generator.Generator
 import kr.ac.kaist.ires.util._
 import kr.ac.kaist.ires.util.Useful._
@@ -37,7 +37,7 @@ case object Mutate extends PhaseObj[Script, MutateConfig, Script] {
       logln(s"script: $mutated")
 
       do {
-        mutated = Generator.mutate(str, SimpleExprReplacer)
+        mutated = Generator.mutate(str, SimpleReplacer)
       } while (set contains mutated)
       set += mutated
       iter += 1

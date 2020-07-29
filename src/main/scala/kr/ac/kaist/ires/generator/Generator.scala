@@ -104,7 +104,7 @@ object Generator {
       val script = totalVisited(target)
       val uid = target.uid
       val beautified = beautify(insts(uid), detail = false)
-      val replacer: Mutator = SimpleExprReplacer
+      val replacer: Mutator = SimpleReplacer
 
       logln(s"${k + 1}th iteration: $script")
       logln(s"target instruction: $uid", false)

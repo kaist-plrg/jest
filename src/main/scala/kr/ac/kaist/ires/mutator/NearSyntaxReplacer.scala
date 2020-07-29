@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir.Interp
 import kr.ac.kaist.ires.sampler.ValidityChecker
 import java.io.PrintWriter
 
-object BranchExprReplacer extends Mutator with Walker {
+object NearSyntaxReplacer extends Mutator with Walker {
   def logln(any: Any, stdout: Boolean = true): Unit = {
     nf match {
       case Some(nf) =>
@@ -32,7 +32,7 @@ object BranchExprReplacer extends Mutator with Walker {
     targetAstStack match {
       case targetAst :: _ =>
         val scriptString = script.toString()
-        logln(s"[BranchExprReplacer] From ```$scriptString'''")
+        logln(s"[NearSyntaxReplacer] From ```$scriptString'''")
 
         prefix = scriptString.substring(0, targetAst.start)
         suffix = scriptString.substring(targetAst.end)
@@ -49,17 +49,17 @@ object BranchExprReplacer extends Mutator with Walker {
         var validity = false
         var parseResult = Parser.parse(Parser.Script(Nil), "")
         do {
-          val mutated = SimpleExprReplacer(targetAst)
+          val mutated = SimpleReplacer(targetAst)
           newScriptString = s"$prefix${mutated.toString()}$suffix"
           validity = ValidityChecker(newScriptString)
           if (validity) parseResult = Parser.parse(Parser.Script(Nil), newScriptString)
         } while (!validity || !parseResult.successful)
 
-        //logln(s"[BranchExprReplacer] From ```$script'''")
-        //logln(s"[BranchExprReplacer] To   ```$newScriptString'''")
+        //logln(s"[NearSyntaxReplacer] From ```$script'''")
+        //logln(s"[NearSyntaxReplacer] To   ```$newScriptString'''")
 
         parseResult.get
-      case Nil => SimpleExprReplacer(script)
+      case Nil => SimpleReplacer(script)
     }
   }
 }
