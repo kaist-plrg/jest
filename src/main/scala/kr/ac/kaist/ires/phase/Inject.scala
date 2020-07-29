@@ -25,13 +25,15 @@ case object Inject extends PhaseObj[Unit, InjectConfig, Unit] {
       filename = file.toString if jsFilter(filename)
       parseResult = parse(Script(Nil), fileReader(filename)) if parseResult.successful
       script = parseResult.get
-    } {
+    } try {
       val injected = Injector(script).result
       println(s"- $INJECTED_DIR/$name")
       println(s"  $script")
       println(s"  ====>")
       println(s"  $injected")
       dumpFile(injected, s"$INJECTED_DIR/$name")
+    } catch {
+      case e: Throwable => println(s"* Warning: $e")
     }
   }
 
