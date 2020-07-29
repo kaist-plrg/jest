@@ -101,12 +101,14 @@ object Generator {
     for (k <- 0 until MAX_ITER) {
       val targetSeq = targets.toSeq
       val target = choose(targetSeq)
-      val script = totalVisited(target)
+      val scriptString = totalVisited(target)
       val uid = target.uid
       val beautified = beautify(insts(uid), detail = false)
-      val replacer: Mutator = SimpleReplacer
+      val script = Parser.parse(Parser.Script(Nil), scriptString).get
+      val replacer = SimpleReplacer
+      // val replacer = NearSyntaxReplacer(uid, script)
 
-      logln(s"${k + 1}th iteration: $script")
+      logln(s"${k + 1}th iteration: $scriptString")
       logln(s"target instruction: $uid", false)
       var trial = 0
       while (trial < MAX_TRIAL && !add(mutate(script, replacer))) trial += 1
@@ -181,8 +183,7 @@ object Generator {
   } yield script).toList
 
   // mutate given JavaScript program
-  def mutate(str: String, replacer: Mutator): Script = {
-    val script = Parser.parse(Parser.Script(Nil), str).get
+  def mutate(script: Script, replacer: Mutator): Script = {
     var mutated = script
     do mutated = replacer(script) while (!ValidityChecker(mutated.toString))
     mutated

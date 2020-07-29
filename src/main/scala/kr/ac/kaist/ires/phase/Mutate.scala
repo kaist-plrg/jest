@@ -37,7 +37,7 @@ case object Mutate extends PhaseObj[Script, MutateConfig, Script] {
       logln(s"script: $mutated")
 
       do {
-        mutated = Generator.mutate(str, SimpleReplacer)
+        mutated = Generator.mutate(script, SimpleReplacer)
       } while (set contains mutated)
       set += mutated
       iter += 1

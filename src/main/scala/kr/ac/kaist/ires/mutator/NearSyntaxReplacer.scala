@@ -4,40 +4,41 @@ import kr.ac.kaist.ires.AST
 import kr.ac.kaist.ires.model._
 import kr.ac.kaist.ires.ir.Interp
 import kr.ac.kaist.ires.sampler.ValidityChecker
+import kr.ac.kaist.ires.util.Useful._
 import java.io.PrintWriter
 
-object NearSyntaxReplacer extends Mutator with Walker {
+case class NearSyntaxReplacer(
+    uid: Int,
+    script: Script,
+    filename: Option[String] = None,
+    debug: Boolean = false
+) extends Mutator with Walker {
+  // logging
+  val nf = filename.map(getPrintWriter(_))
   def logln(any: Any, stdout: Boolean = true): Unit = {
-    nf match {
-      case Some(nf) =>
-        nf.println(any)
-      case None => ()
-    }
+    nf.map(_.println(any))
     if (debug && stdout) println(any)
   }
 
-  var debug = false
-  var nf: Option[PrintWriter] = None
+  // update span
+  script.updateSpan(0)
 
-  var prefix = ""
-  var suffix = ""
-  var targetAstStack: List[AST] = List()
+  // set targets
+  val interp = new Interp(targetInst = Some(uid))
+  val initSt = ModelHelper.initState(script)
+  interp(initSt)
+  val targetAstStack: List[AST] = interp.targetAstStack.get
 
-  def setTarget(uid: Int, script: Script): Unit = {
-    script.updateSpan(0)
-    val interp = new Interp(targetInst = Some(uid))
-    val initSt = ModelHelper.initState(script)
-    interp(initSt)
-    targetAstStack = interp.targetAstStack.get
-    targetAstStack match {
-      case targetAst :: _ =>
-        val scriptString = script.toString()
-        logln(s"[NearSyntaxReplacer] From ```$scriptString'''")
+  // get prefix and suffix
+  val (prefix, suffix) = targetAstStack match {
+    case targetAst :: _ =>
+      val scriptString = script.toString()
+      logln(s"[NearSyntaxReplacer] From ```$scriptString'''")
 
-        prefix = scriptString.substring(0, targetAst.start)
-        suffix = scriptString.substring(targetAst.end)
-      case _ => ()
-    }
+      val prefix = scriptString.substring(0, targetAst.start)
+      val suffix = scriptString.substring(targetAst.end)
+      (prefix, suffix)
+    case _ => ("", "")
   }
 
   def apply(script: Script): Script = {
@@ -55,8 +56,8 @@ object NearSyntaxReplacer extends Mutator with Walker {
           if (validity) parseResult = Parser.parse(Parser.Script(Nil), newScriptString)
         } while (!validity || !parseResult.successful)
 
-        //logln(s"[NearSyntaxReplacer] From ```$script'''")
-        //logln(s"[NearSyntaxReplacer] To   ```$newScriptString'''")
+        logln(s"[NearSyntaxReplacer] From ```$script'''")
+        logln(s"[NearSyntaxReplacer] To   ```$newScriptString'''")
 
         parseResult.get
       case Nil => SimpleReplacer(script)
