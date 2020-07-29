@@ -77,3 +77,7 @@ project/metals.sbt
 
 # generate directory
 result/generated/
+
+# counts
+diff-test/counts
+diff-test/failed
