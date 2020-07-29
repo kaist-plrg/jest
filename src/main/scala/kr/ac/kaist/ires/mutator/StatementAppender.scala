@@ -13,7 +13,7 @@ object StatementAppender extends Mutator with Walker {
   val emptyStmt = Parser.parse(parser, ";").get
 
   lazy val stmts = NRSampler.getRawSample.toList.map(Parser.parse(parser, _).getOrElse(emptyStmt))
-  lazy val manualStmts = List("x()", "x(0)", "return", "return 0", "throw 0", "yield 0", "await y()", "yield * y()").map(Parser.parse(parser, _).get)
+  lazy val manualStmts = List("x()", "x(0)", "return", "return 0", "throw 0", "yield 0", "await x()", "yield * x()").map(Parser.parse(parser, _).get)
 
   override def walk(stmtList: StatementList): StatementList = {
     if (rand.nextBoolean) StatementList1(stmtList, choose(choose(List(stmts, manualStmts))), List(false, false))
