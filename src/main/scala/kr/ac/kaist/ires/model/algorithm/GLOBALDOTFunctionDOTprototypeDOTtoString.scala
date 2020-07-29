@@ -10,6 +10,7 @@ object GLOBALDOTFunctionDOTprototypeDOTtoString extends Algorithm {
   val func: Func = FixUIdWalker(parseFunc(""""GLOBAL.Function.prototype.toString" (this, argumentsList, NewTarget) => {
     let func = this
     if (|| (= (typeof func) "BoundFunctionExoticObject") (= (typeof func) "BuiltinFunctionObject")) {
+      ??? "TODO: toString of built-in functions"
       app __x0__ = (WrapCompletion "")
       return __x0__
     } else {}

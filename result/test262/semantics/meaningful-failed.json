@@ -141,18 +141,18 @@
   "cond": "(= iteratorRecord[\"Done\"] false)",
   "covered": true,
   "inst": "if (= iteratorRecord[\"Done\"] false) ... else ...",
-  "thenCovered": "assert . throws ( TypeError , function  (  ) { var [  { x  }  ] = [  ] ; } ) ;"
+  "thenCovered": "assert . throws ( TypeError , function  (  ) { let [  { x  }  ] = [  ] ; } ) ;"
 }, {
   "algo": "BindingElement1IteratorBindingInitialization1",
   "cond": "__x1__",
   "covered": true,
-  "elseCovered": "assert . throws ( TypeError , function  (  ) { var [  { x  }  ] = [  ] ; } ) ;",
+  "elseCovered": "assert . throws ( TypeError , function  (  ) { let [  { x  }  ] = [  ] ; } ) ;",
   "inst": "if __x1__ ... else ..."
 }, {
   "algo": "BindingElement1IteratorBindingInitialization1",
   "cond": "__x3__",
   "covered": true,
-  "elseCovered": "assert . throws ( TypeError , function  (  ) { var [  { x  }  ] = [  null ] ; } ) ;",
+  "elseCovered": "assert . throws ( TypeError , function  (  ) { let [  { x  }  ] = [  null ] ; } ) ;",
   "inst": "if __x3__ ... else ..."
 }, {
   "algo": "ArrayCreate",
@@ -600,7 +600,7 @@
   "algo": "DeclarativeEnvironmentRecordDOTSetMutableBinding",
   "cond": "(= absent envRec[\"SubMap\"][N])",
   "covered": true,
-  "elseCovered": "assert . throws ( ReferenceError , function  (  ) { E0 ; } ) ;",
+  "elseCovered": "assert . throws ( ReferenceError , function  (  ) { E1 ; } ) ;",
   "inst": "if (= absent envRec[\"SubMap\"][N]) ... else ..."
 }, {
   "algo": "DeclarativeEnvironmentRecordDOTSetMutableBinding",
@@ -636,7 +636,7 @@
   "cond": "(= iteratorRecord[\"Done\"] false)",
   "covered": true,
   "inst": "if (= iteratorRecord[\"Done\"] false) ... else ...",
-  "thenCovered": "var iter = function *  (  ) {  } ( ) ; iter . next ( ) ; let [ ,  ] = iter ;"
+  "thenCovered": "var iter = function *  (  ) {  } ( ) ; iter . next ( ) ; var [ ,  ] = iter ;"
 }, {
   "algo": "Elision1IteratorDestructuringAssignmentEvaluation0",
   "cond": "(= iteratorRecord[\"Done\"] false)",
@@ -1417,7 +1417,7 @@
   "cond": "(= GLOBAL_executionStack[(- GLOBAL_executionStack[\"length\"] 1i)] genContext)",
   "covered": true,
   "inst": "if (= GLOBAL_executionStack[(- GLOBAL_executionStack[\"length\"] 1i)] genContext) ... else ...",
-  "thenCovered": "var iter = function *  (  ) {  } ( ) ; iter . next ( ) ; let [ ,  ] = iter ;"
+  "thenCovered": "var iter = function *  (  ) {  } ( ) ; iter . next ( ) ; var [ ,  ] = iter ;"
 }, {
   "algo": "GeneratorYield",
   "cond": "(= GLOBAL_executionStack[(- GLOBAL_executionStack[\"length\"] 1i)] genContext)",
@@ -1741,13 +1741,13 @@
   "algo": "IsRegExp",
   "cond": "(! (= matcher undefined))",
   "covered": true,
-  "elseCovered": "var obj = { toString : function  (  ) { throw new Test262Error ( ) ; } } ; assert . throws ( Test262Error , function  (  ) { '' . endsWith ( obj ) ; } ) ;",
+  "elseCovered": "var obj = { toString : function  (  ) { throw new Test262Error ( ) ; } } ; assert . throws ( Test262Error , function  (  ) { '' . includes ( obj ) ; } ) ;",
   "inst": "if (! (= matcher undefined)) ... else ..."
 }, {
   "algo": "IsRegExp",
   "cond": "(! (= argument[\"RegExpMatcher\"] absent))",
   "covered": true,
-  "elseCovered": "var obj = { toString : function  (  ) { throw new Test262Error ( ) ; } } ; assert . throws ( Test262Error , function  (  ) { '' . endsWith ( obj ) ; } ) ;",
+  "elseCovered": "var obj = { toString : function  (  ) { throw new Test262Error ( ) ; } } ; assert . throws ( Test262Error , function  (  ) { '' . includes ( obj ) ; } ) ;",
   "inst": "if (! (= argument[\"RegExpMatcher\"] absent)) ... else ..."
 }, {
   "algo": "LabelledItem0TopLevelVarDeclaredNames0",
@@ -2150,13 +2150,13 @@
   "algo": "TryStatement1VarDeclaredNames0",
   "cond": "(< __x3__ __x2__[\"length\"])",
   "covered": true,
-  "elseCovered": "var objBak = Object ; try { Object = 12 ; } finally { Object = objBak ; }",
+  "elseCovered": "var numBak = Number ; try { Number = 12 ; } finally { Number = numBak ; }",
   "inst": "while (< __x3__ __x2__[\"length\"]) { ... }"
 }, {
   "algo": "TryStatement1VarScopedDeclarations0",
   "cond": "(< __x3__ __x2__[\"length\"])",
   "covered": true,
-  "elseCovered": "var objBak = Object ; try { Object = 12 ; } finally { Object = objBak ; }",
+  "elseCovered": "var numBak = Number ; try { Number = 12 ; } finally { Number = numBak ; }",
   "inst": "while (< __x3__ __x2__[\"length\"]) { ... }"
 }, {
   "algo": "TryStatement2VarDeclaredNames0",
