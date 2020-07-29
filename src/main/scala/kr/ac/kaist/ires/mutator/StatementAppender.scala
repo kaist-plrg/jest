@@ -5,8 +5,12 @@ import kr.ac.kaist.ires.sampler._
 import kr.ac.kaist.ires.util.Useful._
 import kr.ac.kaist.ires.AST
 
-object StatementAppender extends Mutator with Walker {
-  def apply(script: Script): Script = walk(script)
+case class StatementAppender(script: Script) extends Mutator {
+  val weight = NORMAL
+  def mutateOption: Option[Script] = Some(StatementAppender.walk(script))
+}
+
+object StatementAppender extends Walker {
   def apply(script: AST): AST = walk(script)
 
   val parser = Parser.StatementListItem(List(true, true, true))

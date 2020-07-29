@@ -5,9 +5,13 @@ import kr.ac.kaist.ires.sampler._
 import kr.ac.kaist.ires.util.Useful._
 import kr.ac.kaist.ires.AST
 
-object SimpleReplacer extends Mutator with Walker {
-  def apply(script: Script): Script = walk(script)
+case class SimpleReplacer(script: Script) extends Mutator with Walker {
+  val weight = IMPORTANT
+  def mutateOption: Option[Script] = Some(SimpleReplacer.walk(script))
+}
+object SimpleReplacer extends Walker {
   def apply(script: AST): AST = walk(script)
+
   lazy val exprList1 = NRSampler.origAssignmentExpression.toList
   lazy val exprList2 = ValueSampler.assignExprs
   override def walk(expr: AssignmentExpression): AssignmentExpression = {

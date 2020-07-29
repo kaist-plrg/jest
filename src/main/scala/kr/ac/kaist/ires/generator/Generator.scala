@@ -106,13 +106,16 @@ object Generator extends DefaultJsonProtocol {
       val uid = target.uid
       val beautified = beautify(insts(uid), detail = false)
       val script = Parser.parse(Parser.Script(Nil), scriptString).get
-      val replacer = SimpleReplacer
-      // val replacer = NearSyntaxReplacer(uid, script)
+      val mutators = List[Mutator](
+        NearSyntaxReplacer(uid, script),
+        StatementAppender(script),
+        SimpleReplacer(script)
+      )
 
       logln(s"${k + 1}th iteration: $scriptString")
       logln(s"target instruction: $uid", false)
       var trial = 0
-      while (trial < MAX_TRIAL && !add(mutate(script, replacer))) trial += 1
+      while (trial < MAX_TRIAL && !add(mutate(mutators))) trial += 1
 
       log("result: ")
       if (trial == MAX_TRIAL) {
@@ -189,9 +192,11 @@ object Generator extends DefaultJsonProtocol {
   } yield script).toList
 
   // mutate given JavaScript program
-  def mutate(script: Script, replacer: Mutator): Script = {
-    var mutated = script
-    do mutated = replacer(script) while (!ValidityChecker(mutated.toString))
+  def mutate(mutators: List[Mutator]): Script =
+    mutate(weightedChoose(mutators.map(m => (m, m.weight))))
+  def mutate(mutator: Mutator): Script = {
+    var mutated = mutator.script
+    do mutated = mutator.mutate while (!ValidityChecker(mutated.toString))
     mutated
   }
   def mutate(script: Script, mutators: List[Mutator]): Script = {

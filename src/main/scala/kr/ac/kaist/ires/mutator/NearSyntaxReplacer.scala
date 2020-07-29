@@ -13,6 +13,9 @@ case class NearSyntaxReplacer(
     filename: Option[String] = None,
     debug: Boolean = false
 ) extends Mutator with Walker {
+  // script string
+  val scriptString = script.toString
+
   // logging
   val nf = filename.map(getPrintWriter(_))
   def logln(any: Any, stdout: Boolean = true): Unit = {
@@ -29,38 +32,38 @@ case class NearSyntaxReplacer(
   interp(initSt)
   val targetAstStack: List[AST] = interp.targetAstStack.get
 
+  // weight of random choice
+  val weight = if (targetAstStack.length > 0) IMPORTANT else 0
+
   // get prefix and suffix
-  val (prefix, suffix) = targetAstStack match {
-    case targetAst :: _ =>
+  val posOpt = targetAstStack match {
+    case targetAst :: _ if targetAst.start != -1 =>
       val scriptString = script.toString()
       logln(s"[NearSyntaxReplacer] From ```$scriptString'''")
-
       val prefix = scriptString.substring(0, targetAst.start)
       val suffix = scriptString.substring(targetAst.end)
-      (prefix, suffix)
-    case _ => ("", "")
+      Some((prefix, suffix))
+    case _ => None
   }
 
-  def apply(script: Script): Script = {
-    targetAstStack match {
-      case targetAst :: _ =>
-        val scriptString = script.toString()
+  // optional mutation
+  val dummyResult = Parser.parse(Parser.Script(Nil), "")
+  def mutateOption: Option[Script] = (targetAstStack, posOpt) match {
+    case (targetAst :: _, Some((prefix, suffix))) =>
+      var newScriptString = scriptString
+      var validity = false
+      var parseResult = dummyResult
 
-        var newScriptString = scriptString
-        var validity = false
-        var parseResult = Parser.parse(Parser.Script(Nil), "")
-        do {
-          val mutated = SimpleReplacer(targetAst)
-          newScriptString = s"$prefix${mutated.toString()}$suffix"
-          validity = ValidityChecker(newScriptString)
-          if (validity) parseResult = Parser.parse(Parser.Script(Nil), newScriptString)
-        } while (!validity || !parseResult.successful)
+      do {
+        val mutated = SimpleReplacer(targetAst)
+        newScriptString = s"$prefix${mutated.toString()}$suffix"
+        validity = ValidityChecker(newScriptString)
+        if (validity) parseResult = Parser.parse(Parser.Script(Nil), newScriptString)
+      } while (!validity || !parseResult.successful)
 
-        logln(s"[NearSyntaxReplacer] From ```$script'''")
-        logln(s"[NearSyntaxReplacer] To   ```$newScriptString'''")
+      logln(s"[NearSyntaxReplacer] To   ```$newScriptString'''")
 
-        parseResult.get
-      case Nil => SimpleReplacer(script)
-    }
+      Some(parseResult.get)
+    case _ => None
   }
 }
