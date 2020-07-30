@@ -34,24 +34,28 @@ case class NearSyntaxReplacer(
   interp(initSt)
   val targetAstStack: List[AST] = interp.targetAstStack.get
 
-  // weight of random choice
-  val weight = if (targetAstStack.length > 0) IMPORTANT else 0
-
-  // get prefix and suffix
-  val posOpt = targetAstStack match {
-    case targetAst :: _ if targetAst.start != -1 =>
-      val scriptString = script.toString()
-      logln(s"[NearSyntaxReplacer] From ```$scriptString'''")
-      val prefix = scriptString.substring(0, targetAst.start)
-      val suffix = scriptString.substring(targetAst.end)
-      Some((prefix, suffix))
+  // get valid nearest AST
+  def getNear: Option[AST] = targetAstStack match {
+    case targetAst :: _ if targetAst.start != -1 => Some(targetAst)
     case _ => None
   }
 
+  // weight of random choice
+  val weight = if (getNear.isDefined) IMPORTANT else 0
+
+  // get prefix and suffix
+  val posOpt = getNear.map(targetAst => {
+    val scriptString = script.toString()
+    logln(s"[NearSyntaxReplacer] From ```$scriptString'''")
+    val prefix = scriptString.substring(0, targetAst.start)
+    val suffix = scriptString.substring(targetAst.end)
+    (prefix, suffix)
+  })
+
   // optional mutation
   val dummyResult = Parser.parse(Parser.Script(Nil), "")
-  def mutateOption: Option[Script] = (targetAstStack, posOpt) match {
-    case (targetAst :: _, Some((prefix, suffix))) =>
+  def mutateOption: Option[Script] = (getNear, posOpt) match {
+    case (Some(targetAst), Some((prefix, suffix))) =>
       var newScriptString = scriptString
       var validity = false
       var parseResult = dummyResult
