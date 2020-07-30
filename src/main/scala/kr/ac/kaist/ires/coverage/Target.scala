@@ -9,6 +9,10 @@ trait Target {
       case None => Set()
     }
   }
+  override def toString: String = this match {
+    case CondTarget(uid, pass) => s"""$uid,${if (pass) "#t" else "#f"}"""
+    case KindTarget(uid, name) => s"""$uid,$name"""
+  }
 }
 object Target {
   // TODO add objects / environments

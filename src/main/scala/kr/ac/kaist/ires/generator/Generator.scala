@@ -14,8 +14,10 @@ import spray.json._
 
 object Generator extends DefaultJsonProtocol {
   // max iteration
-  val MAX_ITER = 5000
+  val MAX_ITER = 100
   val MAX_TRIAL = 500
+  var recentMutator: Option[Mutator] = None
+  var recentNewCovered: Set[Target] = Set()
 
   // generate JavaScript programs
   def generate: List[Script] = generate(false)
@@ -33,11 +35,11 @@ object Generator extends DefaultJsonProtocol {
 
     def log(any: Any, stdout: Boolean = true): Unit = {
       nf.print(any)
-      if (debug) print(any)
+      if (debug || stdout) print(any)
     }
     def logln(any: Any, stdout: Boolean = true): Unit = {
       nf.println(any)
-      if (debug) println(any)
+      if (debug || stdout) println(any)
     }
     def logSimple(any: Any): Unit = nfSimple.print(any.toString + "\t")
     def loglnSimple(any: Any): Unit = nfSimple.println(any)
@@ -56,6 +58,7 @@ object Generator extends DefaultJsonProtocol {
           logln(": PASS", false)
           val newCovered =
             visited.targetCovered.keySet -- totalVisited.targetCovered.keySet
+          recentNewCovered = newCovered
           for (target <- newCovered) {
             val others = target.others
             if (others.forall(targets contains _)) targets --= others
@@ -83,6 +86,8 @@ object Generator extends DefaultJsonProtocol {
       logSimple(getPercent(coverage.instCovered, coverage.insts))
       logSimple(coverage.condCovered.size)
       logSimple(getPercent(coverage.condCovered, coverage.conds))
+      logSimple(recentMutator.fold("Nothing")(_.name))
+      logSimple(recentNewCovered.mkString(";"))
       loglnSimple("")
     }
 
@@ -196,6 +201,7 @@ object Generator extends DefaultJsonProtocol {
   def mutate(mutators: List[Mutator]): Script =
     mutate(weightedChoose(mutators.map(m => (m, m.weight))))
   def mutate(mutator: Mutator): Script = {
+    recentMutator = Some(mutator)
     var mutated = mutator.script
     do mutated = mutator.mutate while (!ValidityChecker(mutated.toString))
     mutated
