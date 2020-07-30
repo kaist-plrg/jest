@@ -149,8 +149,11 @@ object Useful {
 
   // get percent string
   def getPercent[T](passSet: Iterable[T], totalSet: Iterable[T]): String = {
-    val total = totalSet.size
     val pass = passSet.size
+    val total = totalSet.size
+    getPercent(pass, total)
+  }
+  def getPercent(pass: Int, total: Int): String = {
     val ratio = pass.toDouble / total * 100
     f"$pass / $total ($ratio%.2f%%)"
   }
