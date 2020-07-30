@@ -64,7 +64,7 @@ object NRSampler extends NonRecursiveSampler with Sampler {
       .toList
       .map(rawSample =>
         if (ValidityChecker(rawSample)) rawSample
-        else s"async function * a () { ${rawSample} }; a()")
+        else s"async function * x () { ${rawSample} }; x ( )")
       .filter(ValidityChecker(_))
       .map(Parser.parse(parser, _).getOrElse(Script0(None, Nil)))
   }
