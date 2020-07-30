@@ -1,1 +1,1 @@
-Map . prototype . entries . call ( 1 , 0 ) ;
+Object . fromEntries ( 0 ) ;

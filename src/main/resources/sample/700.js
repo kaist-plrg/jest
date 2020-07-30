@@ -1,1 +1,1 @@
-Array . isArray ( ) ;
+Array . of ( ) ;

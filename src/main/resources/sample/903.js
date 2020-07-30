@@ -1,1 +1,1 @@
-Number . prototype . toPrecision . call ( 1 , 0 ) ;
+Object . prototype . toString . call ( 1 ) ;

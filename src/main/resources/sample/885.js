@@ -1,1 +1,1 @@
-Numbe . isFinite ( 0 ) ;
+Object . preventExtensions ( ) ;

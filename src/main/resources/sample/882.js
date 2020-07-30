@@ -1,1 +1,1 @@
-Number ( 0 ) ;
+Object . isSealed ( 0 ) ;

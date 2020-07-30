@@ -1,1 +1,1 @@
-Map . prototype . clear . call ( 1 ) ;
+Object . defineProperty ( 0 , 0 , 0 ) ;

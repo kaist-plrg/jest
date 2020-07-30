@@ -1,1 +1,1 @@
-Object . getPrototypeOf ( 0 , 0 ) ;
+String . prototype . concat . call ( 1 , 0 ) ;

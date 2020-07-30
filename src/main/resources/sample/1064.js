@@ -1,1 +1,1 @@
-String . prototype . charAt . call ( 1 ) ;
+decodeURI ( 0 ) ;

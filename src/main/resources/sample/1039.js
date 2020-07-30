@@ -1,1 +1,1 @@
-Set . prototype . delete . call ( 1 , 0 , 0 ) ;
+Error . prototype . toString . call ( 1 ) ;

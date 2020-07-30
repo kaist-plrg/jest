@@ -1,1 +1,1 @@
-Promise . prototype . catch . call ( 1 , 0 , 0 ) ;
+WeakMap . prototype . delete . call ( 1 , 0 ) ;

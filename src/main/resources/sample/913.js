@@ -1,1 +1,1 @@
-Object . assign ( ) ;
+Promise . reject ( ) ;

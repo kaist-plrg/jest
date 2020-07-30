@@ -1,1 +1,1 @@
-Object . prototype . hasOwnProperty . call ( 1 ) ;
+String . prototype . repeat . call ( 1 , 0 ) ;

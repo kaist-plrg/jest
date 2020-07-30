@@ -1,1 +1,1 @@
-Object . getOwnPropertyDescriptor ( 0 , 0 ) ;
+String . fromCharCode ( 0 ) ;

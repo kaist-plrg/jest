@@ -1,1 +1,1 @@
-Object . freeze ( 0 ) ;
+Set . prototype . forEach . call ( 1 , 0 , 0 ) ;

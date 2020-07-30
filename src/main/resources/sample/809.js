@@ -1,1 +1,1 @@
-var x = Array . prototype [ Symbol . unscopables ] ;
+Map . prototype . delete . call ( 1 , 0 ) ;

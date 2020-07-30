@@ -1,1 +1,1 @@
-Promise . reject ( 0 , 0 ) ;
+Symbol . prototype . valueOf . call ( 1 ) ;

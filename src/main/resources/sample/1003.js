@@ -1,1 +1,1 @@
-Promise ( 0 , 0 ) ;
+String . prototype . toString . call ( 1 ) ;

@@ -1,1 +1,1 @@
-Boolean ( 0 , 0 ) ;
+Number . isInteger ( 0 ) ;

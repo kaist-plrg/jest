@@ -1,1 +1,1 @@
-Object . isFrozen ( ) ;
+String . prototype . indexOf . call ( 1 , 0 ) ;

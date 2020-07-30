@@ -1,1 +1,1 @@
-Object . is ( 0 ) ;
+String . prototype . endsWith . call ( 1 , 0 ) ;

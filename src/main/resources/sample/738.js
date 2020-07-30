@@ -1,1 +1,1 @@
-Array . prototype . flat . call ( 1 , 0 , 0 ) ;
+Array . prototype . join . call ( 1 ) ;

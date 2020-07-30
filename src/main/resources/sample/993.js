@@ -1,1 +1,1 @@
-Object . prototype . toLocaleString . call ( 1 ) ;
+String . prototype . split . call ( 1 ) ;

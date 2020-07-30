@@ -1,1 +1,1 @@
-Object . values ( 0 , 0 ) ;
+String . prototype . repeat . call ( 1 ) ;

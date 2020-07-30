@@ -1,1 +1,1 @@
-Set . prototype . clear . call ( 1 , 0 ) ;
+WeakSet . prototype . has . call ( 1 , 0 ) ;

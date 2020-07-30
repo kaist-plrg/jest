@@ -1,1 +1,0 @@
-String . prototype . match . call ( 1 ) ;

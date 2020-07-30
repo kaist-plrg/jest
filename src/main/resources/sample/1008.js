@@ -1,1 +1,1 @@
-Promise . allSettled ( 0 ) ;
+String . prototype [ Symbol . iterator ] . call ( 1 ) ;

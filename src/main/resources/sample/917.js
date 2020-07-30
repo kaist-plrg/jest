@@ -1,1 +1,1 @@
-Object . create ( ) ;
+Promise . prototype . catch . call ( 1 ) ;

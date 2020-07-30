@@ -1,1 +1,1 @@
-Array . prototype . unshift . call ( 1 ) ;
+Function . prototype [ Symbol . hasInstance ] . call ( 1 , 0 ) ;

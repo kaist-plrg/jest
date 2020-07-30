@@ -1,1 +1,1 @@
-Array . prototype . keys . call ( 1 , 0 ) ;
+Array . prototype . slice . call ( 1 , 0 ) ;

@@ -1,1 +1,1 @@
-Array . prototype . values . call ( 1 , 0 ) ;
+Map . prototype . delete . call ( 1 ) ;

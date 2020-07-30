@@ -1,1 +1,1 @@
-Map . prototype . forEach . call ( 1 , 0 , 0 ) ;
+Object . getOwnPropertyDescriptor ( 0 , 0 ) ;

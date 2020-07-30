@@ -1,1 +1,1 @@
-String . fromCharCode ( ) ;
+isFinite ( ) ;

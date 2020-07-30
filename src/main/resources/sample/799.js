@@ -1,1 +1,1 @@
-Array . prototype . toLocaleString . call ( 1 , 0 ) ;
+Function . prototype . call . call ( 1 ) ;

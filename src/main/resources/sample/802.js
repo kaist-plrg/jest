@@ -1,1 +1,1 @@
-Array . prototype . toString . call ( 1 ) ;
+Function . prototype . toString . call ( 1 ) ;

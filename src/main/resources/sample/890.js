@@ -1,1 +1,1 @@
-Number . isNaN ( ) ;
+Object . setPrototypeOf ( 0 ) ;

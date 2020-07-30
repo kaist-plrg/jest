@@ -1,1 +1,1 @@
-Object . getOwnPropertyDescriptors ( ) ;
+String . fromCodePoint ( 0 ) ;

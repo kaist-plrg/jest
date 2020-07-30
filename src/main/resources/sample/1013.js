@@ -1,1 +1,1 @@
-Promise . reject ( ) ;
+Symbol . keyFor ( 0 ) ;

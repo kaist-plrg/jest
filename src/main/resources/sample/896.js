@@ -1,1 +1,1 @@
-Number . prototype . toExponential . call ( 1 ) ;
+Object . prototype . isPrototypeOf . call ( 1 ) ;

@@ -1,1 +1,1 @@
-Promise . allSettled ( ) ;
+String . prototype . valueOf . call ( 1 ) ;

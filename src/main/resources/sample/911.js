@@ -1,1 +1,1 @@
-Object ( 0 ) ;
+Promise . race ( ) ;

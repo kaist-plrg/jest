@@ -1,1 +1,1 @@
-Number . isSafeInteger ( 0 ) ;
+Object . prototype . hasOwnProperty . call ( 1 ) ;

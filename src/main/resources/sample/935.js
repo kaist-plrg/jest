@@ -1,1 +1,1 @@
-Object . freeze ( 0 , 0 ) ;
+Set . prototype . has . call ( 1 ) ;

@@ -1,1 +1,1 @@
-Map . prototype . keys . call ( 1 , 0 ) ;
+Object . is ( ) ;

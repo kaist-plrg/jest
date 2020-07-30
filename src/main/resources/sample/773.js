@@ -1,1 +1,1 @@
-Array . prototype . reduce . call ( 1 ) ;
+Array . prototype . unshift . call ( 1 , 0 ) ;

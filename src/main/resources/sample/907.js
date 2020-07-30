@@ -1,1 +1,1 @@
-Number . prototype . toString . call ( 1 , 0 , 0 ) ;
+Promise . all ( ) ;

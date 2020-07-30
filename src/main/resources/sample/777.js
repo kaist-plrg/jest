@@ -1,1 +1,1 @@
-Array . prototype . reduceRight . call ( 1 ) ;
+BigInt ( 0 ) ;

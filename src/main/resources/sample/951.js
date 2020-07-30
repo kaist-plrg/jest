@@ -1,1 +1,1 @@
-Object . getOwnPropertySymbols ( 0 , 0 ) ;
+String . prototype . codePointAt . call ( 1 ) ;

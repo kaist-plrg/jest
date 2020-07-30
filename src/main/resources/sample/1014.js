@@ -1,1 +1,1 @@
-Promise . reject ( 0 ) ;
+Symbol . prototype . toString . call ( 1 ) ;

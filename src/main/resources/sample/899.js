@@ -1,1 +1,1 @@
-Number . prototype . toFixed . call ( 1 ) ;
+Object . prototype . propertyIsEnumerable . call ( 1 , 0 ) ;

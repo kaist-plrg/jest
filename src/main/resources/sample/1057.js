@@ -1,1 +1,1 @@
-String . fromCodePoint ( ) ;
+isNaN ( 0 ) ;

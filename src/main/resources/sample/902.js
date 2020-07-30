@@ -1,1 +1,1 @@
-Number . prototype . toPrecision . call ( 1 ) ;
+Object . prototype . toLocaleString . call ( 1 , 0 , 0 ) ;

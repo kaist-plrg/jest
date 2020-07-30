@@ -1,1 +1,1 @@
-Array . prototype . push . call ( 1 , 0 ) ;
+Array . prototype . toString . call ( 1 ) ;

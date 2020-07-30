@@ -1,1 +1,1 @@
-Boolean . prototype . toString . call ( 1 , 0 ) ;
+Number . isNaN ( 0 ) ;

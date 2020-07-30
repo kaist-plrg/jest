@@ -1,1 +1,1 @@
-Numbe . isFinite ( ) ;
+Object . keys ( 0 ) ;

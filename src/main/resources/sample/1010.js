@@ -1,1 +1,1 @@
-Promise . race ( ) ;
+Symbol . for ( ) ;

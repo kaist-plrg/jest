@@ -1,1 +1,1 @@
-Promise . resolve ( ) ;
+Symbol . prototype [ Symbol . toPrimitive ] . call ( 1 ) ;

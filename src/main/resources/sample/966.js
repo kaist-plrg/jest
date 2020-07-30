@@ -1,1 +1,1 @@
-Object . isSealed ( 0 ) ;
+String . prototype . lastIndexOf . call ( 1 , 0 , 0 ) ;

@@ -1,1 +1,1 @@
-Object . getPrototypeOf ( ) ;
+String . prototype . codePointAt . call ( 1 , 0 ) ;

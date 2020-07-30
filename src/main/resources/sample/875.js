@@ -1,1 +1,1 @@
-Map . prototype . set . call ( 1 ) ;
+Object . is ( 0 ) ;

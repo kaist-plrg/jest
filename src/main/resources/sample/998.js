@@ -1,1 +1,1 @@
-Object . prototype . toString . call ( 1 , 0 ) ;
+String . prototype . startsWith . call ( 1 , 0 , 0 ) ;

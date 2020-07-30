@@ -1,1 +1,1 @@
-Promise . all ( 0 ) ;
+String . prototype . trimEnd . call ( 1 ) ;

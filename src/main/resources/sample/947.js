@@ -1,1 +1,1 @@
-Object . getOwnPropertyNames ( 0 ) ;
+String . prototype . charAt . call ( 1 ) ;

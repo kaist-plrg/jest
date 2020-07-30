@@ -1,1 +1,1 @@
-Object . prototype . valueOf . call ( 1 , 0 ) ;
+String . prototype . substring . call ( 1 , 0 ) ;

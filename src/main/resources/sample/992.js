@@ -1,1 +1,1 @@
-Object . prototype . propertyIsEnumerable . call ( 1 , 0 , 0 ) ;
+String . prototype . slice . call ( 1 , 0 , 0 ) ;

@@ -1,1 +1,1 @@
-Object . entries ( 0 ) ;
+Set . prototype . entries . call ( 1 ) ;

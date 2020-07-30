@@ -1,1 +1,1 @@
-Object . keys ( ) ;
+String . prototype . localeCompare . call ( 1 , 0 ) ;

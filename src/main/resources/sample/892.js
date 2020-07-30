@@ -1,1 +1,1 @@
-Number . isNaN ( 0 , 0 ) ;
+Object . values ( ) ;

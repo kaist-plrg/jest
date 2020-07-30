@@ -1,1 +1,1 @@
-Promise . resolve ( 0 , 0 ) ;
+WeakMap ( ) ;

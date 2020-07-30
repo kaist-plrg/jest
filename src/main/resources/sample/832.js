@@ -1,1 +1,1 @@
-Boolean . prototype . valueOf . call ( 1 , 0 ) ;
+Number . isSafeInteger ( 0 ) ;

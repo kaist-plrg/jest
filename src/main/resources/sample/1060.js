@@ -1,1 +1,1 @@
-String . raw ( ) ;
+parseInt ( ) ;

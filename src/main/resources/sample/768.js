@@ -1,1 +1,1 @@
-Array . prototype . pop . call ( 1 ) ;
+Array . prototype . toLocaleString . call ( 1 ) ;

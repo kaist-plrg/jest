@@ -1,1 +1,1 @@
-Object . isExtensible ( 0 , 0 ) ;
+String . prototype . indexOf . call ( 1 ) ;

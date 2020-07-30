@@ -1,1 +1,1 @@
-Set . prototype . has . call ( 1 ) ;
+SyntaxError ( ) ;

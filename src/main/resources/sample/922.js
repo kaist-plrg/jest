@@ -1,1 +1,1 @@
-Object . defineProperties ( 0 ) ;
+Promise . prototype . then . call ( 1 , 0 ) ;

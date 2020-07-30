@@ -1,1 +1,1 @@
-Function . prototype . bind . call ( 1 ) ;
+Number . prototype . toString . call ( 1 , 0 ) ;

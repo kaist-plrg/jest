@@ -1,1 +1,1 @@
-Number ( 0 , 0 ) ;
+Object . keys ( ) ;

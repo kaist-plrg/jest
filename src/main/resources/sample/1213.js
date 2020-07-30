@@ -1,1 +1,0 @@
-SyntaxError ( 0 , 0 ) ;

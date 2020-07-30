@@ -1,1 +1,1 @@
-Map ( 0 ) ;
+Object . defineProperty ( 0 ) ;

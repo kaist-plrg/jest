@@ -1,1 +1,1 @@
-Function . prototype . toString . call ( 1 , 0 ) ;
+Object . create ( 0 , 0 ) ;

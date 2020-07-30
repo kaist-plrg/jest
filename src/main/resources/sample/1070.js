@@ -1,1 +1,1 @@
-String . prototype . codePointAt . call ( 1 ) ;
+encodeURIComponent ( 0 ) ;

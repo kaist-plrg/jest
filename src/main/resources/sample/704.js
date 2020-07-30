@@ -1,1 +1,1 @@
-Array . of ( 0 ) ;
+Array . prototype . copyWithin . call ( 1 ) ;

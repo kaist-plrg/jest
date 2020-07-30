@@ -1,1 +1,1 @@
-String . fromCodePoint ( 0 ) ;
+parseFloat ( ) ;

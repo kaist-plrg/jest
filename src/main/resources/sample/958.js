@@ -1,1 +1,1 @@
-Object . is ( 0 , 0 , 0 ) ;
+String . prototype . includes . call ( 1 ) ;

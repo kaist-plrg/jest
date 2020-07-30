@@ -1,1 +1,1 @@
-Array . prototype . reduce . call ( 1 , 0 , 0 ) ;
+var x = Array . prototype [ Symbol . unscopables ] ;

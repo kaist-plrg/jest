@@ -1,1 +1,1 @@
-BigInt . asIntN ( ) ;
+Map . prototype . forEach . call ( 1 , 0 , 0 ) ;

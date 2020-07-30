@@ -1,1 +1,1 @@
-Object . defineProperty ( 0 , 0 , 0 ) ;
+Set . prototype . clear . call ( 1 ) ;

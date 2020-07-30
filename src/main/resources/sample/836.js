@@ -1,1 +1,1 @@
-Function . prototype . apply . call ( 1 ) ;
+Number . prototype . toFixed . call ( 1 , 0 ) ;

@@ -1,1 +1,1 @@
-Object . setPrototypeOf ( 0 , 0 , 0 ) ;
+String . prototype . padStart . call ( 1 ) ;

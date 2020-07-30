@@ -1,1 +1,1 @@
-Array . prototype . join . call ( 1 , 0 ) ;
+Array . prototype . reverse . call ( 1 ) ;

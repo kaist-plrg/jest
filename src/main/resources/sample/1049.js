@@ -1,1 +1,1 @@
-Set . prototype . values . call ( 1 ) ;
+TypeError ( 0 ) ;

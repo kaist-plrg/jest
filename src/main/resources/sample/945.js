@@ -1,1 +1,1 @@
-Object . getOwnPropertyDescriptors ( 0 , 0 ) ;
+String . raw ( 0 ) ;

@@ -1,1 +1,1 @@
-String ( ) ;
+URIError ( 0 ) ;

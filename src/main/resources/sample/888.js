@@ -1,1 +1,1 @@
-Number . isInteger ( 0 ) ;
+Object . seal ( 0 ) ;

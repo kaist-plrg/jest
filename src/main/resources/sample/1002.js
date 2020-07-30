@@ -1,1 +1,1 @@
-Promise ( 0 ) ;
+String . prototype . toLowerCase . call ( 1 ) ;

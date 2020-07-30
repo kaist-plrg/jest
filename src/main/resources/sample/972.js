@@ -1,1 +1,1 @@
-Object . preventExtensions ( 0 ) ;
+String . prototype . match . call ( 1 , 0 ) ;
