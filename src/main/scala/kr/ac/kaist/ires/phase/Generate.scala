@@ -18,7 +18,8 @@ case object Generate extends PhaseObj[Unit, GenerateConfig, Unit] {
   ): Unit = for (
     (script, k) <- Generator.generate(
       debug = config.debug,
-      maxIter = config.iter
+      maxIter = config.iter,
+      loadDir = config.loaddir
     ).zipWithIndex
   ) {
     mkdir(s"$GEN_RES_DIR")
@@ -32,11 +33,14 @@ case object Generate extends PhaseObj[Unit, GenerateConfig, Unit] {
       "print intermediate process."),
     ("iter", NumOption((c, i) => c.iter = i),
       "maximum number of iterations for generations (default: 100)."),
+    ("load", StrOption((c, str) => c.loadDir = Some(str)),
+      "load existing scripts from the given directory"),
   )
 }
 
 // Generate phase config
 case class GenerateConfig(
     var debug: Boolean = false,
-    var iter: Int = 100
+    var iter: Int = 100,
+    var loadDir: Option[String] = None
 ) extends Config

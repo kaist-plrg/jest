@@ -19,7 +19,7 @@ object Generator extends DefaultJsonProtocol {
   var recentNewCovered: Set[Target] = Set()
 
   // generate JavaScript programs
-  def generate(debug: Boolean, maxIter: Int): List[Script] = {
+  def generate(debug: Boolean, maxIter: Int, loadDir: Option[String]): List[Script] = {
     // log file
     mkdir(GEN_RES_DIR)
     val nf = getPrintWriter(s"$GEN_RES_DIR/log")
@@ -90,7 +90,10 @@ object Generator extends DefaultJsonProtocol {
     }
 
     logln("Load Samples...")
-    val samples = getSample
+    val samples = loadDir match {
+      case Some(directory) => getSampleFrom(s"$directory/scripts/")
+      case None => getSample
+    }
     logln(s"# of Samples: ${samples.size}")
 
     logln("Calculating syntax coverage...")
@@ -100,6 +103,11 @@ object Generator extends DefaultJsonProtocol {
 
     logln("Running samples...")
     for (script <- samples) add(script)
+
+    loadDir.foreach((directory) => {
+      logln("Loading generated scripts...")
+      generated = readJson[Set[String]](s"$directory/generated.json")
+    })
 
     logln("Mutating samples...")
     for (k <- 0 until maxIter) {
@@ -190,6 +198,14 @@ object Generator extends DefaultJsonProtocol {
   // random sampling
   def getSample: List[Script] = (for {
     file <- walkTree(SAMPLE_DIR)
+    filename = file.toString if jsFilter(filename)
+    str = readFile(filename)
+    script = Parser.parse(Parser.Script(Nil), str).get
+  } yield script).toList
+
+  // random sampling from the given directory
+  def getSampleFrom(dir: String): List[Script] = (for {
+    file <- walkTree(dir)
     filename = file.toString if jsFilter(filename)
     str = readFile(filename)
     script = Parser.parse(Parser.Script(Nil), str).get
