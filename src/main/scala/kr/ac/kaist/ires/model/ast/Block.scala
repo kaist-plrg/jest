@@ -11,17 +11,17 @@ trait Block extends AST {
 case class Block0(x1: Option[StatementList], parserParams: List[Boolean]) extends Block {
   x1.foreach((m) => m.parent = Some(this))
   val name: String = "Block0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 2
-    k = x1.fold(k)(_.updateSpan(k)) + 1
-    k += 2
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 1)
+    x1.map(x => inc(x.updateSpan(end)))
+    inc(end + 1)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"{ ${x1.getOrElse("")} }"
+    s("{", x1.getOrElse(""), "}")
   }
   val k: Int = d(x1, 0)
   val fullList: List[(String, Value)] = l("Option[StatementList]", x1, Nil).reverse

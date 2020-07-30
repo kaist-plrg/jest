@@ -10,16 +10,16 @@ trait ContinueStatement extends AST {
 }
 case class ContinueStatement0(parserParams: List[Boolean]) extends ContinueStatement {
   val name: String = "ContinueStatement0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 9
-    k += 2
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 8)
+    inc(end + 1)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"continue ;"
+    s("continue", ";")
   }
   val k: Int = 0
   val fullList: List[(String, Value)] = Nil.reverse
@@ -34,17 +34,17 @@ object ContinueStatement0 extends ASTInfo {
 case class ContinueStatement1(x2: LabelIdentifier, parserParams: List[Boolean]) extends ContinueStatement {
   x2.parent = Some(this)
   val name: String = "ContinueStatement1"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 9
-    k = x2.updateSpan(k) + 1
-    k += 2
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 8)
+    inc(x2.updateSpan(end))
+    inc(end + 1)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"continue $x2 ;"
+    s("continue", x2, ";")
   }
   val k: Int = d(x2, 0)
   val fullList: List[(String, Value)] = l("LabelIdentifier", x2, Nil).reverse

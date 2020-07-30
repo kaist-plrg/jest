@@ -11,17 +11,17 @@ trait ArrayLiteral extends AST {
 case class ArrayLiteral0(x1: Option[Elision], parserParams: List[Boolean]) extends ArrayLiteral {
   x1.foreach((m) => m.parent = Some(this))
   val name: String = "ArrayLiteral0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 2
-    k = x1.fold(k)(_.updateSpan(k)) + 1
-    k += 2
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 1)
+    x1.map(x => inc(x.updateSpan(end)))
+    inc(end + 1)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"[ ${x1.getOrElse("")} ]"
+    s("[", x1.getOrElse(""), "]")
   }
   val k: Int = d(x1, 0)
   val fullList: List[(String, Value)] = l("Option[Elision]", x1, Nil).reverse
@@ -36,17 +36,17 @@ object ArrayLiteral0 extends ASTInfo {
 case class ArrayLiteral1(x1: ElementList, parserParams: List[Boolean]) extends ArrayLiteral {
   x1.parent = Some(this)
   val name: String = "ArrayLiteral1"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 2
-    k = x1.updateSpan(k) + 1
-    k += 2
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 1)
+    inc(x1.updateSpan(end))
+    inc(end + 1)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"[ $x1 ]"
+    s("[", x1, "]")
   }
   val k: Int = d(x1, 0)
   val fullList: List[(String, Value)] = l("ElementList", x1, Nil).reverse
@@ -62,19 +62,19 @@ case class ArrayLiteral2(x1: ElementList, x3: Option[Elision], parserParams: Lis
   x1.parent = Some(this)
   x3.foreach((m) => m.parent = Some(this))
   val name: String = "ArrayLiteral2"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 2
-    k = x1.updateSpan(k) + 1
-    k += 2
-    k = x3.fold(k)(_.updateSpan(k)) + 1
-    k += 2
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 1)
+    inc(x1.updateSpan(end))
+    inc(end + 1)
+    x3.map(x => inc(x.updateSpan(end)))
+    inc(end + 1)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"[ $x1 , ${x3.getOrElse("")} ]"
+    s("[", x1, ",", x3.getOrElse(""), "]")
   }
   val k: Int = d(x3, d(x1, 0))
   val fullList: List[(String, Value)] = l("Option[Elision]", x3, l("ElementList", x1, Nil)).reverse

@@ -11,16 +11,16 @@ trait ClassHeritage extends AST {
 case class ClassHeritage0(x1: LeftHandSideExpression, parserParams: List[Boolean]) extends ClassHeritage {
   x1.parent = Some(this)
   val name: String = "ClassHeritage0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 8
-    k = x1.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 7)
+    inc(x1.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"extends $x1"
+    s("extends", x1)
   }
   val k: Int = d(x1, 0)
   val fullList: List[(String, Value)] = l("LeftHandSideExpression", x1, Nil).reverse

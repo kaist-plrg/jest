@@ -12,17 +12,17 @@ case class ClassExpression0(x1: Option[BindingIdentifier], x2: ClassTail, parser
   x1.foreach((m) => m.parent = Some(this))
   x2.parent = Some(this)
   val name: String = "ClassExpression0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 6
-    k = x1.fold(k)(_.updateSpan(k)) + 1
-    k = x2.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 5)
+    x1.map(x => inc(x.updateSpan(end)))
+    inc(x2.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"class ${x1.getOrElse("")} $x2"
+    s("class", x1.getOrElse(""), x2)
   }
   val k: Int = d(x2, d(x1, 0))
   val fullList: List[(String, Value)] = l("ClassTail", x2, l("Option[BindingIdentifier]", x1, Nil)).reverse

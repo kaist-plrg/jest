@@ -12,18 +12,18 @@ case class ClassTail0(x0: Option[ClassHeritage], x2: Option[ClassBody], parserPa
   x0.foreach((m) => m.parent = Some(this))
   x2.foreach((m) => m.parent = Some(this))
   val name: String = "ClassTail0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.fold(k)(_.updateSpan(k)) + 1
-    k += 2
-    k = x2.fold(k)(_.updateSpan(k)) + 1
-    k += 2
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    x0.map(x => inc(x.updateSpan(end)))
+    inc(end + 1)
+    x2.map(x => inc(x.updateSpan(end)))
+    inc(end + 1)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"${x0.getOrElse("")} { ${x2.getOrElse("")} }"
+    s(x0.getOrElse(""), "{", x2.getOrElse(""), "}")
   }
   val k: Int = d(x2, d(x0, 0))
   val fullList: List[(String, Value)] = l("Option[ClassBody]", x2, l("Option[ClassHeritage]", x0, Nil)).reverse

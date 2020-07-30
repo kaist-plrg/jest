@@ -11,16 +11,16 @@ trait OptionalChain extends AST {
 case class OptionalChain0(x1: Arguments, parserParams: List[Boolean]) extends OptionalChain {
   x1.parent = Some(this)
   val name: String = "OptionalChain0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 3
-    k = x1.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 2)
+    inc(x1.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"?. $x1"
+    s("?.", x1)
   }
   val k: Int = d(x1, 0)
   val fullList: List[(String, Value)] = l("Arguments", x1, Nil).reverse
@@ -36,18 +36,18 @@ object OptionalChain0 extends ASTInfo {
 case class OptionalChain1(x2: Expression, parserParams: List[Boolean]) extends OptionalChain {
   x2.parent = Some(this)
   val name: String = "OptionalChain1"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 3
-    k += 2
-    k = x2.updateSpan(k) + 1
-    k += 2
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 2)
+    inc(end + 1)
+    inc(x2.updateSpan(end))
+    inc(end + 1)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"?. [ $x2 ]"
+    s("?.", "[", x2, "]")
   }
   val k: Int = d(x2, 0)
   val fullList: List[(String, Value)] = l("Expression", x2, Nil).reverse
@@ -63,16 +63,16 @@ object OptionalChain1 extends ASTInfo {
 case class OptionalChain2(x1: Lexical, parserParams: List[Boolean]) extends OptionalChain {
   x1.parent = Some(this)
   val name: String = "OptionalChain2"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 3
-    k = x1.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 2)
+    inc(x1.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"?. $x1"
+    s("?.", x1)
   }
   val k: Int = d(x1, 0)
   val fullList: List[(String, Value)] = l("Lexical", x1, Nil).reverse
@@ -89,16 +89,16 @@ object OptionalChain2 extends ASTInfo {
 case class OptionalChain3(x1: TemplateLiteral, parserParams: List[Boolean]) extends OptionalChain {
   x1.parent = Some(this)
   val name: String = "OptionalChain3"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 3
-    k = x1.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 2)
+    inc(x1.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"?. $x1"
+    s("?.", x1)
   }
   val k: Int = d(x1, 0)
   val fullList: List[(String, Value)] = l("TemplateLiteral", x1, Nil).reverse
@@ -112,16 +112,16 @@ case class OptionalChain4(x0: OptionalChain, x1: Arguments, parserParams: List[B
   x0.parent = Some(this)
   x1.parent = Some(this)
   val name: String = "OptionalChain4"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    k = x1.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    inc(x1.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0 $x1"
+    s(x0, x1)
   }
   val k: Int = d(x1, d(x0, 0))
   val fullList: List[(String, Value)] = l("Arguments", x1, l("OptionalChain", x0, Nil)).reverse
@@ -138,18 +138,18 @@ case class OptionalChain5(x0: OptionalChain, x2: Expression, parserParams: List[
   x0.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "OptionalChain5"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    k += 2
-    k = x2.updateSpan(k) + 1
-    k += 2
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    inc(end + 1)
+    inc(x2.updateSpan(end))
+    inc(end + 1)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0 [ $x2 ]"
+    s(x0, "[", x2, "]")
   }
   val k: Int = d(x2, d(x0, 0))
   val fullList: List[(String, Value)] = l("Expression", x2, l("OptionalChain", x0, Nil)).reverse
@@ -166,17 +166,17 @@ case class OptionalChain6(x0: OptionalChain, x2: Lexical, parserParams: List[Boo
   x0.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "OptionalChain6"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    k += 2
-    k = x2.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    inc(end + 1)
+    inc(x2.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0 . $x2"
+    s(x0, ".", x2)
   }
   val k: Int = d(x2, d(x0, 0))
   val fullList: List[(String, Value)] = l("Lexical", x2, l("OptionalChain", x0, Nil)).reverse
@@ -194,16 +194,16 @@ case class OptionalChain7(x0: OptionalChain, x1: TemplateLiteral, parserParams: 
   x0.parent = Some(this)
   x1.parent = Some(this)
   val name: String = "OptionalChain7"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    k = x1.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    inc(x1.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0 $x1"
+    s(x0, x1)
   }
   val k: Int = d(x1, d(x0, 0))
   val fullList: List[(String, Value)] = l("TemplateLiteral", x1, l("OptionalChain", x0, Nil)).reverse

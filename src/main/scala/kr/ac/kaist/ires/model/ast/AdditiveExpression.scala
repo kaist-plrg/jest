@@ -11,15 +11,15 @@ trait AdditiveExpression extends AST {
 case class AdditiveExpression0(x0: MultiplicativeExpression, parserParams: List[Boolean]) extends AdditiveExpression {
   x0.parent = Some(this)
   val name: String = "AdditiveExpression0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("MultiplicativeExpression", x0, Nil).reverse
@@ -33,17 +33,17 @@ case class AdditiveExpression1(x0: AdditiveExpression, x2: MultiplicativeExpress
   x0.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "AdditiveExpression1"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    k += 2
-    k = x2.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    inc(end + 1)
+    inc(x2.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0 + $x2"
+    s(x0, "+", x2)
   }
   val k: Int = d(x2, d(x0, 0))
   val fullList: List[(String, Value)] = l("MultiplicativeExpression", x2, l("AdditiveExpression", x0, Nil)).reverse
@@ -61,17 +61,17 @@ case class AdditiveExpression2(x0: AdditiveExpression, x2: MultiplicativeExpress
   x0.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "AdditiveExpression2"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    k += 2
-    k = x2.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    inc(end + 1)
+    inc(x2.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0 - $x2"
+    s(x0, "-", x2)
   }
   val k: Int = d(x2, d(x0, 0))
   val fullList: List[(String, Value)] = l("MultiplicativeExpression", x2, l("AdditiveExpression", x0, Nil)).reverse

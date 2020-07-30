@@ -3,7 +3,7 @@ package kr.ac.kaist.ires.phase
 import kr.ac.kaist.ires._
 import kr.ac.kaist.ires.coverage._
 import kr.ac.kaist.ires.model.Script
-import kr.ac.kaist.ires.mutator.SimpleReplacer
+import kr.ac.kaist.ires.mutator._
 import kr.ac.kaist.ires.generator.Generator
 import kr.ac.kaist.ires.util._
 import kr.ac.kaist.ires.util.Useful._
@@ -25,6 +25,20 @@ case object Mutate extends PhaseObj[Script, MutateConfig, Script] {
     var set = Set(mutated)
     var keep = true
     val str = script.toString
+
+    val uid = config.target.get.uid
+
+    val mutators = List(
+      StatementAppender(script),
+      SimpleReplacer(script)
+    ) ++ config.target.fold(List[Mutator]())(target => {
+        val uid = target.uid
+        List(
+          StringLiteralReplacer(uid, script),
+          NearSyntaxReplacer(uid, script)
+        )
+      })
+
     while (keep && iter < config.trial) {
       log(s"${iter}th iteration")
       (Generator.getVisited(mutated), config.target) match {
@@ -37,7 +51,7 @@ case object Mutate extends PhaseObj[Script, MutateConfig, Script] {
       logln(s"script: $mutated")
 
       do {
-        mutated = Generator.mutate(SimpleReplacer(script))
+        mutated = Generator.mutate(mutators)
       } while (set contains mutated)
       set += mutated
       iter += 1

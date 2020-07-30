@@ -11,17 +11,17 @@ trait CaseBlock extends AST {
 case class CaseBlock0(x1: Option[CaseClauses], parserParams: List[Boolean]) extends CaseBlock {
   x1.foreach((m) => m.parent = Some(this))
   val name: String = "CaseBlock0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 2
-    k = x1.fold(k)(_.updateSpan(k)) + 1
-    k += 2
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 1)
+    x1.map(x => inc(x.updateSpan(end)))
+    inc(end + 1)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"{ ${x1.getOrElse("")} }"
+    s("{", x1.getOrElse(""), "}")
   }
   val k: Int = d(x1, 0)
   val fullList: List[(String, Value)] = l("Option[CaseClauses]", x1, Nil).reverse
@@ -44,19 +44,19 @@ case class CaseBlock1(x1: Option[CaseClauses], x2: DefaultClause, x3: Option[Cas
   x2.parent = Some(this)
   x3.foreach((m) => m.parent = Some(this))
   val name: String = "CaseBlock1"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 2
-    k = x1.fold(k)(_.updateSpan(k)) + 1
-    k = x2.updateSpan(k) + 1
-    k = x3.fold(k)(_.updateSpan(k)) + 1
-    k += 2
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 1)
+    x1.map(x => inc(x.updateSpan(end)))
+    inc(x2.updateSpan(end))
+    x3.map(x => inc(x.updateSpan(end)))
+    inc(end + 1)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"{ ${x1.getOrElse("")} $x2 ${x3.getOrElse("")} }"
+    s("{", x1.getOrElse(""), x2, x3.getOrElse(""), "}")
   }
   val k: Int = d(x3, d(x2, d(x1, 0)))
   val fullList: List[(String, Value)] = l("Option[CaseClauses]1", x3, l("DefaultClause", x2, l("Option[CaseClauses]0", x1, Nil))).reverse

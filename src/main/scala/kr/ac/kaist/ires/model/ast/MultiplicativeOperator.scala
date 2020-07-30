@@ -10,15 +10,15 @@ trait MultiplicativeOperator extends AST {
 }
 case class MultiplicativeOperator0(parserParams: List[Boolean]) extends MultiplicativeOperator {
   val name: String = "MultiplicativeOperator0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 2
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 1)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"*"
+    s("*")
   }
   val k: Int = 0
   val fullList: List[(String, Value)] = Nil.reverse
@@ -30,15 +30,15 @@ object MultiplicativeOperator0 extends ASTInfo {
 }
 case class MultiplicativeOperator1(parserParams: List[Boolean]) extends MultiplicativeOperator {
   val name: String = "MultiplicativeOperator1"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 2
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 1)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"/"
+    s("/")
   }
   val k: Int = 0
   val fullList: List[(String, Value)] = Nil.reverse
@@ -50,15 +50,15 @@ object MultiplicativeOperator1 extends ASTInfo {
 }
 case class MultiplicativeOperator2(parserParams: List[Boolean]) extends MultiplicativeOperator {
   val name: String = "MultiplicativeOperator2"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 2
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 1)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"%"
+    s("%")
   }
   val k: Int = 0
   val fullList: List[(String, Value)] = Nil.reverse

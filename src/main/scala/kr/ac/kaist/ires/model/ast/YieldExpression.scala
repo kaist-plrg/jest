@@ -10,15 +10,15 @@ trait YieldExpression extends AST {
 }
 case class YieldExpression0(parserParams: List[Boolean]) extends YieldExpression {
   val name: String = "YieldExpression0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 6
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 5)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"yield"
+    s("yield")
   }
   val k: Int = 0
   val fullList: List[(String, Value)] = Nil.reverse
@@ -33,16 +33,16 @@ object YieldExpression0 extends ASTInfo {
 case class YieldExpression1(x2: AssignmentExpression, parserParams: List[Boolean]) extends YieldExpression {
   x2.parent = Some(this)
   val name: String = "YieldExpression1"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 6
-    k = x2.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 5)
+    inc(x2.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"yield $x2"
+    s("yield", x2)
   }
   val k: Int = d(x2, 0)
   val fullList: List[(String, Value)] = l("AssignmentExpression", x2, Nil).reverse
@@ -57,17 +57,17 @@ object YieldExpression1 extends ASTInfo {
 case class YieldExpression2(x3: AssignmentExpression, parserParams: List[Boolean]) extends YieldExpression {
   x3.parent = Some(this)
   val name: String = "YieldExpression2"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 6
-    k += 2
-    k = x3.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 5)
+    inc(end + 1)
+    inc(x3.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"yield * $x3"
+    s("yield", "*", x3)
   }
   val k: Int = d(x3, 0)
   val fullList: List[(String, Value)] = l("AssignmentExpression", x3, Nil).reverse

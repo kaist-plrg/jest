@@ -14,8 +14,11 @@ trait AST {
 
   // span information
   def updateSpan(start: Int): Int
+  def inc(newEnd: Int): Unit = if (newEnd > end) end = newEnd + 1
   var start: Int = -1
   var end: Int = -1
+
+  def s(seq: Any*): String = seq.map(_.toString).filter(_ != "").mkString(" ")
 
   // to JSON format
   def toJson: String = "{" + (fullList.map {

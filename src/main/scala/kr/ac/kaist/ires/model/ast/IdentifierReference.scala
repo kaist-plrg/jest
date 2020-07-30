@@ -11,15 +11,15 @@ trait IdentifierReference extends AST {
 case class IdentifierReference0(x0: Identifier, parserParams: List[Boolean]) extends IdentifierReference {
   x0.parent = Some(this)
   val name: String = "IdentifierReference0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("Identifier", x0, Nil).reverse
@@ -33,15 +33,15 @@ object IdentifierReference0 extends ASTInfo {
 }
 case class IdentifierReference1(parserParams: List[Boolean]) extends IdentifierReference {
   val name: String = "IdentifierReference1"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 6
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 5)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"yield"
+    s("yield")
   }
   val k: Int = 0
   val fullList: List[(String, Value)] = Nil.reverse
@@ -56,15 +56,15 @@ object IdentifierReference1 extends ASTInfo {
 }
 case class IdentifierReference2(parserParams: List[Boolean]) extends IdentifierReference {
   val name: String = "IdentifierReference2"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 6
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 5)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"await"
+    s("await")
   }
   val k: Int = 0
   val fullList: List[(String, Value)] = Nil.reverse

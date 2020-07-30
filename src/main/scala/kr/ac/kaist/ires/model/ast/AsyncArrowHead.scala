@@ -11,16 +11,16 @@ trait AsyncArrowHead extends AST {
 case class AsyncArrowHead0(x2: ArrowFormalParameters, parserParams: List[Boolean]) extends AsyncArrowHead {
   x2.parent = Some(this)
   val name: String = "AsyncArrowHead0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 6
-    k = x2.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 5)
+    inc(x2.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"async $x2"
+    s("async", x2)
   }
   val k: Int = d(x2, 0)
   val fullList: List[(String, Value)] = l("ArrowFormalParameters", x2, Nil).reverse

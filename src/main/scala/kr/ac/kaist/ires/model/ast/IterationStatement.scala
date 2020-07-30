@@ -12,21 +12,21 @@ case class IterationStatement0(x1: Statement, x4: Expression, parserParams: List
   x1.parent = Some(this)
   x4.parent = Some(this)
   val name: String = "IterationStatement0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 3
-    k = x1.updateSpan(k) + 1
-    k += 6
-    k += 2
-    k = x4.updateSpan(k) + 1
-    k += 2
-    k += 2
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 2)
+    inc(x1.updateSpan(end))
+    inc(end + 5)
+    inc(end + 1)
+    inc(x4.updateSpan(end))
+    inc(end + 1)
+    inc(end + 1)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"do $x1 while ( $x4 ) ;"
+    s("do", x1, "while", "(", x4, ")", ";")
   }
   val k: Int = d(x4, d(x1, 0))
   val fullList: List[(String, Value)] = l("Expression", x4, l("Statement", x1, Nil)).reverse
@@ -45,19 +45,19 @@ case class IterationStatement1(x2: Expression, x4: Statement, parserParams: List
   x2.parent = Some(this)
   x4.parent = Some(this)
   val name: String = "IterationStatement1"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 6
-    k += 2
-    k = x2.updateSpan(k) + 1
-    k += 2
-    k = x4.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 5)
+    inc(end + 1)
+    inc(x2.updateSpan(end))
+    inc(end + 1)
+    inc(x4.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"while ( $x2 ) $x4"
+    s("while", "(", x2, ")", x4)
   }
   val k: Int = d(x4, d(x2, 0))
   val fullList: List[(String, Value)] = l("Statement", x4, l("Expression", x2, Nil)).reverse
@@ -78,23 +78,23 @@ case class IterationStatement2(x3: Option[Expression], x5: Option[Expression], x
   x7.foreach((m) => m.parent = Some(this))
   x9.parent = Some(this)
   val name: String = "IterationStatement2"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 4
-    k += 2
-    k = x3.fold(k)(_.updateSpan(k)) + 1
-    k += 2
-    k = x5.fold(k)(_.updateSpan(k)) + 1
-    k += 2
-    k = x7.fold(k)(_.updateSpan(k)) + 1
-    k += 2
-    k = x9.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 3)
+    inc(end + 1)
+    x3.map(x => inc(x.updateSpan(end)))
+    inc(end + 1)
+    x5.map(x => inc(x.updateSpan(end)))
+    inc(end + 1)
+    x7.map(x => inc(x.updateSpan(end)))
+    inc(end + 1)
+    inc(x9.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"for ( ${x3.getOrElse("")} ; ${x5.getOrElse("")} ; ${x7.getOrElse("")} ) $x9"
+    s("for", "(", x3.getOrElse(""), ";", x5.getOrElse(""), ";", x7.getOrElse(""), ")", x9)
   }
   val k: Int = d(x9, d(x7, d(x5, d(x3, 0))))
   val fullList: List[(String, Value)] = l("Statement", x9, l("Option[Expression]2", x7, l("Option[Expression]1", x5, l("Option[Expression]0", x3, Nil)))).reverse
@@ -115,24 +115,24 @@ case class IterationStatement3(x3: VariableDeclarationList, x5: Option[Expressio
   x7.foreach((m) => m.parent = Some(this))
   x9.parent = Some(this)
   val name: String = "IterationStatement3"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 4
-    k += 2
-    k += 4
-    k = x3.updateSpan(k) + 1
-    k += 2
-    k = x5.fold(k)(_.updateSpan(k)) + 1
-    k += 2
-    k = x7.fold(k)(_.updateSpan(k)) + 1
-    k += 2
-    k = x9.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 3)
+    inc(end + 1)
+    inc(end + 3)
+    inc(x3.updateSpan(end))
+    inc(end + 1)
+    x5.map(x => inc(x.updateSpan(end)))
+    inc(end + 1)
+    x7.map(x => inc(x.updateSpan(end)))
+    inc(end + 1)
+    inc(x9.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"for ( var $x3 ; ${x5.getOrElse("")} ; ${x7.getOrElse("")} ) $x9"
+    s("for", "(", "var", x3, ";", x5.getOrElse(""), ";", x7.getOrElse(""), ")", x9)
   }
   val k: Int = d(x9, d(x7, d(x5, d(x3, 0))))
   val fullList: List[(String, Value)] = l("Statement", x9, l("Option[Expression]1", x7, l("Option[Expression]0", x5, l("VariableDeclarationList", x3, Nil)))).reverse
@@ -153,22 +153,22 @@ case class IterationStatement4(x2: LexicalDeclaration, x3: Option[Expression], x
   x5.foreach((m) => m.parent = Some(this))
   x7.parent = Some(this)
   val name: String = "IterationStatement4"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 4
-    k += 2
-    k = x2.updateSpan(k) + 1
-    k = x3.fold(k)(_.updateSpan(k)) + 1
-    k += 2
-    k = x5.fold(k)(_.updateSpan(k)) + 1
-    k += 2
-    k = x7.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 3)
+    inc(end + 1)
+    inc(x2.updateSpan(end))
+    x3.map(x => inc(x.updateSpan(end)))
+    inc(end + 1)
+    x5.map(x => inc(x.updateSpan(end)))
+    inc(end + 1)
+    inc(x7.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"for ( $x2 ${x3.getOrElse("")} ; ${x5.getOrElse("")} ) $x7"
+    s("for", "(", x2, x3.getOrElse(""), ";", x5.getOrElse(""), ")", x7)
   }
   val k: Int = d(x7, d(x5, d(x3, d(x2, 0))))
   val fullList: List[(String, Value)] = l("Statement", x7, l("Option[Expression]1", x5, l("Option[Expression]0", x3, l("LexicalDeclaration", x2, Nil)))).reverse
@@ -188,21 +188,21 @@ case class IterationStatement5(x3: LeftHandSideExpression, x5: Expression, x7: S
   x5.parent = Some(this)
   x7.parent = Some(this)
   val name: String = "IterationStatement5"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 4
-    k += 2
-    k = x3.updateSpan(k) + 1
-    k += 3
-    k = x5.updateSpan(k) + 1
-    k += 2
-    k = x7.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 3)
+    inc(end + 1)
+    inc(x3.updateSpan(end))
+    inc(end + 2)
+    inc(x5.updateSpan(end))
+    inc(end + 1)
+    inc(x7.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"for ( $x3 in $x5 ) $x7"
+    s("for", "(", x3, "in", x5, ")", x7)
   }
   val k: Int = d(x7, d(x5, d(x3, 0)))
   val fullList: List[(String, Value)] = l("Statement", x7, l("Expression", x5, l("LeftHandSideExpression", x3, Nil))).reverse
@@ -222,22 +222,22 @@ case class IterationStatement6(x3: ForBinding, x5: Expression, x7: Statement, pa
   x5.parent = Some(this)
   x7.parent = Some(this)
   val name: String = "IterationStatement6"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 4
-    k += 2
-    k += 4
-    k = x3.updateSpan(k) + 1
-    k += 3
-    k = x5.updateSpan(k) + 1
-    k += 2
-    k = x7.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 3)
+    inc(end + 1)
+    inc(end + 3)
+    inc(x3.updateSpan(end))
+    inc(end + 2)
+    inc(x5.updateSpan(end))
+    inc(end + 1)
+    inc(x7.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"for ( var $x3 in $x5 ) $x7"
+    s("for", "(", "var", x3, "in", x5, ")", x7)
   }
   val k: Int = d(x7, d(x5, d(x3, 0)))
   val fullList: List[(String, Value)] = l("Statement", x7, l("Expression", x5, l("ForBinding", x3, Nil))).reverse
@@ -257,21 +257,21 @@ case class IterationStatement7(x2: ForDeclaration, x4: Expression, x6: Statement
   x4.parent = Some(this)
   x6.parent = Some(this)
   val name: String = "IterationStatement7"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 4
-    k += 2
-    k = x2.updateSpan(k) + 1
-    k += 3
-    k = x4.updateSpan(k) + 1
-    k += 2
-    k = x6.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 3)
+    inc(end + 1)
+    inc(x2.updateSpan(end))
+    inc(end + 2)
+    inc(x4.updateSpan(end))
+    inc(end + 1)
+    inc(x6.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"for ( $x2 in $x4 ) $x6"
+    s("for", "(", x2, "in", x4, ")", x6)
   }
   val k: Int = d(x6, d(x4, d(x2, 0)))
   val fullList: List[(String, Value)] = l("Statement", x6, l("Expression", x4, l("ForDeclaration", x2, Nil))).reverse
@@ -291,21 +291,21 @@ case class IterationStatement8(x3: LeftHandSideExpression, x5: AssignmentExpress
   x5.parent = Some(this)
   x7.parent = Some(this)
   val name: String = "IterationStatement8"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 4
-    k += 2
-    k = x3.updateSpan(k) + 1
-    k += 3
-    k = x5.updateSpan(k) + 1
-    k += 2
-    k = x7.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 3)
+    inc(end + 1)
+    inc(x3.updateSpan(end))
+    inc(end + 2)
+    inc(x5.updateSpan(end))
+    inc(end + 1)
+    inc(x7.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"for ( $x3 of $x5 ) $x7"
+    s("for", "(", x3, "of", x5, ")", x7)
   }
   val k: Int = d(x7, d(x5, d(x3, 0)))
   val fullList: List[(String, Value)] = l("Statement", x7, l("AssignmentExpression", x5, l("LeftHandSideExpression", x3, Nil))).reverse
@@ -325,22 +325,22 @@ case class IterationStatement9(x3: ForBinding, x5: AssignmentExpression, x7: Sta
   x5.parent = Some(this)
   x7.parent = Some(this)
   val name: String = "IterationStatement9"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 4
-    k += 2
-    k += 4
-    k = x3.updateSpan(k) + 1
-    k += 3
-    k = x5.updateSpan(k) + 1
-    k += 2
-    k = x7.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 3)
+    inc(end + 1)
+    inc(end + 3)
+    inc(x3.updateSpan(end))
+    inc(end + 2)
+    inc(x5.updateSpan(end))
+    inc(end + 1)
+    inc(x7.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"for ( var $x3 of $x5 ) $x7"
+    s("for", "(", "var", x3, "of", x5, ")", x7)
   }
   val k: Int = d(x7, d(x5, d(x3, 0)))
   val fullList: List[(String, Value)] = l("Statement", x7, l("AssignmentExpression", x5, l("ForBinding", x3, Nil))).reverse
@@ -360,21 +360,21 @@ case class IterationStatement10(x2: ForDeclaration, x4: AssignmentExpression, x6
   x4.parent = Some(this)
   x6.parent = Some(this)
   val name: String = "IterationStatement10"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 4
-    k += 2
-    k = x2.updateSpan(k) + 1
-    k += 3
-    k = x4.updateSpan(k) + 1
-    k += 2
-    k = x6.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 3)
+    inc(end + 1)
+    inc(x2.updateSpan(end))
+    inc(end + 2)
+    inc(x4.updateSpan(end))
+    inc(end + 1)
+    inc(x6.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"for ( $x2 of $x4 ) $x6"
+    s("for", "(", x2, "of", x4, ")", x6)
   }
   val k: Int = d(x6, d(x4, d(x2, 0)))
   val fullList: List[(String, Value)] = l("Statement", x6, l("AssignmentExpression", x4, l("ForDeclaration", x2, Nil))).reverse
@@ -394,22 +394,22 @@ case class IterationStatement11(x4: LeftHandSideExpression, x6: AssignmentExpres
   x6.parent = Some(this)
   x8.parent = Some(this)
   val name: String = "IterationStatement11"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 4
-    k += 6
-    k += 2
-    k = x4.updateSpan(k) + 1
-    k += 3
-    k = x6.updateSpan(k) + 1
-    k += 2
-    k = x8.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 3)
+    inc(end + 5)
+    inc(end + 1)
+    inc(x4.updateSpan(end))
+    inc(end + 2)
+    inc(x6.updateSpan(end))
+    inc(end + 1)
+    inc(x8.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"for await ( $x4 of $x6 ) $x8"
+    s("for", "await", "(", x4, "of", x6, ")", x8)
   }
   val k: Int = d(x8, d(x6, d(x4, 0)))
   val fullList: List[(String, Value)] = l("Statement", x8, l("AssignmentExpression", x6, l("LeftHandSideExpression", x4, Nil))).reverse
@@ -429,23 +429,23 @@ case class IterationStatement12(x4: ForBinding, x6: AssignmentExpression, x8: St
   x6.parent = Some(this)
   x8.parent = Some(this)
   val name: String = "IterationStatement12"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 4
-    k += 6
-    k += 2
-    k += 4
-    k = x4.updateSpan(k) + 1
-    k += 3
-    k = x6.updateSpan(k) + 1
-    k += 2
-    k = x8.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 3)
+    inc(end + 5)
+    inc(end + 1)
+    inc(end + 3)
+    inc(x4.updateSpan(end))
+    inc(end + 2)
+    inc(x6.updateSpan(end))
+    inc(end + 1)
+    inc(x8.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"for await ( var $x4 of $x6 ) $x8"
+    s("for", "await", "(", "var", x4, "of", x6, ")", x8)
   }
   val k: Int = d(x8, d(x6, d(x4, 0)))
   val fullList: List[(String, Value)] = l("Statement", x8, l("AssignmentExpression", x6, l("ForBinding", x4, Nil))).reverse
@@ -465,22 +465,22 @@ case class IterationStatement13(x3: ForDeclaration, x5: AssignmentExpression, x7
   x5.parent = Some(this)
   x7.parent = Some(this)
   val name: String = "IterationStatement13"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 4
-    k += 6
-    k += 2
-    k = x3.updateSpan(k) + 1
-    k += 3
-    k = x5.updateSpan(k) + 1
-    k += 2
-    k = x7.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 3)
+    inc(end + 5)
+    inc(end + 1)
+    inc(x3.updateSpan(end))
+    inc(end + 2)
+    inc(x5.updateSpan(end))
+    inc(end + 1)
+    inc(x7.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"for await ( $x3 of $x5 ) $x7"
+    s("for", "await", "(", x3, "of", x5, ")", x7)
   }
   val k: Int = d(x7, d(x5, d(x3, 0)))
   val fullList: List[(String, Value)] = l("Statement", x7, l("AssignmentExpression", x5, l("ForDeclaration", x3, Nil))).reverse

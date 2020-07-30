@@ -10,15 +10,15 @@ trait PrimaryExpression extends AST {
 }
 case class PrimaryExpression0(parserParams: List[Boolean]) extends PrimaryExpression {
   val name: String = "PrimaryExpression0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 5
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 4)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"this"
+    s("this")
   }
   val k: Int = 0
   val fullList: List[(String, Value)] = Nil.reverse
@@ -36,15 +36,15 @@ object PrimaryExpression0 extends ASTInfo {
 case class PrimaryExpression1(x0: IdentifierReference, parserParams: List[Boolean]) extends PrimaryExpression {
   x0.parent = Some(this)
   val name: String = "PrimaryExpression1"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("IdentifierReference", x0, Nil).reverse
@@ -61,15 +61,15 @@ object PrimaryExpression1 extends ASTInfo {
 case class PrimaryExpression2(x0: Literal, parserParams: List[Boolean]) extends PrimaryExpression {
   x0.parent = Some(this)
   val name: String = "PrimaryExpression2"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("Literal", x0, Nil).reverse
@@ -86,15 +86,15 @@ object PrimaryExpression2 extends ASTInfo {
 case class PrimaryExpression3(x0: ArrayLiteral, parserParams: List[Boolean]) extends PrimaryExpression {
   x0.parent = Some(this)
   val name: String = "PrimaryExpression3"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("ArrayLiteral", x0, Nil).reverse
@@ -111,15 +111,15 @@ object PrimaryExpression3 extends ASTInfo {
 case class PrimaryExpression4(x0: ObjectLiteral, parserParams: List[Boolean]) extends PrimaryExpression {
   x0.parent = Some(this)
   val name: String = "PrimaryExpression4"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("ObjectLiteral", x0, Nil).reverse
@@ -136,15 +136,15 @@ object PrimaryExpression4 extends ASTInfo {
 case class PrimaryExpression5(x0: FunctionExpression, parserParams: List[Boolean]) extends PrimaryExpression {
   x0.parent = Some(this)
   val name: String = "PrimaryExpression5"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("FunctionExpression", x0, Nil).reverse
@@ -160,15 +160,15 @@ object PrimaryExpression5 extends ASTInfo {
 case class PrimaryExpression6(x0: ClassExpression, parserParams: List[Boolean]) extends PrimaryExpression {
   x0.parent = Some(this)
   val name: String = "PrimaryExpression6"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("ClassExpression", x0, Nil).reverse
@@ -184,15 +184,15 @@ object PrimaryExpression6 extends ASTInfo {
 case class PrimaryExpression7(x0: GeneratorExpression, parserParams: List[Boolean]) extends PrimaryExpression {
   x0.parent = Some(this)
   val name: String = "PrimaryExpression7"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("GeneratorExpression", x0, Nil).reverse
@@ -208,15 +208,15 @@ object PrimaryExpression7 extends ASTInfo {
 case class PrimaryExpression8(x0: AsyncFunctionExpression, parserParams: List[Boolean]) extends PrimaryExpression {
   x0.parent = Some(this)
   val name: String = "PrimaryExpression8"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("AsyncFunctionExpression", x0, Nil).reverse
@@ -232,15 +232,15 @@ object PrimaryExpression8 extends ASTInfo {
 case class PrimaryExpression9(x0: AsyncGeneratorExpression, parserParams: List[Boolean]) extends PrimaryExpression {
   x0.parent = Some(this)
   val name: String = "PrimaryExpression9"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("AsyncGeneratorExpression", x0, Nil).reverse
@@ -256,15 +256,15 @@ object PrimaryExpression9 extends ASTInfo {
 case class PrimaryExpression10(x0: Lexical, parserParams: List[Boolean]) extends PrimaryExpression {
   x0.parent = Some(this)
   val name: String = "PrimaryExpression10"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("Lexical", x0, Nil).reverse
@@ -282,15 +282,15 @@ object PrimaryExpression10 extends ASTInfo {
 case class PrimaryExpression11(x0: TemplateLiteral, parserParams: List[Boolean]) extends PrimaryExpression {
   x0.parent = Some(this)
   val name: String = "PrimaryExpression11"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("TemplateLiteral", x0, Nil).reverse
@@ -307,15 +307,15 @@ object PrimaryExpression11 extends ASTInfo {
 case class PrimaryExpression12(x0: CoverParenthesizedExpressionAndArrowParameterList, parserParams: List[Boolean]) extends PrimaryExpression {
   x0.parent = Some(this)
   val name: String = "PrimaryExpression12"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("CoverParenthesizedExpressionAndArrowParameterList", x0, Nil).reverse

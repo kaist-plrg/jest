@@ -11,18 +11,18 @@ trait SuperProperty extends AST {
 case class SuperProperty0(x2: Expression, parserParams: List[Boolean]) extends SuperProperty {
   x2.parent = Some(this)
   val name: String = "SuperProperty0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 6
-    k += 2
-    k = x2.updateSpan(k) + 1
-    k += 2
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 5)
+    inc(end + 1)
+    inc(x2.updateSpan(end))
+    inc(end + 1)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"super [ $x2 ]"
+    s("super", "[", x2, "]")
   }
   val k: Int = d(x2, 0)
   val fullList: List[(String, Value)] = l("Expression", x2, Nil).reverse
@@ -37,17 +37,17 @@ object SuperProperty0 extends ASTInfo {
 case class SuperProperty1(x2: Lexical, parserParams: List[Boolean]) extends SuperProperty {
   x2.parent = Some(this)
   val name: String = "SuperProperty1"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 6
-    k += 2
-    k = x2.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 5)
+    inc(end + 1)
+    inc(x2.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"super . $x2"
+    s("super", ".", x2)
   }
   val k: Int = d(x2, 0)
   val fullList: List[(String, Value)] = l("Lexical", x2, Nil).reverse

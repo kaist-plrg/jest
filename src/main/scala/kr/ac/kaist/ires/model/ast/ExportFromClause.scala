@@ -10,15 +10,15 @@ trait ExportFromClause extends AST {
 }
 case class ExportFromClause0(parserParams: List[Boolean]) extends ExportFromClause {
   val name: String = "ExportFromClause0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 2
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 1)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"*"
+    s("*")
   }
   val k: Int = 0
   val fullList: List[(String, Value)] = Nil.reverse
@@ -31,17 +31,17 @@ object ExportFromClause0 extends ASTInfo {
 case class ExportFromClause1(x2: Lexical, parserParams: List[Boolean]) extends ExportFromClause {
   x2.parent = Some(this)
   val name: String = "ExportFromClause1"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 2
-    k += 3
-    k = x2.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 1)
+    inc(end + 2)
+    inc(x2.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"* as $x2"
+    s("*", "as", x2)
   }
   val k: Int = d(x2, 0)
   val fullList: List[(String, Value)] = l("Lexical", x2, Nil).reverse
@@ -54,15 +54,15 @@ object ExportFromClause1 extends ASTInfo {
 case class ExportFromClause2(x0: NamedExports, parserParams: List[Boolean]) extends ExportFromClause {
   x0.parent = Some(this)
   val name: String = "ExportFromClause2"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("NamedExports", x0, Nil).reverse

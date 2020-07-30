@@ -11,15 +11,15 @@ trait ClassElementList extends AST {
 case class ClassElementList0(x0: ClassElement, parserParams: List[Boolean]) extends ClassElementList {
   x0.parent = Some(this)
   val name: String = "ClassElementList0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("ClassElement", x0, Nil).reverse
@@ -37,16 +37,16 @@ case class ClassElementList1(x0: ClassElementList, x1: ClassElement, parserParam
   x0.parent = Some(this)
   x1.parent = Some(this)
   val name: String = "ClassElementList1"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    k = x1.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    inc(x1.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0 $x1"
+    s(x0, x1)
   }
   val k: Int = d(x1, d(x0, 0))
   val fullList: List[(String, Value)] = l("ClassElement", x1, l("ClassElementList", x0, Nil)).reverse

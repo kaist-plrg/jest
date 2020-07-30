@@ -13,24 +13,24 @@ case class AsyncGeneratorDeclaration0(x4: BindingIdentifier, x6: FormalParameter
   x6.parent = Some(this)
   x9.parent = Some(this)
   val name: String = "AsyncGeneratorDeclaration0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 6
-    k += 9
-    k += 2
-    k = x4.updateSpan(k) + 1
-    k += 2
-    k = x6.updateSpan(k) + 1
-    k += 2
-    k += 2
-    k = x9.updateSpan(k) + 1
-    k += 2
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 5)
+    inc(end + 8)
+    inc(end + 1)
+    inc(x4.updateSpan(end))
+    inc(end + 1)
+    inc(x6.updateSpan(end))
+    inc(end + 1)
+    inc(end + 1)
+    inc(x9.updateSpan(end))
+    inc(end + 1)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"async function * $x4 ( $x6 ) { $x9 }"
+    s("async", "function", "*", x4, "(", x6, ")", "{", x9, "}")
   }
   val k: Int = d(x9, d(x6, d(x4, 0)))
   val fullList: List[(String, Value)] = l("AsyncGeneratorBody", x9, l("FormalParameters", x6, l("BindingIdentifier", x4, Nil))).reverse
@@ -49,23 +49,23 @@ case class AsyncGeneratorDeclaration1(x5: FormalParameters, x8: AsyncGeneratorBo
   x5.parent = Some(this)
   x8.parent = Some(this)
   val name: String = "AsyncGeneratorDeclaration1"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 6
-    k += 9
-    k += 2
-    k += 2
-    k = x5.updateSpan(k) + 1
-    k += 2
-    k += 2
-    k = x8.updateSpan(k) + 1
-    k += 2
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 5)
+    inc(end + 8)
+    inc(end + 1)
+    inc(end + 1)
+    inc(x5.updateSpan(end))
+    inc(end + 1)
+    inc(end + 1)
+    inc(x8.updateSpan(end))
+    inc(end + 1)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"async function * ( $x5 ) { $x8 }"
+    s("async", "function", "*", "(", x5, ")", "{", x8, "}")
   }
   val k: Int = d(x8, d(x5, 0))
   val fullList: List[(String, Value)] = l("AsyncGeneratorBody", x8, l("FormalParameters", x5, Nil)).reverse

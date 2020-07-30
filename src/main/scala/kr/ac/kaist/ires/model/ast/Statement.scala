@@ -11,15 +11,15 @@ trait Statement extends AST {
 case class Statement0(x0: BlockStatement, parserParams: List[Boolean]) extends Statement {
   x0.parent = Some(this)
   val name: String = "Statement0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("BlockStatement", x0, Nil).reverse
@@ -32,15 +32,15 @@ object Statement0 extends ASTInfo {
 case class Statement1(x0: VariableStatement, parserParams: List[Boolean]) extends Statement {
   x0.parent = Some(this)
   val name: String = "Statement1"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("VariableStatement", x0, Nil).reverse
@@ -55,15 +55,15 @@ object Statement1 extends ASTInfo {
 case class Statement2(x0: EmptyStatement, parserParams: List[Boolean]) extends Statement {
   x0.parent = Some(this)
   val name: String = "Statement2"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("EmptyStatement", x0, Nil).reverse
@@ -80,15 +80,15 @@ object Statement2 extends ASTInfo {
 case class Statement3(x0: ExpressionStatement, parserParams: List[Boolean]) extends Statement {
   x0.parent = Some(this)
   val name: String = "Statement3"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("ExpressionStatement", x0, Nil).reverse
@@ -105,15 +105,15 @@ object Statement3 extends ASTInfo {
 case class Statement4(x0: IfStatement, parserParams: List[Boolean]) extends Statement {
   x0.parent = Some(this)
   val name: String = "Statement4"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("IfStatement", x0, Nil).reverse
@@ -126,15 +126,15 @@ object Statement4 extends ASTInfo {
 case class Statement5(x0: BreakableStatement, parserParams: List[Boolean]) extends Statement {
   x0.parent = Some(this)
   val name: String = "Statement5"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("BreakableStatement", x0, Nil).reverse
@@ -147,15 +147,15 @@ object Statement5 extends ASTInfo {
 case class Statement6(x0: ContinueStatement, parserParams: List[Boolean]) extends Statement {
   x0.parent = Some(this)
   val name: String = "Statement6"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("ContinueStatement", x0, Nil).reverse
@@ -172,15 +172,15 @@ object Statement6 extends ASTInfo {
 case class Statement7(x0: BreakStatement, parserParams: List[Boolean]) extends Statement {
   x0.parent = Some(this)
   val name: String = "Statement7"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("BreakStatement", x0, Nil).reverse
@@ -197,15 +197,15 @@ object Statement7 extends ASTInfo {
 case class Statement8(x0: ReturnStatement, parserParams: List[Boolean]) extends Statement {
   x0.parent = Some(this)
   val name: String = "Statement8"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("ReturnStatement", x0, Nil).reverse
@@ -221,15 +221,15 @@ object Statement8 extends ASTInfo {
 case class Statement9(x0: WithStatement, parserParams: List[Boolean]) extends Statement {
   x0.parent = Some(this)
   val name: String = "Statement9"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("WithStatement", x0, Nil).reverse
@@ -242,15 +242,15 @@ object Statement9 extends ASTInfo {
 case class Statement10(x0: LabelledStatement, parserParams: List[Boolean]) extends Statement {
   x0.parent = Some(this)
   val name: String = "Statement10"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("LabelledStatement", x0, Nil).reverse
@@ -263,15 +263,15 @@ object Statement10 extends ASTInfo {
 case class Statement11(x0: ThrowStatement, parserParams: List[Boolean]) extends Statement {
   x0.parent = Some(this)
   val name: String = "Statement11"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("ThrowStatement", x0, Nil).reverse
@@ -288,15 +288,15 @@ object Statement11 extends ASTInfo {
 case class Statement12(x0: TryStatement, parserParams: List[Boolean]) extends Statement {
   x0.parent = Some(this)
   val name: String = "Statement12"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("TryStatement", x0, Nil).reverse
@@ -309,15 +309,15 @@ object Statement12 extends ASTInfo {
 case class Statement13(x0: DebuggerStatement, parserParams: List[Boolean]) extends Statement {
   x0.parent = Some(this)
   val name: String = "Statement13"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("DebuggerStatement", x0, Nil).reverse

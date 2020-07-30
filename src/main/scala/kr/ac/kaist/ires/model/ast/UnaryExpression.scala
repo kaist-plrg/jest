@@ -11,15 +11,15 @@ trait UnaryExpression extends AST {
 case class UnaryExpression0(x0: UpdateExpression, parserParams: List[Boolean]) extends UnaryExpression {
   x0.parent = Some(this)
   val name: String = "UnaryExpression0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("UpdateExpression", x0, Nil).reverse
@@ -32,16 +32,16 @@ object UnaryExpression0 extends ASTInfo {
 case class UnaryExpression1(x1: UnaryExpression, parserParams: List[Boolean]) extends UnaryExpression {
   x1.parent = Some(this)
   val name: String = "UnaryExpression1"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 7
-    k = x1.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 6)
+    inc(x1.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"delete $x1"
+    s("delete", x1)
   }
   val k: Int = d(x1, 0)
   val fullList: List[(String, Value)] = l("UnaryExpression", x1, Nil).reverse
@@ -58,16 +58,16 @@ object UnaryExpression1 extends ASTInfo {
 case class UnaryExpression2(x1: UnaryExpression, parserParams: List[Boolean]) extends UnaryExpression {
   x1.parent = Some(this)
   val name: String = "UnaryExpression2"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 5
-    k = x1.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 4)
+    inc(x1.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"void $x1"
+    s("void", x1)
   }
   val k: Int = d(x1, 0)
   val fullList: List[(String, Value)] = l("UnaryExpression", x1, Nil).reverse
@@ -84,16 +84,16 @@ object UnaryExpression2 extends ASTInfo {
 case class UnaryExpression3(x1: UnaryExpression, parserParams: List[Boolean]) extends UnaryExpression {
   x1.parent = Some(this)
   val name: String = "UnaryExpression3"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 7
-    k = x1.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 6)
+    inc(x1.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"typeof $x1"
+    s("typeof", x1)
   }
   val k: Int = d(x1, 0)
   val fullList: List[(String, Value)] = l("UnaryExpression", x1, Nil).reverse
@@ -110,16 +110,16 @@ object UnaryExpression3 extends ASTInfo {
 case class UnaryExpression4(x1: UnaryExpression, parserParams: List[Boolean]) extends UnaryExpression {
   x1.parent = Some(this)
   val name: String = "UnaryExpression4"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 2
-    k = x1.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 1)
+    inc(x1.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"+ $x1"
+    s("+", x1)
   }
   val k: Int = d(x1, 0)
   val fullList: List[(String, Value)] = l("UnaryExpression", x1, Nil).reverse
@@ -136,16 +136,16 @@ object UnaryExpression4 extends ASTInfo {
 case class UnaryExpression5(x1: UnaryExpression, parserParams: List[Boolean]) extends UnaryExpression {
   x1.parent = Some(this)
   val name: String = "UnaryExpression5"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 2
-    k = x1.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 1)
+    inc(x1.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"- $x1"
+    s("-", x1)
   }
   val k: Int = d(x1, 0)
   val fullList: List[(String, Value)] = l("UnaryExpression", x1, Nil).reverse
@@ -162,16 +162,16 @@ object UnaryExpression5 extends ASTInfo {
 case class UnaryExpression6(x1: UnaryExpression, parserParams: List[Boolean]) extends UnaryExpression {
   x1.parent = Some(this)
   val name: String = "UnaryExpression6"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 2
-    k = x1.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 1)
+    inc(x1.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"~ $x1"
+    s("~", x1)
   }
   val k: Int = d(x1, 0)
   val fullList: List[(String, Value)] = l("UnaryExpression", x1, Nil).reverse
@@ -188,16 +188,16 @@ object UnaryExpression6 extends ASTInfo {
 case class UnaryExpression7(x1: UnaryExpression, parserParams: List[Boolean]) extends UnaryExpression {
   x1.parent = Some(this)
   val name: String = "UnaryExpression7"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 2
-    k = x1.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 1)
+    inc(x1.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"! $x1"
+    s("!", x1)
   }
   val k: Int = d(x1, 0)
   val fullList: List[(String, Value)] = l("UnaryExpression", x1, Nil).reverse
@@ -214,15 +214,15 @@ object UnaryExpression7 extends ASTInfo {
 case class UnaryExpression8(x0: AwaitExpression, parserParams: List[Boolean]) extends UnaryExpression {
   x0.parent = Some(this)
   val name: String = "UnaryExpression8"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("AwaitExpression", x0, Nil).reverse

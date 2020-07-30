@@ -10,15 +10,15 @@ trait LetOrConst extends AST {
 }
 case class LetOrConst0(parserParams: List[Boolean]) extends LetOrConst {
   val name: String = "LetOrConst0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 4
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 3)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"let"
+    s("let")
   }
   val k: Int = 0
   val fullList: List[(String, Value)] = Nil.reverse
@@ -32,15 +32,15 @@ object LetOrConst0 extends ASTInfo {
 }
 case class LetOrConst1(parserParams: List[Boolean]) extends LetOrConst {
   val name: String = "LetOrConst1"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 6
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 5)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"const"
+    s("const")
   }
   val k: Int = 0
   val fullList: List[(String, Value)] = Nil.reverse

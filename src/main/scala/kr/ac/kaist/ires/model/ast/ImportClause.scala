@@ -11,15 +11,15 @@ trait ImportClause extends AST {
 case class ImportClause0(x0: ImportedDefaultBinding, parserParams: List[Boolean]) extends ImportClause {
   x0.parent = Some(this)
   val name: String = "ImportClause0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("ImportedDefaultBinding", x0, Nil).reverse
@@ -32,15 +32,15 @@ object ImportClause0 extends ASTInfo {
 case class ImportClause1(x0: NameSpaceImport, parserParams: List[Boolean]) extends ImportClause {
   x0.parent = Some(this)
   val name: String = "ImportClause1"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("NameSpaceImport", x0, Nil).reverse
@@ -53,15 +53,15 @@ object ImportClause1 extends ASTInfo {
 case class ImportClause2(x0: NamedImports, parserParams: List[Boolean]) extends ImportClause {
   x0.parent = Some(this)
   val name: String = "ImportClause2"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("NamedImports", x0, Nil).reverse
@@ -75,17 +75,17 @@ case class ImportClause3(x0: ImportedDefaultBinding, x2: NameSpaceImport, parser
   x0.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "ImportClause3"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    k += 2
-    k = x2.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    inc(end + 1)
+    inc(x2.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0 , $x2"
+    s(x0, ",", x2)
   }
   val k: Int = d(x2, d(x0, 0))
   val fullList: List[(String, Value)] = l("NameSpaceImport", x2, l("ImportedDefaultBinding", x0, Nil)).reverse
@@ -99,17 +99,17 @@ case class ImportClause4(x0: ImportedDefaultBinding, x2: NamedImports, parserPar
   x0.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "ImportClause4"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    k += 2
-    k = x2.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    inc(end + 1)
+    inc(x2.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0 , $x2"
+    s(x0, ",", x2)
   }
   val k: Int = d(x2, d(x0, 0))
   val fullList: List[(String, Value)] = l("NamedImports", x2, l("ImportedDefaultBinding", x0, Nil)).reverse

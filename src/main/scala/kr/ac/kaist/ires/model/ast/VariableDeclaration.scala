@@ -12,16 +12,16 @@ case class VariableDeclaration0(x0: BindingIdentifier, x1: Option[Initializer], 
   x0.parent = Some(this)
   x1.foreach((m) => m.parent = Some(this))
   val name: String = "VariableDeclaration0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    k = x1.fold(k)(_.updateSpan(k)) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    x1.map(x => inc(x.updateSpan(end)))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0 ${x1.getOrElse("")}"
+    s(x0, x1.getOrElse(""))
   }
   val k: Int = d(x1, d(x0, 0))
   val fullList: List[(String, Value)] = l("Option[Initializer]", x1, l("BindingIdentifier", x0, Nil)).reverse
@@ -39,16 +39,16 @@ case class VariableDeclaration1(x0: BindingPattern, x1: Initializer, parserParam
   x0.parent = Some(this)
   x1.parent = Some(this)
   val name: String = "VariableDeclaration1"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    k = x1.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    inc(x1.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0 $x1"
+    s(x0, x1)
   }
   val k: Int = d(x1, d(x0, 0))
   val fullList: List[(String, Value)] = l("Initializer", x1, l("BindingPattern", x0, Nil)).reverse

@@ -11,15 +11,15 @@ trait ShortCircuitExpression extends AST {
 case class ShortCircuitExpression0(x0: LogicalORExpression, parserParams: List[Boolean]) extends ShortCircuitExpression {
   x0.parent = Some(this)
   val name: String = "ShortCircuitExpression0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("LogicalORExpression", x0, Nil).reverse
@@ -32,15 +32,15 @@ object ShortCircuitExpression0 extends ASTInfo {
 case class ShortCircuitExpression1(x0: CoalesceExpression, parserParams: List[Boolean]) extends ShortCircuitExpression {
   x0.parent = Some(this)
   val name: String = "ShortCircuitExpression1"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("CoalesceExpression", x0, Nil).reverse

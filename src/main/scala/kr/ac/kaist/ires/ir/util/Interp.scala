@@ -390,7 +390,7 @@ class Interp(
             case ASTVal(s) =>
               ModelHelper.checkSupported(s)
               // use same span of the original AST
-              s.updateSpan(ast.start)
+              if (ast.start >= 0) s.updateSpan(ast.start)
             case _ =>
           }
           (newVal, s1)

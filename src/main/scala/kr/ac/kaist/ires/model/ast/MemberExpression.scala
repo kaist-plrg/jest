@@ -11,15 +11,15 @@ trait MemberExpression extends AST {
 case class MemberExpression0(x0: PrimaryExpression, parserParams: List[Boolean]) extends MemberExpression {
   x0.parent = Some(this)
   val name: String = "MemberExpression0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("PrimaryExpression", x0, Nil).reverse
@@ -35,18 +35,18 @@ case class MemberExpression1(x0: MemberExpression, x2: Expression, parserParams:
   x0.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "MemberExpression1"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    k += 2
-    k = x2.updateSpan(k) + 1
-    k += 2
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    inc(end + 1)
+    inc(x2.updateSpan(end))
+    inc(end + 1)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0 [ $x2 ]"
+    s(x0, "[", x2, "]")
   }
   val k: Int = d(x2, d(x0, 0))
   val fullList: List[(String, Value)] = l("Expression", x2, l("MemberExpression", x0, Nil)).reverse
@@ -66,17 +66,17 @@ case class MemberExpression2(x0: MemberExpression, x2: Lexical, parserParams: Li
   x0.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "MemberExpression2"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    k += 2
-    k = x2.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    inc(end + 1)
+    inc(x2.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0 . $x2"
+    s(x0, ".", x2)
   }
   val k: Int = d(x2, d(x0, 0))
   val fullList: List[(String, Value)] = l("Lexical", x2, l("MemberExpression", x0, Nil)).reverse
@@ -97,16 +97,16 @@ case class MemberExpression3(x0: MemberExpression, x1: TemplateLiteral, parserPa
   x0.parent = Some(this)
   x1.parent = Some(this)
   val name: String = "MemberExpression3"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    k = x1.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    inc(x1.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0 $x1"
+    s(x0, x1)
   }
   val k: Int = d(x1, d(x0, 0))
   val fullList: List[(String, Value)] = l("TemplateLiteral", x1, l("MemberExpression", x0, Nil)).reverse
@@ -125,15 +125,15 @@ object MemberExpression3 extends ASTInfo {
 case class MemberExpression4(x0: SuperProperty, parserParams: List[Boolean]) extends MemberExpression {
   x0.parent = Some(this)
   val name: String = "MemberExpression4"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("SuperProperty", x0, Nil).reverse
@@ -151,15 +151,15 @@ object MemberExpression4 extends ASTInfo {
 case class MemberExpression5(x0: MetaProperty, parserParams: List[Boolean]) extends MemberExpression {
   x0.parent = Some(this)
   val name: String = "MemberExpression5"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("MetaProperty", x0, Nil).reverse
@@ -178,17 +178,17 @@ case class MemberExpression6(x1: MemberExpression, x2: Arguments, parserParams: 
   x1.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "MemberExpression6"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 4
-    k = x1.updateSpan(k) + 1
-    k = x2.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 3)
+    inc(x1.updateSpan(end))
+    inc(x2.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"new $x1 $x2"
+    s("new", x1, x2)
   }
   val k: Int = d(x2, d(x1, 0))
   val fullList: List[(String, Value)] = l("Arguments", x2, l("MemberExpression", x1, Nil)).reverse

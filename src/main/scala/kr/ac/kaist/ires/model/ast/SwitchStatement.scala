@@ -12,19 +12,19 @@ case class SwitchStatement0(x2: Expression, x4: CaseBlock, parserParams: List[Bo
   x2.parent = Some(this)
   x4.parent = Some(this)
   val name: String = "SwitchStatement0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 7
-    k += 2
-    k = x2.updateSpan(k) + 1
-    k += 2
-    k = x4.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 6)
+    inc(end + 1)
+    inc(x2.updateSpan(end))
+    inc(end + 1)
+    inc(x4.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"switch ( $x2 ) $x4"
+    s("switch", "(", x2, ")", x4)
   }
   val k: Int = d(x4, d(x2, 0))
   val fullList: List[(String, Value)] = l("CaseBlock", x4, l("Expression", x2, Nil)).reverse

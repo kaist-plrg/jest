@@ -13,23 +13,23 @@ case class GeneratorExpression0(x2: Option[BindingIdentifier], x4: FormalParamet
   x4.parent = Some(this)
   x7.parent = Some(this)
   val name: String = "GeneratorExpression0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 9
-    k += 2
-    k = x2.fold(k)(_.updateSpan(k)) + 1
-    k += 2
-    k = x4.updateSpan(k) + 1
-    k += 2
-    k += 2
-    k = x7.updateSpan(k) + 1
-    k += 2
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 8)
+    inc(end + 1)
+    x2.map(x => inc(x.updateSpan(end)))
+    inc(end + 1)
+    inc(x4.updateSpan(end))
+    inc(end + 1)
+    inc(end + 1)
+    inc(x7.updateSpan(end))
+    inc(end + 1)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"function * ${x2.getOrElse("")} ( $x4 ) { $x7 }"
+    s("function", "*", x2.getOrElse(""), "(", x4, ")", "{", x7, "}")
   }
   val k: Int = d(x7, d(x4, d(x2, 0)))
   val fullList: List[(String, Value)] = l("GeneratorBody", x7, l("FormalParameters", x4, l("Option[BindingIdentifier]", x2, Nil))).reverse

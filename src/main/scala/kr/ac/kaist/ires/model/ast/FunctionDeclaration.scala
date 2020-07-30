@@ -13,22 +13,22 @@ case class FunctionDeclaration0(x1: BindingIdentifier, x3: FormalParameters, x6:
   x3.parent = Some(this)
   x6.parent = Some(this)
   val name: String = "FunctionDeclaration0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 9
-    k = x1.updateSpan(k) + 1
-    k += 2
-    k = x3.updateSpan(k) + 1
-    k += 2
-    k += 2
-    k = x6.updateSpan(k) + 1
-    k += 2
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 8)
+    inc(x1.updateSpan(end))
+    inc(end + 1)
+    inc(x3.updateSpan(end))
+    inc(end + 1)
+    inc(end + 1)
+    inc(x6.updateSpan(end))
+    inc(end + 1)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"function $x1 ( $x3 ) { $x6 }"
+    s("function", x1, "(", x3, ")", "{", x6, "}")
   }
   val k: Int = d(x6, d(x3, d(x1, 0)))
   val fullList: List[(String, Value)] = l("FunctionBody", x6, l("FormalParameters", x3, l("BindingIdentifier", x1, Nil))).reverse
@@ -48,21 +48,21 @@ case class FunctionDeclaration1(x2: FormalParameters, x5: FunctionBody, parserPa
   x2.parent = Some(this)
   x5.parent = Some(this)
   val name: String = "FunctionDeclaration1"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 9
-    k += 2
-    k = x2.updateSpan(k) + 1
-    k += 2
-    k += 2
-    k = x5.updateSpan(k) + 1
-    k += 2
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 8)
+    inc(end + 1)
+    inc(x2.updateSpan(end))
+    inc(end + 1)
+    inc(end + 1)
+    inc(x5.updateSpan(end))
+    inc(end + 1)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"function ( $x2 ) { $x5 }"
+    s("function", "(", x2, ")", "{", x5, "}")
   }
   val k: Int = d(x5, d(x2, 0))
   val fullList: List[(String, Value)] = l("FunctionBody", x5, l("FormalParameters", x2, Nil)).reverse

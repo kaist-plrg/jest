@@ -11,15 +11,15 @@ trait ConciseBody extends AST {
 case class ConciseBody0(x1: ExpressionBody, parserParams: List[Boolean]) extends ConciseBody {
   x1.parent = Some(this)
   val name: String = "ConciseBody0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x1.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x1.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x1"
+    s(x1)
   }
   val k: Int = d(x1, 0)
   val fullList: List[(String, Value)] = l("ExpressionBody", x1, Nil).reverse
@@ -39,17 +39,17 @@ object ConciseBody0 extends ASTInfo {
 case class ConciseBody1(x1: FunctionBody, parserParams: List[Boolean]) extends ConciseBody {
   x1.parent = Some(this)
   val name: String = "ConciseBody1"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 2
-    k = x1.updateSpan(k) + 1
-    k += 2
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 1)
+    inc(x1.updateSpan(end))
+    inc(end + 1)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"{ $x1 }"
+    s("{", x1, "}")
   }
   val k: Int = d(x1, 0)
   val fullList: List[(String, Value)] = l("FunctionBody", x1, Nil).reverse

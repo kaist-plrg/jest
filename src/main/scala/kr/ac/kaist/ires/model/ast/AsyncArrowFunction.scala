@@ -12,18 +12,18 @@ case class AsyncArrowFunction0(x2: AsyncArrowBindingIdentifier, x5: AsyncConcise
   x2.parent = Some(this)
   x5.parent = Some(this)
   val name: String = "AsyncArrowFunction0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 6
-    k = x2.updateSpan(k) + 1
-    k += 3
-    k = x5.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 5)
+    inc(x2.updateSpan(end))
+    inc(end + 2)
+    inc(x5.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"async $x2 => $x5"
+    s("async", x2, "=>", x5)
   }
   val k: Int = d(x5, d(x2, 0))
   val fullList: List[(String, Value)] = l("AsyncConciseBody", x5, l("AsyncArrowBindingIdentifier", x2, Nil)).reverse
@@ -42,17 +42,17 @@ case class AsyncArrowFunction1(x0: CoverCallExpressionAndAsyncArrowHead, x3: Asy
   x0.parent = Some(this)
   x3.parent = Some(this)
   val name: String = "AsyncArrowFunction1"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    k += 3
-    k = x3.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    inc(end + 2)
+    inc(x3.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0 => $x3"
+    s(x0, "=>", x3)
   }
   val k: Int = d(x3, d(x0, 0))
   val fullList: List[(String, Value)] = l("AsyncConciseBody", x3, l("CoverCallExpressionAndAsyncArrowHead", x0, Nil)).reverse

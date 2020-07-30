@@ -10,16 +10,16 @@ trait ReturnStatement extends AST {
 }
 case class ReturnStatement0(parserParams: List[Boolean]) extends ReturnStatement {
   val name: String = "ReturnStatement0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 7
-    k += 2
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 6)
+    inc(end + 1)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"return ;"
+    s("return", ";")
   }
   val k: Int = 0
   val fullList: List[(String, Value)] = Nil.reverse
@@ -35,17 +35,17 @@ object ReturnStatement0 extends ASTInfo {
 case class ReturnStatement1(x2: Expression, parserParams: List[Boolean]) extends ReturnStatement {
   x2.parent = Some(this)
   val name: String = "ReturnStatement1"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 7
-    k = x2.updateSpan(k) + 1
-    k += 2
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 6)
+    inc(x2.updateSpan(end))
+    inc(end + 1)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"return $x2 ;"
+    s("return", x2, ";")
   }
   val k: Int = d(x2, 0)
   val fullList: List[(String, Value)] = l("Expression", x2, Nil).reverse

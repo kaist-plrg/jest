@@ -11,15 +11,15 @@ trait CallExpression extends AST {
 case class CallExpression0(x0: CoverCallExpressionAndAsyncArrowHead, parserParams: List[Boolean]) extends CallExpression {
   x0.parent = Some(this)
   val name: String = "CallExpression0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("CoverCallExpressionAndAsyncArrowHead", x0, Nil).reverse
@@ -35,15 +35,15 @@ object CallExpression0 extends ASTInfo {
 case class CallExpression1(x0: SuperCall, parserParams: List[Boolean]) extends CallExpression {
   x0.parent = Some(this)
   val name: String = "CallExpression1"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("SuperCall", x0, Nil).reverse
@@ -58,15 +58,15 @@ object CallExpression1 extends ASTInfo {
 case class CallExpression2(x0: ImportCall, parserParams: List[Boolean]) extends CallExpression {
   x0.parent = Some(this)
   val name: String = "CallExpression2"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("ImportCall", x0, Nil).reverse
@@ -80,16 +80,16 @@ case class CallExpression3(x0: CallExpression, x1: Arguments, parserParams: List
   x0.parent = Some(this)
   x1.parent = Some(this)
   val name: String = "CallExpression3"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    k = x1.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    inc(x1.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0 $x1"
+    s(x0, x1)
   }
   val k: Int = d(x1, d(x0, 0))
   val fullList: List[(String, Value)] = l("Arguments", x1, l("CallExpression", x0, Nil)).reverse
@@ -106,18 +106,18 @@ case class CallExpression4(x0: CallExpression, x2: Expression, parserParams: Lis
   x0.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "CallExpression4"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    k += 2
-    k = x2.updateSpan(k) + 1
-    k += 2
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    inc(end + 1)
+    inc(x2.updateSpan(end))
+    inc(end + 1)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0 [ $x2 ]"
+    s(x0, "[", x2, "]")
   }
   val k: Int = d(x2, d(x0, 0))
   val fullList: List[(String, Value)] = l("Expression", x2, l("CallExpression", x0, Nil)).reverse
@@ -134,17 +134,17 @@ case class CallExpression5(x0: CallExpression, x2: Lexical, parserParams: List[B
   x0.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "CallExpression5"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    k += 2
-    k = x2.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    inc(end + 1)
+    inc(x2.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0 . $x2"
+    s(x0, ".", x2)
   }
   val k: Int = d(x2, d(x0, 0))
   val fullList: List[(String, Value)] = l("Lexical", x2, l("CallExpression", x0, Nil)).reverse
@@ -162,16 +162,16 @@ case class CallExpression6(x0: CallExpression, x1: TemplateLiteral, parserParams
   x0.parent = Some(this)
   x1.parent = Some(this)
   val name: String = "CallExpression6"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    k = x1.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    inc(x1.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0 $x1"
+    s(x0, x1)
   }
   val k: Int = d(x1, d(x0, 0))
   val fullList: List[(String, Value)] = l("TemplateLiteral", x1, l("CallExpression", x0, Nil)).reverse

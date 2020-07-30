@@ -3,6 +3,7 @@ package kr.ac.kaist.ires.mutator
 import kr.ac.kaist.ires.model.Script
 
 trait Mutator {
+  val name: String
   val script: Script
   val weight: Int
   def mutateOption: Option[Script]

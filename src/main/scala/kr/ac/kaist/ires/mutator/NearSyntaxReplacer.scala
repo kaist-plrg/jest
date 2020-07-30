@@ -13,6 +13,8 @@ case class NearSyntaxReplacer(
     filename: Option[String] = None,
     debug: Boolean = false
 ) extends Mutator with Walker {
+  val name = "NearSyntaxReplacer"
+
   // script string
   val scriptString = script.toString
 

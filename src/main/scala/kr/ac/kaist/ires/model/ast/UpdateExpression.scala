@@ -11,15 +11,15 @@ trait UpdateExpression extends AST {
 case class UpdateExpression0(x0: LeftHandSideExpression, parserParams: List[Boolean]) extends UpdateExpression {
   x0.parent = Some(this)
   val name: String = "UpdateExpression0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("LeftHandSideExpression", x0, Nil).reverse
@@ -32,16 +32,16 @@ object UpdateExpression0 extends ASTInfo {
 case class UpdateExpression1(x0: LeftHandSideExpression, parserParams: List[Boolean]) extends UpdateExpression {
   x0.parent = Some(this)
   val name: String = "UpdateExpression1"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    k += 3
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    inc(end + 2)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0 ++"
+    s(x0, "++")
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("LeftHandSideExpression", x0, Nil).reverse
@@ -58,16 +58,16 @@ object UpdateExpression1 extends ASTInfo {
 case class UpdateExpression2(x0: LeftHandSideExpression, parserParams: List[Boolean]) extends UpdateExpression {
   x0.parent = Some(this)
   val name: String = "UpdateExpression2"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    k += 3
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    inc(end + 2)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0 --"
+    s(x0, "--")
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("LeftHandSideExpression", x0, Nil).reverse
@@ -84,16 +84,16 @@ object UpdateExpression2 extends ASTInfo {
 case class UpdateExpression3(x1: UnaryExpression, parserParams: List[Boolean]) extends UpdateExpression {
   x1.parent = Some(this)
   val name: String = "UpdateExpression3"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 3
-    k = x1.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 2)
+    inc(x1.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"++ $x1"
+    s("++", x1)
   }
   val k: Int = d(x1, 0)
   val fullList: List[(String, Value)] = l("UnaryExpression", x1, Nil).reverse
@@ -110,16 +110,16 @@ object UpdateExpression3 extends ASTInfo {
 case class UpdateExpression4(x1: UnaryExpression, parserParams: List[Boolean]) extends UpdateExpression {
   x1.parent = Some(this)
   val name: String = "UpdateExpression4"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 3
-    k = x1.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 2)
+    inc(x1.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"-- $x1"
+    s("--", x1)
   }
   val k: Int = d(x1, 0)
   val fullList: List[(String, Value)] = l("UnaryExpression", x1, Nil).reverse

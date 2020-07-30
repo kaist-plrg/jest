@@ -11,16 +11,16 @@ trait BindingRestElement extends AST {
 case class BindingRestElement0(x1: BindingIdentifier, parserParams: List[Boolean]) extends BindingRestElement {
   x1.parent = Some(this)
   val name: String = "BindingRestElement0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 4
-    k = x1.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 3)
+    inc(x1.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"... $x1"
+    s("...", x1)
   }
   val k: Int = d(x1, 0)
   val fullList: List[(String, Value)] = l("BindingIdentifier", x1, Nil).reverse
@@ -36,16 +36,16 @@ object BindingRestElement0 extends ASTInfo {
 case class BindingRestElement1(x1: BindingPattern, parserParams: List[Boolean]) extends BindingRestElement {
   x1.parent = Some(this)
   val name: String = "BindingRestElement1"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 4
-    k = x1.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 3)
+    inc(x1.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"... $x1"
+    s("...", x1)
   }
   val k: Int = d(x1, 0)
   val fullList: List[(String, Value)] = l("BindingPattern", x1, Nil).reverse

@@ -12,16 +12,16 @@ case class ElementList0(x0: Option[Elision], x1: AssignmentExpression, parserPar
   x0.foreach((m) => m.parent = Some(this))
   x1.parent = Some(this)
   val name: String = "ElementList0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.fold(k)(_.updateSpan(k)) + 1
-    k = x1.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    x0.map(x => inc(x.updateSpan(end)))
+    inc(x1.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"${x0.getOrElse("")} $x1"
+    s(x0.getOrElse(""), x1)
   }
   val k: Int = d(x1, d(x0, 0))
   val fullList: List[(String, Value)] = l("AssignmentExpression", x1, l("Option[Elision]", x0, Nil)).reverse
@@ -37,16 +37,16 @@ case class ElementList1(x0: Option[Elision], x1: SpreadElement, parserParams: Li
   x0.foreach((m) => m.parent = Some(this))
   x1.parent = Some(this)
   val name: String = "ElementList1"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.fold(k)(_.updateSpan(k)) + 1
-    k = x1.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    x0.map(x => inc(x.updateSpan(end)))
+    inc(x1.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"${x0.getOrElse("")} $x1"
+    s(x0.getOrElse(""), x1)
   }
   val k: Int = d(x1, d(x0, 0))
   val fullList: List[(String, Value)] = l("SpreadElement", x1, l("Option[Elision]", x0, Nil)).reverse
@@ -63,18 +63,18 @@ case class ElementList2(x0: ElementList, x2: Option[Elision], x3: AssignmentExpr
   x2.foreach((m) => m.parent = Some(this))
   x3.parent = Some(this)
   val name: String = "ElementList2"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    k += 2
-    k = x2.fold(k)(_.updateSpan(k)) + 1
-    k = x3.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    inc(end + 1)
+    x2.map(x => inc(x.updateSpan(end)))
+    inc(x3.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0 , ${x2.getOrElse("")} $x3"
+    s(x0, ",", x2.getOrElse(""), x3)
   }
   val k: Int = d(x3, d(x2, d(x0, 0)))
   val fullList: List[(String, Value)] = l("AssignmentExpression", x3, l("Option[Elision]", x2, l("ElementList", x0, Nil))).reverse
@@ -91,18 +91,18 @@ case class ElementList3(x0: ElementList, x2: Option[Elision], x3: SpreadElement,
   x2.foreach((m) => m.parent = Some(this))
   x3.parent = Some(this)
   val name: String = "ElementList3"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    k += 2
-    k = x2.fold(k)(_.updateSpan(k)) + 1
-    k = x3.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    inc(end + 1)
+    x2.map(x => inc(x.updateSpan(end)))
+    inc(x3.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0 , ${x2.getOrElse("")} $x3"
+    s(x0, ",", x2.getOrElse(""), x3)
   }
   val k: Int = d(x3, d(x2, d(x0, 0)))
   val fullList: List[(String, Value)] = l("SpreadElement", x3, l("Option[Elision]", x2, l("ElementList", x0, Nil))).reverse

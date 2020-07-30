@@ -11,17 +11,17 @@ trait NameSpaceImport extends AST {
 case class NameSpaceImport0(x2: ImportedBinding, parserParams: List[Boolean]) extends NameSpaceImport {
   x2.parent = Some(this)
   val name: String = "NameSpaceImport0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 2
-    k += 3
-    k = x2.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 1)
+    inc(end + 2)
+    inc(x2.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"* as $x2"
+    s("*", "as", x2)
   }
   val k: Int = d(x2, 0)
   val fullList: List[(String, Value)] = l("ImportedBinding", x2, Nil).reverse

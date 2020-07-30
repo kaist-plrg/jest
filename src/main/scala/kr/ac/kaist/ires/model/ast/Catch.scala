@@ -12,19 +12,19 @@ case class Catch0(x2: CatchParameter, x4: Block, parserParams: List[Boolean]) ex
   x2.parent = Some(this)
   x4.parent = Some(this)
   val name: String = "Catch0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 6
-    k += 2
-    k = x2.updateSpan(k) + 1
-    k += 2
-    k = x4.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 5)
+    inc(end + 1)
+    inc(x2.updateSpan(end))
+    inc(end + 1)
+    inc(x4.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"catch ( $x2 ) $x4"
+    s("catch", "(", x2, ")", x4)
   }
   val k: Int = d(x4, d(x2, 0))
   val fullList: List[(String, Value)] = l("Block", x4, l("CatchParameter", x2, Nil)).reverse
@@ -42,16 +42,16 @@ object Catch0 extends ASTInfo {
 case class Catch1(x1: Block, parserParams: List[Boolean]) extends Catch {
   x1.parent = Some(this)
   val name: String = "Catch1"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 6
-    k = x1.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 5)
+    inc(x1.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"catch $x1"
+    s("catch", x1)
   }
   val k: Int = d(x1, 0)
   val fullList: List[(String, Value)] = l("Block", x1, Nil).reverse

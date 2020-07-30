@@ -11,15 +11,15 @@ trait BindingElement extends AST {
 case class BindingElement0(x0: SingleNameBinding, parserParams: List[Boolean]) extends BindingElement {
   x0.parent = Some(this)
   val name: String = "BindingElement0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("SingleNameBinding", x0, Nil).reverse
@@ -35,16 +35,16 @@ case class BindingElement1(x0: BindingPattern, x1: Option[Initializer], parserPa
   x0.parent = Some(this)
   x1.foreach((m) => m.parent = Some(this))
   val name: String = "BindingElement1"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    k = x1.fold(k)(_.updateSpan(k)) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    x1.map(x => inc(x.updateSpan(end)))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0 ${x1.getOrElse("")}"
+    s(x0, x1.getOrElse(""))
   }
   val k: Int = d(x1, d(x0, 0))
   val fullList: List[(String, Value)] = l("Option[Initializer]", x1, l("BindingPattern", x0, Nil)).reverse

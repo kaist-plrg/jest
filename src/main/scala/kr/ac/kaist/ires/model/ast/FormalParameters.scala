@@ -10,15 +10,14 @@ trait FormalParameters extends AST {
 }
 case class FormalParameters0(parserParams: List[Boolean]) extends FormalParameters {
   val name: String = "FormalParameters0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s""
+    s()
   }
   val k: Int = 0
   val fullList: List[(String, Value)] = Nil.reverse
@@ -37,15 +36,15 @@ object FormalParameters0 extends ASTInfo {
 case class FormalParameters1(x0: FunctionRestParameter, parserParams: List[Boolean]) extends FormalParameters {
   x0.parent = Some(this)
   val name: String = "FormalParameters1"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("FunctionRestParameter", x0, Nil).reverse
@@ -63,15 +62,15 @@ object FormalParameters1 extends ASTInfo {
 case class FormalParameters2(x0: FormalParameterList, parserParams: List[Boolean]) extends FormalParameters {
   x0.parent = Some(this)
   val name: String = "FormalParameters2"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0"
+    s(x0)
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("FormalParameterList", x0, Nil).reverse
@@ -84,16 +83,16 @@ object FormalParameters2 extends ASTInfo {
 case class FormalParameters3(x0: FormalParameterList, parserParams: List[Boolean]) extends FormalParameters {
   x0.parent = Some(this)
   val name: String = "FormalParameters3"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    k += 2
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    inc(end + 1)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0 ,"
+    s(x0, ",")
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("FormalParameterList", x0, Nil).reverse
@@ -107,17 +106,17 @@ case class FormalParameters4(x0: FormalParameterList, x2: FunctionRestParameter,
   x0.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "FormalParameters4"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.updateSpan(k) + 1
-    k += 2
-    k = x2.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(x0.updateSpan(end))
+    inc(end + 1)
+    inc(x2.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"$x0 , $x2"
+    s(x0, ",", x2)
   }
   val k: Int = d(x2, d(x0, 0))
   val fullList: List[(String, Value)] = l("FunctionRestParameter", x2, l("FormalParameterList", x0, Nil)).reverse

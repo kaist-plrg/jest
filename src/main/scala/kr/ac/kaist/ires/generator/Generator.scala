@@ -14,7 +14,7 @@ import spray.json._
 
 object Generator extends DefaultJsonProtocol {
   // max iteration
-  val MAX_ITER = 100
+  val MAX_ITER = 5000
   val MAX_TRIAL = 500
 
   // generate JavaScript programs
@@ -33,11 +33,11 @@ object Generator extends DefaultJsonProtocol {
 
     def log(any: Any, stdout: Boolean = true): Unit = {
       nf.print(any)
-      if (stdout && debug) print(any)
+      if (debug) print(any)
     }
     def logln(any: Any, stdout: Boolean = true): Unit = {
       nf.println(any)
-      if (stdout && debug) println(any)
+      if (debug) println(any)
     }
     def logSimple(any: Any): Unit = nfSimple.print(any.toString + "\t")
     def loglnSimple(any: Any): Unit = nfSimple.println(any)

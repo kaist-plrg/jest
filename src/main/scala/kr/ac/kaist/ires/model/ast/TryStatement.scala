@@ -12,17 +12,17 @@ case class TryStatement0(x1: Block, x2: Catch, parserParams: List[Boolean]) exte
   x1.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "TryStatement0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 4
-    k = x1.updateSpan(k) + 1
-    k = x2.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 3)
+    inc(x1.updateSpan(end))
+    inc(x2.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"try $x1 $x2"
+    s("try", x1, x2)
   }
   val k: Int = d(x2, d(x1, 0))
   val fullList: List[(String, Value)] = l("Catch", x2, l("Block", x1, Nil)).reverse
@@ -41,17 +41,17 @@ case class TryStatement1(x1: Block, x2: Finally, parserParams: List[Boolean]) ex
   x1.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "TryStatement1"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 4
-    k = x1.updateSpan(k) + 1
-    k = x2.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 3)
+    inc(x1.updateSpan(end))
+    inc(x2.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"try $x1 $x2"
+    s("try", x1, x2)
   }
   val k: Int = d(x2, d(x1, 0))
   val fullList: List[(String, Value)] = l("Finally", x2, l("Block", x1, Nil)).reverse
@@ -71,18 +71,18 @@ case class TryStatement2(x1: Block, x2: Catch, x3: Finally, parserParams: List[B
   x2.parent = Some(this)
   x3.parent = Some(this)
   val name: String = "TryStatement2"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 4
-    k = x1.updateSpan(k) + 1
-    k = x2.updateSpan(k) + 1
-    k = x3.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 3)
+    inc(x1.updateSpan(end))
+    inc(x2.updateSpan(end))
+    inc(x3.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"try $x1 $x2 $x3"
+    s("try", x1, x2, x3)
   }
   val k: Int = d(x3, d(x2, d(x1, 0)))
   val fullList: List[(String, Value)] = l("Finally", x3, l("Catch", x2, l("Block", x1, Nil))).reverse

@@ -11,16 +11,16 @@ trait AwaitExpression extends AST {
 case class AwaitExpression0(x1: UnaryExpression, parserParams: List[Boolean]) extends AwaitExpression {
   x1.parent = Some(this)
   val name: String = "AwaitExpression0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 6
-    k = x1.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 5)
+    inc(x1.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"await $x1"
+    s("await", x1)
   }
   val k: Int = d(x1, 0)
   val fullList: List[(String, Value)] = l("UnaryExpression", x1, Nil).reverse

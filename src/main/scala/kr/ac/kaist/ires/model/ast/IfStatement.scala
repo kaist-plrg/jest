@@ -13,21 +13,21 @@ case class IfStatement0(x2: Expression, x4: Statement, x6: Statement, parserPara
   x4.parent = Some(this)
   x6.parent = Some(this)
   val name: String = "IfStatement0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 3
-    k += 2
-    k = x2.updateSpan(k) + 1
-    k += 2
-    k = x4.updateSpan(k) + 1
-    k += 5
-    k = x6.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 2)
+    inc(end + 1)
+    inc(x2.updateSpan(end))
+    inc(end + 1)
+    inc(x4.updateSpan(end))
+    inc(end + 4)
+    inc(x6.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"if ( $x2 ) $x4 else $x6"
+    s("if", "(", x2, ")", x4, "else", x6)
   }
   val k: Int = d(x6, d(x4, d(x2, 0)))
   val fullList: List[(String, Value)] = l("Statement1", x6, l("Statement0", x4, l("Expression", x2, Nil))).reverse
@@ -46,19 +46,19 @@ case class IfStatement1(x2: Expression, x4: Statement, parserParams: List[Boolea
   x2.parent = Some(this)
   x4.parent = Some(this)
   val name: String = "IfStatement1"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 3
-    k += 2
-    k = x2.updateSpan(k) + 1
-    k += 2
-    k = x4.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 2)
+    inc(end + 1)
+    inc(x2.updateSpan(end))
+    inc(end + 1)
+    inc(x4.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"if ( $x2 ) $x4"
+    s("if", "(", x2, ")", x4)
   }
   val k: Int = d(x4, d(x2, 0))
   val fullList: List[(String, Value)] = l("Statement", x4, l("Expression", x2, Nil)).reverse

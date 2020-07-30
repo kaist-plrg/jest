@@ -11,16 +11,16 @@ trait SuperCall extends AST {
 case class SuperCall0(x1: Arguments, parserParams: List[Boolean]) extends SuperCall {
   x1.parent = Some(this)
   val name: String = "SuperCall0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 6
-    k = x1.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 5)
+    inc(x1.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"super $x1"
+    s("super", x1)
   }
   val k: Int = d(x1, 0)
   val fullList: List[(String, Value)] = l("Arguments", x1, Nil).reverse

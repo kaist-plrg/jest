@@ -11,17 +11,17 @@ trait CoverParenthesizedExpressionAndArrowParameterList extends AST {
 case class CoverParenthesizedExpressionAndArrowParameterList0(x1: Expression, parserParams: List[Boolean]) extends CoverParenthesizedExpressionAndArrowParameterList {
   x1.parent = Some(this)
   val name: String = "CoverParenthesizedExpressionAndArrowParameterList0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 2
-    k = x1.updateSpan(k) + 1
-    k += 2
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 1)
+    inc(x1.updateSpan(end))
+    inc(end + 1)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"( $x1 )"
+    s("(", x1, ")")
   }
   val k: Int = d(x1, 0)
   val fullList: List[(String, Value)] = l("Expression", x1, Nil).reverse
@@ -37,18 +37,18 @@ object CoverParenthesizedExpressionAndArrowParameterList0 extends ASTInfo {
 case class CoverParenthesizedExpressionAndArrowParameterList1(x1: Expression, parserParams: List[Boolean]) extends CoverParenthesizedExpressionAndArrowParameterList {
   x1.parent = Some(this)
   val name: String = "CoverParenthesizedExpressionAndArrowParameterList1"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 2
-    k = x1.updateSpan(k) + 1
-    k += 2
-    k += 2
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 1)
+    inc(x1.updateSpan(end))
+    inc(end + 1)
+    inc(end + 1)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"( $x1 , )"
+    s("(", x1, ",", ")")
   }
   val k: Int = d(x1, 0)
   val fullList: List[(String, Value)] = l("Expression", x1, Nil).reverse
@@ -62,16 +62,16 @@ object CoverParenthesizedExpressionAndArrowParameterList1 extends ASTInfo {
 }
 case class CoverParenthesizedExpressionAndArrowParameterList2(parserParams: List[Boolean]) extends CoverParenthesizedExpressionAndArrowParameterList {
   val name: String = "CoverParenthesizedExpressionAndArrowParameterList2"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 2
-    k += 2
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 1)
+    inc(end + 1)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"( )"
+    s("(", ")")
   }
   val k: Int = 0
   val fullList: List[(String, Value)] = Nil.reverse
@@ -86,18 +86,18 @@ object CoverParenthesizedExpressionAndArrowParameterList2 extends ASTInfo {
 case class CoverParenthesizedExpressionAndArrowParameterList3(x2: BindingIdentifier, parserParams: List[Boolean]) extends CoverParenthesizedExpressionAndArrowParameterList {
   x2.parent = Some(this)
   val name: String = "CoverParenthesizedExpressionAndArrowParameterList3"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 2
-    k += 4
-    k = x2.updateSpan(k) + 1
-    k += 2
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 1)
+    inc(end + 3)
+    inc(x2.updateSpan(end))
+    inc(end + 1)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"( ... $x2 )"
+    s("(", "...", x2, ")")
   }
   val k: Int = d(x2, 0)
   val fullList: List[(String, Value)] = l("BindingIdentifier", x2, Nil).reverse
@@ -112,18 +112,18 @@ object CoverParenthesizedExpressionAndArrowParameterList3 extends ASTInfo {
 case class CoverParenthesizedExpressionAndArrowParameterList4(x2: BindingPattern, parserParams: List[Boolean]) extends CoverParenthesizedExpressionAndArrowParameterList {
   x2.parent = Some(this)
   val name: String = "CoverParenthesizedExpressionAndArrowParameterList4"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 2
-    k += 4
-    k = x2.updateSpan(k) + 1
-    k += 2
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 1)
+    inc(end + 3)
+    inc(x2.updateSpan(end))
+    inc(end + 1)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"( ... $x2 )"
+    s("(", "...", x2, ")")
   }
   val k: Int = d(x2, 0)
   val fullList: List[(String, Value)] = l("BindingPattern", x2, Nil).reverse
@@ -139,20 +139,20 @@ case class CoverParenthesizedExpressionAndArrowParameterList5(x1: Expression, x4
   x1.parent = Some(this)
   x4.parent = Some(this)
   val name: String = "CoverParenthesizedExpressionAndArrowParameterList5"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 2
-    k = x1.updateSpan(k) + 1
-    k += 2
-    k += 4
-    k = x4.updateSpan(k) + 1
-    k += 2
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 1)
+    inc(x1.updateSpan(end))
+    inc(end + 1)
+    inc(end + 3)
+    inc(x4.updateSpan(end))
+    inc(end + 1)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"( $x1 , ... $x4 )"
+    s("(", x1, ",", "...", x4, ")")
   }
   val k: Int = d(x4, d(x1, 0))
   val fullList: List[(String, Value)] = l("BindingIdentifier", x4, l("Expression", x1, Nil)).reverse
@@ -168,20 +168,20 @@ case class CoverParenthesizedExpressionAndArrowParameterList6(x1: Expression, x4
   x1.parent = Some(this)
   x4.parent = Some(this)
   val name: String = "CoverParenthesizedExpressionAndArrowParameterList6"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 2
-    k = x1.updateSpan(k) + 1
-    k += 2
-    k += 4
-    k = x4.updateSpan(k) + 1
-    k += 2
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 1)
+    inc(x1.updateSpan(end))
+    inc(end + 1)
+    inc(end + 3)
+    inc(x4.updateSpan(end))
+    inc(end + 1)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"( $x1 , ... $x4 )"
+    s("(", x1, ",", "...", x4, ")")
   }
   val k: Int = d(x4, d(x1, 0))
   val fullList: List[(String, Value)] = l("BindingPattern", x4, l("Expression", x1, Nil)).reverse

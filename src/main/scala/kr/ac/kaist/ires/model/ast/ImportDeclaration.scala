@@ -12,18 +12,18 @@ case class ImportDeclaration0(x1: ImportClause, x2: FromClause, parserParams: Li
   x1.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "ImportDeclaration0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 7
-    k = x1.updateSpan(k) + 1
-    k = x2.updateSpan(k) + 1
-    k += 2
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 6)
+    inc(x1.updateSpan(end))
+    inc(x2.updateSpan(end))
+    inc(end + 1)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"import $x1 $x2 ;"
+    s("import", x1, x2, ";")
   }
   val k: Int = d(x2, d(x1, 0))
   val fullList: List[(String, Value)] = l("FromClause", x2, l("ImportClause", x1, Nil)).reverse
@@ -36,17 +36,17 @@ object ImportDeclaration0 extends ASTInfo {
 case class ImportDeclaration1(x1: ModuleSpecifier, parserParams: List[Boolean]) extends ImportDeclaration {
   x1.parent = Some(this)
   val name: String = "ImportDeclaration1"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 7
-    k = x1.updateSpan(k) + 1
-    k += 2
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 6)
+    inc(x1.updateSpan(end))
+    inc(end + 1)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"import $x1 ;"
+    s("import", x1, ";")
   }
   val k: Int = d(x1, 0)
   val fullList: List[(String, Value)] = l("ModuleSpecifier", x1, Nil).reverse

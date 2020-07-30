@@ -11,15 +11,15 @@ trait Module extends AST {
 case class Module0(x0: Option[ModuleBody], parserParams: List[Boolean]) extends Module {
   x0.foreach((m) => m.parent = Some(this))
   val name: String = "Module0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k = x0.fold(k)(_.updateSpan(k)) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    x0.map(x => inc(x.updateSpan(end)))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"${x0.getOrElse("")}"
+    s(x0.getOrElse(""))
   }
   val k: Int = d(x0, 0)
   val fullList: List[(String, Value)] = l("Option[ModuleBody]", x0, Nil).reverse

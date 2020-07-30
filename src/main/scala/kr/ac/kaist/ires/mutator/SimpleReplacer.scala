@@ -6,6 +6,7 @@ import kr.ac.kaist.ires.util.Useful._
 import kr.ac.kaist.ires.AST
 
 case class SimpleReplacer(script: Script) extends Mutator with Walker {
+  val name = "SimpleReplacer"
   val weight = IMPORTANT
   def mutateOption: Option[Script] = Some(SimpleReplacer.walk(script))
 }

@@ -6,6 +6,7 @@ import kr.ac.kaist.ires.util.Useful._
 import kr.ac.kaist.ires.AST
 
 case class StatementAppender(script: Script) extends Mutator {
+  val name = "StatementAppender"
   val weight = NORMAL
   def mutateOption: Option[Script] = Some(StatementAppender.walk(script))
 }

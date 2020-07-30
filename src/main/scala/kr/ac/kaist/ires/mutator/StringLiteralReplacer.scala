@@ -9,6 +9,7 @@ case class StringLiteralReplacer(
     uid: Int,
     script: Script
 ) extends Mutator with Walker {
+  val name = "StringLiteralReplacer"
   val candidate = insts(uid) match {
     case condInst: CondInst => condInst.cond match {
       case EBOp(OEq, ERef(RefId(_)), EStr(string)) => Some(s"'$string'")

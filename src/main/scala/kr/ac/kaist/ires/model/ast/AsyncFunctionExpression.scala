@@ -12,22 +12,22 @@ case class AsyncFunctionExpression0(x4: FormalParameters, x7: AsyncFunctionBody,
   x4.parent = Some(this)
   x7.parent = Some(this)
   val name: String = "AsyncFunctionExpression0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 6
-    k += 9
-    k += 2
-    k = x4.updateSpan(k) + 1
-    k += 2
-    k += 2
-    k = x7.updateSpan(k) + 1
-    k += 2
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 5)
+    inc(end + 8)
+    inc(end + 1)
+    inc(x4.updateSpan(end))
+    inc(end + 1)
+    inc(end + 1)
+    inc(x7.updateSpan(end))
+    inc(end + 1)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"async function ( $x4 ) { $x7 }"
+    s("async", "function", "(", x4, ")", "{", x7, "}")
   }
   val k: Int = d(x7, d(x4, 0))
   val fullList: List[(String, Value)] = l("AsyncFunctionBody", x7, l("FormalParameters", x4, Nil)).reverse
@@ -48,23 +48,23 @@ case class AsyncFunctionExpression1(x3: BindingIdentifier, x5: FormalParameters,
   x5.parent = Some(this)
   x8.parent = Some(this)
   val name: String = "AsyncFunctionExpression1"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 6
-    k += 9
-    k = x3.updateSpan(k) + 1
-    k += 2
-    k = x5.updateSpan(k) + 1
-    k += 2
-    k += 2
-    k = x8.updateSpan(k) + 1
-    k += 2
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 5)
+    inc(end + 8)
+    inc(x3.updateSpan(end))
+    inc(end + 1)
+    inc(x5.updateSpan(end))
+    inc(end + 1)
+    inc(end + 1)
+    inc(x8.updateSpan(end))
+    inc(end + 1)
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"async function $x3 ( $x5 ) { $x8 }"
+    s("async", "function", x3, "(", x5, ")", "{", x8, "}")
   }
   val k: Int = d(x8, d(x5, d(x3, 0)))
   val fullList: List[(String, Value)] = l("AsyncFunctionBody", x8, l("FormalParameters", x5, l("BindingIdentifier", x3, Nil))).reverse

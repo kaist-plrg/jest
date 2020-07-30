@@ -12,17 +12,17 @@ case class ClassDeclaration0(x1: BindingIdentifier, x2: ClassTail, parserParams:
   x1.parent = Some(this)
   x2.parent = Some(this)
   val name: String = "ClassDeclaration0"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 6
-    k = x1.updateSpan(k) + 1
-    k = x2.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 5)
+    inc(x1.updateSpan(end))
+    inc(x2.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"class $x1 $x2"
+    s("class", x1, x2)
   }
   val k: Int = d(x2, d(x1, 0))
   val fullList: List[(String, Value)] = l("ClassTail", x2, l("BindingIdentifier", x1, Nil)).reverse
@@ -40,16 +40,16 @@ object ClassDeclaration0 extends ASTInfo {
 case class ClassDeclaration1(x1: ClassTail, parserParams: List[Boolean]) extends ClassDeclaration {
   x1.parent = Some(this)
   val name: String = "ClassDeclaration1"
-  def updateSpan(start: Int): Int = {
-    this.start = start
-    var k = start
-    k += 6
-    k = x1.updateSpan(k) + 1
-    this.end = k - 1
-    this.end
+  def updateSpan(newStart: Int): Int = {
+    start = newStart
+    end = start
+    inc(end + 5)
+    inc(x1.updateSpan(end))
+    if (end > start) end -= 1
+    end
   }
   override def toString: String = {
-    s"class $x1"
+    s("class", x1)
   }
   val k: Int = d(x1, 0)
   val fullList: List[(String, Value)] = l("ClassTail", x1, Nil).reverse
