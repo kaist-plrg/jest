@@ -19,7 +19,7 @@ case object Generate extends PhaseObj[Unit, GenerateConfig, Unit] {
     (script, k) <- Generator.generate(
       debug = config.debug,
       maxIter = config.iter,
-      loadDir = config.loaddir
+      loadDir = config.loadDir
     ).zipWithIndex
   ) {
     mkdir(s"$GEN_RES_DIR")
