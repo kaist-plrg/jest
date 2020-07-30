@@ -1,1 +1,1 @@
-class x extends x ?. x . x { static x (  ) {  } }
+var x = function * x ( ) { } ;

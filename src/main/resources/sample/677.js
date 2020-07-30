@@ -1,1 +1,1 @@
-var x = async function *  (  ) {  } ;
+for ( ; ; ) break ;

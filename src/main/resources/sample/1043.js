@@ -1,1 +1,1 @@
-Set . prototype . delete . call ( 1 , 0 , 0 ) ;
+Set . prototype . forEach . call ( 1 , 0 ) ;

@@ -1,1 +1,1 @@
-Map . prototype . values . call ( 1 ) ;
+Number ( 0 , 0 ) ;

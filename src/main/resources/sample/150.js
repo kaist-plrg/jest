@@ -1,1 +1,1 @@
-debugger ;
+function x ( ... [ , , ] ) { }

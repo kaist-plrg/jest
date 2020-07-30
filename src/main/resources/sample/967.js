@@ -1,1 +1,1 @@
-Object . isFrozen ( 0 ) ;
+Object . isSealed ( 0 , 0 ) ;

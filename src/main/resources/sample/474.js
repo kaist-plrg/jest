@@ -1,1 +1,1 @@
-for ( let x = x ;  ;  ) ;
+function * x ( ... [ , x ] ) { }

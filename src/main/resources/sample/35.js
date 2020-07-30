@@ -1,1 +1,1 @@
-async function * x ( ... { x = '' } ) {  }
+for ( x ?. x [ '' ] in '' ) ;

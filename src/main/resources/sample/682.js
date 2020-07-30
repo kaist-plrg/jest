@@ -1,1 +1,1 @@
-LABEL : for (  ;  ;  ) break LABEL ;
+function x ( x0 , x1 ) { } ;

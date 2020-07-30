@@ -1,1 +1,1 @@
-var x = { async * x (  ) {  } } ;
+for ( var { } = x ; ; ) ;

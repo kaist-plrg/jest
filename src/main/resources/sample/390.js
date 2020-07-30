@@ -1,1 +1,1 @@
-var x = x instanceof x ;
+var x = x `${ '' , '' }${ x }${ '' }` ;

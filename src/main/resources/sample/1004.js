@@ -1,1 +1,1 @@
-Object . prototype . valueOf . call ( 1 , 0 ) ;
+Promise . all ( ) ;

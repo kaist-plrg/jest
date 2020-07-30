@@ -1,1 +1,1 @@
-var x = class x  { x (  ) {  } } ;
+for ( x ?. x [ '' , '' ] in '' ) ;

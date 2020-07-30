@@ -1,1 +1,1 @@
-for ( let x = x ;  ; '' ) ;
+var x = { get x ( ) { } } ;

@@ -1,1 +1,1 @@
-do ; while ( '' ) ;
+class x extends function * ( ) { } { ; }

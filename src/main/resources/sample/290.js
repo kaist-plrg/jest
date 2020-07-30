@@ -1,1 +1,1 @@
-for ( [  x ,  ] in '' ) ;
+for ( var x , x ; '' ; ) ;

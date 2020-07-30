@@ -1,1 +1,1 @@
-Map . prototype . delete . call ( 1 ) ;
+Map . prototype . entries . call ( 1 , 0 ) ;

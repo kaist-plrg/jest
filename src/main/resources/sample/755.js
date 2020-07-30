@@ -1,1 +1,1 @@
-Array . prototype . indexOf . call ( 1 ) ;
+Array . prototype . join . call ( 1 ) ;

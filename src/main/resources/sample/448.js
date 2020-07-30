@@ -1,1 +1,1 @@
-class x extends { async x (  ) {  } } {  }
+class x extends `${ '' }${ '' }` { ; }

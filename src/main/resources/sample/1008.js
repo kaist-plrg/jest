@@ -1,1 +1,1 @@
-Promise . all ( ) ;
+Promise . allSettled ( 0 ) ;

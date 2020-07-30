@@ -1,1 +1,1 @@
-var x = x `${ '' }` ;
+async function * x ( ) { var x = yield ; } ; x ( ) ;

@@ -1,1 +1,1 @@
-Array . prototype . every . call ( 1 , 0 ) ;
+Array . prototype . fill . call ( 1 , 0 ) ;

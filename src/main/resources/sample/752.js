@@ -1,1 +1,1 @@
-Array . prototype . includes . call ( 1 , 0 ) ;
+Array . prototype . indexOf . call ( 1 , 0 ) ;

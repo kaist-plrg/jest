@@ -1,1 +1,1 @@
-String . fromCodePoint ( ) ;
+String . raw ( 0 ) ;

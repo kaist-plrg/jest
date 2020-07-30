@@ -1,1 +1,1 @@
-String . prototype . toLowerCase . call ( 1 ) ;
+String . prototype . trim . call ( 1 ) ;

@@ -1,1 +1,1 @@
-Object . fromEntries ( 0 ) ;
+Object . getOwnPropertyDescriptor ( 0 , 0 ) ;

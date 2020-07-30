@@ -1,1 +1,1 @@
-String ( ) ;
+String . fromCharCode ( 0 ) ;

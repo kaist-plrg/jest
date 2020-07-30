@@ -1,1 +1,1 @@
-Array . prototype . pop . call ( 1 ) ;
+Array . prototype . push . call ( 1 , 0 , 0 ) ;

@@ -1,1 +1,1 @@
-class x  { ; }
+try { } catch { } finally { }

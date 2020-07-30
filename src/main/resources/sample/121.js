@@ -1,1 +1,1 @@
-switch ( '' ) { case '' : ; }
+var x = class x extends x { x ( ) { } } ;

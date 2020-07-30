@@ -1,1 +1,1 @@
-ReferenceError ( ) ;
+SyntaxError ( 0 ) ;

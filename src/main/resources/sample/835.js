@@ -1,1 +1,1 @@
-Boolean . prototype . valueOf . call ( 1 ) ;
+Function ( 0 , 0 ) ;

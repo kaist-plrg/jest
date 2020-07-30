@@ -1,1 +1,1 @@
-class x extends true {  }
+var x = typeof x ;

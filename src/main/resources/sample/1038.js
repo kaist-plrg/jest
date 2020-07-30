@@ -1,1 +1,1 @@
-Set . prototype . add . call ( 1 , 0 , 0 ) ;
+Set . prototype . delete . call ( 1 , 0 ) ;

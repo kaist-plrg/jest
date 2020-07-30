@@ -1,1 +1,1 @@
-Map ( 0 ) ;
+Map . prototype . delete . call ( 1 ) ;

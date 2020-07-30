@@ -1,1 +1,1 @@
-class x extends async function *  (  ) {  } {  }
+var x = { async * x ( ... [ x ] ) { } } ;

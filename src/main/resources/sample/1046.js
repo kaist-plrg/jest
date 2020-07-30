@@ -1,1 +1,1 @@
-Set . prototype . forEach . call ( 1 ) ;
+Set . prototype . has . call ( 1 ) ;

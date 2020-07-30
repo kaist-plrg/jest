@@ -1,1 +1,1 @@
-for ( let x  ;  ;  ) ;
+switch ( '' ) { case x : default : ; }

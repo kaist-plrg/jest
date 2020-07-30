@@ -1,1 +1,1 @@
-Number . prototype . valueOf . call ( 1 ) ;
+Object ( 0 , 0 ) ;

@@ -1,1 +1,1 @@
-class x extends await { ; }
+var x = { async * x ( ... { x = '' } ) { } } ;

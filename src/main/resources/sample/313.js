@@ -1,1 +1,1 @@
-class x extends function  (  ) {  } {  }
+switch ( '' ) { case x : default : case x : }

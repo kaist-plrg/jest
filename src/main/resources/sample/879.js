@@ -1,1 +1,1 @@
-Map . prototype . set . call ( 1 ) ;
+Map . prototype . values . call ( 1 ) ;

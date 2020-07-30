@@ -1,1 +1,1 @@
-Symbol . keyFor ( 0 ) ;
+Symbol . prototype . valueOf . call ( 1 ) ;

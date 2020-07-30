@@ -1,1 +1,1 @@
-switch ( '' ) {  default : ;  }
+class x extends `${ '' , '' }${ '' }` { }

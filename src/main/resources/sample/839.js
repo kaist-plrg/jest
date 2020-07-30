@@ -1,1 +1,1 @@
-Function ( 0 , 0 ) ;
+Function . prototype . apply . call ( 1 , 0 , 0 , 0 ) ;

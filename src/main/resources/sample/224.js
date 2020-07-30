@@ -1,1 +1,1 @@
-for ( x ?. x . x in '' ) ;
+var x = x >> x ;

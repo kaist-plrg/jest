@@ -1,1 +1,1 @@
-Promise . prototype . then . call ( 1 , 0 , 0 ) ;
+Set ( 0 , 0 ) ;

@@ -1,1 +1,1 @@
-WeakMap ( ) ;
+WeakMap . prototype . delete . call ( 1 , 0 ) ;

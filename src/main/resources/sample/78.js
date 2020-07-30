@@ -1,1 +1,1 @@
-class x extends [  x ,  ] { ; }
+for ( var x of '' ) ;

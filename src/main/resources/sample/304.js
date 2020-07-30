@@ -1,1 +1,1 @@
-class x  { static x (  ) {  } }
+async function x ( ... x ) { }

@@ -1,1 +1,1 @@
-Object . isExtensible ( ) ;
+Object . isFrozen ( 0 ) ;

@@ -1,1 +1,1 @@
-function * x ( ... { x : x  } ) {  }
+throw '' , '' ;

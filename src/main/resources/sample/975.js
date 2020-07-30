@@ -1,1 +1,1 @@
-Object . preventExtensions ( ) ;
+Object . seal ( 0 ) ;

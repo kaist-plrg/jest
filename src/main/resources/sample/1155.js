@@ -1,1 +1,1 @@
-String . prototype . valueOf . call ( 1 , 0 ) ;
+Symbol ( 0 ) ;

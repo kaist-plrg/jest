@@ -1,1 +1,1 @@
-var x = `${ '' }${ '' }` ;
+LABEL : for ( ; ; ) continue LABEL ;

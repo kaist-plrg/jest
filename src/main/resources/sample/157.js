@@ -1,1 +1,1 @@
-class x extends function  (  ) {  } { ; }
+var x = x <= x ;

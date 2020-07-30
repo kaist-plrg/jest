@@ -1,1 +1,1 @@
-var x = typeof x ;
+var x = { x ( ... [ ] ) { } } ;

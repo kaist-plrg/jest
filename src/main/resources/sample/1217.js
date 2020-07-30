@@ -1,1 +1,1 @@
-SyntaxError ( 0 , 0 ) ;
+URIError ( ) ;

@@ -1,1 +1,1 @@
-BigInt . asUintN ( 0 , 0 , 0 ) ;
+BigInt . prototype . valueOf . call ( 1 ) ;

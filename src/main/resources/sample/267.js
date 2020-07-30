@@ -1,1 +1,1 @@
-var x = { x ( ... [  x  , ,  ] ) {  } } ;
+var x = function x ( ) { } ;

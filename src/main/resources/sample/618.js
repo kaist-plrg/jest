@@ -1,1 +1,1 @@
-let x  ;
+switch ( '' , '' ) { default : ; }

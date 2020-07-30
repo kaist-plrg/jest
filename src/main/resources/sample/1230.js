@@ -1,1 +1,1 @@
-isNaN ( ) ;
+parseFloat ( 0 ) ;

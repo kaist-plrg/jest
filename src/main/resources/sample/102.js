@@ -1,1 +1,1 @@
-switch ( '' ) {  default :   }
+for ( [ x , ... x ] in '' ) ;

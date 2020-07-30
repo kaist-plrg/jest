@@ -1,1 +1,1 @@
-isFinite ( 0 , 0 ) ;
+parseFloat ( ) ;

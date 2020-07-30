@@ -1,1 +1,1 @@
-var x = ! x ;
+async function * x ( ) { class x extends new . target { } } ; x ( ) ;

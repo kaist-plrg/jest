@@ -1,1 +1,1 @@
-if ( '' ) ; else ;
+class x extends [ x , , '' ] { }

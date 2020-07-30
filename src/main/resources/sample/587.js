@@ -1,1 +1,1 @@
-var x = new x ( ... '' ) ;
+switch ( '' ) { case '' , '' : }

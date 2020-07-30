@@ -1,1 +1,1 @@
-class x extends this { ; }
+var [ ... x ] = x ;

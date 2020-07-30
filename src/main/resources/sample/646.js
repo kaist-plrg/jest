@@ -1,1 +1,1 @@
-for ( var x in '' ) ;
+let { } = x ;

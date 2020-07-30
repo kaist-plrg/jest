@@ -1,1 +1,1 @@
-URIError ( ) ;
+eval ( 0 ) ;

@@ -1,1 +1,1 @@
-String . prototype . slice . call ( 1 ) ;
+String . prototype . split . call ( 1 ) ;

@@ -1,1 +1,1 @@
-String . prototype . concat . call ( 1 ) ;
+String . prototype . endsWith . call ( 1 , 0 ) ;

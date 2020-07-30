@@ -1,1 +1,1 @@
-class x extends function * x (  ) {  } { ; }
+class x extends { x , x } { ; }

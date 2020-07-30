@@ -1,1 +1,1 @@
-async function * a (  ) { return '' ; } ; a ( ) ;
+var x = x /= '' ;

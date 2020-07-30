@@ -1,1 +1,1 @@
-String . prototype . indexOf . call ( 1 ) ;
+String . prototype . lastIndexOf . call ( 1 ) ;

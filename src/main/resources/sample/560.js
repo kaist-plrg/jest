@@ -1,1 +1,1 @@
-var x = this ;
+class x extends x `${ '' }${ '' , '' }` { ; }

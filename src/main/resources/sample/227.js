@@ -1,1 +1,1 @@
-var x = class x  {  } ;
+async function * x ( ... [ , ... x ] ) { }

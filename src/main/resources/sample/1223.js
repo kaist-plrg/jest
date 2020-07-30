@@ -1,1 +1,1 @@
-URIError ( 0 , 0 ) ;
+isFinite ( ) ;

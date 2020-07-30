@@ -1,1 +1,1 @@
-function * x ( ... { x  } ) {  }
+for ( ; ; ) continue ;

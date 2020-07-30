@@ -1,1 +1,1 @@
-try {  } finally {  }
+var x = x in x ;

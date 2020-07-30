@@ -1,1 +1,1 @@
-for ( { x , x } in '' ) ;
+async function x ( ... { x = '' } ) { }

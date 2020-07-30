@@ -1,1 +1,1 @@
-delete x [ 42 ] ;
+Array ( 0 ) ;

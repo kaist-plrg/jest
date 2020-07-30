@@ -1,1 +1,1 @@
-class x extends { set x ( x  ) {  } } {  }
+class x extends x `${ '' }` { ; }

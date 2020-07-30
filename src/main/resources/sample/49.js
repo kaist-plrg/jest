@@ -1,1 +1,1 @@
-function * x ( ... [ ,  ] ) {  }
+switch ( '' ) { default : }

@@ -1,1 +1,1 @@
-try {  } catch {  } finally {  }
+function * x ( ... { } ) { }

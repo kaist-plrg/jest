@@ -1,1 +1,1 @@
-Object . entries ( ) ;
+Object . freeze ( 0 ) ;

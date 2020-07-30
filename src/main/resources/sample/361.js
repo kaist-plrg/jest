@@ -1,1 +1,1 @@
-class x extends null {  }
+for ( ; '' , '' ; '' , '' ) ;

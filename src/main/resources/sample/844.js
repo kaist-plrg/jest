@@ -1,1 +1,1 @@
-Function . prototype . bind . call ( 1 ) ;
+Function . prototype . call . call ( 1 ) ;

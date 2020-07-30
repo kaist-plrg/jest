@@ -1,1 +1,1 @@
-switch ( '' ) { case '' :  }
+var { x , ... x } = x ;

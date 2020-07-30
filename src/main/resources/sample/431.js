@@ -1,1 +1,1 @@
-for ( x of '' ) ;
+try { } catch ( x ) { }

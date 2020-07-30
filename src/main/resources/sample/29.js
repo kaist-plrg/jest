@@ -1,1 +1,1 @@
-try {  } catch {  }
+var x = async function * ( ) { } ;

@@ -1,1 +1,1 @@
-var x = await ;
+class x extends function * x ( ) { } { ; }

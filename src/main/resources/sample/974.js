@@ -1,1 +1,1 @@
-Object . keys ( 0 , 0 ) ;
+Object . seal ( ) ;

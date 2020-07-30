@@ -1,1 +1,1 @@
-class x extends x ( ) . x { ; }
+switch ( '' ) { case x : case x : }

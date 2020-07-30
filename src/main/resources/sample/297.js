@@ -1,1 +1,1 @@
-var x = function x (  ) {  } ;
+for ( var x ; '' ; ) ;

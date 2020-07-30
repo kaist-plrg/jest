@@ -1,1 +1,1 @@
-var x = true ;
+async function x ( ... { [ '' ] : { } = x } ) { }

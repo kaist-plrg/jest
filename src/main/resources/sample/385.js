@@ -1,1 +1,1 @@
-try { ; } finally { ; }
+throw '' ;

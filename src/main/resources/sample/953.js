@@ -1,1 +1,1 @@
-Object . getOwnPropertySymbols ( ) ;
+Object . getPrototypeOf ( 0 ) ;

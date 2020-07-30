@@ -1,1 +1,1 @@
-class x extends null { ; }
+class x extends async function * x ( ) { } { ; }

@@ -1,1 +1,1 @@
-var x = { * x ( ... await ) {  } } ;
+async function * x ( ... [ x , , ] ) { }

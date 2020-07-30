@@ -1,1 +1,1 @@
-Array . prototype . forEach . call ( 1 , 0 ) ;
+Array . prototype . includes . call ( 1 , 0 ) ;

@@ -1,1 +1,1 @@
-Object . create ( ) ;
+Object . defineProperties ( ) ;

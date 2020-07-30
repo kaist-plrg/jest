@@ -1,1 +1,1 @@
-async function * a (  ) { for await ( x of '' ) ; } ; a ( ) ;
+var x = { x ( ... await ) { } } ;

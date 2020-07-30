@@ -1,1 +1,1 @@
-Symbol . for ( 0 ) ;
+Symbol . keyFor ( 0 , 0 ) ;

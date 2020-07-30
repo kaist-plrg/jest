@@ -1,1 +1,1 @@
-const x = 42 ;
+Array ( 0 , 0 ) ;

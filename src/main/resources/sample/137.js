@@ -1,1 +1,1 @@
-class x extends async function (  ) {  } {  }
+var x = x `${ '' }${ x }${ '' , '' }` ;

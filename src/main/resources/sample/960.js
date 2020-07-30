@@ -1,1 +1,1 @@
-Object . is ( 0 ) ;
+Object . isExtensible ( 0 ) ;

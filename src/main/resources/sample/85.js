@@ -1,1 +1,1 @@
-try {  } catch { ; }
+class x extends x ?. x ?. x { }

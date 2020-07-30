@@ -1,1 +1,1 @@
-Error . prototype . toString . call ( 1 ) ;
+EvalError ( 0 , 0 ) ;

@@ -1,1 +1,1 @@
-if ( '' , '' ) ;
+class x extends x ( ) `` { ; }

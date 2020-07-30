@@ -1,1 +1,1 @@
-for ( x ( ) . x in '' ) ;
+class x { x ( ) { } }

@@ -1,1 +1,1 @@
-switch ( '' , '' ) {  default : ; case x :  }
+for ( x [ '' ] in '' ) ;

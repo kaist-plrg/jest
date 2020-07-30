@@ -1,1 +1,1 @@
-async function * x ( ... [ ,  ] ) {  }
+var x = new x ( x , ... '' ) ;

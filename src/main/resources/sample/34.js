@@ -1,1 +1,1 @@
-class x extends this {  }
+class x extends x `` { }

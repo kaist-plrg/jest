@@ -1,1 +1,1 @@
-Object . defineProperties ( 0 ) ;
+Object . defineProperty ( 0 ) ;

@@ -1,1 +1,1 @@
-String . prototype . substring . call ( 1 , 0 ) ;
+String . prototype . toLowerCase . call ( 1 , 0 ) ;

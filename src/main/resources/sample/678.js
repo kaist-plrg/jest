@@ -1,1 +1,1 @@
-class x extends x ?. x ?. x { ; }
+LABEL : for ( ; ; ) break LABEL ;

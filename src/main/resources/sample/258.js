@@ -1,1 +1,1 @@
-var x = class   { x (  ) {  } } ;
+function await ( ... { ... x } ) { }

@@ -1,1 +1,1 @@
-try { ; } catch ( x ) { ; }
+var x = [ '' ] ;

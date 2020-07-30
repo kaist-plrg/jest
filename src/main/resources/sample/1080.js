@@ -1,1 +1,1 @@
-String . prototype . endsWith . call ( 1 ) ;
+String . prototype . includes . call ( 1 ) ;

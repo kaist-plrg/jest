@@ -1,1 +1,1 @@
-while ( '' ) ;
+function * x ( ... [ x , , ] ) { }

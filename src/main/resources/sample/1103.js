@@ -1,1 +1,1 @@
-String . prototype . match . call ( 1 , 0 , 0 ) ;
+String . prototype . normalize . call ( 1 ) ;

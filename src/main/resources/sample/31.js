@@ -1,1 +1,1 @@
-function await ( ... { ... x } ) {  }
+var x = { x ( ... x ) { } } ;

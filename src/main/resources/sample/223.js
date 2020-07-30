@@ -1,1 +1,1 @@
-var x = x + x ;
+for ( x ?. x . x in '' ) ;

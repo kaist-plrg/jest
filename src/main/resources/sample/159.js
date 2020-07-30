@@ -1,1 +1,1 @@
-class x extends { set x ( x  ) {  } } { ; }
+var x = { async * x ( ... x ) { } } ;

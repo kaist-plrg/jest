@@ -1,1 +1,1 @@
-for ( let x  ;  ; '' , '' ) ;
+async function * x ( x ) { }

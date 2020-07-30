@@ -1,1 +1,1 @@
-var { 42 : { }  } = x ;
+function * x ( ... await ) { }

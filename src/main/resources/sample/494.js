@@ -1,1 +1,1 @@
-var x = x in x ;
+class x extends [ , ... '' ] { ; ; }

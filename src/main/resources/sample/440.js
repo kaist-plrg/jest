@@ -1,1 +1,1 @@
-var x = class  extends x { ; ; } ;
+for ( let x ; '' ; ) ;

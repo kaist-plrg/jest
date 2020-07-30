@@ -1,1 +1,1 @@
-Object . values ( 0 ) ;
+Object . prototype . hasOwnProperty . call ( 1 , 0 , 0 ) ;

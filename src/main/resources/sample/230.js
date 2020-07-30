@@ -1,1 +1,1 @@
-if ( '' , '' ) ; else ;
+function x ( ... [ ] ) { }

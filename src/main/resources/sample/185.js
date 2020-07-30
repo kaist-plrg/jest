@@ -1,1 +1,1 @@
-class x  { ; ; }
+var x = x ( ) `` ;

@@ -1,1 +1,1 @@
-;
+async function * x ( ) { return '' , '' ; } ; x ( ) ;

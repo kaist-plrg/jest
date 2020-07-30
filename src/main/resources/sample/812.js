@@ -1,1 +1,1 @@
-Array . prototype . values . call ( 1 , 0 ) ;
+BigInt ( 0 , 0 ) ;

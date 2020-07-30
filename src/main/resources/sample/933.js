@@ -1,1 +1,1 @@
-Object . defineProperty ( 0 , 0 , 0 , 0 ) ;
+Object . freeze ( ) ;

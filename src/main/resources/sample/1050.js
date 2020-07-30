@@ -1,1 +1,1 @@
-Set . prototype . has . call ( 1 ) ;
+Set . prototype . values . call ( 1 , 0 ) ;

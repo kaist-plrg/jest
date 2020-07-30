@@ -1,1 +1,1 @@
-isFinite ( 0 ) ;
+isNaN ( 0 , 0 ) ;

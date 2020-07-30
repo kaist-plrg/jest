@@ -1,1 +1,1 @@
-WeakSet ( 0 , 0 ) ;
+WeakSet . prototype . delete . call ( 1 ) ;

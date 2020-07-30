@@ -1,1 +1,1 @@
-String . raw ( 0 , 0 , 0 ) ;
+String . prototype . charCodeAt . call ( 1 ) ;

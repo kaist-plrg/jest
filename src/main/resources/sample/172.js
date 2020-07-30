@@ -1,1 +1,1 @@
-function x ( ... { 42 : { }  } ) {  }
+var x = { async * x ( ... { x : x } ) { } } ;

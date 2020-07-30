@@ -1,1 +1,1 @@
-Object . setPrototypeOf ( 0 , 0 ) ;
+Object . values ( 0 , 0 ) ;

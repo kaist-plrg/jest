@@ -1,1 +1,1 @@
-encodeURI ( ) ;
+encodeURIComponent ( 0 ) ;

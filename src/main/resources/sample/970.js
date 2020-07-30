@@ -1,1 +1,1 @@
-Object . isSealed ( 0 ) ;
+Object . keys ( 0 , 0 ) ;

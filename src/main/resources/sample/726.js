@@ -1,1 +1,1 @@
-Array . prototype . fill . call ( 1 , 0 , 0 ) ;
+Array . prototype . filter . call ( 1 , 0 , 0 ) ;

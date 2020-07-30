@@ -1,1 +1,1 @@
-var await  ;
+var x = x &= '' ;

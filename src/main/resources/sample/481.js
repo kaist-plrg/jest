@@ -1,1 +1,1 @@
-class x extends async function * x (  ) {  } { ; }
+class x extends x `${ '' }${ '' , '' }` { }

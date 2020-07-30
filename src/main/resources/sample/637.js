@@ -1,1 +1,1 @@
-var x = void x ;
+for ( '' ; ; '' ) ;

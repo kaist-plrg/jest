@@ -1,1 +1,1 @@
-async function x ( ... { ... x } ) {  }
+function x ( ... [ , ] ) { }

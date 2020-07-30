@@ -1,1 +1,1 @@
-async function x ( ... [  x  , ,  ] ) {  }
+async function * x ( ) { for await ( let x of '' ) ; } ; x ( ) ;

@@ -1,1 +1,1 @@
-String . prototype . lastIndexOf . call ( 1 ) ;
+String . prototype . localeCompare . call ( 1 ) ;

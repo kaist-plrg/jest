@@ -1,1 +1,1 @@
-parseInt ( 0 ) ;
+decodeURI ( 0 ) ;

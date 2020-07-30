@@ -1,1 +1,1 @@
-Set . prototype . values . call ( 1 ) ;
+String ( 0 , 0 ) ;

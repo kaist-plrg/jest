@@ -1,1 +1,1 @@
-Object . isSealed ( 0 , 0 ) ;
+Object . preventExtensions ( ) ;

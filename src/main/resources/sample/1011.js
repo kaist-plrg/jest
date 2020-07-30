@@ -1,1 +1,1 @@
-Promise . allSettled ( ) ;
+Promise . race ( 0 ) ;

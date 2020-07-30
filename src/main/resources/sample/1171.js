@@ -1,1 +1,1 @@
-Symbol . prototype [ Symbol . toPrimitive ] . call ( 1 , 0 ) ;
+WeakMap ( 0 , 0 ) ;
