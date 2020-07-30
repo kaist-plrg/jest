@@ -14,14 +14,12 @@ import spray.json._
 
 object Generator extends DefaultJsonProtocol {
   // max iteration
-  val MAX_ITER = 100
   val MAX_TRIAL = 500
   var recentMutator: Option[Mutator] = None
   var recentNewCovered: Set[Target] = Set()
 
   // generate JavaScript programs
-  def generate: List[Script] = generate(false)
-  def generate(debug: Boolean): List[Script] = {
+  def generate(debug: Boolean, maxIter: Int): List[Script] = {
     // log file
     mkdir(GEN_RES_DIR)
     val nf = getPrintWriter(s"$GEN_RES_DIR/log")
@@ -104,7 +102,7 @@ object Generator extends DefaultJsonProtocol {
     for (script <- samples) add(script)
 
     logln("Mutating samples...")
-    for (k <- 0 until MAX_ITER) {
+    for (k <- 0 until maxIter) {
       val targetSeq = targets.toSeq
       val target = choose(targetSeq)
       val scriptString = totalVisited(target)
