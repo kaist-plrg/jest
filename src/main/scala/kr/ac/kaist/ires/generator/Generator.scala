@@ -146,9 +146,9 @@ object Generator extends DefaultJsonProtocol {
         mkdir(s"$dir/scripts")
         for ((script, k) <- total.zipWithIndex) {
           dumpFile(script, s"$dir/scripts/$k.js")
-          // dump generated
-          dumpJson(generated, s"$dir/generated.json")
         }
+        // dump generated
+        dumpJson(generated, s"$dir/generated.json")
       }
 
       logFlush()
