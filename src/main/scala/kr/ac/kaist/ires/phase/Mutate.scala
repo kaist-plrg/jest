@@ -30,7 +30,8 @@ case object Mutate extends PhaseObj[Script, MutateConfig, Script] {
 
     val mutators = List(
       StatementAppender(script),
-      SimpleReplacer(script)
+      SimpleReplacer(script),
+      ObjectReplacer(script),
     ) ++ config.target.fold(List[Mutator]())(target => {
         val uid = target.uid
         List(

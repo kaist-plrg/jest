@@ -118,10 +118,11 @@ object Generator extends DefaultJsonProtocol {
       val beautified = beautify(insts(uid), detail = false)
       val script = Parser.parse(Parser.Script(Nil), scriptString).get
       val mutators = List[Mutator](
-        StringLiteralReplacer(uid, script),
-        NearSyntaxReplacer(uid, script),
-        StatementAppender(script),
-        SimpleReplacer(script)
+        // StringLiteralReplacer(uid, script),
+        // NearSyntaxReplacer(uid, script),
+        // StatementAppender(script),
+        SimpleReplacer(script),
+        ObjectReplacer(script),
       )
 
       logln(s"${k + 1}th iteration: $scriptString")

@@ -154,6 +154,7 @@ class Interp(
             }).getOrElse((locals0, s1))
 
             val updatedCtx = s2.context.copy(retId = id)
+            if (COVERAGE_MODE) visited += fname
             val newCtx = Context(name = fname, insts = List(body), locals = locals1)
             s2.copy(context = newCtx, ctxStack = updatedCtx :: s2.ctxStack)
           case ASTMethod(Func(fname, params, _, body), baseLocals) =>
@@ -165,6 +166,7 @@ class Interp(
             }
 
             val updatedCtx = s1.context.copy(retId = id)
+            if (COVERAGE_MODE) visited += fname
             val newCtx = Context(name = fname, insts = List(body), locals = locals)
             s1.copy(context = newCtx, ctxStack = updatedCtx :: s1.ctxStack)
           case Cont(params, body, context, ctxStack) =>
@@ -223,6 +225,7 @@ class Interp(
                     rest match {
                       case Nil =>
                         val updatedCtx = s2.context.copy(retId = id)
+                        if (COVERAGE_MODE) visited += fname
                         val newCtx = Context(name = fname, insts = List(body), locals = locals)
                         s2.copy(context = newCtx, ctxStack = updatedCtx :: s2.ctxStack)
                       case _ =>

@@ -1563,4 +1563,9 @@ object Algorithm {
     thisStringValue,
     thisSymbolValue
   )
+  lazy val infos: Map[String, AlgorithmInfo] = all.map(algo => {
+    val name = algo.name
+    val info = AlgorithmInfoExtractor(algo)
+    (name, info)
+  }).toMap
 }

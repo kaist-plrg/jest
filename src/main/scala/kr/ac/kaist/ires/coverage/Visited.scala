@@ -8,6 +8,8 @@ class Visited {
   def instCovered: Set[Int] = _instCovered
   private var _targetCovered: Map[Target, String] = Map()
   def targetCovered: Map[Target, String] = _targetCovered
+  private var _touchedAlgos: Set[String] = Set()
+  def touchedAlgos: Set[String] = _touchedAlgos
 
   def get(target: Target): Option[String] = _targetCovered.get(target)
   def apply(target: Target): String = _targetCovered(target)
@@ -46,6 +48,9 @@ class Visited {
     case Str(str) => this += (script, KindTarget(uid, str))
     case _ =>
   }
+
+  // add/remove touched algorithm name
+  def +=(algoName: String): Unit = _touchedAlgos += algoName
 
   // merge another Visited
   def ++=(that: Visited): Unit = {
