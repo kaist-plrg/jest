@@ -8,25 +8,25 @@
   "algo": "MemberExpression2Contains0",
   "cond": "(= __x1__ true)",
   "covered": true,
-  "elseCovered": "var fooCalled = false ; function foo (  ) { fooCalled = true ; } var o = { } ; assert . throws ( TypeError , function  (  ) { eval ( \"o.bar( foo() );\" ) ; $ERROR ( \"o.bar does not exist!\" ) ; } ) ; assert . sameValue ( fooCalled , true , 'fooCalled' ) ;",
+  "elseCovered": "var fooCalled = false ; function foo ( ) { fooCalled = true ; } var o = { } ; assert . throws ( TypeError , function ( ) { eval ( \"o.bar( foo() );\" ) ; $ERROR ( \"o.bar does not exist!\" ) ; } ) ; assert . sameValue ( fooCalled , true , 'fooCalled' ) ;",
   "inst": "if (= __x1__ true) ... else ..."
 }, {
   "algo": "MemberExpression2Contains0",
   "cond": "(is-instance-of symbol ReservedWord)",
   "covered": true,
-  "elseCovered": "var fooCalled = false ; function foo (  ) { fooCalled = true ; } var o = { } ; assert . throws ( TypeError , function  (  ) { eval ( \"o.bar( foo() );\" ) ; $ERROR ( \"o.bar does not exist!\" ) ; } ) ; assert . sameValue ( fooCalled , true , 'fooCalled' ) ;",
+  "elseCovered": "var fooCalled = false ; function foo ( ) { fooCalled = true ; } var o = { } ; assert . throws ( TypeError , function ( ) { eval ( \"o.bar( foo() );\" ) ; $ERROR ( \"o.bar does not exist!\" ) ; } ) ; assert . sameValue ( fooCalled , true , 'fooCalled' ) ;",
   "inst": "if (is-instance-of symbol ReservedWord) ... else ..."
 }, {
   "algo": "MemberExpression2Contains0",
   "cond": "__x2__",
   "covered": true,
-  "elseCovered": "var fooCalled = false ; function foo (  ) { fooCalled = true ; } var o = { } ; assert . throws ( TypeError , function  (  ) { eval ( \"o.bar( foo() );\" ) ; $ERROR ( \"o.bar does not exist!\" ) ; } ) ; assert . sameValue ( fooCalled , true , 'fooCalled' ) ;",
+  "elseCovered": "var fooCalled = false ; function foo ( ) { fooCalled = true ; } var o = { } ; assert . throws ( TypeError , function ( ) { eval ( \"o.bar( foo() );\" ) ; $ERROR ( \"o.bar does not exist!\" ) ; } ) ; assert . sameValue ( fooCalled , true , 'fooCalled' ) ;",
   "inst": "if __x2__ ... else ..."
 }, {
   "algo": "MemberExpression2Contains0",
   "cond": "__x2__",
   "covered": true,
-  "elseCovered": "var fooCalled = false ; function foo (  ) { fooCalled = true ; } var o = { } ; assert . throws ( TypeError , function  (  ) { eval ( \"o.bar( foo() );\" ) ; $ERROR ( \"o.bar does not exist!\" ) ; } ) ; assert . sameValue ( fooCalled , true , 'fooCalled' ) ;",
+  "elseCovered": "var fooCalled = false ; function foo ( ) { fooCalled = true ; } var o = { } ; assert . throws ( TypeError , function ( ) { eval ( \"o.bar( foo() );\" ) ; $ERROR ( \"o.bar does not exist!\" ) ; } ) ; assert . sameValue ( fooCalled , true , 'fooCalled' ) ;",
   "inst": "if __x2__ ... else ..."
 }, {
   "algo": "LiteralPropertyName0Contains0",
@@ -51,13 +51,13 @@
   "cond": "(= (get-syntax BooleanLiteral) \"true\")",
   "covered": true,
   "inst": "if (= (get-syntax BooleanLiteral) \"true\") ... else ...",
-  "thenCovered": "assert ( NaN !== NaN ) ;"
+  "thenCovered": "Object . keys ( true ) ;"
 }, {
   "algo": "CallExpression0Evaluation0",
   "cond": "(= __x10__ true)",
   "covered": true,
   "inst": "if (= __x10__ true) ... else ...",
-  "thenCovered": "let x  ; eval ( 'var x;' ) ;"
+  "thenCovered": "let x ; eval ( 'var x;' ) ;"
 }, {
   "algo": "AssignmentExpression5Evaluation0",
   "cond": "(= op \"*\")",
@@ -68,7 +68,7 @@
   "algo": "PrimaryExpression12HasName0",
   "cond": "(= __x1__ false)",
   "covered": true,
-  "elseCovered": "assert . throws ( ReferenceError , function  (  ) { var x = ( class x extends x {  } ) ; } ) ;",
+  "elseCovered": "assert . throws ( ReferenceError , function ( ) { var x = ( class x extends x { } ) ; } ) ;",
   "inst": "if (= __x1__ false) ... else ..."
 }, {
   "algo": "CallExpression5Contains0",
@@ -116,14 +116,14 @@
   "algo": "UnaryExpression1Evaluation0",
   "cond": "(= __x3__ true)",
   "covered": true,
-  "elseCovered": "assert . throws ( TypeError , function  (  ) { delete Math . LN2 ; } ) ;",
+  "elseCovered": "assert . throws ( TypeError , function ( ) { delete Math . LN2 ; } ) ;",
   "inst": "if (= __x3__ true) ... else ..."
 }, {
   "algo": "UnaryExpression1Evaluation0",
   "cond": "(= __x6__ true)",
   "covered": true,
   "inst": "if (= __x6__ true) ... else ...",
-  "thenCovered": "assert . throws ( TypeError , function  (  ) { delete Math . LN2 ; } ) ;"
+  "thenCovered": "assert . throws ( TypeError , function ( ) { delete Math . LN2 ; } ) ;"
 }, {
   "algo": "ArrowParameters0IteratorBindingInitialization0",
   "cond": "__x1__",
@@ -141,42 +141,42 @@
   "cond": "(= iteratorRecord[\"Done\"] false)",
   "covered": true,
   "inst": "if (= iteratorRecord[\"Done\"] false) ... else ...",
-  "thenCovered": "assert . throws ( TypeError , function  (  ) { let [  { x  }  ] = [  ] ; } ) ;"
+  "thenCovered": "assert . throws ( TypeError , function ( ) { var [ { x } ] = [ ] ; } ) ;"
 }, {
   "algo": "BindingElement1IteratorBindingInitialization1",
   "cond": "__x1__",
   "covered": true,
-  "elseCovered": "assert . throws ( TypeError , function  (  ) { let [  { x  }  ] = [  ] ; } ) ;",
+  "elseCovered": "assert . throws ( TypeError , function ( ) { var [ { x } ] = [ ] ; } ) ;",
   "inst": "if __x1__ ... else ..."
 }, {
   "algo": "BindingElement1IteratorBindingInitialization1",
   "cond": "__x3__",
   "covered": true,
-  "elseCovered": "assert . throws ( TypeError , function  (  ) { let [  { x  }  ] = [  null ] ; } ) ;",
+  "elseCovered": "assert . throws ( TypeError , function ( ) { let [ [ x ] ] = [ null ] ; } ) ;",
   "inst": "if __x3__ ... else ..."
 }, {
   "algo": "ArrayCreate",
   "cond": "(= length -0.0)",
   "covered": true,
-  "elseCovered": "{  } [  ] ; ;",
+  "elseCovered": "{ } [ ] ; ;",
   "inst": "if (= length -0.0) ... else ..."
 }, {
   "algo": "ArraySetLength",
   "cond": "(= succeeded false)",
   "covered": true,
-  "elseCovered": "var arr = [  0 ,  1 ] ; Object . defineProperties ( arr , { length : { value : 0 } } ) ; assert . sameValue ( arr . length , 0 , 'arr.length' ) ;",
+  "elseCovered": "var arr = [ 0 , 1 ] ; Object . defineProperties ( arr , { length : { value : 0 } } ) ; assert . sameValue ( arr . length , 0 , 'arr.length' ) ;",
   "inst": "if (= succeeded false) ... else ..."
 }, {
   "algo": "ArraySpeciesCreate",
   "cond": "(= length -0.0)",
   "covered": true,
-  "elseCovered": "assert . throws ( TypeError , function  (  ) { TypedArray . of ( ) ; } ) ;",
+  "elseCovered": "assert . throws ( TypeError , function ( ) { TypedArray . of ( ) ; } ) ;",
   "inst": "if (= length -0.0) ... else ..."
 }, {
   "algo": "ArraySpeciesCreate",
   "cond": "(! (= thisRealm realmC))",
   "covered": true,
-  "elseCovered": "assert . throws ( TypeError , function  (  ) { TypedArray . of ( ) ; } ) ;",
+  "elseCovered": "assert . throws ( TypeError , function ( ) { TypedArray . of ( ) ; } ) ;",
   "inst": "if (! (= thisRealm realmC)) ... else ..."
 }, {
   "algo": "ArraySpeciesCreate",
@@ -187,92 +187,92 @@
   "algo": "AssignmentElement0IteratorDestructuringAssignmentEvaluation1",
   "cond": "__x4__",
   "covered": true,
-  "elseCovered": "var x  ; assert . throws ( TypeError , function  (  ) { 0 , [  { x } ] = [ , ] ; } ) ;",
+  "elseCovered": "var _ ; assert . throws ( TypeError , function ( ) { 0 , [ [ _ ] ] = [ , ] ; } ) ;",
   "inst": "if __x4__ ... else ..."
 }, {
   "algo": "AssignmentRestElement0IteratorDestructuringAssignmentEvaluation0",
   "cond": "__x5__",
   "covered": true,
-  "elseCovered": "const c = null ; assert . throws ( TypeError , function  (  ) { 0 , [  ... c ] = [  1 ] ; } ) ;",
+  "elseCovered": "const c = null ; assert . throws ( TypeError , function ( ) { 0 , [ ... c ] = [ 1 ] ; } ) ;",
   "inst": "if __x5__ ... else ..."
 }, {
   "algo": "AsyncFunctionBody0EvaluateBody0",
   "cond": "(! __x2__)",
   "covered": true,
   "inst": "if (! __x2__) ... else ...",
-  "thenCovered": "let called  ; async function foo (  ) { called = true ; await new Promise ( ) ; } foo ( ) ; assert ( called ) ;"
+  "thenCovered": "let called ; async function foo ( ) { called = true ; await new Promise ( ) ; } foo ( ) ; assert ( called ) ;"
 }, {
   "algo": "AsyncFunctionStart",
   "cond": "(= GLOBAL_executionStack[(- GLOBAL_executionStack[\"length\"] 1i)] asyncContext)",
   "covered": true,
   "inst": "if (= GLOBAL_executionStack[(- GLOBAL_executionStack[\"length\"] 1i)] asyncContext) ... else ...",
-  "thenCovered": "let called  ; async function foo (  ) { called = true ; await new Promise ( ) ; } foo ( ) ; assert ( called ) ;"
+  "thenCovered": "let called ; async function foo ( ) { called = true ; await new Promise ( ) ; } foo ( ) ; assert ( called ) ;"
 }, {
   "algo": "AsyncFunctionStart",
   "cond": "(= result[\"Type\"] CONST_return)",
   "covered": true,
-  "elseCovered": "let called  ; async function foo (  ) { called = true ; await new Promise ( ) ; } foo ( ) ; assert ( called ) ;",
+  "elseCovered": "let called ; async function foo ( ) { called = true ; await new Promise ( ) ; } foo ( ) ; assert ( called ) ;",
   "inst": "if (= result[\"Type\"] CONST_return) ... else ..."
 }, {
   "algo": "AsyncFunctionStart",
   "cond": "(= asyncContext[\"ReturnCont\"] absent)",
   "covered": true,
   "inst": "if (= asyncContext[\"ReturnCont\"] absent) ... else ...",
-  "thenCovered": "let called  ; async function foo (  ) { called = true ; await new Promise ( ) ; } foo ( ) ; assert ( called ) ;"
+  "thenCovered": "let called ; async function foo ( ) { called = true ; await new Promise ( ) ; } foo ( ) ; assert ( called ) ;"
 }, {
   "algo": "AsyncGeneratorEnqueue",
   "cond": "(|| (! (= __x1__ Object)) (= generator[\"AsyncGeneratorState\"] absent))",
   "covered": true,
-  "elseCovered": "async function * g (  ) {  } var result = g ( ) . next ( ) ; assert ( result instanceof Promise ) ;",
+  "elseCovered": "async function * g ( ) { } var result = g ( ) . next ( ) ; assert ( result instanceof Promise ) ;",
   "inst": "if (|| (! (= __x1__ Object)) (= generator[\"AsyncGeneratorState\"] absent)) ... else ..."
 }, {
   "algo": "AsyncGeneratorEnqueue",
   "cond": "(! (= state CONST_executing))",
   "covered": true,
   "inst": "if (! (= state CONST_executing)) ... else ...",
-  "thenCovered": "async function * g (  ) {  } var result = g ( ) . next ( ) ; assert ( result instanceof Promise ) ;"
+  "thenCovered": "async function * g ( ) { } var result = g ( ) . next ( ) ; assert ( result instanceof Promise ) ;"
 }, {
   "algo": "AsyncGeneratorResumeNext",
   "cond": "(= state CONST_awaitingreturn)",
   "covered": true,
-  "elseCovered": "async function * g (  ) {  } var result = g ( ) . next ( ) ; assert ( result instanceof Promise ) ;",
+  "elseCovered": "async function * g ( ) { } var result = g ( ) . next ( ) ; assert ( result instanceof Promise ) ;",
   "inst": "if (= state CONST_awaitingreturn) ... else ..."
 }, {
   "algo": "AsyncGeneratorResumeNext",
   "cond": "(= state CONST_suspendedStart)",
   "covered": true,
   "inst": "if (= state CONST_suspendedStart) ... else ...",
-  "thenCovered": "async function * g (  ) {  } var result = g ( ) . return ( ) ; assert ( result instanceof Promise ) ;"
+  "thenCovered": "async function * g ( ) { } var result = g ( ) . return ( ) ; assert ( result instanceof Promise ) ;"
 }, {
   "algo": "AsyncGeneratorResumeNext",
   "cond": "(= state CONST_completed)",
   "covered": true,
   "inst": "if (= state CONST_completed) ... else ...",
-  "thenCovered": "async function * g (  ) {  } var result = g ( ) . return ( ) ; assert ( result instanceof Promise ) ;"
+  "thenCovered": "async function * g ( ) { } var result = g ( ) . return ( ) ; assert ( result instanceof Promise ) ;"
 }, {
   "algo": "AsyncGeneratorResumeNext",
   "cond": "(= completion[\"Type\"] CONST_return)",
   "covered": true,
   "inst": "if (= completion[\"Type\"] CONST_return) ... else ...",
-  "thenCovered": "async function * g (  ) {  } var result = g ( ) . return ( ) ; assert ( result instanceof Promise ) ;"
+  "thenCovered": "async function * g ( ) { } var result = g ( ) . return ( ) ; assert ( result instanceof Promise ) ;"
 }, {
   "algo": "AsyncGeneratorResumeNext",
   "cond": "(= state CONST_completed)",
   "covered": true,
-  "elseCovered": "async function * g (  ) {  } var result = g ( ) . next ( ) ; assert ( result instanceof Promise ) ;",
+  "elseCovered": "async function * g ( ) { } var result = g ( ) . next ( ) ; assert ( result instanceof Promise ) ;",
   "inst": "if (= state CONST_completed) ... else ..."
 }, {
   "algo": "AsyncGeneratorResumeNext",
   "cond": "(= genContext[\"ReturnCont\"] absent)",
   "covered": true,
   "inst": "if (= genContext[\"ReturnCont\"] absent) ... else ...",
-  "thenCovered": "async function * g (  ) {  } var result = g ( ) . next ( ) ; assert ( result instanceof Promise ) ;"
+  "thenCovered": "async function * g ( ) { } var result = g ( ) . next ( ) ; assert ( result instanceof Promise ) ;"
 }, {
   "algo": "AsyncGeneratorStart",
   "cond": "(= GLOBAL_executionStack[(- GLOBAL_executionStack[\"length\"] 1i)] genContext)",
   "covered": true,
   "inst": "if (= GLOBAL_executionStack[(- GLOBAL_executionStack[\"length\"] 1i)] genContext) ... else ...",
-  "thenCovered": "async function * g (  ) {  } var result = g ( ) . next ( ) ; assert ( result instanceof Promise ) ;"
+  "thenCovered": "async function * g ( ) { } var result = g ( ) . next ( ) ; assert ( result instanceof Promise ) ;"
 }, {
   "algo": "AsyncGeneratorStart",
   "cond": "(! (= result[\"Type\"] CONST_return))",
@@ -283,42 +283,42 @@
   "cond": "(= GLOBAL_executionStack[(- GLOBAL_executionStack[\"length\"] 1i)] asyncContext)",
   "covered": true,
   "inst": "if (= GLOBAL_executionStack[(- GLOBAL_executionStack[\"length\"] 1i)] asyncContext) ... else ...",
-  "thenCovered": "function * g (  ) {  } async function * asyncg (  ) { yield * g ( ) ; } var result = asyncg ( ) . next ( ) ; assert ( result instanceof Promise ) ;"
+  "thenCovered": "function * g ( ) { } async function * asyncg ( ) { yield * g ( ) ; } var result = asyncg ( ) . next ( ) ; assert ( result instanceof Promise ) ;"
 }, {
   "algo": "BigIntCOLONCOLONremainder",
   "cond": "(= n 0n)",
   "covered": true,
-  "elseCovered": "assert . sameValue ( Object ( 2n ) % 2n , 0n , 'The result of (Object(2n) % 2n) is 0n' ) ; assert . sameValue ( 2n % Object ( 2n ) , 0n , 'The result of (2n % Object(2n)) is 0n' ) ; assert . sameValue ( { [ Symbol . toPrimitive ] : function  (  ) { return 2n ; } } % 2n , 0n , 'The result of (({[Symbol.toPrimitive]: function() {return 2n;}}) % 2n) is 0n' ) ; assert . sameValue ( 2n % { [ Symbol . toPrimitive ] : function  (  ) { return 2n ; } } , 0n , 'The result of (2n % {[Symbol.toPrimitive]: function() {return 2n;}}) is 0n' ) ; assert . sameValue ( { valueOf : function  (  ) { return 2n ; } } % 2n , 0n , 'The result of (({valueOf: function() {return 2n;}}) % 2n) is 0n' ) ; assert . sameValue ( 2n % { valueOf : function  (  ) { return 2n ; } } , 0n , 'The result of (2n % {valueOf: function() {return 2n;}}) is 0n' ) ; assert . sameValue ( { toString : function  (  ) { return 2n ; } } % 2n , 0n , 'The result of (({toString: function() {return 2n;}}) % 2n) is 0n' ) ; assert . sameValue ( 2n % { toString : function  (  ) { return 2n ; } } , 0n , 'The result of (2n % {toString: function() {return 2n;}}) is 0n' ) ;",
+  "elseCovered": "assert . sameValue ( Object ( 2n ) % 2n , 0n , 'The result of (Object(2n) % 2n) is 0n' ) ; assert . sameValue ( 2n % Object ( 2n ) , 0n , 'The result of (2n % Object(2n)) is 0n' ) ; assert . sameValue ( { [ Symbol . toPrimitive ] : function ( ) { return 2n ; } } % 2n , 0n , 'The result of (({[Symbol.toPrimitive]: function() {return 2n;}}) % 2n) is 0n' ) ; assert . sameValue ( 2n % { [ Symbol . toPrimitive ] : function ( ) { return 2n ; } } , 0n , 'The result of (2n % {[Symbol.toPrimitive]: function() {return 2n;}}) is 0n' ) ; assert . sameValue ( { valueOf : function ( ) { return 2n ; } } % 2n , 0n , 'The result of (({valueOf: function() {return 2n;}}) % 2n) is 0n' ) ; assert . sameValue ( 2n % { valueOf : function ( ) { return 2n ; } } , 0n , 'The result of (2n % {valueOf: function() {return 2n;}}) is 0n' ) ; assert . sameValue ( { toString : function ( ) { return 2n ; } } % 2n , 0n , 'The result of (({toString: function() {return 2n;}}) % 2n) is 0n' ) ; assert . sameValue ( 2n % { toString : function ( ) { return 2n ; } } , 0n , 'The result of (2n % {toString: function() {return 2n;}}) is 0n' ) ;",
   "inst": "if (= n 0n) ... else ..."
 }, {
   "algo": "BindingRestElement1IteratorBindingInitialization0",
   "cond": "(= iteratorRecord[\"Done\"] false)",
   "covered": true,
   "inst": "if (= iteratorRecord[\"Done\"] false) ... else ...",
-  "thenCovered": "var [  ... { length  } ] = [  1 ,  2 ,  3 ] ; assert . sameValue ( length , 3 ) ;"
+  "thenCovered": "var [ ... { length } ] = [ 1 , 2 , 3 ] ; assert . sameValue ( length , 3 ) ;"
 }, {
   "algo": "BindingRestElement1IteratorBindingInitialization0",
   "cond": "__x2__",
   "covered": true,
-  "elseCovered": "var [  ... { length  } ] = [  1 ,  2 ,  3 ] ; assert . sameValue ( length , 3 ) ;",
+  "elseCovered": "var [ ... { length } ] = [ 1 , 2 , 3 ] ; assert . sameValue ( length , 3 ) ;",
   "inst": "if __x2__ ... else ..."
 }, {
   "algo": "BindingRestElement1IteratorBindingInitialization0",
   "cond": "__x7__",
   "covered": true,
-  "elseCovered": "var [  ... { length  } ] = [  1 ,  2 ,  3 ] ; assert . sameValue ( length , 3 ) ;",
+  "elseCovered": "var [ ... { length } ] = [ 1 , 2 , 3 ] ; assert . sameValue ( length , 3 ) ;",
   "inst": "if __x7__ ... else ..."
 }, {
   "algo": "BreakableStatement1LabelledEvaluation0",
   "cond": "(= stmtResult[\"Target\"] CONST_empty)",
   "covered": true,
   "inst": "if (= stmtResult[\"Target\"] CONST_empty) ... else ...",
-  "thenCovered": "function SwitchTest ( value  ) { var result = 0 ; switch ( value ) { case 0 : switch ( value ) { case 0 : result += 3 ; break ; default : result += 32 ; break ;  } result *= 2 ; break ; result = 3 ; default : result += 32 ; break ;  } return result ; } var x = SwitchTest ( 0 ) ; if ( x !== 6 ) $ERROR ( \"#1: SwitchTest(0) === 6. Actual:  SwitchTest(0) ===\" + SwitchTest ( 0 ) ) ;"
+  "thenCovered": "function SwitchTest ( value ) { var result = 0 ; switch ( value ) { case 0 : switch ( value ) { case 0 : result += 3 ; break ; default : result += 32 ; break ; } result *= 2 ; break ; result = 3 ; default : result += 32 ; break ; } return result ; } var x = SwitchTest ( 0 ) ; if ( x !== 6 ) $ERROR ( \"#1: SwitchTest(0) === 6. Actual:  SwitchTest(0) ===\" + SwitchTest ( 0 ) ) ;"
 }, {
   "algo": "BreakableStatement1LabelledEvaluation0",
   "cond": "(= stmtResult[\"Value\"] CONST_empty)",
   "covered": true,
-  "elseCovered": "function SwitchTest ( value  ) { var result = 0 ; switch ( value ) { case 0 : switch ( value ) { case 0 : result += 3 ; break ; default : result += 32 ; break ;  } result *= 2 ; break ; result = 3 ; default : result += 32 ; break ;  } return result ; } var x = SwitchTest ( 0 ) ; if ( x !== 6 ) $ERROR ( \"#1: SwitchTest(0) === 6. Actual:  SwitchTest(0) ===\" + SwitchTest ( 0 ) ) ;",
+  "elseCovered": "function SwitchTest ( value ) { var result = 0 ; switch ( value ) { case 0 : switch ( value ) { case 0 : result += 3 ; break ; default : result += 32 ; break ; } result *= 2 ; break ; result = 3 ; default : result += 32 ; break ; } return result ; } var x = SwitchTest ( 0 ) ; if ( x !== 6 ) $ERROR ( \"#1: SwitchTest(0) === 6. Actual:  SwitchTest(0) ===\" + SwitchTest ( 0 ) ) ;",
   "inst": "if (= stmtResult[\"Value\"] CONST_empty) ... else ..."
 }, {
   "algo": "BuiltinFunctionObjectDOTCall",
@@ -337,7 +337,7 @@
   "cond": "(= GLOBAL_executionStack[(- GLOBAL_executionStack[\"length\"] 1i)] calleeContext)",
   "covered": true,
   "inst": "if (= GLOBAL_executionStack[(- GLOBAL_executionStack[\"length\"] 1i)] calleeContext) ... else ...",
-  "thenCovered": "assert . throws ( TypeError , function  (  ) { new WeakMap ( { } ) ; } ) ;"
+  "thenCovered": "assert . throws ( TypeError , function ( ) { new WeakMap ( { } ) ; } ) ;"
 }, {
   "algo": "CanonicalNumericIndexString",
   "cond": "(= argument \"-0\")",
@@ -349,66 +349,66 @@
   "cond": "(! (= CaseClauses1 absent))",
   "covered": true,
   "inst": "if (! (= CaseClauses1 absent)) ... else ...",
-  "thenCovered": "function SwitchTest ( value  ) { var result = 0 ; switch ( value ) { case 0 : result += 2 ; case 1 : result += 4 ; break ; case 2 : result += 8 ; case isNaN ( value ) : result += 16 ; default : result += 32 ; break ; case null : result += 64 ; case isNaN : result += 128 ; break ; case Infinity : result += 256 ; case 2 + 3 : result += 512 ; break ; case undefined : result += 1024 ; } return result ; } var n = Number ( false ) ; if ( ! ( SwitchTest ( n ) === 6 ) ) { $ERROR ( \"#1: SwitchTest(Number(false)) === 6. Actual:  SwitchTest(Number(false)) ===\" + SwitchTest ( n ) ) ; } if ( ! ( SwitchTest ( parseInt ) === 32 ) ) { $ERROR ( \"#2: SwitchTest(parseInt) === 32. Actual:  SwitchTest(parseInt) ===\" + SwitchTest ( parseInt ) ) ; } if ( ! ( SwitchTest ( isNaN ) === 128 ) ) { $ERROR ( \"#3: SwitchTest(isNaN) === 128. Actual:  SwitchTest(isNaN) ===\" + SwitchTest ( isNaN ) ) ; } if ( ! ( SwitchTest ( true ) === 32 ) ) { $ERROR ( \"#6: SwitchTest(true) === 32. Actual:  SwitchTest(true) ===\" + SwitchTest ( true ) ) ; } if ( ! ( SwitchTest ( false ) === 48 ) ) { $ERROR ( \"#7: SwitchTest(false) === 48. Actual:  SwitchTest(false) ===\" + SwitchTest ( false ) ) ; } if ( ! ( SwitchTest ( null ) === 192 ) ) { $ERROR ( \"#8: SwitchTest(null) === 192. Actual:  SwitchTest(null) ===\" + SwitchTest ( null ) ) ; } if ( ! ( SwitchTest ( void 0 ) === 1024 ) ) { $ERROR ( \"#9: SwitchTest(void 0) === 1024. Actual:  SwitchTest(void 0) ===\" + SwitchTest ( void 0 ) ) ; } if ( ! ( SwitchTest ( NaN ) === 32 ) ) { $ERROR ( \"#10: SwitchTest(NaN) === 32. Actual:  SwitchTest(NaN) ===\" + SwitchTest ( NaN ) ) ; } if ( ! ( SwitchTest ( Infinity ) === 768 ) ) { $ERROR ( \"#10: SwitchTest(NaN) === 768. Actual:  SwitchTest(NaN) ===\" + SwitchTest ( NaN ) ) ; }"
+  "thenCovered": "function SwitchTest ( value ) { var result = 0 ; switch ( value ) { case 0 : result += 2 ; case 1 : result += 4 ; break ; case 2 : result += 8 ; case isNaN ( value ) : result += 16 ; default : result += 32 ; break ; case null : result += 64 ; case isNaN : result += 128 ; break ; case Infinity : result += 256 ; case 2 + 3 : result += 512 ; break ; case undefined : result += 1024 ; } return result ; } var n = Number ( false ) ; if ( ! ( SwitchTest ( n ) === 6 ) ) { $ERROR ( \"#1: SwitchTest(Number(false)) === 6. Actual:  SwitchTest(Number(false)) ===\" + SwitchTest ( n ) ) ; } if ( ! ( SwitchTest ( parseInt ) === 32 ) ) { $ERROR ( \"#2: SwitchTest(parseInt) === 32. Actual:  SwitchTest(parseInt) ===\" + SwitchTest ( parseInt ) ) ; } if ( ! ( SwitchTest ( isNaN ) === 128 ) ) { $ERROR ( \"#3: SwitchTest(isNaN) === 128. Actual:  SwitchTest(isNaN) ===\" + SwitchTest ( isNaN ) ) ; } if ( ! ( SwitchTest ( true ) === 32 ) ) { $ERROR ( \"#6: SwitchTest(true) === 32. Actual:  SwitchTest(true) ===\" + SwitchTest ( true ) ) ; } if ( ! ( SwitchTest ( false ) === 48 ) ) { $ERROR ( \"#7: SwitchTest(false) === 48. Actual:  SwitchTest(false) ===\" + SwitchTest ( false ) ) ; } if ( ! ( SwitchTest ( null ) === 192 ) ) { $ERROR ( \"#8: SwitchTest(null) === 192. Actual:  SwitchTest(null) ===\" + SwitchTest ( null ) ) ; } if ( ! ( SwitchTest ( void 0 ) === 1024 ) ) { $ERROR ( \"#9: SwitchTest(void 0) === 1024. Actual:  SwitchTest(void 0) ===\" + SwitchTest ( void 0 ) ) ; } if ( ! ( SwitchTest ( NaN ) === 32 ) ) { $ERROR ( \"#10: SwitchTest(NaN) === 32. Actual:  SwitchTest(NaN) ===\" + SwitchTest ( NaN ) ) ; } if ( ! ( SwitchTest ( Infinity ) === 768 ) ) { $ERROR ( \"#10: SwitchTest(NaN) === 768. Actual:  SwitchTest(NaN) ===\" + SwitchTest ( NaN ) ) ; }"
 }, {
   "algo": "CaseBlock1LexicallyScopedDeclarations3",
   "cond": "(< __x6__ __x5__[\"length\"])",
   "covered": true,
-  "elseCovered": "assert . sameValue ( eval ( '1; switch (\"a\") { default: case \"b\": break; }' ) , undefined ) ; assert . sameValue ( eval ( '2; switch (\"a\") { default: case \"b\": { 3; break; } }' ) , 3 ) ; assert . sameValue ( eval ( '4; do { switch (\"a\") { default: case \"b\": continue; } } while (false)' ) , undefined ) ; assert . sameValue ( eval ( '5; do { switch (\"a\") { default: case \"b\": { 6; continue; } } } while (false)' ) , 6 ) ;",
+  "elseCovered": "assert . sameValue ( eval ( '1; switch (\"a\") { default: case \"a\": break; }' ) , undefined ) ; assert . sameValue ( eval ( '2; switch (\"a\") { default: case \"a\": { 3; break; } }' ) , 3 ) ; assert . sameValue ( eval ( '4; do { switch (\"a\") { default: case \"a\": continue; } } while (false)' ) , undefined ) ; assert . sameValue ( eval ( '5; do { switch (\"a\") { default: case \"a\": { 6; continue; } } } while (false)' ) , 6 ) ;",
   "inst": "while (< __x6__ __x5__[\"length\"]) { ... }"
 }, {
   "algo": "CaseBlock1VarDeclaredNames3",
   "cond": "(< __x6__ __x5__[\"length\"])",
   "covered": true,
-  "elseCovered": "assert . sameValue ( eval ( '1; switch (\"a\") { default: case \"b\": break; }' ) , undefined ) ; assert . sameValue ( eval ( '2; switch (\"a\") { default: case \"b\": { 3; break; } }' ) , 3 ) ; assert . sameValue ( eval ( '4; do { switch (\"a\") { default: case \"b\": continue; } } while (false)' ) , undefined ) ; assert . sameValue ( eval ( '5; do { switch (\"a\") { default: case \"b\": { 6; continue; } } } while (false)' ) , 6 ) ;",
+  "elseCovered": "assert . sameValue ( eval ( '1; switch (\"a\") { default: case \"a\": break; }' ) , undefined ) ; assert . sameValue ( eval ( '2; switch (\"a\") { default: case \"a\": { 3; break; } }' ) , 3 ) ; assert . sameValue ( eval ( '4; do { switch (\"a\") { default: case \"a\": continue; } } while (false)' ) , undefined ) ; assert . sameValue ( eval ( '5; do { switch (\"a\") { default: case \"a\": { 6; continue; } } } while (false)' ) , 6 ) ;",
   "inst": "while (< __x6__ __x5__[\"length\"]) { ... }"
 }, {
   "algo": "CaseBlock1VarScopedDeclarations3",
   "cond": "(< __x6__ __x5__[\"length\"])",
   "covered": true,
-  "elseCovered": "assert . sameValue ( eval ( '1; switch (\"a\") { default: case \"b\": break; }' ) , undefined ) ; assert . sameValue ( eval ( '2; switch (\"a\") { default: case \"b\": { 3; break; } }' ) , 3 ) ; assert . sameValue ( eval ( '4; do { switch (\"a\") { default: case \"b\": continue; } } while (false)' ) , undefined ) ; assert . sameValue ( eval ( '5; do { switch (\"a\") { default: case \"b\": { 6; continue; } } } while (false)' ) , 6 ) ;",
+  "elseCovered": "assert . sameValue ( eval ( '1; switch (\"a\") { default: case \"a\": break; }' ) , undefined ) ; assert . sameValue ( eval ( '2; switch (\"a\") { default: case \"a\": { 3; break; } }' ) , 3 ) ; assert . sameValue ( eval ( '4; do { switch (\"a\") { default: case \"a\": continue; } } while (false)' ) , undefined ) ; assert . sameValue ( eval ( '5; do { switch (\"a\") { default: case \"a\": { 6; continue; } } } while (false)' ) , 6 ) ;",
   "inst": "while (< __x6__ __x5__[\"length\"]) { ... }"
 }, {
   "algo": "CaseClause0HasCallInTailPosition1",
   "cond": "(! (= StatementList absent))",
   "covered": true,
   "inst": "if (! (= StatementList absent)) ... else ...",
-  "thenCovered": "var callCount = 0 ; ( function f ( n  ) { if ( n === 0 ) { callCount += 1 ; return ; } switch ( 0 ) { case 0 : return f ( n - 1 ) ; } } ( $MAX_ITERATIONS ) ) ; assert . sameValue ( callCount , 1 ) ;"
+  "thenCovered": "var callCount = 0 ; ( function f ( n ) { if ( n === 0 ) { callCount += 1 ; return ; } switch ( 0 ) { case 0 : return f ( n - 1 ) ; } } ( $MAX_ITERATIONS ) ) ; assert . sameValue ( callCount , 1 ) ;"
 }, {
   "algo": "CaseClauses1HasCallInTailPosition0",
   "cond": "(= has true)",
   "covered": true,
-  "elseCovered": "function SwitchTest ( value  ) { var result = 0 ; switch ( value ) { case 0 : result += 2 ; case 1 : result += 4 ; break ; case 2 : result += 8 ; case isNaN ( value ) : result += 16 ; default : result += 32 ; break ; case null : result += 64 ; case isNaN : result += 128 ; break ; case Infinity : result += 256 ; case 2 + 3 : result += 512 ; break ; case undefined : result += 1024 ; } return result ; } var n = Number ( false ) ; if ( ! ( SwitchTest ( n ) === 6 ) ) { $ERROR ( \"#1: SwitchTest(Number(false)) === 6. Actual:  SwitchTest(Number(false)) ===\" + SwitchTest ( n ) ) ; } if ( ! ( SwitchTest ( parseInt ) === 32 ) ) { $ERROR ( \"#2: SwitchTest(parseInt) === 32. Actual:  SwitchTest(parseInt) ===\" + SwitchTest ( parseInt ) ) ; } if ( ! ( SwitchTest ( isNaN ) === 128 ) ) { $ERROR ( \"#3: SwitchTest(isNaN) === 128. Actual:  SwitchTest(isNaN) ===\" + SwitchTest ( isNaN ) ) ; } if ( ! ( SwitchTest ( true ) === 32 ) ) { $ERROR ( \"#6: SwitchTest(true) === 32. Actual:  SwitchTest(true) ===\" + SwitchTest ( true ) ) ; } if ( ! ( SwitchTest ( false ) === 48 ) ) { $ERROR ( \"#7: SwitchTest(false) === 48. Actual:  SwitchTest(false) ===\" + SwitchTest ( false ) ) ; } if ( ! ( SwitchTest ( null ) === 192 ) ) { $ERROR ( \"#8: SwitchTest(null) === 192. Actual:  SwitchTest(null) ===\" + SwitchTest ( null ) ) ; } if ( ! ( SwitchTest ( void 0 ) === 1024 ) ) { $ERROR ( \"#9: SwitchTest(void 0) === 1024. Actual:  SwitchTest(void 0) ===\" + SwitchTest ( void 0 ) ) ; } if ( ! ( SwitchTest ( NaN ) === 32 ) ) { $ERROR ( \"#10: SwitchTest(NaN) === 32. Actual:  SwitchTest(NaN) ===\" + SwitchTest ( NaN ) ) ; } if ( ! ( SwitchTest ( Infinity ) === 768 ) ) { $ERROR ( \"#10: SwitchTest(NaN) === 768. Actual:  SwitchTest(NaN) ===\" + SwitchTest ( NaN ) ) ; }",
+  "elseCovered": "function SwitchTest ( value ) { var result = 0 ; switch ( value ) { case 0 : result += 2 ; case 1 : result += 4 ; break ; case 2 : result += 8 ; case isNaN ( value ) : result += 16 ; default : result += 32 ; break ; case null : result += 64 ; case isNaN : result += 128 ; break ; case Infinity : result += 256 ; case 2 + 3 : result += 512 ; break ; case undefined : result += 1024 ; } return result ; } var n = Number ( false ) ; if ( ! ( SwitchTest ( n ) === 6 ) ) { $ERROR ( \"#1: SwitchTest(Number(false)) === 6. Actual:  SwitchTest(Number(false)) ===\" + SwitchTest ( n ) ) ; } if ( ! ( SwitchTest ( parseInt ) === 32 ) ) { $ERROR ( \"#2: SwitchTest(parseInt) === 32. Actual:  SwitchTest(parseInt) ===\" + SwitchTest ( parseInt ) ) ; } if ( ! ( SwitchTest ( isNaN ) === 128 ) ) { $ERROR ( \"#3: SwitchTest(isNaN) === 128. Actual:  SwitchTest(isNaN) ===\" + SwitchTest ( isNaN ) ) ; } if ( ! ( SwitchTest ( true ) === 32 ) ) { $ERROR ( \"#6: SwitchTest(true) === 32. Actual:  SwitchTest(true) ===\" + SwitchTest ( true ) ) ; } if ( ! ( SwitchTest ( false ) === 48 ) ) { $ERROR ( \"#7: SwitchTest(false) === 48. Actual:  SwitchTest(false) ===\" + SwitchTest ( false ) ) ; } if ( ! ( SwitchTest ( null ) === 192 ) ) { $ERROR ( \"#8: SwitchTest(null) === 192. Actual:  SwitchTest(null) ===\" + SwitchTest ( null ) ) ; } if ( ! ( SwitchTest ( void 0 ) === 1024 ) ) { $ERROR ( \"#9: SwitchTest(void 0) === 1024. Actual:  SwitchTest(void 0) ===\" + SwitchTest ( void 0 ) ) ; } if ( ! ( SwitchTest ( NaN ) === 32 ) ) { $ERROR ( \"#10: SwitchTest(NaN) === 32. Actual:  SwitchTest(NaN) ===\" + SwitchTest ( NaN ) ) ; } if ( ! ( SwitchTest ( Infinity ) === 768 ) ) { $ERROR ( \"#10: SwitchTest(NaN) === 768. Actual:  SwitchTest(NaN) ===\" + SwitchTest ( NaN ) ) ; }",
   "inst": "if (= has true) ... else ..."
 }, {
   "algo": "CaseClauses1LexicallyScopedDeclarations0",
   "cond": "(< __x3__ __x2__[\"length\"])",
   "covered": true,
-  "elseCovered": "let x = 'outside' ; var probe1  , probe2  ; switch ( null ) { case null : let x = 'inside' ; probe1 = function  (  ) { return x ; } ; case null : probe2 = function  (  ) { return x ; } ; } assert . sameValue ( probe1 ( ) , 'inside' , 'from first `case` clause' ) ; assert . sameValue ( probe2 ( ) , 'inside' , 'from second `case` clause' ) ; assert . sameValue ( x , 'outside' ) ;",
+  "elseCovered": "let x = 'outside' ; var probe1 , probe2 ; switch ( null ) { case null : let x = 'inside' ; probe1 = function ( ) { return x ; } ; case null : probe2 = function ( ) { return x ; } ; } assert . sameValue ( probe1 ( ) , 'inside' , 'from first `case` clause' ) ; assert . sameValue ( probe2 ( ) , 'inside' , 'from second `case` clause' ) ; assert . sameValue ( x , 'outside' ) ;",
   "inst": "while (< __x3__ __x2__[\"length\"]) { ... }"
 }, {
   "algo": "CaseClauses1VarDeclaredNames0",
   "cond": "(< __x3__ __x2__[\"length\"])",
   "covered": true,
-  "elseCovered": "let x = 'outside' ; var probe1  , probe2  ; switch ( null ) { case null : let x = 'inside' ; probe1 = function  (  ) { return x ; } ; case null : probe2 = function  (  ) { return x ; } ; } assert . sameValue ( probe1 ( ) , 'inside' , 'from first `case` clause' ) ; assert . sameValue ( probe2 ( ) , 'inside' , 'from second `case` clause' ) ; assert . sameValue ( x , 'outside' ) ;",
+  "elseCovered": "let x = 'outside' ; var probe1 , probe2 ; switch ( null ) { case null : let x = 'inside' ; probe1 = function ( ) { return x ; } ; case null : probe2 = function ( ) { return x ; } ; } assert . sameValue ( probe1 ( ) , 'inside' , 'from first `case` clause' ) ; assert . sameValue ( probe2 ( ) , 'inside' , 'from second `case` clause' ) ; assert . sameValue ( x , 'outside' ) ;",
   "inst": "while (< __x3__ __x2__[\"length\"]) { ... }"
 }, {
   "algo": "CaseClauses1VarScopedDeclarations0",
   "cond": "(< __x3__ __x2__[\"length\"])",
   "covered": true,
-  "elseCovered": "let x = 'outside' ; var probe1  , probe2  ; switch ( null ) { case null : let x = 'inside' ; probe1 = function  (  ) { return x ; } ; case null : probe2 = function  (  ) { return x ; } ; } assert . sameValue ( probe1 ( ) , 'inside' , 'from first `case` clause' ) ; assert . sameValue ( probe2 ( ) , 'inside' , 'from second `case` clause' ) ; assert . sameValue ( x , 'outside' ) ;",
+  "elseCovered": "let x = 'outside' ; var probe1 , probe2 ; switch ( null ) { case null : let x = 'inside' ; probe1 = function ( ) { return x ; } ; case null : probe2 = function ( ) { return x ; } ; } assert . sameValue ( probe1 ( ) , 'inside' , 'from first `case` clause' ) ; assert . sameValue ( probe2 ( ) , 'inside' , 'from second `case` clause' ) ; assert . sameValue ( x , 'outside' ) ;",
   "inst": "while (< __x3__ __x2__[\"length\"]) { ... }"
 }, {
   "algo": "ClassElementList0ConstructorMethod0",
   "cond": "(is-instance-of ClassElement ClassElement2)",
   "covered": true,
-  "elseCovered": "class C  { constructor (  ) {  } }",
+  "elseCovered": "class C { constructor ( ) { } }",
   "inst": "if (is-instance-of ClassElement ClassElement2) ... else ..."
 }, {
   "algo": "ClassElementList0NonConstructorMethodDefinitions0",
   "cond": "(is-instance-of ClassElement ClassElement2)",
   "covered": true,
-  "elseCovered": "class C  { constructor (  ) {  } }",
+  "elseCovered": "class C { constructor ( ) { } }",
   "inst": "if (is-instance-of ClassElement ClassElement2) ... else ..."
 }, {
   "algo": "ClassTail0Contains3",
@@ -583,12 +583,12 @@
   "cond": "(= elementTypes absent)",
   "covered": true,
   "inst": "if (= elementTypes absent) ... else ...",
-  "thenCovered": "function fun (  ) { return ( this instanceof String ) ; } assert . sameValue ( fun . apply ( \"\" , Array ) , false , 'fun.apply(\"\", Array)' ) ;"
+  "thenCovered": "function fun ( ) { return ( this instanceof String ) ; } assert . sameValue ( fun . apply ( \"\" , Array ) , false , 'fun.apply(\"\", Array)' ) ;"
 }, {
   "algo": "CreateListFromArrayLike",
   "cond": "(! (contains elementTypes __x5__))",
   "covered": true,
-  "elseCovered": "function fun (  ) { return ( this instanceof String ) ; } assert . sameValue ( fun . apply ( \"\" , Array ) , false , 'fun.apply(\"\", Array)' ) ;",
+  "elseCovered": "function fun ( ) { return ( this instanceof String ) ; } assert . sameValue ( fun . apply ( \"\" , Array ) , false , 'fun.apply(\"\", Array)' ) ;",
   "inst": "if (! (contains elementTypes __x5__)) ... else ..."
 }, {
   "algo": "DeclarativeEnvironmentRecordDOTInitializeBinding",
@@ -600,7 +600,7 @@
   "algo": "DeclarativeEnvironmentRecordDOTSetMutableBinding",
   "cond": "(= absent envRec[\"SubMap\"][N])",
   "covered": true,
-  "elseCovered": "assert . throws ( ReferenceError , function  (  ) { E1 ; } ) ;",
+  "elseCovered": "assert . throws ( ReferenceError , function ( ) { E0 ; } ) ;",
   "inst": "if (= absent envRec[\"SubMap\"][N]) ... else ..."
 }, {
   "algo": "DeclarativeEnvironmentRecordDOTSetMutableBinding",
@@ -612,48 +612,48 @@
   "cond": "(= S true)",
   "covered": true,
   "inst": "if (= S true) ... else ...",
-  "thenCovered": "const c = null ; assert . throws ( TypeError , function  (  ) { 0 , [  c ] = [  1 ] ; } ) ;"
+  "thenCovered": "const c = null ; assert . throws ( TypeError , function ( ) { 0 , [ c ] = [ 1 ] ; } ) ;"
 }, {
   "algo": "DefaultClause0HasCallInTailPosition1",
   "cond": "(! (= StatementList absent))",
   "covered": true,
   "inst": "if (! (= StatementList absent)) ... else ...",
-  "thenCovered": "var callCount = 0 ; ( function f ( n  ) { if ( n === 0 ) { callCount += 1 ; return ; } switch ( 0 ) {  default : return f ( n - 1 ) ;  } } ( $MAX_ITERATIONS ) ) ; assert . sameValue ( callCount , 1 ) ;"
+  "thenCovered": "var callCount = 0 ; ( function f ( n ) { if ( n === 0 ) { callCount += 1 ; return ; } switch ( 0 ) { default : return f ( n - 1 ) ; } } ( $MAX_ITERATIONS ) ) ; assert . sameValue ( callCount , 1 ) ;"
 }, {
   "algo": "ElementList1ArrayAccumulation1",
   "cond": "(! (= Elision absent))",
   "covered": true,
-  "elseCovered": "assert . throws ( ReferenceError , function  (  ) { [  ... unresolvableReference ] ; } ) ;",
+  "elseCovered": "assert . throws ( ReferenceError , function ( ) { [ ... unresolvableReference ] ; } ) ;",
   "inst": "if (! (= Elision absent)) ... else ..."
 }, {
   "algo": "ElementList3ArrayAccumulation1",
   "cond": "(! (= Elision absent))",
   "covered": true,
-  "elseCovered": "assert . throws ( ReferenceError , function  (  ) { [  0 ,  ... unresolvableReference ] ; } ) ;",
+  "elseCovered": "assert . throws ( ReferenceError , function ( ) { [ 0 , ... unresolvableReference ] ; } ) ;",
   "inst": "if (! (= Elision absent)) ... else ..."
 }, {
   "algo": "Elision0IteratorDestructuringAssignmentEvaluation0",
   "cond": "(= iteratorRecord[\"Done\"] false)",
   "covered": true,
   "inst": "if (= iteratorRecord[\"Done\"] false) ... else ...",
-  "thenCovered": "var iter = function *  (  ) {  } ( ) ; iter . next ( ) ; var [ ,  ] = iter ;"
+  "thenCovered": "var iter = function * ( ) { } ( ) ; iter . next ( ) ; var [ , ] = iter ;"
 }, {
   "algo": "Elision1IteratorDestructuringAssignmentEvaluation0",
   "cond": "(= iteratorRecord[\"Done\"] false)",
   "covered": true,
   "inst": "if (= iteratorRecord[\"Done\"] false) ... else ...",
-  "thenCovered": "var [ , , ... x ] = [  1 ,  2 ] ; assert ( Array . isArray ( x ) ) ; assert . sameValue ( x . length , 0 ) ;"
+  "thenCovered": "var [ , , ... x ] = [ 1 , 2 ] ; assert ( Array . isArray ( x ) ) ; assert . sameValue ( x . length , 0 ) ;"
 }, {
   "algo": "Elision1IteratorDestructuringAssignmentEvaluation0",
   "cond": "__x3__",
   "covered": true,
-  "elseCovered": "var [ , , ... x ] = [  1 ,  2 ] ; assert ( Array . isArray ( x ) ) ; assert . sameValue ( x . length , 0 ) ;",
+  "elseCovered": "var [ , , ... x ] = [ 1 , 2 ] ; assert ( Array . isArray ( x ) ) ; assert . sameValue ( x . length , 0 ) ;",
   "inst": "if __x3__ ... else ..."
 }, {
   "algo": "Elision1IteratorDestructuringAssignmentEvaluation0",
   "cond": "(= next false)",
   "covered": true,
-  "elseCovered": "var [ , , ... x ] = [  1 ,  2 ] ; assert ( Array . isArray ( x ) ) ; assert . sameValue ( x . length , 0 ) ;",
+  "elseCovered": "var [ , , ... x ] = [ 1 , 2 ] ; assert ( Array . isArray ( x ) ) ; assert . sameValue ( x . length , 0 ) ;",
   "inst": "if (= next false) ... else ..."
 }, {
   "algo": "EqualityExpression2Evaluation0",
@@ -664,7 +664,7 @@
   "algo": "EvalDeclarationInstantiation",
   "cond": "(= strict false)",
   "covered": true,
-  "elseCovered": "let x  ; eval ( 'var x;' ) ;",
+  "elseCovered": "let x ; eval ( 'var x;' ) ;",
   "inst": "if (= strict false) ... else ..."
 }, {
   "algo": "EvalDeclarationInstantiation",
@@ -723,12 +723,12 @@
   "cond": "(! (contains declaredFunctionNames vn))",
   "covered": true,
   "inst": "if (! (contains declaredFunctionNames vn)) ... else ...",
-  "thenCovered": "let x  ; eval ( 'var x;' ) ;"
+  "thenCovered": "let x ; eval ( 'var x;' ) ;"
 }, {
   "algo": "EvalDeclarationInstantiation",
   "cond": "(= (typeof varEnvRec) \"GlobalEnvironmentRecord\")",
   "covered": true,
-  "elseCovered": "let x  ; eval ( 'var x;' ) ;",
+  "elseCovered": "let x ; eval ( 'var x;' ) ;",
   "inst": "if (= (typeof varEnvRec) \"GlobalEnvironmentRecord\") ... else ..."
 }, {
   "algo": "EvalDeclarationInstantiation",
@@ -740,7 +740,7 @@
   "cond": "(! (contains declaredVarNames vn))",
   "covered": true,
   "inst": "if (! (contains declaredVarNames vn)) ... else ...",
-  "thenCovered": "let x  ; eval ( 'var x;' ) ;"
+  "thenCovered": "let x ; eval ( 'var x;' ) ;"
 }, {
   "algo": "EvalDeclarationInstantiation",
   "cond": "(= (typeof varEnvRec) \"GlobalEnvironmentRecord\")",
@@ -757,19 +757,19 @@
   "algo": "EvalDeclarationInstantiation",
   "cond": "(= (typeof varEnvRec) \"GlobalEnvironmentRecord\")",
   "covered": true,
-  "elseCovered": "let x  ; eval ( 'var x;' ) ;",
+  "elseCovered": "let x ; eval ( 'var x;' ) ;",
   "inst": "if (= (typeof varEnvRec) \"GlobalEnvironmentRecord\") ... else ..."
 }, {
   "algo": "EvalDeclarationInstantiation",
   "cond": "(= bindingExists false)",
   "covered": true,
   "inst": "if (= bindingExists false) ... else ...",
-  "thenCovered": "let x  ; eval ( 'var x;' ) ;"
+  "thenCovered": "let x ; eval ( 'var x;' ) ;"
 }, {
   "algo": "FlattenIntoArray",
   "cond": "(! (< targetIndex (- 9007199254740992i 1i)))",
   "covered": true,
-  "elseCovered": "var a = [  [  0 ] ,  [  1 ] ] ; var actual = [  ] . flat . bind ( a ) ( ) ; assert . compareArray ( actual , [  0 ,  1 ] , 'bound flat' ) ;",
+  "elseCovered": "var a = [ [ 0 ] , [ 1 ] ] ; var actual = [ ] . flat . bind ( a ) ( ) ; assert . compareArray ( actual , [ 0 , 1 ] , 'bound flat' ) ;",
   "inst": "if (! (< targetIndex (- 9007199254740992i 1i))) ... else ..."
 }, {
   "algo": "ForInOfBodyEvaluation",
@@ -799,31 +799,31 @@
   "algo": "ForInOfBodyEvaluation",
   "cond": "(= iteratorKind CONST_async)",
   "covered": true,
-  "elseCovered": "assert . throws ( TypeError , function  (  ) { for ( var { } of [  null ] ) { return ; } } ) ;",
+  "elseCovered": "assert . throws ( TypeError , function ( ) { for ( let { } of [ null ] ) { return ; } } ) ;",
   "inst": "if (= iteratorKind CONST_async) ... else ..."
 }, {
   "algo": "ForInOfBodyEvaluation",
   "cond": "(= iterationKind CONST_enumerate)",
   "covered": true,
-  "elseCovered": "assert . throws ( TypeError , function  (  ) { for ( var { } of [  null ] ) { return ; } } ) ;",
+  "elseCovered": "assert . throws ( TypeError , function ( ) { for ( let { } of [ null ] ) { return ; } } ) ;",
   "inst": "if (= iterationKind CONST_enumerate) ... else ..."
 }, {
   "algo": "ForInOfBodyEvaluation",
   "cond": "(= iteratorKind CONST_async)",
   "covered": true,
-  "elseCovered": "assert . throws ( TypeError , function  (  ) { for ( const x of [  1 ,  2 ,  3 ] ) { x ++ ; } } ) ;",
+  "elseCovered": "assert . throws ( TypeError , function ( ) { for ( const x of [ 1 , 2 , 3 ] ) { x ++ ; } } ) ;",
   "inst": "if (= iteratorKind CONST_async) ... else ..."
 }, {
   "algo": "ForInOfHeadEvaluation",
   "cond": "(= iterationKind CONST_asynciterate)",
   "covered": true,
-  "elseCovered": "var x  ; assert . throws ( TypeError , function  (  ) { for ( x of { } ) {  } } ) ;",
+  "elseCovered": "var x ; assert . throws ( TypeError , function ( ) { for ( x of { } ) { } } ) ;",
   "inst": "if (= iterationKind CONST_asynciterate) ... else ..."
 }, {
   "algo": "FormalParameters4ContainsExpression0",
   "cond": "(= __x0__ true)",
   "covered": true,
-  "elseCovered": "var value  ; function rest ( a  , ... b ) { arguments [ 0 ] = 2 ; value = a ; } rest ( 1 ) ; assert . sameValue ( value , 1 ) ;",
+  "elseCovered": "var value ; function rest ( a , ... b ) { arguments [ 0 ] = 2 ; value = a ; } rest ( 1 ) ; assert . sameValue ( value , 1 ) ;",
   "inst": "if (= __x0__ true) ... else ..."
 }, {
   "algo": "FromPropertyDescriptor",
@@ -848,7 +848,7 @@
   "cond": "(! (contains functionNames fn))",
   "covered": true,
   "inst": "if (! (contains functionNames fn)) ... else ...",
-  "thenCovered": "assert . throws ( ReferenceError , function  (  ) { async ; function foo (  ) {  } } ) ;"
+  "thenCovered": "assert . throws ( ReferenceError , function ( ) { async ; function foo ( ) { } } ) ;"
 }, {
   "algo": "FunctionDeclarationInstantiation",
   "cond": "(contains parameterNames \"arguments\")",
@@ -902,13 +902,13 @@
   "cond": "(! (contains instantiatedVarNames n))",
   "covered": true,
   "inst": "if (! (contains instantiatedVarNames n)) ... else ...",
-  "thenCovered": "var probe  ; ( ( _ = null ) => { var x = 'inside' ; probe = function  (  ) { return x ; } ; } ) ( ) ; var x = 'outside' ; assert . sameValue ( probe ( ) , 'inside' ) ; assert . sameValue ( x , 'outside' ) ;"
+  "thenCovered": "var probe ; ( ( _ = null ) => { var x = 'inside' ; probe = function ( ) { return x ; } ; } ) ( ) ; var x = 'outside' ; assert . sameValue ( probe ( ) , 'inside' ) ; assert . sameValue ( x , 'outside' ) ;"
 }, {
   "algo": "FunctionDeclarationInstantiation",
   "cond": "(|| (! (contains parameterBindings n)) (contains functionNames n))",
   "covered": true,
   "inst": "if (|| (! (contains parameterBindings n)) (contains functionNames n)) ... else ...",
-  "thenCovered": "var probe  ; ( ( _ = null ) => { var x = 'inside' ; probe = function  (  ) { return x ; } ; } ) ( ) ; var x = 'outside' ; assert . sameValue ( probe ( ) , 'inside' ) ; assert . sameValue ( x , 'outside' ) ;"
+  "thenCovered": "var probe ; ( ( _ = null ) => { var x = 'inside' ; probe = function ( ) { return x ; } ; } ) ( ) ; var x = 'outside' ; assert . sameValue ( probe ( ) , 'inside' ) ; assert . sameValue ( x , 'outside' ) ;"
 }, {
   "algo": "FunctionDeclarationInstantiation",
   "cond": "(= strict false)",
@@ -919,7 +919,7 @@
   "algo": "FunctionEnvironmentRecordDOTGetSuperBase",
   "cond": "(= home undefined)",
   "covered": true,
-  "elseCovered": "var obj = { method (  ) { return super . toString ; } } ; obj . toString = null ; assert . sameValue ( obj . method ( ) , Object . prototype . toString ) ;",
+  "elseCovered": "var obj = { method ( ) { return super . toString ; } } ; obj . toString = null ; assert . sameValue ( obj . method ( ) , Object . prototype . toString ) ;",
   "inst": "if (= home undefined) ... else ..."
 }, {
   "algo": "FunctionEnvironmentRecordDOTHasSuperBinding",
@@ -931,7 +931,7 @@
   "algo": "GLOBALDOTArrayDOTfrom",
   "cond": "(! (< k (- 9007199254740992i 1i)))",
   "covered": true,
-  "elseCovered": "assert . sameValue ( Array . from . call ( Object , [  ] ) . constructor , Object ) ;",
+  "elseCovered": "assert . sameValue ( Array . from . call ( Object , [ ] ) . constructor , Object ) ;",
   "inst": "if (! (< k (- 9007199254740992i 1i))) ... else ..."
 }, {
   "algo": "GLOBALDOTArrayDOTfrom",
@@ -943,43 +943,43 @@
   "algo": "GLOBALDOTArrayDOTprototypeDOTconcat",
   "cond": "(! (< n (- 9007199254740992i 1i)))",
   "covered": true,
-  "elseCovered": "var A = function  ( _length  ) { this . length = 0 ; Object . preventExtensions ( this ) ; } ; var arr = [  ] ; arr . constructor = { } ; arr . constructor [ Symbol . species ] = A ; assert . throws ( TypeError , function  (  ) { arr . concat ( 1 ) ; } ) ;",
+  "elseCovered": "var A = function ( _length ) { this . length = 0 ; Object . preventExtensions ( this ) ; } ; var arr = [ ] ; arr . constructor = { } ; arr . constructor [ Symbol . species ] = A ; assert . throws ( TypeError , function ( ) { arr . concat ( 1 ) ; } ) ;",
   "inst": "if (! (< n (- 9007199254740992i 1i))) ... else ..."
 }, {
   "algo": "GLOBALDOTArrayDOTprototypeDOTfind",
   "cond": "(= __x4__ false)",
   "covered": true,
-  "elseCovered": "var arr = [  undefined , , , 'foo' ] ; var called = 0 ; arr . find ( function  (  ) { called ++ ; } ) ; assert . sameValue ( called , 4 ) ;",
+  "elseCovered": "var arr = [ undefined , , , 'foo' ] ; var called = 0 ; arr . find ( function ( ) { called ++ ; } ) ; assert . sameValue ( called , 4 ) ;",
   "inst": "if (= __x4__ false) ... else ..."
 }, {
   "algo": "GLOBALDOTArrayDOTprototypeDOTfindIndex",
   "cond": "(= __x4__ false)",
   "covered": true,
-  "elseCovered": "var arr = [  undefined , , , 'foo' ] ; var called = 0 ; arr . findIndex ( function  (  ) { called ++ ; } ) ; assert . sameValue ( called , 4 ) ;",
+  "elseCovered": "var arr = [ undefined , , , 'foo' ] ; var called = 0 ; arr . findIndex ( function ( ) { called ++ ; } ) ; assert . sameValue ( called , 4 ) ;",
   "inst": "if (= __x4__ false) ... else ..."
 }, {
   "algo": "GLOBALDOTArrayDOTprototypeDOTslice",
   "cond": "(= kPresent true)",
   "covered": true,
   "inst": "if (= kPresent true) ... else ...",
-  "thenCovered": "assert . throws ( TypeError , function  (  ) { TypedArray . of ( ) ; } ) ;"
+  "thenCovered": "assert . throws ( TypeError , function ( ) { TypedArray . of ( ) ; } ) ;"
 }, {
   "algo": "GLOBALDOTArrayDOTprototypeDOTsplice",
   "cond": "(= fromPresent true)",
   "covered": true,
   "inst": "if (= fromPresent true) ... else ...",
-  "thenCovered": "var a = [  0 ,  1 ,  2 ] ; Object . defineProperty ( a , 'length' , { writable : false } ) ; assert . throws ( TypeError , function  (  ) { a . splice ( 1 , 2 , 4 ) ; } ) ;"
+  "thenCovered": "var a = [ 0 , 1 , 2 ] ; Object . defineProperty ( a , 'length' , { writable : false } ) ; assert . throws ( TypeError , function ( ) { a . splice ( 1 , 2 , 4 ) ; } ) ;"
 }, {
   "algo": "GLOBALDOTArrayDOTprototypeDOTtoString",
   "cond": "(= result false)",
   "covered": true,
-  "elseCovered": "var i = Array . prototype . indexOf . call ( { length : [  ] } , 1 ) ; assert . sameValue ( i , - 1 , 'i' ) ;",
+  "elseCovered": "var i = Array . prototype . indexOf . call ( { length : [ ] } , 1 ) ; assert . sameValue ( i , - 1 , 'i' ) ;",
   "inst": "if (= result false) ... else ..."
 }, {
   "algo": "GLOBALDOTAwaitFulfilledFunctions",
   "cond": "(= asyncContext[\"ReturnCont\"] absent)",
   "covered": true,
-  "elseCovered": "function * g (  ) {  } async function * asyncg (  ) { yield * g ( ) ; } var result = asyncg ( ) . next ( ) ; assert ( result instanceof Promise ) ;",
+  "elseCovered": "function * g ( ) { } async function * asyncg ( ) { yield * g ( ) ; } var result = asyncg ( ) . next ( ) ; assert ( result instanceof Promise ) ;",
   "inst": "if (= asyncContext[\"ReturnCont\"] absent) ... else ..."
 }, {
   "algo": "GLOBALDOTBigIntDOTprototypeDOTtoString",
@@ -1004,36 +1004,36 @@
   "cond": "(= targetHasLength true)",
   "covered": true,
   "inst": "if (= targetHasLength true) ... else ...",
-  "thenCovered": "function testFunc (  ) {  } testFunc . bind ( ) ;"
+  "thenCovered": "function testFunc ( ) { } testFunc . bind ( ) ;"
 }, {
   "algo": "GLOBALDOTFunctionDOTprototypeDOTbind",
   "cond": "(! (= __x6__ Number))",
   "covered": true,
-  "elseCovered": "function testFunc (  ) {  } testFunc . bind ( ) ;",
+  "elseCovered": "function testFunc ( ) { } testFunc . bind ( ) ;",
   "inst": "if (! (= __x6__ Number)) ... else ..."
 }, {
   "algo": "GLOBALDOTFunctionDOTprototypeDOTtoString",
   "cond": "(&& (= T \"String\") available)",
   "covered": true,
   "inst": "if (&& (= T \"String\") available) ... else ...",
-  "thenCovered": "var funObj = function  (  ) { return arguments ; } ; assert . sameValue ( typeof ( String . prototype . trim . call ( funObj ) ) , \"string\" , 'typeof(String.prototype.trim.call(funObj))' ) ;"
+  "thenCovered": "var funObj = function ( ) { return arguments ; } ; assert . sameValue ( typeof ( String . prototype . trim . call ( funObj ) ) , \"string\" , 'typeof(String.prototype.trim.call(funObj))' ) ;"
 }, {
   "algo": "GLOBALDOTFunctionDOTprototypeDOTtoString",
   "cond": "__x2__",
   "covered": true,
-  "elseCovered": "assert . throws ( TypeError , function  (  ) { Function . prototype . toString . call ( { } ) ; } ) ;",
+  "elseCovered": "assert . throws ( TypeError , function ( ) { Function . prototype . toString . call ( { } ) ; } ) ;",
   "inst": "if __x2__ ... else ..."
 }, {
   "algo": "GLOBALDOTINTRINSIC_ArrayIteratorPrototypeDOTnext",
   "cond": "(! (= __x0__ Object))",
   "covered": true,
-  "elseCovered": "function foo (  ) {  } foo ( ... [  ] , ) ;",
+  "elseCovered": "function foo ( ) { } foo ( ... [ ] , ) ;",
   "inst": "if (! (= __x0__ Object)) ... else ..."
 }, {
   "algo": "GLOBALDOTINTRINSIC_ArrayIteratorPrototypeDOTnext",
   "cond": "(! (= a[\"TypedArrayName\"] absent))",
   "covered": true,
-  "elseCovered": "function foo (  ) {  } foo ( ... [  ] , ) ;",
+  "elseCovered": "function foo ( ) { } foo ( ... [ ] , ) ;",
   "inst": "if (! (= a[\"TypedArrayName\"] absent)) ... else ..."
 }, {
   "algo": "GLOBALDOTINTRINSIC_ArrayIteratorPrototypeDOTnext",
@@ -1044,13 +1044,13 @@
   "algo": "GLOBALDOTINTRINSIC_StringIteratorPrototypeDOTnext",
   "cond": "(! (= __x0__ Object))",
   "covered": true,
-  "elseCovered": "var result  ; var vals = 'string literal' ; result = [ , ] = vals ; assert . sameValue ( result , vals ) ;",
+  "elseCovered": "var result ; var vals = 'string literal' ; result = [ , ] = vals ; assert . sameValue ( result , vals ) ;",
   "inst": "if (! (= __x0__ Object)) ... else ..."
 }, {
   "algo": "GLOBALDOTINTRINSIC_StringIteratorPrototypeDOTnext",
   "cond": "(= s undefined)",
   "covered": true,
-  "elseCovered": "var result  ; var vals = 'string literal' ; result = [ , ] = vals ; assert . sameValue ( result , vals ) ;",
+  "elseCovered": "var result ; var vals = 'string literal' ; result = [ , ] = vals ; assert . sameValue ( result , vals ) ;",
   "inst": "if (= s undefined) ... else ..."
 }, {
   "algo": "GLOBALDOTNumberDOTisSafeInteger",
@@ -1177,19 +1177,19 @@
   "algo": "GLOBALDOTObjectDOTfreeze",
   "cond": "(= status false)",
   "covered": true,
-  "elseCovered": "[  'z' ] . forEach ( function  (  ) { Object . freeze ( Array . prototype . forEach ) ; } ) ;",
+  "elseCovered": "[ 'z' ] . forEach ( function ( ) { Object . freeze ( Array . prototype . forEach ) ; } ) ;",
   "inst": "if (= status false) ... else ..."
 }, {
   "algo": "GLOBALDOTObjectDOTgetOwnPropertyDescriptors",
   "cond": "(! (= descriptor undefined))",
   "covered": true,
   "inst": "if (! (= descriptor undefined)) ... else ...",
-  "thenCovered": "function fakeObject (  ) { $ERROR ( 'The overriden version of Object was called!' ) ; } fakeObject . getOwnPropertyDescriptors = Object . getOwnPropertyDescriptors ; fakeObject . keys = Object . keys ; var global = this ; global . Object = fakeObject ; assert . sameValue ( Object , fakeObject , 'Sanity check failed: could not modify the global Object' ) ; assert . sameValue ( Object . keys ( Object . getOwnPropertyDescriptors ( 'a' ) ) . length , 2 , 'Expected string primitive to have 2 descriptors' ) ;"
+  "thenCovered": "function fakeObject ( ) { $ERROR ( 'The overriden version of Object was called!' ) ; } fakeObject . getOwnPropertyDescriptors = Object . getOwnPropertyDescriptors ; fakeObject . keys = Object . keys ; var global = this ; global . Object = fakeObject ; assert . sameValue ( Object , fakeObject , 'Sanity check failed: could not modify the global Object' ) ; assert . sameValue ( Object . keys ( Object . getOwnPropertyDescriptors ( 'a' ) ) . length , 2 , 'Expected string primitive to have 2 descriptors' ) ;"
 }, {
   "algo": "GLOBALDOTObjectDOTpreventExtensions",
   "cond": "(= status false)",
   "covered": true,
-  "elseCovered": "var obj = { } ; Object . preventExtensions ( obj ) ; assert . throws ( TypeError , function  (  ) { obj . len = 10 ; } ) ;",
+  "elseCovered": "var obj = { } ; Object . preventExtensions ( obj ) ; assert . throws ( TypeError , function ( ) { obj . len = 10 ; } ) ;",
   "inst": "if (= status false) ... else ..."
 }, {
   "algo": "GLOBALDOTObjectDOTprototypeDOTtoString",
@@ -1213,31 +1213,31 @@
   "algo": "GLOBALDOTPromise",
   "cond": "__x7__",
   "covered": true,
-  "elseCovered": "async function * g (  ) {  } var result = g ( ) . next ( ) ; assert ( result instanceof Promise ) ;",
+  "elseCovered": "async function * g ( ) { } var result = g ( ) . next ( ) ; assert ( result instanceof Promise ) ;",
   "inst": "if __x7__ ... else ..."
 }, {
   "algo": "GLOBALDOTPromiseDOTallSettledRejectElementFunctions",
   "cond": "(= alreadyCalled[\"Value\"] true)",
   "covered": true,
-  "elseCovered": "var p1 = Promise . resolve ( 1 ) ; var p2 = Promise . resolve ( 1 ) ; var p3 = Promise . reject ( 1 ) ; var p4 = Promise . resolve ( 1 ) ; var resolve = Promise . resolve ; var getCount = 0 ; var callCount = 0 ; Object . defineProperty ( Promise , 'resolve' , { configurable : true , get (  ) { getCount += 1 ; return function  (  ) { callCount += 1 ; return resolve . apply ( Promise , arguments ) ; } ; } } ) ; Promise . allSettled ( [  p1 ,  p2 ,  p3 ,  p4 ] ) ; assert . sameValue ( getCount , 1 , 'Got `resolve` only once for each iterated value' ) ; assert . sameValue ( callCount , 4 , '`resolve` invoked once for each iterated value' ) ;",
+  "elseCovered": "var p1 = Promise . resolve ( 1 ) ; var p2 = Promise . resolve ( 1 ) ; var p3 = Promise . reject ( 1 ) ; var p4 = Promise . resolve ( 1 ) ; var resolve = Promise . resolve ; var getCount = 0 ; var callCount = 0 ; Object . defineProperty ( Promise , 'resolve' , { configurable : true , get ( ) { getCount += 1 ; return function ( ) { callCount += 1 ; return resolve . apply ( Promise , arguments ) ; } ; } } ) ; Promise . allSettled ( [ p1 , p2 , p3 , p4 ] ) ; assert . sameValue ( getCount , 1 , 'Got `resolve` only once for each iterated value' ) ; assert . sameValue ( callCount , 4 , '`resolve` invoked once for each iterated value' ) ;",
   "inst": "if (= alreadyCalled[\"Value\"] true) ... else ..."
 }, {
   "algo": "GLOBALDOTPromiseDOTallSettledRejectElementFunctions",
   "cond": "(= remainingElementsCount[\"Value\"] 0i)",
   "covered": true,
-  "elseCovered": "var p1 = Promise . resolve ( 1 ) ; var p2 = Promise . resolve ( 1 ) ; var p3 = Promise . reject ( 1 ) ; var p4 = Promise . resolve ( 1 ) ; var resolve = Promise . resolve ; var getCount = 0 ; var callCount = 0 ; Object . defineProperty ( Promise , 'resolve' , { configurable : true , get (  ) { getCount += 1 ; return function  (  ) { callCount += 1 ; return resolve . apply ( Promise , arguments ) ; } ; } } ) ; Promise . allSettled ( [  p1 ,  p2 ,  p3 ,  p4 ] ) ; assert . sameValue ( getCount , 1 , 'Got `resolve` only once for each iterated value' ) ; assert . sameValue ( callCount , 4 , '`resolve` invoked once for each iterated value' ) ;",
+  "elseCovered": "var p1 = Promise . resolve ( 1 ) ; var p2 = Promise . resolve ( 1 ) ; var p3 = Promise . reject ( 1 ) ; var p4 = Promise . resolve ( 1 ) ; var resolve = Promise . resolve ; var getCount = 0 ; var callCount = 0 ; Object . defineProperty ( Promise , 'resolve' , { configurable : true , get ( ) { getCount += 1 ; return function ( ) { callCount += 1 ; return resolve . apply ( Promise , arguments ) ; } ; } } ) ; Promise . allSettled ( [ p1 , p2 , p3 , p4 ] ) ; assert . sameValue ( getCount , 1 , 'Got `resolve` only once for each iterated value' ) ; assert . sameValue ( callCount , 4 , '`resolve` invoked once for each iterated value' ) ;",
   "inst": "if (= remainingElementsCount[\"Value\"] 0i) ... else ..."
 }, {
   "algo": "GLOBALDOTPromiseResolveFunctions",
   "cond": "(= __x2__ true)",
   "covered": true,
-  "elseCovered": "async function * g (  ) {  } var result = g ( ) . next ( ) ; assert ( result instanceof Promise ) ;",
+  "elseCovered": "async function * g ( ) { } var result = g ( ) . next ( ) ; assert ( result instanceof Promise ) ;",
   "inst": "if (= __x2__ true) ... else ..."
 }, {
   "algo": "GLOBALDOTPromiseResolveFunctions",
   "cond": "__x9__",
   "covered": true,
-  "elseCovered": "async function * g (  ) {  } var result = g ( ) . next ( ) ; assert ( result instanceof Promise ) ;",
+  "elseCovered": "async function * g ( ) { } var result = g ( ) . next ( ) ; assert ( result instanceof Promise ) ;",
   "inst": "if __x9__ ... else ..."
 }, {
   "algo": "GLOBALDOTSetDOTprototypeDOTdelete",
@@ -1291,7 +1291,7 @@
   "algo": "GLOBALDOTStringDOTprototypeDOTmatchAll",
   "cond": "(= isRegExp true)",
   "covered": true,
-  "elseCovered": "var obj = { } ; var returnVal = { } ; var callCount = 0 ; var thisVal  , args  ; obj [ Symbol . matchAll ] = function  (  ) { callCount ++ ; thisVal = this ; args = arguments ; return returnVal ; } ; var str = '' ; assert . sameValue ( str . matchAll ( obj ) , returnVal ) ; assert . sameValue ( callCount , 1 , 'Invokes the method exactly once' ) ; assert . sameValue ( thisVal , obj ) ; assert . notSameValue ( args , undefined ) ; assert . sameValue ( args . length , 1 ) ; assert . sameValue ( args [ 0 ] , str ) ;",
+  "elseCovered": "var obj = { } ; var returnVal = { } ; var callCount = 0 ; var thisVal , args ; obj [ Symbol . matchAll ] = function ( ) { callCount ++ ; thisVal = this ; args = arguments ; return returnVal ; } ; var str = '' ; assert . sameValue ( str . matchAll ( obj ) , returnVal ) ; assert . sameValue ( callCount , 1 , 'Invokes the method exactly once' ) ; assert . sameValue ( thisVal , obj ) ; assert . notSameValue ( args , undefined ) ; assert . sameValue ( args . length , 1 ) ; assert . sameValue ( args [ 0 ] , str ) ;",
   "inst": "if (= isRegExp true) ... else ..."
 }, {
   "algo": "GLOBALDOTStringDOTprototypeDOTmatchAll",
@@ -1303,7 +1303,7 @@
   "cond": "(! (= matcher undefined))",
   "covered": true,
   "inst": "if (! (= matcher undefined)) ... else ...",
-  "thenCovered": "var obj = { } ; var returnVal = { } ; var callCount = 0 ; var thisVal  , args  ; obj [ Symbol . matchAll ] = function  (  ) { callCount ++ ; thisVal = this ; args = arguments ; return returnVal ; } ; var str = '' ; assert . sameValue ( str . matchAll ( obj ) , returnVal ) ; assert . sameValue ( callCount , 1 , 'Invokes the method exactly once' ) ; assert . sameValue ( thisVal , obj ) ; assert . notSameValue ( args , undefined ) ; assert . sameValue ( args . length , 1 ) ; assert . sameValue ( args [ 0 ] , str ) ;"
+  "thenCovered": "var obj = { } ; var returnVal = { } ; var callCount = 0 ; var thisVal , args ; obj [ Symbol . matchAll ] = function ( ) { callCount ++ ; thisVal = this ; args = arguments ; return returnVal ; } ; var str = '' ; assert . sameValue ( str . matchAll ( obj ) , returnVal ) ; assert . sameValue ( callCount , 1 , 'Invokes the method exactly once' ) ; assert . sameValue ( thisVal , obj ) ; assert . notSameValue ( args , undefined ) ; assert . sameValue ( args . length , 1 ) ; assert . sameValue ( args [ 0 ] , str ) ;"
 }, {
   "algo": "GLOBALDOTStringDOTprototypeDOTreplace",
   "cond": "(! (|| (= searchValue undefined) (= searchValue null)))",
@@ -1328,7 +1328,7 @@
   "algo": "GLOBALDOTStringDOTprototypeDOTstartsWith",
   "cond": "(= isRegExp true)",
   "covered": true,
-  "elseCovered": "var s = Symbol ( ) ; assert . throws ( TypeError , function  (  ) { '' . startsWith ( s ) ; } ) ;",
+  "elseCovered": "var s = Symbol ( ) ; assert . throws ( TypeError , function ( ) { '' . startsWith ( s ) ; } ) ;",
   "inst": "if (= isRegExp true) ... else ..."
 }, {
   "algo": "GLOBALDOTStringDOTraw",
@@ -1368,19 +1368,19 @@
   "cond": "__x6__",
   "covered": true,
   "inst": "if __x6__ ... else ...",
-  "thenCovered": "var foo = { } ; var s = new WeakSet ( [  foo ] ) ; assert . sameValue ( s . add ( foo ) , s , '`s.add(foo)` returns `s`' ) ;"
+  "thenCovered": "var foo = { } ; var s = new WeakSet ( [ foo ] ) ; assert . sameValue ( s . add ( foo ) , s , '`s.add(foo)` returns `s`' ) ;"
 }, {
   "algo": "GLOBALDOTWeakSetDOTprototypeDOTdelete",
   "cond": "__x6__",
   "covered": true,
   "inst": "if __x6__ ... else ...",
-  "thenCovered": "var foo = { } ; var s = new WeakSet ( [  foo ] ) ; var result = s . delete ( foo ) ; assert . sameValue ( s . has ( foo ) , false ) ; assert . sameValue ( result , true , 'WeakSet#delete returns true' ) ;"
+  "thenCovered": "var foo = { } ; var s = new WeakSet ( [ foo ] ) ; var result = s . delete ( foo ) ; assert . sameValue ( s . has ( foo ) , false ) ; assert . sameValue ( result , true , 'WeakSet#delete returns true' ) ;"
 }, {
   "algo": "GLOBALDOTWeakSetDOTprototypeDOTdelete",
   "cond": "__x6__",
   "covered": true,
   "inst": "if __x6__ ... else ...",
-  "thenCovered": "var foo = { } ; var s = new WeakSet ( [  foo ] ) ; var result = s . delete ( foo ) ; assert . sameValue ( s . has ( foo ) , false ) ; assert . sameValue ( result , true , 'WeakSet#delete returns true' ) ;"
+  "thenCovered": "var foo = { } ; var s = new WeakSet ( [ foo ] ) ; var result = s . delete ( foo ) ; assert . sameValue ( s . has ( foo ) , false ) ; assert . sameValue ( result , true , 'WeakSet#delete returns true' ) ;"
 }, {
   "algo": "GLOBALDOTparseInt",
   "cond": "(! (== R 0i))",
@@ -1410,20 +1410,20 @@
   "algo": "GeneratorResumeAbrupt",
   "cond": "(= genContext[\"ReturnCont\"] absent)",
   "covered": true,
-  "elseCovered": "var first = 0 ; var second = 0 ; function * g (  ) { first += 1 ; yield ; second += 1 ; } ; var [ ,  ] = g ( ) ; assert . sameValue ( first , 1 ) ; assert . sameValue ( second , 0 ) ;",
+  "elseCovered": "var first = 0 ; var second = 0 ; function * g ( ) { first += 1 ; yield ; second += 1 ; } ; var [ , ] = g ( ) ; assert . sameValue ( first , 1 ) ; assert . sameValue ( second , 0 ) ;",
   "inst": "if (= genContext[\"ReturnCont\"] absent) ... else ..."
 }, {
   "algo": "GeneratorStart",
   "cond": "(= GLOBAL_executionStack[(- GLOBAL_executionStack[\"length\"] 1i)] genContext)",
   "covered": true,
   "inst": "if (= GLOBAL_executionStack[(- GLOBAL_executionStack[\"length\"] 1i)] genContext) ... else ...",
-  "thenCovered": "var iter = function *  (  ) {  } ( ) ; iter . next ( ) ; var [ ,  ] = iter ;"
+  "thenCovered": "var iter = function * ( ) { } ( ) ; iter . next ( ) ; var [ , ] = iter ;"
 }, {
   "algo": "GeneratorYield",
   "cond": "(= GLOBAL_executionStack[(- GLOBAL_executionStack[\"length\"] 1i)] genContext)",
   "covered": true,
   "inst": "if (= GLOBAL_executionStack[(- GLOBAL_executionStack[\"length\"] 1i)] genContext) ... else ...",
-  "thenCovered": "function * foo ( await  ) { yield await ; } ; assert . sameValue ( foo ( 1 ) . next ( ) . value , 1 ) ;"
+  "thenCovered": "function * foo ( await ) { yield await ; } ; assert . sameValue ( foo ( 1 ) . next ( ) . value , 1 ) ;"
 }, {
   "algo": "GetActiveScriptOrModule",
   "cond": "(= GLOBAL_executionStack[\"length\"] 0i)",
@@ -1458,97 +1458,97 @@
   "cond": "(= method undefined)",
   "covered": true,
   "inst": "if (= method undefined) ... else ...",
-  "thenCovered": "function * g (  ) {  } async function * asyncg (  ) { yield * g ( ) ; } var result = asyncg ( ) . next ( ) ; assert ( result instanceof Promise ) ;"
+  "thenCovered": "function * g ( ) { } async function * asyncg ( ) { yield * g ( ) ; } var result = asyncg ( ) . next ( ) ; assert ( result instanceof Promise ) ;"
 }, {
   "algo": "GetPrototypeFromConstructor",
   "cond": "(= intrinsicDefaultProto \"%String.prototype%\")",
   "covered": true,
-  "elseCovered": "function * g ( a = ( g . prototype = null ) ) {  } var oldPrototype = g . prototype ; var it = g ( ) ; assert . notSameValue ( Object . getPrototypeOf ( it ) , oldPrototype ) ;",
+  "elseCovered": "function * g ( a = ( g . prototype = null ) ) { } var oldPrototype = g . prototype ; var it = g ( ) ; assert . notSameValue ( Object . getPrototypeOf ( it ) , oldPrototype ) ;",
   "inst": "if (= intrinsicDefaultProto \"%String.prototype%\") ... else ..."
 }, {
   "algo": "GetPrototypeFromConstructor",
   "cond": "(= intrinsicDefaultProto \"%Array.prototype%\")",
   "covered": true,
-  "elseCovered": "function * g ( a = ( g . prototype = null ) ) {  } var oldPrototype = g . prototype ; var it = g ( ) ; assert . notSameValue ( Object . getPrototypeOf ( it ) , oldPrototype ) ;",
+  "elseCovered": "function * g ( a = ( g . prototype = null ) ) { } var oldPrototype = g . prototype ; var it = g ( ) ; assert . notSameValue ( Object . getPrototypeOf ( it ) , oldPrototype ) ;",
   "inst": "if (= intrinsicDefaultProto \"%Array.prototype%\") ... else ..."
 }, {
   "algo": "GetPrototypeFromConstructor",
   "cond": "(= intrinsicDefaultProto \"%Boolean.prototype%\")",
   "covered": true,
-  "elseCovered": "function * g ( a = ( g . prototype = null ) ) {  } var oldPrototype = g . prototype ; var it = g ( ) ; assert . notSameValue ( Object . getPrototypeOf ( it ) , oldPrototype ) ;",
+  "elseCovered": "function * g ( a = ( g . prototype = null ) ) { } var oldPrototype = g . prototype ; var it = g ( ) ; assert . notSameValue ( Object . getPrototypeOf ( it ) , oldPrototype ) ;",
   "inst": "if (= intrinsicDefaultProto \"%Boolean.prototype%\") ... else ..."
 }, {
   "algo": "GetPrototypeFromConstructor",
   "cond": "(= intrinsicDefaultProto \"%Number.prototype%\")",
   "covered": true,
-  "elseCovered": "function * g ( a = ( g . prototype = null ) ) {  } var oldPrototype = g . prototype ; var it = g ( ) ; assert . notSameValue ( Object . getPrototypeOf ( it ) , oldPrototype ) ;",
+  "elseCovered": "function * g ( a = ( g . prototype = null ) ) { } var oldPrototype = g . prototype ; var it = g ( ) ; assert . notSameValue ( Object . getPrototypeOf ( it ) , oldPrototype ) ;",
   "inst": "if (= intrinsicDefaultProto \"%Number.prototype%\") ... else ..."
 }, {
   "algo": "GetPrototypeFromConstructor",
   "cond": "(= intrinsicDefaultProto \"%Map.prototype%\")",
   "covered": true,
-  "elseCovered": "function * g ( a = ( g . prototype = null ) ) {  } var oldPrototype = g . prototype ; var it = g ( ) ; assert . notSameValue ( Object . getPrototypeOf ( it ) , oldPrototype ) ;",
+  "elseCovered": "function * g ( a = ( g . prototype = null ) ) { } var oldPrototype = g . prototype ; var it = g ( ) ; assert . notSameValue ( Object . getPrototypeOf ( it ) , oldPrototype ) ;",
   "inst": "if (= intrinsicDefaultProto \"%Map.prototype%\") ... else ..."
 }, {
   "algo": "GetPrototypeFromConstructor",
   "cond": "(= intrinsicDefaultProto \"%Set.prototype%\")",
   "covered": true,
-  "elseCovered": "function * g ( a = ( g . prototype = null ) ) {  } var oldPrototype = g . prototype ; var it = g ( ) ; assert . notSameValue ( Object . getPrototypeOf ( it ) , oldPrototype ) ;",
+  "elseCovered": "function * g ( a = ( g . prototype = null ) ) { } var oldPrototype = g . prototype ; var it = g ( ) ; assert . notSameValue ( Object . getPrototypeOf ( it ) , oldPrototype ) ;",
   "inst": "if (= intrinsicDefaultProto \"%Set.prototype%\") ... else ..."
 }, {
   "algo": "GetPrototypeFromConstructor",
   "cond": "(= intrinsicDefaultProto \"%WeakMap.prototype%\")",
   "covered": true,
-  "elseCovered": "function * g ( a = ( g . prototype = null ) ) {  } var oldPrototype = g . prototype ; var it = g ( ) ; assert . notSameValue ( Object . getPrototypeOf ( it ) , oldPrototype ) ;",
+  "elseCovered": "function * g ( a = ( g . prototype = null ) ) { } var oldPrototype = g . prototype ; var it = g ( ) ; assert . notSameValue ( Object . getPrototypeOf ( it ) , oldPrototype ) ;",
   "inst": "if (= intrinsicDefaultProto \"%WeakMap.prototype%\") ... else ..."
 }, {
   "algo": "GetPrototypeFromConstructor",
   "cond": "(= intrinsicDefaultProto \"%WeakSet.prototype%\")",
   "covered": true,
-  "elseCovered": "function * g ( a = ( g . prototype = null ) ) {  } var oldPrototype = g . prototype ; var it = g ( ) ; assert . notSameValue ( Object . getPrototypeOf ( it ) , oldPrototype ) ;",
+  "elseCovered": "function * g ( a = ( g . prototype = null ) ) { } var oldPrototype = g . prototype ; var it = g ( ) ; assert . notSameValue ( Object . getPrototypeOf ( it ) , oldPrototype ) ;",
   "inst": "if (= intrinsicDefaultProto \"%WeakSet.prototype%\") ... else ..."
 }, {
   "algo": "GetPrototypeFromConstructor",
   "cond": "(= intrinsicDefaultProto \"%Error.prototype%\")",
   "covered": true,
-  "elseCovered": "function * g ( a = ( g . prototype = null ) ) {  } var oldPrototype = g . prototype ; var it = g ( ) ; assert . notSameValue ( Object . getPrototypeOf ( it ) , oldPrototype ) ;",
+  "elseCovered": "function * g ( a = ( g . prototype = null ) ) { } var oldPrototype = g . prototype ; var it = g ( ) ; assert . notSameValue ( Object . getPrototypeOf ( it ) , oldPrototype ) ;",
   "inst": "if (= intrinsicDefaultProto \"%Error.prototype%\") ... else ..."
 }, {
   "algo": "GetPrototypeFromConstructor",
   "cond": "(= intrinsicDefaultProto \"%EvalError.prototype%\")",
   "covered": true,
-  "elseCovered": "function * g ( a = ( g . prototype = null ) ) {  } var oldPrototype = g . prototype ; var it = g ( ) ; assert . notSameValue ( Object . getPrototypeOf ( it ) , oldPrototype ) ;",
+  "elseCovered": "function * g ( a = ( g . prototype = null ) ) { } var oldPrototype = g . prototype ; var it = g ( ) ; assert . notSameValue ( Object . getPrototypeOf ( it ) , oldPrototype ) ;",
   "inst": "if (= intrinsicDefaultProto \"%EvalError.prototype%\") ... else ..."
 }, {
   "algo": "GetPrototypeFromConstructor",
   "cond": "(= intrinsicDefaultProto \"%ReferenceError.prototype%\")",
   "covered": true,
-  "elseCovered": "function * g ( a = ( g . prototype = null ) ) {  } var oldPrototype = g . prototype ; var it = g ( ) ; assert . notSameValue ( Object . getPrototypeOf ( it ) , oldPrototype ) ;",
+  "elseCovered": "function * g ( a = ( g . prototype = null ) ) { } var oldPrototype = g . prototype ; var it = g ( ) ; assert . notSameValue ( Object . getPrototypeOf ( it ) , oldPrototype ) ;",
   "inst": "if (= intrinsicDefaultProto \"%ReferenceError.prototype%\") ... else ..."
 }, {
   "algo": "GetPrototypeFromConstructor",
   "cond": "(= intrinsicDefaultProto \"%SyntaxError.prototype%\")",
   "covered": true,
-  "elseCovered": "function * g ( a = ( g . prototype = null ) ) {  } var oldPrototype = g . prototype ; var it = g ( ) ; assert . notSameValue ( Object . getPrototypeOf ( it ) , oldPrototype ) ;",
+  "elseCovered": "function * g ( a = ( g . prototype = null ) ) { } var oldPrototype = g . prototype ; var it = g ( ) ; assert . notSameValue ( Object . getPrototypeOf ( it ) , oldPrototype ) ;",
   "inst": "if (= intrinsicDefaultProto \"%SyntaxError.prototype%\") ... else ..."
 }, {
   "algo": "GetPrototypeFromConstructor",
   "cond": "(= intrinsicDefaultProto \"%TypeError.prototype%\")",
   "covered": true,
-  "elseCovered": "function * g ( a = ( g . prototype = null ) ) {  } var oldPrototype = g . prototype ; var it = g ( ) ; assert . notSameValue ( Object . getPrototypeOf ( it ) , oldPrototype ) ;",
+  "elseCovered": "function * g ( a = ( g . prototype = null ) ) { } var oldPrototype = g . prototype ; var it = g ( ) ; assert . notSameValue ( Object . getPrototypeOf ( it ) , oldPrototype ) ;",
   "inst": "if (= intrinsicDefaultProto \"%TypeError.prototype%\") ... else ..."
 }, {
   "algo": "GetPrototypeFromConstructor",
   "cond": "(= intrinsicDefaultProto \"%URIError.prototype%\")",
   "covered": true,
-  "elseCovered": "function * g ( a = ( g . prototype = null ) ) {  } var oldPrototype = g . prototype ; var it = g ( ) ; assert . notSameValue ( Object . getPrototypeOf ( it ) , oldPrototype ) ;",
+  "elseCovered": "function * g ( a = ( g . prototype = null ) ) { } var oldPrototype = g . prototype ; var it = g ( ) ; assert . notSameValue ( Object . getPrototypeOf ( it ) , oldPrototype ) ;",
   "inst": "if (= intrinsicDefaultProto \"%URIError.prototype%\") ... else ..."
 }, {
   "algo": "GetPrototypeFromConstructor",
   "cond": "(= intrinsicDefaultProto \"%AsyncGenerator.prototype%\")",
   "covered": true,
   "inst": "if (= intrinsicDefaultProto \"%AsyncGenerator.prototype%\") ... else ...",
-  "thenCovered": "async function * g ( a = ( g . prototype = null ) ) {  } var oldPrototype = g . prototype ; var it = g ( ) ; assert . notSameValue ( Object . getPrototypeOf ( it ) , oldPrototype ) ;"
+  "thenCovered": "async function * g ( a = ( g . prototype = null ) ) { } var oldPrototype = g . prototype ; var it = g ( ) ; assert . notSameValue ( Object . getPrototypeOf ( it ) , oldPrototype ) ;"
 }, {
   "algo": "GetPrototypeFromConstructor",
   "cond": "(= intrinsicDefaultProto \"%Promise.prototype%\")",
@@ -1558,19 +1558,19 @@
   "algo": "GlobalDeclarationInstantiation",
   "cond": "(= __x4__ true)",
   "covered": true,
-  "elseCovered": "class await  {  }",
+  "elseCovered": "class await { }",
   "inst": "if (= __x4__ true) ... else ..."
 }, {
   "algo": "GlobalDeclarationInstantiation",
   "cond": "(= __x6__ true)",
   "covered": true,
-  "elseCovered": "class await  {  }",
+  "elseCovered": "class await { }",
   "inst": "if (= __x6__ true) ... else ..."
 }, {
   "algo": "GlobalDeclarationInstantiation",
   "cond": "(= hasRestrictedGlobal true)",
   "covered": true,
-  "elseCovered": "class await  {  }",
+  "elseCovered": "class await { }",
   "inst": "if (= hasRestrictedGlobal true) ... else ..."
 }, {
   "algo": "GlobalDeclarationInstantiation",
@@ -1595,7 +1595,7 @@
   "cond": "(= existingProp[\"Configurable\"] true)",
   "covered": true,
   "inst": "if (= existingProp[\"Configurable\"] true) ... else ...",
-  "thenCovered": "function Array (  ) {  } var o = { x : 1 , y : 2 } ; var a = Object . keys ( o ) ; var s = Object . prototype . toString . call ( a ) ; assert . sameValue ( s , '[object Array]' , 's' ) ;"
+  "thenCovered": "function Array ( ) { } var o = { x : 1 , y : 2 } ; var a = Object . keys ( o ) ; var s = Object . prototype . toString . call ( a ) ; assert . sameValue ( s , '[object Array]' , 's' ) ;"
 }, {
   "algo": "GlobalEnvironmentRecordDOTCanDeclareGlobalFunction",
   "cond": "(&& (&& (= result true) (= existingProp[\"Writable\"] true)) (= existingProp[\"Enumerable\"] true))",
@@ -1629,20 +1629,20 @@
   "algo": "GlobalEnvironmentRecordDOTCreateImmutableBinding",
   "cond": "(= __x0__ true)",
   "covered": true,
-  "elseCovered": "const [  x = 23 ] = [  ] ; assert . sameValue ( x , 23 ) ;",
+  "elseCovered": "const [ x = 23 ] = [ ] ; assert . sameValue ( x , 23 ) ;",
   "inst": "if (= __x0__ true) ... else ..."
 }, {
   "algo": "GlobalEnvironmentRecordDOTCreateMutableBinding",
   "cond": "(= __x0__ true)",
   "covered": true,
-  "elseCovered": "class await  {  }",
+  "elseCovered": "class await { }",
   "inst": "if (= __x0__ true) ... else ..."
 }, {
   "algo": "GlobalEnvironmentRecordDOTHasRestrictedGlobalProperty",
   "cond": "(= existingProp undefined)",
   "covered": true,
   "inst": "if (= existingProp undefined) ... else ...",
-  "thenCovered": "class await  {  }"
+  "thenCovered": "class await { }"
 }, {
   "algo": "GlobalEnvironmentRecordDOTHasRestrictedGlobalProperty",
   "cond": "(= existingProp[\"Configurable\"] true)",
@@ -1652,26 +1652,26 @@
   "algo": "GlobalEnvironmentRecordDOTHasVarDeclaration",
   "cond": "(contains varDeclaredNames N)",
   "covered": true,
-  "elseCovered": "class await  {  }",
+  "elseCovered": "class await { }",
   "inst": "if (contains varDeclaredNames N) ... else ..."
 }, {
   "algo": "GlobalEnvironmentRecordDOTInitializeBinding",
   "cond": "(= __x0__ true)",
   "covered": true,
   "inst": "if (= __x0__ true) ... else ...",
-  "thenCovered": "class await  {  }"
+  "thenCovered": "class await { }"
 }, {
   "algo": "InitializeBoundName",
   "cond": "(! (= environment undefined))",
   "covered": true,
   "inst": "if (! (= environment undefined)) ... else ...",
-  "thenCovered": "class await  {  }"
+  "thenCovered": "class await { }"
 }, {
   "algo": "InstanceofOperator",
   "cond": "(= __x6__ false)",
   "covered": true,
   "inst": "if (= __x6__ false) ... else ...",
-  "thenCovered": "var F = { } ; F [ Symbol . hasInstance ] = null ; assert . throws ( TypeError , function  (  ) { 0 instanceof F ; } ) ;"
+  "thenCovered": "var F = { } ; F [ Symbol . hasInstance ] = null ; assert . throws ( TypeError , function ( ) { 0 instanceof F ; } ) ;"
 }, {
   "algo": "IsAccessorDescriptor",
   "cond": "(= Desc undefined)",
@@ -1741,13 +1741,13 @@
   "algo": "IsRegExp",
   "cond": "(! (= matcher undefined))",
   "covered": true,
-  "elseCovered": "var obj = { toString : function  (  ) { throw new Test262Error ( ) ; } } ; assert . throws ( Test262Error , function  (  ) { '' . includes ( obj ) ; } ) ;",
+  "elseCovered": "var obj = { toString : function ( ) { throw new Test262Error ( ) ; } } ; assert . throws ( Test262Error , function ( ) { '' . endsWith ( obj ) ; } ) ;",
   "inst": "if (! (= matcher undefined)) ... else ..."
 }, {
   "algo": "IsRegExp",
   "cond": "(! (= argument[\"RegExpMatcher\"] absent))",
   "covered": true,
-  "elseCovered": "var obj = { toString : function  (  ) { throw new Test262Error ( ) ; } } ; assert . throws ( Test262Error , function  (  ) { '' . includes ( obj ) ; } ) ;",
+  "elseCovered": "var obj = { toString : function ( ) { throw new Test262Error ( ) ; } } ; assert . throws ( Test262Error , function ( ) { '' . endsWith ( obj ) ; } ) ;",
   "inst": "if (! (= argument[\"RegExpMatcher\"] absent)) ... else ..."
 }, {
   "algo": "LabelledItem0TopLevelVarDeclaredNames0",
@@ -1772,7 +1772,7 @@
   "cond": "(= this call)",
   "covered": true,
   "inst": "if (= this call) ... else ...",
-  "thenCovered": "( function  (  ) { var finished = false ; function f ( _  , n  ) { if ( n === 0 ) { finished = true ; return ; } return f `${ n - 1 }` ; } f ( null , $MAX_ITERATIONS ) ; return finished ; } ( ) ) ;"
+  "thenCovered": "( function ( ) { var finished = false ; function f ( _ , n ) { if ( n === 0 ) { finished = true ; return ; } return f `${ n - 1 }` ; } f ( null , $MAX_ITERATIONS ) ; return finished ; } ( ) ) ;"
 }, {
   "algo": "ObjectEnvironmentRecordDOTGetBindingValue",
   "cond": "(= value false)",
@@ -1827,20 +1827,20 @@
   "algo": "OrdinarySetPrototypeOf",
   "cond": "(= __x0__ true)",
   "covered": true,
-  "elseCovered": "var obj = { } ; Object . preventExtensions ( obj ) ; assert . throws ( TypeError , function  (  ) { Object . setPrototypeOf ( obj , null ) ; } ) ;",
+  "elseCovered": "var obj = { } ; Object . preventExtensions ( obj ) ; assert . throws ( TypeError , function ( ) { Object . setPrototypeOf ( obj , null ) ; } ) ;",
   "inst": "if (= __x0__ true) ... else ..."
 }, {
   "algo": "OrdinarySetPrototypeOf",
   "cond": "(= __x3__ true)",
   "covered": true,
-  "elseCovered": "var proto = { p4 : 'p4' , } ; var o = { p1 : 'p1' , p2 : 'p2' , p3 : 'p3' , } ; Object . setPrototypeOf ( o , proto ) ; var keys = [  ] ; for ( var key in o ) { keys . push ( key ) ; } assert . compareArray ( keys , [  'p1' ,  'p2' ,  'p3' ,  'p4' ] ) ;",
+  "elseCovered": "var proto = { p4 : 'p4' , } ; var o = { p1 : 'p1' , p2 : 'p2' , p3 : 'p3' , } ; Object . setPrototypeOf ( o , proto ) ; var keys = [ ] ; for ( var key in o ) { keys . push ( key ) ; } assert . compareArray ( keys , [ 'p1' , 'p2' , 'p3' , 'p4' ] ) ;",
   "inst": "if (= __x3__ true) ... else ..."
 }, {
   "algo": "OrdinarySetPrototypeOf",
   "cond": "(! (= p[\"GetProtoTypeOf\"] OrdinaryObjectDOTGetPrototypeOf))",
   "covered": true,
   "inst": "if (! (= p[\"GetProtoTypeOf\"] OrdinaryObjectDOTGetPrototypeOf)) ... else ...",
-  "thenCovered": "var proto = { p4 : 'p4' , } ; var o = { p1 : 'p1' , p2 : 'p2' , p3 : 'p3' , } ; Object . setPrototypeOf ( o , proto ) ; var keys = [  ] ; for ( var key in o ) { keys . push ( key ) ; } assert . compareArray ( keys , [  'p1' ,  'p2' ,  'p3' ,  'p4' ] ) ;"
+  "thenCovered": "var proto = { p4 : 'p4' , } ; var o = { p1 : 'p1' , p2 : 'p2' , p3 : 'p3' , } ; Object . setPrototypeOf ( o , proto ) ; var keys = [ ] ; for ( var key in o ) { keys . push ( key ) ; } assert . compareArray ( keys , [ 'p1' , 'p2' , 'p3' , 'p4' ] ) ;"
 }, {
   "algo": "OrdinarySetWithOwnDescriptor",
   "cond": "(= __x9__ true)",
@@ -1864,48 +1864,48 @@
   "cond": "__x17__",
   "covered": true,
   "inst": "if __x17__ ... else ...",
-  "thenCovered": "let x  ; eval ( 'var x;' ) ;"
+  "thenCovered": "let x ; eval ( 'var x;' ) ;"
 }, {
   "algo": "PerformEval",
   "cond": "(= strictEval true)",
   "covered": true,
   "inst": "if (= strictEval true) ... else ...",
-  "thenCovered": "let x  ; eval ( 'var x;' ) ;"
+  "thenCovered": "let x ; eval ( 'var x;' ) ;"
 }, {
   "algo": "PerformEval",
   "cond": "(= runningContext null)",
   "covered": true,
-  "elseCovered": "let x  ; eval ( 'var x;' ) ;",
+  "elseCovered": "let x ; eval ( 'var x;' ) ;",
   "inst": "if (= runningContext null) ... else ..."
 }, {
   "algo": "PerformEval",
   "cond": "(= GLOBAL_executionStack[(- GLOBAL_executionStack[\"length\"] 1i)] evalContext)",
   "covered": true,
   "inst": "if (= GLOBAL_executionStack[(- GLOBAL_executionStack[\"length\"] 1i)] evalContext) ... else ...",
-  "thenCovered": "let x  ; eval ( 'var x;' ) ;"
+  "thenCovered": "let x ; eval ( 'var x;' ) ;"
 }, {
   "algo": "PerformEval",
   "cond": "(= GLOBAL_executionStack[\"length\"] 0i)",
   "covered": true,
-  "elseCovered": "let x  ; eval ( 'var x;' ) ;",
+  "elseCovered": "let x ; eval ( 'var x;' ) ;",
   "inst": "if (= GLOBAL_executionStack[\"length\"] 0i) ... else ..."
 }, {
   "algo": "PerformPromiseAll",
   "cond": "(= __x2__ false)",
   "covered": true,
-  "elseCovered": "var p = Promise . all ( [  ] ) ; if ( ! ( p instanceof Promise ) ) { $ERROR ( 'Expected p to be a Promise' ) ; }",
+  "elseCovered": "var p = Promise . all ( [ ] ) ; if ( ! ( p instanceof Promise ) ) { $ERROR ( 'Expected p to be a Promise' ) ; }",
   "inst": "if (= __x2__ false) ... else ..."
 }, {
   "algo": "PerformPromiseAllSettled",
   "cond": "(= __x2__ false)",
   "covered": true,
-  "elseCovered": "var p = Promise . allSettled ( [  ] ) ; assert ( p instanceof Promise ) ; assert . sameValue ( Object . getPrototypeOf ( p ) , Promise . prototype ) ;",
+  "elseCovered": "var p = Promise . allSettled ( [ ] ) ; assert ( p instanceof Promise ) ; assert . sameValue ( Object . getPrototypeOf ( p ) , Promise . prototype ) ;",
   "inst": "if (= __x2__ false) ... else ..."
 }, {
   "algo": "PerformPromiseRace",
   "cond": "(= __x2__ false)",
   "covered": true,
-  "elseCovered": "var p = Promise . race ( [  ] ) ; if ( ! ( p instanceof Promise ) ) { $ERROR ( \"Expected Promise.race([]) to return a promise.\" ) ; }",
+  "elseCovered": "var p = Promise . race ( [ ] ) ; if ( ! ( p instanceof Promise ) ) { $ERROR ( \"Expected Promise.race([]) to return a promise.\" ) ; }",
   "inst": "if (= __x2__ false) ... else ..."
 }, {
   "algo": "PerformPromiseThen",
@@ -1924,12 +1924,12 @@
   "cond": "(= GLOBAL_executionStack[(- GLOBAL_executionStack[\"length\"] 1i)] leafContext)",
   "covered": true,
   "inst": "if (= GLOBAL_executionStack[(- GLOBAL_executionStack[\"length\"] 1i)] leafContext) ... else ...",
-  "thenCovered": "assert . throws ( TypeError , function  (  ) { Promise . all . call ( eval ) ; } ) ;"
+  "thenCovered": "assert . throws ( TypeError , function ( ) { Promise . all . call ( eval ) ; } ) ;"
 }, {
   "algo": "PrepareForTailCall",
   "cond": "(= GLOBAL_executionStack[\"length\"] 0i)",
   "covered": true,
-  "elseCovered": "assert . throws ( TypeError , function  (  ) { Promise . all . call ( eval ) ; } ) ;",
+  "elseCovered": "assert . throws ( TypeError , function ( ) { Promise . all . call ( eval ) ; } ) ;",
   "inst": "if (= GLOBAL_executionStack[\"length\"] 0i) ... else ..."
 }, {
   "algo": "PromiseReactionJob",
@@ -1954,7 +1954,7 @@
   "cond": "(= __x4__ true)",
   "covered": true,
   "inst": "if (= __x4__ true) ... else ...",
-  "thenCovered": "assert . throws ( ReferenceError , function  (  ) { b = 11 ; } ) ;"
+  "thenCovered": "assert . throws ( ReferenceError , function ( ) { b = 11 ; } ) ;"
 }, {
   "algo": "RunJobs",
   "cond": "(= GLOBAL_executionStack[(- GLOBAL_executionStack[\"length\"] 1i)] GLOBAL_context)",
@@ -2013,25 +2013,25 @@
   "algo": "SpeciesConstructor",
   "cond": "(= C undefined)",
   "covered": true,
-  "elseCovered": "var p1 = new Promise ( function  (  ) {  } ) ; delete p1 . constructor ; var p2 = p1 . then ( ) ; assert ( p2 instanceof Promise ) ;",
+  "elseCovered": "var p1 = new Promise ( function ( ) { } ) ; delete p1 . constructor ; var p2 = p1 . then ( ) ; assert ( p2 instanceof Promise ) ;",
   "inst": "if (= C undefined) ... else ..."
 }, {
   "algo": "SpeciesConstructor",
   "cond": "(= __x7__ true)",
   "covered": true,
   "inst": "if (= __x7__ true) ... else ...",
-  "thenCovered": "var p1 = new Promise ( function  (  ) {  } ) ; delete p1 . constructor ; var p2 = p1 . then ( ) ; assert ( p2 instanceof Promise ) ;"
+  "thenCovered": "var p1 = new Promise ( function ( ) { } ) ; delete p1 . constructor ; var p2 = p1 . then ( ) ; assert ( p2 instanceof Promise ) ;"
 }, {
   "algo": "StringExoticObjectDOTOwnPropertyKeys",
   "cond": "(! (< n str[\"length\"]))",
   "covered": true,
   "inst": "if (! (< n str[\"length\"])) ... else ...",
-  "thenCovered": "var str = new String ( \"abc\" ) ; str [ 5 ] = \"de\" ; var expected = [  \"0\" ,  \"1\" ,  \"2\" ,  \"5\" ,  \"length\" ] ; var actual = Object . getOwnPropertyNames ( str ) ; assert ( compareArray ( actual , expected ) , 'compareArray(actual, expected) !== true' ) ;"
+  "thenCovered": "var str = new String ( \"abc\" ) ; str [ 5 ] = \"de\" ; var expected = [ \"0\" , \"1\" , \"2\" , \"5\" , \"length\" ] ; var actual = Object . getOwnPropertyNames ( str ) ; assert ( compareArray ( actual , expected ) , 'compareArray(actual, expected) !== true' ) ;"
 }, {
   "algo": "StringExoticObjectDOTOwnPropertyKeys",
   "cond": "(< j len)",
   "covered": true,
-  "elseCovered": "var str = new String ( \"abc\" ) ; str [ 5 ] = \"de\" ; var expected = [  \"0\" ,  \"1\" ,  \"2\" ,  \"5\" ,  \"length\" ] ; var actual = Object . getOwnPropertyNames ( str ) ; assert ( compareArray ( actual , expected ) , 'compareArray(actual, expected) !== true' ) ;",
+  "elseCovered": "var str = new String ( \"abc\" ) ; str [ 5 ] = \"de\" ; var expected = [ \"0\" , \"1\" , \"2\" , \"5\" , \"length\" ] ; var actual = Object . getOwnPropertyNames ( str ) ; assert ( compareArray ( actual , expected ) , 'compareArray(actual, expected) !== true' ) ;",
   "inst": "while (< j len) { ... }"
 }, {
   "algo": "StringExoticObjectDOTOwnPropertyKeys",
@@ -2048,37 +2048,37 @@
   "algo": "SuperProperty1Contains0",
   "cond": "(= symbol \"super\")",
   "covered": true,
-  "elseCovered": "var superProp = null ; var o = { test262 : null , method (  ) { superProp = eval ( 'super.test262;' ) ; } } ; o . method ( ) ; assert . sameValue ( superProp , undefined ) ; Object . setPrototypeOf ( o , { test262 : 262 } ) ; o . method ( ) ; assert . sameValue ( superProp , 262 ) ;",
+  "elseCovered": "var superProp = null ; var o = { test262 : null , method ( ) { superProp = eval ( 'super.test262;' ) ; } } ; o . method ( ) ; assert . sameValue ( superProp , undefined ) ; Object . setPrototypeOf ( o , { test262 : 262 } ) ; o . method ( ) ; assert . sameValue ( superProp , 262 ) ;",
   "inst": "if (= symbol \"super\") ... else ..."
 }, {
   "algo": "SuperProperty1Contains0",
   "cond": "(is-instance-of symbol ReservedWord)",
   "covered": true,
-  "elseCovered": "var superProp = null ; var o = { test262 : null , method (  ) { superProp = eval ( 'super.test262;' ) ; } } ; o . method ( ) ; assert . sameValue ( superProp , undefined ) ; Object . setPrototypeOf ( o , { test262 : 262 } ) ; o . method ( ) ; assert . sameValue ( superProp , 262 ) ;",
+  "elseCovered": "var superProp = null ; var o = { test262 : null , method ( ) { superProp = eval ( 'super.test262;' ) ; } } ; o . method ( ) ; assert . sameValue ( superProp , undefined ) ; Object . setPrototypeOf ( o , { test262 : 262 } ) ; o . method ( ) ; assert . sameValue ( superProp , 262 ) ;",
   "inst": "if (is-instance-of symbol ReservedWord) ... else ..."
 }, {
   "algo": "SuperProperty1Contains0",
   "cond": "__x0__",
   "covered": true,
-  "elseCovered": "var superProp = null ; var o = { test262 : null , method (  ) { superProp = eval ( 'super.test262;' ) ; } } ; o . method ( ) ; assert . sameValue ( superProp , undefined ) ; Object . setPrototypeOf ( o , { test262 : 262 } ) ; o . method ( ) ; assert . sameValue ( superProp , 262 ) ;",
+  "elseCovered": "var superProp = null ; var o = { test262 : null , method ( ) { superProp = eval ( 'super.test262;' ) ; } } ; o . method ( ) ; assert . sameValue ( superProp , undefined ) ; Object . setPrototypeOf ( o , { test262 : 262 } ) ; o . method ( ) ; assert . sameValue ( superProp , 262 ) ;",
   "inst": "if __x0__ ... else ..."
 }, {
   "algo": "SuperProperty1Contains0",
   "cond": "__x0__",
   "covered": true,
-  "elseCovered": "var superProp = null ; var o = { test262 : null , method (  ) { superProp = eval ( 'super.test262;' ) ; } } ; o . method ( ) ; assert . sameValue ( superProp , undefined ) ; Object . setPrototypeOf ( o , { test262 : 262 } ) ; o . method ( ) ; assert . sameValue ( superProp , 262 ) ;",
+  "elseCovered": "var superProp = null ; var o = { test262 : null , method ( ) { superProp = eval ( 'super.test262;' ) ; } } ; o . method ( ) ; assert . sameValue ( superProp , undefined ) ; Object . setPrototypeOf ( o , { test262 : 262 } ) ; o . method ( ) ; assert . sameValue ( superProp , 262 ) ;",
   "inst": "if __x0__ ... else ..."
 }, {
   "algo": "TestIntegrityLevel",
   "cond": "(! (= currentDesc undefined))",
   "covered": true,
   "inst": "if (! (= currentDesc undefined)) ... else ...",
-  "thenCovered": "var obj = Object . freeze ( [  0 ,  1 ,  2 ] ) ; assert ( Object . isFrozen ( obj ) , 'Object.isFrozen(obj) !== true' ) ;"
+  "thenCovered": "var obj = Object . freeze ( [ 0 , 1 , 2 ] ) ; assert ( Object . isFrozen ( obj ) , 'Object.isFrozen(obj) !== true' ) ;"
 }, {
   "algo": "ToInteger",
   "cond": "(= integer -0.0)",
   "covered": true,
-  "elseCovered": "var [  x = 23 ] = [ , ] ; assert . sameValue ( x , 23 ) ;",
+  "elseCovered": "let [ x = 23 ] = [ , ] ; assert . sameValue ( x , 23 ) ;",
   "inst": "if (= integer -0.0) ... else ..."
 }, {
   "algo": "ToObject",
@@ -2162,13 +2162,13 @@
   "algo": "TryStatement2VarDeclaredNames0",
   "cond": "(< __x7__ __x6__[\"length\"])",
   "covered": true,
-  "elseCovered": "try {  } catch {  } finally {  }",
+  "elseCovered": "try { } catch { } finally { }",
   "inst": "while (< __x7__ __x6__[\"length\"]) { ... }"
 }, {
   "algo": "TryStatement2VarScopedDeclarations0",
   "cond": "(< __x7__ __x6__[\"length\"])",
   "covered": true,
-  "elseCovered": "try {  } catch {  } finally {  }",
+  "elseCovered": "try { } catch { } finally { }",
   "inst": "while (< __x7__ __x6__[\"length\"]) { ... }"
 }, {
   "algo": "ValidateAndApplyPropertyDescriptor",
@@ -2187,65 +2187,65 @@
   "cond": "(! (= O undefined))",
   "covered": true,
   "inst": "if (! (= O undefined)) ... else ...",
-  "thenCovered": "eval ( \"({foo : 1, get foo(){}});\" ) ;"
+  "thenCovered": "void { foo : 1 , set foo ( x ) { } } ;"
 }, {
   "algo": "ValidateAndApplyPropertyDescriptor",
   "cond": "(! (= O undefined))",
   "covered": true,
   "inst": "if (! (= O undefined)) ... else ...",
-  "thenCovered": "void { get foo ( ) {  } , foo : 1 } ;"
+  "thenCovered": "void { get foo ( ) { } , foo : 1 } ;"
 }, {
   "algo": "YieldExpression0Evaluation0",
   "cond": "(= generatorKind CONST_async)",
   "covered": true,
-  "elseCovered": "var first = 0 ; var second = 0 ; function * g (  ) { first += 1 ; yield ; second += 1 ; } ; var [ ,  ] = g ( ) ; assert . sameValue ( first , 1 ) ; assert . sameValue ( second , 0 ) ;",
+  "elseCovered": "var first = 0 ; var second = 0 ; function * g ( ) { first += 1 ; yield ; second += 1 ; } ; var [ , ] = g ( ) ; assert . sameValue ( first , 1 ) ; assert . sameValue ( second , 0 ) ;",
   "inst": "if (= generatorKind CONST_async) ... else ..."
 }, {
   "algo": "YieldExpression1Evaluation0",
   "cond": "(= generatorKind CONST_async)",
   "covered": true,
-  "elseCovered": "function * foo ( await  ) { yield await ; } ; assert . sameValue ( foo ( 1 ) . next ( ) . value , 1 ) ;",
+  "elseCovered": "function * foo ( await ) { yield await ; } ; assert . sameValue ( foo ( 1 ) . next ( ) . value , 1 ) ;",
   "inst": "if (= generatorKind CONST_async) ... else ..."
 }, {
   "algo": "YieldExpression2Evaluation0",
   "cond": "(= generatorKind CONST_async)",
   "covered": true,
-  "elseCovered": "var badIter = { } ; badIter [ Symbol . iterator ] = function  (  ) { return { next : function  (  ) { return { done : false } ; } , return : function  (  ) { throw 87 ; } } ; } ; function * g (  ) { try { yield * badIter ; } catch ( err ) { caught = err ; } } var iter = g ( ) ; var caught  ; iter . next ( ) ; iter . throw ( ) ; assert . sameValue ( caught , 87 ) ;",
+  "elseCovered": "var badIter = { } ; badIter [ Symbol . iterator ] = function ( ) { return { next : function ( ) { return { done : false } ; } , return : function ( ) { throw 87 ; } } ; } ; function * g ( ) { try { yield * badIter ; } catch ( err ) { caught = err ; } } var iter = g ( ) ; var caught ; iter . next ( ) ; iter . throw ( ) ; assert . sameValue ( caught , 87 ) ;",
   "inst": "if (= generatorKind CONST_async) ... else ..."
 }, {
   "algo": "YieldExpression2Evaluation0",
   "cond": "(= generatorKind CONST_async)",
   "covered": true,
-  "elseCovered": "var quickIter = { } ; var iter  , exprValue  , throwReceived  ; quickIter [ Symbol . iterator ] = function  (  ) { return { next : function  (  ) { return { done : false } ; } , throw : function  ( x  ) { throwReceived = x ; return { done : true , value : 3333 } ; } } ; } ; function * g (  ) { exprValue = yield * quickIter ; } iter = g ( ) ; iter . next ( ) ; iter . throw ( 2222 ) ; assert . sameValue ( throwReceived , 2222 ) ; assert . sameValue ( exprValue , 3333 ) ;",
+  "elseCovered": "var quickIter = { } ; var iter , exprValue , throwReceived ; quickIter [ Symbol . iterator ] = function ( ) { return { next : function ( ) { return { done : false } ; } , throw : function ( x ) { throwReceived = x ; return { done : true , value : 3333 } ; } } ; } ; function * g ( ) { exprValue = yield * quickIter ; } iter = g ( ) ; iter . next ( ) ; iter . throw ( 2222 ) ; assert . sameValue ( throwReceived , 2222 ) ; assert . sameValue ( exprValue , 3333 ) ;",
   "inst": "if (= generatorKind CONST_async) ... else ..."
 }, {
   "algo": "YieldExpression2Evaluation0",
   "cond": "(= generatorKind CONST_async)",
   "covered": true,
-  "elseCovered": "var badIter = { } ; var callCount = 0 ; var spyValue = Object . defineProperty ( { done : false } , 'value' , { get : function  (  ) { callCount += 1 ; } } ) ; badIter [ Symbol . iterator ] = function  (  ) { return { next : function  (  ) { return { done : false } ; } , throw : function  (  ) { return spyValue ; } } ; } ; var delegationComplete = false ; function * g (  ) { yield * badIter ; delegationComplete = true ; } var iter = g ( ) ; iter . next ( ) ; assert . sameValue ( callCount , 0 , 'access count (first iteration)' ) ; assert . sameValue ( delegationComplete , false , 'delegation ongoing (first iteration)' ) ; iter . throw ( ) ; assert . sameValue ( callCount , 0 , 'access count (second iteration)' ) ; assert . sameValue ( delegationComplete , false , 'delegation ongoing (second iteration)' ) ; spyValue . done = true ; iter . throw ( ) ; assert . sameValue ( callCount , 1 , 'access count (final iteration)' ) ; assert . sameValue ( delegationComplete , true , 'delegation complete' ) ;",
+  "elseCovered": "var badIter = { } ; var callCount = 0 ; var spyValue = Object . defineProperty ( { done : false } , 'value' , { get : function ( ) { callCount += 1 ; } } ) ; badIter [ Symbol . iterator ] = function ( ) { return { next : function ( ) { return { done : false } ; } , throw : function ( ) { return spyValue ; } } ; } ; var delegationComplete = false ; function * g ( ) { yield * badIter ; delegationComplete = true ; } var iter = g ( ) ; iter . next ( ) ; assert . sameValue ( callCount , 0 , 'access count (first iteration)' ) ; assert . sameValue ( delegationComplete , false , 'delegation ongoing (first iteration)' ) ; iter . throw ( ) ; assert . sameValue ( callCount , 0 , 'access count (second iteration)' ) ; assert . sameValue ( delegationComplete , false , 'delegation ongoing (second iteration)' ) ; spyValue . done = true ; iter . throw ( ) ; assert . sameValue ( callCount , 1 , 'access count (final iteration)' ) ; assert . sameValue ( delegationComplete , true , 'delegation complete' ) ;",
   "inst": "if (= generatorKind CONST_async) ... else ..."
 }, {
   "algo": "YieldExpression2Evaluation0",
   "cond": "(= generatorKind CONST_async)",
   "covered": true,
-  "elseCovered": "var badIter = { } ; badIter [ Symbol . iterator ] = function  (  ) { return { next : function  (  ) { return { done : false } ; } , return : function  (  ) { throw 87 ; } } ; } ; function * g (  ) { try { yield * badIter ; } catch ( err ) { caught = err ; } } var iter = g ( ) ; var caught  ; iter . next ( ) ; iter . throw ( ) ; assert . sameValue ( caught , 87 ) ;",
+  "elseCovered": "var badIter = { } ; badIter [ Symbol . iterator ] = function ( ) { return { next : function ( ) { return { done : false } ; } , return : function ( ) { throw 87 ; } } ; } ; function * g ( ) { try { yield * badIter ; } catch ( err ) { caught = err ; } } var iter = g ( ) ; var caught ; iter . next ( ) ; iter . throw ( ) ; assert . sameValue ( caught , 87 ) ;",
   "inst": "if (= generatorKind CONST_async) ... else ..."
 }, {
   "algo": "YieldExpression2Evaluation0",
   "cond": "(= generatorKind CONST_async)",
   "covered": true,
-  "elseCovered": "var badIter = { } ; var throwCount = 0 ; var returnCount = 0 ; var hitNextStatement = false ; var hitCatch = false ; var hitFinally = false ; var spyResult = { next : function  (  ) { return { done : false } ; } } ; Object . defineProperty ( spyResult , 'throw' , { get : function  (  ) { throwCount += 1 ; } } ) ; Object . defineProperty ( spyResult , 'return' , { get : function  (  ) { returnCount += 1 ; } } ) ; badIter [ Symbol . iterator ] = function  (  ) { return spyResult ; } ; function * g (  ) { try { yield * badIter ; hitNextStatement = true ; } catch ( _ ) { hitCatch = true ; } finally { hitFinally = true ; } } var iter = g ( ) ; iter . next ( ) ; iter . return ( ) ; assert . sameValue ( throwCount , 0 , '`throw` property access' ) ; assert . sameValue ( returnCount , 1 , '`return` property access' ) ; assert . sameValue ( hitFinally , true , 'Generator execution was resumed' ) ; assert . sameValue ( hitNextStatement , false , 'Abrupt completion interrupted control flow' ) ; assert . sameValue ( hitCatch , false , 'Abrupt completion not interpreted as \"throw\"' ) ;",
+  "elseCovered": "var badIter = { } ; var throwCount = 0 ; var returnCount = 0 ; var hitNextStatement = false ; var hitCatch = false ; var hitFinally = false ; var spyResult = { next : function ( ) { return { done : false } ; } } ; Object . defineProperty ( spyResult , 'throw' , { get : function ( ) { throwCount += 1 ; } } ) ; Object . defineProperty ( spyResult , 'return' , { get : function ( ) { returnCount += 1 ; } } ) ; badIter [ Symbol . iterator ] = function ( ) { return spyResult ; } ; function * g ( ) { try { yield * badIter ; hitNextStatement = true ; } catch ( _ ) { hitCatch = true ; } finally { hitFinally = true ; } } var iter = g ( ) ; iter . next ( ) ; iter . return ( ) ; assert . sameValue ( throwCount , 0 , '`throw` property access' ) ; assert . sameValue ( returnCount , 1 , '`return` property access' ) ; assert . sameValue ( hitFinally , true , 'Generator execution was resumed' ) ; assert . sameValue ( hitNextStatement , false , 'Abrupt completion interrupted control flow' ) ; assert . sameValue ( hitCatch , false , 'Abrupt completion not interpreted as \"throw\"' ) ;",
   "inst": "if (= generatorKind CONST_async) ... else ..."
 }, {
   "algo": "YieldExpression2Evaluation0",
   "cond": "(= generatorKind CONST_async)",
   "covered": true,
-  "elseCovered": "var thrown = new Test262Error ( ) ; var badIter = { } ; var poisonedDone = Object . defineProperty ( { } , 'done' , { get : function  (  ) { throw thrown ; } } ) ; badIter [ Symbol . iterator ] = function  (  ) { return { next : function  (  ) { return { done : false } ; } , return : function  (  ) { return poisonedDone ; } } ; } ; function * g (  ) { try { yield * badIter ; } catch ( err ) { caught = err ; } } var iter = g ( ) ; var caught  ; iter . next ( ) ; iter . return ( ) ; assert . sameValue ( caught , thrown ) ;",
+  "elseCovered": "var thrown = new Test262Error ( ) ; var badIter = { } ; var poisonedDone = Object . defineProperty ( { } , 'done' , { get : function ( ) { throw thrown ; } } ) ; badIter [ Symbol . iterator ] = function ( ) { return { next : function ( ) { return { done : false } ; } , return : function ( ) { return poisonedDone ; } } ; } ; function * g ( ) { try { yield * badIter ; } catch ( err ) { caught = err ; } } var iter = g ( ) ; var caught ; iter . next ( ) ; iter . return ( ) ; assert . sameValue ( caught , thrown ) ;",
   "inst": "if (= generatorKind CONST_async) ... else ..."
 }, {
   "algo": "YieldExpression2Evaluation0",
   "cond": "(= generatorKind CONST_async)",
   "covered": true,
-  "elseCovered": "var badIter = { } ; var callCount = 0 ; var spyValue = Object . defineProperty ( { done : false } , 'value' , { get : function  (  ) { callCount += 1 ; } } ) ; badIter [ Symbol . iterator ] = function  (  ) { return { next : function  (  ) { return { done : false } ; } , return : function  (  ) { return spyValue ; } } ; } ; var normalCompletion = false ; var errorCompletion = false ; var delegationComplete = false ; function * g (  ) { try { yield * badIter ; normalCompletion = true ; } catch ( _ ) { errorCompletion = true ; } finally { delegationComplete = true ; } } var iter = g ( ) ; iter . next ( ) ; assert . sameValue ( callCount , 0 , 'access count (first iteration)' ) ; assert . sameValue ( delegationComplete , false , 'delegation ongoing (first iteration)' ) ; iter . return ( ) ; assert . sameValue ( callCount , 0 , 'access count (second iteration)' ) ; assert . sameValue ( delegationComplete , false , 'delegation ongoing (second iteration)' ) ; spyValue . done = true ; iter . return ( ) ; assert . sameValue ( callCount , 1 , 'access count (final iteration)' ) ; assert . sameValue ( delegationComplete , true , 'delegation complete' ) ; assert . sameValue ( normalCompletion , false , 'completion was abrupt' ) ; assert . sameValue ( errorCompletion , false , 'completion was not of type \"throw\"' ) ;",
+  "elseCovered": "var badIter = { } ; var callCount = 0 ; var spyValue = Object . defineProperty ( { done : false } , 'value' , { get : function ( ) { callCount += 1 ; } } ) ; badIter [ Symbol . iterator ] = function ( ) { return { next : function ( ) { return { done : false } ; } , return : function ( ) { return spyValue ; } } ; } ; var normalCompletion = false ; var errorCompletion = false ; var delegationComplete = false ; function * g ( ) { try { yield * badIter ; normalCompletion = true ; } catch ( _ ) { errorCompletion = true ; } finally { delegationComplete = true ; } } var iter = g ( ) ; iter . next ( ) ; assert . sameValue ( callCount , 0 , 'access count (first iteration)' ) ; assert . sameValue ( delegationComplete , false , 'delegation ongoing (first iteration)' ) ; iter . return ( ) ; assert . sameValue ( callCount , 0 , 'access count (second iteration)' ) ; assert . sameValue ( delegationComplete , false , 'delegation ongoing (second iteration)' ) ; spyValue . done = true ; iter . return ( ) ; assert . sameValue ( callCount , 1 , 'access count (final iteration)' ) ; assert . sameValue ( delegationComplete , true , 'delegation complete' ) ; assert . sameValue ( normalCompletion , false , 'completion was abrupt' ) ; assert . sameValue ( errorCompletion , false , 'completion was not of type \"throw\"' ) ;",
   "inst": "if (= generatorKind CONST_async) ... else ..."
 }]

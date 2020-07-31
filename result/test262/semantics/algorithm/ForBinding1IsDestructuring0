@@ -1,0 +1,4 @@
+[32mForBinding1IsDestructuring0[0m
+[32m- Inst: 1 / 1 (100.00%)[0m
+[32m- Cond: -[0m
+[32m+ 10191 [-]   : return true[0m

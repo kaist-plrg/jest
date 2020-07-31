@@ -80,8 +80,8 @@ class Test262Test extends IRESTest with EvalTest {
 
       // dump algorithm coverages
       val algoSummaryContent = algoCoverages.map(cov => cov.summary).mkString(LINE_SEP)
-      dumpFile(algoSummaryContent + LINE_SEP, s"$GEN_RES_DIR/semantics/algoSummary")
-      algoCoverages.foreach(cov => cov.dump(s"$GEN_RES_DIR/semantics/algorithm"))
+      dumpFile(algoSummaryContent + LINE_SEP, s"$TEST262_RES_DIR/semantics/algoSummary")
+      algoCoverages.foreach(cov => cov.dump(s"$TEST262_RES_DIR/semantics/algorithm"))
     }
   }
 

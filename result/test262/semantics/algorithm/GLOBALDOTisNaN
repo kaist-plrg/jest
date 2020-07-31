@@ -1,0 +1,20 @@
+[33mGLOBALDOTisNaN[0m
+[33m- Inst: 16 / 17 (94.12%)[0m
+[33m- Cond: 5 / 6 (83.33%)[0m
+[32m+ 19325 [-]   : { ... }[0m
+[32m+ 19326 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
+[32m+ 19327 [-]   : let number = __x0__[0m
+[32m+ 19328 [-]   : app __x1__ = (ToNumber number)[0m
+[32m+ 19329 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x1__) ... else ...[0m
+[32m+ 19330 [[31mF[0m/[32mT[0m[32m]: if (= __x1__["Type"] CONST_normal) ... else ...[0m
+[31m- 19331 [-]   : __x1__ = __x1__["Value"][0m
+[32m+ 19332 [-]   : return __x1__[0m
+[32m+ 19333 [-]   : {}[0m
+[32m+ 19334 [-]   : let num = __x1__[0m
+[32m+ 19335 [[32mT[0m/[32mT[0m[32m]: if (= num NaN) ... else ...[0m
+[32m+ 19336 [-]   : { ... }[0m
+[32m+ 19337 [-]   : app __x2__ = (WrapCompletion true)[0m
+[32m+ 19338 [-]   : return __x2__[0m
+[32m+ 19339 [-]   : { ... }[0m
+[32m+ 19340 [-]   : app __x3__ = (WrapCompletion false)[0m
+[32m+ 19341 [-]   : return __x3__[0m

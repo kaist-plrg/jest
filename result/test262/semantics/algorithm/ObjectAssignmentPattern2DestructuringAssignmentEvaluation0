@@ -1,0 +1,22 @@
+[33mObjectAssignmentPattern2DestructuringAssignmentEvaluation0[0m
+[33m- Inst: 18 / 19 (94.74%)[0m
+[33m- Cond: 7 / 8 (87.50%)[0m
+[32m+ 23627 [-]   : { ... }[0m
+[32m+ 23628 [-]   : app __x0__ = (RequireObjectCoercible value)[0m
+[32m+ 23629 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
+[32m+ 23630 [[31mF[0m/[32mT[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
+[31m- 23631 [-]   : __x0__ = __x0__["Value"][0m
+[32m+ 23632 [-]   : return __x0__[0m
+[32m+ 23633 [-]   : {}[0m
+[32m+ 23634 [-]   : __x0__[0m
+[32m+ 23635 [-]   : access __x1__ = (AssignmentPropertyList "PropertyDestructuringAssignmentEvaluation")[0m
+[32m+ 23636 [-]   : app __x2__ = (__x1__ value)[0m
+[32m+ 23637 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
+[32m+ 23638 [[32mT[0m/[32mT[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
+[32m+ 23639 [-]   : __x2__ = __x2__["Value"][0m
+[32m+ 23640 [-]   : return __x2__[0m
+[32m+ 23641 [-]   : {}[0m
+[32m+ 23642 [-]   : __x2__[0m
+[32m+ 23643 [-]   : app __x3__ = (NormalCompletion CONST_empty)[0m
+[32m+ 23644 [-]   : app __x4__ = (WrapCompletion __x3__)[0m
+[32m+ 23645 [-]   : return __x4__[0m
