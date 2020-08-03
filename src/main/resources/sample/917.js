@@ -1,1 +1,1 @@
-Promise . prototype . catch . call ( 1 ) ;
+ReferenceError ( 0 ) ;

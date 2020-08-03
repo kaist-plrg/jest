@@ -1,1 +1,1 @@
-Object . keys ( 0 ) ;
+String . prototype . slice . call ( 1 , 0 , 0 ) ;

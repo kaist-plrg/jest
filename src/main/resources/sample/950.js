@@ -1,1 +1,0 @@
-String . prototype . charCodeAt . call ( 1 , 0 ) ;

@@ -1,1 +1,1 @@
-Object . freeze ( 0 ) ;
+String . prototype . concat . call ( 1 ) ;

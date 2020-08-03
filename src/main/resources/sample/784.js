@@ -1,1 +1,1 @@
-BigInt . prototype . toString . call ( 1 ) ;
+Map . prototype . set . call ( 1 , 0 , 0 ) ;

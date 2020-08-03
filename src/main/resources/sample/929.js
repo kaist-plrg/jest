@@ -1,1 +1,1 @@
-Set . prototype . delete . call ( 1 ) ;
+encodeURIComponent ( 0 ) ;

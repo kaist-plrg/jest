@@ -1,1 +1,1 @@
-Promise . allSettled ( ) ;
+WeakSet ( 0 ) ;

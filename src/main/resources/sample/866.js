@@ -1,1 +1,1 @@
-Object . getOwnPropertyDescriptors ( ) ;
+String . prototype . indexOf . call ( 1 , 0 ) ;

@@ -1,1 +1,1 @@
-Array . from ( ) ;
+Array ( 0 , 0 ) ;

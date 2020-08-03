@@ -1,1 +1,1 @@
-Set ( ) ;
+parseFloat ( 0 ) ;

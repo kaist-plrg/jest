@@ -1,1 +1,1 @@
-Number . prototype . toPrecision . call ( 1 , 0 ) ;
+Set ( 0 ) ;

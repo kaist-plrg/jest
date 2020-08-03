@@ -1,1 +1,1 @@
-Promise . race ( ) ;
+WeakSet . prototype . delete . call ( 1 , 0 ) ;

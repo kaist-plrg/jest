@@ -1,1 +1,1 @@
-Number . prototype . toFixed . call ( 1 ) ;
+Promise . prototype . finally . call ( 1 , 0 ) ;

@@ -1,1 +1,1 @@
-Promise ( ) ;
+WeakMap . prototype . get . call ( 1 , 0 ) ;

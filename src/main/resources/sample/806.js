@@ -1,1 +1,1 @@
-Map ( 0 ) ;
+Object . freeze ( 0 ) ;

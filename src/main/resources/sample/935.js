@@ -1,1 +1,0 @@
-Set . prototype . has . call ( 1 ) ;

@@ -1,1 +1,1 @@
-Object . is ( 0 ) ;
+String . prototype . normalize . call ( 1 ) ;

@@ -1,1 +1,1 @@
-Object . create ( ) ;
+String ( 0 ) ;

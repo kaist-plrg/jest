@@ -1,1 +1,1 @@
-Array . prototype . some . call ( 1 ) ;
+Boolean ( 0 ) ;

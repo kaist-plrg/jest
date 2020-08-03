@@ -1,1 +1,1 @@
-Set . prototype . add . call ( 1 ) ;
+decodeURI ( 0 ) ;

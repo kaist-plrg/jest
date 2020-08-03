@@ -1,1 +1,1 @@
-Promise . resolve ( ) ;
+EvalError ( 0 ) ;

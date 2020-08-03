@@ -1,1 +1,1 @@
-Object . setPrototypeOf ( 0 , 0 ) ;
+String . prototype . trim . call ( 1 ) ;

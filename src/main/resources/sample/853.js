@@ -1,1 +1,1 @@
-Object . defineProperty ( ) ;
+String . fromCodePoint ( 0 , 0 ) ;

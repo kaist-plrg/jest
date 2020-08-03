@@ -1,1 +1,1 @@
-Map . prototype . keys . call ( 1 ) ;
+Object . preventExtensions ( 0 ) ;

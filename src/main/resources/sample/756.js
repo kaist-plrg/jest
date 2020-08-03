@@ -1,1 +1,1 @@
-Array . prototype . reverse . call ( 1 ) ;
+BigInt . asIntN ( 0 , 0 ) ;

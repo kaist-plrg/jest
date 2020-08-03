@@ -1,1 +1,1 @@
-Function . prototype . bind . call ( 1 ) ;
+Number . prototype . valueOf . call ( 1 ) ;

@@ -1,1 +1,1 @@
-Object . values ( ) ;
+String . prototype . trimEnd . call ( 1 ) ;

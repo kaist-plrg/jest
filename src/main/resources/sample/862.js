@@ -1,1 +1,1 @@
-Object . fromEntries ( 0 ) ;
+String . prototype . endsWith . call ( 1 , 0 ) ;

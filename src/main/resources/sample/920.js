@@ -1,1 +1,1 @@
-Promise . prototype . finally . call ( 1 , 0 ) ;
+URIError ( 0 ) ;

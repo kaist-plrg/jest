@@ -1,1 +1,1 @@
-Object . keys ( ) ;
+String . prototype . search . call ( 1 , 0 ) ;

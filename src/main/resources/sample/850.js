@@ -1,1 +1,1 @@
-Object . defineProperties ( ) ;
+String . fromCharCode ( 0 , 0 ) ;

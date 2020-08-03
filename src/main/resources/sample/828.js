@@ -1,1 +1,1 @@
-Number . isInteger ( 0 ) ;
+Promise ( 0 ) ;

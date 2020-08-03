@@ -1,1 +1,1 @@
-Number . isSafeInteger ( ) ;
+Promise . race ( 0 ) ;

@@ -1,1 +1,1 @@
-Object . setPrototypeOf ( ) ;
+String . prototype . toLowerCase . call ( 1 ) ;

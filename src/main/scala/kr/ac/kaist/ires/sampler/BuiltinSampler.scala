@@ -11,12 +11,12 @@ object BuiltinSampler extends Sampler with DefaultJsonProtocol {
 
   def infoToScripts(i: BuiltinInfo): List[String] = i match {
     case BuiltinInfo(f, p, o, r, false, true, _) => {
-      val max = if (r) p + 1 else p + o
-      (0 to max).map(n => s"$f(${List.fill(n)("0").mkString(", ")})").toList
+      val max = if (r) p + 2 else p + o
+      (p to max).map(n => s"$f(${List.fill(n)("0").mkString(", ")})").toList
     }
     case BuiltinInfo(f, p, o, r, true, true, _) => {
       val max = if (r) p + 1 else p + o
-      (0 to max).map(n => s"$f.call(1${if (n > 0) ", " else ""}${List.fill(n)("0").mkString(", ")})").toList
+      (p to max).map(n => s"$f.call(1${if (n > 0) ", " else ""}${List.fill(n)("0").mkString(", ")})").toList
     }
     case BuiltinInfo(name, _, _, _, _, false, _) => {
       List("var x = " + name)

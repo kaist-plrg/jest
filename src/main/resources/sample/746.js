@@ -1,1 +1,1 @@
-Array . prototype . map . call ( 1 , 0 , 0 ) ;
+Array . prototype . splice . call ( 1 , 0 , 0 , 0 ) ;

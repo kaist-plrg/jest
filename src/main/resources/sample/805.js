@@ -1,1 +1,1 @@
-Map ( ) ;
+Object . entries ( 0 ) ;

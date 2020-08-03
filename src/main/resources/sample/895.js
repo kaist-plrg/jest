@@ -1,1 +1,1 @@
-Object . prototype . hasOwnProperty . call ( 1 , 0 ) ;
+String . prototype [ Symbol . iterator ] . call ( 1 ) ;

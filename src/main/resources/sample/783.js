@@ -1,1 +1,1 @@
-BigInt . asUintN ( 0 , 0 ) ;
+Map . prototype . keys . call ( 1 ) ;

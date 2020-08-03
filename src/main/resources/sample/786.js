@@ -1,1 +1,1 @@
-BigInt . prototype . valueOf . call ( 1 ) ;
+Number ( 0 ) ;

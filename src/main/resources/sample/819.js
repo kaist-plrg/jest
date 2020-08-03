@@ -1,1 +1,1 @@
-Map . prototype . set . call ( 1 ) ;
+Object . seal ( 0 ) ;

@@ -1,1 +1,1 @@
-Object . assign ( 0 , 0 ) ;
+Set . prototype . values . call ( 1 ) ;

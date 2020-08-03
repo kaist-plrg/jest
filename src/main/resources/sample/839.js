@@ -1,1 +1,1 @@
-Number . prototype . toString . call ( 1 ) ;
+Set . prototype . add . call ( 1 , 0 ) ;

@@ -1,1 +1,1 @@
-Number . isInteger ( ) ;
+Object . prototype . valueOf . call ( 1 ) ;

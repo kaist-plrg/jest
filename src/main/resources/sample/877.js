@@ -1,1 +1,1 @@
-Object . isExtensible ( ) ;
+String . prototype . padEnd . call ( 1 , 0 ) ;

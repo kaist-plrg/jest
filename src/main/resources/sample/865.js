@@ -1,1 +1,1 @@
-Object . getOwnPropertyDescriptor ( 0 , 0 ) ;
+String . prototype . includes . call ( 1 , 0 , 0 ) ;

@@ -1,1 +1,1 @@
-Array . prototype . slice . call ( 1 , 0 , 0 ) ;
+BigInt . prototype . valueOf . call ( 1 ) ;

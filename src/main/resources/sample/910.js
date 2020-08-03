@@ -1,1 +1,1 @@
-Promise . allSettled ( 0 ) ;
+WeakSet . prototype . add . call ( 1 , 0 ) ;

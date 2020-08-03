@@ -1,1 +1,1 @@
-Object . preventExtensions ( 0 ) ;
+String . prototype . startsWith . call ( 1 , 0 ) ;

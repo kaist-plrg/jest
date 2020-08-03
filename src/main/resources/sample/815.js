@@ -1,1 +1,1 @@
-Map . prototype . get . call ( 1 , 0 ) ;
+Object . isFrozen ( 0 ) ;

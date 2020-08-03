@@ -1,1 +1,1 @@
-Object . isFrozen ( ) ;
+String . prototype . padStart . call ( 1 , 0 ) ;

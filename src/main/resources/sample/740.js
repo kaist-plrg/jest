@@ -1,1 +1,1 @@
-Array . prototype . keys . call ( 1 ) ;
+Array . prototype . reverse . call ( 1 ) ;

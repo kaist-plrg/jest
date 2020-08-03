@@ -1,1 +1,1 @@
-Object . defineProperty ( 0 ) ;
+String . raw ( 0 ) ;

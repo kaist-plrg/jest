@@ -1,1 +1,1 @@
-Function . prototype . call . call ( 1 ) ;
+Object . assign ( 0 ) ;

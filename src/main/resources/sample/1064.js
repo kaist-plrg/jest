@@ -1,1 +1,0 @@
-decodeURI ( 0 ) ;

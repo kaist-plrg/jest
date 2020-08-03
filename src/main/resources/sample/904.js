@@ -1,1 +1,1 @@
-Object . prototype . valueOf . call ( 1 ) ;
+WeakMap . prototype . delete . call ( 1 , 0 ) ;

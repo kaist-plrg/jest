@@ -1,1 +1,1 @@
-Map . prototype . delete . call ( 1 ) ;
+Object . getOwnPropertyDescriptor ( 0 , 0 ) ;

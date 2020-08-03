@@ -1,1 +1,1 @@
-Object . create ( 0 ) ;
+String . fromCharCode ( ) ;

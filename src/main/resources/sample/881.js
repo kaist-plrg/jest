@@ -1,1 +1,1 @@
-Object . isSealed ( ) ;
+String . prototype . repeat . call ( 1 , 0 ) ;

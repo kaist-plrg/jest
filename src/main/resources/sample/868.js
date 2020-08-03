@@ -1,1 +1,1 @@
-Object . getOwnPropertyNames ( ) ;
+String . prototype . lastIndexOf . call ( 1 , 0 ) ;

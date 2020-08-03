@@ -1,1 +1,1 @@
-Object . setPrototypeOf ( 0 ) ;
+String . prototype . toString . call ( 1 ) ;

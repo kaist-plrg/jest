@@ -1,1 +1,1 @@
-Array . prototype . splice . call ( 1 , 0 , 0 ) ;
+Function ( 0 , 0 ) ;

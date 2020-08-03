@@ -1,1 +1,1 @@
-Object . freeze ( ) ;
+String . prototype . codePointAt . call ( 1 , 0 ) ;

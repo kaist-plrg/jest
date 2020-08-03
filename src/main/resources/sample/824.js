@@ -1,1 +1,1 @@
-Number ( 0 ) ;
+Object . prototype . propertyIsEnumerable . call ( 1 , 0 ) ;

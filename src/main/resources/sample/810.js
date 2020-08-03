@@ -1,1 +1,1 @@
-Map . prototype . entries . call ( 1 ) ;
+Object . getOwnPropertyNames ( 0 ) ;

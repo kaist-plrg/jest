@@ -1,1 +1,1 @@
-Object ( 0 ) ;
+Set . prototype . forEach . call ( 1 , 0 ) ;

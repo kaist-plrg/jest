@@ -1,1 +1,1 @@
-Map . prototype . values . call ( 1 ) ;
+Object . prototype . hasOwnProperty . call ( 1 , 0 ) ;

@@ -1,1 +1,1 @@
-Number . isSafeInteger ( 0 ) ;
+Promise . reject ( 0 ) ;

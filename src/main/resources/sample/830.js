@@ -1,1 +1,1 @@
-Number . isNaN ( 0 ) ;
+Promise . allSettled ( 0 ) ;

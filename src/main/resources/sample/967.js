@@ -1,1 +1,0 @@
-String . prototype . localeCompare . call ( 1 ) ;

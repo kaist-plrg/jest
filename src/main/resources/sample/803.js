@@ -1,1 +1,1 @@
-Function . prototype [ Symbol . hasInstance ] . call ( 1 ) ;
+Object . defineProperties ( 0 , 0 ) ;

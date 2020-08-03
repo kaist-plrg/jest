@@ -1,1 +1,1 @@
-Number . isNaN ( ) ;
+Promise . all ( 0 ) ;
