@@ -1,1 +1,1 @@
-BigInt . asUintN ( 0 , 0 ) ;
+Array . prototype . toString . call ( 1 ) ;

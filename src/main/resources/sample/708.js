@@ -1,1 +1,1 @@
-Array . prototype . every . call ( 1 , 0 , 0 ) ;
+Array . of ( 0 , 0 ) ;

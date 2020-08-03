@@ -1,1 +1,1 @@
-Map ( 0 ) ;
+Function . prototype . bind . call ( 1 , 0 ) ;

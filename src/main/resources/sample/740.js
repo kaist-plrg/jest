@@ -1,1 +1,1 @@
-Array . prototype . reverse . call ( 1 ) ;
+Array . prototype . pop . call ( 1 ) ;

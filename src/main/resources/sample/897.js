@@ -1,1 +1,1 @@
-Symbol . for ( 0 ) ;
+String . prototype . toString . call ( 1 ) ;

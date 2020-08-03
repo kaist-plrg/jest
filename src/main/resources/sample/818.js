@@ -1,1 +1,1 @@
-Object . preventExtensions ( 0 ) ;
+Object . getOwnPropertySymbols ( 0 ) ;

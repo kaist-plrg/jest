@@ -1,1 +1,1 @@
-Array . prototype . lastIndexOf . call ( 1 , 0 , 0 ) ;
+Array . prototype . includes . call ( 1 , 0 ) ;

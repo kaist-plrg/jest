@@ -1,1 +1,1 @@
-Object . isSealed ( 0 ) ;
+Object . getOwnPropertyDescriptors ( 0 ) ;

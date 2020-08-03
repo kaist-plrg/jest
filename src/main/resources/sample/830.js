@@ -1,1 +1,1 @@
-Promise . allSettled ( 0 ) ;
+Object . prototype . isPrototypeOf . call ( 1 , 0 ) ;

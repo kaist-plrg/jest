@@ -1,1 +1,1 @@
-String . prototype . toString . call ( 1 ) ;
+String . prototype . search . call ( 1 , 0 ) ;

@@ -1,1 +1,1 @@
-Object . prototype . toString . call ( 1 ) ;
+Object . seal ( 0 ) ;

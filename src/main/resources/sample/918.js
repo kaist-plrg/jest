@@ -1,1 +1,1 @@
-SyntaxError ( 0 ) ;
+WeakSet . prototype . delete . call ( 1 , 0 ) ;

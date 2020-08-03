@@ -1,1 +1,1 @@
-Set . prototype . entries . call ( 1 ) ;
+Promise . prototype . finally . call ( 1 , 0 ) ;

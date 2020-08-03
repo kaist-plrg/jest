@@ -1,1 +1,1 @@
-Map . prototype . forEach . call ( 1 , 0 ) ;
+Function . prototype . toString . call ( 1 ) ;

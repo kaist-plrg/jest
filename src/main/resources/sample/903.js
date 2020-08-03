@@ -1,1 +1,1 @@
-WeakMap ( 0 ) ;
+Symbol ( ) ;

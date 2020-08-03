@@ -1,1 +1,1 @@
-encodeURI ( 0 ) ;
+eval ( 0 ) ;

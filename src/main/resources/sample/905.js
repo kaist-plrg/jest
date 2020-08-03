@@ -1,1 +1,1 @@
-WeakMap . prototype . get . call ( 1 , 0 ) ;
+Symbol . keyFor ( 0 ) ;

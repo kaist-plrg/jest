@@ -1,1 +1,1 @@
-Number . isInteger ( 0 ) ;
+Map . prototype . get . call ( 1 , 0 ) ;

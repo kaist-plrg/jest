@@ -1,1 +1,1 @@
-parseInt ( 0 , 0 ) ;
+SyntaxError ( 0 ) ;

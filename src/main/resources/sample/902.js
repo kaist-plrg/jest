@@ -1,1 +1,1 @@
-WeakMap ( ) ;
+String . prototype [ Symbol . iterator ] . call ( 1 ) ;

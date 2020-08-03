@@ -1,1 +1,1 @@
-Object . assign ( 0 , 0 , 0 ) ;
+Number . prototype . toString . call ( 1 ) ;

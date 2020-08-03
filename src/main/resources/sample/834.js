@@ -1,1 +1,1 @@
-Promise . prototype . catch . call ( 1 , 0 ) ;
+Object . prototype . valueOf . call ( 1 ) ;

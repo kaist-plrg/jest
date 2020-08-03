@@ -1,1 +1,1 @@
-Promise ( 0 ) ;
+Object . values ( 0 ) ;

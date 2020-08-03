@@ -1,1 +1,1 @@
-decodeURI ( 0 ) ;
+TypeError ( 0 ) ;

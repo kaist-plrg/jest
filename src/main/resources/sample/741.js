@@ -1,1 +1,1 @@
-Array . prototype . shift . call ( 1 ) ;
+Array . prototype . push . call ( 1 ) ;

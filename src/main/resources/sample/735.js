@@ -1,1 +1,1 @@
-Array . prototype . push . call ( 1 , 0 ) ;
+Array . prototype . keys . call ( 1 ) ;

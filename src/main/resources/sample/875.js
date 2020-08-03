@@ -1,1 +1,1 @@
-String . prototype . normalize . call ( 1 ) ;
+String . prototype . lastIndexOf . call ( 1 , 0 ) ;

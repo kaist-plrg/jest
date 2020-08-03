@@ -1,1 +1,1 @@
-WeakMap . prototype . has . call ( 1 , 0 ) ;
+Symbol . prototype . toString . call ( 1 ) ;

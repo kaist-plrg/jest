@@ -1,1 +1,1 @@
-WeakMap . prototype . set . call ( 1 , 0 , 0 ) ;
+Symbol . prototype . valueOf . call ( 1 ) ;

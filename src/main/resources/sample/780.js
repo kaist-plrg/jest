@@ -1,1 +1,1 @@
-Map . prototype . forEach . call ( 1 , 0 , 0 ) ;
+Function . prototype [ Symbol . hasInstance ] . call ( 1 , 0 ) ;

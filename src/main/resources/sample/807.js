@@ -1,1 +1,1 @@
-Object . fromEntries ( 0 ) ;
+Object . assign ( 0 , 0 ) ;

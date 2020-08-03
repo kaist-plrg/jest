@@ -1,1 +1,1 @@
-Set . prototype . clear . call ( 1 ) ;
+Promise . resolve ( 0 ) ;

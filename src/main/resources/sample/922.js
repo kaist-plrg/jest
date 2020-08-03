@@ -1,1 +1,1 @@
-isFinite ( 0 ) ;
+EvalError ( 0 ) ;

@@ -1,1 +1,1 @@
-Object . isExtensible ( 0 ) ;
+Object . fromEntries ( 0 ) ;

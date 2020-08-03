@@ -1,1 +1,1 @@
-String . prototype . indexOf . call ( 1 , 0 ) ;
+String . prototype . codePointAt . call ( 1 , 0 ) ;

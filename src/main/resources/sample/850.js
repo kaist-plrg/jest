@@ -1,1 +1,1 @@
-String . fromCharCode ( 0 , 0 ) ;
+Set . prototype . forEach . call ( 1 , 0 ) ;

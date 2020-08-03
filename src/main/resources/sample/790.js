@@ -1,1 +1,1 @@
-Number . isSafeInteger ( 0 ) ;
+Map . prototype . keys . call ( 1 ) ;

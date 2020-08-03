@@ -1,1 +1,1 @@
-Array . prototype . reduce . call ( 1 , 0 ) ;
+Array . prototype . lastIndexOf . call ( 1 , 0 ) ;

@@ -1,1 +1,1 @@
-Symbol . keyFor ( 0 ) ;
+String . prototype . trim . call ( 1 ) ;

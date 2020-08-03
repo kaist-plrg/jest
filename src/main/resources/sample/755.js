@@ -1,1 +1,1 @@
-BigInt ( 0 ) ;
+Array . prototype . toLocaleString . call ( 1 , 0 ) ;

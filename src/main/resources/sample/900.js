@@ -1,1 +1,1 @@
-Symbol . prototype . valueOf . call ( 1 ) ;
+String . prototype . trimStart . call ( 1 ) ;

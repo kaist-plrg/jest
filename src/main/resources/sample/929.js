@@ -1,1 +1,1 @@
-encodeURIComponent ( 0 ) ;
+isFinite ( 0 ) ;

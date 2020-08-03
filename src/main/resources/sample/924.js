@@ -1,1 +1,1 @@
-parseFloat ( 0 ) ;
+ReferenceError ( 0 ) ;

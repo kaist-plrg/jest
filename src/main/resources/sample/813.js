@@ -1,1 +1,1 @@
-Object . is ( 0 , 0 ) ;
+Object . freeze ( 0 ) ;

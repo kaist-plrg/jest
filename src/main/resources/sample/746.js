@@ -1,1 +1,1 @@
-Array . prototype . splice . call ( 1 , 0 , 0 , 0 ) ;
+Array . prototype . reduceRight . call ( 1 , 0 , 0 ) ;

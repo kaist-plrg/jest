@@ -1,1 +1,1 @@
-Promise . resolve ( 0 ) ;
+Object . prototype . toString . call ( 1 ) ;

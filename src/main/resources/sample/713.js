@@ -1,1 +1,1 @@
-Array . prototype . find . call ( 1 , 0 ) ;
+Array . prototype . entries . call ( 1 ) ;

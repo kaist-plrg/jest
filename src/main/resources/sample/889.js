@@ -1,1 +1,1 @@
-String . prototype . toLowerCase . call ( 1 ) ;
+String . prototype . replace . call ( 1 , 0 , 0 ) ;

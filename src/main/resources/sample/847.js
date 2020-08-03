@@ -1,1 +1,1 @@
-String ( 0 ) ;
+Set . prototype . clear . call ( 1 ) ;

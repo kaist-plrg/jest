@@ -1,1 +1,1 @@
-String . prototype . charAt . call ( 1 , 0 ) ;
+String . fromCharCode ( 0 , 0 ) ;

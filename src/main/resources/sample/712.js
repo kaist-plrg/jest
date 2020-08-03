@@ -1,1 +1,1 @@
-Array . prototype . filter . call ( 1 , 0 , 0 ) ;
+Array . prototype . copyWithin . call ( 1 , 0 , 0 , 0 ) ;

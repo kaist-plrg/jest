@@ -1,1 +1,1 @@
-Function . prototype [ Symbol . hasInstance ] . call ( 1 , 0 ) ;
+Function ( 0 , 0 ) ;

@@ -1,1 +1,1 @@
-Array . prototype . concat . call ( 1 ) ;
+Array . from ( 0 ) ;

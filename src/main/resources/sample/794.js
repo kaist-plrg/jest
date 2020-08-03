@@ -1,1 +1,1 @@
-Number . prototype . toString . call ( 1 ) ;
+Numbe . isFinite ( 0 ) ;

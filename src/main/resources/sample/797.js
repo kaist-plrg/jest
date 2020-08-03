@@ -1,1 +1,1 @@
-Object ( ) ;
+Number . isSafeInteger ( 0 ) ;

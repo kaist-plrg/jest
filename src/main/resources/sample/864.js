@@ -1,1 +1,1 @@
-String . prototype . includes . call ( 1 , 0 ) ;
+String . prototype . charAt . call ( 1 , 0 ) ;

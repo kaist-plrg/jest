@@ -1,1 +1,1 @@
-String . fromCodePoint ( 0 ) ;
+Set . prototype . has . call ( 1 , 0 ) ;

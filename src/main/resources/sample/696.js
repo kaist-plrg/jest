@@ -1,1 +1,1 @@
-Array . from ( 0 , 0 ) ;
+var x = { x : 1 } ; ( { ... x } = x ) ;

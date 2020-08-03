@@ -1,1 +1,1 @@
-String . fromCodePoint ( ) ;
+Set . prototype . forEach . call ( 1 , 0 , 0 ) ;

@@ -1,1 +1,1 @@
-WeakSet . prototype . add . call ( 1 , 0 ) ;
+WeakMap ( 0 ) ;

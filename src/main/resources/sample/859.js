@@ -1,1 +1,1 @@
-String . prototype . codePointAt . call ( 1 , 0 ) ;
+String . fromCodePoint ( 0 ) ;

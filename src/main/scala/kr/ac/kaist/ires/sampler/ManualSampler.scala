@@ -27,8 +27,8 @@ object ManualSampler extends Sampler {
     // - SuperProperty0
     // - SuperProperty1
     "class x extends 42 { constructor() { super() } };",
-    "class x  { x (  ) { this . x0 = super . x ; } } ;",
-    "class x  { x (  ) { this . x0 = super [ 42 ] ; } } ;",
+    "class x  { constructor (  ) { this . x = super . x ; } } ;",
+    "class x  { constructor (  ) { this . x = super [ 42 ] ; } } ;",
     // function parameters
     // - FormalParameterList1
     // - FormalParameters4
@@ -57,6 +57,15 @@ object ManualSampler extends Sampler {
     "delete x[42];",
     "const x = 42;",
     "",
+    // assignment pattern(supplemenatal syntax)
+    "var x = { p: 0 }; ( { p: x } = x );",
+    "var x = [ 1, 2, 3 ]; ( [ x, x ] = x );",
+    "var x = [ 1, 2, 3 ]; ( [ , x ] = x );",
+    "var x = [ 1, 2, 3 ]; ( [ , x, ...x ] = x );",
+    "var x = { x: 1 }; ( { ...x } = x );",
+    // binding element
+    "function x ( [ x ] = [ 1, 2, 3 ] ) { };",
+    "function x ( x = [ 1, 2, 3 ] ) { };",
   // early error(always)
   // - OptionalChain3
   // - OptionalChain7

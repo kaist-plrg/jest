@@ -1,1 +1,1 @@
-Function . prototype . bind . call ( 1 , 0 ) ;
+Boolean ( 0 ) ;

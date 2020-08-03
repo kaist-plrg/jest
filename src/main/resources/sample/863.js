@@ -1,1 +1,1 @@
-String . prototype . endsWith . call ( 1 , 0 , 0 ) ;
+String . raw ( 0 , 0 , 0 ) ;

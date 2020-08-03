@@ -1,1 +1,1 @@
-String . prototype . slice . call ( 1 , 0 , 0 ) ;
+String . prototype . padEnd . call ( 1 , 0 ) ;

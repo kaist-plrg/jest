@@ -1,1 +1,1 @@
-Error ( 0 ) ;
+WeakMap . prototype . has . call ( 1 , 0 ) ;

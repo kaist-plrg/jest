@@ -1,1 +1,1 @@
-String . raw ( 0 ) ;
+String ( 0 ) ;

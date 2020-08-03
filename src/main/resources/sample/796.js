@@ -1,1 +1,1 @@
-Number . prototype . valueOf . call ( 1 ) ;
+Number . isNaN ( 0 ) ;
