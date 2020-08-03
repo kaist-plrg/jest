@@ -115,6 +115,10 @@ object Generator extends DefaultJsonProtocol {
       val target = choose(targetSeq)
       val scriptString = totalVisited(target)
       val uid = target.uid
+
+      logln(s"${k + 1}th iteration: $scriptString")
+      logln(s"target instruction: $uid", false)
+
       val beautified = beautify(insts(uid), detail = false)
       val script = Parser.parse(Parser.Script(Nil), scriptString).get
       val mutators = List[Mutator](
@@ -125,8 +129,6 @@ object Generator extends DefaultJsonProtocol {
         ObjectReplacer(script),
       )
 
-      logln(s"${k + 1}th iteration: $scriptString")
-      logln(s"target instruction: $uid", false)
       var trial = 0
       while (trial < MAX_TRIAL && !add(mutate(mutators))) trial += 1
 
