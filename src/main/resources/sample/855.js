@@ -1,1 +1,1 @@
-Promise . reject ( 0 ) ;
+var x = Map ( 0 ) ;

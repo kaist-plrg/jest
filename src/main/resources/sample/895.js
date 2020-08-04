@@ -1,1 +1,1 @@
-String . prototype . lastIndexOf . call ( null , 0 , 0 ) ;
+var x = Object ( ) ;

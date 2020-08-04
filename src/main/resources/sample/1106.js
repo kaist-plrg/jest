@@ -1,0 +1,1 @@
+var x = parseFloat ( 0 ) ;

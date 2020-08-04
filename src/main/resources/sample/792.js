@@ -1,1 +1,1 @@
-new Map ( ) ;
+var x = Array . prototype . shift . call ( null ) ;

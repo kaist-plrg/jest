@@ -1,0 +1,1 @@
+var x = String . fromCodePoint ( 0 , 0 ) ;

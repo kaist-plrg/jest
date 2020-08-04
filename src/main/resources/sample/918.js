@@ -1,1 +1,1 @@
-String . prototype . trimEnd . call ( null ) ;
+var x = Object . preventExtensions ( 0 ) ;

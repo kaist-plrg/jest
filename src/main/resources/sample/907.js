@@ -1,1 +1,1 @@
-String . prototype . repeat . call ( null , 0 ) ;
+var x = Object . fromEntries ( 0 ) ;

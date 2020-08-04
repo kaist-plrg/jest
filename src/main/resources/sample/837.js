@@ -1,1 +1,1 @@
-Object . isFrozen ( 0 ) ;
+var x = Function ( 0 , 0 ) ;

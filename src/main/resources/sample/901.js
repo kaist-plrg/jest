@@ -1,1 +1,1 @@
-String . prototype . normalize . call ( null ) ;
+var x = Object . assign ( 0 , 0 , 0 ) ;

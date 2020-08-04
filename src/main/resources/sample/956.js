@@ -1,1 +1,1 @@
-new TypeError ( 0 ) ;
+var x = Set . prototype . delete . call ( null , 0 ) ;

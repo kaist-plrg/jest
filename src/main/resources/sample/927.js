@@ -1,1 +1,1 @@
-Symbol . prototype . valueOf . call ( null ) ;
+var x = Object . prototype . propertyIsEnumerable . call ( null , 0 ) ;

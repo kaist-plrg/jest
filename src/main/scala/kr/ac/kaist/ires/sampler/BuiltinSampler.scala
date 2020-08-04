@@ -7,7 +7,6 @@ import spray.json._
 
 object BuiltinSampler extends Sampler with DefaultJsonProtocol {
   case class BuiltinInfo(name: String, param: Int, optional: Int, rest: Boolean, prototype: Boolean, newable: Boolean, callable: Boolean, supported: Boolean)
-  // implicit val BuiltinInfoFormat: JsonFormat[BuiltinInfo] = jsonFormat7(BuiltinInfo)
   implicit object BuiltinInfoFormat extends RootJsonFormat[BuiltinInfo] {
     def read(value: JsValue) = {
       value.asJsObject.getFields("name", "param", "optional", "rest", "prototype", "new", "callable", "supported") match {
@@ -18,7 +17,7 @@ object BuiltinSampler extends Sampler with DefaultJsonProtocol {
     def write(b: BuiltinInfo) = ???
   }
 
-  def infoToScripts(i: BuiltinInfo): List[String] = i match {
+  def infoToScripts(infos: List[BuiltinInfo], i: BuiltinInfo): List[String] = i match {
     case BuiltinInfo(f, p, o, r, false, newable, true, _) => {
       val max = if (r) p + 2 else p + o
       (p to max).toList.flatMap(n => {
@@ -29,18 +28,21 @@ object BuiltinSampler extends Sampler with DefaultJsonProtocol {
     }
     case BuiltinInfo(f, p, o, r, true, _, true, _) => {
       val max = if (r) p + 1 else p + o
-      (p to max).map(n => s"$f.call(null${if (n > 0) ", " else ""}${List.fill(n)("0").mkString(", ")})").toList
+      val constructor = f.split("\\.")(0)
+      val BuiltinInfo(_, cparam, _, _, _, _, _, _) = infos.find(_.name == constructor).get
+      val callees = List(s"new $constructor ( ${List.fill(cparam)("0").mkString(",")} )", "null")
+      (p to max).toList.flatMap(n =>
+        callees.map(c =>
+          s"$f.call($c${if (n > 0) ", " else ""}${List.fill(n)("0").mkString(", ")})"))
     }
-    case BuiltinInfo(name, _, _, _, _, _, false, _) => {
-      List("var x = " + name)
-    }
+    case BuiltinInfo(name, _, _, _, _, _, false, _) => List(name)
   }
 
   val scripts: List[String] = {
     val infos = readJson[List[BuiltinInfo]](s"$RESOURCE_DIR/Builtins.json").filter(_.supported)
-    infos.flatMap(infoToScripts)
+    infos.flatMap(infoToScripts(infos, _)).map(s => s"var x = $s")
   }
 
   def getSample: List[Script] =
-    scripts.map(s => Parser.parse(Parser.Script(Nil), s).get)
+    scripts.map(Parser.parse(Parser.Script(Nil), _).get)
 }

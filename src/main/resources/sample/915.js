@@ -1,1 +1,1 @@
-String . prototype . toLowerCase . call ( null ) ;
+var x = Object . isFrozen ( 0 ) ;

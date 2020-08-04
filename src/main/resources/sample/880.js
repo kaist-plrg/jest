@@ -1,1 +1,1 @@
-String . raw ( 0 ) ;
+var x = Number . isInteger ( 0 ) ;

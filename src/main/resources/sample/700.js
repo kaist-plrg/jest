@@ -1,1 +1,1 @@
-function x ( x = [ 1 , 2 , 3 ] ) { } ; x ( [ ] ) ;
+var x = Array ( ) ;

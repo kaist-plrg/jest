@@ -1,1 +1,1 @@
-Object . defineProperties ( 0 , 0 ) ;
+var x = BigInt . prototype . valueOf . call ( new BigInt ( 0 ) ) ;

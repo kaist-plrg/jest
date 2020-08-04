@@ -1,1 +1,1 @@
-Array . prototype . slice . call ( null , 0 , 0 ) ;
+var x = Array . prototype . forEach . call ( null , 0 , 0 ) ;

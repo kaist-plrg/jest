@@ -1,1 +1,1 @@
-Array . prototype . shift . call ( null ) ;
+var x = Array . prototype . forEach . call ( new Array ( ) , 0 , 0 ) ;

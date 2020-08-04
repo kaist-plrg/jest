@@ -375,7 +375,7 @@
     "optional": 0,
     "rest": false,
     "prototype": false,
-    "new": true,
+    "new": false,
     "callable": true,
     "supported": true
   },
@@ -1735,7 +1735,7 @@
     "optional": 0,
     "rest": false,
     "prototype": false,
-    "new": true,
+    "new": false,
     "callable": true,
     "supported": true
   },

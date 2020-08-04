@@ -1,1 +1,1 @@
-Object . isExtensible ( 0 ) ;
+var x = new Function ( 0 ) ;

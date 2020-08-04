@@ -1,1 +1,1 @@
-Object . prototype . toLocaleString . call ( null , 0 , 0 ) ;
+var x = Function . prototype . call . call ( new Function ( ) , 0 , 0 ) ;

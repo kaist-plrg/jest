@@ -1,1 +1,1 @@
-Number . isSafeInteger ( 0 ) ;
+var x = Array . prototype . toString . call ( null ) ;

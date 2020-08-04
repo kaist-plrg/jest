@@ -1,1 +1,1 @@
-new BigInt ( 0 ) ;
+var x = Array . prototype . lastIndexOf . call ( null , 0 ) ;

@@ -1,1 +1,1 @@
-Array . prototype . pop . call ( null ) ;
+var x = Array . prototype . flat . call ( new Array ( ) , 0 ) ;

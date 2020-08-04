@@ -1,1 +1,1 @@
-parseInt ( 0 , 0 ) ;
+var x = Set . prototype . has . call ( new Set ( ) , 0 ) ;

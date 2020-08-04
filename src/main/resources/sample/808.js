@@ -1,1 +1,1 @@
-Number . isInteger ( 0 ) ;
+var x = Array . prototype . toLocaleString . call ( null , 0 , 0 ) ;

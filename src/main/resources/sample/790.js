@@ -1,1 +1,1 @@
-Function . prototype [ Symbol . hasInstance ] . call ( null , 0 ) ;
+var x = Array . prototype . reverse . call ( null ) ;

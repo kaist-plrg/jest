@@ -1,1 +1,1 @@
-String . prototype . includes . call ( null , 0 ) ;
+var x = Number . prototype . toString . call ( null ) ;

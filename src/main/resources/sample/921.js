@@ -1,1 +1,1 @@
-String . prototype [ Symbol . iterator ] . call ( null ) ;
+var x = Object . values ( 0 ) ;

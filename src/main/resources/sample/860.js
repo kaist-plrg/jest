@@ -1,1 +1,1 @@
-Set ( ) ;
+var x = Map . prototype . delete . call ( null , 0 ) ;

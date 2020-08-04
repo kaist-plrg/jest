@@ -1,1 +1,1 @@
-Object . freeze ( 0 ) ;
+var x = new Boolean ( 0 ) ;

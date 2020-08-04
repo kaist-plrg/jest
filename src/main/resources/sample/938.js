@@ -1,1 +1,1 @@
-new WeakSet ( ) ;
+var x = Promise . race ( 0 ) ;

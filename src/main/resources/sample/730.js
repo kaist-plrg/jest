@@ -1,1 +1,1 @@
-Array . prototype . flat . call ( null , 0 ) ;
+var x = Array . prototype . fill . call ( null , 0 , 0 ) ;

@@ -1,1 +1,1 @@
-Object ( ) ;
+var x = Array . prototype [ Symbol . unscopables ] ;

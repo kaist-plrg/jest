@@ -1,1 +1,1 @@
-Array . prototype . findIndex . call ( null , 0 , 0 ) ;
+var x = Array . prototype . fill . call ( null , 0 ) ;

@@ -1,1 +1,1 @@
-String . prototype . search . call ( null , 0 ) ;
+var x = Object . getOwnPropertyDescriptors ( 0 ) ;

@@ -1,1 +1,1 @@
-Map . prototype . values . call ( null ) ;
+var x = Array . prototype . toLocaleString . call ( null ) ;

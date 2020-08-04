@@ -1,1 +1,1 @@
-new Object ( 0 ) ;
+var x = BigInt . asUintN ( 0 , 0 ) ;

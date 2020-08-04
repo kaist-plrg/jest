@@ -1,1 +1,1 @@
-Promise . prototype . then . call ( null , 0 , 0 ) ;
+var x = Map . prototype . delete . call ( new Map ( ) , 0 ) ;

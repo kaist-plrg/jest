@@ -1,1 +1,1 @@
-new Map ( 0 ) ;
+var x = Array . prototype . slice . call ( null , 0 , 0 ) ;

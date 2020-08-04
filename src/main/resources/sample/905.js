@@ -1,1 +1,1 @@
-String . prototype . padStart . call ( null , 0 ) ;
+var x = Object . entries ( 0 ) ;

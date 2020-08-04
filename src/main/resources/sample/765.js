@@ -1,1 +1,1 @@
-Array . prototype . values . call ( null ) ;
+var x = Array . prototype . keys . call ( new Array ( ) ) ;

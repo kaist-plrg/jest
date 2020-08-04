@@ -1,1 +1,1 @@
-WeakMap . prototype . set . call ( null , 0 , 0 ) ;
+var x = Promise . all ( 0 ) ;

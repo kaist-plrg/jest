@@ -1,1 +1,1 @@
-Object . prototype . valueOf . call ( null ) ;
+var x = Function . prototype . toString . call ( new Function ( ) ) ;

@@ -1,1 +1,1 @@
-WeakSet ( ) ;
+var x = Promise . allSettled ( 0 ) ;

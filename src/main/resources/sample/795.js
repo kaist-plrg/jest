@@ -1,1 +1,1 @@
-Map . prototype . clear . call ( null ) ;
+var x = Array . prototype . some . call ( new Array ( ) , 0 ) ;

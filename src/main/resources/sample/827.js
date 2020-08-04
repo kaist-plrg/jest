@@ -1,1 +1,1 @@
-Object . entries ( 0 ) ;
+var x = Boolean ( 0 ) ;

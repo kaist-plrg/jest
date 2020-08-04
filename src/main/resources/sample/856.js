@@ -1,1 +1,1 @@
-Promise . resolve ( 0 ) ;
+var x = new Map ( 0 ) ;

@@ -1,1 +1,1 @@
-new Error ( 0 ) ;
+var x = Promise . prototype . then . call ( new Promise ( 0 ) , 0 , 0 ) ;

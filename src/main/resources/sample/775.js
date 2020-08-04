@@ -1,1 +1,1 @@
-new Boolean ( 0 ) ;
+var x = Array . prototype . pop . call ( new Array ( ) ) ;

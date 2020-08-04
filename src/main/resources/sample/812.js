@@ -1,1 +1,1 @@
-Number . prototype . toFixed . call ( null , 0 ) ;
+var x = Array . prototype . unshift . call ( null ) ;

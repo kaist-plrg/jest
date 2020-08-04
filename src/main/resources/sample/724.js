@@ -1,1 +1,1 @@
-Array . prototype . filter . call ( null , 0 , 0 ) ;
+var x = Array . prototype . every . call ( null , 0 ) ;

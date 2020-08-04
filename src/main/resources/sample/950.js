@@ -1,1 +1,1 @@
-new RangeError ( 0 ) ;
+var x = new Set ( 0 ) ;

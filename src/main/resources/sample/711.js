@@ -1,1 +1,1 @@
-Array . of ( ) ;
+var x = Array . of ( 0 ) ;

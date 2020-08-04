@@ -1,1 +1,1 @@
-Object . getPrototypeOf ( 0 ) ;
+var x = new Function ( ) ;

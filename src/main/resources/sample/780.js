@@ -1,1 +1,1 @@
-Function ( 0 ) ;
+var x = Array . prototype . push . call ( null , 0 ) ;

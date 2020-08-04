@@ -1,1 +1,1 @@
-Array . prototype . some . call ( null , 0 ) ;
+var x = Array . prototype . includes . call ( new Array ( ) , 0 ) ;

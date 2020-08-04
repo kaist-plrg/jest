@@ -1,1 +1,1 @@
-Object . setPrototypeOf ( 0 , 0 ) ;
+var x = Function . prototype . bind . call ( null , 0 ) ;

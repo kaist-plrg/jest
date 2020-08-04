@@ -1,1 +1,1 @@
-String . fromCodePoint ( 0 ) ;
+var x = new Number ( 0 ) ;

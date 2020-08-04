@@ -1,1 +1,1 @@
-String . prototype . slice . call ( null , 0 , 0 ) ;
+var x = Object . getOwnPropertyNames ( 0 ) ;

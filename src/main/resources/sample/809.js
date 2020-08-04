@@ -1,1 +1,1 @@
-Number . isNaN ( 0 ) ;
+var x = Array . prototype . toString . call ( new Array ( ) ) ;

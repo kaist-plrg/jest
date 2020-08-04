@@ -1,1 +1,1 @@
-Function . prototype . call . call ( null , 0 ) ;
+var x = Array . prototype . reduceRight . call ( new Array ( ) , 0 , 0 ) ;

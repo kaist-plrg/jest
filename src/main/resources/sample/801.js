@@ -1,1 +1,1 @@
-Map . prototype . has . call ( null , 0 ) ;
+var x = Array . prototype . splice . call ( new Array ( ) , 0 , 0 , 0 ) ;

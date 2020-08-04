@@ -1,1 +1,1 @@
-WeakSet . prototype . delete . call ( null , 0 ) ;
+var x = Promise . prototype . catch . call ( null , 0 ) ;

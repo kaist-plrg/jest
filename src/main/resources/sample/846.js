@@ -1,1 +1,1 @@
-Object . prototype . propertyIsEnumerable . call ( null , 0 ) ;
+var x = Function . prototype . call . call ( null , 0 ) ;

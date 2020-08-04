@@ -1,1 +1,1 @@
-new Array ( 0 ) ;
+var x = Array ( 0 , 0 ) ;

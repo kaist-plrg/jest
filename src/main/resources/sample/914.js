@@ -1,1 +1,1 @@
-String . prototype . substring . call ( null , 0 , 0 ) ;
+var x = Object . isExtensible ( 0 ) ;

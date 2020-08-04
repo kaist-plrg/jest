@@ -1,1 +1,1 @@
-Object . getOwnPropertyDescriptor ( 0 , 0 ) ;
+var x = Boolean . prototype . toString . call ( null ) ;

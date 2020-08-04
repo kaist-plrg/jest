@@ -1,1 +1,1 @@
-String . prototype . matchAll . call ( null , 0 ) ;
+var x = Object . assign ( 0 , 0 ) ;

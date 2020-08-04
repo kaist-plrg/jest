@@ -1,1 +1,1 @@
-Promise ( 0 ) ;
+var x = Function . prototype . toString . call ( null ) ;

@@ -1,1 +1,1 @@
-String . prototype . split . call ( null , 0 , 0 ) ;
+var x = Object . getOwnPropertySymbols ( 0 ) ;

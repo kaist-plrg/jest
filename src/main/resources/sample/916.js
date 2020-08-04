@@ -1,1 +1,1 @@
-String . prototype . toString . call ( null ) ;
+var x = Object . isSealed ( 0 ) ;

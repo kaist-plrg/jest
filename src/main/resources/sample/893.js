@@ -1,1 +1,1 @@
-String . prototype . indexOf . call ( null , 0 , 0 ) ;
+var x = Number . prototype . valueOf . call ( new Number ( 0 ) ) ;

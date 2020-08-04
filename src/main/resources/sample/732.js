@@ -1,1 +1,1 @@
-Array . prototype . flatMap . call ( null , 0 , 0 ) ;
+var x = Array . prototype . filter . call ( null , 0 ) ;

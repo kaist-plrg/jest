@@ -1,1 +1,1 @@
-Number . prototype . toPrecision . call ( null , 0 ) ;
+var x = Array . prototype . unshift . call ( new Array ( ) , 0 ) ;

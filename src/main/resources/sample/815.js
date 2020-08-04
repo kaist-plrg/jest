@@ -1,1 +1,1 @@
-Number . prototype . toString . call ( null , 0 ) ;
+var x = Array . prototype . values . call ( new Array ( ) ) ;

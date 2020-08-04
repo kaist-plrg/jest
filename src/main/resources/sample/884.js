@@ -1,1 +1,1 @@
-String . prototype . charCodeAt . call ( null , 0 ) ;
+var x = Number . prototype . toExponential . call ( null , 0 ) ;

@@ -1,1 +1,1 @@
-WeakMap . prototype . delete . call ( null , 0 ) ;
+var x = Object . prototype . valueOf . call ( null ) ;

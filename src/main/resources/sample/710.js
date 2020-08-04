@@ -1,1 +1,1 @@
-Array . isArray ( 0 ) ;
+var x = Array . of ( ) ;

@@ -1,1 +1,1 @@
-Boolean . prototype . valueOf . call ( null ) ;
+var x = Array . prototype . push . call ( new Array ( ) ) ;

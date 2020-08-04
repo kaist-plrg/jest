@@ -1,1 +1,1 @@
-Number . prototype . valueOf . call ( null ) ;
+var x = Array . prototype . values . call ( null ) ;

@@ -1,1 +1,1 @@
-String . prototype . startsWith . call ( null , 0 ) ;
+var x = Object . getPrototypeOf ( 0 ) ;

@@ -1,1 +1,1 @@
-Array . prototype . splice . call ( null , 0 , 0 , 0 ) ;
+var x = Array . prototype . includes . call ( null , 0 , 0 ) ;

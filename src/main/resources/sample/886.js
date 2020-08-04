@@ -1,1 +1,1 @@
-String . prototype . concat . call ( null ) ;
+var x = Number . prototype . toFixed . call ( null , 0 ) ;

@@ -1,1 +1,1 @@
-new WeakSet ( 0 ) ;
+var x = Promise . resolve ( 0 ) ;

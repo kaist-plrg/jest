@@ -1,1 +1,1 @@
-Object . prototype . hasOwnProperty . call ( null , 0 ) ;
+var x = Function . prototype . bind . call ( null , 0 , 0 ) ;

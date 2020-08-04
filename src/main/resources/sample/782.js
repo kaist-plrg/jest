@@ -1,1 +1,1 @@
-Function ( 0 , 0 ) ;
+var x = Array . prototype . reduce . call ( null , 0 ) ;

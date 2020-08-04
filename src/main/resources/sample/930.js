@@ -1,1 +1,1 @@
-new WeakMap ( ) ;
+var x = Object . prototype . toString . call ( new Object ( ) ) ;

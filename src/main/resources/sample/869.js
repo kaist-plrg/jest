@@ -1,1 +1,1 @@
-Set . prototype . forEach . call ( null , 0 , 0 ) ;
+var x = Map . prototype . has . call ( new Map ( ) , 0 ) ;

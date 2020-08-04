@@ -1,1 +1,1 @@
-String . prototype . concat . call ( null , 0 ) ;
+var x = Number . prototype . toPrecision . call ( new Number ( 0 ) , 0 ) ;

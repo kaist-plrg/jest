@@ -1,1 +1,1 @@
-URIError ( 0 ) ;
+var x = Set . prototype . entries . call ( new Set ( ) ) ;

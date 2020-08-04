@@ -1,1 +1,1 @@
-String . prototype . trim . call ( null ) ;
+var x = Object . keys ( 0 ) ;

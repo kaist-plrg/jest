@@ -1,1 +1,1 @@
-String . prototype . padEnd . call ( null , 0 , 0 ) ;
+var x = Object . defineProperty ( 0 , 0 , 0 ) ;

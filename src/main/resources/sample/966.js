@@ -1,1 +1,1 @@
-encodeURI ( 0 ) ;
+var x = Set . prototype . values . call ( null ) ;

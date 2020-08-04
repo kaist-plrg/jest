@@ -1,1 +1,1 @@
-ReferenceError ( 0 ) ;
+var x = Set . prototype . add . call ( new Set ( ) , 0 ) ;

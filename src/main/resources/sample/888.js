@@ -1,1 +1,1 @@
-String . prototype . endsWith . call ( null , 0 ) ;
+var x = Number . prototype . toPrecision . call ( null , 0 ) ;

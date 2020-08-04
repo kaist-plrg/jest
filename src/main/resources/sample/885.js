@@ -1,1 +1,1 @@
-String . prototype . codePointAt . call ( null , 0 ) ;
+var x = Number . prototype . toFixed . call ( new Number ( 0 ) , 0 ) ;

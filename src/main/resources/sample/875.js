@@ -1,1 +1,1 @@
-String . fromCharCode ( 0 ) ;
+var x = Map . prototype . values . call ( new Map ( ) ) ;

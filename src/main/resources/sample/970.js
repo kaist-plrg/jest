@@ -1,0 +1,1 @@
+var x = String . fromCharCode ( 0 ) ;

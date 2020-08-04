@@ -1,1 +1,1 @@
-Object . is ( 0 , 0 ) ;
+var x = Function ( 0 ) ;

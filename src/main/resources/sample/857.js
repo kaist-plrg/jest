@@ -1,1 +1,1 @@
-Promise . prototype . catch . call ( null , 0 ) ;
+var x = Map . prototype . clear . call ( new Map ( ) ) ;

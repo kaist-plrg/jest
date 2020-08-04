@@ -1,1 +1,1 @@
-Boolean . prototype . toString . call ( null ) ;
+var x = Array . prototype . pop . call ( null ) ;

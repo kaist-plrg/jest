@@ -1,1 +1,1 @@
-Object . prototype . isPrototypeOf . call ( null , 0 ) ;
+var x = Function . prototype . call . call ( new Function ( ) , 0 ) ;

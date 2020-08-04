@@ -1,1 +1,1 @@
-Object . getOwnPropertyNames ( 0 ) ;
+var x = Boolean . prototype . valueOf . call ( null ) ;

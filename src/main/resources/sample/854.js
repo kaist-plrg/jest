@@ -1,1 +1,1 @@
-Promise . race ( 0 ) ;
+var x = new Map ( ) ;

@@ -1,0 +1,1 @@
+var x = String . prototype . match . call ( new String ( 0 ) , 0 ) ;

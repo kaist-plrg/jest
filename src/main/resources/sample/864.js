@@ -1,1 +1,1 @@
-Set . prototype . add . call ( null , 0 ) ;
+var x = Map . prototype . forEach . call ( null , 0 ) ;

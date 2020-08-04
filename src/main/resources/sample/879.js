@@ -1,1 +1,1 @@
-String . fromCodePoint ( 0 , 0 ) ;
+var x = Number . isFinite ( 0 ) ;

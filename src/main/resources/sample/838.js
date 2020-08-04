@@ -1,1 +1,1 @@
-Object . isSealed ( 0 ) ;
+var x = new Function ( 0 , 0 ) ;

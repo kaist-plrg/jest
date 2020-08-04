@@ -1,1 +1,1 @@
-RangeError ( 0 ) ;
+var x = Set ( 0 ) ;

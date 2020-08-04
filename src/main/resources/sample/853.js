@@ -1,1 +1,1 @@
-Promise . allSettled ( 0 ) ;
+var x = Map ( ) ;

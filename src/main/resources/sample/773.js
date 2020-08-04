@@ -1,1 +1,1 @@
-BigInt . prototype . valueOf . call ( null ) ;
+var x = Array . prototype . map . call ( new Array ( ) , 0 , 0 ) ;

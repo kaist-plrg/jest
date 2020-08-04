@@ -1,1 +1,1 @@
-String . prototype . trimStart . call ( null ) ;
+var x = Object . seal ( 0 ) ;

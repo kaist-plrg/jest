@@ -1,1 +1,1 @@
-String . prototype . replace . call ( null , 0 , 0 ) ;
+var x = Object . getOwnPropertyDescriptor ( 0 , 0 ) ;

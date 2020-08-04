@@ -1,1 +1,1 @@
-Object . fromEntries ( 0 ) ;
+var x = Boolean . prototype . toString . call ( new Boolean ( 0 ) ) ;

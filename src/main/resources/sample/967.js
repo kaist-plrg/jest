@@ -1,1 +1,1 @@
-encodeURIComponent ( 0 ) ;
+var x = String ( 0 ) ;

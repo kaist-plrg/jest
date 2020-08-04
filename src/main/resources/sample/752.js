@@ -1,1 +1,1 @@
-Array . prototype . reverse . call ( null ) ;
+var x = Array . prototype . forEach . call ( null , 0 ) ;

@@ -1,1 +1,1 @@
-String . prototype . localeCompare . call ( null , 0 , 0 ) ;
+var x = Object ( 0 ) ;

@@ -1,1 +1,1 @@
-Object . create ( 0 , 0 ) ;
+var x = BigInt . prototype . toString . call ( null , 0 ) ;

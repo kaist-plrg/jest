@@ -1,1 +1,1 @@
-new URIError ( 0 ) ;
+var x = Set . prototype . entries . call ( null ) ;

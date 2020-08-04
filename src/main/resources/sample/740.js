@@ -1,1 +1,1 @@
-Array . prototype . keys . call ( null ) ;
+var x = Array . prototype . findIndex . call ( null , 0 ) ;

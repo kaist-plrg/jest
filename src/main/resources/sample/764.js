@@ -1,1 +1,1 @@
-Array . prototype . unshift . call ( null , 0 ) ;
+var x = Array . prototype . join . call ( null , 0 ) ;

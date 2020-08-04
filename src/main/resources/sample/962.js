@@ -1,1 +1,1 @@
-parseFloat ( 0 ) ;
+var x = Set . prototype . forEach . call ( null , 0 , 0 ) ;

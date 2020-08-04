@@ -1,1 +1,1 @@
-Array . prototype . copyWithin . call ( null , 0 , 0 ) ;
+var x = Array . prototype . concat . call ( null , 0 ) ;

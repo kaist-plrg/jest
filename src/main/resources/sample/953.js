@@ -1,1 +1,1 @@
-SyntaxError ( 0 ) ;
+var x = Set . prototype . clear . call ( new Set ( ) ) ;
