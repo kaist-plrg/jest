@@ -46,11 +46,16 @@ object Generator extends DefaultJsonProtocol {
       nfSimple.flush()
     }
 
-    def add(script: Script): Boolean = {
-      val str = script.toString
+    def addScript(script: Script): Boolean = add(script.toString)
+
+    def add(str: String): Boolean = {
       if (generated contains str) return false
       generated += str
-      log(f"$script%-80s", false)
+      log(f"$str%-80s", false)
+      val script = Parser.parse(Parser.Script(Nil), str) match {
+        case Parser.Success(result, _) => result
+        case _ => return false
+      }
       getVisited(script) match {
         case Left(visited) if !(visited subsetOf totalVisited) =>
           logln(": PASS", false)
@@ -102,7 +107,7 @@ object Generator extends DefaultJsonProtocol {
     tracer.dump(s"$GEN_RES_DIR/syntax")
 
     logln("Running samples...")
-    for (script <- samples) add(script)
+    for (script <- samples) addScript(script)
 
     loadDir.foreach((directory) => {
       logln("Loading generated scripts...")
@@ -131,7 +136,7 @@ object Generator extends DefaultJsonProtocol {
         )
 
         var trial = 0
-        while (trial < MAX_TRIAL && !add(mutate(mutators))) trial += 1
+        while (trial < MAX_TRIAL && !add(mutateString(mutators))) trial += 1
 
         log("result: ")
         if (trial == MAX_TRIAL) {
@@ -226,6 +231,16 @@ object Generator extends DefaultJsonProtocol {
     var mutated = mutator.script
     do mutated = mutator.mutate while (!ValidityChecker(mutated.toString))
     mutated
+  }
+
+  // mutate given JavaScript program(return in String)
+  def mutateString(mutators: List[Mutator]): String =
+    mutateString(weightedChoose(mutators.map(m => (m, m.weight))))
+  def mutateString(mutator: Mutator): String = {
+    recentMutator = Some(mutator)
+    var mutated = mutator.script
+    do mutated = mutator.mutate while (!ValidityChecker(mutated.toString))
+    mutated.toString
   }
 
   // get visited points in ECMAScript
