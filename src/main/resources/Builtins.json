@@ -594,7 +594,7 @@
     "supported": true
   },
   {
-    "name": "Numbe.isFinite",
+    "name": "Number.isFinite",
     "param": 1,
     "optional": 0,
     "rest": false,
