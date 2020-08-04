@@ -8,10 +8,12 @@ trait Target {
       case Some(set) => (set - name).map(KindTarget(uid, _))
       case None => Set()
     }
+    case CompletionTarget(uid, normal) => Set(CompletionTarget(uid, !normal))
   }
   override def toString: String = this match {
     case CondTarget(uid, pass) => s"""$uid,${if (pass) "#t" else "#f"}"""
     case KindTarget(uid, name) => s"""$uid,$name"""
+    case CompletionTarget(uid, normal) => s"""$uid,${if (normal) "NORMAL" else "ABRUPT"}"""
   }
 }
 object Target {
@@ -20,3 +22,4 @@ object Target {
 }
 case class CondTarget(uid: Int, pass: Boolean) extends Target
 case class KindTarget(uid: Int, name: String) extends Target
+case class CompletionTarget(uid: Int, normal: Boolean) extends Target

@@ -15,13 +15,33 @@ class Visited {
   def apply(target: Target): String = _targetCovered(target)
   def contains(target: Target): Boolean = _targetCovered contains target
 
-  // get if the instruction is is-completion conditions
-  def getIfIsCompletion(uid: Int): Option[IIf] = insts(uid) match {
-    case (condInst: IIf) => condInst.cond match {
-      case EIsCompletion(_) => Some(condInst)
-      case _ => None
+  def isCompletionChecker(inst: Inst): Boolean = inst match {
+    case IIf(EIsCompletion(_), _, _) => true
+    case _ => false
+  }
+  def isNormalChecker(inst: Inst): Boolean = inst match {
+    case IIf(EBOp(OEq, _, ERef(RefId(Id("CONST_normal")))), _, _) => true
+    case _ => false
+  }
+  def getCompletionTarget(inst: Inst, bool: Boolean): Option[CompletionTarget] = {
+    if (isCompletionChecker(inst) && !bool) Some(CompletionTarget(inst.uid, true))
+    else if (isNormalChecker(inst)) {
+      val uid = inst.uid
+      val prev = insts(uid - 1)
+      if (isCompletionChecker(prev)) Some(CompletionTarget(uid - 1, bool))
+      else None
+    } else None
+  }
+  def getTarget(inst: Inst, bool: Boolean, updated: Boolean = false): Target = {
+    getCompletionTarget(inst, bool) match {
+      case Some(compTarget @ CompletionTarget(uid, normal)) =>
+        insts(uid + 4) match {
+          case ISeq(Nil) => _instCovered += uid + 4
+          case _ =>
+        }
+        compTarget
+      case None => CondTarget(inst.uid, bool)
     }
-    case _ => None
   }
 
   // add/remove covered instructions
@@ -30,26 +50,13 @@ class Visited {
   // add/remove covered conditions
   def +=(script: String, target: Target): Unit = {
     val uid = target.uid
-    if (uid >= 0) {
-      _targetCovered.get(target) match {
-        case Some(origScript) if origScript.length <= script.length =>
-        case _ => _targetCovered += target -> script
-      }
-      (target, getIfIsCompletion(uid)) match {
-        case (CondTarget(_, true), Some(IIf(c, t, e))) =>
-          _targetCovered += CondTarget(uid, false) -> script
-          _instCovered += e.uid
-        case (CondTarget(_, false), Some(IIf(_, inst @ IIf(_, t, _), _))) =>
-          _targetCovered += CondTarget(inst.uid, true) -> script
-          _targetCovered += CondTarget(uid, true) -> script
-          _instCovered += inst.uid
-          _instCovered += t.uid
-        case _ =>
-      }
+    if (uid >= 0) _targetCovered.get(target) match {
+      case Some(origScript) if origScript.length <= script.length =>
+      case _ => _targetCovered += target -> script
     }
   }
   def +=(script: String, uid: Int, value: Value): Unit = if (uid >= 0) value match {
-    case Bool(b) => this += (script, CondTarget(uid, b))
+    case Bool(b) => this += (script, getTarget(insts(uid), b))
     case Str(str) => this += (script, KindTarget(uid, str))
     case _ =>
   }
@@ -79,8 +86,8 @@ class Visited {
     inst match {
       case (condInst: CondInst) =>
         val cond = beautify(condInst.cond)
-        val thenCovered = this._targetCovered.get(CondTarget(uid, true))
-        val elseCovered = this._targetCovered.get(CondTarget(uid, false))
+        val thenCovered = this._targetCovered.get(getTarget(inst, true))
+        val elseCovered = this._targetCovered.get(getTarget(inst, true))
         Cond(algoName, instStr, covered, cond, thenCovered, elseCovered)
       case _ => Base(algoName, instStr, covered)
     }
