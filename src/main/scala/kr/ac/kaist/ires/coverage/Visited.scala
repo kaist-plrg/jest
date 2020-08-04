@@ -36,9 +36,14 @@ class Visited {
         case _ => _targetCovered += target -> script
       }
       (target, getIfIsCompletion(uid)) match {
-        case (CondTarget(_, pass), Some(IIf(c, t, e))) =>
-          _targetCovered += CondTarget(uid, !pass) -> script
+        case (CondTarget(_, true), Some(IIf(c, t, e))) =>
+          _targetCovered += CondTarget(uid, false) -> script
           _instCovered += e.uid
+        case (CondTarget(_, false), Some(IIf(_, inst @ IIf(_, t, _), _))) =>
+          _targetCovered += CondTarget(inst.uid, true) -> script
+          _targetCovered += CondTarget(uid, true) -> script
+          _instCovered += inst.uid
+          _instCovered += t.uid
         case _ =>
       }
     }
