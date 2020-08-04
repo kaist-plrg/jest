@@ -87,7 +87,7 @@ class Visited {
       case (condInst: CondInst) =>
         val cond = beautify(condInst.cond)
         val thenCovered = this._targetCovered.get(getTarget(inst, true))
-        val elseCovered = this._targetCovered.get(getTarget(inst, true))
+        val elseCovered = this._targetCovered.get(getTarget(inst, false))
         Cond(algoName, instStr, covered, cond, thenCovered, elseCovered)
       case _ => Base(algoName, instStr, covered)
     }
