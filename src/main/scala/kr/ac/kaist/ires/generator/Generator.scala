@@ -24,6 +24,8 @@ object Generator extends DefaultJsonProtocol {
     mkdir(GEN_RES_DIR)
     val nf = getPrintWriter(s"$GEN_RES_DIR/log")
     val nfSimple = getPrintWriter(s"$GEN_RES_DIR/simple_log")
+    val exceptionDirectory = s"$GEN_RES_DIR/exceptions"
+    mkdir(exceptionDirectory)
 
     var total: List[Script] = Nil
     val totalVisited: Visited = new Visited
@@ -115,12 +117,14 @@ object Generator extends DefaultJsonProtocol {
     })
 
     logln("Mutating samples...")
+    var scriptString = ""
+    var uid = -1
     for (k <- 0 until maxIter) {
       try {
         val targetSeq = targets.toSeq
         val target = choose(targetSeq)
-        val scriptString = totalVisited(target)
-        val uid = target.uid
+        scriptString = totalVisited(target)
+        uid = target.uid
 
         logln(s"${k + 1}th iteration: $scriptString")
         logln(s"target instruction: $uid", false)
@@ -148,7 +152,19 @@ object Generator extends DefaultJsonProtocol {
           logIterationSummary(k)
         }
       } catch {
-        case e: Throwable => logln(e.getStackTrace.mkString("\n"))
+        case e: Throwable => {
+          logln(e.getStackTrace.mkString(LINE_SEP))
+
+          val nfException = getPrintWriter(s"$exceptionDirectory/$k.json")
+          val result = Map(
+            ("message" -> e.getStackTrace().mkString(LINE_SEP)),
+            ("originalScript" -> scriptString),
+            ("recentMutator" -> recentMutator.fold("Nothing")(_.name)),
+            ("targetUid" -> uid.toString()),
+          )
+          nfException.println(result.toJson)
+          nfException.close()
+        }
       }
 
       if (((k + 1) % 100) == 0) {
