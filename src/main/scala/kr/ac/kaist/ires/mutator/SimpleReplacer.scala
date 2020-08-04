@@ -8,7 +8,7 @@ import kr.ac.kaist.ires.AST
 case class SimpleReplacer(script: Script) extends Mutator with Walker {
   val name = "SimpleReplacer"
   val weight = IMPORTANT
-  def mutateOption: Option[Script] = Some(SimpleReplacer.walk(script))
+  def mutateOption: Option[Script] = Some(Parser.parse(Parser.Script(Nil), SimpleReplacer.walk(script).toString()).get)
 }
 object SimpleReplacer extends Walker {
   def apply(script: AST): AST = walk(script)
