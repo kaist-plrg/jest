@@ -1,3 +1,30 @@
 \begin{abstract}
-  \inred{TODO}
+  Modern programming follows the continuous integration (CI) and continuous
+  deployment (CD) approach rather than the traditional waterfall model.  Even
+  the development of modern programming languages uses the CI/CD approach to
+  swiftly provide new language features and to adapt new development
+  environments.  Unlike the conventional approaches, in the modern CI/CD
+  approaches, the language specification is no more the Oracle of semantics
+  because both the specification and interpreters (or compilers) can co-evolve.
+  In this setting, both the specification and implementations may have bugs, and
+  guaranteeing their correctness is non-trivial.
+
+  In this paper, we present a novel \textit{N+1-version testing} to resolve the
+  problem.  Unlike the traditional N-version testing, our approach consists of
+  three steps: 1) to automatically synthesize programs guided by the syntax and
+  semantics from the given language specification, 2) to generate conformance
+  tests by injecting assertions to them to check their final program states, and
+  3) to find and localize the specification bugs via executing programs on
+  multiple implementations.  We propose \( \tool \) that performs N+1-version
+  testing for modern JavaScript engines and ECMAScript, which is the
+  specification of JavaScript that describes syntax and semantics in a natural
+  language.  We extended a tool \( \jiset \)\cite{jiset}, which is a JavaScript
+  IR-based semantics extraction toolchain, to obtain mechanized semantics from
+  ECMAScript.  We evaluated our tool with four JavaScript engines that support
+  all modern JavaScript language features and the most recent version of
+  ECMAScript (ES11, 2020).  \( \tool \) automatically synthesized \inred{X,XXX}
+  programs that covered \inred{XX.XX\%} of syntax and \inred{XX.XX\%} of
+  semantics from ES11.  Using the assertion-injected JavaScript programs, our
+  tool found \inred{XX} engine bugs in four different engines and \inred{X}
+  specification bugs in ES11.
 \end{abstract}
