@@ -35,10 +35,7 @@ class Visited {
   def getTarget(inst: Inst, bool: Boolean, updated: Boolean = false): Target = {
     getCompletionTarget(inst, bool) match {
       case Some(compTarget @ CompletionTarget(uid, normal)) =>
-        insts(uid + 4) match {
-          case ISeq(Nil) => _instCovered += uid + 4
-          case _ =>
-        }
+        if (normal && updated) _instCovered ++= Set(uid + 1, uid + 2, uid + 4)
         compTarget
       case None => CondTarget(inst.uid, bool)
     }
@@ -56,7 +53,7 @@ class Visited {
     }
   }
   def +=(script: String, uid: Int, value: Value): Unit = if (uid >= 0) value match {
-    case Bool(b) => this += (script, getTarget(insts(uid), b))
+    case Bool(b) => this += (script, getTarget(insts(uid), b, true))
     case Str(str) => this += (script, KindTarget(uid, str))
     case _ =>
   }
@@ -82,18 +79,20 @@ class Visited {
     val uid = inst.uid
     val algo = instToAlgo(uid)
     val algoName = algo.name
-    val covered = this._instCovered.contains(uid)
+    val covered = _instCovered.contains(uid)
     inst match {
       case (condInst: CondInst) =>
         val cond = beautify(condInst.cond)
-        val thenCovered = this._targetCovered.get(getTarget(inst, true))
-        val elseCovered = this._targetCovered.get(getTarget(inst, false))
+        var thenCovered = _targetCovered.get(getTarget(inst, true))
+        val elseCovered = _targetCovered.get(getTarget(inst, false))
+        if (isCompletionChecker(condInst)) thenCovered.fold(elseCovered)(Some(_))
         Cond(algoName, instStr, covered, cond, thenCovered, elseCovered)
       case _ => Base(algoName, instStr, covered)
     }
   }))
 
-  def getAlgoCoverages: List[AlgoCoverage] =
+  def getAlgoCoverages: List[AlgoCoverage] = {
+    val coverage = getCoverage
     insts
       .toList
       .groupBy(inst => instToAlgo(inst.uid).name)
@@ -101,15 +100,20 @@ class Visited {
         case (name, algoInsts) => {
           val uids = algoInsts.map(_.uid).toSet
           val algoCovered = _instCovered.filter(uids.contains(_))
-          val algoCondCovered = _targetCovered.keySet.flatMap {
-            case CondTarget(uid, pass) if uids.contains(uid) => Some((uid, pass))
-            case _ => None
-          }
+          val algoCondCovered = coverage.cases.zipWithIndex.flatMap {
+            case (Cond(_, _, _, _, thenCovered, elseCovered), uid) =>
+              var set = Set[(Int, Boolean)]()
+              if (thenCovered.isDefined) set += uid -> true
+              if (elseCovered.isDefined) set += uid -> false
+              set
+            case _ => Set()
+          }.toSet
           AlgoCoverage(name, algoInsts, algoCovered, algoCondCovered)
         }
       }
       .toList
       .sortBy(_.name)
+  }
 
   // simple String
   def simpleString: String = s"(${_instCovered.size}, ${_targetCovered.size})"
