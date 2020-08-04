@@ -111,35 +111,39 @@ object Generator extends DefaultJsonProtocol {
 
     logln("Mutating samples...")
     for (k <- 0 until maxIter) {
-      val targetSeq = targets.toSeq
-      val target = choose(targetSeq)
-      val scriptString = totalVisited(target)
-      val uid = target.uid
+      try {
+        val targetSeq = targets.toSeq
+        val target = choose(targetSeq)
+        val scriptString = totalVisited(target)
+        val uid = target.uid
 
-      logln(s"${k + 1}th iteration: $scriptString")
-      logln(s"target instruction: $uid", false)
+        logln(s"${k + 1}th iteration: $scriptString")
+        logln(s"target instruction: $uid", false)
 
-      val beautified = beautify(insts(uid), detail = false)
-      val script = Parser.parse(Parser.Script(Nil), scriptString).get
-      val mutators = List[Mutator](
-        StringLiteralReplacer(uid, script),
-        NearSyntaxReplacer(uid, script),
-        StatementAppender(script),
-        SimpleReplacer(script),
-        ObjectReplacer(script),
-      )
+        val beautified = beautify(insts(uid), detail = false)
+        val script = Parser.parse(Parser.Script(Nil), scriptString).get
+        val mutators = List[Mutator](
+          StringLiteralReplacer(uid, script),
+          NearSyntaxReplacer(uid, script),
+          StatementAppender(script),
+          SimpleReplacer(script),
+          ObjectReplacer(script),
+        )
 
-      var trial = 0
-      while (trial < MAX_TRIAL && !add(mutate(mutators))) trial += 1
+        var trial = 0
+        while (trial < MAX_TRIAL && !add(mutate(mutators))) trial += 1
 
-      log("result: ")
-      if (trial == MAX_TRIAL) {
-        logln("FAILED")
-        failed += target
-      } else {
-        failed -= target
-        logln(totalVisited.simpleString)
-        logIterationSummary(k)
+        log("result: ")
+        if (trial == MAX_TRIAL) {
+          logln("FAILED")
+          failed += target
+        } else {
+          failed -= target
+          logln(totalVisited.simpleString)
+          logIterationSummary(k)
+        }
+      } catch {
+        case e: Throwable => logln(e.getStackTrace.mkString("\n"))
       }
 
       if (((k + 1) % 100) == 0) {
