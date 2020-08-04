@@ -1,1 +1,1 @@
-Array . prototype . slice . call ( 1 , 0 , 0 ) ;
+Array . prototype . reduce . call ( null , 0 , 0 ) ;

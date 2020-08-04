@@ -1,1 +1,1 @@
-Boolean ( 0 ) ;
+new BigInt ( 0 ) ;

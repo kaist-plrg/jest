@@ -1,1 +1,1 @@
-RangeError ( 0 ) ;
+new Symbol ( ) ;

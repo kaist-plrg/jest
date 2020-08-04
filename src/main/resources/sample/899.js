@@ -1,1 +1,1 @@
-String . prototype . trimEnd . call ( 1 ) ;
+String . prototype . match . call ( null , 0 ) ;

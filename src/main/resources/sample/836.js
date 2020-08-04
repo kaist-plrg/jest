@@ -1,1 +1,1 @@
-Promise . all ( 0 ) ;
+Object . isExtensible ( 0 ) ;

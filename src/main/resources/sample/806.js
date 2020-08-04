@@ -1,1 +1,1 @@
-Object . assign ( 0 ) ;
+new Number ( 0 ) ;

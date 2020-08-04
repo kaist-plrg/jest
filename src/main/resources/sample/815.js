@@ -1,1 +1,1 @@
-Object . getOwnPropertyDescriptor ( 0 , 0 ) ;
+Number . prototype . toString . call ( null , 0 ) ;

@@ -1,1 +1,1 @@
-Array . prototype . values . call ( 1 ) ;
+Array . prototype . toLocaleString . call ( null , 0 ) ;

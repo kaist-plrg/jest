@@ -1,1 +1,1 @@
-Object . prototype . isPrototypeOf . call ( 1 , 0 ) ;
+Object . getOwnPropertyDescriptor ( 0 , 0 ) ;

@@ -1,1 +1,1 @@
-Object . prototype . toString . call ( 1 ) ;
+Object . getOwnPropertySymbols ( 0 ) ;

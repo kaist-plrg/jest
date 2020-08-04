@@ -1,1 +1,1 @@
-Number . prototype . toExponential . call ( 1 , 0 ) ;
+Map . prototype . forEach . call ( null , 0 ) ;

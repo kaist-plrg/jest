@@ -1,1 +1,1 @@
-Array . prototype . fill . call ( 1 , 0 , 0 ) ;
+Array . prototype . copyWithin . call ( null , 0 , 0 , 0 ) ;

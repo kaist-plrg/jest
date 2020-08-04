@@ -1,1 +1,1 @@
-WeakSet . prototype . add . call ( 1 , 0 ) ;
+String . prototype . trim . call ( null ) ;

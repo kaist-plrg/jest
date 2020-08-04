@@ -1,1 +1,1 @@
-Number . prototype . toFixed . call ( 1 , 0 ) ;
+Map . prototype . forEach . call ( null , 0 , 0 ) ;

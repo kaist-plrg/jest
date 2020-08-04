@@ -1,1 +1,1 @@
-WeakMap ( 0 ) ;
+String . prototype . slice . call ( null , 0 , 0 ) ;

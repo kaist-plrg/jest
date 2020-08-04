@@ -1,1 +1,1 @@
-Object ( 0 ) ;
+Number ( 0 ) ;

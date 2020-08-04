@@ -1,1 +1,1 @@
-WeakSet ( 0 ) ;
+String . prototype . toString . call ( null ) ;

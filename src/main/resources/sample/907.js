@@ -1,1 +1,1 @@
-Symbol . prototype . valueOf . call ( 1 ) ;
+String . prototype . repeat . call ( null , 0 ) ;

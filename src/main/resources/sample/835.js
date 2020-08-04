@@ -1,1 +1,1 @@
-Promise ( 0 ) ;
+Object . is ( 0 , 0 ) ;

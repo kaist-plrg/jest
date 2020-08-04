@@ -1,1 +1,1 @@
-BigInt . asUintN ( 0 , 0 ) ;
+Array . prototype . unshift . call ( null , 0 ) ;

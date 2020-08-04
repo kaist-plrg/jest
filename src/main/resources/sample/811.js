@@ -1,1 +1,1 @@
-Object . defineProperty ( 0 , 0 , 0 ) ;
+Number . prototype . toExponential . call ( null , 0 ) ;

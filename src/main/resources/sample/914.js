@@ -1,1 +1,1 @@
-WeakMap . prototype . set . call ( 1 , 0 , 0 ) ;
+String . prototype . substring . call ( null , 0 , 0 ) ;

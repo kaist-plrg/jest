@@ -1,1 +1,1 @@
-decodeURIComponent ( 0 ) ;
+WeakMap . prototype . get . call ( null , 0 ) ;

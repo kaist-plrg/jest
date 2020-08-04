@@ -1,1 +1,1 @@
-Number . isFinite ( 0 ) ;
+new Map ( 0 ) ;

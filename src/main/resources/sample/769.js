@@ -1,1 +1,1 @@
-Boolean . prototype . toString . call ( 1 ) ;
+BigInt . asIntN ( 0 , 0 ) ;

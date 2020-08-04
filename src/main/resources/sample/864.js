@@ -1,1 +1,1 @@
-String . prototype . charAt . call ( 1 , 0 ) ;
+Set . prototype . add . call ( null , 0 ) ;

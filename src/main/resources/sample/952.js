@@ -1,0 +1,1 @@
+new ReferenceError ( 0 ) ;

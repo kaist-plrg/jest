@@ -1,1 +1,1 @@
-String . prototype . replace . call ( 1 , 0 , 0 ) ;
+String . prototype . endsWith . call ( null , 0 , 0 ) ;

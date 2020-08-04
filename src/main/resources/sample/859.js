@@ -1,1 +1,1 @@
-String . fromCodePoint ( 0 ) ;
+Promise . prototype . then . call ( null , 0 , 0 ) ;

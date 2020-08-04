@@ -1,1 +1,1 @@
-BigInt ( 0 ) ;
+Array . prototype . toString . call ( null ) ;

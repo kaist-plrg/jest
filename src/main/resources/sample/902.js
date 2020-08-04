@@ -1,1 +1,1 @@
-String . prototype [ Symbol . iterator ] . call ( 1 ) ;
+String . prototype . normalize . call ( null , 0 ) ;

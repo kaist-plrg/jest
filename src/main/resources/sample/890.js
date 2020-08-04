@@ -1,1 +1,1 @@
-String . prototype . search . call ( 1 , 0 ) ;
+String . prototype . includes . call ( null , 0 ) ;

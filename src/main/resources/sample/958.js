@@ -1,0 +1,1 @@
+new URIError ( 0 ) ;

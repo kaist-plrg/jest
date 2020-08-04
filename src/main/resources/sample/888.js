@@ -1,1 +1,1 @@
-String . prototype . repeat . call ( 1 , 0 ) ;
+String . prototype . endsWith . call ( null , 0 ) ;

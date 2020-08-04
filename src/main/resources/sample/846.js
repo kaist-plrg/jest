@@ -1,1 +1,1 @@
-Set . prototype . add . call ( 1 , 0 ) ;
+Object . prototype . propertyIsEnumerable . call ( null , 0 ) ;

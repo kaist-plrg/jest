@@ -61,11 +61,12 @@ object ManualSampler extends Sampler {
     "var x = { p: 0 }; ( { p: x } = x );",
     "var x = [ 1, 2, 3 ]; ( [ x, x ] = x );",
     "var x = [ 1, 2, 3 ]; ( [ , x ] = x );",
+    "var x = [ 1, 2, 3 ]; ( [ , ...x ] = x );",
     "var x = [ 1, 2, 3 ]; ( [ , x, ...x ] = x );",
     "var x = { x: 1 }; ( { ...x } = x );",
+    "var x = { x: 1 }; ( { x, ...x } = x );",
     // binding element
-    "function x ( [ x ] = [ 1, 2, 3 ] ) { };",
-    "function x ( x = [ 1, 2, 3 ] ) { };",
+    "function x ( [ x ] = [ 1, 2, 3 ] ) { }; x( 0 ) ;",
   // early error(always)
   // - OptionalChain3
   // - OptionalChain7

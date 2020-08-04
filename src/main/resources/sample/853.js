@@ -1,1 +1,1 @@
-Set . prototype . values . call ( 1 ) ;
+Promise . allSettled ( 0 ) ;

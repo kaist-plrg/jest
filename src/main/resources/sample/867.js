@@ -1,1 +1,1 @@
-String . prototype . concat . call ( 1 ) ;
+Set . prototype . entries . call ( null ) ;

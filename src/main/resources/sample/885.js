@@ -1,1 +1,1 @@
-String . prototype . padEnd . call ( 1 , 0 , 0 ) ;
+String . prototype . codePointAt . call ( null , 0 ) ;

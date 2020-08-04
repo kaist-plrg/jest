@@ -1,1 +1,1 @@
-Number . isNaN ( 0 ) ;
+Map . prototype . delete . call ( null , 0 ) ;

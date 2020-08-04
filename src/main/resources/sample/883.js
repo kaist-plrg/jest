@@ -1,1 +1,1 @@
-String . prototype . normalize . call ( 1 , 0 ) ;
+String . prototype . charAt . call ( null , 0 ) ;

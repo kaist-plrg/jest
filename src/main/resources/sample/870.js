@@ -1,1 +1,1 @@
-String . prototype . endsWith . call ( 1 , 0 , 0 ) ;
+Set . prototype . has . call ( null , 0 ) ;

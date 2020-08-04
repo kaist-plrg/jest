@@ -1,1 +1,1 @@
-Number . prototype . toString . call ( 1 , 0 ) ;
+Map . prototype . keys . call ( null ) ;

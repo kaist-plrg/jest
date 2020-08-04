@@ -1,1 +1,1 @@
-String . fromCharCode ( 0 ) ;
+Promise . resolve ( 0 ) ;

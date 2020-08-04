@@ -1,1 +1,1 @@
-ReferenceError ( 0 ) ;
+Symbol . for ( 0 ) ;

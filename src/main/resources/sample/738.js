@@ -1,1 +1,1 @@
-Array . prototype . map . call ( 1 , 0 ) ;
+Array . prototype . indexOf . call ( null , 0 , 0 ) ;

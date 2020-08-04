@@ -1,1 +1,1 @@
-Array . prototype . push . call ( 1 ) ;
+Array . prototype . lastIndexOf . call ( null , 0 ) ;

@@ -1,1 +1,1 @@
-Array . prototype . findIndex . call ( 1 , 0 ) ;
+Array . prototype . fill . call ( null , 0 , 0 ) ;

@@ -1,1 +1,1 @@
-parseFloat ( 0 ) ;
+WeakMap ( 0 ) ;

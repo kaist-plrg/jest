@@ -1,1 +1,1 @@
-decodeURI ( 0 ) ;
+WeakMap . prototype . delete . call ( null , 0 ) ;

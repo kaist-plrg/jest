@@ -1,1 +1,1 @@
-String . prototype . endsWith . call ( 1 , 0 ) ;
+Set . prototype . forEach . call ( null , 0 , 0 ) ;

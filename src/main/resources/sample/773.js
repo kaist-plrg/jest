@@ -1,1 +1,1 @@
-Function ( 0 , 0 ) ;
+BigInt . prototype . valueOf . call ( null ) ;

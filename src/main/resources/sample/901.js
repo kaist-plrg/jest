@@ -1,1 +1,1 @@
-String . prototype . valueOf . call ( 1 ) ;
+String . prototype . normalize . call ( null ) ;

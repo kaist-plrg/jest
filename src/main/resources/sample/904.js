@@ -1,1 +1,1 @@
-Symbol . for ( 0 ) ;
+String . prototype . padEnd . call ( null , 0 , 0 ) ;

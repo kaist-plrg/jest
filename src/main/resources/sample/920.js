@@ -1,1 +1,1 @@
-Error ( 0 ) ;
+String . prototype . valueOf . call ( null ) ;

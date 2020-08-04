@@ -1,1 +1,1 @@
-eval ( 0 ) ;
+Symbol . prototype [ Symbol . toPrimitive ] . call ( null , 0 ) ;

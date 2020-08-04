@@ -1,1 +1,1 @@
-String . fromCharCode ( 0 , 0 ) ;
+Promise . prototype . catch . call ( null , 0 ) ;

@@ -1,1 +1,1 @@
-String . prototype . codePointAt . call ( 1 , 0 ) ;
+Set . prototype . delete . call ( null , 0 ) ;

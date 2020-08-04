@@ -1,1 +1,1 @@
-WeakMap . prototype . get . call ( 1 , 0 ) ;
+String . prototype . startsWith . call ( null , 0 ) ;

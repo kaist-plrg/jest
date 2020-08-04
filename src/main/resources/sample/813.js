@@ -1,1 +1,1 @@
-Object . freeze ( 0 ) ;
+Number . prototype . toPrecision . call ( null , 0 ) ;

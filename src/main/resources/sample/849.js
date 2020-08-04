@@ -1,1 +1,1 @@
-Set . prototype . entries . call ( 1 ) ;
+Object . prototype . valueOf . call ( null ) ;

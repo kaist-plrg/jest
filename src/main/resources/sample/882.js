@@ -1,1 +1,1 @@
-String . prototype . normalize . call ( 1 ) ;
+String . raw ( 0 , 0 , 0 ) ;

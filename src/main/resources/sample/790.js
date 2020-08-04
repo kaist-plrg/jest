@@ -1,1 +1,1 @@
-Map . prototype . keys . call ( 1 ) ;
+Function . prototype [ Symbol . hasInstance ] . call ( null , 0 ) ;

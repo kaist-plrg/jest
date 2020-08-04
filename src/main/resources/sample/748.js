@@ -1,1 +1,1 @@
-Array . prototype . shift . call ( 1 ) ;
+Array . prototype . reduce . call ( null , 0 ) ;

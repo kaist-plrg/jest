@@ -1,1 +1,1 @@
-Set ( 0 ) ;
+Object . prototype . isPrototypeOf . call ( null , 0 ) ;

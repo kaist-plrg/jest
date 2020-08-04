@@ -1,1 +1,1 @@
-parseInt ( 0 , 0 ) ;
+new WeakMap ( 0 ) ;

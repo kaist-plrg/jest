@@ -1,1 +1,1 @@
-Object ( ) ;
+Map . prototype . values . call ( null ) ;

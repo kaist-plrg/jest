@@ -1,1 +1,1 @@
-Object . keys ( 0 ) ;
+Object . create ( 0 , 0 ) ;

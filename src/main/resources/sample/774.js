@@ -1,1 +1,1 @@
-Function . prototype . apply . call ( 1 , 0 , 0 ) ;
+Boolean ( 0 ) ;

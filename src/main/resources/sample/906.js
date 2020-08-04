@@ -1,1 +1,1 @@
-Symbol . prototype . toString . call ( 1 ) ;
+String . prototype . padStart . call ( null , 0 , 0 ) ;

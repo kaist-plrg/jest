@@ -1,1 +1,1 @@
-Object . getOwnPropertySymbols ( 0 ) ;
+new Object ( ) ;

@@ -1,1 +1,1 @@
-Array . prototype . toLocaleString . call ( 1 ) ;
+Array . prototype . slice . call ( null , 0 , 0 ) ;

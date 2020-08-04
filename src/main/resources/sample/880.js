@@ -1,1 +1,1 @@
-String . prototype . match . call ( 1 , 0 ) ;
+String . raw ( 0 ) ;

@@ -1,1 +1,1 @@
-WeakSet ( ) ;
+String . prototype . toLowerCase . call ( null ) ;

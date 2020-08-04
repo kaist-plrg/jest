@@ -1,1 +1,1 @@
-Object . fromEntries ( 0 ) ;
+Number . prototype . toString . call ( null ) ;

@@ -1,1 +1,1 @@
-Promise . resolve ( 0 ) ;
+Object . preventExtensions ( 0 ) ;

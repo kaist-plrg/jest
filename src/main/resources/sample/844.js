@@ -1,1 +1,1 @@
-Set ( ) ;
+Object . prototype . hasOwnProperty . call ( null , 0 ) ;

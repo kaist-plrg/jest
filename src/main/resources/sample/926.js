@@ -1,1 +1,1 @@
-TypeError ( 0 ) ;
+Symbol . prototype . toString . call ( null ) ;

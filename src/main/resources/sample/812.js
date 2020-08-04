@@ -1,1 +1,1 @@
-Object . entries ( 0 ) ;
+Number . prototype . toFixed . call ( null , 0 ) ;

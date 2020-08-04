@@ -1,1 +1,1 @@
-Array . of ( ) ;
+new Array ( 0 , 0 ) ;

@@ -1,1 +1,1 @@
-WeakMap . prototype . delete . call ( 1 , 0 ) ;
+String . prototype . split . call ( null , 0 , 0 ) ;

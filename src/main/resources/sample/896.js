@@ -1,1 +1,1 @@
-String . prototype . toLowerCase . call ( 1 ) ;
+String . prototype . localeCompare . call ( null , 0 ) ;

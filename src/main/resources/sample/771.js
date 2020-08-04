@@ -1,1 +1,1 @@
-Function ( ) ;
+BigInt . prototype . toString . call ( null ) ;

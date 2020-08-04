@@ -1,1 +1,1 @@
-String ( 0 ) ;
+Promise . race ( 0 ) ;

@@ -1,1 +1,1 @@
-isNaN ( 0 ) ;
+new WeakMap ( ) ;

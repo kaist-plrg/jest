@@ -1,1 +1,1 @@
-Set . prototype . forEach . call ( 1 , 0 , 0 ) ;
+new Promise ( 0 ) ;

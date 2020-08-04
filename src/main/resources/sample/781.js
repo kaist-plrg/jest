@@ -1,1 +1,1 @@
-Map ( ) ;
+new Function ( 0 ) ;

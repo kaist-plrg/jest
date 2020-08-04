@@ -1,1 +1,1 @@
-encodeURI ( 0 ) ;
+WeakMap . prototype . has . call ( null , 0 ) ;

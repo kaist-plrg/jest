@@ -1,1 +1,1 @@
-Promise . allSettled ( 0 ) ;
+Object . isFrozen ( 0 ) ;

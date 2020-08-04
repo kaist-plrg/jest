@@ -1,1 +1,1 @@
-Set . prototype . clear . call ( 1 ) ;
+Object . prototype . toLocaleString . call ( null , 0 , 0 ) ;

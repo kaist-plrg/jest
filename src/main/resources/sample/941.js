@@ -1,0 +1,1 @@
+WeakSet . prototype . add . call ( null , 0 ) ;

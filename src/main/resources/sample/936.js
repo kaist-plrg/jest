@@ -1,1 +1,1 @@
-encodeURIComponent ( 0 ) ;
+WeakMap . prototype . set . call ( null , 0 , 0 ) ;

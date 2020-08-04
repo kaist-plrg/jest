@@ -1,1 +1,1 @@
-Map . prototype . forEach . call ( 1 , 0 ) ;
+Function . prototype . bind . call ( null , 0 , 0 ) ;

@@ -1,1 +1,1 @@
-String . prototype . lastIndexOf . call ( 1 , 0 , 0 ) ;
+String . fromCharCode ( 0 , 0 ) ;

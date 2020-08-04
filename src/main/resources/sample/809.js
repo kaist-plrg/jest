@@ -1,1 +1,1 @@
-Object . create ( 0 , 0 ) ;
+Number . isNaN ( 0 ) ;

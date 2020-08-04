@@ -1,1 +1,1 @@
-Array . prototype . unshift . call ( 1 ) ;
+Array . prototype . splice . call ( null , 0 , 0 , 0 ) ;

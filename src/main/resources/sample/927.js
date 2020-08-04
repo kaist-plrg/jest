@@ -1,1 +1,1 @@
-URIError ( 0 ) ;
+Symbol . prototype . valueOf . call ( null ) ;

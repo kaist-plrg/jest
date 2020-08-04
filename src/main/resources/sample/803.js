@@ -1,1 +1,1 @@
-Number . prototype . valueOf . call ( 1 ) ;
+Map . prototype . set . call ( null , 0 , 0 ) ;

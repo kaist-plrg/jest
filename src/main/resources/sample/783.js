@@ -1,1 +1,1 @@
-Map . prototype . clear . call ( 1 ) ;
+new Function ( 0 , 0 ) ;

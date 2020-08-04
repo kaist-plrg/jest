@@ -1,1 +1,1 @@
-SyntaxError ( 0 ) ;
+Symbol . keyFor ( 0 ) ;

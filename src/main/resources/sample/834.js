@@ -1,1 +1,1 @@
-Object . prototype . valueOf . call ( 1 ) ;
+Object . getPrototypeOf ( 0 ) ;
