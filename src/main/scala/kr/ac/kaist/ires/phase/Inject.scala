@@ -5,11 +5,15 @@ import kr.ac.kaist.ires.model._
 import kr.ac.kaist.ires.model.Parser._
 import kr.ac.kaist.ires.injector.Injector
 import kr.ac.kaist.ires.util.Useful._
+import spray.json._
 
 // Inject phase
 case object Inject extends PhaseObj[Unit, InjectConfig, Unit] {
   val name = "inject"
   val help = "Inject semantics assertions into JavaScript files."
+
+  val exceptionDirectory = s"$DIFF_TEST_DIR/inject_exceptions"
+  mkdir(exceptionDirectory)
 
   def apply(
     unit: Unit,
@@ -33,7 +37,10 @@ case object Inject extends PhaseObj[Unit, InjectConfig, Unit] {
       println(s"  $injected")
       dumpFile(injected, s"$INJECTED_DIR/$name")
     } catch {
-      case e: Throwable => println(s"* Warning: $e")
+      case e: Throwable => {
+        println(s"* Warning: $e")
+        dumpFile(Map(("message" -> e.getMessage()), ("stacktrace" -> e.getStackTrace().mkString(LINE_SEP))).toJson, s"$exceptionDirectory/$name.json")
+      }
     }
   }
 
