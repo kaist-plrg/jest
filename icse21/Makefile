@@ -1,6 +1,6 @@
 FILE=main
 
-TEXSRC=$(wildcard *.tex img/*.pdf)
+TEXSRC=$(wildcard *.tex *.bib img/*.pdf)
 
 $(FILE).pdf: $(TEXSRC)
 	pdflatex $(FILE).tex && \
