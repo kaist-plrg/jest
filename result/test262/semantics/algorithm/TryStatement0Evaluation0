@@ -1,6 +1,6 @@
 [32mTryStatement0Evaluation0[0m
 [32m- Inst: 13 / 13 (100.00%)[0m
-[32m- Cond: 2 / 2 (100.00%)[0m
+[33m- Cond: 7944 / 2 (397200.00%)[0m
 [32m+ 1612  [-]   : { ... }[0m
 [32m+ 1613  [-]   : access __x0__ = (Block "Evaluation")[0m
 [32m+ 1614  [-]   : let B = __x0__[0m

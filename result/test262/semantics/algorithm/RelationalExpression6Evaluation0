@@ -1,6 +1,6 @@
 [33mRelationalExpression6Evaluation0[0m
 [33m- Inst: 37 / 39 (94.87%)[0m
-[33m- Cond: 16 / 18 (88.89%)[0m
+[33m- Cond: 7944 / 18 (44133.33%)[0m
 [32m+ 26792 [-]   : { ... }[0m
 [32m+ 26793 [-]   : access __x0__ = (RelationalExpression "Evaluation")[0m
 [32m+ 26794 [-]   : let lref = __x0__[0m

@@ -1,6 +1,6 @@
 [33mIfStatement0Evaluation0[0m
-[33m- Inst: 24 / 27 (88.89%)[0m
-[33m- Cond: 8 / 10 (80.00%)[0m
+[33m- Inst: 26 / 27 (96.30%)[0m
+[33m- Cond: 7944 / 10 (79440.00%)[0m
 [32m+ 2892  [-]   : { ... }[0m
 [32m+ 2893  [-]   : access __x0__ = (Expression "Evaluation")[0m
 [32m+ 2894  [-]   : let exprRef = __x0__[0m
@@ -11,9 +11,9 @@
 [32m+ 2899  [-]   : return __x1__[0m
 [32m+ 2900  [-]   : {}[0m
 [32m+ 2901  [-]   : app __x2__ = (ToBoolean __x1__)[0m
-[32m+ 2902  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
-[31m- 2903  [-]   : if (= __x2__["Type"] CONST_normal) ... else ...[0m
-[31m- 2904  [-]   : __x2__ = __x2__["Value"][0m
+[32m+ 2902  [[31mF[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
+[32m+ 2903  [[32mT[0m/[31mF[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
+[32m+ 2904  [-]   : __x2__ = __x2__["Value"][0m
 [31m- 2905  [-]   : return __x2__[0m
 [32m+ 2906  [-]   : {}[0m
 [32m+ 2907  [-]   : let exprValue = __x2__[0m

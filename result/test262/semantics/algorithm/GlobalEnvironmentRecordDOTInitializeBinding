@@ -1,6 +1,6 @@
 [33mGlobalEnvironmentRecordDOTInitializeBinding[0m
 [33m- Inst: 9 / 19 (47.37%)[0m
-[33m- Cond: 1 / 6 (16.67%)[0m
+[33m- Cond: 7944 / 6 (132400.00%)[0m
 [32m+ 20725 [-]   : { ... }[0m
 [32m+ 20726 [-]   : let envRec = this[0m
 [32m+ 20727 [-]   : let DclRec = envRec["DeclarativeRecord"][0m

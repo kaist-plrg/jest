@@ -1,6 +1,6 @@
 [33mGLOBALDOTINTRINSIC_AsyncFromSyncIteratorPrototypeDOTnext[0m
 [33m- Inst: 27 / 35 (77.14%)[0m
-[33m- Cond: 9 / 14 (64.29%)[0m
+[33m- Cond: 7944 / 14 (56742.86%)[0m
 [32m+ 14493 [-]   : { ... }[0m
 [32m+ 14494 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 14495 [-]   : let value = __x0__[0m
@@ -21,12 +21,12 @@
 [32m+ 14510 [[32mT[0m/[31mF[0m[32m]: if (= result["Type"] CONST_normal) ... else ...[0m
 [32m+ 14511 [-]   : result = result["Value"][0m
 [31m- 14512 [-]   : { ... }[0m
-[31m- 14513 [-]   : app __x4__ = (Call promiseCapability["Reject"] undefined (new [result["Value"]]))[0m
+[32m+ 14513 [-]   : app __x4__ = (Call promiseCapability["Reject"] undefined (new [result["Value"]]))[0m
 [31m- 14514 [-]   : if (&& (is-completion __x4__) (! (= __x4__["Type"] CONST_normal))) ... else ...[0m
 [31m- 14515 [-]   : return __x4__[0m
 [31m- 14516 [-]   : {}[0m
 [31m- 14517 [-]   : return promiseCapability["Promise"][0m
-[32m+ 14518 [-]   : {}[0m
+[31m- 14518 [-]   : {}[0m
 [32m+ 14519 [-]   : result[0m
 [32m+ 14520 [-]   : app __x5__ = (AsyncFromSyncIteratorContinuation result promiseCapability)[0m
 [32m+ 14521 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x5__) ... else ...[0m

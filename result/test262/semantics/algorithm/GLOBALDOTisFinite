@@ -1,13 +1,13 @@
-[33mGLOBALDOTisFinite[0m
-[33m- Inst: 16 / 17 (94.12%)[0m
-[33m- Cond: 5 / 6 (83.33%)[0m
+[32mGLOBALDOTisFinite[0m
+[32m- Inst: 17 / 17 (100.00%)[0m
+[33m- Cond: 7944 / 6 (132400.00%)[0m
 [32m+ 19308 [-]   : { ... }[0m
 [32m+ 19309 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 19310 [-]   : let number = __x0__[0m
 [32m+ 19311 [-]   : app __x1__ = (ToNumber number)[0m
 [32m+ 19312 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x1__) ... else ...[0m
-[32m+ 19313 [[31mF[0m/[32mT[0m[32m]: if (= __x1__["Type"] CONST_normal) ... else ...[0m
-[31m- 19314 [-]   : __x1__ = __x1__["Value"][0m
+[32m+ 19313 [[32mT[0m/[32mT[0m[32m]: if (= __x1__["Type"] CONST_normal) ... else ...[0m
+[32m+ 19314 [-]   : __x1__ = __x1__["Value"][0m
 [32m+ 19315 [-]   : return __x1__[0m
 [32m+ 19316 [-]   : {}[0m
 [32m+ 19317 [-]   : let num = __x1__[0m

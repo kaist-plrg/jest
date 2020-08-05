@@ -1,6 +1,6 @@
 [33mBreakableStatement1LabelledEvaluation0[0m
 [33m- Inst: 13 / 17 (76.47%)[0m
-[33m- Cond: 4 / 6 (66.67%)[0m
+[33m- Cond: 7944 / 6 (132400.00%)[0m
 [32m+ 7295  [-]   : { ... }[0m
 [32m+ 7296  [-]   : access __x0__ = (SwitchStatement "Evaluation")[0m
 [32m+ 7297  [-]   : let stmtResult = __x0__[0m

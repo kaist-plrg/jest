@@ -1,6 +1,6 @@
 [33mForInOfBodyEvaluation[0m
-[33m- Inst: 140 / 182 (76.92%)[0m
-[33m- Cond: 54 / 78 (69.23%)[0m
+[33m- Inst: 138 / 182 (75.82%)[0m
+[33m- Cond: 7944 / 78 (10184.62%)[0m
 [32m+ 10259 [-]   : { ... }[0m
 [32m+ 10260 [[32mT[0m/[31mF[0m[32m]: if (= iteratorKind absent) ... else ...[0m
 [32m+ 10261 [-]   : iteratorKind = CONST_sync[0m
@@ -137,11 +137,11 @@
 [32m+ 10392 [-]   : { ... }[0m
 [32m+ 10393 [-]   : assert (= iterationKind CONST_iterate)[0m
 [32m+ 10394 [-]   : app __x28__ = (IteratorClose iteratorRecord status)[0m
-[32m+ 10395 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x28__) ... else ...[0m
+[32m+ 10395 [[32mT[0m/[31mF[0m[32m]: if (is-completion __x28__) ... else ...[0m
 [32m+ 10396 [[31mF[0m/[32mT[0m[32m]: if (= __x28__["Type"] CONST_normal) ... else ...[0m
 [31m- 10397 [-]   : __x28__ = __x28__["Value"][0m
 [32m+ 10398 [-]   : return __x28__[0m
-[32m+ 10399 [-]   : {}[0m
+[31m- 10399 [-]   : {}[0m
 [31m- 10400 [-]   : app __x29__ = (WrapCompletion __x28__)[0m
 [31m- 10401 [-]   : return __x29__[0m
 [32m+ 10402 [-]   : {}[0m
@@ -172,11 +172,11 @@
 [31m- 10427 [-]   : return __x37__[0m
 [32m+ 10428 [-]   : {}[0m
 [32m+ 10429 [-]   : app __x38__ = (IteratorClose iteratorRecord status)[0m
-[32m+ 10430 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x38__) ... else ...[0m
+[32m+ 10430 [[32mT[0m/[31mF[0m[32m]: if (is-completion __x38__) ... else ...[0m
 [32m+ 10431 [[31mF[0m/[32mT[0m[32m]: if (= __x38__["Type"] CONST_normal) ... else ...[0m
 [31m- 10432 [-]   : __x38__ = __x38__["Value"][0m
 [32m+ 10433 [-]   : return __x38__[0m
-[32m+ 10434 [-]   : {}[0m
+[31m- 10434 [-]   : {}[0m
 [31m- 10435 [-]   : app __x39__ = (WrapCompletion __x38__)[0m
 [31m- 10436 [-]   : return __x39__[0m
 [32m+ 10437 [-]   : {}[0m

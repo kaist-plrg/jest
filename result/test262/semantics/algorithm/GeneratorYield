@@ -1,6 +1,6 @@
 [33mGeneratorYield[0m
 [33m- Inst: 17 / 18 (94.44%)[0m
-[33m- Cond: 1 / 2 (50.00%)[0m
+[33m- Cond: 7944 / 2 (397200.00%)[0m
 [32m+ 19672 [-]   : { ... }[0m
 [32m+ 19673 [-]   : let genContext = GLOBAL_context[0m
 [32m+ 19674 [-]   : let generator = genContext["Generator"][0m

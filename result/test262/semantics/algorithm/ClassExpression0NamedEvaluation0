@@ -1,6 +1,6 @@
 [33mClassExpression0NamedEvaluation0[0m
 [33m- Inst: 12 / 13 (92.31%)[0m
-[33m- Cond: 3 / 4 (75.00%)[0m
+[33m- Cond: 7944 / 4 (198600.00%)[0m
 [32m+ 8060  [-]   : { ... }[0m
 [32m+ 8061  [-]   : access __x0__ = (ClassTail "ClassDefinitionEvaluation")[0m
 [32m+ 8062  [-]   : app __x1__ = (__x0__ undefined name)[0m

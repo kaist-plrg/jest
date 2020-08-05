@@ -1,6 +1,6 @@
 [33mGLOBALDOTStringDOTprototypeDOTcodePointAt[0m
-[33m- Inst: 30 / 39 (76.92%)[0m
-[33m- Cond: 13 / 18 (72.22%)[0m
+[33m- Inst: 31 / 39 (79.49%)[0m
+[33m- Cond: 7944 / 18 (44133.33%)[0m
 [32m+ 17295 [-]   : { ... }[0m
 [32m+ 17296 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 17297 [-]   : let pos = __x0__[0m
@@ -13,8 +13,8 @@
 [32m+ 17304 [-]   : let O = __x1__[0m
 [32m+ 17305 [-]   : app __x2__ = (ToString O)[0m
 [32m+ 17306 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
-[32m+ 17307 [[31mF[0m/[32mT[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
-[31m- 17308 [-]   : __x2__ = __x2__["Value"][0m
+[32m+ 17307 [[32mT[0m/[32mT[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
+[32m+ 17308 [-]   : __x2__ = __x2__["Value"][0m
 [32m+ 17309 [-]   : return __x2__[0m
 [32m+ 17310 [-]   : {}[0m
 [32m+ 17311 [-]   : let S = __x2__[0m

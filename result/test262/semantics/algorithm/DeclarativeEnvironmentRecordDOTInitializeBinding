@@ -1,6 +1,6 @@
 [33mDeclarativeEnvironmentRecordDOTInitializeBinding[0m
 [33m- Inst: 8 / 9 (88.89%)[0m
-[33m- Cond: 1 / 2 (50.00%)[0m
+[33m- Cond: 7944 / 2 (397200.00%)[0m
 [32m+ 9160  [-]   : { ... }[0m
 [32m+ 9161  [-]   : let envRec = this[0m
 [32m+ 9162  [-]   : envRec["SubMap"][N]["BoundValue"] = V[0m

@@ -1,6 +1,6 @@
 [33mGLOBALDOTArrayDOTprototypeDOTreduce[0m
-[33m- Inst: 96 / 104 (92.31%)[0m
-[33m- Cond: 46 / 52 (88.46%)[0m
+[33m- Inst: 100 / 104 (96.15%)[0m
+[33m- Cond: 7944 / 52 (15276.92%)[0m
 [32m+ 12683 [-]   : { ... }[0m
 [32m+ 12684 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 12685 [-]   : let callbackfn = __x0__[0m
@@ -40,9 +40,9 @@
 [32m+ 12719 [[32mT[0m/[32mT[0m[32m]: while (&& (= kPresent false) (< k len)) { ... }[0m
 [32m+ 12720 [-]   : { ... }[0m
 [32m+ 12721 [-]   : app __x7__ = (ToString k)[0m
-[32m+ 12722 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x7__) ... else ...[0m
-[31m- 12723 [-]   : if (= __x7__["Type"] CONST_normal) ... else ...[0m
-[31m- 12724 [-]   : __x7__ = __x7__["Value"][0m
+[32m+ 12722 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x7__) ... else ...[0m
+[32m+ 12723 [[32mT[0m/[31mF[0m[32m]: if (= __x7__["Type"] CONST_normal) ... else ...[0m
+[32m+ 12724 [-]   : __x7__ = __x7__["Value"][0m
 [31m- 12725 [-]   : return __x7__[0m
 [32m+ 12726 [-]   : {}[0m
 [32m+ 12727 [-]   : let Pk = __x7__[0m
@@ -72,9 +72,9 @@
 [32m+ 12751 [[32mT[0m/[32mT[0m[32m]: while (< k len) { ... }[0m
 [32m+ 12752 [-]   : { ... }[0m
 [32m+ 12753 [-]   : app __x11__ = (ToString k)[0m
-[32m+ 12754 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x11__) ... else ...[0m
-[31m- 12755 [-]   : if (= __x11__["Type"] CONST_normal) ... else ...[0m
-[31m- 12756 [-]   : __x11__ = __x11__["Value"][0m
+[32m+ 12754 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x11__) ... else ...[0m
+[32m+ 12755 [[32mT[0m/[31mF[0m[32m]: if (= __x11__["Type"] CONST_normal) ... else ...[0m
+[32m+ 12756 [-]   : __x11__ = __x11__["Value"][0m
 [31m- 12757 [-]   : return __x11__[0m
 [32m+ 12758 [-]   : {}[0m
 [32m+ 12759 [-]   : let Pk = __x11__[0m

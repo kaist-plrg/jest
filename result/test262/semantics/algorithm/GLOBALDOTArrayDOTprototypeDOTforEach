@@ -1,6 +1,6 @@
 [33mGLOBALDOTArrayDOTprototypeDOTforEach[0m
-[33m- Inst: 58 / 62 (93.55%)[0m
-[33m- Cond: 27 / 30 (90.00%)[0m
+[33m- Inst: 60 / 62 (96.77%)[0m
+[33m- Cond: 7944 / 30 (26480.00%)[0m
 [32m+ 12141 [-]   : { ... }[0m
 [32m+ 12142 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 12143 [-]   : let callbackfn = __x0__[0m
@@ -30,9 +30,9 @@
 [32m+ 12167 [[32mT[0m/[32mT[0m[32m]: while (< k len) { ... }[0m
 [32m+ 12168 [-]   : { ... }[0m
 [32m+ 12169 [-]   : app __x6__ = (ToString k)[0m
-[32m+ 12170 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x6__) ... else ...[0m
-[31m- 12171 [-]   : if (= __x6__["Type"] CONST_normal) ... else ...[0m
-[31m- 12172 [-]   : __x6__ = __x6__["Value"][0m
+[32m+ 12170 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x6__) ... else ...[0m
+[32m+ 12171 [[32mT[0m/[31mF[0m[32m]: if (= __x6__["Type"] CONST_normal) ... else ...[0m
+[32m+ 12172 [-]   : __x6__ = __x6__["Value"][0m
 [31m- 12173 [-]   : return __x6__[0m
 [32m+ 12174 [-]   : {}[0m
 [32m+ 12175 [-]   : let Pk = __x6__[0m

@@ -1,14 +1,14 @@
 [33mGLOBALDOTWeakSetDOTprototypeDOTadd[0m
-[33m- Inst: 36 / 38 (94.74%)[0m
-[33m- Cond: 10 / 12 (83.33%)[0m
+[33m- Inst: 37 / 38 (97.37%)[0m
+[33m- Cond: 7944 / 12 (66200.00%)[0m
 [32m+ 19035 [-]   : { ... }[0m
 [32m+ 19036 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 19037 [-]   : let value = __x0__[0m
 [32m+ 19038 [-]   : let S = this[0m
 [32m+ 19039 [-]   : app __x1__ = (RequireInternalSlot S "WeakSetData")[0m
 [32m+ 19040 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x1__) ... else ...[0m
-[32m+ 19041 [[31mF[0m/[32mT[0m[32m]: if (= __x1__["Type"] CONST_normal) ... else ...[0m
-[31m- 19042 [-]   : __x1__ = __x1__["Value"][0m
+[32m+ 19041 [[32mT[0m/[32mT[0m[32m]: if (= __x1__["Type"] CONST_normal) ... else ...[0m
+[32m+ 19042 [-]   : __x1__ = __x1__["Value"][0m
 [32m+ 19043 [-]   : return __x1__[0m
 [32m+ 19044 [-]   : {}[0m
 [32m+ 19045 [-]   : __x1__[0m

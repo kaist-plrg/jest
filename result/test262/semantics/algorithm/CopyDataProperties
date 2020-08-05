@@ -1,6 +1,6 @@
 [33mCopyDataProperties[0m
-[33m- Inst: 62 / 68 (91.18%)[0m
-[33m- Cond: 27 / 32 (84.38%)[0m
+[33m- Inst: 64 / 68 (94.12%)[0m
+[33m- Cond: 7944 / 32 (24825.00%)[0m
 [32m+ 8358  [-]   : { ... }[0m
 [32m+ 8359  [-]   : app __x0__ = (Type target)[0m
 [32m+ 8360  [-]   : assert (= __x0__ Object)[0m
@@ -10,9 +10,9 @@
 [32m+ 8364  [-]   : return __x1__[0m
 [32m+ 8365  [-]   : {}[0m
 [32m+ 8366  [-]   : app __x2__ = (ToObject source)[0m
-[32m+ 8367  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
-[31m- 8368  [-]   : if (= __x2__["Type"] CONST_normal) ... else ...[0m
-[31m- 8369  [-]   : __x2__ = __x2__["Value"][0m
+[32m+ 8367  [[31mF[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
+[32m+ 8368  [[32mT[0m/[31mF[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
+[32m+ 8369  [-]   : __x2__ = __x2__["Value"][0m
 [31m- 8370  [-]   : return __x2__[0m
 [32m+ 8371  [-]   : {}[0m
 [32m+ 8372  [-]   : let from = __x2__[0m

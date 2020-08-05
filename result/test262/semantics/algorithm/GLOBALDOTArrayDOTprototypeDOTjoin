@@ -1,6 +1,6 @@
 [33mGLOBALDOTArrayDOTprototypeDOTjoin[0m
-[33m- Inst: 53 / 60 (88.33%)[0m
-[33m- Cond: 26 / 32 (81.25%)[0m
+[33m- Inst: 57 / 60 (95.00%)[0m
+[33m- Cond: 7944 / 32 (24825.00%)[0m
 [32m+ 12349 [-]   : { ... }[0m
 [32m+ 12350 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 12351 [-]   : let separator = __x0__[0m
@@ -23,8 +23,8 @@
 [32m+ 12368 [-]   : { ... }[0m
 [32m+ 12369 [-]   : app sep = (ToString separator)[0m
 [32m+ 12370 [[32mT[0m/[32mT[0m[32m]: if (is-completion sep) ... else ...[0m
-[32m+ 12371 [[31mF[0m/[32mT[0m[32m]: if (= sep["Type"] CONST_normal) ... else ...[0m
-[31m- 12372 [-]   : sep = sep["Value"][0m
+[32m+ 12371 [[32mT[0m/[32mT[0m[32m]: if (= sep["Type"] CONST_normal) ... else ...[0m
+[32m+ 12372 [-]   : sep = sep["Value"][0m
 [32m+ 12373 [-]   : return sep[0m
 [32m+ 12374 [-]   : {}[0m
 [32m+ 12375 [-]   : let R = ""[0m
@@ -35,9 +35,9 @@
 [32m+ 12380 [-]   : R = (+ R sep)[0m
 [32m+ 12381 [-]   : {}[0m
 [32m+ 12382 [-]   : app __x3__ = (ToString k)[0m
-[32m+ 12383 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
-[31m- 12384 [-]   : if (= __x3__["Type"] CONST_normal) ... else ...[0m
-[31m- 12385 [-]   : __x3__ = __x3__["Value"][0m
+[32m+ 12383 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
+[32m+ 12384 [[32mT[0m/[31mF[0m[32m]: if (= __x3__["Type"] CONST_normal) ... else ...[0m
+[32m+ 12385 [-]   : __x3__ = __x3__["Value"][0m
 [31m- 12386 [-]   : return __x3__[0m
 [32m+ 12387 [-]   : {}[0m
 [32m+ 12388 [-]   : app __x4__ = (Get O __x3__)[0m
@@ -52,8 +52,8 @@
 [32m+ 12397 [-]   : { ... }[0m
 [32m+ 12398 [-]   : app __x5__ = (ToString element)[0m
 [32m+ 12399 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x5__) ... else ...[0m
-[32m+ 12400 [[31mF[0m/[32mT[0m[32m]: if (= __x5__["Type"] CONST_normal) ... else ...[0m
-[31m- 12401 [-]   : __x5__ = __x5__["Value"][0m
+[32m+ 12400 [[32mT[0m/[32mT[0m[32m]: if (= __x5__["Type"] CONST_normal) ... else ...[0m
+[32m+ 12401 [-]   : __x5__ = __x5__["Value"][0m
 [32m+ 12402 [-]   : return __x5__[0m
 [32m+ 12403 [-]   : {}[0m
 [32m+ 12404 [-]   : let next = __x5__[0m

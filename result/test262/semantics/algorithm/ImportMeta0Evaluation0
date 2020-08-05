@@ -1,6 +1,6 @@
 [31mImportMeta0Evaluation0[0m
 [31m- Inst: 0 / 54 (0.00%)[0m
-[31m- Cond: 0 / 24 (0.00%)[0m
+[33m- Cond: 7944 / 24 (33100.00%)[0m
 [31m- 21214 [-]   : { ... }[0m
 [31m- 21215 [-]   : app __x0__ = (GetActiveScriptOrModule )[0m
 [31m- 21216 [-]   : if (is-completion __x0__) ... else ...[0m

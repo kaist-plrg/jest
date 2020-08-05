@@ -1,6 +1,6 @@
 [31mBindingIdentifier1BindingInitialization0[0m
 [31m- Inst: 0 / 9 (0.00%)[0m
-[31m- Cond: 0 / 4 (0.00%)[0m
+[33m- Cond: 7944 / 4 (198600.00%)[0m
 [31m- 6745  [-]   : { ... }[0m
 [31m- 6746  [-]   : app __x0__ = (InitializeBoundName "yield" value environment)[0m
 [31m- 6747  [-]   : if (is-completion __x0__) ... else ...[0m

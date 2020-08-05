@@ -1,6 +1,6 @@
 [31mINTRINSIC_AsyncFromSyncIteratorPrototypeDOTthrow[0m
 [31m- Inst: 0 / 71 (0.00%)[0m
-[31m- Cond: 0 / 32 (0.00%)[0m
+[33m- Cond: 7944 / 32 (24825.00%)[0m
 [31m- 20979 [-]   : { ... }[0m
 [31m- 20980 [-]   : let O = this[0m
 [31m- 20981 [-]   : app __x0__ = (Type O)[0m

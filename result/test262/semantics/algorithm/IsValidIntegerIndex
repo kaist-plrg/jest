@@ -1,6 +1,6 @@
 [31mIsValidIntegerIndex[0m
 [31m- Inst: 0 / 26 (0.00%)[0m
-[31m- Cond: 0 / 10 (0.00%)[0m
+[33m- Cond: 7944 / 10 (79440.00%)[0m
 [31m- 22118 [-]   : { ... }[0m
 [31m- 22119 [-]   : app __x0__ = (Type index)[0m
 [31m- 22120 [-]   : assert (= __x0__ Number)[0m

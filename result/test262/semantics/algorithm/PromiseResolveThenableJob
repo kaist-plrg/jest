@@ -1,6 +1,6 @@
 [32mPromiseResolveThenableJob[0m
 [32m- Inst: 17 / 17 (100.00%)[0m
-[32m- Cond: 2 / 2 (100.00%)[0m
+[33m- Cond: 7944 / 2 (397200.00%)[0m
 [32m+ 25525 [-]   : { ... }[0m
 [32m+ 25526 [-]   : app __x0__ = (CreateResolvingFunctions promiseToResolve)[0m
 [32m+ 25527 [-]   : let resolvingFunctions = __x0__[0m

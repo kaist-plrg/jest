@@ -1,6 +1,6 @@
 [33mGLOBALDOTStringDOTprototypeDOTsplit[0m
-[33m- Inst: 144 / 162 (88.89%)[0m
-[33m- Cond: 64 / 78 (82.05%)[0m
+[33m- Inst: 152 / 162 (93.83%)[0m
+[33m- Cond: 7944 / 78 (10184.62%)[0m
 [32m+ 18103 [-]   : { ... }[0m
 [32m+ 18104 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 18105 [-]   : let separator = __x0__[0m
@@ -35,9 +35,9 @@
 [32m+ 18134 [-]   : {}[0m
 [32m+ 18135 [-]   : {}[0m
 [32m+ 18136 [-]   : app __x6__ = (ToString O)[0m
-[32m+ 18137 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x6__) ... else ...[0m
-[31m- 18138 [-]   : if (= __x6__["Type"] CONST_normal) ... else ...[0m
-[31m- 18139 [-]   : __x6__ = __x6__["Value"][0m
+[32m+ 18137 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x6__) ... else ...[0m
+[32m+ 18138 [[32mT[0m/[31mF[0m[32m]: if (= __x6__["Type"] CONST_normal) ... else ...[0m
+[32m+ 18139 [-]   : __x6__ = __x6__["Value"][0m
 [31m- 18140 [-]   : return __x6__[0m
 [32m+ 18141 [-]   : {}[0m
 [32m+ 18142 [-]   : let S = __x6__[0m
@@ -62,9 +62,9 @@
 [32m+ 18161 [-]   : let s = S["length"][0m
 [32m+ 18162 [-]   : let p = 0i[0m
 [32m+ 18163 [-]   : app __x9__ = (ToString separator)[0m
-[32m+ 18164 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x9__) ... else ...[0m
-[31m- 18165 [-]   : if (= __x9__["Type"] CONST_normal) ... else ...[0m
-[31m- 18166 [-]   : __x9__ = __x9__["Value"][0m
+[32m+ 18164 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x9__) ... else ...[0m
+[32m+ 18165 [[32mT[0m/[31mF[0m[32m]: if (= __x9__["Type"] CONST_normal) ... else ...[0m
+[32m+ 18166 [-]   : __x9__ = __x9__["Value"][0m
 [31m- 18167 [-]   : return __x9__[0m
 [32m+ 18168 [-]   : {}[0m
 [32m+ 18169 [-]   : let R = __x9__[0m
@@ -122,9 +122,9 @@
 [32m+ 18221 [-]   : T = (+ T S[idx])[0m
 [32m+ 18222 [-]   : idx = (+ idx 1i)[0m
 [32m+ 18223 [-]   : app __x18__ = (ToString lengthA)[0m
-[32m+ 18224 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x18__) ... else ...[0m
-[31m- 18225 [-]   : if (= __x18__["Type"] CONST_normal) ... else ...[0m
-[31m- 18226 [-]   : __x18__ = __x18__["Value"][0m
+[32m+ 18224 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x18__) ... else ...[0m
+[32m+ 18225 [[32mT[0m/[31mF[0m[32m]: if (= __x18__["Type"] CONST_normal) ... else ...[0m
+[32m+ 18226 [-]   : __x18__ = __x18__["Value"][0m
 [31m- 18227 [-]   : return __x18__[0m
 [32m+ 18228 [-]   : {}[0m
 [32m+ 18229 [-]   : app __x19__ = (CreateDataPropertyOrThrow A __x18__ T)[0m
@@ -149,9 +149,9 @@
 [32m+ 18248 [-]   : T = (+ T S[idx])[0m
 [32m+ 18249 [-]   : idx = (+ idx 1i)[0m
 [32m+ 18250 [-]   : app __x21__ = (ToString lengthA)[0m
-[32m+ 18251 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x21__) ... else ...[0m
-[31m- 18252 [-]   : if (= __x21__["Type"] CONST_normal) ... else ...[0m
-[31m- 18253 [-]   : __x21__ = __x21__["Value"][0m
+[32m+ 18251 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x21__) ... else ...[0m
+[32m+ 18252 [[32mT[0m/[31mF[0m[32m]: if (= __x21__["Type"] CONST_normal) ... else ...[0m
+[32m+ 18253 [-]   : __x21__ = __x21__["Value"][0m
 [31m- 18254 [-]   : return __x21__[0m
 [32m+ 18255 [-]   : {}[0m
 [32m+ 18256 [-]   : app __x22__ = (CreateDataPropertyOrThrow A __x21__ T)[0m

@@ -1,6 +1,6 @@
 [33mGLOBALDOTPromiseDOTallSettled[0m
-[33m- Inst: 40 / 49 (81.63%)[0m
-[33m- Cond: 15 / 20 (75.00%)[0m
+[33m- Inst: 39 / 49 (79.59%)[0m
+[33m- Cond: 7944 / 20 (39720.00%)[0m
 [32m+ 16368 [-]   : { ... }[0m
 [32m+ 16369 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 16370 [-]   : let iterable = __x0__[0m
@@ -18,12 +18,12 @@
 [32m+ 16382 [[32mT[0m/[31mF[0m[32m]: if (= iteratorRecord["Type"] CONST_normal) ... else ...[0m
 [32m+ 16383 [-]   : iteratorRecord = iteratorRecord["Value"][0m
 [31m- 16384 [-]   : { ... }[0m
-[31m- 16385 [-]   : app __x3__ = (Call promiseCapability["Reject"] undefined (new [iteratorRecord["Value"]]))[0m
+[32m+ 16385 [-]   : app __x3__ = (Call promiseCapability["Reject"] undefined (new [iteratorRecord["Value"]]))[0m
 [31m- 16386 [-]   : if (&& (is-completion __x3__) (! (= __x3__["Type"] CONST_normal))) ... else ...[0m
 [31m- 16387 [-]   : return __x3__[0m
 [31m- 16388 [-]   : {}[0m
 [31m- 16389 [-]   : return promiseCapability["Promise"][0m
-[32m+ 16390 [-]   : {}[0m
+[31m- 16390 [-]   : {}[0m
 [32m+ 16391 [-]   : iteratorRecord[0m
 [32m+ 16392 [-]   : app __x4__ = (PerformPromiseAllSettled iteratorRecord C promiseCapability)[0m
 [32m+ 16393 [-]   : let result = __x4__[0m
@@ -35,7 +35,7 @@
 [32m+ 16399 [-]   : app __x6__ = (IteratorClose iteratorRecord result)[0m
 [32m+ 16400 [-]   : result = __x6__[0m
 [32m+ 16401 [-]   : {}[0m
-[32m+ 16402 [[32mT[0m/[32mT[0m[32m]: if (is-completion result) ... else ...[0m
+[32m+ 16402 [[32mT[0m/[31mF[0m[32m]: if (is-completion result) ... else ...[0m
 [32m+ 16403 [[31mF[0m/[32mT[0m[32m]: if (= result["Type"] CONST_normal) ... else ...[0m
 [31m- 16404 [-]   : result = result["Value"][0m
 [32m+ 16405 [-]   : { ... }[0m
@@ -44,7 +44,7 @@
 [31m- 16408 [-]   : return __x7__[0m
 [32m+ 16409 [-]   : {}[0m
 [32m+ 16410 [-]   : return promiseCapability["Promise"][0m
-[32m+ 16411 [-]   : {}[0m
+[31m- 16411 [-]   : {}[0m
 [31m- 16412 [-]   : result[0m
 [32m+ 16413 [-]   : {}[0m
 [32m+ 16414 [-]   : app __x8__ = (Completion result)[0m

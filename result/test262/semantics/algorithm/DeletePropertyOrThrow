@@ -1,6 +1,6 @@
 [33mDeletePropertyOrThrow[0m
 [33m- Inst: 18 / 19 (94.74%)[0m
-[33m- Cond: 5 / 6 (83.33%)[0m
+[33m- Cond: 7944 / 6 (132400.00%)[0m
 [32m+ 9272  [-]   : { ... }[0m
 [32m+ 9273  [-]   : app __x0__ = (Type O)[0m
 [32m+ 9274  [-]   : assert (= __x0__ Object)[0m

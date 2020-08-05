@@ -1,14 +1,14 @@
-[33mGLOBALDOTWeakMapDOTprototypeDOTget[0m
-[33m- Inst: 36 / 37 (97.30%)[0m
-[33m- Cond: 11 / 12 (91.67%)[0m
+[32mGLOBALDOTWeakMapDOTprototypeDOTget[0m
+[32m- Inst: 37 / 37 (100.00%)[0m
+[33m- Cond: 7944 / 12 (66200.00%)[0m
 [32m+ 18843 [-]   : { ... }[0m
 [32m+ 18844 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 18845 [-]   : let key = __x0__[0m
 [32m+ 18846 [-]   : let M = this[0m
 [32m+ 18847 [-]   : app __x1__ = (RequireInternalSlot M "WeakMapData")[0m
 [32m+ 18848 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x1__) ... else ...[0m
-[32m+ 18849 [[31mF[0m/[32mT[0m[32m]: if (= __x1__["Type"] CONST_normal) ... else ...[0m
-[31m- 18850 [-]   : __x1__ = __x1__["Value"][0m
+[32m+ 18849 [[32mT[0m/[32mT[0m[32m]: if (= __x1__["Type"] CONST_normal) ... else ...[0m
+[32m+ 18850 [-]   : __x1__ = __x1__["Value"][0m
 [32m+ 18851 [-]   : return __x1__[0m
 [32m+ 18852 [-]   : {}[0m
 [32m+ 18853 [-]   : __x1__[0m

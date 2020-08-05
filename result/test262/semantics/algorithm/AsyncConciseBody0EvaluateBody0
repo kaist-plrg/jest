@@ -1,6 +1,6 @@
 [31mAsyncConciseBody0EvaluateBody0[0m
 [31m- Inst: 0 / 30 (0.00%)[0m
-[31m- Cond: 0 / 14 (0.00%)[0m
+[33m- Cond: 7944 / 14 (56742.86%)[0m
 [31m- 5543  [-]   : { ... }[0m
 [31m- 5544  [-]   : app __x0__ = (NewPromiseCapability INTRINSIC_Promise)[0m
 [31m- 5545  [-]   : if (is-completion __x0__) ... else ...[0m

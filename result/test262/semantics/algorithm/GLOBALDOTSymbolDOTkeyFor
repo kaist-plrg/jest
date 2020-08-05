@@ -1,6 +1,6 @@
 [33mGLOBALDOTSymbolDOTkeyFor[0m
 [33m- Inst: 19 / 20 (95.00%)[0m
-[33m- Cond: 5 / 6 (83.33%)[0m
+[33m- Cond: 7944 / 6 (132400.00%)[0m
 [32m+ 18584 [-]   : { ... }[0m
 [32m+ 18585 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 18586 [-]   : let sym = __x0__[0m

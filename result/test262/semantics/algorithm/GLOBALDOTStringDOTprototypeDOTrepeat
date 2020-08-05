@@ -1,6 +1,6 @@
-[33mGLOBALDOTStringDOTprototypeDOTrepeat[0m
-[33m- Inst: 39 / 40 (97.50%)[0m
-[33m- Cond: 17 / 18 (94.44%)[0m
+[32mGLOBALDOTStringDOTprototypeDOTrepeat[0m
+[32m- Inst: 40 / 40 (100.00%)[0m
+[33m- Cond: 7944 / 18 (44133.33%)[0m
 [32m+ 17860 [-]   : { ... }[0m
 [32m+ 17861 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 17862 [-]   : let count = __x0__[0m
@@ -13,8 +13,8 @@
 [32m+ 17869 [-]   : let O = __x1__[0m
 [32m+ 17870 [-]   : app __x2__ = (ToString O)[0m
 [32m+ 17871 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
-[32m+ 17872 [[31mF[0m/[32mT[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
-[31m- 17873 [-]   : __x2__ = __x2__["Value"][0m
+[32m+ 17872 [[32mT[0m/[32mT[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
+[32m+ 17873 [-]   : __x2__ = __x2__["Value"][0m
 [32m+ 17874 [-]   : return __x2__[0m
 [32m+ 17875 [-]   : {}[0m
 [32m+ 17876 [-]   : let S = __x2__[0m

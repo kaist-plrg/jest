@@ -1,6 +1,6 @@
 [32mListIteratorNextFunctions[0m
 [32m- Inst: 18 / 18 (100.00%)[0m
-[32m- Cond: 2 / 2 (100.00%)[0m
+[33m- Cond: 7944 / 2 (397200.00%)[0m
 [32m+ 22670 [-]   : { ... }[0m
 [32m+ 22671 [-]   : let O = this[0m
 [32m+ 22672 [-]   : app __x0__ = (Type O)[0m

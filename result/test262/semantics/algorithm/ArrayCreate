@@ -1,6 +1,6 @@
 [33mArrayCreate[0m
 [33m- Inst: 34 / 38 (89.47%)[0m
-[33m- Cond: 14 / 18 (77.78%)[0m
+[33m- Cond: 7944 / 18 (44133.33%)[0m
 [32m+ 4780  [-]   : { ... }[0m
 [32m+ 4781  [-]   : app __x0__ = (IsNonNegativeInteger length)[0m
 [32m+ 4782  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m

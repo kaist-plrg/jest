@@ -1,6 +1,6 @@
 [33mGLOBALDOTSet[0m
-[33m- Inst: 71 / 76 (93.42%)[0m
-[33m- Cond: 32 / 36 (88.89%)[0m
+[33m- Inst: 70 / 76 (92.11%)[0m
+[33m- Cond: 7944 / 36 (22066.67%)[0m
 [32m+ 16856 [-]   : { ... }[0m
 [32m+ 16857 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 16858 [-]   : let iterable = __x0__[0m
@@ -69,11 +69,11 @@
 [32m+ 16921 [[32mT[0m/[32mT[0m[32m]: if __x12__ ... else ...[0m
 [32m+ 16922 [-]   : { ... }[0m
 [32m+ 16923 [-]   : app __x13__ = (IteratorClose iteratorRecord status)[0m
-[32m+ 16924 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x13__) ... else ...[0m
+[32m+ 16924 [[32mT[0m/[31mF[0m[32m]: if (is-completion __x13__) ... else ...[0m
 [32m+ 16925 [[31mF[0m/[32mT[0m[32m]: if (= __x13__["Type"] CONST_normal) ... else ...[0m
 [31m- 16926 [-]   : __x13__ = __x13__["Value"][0m
 [32m+ 16927 [-]   : return __x13__[0m
-[32m+ 16928 [-]   : {}[0m
+[31m- 16928 [-]   : {}[0m
 [31m- 16929 [-]   : app __x14__ = (WrapCompletion __x13__)[0m
 [31m- 16930 [-]   : return __x14__[0m
 [32m+ 16931 [-]   : {}[0m

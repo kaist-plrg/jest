@@ -1,6 +1,6 @@
 [33mSameValueZero[0m
-[33m- Inst: 26 / 27 (96.30%)[0m
-[33m- Cond: 9 / 10 (90.00%)[0m
+[33m- Inst: 25 / 27 (92.59%)[0m
+[33m- Cond: 7944 / 10 (79440.00%)[0m
 [32m+ 26994 [-]   : { ... }[0m
 [32m+ 26995 [-]   : app __x0__ = (Type x)[0m
 [32m+ 26996 [-]   : app __x1__ = (Type y)[0m
@@ -14,9 +14,9 @@
 [32m+ 27004 [-]   : { ... }[0m
 [32m+ 27005 [-]   : app T = (Type x)[0m
 [32m+ 27006 [-]   : app result = (PRIMITIVES[T]["sameValueZero"] x y)[0m
-[32m+ 27007 [[32mT[0m/[32mT[0m[32m]: if (is-completion result) ... else ...[0m
+[32m+ 27007 [[32mT[0m/[31mF[0m[32m]: if (is-completion result) ... else ...[0m
 [32m+ 27008 [-]   : result = result["Value"][0m
-[32m+ 27009 [-]   : {}[0m
+[31m- 27009 [-]   : {}[0m
 [32m+ 27010 [-]   : app wrapped = (WrapCompletion result)[0m
 [32m+ 27011 [-]   : return wrapped[0m
 [32m+ 27012 [-]   : {}[0m

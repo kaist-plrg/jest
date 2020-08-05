@@ -1,6 +1,6 @@
 [32mGLOBALDOTStringDOTprototypeDOTtrimStart[0m
 [32m- Inst: 10 / 10 (100.00%)[0m
-[32m- Cond: 4 / 4 (100.00%)[0m
+[33m- Cond: 7944 / 4 (198600.00%)[0m
 [32m+ 18442 [-]   : { ... }[0m
 [32m+ 18443 [-]   : let S = this[0m
 [32m+ 18444 [-]   : app __x0__ = (TrimString S CONST_start)[0m

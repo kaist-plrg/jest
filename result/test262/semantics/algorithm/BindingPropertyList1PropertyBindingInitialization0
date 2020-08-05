@@ -1,6 +1,6 @@
 [32mBindingPropertyList1PropertyBindingInitialization0[0m
 [32m- Inst: 26 / 26 (100.00%)[0m
-[32m- Cond: 10 / 10 (100.00%)[0m
+[33m- Cond: 7944 / 10 (79440.00%)[0m
 [32m+ 3332  [-]   : { ... }[0m
 [32m+ 3333  [-]   : access __x0__ = (BindingPropertyList "PropertyBindingInitialization")[0m
 [32m+ 3334  [-]   : app __x1__ = (__x0__ value environment)[0m

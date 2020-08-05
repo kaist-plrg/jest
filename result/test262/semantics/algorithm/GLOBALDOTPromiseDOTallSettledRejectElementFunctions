@@ -1,6 +1,6 @@
 [33mGLOBALDOTPromiseDOTallSettledRejectElementFunctions[0m
-[33m- Inst: 33 / 54 (61.11%)[0m
-[33m- Cond: 10 / 22 (45.45%)[0m
+[33m- Inst: 32 / 54 (59.26%)[0m
+[33m- Cond: 7944 / 22 (36109.09%)[0m
 [32m+ 16417 [-]   : { ... }[0m
 [32m+ 16418 [-]   : let x = argumentsList[0i][0m
 [32m+ 16419 [-]   : let F = GLOBAL_context["Function"][0m
@@ -16,9 +16,9 @@
 [32m+ 16429 [-]   : let promiseCapability = F["Capability"][0m
 [32m+ 16430 [-]   : let remainingElementsCount = F["RemainingElements"][0m
 [32m+ 16431 [-]   : app obj = (OrdinaryObjectCreate INTRINSIC_ObjectPrototype)[0m
-[32m+ 16432 [[32mT[0m/[32mT[0m[32m]: if (is-completion obj) ... else ...[0m
+[32m+ 16432 [[32mT[0m/[31mF[0m[32m]: if (is-completion obj) ... else ...[0m
 [32m+ 16433 [-]   : obj = obj["Value"][0m
-[32m+ 16434 [-]   : {}[0m
+[31m- 16434 [-]   : {}[0m
 [32m+ 16435 [-]   : app __x1__ = (CreateDataPropertyOrThrow obj "status" "rejected")[0m
 [32m+ 16436 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x1__) ... else ...[0m
 [32m+ 16437 [[32mT[0m/[31mF[0m[32m]: if (= __x1__["Type"] CONST_normal) ... else ...[0m

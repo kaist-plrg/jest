@@ -1,6 +1,6 @@
 [33mGLOBALDOTArrayDOTfrom[0m
-[33m- Inst: 170 / 210 (80.95%)[0m
-[33m- Cond: 81 / 106 (76.42%)[0m
+[33m- Inst: 174 / 210 (82.86%)[0m
+[33m- Cond: 7944 / 106 (7494.34%)[0m
 [32m+ 11091 [-]   : { ... }[0m
 [32m+ 11092 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 11093 [-]   : let items = __x0__[0m
@@ -70,9 +70,9 @@
 [31m- 11157 [-]   : return __x12__[0m
 [32m+ 11158 [-]   : {}[0m
 [32m+ 11159 [-]   : app __x13__ = (ToString k)[0m
-[32m+ 11160 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x13__) ... else ...[0m
-[31m- 11161 [-]   : if (= __x13__["Type"] CONST_normal) ... else ...[0m
-[31m- 11162 [-]   : __x13__ = __x13__["Value"][0m
+[32m+ 11160 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x13__) ... else ...[0m
+[32m+ 11161 [[32mT[0m/[31mF[0m[32m]: if (= __x13__["Type"] CONST_normal) ... else ...[0m
+[32m+ 11162 [-]   : __x13__ = __x13__["Value"][0m
 [31m- 11163 [-]   : return __x13__[0m
 [32m+ 11164 [-]   : {}[0m
 [32m+ 11165 [-]   : let Pk = __x13__[0m
@@ -110,11 +110,11 @@
 [32m+ 11197 [[32mT[0m/[32mT[0m[32m]: if __x19__ ... else ...[0m
 [32m+ 11198 [-]   : { ... }[0m
 [32m+ 11199 [-]   : app __x20__ = (IteratorClose iteratorRecord mappedValue)[0m
-[32m+ 11200 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x20__) ... else ...[0m
+[32m+ 11200 [[32mT[0m/[31mF[0m[32m]: if (is-completion __x20__) ... else ...[0m
 [32m+ 11201 [[31mF[0m/[32mT[0m[32m]: if (= __x20__["Type"] CONST_normal) ... else ...[0m
 [31m- 11202 [-]   : __x20__ = __x20__["Value"][0m
 [32m+ 11203 [-]   : return __x20__[0m
-[32m+ 11204 [-]   : {}[0m
+[31m- 11204 [-]   : {}[0m
 [31m- 11205 [-]   : app __x21__ = (WrapCompletion __x20__)[0m
 [31m- 11206 [-]   : return __x21__[0m
 [32m+ 11207 [-]   : {}[0m
@@ -125,20 +125,20 @@
 [32m+ 11212 [[32mT[0m/[32mT[0m[32m]: if __x23__ ... else ...[0m
 [32m+ 11213 [-]   : { ... }[0m
 [32m+ 11214 [-]   : app __x24__ = (IteratorClose iteratorRecord defineStatus)[0m
-[32m+ 11215 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x24__) ... else ...[0m
+[32m+ 11215 [[32mT[0m/[31mF[0m[32m]: if (is-completion __x24__) ... else ...[0m
 [32m+ 11216 [[31mF[0m/[32mT[0m[32m]: if (= __x24__["Type"] CONST_normal) ... else ...[0m
 [31m- 11217 [-]   : __x24__ = __x24__["Value"][0m
 [32m+ 11218 [-]   : return __x24__[0m
-[32m+ 11219 [-]   : {}[0m
+[31m- 11219 [-]   : {}[0m
 [31m- 11220 [-]   : app __x25__ = (WrapCompletion __x24__)[0m
 [31m- 11221 [-]   : return __x25__[0m
 [32m+ 11222 [-]   : {}[0m
 [32m+ 11223 [-]   : k = (+ k 1i)[0m
 [32m+ 11224 [-]   : {}[0m
 [32m+ 11225 [-]   : app __x26__ = (ToObject items)[0m
-[32m+ 11226 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x26__) ... else ...[0m
-[31m- 11227 [-]   : if (= __x26__["Type"] CONST_normal) ... else ...[0m
-[31m- 11228 [-]   : __x26__ = __x26__["Value"][0m
+[32m+ 11226 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x26__) ... else ...[0m
+[32m+ 11227 [[32mT[0m/[31mF[0m[32m]: if (= __x26__["Type"] CONST_normal) ... else ...[0m
+[32m+ 11228 [-]   : __x26__ = __x26__["Value"][0m
 [31m- 11229 [-]   : return __x26__[0m
 [32m+ 11230 [-]   : {}[0m
 [32m+ 11231 [-]   : let arrayLike = __x26__[0m
@@ -171,9 +171,9 @@
 [32m+ 11258 [[32mT[0m/[32mT[0m[32m]: while (< k len) { ... }[0m
 [32m+ 11259 [-]   : { ... }[0m
 [32m+ 11260 [-]   : app __x31__ = (ToString k)[0m
-[32m+ 11261 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x31__) ... else ...[0m
-[31m- 11262 [-]   : if (= __x31__["Type"] CONST_normal) ... else ...[0m
-[31m- 11263 [-]   : __x31__ = __x31__["Value"][0m
+[32m+ 11261 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x31__) ... else ...[0m
+[32m+ 11262 [[32mT[0m/[31mF[0m[32m]: if (= __x31__["Type"] CONST_normal) ... else ...[0m
+[32m+ 11263 [-]   : __x31__ = __x31__["Value"][0m
 [31m- 11264 [-]   : return __x31__[0m
 [32m+ 11265 [-]   : {}[0m
 [32m+ 11266 [-]   : let Pk = __x31__[0m

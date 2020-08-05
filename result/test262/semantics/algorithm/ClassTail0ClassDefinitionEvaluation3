@@ -1,6 +1,6 @@
 [33mClassTail0ClassDefinitionEvaluation3[0m
-[33m- Inst: 126 / 131 (96.18%)[0m
-[33m- Cond: 42 / 46 (91.30%)[0m
+[33m- Inst: 128 / 131 (97.71%)[0m
+[33m- Cond: 7944 / 46 (17269.57%)[0m
 [32m+ 8073  [-]   : { ... }[0m
 [32m+ 8074  [-]   : access __x0__ = (GLOBAL_context "LexicalEnvironment")[0m
 [32m+ 8075  [-]   : let lex = __x0__[0m
@@ -74,9 +74,9 @@
 [31m- 8143  [-]   : return __x13__[0m
 [32m+ 8144  [-]   : {}[0m
 [32m+ 8145  [-]   : let constructorInfo = __x13__[0m
-[32m+ 8146  [[32mT[0m/[32mT[0m[32m]: if (is-completion constructorInfo) ... else ...[0m
-[31m- 8147  [-]   : if (= constructorInfo["Type"] CONST_normal) ... else ...[0m
-[31m- 8148  [-]   : constructorInfo = constructorInfo["Value"][0m
+[32m+ 8146  [[31mF[0m/[32mT[0m[32m]: if (is-completion constructorInfo) ... else ...[0m
+[32m+ 8147  [[32mT[0m/[31mF[0m[32m]: if (= constructorInfo["Type"] CONST_normal) ... else ...[0m
+[32m+ 8148  [-]   : constructorInfo = constructorInfo["Value"][0m
 [31m- 8149  [-]   : return constructorInfo[0m
 [32m+ 8150  [-]   : {}[0m
 [32m+ 8151  [-]   : constructorInfo[0m

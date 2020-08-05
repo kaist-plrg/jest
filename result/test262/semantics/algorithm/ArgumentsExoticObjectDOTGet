@@ -1,6 +1,6 @@
 [31mArgumentsExoticObjectDOTGet[0m
 [31m- Inst: 0 / 24 (0.00%)[0m
-[31m- Cond: 0 / 10 (0.00%)[0m
+[33m- Cond: 7944 / 10 (79440.00%)[0m
 [31m- 4429  [-]   : { ... }[0m
 [31m- 4430  [-]   : let args = args[0m
 [31m- 4431  [-]   : let map = args["ParameterMap"][0m

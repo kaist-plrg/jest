@@ -1,6 +1,6 @@
 [33mGLOBALDOTNumberDOTprototypeDOTtoString[0m
-[33m- Inst: 60 / 64 (93.75%)[0m
-[33m- Cond: 25 / 28 (89.29%)[0m
+[33m- Inst: 62 / 64 (96.88%)[0m
+[33m- Cond: 7944 / 28 (28371.43%)[0m
 [32m+ 15461 [-]   : { ... }[0m
 [32m+ 15462 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 15463 [-]   : let radix = __x0__[0m
@@ -29,9 +29,9 @@
 [32m+ 15486 [[32mT[0m/[32mT[0m[32m]: if (== radixNumber 10i) ... else ...[0m
 [32m+ 15487 [-]   : { ... }[0m
 [32m+ 15488 [-]   : app __x4__ = (ToString x)[0m
-[32m+ 15489 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x4__) ... else ...[0m
-[31m- 15490 [-]   : if (= __x4__["Type"] CONST_normal) ... else ...[0m
-[31m- 15491 [-]   : __x4__ = __x4__["Value"][0m
+[32m+ 15489 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x4__) ... else ...[0m
+[32m+ 15490 [[32mT[0m/[31mF[0m[32m]: if (= __x4__["Type"] CONST_normal) ... else ...[0m
+[32m+ 15491 [-]   : __x4__ = __x4__["Value"][0m
 [31m- 15492 [-]   : return __x4__[0m
 [32m+ 15493 [-]   : {}[0m
 [32m+ 15494 [-]   : app __x5__ = (WrapCompletion __x4__)[0m

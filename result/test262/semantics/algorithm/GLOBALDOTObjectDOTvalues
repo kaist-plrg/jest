@@ -1,13 +1,13 @@
-[33mGLOBALDOTObjectDOTvalues[0m
-[33m- Inst: 19 / 20 (95.00%)[0m
-[33m- Cond: 7 / 8 (87.50%)[0m
+[32mGLOBALDOTObjectDOTvalues[0m
+[32m- Inst: 20 / 20 (100.00%)[0m
+[33m- Cond: 7944 / 8 (99300.00%)[0m
 [32m+ 16221 [-]   : { ... }[0m
 [32m+ 16222 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 16223 [-]   : let O = __x0__[0m
 [32m+ 16224 [-]   : app __x1__ = (ToObject O)[0m
 [32m+ 16225 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x1__) ... else ...[0m
-[32m+ 16226 [[31mF[0m/[32mT[0m[32m]: if (= __x1__["Type"] CONST_normal) ... else ...[0m
-[31m- 16227 [-]   : __x1__ = __x1__["Value"][0m
+[32m+ 16226 [[32mT[0m/[32mT[0m[32m]: if (= __x1__["Type"] CONST_normal) ... else ...[0m
+[32m+ 16227 [-]   : __x1__ = __x1__["Value"][0m
 [32m+ 16228 [-]   : return __x1__[0m
 [32m+ 16229 [-]   : {}[0m
 [32m+ 16230 [-]   : let obj = __x1__[0m

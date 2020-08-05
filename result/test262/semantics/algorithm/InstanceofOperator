@@ -1,6 +1,6 @@
 [33mInstanceofOperator[0m
-[33m- Inst: 33 / 45 (73.33%)[0m
-[33m- Cond: 15 / 22 (68.18%)[0m
+[33m- Inst: 35 / 45 (77.78%)[0m
+[33m- Cond: 7944 / 22 (36109.09%)[0m
 [32m+ 21336 [-]   : { ... }[0m
 [32m+ 21337 [-]   : app __x0__ = (Type target)[0m
 [32m+ 21338 [[32mT[0m/[32mT[0m[32m]: if (! (= __x0__ Object)) ... else ...[0m
@@ -24,9 +24,9 @@
 [32m+ 21356 [-]   : return __x3__[0m
 [32m+ 21357 [-]   : {}[0m
 [32m+ 21358 [-]   : app __x4__ = (ToBoolean __x3__)[0m
-[32m+ 21359 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x4__) ... else ...[0m
-[31m- 21360 [-]   : if (= __x4__["Type"] CONST_normal) ... else ...[0m
-[31m- 21361 [-]   : __x4__ = __x4__["Value"][0m
+[32m+ 21359 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x4__) ... else ...[0m
+[32m+ 21360 [[32mT[0m/[31mF[0m[32m]: if (= __x4__["Type"] CONST_normal) ... else ...[0m
+[32m+ 21361 [-]   : __x4__ = __x4__["Value"][0m
 [31m- 21362 [-]   : return __x4__[0m
 [32m+ 21363 [-]   : {}[0m
 [32m+ 21364 [-]   : app __x5__ = (WrapCompletion __x4__)[0m

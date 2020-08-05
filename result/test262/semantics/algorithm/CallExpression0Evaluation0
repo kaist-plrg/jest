@@ -1,6 +1,6 @@
 [33mCallExpression0Evaluation0[0m
 [33m- Inst: 75 / 76 (98.68%)[0m
-[33m- Cond: 29 / 30 (96.67%)[0m
+[33m- Cond: 7944 / 30 (26480.00%)[0m
 [32m+ 958   [-]   : { ... }[0m
 [32m+ 959   [-]   : access __x0__ = (CoverCallExpressionAndAsyncArrowHead "CoveredCallExpression")[0m
 [32m+ 960   [-]   : let expr = __x0__[0m

@@ -1,6 +1,6 @@
 [32mSuperProperty1Evaluation0[0m
 [32m- Inst: 21 / 21 (100.00%)[0m
-[32m- Cond: 8 / 8 (100.00%)[0m
+[33m- Cond: 7944 / 8 (99300.00%)[0m
 [32m+ 27836 [-]   : { ... }[0m
 [32m+ 27837 [-]   : app __x0__ = (GetThisEnvironment )[0m
 [32m+ 27838 [-]   : let env = __x0__[0m

@@ -1,6 +1,6 @@
 [33mAbstractRelationalComparison[0m
-[33m- Inst: 128 / 134 (95.52%)[0m
-[33m- Cond: 56 / 60 (93.33%)[0m
+[33m- Inst: 132 / 134 (98.51%)[0m
+[33m- Cond: 7944 / 60 (13240.00%)[0m
 [32m+ 4008  [-]   : { ... }[0m
 [32m+ 4009  [[32mT[0m/[32mT[0m[32m]: if (= LeftFirst absent) ... else ...[0m
 [32m+ 4010  [-]   : let LeftFirst = true[0m
@@ -56,9 +56,9 @@
 [32m+ 4060  [[32mT[0m/[32mT[0m[32m]: if __x8__ ... else ...[0m
 [32m+ 4061  [-]   : { ... }[0m
 [32m+ 4062  [-]   : app __x10__ = (StringToBigInt py)[0m
-[32m+ 4063  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x10__) ... else ...[0m
-[31m- 4064  [-]   : if (= __x10__["Type"] CONST_normal) ... else ...[0m
-[31m- 4065  [-]   : __x10__ = __x10__["Value"][0m
+[32m+ 4063  [[31mF[0m/[32mT[0m[32m]: if (is-completion __x10__) ... else ...[0m
+[32m+ 4064  [[32mT[0m/[31mF[0m[32m]: if (= __x10__["Type"] CONST_normal) ... else ...[0m
+[32m+ 4065  [-]   : __x10__ = __x10__["Value"][0m
 [31m- 4066  [-]   : return __x10__[0m
 [32m+ 4067  [-]   : {}[0m
 [32m+ 4068  [-]   : let ny = __x10__[0m
@@ -81,9 +81,9 @@
 [32m+ 4085  [[32mT[0m/[32mT[0m[32m]: if __x13__ ... else ...[0m
 [32m+ 4086  [-]   : { ... }[0m
 [32m+ 4087  [-]   : app __x15__ = (StringToBigInt px)[0m
-[32m+ 4088  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x15__) ... else ...[0m
-[31m- 4089  [-]   : if (= __x15__["Type"] CONST_normal) ... else ...[0m
-[31m- 4090  [-]   : __x15__ = __x15__["Value"][0m
+[32m+ 4088  [[31mF[0m/[32mT[0m[32m]: if (is-completion __x15__) ... else ...[0m
+[32m+ 4089  [[32mT[0m/[31mF[0m[32m]: if (= __x15__["Type"] CONST_normal) ... else ...[0m
+[32m+ 4090  [-]   : __x15__ = __x15__["Value"][0m
 [31m- 4091  [-]   : return __x15__[0m
 [32m+ 4092  [-]   : {}[0m
 [32m+ 4093  [-]   : let nx = __x15__[0m

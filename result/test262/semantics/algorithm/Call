@@ -1,6 +1,6 @@
 [32mCall[0m
 [32m- Inst: 18 / 18 (100.00%)[0m
-[32m- Cond: 8 / 8 (100.00%)[0m
+[33m- Cond: 7944 / 8 (99300.00%)[0m
 [32m+ 7362  [-]   : { ... }[0m
 [32m+ 7363  [[32mT[0m/[32mT[0m[32m]: if (= argumentsList absent) ... else ...[0m
 [32m+ 7364  [-]   : argumentsList = (new [])[0m

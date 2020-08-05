@@ -1,6 +1,6 @@
-[33mGLOBALDOTMapDOTprototypeDOTforEach[0m
-[33m- Inst: 35 / 36 (97.22%)[0m
-[33m- Cond: 13 / 14 (92.86%)[0m
+[32mGLOBALDOTMapDOTprototypeDOTforEach[0m
+[32m- Inst: 36 / 36 (100.00%)[0m
+[33m- Cond: 7944 / 14 (56742.86%)[0m
 [32m+ 15008 [-]   : { ... }[0m
 [32m+ 15009 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 15010 [-]   : let callbackfn = __x0__[0m
@@ -9,8 +9,8 @@
 [32m+ 15013 [-]   : let M = this[0m
 [32m+ 15014 [-]   : app __x2__ = (RequireInternalSlot M "MapData")[0m
 [32m+ 15015 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
-[32m+ 15016 [[31mF[0m/[32mT[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
-[31m- 15017 [-]   : __x2__ = __x2__["Value"][0m
+[32m+ 15016 [[32mT[0m/[32mT[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
+[32m+ 15017 [-]   : __x2__ = __x2__["Value"][0m
 [32m+ 15018 [-]   : return __x2__[0m
 [32m+ 15019 [-]   : {}[0m
 [32m+ 15020 [-]   : __x2__[0m

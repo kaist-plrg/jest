@@ -1,6 +1,6 @@
 [31mDefaultClause0LexicallyDeclaredNames1[0m
 [31m- Inst: 0 / 7 (0.00%)[0m
-[31m- Cond: 0 / 2 (0.00%)[0m
+[33m- Cond: 7944 / 2 (397200.00%)[0m
 [31m- 9225  [-]   : { ... }[0m
 [31m- 9226  [-]   : if (! (= StatementList absent)) ... else ...[0m
 [31m- 9227  [-]   : { ... }[0m

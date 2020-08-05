@@ -1,6 +1,6 @@
 [33mCreateIterResultObject[0m
 [33m- Inst: 18 / 20 (90.00%)[0m
-[33m- Cond: 6 / 8 (75.00%)[0m
+[33m- Cond: 7944 / 8 (99300.00%)[0m
 [32m+ 8784  [-]   : { ... }[0m
 [32m+ 8785  [-]   : app __x0__ = (Type done)[0m
 [32m+ 8786  [-]   : assert (= __x0__ Boolean)[0m

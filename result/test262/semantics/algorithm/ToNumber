@@ -1,6 +1,6 @@
 [33mToNumber[0m
-[33m- Inst: 32 / 33 (96.97%)[0m
-[33m- Cond: 21 / 22 (95.45%)[0m
+[33m- Inst: 31 / 33 (93.94%)[0m
+[33m- Cond: 7944 / 22 (36109.09%)[0m
 [32m+ 28216 [-]   : { ... }[0m
 [32m+ 28217 [-]   : app atype = (Type argument)[0m
 [32m+ 28218 [[32mT[0m/[32mT[0m[32m]: if (= atype "Undefined") ... else ...[0m
@@ -19,12 +19,12 @@
 [32m+ 28231 [-]   : return (new Completion("Type" -> CONST_throw, "Value" -> (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))), "Target" -> CONST_empty))[0m
 [32m+ 28232 [-]   : { ... }[0m
 [32m+ 28233 [-]   : app __x0__ = (ToPrimitive argument "Number")[0m
-[32m+ 28234 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
+[32m+ 28234 [[32mT[0m/[31mF[0m[32m]: if (is-completion __x0__) ... else ...[0m
 [32m+ 28235 [-]   : { ... }[0m
 [32m+ 28236 [[32mT[0m/[32mT[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
 [32m+ 28237 [-]   : __x0__ = __x0__["Value"][0m
 [32m+ 28238 [-]   : return __x0__[0m
-[32m+ 28239 [-]   : {}[0m
+[31m- 28239 [-]   : {}[0m
 [32m+ 28240 [-]   : let primValue = __x0__[0m
 [32m+ 28241 [-]   : app __x1__ = (ToNumber primValue)[0m
 [32m+ 28242 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x1__) ... else ...[0m

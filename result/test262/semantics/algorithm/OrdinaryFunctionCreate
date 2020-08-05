@@ -1,6 +1,6 @@
 [33mOrdinaryFunctionCreate[0m
 [33m- Inst: 36 / 39 (92.31%)[0m
-[33m- Cond: 9 / 12 (75.00%)[0m
+[33m- Cond: 7944 / 12 (66200.00%)[0m
 [32m+ 24286 [-]   : { ... }[0m
 [32m+ 24287 [-]   : app __x0__ = (Type functionPrototype)[0m
 [32m+ 24288 [-]   : assert (= __x0__ Object)[0m

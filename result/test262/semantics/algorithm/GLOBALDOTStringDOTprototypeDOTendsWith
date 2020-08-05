@@ -1,6 +1,6 @@
 [33mGLOBALDOTStringDOTprototypeDOTendsWith[0m
-[33m- Inst: 60 / 66 (90.91%)[0m
-[33m- Cond: 26 / 30 (86.67%)[0m
+[33m- Inst: 62 / 66 (93.94%)[0m
+[33m- Cond: 7944 / 30 (26480.00%)[0m
 [32m+ 17364 [-]   : { ... }[0m
 [32m+ 17365 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 17366 [-]   : let searchString = __x0__[0m
@@ -15,8 +15,8 @@
 [32m+ 17375 [-]   : let O = __x2__[0m
 [32m+ 17376 [-]   : app __x3__ = (ToString O)[0m
 [32m+ 17377 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
-[32m+ 17378 [[31mF[0m/[32mT[0m[32m]: if (= __x3__["Type"] CONST_normal) ... else ...[0m
-[31m- 17379 [-]   : __x3__ = __x3__["Value"][0m
+[32m+ 17378 [[32mT[0m/[32mT[0m[32m]: if (= __x3__["Type"] CONST_normal) ... else ...[0m
+[32m+ 17379 [-]   : __x3__ = __x3__["Value"][0m
 [32m+ 17380 [-]   : return __x3__[0m
 [32m+ 17381 [-]   : {}[0m
 [32m+ 17382 [-]   : let S = __x3__[0m
@@ -34,8 +34,8 @@
 [32m+ 17394 [-]   : {}[0m
 [32m+ 17395 [-]   : app __x6__ = (ToString searchString)[0m
 [32m+ 17396 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x6__) ... else ...[0m
-[32m+ 17397 [[31mF[0m/[32mT[0m[32m]: if (= __x6__["Type"] CONST_normal) ... else ...[0m
-[31m- 17398 [-]   : __x6__ = __x6__["Value"][0m
+[32m+ 17397 [[32mT[0m/[32mT[0m[32m]: if (= __x6__["Type"] CONST_normal) ... else ...[0m
+[32m+ 17398 [-]   : __x6__ = __x6__["Value"][0m
 [32m+ 17399 [-]   : return __x6__[0m
 [32m+ 17400 [-]   : {}[0m
 [32m+ 17401 [-]   : let searchStr = __x6__[0m

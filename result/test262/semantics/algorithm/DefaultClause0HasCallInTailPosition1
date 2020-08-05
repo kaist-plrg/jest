@@ -1,6 +1,6 @@
 [33mDefaultClause0HasCallInTailPosition1[0m
 [33m- Inst: 7 / 10 (70.00%)[0m
-[33m- Cond: 1 / 2 (50.00%)[0m
+[33m- Cond: 7944 / 2 (397200.00%)[0m
 [32m+ 9215  [-]   : { ... }[0m
 [32m+ 9216  [[32mT[0m/[31mF[0m[32m]: if (! (= StatementList absent)) ... else ...[0m
 [32m+ 9217  [-]   : { ... }[0m

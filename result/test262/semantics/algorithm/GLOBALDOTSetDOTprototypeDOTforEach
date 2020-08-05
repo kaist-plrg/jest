@@ -1,6 +1,6 @@
-[33mGLOBALDOTSetDOTprototypeDOTforEach[0m
-[33m- Inst: 37 / 38 (97.37%)[0m
-[33m- Cond: 13 / 14 (92.86%)[0m
+[32mGLOBALDOTSetDOTprototypeDOTforEach[0m
+[32m- Inst: 38 / 38 (100.00%)[0m
+[33m- Cond: 7944 / 14 (56742.86%)[0m
 [32m+ 17027 [-]   : { ... }[0m
 [32m+ 17028 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 17029 [-]   : let callbackfn = __x0__[0m
@@ -9,8 +9,8 @@
 [32m+ 17032 [-]   : let S = this[0m
 [32m+ 17033 [-]   : app __x2__ = (RequireInternalSlot S "SetData")[0m
 [32m+ 17034 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
-[32m+ 17035 [[31mF[0m/[32mT[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
-[31m- 17036 [-]   : __x2__ = __x2__["Value"][0m
+[32m+ 17035 [[32mT[0m/[32mT[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
+[32m+ 17036 [-]   : __x2__ = __x2__["Value"][0m
 [32m+ 17037 [-]   : return __x2__[0m
 [32m+ 17038 [-]   : {}[0m
 [32m+ 17039 [-]   : __x2__[0m

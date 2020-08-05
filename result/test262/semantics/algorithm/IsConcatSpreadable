@@ -1,6 +1,6 @@
 [33mIsConcatSpreadable[0m
-[33m- Inst: 29 / 33 (87.88%)[0m
-[33m- Cond: 13 / 16 (81.25%)[0m
+[33m- Inst: 31 / 33 (93.94%)[0m
+[33m- Cond: 7944 / 16 (49650.00%)[0m
 [32m+ 21803 [-]   : { ... }[0m
 [32m+ 21804 [-]   : app __x0__ = (Type O)[0m
 [32m+ 21805 [[32mT[0m/[32mT[0m[32m]: if (! (= __x0__ Object)) ... else ...[0m
@@ -18,9 +18,9 @@
 [32m+ 21817 [[32mT[0m/[32mT[0m[32m]: if (! (= spreadable undefined)) ... else ...[0m
 [32m+ 21818 [-]   : { ... }[0m
 [32m+ 21819 [-]   : app __x3__ = (ToBoolean spreadable)[0m
-[32m+ 21820 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
-[31m- 21821 [-]   : if (= __x3__["Type"] CONST_normal) ... else ...[0m
-[31m- 21822 [-]   : __x3__ = __x3__["Value"][0m
+[32m+ 21820 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
+[32m+ 21821 [[32mT[0m/[31mF[0m[32m]: if (= __x3__["Type"] CONST_normal) ... else ...[0m
+[32m+ 21822 [-]   : __x3__ = __x3__["Value"][0m
 [31m- 21823 [-]   : return __x3__[0m
 [32m+ 21824 [-]   : {}[0m
 [32m+ 21825 [-]   : app __x4__ = (WrapCompletion __x3__)[0m

@@ -1,6 +1,6 @@
 [33mAsyncGeneratorStart[0m
 [33m- Inst: 29 / 43 (67.44%)[0m
-[33m- Cond: 5 / 14 (35.71%)[0m
+[33m- Cond: 7944 / 14 (56742.86%)[0m
 [32m+ 6269  [-]   : { ... }[0m
 [32m+ 6270  [-]   : assert (= generator["AsyncGeneratorState"] undefined)[0m
 [32m+ 6271  [-]   : let genContext = GLOBAL_context[0m

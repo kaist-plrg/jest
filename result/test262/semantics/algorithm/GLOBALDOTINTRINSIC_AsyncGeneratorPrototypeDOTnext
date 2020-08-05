@@ -1,6 +1,6 @@
 [33mGLOBALDOTINTRINSIC_AsyncGeneratorPrototypeDOTnext[0m
 [33m- Inst: 13 / 14 (92.86%)[0m
-[33m- Cond: 3 / 4 (75.00%)[0m
+[33m- Cond: 7944 / 4 (198600.00%)[0m
 [32m+ 14681 [-]   : { ... }[0m
 [32m+ 14682 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 14683 [-]   : let value = __x0__[0m

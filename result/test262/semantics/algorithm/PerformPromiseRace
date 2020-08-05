@@ -1,6 +1,6 @@
 [33mPerformPromiseRace[0m
 [33m- Inst: 63 / 67 (94.03%)[0m
-[33m- Cond: 31 / 34 (91.18%)[0m
+[33m- Cond: 7944 / 34 (23364.71%)[0m
 [32m+ 25233 [-]   : { ... }[0m
 [32m+ 25234 [-]   : app __x0__ = (IsConstructor constructor)[0m
 [32m+ 25235 [-]   : assert (= __x0__ true)[0m

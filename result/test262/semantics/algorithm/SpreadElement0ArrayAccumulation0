@@ -1,6 +1,6 @@
 [33mSpreadElement0ArrayAccumulation0[0m
-[33m- Inst: 48 / 52 (92.31%)[0m
-[33m- Cond: 24 / 28 (85.71%)[0m
+[33m- Inst: 50 / 52 (96.15%)[0m
+[33m- Cond: 7944 / 28 (28371.43%)[0m
 [32m+ 27408 [-]   : { ... }[0m
 [32m+ 27409 [-]   : access __x0__ = (AssignmentExpression "Evaluation")[0m
 [32m+ 27410 [-]   : let spreadRef = __x0__[0m
@@ -40,9 +40,9 @@
 [32m+ 27444 [-]   : {}[0m
 [32m+ 27445 [-]   : let nextValue = __x5__[0m
 [32m+ 27446 [-]   : app __x6__ = (ToString nextIndex)[0m
-[32m+ 27447 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x6__) ... else ...[0m
-[31m- 27448 [-]   : if (= __x6__["Type"] CONST_normal) ... else ...[0m
-[31m- 27449 [-]   : __x6__ = __x6__["Value"][0m
+[32m+ 27447 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x6__) ... else ...[0m
+[32m+ 27448 [[32mT[0m/[31mF[0m[32m]: if (= __x6__["Type"] CONST_normal) ... else ...[0m
+[32m+ 27449 [-]   : __x6__ = __x6__["Value"][0m
 [31m- 27450 [-]   : return __x6__[0m
 [32m+ 27451 [-]   : {}[0m
 [32m+ 27452 [-]   : app __x7__ = (CreateDataPropertyOrThrow array __x6__ nextValue)[0m

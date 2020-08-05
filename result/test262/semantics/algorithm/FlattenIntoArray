@@ -1,6 +1,6 @@
 [33mFlattenIntoArray[0m
-[33m- Inst: 97 / 114 (85.09%)[0m
-[33m- Cond: 47 / 60 (78.33%)[0m
+[33m- Inst: 101 / 114 (88.60%)[0m
+[33m- Cond: 7944 / 60 (13240.00%)[0m
 [32m+ 10077 [-]   : { ... }[0m
 [32m+ 10078 [-]   : app __x0__ = (Type target)[0m
 [32m+ 10079 [-]   : assert (= __x0__ Object)[0m
@@ -32,9 +32,9 @@
 [32m+ 10105 [[32mT[0m/[32mT[0m[32m]: while (< sourceIndex sourceLen) { ... }[0m
 [32m+ 10106 [-]   : { ... }[0m
 [32m+ 10107 [-]   : app __x5__ = (ToString sourceIndex)[0m
-[32m+ 10108 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x5__) ... else ...[0m
-[31m- 10109 [-]   : if (= __x5__["Type"] CONST_normal) ... else ...[0m
-[31m- 10110 [-]   : __x5__ = __x5__["Value"][0m
+[32m+ 10108 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x5__) ... else ...[0m
+[32m+ 10109 [[32mT[0m/[31mF[0m[32m]: if (= __x5__["Type"] CONST_normal) ... else ...[0m
+[32m+ 10110 [-]   : __x5__ = __x5__["Value"][0m
 [31m- 10111 [-]   : return __x5__[0m
 [32m+ 10112 [-]   : {}[0m
 [32m+ 10113 [-]   : let P = __x5__[0m
@@ -98,9 +98,9 @@
 [31m- 10171 [-]   : return __x12__[0m
 [32m+ 10172 [-]   : {}[0m
 [32m+ 10173 [-]   : app __x13__ = (ToString targetIndex)[0m
-[32m+ 10174 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x13__) ... else ...[0m
-[31m- 10175 [-]   : if (= __x13__["Type"] CONST_normal) ... else ...[0m
-[31m- 10176 [-]   : __x13__ = __x13__["Value"][0m
+[32m+ 10174 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x13__) ... else ...[0m
+[32m+ 10175 [[32mT[0m/[31mF[0m[32m]: if (= __x13__["Type"] CONST_normal) ... else ...[0m
+[32m+ 10176 [-]   : __x13__ = __x13__["Value"][0m
 [31m- 10177 [-]   : return __x13__[0m
 [32m+ 10178 [-]   : {}[0m
 [32m+ 10179 [-]   : app __x14__ = (CreateDataPropertyOrThrow target __x13__ element)[0m

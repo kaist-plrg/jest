@@ -1,6 +1,6 @@
 [32mNewFunctionEnvironment[0m
 [32m- Inst: 16 / 16 (100.00%)[0m
-[32m- Cond: 2 / 2 (100.00%)[0m
+[33m- Cond: 7944 / 2 (397200.00%)[0m
 [32m+ 23222 [-]   : { ... }[0m
 [32m+ 23223 [-]   : app __x0__ = (Type newTarget)[0m
 [32m+ 23224 [-]   : assert (|| (= __x0__ Undefined) (= __x0__ Object))[0m

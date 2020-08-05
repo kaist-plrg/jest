@@ -1,6 +1,6 @@
 [33mAsyncMethod0PropertyDefinitionEvaluation0[0m
-[33m- Inst: 35 / 39 (89.74%)[0m
-[33m- Cond: 14 / 18 (77.78%)[0m
+[33m- Inst: 34 / 39 (87.18%)[0m
+[33m- Cond: 7944 / 18 (44133.33%)[0m
 [32m+ 6410  [-]   : { ... }[0m
 [32m+ 6411  [-]   : access __x0__ = (PropertyName "Evaluation")[0m
 [32m+ 6412  [-]   : let propKey = __x0__[0m
@@ -13,9 +13,9 @@
 [32m+ 6419  [-]   : access __x1__ = (GLOBAL_context "LexicalEnvironment")[0m
 [32m+ 6420  [-]   : let scope = __x1__[0m
 [32m+ 6421  [-]   : app closure = (OrdinaryFunctionCreate INTRINSIC_AsyncFunctionPrototype UniqueFormalParameters AsyncFunctionBody CONST_nonlexicalthis scope)[0m
-[32m+ 6422  [[32mT[0m/[32mT[0m[32m]: if (is-completion closure) ... else ...[0m
+[32m+ 6422  [[32mT[0m/[31mF[0m[32m]: if (is-completion closure) ... else ...[0m
 [32m+ 6423  [-]   : closure = closure["Value"][0m
-[32m+ 6424  [-]   : {}[0m
+[31m- 6424  [-]   : {}[0m
 [32m+ 6425  [-]   : app __x2__ = (MakeMethod closure object)[0m
 [32m+ 6426  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
 [32m+ 6427  [[32mT[0m/[31mF[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m

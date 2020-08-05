@@ -1,6 +1,6 @@
 [31mCompletePropertyDescriptor[0m
 [31m- Inst: 0 / 33 (0.00%)[0m
-[31m- Cond: 0 / 16 (0.00%)[0m
+[33m- Cond: 7944 / 16 (49650.00%)[0m
 [31m- 8260  [-]   : { ... }[0m
 [31m- 8261  [-]   : assert (= (typeof Desc) "PropertyDescriptor")[0m
 [31m- 8262  [-]   : let like = (new Record("Value" -> undefined, "Writable" -> false, "Get" -> undefined, "Set" -> undefined, "Enumerable" -> false, "Configurable" -> false))[0m

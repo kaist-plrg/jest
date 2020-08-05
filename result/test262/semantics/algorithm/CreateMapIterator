@@ -1,11 +1,11 @@
-[33mCreateMapIterator[0m
-[33m- Inst: 14 / 15 (93.33%)[0m
-[33m- Cond: 3 / 4 (75.00%)[0m
+[32mCreateMapIterator[0m
+[32m- Inst: 15 / 15 (100.00%)[0m
+[33m- Cond: 7944 / 4 (198600.00%)[0m
 [32m+ 8864  [-]   : { ... }[0m
 [32m+ 8865  [-]   : app __x0__ = (RequireInternalSlot map "MapData")[0m
 [32m+ 8866  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
-[32m+ 8867  [[31mF[0m/[32mT[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
-[31m- 8868  [-]   : __x0__ = __x0__["Value"][0m
+[32m+ 8867  [[32mT[0m/[32mT[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
+[32m+ 8868  [-]   : __x0__ = __x0__["Value"][0m
 [32m+ 8869  [-]   : return __x0__[0m
 [32m+ 8870  [-]   : {}[0m
 [32m+ 8871  [-]   : __x0__[0m

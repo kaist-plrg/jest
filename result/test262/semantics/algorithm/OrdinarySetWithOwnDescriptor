@@ -1,6 +1,6 @@
 [33mOrdinarySetWithOwnDescriptor[0m
 [33m- Inst: 85 / 94 (90.43%)[0m
-[33m- Cond: 37 / 42 (88.10%)[0m
+[33m- Cond: 7944 / 42 (18914.29%)[0m
 [32m+ 24717 [-]   : { ... }[0m
 [32m+ 24718 [-]   : app __x0__ = (IsPropertyKey P)[0m
 [32m+ 24719 [-]   : assert (= __x0__ true)[0m

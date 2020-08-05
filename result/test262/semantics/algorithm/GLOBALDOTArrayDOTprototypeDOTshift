@@ -1,6 +1,6 @@
 [33mGLOBALDOTArrayDOTprototypeDOTshift[0m
-[33m- Inst: 90 / 106 (84.91%)[0m
-[33m- Cond: 45 / 58 (77.59%)[0m
+[33m- Inst: 96 / 106 (90.57%)[0m
+[33m- Cond: 7944 / 58 (13696.55%)[0m
 [32m+ 13012 [-]   : { ... }[0m
 [32m+ 13013 [-]   : app __x0__ = (ToObject this)[0m
 [32m+ 13014 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
@@ -39,16 +39,16 @@
 [32m+ 13047 [[32mT[0m/[32mT[0m[32m]: while (< k len) { ... }[0m
 [32m+ 13048 [-]   : { ... }[0m
 [32m+ 13049 [-]   : app __x5__ = (ToString k)[0m
-[32m+ 13050 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x5__) ... else ...[0m
-[31m- 13051 [-]   : if (= __x5__["Type"] CONST_normal) ... else ...[0m
-[31m- 13052 [-]   : __x5__ = __x5__["Value"][0m
+[32m+ 13050 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x5__) ... else ...[0m
+[32m+ 13051 [[32mT[0m/[31mF[0m[32m]: if (= __x5__["Type"] CONST_normal) ... else ...[0m
+[32m+ 13052 [-]   : __x5__ = __x5__["Value"][0m
 [31m- 13053 [-]   : return __x5__[0m
 [32m+ 13054 [-]   : {}[0m
 [32m+ 13055 [-]   : let from = __x5__[0m
 [32m+ 13056 [-]   : app __x6__ = (ToString (- k 1i))[0m
-[32m+ 13057 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x6__) ... else ...[0m
-[31m- 13058 [-]   : if (= __x6__["Type"] CONST_normal) ... else ...[0m
-[31m- 13059 [-]   : __x6__ = __x6__["Value"][0m
+[32m+ 13057 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x6__) ... else ...[0m
+[32m+ 13058 [[32mT[0m/[31mF[0m[32m]: if (= __x6__["Type"] CONST_normal) ... else ...[0m
+[32m+ 13059 [-]   : __x6__ = __x6__["Value"][0m
 [31m- 13060 [-]   : return __x6__[0m
 [32m+ 13061 [-]   : {}[0m
 [32m+ 13062 [-]   : let to = __x6__[0m
@@ -86,9 +86,9 @@
 [32m+ 13094 [-]   : __x10__[0m
 [32m+ 13095 [-]   : k = (+ k 1i)[0m
 [32m+ 13096 [-]   : app __x11__ = (ToString (- len 1i))[0m
-[32m+ 13097 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x11__) ... else ...[0m
-[31m- 13098 [-]   : if (= __x11__["Type"] CONST_normal) ... else ...[0m
-[31m- 13099 [-]   : __x11__ = __x11__["Value"][0m
+[32m+ 13097 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x11__) ... else ...[0m
+[32m+ 13098 [[32mT[0m/[31mF[0m[32m]: if (= __x11__["Type"] CONST_normal) ... else ...[0m
+[32m+ 13099 [-]   : __x11__ = __x11__["Value"][0m
 [31m- 13100 [-]   : return __x11__[0m
 [32m+ 13101 [-]   : {}[0m
 [32m+ 13102 [-]   : app __x12__ = (DeletePropertyOrThrow O __x11__)[0m

@@ -1,6 +1,6 @@
 [33mGLOBALDOTArrayDOTof[0m
-[33m- Inst: 46 / 50 (92.00%)[0m
-[33m- Cond: 21 / 24 (87.50%)[0m
+[33m- Inst: 48 / 50 (96.00%)[0m
+[33m- Cond: 7944 / 24 (33100.00%)[0m
 [32m+ 11312 [-]   : { ... }[0m
 [32m+ 11313 [-]   : let len = argumentsList["length"][0m
 [32m+ 11314 [-]   : let items = argumentsList[0m
@@ -28,9 +28,9 @@
 [32m+ 11336 [-]   : { ... }[0m
 [32m+ 11337 [-]   : let kValue = items[k][0m
 [32m+ 11338 [-]   : app __x3__ = (ToString k)[0m
-[32m+ 11339 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
-[31m- 11340 [-]   : if (= __x3__["Type"] CONST_normal) ... else ...[0m
-[31m- 11341 [-]   : __x3__ = __x3__["Value"][0m
+[32m+ 11339 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
+[32m+ 11340 [[32mT[0m/[31mF[0m[32m]: if (= __x3__["Type"] CONST_normal) ... else ...[0m
+[32m+ 11341 [-]   : __x3__ = __x3__["Value"][0m
 [31m- 11342 [-]   : return __x3__[0m
 [32m+ 11343 [-]   : {}[0m
 [32m+ 11344 [-]   : let Pk = __x3__[0m

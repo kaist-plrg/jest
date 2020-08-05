@@ -1,6 +1,6 @@
 [33mAssignmentExpression4Evaluation0[0m
 [33m- Inst: 58 / 59 (98.31%)[0m
-[33m- Cond: 23 / 24 (95.83%)[0m
+[33m- Cond: 7944 / 24 (33100.00%)[0m
 [32m+ 2037  [-]   : { ... }[0m
 [32m+ 2038  [[32mT[0m/[32mT[0m[32m]: if (! (|| (is-instance-of LeftHandSideExpression ObjectLiteral) (is-instance-of LeftHandSideExpression ArrayLiteral))) ... else ...[0m
 [32m+ 2039  [-]   : { ... }[0m

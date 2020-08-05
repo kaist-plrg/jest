@@ -1,6 +1,6 @@
 [32mGetGeneratorKind[0m
 [32m- Inst: 15 / 15 (100.00%)[0m
-[32m- Cond: 4 / 4 (100.00%)[0m
+[33m- Cond: 7944 / 4 (198600.00%)[0m
 [32m+ 19789 [-]   : { ... }[0m
 [32m+ 19790 [-]   : let genContext = GLOBAL_context[0m
 [32m+ 19791 [[32mT[0m/[32mT[0m[32m]: if (= genContext["Generator"] absent) ... else ...[0m

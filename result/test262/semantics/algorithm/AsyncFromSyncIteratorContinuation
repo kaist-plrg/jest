@@ -1,6 +1,6 @@
 [33mAsyncFromSyncIteratorContinuation[0m
-[33m- Inst: 40 / 63 (63.49%)[0m
-[33m- Cond: 17 / 30 (56.67%)[0m
+[33m- Inst: 43 / 63 (68.25%)[0m
+[33m- Cond: 7944 / 30 (26480.00%)[0m
 [32m+ 5577  [-]   : { ... }[0m
 [32m+ 5578  [-]   : app __x0__ = (IteratorComplete result)[0m
 [32m+ 5579  [-]   : let done = __x0__[0m
@@ -8,12 +8,12 @@
 [32m+ 5581  [[32mT[0m/[31mF[0m[32m]: if (= done["Type"] CONST_normal) ... else ...[0m
 [32m+ 5582  [-]   : done = done["Value"][0m
 [31m- 5583  [-]   : { ... }[0m
-[31m- 5584  [-]   : app __x1__ = (Call promiseCapability["Reject"] undefined (new [done["Value"]]))[0m
+[32m+ 5584  [-]   : app __x1__ = (Call promiseCapability["Reject"] undefined (new [done["Value"]]))[0m
 [31m- 5585  [-]   : if (&& (is-completion __x1__) (! (= __x1__["Type"] CONST_normal))) ... else ...[0m
 [31m- 5586  [-]   : return __x1__[0m
 [31m- 5587  [-]   : {}[0m
 [31m- 5588  [-]   : return promiseCapability["Promise"][0m
-[32m+ 5589  [-]   : {}[0m
+[31m- 5589  [-]   : {}[0m
 [32m+ 5590  [-]   : done[0m
 [32m+ 5591  [-]   : app __x2__ = (IteratorValue result)[0m
 [32m+ 5592  [-]   : let value = __x2__[0m
@@ -21,12 +21,12 @@
 [32m+ 5594  [[32mT[0m/[31mF[0m[32m]: if (= value["Type"] CONST_normal) ... else ...[0m
 [32m+ 5595  [-]   : value = value["Value"][0m
 [31m- 5596  [-]   : { ... }[0m
-[31m- 5597  [-]   : app __x3__ = (Call promiseCapability["Reject"] undefined (new [value["Value"]]))[0m
+[32m+ 5597  [-]   : app __x3__ = (Call promiseCapability["Reject"] undefined (new [value["Value"]]))[0m
 [31m- 5598  [-]   : if (&& (is-completion __x3__) (! (= __x3__["Type"] CONST_normal))) ... else ...[0m
 [31m- 5599  [-]   : return __x3__[0m
 [31m- 5600  [-]   : {}[0m
 [31m- 5601  [-]   : return promiseCapability["Promise"][0m
-[32m+ 5602  [-]   : {}[0m
+[31m- 5602  [-]   : {}[0m
 [32m+ 5603  [-]   : value[0m
 [32m+ 5604  [-]   : app __x4__ = (PromiseResolve INTRINSIC_Promise value)[0m
 [32m+ 5605  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x4__) ... else ...[0m
@@ -35,11 +35,11 @@
 [31m- 5608  [-]   : return __x4__[0m
 [32m+ 5609  [-]   : {}[0m
 [32m+ 5610  [-]   : let valueWrapper = __x4__[0m
-[32m+ 5611  [[32mT[0m/[32mT[0m[32m]: if (is-completion valueWrapper) ... else ...[0m
-[31m- 5612  [-]   : if (= valueWrapper["Type"] CONST_normal) ... else ...[0m
-[31m- 5613  [-]   : valueWrapper = valueWrapper["Value"][0m
+[32m+ 5611  [[31mF[0m/[32mT[0m[32m]: if (is-completion valueWrapper) ... else ...[0m
+[32m+ 5612  [[32mT[0m/[31mF[0m[32m]: if (= valueWrapper["Type"] CONST_normal) ... else ...[0m
+[32m+ 5613  [-]   : valueWrapper = valueWrapper["Value"][0m
 [31m- 5614  [-]   : { ... }[0m
-[31m- 5615  [-]   : app __x5__ = (Call promiseCapability["Reject"] undefined (new [valueWrapper["Value"]]))[0m
+[32m+ 5615  [-]   : app __x5__ = (Call promiseCapability["Reject"] undefined (new [valueWrapper["Value"]]))[0m
 [31m- 5616  [-]   : if (&& (is-completion __x5__) (! (= __x5__["Type"] CONST_normal))) ... else ...[0m
 [31m- 5617  [-]   : return __x5__[0m
 [31m- 5618  [-]   : {}[0m

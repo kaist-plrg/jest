@@ -1,6 +1,6 @@
 [32mTemplateSpans1Evaluation0[0m
 [32m- Inst: 13 / 13 (100.00%)[0m
-[32m- Cond: 4 / 4 (100.00%)[0m
+[33m- Cond: 7944 / 4 (198600.00%)[0m
 [32m+ 2677  [-]   : { ... }[0m
 [32m+ 2678  [-]   : access __x0__ = (TemplateMiddleList "Evaluation")[0m
 [32m+ 2679  [-]   : let head = __x0__[0m

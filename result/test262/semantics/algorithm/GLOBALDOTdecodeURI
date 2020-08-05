@@ -1,6 +1,6 @@
 [33mGLOBALDOTdecodeURI[0m
 [33m- Inst: 2 / 20 (10.00%)[0m
-[31m- Cond: 0 / 8 (0.00%)[0m
+[33m- Cond: 7944 / 8 (99300.00%)[0m
 [32m+ 19148 [-]   : { ... }[0m
 [32m+ 19149 [-]   : ??? "GLOBAL.decodeURI"[0m
 [31m- 19150 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m

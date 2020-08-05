@@ -1,6 +1,6 @@
 [31mObjectEnvironmentRecordDOTWithBaseObject[0m
 [31m- Inst: 0 / 9 (0.00%)[0m
-[31m- Cond: 0 / 2 (0.00%)[0m
+[33m- Cond: 7944 / 2 (397200.00%)[0m
 [31m- 23941 [-]   : { ... }[0m
 [31m- 23942 [-]   : let envRec = this[0m
 [31m- 23943 [-]   : if (= envRec["withEnvironment"] true) ... else ...[0m

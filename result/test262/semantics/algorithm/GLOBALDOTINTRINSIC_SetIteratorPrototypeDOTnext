@@ -1,6 +1,6 @@
 [32mGLOBALDOTINTRINSIC_SetIteratorPrototypeDOTnext[0m
 [32m- Inst: 48 / 48 (100.00%)[0m
-[32m- Cond: 12 / 12 (100.00%)[0m
+[33m- Cond: 7944 / 12 (66200.00%)[0m
 [32m+ 14820 [-]   : { ... }[0m
 [32m+ 14821 [-]   : let O = this[0m
 [32m+ 14822 [-]   : app __x0__ = (Type O)[0m

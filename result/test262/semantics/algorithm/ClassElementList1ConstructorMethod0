@@ -1,6 +1,6 @@
 [32mClassElementList1ConstructorMethod0[0m
 [32m- Inst: 18 / 18 (100.00%)[0m
-[32m- Cond: 8 / 8 (100.00%)[0m
+[33m- Cond: 7944 / 8 (99300.00%)[0m
 [32m+ 7990  [-]   : { ... }[0m
 [32m+ 7991  [-]   : access __x0__ = (ClassElementList "ConstructorMethod")[0m
 [32m+ 7992  [-]   : let head = __x0__[0m

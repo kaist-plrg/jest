@@ -1,6 +1,6 @@
 [33mLogicalANDExpression1Evaluation0[0m
-[33m- Inst: 29 / 32 (90.63%)[0m
-[33m- Cond: 12 / 14 (85.71%)[0m
+[33m- Inst: 31 / 32 (96.88%)[0m
+[33m- Cond: 7944 / 14 (56742.86%)[0m
 [32m+ 2380  [-]   : { ... }[0m
 [32m+ 2381  [-]   : access __x0__ = (LogicalANDExpression "Evaluation")[0m
 [32m+ 2382  [-]   : let lref = __x0__[0m
@@ -12,9 +12,9 @@
 [32m+ 2388  [-]   : {}[0m
 [32m+ 2389  [-]   : let lval = __x1__[0m
 [32m+ 2390  [-]   : app __x2__ = (ToBoolean lval)[0m
-[32m+ 2391  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
-[31m- 2392  [-]   : if (= __x2__["Type"] CONST_normal) ... else ...[0m
-[31m- 2393  [-]   : __x2__ = __x2__["Value"][0m
+[32m+ 2391  [[31mF[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
+[32m+ 2392  [[32mT[0m/[31mF[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
+[32m+ 2393  [-]   : __x2__ = __x2__["Value"][0m
 [31m- 2394  [-]   : return __x2__[0m
 [32m+ 2395  [-]   : {}[0m
 [32m+ 2396  [-]   : let lbool = __x2__[0m

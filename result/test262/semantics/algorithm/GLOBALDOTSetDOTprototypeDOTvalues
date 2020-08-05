@@ -1,6 +1,6 @@
 [32mGLOBALDOTSetDOTprototypeDOTvalues[0m
 [32m- Inst: 10 / 10 (100.00%)[0m
-[32m- Cond: 4 / 4 (100.00%)[0m
+[33m- Cond: 7944 / 4 (198600.00%)[0m
 [32m+ 17096 [-]   : { ... }[0m
 [32m+ 17097 [-]   : let S = this[0m
 [32m+ 17098 [-]   : app __x0__ = (CreateSetIterator S CONST_value)[0m

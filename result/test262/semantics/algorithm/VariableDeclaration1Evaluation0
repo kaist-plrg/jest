@@ -1,6 +1,6 @@
 [33mVariableDeclaration1Evaluation0[0m
 [33m- Inst: 13 / 14 (92.86%)[0m
-[33m- Cond: 3 / 4 (75.00%)[0m
+[33m- Cond: 7944 / 4 (198600.00%)[0m
 [32m+ 29234 [-]   : { ... }[0m
 [32m+ 29235 [-]   : access __x0__ = (Initializer "Evaluation")[0m
 [32m+ 29236 [-]   : let rhs = __x0__[0m

@@ -1,6 +1,6 @@
 [33mCreateResolvingFunctions[0m
 [33m- Inst: 22 / 24 (91.67%)[0m
-[33m- Cond: 6 / 8 (75.00%)[0m
+[33m- Cond: 7944 / 8 (99300.00%)[0m
 [32m+ 9022  [-]   : { ... }[0m
 [32m+ 9023  [-]   : let alreadyResolved = (new Record("Value" -> false))[0m
 [32m+ 9024  [-]   : let stepsResolve = (new algorithm("length" -> 1i, "step" -> GLOBALDOTPromiseResolveFunctions))[0m

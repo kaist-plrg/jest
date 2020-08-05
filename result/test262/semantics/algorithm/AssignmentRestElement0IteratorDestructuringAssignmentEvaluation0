@@ -1,6 +1,6 @@
 [33mAssignmentRestElement0IteratorDestructuringAssignmentEvaluation0[0m
-[33m- Inst: 72 / 79 (91.14%)[0m
-[33m- Cond: 34 / 40 (85.00%)[0m
+[33m- Inst: 74 / 79 (93.67%)[0m
+[33m- Cond: 7944 / 40 (19860.00%)[0m
 [32m+ 5342  [-]   : { ... }[0m
 [32m+ 5343  [[32mT[0m/[32mT[0m[32m]: if (! (|| (is-instance-of DestructuringAssignmentTarget ObjectLiteral) (is-instance-of DestructuringAssignmentTarget ArrayLiteral))) ... else ...[0m
 [32m+ 5344  [-]   : { ... }[0m
@@ -51,9 +51,9 @@
 [32m+ 5389  [-]   : {}[0m
 [32m+ 5390  [-]   : nextValue[0m
 [32m+ 5391  [-]   : app __x6__ = (ToString n)[0m
-[32m+ 5392  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x6__) ... else ...[0m
-[31m- 5393  [-]   : if (= __x6__["Type"] CONST_normal) ... else ...[0m
-[31m- 5394  [-]   : __x6__ = __x6__["Value"][0m
+[32m+ 5392  [[31mF[0m/[32mT[0m[32m]: if (is-completion __x6__) ... else ...[0m
+[32m+ 5393  [[32mT[0m/[31mF[0m[32m]: if (= __x6__["Type"] CONST_normal) ... else ...[0m
+[32m+ 5394  [-]   : __x6__ = __x6__["Value"][0m
 [31m- 5395  [-]   : return __x6__[0m
 [32m+ 5396  [-]   : {}[0m
 [32m+ 5397  [-]   : app __x7__ = (CreateDataPropertyOrThrow A __x6__ nextValue)[0m

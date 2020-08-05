@@ -1,6 +1,6 @@
 [32mOrdinaryObjectDOTGet[0m
 [32m- Inst: 9 / 9 (100.00%)[0m
-[32m- Cond: 4 / 4 (100.00%)[0m
+[33m- Cond: 7944 / 4 (198600.00%)[0m
 [32m+ 24533 [-]   : { ... }[0m
 [32m+ 24534 [-]   : app __x0__ = (OrdinaryGet O P Receiver)[0m
 [32m+ 24535 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m

@@ -1,6 +1,6 @@
 [32mLexicalBinding0Evaluation1[0m
 [32m- Inst: 24 / 24 (100.00%)[0m
-[32m- Cond: 6 / 6 (100.00%)[0m
+[33m- Cond: 7944 / 6 (132400.00%)[0m
 [32m+ 2790  [-]   : { ... }[0m
 [32m+ 2791  [-]   : access __x0__ = (BindingIdentifier "StringValue")[0m
 [32m+ 2792  [-]   : let bindingId = __x0__[0m

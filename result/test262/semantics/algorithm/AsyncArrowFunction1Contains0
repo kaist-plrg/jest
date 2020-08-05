@@ -1,6 +1,6 @@
 [31mAsyncArrowFunction1Contains0[0m
 [31m- Inst: 0 / 14 (0.00%)[0m
-[31m- Cond: 0 / 4 (0.00%)[0m
+[33m- Cond: 7944 / 4 (198600.00%)[0m
 [31m- 5506  [-]   : { ... }[0m
 [31m- 5507  [-]   : if (! (|| (|| (|| (|| (is-instance-of symbol NewTarget) (is-instance-of symbol SuperProperty)) (is-instance-of symbol SuperCall)) (= symbol "super")) (= symbol "this"))) ... else ...[0m
 [31m- 5508  [-]   : return false[0m

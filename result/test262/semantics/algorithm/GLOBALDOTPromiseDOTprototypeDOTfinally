@@ -1,6 +1,6 @@
 [33mGLOBALDOTPromiseDOTprototypeDOTfinally[0m
 [33m- Inst: 50 / 53 (94.34%)[0m
-[33m- Cond: 17 / 20 (85.00%)[0m
+[33m- Cond: 7944 / 20 (39720.00%)[0m
 [32m+ 16537 [-]   : { ... }[0m
 [32m+ 16538 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 16539 [-]   : let onFinally = __x0__[0m

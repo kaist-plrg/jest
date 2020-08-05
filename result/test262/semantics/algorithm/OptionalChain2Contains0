@@ -1,6 +1,6 @@
 [31mOptionalChain2Contains0[0m
 [31m- Inst: 0 / 15 (0.00%)[0m
-[31m- Cond: 0 / 6 (0.00%)[0m
+[33m- Cond: 7944 / 6 (132400.00%)[0m
 [31m- 23993 [-]   : { ... }[0m
 [31m- 23994 [-]   : if (is-instance-of symbol ReservedWord) ... else ...[0m
 [31m- 23995 [-]   : return false[0m

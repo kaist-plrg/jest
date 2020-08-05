@@ -1,6 +1,6 @@
 [33mNumberCOLONCOLONleftShift[0m
 [33m- Inst: 16 / 18 (88.89%)[0m
-[33m- Cond: 6 / 8 (75.00%)[0m
+[33m- Cond: 7944 / 8 (99300.00%)[0m
 [32m+ 23402 [-]   : { ... }[0m
 [32m+ 23403 [-]   : app __x0__ = (ToInt32 x)[0m
 [32m+ 23404 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m

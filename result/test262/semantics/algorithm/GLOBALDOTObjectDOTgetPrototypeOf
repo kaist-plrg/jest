@@ -1,13 +1,13 @@
 [33mGLOBALDOTObjectDOTgetPrototypeOf[0m
-[33m- Inst: 16 / 18 (88.89%)[0m
-[33m- Cond: 6 / 8 (75.00%)[0m
+[33m- Inst: 17 / 18 (94.44%)[0m
+[33m- Cond: 7944 / 8 (99300.00%)[0m
 [32m+ 15868 [-]   : { ... }[0m
 [32m+ 15869 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 15870 [-]   : let O = __x0__[0m
 [32m+ 15871 [-]   : app __x1__ = (ToObject O)[0m
 [32m+ 15872 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x1__) ... else ...[0m
-[32m+ 15873 [[31mF[0m/[32mT[0m[32m]: if (= __x1__["Type"] CONST_normal) ... else ...[0m
-[31m- 15874 [-]   : __x1__ = __x1__["Value"][0m
+[32m+ 15873 [[32mT[0m/[32mT[0m[32m]: if (= __x1__["Type"] CONST_normal) ... else ...[0m
+[32m+ 15874 [-]   : __x1__ = __x1__["Value"][0m
 [32m+ 15875 [-]   : return __x1__[0m
 [32m+ 15876 [-]   : {}[0m
 [32m+ 15877 [-]   : let obj = __x1__[0m

@@ -1,11 +1,11 @@
-[33mCreateSetIterator[0m
-[33m- Inst: 14 / 15 (93.33%)[0m
-[33m- Cond: 3 / 4 (75.00%)[0m
+[32mCreateSetIterator[0m
+[32m- Inst: 15 / 15 (100.00%)[0m
+[33m- Cond: 7944 / 4 (198600.00%)[0m
 [32m+ 9046  [-]   : { ... }[0m
 [32m+ 9047  [-]   : app __x0__ = (RequireInternalSlot set "SetData")[0m
 [32m+ 9048  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
-[32m+ 9049  [[31mF[0m/[32mT[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
-[31m- 9050  [-]   : __x0__ = __x0__["Value"][0m
+[32m+ 9049  [[32mT[0m/[32mT[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
+[32m+ 9050  [-]   : __x0__ = __x0__["Value"][0m
 [32m+ 9051  [-]   : return __x0__[0m
 [32m+ 9052  [-]   : {}[0m
 [32m+ 9053  [-]   : __x0__[0m

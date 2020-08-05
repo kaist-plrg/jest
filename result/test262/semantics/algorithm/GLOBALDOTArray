@@ -1,6 +1,6 @@
 [33mGLOBALDOTArray[0m
-[33m- Inst: 103 / 115 (89.57%)[0m
-[33m- Cond: 45 / 56 (80.36%)[0m
+[33m- Inst: 105 / 115 (91.30%)[0m
+[33m- Cond: 7944 / 56 (14185.71%)[0m
 [32m+ 10976 [[32mT[0m/[32mT[0m[32m]: if (== argumentsList["length"] 0i) ... else ...[0m
 [32m+ 10977 [-]   : { ... }[0m
 [32m+ 10978 [-]   : let numberOfArgs = argumentsList["length"][0m
@@ -99,9 +99,9 @@
 [32m+ 11071 [[32mT[0m/[32mT[0m[32m]: while (< k numberOfArgs) { ... }[0m
 [32m+ 11072 [-]   : { ... }[0m
 [32m+ 11073 [-]   : app __x14__ = (ToString k)[0m
-[32m+ 11074 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x14__) ... else ...[0m
-[31m- 11075 [-]   : if (= __x14__["Type"] CONST_normal) ... else ...[0m
-[31m- 11076 [-]   : __x14__ = __x14__["Value"][0m
+[32m+ 11074 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x14__) ... else ...[0m
+[32m+ 11075 [[32mT[0m/[31mF[0m[32m]: if (= __x14__["Type"] CONST_normal) ... else ...[0m
+[32m+ 11076 [-]   : __x14__ = __x14__["Value"][0m
 [31m- 11077 [-]   : return __x14__[0m
 [32m+ 11078 [-]   : {}[0m
 [32m+ 11079 [-]   : let Pk = __x14__[0m

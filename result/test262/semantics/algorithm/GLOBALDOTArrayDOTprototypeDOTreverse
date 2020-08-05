@@ -1,6 +1,6 @@
 [33mGLOBALDOTArrayDOTprototypeDOTreverse[0m
-[33m- Inst: 104 / 121 (85.95%)[0m
-[33m- Cond: 53 / 68 (77.94%)[0m
+[33m- Inst: 108 / 121 (89.26%)[0m
+[33m- Cond: 7944 / 68 (11682.35%)[0m
 [32m+ 12891 [-]   : { ... }[0m
 [32m+ 12892 [-]   : app __x0__ = (ToObject this)[0m
 [32m+ 12893 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
@@ -23,16 +23,16 @@
 [32m+ 12910 [-]   : { ... }[0m
 [32m+ 12911 [-]   : let upper = (- (- len lower) 1i)[0m
 [32m+ 12912 [-]   : app __x3__ = (ToString upper)[0m
-[32m+ 12913 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
-[31m- 12914 [-]   : if (= __x3__["Type"] CONST_normal) ... else ...[0m
-[31m- 12915 [-]   : __x3__ = __x3__["Value"][0m
+[32m+ 12913 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
+[32m+ 12914 [[32mT[0m/[31mF[0m[32m]: if (= __x3__["Type"] CONST_normal) ... else ...[0m
+[32m+ 12915 [-]   : __x3__ = __x3__["Value"][0m
 [31m- 12916 [-]   : return __x3__[0m
 [32m+ 12917 [-]   : {}[0m
 [32m+ 12918 [-]   : let upperP = __x3__[0m
 [32m+ 12919 [-]   : app __x4__ = (ToString lower)[0m
-[32m+ 12920 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x4__) ... else ...[0m
-[31m- 12921 [-]   : if (= __x4__["Type"] CONST_normal) ... else ...[0m
-[31m- 12922 [-]   : __x4__ = __x4__["Value"][0m
+[32m+ 12920 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x4__) ... else ...[0m
+[32m+ 12921 [[32mT[0m/[31mF[0m[32m]: if (= __x4__["Type"] CONST_normal) ... else ...[0m
+[32m+ 12922 [-]   : __x4__ = __x4__["Value"][0m
 [31m- 12923 [-]   : return __x4__[0m
 [32m+ 12924 [-]   : {}[0m
 [32m+ 12925 [-]   : let lowerP = __x4__[0m

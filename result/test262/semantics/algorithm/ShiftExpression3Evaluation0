@@ -1,6 +1,6 @@
 [32mShiftExpression3Evaluation0[0m
 [32m- Inst: 45 / 45 (100.00%)[0m
-[32m- Cond: 18 / 18 (100.00%)[0m
+[33m- Cond: 7944 / 18 (44133.33%)[0m
 [32m+ 27300 [-]   : { ... }[0m
 [32m+ 27301 [-]   : access __x0__ = (ShiftExpression "Evaluation")[0m
 [32m+ 27302 [-]   : let lref = __x0__[0m

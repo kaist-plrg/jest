@@ -1,6 +1,6 @@
 [33mIteratorComplete[0m
-[33m- Inst: 14 / 17 (82.35%)[0m
-[33m- Cond: 6 / 8 (75.00%)[0m
+[33m- Inst: 16 / 17 (94.12%)[0m
+[33m- Cond: 7944 / 8 (99300.00%)[0m
 [32m+ 22455 [-]   : { ... }[0m
 [32m+ 22456 [-]   : app __x0__ = (Type iterResult)[0m
 [32m+ 22457 [-]   : assert (= __x0__ Object)[0m
@@ -11,9 +11,9 @@
 [32m+ 22462 [-]   : return __x1__[0m
 [32m+ 22463 [-]   : {}[0m
 [32m+ 22464 [-]   : app __x2__ = (ToBoolean __x1__)[0m
-[32m+ 22465 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
-[31m- 22466 [-]   : if (= __x2__["Type"] CONST_normal) ... else ...[0m
-[31m- 22467 [-]   : __x2__ = __x2__["Value"][0m
+[32m+ 22465 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
+[32m+ 22466 [[32mT[0m/[31mF[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
+[32m+ 22467 [-]   : __x2__ = __x2__["Value"][0m
 [31m- 22468 [-]   : return __x2__[0m
 [32m+ 22469 [-]   : {}[0m
 [32m+ 22470 [-]   : app __x3__ = (WrapCompletion __x2__)[0m

@@ -1,6 +1,6 @@
 [33mArrayAssignmentPattern0DestructuringAssignmentEvaluation3[0m
-[33m- Inst: 35 / 38 (92.11%)[0m
-[33m- Cond: 13 / 14 (92.86%)[0m
+[33m- Inst: 34 / 38 (89.47%)[0m
+[33m- Cond: 7944 / 14 (56742.86%)[0m
 [32m+ 4545  [-]   : { ... }[0m
 [32m+ 4546  [-]   : app __x0__ = (GetIterator value)[0m
 [32m+ 4547  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
@@ -29,11 +29,11 @@
 [32m+ 4570  [[32mT[0m/[32mT[0m[32m]: if (= iteratorRecord["Done"] false) ... else ...[0m
 [32m+ 4571  [-]   : { ... }[0m
 [32m+ 4572  [-]   : app __x8__ = (IteratorClose iteratorRecord result)[0m
-[32m+ 4573  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x8__) ... else ...[0m
+[32m+ 4573  [[32mT[0m/[31mF[0m[32m]: if (is-completion __x8__) ... else ...[0m
 [32m+ 4574  [[31mF[0m/[32mT[0m[32m]: if (= __x8__["Type"] CONST_normal) ... else ...[0m
 [31m- 4575  [-]   : __x8__ = __x8__["Value"][0m
 [32m+ 4576  [-]   : return __x8__[0m
-[32m+ 4577  [-]   : {}[0m
+[31m- 4577  [-]   : {}[0m
 [31m- 4578  [-]   : app __x9__ = (WrapCompletion __x8__)[0m
 [31m- 4579  [-]   : return __x9__[0m
 [32m+ 4580  [-]   : {}[0m

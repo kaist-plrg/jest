@@ -1,6 +1,6 @@
 [33mGLOBALDOTReferenceError[0m
-[33m- Inst: 28 / 33 (84.85%)[0m
-[33m- Cond: 12 / 16 (75.00%)[0m
+[33m- Inst: 30 / 33 (90.91%)[0m
+[33m- Cond: 7944 / 16 (49650.00%)[0m
 [32m+ 16804 [-]   : { ... }[0m
 [32m+ 16805 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 16806 [-]   : let message = __x0__[0m
@@ -17,9 +17,9 @@
 [32m+ 16817 [[32mT[0m/[32mT[0m[32m]: if (! (= message undefined)) ... else ...[0m
 [32m+ 16818 [-]   : { ... }[0m
 [32m+ 16819 [-]   : app __x2__ = (ToString message)[0m
-[32m+ 16820 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
-[31m- 16821 [-]   : if (= __x2__["Type"] CONST_normal) ... else ...[0m
-[31m- 16822 [-]   : __x2__ = __x2__["Value"][0m
+[32m+ 16820 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
+[32m+ 16821 [[32mT[0m/[31mF[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
+[32m+ 16822 [-]   : __x2__ = __x2__["Value"][0m
 [31m- 16823 [-]   : return __x2__[0m
 [32m+ 16824 [-]   : {}[0m
 [32m+ 16825 [-]   : let msg = __x2__[0m

@@ -1,6 +1,6 @@
 [33mTemplateMiddleList0SubstitutionEvaluation0[0m
 [33m- Inst: 11 / 12 (91.67%)[0m
-[33m- Cond: 3 / 4 (75.00%)[0m
+[33m- Cond: 7944 / 4 (198600.00%)[0m
 [32m+ 2594  [-]   : { ... }[0m
 [32m+ 2595  [-]   : access __x0__ = (Expression "Evaluation")[0m
 [32m+ 2596  [-]   : let subRef = __x0__[0m

@@ -1,6 +1,6 @@
-[33mGLOBALDOTBigInt[0m
-[33m- Inst: 33 / 35 (94.29%)[0m
-[33m- Cond: 14 / 16 (87.50%)[0m
+[32mGLOBALDOTBigInt[0m
+[32m- Inst: 35 / 35 (100.00%)[0m
+[33m- Cond: 7944 / 16 (49650.00%)[0m
 [32m+ 13802 [-]   : { ... }[0m
 [32m+ 13803 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 13804 [-]   : let value = __x0__[0m
@@ -21,8 +21,8 @@
 [32m+ 13819 [-]   : { ... }[0m
 [32m+ 13820 [-]   : app __x4__ = (NumberToBigInt prim)[0m
 [32m+ 13821 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x4__) ... else ...[0m
-[32m+ 13822 [[31mF[0m/[32mT[0m[32m]: if (= __x4__["Type"] CONST_normal) ... else ...[0m
-[31m- 13823 [-]   : __x4__ = __x4__["Value"][0m
+[32m+ 13822 [[32mT[0m/[32mT[0m[32m]: if (= __x4__["Type"] CONST_normal) ... else ...[0m
+[32m+ 13823 [-]   : __x4__ = __x4__["Value"][0m
 [32m+ 13824 [-]   : return __x4__[0m
 [32m+ 13825 [-]   : {}[0m
 [32m+ 13826 [-]   : app __x5__ = (WrapCompletion __x4__)[0m
@@ -30,8 +30,8 @@
 [32m+ 13828 [-]   : { ... }[0m
 [32m+ 13829 [-]   : app __x6__ = (ToBigInt value)[0m
 [32m+ 13830 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x6__) ... else ...[0m
-[32m+ 13831 [[31mF[0m/[32mT[0m[32m]: if (= __x6__["Type"] CONST_normal) ... else ...[0m
-[31m- 13832 [-]   : __x6__ = __x6__["Value"][0m
+[32m+ 13831 [[32mT[0m/[32mT[0m[32m]: if (= __x6__["Type"] CONST_normal) ... else ...[0m
+[32m+ 13832 [-]   : __x6__ = __x6__["Value"][0m
 [32m+ 13833 [-]   : return __x6__[0m
 [32m+ 13834 [-]   : {}[0m
 [32m+ 13835 [-]   : app __x7__ = (WrapCompletion __x6__)[0m

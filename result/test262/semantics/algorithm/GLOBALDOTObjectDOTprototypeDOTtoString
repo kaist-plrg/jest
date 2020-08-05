@@ -1,6 +1,6 @@
 [33mGLOBALDOTObjectDOTprototypeDOTtoString[0m
 [33m- Inst: 53 / 57 (92.98%)[0m
-[33m- Cond: 32 / 36 (88.89%)[0m
+[33m- Cond: 7944 / 36 (22066.67%)[0m
 [32m+ 16094 [-]   : { ... }[0m
 [32m+ 16095 [[32mT[0m/[32mT[0m[32m]: if (= this undefined) ... else ...[0m
 [32m+ 16096 [-]   : { ... }[0m

@@ -1,6 +1,6 @@
-[33mUpdateExpression1Evaluation0[0m
-[33m- Inst: 29 / 30 (96.67%)[0m
-[32m- Cond: 14 / 14 (100.00%)[0m
+[32mUpdateExpression1Evaluation0[0m
+[32m- Inst: 30 / 30 (100.00%)[0m
+[33m- Cond: 7944 / 14 (56742.86%)[0m
 [32m+ 2129  [-]   : { ... }[0m
 [32m+ 2130  [-]   : access __x0__ = (LeftHandSideExpression "Evaluation")[0m
 [32m+ 2131  [-]   : let lhs = __x0__[0m
@@ -19,8 +19,8 @@
 [32m+ 2144  [-]   : let oldValue = __x2__[0m
 [32m+ 2145  [-]   : app T = (Type oldValue)[0m
 [32m+ 2146  [-]   : app newValue = (PRIMITIVES[T]["add"] oldValue PRIMITIVES[T]["unit"])[0m
-[32m+ 2147  [[32mT[0m/[32mT[0m[32m]: if (is-completion newValue) ... else ...[0m
-[31m- 2148  [-]   : newValue = newValue["Value"][0m
+[32m+ 2147  [[31mF[0m/[32mT[0m[32m]: if (is-completion newValue) ... else ...[0m
+[32m+ 2148  [-]   : newValue = newValue["Value"][0m
 [32m+ 2149  [-]   : {}[0m
 [32m+ 2150  [-]   : app __x3__ = (PutValue lhs newValue)[0m
 [32m+ 2151  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m

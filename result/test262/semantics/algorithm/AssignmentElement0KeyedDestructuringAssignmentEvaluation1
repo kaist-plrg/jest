@@ -1,6 +1,6 @@
 [33mAssignmentElement0KeyedDestructuringAssignmentEvaluation1[0m
 [33m- Inst: 54 / 56 (96.43%)[0m
-[33m- Cond: 22 / 24 (91.67%)[0m
+[33m- Cond: 7944 / 24 (33100.00%)[0m
 [32m+ 5152  [-]   : { ... }[0m
 [32m+ 5153  [[32mT[0m/[32mT[0m[32m]: if (! (|| (is-instance-of DestructuringAssignmentTarget ObjectLiteral) (is-instance-of DestructuringAssignmentTarget ArrayLiteral))) ... else ...[0m
 [32m+ 5154  [-]   : { ... }[0m

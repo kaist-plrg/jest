@@ -1,6 +1,6 @@
 [32mThrowStatement0Evaluation0[0m
 [32m- Inst: 13 / 13 (100.00%)[0m
-[32m- Cond: 4 / 4 (100.00%)[0m
+[33m- Cond: 7944 / 4 (198600.00%)[0m
 [32m+ 1422  [-]   : { ... }[0m
 [32m+ 1423  [-]   : access __x0__ = (Expression "Evaluation")[0m
 [32m+ 1424  [-]   : let exprRef = __x0__[0m

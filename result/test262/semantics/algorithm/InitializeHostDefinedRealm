@@ -1,6 +1,6 @@
 [33mInitializeHostDefinedRealm[0m
 [33m- Inst: 22 / 23 (95.65%)[0m
-[33m- Cond: 3 / 4 (75.00%)[0m
+[33m- Cond: 7944 / 4 (198600.00%)[0m
 [32m+ 21290 [-]   : { ... }[0m
 [32m+ 21291 [-]   : app __x0__ = (CreateRealm )[0m
 [32m+ 21292 [-]   : let realm = __x0__[0m

@@ -1,6 +1,6 @@
-[33mToBigInt[0m
-[33m- Inst: 34 / 35 (97.14%)[0m
-[32m- Cond: 20 / 20 (100.00%)[0m
+[32mToBigInt[0m
+[32m- Inst: 35 / 35 (100.00%)[0m
+[33m- Cond: 7944 / 20 (39720.00%)[0m
 [32m+ 27981 [-]   : { ... }[0m
 [32m+ 27982 [-]   : app prim = (ToPrimitive argument Number)[0m
 [32m+ 27983 [[32mT[0m/[32mT[0m[32m]: if (is-completion prim) ... else ...[0m
@@ -28,8 +28,8 @@
 [32m+ 28005 [[32mT[0m/[32mT[0m[32m]: if (= atype "String") ... else ...[0m
 [32m+ 28006 [-]   : { ... }[0m
 [32m+ 28007 [-]   : app n = (StringToBigInt prim)[0m
-[32m+ 28008 [[32mT[0m/[32mT[0m[32m]: if (is-completion n) ... else ...[0m
-[31m- 28009 [-]   : n = n["Value"][0m
+[32m+ 28008 [[31mF[0m/[32mT[0m[32m]: if (is-completion n) ... else ...[0m
+[32m+ 28009 [-]   : n = n["Value"][0m
 [32m+ 28010 [-]   : {}[0m
 [32m+ 28011 [[32mT[0m/[32mT[0m[32m]: if (= n NaN) ... else ...[0m
 [32m+ 28012 [-]   : return (new Completion("Type" -> CONST_throw, "Value" -> (new OrdinaryObject("Prototype" -> INTRINSIC_SyntaxErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))), "Target" -> CONST_empty))[0m

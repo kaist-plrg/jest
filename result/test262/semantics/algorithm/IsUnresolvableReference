@@ -1,6 +1,6 @@
 [32mIsUnresolvableReference[0m
 [32m- Inst: 10 / 10 (100.00%)[0m
-[32m- Cond: 2 / 2 (100.00%)[0m
+[33m- Cond: 7944 / 2 (397200.00%)[0m
 [32m+ 22108 [-]   : { ... }[0m
 [32m+ 22109 [-]   : app __x0__ = (Type V)[0m
 [32m+ 22110 [-]   : assert (= __x0__ Reference)[0m

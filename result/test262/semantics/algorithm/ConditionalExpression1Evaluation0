@@ -1,6 +1,6 @@
 [33mConditionalExpression1Evaluation0[0m
-[33m- Inst: 36 / 39 (92.31%)[0m
-[33m- Cond: 16 / 18 (88.89%)[0m
+[33m- Inst: 38 / 39 (97.44%)[0m
+[33m- Cond: 7944 / 18 (44133.33%)[0m
 [32m+ 2726  [-]   : { ... }[0m
 [32m+ 2727  [-]   : access __x0__ = (ShortCircuitExpression "Evaluation")[0m
 [32m+ 2728  [-]   : let lref = __x0__[0m
@@ -11,9 +11,9 @@
 [32m+ 2733  [-]   : return __x1__[0m
 [32m+ 2734  [-]   : {}[0m
 [32m+ 2735  [-]   : app __x2__ = (ToBoolean __x1__)[0m
-[32m+ 2736  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
-[31m- 2737  [-]   : if (= __x2__["Type"] CONST_normal) ... else ...[0m
-[31m- 2738  [-]   : __x2__ = __x2__["Value"][0m
+[32m+ 2736  [[31mF[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
+[32m+ 2737  [[32mT[0m/[31mF[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
+[32m+ 2738  [-]   : __x2__ = __x2__["Value"][0m
 [31m- 2739  [-]   : return __x2__[0m
 [32m+ 2740  [-]   : {}[0m
 [32m+ 2741  [-]   : let lval = __x2__[0m

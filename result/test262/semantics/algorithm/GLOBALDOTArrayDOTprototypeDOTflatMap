@@ -1,6 +1,6 @@
 [33mGLOBALDOTArrayDOTprototypeDOTflatMap[0m
 [33m- Inst: 45 / 46 (97.83%)[0m
-[33m- Cond: 21 / 22 (95.45%)[0m
+[33m- Cond: 7944 / 22 (36109.09%)[0m
 [32m+ 12095 [-]   : { ... }[0m
 [32m+ 12096 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 12097 [-]   : let mapperFunction = __x0__[0m

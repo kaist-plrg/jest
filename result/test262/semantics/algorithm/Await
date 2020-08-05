@@ -1,6 +1,6 @@
 [33mAwait[0m
 [33m- Inst: 41 / 46 (89.13%)[0m
-[33m- Cond: 13 / 18 (72.22%)[0m
+[33m- Cond: 7944 / 18 (44133.33%)[0m
 [32m+ 6449  [-]   : { ... }[0m
 [32m+ 6450  [-]   : let asyncContext = GLOBAL_context[0m
 [32m+ 6451  [-]   : app __x0__ = (PromiseResolve INTRINSIC_Promise value)[0m

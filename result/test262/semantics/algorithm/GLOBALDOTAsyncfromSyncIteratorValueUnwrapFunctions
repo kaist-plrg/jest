@@ -1,6 +1,6 @@
 [33mGLOBALDOTAsyncfromSyncIteratorValueUnwrapFunctions[0m
 [33m- Inst: 11 / 12 (91.67%)[0m
-[33m- Cond: 3 / 4 (75.00%)[0m
+[33m- Cond: 7944 / 4 (198600.00%)[0m
 [32m+ 13754 [-]   : { ... }[0m
 [32m+ 13755 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 13756 [-]   : let value = __x0__[0m

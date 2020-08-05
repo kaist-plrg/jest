@@ -1,6 +1,6 @@
 [33mPerformPromiseThen[0m
 [33m- Inst: 46 / 47 (97.87%)[0m
-[33m- Cond: 13 / 14 (92.86%)[0m
+[33m- Cond: 7944 / 14 (56742.86%)[0m
 [32m+ 25300 [-]   : { ... }[0m
 [32m+ 25301 [-]   : app __x0__ = (IsPromise promise)[0m
 [32m+ 25302 [-]   : assert (= __x0__ true)[0m

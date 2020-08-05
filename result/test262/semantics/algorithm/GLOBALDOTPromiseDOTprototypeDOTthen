@@ -1,6 +1,6 @@
 [32mGLOBALDOTPromiseDOTprototypeDOTthen[0m
 [32m- Inst: 29 / 29 (100.00%)[0m
-[32m- Cond: 10 / 10 (100.00%)[0m
+[33m- Cond: 7944 / 10 (79440.00%)[0m
 [32m+ 16590 [-]   : { ... }[0m
 [32m+ 16591 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 16592 [-]   : let onFulfilled = __x0__[0m

@@ -1,6 +1,6 @@
 [33mFormalParameters4ContainsExpression0[0m
 [33m- Inst: 6 / 7 (85.71%)[0m
-[33m- Cond: 1 / 2 (50.00%)[0m
+[33m- Cond: 7944 / 2 (397200.00%)[0m
 [32m+ 10524 [-]   : { ... }[0m
 [32m+ 10525 [-]   : access __x0__ = (FormalParameterList "ContainsExpression")[0m
 [32m+ 10526 [[31mF[0m/[32mT[0m[32m]: if (= __x0__ true) ... else ...[0m

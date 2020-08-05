@@ -1,6 +1,6 @@
 [33mGLOBALDOTNumberDOTprototypeDOTtoExponential[0m
 [33m- Inst: 2 / 64 (3.13%)[0m
-[31m- Cond: 0 / 24 (0.00%)[0m
+[33m- Cond: 7944 / 24 (33100.00%)[0m
 [32m+ 15260 [-]   : { ... }[0m
 [32m+ 15261 [-]   : ??? "GLOBAL.Number.prototype.toExponential"[0m
 [31m- 15262 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m

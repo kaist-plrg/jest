@@ -1,6 +1,6 @@
 [32mEqualityExpression4Evaluation0[0m
 [32m- Inst: 29 / 29 (100.00%)[0m
-[32m- Cond: 10 / 10 (100.00%)[0m
+[33m- Cond: 7944 / 10 (79440.00%)[0m
 [32m+ 2282  [-]   : { ... }[0m
 [32m+ 2283  [-]   : access __x0__ = (EqualityExpression "Evaluation")[0m
 [32m+ 2284  [-]   : let lref = __x0__[0m

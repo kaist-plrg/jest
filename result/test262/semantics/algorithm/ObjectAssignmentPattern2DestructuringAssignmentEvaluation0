@@ -1,11 +1,11 @@
-[33mObjectAssignmentPattern2DestructuringAssignmentEvaluation0[0m
-[33m- Inst: 18 / 19 (94.74%)[0m
-[33m- Cond: 7 / 8 (87.50%)[0m
+[32mObjectAssignmentPattern2DestructuringAssignmentEvaluation0[0m
+[32m- Inst: 19 / 19 (100.00%)[0m
+[33m- Cond: 7944 / 8 (99300.00%)[0m
 [32m+ 23627 [-]   : { ... }[0m
 [32m+ 23628 [-]   : app __x0__ = (RequireObjectCoercible value)[0m
 [32m+ 23629 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
-[32m+ 23630 [[31mF[0m/[32mT[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
-[31m- 23631 [-]   : __x0__ = __x0__["Value"][0m
+[32m+ 23630 [[32mT[0m/[32mT[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
+[32m+ 23631 [-]   : __x0__ = __x0__["Value"][0m
 [32m+ 23632 [-]   : return __x0__[0m
 [32m+ 23633 [-]   : {}[0m
 [32m+ 23634 [-]   : __x0__[0m

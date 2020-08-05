@@ -1,6 +1,6 @@
 [33mGlobalDeclarationInstantiation[0m
 [33m- Inst: 159 / 184 (86.41%)[0m
-[33m- Cond: 57 / 70 (81.43%)[0m
+[33m- Cond: 7944 / 70 (11348.57%)[0m
 [32m+ 20250 [-]   : { ... }[0m
 [32m+ 20251 [-]   : let envRec = env["EnvironmentRecord"][0m
 [32m+ 20252 [-]   : assert (= (typeof envRec) "GlobalEnvironmentRecord")[0m

@@ -1,6 +1,6 @@
 [33mElementList1ArrayAccumulation1[0m
 [33m- Inst: 7 / 17 (41.18%)[0m
-[33m- Cond: 1 / 6 (16.67%)[0m
+[33m- Cond: 7944 / 6 (132400.00%)[0m
 [32m+ 9393  [-]   : { ... }[0m
 [32m+ 9394  [[31mF[0m/[32mT[0m[32m]: if (! (= Elision absent)) ... else ...[0m
 [31m- 9395  [-]   : { ... }[0m

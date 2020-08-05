@@ -1,6 +1,6 @@
 [33mToPropertyDescriptor[0m
-[33m- Inst: 134 / 155 (86.45%)[0m
-[33m- Cond: 64 / 82 (78.05%)[0m
+[33m- Inst: 140 / 155 (90.32%)[0m
+[33m- Cond: 7944 / 82 (9687.80%)[0m
 [32m+ 28392 [-]   : { ... }[0m
 [32m+ 28393 [-]   : app __x0__ = (Type Obj)[0m
 [32m+ 28394 [[32mT[0m/[32mT[0m[32m]: if (! (= __x0__ Object)) ... else ...[0m
@@ -25,9 +25,9 @@
 [31m- 28413 [-]   : return __x3__[0m
 [32m+ 28414 [-]   : {}[0m
 [32m+ 28415 [-]   : app __x4__ = (ToBoolean __x3__)[0m
-[32m+ 28416 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x4__) ... else ...[0m
-[31m- 28417 [-]   : if (= __x4__["Type"] CONST_normal) ... else ...[0m
-[31m- 28418 [-]   : __x4__ = __x4__["Value"][0m
+[32m+ 28416 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x4__) ... else ...[0m
+[32m+ 28417 [[32mT[0m/[31mF[0m[32m]: if (= __x4__["Type"] CONST_normal) ... else ...[0m
+[32m+ 28418 [-]   : __x4__ = __x4__["Value"][0m
 [31m- 28419 [-]   : return __x4__[0m
 [32m+ 28420 [-]   : {}[0m
 [32m+ 28421 [-]   : let enumerable = __x4__[0m
@@ -49,9 +49,9 @@
 [31m- 28437 [-]   : return __x6__[0m
 [32m+ 28438 [-]   : {}[0m
 [32m+ 28439 [-]   : app __x7__ = (ToBoolean __x6__)[0m
-[32m+ 28440 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x7__) ... else ...[0m
-[31m- 28441 [-]   : if (= __x7__["Type"] CONST_normal) ... else ...[0m
-[31m- 28442 [-]   : __x7__ = __x7__["Value"][0m
+[32m+ 28440 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x7__) ... else ...[0m
+[32m+ 28441 [[32mT[0m/[31mF[0m[32m]: if (= __x7__["Type"] CONST_normal) ... else ...[0m
+[32m+ 28442 [-]   : __x7__ = __x7__["Value"][0m
 [31m- 28443 [-]   : return __x7__[0m
 [32m+ 28444 [-]   : {}[0m
 [32m+ 28445 [-]   : let configurable = __x7__[0m
@@ -91,9 +91,9 @@
 [31m- 28479 [-]   : return __x11__[0m
 [32m+ 28480 [-]   : {}[0m
 [32m+ 28481 [-]   : app __x12__ = (ToBoolean __x11__)[0m
-[32m+ 28482 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x12__) ... else ...[0m
-[31m- 28483 [-]   : if (= __x12__["Type"] CONST_normal) ... else ...[0m
-[31m- 28484 [-]   : __x12__ = __x12__["Value"][0m
+[32m+ 28482 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x12__) ... else ...[0m
+[32m+ 28483 [[32mT[0m/[31mF[0m[32m]: if (= __x12__["Type"] CONST_normal) ... else ...[0m
+[32m+ 28484 [-]   : __x12__ = __x12__["Value"][0m
 [31m- 28485 [-]   : return __x12__[0m
 [32m+ 28486 [-]   : {}[0m
 [32m+ 28487 [-]   : let writable = __x12__[0m

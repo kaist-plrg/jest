@@ -1,6 +1,6 @@
 [33mToObject[0m
 [33m- Inst: 62 / 73 (84.93%)[0m
-[33m- Cond: 25 / 36 (69.44%)[0m
+[33m- Cond: 7944 / 36 (22066.67%)[0m
 [32m+ 28271 [-]   : { ... }[0m
 [32m+ 28272 [-]   : app atype = (Type argument)[0m
 [32m+ 28273 [[32mT[0m/[32mT[0m[32m]: if (= atype "Undefined") ... else ...[0m

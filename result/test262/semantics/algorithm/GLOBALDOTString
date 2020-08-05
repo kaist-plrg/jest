@@ -1,6 +1,6 @@
 [33mGLOBALDOTString[0m
-[33m- Inst: 41 / 44 (93.18%)[0m
-[33m- Cond: 17 / 20 (85.00%)[0m
+[33m- Inst: 42 / 44 (95.45%)[0m
+[33m- Cond: 7944 / 20 (39720.00%)[0m
 [32m+ 17106 [-]   : { ... }[0m
 [32m+ 17107 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 17108 [-]   : let value = __x0__[0m
@@ -21,8 +21,8 @@
 [32m+ 17123 [-]   : {}[0m
 [32m+ 17124 [-]   : app __x5__ = (ToString value)[0m
 [32m+ 17125 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x5__) ... else ...[0m
-[32m+ 17126 [[31mF[0m/[32mT[0m[32m]: if (= __x5__["Type"] CONST_normal) ... else ...[0m
-[31m- 17127 [-]   : __x5__ = __x5__["Value"][0m
+[32m+ 17126 [[32mT[0m/[32mT[0m[32m]: if (= __x5__["Type"] CONST_normal) ... else ...[0m
+[32m+ 17127 [-]   : __x5__ = __x5__["Value"][0m
 [32m+ 17128 [-]   : return __x5__[0m
 [32m+ 17129 [-]   : {}[0m
 [32m+ 17130 [-]   : let s = __x5__[0m

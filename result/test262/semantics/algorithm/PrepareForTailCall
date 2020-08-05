@@ -1,6 +1,6 @@
 [33mPrepareForTailCall[0m
 [33m- Inst: 8 / 10 (80.00%)[0m
-[33m- Cond: 2 / 4 (50.00%)[0m
+[33m- Cond: 7944 / 4 (198600.00%)[0m
 [32m+ 25367 [-]   : { ... }[0m
 [32m+ 25368 [-]   : let leafContext = GLOBAL_context[0m
 [32m+ 25369 [[32mT[0m/[31mF[0m[32m]: if (= GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 1i)] leafContext) ... else ...[0m

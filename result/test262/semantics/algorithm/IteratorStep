@@ -1,6 +1,6 @@
 [32mIteratorStep[0m
 [32m- Inst: 22 / 22 (100.00%)[0m
-[32m- Cond: 10 / 10 (100.00%)[0m
+[33m- Cond: 7944 / 10 (79440.00%)[0m
 [32m+ 22498 [-]   : { ... }[0m
 [32m+ 22499 [-]   : app __x0__ = (IteratorNext iteratorRecord)[0m
 [32m+ 22500 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m

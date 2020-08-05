@@ -1,6 +1,6 @@
-[33mGLOBALDOTStringDOTprototypeDOTconcat[0m
-[33m- Inst: 28 / 30 (93.33%)[0m
-[33m- Cond: 12 / 14 (85.71%)[0m
+[32mGLOBALDOTStringDOTprototypeDOTconcat[0m
+[32m- Inst: 30 / 30 (100.00%)[0m
+[33m- Cond: 7944 / 14 (56742.86%)[0m
 [32m+ 17334 [-]   : { ... }[0m
 [32m+ 17335 [-]   : app __x0__ = (RequireObjectCoercible this)[0m
 [32m+ 17336 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
@@ -11,8 +11,8 @@
 [32m+ 17341 [-]   : let O = __x0__[0m
 [32m+ 17342 [-]   : app __x1__ = (ToString O)[0m
 [32m+ 17343 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x1__) ... else ...[0m
-[32m+ 17344 [[31mF[0m/[32mT[0m[32m]: if (= __x1__["Type"] CONST_normal) ... else ...[0m
-[31m- 17345 [-]   : __x1__ = __x1__["Value"][0m
+[32m+ 17344 [[32mT[0m/[32mT[0m[32m]: if (= __x1__["Type"] CONST_normal) ... else ...[0m
+[32m+ 17345 [-]   : __x1__ = __x1__["Value"][0m
 [32m+ 17346 [-]   : return __x1__[0m
 [32m+ 17347 [-]   : {}[0m
 [32m+ 17348 [-]   : let S = __x1__[0m
@@ -23,8 +23,8 @@
 [32m+ 17353 [-]   : let next = (pop args 0i)[0m
 [32m+ 17354 [-]   : app __x2__ = (ToString next)[0m
 [32m+ 17355 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
-[32m+ 17356 [[31mF[0m/[32mT[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
-[31m- 17357 [-]   : __x2__ = __x2__["Value"][0m
+[32m+ 17356 [[32mT[0m/[32mT[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
+[32m+ 17357 [-]   : __x2__ = __x2__["Value"][0m
 [32m+ 17358 [-]   : return __x2__[0m
 [32m+ 17359 [-]   : {}[0m
 [32m+ 17360 [-]   : let nextString = __x2__[0m

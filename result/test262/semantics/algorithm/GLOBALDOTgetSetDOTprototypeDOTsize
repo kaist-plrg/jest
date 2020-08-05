@@ -1,12 +1,12 @@
 [33mGLOBALDOTgetSetDOTprototypeDOTsize[0m
-[33m- Inst: 19 / 22 (86.36%)[0m
-[33m- Cond: 6 / 8 (75.00%)[0m
+[33m- Inst: 21 / 22 (95.45%)[0m
+[33m- Cond: 7944 / 8 (99300.00%)[0m
 [32m+ 19275 [-]   : { ... }[0m
 [32m+ 19276 [-]   : let S = this[0m
 [32m+ 19277 [-]   : app __x0__ = (RequireInternalSlot S "SetData")[0m
-[32m+ 19278 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
-[31m- 19279 [-]   : if (= __x0__["Type"] CONST_normal) ... else ...[0m
-[31m- 19280 [-]   : __x0__ = __x0__["Value"][0m
+[32m+ 19278 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
+[32m+ 19279 [[32mT[0m/[31mF[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
+[32m+ 19280 [-]   : __x0__ = __x0__["Value"][0m
 [31m- 19281 [-]   : return __x0__[0m
 [32m+ 19282 [-]   : {}[0m
 [32m+ 19283 [-]   : __x0__[0m

@@ -1,6 +1,6 @@
 [33mIdentifierReference0Evaluation0[0m
 [33m- Inst: 9 / 10 (90.00%)[0m
-[33m- Cond: 3 / 4 (75.00%)[0m
+[33m- Cond: 7944 / 4 (198600.00%)[0m
 [32m+ 441   [-]   : { ... }[0m
 [32m+ 442   [-]   : access __x0__ = (Identifier "StringValue")[0m
 [32m+ 443   [-]   : app __x1__ = (ResolveBinding __x0__)[0m

@@ -1,12 +1,12 @@
-[33mGLOBALDOTgetMapDOTprototypeDOTsize[0m
-[33m- Inst: 21 / 22 (95.45%)[0m
-[33m- Cond: 7 / 8 (87.50%)[0m
+[32mGLOBALDOTgetMapDOTprototypeDOTsize[0m
+[32m- Inst: 22 / 22 (100.00%)[0m
+[33m- Cond: 7944 / 8 (99300.00%)[0m
 [32m+ 19247 [-]   : { ... }[0m
 [32m+ 19248 [-]   : let M = this[0m
 [32m+ 19249 [-]   : app __x0__ = (RequireInternalSlot M "MapData")[0m
 [32m+ 19250 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
-[32m+ 19251 [[31mF[0m/[32mT[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
-[31m- 19252 [-]   : __x0__ = __x0__["Value"][0m
+[32m+ 19251 [[32mT[0m/[32mT[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
+[32m+ 19252 [-]   : __x0__ = __x0__["Value"][0m
 [32m+ 19253 [-]   : return __x0__[0m
 [32m+ 19254 [-]   : {}[0m
 [32m+ 19255 [-]   : __x0__[0m

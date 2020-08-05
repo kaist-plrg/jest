@@ -1,13 +1,13 @@
 [33mGLOBALDOTObjectDOTfromEntries[0m
-[33m- Inst: 25 / 27 (92.59%)[0m
-[33m- Cond: 10 / 12 (83.33%)[0m
+[33m- Inst: 26 / 27 (96.30%)[0m
+[33m- Cond: 7944 / 12 (66200.00%)[0m
 [32m+ 15737 [-]   : { ... }[0m
 [32m+ 15738 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 15739 [-]   : let iterable = __x0__[0m
 [32m+ 15740 [-]   : app __x1__ = (RequireObjectCoercible iterable)[0m
 [32m+ 15741 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x1__) ... else ...[0m
-[32m+ 15742 [[31mF[0m/[32mT[0m[32m]: if (= __x1__["Type"] CONST_normal) ... else ...[0m
-[31m- 15743 [-]   : __x1__ = __x1__["Value"][0m
+[32m+ 15742 [[32mT[0m/[32mT[0m[32m]: if (= __x1__["Type"] CONST_normal) ... else ...[0m
+[32m+ 15743 [-]   : __x1__ = __x1__["Value"][0m
 [32m+ 15744 [-]   : return __x1__[0m
 [32m+ 15745 [-]   : {}[0m
 [32m+ 15746 [-]   : __x1__[0m

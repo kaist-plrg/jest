@@ -1,6 +1,6 @@
 [31mModuleNamespaceExoticObjectDOTDelete[0m
 [31m- Inst: 0 / 23 (0.00%)[0m
-[31m- Cond: 0 / 8 (0.00%)[0m
+[33m- Cond: 7944 / 8 (99300.00%)[0m
 [31m- 23064 [-]   : { ... }[0m
 [31m- 23065 [-]   : app __x0__ = (IsPropertyKey P)[0m
 [31m- 23066 [-]   : assert (= __x0__ true)[0m

@@ -1,6 +1,6 @@
 [33mPerformPromiseAllSettled[0m
 [33m- Inst: 111 / 118 (94.07%)[0m
-[33m- Cond: 46 / 52 (88.46%)[0m
+[33m- Cond: 7944 / 52 (15276.92%)[0m
 [32m+ 25115 [-]   : { ... }[0m
 [32m+ 25116 [-]   : app __x0__ = (IsConstructor constructor)[0m
 [32m+ 25117 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m

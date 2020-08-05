@@ -1,6 +1,6 @@
 [33mAsyncGeneratorEnqueue[0m
 [33m- Inst: 25 / 39 (64.10%)[0m
-[33m- Cond: 8 / 16 (50.00%)[0m
+[33m- Cond: 7944 / 16 (49650.00%)[0m
 [32m+ 5911  [-]   : { ... }[0m
 [32m+ 5912  [-]   : assert (is-completion completion)[0m
 [32m+ 5913  [-]   : app __x0__ = (NewPromiseCapability INTRINSIC_Promise)[0m

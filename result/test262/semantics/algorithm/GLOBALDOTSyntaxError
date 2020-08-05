@@ -1,6 +1,6 @@
 [33mGLOBALDOTSyntaxError[0m
-[33m- Inst: 27 / 33 (81.82%)[0m
-[33m- Cond: 11 / 16 (68.75%)[0m
+[33m- Inst: 29 / 33 (87.88%)[0m
+[33m- Cond: 7944 / 16 (49650.00%)[0m
 [32m+ 18635 [-]   : { ... }[0m
 [32m+ 18636 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 18637 [-]   : let message = __x0__[0m
@@ -17,9 +17,9 @@
 [32m+ 18648 [[32mT[0m/[32mT[0m[32m]: if (! (= message undefined)) ... else ...[0m
 [32m+ 18649 [-]   : { ... }[0m
 [32m+ 18650 [-]   : app __x2__ = (ToString message)[0m
-[32m+ 18651 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
-[31m- 18652 [-]   : if (= __x2__["Type"] CONST_normal) ... else ...[0m
-[31m- 18653 [-]   : __x2__ = __x2__["Value"][0m
+[32m+ 18651 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
+[32m+ 18652 [[32mT[0m/[31mF[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
+[32m+ 18653 [-]   : __x2__ = __x2__["Value"][0m
 [31m- 18654 [-]   : return __x2__[0m
 [32m+ 18655 [-]   : {}[0m
 [32m+ 18656 [-]   : let msg = __x2__[0m

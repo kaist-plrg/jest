@@ -1,6 +1,6 @@
 [31mClassDeclaration1BindingClassDeclarationEvaluation0[0m
 [31m- Inst: 0 / 12 (0.00%)[0m
-[31m- Cond: 0 / 4 (0.00%)[0m
+[33m- Cond: 7944 / 4 (198600.00%)[0m
 [31m- 7922  [-]   : { ... }[0m
 [31m- 7923  [-]   : access __x0__ = (ClassTail "ClassDefinitionEvaluation")[0m
 [31m- 7924  [-]   : app __x1__ = (__x0__ undefined "default")[0m

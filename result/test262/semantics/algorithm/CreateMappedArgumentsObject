@@ -1,6 +1,6 @@
 [31mCreateMappedArgumentsObject[0m
 [31m- Inst: 0 / 84 (0.00%)[0m
-[31m- Cond: 0 / 34 (0.00%)[0m
+[33m- Cond: 7944 / 34 (23364.71%)[0m
 [31m- 8879  [-]   : { ... }[0m
 [31m- 8880  [-]   : let len = argumentsList["length"][0m
 [31m- 8881  [-]   : app __x0__ = (MakeBasicObject (new ["Prototype", "Extensible", "ParameterMap"]))[0m

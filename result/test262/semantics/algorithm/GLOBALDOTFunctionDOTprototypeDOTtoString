@@ -1,6 +1,6 @@
 [33mGLOBALDOTFunctionDOTprototypeDOTtoString[0m
-[33m- Inst: 30 / 36 (83.33%)[0m
-[33m- Cond: 10 / 12 (83.33%)[0m
+[33m- Inst: 29 / 36 (80.56%)[0m
+[33m- Cond: 7944 / 12 (66200.00%)[0m
 [32m+ 14344 [-]   : { ... }[0m
 [32m+ 14345 [-]   : let func = this[0m
 [32m+ 14346 [[32mT[0m/[32mT[0m[32m]: if (|| (= (typeof func) "BoundFunctionExoticObject") (= (typeof func) "BuiltinFunctionObject")) ... else ...[0m
@@ -14,9 +14,9 @@
 [32m+ 14354 [-]   : { ... }[0m
 [32m+ 14355 [-]   : app T = (Type func["SourceText"])[0m
 [32m+ 14356 [-]   : app available = (HostHasSourceTextAvailable func)[0m
-[32m+ 14357 [[32mT[0m/[32mT[0m[32m]: if (is-completion available) ... else ...[0m
+[32m+ 14357 [[32mT[0m/[31mF[0m[32m]: if (is-completion available) ... else ...[0m
 [32m+ 14358 [-]   : available = available["Value"][0m
-[32m+ 14359 [-]   : {}[0m
+[31m- 14359 [-]   : {}[0m
 [32m+ 14360 [[32mT[0m/[31mF[0m[32m]: if (&& (= T "String") available) ... else ...[0m
 [32m+ 14361 [-]   : { ... }[0m
 [32m+ 14362 [-]   : app wrapped = (WrapCompletion func["SourceText"])[0m

@@ -1,6 +1,6 @@
 [33mToString[0m
-[33m- Inst: 44 / 45 (97.78%)[0m
-[33m- Cond: 27 / 28 (96.43%)[0m
+[33m- Inst: 42 / 45 (93.33%)[0m
+[33m- Cond: 7944 / 28 (28371.43%)[0m
 [32m+ 28569 [-]   : { ... }[0m
 [32m+ 28570 [-]   : app atype = (Type argument)[0m
 [32m+ 28571 [[32mT[0m/[32mT[0m[32m]: if (= atype "Undefined") ... else ...[0m
@@ -25,18 +25,18 @@
 [32m+ 28590 [[32mT[0m/[32mT[0m[32m]: if (= atype "BigInt") ... else ...[0m
 [32m+ 28591 [-]   : { ... }[0m
 [32m+ 28592 [-]   : app result = (PRIMITIVES["BigInt"]["toString"] argument)[0m
-[32m+ 28593 [[32mT[0m/[32mT[0m[32m]: if (is-completion result) ... else ...[0m
+[32m+ 28593 [[32mT[0m/[31mF[0m[32m]: if (is-completion result) ... else ...[0m
 [32m+ 28594 [-]   : result = result["Value"][0m
-[32m+ 28595 [-]   : {}[0m
+[31m- 28595 [-]   : {}[0m
 [32m+ 28596 [-]   : return result[0m
 [32m+ 28597 [-]   : { ... }[0m
 [32m+ 28598 [-]   : app __x0__ = (ToPrimitive argument "String")[0m
-[32m+ 28599 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
+[32m+ 28599 [[32mT[0m/[31mF[0m[32m]: if (is-completion __x0__) ... else ...[0m
 [32m+ 28600 [-]   : { ... }[0m
 [32m+ 28601 [[32mT[0m/[32mT[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
 [32m+ 28602 [-]   : __x0__ = __x0__["Value"][0m
 [32m+ 28603 [-]   : return __x0__[0m
-[32m+ 28604 [-]   : {}[0m
+[31m- 28604 [-]   : {}[0m
 [32m+ 28605 [-]   : let primValue = __x0__[0m
 [32m+ 28606 [-]   : app __x1__ = (ToString primValue)[0m
 [32m+ 28607 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x1__) ... else ...[0m

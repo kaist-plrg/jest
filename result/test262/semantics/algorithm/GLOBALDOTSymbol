@@ -1,6 +1,6 @@
-[33mGLOBALDOTSymbol[0m
-[33m- Inst: 19 / 20 (95.00%)[0m
-[33m- Cond: 7 / 8 (87.50%)[0m
+[32mGLOBALDOTSymbol[0m
+[32m- Inst: 20 / 20 (100.00%)[0m
+[33m- Cond: 7944 / 8 (99300.00%)[0m
 [32m+ 18541 [-]   : { ... }[0m
 [32m+ 18542 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 18543 [-]   : let description = __x0__[0m
@@ -14,8 +14,8 @@
 [32m+ 18551 [-]   : { ... }[0m
 [32m+ 18552 [-]   : app __x2__ = (ToString description)[0m
 [32m+ 18553 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
-[32m+ 18554 [[31mF[0m/[32mT[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
-[31m- 18555 [-]   : __x2__ = __x2__["Value"][0m
+[32m+ 18554 [[32mT[0m/[32mT[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
+[32m+ 18555 [-]   : __x2__ = __x2__["Value"][0m
 [32m+ 18556 [-]   : return __x2__[0m
 [32m+ 18557 [-]   : {}[0m
 [32m+ 18558 [-]   : let descString = __x2__[0m

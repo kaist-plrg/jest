@@ -1,6 +1,6 @@
 [33mForBodyEvaluation[0m
-[33m- Inst: 62 / 67 (92.54%)[0m
-[33m- Cond: 27 / 32 (84.38%)[0m
+[33m- Inst: 64 / 67 (95.52%)[0m
+[33m- Cond: 7944 / 32 (24825.00%)[0m
 [32m+ 10192 [-]   : { ... }[0m
 [32m+ 10193 [-]   : let V = undefined[0m
 [32m+ 10194 [-]   : app __x0__ = (CreatePerIterationEnvironment perIterationBindings)[0m
@@ -24,9 +24,9 @@
 [32m+ 10212 [-]   : {}[0m
 [32m+ 10213 [-]   : let testValue = __x2__[0m
 [32m+ 10214 [-]   : app __x3__ = (ToBoolean testValue)[0m
-[32m+ 10215 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
-[31m- 10216 [-]   : if (= __x3__["Type"] CONST_normal) ... else ...[0m
-[31m- 10217 [-]   : __x3__ = __x3__["Value"][0m
+[32m+ 10215 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
+[32m+ 10216 [[32mT[0m/[31mF[0m[32m]: if (= __x3__["Type"] CONST_normal) ... else ...[0m
+[32m+ 10217 [-]   : __x3__ = __x3__["Value"][0m
 [31m- 10218 [-]   : return __x3__[0m
 [32m+ 10219 [-]   : {}[0m
 [32m+ 10220 [[32mT[0m/[32mT[0m[32m]: if (= __x3__ false) ... else ...[0m

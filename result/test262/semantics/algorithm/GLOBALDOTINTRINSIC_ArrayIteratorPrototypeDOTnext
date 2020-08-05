@@ -1,6 +1,6 @@
 [33mGLOBALDOTINTRINSIC_ArrayIteratorPrototypeDOTnext[0m
-[33m- Inst: 65 / 81 (80.25%)[0m
-[33m- Cond: 24 / 32 (75.00%)[0m
+[33m- Inst: 67 / 81 (82.72%)[0m
+[33m- Cond: 7944 / 32 (24825.00%)[0m
 [32m+ 14412 [-]   : { ... }[0m
 [32m+ 14413 [-]   : let O = this[0m
 [32m+ 14414 [-]   : app __x0__ = (Type O)[0m
@@ -55,9 +55,9 @@
 [32m+ 14463 [-]   : return __x11__[0m
 [32m+ 14464 [-]   : {}[0m
 [32m+ 14465 [-]   : app __x12__ = (ToString index)[0m
-[32m+ 14466 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x12__) ... else ...[0m
-[31m- 14467 [-]   : if (= __x12__["Type"] CONST_normal) ... else ...[0m
-[31m- 14468 [-]   : __x12__ = __x12__["Value"][0m
+[32m+ 14466 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x12__) ... else ...[0m
+[32m+ 14467 [[32mT[0m/[31mF[0m[32m]: if (= __x12__["Type"] CONST_normal) ... else ...[0m
+[32m+ 14468 [-]   : __x12__ = __x12__["Value"][0m
 [31m- 14469 [-]   : return __x12__[0m
 [32m+ 14470 [-]   : {}[0m
 [32m+ 14471 [-]   : let elementKey = __x12__[0m

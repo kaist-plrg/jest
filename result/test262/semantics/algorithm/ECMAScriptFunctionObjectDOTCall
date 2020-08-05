@@ -1,6 +1,6 @@
 [32mECMAScriptFunctionObjectDOTCall[0m
 [32m- Inst: 34 / 34 (100.00%)[0m
-[32m- Cond: 10 / 10 (100.00%)[0m
+[33m- Cond: 7944 / 10 (79440.00%)[0m
 [32m+ 9291  [-]   : { ... }[0m
 [32m+ 9292  [[32mT[0m/[32mT[0m[32m]: if (= F["IsClassConstructor"] true) ... else ...[0m
 [32m+ 9293  [-]   : { ... }[0m

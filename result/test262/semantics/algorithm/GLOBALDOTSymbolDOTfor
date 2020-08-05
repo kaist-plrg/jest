@@ -1,13 +1,13 @@
-[33mGLOBALDOTSymbolDOTfor[0m
-[33m- Inst: 22 / 23 (95.65%)[0m
-[33m- Cond: 7 / 8 (87.50%)[0m
+[32mGLOBALDOTSymbolDOTfor[0m
+[32m- Inst: 23 / 23 (100.00%)[0m
+[33m- Cond: 7944 / 8 (99300.00%)[0m
 [32m+ 18561 [-]   : { ... }[0m
 [32m+ 18562 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 18563 [-]   : let key = __x0__[0m
 [32m+ 18564 [-]   : app __x1__ = (ToString key)[0m
 [32m+ 18565 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x1__) ... else ...[0m
-[32m+ 18566 [[31mF[0m/[32mT[0m[32m]: if (= __x1__["Type"] CONST_normal) ... else ...[0m
-[31m- 18567 [-]   : __x1__ = __x1__["Value"][0m
+[32m+ 18566 [[32mT[0m/[32mT[0m[32m]: if (= __x1__["Type"] CONST_normal) ... else ...[0m
+[32m+ 18567 [-]   : __x1__ = __x1__["Value"][0m
 [32m+ 18568 [-]   : return __x1__[0m
 [32m+ 18569 [-]   : {}[0m
 [32m+ 18570 [-]   : let stringKey = __x1__[0m

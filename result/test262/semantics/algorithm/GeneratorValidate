@@ -1,11 +1,11 @@
-[33mGeneratorValidate[0m
-[33m- Inst: 15 / 16 (93.75%)[0m
-[33m- Cond: 5 / 6 (83.33%)[0m
+[32mGeneratorValidate[0m
+[32m- Inst: 16 / 16 (100.00%)[0m
+[33m- Cond: 7944 / 6 (132400.00%)[0m
 [32m+ 19656 [-]   : { ... }[0m
 [32m+ 19657 [-]   : app __x0__ = (RequireInternalSlot generator "GeneratorState")[0m
 [32m+ 19658 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
-[32m+ 19659 [[31mF[0m/[32mT[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
-[31m- 19660 [-]   : __x0__ = __x0__["Value"][0m
+[32m+ 19659 [[32mT[0m/[32mT[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
+[32m+ 19660 [-]   : __x0__ = __x0__["Value"][0m
 [32m+ 19661 [-]   : return __x0__[0m
 [32m+ 19662 [-]   : {}[0m
 [32m+ 19663 [-]   : __x0__[0m

@@ -1,6 +1,6 @@
-[33mGLOBALDOTBigIntDOTasUintN[0m
-[33m- Inst: 19 / 20 (95.00%)[0m
-[33m- Cond: 7 / 8 (87.50%)[0m
+[32mGLOBALDOTBigIntDOTasUintN[0m
+[32m- Inst: 20 / 20 (100.00%)[0m
+[33m- Cond: 7944 / 8 (99300.00%)[0m
 [32m+ 13860 [-]   : { ... }[0m
 [32m+ 13861 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 13862 [-]   : let bits = __x0__[0m
@@ -15,8 +15,8 @@
 [32m+ 13871 [-]   : let bits = __x2__[0m
 [32m+ 13872 [-]   : app __x3__ = (ToBigInt bigint)[0m
 [32m+ 13873 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
-[32m+ 13874 [[31mF[0m/[32mT[0m[32m]: if (= __x3__["Type"] CONST_normal) ... else ...[0m
-[31m- 13875 [-]   : __x3__ = __x3__["Value"][0m
+[32m+ 13874 [[32mT[0m/[32mT[0m[32m]: if (= __x3__["Type"] CONST_normal) ... else ...[0m
+[32m+ 13875 [-]   : __x3__ = __x3__["Value"][0m
 [32m+ 13876 [-]   : return __x3__[0m
 [32m+ 13877 [-]   : {}[0m
 [32m+ 13878 [-]   : let bigint = __x3__[0m

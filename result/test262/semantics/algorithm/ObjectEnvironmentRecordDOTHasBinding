@@ -1,6 +1,6 @@
 [33mObjectEnvironmentRecordDOTHasBinding[0m
 [33m- Inst: 18 / 51 (35.29%)[0m
-[33m- Cond: 6 / 24 (25.00%)[0m
+[33m- Cond: 7944 / 24 (33100.00%)[0m
 [32m+ 23860 [-]   : { ... }[0m
 [32m+ 23861 [-]   : let envRec = this[0m
 [32m+ 23862 [-]   : let bindings = envRec["BindingObject"][0m

@@ -1,6 +1,6 @@
 [33mVariableDeclarationList1Evaluation0[0m
 [33m- Inst: 11 / 12 (91.67%)[0m
-[33m- Cond: 3 / 4 (75.00%)[0m
+[33m- Cond: 7944 / 4 (198600.00%)[0m
 [32m+ 2112  [-]   : { ... }[0m
 [32m+ 2113  [-]   : access __x0__ = (VariableDeclarationList "Evaluation")[0m
 [32m+ 2114  [-]   : let next = __x0__[0m

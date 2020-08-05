@@ -1,6 +1,6 @@
 [33mGLOBALDOTStringDOTraw[0m
 [33m- Inst: 2 / 80 (2.50%)[0m
-[31m- Cond: 0 / 40 (0.00%)[0m
+[33m- Cond: 7944 / 40 (19860.00%)[0m
 [32m+ 18461 [-]   : { ... }[0m
 [32m+ 18462 [-]   : ??? "GLOBAL.String.raw"[0m
 [31m- 18463 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m

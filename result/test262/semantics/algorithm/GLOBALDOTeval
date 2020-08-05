@@ -1,6 +1,6 @@
 [32mGLOBALDOTeval[0m
 [32m- Inst: 13 / 13 (100.00%)[0m
-[32m- Cond: 4 / 4 (100.00%)[0m
+[33m- Cond: 7944 / 4 (198600.00%)[0m
 [32m+ 19228 [-]   : { ... }[0m
 [32m+ 19229 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 19230 [-]   : let x = __x0__[0m

@@ -1,6 +1,6 @@
 [33mElementList2ArrayAccumulation1[0m
-[33m- Inst: 39 / 46 (84.78%)[0m
-[33m- Cond: 16 / 22 (72.73%)[0m
+[33m- Inst: 41 / 46 (89.13%)[0m
+[33m- Cond: 7944 / 22 (36109.09%)[0m
 [32m+ 694   [-]   : { ... }[0m
 [32m+ 695   [-]   : access __x0__ = (ElementList "ArrayAccumulation")[0m
 [32m+ 696   [-]   : app __x1__ = (__x0__ array nextIndex)[0m
@@ -33,9 +33,9 @@
 [32m+ 723   [-]   : {}[0m
 [32m+ 724   [-]   : let initValue = __x5__[0m
 [32m+ 725   [-]   : app __x6__ = (ToString nextIndex)[0m
-[32m+ 726   [[32mT[0m/[32mT[0m[32m]: if (is-completion __x6__) ... else ...[0m
-[31m- 727   [-]   : if (= __x6__["Type"] CONST_normal) ... else ...[0m
-[31m- 728   [-]   : __x6__ = __x6__["Value"][0m
+[32m+ 726   [[31mF[0m/[32mT[0m[32m]: if (is-completion __x6__) ... else ...[0m
+[32m+ 727   [[32mT[0m/[31mF[0m[32m]: if (= __x6__["Type"] CONST_normal) ... else ...[0m
+[32m+ 728   [-]   : __x6__ = __x6__["Value"][0m
 [31m- 729   [-]   : return __x6__[0m
 [32m+ 730   [-]   : {}[0m
 [32m+ 731   [-]   : app __x7__ = (CreateDataPropertyOrThrow array __x6__ initValue)[0m

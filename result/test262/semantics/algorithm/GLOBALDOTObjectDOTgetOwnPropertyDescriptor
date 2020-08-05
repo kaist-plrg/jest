@@ -1,6 +1,6 @@
 [33mGLOBALDOTObjectDOTgetOwnPropertyDescriptor[0m
-[33m- Inst: 27 / 29 (93.10%)[0m
-[33m- Cond: 10 / 12 (83.33%)[0m
+[33m- Inst: 28 / 29 (96.55%)[0m
+[33m- Cond: 7944 / 12 (66200.00%)[0m
 [32m+ 15764 [-]   : { ... }[0m
 [32m+ 15765 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 15766 [-]   : let O = __x0__[0m
@@ -8,8 +8,8 @@
 [32m+ 15768 [-]   : let P = __x1__[0m
 [32m+ 15769 [-]   : app __x2__ = (ToObject O)[0m
 [32m+ 15770 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
-[32m+ 15771 [[31mF[0m/[32mT[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
-[31m- 15772 [-]   : __x2__ = __x2__["Value"][0m
+[32m+ 15771 [[32mT[0m/[32mT[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
+[32m+ 15772 [-]   : __x2__ = __x2__["Value"][0m
 [32m+ 15773 [-]   : return __x2__[0m
 [32m+ 15774 [-]   : {}[0m
 [32m+ 15775 [-]   : let obj = __x2__[0m

@@ -1,6 +1,6 @@
 [32mIterationStatement2LabelledEvaluation7[0m
 [32m- Inst: 21 / 21 (100.00%)[0m
-[32m- Cond: 10 / 10 (100.00%)[0m
+[33m- Cond: 7944 / 10 (79440.00%)[0m
 [32m+ 2255  [-]   : { ... }[0m
 [32m+ 2256  [[32mT[0m/[32mT[0m[32m]: if (! (= Expression0 absent)) ... else ...[0m
 [32m+ 2257  [-]   : { ... }[0m

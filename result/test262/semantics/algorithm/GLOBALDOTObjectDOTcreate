@@ -1,6 +1,6 @@
 [32mGLOBALDOTObjectDOTcreate[0m
 [32m- Inst: 26 / 26 (100.00%)[0m
-[32m- Cond: 8 / 8 (100.00%)[0m
+[33m- Cond: 7944 / 8 (99300.00%)[0m
 [32m+ 15619 [-]   : { ... }[0m
 [32m+ 15620 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 15621 [-]   : let O = __x0__[0m

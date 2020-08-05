@@ -1,6 +1,6 @@
 [33mCaseBlock1LexicallyScopedDeclarations3[0m
 [33m- Inst: 21 / 25 (84.00%)[0m
-[33m- Cond: 7 / 8 (87.50%)[0m
+[33m- Cond: 7944 / 8 (99300.00%)[0m
 [32m+ 7685  [-]   : { ... }[0m
 [32m+ 7686  [[32mT[0m/[32mT[0m[32m]: if (! (= CaseClauses0 absent)) ... else ...[0m
 [32m+ 7687  [-]   : { ... }[0m

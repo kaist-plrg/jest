@@ -1,6 +1,6 @@
 [33mCaseBlock1VarDeclaredNames3[0m
 [33m- Inst: 21 / 25 (84.00%)[0m
-[33m- Cond: 7 / 8 (87.50%)[0m
+[33m- Cond: 7944 / 8 (99300.00%)[0m
 [32m+ 7710  [-]   : { ... }[0m
 [32m+ 7711  [[32mT[0m/[32mT[0m[32m]: if (! (= CaseClauses0 absent)) ... else ...[0m
 [32m+ 7712  [-]   : { ... }[0m

@@ -1,6 +1,6 @@
 [33mGLOBALDOTStringDOTprototypeDOTlastIndexOf[0m
-[33m- Inst: 57 / 63 (90.48%)[0m
-[33m- Cond: 23 / 28 (82.14%)[0m
+[33m- Inst: 61 / 63 (96.83%)[0m
+[33m- Cond: 7944 / 28 (28371.43%)[0m
 [32m+ 17544 [-]   : { ... }[0m
 [32m+ 17545 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 17546 [-]   : let searchString = __x0__[0m
@@ -14,23 +14,23 @@
 [32m+ 17554 [-]   : {}[0m
 [32m+ 17555 [-]   : let O = __x2__[0m
 [32m+ 17556 [-]   : app __x3__ = (ToString O)[0m
-[32m+ 17557 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
-[31m- 17558 [-]   : if (= __x3__["Type"] CONST_normal) ... else ...[0m
-[31m- 17559 [-]   : __x3__ = __x3__["Value"][0m
+[32m+ 17557 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
+[32m+ 17558 [[32mT[0m/[31mF[0m[32m]: if (= __x3__["Type"] CONST_normal) ... else ...[0m
+[32m+ 17559 [-]   : __x3__ = __x3__["Value"][0m
 [31m- 17560 [-]   : return __x3__[0m
 [32m+ 17561 [-]   : {}[0m
 [32m+ 17562 [-]   : let S = __x3__[0m
 [32m+ 17563 [-]   : app __x4__ = (ToString searchString)[0m
 [32m+ 17564 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x4__) ... else ...[0m
-[32m+ 17565 [[31mF[0m/[32mT[0m[32m]: if (= __x4__["Type"] CONST_normal) ... else ...[0m
-[31m- 17566 [-]   : __x4__ = __x4__["Value"][0m
+[32m+ 17565 [[32mT[0m/[32mT[0m[32m]: if (= __x4__["Type"] CONST_normal) ... else ...[0m
+[32m+ 17566 [-]   : __x4__ = __x4__["Value"][0m
 [32m+ 17567 [-]   : return __x4__[0m
 [32m+ 17568 [-]   : {}[0m
 [32m+ 17569 [-]   : let searchStr = __x4__[0m
 [32m+ 17570 [-]   : app __x5__ = (ToNumber position)[0m
 [32m+ 17571 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x5__) ... else ...[0m
-[32m+ 17572 [[31mF[0m/[32mT[0m[32m]: if (= __x5__["Type"] CONST_normal) ... else ...[0m
-[31m- 17573 [-]   : __x5__ = __x5__["Value"][0m
+[32m+ 17572 [[32mT[0m/[32mT[0m[32m]: if (= __x5__["Type"] CONST_normal) ... else ...[0m
+[32m+ 17573 [-]   : __x5__ = __x5__["Value"][0m
 [32m+ 17574 [-]   : return __x5__[0m
 [32m+ 17575 [-]   : {}[0m
 [32m+ 17576 [-]   : let numPos = __x5__[0m

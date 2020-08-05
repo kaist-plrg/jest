@@ -1,6 +1,6 @@
 [33mCaseClauses1HasCallInTailPosition0[0m
 [33m- Inst: 10 / 13 (76.92%)[0m
-[33m- Cond: 1 / 2 (50.00%)[0m
+[33m- Cond: 7944 / 2 (397200.00%)[0m
 [32m+ 7820  [-]   : { ... }[0m
 [32m+ 7821  [-]   : access __x0__ = (CaseClauses "HasCallInTailPosition")[0m
 [32m+ 7822  [-]   : app __x1__ = (__x0__ call)[0m

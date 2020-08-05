@@ -1,6 +1,6 @@
 [33mMakeConstructor[0m
 [33m- Inst: 27 / 29 (93.10%)[0m
-[33m- Cond: 10 / 12 (83.33%)[0m
+[33m- Cond: 7944 / 12 (66200.00%)[0m
 [32m+ 22786 [-]   : { ... }[0m
 [32m+ 22787 [-]   : app __x0__ = (IsConstructor F)[0m
 [32m+ 22788 [-]   : assert (= __x0__ false)[0m

@@ -1,6 +1,6 @@
 [33mSetImmutablePrototype[0m
 [33m- Inst: 15 / 16 (93.75%)[0m
-[33m- Cond: 5 / 6 (83.33%)[0m
+[33m- Cond: 7944 / 6 (132400.00%)[0m
 [32m+ 27148 [-]   : { ... }[0m
 [32m+ 27149 [-]   : app __x0__ = (O["GetPrototypeOf"] O)[0m
 [32m+ 27150 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m

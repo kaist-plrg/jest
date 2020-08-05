@@ -1,6 +1,6 @@
 [33mUpdateExpression3Evaluation0[0m
-[33m- Inst: 29 / 31 (93.55%)[0m
-[33m- Cond: 13 / 14 (92.86%)[0m
+[33m- Inst: 30 / 31 (96.77%)[0m
+[33m- Cond: 7944 / 14 (56742.86%)[0m
 [32m+ 874   [-]   : { ... }[0m
 [32m+ 875   [-]   : access __x0__ = (UnaryExpression "Evaluation")[0m
 [32m+ 876   [-]   : let expr = __x0__[0m
@@ -19,8 +19,8 @@
 [32m+ 889   [-]   : let oldValue = __x2__[0m
 [32m+ 890   [-]   : app __x3__ = (Type oldValue)[0m
 [32m+ 891   [-]   : app __x4__ = (PRIMITIVES[__x3__]["add"] oldValue PRIMITIVES[__x3__]["unit"])[0m
-[32m+ 892   [[32mT[0m/[32mT[0m[32m]: if (is-completion __x4__) ... else ...[0m
-[31m- 893   [-]   : __x4__ = __x4__["Value"][0m
+[32m+ 892   [[31mF[0m/[32mT[0m[32m]: if (is-completion __x4__) ... else ...[0m
+[32m+ 893   [-]   : __x4__ = __x4__["Value"][0m
 [32m+ 894   [-]   : {}[0m
 [32m+ 895   [-]   : let newValue = __x4__[0m
 [32m+ 896   [-]   : app __x5__ = (PutValue expr newValue)[0m

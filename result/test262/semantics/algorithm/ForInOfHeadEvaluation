@@ -1,6 +1,6 @@
 [33mForInOfHeadEvaluation[0m
-[33m- Inst: 61 / 67 (91.04%)[0m
-[33m- Cond: 25 / 30 (83.33%)[0m
+[33m- Inst: 63 / 67 (94.03%)[0m
+[33m- Cond: 7944 / 30 (26480.00%)[0m
 [32m+ 10441 [-]   : { ... }[0m
 [32m+ 10442 [-]   : let oldEnv = GLOBAL_context["LexicalEnvironment"][0m
 [32m+ 10443 [[32mT[0m/[32mT[0m[32m]: if (< 0i uninitializedBoundNames["length"]) ... else ...[0m
@@ -41,9 +41,9 @@
 [32m+ 10478 [-]   : return __x6__[0m
 [32m+ 10479 [-]   : {}[0m
 [32m+ 10480 [-]   : app __x7__ = (ToObject exprValue)[0m
-[32m+ 10481 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x7__) ... else ...[0m
-[31m- 10482 [-]   : if (= __x7__["Type"] CONST_normal) ... else ...[0m
-[31m- 10483 [-]   : __x7__ = __x7__["Value"][0m
+[32m+ 10481 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x7__) ... else ...[0m
+[32m+ 10482 [[32mT[0m/[31mF[0m[32m]: if (= __x7__["Type"] CONST_normal) ... else ...[0m
+[32m+ 10483 [-]   : __x7__ = __x7__["Value"][0m
 [31m- 10484 [-]   : return __x7__[0m
 [32m+ 10485 [-]   : {}[0m
 [32m+ 10486 [-]   : let obj = __x7__[0m

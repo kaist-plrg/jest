@@ -1,6 +1,6 @@
 [31mArgumentsExoticObjectDOTDefineOwnProperty[0m
 [31m- Inst: 0 / 53 (0.00%)[0m
-[31m- Cond: 0 / 20 (0.00%)[0m
+[33m- Cond: 7944 / 20 (39720.00%)[0m
 [31m- 4352  [-]   : { ... }[0m
 [31m- 4353  [-]   : let args = args[0m
 [31m- 4354  [-]   : let map = args["ParameterMap"][0m

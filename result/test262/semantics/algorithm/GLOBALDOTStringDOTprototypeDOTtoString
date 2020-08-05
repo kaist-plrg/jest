@@ -1,6 +1,6 @@
 [32mGLOBALDOTStringDOTprototypeDOTtoString[0m
 [32m- Inst: 9 / 9 (100.00%)[0m
-[32m- Cond: 4 / 4 (100.00%)[0m
+[33m- Cond: 7944 / 4 (198600.00%)[0m
 [32m+ 18413 [-]   : { ... }[0m
 [32m+ 18414 [-]   : app __x0__ = (thisStringValue this)[0m
 [32m+ 18415 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m

@@ -1,6 +1,6 @@
 [33mBindingElementList1IteratorBindingInitialization0[0m
 [33m- Inst: 12 / 13 (92.31%)[0m
-[33m- Cond: 3 / 4 (75.00%)[0m
+[33m- Cond: 7944 / 4 (198600.00%)[0m
 [32m+ 6708  [-]   : { ... }[0m
 [32m+ 6709  [-]   : access __x0__ = (BindingElementList "IteratorBindingInitialization")[0m
 [32m+ 6710  [-]   : app __x1__ = (__x0__ iteratorRecord environment)[0m

@@ -1,6 +1,6 @@
 [33mVariableDeclaration0Evaluation1[0m
 [33m- Inst: 32 / 34 (94.12%)[0m
-[33m- Cond: 12 / 14 (85.71%)[0m
+[33m- Cond: 7944 / 14 (56742.86%)[0m
 [32m+ 783   [-]   : { ... }[0m
 [32m+ 784   [-]   : access __x0__ = (BindingIdentifier "StringValue")[0m
 [32m+ 785   [-]   : let bindingId = __x0__[0m

@@ -1,6 +1,6 @@
 [32mToBoolean[0m
 [32m- Inst: 29 / 29 (100.00%)[0m
-[32m- Cond: 18 / 18 (100.00%)[0m
+[33m- Cond: 7944 / 18 (44133.33%)[0m
 [32m+ 28043 [-]   : { ... }[0m
 [32m+ 28044 [-]   : app atype = (Type argument)[0m
 [32m+ 28045 [[32mT[0m/[32mT[0m[32m]: if (= atype "Undefined") ... else ...[0m

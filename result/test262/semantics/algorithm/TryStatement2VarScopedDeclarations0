@@ -1,6 +1,6 @@
 [33mTryStatement2VarScopedDeclarations0[0m
 [33m- Inst: 16 / 20 (80.00%)[0m
-[33m- Cond: 3 / 4 (75.00%)[0m
+[33m- Cond: 7944 / 4 (198600.00%)[0m
 [32m+ 28826 [-]   : { ... }[0m
 [32m+ 28827 [-]   : access __x0__ = (Block "VarScopedDeclarations")[0m
 [32m+ 28828 [-]   : let declarations = __x0__[0m

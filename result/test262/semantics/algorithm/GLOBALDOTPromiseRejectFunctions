@@ -1,6 +1,6 @@
 [32mGLOBALDOTPromiseRejectFunctions[0m
 [32m- Inst: 15 / 15 (100.00%)[0m
-[32m- Cond: 2 / 2 (100.00%)[0m
+[33m- Cond: 7944 / 2 (397200.00%)[0m
 [32m+ 16706 [-]   : { ... }[0m
 [32m+ 16707 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 16708 [-]   : let reason = __x0__[0m

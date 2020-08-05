@@ -1,6 +1,6 @@
 [33mBindingRestElement1IteratorBindingInitialization0[0m
-[33m- Inst: 52 / 62 (83.87%)[0m
-[33m- Cond: 22 / 32 (68.75%)[0m
+[33m- Inst: 54 / 62 (87.10%)[0m
+[33m- Cond: 7944 / 32 (24825.00%)[0m
 [32m+ 6977  [-]   : { ... }[0m
 [32m+ 6978  [-]   : app __x0__ = (ArrayCreate 0i)[0m
 [32m+ 6979  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
@@ -50,9 +50,9 @@
 [32m+ 7023  [-]   : {}[0m
 [32m+ 7024  [-]   : nextValue[0m
 [32m+ 7025  [-]   : app __x8__ = (ToString n)[0m
-[32m+ 7026  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x8__) ... else ...[0m
-[31m- 7027  [-]   : if (= __x8__["Type"] CONST_normal) ... else ...[0m
-[31m- 7028  [-]   : __x8__ = __x8__["Value"][0m
+[32m+ 7026  [[31mF[0m/[32mT[0m[32m]: if (is-completion __x8__) ... else ...[0m
+[32m+ 7027  [[32mT[0m/[31mF[0m[32m]: if (= __x8__["Type"] CONST_normal) ... else ...[0m
+[32m+ 7028  [-]   : __x8__ = __x8__["Value"][0m
 [31m- 7029  [-]   : return __x8__[0m
 [32m+ 7030  [-]   : {}[0m
 [32m+ 7031  [-]   : app __x9__ = (CreateDataPropertyOrThrow A __x8__ nextValue)[0m

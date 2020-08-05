@@ -1,6 +1,6 @@
 [33mBindingRestElement0IteratorBindingInitialization0[0m
-[33m- Inst: 73 / 80 (91.25%)[0m
-[33m- Cond: 35 / 42 (83.33%)[0m
+[33m- Inst: 75 / 80 (93.75%)[0m
+[33m- Cond: 7944 / 42 (18914.29%)[0m
 [32m+ 6894  [-]   : { ... }[0m
 [32m+ 6895  [-]   : access __x0__ = (BindingIdentifier "StringValue")[0m
 [32m+ 6896  [-]   : app __x1__ = (ResolveBinding __x0__ environment)[0m
@@ -68,9 +68,9 @@
 [32m+ 6958  [-]   : {}[0m
 [32m+ 6959  [-]   : nextValue[0m
 [32m+ 6960  [-]   : app __x11__ = (ToString n)[0m
-[32m+ 6961  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x11__) ... else ...[0m
-[31m- 6962  [-]   : if (= __x11__["Type"] CONST_normal) ... else ...[0m
-[31m- 6963  [-]   : __x11__ = __x11__["Value"][0m
+[32m+ 6961  [[31mF[0m/[32mT[0m[32m]: if (is-completion __x11__) ... else ...[0m
+[32m+ 6962  [[32mT[0m/[31mF[0m[32m]: if (= __x11__["Type"] CONST_normal) ... else ...[0m
+[32m+ 6963  [-]   : __x11__ = __x11__["Value"][0m
 [31m- 6964  [-]   : return __x11__[0m
 [32m+ 6965  [-]   : {}[0m
 [32m+ 6966  [-]   : app __x12__ = (CreateDataPropertyOrThrow A __x11__ nextValue)[0m

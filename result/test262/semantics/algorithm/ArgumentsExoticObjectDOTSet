@@ -1,6 +1,6 @@
 [31mArgumentsExoticObjectDOTSet[0m
 [31m- Inst: 0 / 27 (0.00%)[0m
-[31m- Cond: 0 / 12 (0.00%)[0m
+[33m- Cond: 7944 / 12 (66200.00%)[0m
 [31m- 4477  [-]   : { ... }[0m
 [31m- 4478  [-]   : let args = args[0m
 [31m- 4479  [-]   : app __x0__ = (SameValue args Receiver)[0m

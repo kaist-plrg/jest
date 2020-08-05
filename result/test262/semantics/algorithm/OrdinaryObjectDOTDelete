@@ -1,6 +1,6 @@
 [33mOrdinaryObjectDOTDelete[0m
 [33m- Inst: 8 / 9 (88.89%)[0m
-[33m- Cond: 3 / 4 (75.00%)[0m
+[33m- Cond: 7944 / 4 (198600.00%)[0m
 [32m+ 24524 [-]   : { ... }[0m
 [32m+ 24525 [-]   : app __x0__ = (OrdinaryDelete O P)[0m
 [32m+ 24526 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m

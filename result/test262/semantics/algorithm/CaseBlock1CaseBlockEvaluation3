@@ -1,6 +1,6 @@
 [33mCaseBlock1CaseBlockEvaluation3[0m
 [33m- Inst: 116 / 118 (98.31%)[0m
-[33m- Cond: 44 / 46 (95.65%)[0m
+[33m- Cond: 7944 / 46 (17269.57%)[0m
 [32m+ 7513  [-]   : { ... }[0m
 [32m+ 7514  [-]   : let V = undefined[0m
 [32m+ 7515  [[32mT[0m/[32mT[0m[32m]: if (! (= CaseClauses0 absent)) ... else ...[0m

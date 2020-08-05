@@ -1,6 +1,6 @@
 [33mGLOBALDOTObjectDOTsetPrototypeOf[0m
-[33m- Inst: 36 / 38 (94.74%)[0m
-[33m- Cond: 12 / 14 (85.71%)[0m
+[33m- Inst: 37 / 38 (97.37%)[0m
+[33m- Cond: 7944 / 14 (56742.86%)[0m
 [32m+ 16183 [-]   : { ... }[0m
 [32m+ 16184 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 16185 [-]   : let O = __x0__[0m
@@ -8,8 +8,8 @@
 [32m+ 16187 [-]   : let proto = __x1__[0m
 [32m+ 16188 [-]   : app __x2__ = (RequireObjectCoercible O)[0m
 [32m+ 16189 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
-[32m+ 16190 [[31mF[0m/[32mT[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
-[31m- 16191 [-]   : __x2__ = __x2__["Value"][0m
+[32m+ 16190 [[32mT[0m/[32mT[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
+[32m+ 16191 [-]   : __x2__ = __x2__["Value"][0m
 [32m+ 16192 [-]   : return __x2__[0m
 [32m+ 16193 [-]   : {}[0m
 [32m+ 16194 [-]   : O = __x2__[0m

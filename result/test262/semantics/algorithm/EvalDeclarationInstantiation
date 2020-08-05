@@ -1,6 +1,6 @@
 [33mEvalDeclarationInstantiation[0m
 [33m- Inst: 139 / 235 (59.15%)[0m
-[33m- Cond: 48 / 102 (47.06%)[0m
+[33m- Cond: 7944 / 102 (7788.24%)[0m
 [32m+ 9653  [-]   : { ... }[0m
 [32m+ 9654  [-]   : access __x0__ = (body "VarDeclaredNames")[0m
 [32m+ 9655  [-]   : let varNames = __x0__[0m

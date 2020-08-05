@@ -1,6 +1,6 @@
 [32mDeclarativeEnvironmentRecordDOTCreateMutableBinding[0m
 [32m- Inst: 9 / 9 (100.00%)[0m
-[32m- Cond: 2 / 2 (100.00%)[0m
+[33m- Cond: 7944 / 2 (397200.00%)[0m
 [32m+ 9116  [-]   : { ... }[0m
 [32m+ 9117  [-]   : let envRec = this[0m
 [32m+ 9118  [-]   : envRec["SubMap"][N] = (new MutableBinding("initialized" -> false))[0m

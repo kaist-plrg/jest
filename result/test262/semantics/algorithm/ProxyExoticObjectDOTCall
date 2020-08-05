@@ -1,6 +1,6 @@
 [31mProxyExoticObjectDOTCall[0m
 [31m- Inst: 0 / 43 (0.00%)[0m
-[31m- Cond: 0 / 20 (0.00%)[0m
+[33m- Cond: 7944 / 20 (39720.00%)[0m
 [31m- 25672 [-]   : { ... }[0m
 [31m- 25673 [-]   : let handler = O["ProxyHandler"][0m
 [31m- 25674 [-]   : if (= handler null) ... else ...[0m

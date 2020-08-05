@@ -1,6 +1,6 @@
 [33mGLOBALDOTArrayDOTprototypeDOTindexOf[0m
-[33m- Inst: 77 / 84 (91.67%)[0m
-[33m- Cond: 37 / 42 (88.10%)[0m
+[33m- Inst: 81 / 84 (96.43%)[0m
+[33m- Cond: 7944 / 42 (18914.29%)[0m
 [32m+ 12265 [-]   : { ... }[0m
 [32m+ 12266 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 12267 [-]   : let searchElement = __x0__[0m
@@ -47,9 +47,9 @@
 [32m+ 12308 [[32mT[0m/[32mT[0m[32m]: while (< k len) { ... }[0m
 [32m+ 12309 [-]   : { ... }[0m
 [32m+ 12310 [-]   : app __x7__ = (ToString k)[0m
-[32m+ 12311 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x7__) ... else ...[0m
-[31m- 12312 [-]   : if (= __x7__["Type"] CONST_normal) ... else ...[0m
-[31m- 12313 [-]   : __x7__ = __x7__["Value"][0m
+[32m+ 12311 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x7__) ... else ...[0m
+[32m+ 12312 [[32mT[0m/[31mF[0m[32m]: if (= __x7__["Type"] CONST_normal) ... else ...[0m
+[32m+ 12313 [-]   : __x7__ = __x7__["Value"][0m
 [31m- 12314 [-]   : return __x7__[0m
 [32m+ 12315 [-]   : {}[0m
 [32m+ 12316 [-]   : app __x8__ = (HasProperty O __x7__)[0m
@@ -62,9 +62,9 @@
 [32m+ 12323 [[32mT[0m/[32mT[0m[32m]: if (= kPresent true) ... else ...[0m
 [32m+ 12324 [-]   : { ... }[0m
 [32m+ 12325 [-]   : app __x9__ = (ToString k)[0m
-[32m+ 12326 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x9__) ... else ...[0m
-[31m- 12327 [-]   : if (= __x9__["Type"] CONST_normal) ... else ...[0m
-[31m- 12328 [-]   : __x9__ = __x9__["Value"][0m
+[32m+ 12326 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x9__) ... else ...[0m
+[32m+ 12327 [[32mT[0m/[31mF[0m[32m]: if (= __x9__["Type"] CONST_normal) ... else ...[0m
+[32m+ 12328 [-]   : __x9__ = __x9__["Value"][0m
 [31m- 12329 [-]   : return __x9__[0m
 [32m+ 12330 [-]   : {}[0m
 [32m+ 12331 [-]   : app __x10__ = (Get O __x9__)[0m

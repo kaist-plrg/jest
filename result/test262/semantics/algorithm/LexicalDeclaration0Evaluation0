@@ -1,6 +1,6 @@
 [32mLexicalDeclaration0Evaluation0[0m
 [32m- Inst: 12 / 12 (100.00%)[0m
-[32m- Cond: 4 / 4 (100.00%)[0m
+[33m- Cond: 7944 / 4 (198600.00%)[0m
 [32m+ 2817  [-]   : { ... }[0m
 [32m+ 2818  [-]   : access __x0__ = (BindingList "Evaluation")[0m
 [32m+ 2819  [-]   : let next = __x0__[0m

@@ -1,6 +1,6 @@
 [32mGetThisValue[0m
 [32m- Inst: 12 / 12 (100.00%)[0m
-[32m- Cond: 2 / 2 (100.00%)[0m
+[33m- Cond: 7944 / 2 (397200.00%)[0m
 [32m+ 20144 [-]   : { ... }[0m
 [32m+ 20145 [-]   : app __x0__ = (IsPropertyReference V)[0m
 [32m+ 20146 [-]   : assert (= __x0__ true)[0m

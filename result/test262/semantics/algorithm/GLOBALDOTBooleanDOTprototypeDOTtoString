@@ -1,6 +1,6 @@
 [32mGLOBALDOTBooleanDOTprototypeDOTtoString[0m
 [32m- Inst: 15 / 15 (100.00%)[0m
-[32m- Cond: 6 / 6 (100.00%)[0m
+[33m- Cond: 7944 / 6 (132400.00%)[0m
 [32m+ 13980 [-]   : { ... }[0m
 [32m+ 13981 [-]   : app __x0__ = (thisBooleanValue this)[0m
 [32m+ 13982 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m

@@ -1,6 +1,6 @@
 [33mGLOBALDOTArrayDOTprototypeDOTpush[0m
-[33m- Inst: 43 / 48 (89.58%)[0m
-[33m- Cond: 20 / 24 (83.33%)[0m
+[33m- Inst: 45 / 48 (93.75%)[0m
+[33m- Cond: 7944 / 24 (33100.00%)[0m
 [32m+ 12635 [-]   : { ... }[0m
 [32m+ 12636 [-]   : app __x0__ = (ToObject this)[0m
 [32m+ 12637 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
@@ -27,9 +27,9 @@
 [32m+ 12658 [-]   : { ... }[0m
 [32m+ 12659 [-]   : let E = (pop items 0i)[0m
 [32m+ 12660 [-]   : app __x3__ = (ToString len)[0m
-[32m+ 12661 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
-[31m- 12662 [-]   : if (= __x3__["Type"] CONST_normal) ... else ...[0m
-[31m- 12663 [-]   : __x3__ = __x3__["Value"][0m
+[32m+ 12661 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
+[32m+ 12662 [[32mT[0m/[31mF[0m[32m]: if (= __x3__["Type"] CONST_normal) ... else ...[0m
+[32m+ 12663 [-]   : __x3__ = __x3__["Value"][0m
 [31m- 12664 [-]   : return __x3__[0m
 [32m+ 12665 [-]   : {}[0m
 [32m+ 12666 [-]   : app __x4__ = (Set O __x3__ E true)[0m

@@ -1,6 +1,6 @@
-[33mGLOBALDOTStringDOTprototypeDOTSYMBOL_iterator[0m
-[33m- Inst: 17 / 18 (94.44%)[0m
-[33m- Cond: 7 / 8 (87.50%)[0m
+[32mGLOBALDOTStringDOTprototypeDOTSYMBOL_iterator[0m
+[32m- Inst: 18 / 18 (100.00%)[0m
+[33m- Cond: 7944 / 8 (99300.00%)[0m
 [32m+ 17213 [-]   : { ... }[0m
 [32m+ 17214 [-]   : app __x0__ = (RequireObjectCoercible this)[0m
 [32m+ 17215 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
@@ -11,8 +11,8 @@
 [32m+ 17220 [-]   : let O = __x0__[0m
 [32m+ 17221 [-]   : app __x1__ = (ToString O)[0m
 [32m+ 17222 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x1__) ... else ...[0m
-[32m+ 17223 [[31mF[0m/[32mT[0m[32m]: if (= __x1__["Type"] CONST_normal) ... else ...[0m
-[31m- 17224 [-]   : __x1__ = __x1__["Value"][0m
+[32m+ 17223 [[32mT[0m/[32mT[0m[32m]: if (= __x1__["Type"] CONST_normal) ... else ...[0m
+[32m+ 17224 [-]   : __x1__ = __x1__["Value"][0m
 [32m+ 17225 [-]   : return __x1__[0m
 [32m+ 17226 [-]   : {}[0m
 [32m+ 17227 [-]   : let S = __x1__[0m

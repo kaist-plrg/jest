@@ -1,6 +1,6 @@
 [33mGLOBALDOTStringDOTprototypeDOTcharCodeAt[0m
 [33m- Inst: 2 / 32 (6.25%)[0m
-[31m- Cond: 0 / 14 (0.00%)[0m
+[33m- Cond: 7944 / 14 (56742.86%)[0m
 [32m+ 17263 [-]   : { ... }[0m
 [32m+ 17264 [-]   : ??? "GLOBAL.String.prototype.charCodeAt"[0m
 [31m- 17265 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m

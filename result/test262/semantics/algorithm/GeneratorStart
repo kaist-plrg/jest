@@ -1,6 +1,6 @@
 [33mGeneratorStart[0m
 [33m- Inst: 31 / 32 (96.88%)[0m
-[33m- Cond: 5 / 6 (83.33%)[0m
+[33m- Cond: 7944 / 6 (132400.00%)[0m
 [32m+ 19624 [-]   : { ... }[0m
 [32m+ 19625 [-]   : assert (= generator["GeneratorState"] undefined)[0m
 [32m+ 19626 [-]   : let genContext = GLOBAL_context[0m

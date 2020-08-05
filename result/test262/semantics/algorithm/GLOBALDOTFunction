@@ -1,6 +1,6 @@
 [33mGLOBALDOTFunction[0m
 [33m- Inst: 4 / 11 (36.36%)[0m
-[31m- Cond: 0 / 4 (0.00%)[0m
+[33m- Cond: 7944 / 4 (198600.00%)[0m
 [32m+ 14179 [-]   : { ... }[0m
 [32m+ 14180 [-]   : let C = GLOBAL_context["Function"][0m
 [32m+ 14181 [-]   : let args = argumentsList[0m

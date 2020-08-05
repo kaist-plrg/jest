@@ -1,14 +1,14 @@
 [33mGLOBALDOTWeakSetDOTprototypeDOTdelete[0m
-[33m- Inst: 34 / 38 (89.47%)[0m
-[33m- Cond: 9 / 12 (75.00%)[0m
+[33m- Inst: 35 / 38 (92.11%)[0m
+[33m- Cond: 7944 / 12 (66200.00%)[0m
 [32m+ 19073 [-]   : { ... }[0m
 [32m+ 19074 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 19075 [-]   : let value = __x0__[0m
 [32m+ 19076 [-]   : let S = this[0m
 [32m+ 19077 [-]   : app __x1__ = (RequireInternalSlot S "WeakSetData")[0m
 [32m+ 19078 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x1__) ... else ...[0m
-[32m+ 19079 [[31mF[0m/[32mT[0m[32m]: if (= __x1__["Type"] CONST_normal) ... else ...[0m
-[31m- 19080 [-]   : __x1__ = __x1__["Value"][0m
+[32m+ 19079 [[32mT[0m/[32mT[0m[32m]: if (= __x1__["Type"] CONST_normal) ... else ...[0m
+[32m+ 19080 [-]   : __x1__ = __x1__["Value"][0m
 [32m+ 19081 [-]   : return __x1__[0m
 [32m+ 19082 [-]   : {}[0m
 [32m+ 19083 [-]   : __x1__[0m

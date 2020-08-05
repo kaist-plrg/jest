@@ -1,6 +1,6 @@
 [33mPropertyDefinition0PropertyDefinitionEvaluation0[0m
 [33m- Inst: 20 / 21 (95.24%)[0m
-[33m- Cond: 7 / 8 (87.50%)[0m
+[33m- Cond: 7944 / 8 (99300.00%)[0m
 [32m+ 25545 [-]   : { ... }[0m
 [32m+ 25546 [-]   : access __x0__ = (IdentifierReference "StringValue")[0m
 [32m+ 25547 [-]   : let propName = __x0__[0m

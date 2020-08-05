@@ -1,6 +1,6 @@
 [33mArrowFunction0Contains0[0m
 [33m- Inst: 10 / 12 (83.33%)[0m
-[33m- Cond: 2 / 4 (50.00%)[0m
+[33m- Cond: 7944 / 4 (198600.00%)[0m
 [32m+ 2956  [-]   : { ... }[0m
 [32m+ 2957  [[31mF[0m/[32mT[0m[32m]: if (! (|| (|| (|| (|| (is-instance-of symbol NewTarget) (is-instance-of symbol SuperProperty)) (is-instance-of symbol SuperCall)) (= symbol "super")) (= symbol "this"))) ... else ...[0m
 [31m- 2958  [-]   : return false[0m

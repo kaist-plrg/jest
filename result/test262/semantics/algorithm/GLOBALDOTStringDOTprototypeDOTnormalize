@@ -1,6 +1,6 @@
-[33mGLOBALDOTStringDOTprototypeDOTnormalize[0m
-[33m- Inst: 42 / 44 (95.45%)[0m
-[33m- Cond: 20 / 22 (90.91%)[0m
+[32mGLOBALDOTStringDOTprototypeDOTnormalize[0m
+[32m- Inst: 44 / 44 (100.00%)[0m
+[33m- Cond: 7944 / 22 (36109.09%)[0m
 [32m+ 17776 [-]   : { ... }[0m
 [32m+ 17777 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 17778 [-]   : let form = __x0__[0m
@@ -13,8 +13,8 @@
 [32m+ 17785 [-]   : let O = __x1__[0m
 [32m+ 17786 [-]   : app __x2__ = (ToString O)[0m
 [32m+ 17787 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
-[32m+ 17788 [[31mF[0m/[32mT[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
-[31m- 17789 [-]   : __x2__ = __x2__["Value"][0m
+[32m+ 17788 [[32mT[0m/[32mT[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
+[32m+ 17789 [-]   : __x2__ = __x2__["Value"][0m
 [32m+ 17790 [-]   : return __x2__[0m
 [32m+ 17791 [-]   : {}[0m
 [32m+ 17792 [-]   : let S = __x2__[0m
@@ -23,8 +23,8 @@
 [32m+ 17795 [-]   : { ... }[0m
 [32m+ 17796 [-]   : app __x3__ = (ToString form)[0m
 [32m+ 17797 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
-[32m+ 17798 [[31mF[0m/[32mT[0m[32m]: if (= __x3__["Type"] CONST_normal) ... else ...[0m
-[31m- 17799 [-]   : __x3__ = __x3__["Value"][0m
+[32m+ 17798 [[32mT[0m/[32mT[0m[32m]: if (= __x3__["Type"] CONST_normal) ... else ...[0m
+[32m+ 17799 [-]   : __x3__ = __x3__["Value"][0m
 [32m+ 17800 [-]   : return __x3__[0m
 [32m+ 17801 [-]   : {}[0m
 [32m+ 17802 [-]   : let f = __x3__[0m

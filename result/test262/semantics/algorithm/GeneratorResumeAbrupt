@@ -1,6 +1,6 @@
 [33mGeneratorResumeAbrupt[0m
 [33m- Inst: 40 / 41 (97.56%)[0m
-[33m- Cond: 11 / 12 (91.67%)[0m
+[33m- Cond: 7944 / 12 (66200.00%)[0m
 [32m+ 19583 [-]   : { ... }[0m
 [32m+ 19584 [-]   : app __x0__ = (GeneratorValidate generator)[0m
 [32m+ 19585 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m

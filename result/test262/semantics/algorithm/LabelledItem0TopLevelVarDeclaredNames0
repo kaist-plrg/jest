@@ -1,6 +1,6 @@
 [33mLabelledItem0TopLevelVarDeclaredNames0[0m
 [33m- Inst: 5 / 9 (55.56%)[0m
-[33m- Cond: 1 / 2 (50.00%)[0m
+[33m- Cond: 7944 / 2 (397200.00%)[0m
 [32m+ 22545 [-]   : { ... }[0m
 [32m+ 22546 [[31mF[0m/[32mT[0m[32m]: if (is-instance-of Statement Statement10) ... else ...[0m
 [31m- 22547 [-]   : { ... }[0m

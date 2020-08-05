@@ -1,6 +1,6 @@
 [33mArraySpeciesCreate[0m
 [33m- Inst: 84 / 94 (89.36%)[0m
-[33m- Cond: 42 / 50 (84.00%)[0m
+[33m- Cond: 7944 / 50 (15888.00%)[0m
 [32m+ 4976  [-]   : { ... }[0m
 [32m+ 4977  [-]   : app __x0__ = (IsNonNegativeInteger length)[0m
 [32m+ 4978  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m

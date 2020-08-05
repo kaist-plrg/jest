@@ -1,6 +1,6 @@
 [33mGLOBALDOTPromiseDOTrace[0m
-[33m- Inst: 40 / 49 (81.63%)[0m
-[33m- Cond: 15 / 20 (75.00%)[0m
+[33m- Inst: 39 / 49 (79.59%)[0m
+[33m- Cond: 7944 / 20 (39720.00%)[0m
 [32m+ 16619 [-]   : { ... }[0m
 [32m+ 16620 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 16621 [-]   : let iterable = __x0__[0m
@@ -18,12 +18,12 @@
 [32m+ 16633 [[32mT[0m/[31mF[0m[32m]: if (= iteratorRecord["Type"] CONST_normal) ... else ...[0m
 [32m+ 16634 [-]   : iteratorRecord = iteratorRecord["Value"][0m
 [31m- 16635 [-]   : { ... }[0m
-[31m- 16636 [-]   : app __x3__ = (Call promiseCapability["Reject"] undefined (new [iteratorRecord["Value"]]))[0m
+[32m+ 16636 [-]   : app __x3__ = (Call promiseCapability["Reject"] undefined (new [iteratorRecord["Value"]]))[0m
 [31m- 16637 [-]   : if (&& (is-completion __x3__) (! (= __x3__["Type"] CONST_normal))) ... else ...[0m
 [31m- 16638 [-]   : return __x3__[0m
 [31m- 16639 [-]   : {}[0m
 [31m- 16640 [-]   : return promiseCapability["Promise"][0m
-[32m+ 16641 [-]   : {}[0m
+[31m- 16641 [-]   : {}[0m
 [32m+ 16642 [-]   : iteratorRecord[0m
 [32m+ 16643 [-]   : app __x4__ = (PerformPromiseRace iteratorRecord C promiseCapability)[0m
 [32m+ 16644 [-]   : let result = __x4__[0m
@@ -35,7 +35,7 @@
 [32m+ 16650 [-]   : app __x6__ = (IteratorClose iteratorRecord result)[0m
 [32m+ 16651 [-]   : result = __x6__[0m
 [32m+ 16652 [-]   : {}[0m
-[32m+ 16653 [[32mT[0m/[32mT[0m[32m]: if (is-completion result) ... else ...[0m
+[32m+ 16653 [[32mT[0m/[31mF[0m[32m]: if (is-completion result) ... else ...[0m
 [32m+ 16654 [[31mF[0m/[32mT[0m[32m]: if (= result["Type"] CONST_normal) ... else ...[0m
 [31m- 16655 [-]   : result = result["Value"][0m
 [32m+ 16656 [-]   : { ... }[0m
@@ -44,7 +44,7 @@
 [31m- 16659 [-]   : return __x7__[0m
 [32m+ 16660 [-]   : {}[0m
 [32m+ 16661 [-]   : return promiseCapability["Promise"][0m
-[32m+ 16662 [-]   : {}[0m
+[31m- 16662 [-]   : {}[0m
 [31m- 16663 [-]   : result[0m
 [32m+ 16664 [-]   : {}[0m
 [32m+ 16665 [-]   : app __x8__ = (Completion result)[0m

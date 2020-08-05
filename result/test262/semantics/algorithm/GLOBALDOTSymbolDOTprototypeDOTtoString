@@ -1,6 +1,6 @@
 [33mGLOBALDOTSymbolDOTprototypeDOTtoString[0m
 [33m- Inst: 10 / 11 (90.91%)[0m
-[33m- Cond: 3 / 4 (75.00%)[0m
+[33m- Cond: 7944 / 4 (198600.00%)[0m
 [32m+ 18615 [-]   : { ... }[0m
 [32m+ 18616 [-]   : app __x0__ = (thisSymbolValue this)[0m
 [32m+ 18617 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m

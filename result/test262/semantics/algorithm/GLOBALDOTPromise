@@ -1,6 +1,6 @@
 [33mGLOBALDOTPromise[0m
 [33m- Inst: 33 / 42 (78.57%)[0m
-[33m- Cond: 8 / 14 (57.14%)[0m
+[33m- Cond: 7944 / 14 (56742.86%)[0m
 [32m+ 16241 [-]   : { ... }[0m
 [32m+ 16242 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 16243 [-]   : let executor = __x0__[0m

@@ -1,6 +1,6 @@
 [31mToBigUint64[0m
 [31m- Inst: 0 / 11 (0.00%)[0m
-[31m- Cond: 0 / 4 (0.00%)[0m
+[33m- Cond: 7944 / 4 (198600.00%)[0m
 [31m- 28032 [-]   : { ... }[0m
 [31m- 28033 [-]   : app __x0__ = (ToBigInt argument)[0m
 [31m- 28034 [-]   : if (is-completion __x0__) ... else ...[0m

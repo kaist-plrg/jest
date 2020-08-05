@@ -1,6 +1,6 @@
 [33mGLOBALDOTErrorDOTprototypeDOTtoString[0m
-[33m- Inst: 46 / 54 (85.19%)[0m
-[33m- Cond: 20 / 26 (76.92%)[0m
+[33m- Inst: 50 / 54 (92.59%)[0m
+[33m- Cond: 7944 / 26 (30553.85%)[0m
 [32m+ 14092 [-]   : { ... }[0m
 [32m+ 14093 [-]   : let O = this[0m
 [32m+ 14094 [-]   : app __x0__ = (Type O)[0m
@@ -20,9 +20,9 @@
 [32m+ 14108 [-]   : name = "Error"[0m
 [32m+ 14109 [-]   : { ... }[0m
 [32m+ 14110 [-]   : app __x3__ = (ToString name)[0m
-[32m+ 14111 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
-[31m- 14112 [-]   : if (= __x3__["Type"] CONST_normal) ... else ...[0m
-[31m- 14113 [-]   : __x3__ = __x3__["Value"][0m
+[32m+ 14111 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
+[32m+ 14112 [[32mT[0m/[31mF[0m[32m]: if (= __x3__["Type"] CONST_normal) ... else ...[0m
+[32m+ 14113 [-]   : __x3__ = __x3__["Value"][0m
 [31m- 14114 [-]   : return __x3__[0m
 [32m+ 14115 [-]   : {}[0m
 [32m+ 14116 [-]   : name = __x3__[0m
@@ -37,9 +37,9 @@
 [32m+ 14125 [-]   : msg = ""[0m
 [32m+ 14126 [-]   : { ... }[0m
 [32m+ 14127 [-]   : app __x5__ = (ToString msg)[0m
-[32m+ 14128 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x5__) ... else ...[0m
-[31m- 14129 [-]   : if (= __x5__["Type"] CONST_normal) ... else ...[0m
-[31m- 14130 [-]   : __x5__ = __x5__["Value"][0m
+[32m+ 14128 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x5__) ... else ...[0m
+[32m+ 14129 [[32mT[0m/[31mF[0m[32m]: if (= __x5__["Type"] CONST_normal) ... else ...[0m
+[32m+ 14130 [-]   : __x5__ = __x5__["Value"][0m
 [31m- 14131 [-]   : return __x5__[0m
 [32m+ 14132 [-]   : {}[0m
 [32m+ 14133 [-]   : msg = __x5__[0m

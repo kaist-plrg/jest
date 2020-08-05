@@ -1,14 +1,14 @@
-[33mGLOBALDOTSetDOTprototypeDOTadd[0m
-[33m- Inst: 34 / 35 (97.14%)[0m
-[33m- Cond: 11 / 12 (91.67%)[0m
+[32mGLOBALDOTSetDOTprototypeDOTadd[0m
+[32m- Inst: 35 / 35 (100.00%)[0m
+[33m- Cond: 7944 / 12 (66200.00%)[0m
 [32m+ 16932 [-]   : { ... }[0m
 [32m+ 16933 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 16934 [-]   : let value = __x0__[0m
 [32m+ 16935 [-]   : let S = this[0m
 [32m+ 16936 [-]   : app __x1__ = (RequireInternalSlot S "SetData")[0m
 [32m+ 16937 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x1__) ... else ...[0m
-[32m+ 16938 [[31mF[0m/[32mT[0m[32m]: if (= __x1__["Type"] CONST_normal) ... else ...[0m
-[31m- 16939 [-]   : __x1__ = __x1__["Value"][0m
+[32m+ 16938 [[32mT[0m/[32mT[0m[32m]: if (= __x1__["Type"] CONST_normal) ... else ...[0m
+[32m+ 16939 [-]   : __x1__ = __x1__["Value"][0m
 [32m+ 16940 [-]   : return __x1__[0m
 [32m+ 16941 [-]   : {}[0m
 [32m+ 16942 [-]   : __x1__[0m

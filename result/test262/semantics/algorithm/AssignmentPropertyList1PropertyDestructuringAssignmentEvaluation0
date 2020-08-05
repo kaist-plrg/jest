@@ -1,6 +1,6 @@
 [33mAssignmentPropertyList1PropertyDestructuringAssignmentEvaluation0[0m
 [33m- Inst: 24 / 26 (92.31%)[0m
-[33m- Cond: 8 / 10 (80.00%)[0m
+[33m- Cond: 7944 / 10 (79440.00%)[0m
 [32m+ 5316  [-]   : { ... }[0m
 [32m+ 5317  [-]   : access __x0__ = (AssignmentPropertyList "PropertyDestructuringAssignmentEvaluation")[0m
 [32m+ 5318  [-]   : app __x1__ = (__x0__ value)[0m

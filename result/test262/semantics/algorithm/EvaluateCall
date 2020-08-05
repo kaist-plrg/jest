@@ -1,6 +1,6 @@
 [33mEvaluateCall[0m
 [33m- Inst: 48 / 49 (97.96%)[0m
-[33m- Cond: 17 / 18 (94.44%)[0m
+[33m- Cond: 7944 / 18 (44133.33%)[0m
 [32m+ 9888  [-]   : { ... }[0m
 [32m+ 9889  [[32mT[0m/[32mT[0m[32m]: if (is-completion ref) ... else ...[0m
 [32m+ 9890  [[32mT[0m/[31mF[0m[32m]: if (= ref["Type"] CONST_normal) ... else ...[0m

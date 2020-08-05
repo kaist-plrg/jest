@@ -1,6 +1,6 @@
 [32mArrayBindingPattern0IteratorBindingInitialization3[0m
 [32m- Inst: 16 / 16 (100.00%)[0m
-[32m- Cond: 6 / 6 (100.00%)[0m
+[33m- Cond: 7944 / 6 (132400.00%)[0m
 [32m+ 4688  [-]   : { ... }[0m
 [32m+ 4689  [[32mT[0m/[32mT[0m[32m]: if (! (= Elision absent)) ... else ...[0m
 [32m+ 4690  [-]   : { ... }[0m

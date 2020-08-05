@@ -1,6 +1,6 @@
 [33mToPropertyKey[0m
-[33m- Inst: 19 / 22 (86.36%)[0m
-[33m- Cond: 8 / 10 (80.00%)[0m
+[33m- Inst: 21 / 22 (95.45%)[0m
+[33m- Cond: 7944 / 10 (79440.00%)[0m
 [32m+ 28547 [-]   : { ... }[0m
 [32m+ 28548 [-]   : app __x0__ = (ToPrimitive argument String)[0m
 [32m+ 28549 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
@@ -16,9 +16,9 @@
 [32m+ 28559 [-]   : return __x2__[0m
 [32m+ 28560 [-]   : {}[0m
 [32m+ 28561 [-]   : app __x3__ = (ToString key)[0m
-[32m+ 28562 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
-[31m- 28563 [-]   : if (= __x3__["Type"] CONST_normal) ... else ...[0m
-[31m- 28564 [-]   : __x3__ = __x3__["Value"][0m
+[32m+ 28562 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
+[32m+ 28563 [[32mT[0m/[31mF[0m[32m]: if (= __x3__["Type"] CONST_normal) ... else ...[0m
+[32m+ 28564 [-]   : __x3__ = __x3__["Value"][0m
 [31m- 28565 [-]   : return __x3__[0m
 [32m+ 28566 [-]   : {}[0m
 [32m+ 28567 [-]   : app __x4__ = (WrapCompletion __x3__)[0m

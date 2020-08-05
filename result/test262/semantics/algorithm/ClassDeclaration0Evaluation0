@@ -1,6 +1,6 @@
 [32mClassDeclaration0Evaluation0[0m
 [32m- Inst: 11 / 11 (100.00%)[0m
-[32m- Cond: 4 / 4 (100.00%)[0m
+[33m- Cond: 7944 / 4 (198600.00%)[0m
 [32m+ 7910  [-]   : { ... }[0m
 [32m+ 7911  [-]   : access __x0__ = (this "BindingClassDeclarationEvaluation")[0m
 [32m+ 7912  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m

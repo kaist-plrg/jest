@@ -1,6 +1,6 @@
 [33mGLOBALDOTArrayDOTprototypeDOTfill[0m
-[33m- Inst: 68 / 71 (95.77%)[0m
-[33m- Cond: 30 / 32 (93.75%)[0m
+[33m- Inst: 70 / 71 (98.59%)[0m
+[33m- Cond: 7944 / 32 (24825.00%)[0m
 [32m+ 11761 [-]   : { ... }[0m
 [32m+ 11762 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 11763 [-]   : let value = __x0__[0m
@@ -56,9 +56,9 @@
 [32m+ 11813 [[32mT[0m/[32mT[0m[32m]: while (< k final) { ... }[0m
 [32m+ 11814 [-]   : { ... }[0m
 [32m+ 11815 [-]   : app __x11__ = (ToString k)[0m
-[32m+ 11816 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x11__) ... else ...[0m
-[31m- 11817 [-]   : if (= __x11__["Type"] CONST_normal) ... else ...[0m
-[31m- 11818 [-]   : __x11__ = __x11__["Value"][0m
+[32m+ 11816 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x11__) ... else ...[0m
+[32m+ 11817 [[32mT[0m/[31mF[0m[32m]: if (= __x11__["Type"] CONST_normal) ... else ...[0m
+[32m+ 11818 [-]   : __x11__ = __x11__["Value"][0m
 [31m- 11819 [-]   : return __x11__[0m
 [32m+ 11820 [-]   : {}[0m
 [32m+ 11821 [-]   : let Pk = __x11__[0m

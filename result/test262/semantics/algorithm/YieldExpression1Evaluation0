@@ -1,6 +1,6 @@
 [33mYieldExpression1Evaluation0[0m
 [33m- Inst: 27 / 37 (72.97%)[0m
-[33m- Cond: 12 / 18 (66.67%)[0m
+[33m- Cond: 7944 / 18 (44133.33%)[0m
 [32m+ 29322 [-]   : { ... }[0m
 [32m+ 29323 [-]   : app __x0__ = (GetGeneratorKind )[0m
 [32m+ 29324 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m

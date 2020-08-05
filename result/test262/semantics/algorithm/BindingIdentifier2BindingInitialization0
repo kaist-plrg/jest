@@ -1,6 +1,6 @@
 [31mBindingIdentifier2BindingInitialization0[0m
 [31m- Inst: 0 / 9 (0.00%)[0m
-[31m- Cond: 0 / 4 (0.00%)[0m
+[33m- Cond: 7944 / 4 (198600.00%)[0m
 [31m- 6792  [-]   : { ... }[0m
 [31m- 6793  [-]   : app __x0__ = (InitializeBoundName "await" value environment)[0m
 [31m- 6794  [-]   : if (is-completion __x0__) ... else ...[0m

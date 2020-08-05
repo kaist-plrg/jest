@@ -1,6 +1,6 @@
-[33mSubstitutionTemplate0Evaluation0[0m
-[33m- Inst: 28 / 29 (96.55%)[0m
-[33m- Cond: 11 / 12 (91.67%)[0m
+[32mSubstitutionTemplate0Evaluation0[0m
+[32m- Inst: 29 / 29 (100.00%)[0m
+[33m- Cond: 7944 / 12 (66200.00%)[0m
 [32m+ 2526  [-]   : { ... }[0m
 [32m+ 2527  [-]   : access __x0__ = (TemplateHead "TV")[0m
 [32m+ 2528  [-]   : let head = __x0__[0m
@@ -15,8 +15,8 @@
 [32m+ 2537  [-]   : let sub = __x2__[0m
 [32m+ 2538  [-]   : app __x3__ = (ToString sub)[0m
 [32m+ 2539  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
-[32m+ 2540  [[31mF[0m/[32mT[0m[32m]: if (= __x3__["Type"] CONST_normal) ... else ...[0m
-[31m- 2541  [-]   : __x3__ = __x3__["Value"][0m
+[32m+ 2540  [[32mT[0m/[32mT[0m[32m]: if (= __x3__["Type"] CONST_normal) ... else ...[0m
+[32m+ 2541  [-]   : __x3__ = __x3__["Value"][0m
 [32m+ 2542  [-]   : return __x3__[0m
 [32m+ 2543  [-]   : {}[0m
 [32m+ 2544  [-]   : let middle = __x3__[0m

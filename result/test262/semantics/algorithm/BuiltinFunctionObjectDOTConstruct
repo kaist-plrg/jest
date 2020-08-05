@@ -1,6 +1,6 @@
 [33mBuiltinFunctionObjectDOTConstruct[0m
 [33m- Inst: 23 / 25 (92.00%)[0m
-[33m- Cond: 2 / 4 (50.00%)[0m
+[33m- Cond: 7944 / 4 (198600.00%)[0m
 [32m+ 7337  [-]   : { ... }[0m
 [32m+ 7338  [-]   : let callerContext = GLOBAL_context[0m
 [32m+ 7339  [[31mF[0m/[32mT[0m[32m]: if (= callerContext null) ... else ...[0m

@@ -1,6 +1,6 @@
 [33mOrdinaryObjectDOTSetPrototypeOf[0m
 [33m- Inst: 8 / 9 (88.89%)[0m
-[33m- Cond: 3 / 4 (75.00%)[0m
+[33m- Cond: 7944 / 4 (198600.00%)[0m
 [32m+ 24605 [-]   : { ... }[0m
 [32m+ 24606 [-]   : app __x0__ = (OrdinarySetPrototypeOf O V)[0m
 [32m+ 24607 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m

@@ -1,6 +1,6 @@
 [33mCreateListIteratorRecord[0m
 [33m- Inst: 14 / 15 (93.33%)[0m
-[33m- Cond: 3 / 4 (75.00%)[0m
+[33m- Cond: 7944 / 4 (198600.00%)[0m
 [32m+ 8849  [-]   : { ... }[0m
 [32m+ 8850  [-]   : app __x0__ = (OrdinaryObjectCreate INTRINSIC_IteratorPrototype (new ["IteratedList", "ListNextIndex"]))[0m
 [32m+ 8851  [-]   : let iterator = __x0__[0m

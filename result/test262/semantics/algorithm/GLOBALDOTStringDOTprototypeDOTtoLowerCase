@@ -1,6 +1,6 @@
 [33mGLOBALDOTStringDOTprototypeDOTtoLowerCase[0m
 [33m- Inst: 2 / 33 (6.06%)[0m
-[31m- Cond: 0 / 16 (0.00%)[0m
+[33m- Cond: 7944 / 16 (49650.00%)[0m
 [32m+ 18380 [-]   : { ... }[0m
 [32m+ 18381 [-]   : ??? "GLOBAL.String.prototype.toLowerCase"[0m
 [31m- 18382 [-]   : app __x0__ = (RequireObjectCoercible this)[0m

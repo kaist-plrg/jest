@@ -1,6 +1,6 @@
 [33mAsyncGeneratorMethod0PropertyDefinitionEvaluation0[0m
-[33m- Inst: 46 / 52 (88.46%)[0m
-[33m- Cond: 20 / 26 (76.92%)[0m
+[33m- Inst: 45 / 52 (86.54%)[0m
+[33m- Cond: 7944 / 26 (30553.85%)[0m
 [32m+ 6046  [-]   : { ... }[0m
 [32m+ 6047  [-]   : access __x0__ = (PropertyName "Evaluation")[0m
 [32m+ 6048  [-]   : let propKey = __x0__[0m
@@ -26,9 +26,9 @@
 [32m+ 6068  [-]   : {}[0m
 [32m+ 6069  [-]   : __x2__[0m
 [32m+ 6070  [-]   : app prototype = (OrdinaryObjectCreate INTRINSIC_AsyncGeneratorPrototype)[0m
-[32m+ 6071  [[32mT[0m/[32mT[0m[32m]: if (is-completion prototype) ... else ...[0m
+[32m+ 6071  [[32mT[0m/[31mF[0m[32m]: if (is-completion prototype) ... else ...[0m
 [32m+ 6072  [-]   : prototype = prototype["Value"][0m
-[32m+ 6073  [-]   : {}[0m
+[31m- 6073  [-]   : {}[0m
 [32m+ 6074  [-]   : app __x3__ = (DefinePropertyOrThrow closure "prototype" (new PropertyDescriptor("Value" -> prototype, "Writable" -> true, "Enumerable" -> false, "Configurable" -> false)))[0m
 [32m+ 6075  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
 [32m+ 6076  [[32mT[0m/[31mF[0m[32m]: if (= __x3__["Type"] CONST_normal) ... else ...[0m

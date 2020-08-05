@@ -1,6 +1,6 @@
 [33mGlobalEnvironmentRecordDOTCreateGlobalVarBinding[0m
 [33m- Inst: 37 / 42 (88.10%)[0m
-[33m- Cond: 15 / 20 (75.00%)[0m
+[33m- Cond: 7944 / 20 (39720.00%)[0m
 [32m+ 20529 [-]   : { ... }[0m
 [32m+ 20530 [-]   : let envRec = this[0m
 [32m+ 20531 [-]   : let ObjRec = envRec["ObjectRecord"][0m

@@ -1,6 +1,6 @@
 [33mMakeSuperPropertyReference[0m
-[33m- Inst: 19 / 21 (90.48%)[0m
-[33m- Cond: 6 / 8 (75.00%)[0m
+[33m- Inst: 20 / 21 (95.24%)[0m
+[33m- Cond: 7944 / 8 (99300.00%)[0m
 [32m+ 22822 [-]   : { ... }[0m
 [32m+ 22823 [-]   : app __x0__ = (GetThisEnvironment )[0m
 [32m+ 22824 [-]   : let env = __x0__[0m
@@ -15,8 +15,8 @@
 [32m+ 22833 [-]   : let baseValue = __x2__[0m
 [32m+ 22834 [-]   : app __x3__ = (RequireObjectCoercible baseValue)[0m
 [32m+ 22835 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
-[32m+ 22836 [[31mF[0m/[32mT[0m[32m]: if (= __x3__["Type"] CONST_normal) ... else ...[0m
-[31m- 22837 [-]   : __x3__ = __x3__["Value"][0m
+[32m+ 22836 [[32mT[0m/[32mT[0m[32m]: if (= __x3__["Type"] CONST_normal) ... else ...[0m
+[32m+ 22837 [-]   : __x3__ = __x3__["Value"][0m
 [32m+ 22838 [-]   : return __x3__[0m
 [32m+ 22839 [-]   : {}[0m
 [32m+ 22840 [-]   : let bv = __x3__[0m

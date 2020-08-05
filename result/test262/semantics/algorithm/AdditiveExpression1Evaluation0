@@ -1,6 +1,6 @@
-[33mAdditiveExpression1Evaluation0[0m
-[33m- Inst: 83 / 85 (97.65%)[0m
-[33m- Cond: 36 / 38 (94.74%)[0m
+[32mAdditiveExpression1Evaluation0[0m
+[32m- Inst: 85 / 85 (100.00%)[0m
+[33m- Cond: 7944 / 38 (20905.26%)[0m
 [32m+ 1086  [-]   : { ... }[0m
 [32m+ 1087  [-]   : access __x0__ = (AdditiveExpression "Evaluation")[0m
 [32m+ 1088  [-]   : let lref = __x0__[0m
@@ -45,15 +45,15 @@
 [32m+ 1127  [-]   : { ... }[0m
 [32m+ 1128  [-]   : app __x9__ = (ToString lprim)[0m
 [32m+ 1129  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x9__) ... else ...[0m
-[32m+ 1130  [[31mF[0m/[32mT[0m[32m]: if (= __x9__["Type"] CONST_normal) ... else ...[0m
-[31m- 1131  [-]   : __x9__ = __x9__["Value"][0m
+[32m+ 1130  [[32mT[0m/[32mT[0m[32m]: if (= __x9__["Type"] CONST_normal) ... else ...[0m
+[32m+ 1131  [-]   : __x9__ = __x9__["Value"][0m
 [32m+ 1132  [-]   : return __x9__[0m
 [32m+ 1133  [-]   : {}[0m
 [32m+ 1134  [-]   : let lstr = __x9__[0m
 [32m+ 1135  [-]   : app __x10__ = (ToString rprim)[0m
 [32m+ 1136  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x10__) ... else ...[0m
-[32m+ 1137  [[31mF[0m/[32mT[0m[32m]: if (= __x10__["Type"] CONST_normal) ... else ...[0m
-[31m- 1138  [-]   : __x10__ = __x10__["Value"][0m
+[32m+ 1137  [[32mT[0m/[32mT[0m[32m]: if (= __x10__["Type"] CONST_normal) ... else ...[0m
+[32m+ 1138  [-]   : __x10__ = __x10__["Value"][0m
 [32m+ 1139  [-]   : return __x10__[0m
 [32m+ 1140  [-]   : {}[0m
 [32m+ 1141  [-]   : let rstr = __x10__[0m

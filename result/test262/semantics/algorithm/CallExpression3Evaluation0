@@ -1,6 +1,6 @@
 [33mCallExpression3Evaluation0[0m
 [33m- Inst: 17 / 18 (94.44%)[0m
-[33m- Cond: 7 / 8 (87.50%)[0m
+[33m- Cond: 7944 / 8 (99300.00%)[0m
 [32m+ 2458  [-]   : { ... }[0m
 [32m+ 2459  [-]   : access ref = (CallExpression "Evaluation")[0m
 [32m+ 2460  [-]   : app func = (GetValue ref)[0m

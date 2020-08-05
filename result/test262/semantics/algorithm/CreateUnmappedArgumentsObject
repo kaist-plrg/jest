@@ -1,6 +1,6 @@
 [33mCreateUnmappedArgumentsObject[0m
-[33m- Inst: 29 / 34 (85.29%)[0m
-[33m- Cond: 10 / 14 (71.43%)[0m
+[33m- Inst: 31 / 34 (91.18%)[0m
+[33m- Cond: 7944 / 14 (56742.86%)[0m
 [32m+ 9071  [-]   : { ... }[0m
 [32m+ 9072  [-]   : let len = argumentsList["length"][0m
 [32m+ 9073  [-]   : app obj = (OrdinaryObjectCreate INTRINSIC_ObjectPrototype (new ["ParameterMap"]))[0m
@@ -12,9 +12,9 @@
 [32m+ 9079  [-]   : { ... }[0m
 [32m+ 9080  [-]   : let val = argumentsList[index][0m
 [32m+ 9081  [-]   : app __x1__ = (ToString index)[0m
-[32m+ 9082  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x1__) ... else ...[0m
-[31m- 9083  [-]   : if (= __x1__["Type"] CONST_normal) ... else ...[0m
-[31m- 9084  [-]   : __x1__ = __x1__["Value"][0m
+[32m+ 9082  [[31mF[0m/[32mT[0m[32m]: if (is-completion __x1__) ... else ...[0m
+[32m+ 9083  [[32mT[0m/[31mF[0m[32m]: if (= __x1__["Type"] CONST_normal) ... else ...[0m
+[32m+ 9084  [-]   : __x1__ = __x1__["Value"][0m
 [31m- 9085  [-]   : return __x1__[0m
 [32m+ 9086  [-]   : {}[0m
 [32m+ 9087  [-]   : app __x2__ = (CreateDataPropertyOrThrow obj __x1__ val)[0m

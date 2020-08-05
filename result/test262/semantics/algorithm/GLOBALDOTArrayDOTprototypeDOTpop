@@ -1,6 +1,6 @@
 [33mGLOBALDOTArrayDOTprototypeDOTpop[0m
-[33m- Inst: 53 / 59 (89.83%)[0m
-[33m- Cond: 25 / 30 (83.33%)[0m
+[33m- Inst: 55 / 59 (93.22%)[0m
+[33m- Cond: 7944 / 30 (26480.00%)[0m
 [32m+ 12576 [-]   : { ... }[0m
 [32m+ 12577 [-]   : app __x0__ = (ToObject this)[0m
 [32m+ 12578 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
@@ -31,9 +31,9 @@
 [32m+ 12603 [-]   : assert (< 0i len)[0m
 [32m+ 12604 [-]   : let newLen = (- len 1i)[0m
 [32m+ 12605 [-]   : app __x4__ = (ToString newLen)[0m
-[32m+ 12606 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x4__) ... else ...[0m
-[31m- 12607 [-]   : if (= __x4__["Type"] CONST_normal) ... else ...[0m
-[31m- 12608 [-]   : __x4__ = __x4__["Value"][0m
+[32m+ 12606 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x4__) ... else ...[0m
+[32m+ 12607 [[32mT[0m/[31mF[0m[32m]: if (= __x4__["Type"] CONST_normal) ... else ...[0m
+[32m+ 12608 [-]   : __x4__ = __x4__["Value"][0m
 [31m- 12609 [-]   : return __x4__[0m
 [32m+ 12610 [-]   : {}[0m
 [32m+ 12611 [-]   : let index = __x4__[0m

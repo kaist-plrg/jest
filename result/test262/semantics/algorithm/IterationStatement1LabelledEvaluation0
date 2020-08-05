@@ -1,6 +1,6 @@
 [33mIterationStatement1LabelledEvaluation0[0m
-[33m- Inst: 35 / 38 (92.11%)[0m
-[33m- Cond: 13 / 16 (81.25%)[0m
+[33m- Inst: 37 / 38 (97.37%)[0m
+[33m- Cond: 7944 / 16 (49650.00%)[0m
 [32m+ 3714  [-]   : { ... }[0m
 [32m+ 3715  [-]   : let V = undefined[0m
 [32m+ 3716  [[32mT[0m/[31mF[0m[32m]: while true { ... }[0m
@@ -15,9 +15,9 @@
 [32m+ 3725  [-]   : {}[0m
 [32m+ 3726  [-]   : let exprValue = __x1__[0m
 [32m+ 3727  [-]   : app __x2__ = (ToBoolean exprValue)[0m
-[32m+ 3728  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
-[31m- 3729  [-]   : if (= __x2__["Type"] CONST_normal) ... else ...[0m
-[31m- 3730  [-]   : __x2__ = __x2__["Value"][0m
+[32m+ 3728  [[31mF[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
+[32m+ 3729  [[32mT[0m/[31mF[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
+[32m+ 3730  [-]   : __x2__ = __x2__["Value"][0m
 [31m- 3731  [-]   : return __x2__[0m
 [32m+ 3732  [-]   : {}[0m
 [32m+ 3733  [[32mT[0m/[32mT[0m[32m]: if (= __x2__ false) ... else ...[0m

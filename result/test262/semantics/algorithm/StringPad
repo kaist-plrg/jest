@@ -1,12 +1,12 @@
 [33mStringPad[0m
-[33m- Inst: 47 / 50 (94.00%)[0m
-[33m- Cond: 19 / 22 (86.36%)[0m
+[33m- Inst: 49 / 50 (98.00%)[0m
+[33m- Cond: 7944 / 22 (36109.09%)[0m
 [32m+ 27690 [-]   : { ... }[0m
 [32m+ 27691 [-]   : assert (|| (= placement CONST_start) (= placement CONST_end))[0m
 [32m+ 27692 [-]   : app __x0__ = (ToString O)[0m
 [32m+ 27693 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
-[32m+ 27694 [[31mF[0m/[32mT[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
-[31m- 27695 [-]   : __x0__ = __x0__["Value"][0m
+[32m+ 27694 [[32mT[0m/[32mT[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
+[32m+ 27695 [-]   : __x0__ = __x0__["Value"][0m
 [32m+ 27696 [-]   : return __x0__[0m
 [32m+ 27697 [-]   : {}[0m
 [32m+ 27698 [-]   : let S = __x0__[0m
@@ -26,8 +26,8 @@
 [32m+ 27712 [-]   : { ... }[0m
 [32m+ 27713 [-]   : app __x2__ = (ToString fillString)[0m
 [32m+ 27714 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x2__) ... else ...[0m
-[32m+ 27715 [[31mF[0m/[32mT[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
-[31m- 27716 [-]   : __x2__ = __x2__["Value"][0m
+[32m+ 27715 [[32mT[0m/[32mT[0m[32m]: if (= __x2__["Type"] CONST_normal) ... else ...[0m
+[32m+ 27716 [-]   : __x2__ = __x2__["Value"][0m
 [32m+ 27717 [-]   : return __x2__[0m
 [32m+ 27718 [-]   : {}[0m
 [32m+ 27719 [-]   : let filler = __x2__[0m

@@ -1,6 +1,6 @@
 [31mCaseBlock1LexicallyDeclaredNames3[0m
 [31m- Inst: 0 / 25 (0.00%)[0m
-[31m- Cond: 0 / 8 (0.00%)[0m
+[33m- Cond: 7944 / 8 (99300.00%)[0m
 [31m- 7660  [-]   : { ... }[0m
 [31m- 7661  [-]   : if (! (= CaseClauses0 absent)) ... else ...[0m
 [31m- 7662  [-]   : { ... }[0m

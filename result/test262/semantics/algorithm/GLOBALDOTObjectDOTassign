@@ -1,13 +1,13 @@
 [33mGLOBALDOTObjectDOTassign[0m
-[33m- Inst: 55 / 58 (94.83%)[0m
-[33m- Cond: 27 / 30 (90.00%)[0m
+[33m- Inst: 56 / 58 (96.55%)[0m
+[33m- Cond: 7944 / 30 (26480.00%)[0m
 [32m+ 15561 [-]   : { ... }[0m
 [32m+ 15562 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 15563 [-]   : let target = __x0__[0m
 [32m+ 15564 [-]   : app __x1__ = (ToObject target)[0m
 [32m+ 15565 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x1__) ... else ...[0m
-[32m+ 15566 [[31mF[0m/[32mT[0m[32m]: if (= __x1__["Type"] CONST_normal) ... else ...[0m
-[31m- 15567 [-]   : __x1__ = __x1__["Value"][0m
+[32m+ 15566 [[32mT[0m/[32mT[0m[32m]: if (= __x1__["Type"] CONST_normal) ... else ...[0m
+[32m+ 15567 [-]   : __x1__ = __x1__["Value"][0m
 [32m+ 15568 [-]   : return __x1__[0m
 [32m+ 15569 [-]   : {}[0m
 [32m+ 15570 [-]   : let to = __x1__[0m

@@ -1,6 +1,6 @@
 [33mGlobalEnvironmentRecordDOTHasBinding[0m
 [33m- Inst: 17 / 18 (94.44%)[0m
-[33m- Cond: 5 / 6 (83.33%)[0m
+[33m- Cond: 7944 / 6 (132400.00%)[0m
 [32m+ 20662 [-]   : { ... }[0m
 [32m+ 20663 [-]   : let envRec = this[0m
 [32m+ 20664 [-]   : let DclRec = envRec["DeclarativeRecord"][0m

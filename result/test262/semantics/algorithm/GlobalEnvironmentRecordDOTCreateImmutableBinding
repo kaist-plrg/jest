@@ -1,6 +1,6 @@
 [33mGlobalEnvironmentRecordDOTCreateImmutableBinding[0m
 [33m- Inst: 9 / 12 (75.00%)[0m
-[33m- Cond: 1 / 2 (50.00%)[0m
+[33m- Cond: 7944 / 2 (397200.00%)[0m
 [32m+ 20571 [-]   : { ... }[0m
 [32m+ 20572 [-]   : let envRec = this[0m
 [32m+ 20573 [-]   : let DclRec = envRec["DeclarativeRecord"][0m

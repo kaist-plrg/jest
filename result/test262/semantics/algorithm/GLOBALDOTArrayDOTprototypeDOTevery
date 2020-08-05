@@ -1,6 +1,6 @@
 [33mGLOBALDOTArrayDOTprototypeDOTevery[0m
-[33m- Inst: 66 / 73 (90.41%)[0m
-[33m- Cond: 31 / 36 (86.11%)[0m
+[33m- Inst: 70 / 73 (95.89%)[0m
+[33m- Cond: 7944 / 36 (22066.67%)[0m
 [32m+ 11688 [-]   : { ... }[0m
 [32m+ 11689 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 11690 [-]   : let callbackfn = __x0__[0m
@@ -30,9 +30,9 @@
 [32m+ 11714 [[32mT[0m/[32mT[0m[32m]: while (< k len) { ... }[0m
 [32m+ 11715 [-]   : { ... }[0m
 [32m+ 11716 [-]   : app __x6__ = (ToString k)[0m
-[32m+ 11717 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x6__) ... else ...[0m
-[31m- 11718 [-]   : if (= __x6__["Type"] CONST_normal) ... else ...[0m
-[31m- 11719 [-]   : __x6__ = __x6__["Value"][0m
+[32m+ 11717 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x6__) ... else ...[0m
+[32m+ 11718 [[32mT[0m/[31mF[0m[32m]: if (= __x6__["Type"] CONST_normal) ... else ...[0m
+[32m+ 11719 [-]   : __x6__ = __x6__["Value"][0m
 [31m- 11720 [-]   : return __x6__[0m
 [32m+ 11721 [-]   : {}[0m
 [32m+ 11722 [-]   : let Pk = __x6__[0m
@@ -59,9 +59,9 @@
 [32m+ 11743 [-]   : return __x9__[0m
 [32m+ 11744 [-]   : {}[0m
 [32m+ 11745 [-]   : app __x10__ = (ToBoolean __x9__)[0m
-[32m+ 11746 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x10__) ... else ...[0m
-[31m- 11747 [-]   : if (= __x10__["Type"] CONST_normal) ... else ...[0m
-[31m- 11748 [-]   : __x10__ = __x10__["Value"][0m
+[32m+ 11746 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x10__) ... else ...[0m
+[32m+ 11747 [[32mT[0m/[31mF[0m[32m]: if (= __x10__["Type"] CONST_normal) ... else ...[0m
+[32m+ 11748 [-]   : __x10__ = __x10__["Value"][0m
 [31m- 11749 [-]   : return __x10__[0m
 [32m+ 11750 [-]   : {}[0m
 [32m+ 11751 [-]   : let testResult = __x10__[0m

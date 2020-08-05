@@ -1,6 +1,6 @@
 [33mGetFunctionRealm[0m
 [33m- Inst: 18 / 44 (40.91%)[0m
-[33m- Cond: 7 / 20 (35.00%)[0m
+[33m- Cond: 7944 / 20 (39720.00%)[0m
 [32m+ 19745 [-]   : { ... }[0m
 [32m+ 19746 [-]   : app __x0__ = (IsCallable obj)[0m
 [32m+ 19747 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m

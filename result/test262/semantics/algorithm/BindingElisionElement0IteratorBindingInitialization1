@@ -1,6 +1,6 @@
 [31mBindingElisionElement0IteratorBindingInitialization1[0m
 [31m- Inst: 0 / 13 (0.00%)[0m
-[31m- Cond: 0 / 4 (0.00%)[0m
+[33m- Cond: 7944 / 4 (198600.00%)[0m
 [31m- 6732  [-]   : { ... }[0m
 [31m- 6733  [-]   : access __x0__ = (Elision "IteratorDestructuringAssignmentEvaluation")[0m
 [31m- 6734  [-]   : app __x1__ = (__x0__ iteratorRecord)[0m

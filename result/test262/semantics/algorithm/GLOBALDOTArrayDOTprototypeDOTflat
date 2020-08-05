@@ -1,6 +1,6 @@
 [33mGLOBALDOTArrayDOTprototypeDOTflat[0m
 [33m- Inst: 43 / 44 (97.73%)[0m
-[33m- Cond: 21 / 22 (95.45%)[0m
+[33m- Cond: 7944 / 22 (36109.09%)[0m
 [32m+ 12051 [-]   : { ... }[0m
 [32m+ 12052 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 12053 [-]   : let depth = __x0__[0m

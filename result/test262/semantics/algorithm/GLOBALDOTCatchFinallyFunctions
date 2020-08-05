@@ -1,6 +1,6 @@
 [33mGLOBALDOTCatchFinallyFunctions[0m
 [33m- Inst: 32 / 35 (91.43%)[0m
-[33m- Cond: 9 / 12 (75.00%)[0m
+[33m- Cond: 7944 / 12 (66200.00%)[0m
 [32m+ 14004 [-]   : { ... }[0m
 [32m+ 14005 [-]   : let reason = argumentsList[0i][0m
 [32m+ 14006 [-]   : let F = GLOBAL_context["Function"][0m

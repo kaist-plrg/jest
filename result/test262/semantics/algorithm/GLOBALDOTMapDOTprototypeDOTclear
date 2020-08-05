@@ -1,12 +1,12 @@
-[33mGLOBALDOTMapDOTprototypeDOTclear[0m
-[33m- Inst: 19 / 20 (95.00%)[0m
-[33m- Cond: 5 / 6 (83.33%)[0m
+[32mGLOBALDOTMapDOTprototypeDOTclear[0m
+[32m- Inst: 20 / 20 (100.00%)[0m
+[33m- Cond: 7944 / 6 (132400.00%)[0m
 [32m+ 14945 [-]   : { ... }[0m
 [32m+ 14946 [-]   : let M = this[0m
 [32m+ 14947 [-]   : app __x0__ = (RequireInternalSlot M "MapData")[0m
 [32m+ 14948 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
-[32m+ 14949 [[31mF[0m/[32mT[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
-[31m- 14950 [-]   : __x0__ = __x0__["Value"][0m
+[32m+ 14949 [[32mT[0m/[32mT[0m[32m]: if (= __x0__["Type"] CONST_normal) ... else ...[0m
+[32m+ 14950 [-]   : __x0__ = __x0__["Value"][0m
 [32m+ 14951 [-]   : return __x0__[0m
 [32m+ 14952 [-]   : {}[0m
 [32m+ 14953 [-]   : __x0__[0m

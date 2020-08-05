@@ -1,6 +1,6 @@
 [33mCreateListFromArrayLike[0m
-[33m- Inst: 38 / 45 (84.44%)[0m
-[33m- Cond: 16 / 20 (80.00%)[0m
+[33m- Inst: 40 / 45 (88.89%)[0m
+[33m- Cond: 7944 / 20 (39720.00%)[0m
 [32m+ 8804  [-]   : { ... }[0m
 [32m+ 8805  [[32mT[0m/[31mF[0m[32m]: if (= elementTypes absent) ... else ...[0m
 [32m+ 8806  [-]   : elementTypes = (new [Undefined, Null, Boolean, String, Symbol, Number, BigInt, Object])[0m
@@ -23,9 +23,9 @@
 [32m+ 8823  [[32mT[0m/[32mT[0m[32m]: while (< index len) { ... }[0m
 [32m+ 8824  [-]   : { ... }[0m
 [32m+ 8825  [-]   : app __x3__ = (ToString index)[0m
-[32m+ 8826  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
-[31m- 8827  [-]   : if (= __x3__["Type"] CONST_normal) ... else ...[0m
-[31m- 8828  [-]   : __x3__ = __x3__["Value"][0m
+[32m+ 8826  [[31mF[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
+[32m+ 8827  [[32mT[0m/[31mF[0m[32m]: if (= __x3__["Type"] CONST_normal) ... else ...[0m
+[32m+ 8828  [-]   : __x3__ = __x3__["Value"][0m
 [31m- 8829  [-]   : return __x3__[0m
 [32m+ 8830  [-]   : {}[0m
 [32m+ 8831  [-]   : let indexName = __x3__[0m

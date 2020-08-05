@@ -1,6 +1,6 @@
 [33mGLOBALDOTStringDOTprototypeDOTmatch[0m
-[33m- Inst: 34 / 53 (64.15%)[0m
-[33m- Cond: 16 / 28 (57.14%)[0m
+[33m- Inst: 36 / 53 (67.92%)[0m
+[33m- Cond: 7944 / 28 (28371.43%)[0m
 [32m+ 17635 [-]   : { ... }[0m
 [32m+ 17636 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 17637 [-]   : let regexp = __x0__[0m
@@ -33,9 +33,9 @@
 [32m+ 17664 [-]   : {}[0m
 [32m+ 17665 [-]   : {}[0m
 [32m+ 17666 [-]   : app __x5__ = (ToString O)[0m
-[32m+ 17667 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x5__) ... else ...[0m
-[31m- 17668 [-]   : if (= __x5__["Type"] CONST_normal) ... else ...[0m
-[31m- 17669 [-]   : __x5__ = __x5__["Value"][0m
+[32m+ 17667 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x5__) ... else ...[0m
+[32m+ 17668 [[32mT[0m/[31mF[0m[32m]: if (= __x5__["Type"] CONST_normal) ... else ...[0m
+[32m+ 17669 [-]   : __x5__ = __x5__["Value"][0m
 [31m- 17670 [-]   : return __x5__[0m
 [32m+ 17671 [-]   : {}[0m
 [32m+ 17672 [-]   : let S = __x5__[0m

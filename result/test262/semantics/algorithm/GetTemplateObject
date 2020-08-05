@@ -1,6 +1,6 @@
 [33mGetTemplateObject[0m
-[33m- Inst: 55 / 60 (91.67%)[0m
-[33m- Cond: 14 / 18 (77.78%)[0m
+[33m- Inst: 57 / 60 (95.00%)[0m
+[33m- Cond: 7944 / 18 (44133.33%)[0m
 [32m+ 20069 [-]   : { ... }[0m
 [32m+ 20070 [-]   : access __x0__ = (templateLiteral "TemplateStrings")[0m
 [32m+ 20071 [-]   : app __x1__ = (__x0__ true)[0m
@@ -39,9 +39,9 @@
 [32m+ 20104 [[32mT[0m/[32mT[0m[32m]: while (< index count) { ... }[0m
 [32m+ 20105 [-]   : { ... }[0m
 [32m+ 20106 [-]   : app __x8__ = (ToString index)[0m
-[32m+ 20107 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x8__) ... else ...[0m
-[31m- 20108 [-]   : if (= __x8__["Type"] CONST_normal) ... else ...[0m
-[31m- 20109 [-]   : __x8__ = __x8__["Value"][0m
+[32m+ 20107 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x8__) ... else ...[0m
+[32m+ 20108 [[32mT[0m/[31mF[0m[32m]: if (= __x8__["Type"] CONST_normal) ... else ...[0m
+[32m+ 20109 [-]   : __x8__ = __x8__["Value"][0m
 [31m- 20110 [-]   : return __x8__[0m
 [32m+ 20111 [-]   : {}[0m
 [32m+ 20112 [-]   : let prop = __x8__[0m

@@ -1,6 +1,6 @@
 [32mLabelledItem0LabelledEvaluation0[0m
 [32m- Inst: 10 / 10 (100.00%)[0m
-[32m- Cond: 2 / 2 (100.00%)[0m
+[33m- Cond: 7944 / 2 (397200.00%)[0m
 [32m+ 22533 [[32mT[0m/[32mT[0m[32m]: if (|| (is-instance-of Statement LabelledStatement) (is-instance-of Statement BreakableStatement)) ... else ...[0m
 [32m+ 22534 [-]   : { ... }[0m
 [32m+ 22535 [-]   : access __x0__ = (Statement "LabelledEvaluation")[0m

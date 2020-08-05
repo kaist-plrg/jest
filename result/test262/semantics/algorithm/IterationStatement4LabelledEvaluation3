@@ -1,6 +1,6 @@
 [33mIterationStatement4LabelledEvaluation3[0m
 [33m- Inst: 50 / 52 (96.15%)[0m
-[33m- Cond: 14 / 16 (87.50%)[0m
+[33m- Cond: 7944 / 16 (49650.00%)[0m
 [32m+ 3532  [-]   : { ... }[0m
 [32m+ 3533  [-]   : let oldEnv = GLOBAL_context["LexicalEnvironment"][0m
 [32m+ 3534  [-]   : app __x0__ = (NewDeclarativeEnvironment oldEnv)[0m

@@ -1,6 +1,6 @@
 [31mMakeArgSetter[0m
 [31m- Inst: 0 / 13 (0.00%)[0m
-[31m- Cond: 0 / 4 (0.00%)[0m
+[33m- Cond: 7944 / 4 (198600.00%)[0m
 [31m- 22753 [-]   : { ... }[0m
 [31m- 22754 [-]   : let steps = (new algorithm("step" -> ArgSetter))[0m
 [31m- 22755 [-]   : app __x0__ = (CreateBuiltinFunction steps (new ["Name", "Env"]))[0m

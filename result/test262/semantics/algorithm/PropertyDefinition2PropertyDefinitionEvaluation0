@@ -1,6 +1,6 @@
 [33mPropertyDefinition2PropertyDefinitionEvaluation0[0m
 [33m- Inst: 31 / 34 (91.18%)[0m
-[33m- Cond: 11 / 14 (78.57%)[0m
+[33m- Cond: 7944 / 14 (56742.86%)[0m
 [32m+ 598   [-]   : { ... }[0m
 [32m+ 599   [-]   : access __x0__ = (PropertyName "Evaluation")[0m
 [32m+ 600   [-]   : let propKey = __x0__[0m

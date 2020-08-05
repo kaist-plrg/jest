@@ -1,6 +1,6 @@
 [33mAssignmentProperty0PropertyDestructuringAssignmentEvaluation1[0m
 [33m- Inst: 43 / 45 (95.56%)[0m
-[33m- Cond: 18 / 20 (90.00%)[0m
+[33m- Cond: 7944 / 20 (39720.00%)[0m
 [32m+ 5252  [-]   : { ... }[0m
 [32m+ 5253  [-]   : access __x0__ = (IdentifierReference "StringValue")[0m
 [32m+ 5254  [-]   : let P = __x0__[0m

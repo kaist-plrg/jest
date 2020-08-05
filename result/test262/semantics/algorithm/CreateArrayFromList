@@ -1,6 +1,6 @@
 [33mCreateArrayFromList[0m
-[33m- Inst: 26 / 31 (83.87%)[0m
-[33m- Cond: 10 / 14 (71.43%)[0m
+[33m- Inst: 28 / 31 (90.32%)[0m
+[33m- Cond: 7944 / 14 (56742.86%)[0m
 [32m+ 8432  [-]   : { ... }[0m
 [32m+ 8433  [-]   : app __x0__ = (ArrayCreate 0i)[0m
 [32m+ 8434  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m
@@ -16,9 +16,9 @@
 [32m+ 8444  [-]   : { ... }[0m
 [32m+ 8445  [-]   : let e = __x1__[__x2__][0m
 [32m+ 8446  [-]   : app __x3__ = (ToString n)[0m
-[32m+ 8447  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
-[31m- 8448  [-]   : if (= __x3__["Type"] CONST_normal) ... else ...[0m
-[31m- 8449  [-]   : __x3__ = __x3__["Value"][0m
+[32m+ 8447  [[31mF[0m/[32mT[0m[32m]: if (is-completion __x3__) ... else ...[0m
+[32m+ 8448  [[32mT[0m/[31mF[0m[32m]: if (= __x3__["Type"] CONST_normal) ... else ...[0m
+[32m+ 8449  [-]   : __x3__ = __x3__["Value"][0m
 [31m- 8450  [-]   : return __x3__[0m
 [32m+ 8451  [-]   : {}[0m
 [32m+ 8452  [-]   : app __x4__ = (CreateDataPropertyOrThrow array __x3__ e)[0m
