@@ -78,6 +78,8 @@ case object Mutate extends PhaseObj[Script, MutateConfig, Script] {
           case "#f" => Some(CondTarget(uid, false))
           case "NORMAL" => Some(CompletionTarget(uid, true))
           case "ABRUPT" => Some(CompletionTarget(uid, false))
+          case "RET_NORMAL" => Some(ReturnValueTarget(uid, true))
+          case "RET_ABRUPT" => Some(ReturnValueTarget(uid, false))
           case _ => Some(KindTarget(uid, str))
         }
       case _ =>

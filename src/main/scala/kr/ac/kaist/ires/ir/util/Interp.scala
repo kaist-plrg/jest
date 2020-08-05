@@ -8,7 +8,7 @@ import scala.concurrent.duration._
 import scala.concurrent.ExecutionContext.Implicits.global
 
 import kr.ac.kaist.ires.{ DEBUG_INTERP, IRES, COVERAGE_MODE, Lexical, AST }
-import kr.ac.kaist.ires.coverage.Visited
+import kr.ac.kaist.ires.coverage.{ Visited, ReturnValueTarget }
 import kr.ac.kaist.ires.error.{ NotSupported, NotYetModeled, Timeout }
 import kr.ac.kaist.ires.model.{ Parser => ESParser, ESValueParser, ModelHelper }
 import kr.ac.kaist.ires.parser.UnicodeRegex.WSLT
@@ -23,7 +23,6 @@ class Interp(
 ) {
   var startTime: Long = 0
   var instCount = 0
-  var curInst: Inst = ISeq(Nil)
 
   var astStack: List[AST] = List()
   var targetAstStack: Option[List[AST]] = None
@@ -40,7 +39,7 @@ class Interp(
       case ctx :: rest => fixpoint(st.copy(context = ctx.copy(locals = ctx.locals + (ctx.retId -> Absent)), ctxStack = rest))
     }
     case inst :: rest =>
-      fixpoint(interp(inst)(st.copy(context = st.context.copy(insts = rest))))
+      fixpoint(interp(inst)(st.copy(context = st.context.copy(curInst = inst, insts = rest))))
   }
 
   // instructions
@@ -49,7 +48,6 @@ class Interp(
       case Some(value) => if (value == inst.uid) targetAstStack = Some(astStack)
       case None => ()
     }
-    curInst = inst
     if (instCount == 0) startTime = System.currentTimeMillis
     instCount = instCount + 1
     if (COVERAGE_MODE) visited += inst.uid
@@ -91,6 +89,24 @@ class Interp(
         }
       case IReturn(expr) =>
         val (value, s0) = interp(expr)(st)
+        if (COVERAGE_MODE) {
+          s0.ctxStack.headOption.foreach(ctx => {
+            visited += (
+              s0.script,
+              ReturnValueTarget(
+                ctx.curInst.uid,
+                value match {
+                  case addr: Addr => s0.heap.map.getOrElse(addr, error(s"unknown address: $addr")) match {
+                    case value @ IRMap(Ty("Completion"), props, _) =>
+                      props.getOrElse(Str("Type"), error(s"type should exist: $value"))._1 == NamedAddr("CONST_normal")
+                    case _ => true
+                  }
+                  case _ => true
+                }
+              )
+            )
+          })
+        }
         if (evaluationAlgorithmPattern.matches(st.context.name)) astStack = astStack.tail
         s0.ctxStack match {
           case Nil => s0.copy(context = s0.context.copy(locals = s0.context.locals + (s0.context.retId -> value), insts = Nil))
@@ -529,7 +545,7 @@ class Interp(
       (st.context.locals.getOrElse(id, st.globals.getOrElse(id, Absent)), st)
     case RefValueProp(addr, value) =>
       if (COVERAGE_MODE && addr == NamedAddr("PRIMITIVES"))
-        visited += (st.script, curInst.uid, value)
+        visited += (st.script, st.context.curInst.uid, value)
       (st.heap(addr, value), st)
     case RefValueString(str, value) => (stringOp(str, value), st)
   }
