@@ -1,6 +1,6 @@
 [33mGLOBALDOTStringDOTprototypeDOTsubstring[0m
 [33m- Inst: 52 / 53 (98.11%)[0m
-[33m- Cond: 7944 / 20 (39720.00%)[0m
+[33m- Cond: 18 / 20 (90.00%)[0m
 [32m+ 18327 [-]   : { ... }[0m
 [32m+ 18328 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 18329 [-]   : let start = __x0__[0m

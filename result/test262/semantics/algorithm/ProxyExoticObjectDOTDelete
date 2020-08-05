@@ -1,6 +1,6 @@
 [31mProxyExoticObjectDOTDelete[0m
 [31m- Inst: 0 / 79 (0.00%)[0m
-[33m- Cond: 7944 / 36 (22066.67%)[0m
+[31m- Cond: 0 / 36 (0.00%)[0m
 [31m- 25861 [-]   : { ... }[0m
 [31m- 25862 [-]   : app __x0__ = (IsPropertyKey P)[0m
 [31m- 25863 [-]   : assert (= __x0__ true)[0m

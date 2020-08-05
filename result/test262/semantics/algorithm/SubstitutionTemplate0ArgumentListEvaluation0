@@ -1,6 +1,6 @@
 [33mSubstitutionTemplate0ArgumentListEvaluation0[0m
 [33m- Inst: 23 / 25 (92.00%)[0m
-[33m- Cond: 7944 / 8 (99300.00%)[0m
+[33m- Cond: 6 / 8 (75.00%)[0m
 [32m+ 2501  [-]   : { ... }[0m
 [32m+ 2502  [-]   : let templateLiteral = this[0m
 [32m+ 2503  [-]   : app __x0__ = (GetTemplateObject templateLiteral)[0m

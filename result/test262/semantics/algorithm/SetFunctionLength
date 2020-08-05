@@ -1,6 +1,6 @@
 [33mSetFunctionLength[0m
 [33m- Inst: 16 / 18 (88.89%)[0m
-[33m- Cond: 7944 / 8 (99300.00%)[0m
+[33m- Cond: 6 / 8 (75.00%)[0m
 [32m+ 27108 [-]   : { ... }[0m
 [32m+ 27109 [-]   : app __x0__ = (Type length)[0m
 [32m+ 27110 [-]   : assert (= __x0__ Number)[0m

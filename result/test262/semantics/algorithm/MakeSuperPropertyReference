@@ -1,6 +1,6 @@
 [33mMakeSuperPropertyReference[0m
 [33m- Inst: 20 / 21 (95.24%)[0m
-[33m- Cond: 7944 / 8 (99300.00%)[0m
+[33m- Cond: 7 / 8 (87.50%)[0m
 [32m+ 22822 [-]   : { ... }[0m
 [32m+ 22823 [-]   : app __x0__ = (GetThisEnvironment )[0m
 [32m+ 22824 [-]   : let env = __x0__[0m

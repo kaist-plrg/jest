@@ -1,6 +1,6 @@
 [32mTrimString[0m
 [32m- Inst: 24 / 24 (100.00%)[0m
-[33m- Cond: 7944 / 12 (66200.00%)[0m
+[32m- Cond: 12 / 12 (100.00%)[0m
 [32m+ 28718 [-]   : { ... }[0m
 [32m+ 28719 [-]   : app __x0__ = (RequireObjectCoercible string)[0m
 [32m+ 28720 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m

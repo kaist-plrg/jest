@@ -1,6 +1,6 @@
 [33mBindingElement1IteratorBindingInitialization1[0m
 [33m- Inst: 44 / 50 (88.00%)[0m
-[33m- Cond: 7944 / 24 (33100.00%)[0m
+[33m- Cond: 18 / 24 (75.00%)[0m
 [32m+ 3390  [-]   : { ... }[0m
 [32m+ 3391  [[32mT[0m/[31mF[0m[32m]: if (= iteratorRecord["Done"] false) ... else ...[0m
 [32m+ 3392  [-]   : { ... }[0m

@@ -1,6 +1,6 @@
 [33mGLOBALDOTObjectDOTsetPrototypeOf[0m
 [33m- Inst: 37 / 38 (97.37%)[0m
-[33m- Cond: 7944 / 14 (56742.86%)[0m
+[33m- Cond: 13 / 14 (92.86%)[0m
 [32m+ 16183 [-]   : { ... }[0m
 [32m+ 16184 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 16185 [-]   : let O = __x0__[0m

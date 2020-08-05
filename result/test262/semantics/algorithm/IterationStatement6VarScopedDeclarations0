@@ -1,6 +1,6 @@
 [32mIterationStatement6VarScopedDeclarations0[0m
 [32m- Inst: 11 / 11 (100.00%)[0m
-[33m- Cond: 7944 / 2 (397200.00%)[0m
+[32m- Cond: 2 / 2 (100.00%)[0m
 [32m+ 3243  [-]   : { ... }[0m
 [32m+ 3244  [-]   : let declarations = (new [ForBinding])[0m
 [32m+ 3245  [-]   : access __x0__ = (Statement "VarScopedDeclarations")[0m

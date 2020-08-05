@@ -1,6 +1,6 @@
 [33mResolveBinding[0m
 [33m- Inst: 13 / 14 (92.86%)[0m
-[33m- Cond: 7944 / 6 (132400.00%)[0m
+[33m- Cond: 5 / 6 (83.33%)[0m
 [32m+ 26853 [-]   : { ... }[0m
 [32m+ 26854 [[32mT[0m/[32mT[0m[32m]: if (|| (= env absent) (= env undefined)) ... else ...[0m
 [32m+ 26855 [-]   : env = GLOBAL_context["LexicalEnvironment"][0m

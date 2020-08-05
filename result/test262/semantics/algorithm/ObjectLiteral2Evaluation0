@@ -1,6 +1,6 @@
 [33mObjectLiteral2Evaluation0[0m
 [33m- Inst: 11 / 12 (91.67%)[0m
-[33m- Cond: 7944 / 4 (198600.00%)[0m
+[33m- Cond: 3 / 4 (75.00%)[0m
 [32m+ 3833  [-]   : { ... }[0m
 [32m+ 3834  [-]   : app obj = (OrdinaryObjectCreate INTRINSIC_ObjectPrototype)[0m
 [32m+ 3835  [-]   : access __x0__ = (PropertyDefinitionList "PropertyDefinitionEvaluation")[0m

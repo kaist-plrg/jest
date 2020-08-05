@@ -1,6 +1,6 @@
 [33mCallExpression5Contains0[0m
 [33m- Inst: 13 / 20 (65.00%)[0m
-[33m- Cond: 7944 / 8 (99300.00%)[0m
+[33m- Cond: 4 / 8 (50.00%)[0m
 [32m+ 2418  [-]   : { ... }[0m
 [32m+ 2419  [-]   : access __x0__ = (CallExpression "Contains")[0m
 [32m+ 2420  [-]   : app __x1__ = (__x0__ symbol)[0m

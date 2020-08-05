@@ -1,6 +1,6 @@
 [33mGLOBALDOTPromiseDOTallSettledRejectElementFunctions[0m
 [33m- Inst: 32 / 54 (59.26%)[0m
-[33m- Cond: 7944 / 22 (36109.09%)[0m
+[33m- Cond: 9 / 22 (40.91%)[0m
 [32m+ 16417 [-]   : { ... }[0m
 [32m+ 16418 [-]   : let x = argumentsList[0i][0m
 [32m+ 16419 [-]   : let F = GLOBAL_context["Function"][0m

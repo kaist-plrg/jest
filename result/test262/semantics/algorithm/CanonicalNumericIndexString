@@ -1,6 +1,6 @@
 [33mCanonicalNumericIndexString[0m
 [33m- Inst: 24 / 29 (82.76%)[0m
-[33m- Cond: 7944 / 12 (66200.00%)[0m
+[33m- Cond: 7 / 12 (58.33%)[0m
 [32m+ 7434  [-]   : { ... }[0m
 [32m+ 7435  [-]   : app __x0__ = (Type argument)[0m
 [32m+ 7436  [-]   : assert (= __x0__ String)[0m

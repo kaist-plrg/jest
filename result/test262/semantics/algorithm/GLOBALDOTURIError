@@ -1,6 +1,6 @@
 [33mGLOBALDOTURIError[0m
 [33m- Inst: 30 / 33 (90.91%)[0m
-[33m- Cond: 7944 / 16 (49650.00%)[0m
+[33m- Cond: 12 / 16 (75.00%)[0m
 [32m+ 18735 [-]   : { ... }[0m
 [32m+ 18736 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 18737 [-]   : let message = __x0__[0m

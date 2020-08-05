@@ -1,6 +1,6 @@
 [33mGLOBALDOTINTRINSIC_AsyncFromSyncIteratorPrototypeDOTnext[0m
 [33m- Inst: 27 / 35 (77.14%)[0m
-[33m- Cond: 7944 / 14 (56742.86%)[0m
+[33m- Cond: 9 / 14 (64.29%)[0m
 [32m+ 14493 [-]   : { ... }[0m
 [32m+ 14494 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 14495 [-]   : let value = __x0__[0m

@@ -1,6 +1,6 @@
 [33mArrowParameters0IteratorBindingInitialization0[0m
 [33m- Inst: 32 / 36 (88.89%)[0m
-[33m- Cond: 7944 / 16 (49650.00%)[0m
+[33m- Cond: 12 / 16 (75.00%)[0m
 [32m+ 3258  [-]   : { ... }[0m
 [32m+ 3259  [-]   : assert (= iteratorRecord["Done"] false)[0m
 [32m+ 3260  [-]   : app __x0__ = (IteratorStep iteratorRecord)[0m

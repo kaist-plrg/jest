@@ -1,6 +1,6 @@
 [31mIntegerIndexedElementSet[0m
 [31m- Inst: 0 / 47 (0.00%)[0m
-[33m- Cond: 7944 / 18 (44133.33%)[0m
+[31m- Cond: 0 / 18 (0.00%)[0m
 [31m- 21410 [-]   : { ... }[0m
 [31m- 21411 [-]   : app __x0__ = (Type index)[0m
 [31m- 21412 [-]   : assert (= __x0__ Number)[0m

@@ -1,6 +1,6 @@
 [32mGLOBALDOTObjectDOTgetOwnPropertyNames[0m
 [32m- Inst: 11 / 11 (100.00%)[0m
-[33m- Cond: 7944 / 4 (198600.00%)[0m
+[32m- Cond: 4 / 4 (100.00%)[0m
 [32m+ 15846 [-]   : { ... }[0m
 [32m+ 15847 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 15848 [-]   : let O = __x0__[0m

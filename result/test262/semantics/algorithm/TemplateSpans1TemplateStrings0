@@ -1,6 +1,6 @@
 [32mTemplateSpans1TemplateStrings0[0m
 [32m- Inst: 18 / 18 (100.00%)[0m
-[33m- Cond: 7944 / 4 (198600.00%)[0m
+[32m- Cond: 4 / 4 (100.00%)[0m
 [32m+ 2694  [-]   : { ... }[0m
 [32m+ 2695  [-]   : access __x0__ = (TemplateMiddleList "TemplateStrings")[0m
 [32m+ 2696  [-]   : app __x1__ = (__x0__ raw)[0m

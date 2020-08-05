@@ -1,6 +1,6 @@
 [33mAddRestrictedFunctionProperties[0m
 [33m- Inst: 15 / 17 (88.24%)[0m
-[33m- Cond: 7944 / 8 (99300.00%)[0m
+[33m- Cond: 6 / 8 (75.00%)[0m
 [32m+ 4233  [-]   : { ... }[0m
 [32m+ 4234  [-]   : let thrower = realm["Intrinsics"]["INTRINSIC_ThrowTypeError"][0m
 [32m+ 4235  [-]   : app __x0__ = (DefinePropertyOrThrow F "caller" (new PropertyDescriptor("Get" -> thrower, "Set" -> thrower, "Enumerable" -> false, "Configurable" -> true)))[0m

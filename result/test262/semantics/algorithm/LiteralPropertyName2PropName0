@@ -1,6 +1,6 @@
 [33mLiteralPropertyName2PropName0[0m
 [33m- Inst: 9 / 10 (90.00%)[0m
-[33m- Cond: 7944 / 4 (198600.00%)[0m
+[33m- Cond: 2 / 4 (50.00%)[0m
 [32m+ 22707 [-]   : { ... }[0m
 [32m+ 22708 [-]   : access __x0__ = (NumericLiteral "NumericValue")[0m
 [32m+ 22709 [-]   : let nbr = __x0__[0m

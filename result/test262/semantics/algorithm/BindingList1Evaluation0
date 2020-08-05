@@ -1,6 +1,6 @@
 [33mBindingList1Evaluation0[0m
 [33m- Inst: 11 / 12 (91.67%)[0m
-[33m- Cond: 7944 / 4 (198600.00%)[0m
+[33m- Cond: 3 / 4 (75.00%)[0m
 [32m+ 3477  [-]   : { ... }[0m
 [32m+ 3478  [-]   : access __x0__ = (BindingList "Evaluation")[0m
 [32m+ 3479  [-]   : let next = __x0__[0m

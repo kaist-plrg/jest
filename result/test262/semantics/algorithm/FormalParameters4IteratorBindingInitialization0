@@ -1,6 +1,6 @@
 [33mFormalParameters4IteratorBindingInitialization0[0m
 [33m- Inst: 12 / 13 (92.31%)[0m
-[33m- Cond: 7944 / 4 (198600.00%)[0m
+[33m- Cond: 3 / 4 (75.00%)[0m
 [32m+ 10535 [-]   : { ... }[0m
 [32m+ 10536 [-]   : access __x0__ = (FormalParameterList "IteratorBindingInitialization")[0m
 [32m+ 10537 [-]   : app __x1__ = (__x0__ iteratorRecord environment)[0m

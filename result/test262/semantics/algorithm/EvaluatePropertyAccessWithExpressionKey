@@ -1,6 +1,6 @@
 [32mEvaluatePropertyAccessWithExpressionKey[0m
 [32m- Inst: 26 / 26 (100.00%)[0m
-[33m- Cond: 7944 / 12 (66200.00%)[0m
+[32m- Cond: 12 / 12 (100.00%)[0m
 [32m+ 9973  [-]   : { ... }[0m
 [32m+ 9974  [-]   : access __x0__ = (expression "Evaluation")[0m
 [32m+ 9975  [-]   : let propertyNameReference = __x0__[0m

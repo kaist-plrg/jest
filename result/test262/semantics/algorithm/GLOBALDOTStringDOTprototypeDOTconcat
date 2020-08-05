@@ -1,6 +1,6 @@
 [32mGLOBALDOTStringDOTprototypeDOTconcat[0m
 [32m- Inst: 30 / 30 (100.00%)[0m
-[33m- Cond: 7944 / 14 (56742.86%)[0m
+[32m- Cond: 14 / 14 (100.00%)[0m
 [32m+ 17334 [-]   : { ... }[0m
 [32m+ 17335 [-]   : app __x0__ = (RequireObjectCoercible this)[0m
 [32m+ 17336 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m

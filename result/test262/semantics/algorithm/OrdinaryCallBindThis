@@ -1,6 +1,6 @@
 [33mOrdinaryCallBindThis[0m
 [33m- Inst: 18 / 32 (56.25%)[0m
-[33m- Cond: 7944 / 10 (79440.00%)[0m
+[33m- Cond: 3 / 10 (30.00%)[0m
 [32m+ 24197 [-]   : { ... }[0m
 [32m+ 24198 [-]   : let thisMode = F["ThisMode"][0m
 [32m+ 24199 [[32mT[0m/[32mT[0m[32m]: if (= thisMode CONST_lexical) ... else ...[0m

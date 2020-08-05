@@ -1,6 +1,6 @@
 [32mGLOBALDOTObjectDOTprototypeDOTvalueOf[0m
 [32m- Inst: 9 / 9 (100.00%)[0m
-[33m- Cond: 7944 / 4 (198600.00%)[0m
+[32m- Cond: 4 / 4 (100.00%)[0m
 [32m+ 16151 [-]   : { ... }[0m
 [32m+ 16152 [-]   : app __x0__ = (ToObject this)[0m
 [32m+ 16153 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m

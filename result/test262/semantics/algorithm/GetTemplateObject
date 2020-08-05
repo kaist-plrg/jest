@@ -1,6 +1,6 @@
 [33mGetTemplateObject[0m
 [33m- Inst: 57 / 60 (95.00%)[0m
-[33m- Cond: 7944 / 18 (44133.33%)[0m
+[33m- Cond: 14 / 18 (77.78%)[0m
 [32m+ 20069 [-]   : { ... }[0m
 [32m+ 20070 [-]   : access __x0__ = (templateLiteral "TemplateStrings")[0m
 [32m+ 20071 [-]   : app __x1__ = (__x0__ true)[0m

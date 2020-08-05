@@ -1,6 +1,6 @@
 [33mGLOBALDOTArrayDOTprototypeDOTfill[0m
 [33m- Inst: 70 / 71 (98.59%)[0m
-[33m- Cond: 7944 / 32 (24825.00%)[0m
+[33m- Cond: 30 / 32 (93.75%)[0m
 [32m+ 11761 [-]   : { ... }[0m
 [32m+ 11762 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 11763 [-]   : let value = __x0__[0m

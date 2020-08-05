@@ -1,6 +1,6 @@
 [32mArgumentList1ArgumentListEvaluation0[0m
 [32m- Inst: 40 / 40 (100.00%)[0m
-[33m- Cond: 7944 / 20 (39720.00%)[0m
+[33m- Cond: 19 / 20 (95.00%)[0m
 [32m+ 4267  [-]   : { ... }[0m
 [32m+ 4268  [-]   : let list = (new [])[0m
 [32m+ 4269  [-]   : access __x0__ = (AssignmentExpression "Evaluation")[0m

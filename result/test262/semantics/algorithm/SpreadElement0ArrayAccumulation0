@@ -1,6 +1,6 @@
 [33mSpreadElement0ArrayAccumulation0[0m
 [33m- Inst: 50 / 52 (96.15%)[0m
-[33m- Cond: 7944 / 28 (28371.43%)[0m
+[33m- Cond: 24 / 28 (85.71%)[0m
 [32m+ 27408 [-]   : { ... }[0m
 [32m+ 27409 [-]   : access __x0__ = (AssignmentExpression "Evaluation")[0m
 [32m+ 27410 [-]   : let spreadRef = __x0__[0m

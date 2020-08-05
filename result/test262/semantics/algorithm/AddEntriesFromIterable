@@ -1,6 +1,6 @@
 [33mAddEntriesFromIterable[0m
 [33m- Inst: 75 / 91 (82.42%)[0m
-[33m- Cond: 7944 / 42 (18914.29%)[0m
+[33m- Cond: 33 / 42 (78.57%)[0m
 [32m+ 4142  [-]   : { ... }[0m
 [32m+ 4143  [-]   : app __x0__ = (IsCallable adder)[0m
 [32m+ 4144  [[32mT[0m/[32mT[0m[32m]: if (= __x0__ false) ... else ...[0m

@@ -1,6 +1,6 @@
 [33mGLOBALDOTWeakSetDOTprototypeDOTadd[0m
 [33m- Inst: 37 / 38 (97.37%)[0m
-[33m- Cond: 7944 / 12 (66200.00%)[0m
+[33m- Cond: 11 / 12 (91.67%)[0m
 [32m+ 19035 [-]   : { ... }[0m
 [32m+ 19036 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 19037 [-]   : let value = __x0__[0m

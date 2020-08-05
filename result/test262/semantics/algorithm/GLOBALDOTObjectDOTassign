@@ -1,6 +1,6 @@
 [33mGLOBALDOTObjectDOTassign[0m
 [33m- Inst: 56 / 58 (96.55%)[0m
-[33m- Cond: 7944 / 30 (26480.00%)[0m
+[33m- Cond: 28 / 30 (93.33%)[0m
 [32m+ 15561 [-]   : { ... }[0m
 [32m+ 15562 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 15563 [-]   : let target = __x0__[0m

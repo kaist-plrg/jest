@@ -1,6 +1,6 @@
 [32mGLOBALDOTBigIntDOTasIntN[0m
 [32m- Inst: 23 / 23 (100.00%)[0m
-[33m- Cond: 7944 / 10 (79440.00%)[0m
+[32m- Cond: 10 / 10 (100.00%)[0m
 [32m+ 13837 [-]   : { ... }[0m
 [32m+ 13838 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 13839 [-]   : let bits = __x0__[0m

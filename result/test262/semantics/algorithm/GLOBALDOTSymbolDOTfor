@@ -1,6 +1,6 @@
 [32mGLOBALDOTSymbolDOTfor[0m
 [32m- Inst: 23 / 23 (100.00%)[0m
-[33m- Cond: 7944 / 8 (99300.00%)[0m
+[32m- Cond: 8 / 8 (100.00%)[0m
 [32m+ 18561 [-]   : { ... }[0m
 [32m+ 18562 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 18563 [-]   : let key = __x0__[0m

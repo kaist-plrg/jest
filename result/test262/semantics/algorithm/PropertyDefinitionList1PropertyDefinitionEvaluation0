@@ -1,6 +1,6 @@
 [33mPropertyDefinitionList1PropertyDefinitionEvaluation0[0m
 [33m- Inst: 12 / 13 (92.31%)[0m
-[33m- Cond: 7944 / 4 (198600.00%)[0m
+[33m- Cond: 3 / 4 (75.00%)[0m
 [32m+ 671   [-]   : { ... }[0m
 [32m+ 672   [-]   : access __x0__ = (PropertyDefinitionList "PropertyDefinitionEvaluation")[0m
 [32m+ 673   [-]   : app __x1__ = (__x0__ object enumerable)[0m

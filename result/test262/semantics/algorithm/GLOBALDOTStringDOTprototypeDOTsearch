@@ -1,6 +1,6 @@
 [33mGLOBALDOTStringDOTprototypeDOTsearch[0m
 [33m- Inst: 36 / 53 (67.92%)[0m
-[33m- Cond: 7944 / 28 (28371.43%)[0m
+[33m- Cond: 16 / 28 (57.14%)[0m
 [32m+ 17990 [-]   : { ... }[0m
 [32m+ 17991 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 17992 [-]   : let regexp = __x0__[0m

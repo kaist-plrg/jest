@@ -1,6 +1,6 @@
 [32mStatementList1LexicallyScopedDeclarations0[0m
 [32m- Inst: 12 / 12 (100.00%)[0m
-[33m- Cond: 7944 / 2 (397200.00%)[0m
+[32m- Cond: 2 / 2 (100.00%)[0m
 [32m+ 1480  [-]   : { ... }[0m
 [32m+ 1481  [-]   : access __x0__ = (StatementList "LexicallyScopedDeclarations")[0m
 [32m+ 1482  [-]   : let declarations = __x0__[0m

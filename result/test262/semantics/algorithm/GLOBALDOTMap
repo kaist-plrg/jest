@@ -1,6 +1,6 @@
 [33mGLOBALDOTMap[0m
 [33m- Inst: 35 / 36 (97.22%)[0m
-[33m- Cond: 7944 / 16 (49650.00%)[0m
+[33m- Cond: 15 / 16 (93.75%)[0m
 [32m+ 14909 [-]   : { ... }[0m
 [32m+ 14910 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 14911 [-]   : let iterable = __x0__[0m

@@ -1,6 +1,6 @@
 [33mObjectBindingPattern3BindingInitialization1[0m
 [33m- Inst: 12 / 13 (92.31%)[0m
-[33m- Cond: 7944 / 4 (198600.00%)[0m
+[33m- Cond: 3 / 4 (75.00%)[0m
 [32m+ 23710 [-]   : { ... }[0m
 [32m+ 23711 [-]   : access __x0__ = (BindingPropertyList "PropertyBindingInitialization")[0m
 [32m+ 23712 [-]   : app __x1__ = (__x0__ value environment)[0m

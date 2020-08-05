@@ -1,6 +1,6 @@
 [33mBindingRestElement0IteratorBindingInitialization0[0m
 [33m- Inst: 75 / 80 (93.75%)[0m
-[33m- Cond: 7944 / 42 (18914.29%)[0m
+[33m- Cond: 35 / 42 (83.33%)[0m
 [32m+ 6894  [-]   : { ... }[0m
 [32m+ 6895  [-]   : access __x0__ = (BindingIdentifier "StringValue")[0m
 [32m+ 6896  [-]   : app __x1__ = (ResolveBinding __x0__ environment)[0m

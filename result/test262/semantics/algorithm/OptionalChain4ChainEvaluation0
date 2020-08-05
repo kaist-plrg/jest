@@ -1,6 +1,6 @@
 [33mOptionalChain4ChainEvaluation0[0m
 [33m- Inst: 25 / 28 (89.29%)[0m
-[33m- Cond: 7944 / 12 (66200.00%)[0m
+[33m- Cond: 9 / 12 (75.00%)[0m
 [32m+ 24011 [-]   : { ... }[0m
 [32m+ 24012 [-]   : let optionalChain = OptionalChain[0m
 [32m+ 24013 [-]   : access __x0__ = (optionalChain "ChainEvaluation")[0m

@@ -1,6 +1,6 @@
 [32mSubstitutionTemplate0Evaluation0[0m
 [32m- Inst: 29 / 29 (100.00%)[0m
-[33m- Cond: 7944 / 12 (66200.00%)[0m
+[32m- Cond: 12 / 12 (100.00%)[0m
 [32m+ 2526  [-]   : { ... }[0m
 [32m+ 2527  [-]   : access __x0__ = (TemplateHead "TV")[0m
 [32m+ 2528  [-]   : let head = __x0__[0m

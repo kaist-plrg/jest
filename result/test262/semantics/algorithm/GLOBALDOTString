@@ -1,6 +1,6 @@
 [33mGLOBALDOTString[0m
 [33m- Inst: 42 / 44 (95.45%)[0m
-[33m- Cond: 7944 / 20 (39720.00%)[0m
+[33m- Cond: 18 / 20 (90.00%)[0m
 [32m+ 17106 [-]   : { ... }[0m
 [32m+ 17107 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 17108 [-]   : let value = __x0__[0m

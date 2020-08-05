@@ -1,6 +1,6 @@
 [33mToPropertyKey[0m
 [33m- Inst: 21 / 22 (95.45%)[0m
-[33m- Cond: 7944 / 10 (79440.00%)[0m
+[33m- Cond: 8 / 10 (80.00%)[0m
 [32m+ 28547 [-]   : { ... }[0m
 [32m+ 28548 [-]   : app __x0__ = (ToPrimitive argument String)[0m
 [32m+ 28549 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m

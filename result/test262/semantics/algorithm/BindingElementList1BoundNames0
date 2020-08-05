@@ -1,6 +1,6 @@
 [32mBindingElementList1BoundNames0[0m
 [32m- Inst: 12 / 12 (100.00%)[0m
-[33m- Cond: 7944 / 2 (397200.00%)[0m
+[32m- Cond: 2 / 2 (100.00%)[0m
 [32m+ 6688  [-]   : { ... }[0m
 [32m+ 6689  [-]   : access __x0__ = (BindingElementList "BoundNames")[0m
 [32m+ 6690  [-]   : let names = __x0__[0m

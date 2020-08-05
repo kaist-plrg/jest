@@ -1,6 +1,6 @@
 [33mCaseBlock1HasCallInTailPosition3[0m
 [33m- Inst: 28 / 29 (96.55%)[0m
-[33m- Cond: 7944 / 8 (99300.00%)[0m
+[33m- Cond: 7 / 8 (87.50%)[0m
 [32m+ 7631  [-]   : { ... }[0m
 [32m+ 7632  [-]   : let has = false[0m
 [32m+ 7633  [[32mT[0m/[32mT[0m[32m]: if (! (= CaseClauses0 absent)) ... else ...[0m

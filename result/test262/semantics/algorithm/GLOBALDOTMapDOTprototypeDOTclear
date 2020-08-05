@@ -1,6 +1,6 @@
 [32mGLOBALDOTMapDOTprototypeDOTclear[0m
 [32m- Inst: 20 / 20 (100.00%)[0m
-[33m- Cond: 7944 / 6 (132400.00%)[0m
+[32m- Cond: 6 / 6 (100.00%)[0m
 [32m+ 14945 [-]   : { ... }[0m
 [32m+ 14946 [-]   : let M = this[0m
 [32m+ 14947 [-]   : app __x0__ = (RequireInternalSlot M "MapData")[0m

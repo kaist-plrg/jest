@@ -1,6 +1,6 @@
 [31mArgumentsExoticObjectDOTDelete[0m
 [31m- Inst: 0 / 24 (0.00%)[0m
-[33m- Cond: 7944 / 10 (79440.00%)[0m
+[31m- Cond: 0 / 10 (0.00%)[0m
 [31m- 4405  [-]   : { ... }[0m
 [31m- 4406  [-]   : let args = args[0m
 [31m- 4407  [-]   : let map = args["ParameterMap"][0m

@@ -1,6 +1,6 @@
 [32mIterationStatement9VarDeclaredNames0[0m
 [32m- Inst: 12 / 12 (100.00%)[0m
-[33m- Cond: 7944 / 2 (397200.00%)[0m
+[32m- Cond: 2 / 2 (100.00%)[0m
 [32m+ 22391 [-]   : { ... }[0m
 [32m+ 22392 [-]   : access __x0__ = (ForBinding "BoundNames")[0m
 [32m+ 22393 [-]   : let names = __x0__[0m

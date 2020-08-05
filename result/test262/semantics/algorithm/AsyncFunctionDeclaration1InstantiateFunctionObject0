@@ -1,6 +1,6 @@
 [31mAsyncFunctionDeclaration1InstantiateFunctionObject0[0m
 [31m- Inst: 0 / 15 (0.00%)[0m
-[33m- Cond: 7944 / 6 (132400.00%)[0m
+[31m- Cond: 0 / 6 (0.00%)[0m
 [31m- 5702  [-]   : { ... }[0m
 [31m- 5703  [-]   : app F = (OrdinaryFunctionCreate INTRINSIC_AsyncFunctionPrototype FormalParameters AsyncFunctionBody CONST_nonlexicalthis scope)[0m
 [31m- 5704  [-]   : if (is-completion F) ... else ...[0m

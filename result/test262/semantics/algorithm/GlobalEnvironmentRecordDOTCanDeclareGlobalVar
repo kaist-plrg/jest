@@ -1,6 +1,6 @@
 [33mGlobalEnvironmentRecordDOTCanDeclareGlobalVar[0m
 [33m- Inst: 22 / 24 (91.67%)[0m
-[33m- Cond: 7944 / 10 (79440.00%)[0m
+[33m- Cond: 8 / 10 (80.00%)[0m
 [32m+ 20467 [-]   : { ... }[0m
 [32m+ 20468 [-]   : let envRec = this[0m
 [32m+ 20469 [-]   : let ObjRec = envRec["ObjectRecord"][0m

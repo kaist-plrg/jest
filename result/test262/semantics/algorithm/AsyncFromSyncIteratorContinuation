@@ -1,6 +1,6 @@
 [33mAsyncFromSyncIteratorContinuation[0m
 [33m- Inst: 43 / 63 (68.25%)[0m
-[33m- Cond: 7944 / 30 (26480.00%)[0m
+[33m- Cond: 17 / 30 (56.67%)[0m
 [32m+ 5577  [-]   : { ... }[0m
 [32m+ 5578  [-]   : app __x0__ = (IteratorComplete result)[0m
 [32m+ 5579  [-]   : let done = __x0__[0m

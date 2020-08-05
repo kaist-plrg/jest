@@ -1,6 +1,6 @@
 [33mAsyncGeneratorResumeNext[0m
 [33m- Inst: 70 / 100 (70.00%)[0m
-[33m- Cond: 7944 / 40 (19860.00%)[0m
+[33m- Cond: 22 / 40 (55.00%)[0m
 [32m+ 6147  [-]   : { ... }[0m
 [32m+ 6148  [-]   : let state = generator["AsyncGeneratorState"][0m
 [32m+ 6149  [-]   : assert (! (= state CONST_executing))[0m

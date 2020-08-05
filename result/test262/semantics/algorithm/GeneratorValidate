@@ -1,6 +1,6 @@
 [32mGeneratorValidate[0m
 [32m- Inst: 16 / 16 (100.00%)[0m
-[33m- Cond: 7944 / 6 (132400.00%)[0m
+[32m- Cond: 6 / 6 (100.00%)[0m
 [32m+ 19656 [-]   : { ... }[0m
 [32m+ 19657 [-]   : app __x0__ = (RequireInternalSlot generator "GeneratorState")[0m
 [32m+ 19658 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m

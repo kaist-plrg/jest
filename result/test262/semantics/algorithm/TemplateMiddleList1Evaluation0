@@ -1,6 +1,6 @@
 [33mTemplateMiddleList1Evaluation0[0m
 [33m- Inst: 28 / 29 (96.55%)[0m
-[33m- Cond: 7944 / 12 (66200.00%)[0m
+[33m- Cond: 11 / 12 (91.67%)[0m
 [32m+ 2615  [-]   : { ... }[0m
 [32m+ 2616  [-]   : access __x0__ = (TemplateMiddleList "Evaluation")[0m
 [32m+ 2617  [-]   : let rest = __x0__[0m

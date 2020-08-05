@@ -1,6 +1,6 @@
 [32mGLOBALDOTMapDOTprototypeDOTdelete[0m
 [32m- Inst: 33 / 33 (100.00%)[0m
-[33m- Cond: 7944 / 10 (79440.00%)[0m
+[32m- Cond: 10 / 10 (100.00%)[0m
 [32m+ 14965 [-]   : { ... }[0m
 [32m+ 14966 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 14967 [-]   : let key = __x0__[0m

@@ -1,6 +1,6 @@
 [33mSuperCall0Evaluation0[0m
 [33m- Inst: 41 / 42 (97.62%)[0m
-[33m- Cond: 7944 / 18 (44133.33%)[0m
+[33m- Cond: 17 / 18 (94.44%)[0m
 [32m+ 27741 [-]   : { ... }[0m
 [32m+ 27742 [-]   : app __x0__ = (GetNewTarget )[0m
 [32m+ 27743 [-]   : let newTarget = __x0__[0m

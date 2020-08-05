@@ -1,6 +1,6 @@
 [33mAsyncGeneratorBody0EvaluateBody0[0m
 [33m- Inst: 22 / 24 (91.67%)[0m
-[33m- Cond: 7944 / 12 (66200.00%)[0m
+[33m- Cond: 10 / 12 (83.33%)[0m
 [32m+ 5837  [-]   : { ... }[0m
 [32m+ 5838  [-]   : app __x0__ = (FunctionDeclarationInstantiation functionObject argumentsList)[0m
 [32m+ 5839  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m

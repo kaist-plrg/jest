@@ -1,6 +1,6 @@
 [32mBindingPattern1BindingInitialization0[0m
 [32m- Inst: 24 / 24 (100.00%)[0m
-[33m- Cond: 7944 / 10 (79440.00%)[0m
+[32m- Cond: 10 / 10 (100.00%)[0m
 [32m+ 6839  [-]   : { ... }[0m
 [32m+ 6840  [-]   : app __x0__ = (GetIterator value)[0m
 [32m+ 6841  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m

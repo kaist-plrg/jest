@@ -1,6 +1,6 @@
 [31mClassElementList1PrototypePropertyNameList0[0m
 [31m- Inst: 0 / 14 (0.00%)[0m
-[33m- Cond: 7944 / 4 (198600.00%)[0m
+[31m- Cond: 0 / 4 (0.00%)[0m
 [31m- 8026  [-]   : { ... }[0m
 [31m- 8027  [-]   : access __x0__ = (ClassElementList "PrototypePropertyNameList")[0m
 [31m- 8028  [-]   : let list = __x0__[0m

@@ -1,6 +1,6 @@
 [33mCatch0CatchClauseEvaluation0[0m
 [33m- Inst: 36 / 37 (97.30%)[0m
-[33m- Cond: 7944 / 8 (99300.00%)[0m
+[33m- Cond: 7 / 8 (87.50%)[0m
 [32m+ 1564  [-]   : { ... }[0m
 [32m+ 1565  [-]   : let oldEnv = GLOBAL_context["LexicalEnvironment"][0m
 [32m+ 1566  [-]   : app __x0__ = (NewDeclarativeEnvironment oldEnv)[0m

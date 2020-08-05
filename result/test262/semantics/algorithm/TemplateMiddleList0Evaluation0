@@ -1,6 +1,6 @@
 [32mTemplateMiddleList0Evaluation0[0m
 [32m- Inst: 21 / 21 (100.00%)[0m
-[33m- Cond: 7944 / 8 (99300.00%)[0m
+[32m- Cond: 8 / 8 (100.00%)[0m
 [32m+ 2573  [-]   : { ... }[0m
 [32m+ 2574  [-]   : access __x0__ = (TemplateMiddle "TV")[0m
 [32m+ 2575  [-]   : let head = __x0__[0m

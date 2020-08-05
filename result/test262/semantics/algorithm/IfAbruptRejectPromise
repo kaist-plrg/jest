@@ -1,6 +1,6 @@
 [31mIfAbruptRejectPromise[0m
 [31m- Inst: 0 / 12 (0.00%)[0m
-[33m- Cond: 7944 / 6 (132400.00%)[0m
+[31m- Cond: 0 / 6 (0.00%)[0m
 [31m- 21147 [-]   : { ... }[0m
 [31m- 21148 [-]   : if (is-completion value) ... else ...[0m
 [31m- 21149 [-]   : if (= value["Type"] CONST_normal) ... else ...[0m

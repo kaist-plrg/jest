@@ -1,6 +1,6 @@
 [33mScriptEvaluation[0m
 [33m- Inst: 30 / 36 (83.33%)[0m
-[33m- Cond: 7944 / 8 (99300.00%)[0m
+[33m- Cond: 4 / 8 (50.00%)[0m
 [32m+ 27021 [-]   : { ... }[0m
 [32m+ 27022 [-]   : let globalEnv = scriptRecord["Realm"]["GlobalEnv"][0m
 [32m+ 27023 [-]   : let scriptContext = (new ExecutionContext("SubMap" -> (new SubMap())))[0m

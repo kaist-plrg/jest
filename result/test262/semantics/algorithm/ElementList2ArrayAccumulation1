@@ -1,6 +1,6 @@
 [33mElementList2ArrayAccumulation1[0m
 [33m- Inst: 41 / 46 (89.13%)[0m
-[33m- Cond: 7944 / 22 (36109.09%)[0m
+[33m- Cond: 16 / 22 (72.73%)[0m
 [32m+ 694   [-]   : { ... }[0m
 [32m+ 695   [-]   : access __x0__ = (ElementList "ArrayAccumulation")[0m
 [32m+ 696   [-]   : app __x1__ = (__x0__ array nextIndex)[0m

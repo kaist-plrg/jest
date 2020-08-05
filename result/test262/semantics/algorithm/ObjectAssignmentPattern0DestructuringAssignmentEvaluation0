@@ -1,6 +1,6 @@
 [32mObjectAssignmentPattern0DestructuringAssignmentEvaluation0[0m
 [32m- Inst: 11 / 11 (100.00%)[0m
-[33m- Cond: 7944 / 4 (198600.00%)[0m
+[32m- Cond: 4 / 4 (100.00%)[0m
 [32m+ 23603 [-]   : { ... }[0m
 [32m+ 23604 [-]   : app __x0__ = (RequireObjectCoercible value)[0m
 [32m+ 23605 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m

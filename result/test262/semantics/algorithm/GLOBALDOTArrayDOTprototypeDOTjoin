@@ -1,6 +1,6 @@
 [33mGLOBALDOTArrayDOTprototypeDOTjoin[0m
 [33m- Inst: 57 / 60 (95.00%)[0m
-[33m- Cond: 7944 / 32 (24825.00%)[0m
+[33m- Cond: 28 / 32 (87.50%)[0m
 [32m+ 12349 [-]   : { ... }[0m
 [32m+ 12350 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 12351 [-]   : let separator = __x0__[0m

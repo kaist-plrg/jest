@@ -1,6 +1,6 @@
 [31mProxyExoticObjectDOTOwnPropertyKeys[0m
 [31m- Inst: 0 / 117 (0.00%)[0m
-[33m- Cond: 7944 / 50 (15888.00%)[0m
+[31m- Cond: 0 / 50 (0.00%)[0m
 [31m- 26323 [-]   : { ... }[0m
 [31m- 26324 [-]   : let handler = O["ProxyHandler"][0m
 [31m- 26325 [-]   : if (= handler null) ... else ...[0m

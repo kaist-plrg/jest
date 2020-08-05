@@ -1,6 +1,6 @@
 [32mClassExpression0Evaluation1[0m
 [32m- Inst: 17 / 17 (100.00%)[0m
-[33m- Cond: 7944 / 6 (132400.00%)[0m
+[32m- Cond: 6 / 6 (100.00%)[0m
 [32m+ 8040  [-]   : { ... }[0m
 [32m+ 8041  [[32mT[0m/[32mT[0m[32m]: if (= BindingIdentifier absent) ... else ...[0m
 [32m+ 8042  [-]   : let className = undefined[0m

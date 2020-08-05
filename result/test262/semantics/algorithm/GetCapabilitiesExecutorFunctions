@@ -1,6 +1,6 @@
 [31mGetCapabilitiesExecutorFunctions[0m
 [31m- Inst: 0 / 17 (0.00%)[0m
-[33m- Cond: 7944 / 4 (198600.00%)[0m
+[31m- Cond: 0 / 4 (0.00%)[0m
 [31m- 19728 [-]   : { ... }[0m
 [31m- 19729 [-]   : let F = GLOBAL_context["Function"][0m
 [31m- 19730 [-]   : let promiseCapability = F["Capability"][0m

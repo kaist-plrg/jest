@@ -1,6 +1,6 @@
 [33mFunctionEnvironmentRecordDOTHasSuperBinding[0m
 [33m- Inst: 11 / 14 (78.57%)[0m
-[33m- Cond: 7944 / 4 (198600.00%)[0m
+[33m- Cond: 3 / 4 (75.00%)[0m
 [32m+ 10948 [-]   : { ... }[0m
 [32m+ 10949 [-]   : let envRec = this[0m
 [32m+ 10950 [[31mF[0m/[32mT[0m[32m]: if (= envRec["ThisBindingStatus"] CONST_lexical) ... else ...[0m

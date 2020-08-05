@@ -1,6 +1,6 @@
 [33mGLOBALDOTReferenceError[0m
 [33m- Inst: 30 / 33 (90.91%)[0m
-[33m- Cond: 7944 / 16 (49650.00%)[0m
+[33m- Cond: 12 / 16 (75.00%)[0m
 [32m+ 16804 [-]   : { ... }[0m
 [32m+ 16805 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 16806 [-]   : let message = __x0__[0m

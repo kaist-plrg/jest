@@ -1,6 +1,6 @@
 [32mGLOBALDOTisNaN[0m
 [32m- Inst: 17 / 17 (100.00%)[0m
-[33m- Cond: 7944 / 6 (132400.00%)[0m
+[32m- Cond: 6 / 6 (100.00%)[0m
 [32m+ 19325 [-]   : { ... }[0m
 [32m+ 19326 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 19327 [-]   : let number = __x0__[0m

@@ -1,6 +1,6 @@
 [33mBindingRestElement1IteratorBindingInitialization0[0m
 [33m- Inst: 54 / 62 (87.10%)[0m
-[33m- Cond: 7944 / 32 (24825.00%)[0m
+[33m- Cond: 22 / 32 (68.75%)[0m
 [32m+ 6977  [-]   : { ... }[0m
 [32m+ 6978  [-]   : app __x0__ = (ArrayCreate 0i)[0m
 [32m+ 6979  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m

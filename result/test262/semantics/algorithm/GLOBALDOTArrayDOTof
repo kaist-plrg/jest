@@ -1,6 +1,6 @@
 [33mGLOBALDOTArrayDOTof[0m
 [33m- Inst: 48 / 50 (96.00%)[0m
-[33m- Cond: 7944 / 24 (33100.00%)[0m
+[33m- Cond: 21 / 24 (87.50%)[0m
 [32m+ 11312 [-]   : { ... }[0m
 [32m+ 11313 [-]   : let len = argumentsList["length"][0m
 [32m+ 11314 [-]   : let items = argumentsList[0m

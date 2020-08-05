@@ -1,6 +1,6 @@
 [33mAsyncFunctionDeclaration0InstantiateFunctionObject0[0m
 [33m- Inst: 15 / 17 (88.24%)[0m
-[33m- Cond: 7944 / 6 (132400.00%)[0m
+[33m- Cond: 4 / 6 (66.67%)[0m
 [32m+ 5678  [-]   : { ... }[0m
 [32m+ 5679  [-]   : access __x0__ = (BindingIdentifier "StringValue")[0m
 [32m+ 5680  [-]   : let name = __x0__[0m

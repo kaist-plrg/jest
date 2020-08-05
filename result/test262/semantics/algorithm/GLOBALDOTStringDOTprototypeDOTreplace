@@ -1,6 +1,6 @@
 [33mGLOBALDOTStringDOTprototypeDOTreplace[0m
 [33m- Inst: 2 / 90 (2.22%)[0m
-[33m- Cond: 7944 / 44 (18054.55%)[0m
+[31m- Cond: 0 / 44 (0.00%)[0m
 [32m+ 17900 [-]   : { ... }[0m
 [32m+ 17901 [-]   : ??? "GLOBAL.String.prototype.replace"[0m
 [31m- 17902 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m

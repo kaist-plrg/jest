@@ -1,6 +1,6 @@
 [33mStringGetOwnProperty[0m
 [33m- Inst: 40 / 44 (90.91%)[0m
-[33m- Cond: 7944 / 14 (56742.86%)[0m
+[33m- Cond: 12 / 14 (85.71%)[0m
 [32m+ 27646 [-]   : { ... }[0m
 [32m+ 27647 [-]   : app __x0__ = (IsPropertyKey P)[0m
 [32m+ 27648 [-]   : assert (= __x0__ true)[0m

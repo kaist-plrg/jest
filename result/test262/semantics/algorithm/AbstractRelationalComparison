@@ -1,6 +1,6 @@
 [33mAbstractRelationalComparison[0m
 [33m- Inst: 132 / 134 (98.51%)[0m
-[33m- Cond: 7944 / 60 (13240.00%)[0m
+[33m- Cond: 56 / 60 (93.33%)[0m
 [32m+ 4008  [-]   : { ... }[0m
 [32m+ 4009  [[32mT[0m/[32mT[0m[32m]: if (= LeftFirst absent) ... else ...[0m
 [32m+ 4010  [-]   : let LeftFirst = true[0m

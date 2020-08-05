@@ -1,6 +1,6 @@
 [32mGLOBALDOTFunctionDOTprototypeDOTSYMBOL_hasInstance[0m
 [32m- Inst: 12 / 12 (100.00%)[0m
-[33m- Cond: 7944 / 4 (198600.00%)[0m
+[32m- Cond: 4 / 4 (100.00%)[0m
 [32m+ 14190 [-]   : { ... }[0m
 [32m+ 14191 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 14192 [-]   : let V = __x0__[0m

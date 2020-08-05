@@ -1,6 +1,6 @@
 [33mSetRealmGlobalObject[0m
 [33m- Inst: 16 / 18 (88.89%)[0m
-[33m- Cond: 7944 / 4 (198600.00%)[0m
+[33m- Cond: 2 / 4 (50.00%)[0m
 [32m+ 27233 [-]   : { ... }[0m
 [32m+ 27234 [[32mT[0m/[31mF[0m[32m]: if (= globalObj undefined) ... else ...[0m
 [32m+ 27235 [-]   : { ... }[0m

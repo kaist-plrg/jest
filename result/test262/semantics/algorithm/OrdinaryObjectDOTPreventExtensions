@@ -1,6 +1,6 @@
 [33mOrdinaryObjectDOTPreventExtensions[0m
 [33m- Inst: 8 / 9 (88.89%)[0m
-[33m- Cond: 7944 / 4 (198600.00%)[0m
+[33m- Cond: 3 / 4 (75.00%)[0m
 [32m+ 24587 [-]   : { ... }[0m
 [32m+ 24588 [-]   : app __x0__ = (OrdinaryPreventExtensions O)[0m
 [32m+ 24589 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m

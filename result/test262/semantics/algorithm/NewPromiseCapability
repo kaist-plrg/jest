@@ -1,6 +1,6 @@
 [33mNewPromiseCapability[0m
 [33m- Inst: 38 / 39 (97.44%)[0m
-[33m- Cond: 7944 / 14 (56742.86%)[0m
+[33m- Cond: 13 / 14 (92.86%)[0m
 [32m+ 23259 [-]   : { ... }[0m
 [32m+ 23260 [-]   : app __x0__ = (IsConstructor C)[0m
 [32m+ 23261 [[32mT[0m/[32mT[0m[32m]: if (= __x0__ false) ... else ...[0m

@@ -1,6 +1,6 @@
 [33mGLOBALDOTErrorDOTprototypeDOTtoString[0m
 [33m- Inst: 50 / 54 (92.59%)[0m
-[33m- Cond: 7944 / 26 (30553.85%)[0m
+[33m- Cond: 20 / 26 (76.92%)[0m
 [32m+ 14092 [-]   : { ... }[0m
 [32m+ 14093 [-]   : let O = this[0m
 [32m+ 14094 [-]   : app __x0__ = (Type O)[0m

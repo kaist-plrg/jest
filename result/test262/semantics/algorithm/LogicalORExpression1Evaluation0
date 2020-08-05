@@ -1,6 +1,6 @@
 [33mLogicalORExpression1Evaluation0[0m
 [33m- Inst: 31 / 32 (96.88%)[0m
-[33m- Cond: 7944 / 14 (56742.86%)[0m
+[33m- Cond: 12 / 14 (85.71%)[0m
 [32m+ 1999  [-]   : { ... }[0m
 [32m+ 2000  [-]   : access __x0__ = (LogicalORExpression "Evaluation")[0m
 [32m+ 2001  [-]   : let lref = __x0__[0m

@@ -1,6 +1,6 @@
 [33mGLOBALDOTSetDOTprototypeDOTdelete[0m
 [33m- Inst: 31 / 32 (96.88%)[0m
-[33m- Cond: 7944 / 10 (79440.00%)[0m
+[33m- Cond: 9 / 10 (90.00%)[0m
 [32m+ 16985 [-]   : { ... }[0m
 [32m+ 16986 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 16987 [-]   : let value = __x0__[0m

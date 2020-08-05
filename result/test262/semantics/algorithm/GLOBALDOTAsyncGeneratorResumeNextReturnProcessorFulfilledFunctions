@@ -1,6 +1,6 @@
 [33mGLOBALDOTAsyncGeneratorResumeNextReturnProcessorFulfilledFunctions[0m
 [33m- Inst: 12 / 13 (92.31%)[0m
-[33m- Cond: 7944 / 4 (198600.00%)[0m
+[33m- Cond: 3 / 4 (75.00%)[0m
 [32m+ 13728 [-]   : { ... }[0m
 [32m+ 13729 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 13730 [-]   : let value = __x0__[0m

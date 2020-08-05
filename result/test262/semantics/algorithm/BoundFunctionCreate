@@ -1,6 +1,6 @@
 [33mBoundFunctionCreate[0m
 [33m- Inst: 28 / 30 (93.33%)[0m
-[33m- Cond: 7944 / 10 (79440.00%)[0m
+[33m- Cond: 8 / 10 (80.00%)[0m
 [32m+ 7207  [-]   : { ... }[0m
 [32m+ 7208  [-]   : app __x0__ = (Type targetFunction)[0m
 [32m+ 7209  [-]   : assert (= __x0__ Object)[0m

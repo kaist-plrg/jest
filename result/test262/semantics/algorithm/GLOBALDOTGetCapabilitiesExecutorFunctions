@@ -1,6 +1,6 @@
 [32mGLOBALDOTGetCapabilitiesExecutorFunctions[0m
 [32m- Inst: 21 / 21 (100.00%)[0m
-[33m- Cond: 7944 / 4 (198600.00%)[0m
+[32m- Cond: 4 / 4 (100.00%)[0m
 [32m+ 14391 [-]   : { ... }[0m
 [32m+ 14392 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 14393 [-]   : let resolve = __x0__[0m

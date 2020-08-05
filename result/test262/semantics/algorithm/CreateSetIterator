@@ -1,6 +1,6 @@
 [32mCreateSetIterator[0m
 [32m- Inst: 15 / 15 (100.00%)[0m
-[33m- Cond: 7944 / 4 (198600.00%)[0m
+[32m- Cond: 4 / 4 (100.00%)[0m
 [32m+ 9046  [-]   : { ... }[0m
 [32m+ 9047  [-]   : app __x0__ = (RequireInternalSlot set "SetData")[0m
 [32m+ 9048  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m

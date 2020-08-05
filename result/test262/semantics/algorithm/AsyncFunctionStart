@@ -1,6 +1,6 @@
 [33mAsyncFunctionStart[0m
 [33m- Inst: 43 / 55 (78.18%)[0m
-[33m- Cond: 7944 / 20 (39720.00%)[0m
+[33m- Cond: 11 / 20 (55.00%)[0m
 [32m+ 5782  [-]   : { ... }[0m
 [32m+ 5783  [-]   : let runningContext = GLOBAL_context[0m
 [32m+ 5784  [-]   : let asyncContext = (copy-obj runningContext)[0m

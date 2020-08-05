@@ -1,6 +1,6 @@
 [33mOptionalChain2ChainEvaluation0[0m
 [33m- Inst: 9 / 10 (90.00%)[0m
-[33m- Cond: 7944 / 4 (198600.00%)[0m
+[33m- Cond: 3 / 4 (75.00%)[0m
 [32m+ 23983 [-]   : { ... }[0m
 [32m+ 23984 [-]   : let strict = true[0m
 [32m+ 23985 [-]   : app __x0__ = (EvaluatePropertyAccessWithIdentifierKey baseValue IdentifierName strict)[0m

@@ -1,6 +1,6 @@
 [31mModuleNamespaceExoticObjectDOTGetOwnProperty[0m
 [31m- Inst: 0 / 23 (0.00%)[0m
-[33m- Cond: 7944 / 8 (99300.00%)[0m
+[31m- Cond: 0 / 8 (0.00%)[0m
 [31m- 23145 [-]   : { ... }[0m
 [31m- 23146 [-]   : app __x0__ = (Type P)[0m
 [31m- 23147 [-]   : if (= __x0__ Symbol) ... else ...[0m

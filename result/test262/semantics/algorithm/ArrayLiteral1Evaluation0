@@ -1,6 +1,6 @@
 [33mArrayLiteral1Evaluation0[0m
 [33m- Inst: 18 / 19 (94.74%)[0m
-[33m- Cond: 7944 / 8 (99300.00%)[0m
+[33m- Cond: 7 / 8 (87.50%)[0m
 [32m+ 1899  [-]   : { ... }[0m
 [32m+ 1900  [-]   : app __x0__ = (ArrayCreate 0i)[0m
 [32m+ 1901  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m

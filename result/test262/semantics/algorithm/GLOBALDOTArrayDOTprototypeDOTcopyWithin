@@ -1,6 +1,6 @@
 [33mGLOBALDOTArrayDOTprototypeDOTcopyWithin[0m
 [33m- Inst: 124 / 127 (97.64%)[0m
-[33m- Cond: 7944 / 58 (13696.55%)[0m
+[33m- Cond: 53 / 58 (91.38%)[0m
 [32m+ 11550 [-]   : { ... }[0m
 [32m+ 11551 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 11552 [-]   : let target = __x0__[0m

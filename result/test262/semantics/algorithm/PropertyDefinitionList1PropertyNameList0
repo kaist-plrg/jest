@@ -1,6 +1,6 @@
 [31mPropertyDefinitionList1PropertyNameList0[0m
 [31m- Inst: 0 / 10 (0.00%)[0m
-[33m- Cond: 7944 / 2 (397200.00%)[0m
+[31m- Cond: 0 / 2 (0.00%)[0m
 [31m- 684   [-]   : { ... }[0m
 [31m- 685   [-]   : access __x0__ = (PropertyDefinitionList "PropertyNameList")[0m
 [31m- 686   [-]   : let list = __x0__[0m

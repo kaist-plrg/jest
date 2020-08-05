@@ -1,6 +1,6 @@
 [33mCreatePerIterationEnvironment[0m
 [33m- Inst: 34 / 36 (94.44%)[0m
-[33m- Cond: 7944 / 12 (66200.00%)[0m
+[33m- Cond: 10 / 12 (83.33%)[0m
 [32m+ 8977  [-]   : { ... }[0m
 [32m+ 8978  [[32mT[0m/[32mT[0m[32m]: if (< 0i perIterationBindings["length"]) ... else ...[0m
 [32m+ 8979  [-]   : { ... }[0m

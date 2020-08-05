@@ -1,6 +1,6 @@
 [33mGLOBALDOTStringDOTfromCharCode[0m
 [33m- Inst: 2 / 20 (10.00%)[0m
-[33m- Cond: 7944 / 6 (132400.00%)[0m
+[31m- Cond: 0 / 6 (0.00%)[0m
 [32m+ 17150 [-]   : { ... }[0m
 [32m+ 17151 [-]   : ??? "GLOBAL.String.fromCharCode"[0m
 [31m- 17152 [-]   : !!! "Etc"[0m

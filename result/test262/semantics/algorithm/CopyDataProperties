@@ -1,6 +1,6 @@
 [33mCopyDataProperties[0m
 [33m- Inst: 64 / 68 (94.12%)[0m
-[33m- Cond: 7944 / 32 (24825.00%)[0m
+[33m- Cond: 27 / 32 (84.38%)[0m
 [32m+ 8358  [-]   : { ... }[0m
 [32m+ 8359  [-]   : app __x0__ = (Type target)[0m
 [32m+ 8360  [-]   : assert (= __x0__ Object)[0m

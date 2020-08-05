@@ -1,6 +1,6 @@
 [33mOrdinaryObjectCreate[0m
 [33m- Inst: 14 / 15 (93.33%)[0m
-[33m- Cond: 7944 / 6 (132400.00%)[0m
+[33m- Cond: 5 / 6 (83.33%)[0m
 [32m+ 24500 [-]   : { ... }[0m
 [32m+ 24501 [-]   : let internalSlotsList = (new ["Prototype", "Extensible"])[0m
 [32m+ 24502 [[32mT[0m/[32mT[0m[32m]: if (! (= additionalInternalSlotsList absent)) ... else ...[0m

@@ -1,6 +1,6 @@
 [32mGLOBALDOTMapDOTprototypeDOTvalues[0m
 [32m- Inst: 10 / 10 (100.00%)[0m
-[33m- Cond: 7944 / 4 (198600.00%)[0m
+[32m- Cond: 4 / 4 (100.00%)[0m
 [32m+ 15155 [-]   : { ... }[0m
 [32m+ 15156 [-]   : let M = this[0m
 [32m+ 15157 [-]   : app __x0__ = (CreateMapIterator M CONST_value)[0m

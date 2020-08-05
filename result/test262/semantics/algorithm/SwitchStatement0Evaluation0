@@ -1,6 +1,6 @@
 [33mSwitchStatement0Evaluation0[0m
 [33m- Inst: 21 / 22 (95.45%)[0m
-[33m- Cond: 7944 / 4 (198600.00%)[0m
+[33m- Cond: 3 / 4 (75.00%)[0m
 [32m+ 27857 [-]   : { ... }[0m
 [32m+ 27858 [-]   : access __x0__ = (Expression "Evaluation")[0m
 [32m+ 27859 [-]   : let exprRef = __x0__[0m

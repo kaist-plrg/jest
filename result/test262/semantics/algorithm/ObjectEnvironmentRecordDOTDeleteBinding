@@ -1,6 +1,6 @@
 [31mObjectEnvironmentRecordDOTDeleteBinding[0m
 [31m- Inst: 0 / 11 (0.00%)[0m
-[33m- Cond: 7944 / 4 (198600.00%)[0m
+[31m- Cond: 0 / 4 (0.00%)[0m
 [31m- 23822 [-]   : { ... }[0m
 [31m- 23823 [-]   : let envRec = this[0m
 [31m- 23824 [-]   : let bindings = envRec["BindingObject"][0m

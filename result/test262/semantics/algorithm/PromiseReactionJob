@@ -1,6 +1,6 @@
 [33mPromiseReactionJob[0m
 [33m- Inst: 32 / 35 (91.43%)[0m
-[33m- Cond: 7944 / 8 (99300.00%)[0m
+[33m- Cond: 7 / 8 (87.50%)[0m
 [32m+ 25393 [-]   : { ... }[0m
 [32m+ 25394 [-]   : let promiseCapability = reaction["Capability"][0m
 [32m+ 25395 [-]   : let type = reaction["Type"][0m

@@ -1,6 +1,6 @@
 [31mAsyncArrowFunction1Evaluation0[0m
 [31m- Inst: 0 / 14 (0.00%)[0m
-[33m- Cond: 7944 / 2 (397200.00%)[0m
+[31m- Cond: 0 / 2 (0.00%)[0m
 [31m- 5520  [-]   : { ... }[0m
 [31m- 5521  [-]   : access __x0__ = (GLOBAL_context "LexicalEnvironment")[0m
 [31m- 5522  [-]   : let scope = __x0__[0m

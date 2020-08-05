@@ -1,6 +1,6 @@
 [32mFunctionEnvironmentRecordDOTGetThisBinding[0m
 [32m- Inst: 10 / 10 (100.00%)[0m
-[33m- Cond: 7944 / 2 (397200.00%)[0m
+[32m- Cond: 2 / 2 (100.00%)[0m
 [32m+ 10938 [-]   : { ... }[0m
 [32m+ 10939 [-]   : let envRec = this[0m
 [32m+ 10940 [-]   : assert (! (= envRec["ThisBindingStatus"] CONST_lexical))[0m

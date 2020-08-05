@@ -1,6 +1,6 @@
 [33mGLOBALDOTPromiseDOTall[0m
 [33m- Inst: 39 / 49 (79.59%)[0m
-[33m- Cond: 7944 / 20 (39720.00%)[0m
+[33m- Cond: 14 / 20 (70.00%)[0m
 [32m+ 16283 [-]   : { ... }[0m
 [32m+ 16284 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 16285 [-]   : let iterable = __x0__[0m

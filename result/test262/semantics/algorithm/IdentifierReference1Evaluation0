@@ -1,6 +1,6 @@
 [31mIdentifierReference1Evaluation0[0m
 [31m- Inst: 0 / 9 (0.00%)[0m
-[33m- Cond: 7944 / 4 (198600.00%)[0m
+[31m- Cond: 0 / 4 (0.00%)[0m
 [31m- 21127 [-]   : { ... }[0m
 [31m- 21128 [-]   : app __x0__ = (ResolveBinding "yield")[0m
 [31m- 21129 [-]   : if (is-completion __x0__) ... else ...[0m

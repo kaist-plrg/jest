@@ -1,6 +1,6 @@
 [33mGLOBALDOTArrayDOTprototypeDOTsplice[0m
 [33m- Inst: 243 / 269 (90.33%)[0m
-[33m- Cond: 7944 / 142 (5594.37%)[0m
+[33m- Cond: 108 / 142 (76.06%)[0m
 [32m+ 13301 [-]   : { ... }[0m
 [32m+ 13302 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 13303 [-]   : let start = __x0__[0m

@@ -1,6 +1,6 @@
 [33mAssignmentRestElement0IteratorDestructuringAssignmentEvaluation0[0m
 [33m- Inst: 74 / 79 (93.67%)[0m
-[33m- Cond: 7944 / 40 (19860.00%)[0m
+[33m- Cond: 34 / 40 (85.00%)[0m
 [32m+ 5342  [-]   : { ... }[0m
 [32m+ 5343  [[32mT[0m/[32mT[0m[32m]: if (! (|| (is-instance-of DestructuringAssignmentTarget ObjectLiteral) (is-instance-of DestructuringAssignmentTarget ArrayLiteral))) ... else ...[0m
 [32m+ 5344  [-]   : { ... }[0m

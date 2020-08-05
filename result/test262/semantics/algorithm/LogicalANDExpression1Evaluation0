@@ -1,6 +1,6 @@
 [33mLogicalANDExpression1Evaluation0[0m
 [33m- Inst: 31 / 32 (96.88%)[0m
-[33m- Cond: 7944 / 14 (56742.86%)[0m
+[33m- Cond: 12 / 14 (85.71%)[0m
 [32m+ 2380  [-]   : { ... }[0m
 [32m+ 2381  [-]   : access __x0__ = (LogicalANDExpression "Evaluation")[0m
 [32m+ 2382  [-]   : let lref = __x0__[0m

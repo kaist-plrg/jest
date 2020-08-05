@@ -1,6 +1,6 @@
 [33mPerformPromiseAll[0m
 [33m- Inst: 98 / 104 (94.23%)[0m
-[33m- Cond: 7944 / 48 (16550.00%)[0m
+[33m- Cond: 43 / 48 (89.58%)[0m
 [32m+ 25011 [-]   : { ... }[0m
 [32m+ 25012 [-]   : app __x0__ = (IsConstructor constructor)[0m
 [32m+ 25013 [-]   : assert (= __x0__ true)[0m

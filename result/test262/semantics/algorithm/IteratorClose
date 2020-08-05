@@ -1,6 +1,6 @@
 [32mIteratorClose[0m
 [32m- Inst: 41 / 41 (100.00%)[0m
-[33m- Cond: 7944 / 12 (66200.00%)[0m
+[32m- Cond: 12 / 12 (100.00%)[0m
 [32m+ 22414 [-]   : { ... }[0m
 [32m+ 22415 [-]   : app __x0__ = (Type iteratorRecord["Iterator"])[0m
 [32m+ 22416 [-]   : assert (= __x0__ Object)[0m

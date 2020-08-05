@@ -1,6 +1,6 @@
 [33mAssignmentRestProperty0RestDestructuringAssignmentEvaluation0[0m
 [33m- Inst: 19 / 20 (95.00%)[0m
-[33m- Cond: 7944 / 8 (99300.00%)[0m
+[33m- Cond: 7 / 8 (87.50%)[0m
 [32m+ 5421  [-]   : { ... }[0m
 [32m+ 5422  [-]   : access __x0__ = (DestructuringAssignmentTarget "Evaluation")[0m
 [32m+ 5423  [-]   : let lref = __x0__[0m

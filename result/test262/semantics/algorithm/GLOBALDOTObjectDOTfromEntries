@@ -1,6 +1,6 @@
 [33mGLOBALDOTObjectDOTfromEntries[0m
 [33m- Inst: 26 / 27 (96.30%)[0m
-[33m- Cond: 7944 / 12 (66200.00%)[0m
+[33m- Cond: 11 / 12 (91.67%)[0m
 [32m+ 15737 [-]   : { ... }[0m
 [32m+ 15738 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 15739 [-]   : let iterable = __x0__[0m

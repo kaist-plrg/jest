@@ -1,6 +1,6 @@
 [33mGLOBALDOTencodeURIComponent[0m
 [33m- Inst: 2 / 20 (10.00%)[0m
-[33m- Cond: 7944 / 8 (99300.00%)[0m
+[31m- Cond: 0 / 8 (0.00%)[0m
 [32m+ 19208 [-]   : { ... }[0m
 [32m+ 19209 [-]   : ??? "GLOBAL.encodeURIComponent"[0m
 [31m- 19210 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m

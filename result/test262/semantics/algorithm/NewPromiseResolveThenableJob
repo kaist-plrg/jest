@@ -1,6 +1,6 @@
 [33mNewPromiseResolveThenableJob[0m
 [33m- Inst: 8 / 9 (88.89%)[0m
-[33m- Cond: 7944 / 2 (397200.00%)[0m
+[33m- Cond: 1 / 2 (50.00%)[0m
 [32m+ 23311 [-]   : { ... }[0m
 [32m+ 23312 [-]   : let job = (new Job("Closure" -> PromiseResolveThenableJob, "Captured" -> (new [promiseToResolve, thenable, then])))[0m
 [32m+ 23313 [-]   : app __x0__ = (GetFunctionRealm then)[0m

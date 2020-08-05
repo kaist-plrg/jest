@@ -1,6 +1,6 @@
 [33mValidateAndApplyPropertyDescriptor[0m
 [33m- Inst: 203 / 215 (94.42%)[0m
-[33m- Cond: 7944 / 106 (7494.34%)[0m
+[33m- Cond: 94 / 106 (88.68%)[0m
 [32m+ 29016 [-]   : { ... }[0m
 [32m+ 29017 [[32mT[0m/[32mT[0m[32m]: if (= current undefined) ... else ...[0m
 [32m+ 29018 [-]   : { ... }[0m

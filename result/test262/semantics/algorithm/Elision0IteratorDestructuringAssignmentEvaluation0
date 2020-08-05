@@ -1,6 +1,6 @@
 [33mElision0IteratorDestructuringAssignmentEvaluation0[0m
 [33m- Inst: 21 / 22 (95.45%)[0m
-[33m- Cond: 7944 / 10 (79440.00%)[0m
+[33m- Cond: 9 / 10 (90.00%)[0m
 [32m+ 9447  [-]   : { ... }[0m
 [32m+ 9448  [[32mT[0m/[31mF[0m[32m]: if (= iteratorRecord["Done"] false) ... else ...[0m
 [32m+ 9449  [-]   : { ... }[0m

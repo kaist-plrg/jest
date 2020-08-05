@@ -1,6 +1,6 @@
 [33mTryStatement2VarDeclaredNames0[0m
 [33m- Inst: 16 / 20 (80.00%)[0m
-[33m- Cond: 7944 / 4 (198600.00%)[0m
+[33m- Cond: 3 / 4 (75.00%)[0m
 [32m+ 28806 [-]   : { ... }[0m
 [32m+ 28807 [-]   : access __x0__ = (Block "VarDeclaredNames")[0m
 [32m+ 28808 [-]   : let names = __x0__[0m

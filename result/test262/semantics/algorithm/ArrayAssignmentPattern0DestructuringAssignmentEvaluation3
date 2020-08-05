@@ -1,6 +1,6 @@
 [33mArrayAssignmentPattern0DestructuringAssignmentEvaluation3[0m
 [33m- Inst: 34 / 38 (89.47%)[0m
-[33m- Cond: 7944 / 14 (56742.86%)[0m
+[33m- Cond: 12 / 14 (85.71%)[0m
 [32m+ 4545  [-]   : { ... }[0m
 [32m+ 4546  [-]   : app __x0__ = (GetIterator value)[0m
 [32m+ 4547  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m

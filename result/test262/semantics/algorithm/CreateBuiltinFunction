@@ -1,6 +1,6 @@
 [33mCreateBuiltinFunction[0m
 [33m- Inst: 21 / 24 (87.50%)[0m
-[33m- Cond: 7944 / 8 (99300.00%)[0m
+[33m- Cond: 5 / 8 (62.50%)[0m
 [32m+ 8493  [-]   : { ... }[0m
 [32m+ 8494  [[32mT[0m/[31mF[0m[32m]: if (= realm absent) ... else ...[0m
 [32m+ 8495  [-]   : realm = REALM[0m

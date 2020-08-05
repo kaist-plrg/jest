@@ -1,6 +1,6 @@
 [31mAsyncGeneratorResumeNextReturnProcessorRejectedFunctions[0m
 [31m- Inst: 0 / 11 (0.00%)[0m
-[33m- Cond: 7944 / 4 (198600.00%)[0m
+[31m- Cond: 0 / 4 (0.00%)[0m
 [31m- 6258  [-]   : { ... }[0m
 [31m- 6259  [-]   : let F = GLOBAL_context["Function"][0m
 [31m- 6260  [-]   : F["Generator"]["AsyncGeneratorState"] = CONST_completed[0m

@@ -1,6 +1,6 @@
 [33mForInOfHeadEvaluation[0m
 [33m- Inst: 63 / 67 (94.03%)[0m
-[33m- Cond: 7944 / 30 (26480.00%)[0m
+[33m- Cond: 25 / 30 (83.33%)[0m
 [32m+ 10441 [-]   : { ... }[0m
 [32m+ 10442 [-]   : let oldEnv = GLOBAL_context["LexicalEnvironment"][0m
 [32m+ 10443 [[32mT[0m/[32mT[0m[32m]: if (< 0i uninitializedBoundNames["length"]) ... else ...[0m

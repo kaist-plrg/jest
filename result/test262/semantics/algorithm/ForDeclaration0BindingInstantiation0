@@ -1,6 +1,6 @@
 [33mForDeclaration0BindingInstantiation0[0m
 [33m- Inst: 26 / 28 (92.86%)[0m
-[33m- Cond: 7944 / 12 (66200.00%)[0m
+[33m- Cond: 10 / 12 (83.33%)[0m
 [32m+ 3595  [-]   : { ... }[0m
 [32m+ 3596  [-]   : let envRec = environment["EnvironmentRecord"][0m
 [32m+ 3597  [-]   : assert (= (typeof envRec) "DeclarativeEnvironmentRecord")[0m

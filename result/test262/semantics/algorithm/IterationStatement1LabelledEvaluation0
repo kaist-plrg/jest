@@ -1,6 +1,6 @@
 [33mIterationStatement1LabelledEvaluation0[0m
 [33m- Inst: 37 / 38 (97.37%)[0m
-[33m- Cond: 7944 / 16 (49650.00%)[0m
+[33m- Cond: 13 / 16 (81.25%)[0m
 [32m+ 3714  [-]   : { ... }[0m
 [32m+ 3715  [-]   : let V = undefined[0m
 [32m+ 3716  [[32mT[0m/[31mF[0m[32m]: while true { ... }[0m

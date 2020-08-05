@@ -1,6 +1,6 @@
 [33mGLOBALDOTArrayDOTisArray[0m
 [33m- Inst: 10 / 11 (90.91%)[0m
-[33m- Cond: 7944 / 4 (198600.00%)[0m
+[33m- Cond: 3 / 4 (75.00%)[0m
 [32m+ 11301 [-]   : { ... }[0m
 [32m+ 11302 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 11303 [-]   : let arg = __x0__[0m

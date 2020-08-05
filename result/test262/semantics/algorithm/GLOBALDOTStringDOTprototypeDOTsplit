@@ -1,6 +1,6 @@
 [33mGLOBALDOTStringDOTprototypeDOTsplit[0m
 [33m- Inst: 152 / 162 (93.83%)[0m
-[33m- Cond: 7944 / 78 (10184.62%)[0m
+[33m- Cond: 64 / 78 (82.05%)[0m
 [32m+ 18103 [-]   : { ... }[0m
 [32m+ 18104 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 18105 [-]   : let separator = __x0__[0m

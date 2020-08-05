@@ -1,6 +1,6 @@
 [31mIntegerIndexedObjectCreate[0m
 [31m- Inst: 0 / 18 (0.00%)[0m
-[33m- Cond: 7944 / 4 (198600.00%)[0m
+[31m- Cond: 0 / 4 (0.00%)[0m
 [31m- 21682 [-]   : { ... }[0m
 [31m- 21683 [-]   : let internalSlotsList = (new ["Prototype", "Extensible", "ViewedArrayBuffer", "TypedArrayName", "ContentType", "ByteLength", "ByteOffset", "ArrayLength"])[0m
 [31m- 21684 [-]   : app __x0__ = (MakeBasicObject internalSlotsList)[0m

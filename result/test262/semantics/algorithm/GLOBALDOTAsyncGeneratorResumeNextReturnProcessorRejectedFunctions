@@ -1,6 +1,6 @@
 [31mGLOBALDOTAsyncGeneratorResumeNextReturnProcessorRejectedFunctions[0m
 [31m- Inst: 0 / 13 (0.00%)[0m
-[33m- Cond: 7944 / 4 (198600.00%)[0m
+[31m- Cond: 0 / 4 (0.00%)[0m
 [31m- 13741 [-]   : { ... }[0m
 [31m- 13742 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [31m- 13743 [-]   : let reason = __x0__[0m

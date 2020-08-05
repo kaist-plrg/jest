@@ -1,6 +1,6 @@
 [31mToUint8Clamp[0m
 [31m- Inst: 0 / 40 (0.00%)[0m
-[33m- Cond: 7944 / 14 (56742.86%)[0m
+[31m- Cond: 0 / 14 (0.00%)[0m
 [31m- 28665 [-]   : { ... }[0m
 [31m- 28666 [-]   : app __x0__ = (ToNumber argument)[0m
 [31m- 28667 [-]   : if (is-completion __x0__) ... else ...[0m

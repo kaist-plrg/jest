@@ -1,6 +1,6 @@
 [33mGLOBALDOTObjectDOTprototypeDOThasOwnProperty[0m
 [33m- Inst: 23 / 25 (92.00%)[0m
-[33m- Cond: 7944 / 12 (66200.00%)[0m
+[33m- Cond: 10 / 12 (83.33%)[0m
 [32m+ 15988 [-]   : { ... }[0m
 [32m+ 15989 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 15990 [-]   : let V = __x0__[0m

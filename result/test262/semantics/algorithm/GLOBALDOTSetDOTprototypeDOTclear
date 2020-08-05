@@ -1,6 +1,6 @@
 [32mGLOBALDOTSetDOTprototypeDOTclear[0m
 [32m- Inst: 18 / 18 (100.00%)[0m
-[33m- Cond: 7944 / 6 (132400.00%)[0m
+[32m- Cond: 6 / 6 (100.00%)[0m
 [32m+ 16967 [-]   : { ... }[0m
 [32m+ 16968 [-]   : let S = this[0m
 [32m+ 16969 [-]   : app __x0__ = (RequireInternalSlot S "SetData")[0m

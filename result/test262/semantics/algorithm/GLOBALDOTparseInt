@@ -1,6 +1,6 @@
 [33mGLOBALDOTparseInt[0m
 [33m- Inst: 2 / 56 (3.57%)[0m
-[33m- Cond: 7944 / 22 (36109.09%)[0m
+[31m- Cond: 0 / 22 (0.00%)[0m
 [32m+ 19366 [-]   : { ... }[0m
 [32m+ 19367 [-]   : ??? "GLOBAL.parseInt"[0m
 [31m- 19368 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m

@@ -1,6 +1,6 @@
 [33mLexicalBinding1Evaluation0[0m
 [33m- Inst: 14 / 15 (93.33%)[0m
-[33m- Cond: 7944 / 4 (198600.00%)[0m
+[33m- Cond: 3 / 4 (75.00%)[0m
 [32m+ 22655 [-]   : { ... }[0m
 [32m+ 22656 [-]   : access __x0__ = (Initializer "Evaluation")[0m
 [32m+ 22657 [-]   : let rhs = __x0__[0m

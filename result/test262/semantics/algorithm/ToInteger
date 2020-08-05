@@ -1,6 +1,6 @@
 [33mToInteger[0m
 [33m- Inst: 23 / 26 (88.46%)[0m
-[33m- Cond: 7944 / 10 (79440.00%)[0m
+[33m- Cond: 9 / 10 (90.00%)[0m
 [32m+ 28174 [-]   : { ... }[0m
 [32m+ 28175 [-]   : app __x0__ = (ToNumber argument)[0m
 [32m+ 28176 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m

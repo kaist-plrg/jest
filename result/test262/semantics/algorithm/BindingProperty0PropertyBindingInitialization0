@@ -1,6 +1,6 @@
 [32mBindingProperty0PropertyBindingInitialization0[0m
 [32m- Inst: 14 / 14 (100.00%)[0m
-[33m- Cond: 7944 / 4 (198600.00%)[0m
+[32m- Cond: 4 / 4 (100.00%)[0m
 [32m+ 3298  [-]   : { ... }[0m
 [32m+ 3299  [-]   : access __x0__ = (SingleNameBinding "BoundNames")[0m
 [32m+ 3300  [-]   : access __x1__ = (__x0__ 0i)[0m

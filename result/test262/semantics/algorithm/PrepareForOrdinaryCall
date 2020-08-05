@@ -1,6 +1,6 @@
 [33mPrepareForOrdinaryCall[0m
 [33m- Inst: 19 / 20 (95.00%)[0m
-[33m- Cond: 7944 / 2 (397200.00%)[0m
+[33m- Cond: 1 / 2 (50.00%)[0m
 [32m+ 25347 [-]   : { ... }[0m
 [32m+ 25348 [-]   : app __x0__ = (Type newTarget)[0m
 [32m+ 25349 [-]   : assert (|| (= __x0__ Undefined) (= __x0__ Object))[0m

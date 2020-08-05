@@ -1,6 +1,6 @@
 [33mGLOBALDOTPromiseResolveFunctions[0m
 [33m- Inst: 41 / 50 (82.00%)[0m
-[33m- Cond: 7944 / 10 (79440.00%)[0m
+[33m- Cond: 8 / 10 (80.00%)[0m
 [32m+ 16721 [-]   : { ... }[0m
 [32m+ 16722 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 16723 [-]   : let resolution = __x0__[0m

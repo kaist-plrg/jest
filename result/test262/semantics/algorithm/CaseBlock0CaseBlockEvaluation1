@@ -1,6 +1,6 @@
 [33mCaseBlock0CaseBlockEvaluation1[0m
 [33m- Inst: 38 / 39 (97.44%)[0m
-[33m- Cond: 7944 / 14 (56742.86%)[0m
+[33m- Cond: 13 / 14 (92.86%)[0m
 [32m+ 7467  [-]   : { ... }[0m
 [32m+ 7468  [-]   : let V = undefined[0m
 [32m+ 7469  [-]   : let A = (get-elems CaseClauses CaseClause)[0m

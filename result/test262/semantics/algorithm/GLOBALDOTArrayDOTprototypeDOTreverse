@@ -1,6 +1,6 @@
 [33mGLOBALDOTArrayDOTprototypeDOTreverse[0m
 [33m- Inst: 108 / 121 (89.26%)[0m
-[33m- Cond: 7944 / 68 (11682.35%)[0m
+[33m- Cond: 53 / 68 (77.94%)[0m
 [32m+ 12891 [-]   : { ... }[0m
 [32m+ 12892 [-]   : app __x0__ = (ToObject this)[0m
 [32m+ 12893 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m

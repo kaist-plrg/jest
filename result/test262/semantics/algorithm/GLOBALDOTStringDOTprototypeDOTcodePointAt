@@ -1,6 +1,6 @@
 [33mGLOBALDOTStringDOTprototypeDOTcodePointAt[0m
 [33m- Inst: 31 / 39 (79.49%)[0m
-[33m- Cond: 7944 / 18 (44133.33%)[0m
+[33m- Cond: 14 / 18 (77.78%)[0m
 [32m+ 17295 [-]   : { ... }[0m
 [32m+ 17296 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 17297 [-]   : let pos = __x0__[0m

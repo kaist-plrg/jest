@@ -1,6 +1,6 @@
 [33mGLOBALDOTArrayDOTprototypeDOTpop[0m
 [33m- Inst: 55 / 59 (93.22%)[0m
-[33m- Cond: 7944 / 30 (26480.00%)[0m
+[33m- Cond: 25 / 30 (83.33%)[0m
 [32m+ 12576 [-]   : { ... }[0m
 [32m+ 12577 [-]   : app __x0__ = (ToObject this)[0m
 [32m+ 12578 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m

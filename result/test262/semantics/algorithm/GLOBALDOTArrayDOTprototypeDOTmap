@@ -1,6 +1,6 @@
 [33mGLOBALDOTArrayDOTprototypeDOTmap[0m
 [33m- Inst: 74 / 76 (97.37%)[0m
-[33m- Cond: 7944 / 38 (20905.26%)[0m
+[33m- Cond: 35 / 38 (92.11%)[0m
 [32m+ 12500 [-]   : { ... }[0m
 [32m+ 12501 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 12502 [-]   : let callbackfn = __x0__[0m

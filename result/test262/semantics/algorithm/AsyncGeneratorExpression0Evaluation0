@@ -1,6 +1,6 @@
 [33mAsyncGeneratorExpression0Evaluation0[0m
 [33m- Inst: 21 / 24 (87.50%)[0m
-[33m- Cond: 7944 / 10 (79440.00%)[0m
+[33m- Cond: 7 / 10 (70.00%)[0m
 [32m+ 5951  [-]   : { ... }[0m
 [32m+ 5952  [-]   : access __x0__ = (GLOBAL_context "LexicalEnvironment")[0m
 [32m+ 5953  [-]   : let scope = __x0__[0m

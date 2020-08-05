@@ -1,6 +1,6 @@
 [32mGLOBALDOTMapDOTprototypeDOTget[0m
 [32m- Inst: 31 / 31 (100.00%)[0m
-[33m- Cond: 7944 / 10 (79440.00%)[0m
+[32m- Cond: 10 / 10 (100.00%)[0m
 [32m+ 15044 [-]   : { ... }[0m
 [32m+ 15045 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 15046 [-]   : let key = __x0__[0m

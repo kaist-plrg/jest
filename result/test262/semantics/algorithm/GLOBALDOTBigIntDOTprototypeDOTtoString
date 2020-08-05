@@ -1,6 +1,6 @@
 [33mGLOBALDOTBigIntDOTprototypeDOTtoString[0m
 [33m- Inst: 55 / 66 (83.33%)[0m
-[33m- Cond: 7944 / 30 (26480.00%)[0m
+[33m- Cond: 24 / 30 (80.00%)[0m
 [32m+ 13880 [-]   : { ... }[0m
 [32m+ 13881 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 13882 [-]   : let radix = __x0__[0m

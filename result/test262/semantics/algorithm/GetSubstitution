@@ -1,6 +1,6 @@
 [31mGetSubstitution[0m
 [31m- Inst: 0 / 23 (0.00%)[0m
-[33m- Cond: 7944 / 4 (198600.00%)[0m
+[31m- Cond: 0 / 4 (0.00%)[0m
 [31m- 20032 [-]   : { ... }[0m
 [31m- 20033 [-]   : !!! "GetSubstitution"[0m
 [31m- 20034 [-]   : app __x0__ = (Type matched)[0m

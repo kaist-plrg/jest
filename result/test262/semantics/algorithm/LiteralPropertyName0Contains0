@@ -1,6 +1,6 @@
 [33mLiteralPropertyName0Contains0[0m
 [33m- Inst: 9 / 15 (60.00%)[0m
-[33m- Cond: 7944 / 6 (132400.00%)[0m
+[33m- Cond: 3 / 6 (50.00%)[0m
 [32m+ 563   [-]   : { ... }[0m
 [32m+ 564   [[31mF[0m/[32mT[0m[32m]: if (is-instance-of symbol ReservedWord) ... else ...[0m
 [31m- 565   [-]   : return false[0m

@@ -1,6 +1,6 @@
 [33mGLOBALDOTArray[0m
 [33m- Inst: 105 / 115 (91.30%)[0m
-[33m- Cond: 7944 / 56 (14185.71%)[0m
+[33m- Cond: 45 / 56 (80.36%)[0m
 [32m+ 10976 [[32mT[0m/[32mT[0m[32m]: if (== argumentsList["length"] 0i) ... else ...[0m
 [32m+ 10977 [-]   : { ... }[0m
 [32m+ 10978 [-]   : let numberOfArgs = argumentsList["length"][0m

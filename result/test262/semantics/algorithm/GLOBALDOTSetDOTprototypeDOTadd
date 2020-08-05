@@ -1,6 +1,6 @@
 [32mGLOBALDOTSetDOTprototypeDOTadd[0m
 [32m- Inst: 35 / 35 (100.00%)[0m
-[33m- Cond: 7944 / 12 (66200.00%)[0m
+[32m- Cond: 12 / 12 (100.00%)[0m
 [32m+ 16932 [-]   : { ... }[0m
 [32m+ 16933 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 16934 [-]   : let value = __x0__[0m

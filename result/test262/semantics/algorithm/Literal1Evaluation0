@@ -1,6 +1,6 @@
 [33mLiteral1Evaluation0[0m
 [33m- Inst: 10 / 11 (90.91%)[0m
-[33m- Cond: 7944 / 4 (198600.00%)[0m
+[33m- Cond: 3 / 4 (75.00%)[0m
 [32m+ 660   [-]   : { ... }[0m
 [32m+ 661   [[32mT[0m/[32mT[0m[32m]: if (= (get-syntax BooleanLiteral) "false") ... else ...[0m
 [32m+ 662   [-]   : { ... }[0m

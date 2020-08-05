@@ -1,6 +1,6 @@
 [32mUnaryExpression3Evaluation0[0m
 [32m- Inst: 29 / 29 (100.00%)[0m
-[33m- Cond: 7944 / 12 (66200.00%)[0m
+[32m- Cond: 12 / 12 (100.00%)[0m
 [32m+ 3027  [-]   : { ... }[0m
 [32m+ 3028  [-]   : access __x0__ = (UnaryExpression "Evaluation")[0m
 [32m+ 3029  [-]   : let val = __x0__[0m

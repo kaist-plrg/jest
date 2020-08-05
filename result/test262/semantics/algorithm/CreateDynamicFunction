@@ -1,6 +1,6 @@
 [33mCreateDynamicFunction[0m
 [33m- Inst: 2 / 212 (0.94%)[0m
-[33m- Cond: 7944 / 80 (9930.00%)[0m
+[31m- Cond: 0 / 80 (0.00%)[0m
 [32m+ 8551  [-]   : { ... }[0m
 [32m+ 8552  [-]   : ??? "CreateDynamicFunction"[0m
 [31m- 8553  [-]   : let callerContext = GLOBAL_executionStack[(- GLOBAL_executionStack["length"] 2i)][0m

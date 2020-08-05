@@ -1,6 +1,6 @@
 [33mStringPad[0m
 [33m- Inst: 49 / 50 (98.00%)[0m
-[33m- Cond: 7944 / 22 (36109.09%)[0m
+[33m- Cond: 21 / 22 (95.45%)[0m
 [32m+ 27690 [-]   : { ... }[0m
 [32m+ 27691 [-]   : assert (|| (= placement CONST_start) (= placement CONST_end))[0m
 [32m+ 27692 [-]   : app __x0__ = (ToString O)[0m

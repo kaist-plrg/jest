@@ -1,6 +1,6 @@
 [33mInitializeBoundName[0m
 [33m- Inst: 11 / 22 (50.00%)[0m
-[33m- Cond: 7944 / 6 (132400.00%)[0m
+[33m- Cond: 1 / 6 (16.67%)[0m
 [32m+ 21268 [-]   : { ... }[0m
 [32m+ 21269 [-]   : app __x0__ = (Type name)[0m
 [32m+ 21270 [-]   : assert (= __x0__ String)[0m

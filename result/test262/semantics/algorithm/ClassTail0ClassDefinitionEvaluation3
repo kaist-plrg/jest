@@ -1,6 +1,6 @@
 [33mClassTail0ClassDefinitionEvaluation3[0m
 [33m- Inst: 128 / 131 (97.71%)[0m
-[33m- Cond: 7944 / 46 (17269.57%)[0m
+[33m- Cond: 42 / 46 (91.30%)[0m
 [32m+ 8073  [-]   : { ... }[0m
 [32m+ 8074  [-]   : access __x0__ = (GLOBAL_context "LexicalEnvironment")[0m
 [32m+ 8075  [-]   : let lex = __x0__[0m

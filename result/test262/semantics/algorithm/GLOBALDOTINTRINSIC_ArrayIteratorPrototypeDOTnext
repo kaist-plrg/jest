@@ -1,6 +1,6 @@
 [33mGLOBALDOTINTRINSIC_ArrayIteratorPrototypeDOTnext[0m
 [33m- Inst: 67 / 81 (82.72%)[0m
-[33m- Cond: 7944 / 32 (24825.00%)[0m
+[33m- Cond: 24 / 32 (75.00%)[0m
 [32m+ 14412 [-]   : { ... }[0m
 [32m+ 14413 [-]   : let O = this[0m
 [32m+ 14414 [-]   : app __x0__ = (Type O)[0m

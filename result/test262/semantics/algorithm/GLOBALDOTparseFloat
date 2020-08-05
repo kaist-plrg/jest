@@ -1,6 +1,6 @@
 [33mGLOBALDOTparseFloat[0m
 [33m- Inst: 2 / 24 (8.33%)[0m
-[33m- Cond: 7944 / 8 (99300.00%)[0m
+[31m- Cond: 0 / 8 (0.00%)[0m
 [32m+ 19342 [-]   : { ... }[0m
 [32m+ 19343 [-]   : ??? "GLOBAL.parseFloat"[0m
 [31m- 19344 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m

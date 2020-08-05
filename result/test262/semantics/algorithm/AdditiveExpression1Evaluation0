@@ -1,6 +1,6 @@
 [32mAdditiveExpression1Evaluation0[0m
 [32m- Inst: 85 / 85 (100.00%)[0m
-[33m- Cond: 7944 / 38 (20905.26%)[0m
+[32m- Cond: 38 / 38 (100.00%)[0m
 [32m+ 1086  [-]   : { ... }[0m
 [32m+ 1087  [-]   : access __x0__ = (AdditiveExpression "Evaluation")[0m
 [32m+ 1088  [-]   : let lref = __x0__[0m

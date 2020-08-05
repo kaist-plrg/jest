@@ -1,6 +1,6 @@
 [32mBindingPattern0BindingInitialization0[0m
 [32m- Inst: 12 / 12 (100.00%)[0m
-[33m- Cond: 7944 / 4 (198600.00%)[0m
+[32m- Cond: 4 / 4 (100.00%)[0m
 [32m+ 3370  [-]   : { ... }[0m
 [32m+ 3371  [-]   : app __x0__ = (RequireObjectCoercible value)[0m
 [32m+ 3372  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m

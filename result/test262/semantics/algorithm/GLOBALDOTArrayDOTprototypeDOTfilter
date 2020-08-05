@@ -1,6 +1,6 @@
 [33mGLOBALDOTArrayDOTprototypeDOTfilter[0m
 [33m- Inst: 89 / 93 (95.70%)[0m
-[33m- Cond: 7944 / 48 (16550.00%)[0m
+[33m- Cond: 41 / 48 (85.42%)[0m
 [32m+ 11832 [-]   : { ... }[0m
 [32m+ 11833 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 11834 [-]   : let callbackfn = __x0__[0m

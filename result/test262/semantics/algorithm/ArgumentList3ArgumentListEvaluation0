@@ -1,6 +1,6 @@
 [33mArgumentList3ArgumentListEvaluation0[0m
 [33m- Inst: 44 / 45 (97.78%)[0m
-[33m- Cond: 7944 / 24 (33100.00%)[0m
+[33m- Cond: 22 / 24 (91.67%)[0m
 [32m+ 4307  [-]   : { ... }[0m
 [32m+ 4308  [-]   : access __x0__ = (ArgumentList "ArgumentListEvaluation")[0m
 [32m+ 4309  [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m

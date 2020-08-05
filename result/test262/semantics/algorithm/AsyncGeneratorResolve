@@ -1,6 +1,6 @@
 [33mAsyncGeneratorResolve[0m
 [33m- Inst: 25 / 28 (89.29%)[0m
-[33m- Cond: 7944 / 12 (66200.00%)[0m
+[33m- Cond: 9 / 12 (75.00%)[0m
 [32m+ 6119  [-]   : { ... }[0m
 [32m+ 6120  [-]   : let queue = generator["AsyncGeneratorQueue"][0m
 [32m+ 6121  [-]   : assert (< 0i queue["length"])[0m

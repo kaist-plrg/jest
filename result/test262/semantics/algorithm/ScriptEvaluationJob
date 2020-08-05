@@ -1,6 +1,6 @@
 [33mScriptEvaluationJob[0m
 [33m- Inst: 11 / 12 (91.67%)[0m
-[33m- Cond: 7944 / 4 (198600.00%)[0m
+[33m- Cond: 3 / 4 (75.00%)[0m
 [32m+ 27057 [-]   : { ... }[0m
 [32m+ 27058 [-]   : let realm = REALM[0m
 [32m+ 27059 [-]   : app __x0__ = (ParseScript sourceText realm hostDefined)[0m

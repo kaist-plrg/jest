@@ -1,6 +1,6 @@
 [33mCaseClauses1VarScopedDeclarations0[0m
 [33m- Inst: 8 / 12 (66.67%)[0m
-[33m- Cond: 7944 / 2 (397200.00%)[0m
+[33m- Cond: 1 / 2 (50.00%)[0m
 [32m+ 7869  [-]   : { ... }[0m
 [32m+ 7870  [-]   : access __x0__ = (CaseClauses "VarScopedDeclarations")[0m
 [32m+ 7871  [-]   : let declarations = __x0__[0m

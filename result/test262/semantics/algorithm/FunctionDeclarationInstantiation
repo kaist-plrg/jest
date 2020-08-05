@@ -1,6 +1,6 @@
 [33mFunctionDeclarationInstantiation[0m
 [33m- Inst: 204 / 265 (76.98%)[0m
-[33m- Cond: 7944 / 102 (7788.24%)[0m
+[33m- Cond: 66 / 102 (64.71%)[0m
 [32m+ 10643 [-]   : { ... }[0m
 [32m+ 10644 [-]   : let calleeContext = GLOBAL_context[0m
 [32m+ 10645 [-]   : let code = func["ECMAScriptCode"][0m

@@ -1,6 +1,6 @@
 [31mArgumentsExoticObjectDOTGetOwnProperty[0m
 [31m- Inst: 0 / 24 (0.00%)[0m
-[33m- Cond: 7944 / 8 (99300.00%)[0m
+[31m- Cond: 0 / 8 (0.00%)[0m
 [31m- 4453  [-]   : { ... }[0m
 [31m- 4454  [-]   : let args = args[0m
 [31m- 4455  [-]   : app __x0__ = (OrdinaryGetOwnProperty args P)[0m

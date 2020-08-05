@@ -1,6 +1,6 @@
 [33mOrdinarySetPrototypeOf[0m
 [33m- Inst: 24 / 31 (77.42%)[0m
-[33m- Cond: 7944 / 12 (66200.00%)[0m
+[33m- Cond: 9 / 12 (75.00%)[0m
 [32m+ 24686 [-]   : { ... }[0m
 [32m+ 24687 [-]   : let current = O["Prototype"][0m
 [32m+ 24688 [-]   : app __x0__ = (SameValue V current)[0m

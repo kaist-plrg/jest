@@ -1,6 +1,6 @@
 [33mOrdinaryObjectDOTGetOwnProperty[0m
 [33m- Inst: 8 / 9 (88.89%)[0m
-[33m- Cond: 7944 / 4 (198600.00%)[0m
+[33m- Cond: 2 / 4 (50.00%)[0m
 [32m+ 24542 [-]   : { ... }[0m
 [32m+ 24543 [-]   : app __x0__ = (OrdinaryGetOwnProperty O P)[0m
 [32m+ 24544 [[31mF[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m

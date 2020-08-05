@@ -1,6 +1,6 @@
 [32mGLOBALDOTStringDOTprototypeDOTrepeat[0m
 [32m- Inst: 40 / 40 (100.00%)[0m
-[33m- Cond: 7944 / 18 (44133.33%)[0m
+[32m- Cond: 18 / 18 (100.00%)[0m
 [32m+ 17860 [-]   : { ... }[0m
 [32m+ 17861 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 17862 [-]   : let count = __x0__[0m

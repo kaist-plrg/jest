@@ -1,6 +1,6 @@
 [33mECMAScriptFunctionObjectDOTConstruct[0m
 [33m- Inst: 67 / 68 (98.53%)[0m
-[33m- Cond: 7944 / 26 (30553.85%)[0m
+[33m- Cond: 25 / 26 (96.15%)[0m
 [32m+ 9325  [-]   : { ... }[0m
 [32m+ 9326  [-]   : app __x0__ = (Type newTarget)[0m
 [32m+ 9327  [-]   : assert (= __x0__ Object)[0m

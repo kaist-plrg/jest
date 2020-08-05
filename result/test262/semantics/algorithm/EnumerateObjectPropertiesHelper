@@ -1,6 +1,6 @@
 [33mEnumerateObjectPropertiesHelper[0m
 [33m- Inst: 27 / 29 (93.10%)[0m
-[33m- Cond: 7944 / 14 (56742.86%)[0m
+[33m- Cond: 12 / 14 (85.71%)[0m
 [32m+ 9579  [-]   : { ... }[0m
 [32m+ 9580  [-]   : app a = (O["OwnPropertyKeys"] O)[0m
 [32m+ 9581  [[32mT[0m/[32mT[0m[32m]: if (is-completion a) ... else ...[0m

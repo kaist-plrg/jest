@@ -1,6 +1,6 @@
 [33mConditionalExpression1Evaluation0[0m
 [33m- Inst: 38 / 39 (97.44%)[0m
-[33m- Cond: 7944 / 18 (44133.33%)[0m
+[33m- Cond: 16 / 18 (88.89%)[0m
 [32m+ 2726  [-]   : { ... }[0m
 [32m+ 2727  [-]   : access __x0__ = (ShortCircuitExpression "Evaluation")[0m
 [32m+ 2728  [-]   : let lref = __x0__[0m

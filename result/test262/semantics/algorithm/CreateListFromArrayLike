@@ -1,6 +1,6 @@
 [33mCreateListFromArrayLike[0m
 [33m- Inst: 40 / 45 (88.89%)[0m
-[33m- Cond: 7944 / 20 (39720.00%)[0m
+[33m- Cond: 16 / 20 (80.00%)[0m
 [32m+ 8804  [-]   : { ... }[0m
 [32m+ 8805  [[32mT[0m/[31mF[0m[32m]: if (= elementTypes absent) ... else ...[0m
 [32m+ 8806  [-]   : elementTypes = (new [Undefined, Null, Boolean, String, Symbol, Number, BigInt, Object])[0m

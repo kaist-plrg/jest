@@ -1,6 +1,6 @@
 [33mPrimaryExpression12HasName0[0m
 [33m- Inst: 8 / 9 (88.89%)[0m
-[33m- Cond: 7944 / 2 (397200.00%)[0m
+[33m- Cond: 1 / 2 (50.00%)[0m
 [32m+ 2208  [-]   : { ... }[0m
 [32m+ 2209  [-]   : access __x0__ = (CoverParenthesizedExpressionAndArrowParameterList "CoveredParenthesizedExpression")[0m
 [32m+ 2210  [-]   : let expr = __x0__[0m

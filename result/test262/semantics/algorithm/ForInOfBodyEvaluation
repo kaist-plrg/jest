@@ -1,6 +1,6 @@
 [33mForInOfBodyEvaluation[0m
 [33m- Inst: 138 / 182 (75.82%)[0m
-[33m- Cond: 7944 / 78 (10184.62%)[0m
+[33m- Cond: 52 / 78 (66.67%)[0m
 [32m+ 10259 [-]   : { ... }[0m
 [32m+ 10260 [[32mT[0m/[31mF[0m[32m]: if (= iteratorKind absent) ... else ...[0m
 [32m+ 10261 [-]   : iteratorKind = CONST_sync[0m

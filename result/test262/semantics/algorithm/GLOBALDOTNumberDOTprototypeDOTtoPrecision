@@ -1,6 +1,6 @@
 [33mGLOBALDOTNumberDOTprototypeDOTtoPrecision[0m
 [33m- Inst: 2 / 81 (2.47%)[0m
-[33m- Cond: 7944 / 32 (24825.00%)[0m
+[31m- Cond: 0 / 32 (0.00%)[0m
 [32m+ 15380 [-]   : { ... }[0m
 [32m+ 15381 [-]   : ??? "GLOBAL.Number.prototype.toPrecision"[0m
 [31m- 15382 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m

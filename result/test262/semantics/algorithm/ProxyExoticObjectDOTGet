@@ -1,6 +1,6 @@
 [31mProxyExoticObjectDOTGet[0m
 [31m- Inst: 0 / 67 (0.00%)[0m
-[33m- Cond: 7944 / 30 (26480.00%)[0m
+[31m- Cond: 0 / 30 (0.00%)[0m
 [31m- 25940 [-]   : { ... }[0m
 [31m- 25941 [-]   : app __x0__ = (IsPropertyKey P)[0m
 [31m- 25942 [-]   : assert (= __x0__ true)[0m

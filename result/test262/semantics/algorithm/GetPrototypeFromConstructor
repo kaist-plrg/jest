@@ -1,6 +1,6 @@
 [33mGetPrototypeFromConstructor[0m
 [33m- Inst: 41 / 60 (68.33%)[0m
-[33m- Cond: 7944 / 46 (17269.57%)[0m
+[33m- Cond: 27 / 46 (58.70%)[0m
 [32m+ 19967 [-]   : { ... }[0m
 [32m+ 19968 [-]   : app __x0__ = (IsCallable constructor)[0m
 [32m+ 19969 [-]   : assert (= __x0__ true)[0m

@@ -1,6 +1,6 @@
 [33mGLOBALDOTArrayDOTprototypeDOTindexOf[0m
 [33m- Inst: 81 / 84 (96.43%)[0m
-[33m- Cond: 7944 / 42 (18914.29%)[0m
+[33m- Cond: 37 / 42 (88.10%)[0m
 [32m+ 12265 [-]   : { ... }[0m
 [32m+ 12266 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 12267 [-]   : let searchElement = __x0__[0m

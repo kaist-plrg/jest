@@ -1,6 +1,6 @@
 [33mRunJobs[0m
 [33m- Inst: 32 / 36 (88.89%)[0m
-[33m- Cond: 7944 / 14 (56742.86%)[0m
+[33m- Cond: 9 / 14 (64.29%)[0m
 [32m+ 26879 [-]   : { ... }[0m
 [32m+ 26880 [-]   : app __x0__ = (InitializeHostDefinedRealm )[0m
 [32m+ 26881 [[32mT[0m/[32mT[0m[32m]: if (is-completion __x0__) ... else ...[0m

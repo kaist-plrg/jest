@@ -1,6 +1,6 @@
 [33mGLOBALDOTStringDOTprototypeDOTendsWith[0m
 [33m- Inst: 62 / 66 (93.94%)[0m
-[33m- Cond: 7944 / 30 (26480.00%)[0m
+[33m- Cond: 28 / 30 (93.33%)[0m
 [32m+ 17364 [-]   : { ... }[0m
 [32m+ 17365 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 17366 [-]   : let searchString = __x0__[0m

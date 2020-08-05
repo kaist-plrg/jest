@@ -1,6 +1,6 @@
 [32mGLOBALDOTWeakMapDOTprototypeDOTset[0m
 [32m- Inst: 42 / 42 (100.00%)[0m
-[33m- Cond: 7944 / 12 (66200.00%)[0m
+[32m- Cond: 12 / 12 (100.00%)[0m
 [32m+ 18917 [-]   : { ... }[0m
 [32m+ 18918 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 18919 [-]   : let key = __x0__[0m

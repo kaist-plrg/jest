@@ -1,6 +1,6 @@
 [33mSuperProperty1Contains0[0m
 [33m- Inst: 11 / 18 (61.11%)[0m
-[33m- Cond: 7944 / 8 (99300.00%)[0m
+[33m- Cond: 4 / 8 (50.00%)[0m
 [32m+ 27818 [-]   : { ... }[0m
 [32m+ 27819 [[31mF[0m/[32mT[0m[32m]: if (= symbol "super") ... else ...[0m
 [31m- 27820 [-]   : return true[0m

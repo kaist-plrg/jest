@@ -1,6 +1,6 @@
 [33mAssignmentElisionElement0IteratorDestructuringAssignmentEvaluation1[0m
 [33m- Inst: 12 / 13 (92.31%)[0m
-[33m- Cond: 7944 / 4 (198600.00%)[0m
+[33m- Cond: 3 / 4 (75.00%)[0m
 [32m+ 5231  [-]   : { ... }[0m
 [32m+ 5232  [-]   : access __x0__ = (Elision "IteratorDestructuringAssignmentEvaluation")[0m
 [32m+ 5233  [-]   : app __x1__ = (__x0__ iteratorRecord)[0m

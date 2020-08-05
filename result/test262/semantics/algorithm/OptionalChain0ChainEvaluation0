@@ -1,6 +1,6 @@
 [33mOptionalChain0ChainEvaluation0[0m
 [33m- Inst: 11 / 12 (91.67%)[0m
-[33m- Cond: 7944 / 4 (198600.00%)[0m
+[33m- Cond: 3 / 4 (75.00%)[0m
 [32m+ 23950 [-]   : { ... }[0m
 [32m+ 23951 [-]   : let thisChain = this[0m
 [32m+ 23952 [-]   : app __x0__ = (IsInTailPosition thisChain)[0m

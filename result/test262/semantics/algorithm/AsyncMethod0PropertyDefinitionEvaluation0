@@ -1,6 +1,6 @@
 [33mAsyncMethod0PropertyDefinitionEvaluation0[0m
 [33m- Inst: 34 / 39 (87.18%)[0m
-[33m- Cond: 7944 / 18 (44133.33%)[0m
+[33m- Cond: 13 / 18 (72.22%)[0m
 [32m+ 6410  [-]   : { ... }[0m
 [32m+ 6411  [-]   : access __x0__ = (PropertyName "Evaluation")[0m
 [32m+ 6412  [-]   : let propKey = __x0__[0m

@@ -1,6 +1,6 @@
 [32mResolveThisBinding[0m
 [32m- Inst: 11 / 11 (100.00%)[0m
-[33m- Cond: 7944 / 4 (198600.00%)[0m
+[32m- Cond: 4 / 4 (100.00%)[0m
 [32m+ 26867 [-]   : { ... }[0m
 [32m+ 26868 [-]   : app __x0__ = (GetThisEnvironment )[0m
 [32m+ 26869 [-]   : let envRec = __x0__[0m

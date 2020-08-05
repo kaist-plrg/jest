@@ -1,6 +1,6 @@
 [33mGLOBALDOTgetSetDOTprototypeDOTsize[0m
 [33m- Inst: 21 / 22 (95.45%)[0m
-[33m- Cond: 7944 / 8 (99300.00%)[0m
+[33m- Cond: 6 / 8 (75.00%)[0m
 [32m+ 19275 [-]   : { ... }[0m
 [32m+ 19276 [-]   : let S = this[0m
 [32m+ 19277 [-]   : app __x0__ = (RequireInternalSlot S "SetData")[0m

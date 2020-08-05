@@ -1,6 +1,6 @@
 [31mBindingProperty1ContainsExpression0[0m
 [31m- Inst: 0 / 8 (0.00%)[0m
-[33m- Cond: 7944 / 2 (397200.00%)[0m
+[31m- Cond: 0 / 2 (0.00%)[0m
 [31m- 6866  [-]   : { ... }[0m
 [31m- 6867  [-]   : access __x0__ = (PropertyName "IsComputedPropertyKey")[0m
 [31m- 6868  [-]   : let has = __x0__[0m

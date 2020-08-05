@@ -1,6 +1,6 @@
 [33mGLOBALDOTWeakSetDOTprototypeDOTdelete[0m
 [33m- Inst: 35 / 38 (92.11%)[0m
-[33m- Cond: 7944 / 12 (66200.00%)[0m
+[33m- Cond: 10 / 12 (83.33%)[0m
 [32m+ 19073 [-]   : { ... }[0m
 [32m+ 19074 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 19075 [-]   : let value = __x0__[0m

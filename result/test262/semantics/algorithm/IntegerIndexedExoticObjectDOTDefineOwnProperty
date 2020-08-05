@@ -1,6 +1,6 @@
 [31mIntegerIndexedExoticObjectDOTDefineOwnProperty[0m
 [31m- Inst: 0 / 71 (0.00%)[0m
-[33m- Cond: 7944 / 32 (24825.00%)[0m
+[31m- Cond: 0 / 32 (0.00%)[0m
 [31m- 21457 [-]   : { ... }[0m
 [31m- 21458 [-]   : app __x0__ = (IsPropertyKey P)[0m
 [31m- 21459 [-]   : assert (= __x0__ true)[0m

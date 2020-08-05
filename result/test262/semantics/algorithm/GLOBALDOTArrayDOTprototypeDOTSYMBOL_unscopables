@@ -1,6 +1,6 @@
 [31mGLOBALDOTArrayDOTprototypeDOTSYMBOL_unscopables[0m
 [31m- Inst: 0 / 75 (0.00%)[0m
-[33m- Cond: 7944 / 40 (19860.00%)[0m
+[31m- Cond: 0 / 40 (0.00%)[0m
 [31m- 11362 [-]   : { ... }[0m
 [31m- 11363 [-]   : app __x0__ = (OrdinaryObjectCreate null)[0m
 [31m- 11364 [-]   : let unscopableList = __x0__[0m

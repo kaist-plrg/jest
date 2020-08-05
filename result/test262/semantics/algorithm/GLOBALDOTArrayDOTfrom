@@ -1,6 +1,6 @@
 [33mGLOBALDOTArrayDOTfrom[0m
 [33m- Inst: 174 / 210 (82.86%)[0m
-[33m- Cond: 7944 / 106 (7494.34%)[0m
+[33m- Cond: 79 / 106 (74.53%)[0m
 [32m+ 11091 [-]   : { ... }[0m
 [32m+ 11092 [-]   : app __x0__ = (GetArgument argumentsList 0i)[0m
 [32m+ 11093 [-]   : let items = __x0__[0m
