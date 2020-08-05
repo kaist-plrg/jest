@@ -128,6 +128,14 @@ sudo apt-get install nodejs
 brew update
 brew install node
 ```
+If you want to install the specified version([Node v14.5.0(v8 8.3.110.9)](https://nodejs.org/download/release/v14.5.0/)), follow the below instructions.
+  - Linux (x64):
+```
+wget https://nodejs.org/download/release/v14.5.0/node-v14.5.0-linux-x64.tar.gz
+tar -zxf node-v14.5.0-linux-x64.tar.gz
+export NODE_HOME=$(pwd)/node-v14.5.0-linux-x64
+export PATH=$NODE_HOME/bin:$PATH
+```
 2. Check the version of Node.js:
 ```
 node --version
