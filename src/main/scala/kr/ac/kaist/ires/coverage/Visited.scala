@@ -101,7 +101,7 @@ class Visited {
           val uids = algoInsts.map(_.uid).toSet
           val algoCovered = _instCovered.filter(uids.contains(_))
           val algoCondCovered = coverage.cases.zipWithIndex.flatMap {
-            case (Cond(_, _, _, _, thenCovered, elseCovered), uid) =>
+            case (Cond(_, _, _, _, thenCovered, elseCovered), uid) if uids.contains(uid) =>
               var set = Set[(Int, Boolean)]()
               if (thenCovered.isDefined) set += uid -> true
               if (elseCovered.isDefined) set += uid -> false
