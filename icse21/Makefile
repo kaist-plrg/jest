@@ -1,8 +1,6 @@
 FILE=main
 
-TEXSRC=	$(FILE).tex abstract.tex intro.tex \
-				eval.tex related.tex conclusion.tex \
-				macros.tex ref.bib
+TEXSRC=$(wildcard *.tex img/*.pdf)
 
 $(FILE).pdf: $(TEXSRC)
 	pdflatex $(FILE).tex && \
