@@ -354,7 +354,7 @@ object ESValueParser extends RegexParsers with UnicodeRegex {
       // The TRV of NotEscapeSequence::0DecimalDigit is the sequence consisting of the code unit 0x0030 (DIGIT ZERO) followed by the code units of the TRV of DecimalDigit.
       seq("0", TRV.DecimalDigit) |||
       // The TRV of NotEscapeSequence::DecimalDigit not 0 is the code units of the TRV of DecimalDigit.
-      // XXX TRV.DecimalDigit.filter(_ != "0") |||
+      TRV.DecimalDigit.filter(_ != "0") |||
       // The TRV of NotEscapeSequence::uHexDigitHexDigitHexDigit[lookahead ∉ HexDigit] is the sequence consisting of the code unit 0x0075 (LATIN SMALL LETTER U) followed by the code units of the TRV of the first HexDigit followed by the code units of the TRV of the second HexDigit followed by the code units of the TRV of the third HexDigit.
       seq("u", TRV.HexDigit, TRV.HexDigit, TRV.HexDigit) <~ not(Predef.HexDigit) |||
       // The TRV of NotEscapeSequence::uHexDigitHexDigit[lookahead ∉ HexDigit] is the sequence consisting of the code unit 0x0075 (LATIN SMALL LETTER U) followed by the code units of the TRV of the first HexDigit followed by the code units of the TRV of the second HexDigit.

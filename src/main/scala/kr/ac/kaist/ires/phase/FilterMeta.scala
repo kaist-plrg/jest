@@ -152,7 +152,7 @@ case object FilterMeta extends PhaseObj[Unit, FilterMetaConfig, Unit] {
     "language/statements/for-of/iterator-close-throw-get-method-non-callable.js",
 
     // 6. TRV
-    "language/expressions/tagged-template/invalid-escape-sequences.js",
+    // NOT BUG - "language/expressions/tagged-template/invalid-escape-sequences.js",
 
     // Conflicts test with the initialization in 'harness/propertyHelper.js'
     // ReferenceError: Cannot access 'Array' before initialization

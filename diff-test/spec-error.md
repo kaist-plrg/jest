@@ -130,7 +130,7 @@ for (var y of x) throw 42;
   - [language/statements/for-of/iterator-close-throw-get-method-abrupt.js](https://github.com/tc39/test262/tree/master/test/language/statements/for-of/iterator-close-throw-get-method-abrupt.js)
   - [language/statements/for-of/iterator-close-throw-get-method-non-callable.js](language/statements/for-of/iterator-close-throw-get-method-abrupt.jslanguage/statements/for-of/iterator-close-throw-get-method-non-callable.js)
 
-
+<!--
 ## Template Raw Value (TRV)
 - __Section:__ [11.8.6.1 Static Semantics: TV and TRV](http://ecma-international.org/ecma-262/11.0/#sec-static-semantics-tv-and-trv)
 - TRV of NotEscapeSequence에서 "_DecimalDigit_ but not __0__" 에 대한 경우에 대해서 아예 설명이 없음
@@ -148,7 +148,6 @@ var x;
 - __Failed Test262 tests:__
   - [language/expressions/tagged-template/invalid-escape-sequences.js](https://github.com/tc39/test262/tree/master/test/language/expressions/tagged-template/invalid-escape-sequences.js)
 
-<!--
 ## Number::unsignedRightShift
 - __Section:__ [6.1.6.1.11 Number::unsignedRightShift](http://ecma-international.org/ecma-262/11.0/#sec-numeric-types-number-unsignedRightShift)
 - 첫 번째 step에서 `lnum`을 구할 때, [ToUint32](http://ecma-international.org/ecma-262/11.0/#sec-touint32) 대신 [ToInt32](http://ecma-international.org/ecma-262/11.0/#sec-toint32)을
