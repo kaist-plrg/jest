@@ -47,13 +47,13 @@ for ( [  x ?. x [ '' , '' ] ,  ... [  x , , ... x ] ] of [  [  ] ] ) for ( var x
 for ( let x of x ++ ) switch ( [  ... '' ] ) { case NaN :  default : for ( var { } = x ; '' ;  ) ; case `${ '' , '' }${ x }${ '' }` :  }
 ```
 
-<<<<<<< HEAD
 - Expected ["0", "2", "length"] but got ["0", "length"].
-Expected true but gotfalse
-Expected no exception but a TypeError is thrown.
+- Expected true but gotfalse
+- Expected no exception but a TypeError is thrown.
 ```
 var x = new Set ( [ , , ] ) ; var x = [ x , , ... x ] ;
-=======
+```
+
 - Expected ["length", "name", "prototype"] but got ["length", "prototype", "name"].
 ```
 async function * x ( ) { for await ( var x of '' ) ; } ; x ( ) ;
@@ -68,7 +68,6 @@ var x = String . prototype . padStart . call ( 42n , Infinity , [ ] ) ;
 - Expected a TypeError to be thrown but no exception was thrown at all
 ```
 delete 'str' [ 0 ] ;
->>>>>>> Update error.md
 ```
 
 ### QuickJS (qjs)
