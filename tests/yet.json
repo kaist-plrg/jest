@@ -5109,6 +5109,7 @@
   "built-ins/TypedArray/prototype/set/typedarray-arg-set-values-diff-buffer-other-type-sab.js": "Int8Array",
   "built-ins/TypedArray/prototype/keys/invoked-as-method.js": "Int8Array",
   "built-ins/Math/pow/name.js": "Math",
+  "built-ins/BigInt/prototype/toString/radix-2-to-36.js": "TIMEOUT",
   "built-ins/Atomics/wait/bigint/bad-range.js": "RegularExpressionLiteral",
   "built-ins/TypedArrayConstructors/from/invoked-as-func.js": "Int8Array",
   "built-ins/TypedArray/prototype/copyWithin/BigInt/return-abrupt-from-target-is-symbol.js": "Int8Array",

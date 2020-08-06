@@ -51,7 +51,7 @@
   "cond": "(= (get-syntax BooleanLiteral) \"true\")",
   "covered": true,
   "inst": "if (= (get-syntax BooleanLiteral) \"true\") ... else ...",
-  "thenCovered": "assert ( NaN !== NaN ) ;"
+  "thenCovered": "Object . keys ( true ) ;"
 }, {
   "algo": "CallExpression0Evaluation0",
   "cond": "(= __x10__ true)",
@@ -141,12 +141,12 @@
   "cond": "(= iteratorRecord[\"Done\"] false)",
   "covered": true,
   "inst": "if (= iteratorRecord[\"Done\"] false) ... else ...",
-  "thenCovered": "assert . throws ( TypeError , function ( ) { let [ { x } ] = [ ] ; } ) ;"
+  "thenCovered": "assert . throws ( TypeError , function ( ) { var [ { x } ] = [ ] ; } ) ;"
 }, {
   "algo": "BindingElement1IteratorBindingInitialization1",
   "cond": "__x1__",
   "covered": true,
-  "elseCovered": "assert . throws ( TypeError , function ( ) { let [ { x } ] = [ ] ; } ) ;",
+  "elseCovered": "assert . throws ( TypeError , function ( ) { var [ { x } ] = [ ] ; } ) ;",
   "inst": "if __x1__ ... else ..."
 }, {
   "algo": "BindingElement1IteratorBindingInitialization1",
@@ -187,7 +187,7 @@
   "algo": "AssignmentElement0IteratorDestructuringAssignmentEvaluation1",
   "cond": "__x4__",
   "covered": true,
-  "elseCovered": "var _ ; assert . throws ( TypeError , function ( ) { 0 , [ [ _ ] ] = [ , ] ; } ) ;",
+  "elseCovered": "var x ; assert . throws ( TypeError , function ( ) { 0 , [ { x } ] = [ , ] ; } ) ;",
   "inst": "if __x4__ ... else ..."
 }, {
   "algo": "AssignmentRestElement0IteratorDestructuringAssignmentEvaluation0",
@@ -354,19 +354,19 @@
   "algo": "CaseBlock1LexicallyScopedDeclarations3",
   "cond": "(< __x6__ __x5__[\"length\"])",
   "covered": true,
-  "elseCovered": "assert . sameValue ( eval ( '1; switch (\"a\") { default: case \"b\": break; }' ) , undefined ) ; assert . sameValue ( eval ( '2; switch (\"a\") { default: case \"b\": { 3; break; } }' ) , 3 ) ; assert . sameValue ( eval ( '4; do { switch (\"a\") { default: case \"b\": continue; } } while (false)' ) , undefined ) ; assert . sameValue ( eval ( '5; do { switch (\"a\") { default: case \"b\": { 6; continue; } } } while (false)' ) , 6 ) ;",
+  "elseCovered": "assert . sameValue ( eval ( '1; switch (\"a\") { default: case \"a\": break; }' ) , undefined ) ; assert . sameValue ( eval ( '2; switch (\"a\") { default: case \"a\": { 3; break; } }' ) , 3 ) ; assert . sameValue ( eval ( '4; do { switch (\"a\") { default: case \"a\": continue; } } while (false)' ) , undefined ) ; assert . sameValue ( eval ( '5; do { switch (\"a\") { default: case \"a\": { 6; continue; } } } while (false)' ) , 6 ) ;",
   "inst": "while (< __x6__ __x5__[\"length\"]) { ... }"
 }, {
   "algo": "CaseBlock1VarDeclaredNames3",
   "cond": "(< __x6__ __x5__[\"length\"])",
   "covered": true,
-  "elseCovered": "assert . sameValue ( eval ( '1; switch (\"a\") { default: case \"b\": break; }' ) , undefined ) ; assert . sameValue ( eval ( '2; switch (\"a\") { default: case \"b\": { 3; break; } }' ) , 3 ) ; assert . sameValue ( eval ( '4; do { switch (\"a\") { default: case \"b\": continue; } } while (false)' ) , undefined ) ; assert . sameValue ( eval ( '5; do { switch (\"a\") { default: case \"b\": { 6; continue; } } } while (false)' ) , 6 ) ;",
+  "elseCovered": "assert . sameValue ( eval ( '1; switch (\"a\") { default: case \"a\": break; }' ) , undefined ) ; assert . sameValue ( eval ( '2; switch (\"a\") { default: case \"a\": { 3; break; } }' ) , 3 ) ; assert . sameValue ( eval ( '4; do { switch (\"a\") { default: case \"a\": continue; } } while (false)' ) , undefined ) ; assert . sameValue ( eval ( '5; do { switch (\"a\") { default: case \"a\": { 6; continue; } } } while (false)' ) , 6 ) ;",
   "inst": "while (< __x6__ __x5__[\"length\"]) { ... }"
 }, {
   "algo": "CaseBlock1VarScopedDeclarations3",
   "cond": "(< __x6__ __x5__[\"length\"])",
   "covered": true,
-  "elseCovered": "assert . sameValue ( eval ( '1; switch (\"a\") { default: case \"b\": break; }' ) , undefined ) ; assert . sameValue ( eval ( '2; switch (\"a\") { default: case \"b\": { 3; break; } }' ) , 3 ) ; assert . sameValue ( eval ( '4; do { switch (\"a\") { default: case \"b\": continue; } } while (false)' ) , undefined ) ; assert . sameValue ( eval ( '5; do { switch (\"a\") { default: case \"b\": { 6; continue; } } } while (false)' ) , 6 ) ;",
+  "elseCovered": "assert . sameValue ( eval ( '1; switch (\"a\") { default: case \"a\": break; }' ) , undefined ) ; assert . sameValue ( eval ( '2; switch (\"a\") { default: case \"a\": { 3; break; } }' ) , 3 ) ; assert . sameValue ( eval ( '4; do { switch (\"a\") { default: case \"a\": continue; } } while (false)' ) , undefined ) ; assert . sameValue ( eval ( '5; do { switch (\"a\") { default: case \"a\": { 6; continue; } } } while (false)' ) , 6 ) ;",
   "inst": "while (< __x6__ __x5__[\"length\"]) { ... }"
 }, {
   "algo": "CaseClause0HasCallInTailPosition1",
@@ -642,18 +642,18 @@
   "cond": "(= iteratorRecord[\"Done\"] false)",
   "covered": true,
   "inst": "if (= iteratorRecord[\"Done\"] false) ... else ...",
-  "thenCovered": "var [ , , ... x ] = [ 1 , 2 ] ; assert ( Array . isArray ( x ) ) ; assert . sameValue ( x . length , 0 ) ;"
+  "thenCovered": "let [ , , ... x ] = [ 1 , 2 ] ; assert ( Array . isArray ( x ) ) ; assert . sameValue ( x . length , 0 ) ;"
 }, {
   "algo": "Elision1IteratorDestructuringAssignmentEvaluation0",
   "cond": "__x3__",
   "covered": true,
-  "elseCovered": "var [ , , ... x ] = [ 1 , 2 ] ; assert ( Array . isArray ( x ) ) ; assert . sameValue ( x . length , 0 ) ;",
+  "elseCovered": "let [ , , ... x ] = [ 1 , 2 ] ; assert ( Array . isArray ( x ) ) ; assert . sameValue ( x . length , 0 ) ;",
   "inst": "if __x3__ ... else ..."
 }, {
   "algo": "Elision1IteratorDestructuringAssignmentEvaluation0",
   "cond": "(= next false)",
   "covered": true,
-  "elseCovered": "var [ , , ... x ] = [ 1 , 2 ] ; assert ( Array . isArray ( x ) ) ; assert . sameValue ( x . length , 0 ) ;",
+  "elseCovered": "let [ , , ... x ] = [ 1 , 2 ] ; assert ( Array . isArray ( x ) ) ; assert . sameValue ( x . length , 0 ) ;",
   "inst": "if (= next false) ... else ..."
 }, {
   "algo": "EqualityExpression2Evaluation0",
@@ -799,13 +799,13 @@
   "algo": "ForInOfBodyEvaluation",
   "cond": "(= iteratorKind CONST_async)",
   "covered": true,
-  "elseCovered": "assert . throws ( TypeError , function ( ) { for ( var { } of [ null ] ) { return ; } } ) ;",
+  "elseCovered": "assert . throws ( TypeError , function ( ) { for ( let { } of [ null ] ) { return ; } } ) ;",
   "inst": "if (= iteratorKind CONST_async) ... else ..."
 }, {
   "algo": "ForInOfBodyEvaluation",
   "cond": "(= iterationKind CONST_enumerate)",
   "covered": true,
-  "elseCovered": "assert . throws ( TypeError , function ( ) { for ( var { } of [ null ] ) { return ; } } ) ;",
+  "elseCovered": "assert . throws ( TypeError , function ( ) { for ( let { } of [ null ] ) { return ; } } ) ;",
   "inst": "if (= iterationKind CONST_enumerate) ... else ..."
 }, {
   "algo": "ForInOfBodyEvaluation",
@@ -2078,7 +2078,7 @@
   "algo": "ToInteger",
   "cond": "(= integer -0.0)",
   "covered": true,
-  "elseCovered": "let [ x = 23 ] = [ , ] ; assert . sameValue ( x , 23 ) ;",
+  "elseCovered": "var [ x = 23 ] = [ , ] ; assert . sameValue ( x , 23 ) ;",
   "inst": "if (= integer -0.0) ... else ..."
 }, {
   "algo": "ToObject",
