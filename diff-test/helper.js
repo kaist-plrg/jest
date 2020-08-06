@@ -22,21 +22,18 @@ function $assert(mustBeTrue) {
   $error('Expected true but got' + $toString(mustBeTrue));
 }
 
-// assertion for thrown values
-$assert.throws = function (func, expected) {
-  if (typeof func !== 'function') {
-    $error('$assert.throws requires a function.');
-    return;
+// assertion for comparing two thrown values
+$assert.sameThrows = function (thrown, expected) {
+  var thrownStr = $toString(thrown);
+  if (typeof expected !== 'function') {
+    if (thrown !== expected) $error('Expected ' + $toString(expected) + ' but got ' + thrownStr);
+  } else if (!(thrown instanceof expected)) {
+    $error('Expected a ' + expected.name + ' but got ' + thrownStr);
   }
-  try { func(); } catch (thrown) {
-    var thrownStr = $toString(thrown);
-    if (typeof expected !== 'function') {
-      if (thrown !== expected) $error('Expected ' + $toString(expected) + ' but got ' + thrownStr);
-    } else if (!(thrown instanceof expected)) {
-      $error('Expected a ' + expected.name + ' but got ' + thrownStr);
-    }
-    return;
-  }
+};
+
+// assertion for thrown values that were expected to be thrown but not thrown
+$assert.shouldveThrown = function (expected) {
   $error('Expected a ' + expected.name + ' to be thrown but no exception was thrown at all');
 };
 

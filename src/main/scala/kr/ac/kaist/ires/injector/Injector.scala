@@ -122,7 +122,7 @@ case class Injector(script: Script) {
         }
         case x => println(s"123: $x"); toJSCode(x)
       }
-      injected = s"$$assert.throws(function () { $injected }, $thrown);"
+      injected = s"try { $injected $$assert.shouldveThrown($thrown); } catch (thrown) { $$assert.sameThrows(thrown, $thrown); }"
   }
 
   // get values
