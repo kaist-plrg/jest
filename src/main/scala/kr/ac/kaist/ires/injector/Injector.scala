@@ -8,9 +8,13 @@ case class Injector(script: Script) {
   // injected script
   lazy val result = {
     if (isNormal) {
+      println("handling varaible...")
       handleVariable
+
+      println("handling let...")
       handleLet
     }
+    println("handling Exception...")
     handleException
     injected
   }
@@ -55,6 +59,7 @@ case class Injector(script: Script) {
   // handle addresses
   private var handledObjectSet = Set[Addr]()
   private def handleObject(addr: Addr, path: String): Unit = {
+    println(s"handleObject: $path")
     if (handledObjectSet contains addr) return
     handledObjectSet += addr
     handlePropNames(addr, path)
@@ -63,6 +68,7 @@ case class Injector(script: Script) {
 
   // handle property names
   private def handlePropNames(addr: Addr, path: String): Unit = {
+    println("handlePropNames")
     val initSt = st.copy(globals = st.globals + (Id("input") -> addr))
     val newSt = runInst(initSt, s"app result = (GetOwnPropertyKeys input CONST_string)")
     val result = "result.SubMap"
@@ -77,6 +83,7 @@ case class Injector(script: Script) {
   // handle properties
   private val descFields = List("Value", "Writable", "Enumerable", "Configurable")
   private def handleProperty(addr: Addr, path: String): Unit = {
+    println("handleProperty")
     val subMap = access(st, addr, Str("SubMap"))
     for (p <- getKeys(subMap)) access(st, subMap, p) match {
       case addr: Addr => st(addr) match {
@@ -90,13 +97,13 @@ case class Injector(script: Script) {
             case (c: Const, _) => set += s"${field.toLowerCase}: ${toJSCode(c)}"
             case (addr: Addr, _) if field == "Value" =>
               handleObject(addr, s"$path[$propStr]")
-            case _ => ???
+            case _ => println(100); ???
           }
           val desc = set.mkString("{ ", ", ", "}")
           add(s"$$verifyProperty($path, $propStr, $desc);")
-        case _ => ???
+        case x => println(104); println(x); ???
       }
-      case _ => ???
+      case _ => println(106); ???
     }
   }
 
@@ -111,9 +118,9 @@ case class Injector(script: Script) {
       val thrown = getValue(st, "result.Value")._1 match {
         case _: Addr => getValue(st, "result.Prototype")._1 match {
           case NamedAddr(errorNameRegex(name)) => name + "Error"
-          case _ => ???
+          case _ => println(121); ???
         }
-        case _ => ???
+        case x => println(s"123: $x"); toJSCode(x)
       }
       injected = s"$$assert.throws(function () { $injected }, $thrown);"
   }
@@ -159,9 +166,9 @@ case class Injector(script: Script) {
   private def getKeys(value: Value): Set[Value] = value match {
     case addr: Addr => st(addr) match {
       case (m: IRMap) => m.props.keySet
-      case _ => ???
+      case _ => println(169); ???
     }
-    case _ => ???
+    case _ => println(171); ???
   }
 
   // conversion to JS codes
@@ -171,6 +178,6 @@ case class Injector(script: Script) {
   }
   private def toJSCode(value: Value): String = value match {
     case c: Const => toJSCode(c)
-    case _ => ???
+    case _ => println(181); ???
   }
 }
