@@ -35,6 +35,7 @@ case object Inject extends PhaseObj[Unit, InjectConfig, Unit] {
       println(s"  $script")
       println(s"  ====>")
       println(s"  $injected")
+      mkdir(INJECTED_DIR)
       dumpFile(injected, s"$INJECTED_DIR/$name")
     } catch {
       case e: Throwable => {
