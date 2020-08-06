@@ -1,7 +1,6 @@
 # ECMAScript 2020 Bugs
 
-
-## Abstract Equality Comparison
+## Abstract Equality Comparison - [Resolved](https://github.com/tc39/ecma262/pull/1976)
 - __Section:__ [7.2.15 Abstract Equality Comparison](http://ecma-international.org/ecma-262/11.0/#sec-abstract-equality-comparison)
 - 10 번째 11 번째 step에서 [`ToPrimitive`](http://ecma-international.org/ecma-262/11.0/#sec-toprimitive)를
 호출하고 나서 [ReturnIfAbrupt (?)](http://ecma-international.org/ecma-262/11.0/#sec-returnifabrupt-shorthands)를
@@ -22,27 +21,7 @@
   - [language/expressions/equals/S11.9.1_A7.8.js](https://github.com/tc39/test262/tree/master/test/language/expressions/equals/S11.9.1_A7.8.js)
   - [language/expressions/equals/S11.9.1_A7.9.js](https://github.com/tc39/test262/tree/master/test/language/expressions/equals/S11.9.1_A7.9.js)
 
-
-## ArraySetLength
-- __Section:__ [9.4.2.4 ArraySetLength](http://ecma-international.org/ecma-262/11.0/#sec-arraysetlength)
-- 14 번째 step에서 `succeeded`가 [`OrdinaryDefineOwnProperty`](http://ecma-international.org/ecma-262/11.0/#sec-ordinarydefineownproperty)를
-통해 `false`가 되는 경우, `ArraySetLength`는 `false`를 반환해야 한다. 그런데, GraalJS와 Node에서는
-그렇지 않은 것 같은데 확인이 필요해 보임.
-- __Simple JavaScript code:__
-```js
-var x = [42];
-Object.defineProperty(x, 'length', { value: 0, enumerable: true });
-```
-| JS Engine | Result |
-|:-:|:-|
-| GraalJS     | Expected a TypeError to be thrown but no exception was thrown at all. |
-| QuickJS     | Pass |
-| Moddable XS | Pass |
-| Google V8   | Expected a TypeError to be thrown but no exception was thrown at all. |
-- __Failed Test262 tests:__ 위의 경우에 대해서 cover하지 못함
-
-
-## Class Property Orders
+## Class Property Orders - [Resolved](https://github.com/tc39/ecma262/pull/1490)
 - __Section:__ [14.6.13 Runtime Semantics: ClassDefinitionEvaluation](http://ecma-international.org/ecma-262/11.0/#sec-runtime-semantics-classdefinitionevaluation)
 - ES2020에 따르면, class를 생성할 때 own property가 `length` -> `prototype` -> `name`의 순서로 추가가 된다.
   1. 12 번째 step에서 `constructor`의 [DefineMethod](http://ecma-international.org/ecma-262/11.0/#sec-runtime-semantics-definemethod)를 호출하고, 6 번째 step에서 [OrdinaryFunctionCreate](http://ecma-international.org/ecma-262/11.0/#sec-ordinaryfunctioncreate)를 호출, 18 번째 step에서 [SetFunctionLength](http://ecma-international.org/ecma-262/11.0/#sec-setfunctionlength)를 호출해서 4 번째 step에서 `length` property를 생성함.
@@ -65,7 +44,7 @@ class A {}
   - [language/computed-property-names/class/static/method-symbol.js](https://github.com/tc39/test262/tree/master/test/language/computed-property-names/class/static/method-symbol.js)
 
 
-## Default Function Names
+## Default Function Names - [Resolved](https://github.com/tc39/ecma262/pull/1490)
 - __Section:__ [14.2.17 Runtime Semantics: Evaluation](http://ecma-international.org/ecma-262/11.0/#sec-arrow-function-definitions-runtime-semantics-evaluation)
 - ArrowFunction, FunctionExpression, AsyncFunctionExpression 등에서 이름을 가지지 않는 경우에는
   Evaluation을 하더라도 [SetFunctionName](http://ecma-international.org/ecma-262/11.0/#sec-setfunctionname)을
@@ -101,7 +80,7 @@ var x;
   - [language/expressions/generators/name.js](https://github.com/tc39/test262/tree/master/test/language/expressions/generators/name.js)
 
 
-## IteratorClose
+## IteratorClose - [Resolved](https://github.com/tc39/ecma262/pull/1408)
 - __Section:__ [7.4.6 IteratorClose](http://ecma-international.org/ecma-262/11.0/#sec-iteratorclose)
 - 4 번째 step에서 [GetMethod](http://ecma-international.org/ecma-262/11.0/#sec-getmethod)를 통해서
   `return`에 관한 것을 가져오는데, 이 과정에서 abrupt completion 검사를 하는 것이 8 번째 step에서
@@ -130,7 +109,26 @@ for (var y of x) throw 42;
   - [language/statements/for-of/iterator-close-throw-get-method-abrupt.js](https://github.com/tc39/test262/tree/master/test/language/statements/for-of/iterator-close-throw-get-method-abrupt.js)
   - [language/statements/for-of/iterator-close-throw-get-method-non-callable.js](language/statements/for-of/iterator-close-throw-get-method-abrupt.jslanguage/statements/for-of/iterator-close-throw-get-method-non-callable.js)
 
+
 <!--
+## ArraySetLength
+- __Section:__ [9.4.2.4 ArraySetLength](http://ecma-international.org/ecma-262/11.0/#sec-arraysetlength)
+- 14 번째 step에서 `succeeded`가 [`OrdinaryDefineOwnProperty`](http://ecma-international.org/ecma-262/11.0/#sec-ordinarydefineownproperty)를
+통해 `false`가 되는 경우, `ArraySetLength`는 `false`를 반환해야 한다. 그런데, GraalJS와 Node에서는
+그렇지 않은 것 같은데 확인이 필요해 보임.
+- __Simple JavaScript code:__
+```js
+var x = [42];
+Object.defineProperty(x, 'length', { value: 0, enumerable: true });
+```
+| JS Engine | Result |
+|:-:|:-|
+| GraalJS     | Expected a TypeError to be thrown but no exception was thrown at all. |
+| QuickJS     | Pass |
+| Moddable XS | Pass |
+| Google V8   | Expected a TypeError to be thrown but no exception was thrown at all. |
+- __Failed Test262 tests:__ 위의 경우에 대해서 cover하지 못함
+
 ## Template Raw Value (TRV)
 - __Section:__ [11.8.6.1 Static Semantics: TV and TRV](http://ecma-international.org/ecma-262/11.0/#sec-static-semantics-tv-and-trv)
 - TRV of NotEscapeSequence에서 "_DecimalDigit_ but not __0__" 에 대한 경우에 대해서 아예 설명이 없음
