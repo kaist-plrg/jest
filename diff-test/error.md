@@ -33,6 +33,13 @@ for ( [  x ?. x [ '' , '' ] ,  ... [  x , , ... x ] ] of [  [  ] ] ) for ( var x
 for ( let x of x ++ ) switch ( [  ... '' ] ) { case NaN :  default : for ( var { } = x ; '' ;  ) ; case `${ '' , '' }${ x }${ '' }` :  }
 ```
 
+- Expected ["0", "2", "length"] but got ["0", "length"].
+Expected true but gotfalse
+Expected no exception but a TypeError is thrown.
+```
+var x = new Set ( [ , , ] ) ; var x = [ x , , ... x ] ;
+```
+
 ### QuickJS (qjs)
 
 - Expected a ReferenceError to be thrown but no exception was thrown at all
