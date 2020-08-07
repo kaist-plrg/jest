@@ -17,6 +17,7 @@ object Generator extends DefaultJsonProtocol {
   val MAX_TRIAL = 500
   var recentMutator: Option[Mutator] = None
   var recentNewCovered: Set[Target] = Set()
+  var recentInterp: Option[Interp] = None
 
   // generate JavaScript programs
   def generate(debug: Boolean, maxIter: Int, loadDir: Option[String]): List[Script] = {
@@ -34,6 +35,7 @@ object Generator extends DefaultJsonProtocol {
     var targets: Set[Target] = Set()
     var failed: Set[Target] = Set()
     var generated: Set[String] = Set()
+    var errors: Map[Int, String] = Map()
 
     def log(any: Any, stdout: Boolean = true): Unit = {
       nf.print(any)
@@ -79,6 +81,12 @@ object Generator extends DefaultJsonProtocol {
           false
         case Right(msg) =>
           logln(s": $msg", false)
+          if (msg.startsWith("ERROR")) {
+            val uid = recentInterp.get.recentInst.get.uid
+            val origScript = errors.getOrElse(uid, "")
+            if (origScript == "" || origScript.length > str.length)
+              errors = errors + (uid -> str)
+          }
           false
       }
     }
@@ -194,6 +202,8 @@ object Generator extends DefaultJsonProtocol {
         }
         // dump generated
         dumpJson(generated, s"$dir/generated.json")
+        // dump error
+        dumpJson(errors.toList, s"$dir/errors.json")
       }
 
       logFlush()
@@ -221,6 +231,9 @@ object Generator extends DefaultJsonProtocol {
 
     // dump generated
     dumpJson(generated, s"$GEN_RES_DIR/generated.json")
+
+    // dump error
+    dumpJson(errors.toList, s"$GEN_RES_DIR/errors.json")
 
     // close PrintWriter for the log file
     nf.close()
@@ -274,6 +287,7 @@ object Generator extends DefaultJsonProtocol {
   // get visited points in ECMAScript
   def getVisited(script: Script): Either[Visited, String] = try {
     val interp = new Interp(timeLimit = Some(1))
+    recentInterp = Some(interp)
     val initSt = ModelHelper.initState(script)
     val st = interp(initSt)
     Left(interp.visited)

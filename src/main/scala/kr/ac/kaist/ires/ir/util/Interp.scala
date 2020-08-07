@@ -23,6 +23,7 @@ class Interp(
 ) {
   var startTime: Long = 0
   var instCount = 0
+  var recentInst: Option[Inst] = None
 
   var astStack: List[AST] = List()
   var targetAstStack: Option[List[AST]] = None
@@ -44,6 +45,7 @@ class Interp(
 
   // instructions
   def interp(inst: Inst): State => State = st => {
+    recentInst = Some(inst)
     targetInst match {
       case Some(value) => if (value == inst.uid) targetAstStack = Some(astStack)
       case None => ()
