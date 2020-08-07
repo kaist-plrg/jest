@@ -1,14 +1,10 @@
 # QuickJS (qjs) Bugs
 
+- report 하는 곳 : https://github.com/ldarren/QuickJS/issues
+
 - Expected a ReferenceError to be thrown but no exception was thrown at all
 ```
 let x = { x , x } = { async x ( x  ) {  } } ;
-```
-
-- Expected a ReferenceError but got a TypeError
-```
-const x = x = '' ;
-const x = x = class x extends x { ; } ;
 ```
 
 - SyntaxError: expected '}' after template expression

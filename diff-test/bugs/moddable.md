@@ -1,5 +1,7 @@
 # Moddable XS (xst) Bugs
 
+- report 하는 곳 : https://github.com/Moddable-OpenSource/moddable/issues
+
 - descriptor value should be "42" but ""
 ```
 var x = { 42 : class   { x (  ) {  } } } ;
