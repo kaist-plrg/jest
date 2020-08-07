@@ -1,6 +1,6 @@
 # ECMAScript 2020 Bugs
 
-## Abstract Equality Comparison - [Resolved](https://github.com/tc39/ecma262/pull/1976)
+## Abstract Equality Comparison - [Resolved, Found](https://github.com/tc39/ecma262/pull/1976)
 - __Section:__ [7.2.15 Abstract Equality Comparison](http://ecma-international.org/ecma-262/11.0/#sec-abstract-equality-comparison)
 - 10 번째 11 번째 step에서 [`ToPrimitive`](http://ecma-international.org/ecma-262/11.0/#sec-toprimitive)를
 호출하고 나서 [ReturnIfAbrupt (?)](http://ecma-international.org/ecma-262/11.0/#sec-returnifabrupt-shorthands)를
@@ -125,6 +125,15 @@ x ++;
 ( 0 , eval )( new . target )
 ```
 
+## For In  - [Resolved](https://github.com/tc39/ecma262/pull/1969)
+
+- __Section:__ [13.7.5.12 Runtime Semantics: ForIn/OfHeadEvaluation](http://ecma-international.org/ecma-262/11.0/#sec-runtime-semantics-forinofheadevaluation)
+- for in loop에서 *iterationKind* 가 enumerate 인 경우 EnumerateObjectProperties에서 iterator Record가 아닌 iterator **object**를 반환한다.
+그러나 iterator object는 [[NextMethod]] 가 없으므로 이후 ForIn/OfBodyEvaluation에서 6.a에서 TypeError 발생함
+- __Simple JavaScript code:__
+```js
+for ( x in { } ) ;
+```
 <!--
 ## ArraySetLength
 - __Section:__ [9.4.2.4 ArraySetLength](http://ecma-international.org/ecma-262/11.0/#sec-arraysetlength)
