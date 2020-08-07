@@ -175,4 +175,7 @@ object Useful {
     val (res, _) = seq(idx)
     res
   }
+
+  // get hashCode string
+  def hashCodeString(any: Any): String = f"0x${any.hashCode}%x"
 }
