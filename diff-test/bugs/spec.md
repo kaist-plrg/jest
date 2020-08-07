@@ -109,6 +109,21 @@ for (var y of x) throw 42;
   - [language/statements/for-of/iterator-close-throw-get-method-abrupt.js](https://github.com/tc39/test262/tree/master/test/language/statements/for-of/iterator-close-throw-get-method-abrupt.js)
   - [language/statements/for-of/iterator-close-throw-get-method-non-callable.js](language/statements/for-of/iterator-close-throw-get-method-abrupt.jslanguage/statements/for-of/iterator-close-throw-get-method-non-callable.js)
 
+## UpdateExpression Evaluation - [Resolved](https://github.com/tc39/ecma262/pull/1954)
+- __Section:__ [12.4.4 PotfixIncrement Operator](https://www.ecma-international.org/ecma-262/#sec-postfix-increment-operator)
+- 3 번째 step에서 oldvalue라는 Free Iderntifier가 등장한다. 이로 인해 Type(oldvalue)로 부터 Absent가 propagate 되어, ir의 interp과정에서 크래시가 나게 된다. 이는 12.4.4 ~ 12.4.7 모두에 해당한다.
+- __Simple JavaScript code:__
+```js
+var x = 0;
+x ++;
+```
+## Indirect Eval - [Resolved](https://github.com/tc39/ecma262/pull/1949)
+- __Section:__ [18.2.1.1 Runtime Semantics: PerformEval](https://www.ecma-international.org/ecma-262/#sec-performeval)
+- eval의 indirect call 안에 new.target, super등이 바로 오는 경우
+- __Simple JavaScript code:__
+```js
+( 0 , eval )( new . target )
+```
 
 <!--
 ## ArraySetLength
