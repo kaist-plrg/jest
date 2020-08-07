@@ -1,6 +1,6 @@
 package kr.ac.kaist.ires.parser
 
-import kr.ac.kaist.ires.util.Useful.cached
+import kr.ac.kaist.ires.util.Useful._
 import scala.util.matching.Regex
 import scala.util.parsing.combinator.RegexParsers
 import scala.util.parsing.input._
@@ -33,11 +33,13 @@ trait Lexer extends RegexParsers with EPackratParsers with UnicodeRegex {
     )
 
     // exclusion (butnot) symbol
-    def \(cond: => Parser[String]): Parser[String] =
-      this.parser.filter(s => parseAll(cond.parser, s).isEmpty)
+    def \(cond: => Parser[String]): Lexer = exclusion((parser, cond))
 
     // optional symbol
     def opt(): Parser[String] = parser | empty
+  }
+  private val exclusion = cached[(Parser[String], Parser[String]), Lexer] {
+    case (base, cond) => base.parser.filter(s => parseAll(cond.parser, s).isEmpty)
   }
 
   // basic lexers
