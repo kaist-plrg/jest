@@ -74,4 +74,15 @@ object NRSampler extends NonRecursiveSampler with Sampler {
     origDeclaration.map(_.toString) ++
     origAssignmentExpression.map(e => s"var x = $e")
   )
+
+  def getEvalSample: List[Script] = {
+    val parser = Parser.Script(Nil)
+    getRawSample.toList.map(s => "eval(\"" + s + "\")").map(Parser.parse(parser, _).get)
+  }
+
+  def getIndirectEvalSample: List[Script] = {
+    val parser = Parser.Script(Nil)
+    getRawSample.toList.map(s => "(0,eval)(\"" + s + "\")").map(Parser.parse(parser, _).get)
+  }
 }
+

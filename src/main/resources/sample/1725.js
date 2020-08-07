@@ -1,0 +1,1 @@
+eval ( "var x = x instanceof x" ) ;

@@ -101,8 +101,8 @@ object Generator extends DefaultJsonProtocol {
 
     logln("Load Samples...")
     val samples = loadDir match {
-      case Some(directory) => getSampleFrom(s"$directory/scripts/")
-      case None => getSample
+      case Some(directory) => getSample(s"$directory/scripts/")
+      case None => getSample()
     }
     logln(s"# of Samples: ${samples.size}")
 
@@ -189,7 +189,7 @@ object Generator extends DefaultJsonProtocol {
         }, s"$dir/failed.json")
         //dump scripts
         mkdir(s"$dir/scripts")
-        for ((script, k) <- total.zipWithIndex) {
+        for ((script, k) <- total.toList.sortWith(cmp).zipWithIndex) {
           dumpFile(script, s"$dir/scripts/$k.js")
         }
         // dump generated
@@ -229,21 +229,27 @@ object Generator extends DefaultJsonProtocol {
     total
   }
 
-  // random sampling
-  def getSample: List[Script] = (for {
-    file <- walkTree(SAMPLE_DIR)
-    filename = file.toString if jsFilter(filename)
-    str = readFile(filename)
-    script = Parser.parse(Parser.Script(Nil), str).get
-  } yield script).toList
+  // compare scripts
+  def cmp(s1: Script, s2: Script): Boolean = {
+    val str1 = s1.toString
+    val str2 = s2.toString
 
-  // random sampling from the given directory
-  def getSampleFrom(dir: String): List[Script] = (for {
+    val len1 = str1.length
+    val len2 = str2.length
+
+    val priority1 = if (str1.startsWith("( 0 , eval )")) 2 else if (str1.startsWith("eval")) 1 else 0
+    val priority2 = if (str2.startsWith("( 0 , eval )")) 2 else if (str2.startsWith("eval")) 1 else 0
+
+    if (priority1 == priority2) if (len1 == len2) str1 < str2 else len1 < len2 else priority1 < priority2
+  }
+
+  // random sampling
+  def getSample(dir: String = SAMPLE_DIR): List[Script] = (for {
     file <- walkTree(dir)
     filename = file.toString if jsFilter(filename)
     str = readFile(filename)
     script = Parser.parse(Parser.Script(Nil), str).get
-  } yield script).toList
+  } yield script).toList.sortWith(cmp)
 
   // mutate given JavaScript program
   def mutate(mutators: List[Mutator]): Script =

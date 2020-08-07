@@ -1,0 +1,1 @@
+( 0 , eval ) ( "for await ( var x of '' ) ;" ) ;

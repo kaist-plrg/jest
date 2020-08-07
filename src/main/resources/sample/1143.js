@@ -1,0 +1,1 @@
+eval ( "switch ( '' ) { case x : case x : }" ) ;

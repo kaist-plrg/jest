@@ -1,0 +1,1 @@
+eval ( "for ( async function * x ( ) { } in '' ) ;" ) ;

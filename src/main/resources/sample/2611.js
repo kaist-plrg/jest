@@ -1,0 +1,1 @@
+( 0 , eval ) ( "for ( class x extends x { ; } in '' ) ;" ) ;

@@ -1,0 +1,1 @@
+eval ( "for ( class { static x ( ) { } } in '' ) ;" ) ;
