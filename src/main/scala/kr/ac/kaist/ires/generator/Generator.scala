@@ -20,6 +20,8 @@ object Generator extends DefaultJsonProtocol {
 
   // generate JavaScript programs
   def generate(debug: Boolean, maxIter: Int, loadDir: Option[String]): List[Script] = {
+    val runtime = Runtime.getRuntime()
+
     // log file
     mkdir(GEN_RES_DIR)
     val nf = getPrintWriter(s"$GEN_RES_DIR/log")
@@ -35,11 +37,11 @@ object Generator extends DefaultJsonProtocol {
 
     def log(any: Any, stdout: Boolean = true): Unit = {
       nf.print(any)
-      if (debug || stdout) print(any)
+      if (debug && stdout) print(any)
     }
     def logln(any: Any, stdout: Boolean = true): Unit = {
       nf.println(any)
-      if (debug || stdout) println(any)
+      if (debug && stdout) println(any)
     }
     def logSimple(any: Any): Unit = nfSimple.print(any.toString + "\t")
     def loglnSimple(any: Any): Unit = nfSimple.println(any)
@@ -93,6 +95,7 @@ object Generator extends DefaultJsonProtocol {
       logSimple(getPercent(coverage.condCovered, coverage.conds))
       logSimple(recentMutator.fold("Nothing")(_.name))
       logSimple(recentNewCovered.mkString(";"))
+      logSimple(s"${runtime.totalMemory() - runtime.freeMemory()}/${runtime.totalMemory()}")
       loglnSimple("")
     }
 
@@ -157,7 +160,8 @@ object Generator extends DefaultJsonProtocol {
 
           val nfException = getPrintWriter(s"$exceptionDirectory/$k.json")
           val result = Map(
-            ("message" -> e.getStackTrace().mkString(LINE_SEP)),
+            ("message" -> e.getMessage()),
+            ("stackTrace" -> e.getStackTrace().mkString(LINE_SEP)),
             ("originalScript" -> scriptString),
             ("recentMutator" -> recentMutator.fold("Nothing")(_.name)),
             ("targetUid" -> uid.toString()),
@@ -170,6 +174,8 @@ object Generator extends DefaultJsonProtocol {
       if (((k + 1) % 100) == 0) {
         val dir = s"$GEN_RES_DIR/iteration/${k + 1}"
         mkdir(dir)
+        val tracer = RHSTracer(total)
+        tracer.dump(s"$dir/syntax")
         // dump coverage
         totalVisited.getCoverage.dump(s"$dir/semantics")
         // dump algorithm coverages
