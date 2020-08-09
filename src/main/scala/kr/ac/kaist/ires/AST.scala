@@ -52,11 +52,12 @@ trait AST {
 
   // get semantics
   def semantics(fname: String): Option[(Func, List[Value])] = {
-    (info.semMap.get(fname + k.toString) match {
-      case Some(f) => Some((f, ASTVal(this) :: list.map(_._2)))
-      case None => info.semMap.get(fname + info.maxK.toString).map((f) => (f, ASTVal(this) :: fullList.map(_._2)))
+    ((k to info.maxK).foldLeft[Option[(Func, List[Value])]](None) {
+      case (None, i) if i == k => info.semMap.get(fname + i.toString).map((_, list.map(_._2)))
+      case (None, i) if (i & k) == k => info.semMap.get(fname + i.toString).map((_, fullList.map(_._2)))
+      case (res, _) => res
     }) match {
-      case Some(f) => Some(f)
+      case Some((f, list)) => Some((f, ASTVal(this) :: list))
       // `Contains` static semantics
       case None => if (fname == "Contains") Some((Func(
         name + fname,

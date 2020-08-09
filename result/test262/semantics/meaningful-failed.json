@@ -51,7 +51,7 @@
   "cond": "(= (get-syntax BooleanLiteral) \"true\")",
   "covered": true,
   "inst": "if (= (get-syntax BooleanLiteral) \"true\") ... else ...",
-  "thenCovered": "Object . keys ( true ) ;"
+  "thenCovered": "assert ( NaN !== NaN ) ;"
 }, {
   "algo": "CallExpression0Evaluation0",
   "cond": "(= __x10__ true)",
@@ -152,7 +152,7 @@
   "algo": "BindingElement1IteratorBindingInitialization1",
   "cond": "__x3__",
   "covered": true,
-  "elseCovered": "assert . throws ( TypeError , function ( ) { let [ [ x ] ] = [ null ] ; } ) ;",
+  "elseCovered": "assert . throws ( TypeError , function ( ) { var [ [ x ] ] = [ null ] ; } ) ;",
   "inst": "if __x3__ ... else ..."
 }, {
   "algo": "ArrayCreate",
@@ -337,7 +337,7 @@
   "cond": "(= GLOBAL_executionStack[(- GLOBAL_executionStack[\"length\"] 1i)] calleeContext)",
   "covered": true,
   "inst": "if (= GLOBAL_executionStack[(- GLOBAL_executionStack[\"length\"] 1i)] calleeContext) ... else ...",
-  "thenCovered": "assert . throws ( TypeError , function ( ) { TypedArray . of ( ) ; } ) ;"
+  "thenCovered": "assert . throws ( TypeError , function ( ) { new WeakMap ( { } ) ; } ) ;"
 }, {
   "algo": "CanonicalNumericIndexString",
   "cond": "(= argument \"-0\")",
@@ -354,19 +354,19 @@
   "algo": "CaseBlock1LexicallyScopedDeclarations3",
   "cond": "(< __x6__ __x5__[\"length\"])",
   "covered": true,
-  "elseCovered": "assert . sameValue ( eval ( '1; switch (\"a\") { default: case \"a\": break; }' ) , undefined ) ; assert . sameValue ( eval ( '2; switch (\"a\") { default: case \"a\": { 3; break; } }' ) , 3 ) ; assert . sameValue ( eval ( '4; do { switch (\"a\") { default: case \"a\": continue; } } while (false)' ) , undefined ) ; assert . sameValue ( eval ( '5; do { switch (\"a\") { default: case \"a\": { 6; continue; } } } while (false)' ) , 6 ) ;",
+  "elseCovered": "assert . sameValue ( eval ( '1; switch (\"a\") { default: case \"b\": break; }' ) , undefined ) ; assert . sameValue ( eval ( '2; switch (\"a\") { default: case \"b\": { 3; break; } }' ) , 3 ) ; assert . sameValue ( eval ( '4; do { switch (\"a\") { default: case \"b\": continue; } } while (false)' ) , undefined ) ; assert . sameValue ( eval ( '5; do { switch (\"a\") { default: case \"b\": { 6; continue; } } } while (false)' ) , 6 ) ;",
   "inst": "while (< __x6__ __x5__[\"length\"]) { ... }"
 }, {
   "algo": "CaseBlock1VarDeclaredNames3",
   "cond": "(< __x6__ __x5__[\"length\"])",
   "covered": true,
-  "elseCovered": "assert . sameValue ( eval ( '1; switch (\"a\") { default: case \"a\": break; }' ) , undefined ) ; assert . sameValue ( eval ( '2; switch (\"a\") { default: case \"a\": { 3; break; } }' ) , 3 ) ; assert . sameValue ( eval ( '4; do { switch (\"a\") { default: case \"a\": continue; } } while (false)' ) , undefined ) ; assert . sameValue ( eval ( '5; do { switch (\"a\") { default: case \"a\": { 6; continue; } } } while (false)' ) , 6 ) ;",
+  "elseCovered": "assert . sameValue ( eval ( '1; switch (\"a\") { default: case \"b\": break; }' ) , undefined ) ; assert . sameValue ( eval ( '2; switch (\"a\") { default: case \"b\": { 3; break; } }' ) , 3 ) ; assert . sameValue ( eval ( '4; do { switch (\"a\") { default: case \"b\": continue; } } while (false)' ) , undefined ) ; assert . sameValue ( eval ( '5; do { switch (\"a\") { default: case \"b\": { 6; continue; } } } while (false)' ) , 6 ) ;",
   "inst": "while (< __x6__ __x5__[\"length\"]) { ... }"
 }, {
   "algo": "CaseBlock1VarScopedDeclarations3",
   "cond": "(< __x6__ __x5__[\"length\"])",
   "covered": true,
-  "elseCovered": "assert . sameValue ( eval ( '1; switch (\"a\") { default: case \"a\": break; }' ) , undefined ) ; assert . sameValue ( eval ( '2; switch (\"a\") { default: case \"a\": { 3; break; } }' ) , 3 ) ; assert . sameValue ( eval ( '4; do { switch (\"a\") { default: case \"a\": continue; } } while (false)' ) , undefined ) ; assert . sameValue ( eval ( '5; do { switch (\"a\") { default: case \"a\": { 6; continue; } } } while (false)' ) , 6 ) ;",
+  "elseCovered": "assert . sameValue ( eval ( '1; switch (\"a\") { default: case \"b\": break; }' ) , undefined ) ; assert . sameValue ( eval ( '2; switch (\"a\") { default: case \"b\": { 3; break; } }' ) , 3 ) ; assert . sameValue ( eval ( '4; do { switch (\"a\") { default: case \"b\": continue; } } while (false)' ) , undefined ) ; assert . sameValue ( eval ( '5; do { switch (\"a\") { default: case \"b\": { 6; continue; } } } while (false)' ) , 6 ) ;",
   "inst": "while (< __x6__ __x5__[\"length\"]) { ... }"
 }, {
   "algo": "CaseClause0HasCallInTailPosition1",
@@ -600,7 +600,7 @@
   "algo": "DeclarativeEnvironmentRecordDOTSetMutableBinding",
   "cond": "(= absent envRec[\"SubMap\"][N])",
   "covered": true,
-  "elseCovered": "assert . throws ( ReferenceError , function ( ) { e0 ; } ) ;",
+  "elseCovered": "assert . throws ( ReferenceError , function ( ) { E0 ; } ) ;",
   "inst": "if (= absent envRec[\"SubMap\"][N]) ... else ..."
 }, {
   "algo": "DeclarativeEnvironmentRecordDOTSetMutableBinding",
@@ -642,18 +642,18 @@
   "cond": "(= iteratorRecord[\"Done\"] false)",
   "covered": true,
   "inst": "if (= iteratorRecord[\"Done\"] false) ... else ...",
-  "thenCovered": "let [ , , ... x ] = [ 1 , 2 ] ; assert ( Array . isArray ( x ) ) ; assert . sameValue ( x . length , 0 ) ;"
+  "thenCovered": "var [ , , ... x ] = [ 1 , 2 ] ; assert ( Array . isArray ( x ) ) ; assert . sameValue ( x . length , 0 ) ;"
 }, {
   "algo": "Elision1IteratorDestructuringAssignmentEvaluation0",
   "cond": "__x3__",
   "covered": true,
-  "elseCovered": "let [ , , ... x ] = [ 1 , 2 ] ; assert ( Array . isArray ( x ) ) ; assert . sameValue ( x . length , 0 ) ;",
+  "elseCovered": "var [ , , ... x ] = [ 1 , 2 ] ; assert ( Array . isArray ( x ) ) ; assert . sameValue ( x . length , 0 ) ;",
   "inst": "if __x3__ ... else ..."
 }, {
   "algo": "Elision1IteratorDestructuringAssignmentEvaluation0",
   "cond": "(= next false)",
   "covered": true,
-  "elseCovered": "let [ , , ... x ] = [ 1 , 2 ] ; assert ( Array . isArray ( x ) ) ; assert . sameValue ( x . length , 0 ) ;",
+  "elseCovered": "var [ , , ... x ] = [ 1 , 2 ] ; assert ( Array . isArray ( x ) ) ; assert . sameValue ( x . length , 0 ) ;",
   "inst": "if (= next false) ... else ..."
 }, {
   "algo": "EqualityExpression2Evaluation0",
@@ -799,13 +799,13 @@
   "algo": "ForInOfBodyEvaluation",
   "cond": "(= iteratorKind CONST_async)",
   "covered": true,
-  "elseCovered": "assert . throws ( TypeError , function ( ) { for ( let { } of [ null ] ) { return ; } } ) ;",
+  "elseCovered": "assert . throws ( TypeError , function ( ) { for ( var { } of [ null ] ) { return ; } } ) ;",
   "inst": "if (= iteratorKind CONST_async) ... else ..."
 }, {
   "algo": "ForInOfBodyEvaluation",
   "cond": "(= iterationKind CONST_enumerate)",
   "covered": true,
-  "elseCovered": "assert . throws ( TypeError , function ( ) { for ( let { } of [ null ] ) { return ; } } ) ;",
+  "elseCovered": "assert . throws ( TypeError , function ( ) { for ( var { } of [ null ] ) { return ; } } ) ;",
   "inst": "if (= iterationKind CONST_enumerate) ... else ..."
 }, {
   "algo": "ForInOfBodyEvaluation",
@@ -1410,7 +1410,7 @@
   "algo": "GeneratorResumeAbrupt",
   "cond": "(= genContext[\"ReturnCont\"] absent)",
   "covered": true,
-  "elseCovered": "var first = 0 ; var second = 0 ; function * g ( ) { first += 1 ; yield ; second += 1 ; } ; let [ , ] = g ( ) ; assert . sameValue ( first , 1 ) ; assert . sameValue ( second , 0 ) ;",
+  "elseCovered": "var first = 0 ; var second = 0 ; function * g ( ) { first += 1 ; yield ; second += 1 ; } ; var [ , ] = g ( ) ; assert . sameValue ( first , 1 ) ; assert . sameValue ( second , 0 ) ;",
   "inst": "if (= genContext[\"ReturnCont\"] absent) ... else ..."
 }, {
   "algo": "GeneratorStart",
@@ -2198,7 +2198,7 @@
   "algo": "YieldExpression0Evaluation0",
   "cond": "(= generatorKind CONST_async)",
   "covered": true,
-  "elseCovered": "var first = 0 ; var second = 0 ; function * g ( ) { first += 1 ; yield ; second += 1 ; } ; let [ , ] = g ( ) ; assert . sameValue ( first , 1 ) ; assert . sameValue ( second , 0 ) ;",
+  "elseCovered": "var first = 0 ; var second = 0 ; function * g ( ) { first += 1 ; yield ; second += 1 ; } ; var [ , ] = g ( ) ; assert . sameValue ( first , 1 ) ; assert . sameValue ( second , 0 ) ;",
   "inst": "if (= generatorKind CONST_async) ... else ..."
 }, {
   "algo": "YieldExpression1Evaluation0",
