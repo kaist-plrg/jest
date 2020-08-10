@@ -2,12 +2,18 @@
 
 - report 하는 곳 : https://github.com/Moddable-OpenSource/moddable/issues
 
+## PropertyDefinitionEvaluation - [Reported](https://github.com/Moddable-OpenSource/moddable/issues/400)
+- __Section:__ [12.2.6.8 Runtime Semantics: PropertyDefinitionEvaluation](http://ecma-international.org/ecma-262/11.0/#sec-object-initializer-runtime-semantics-propertydefinitionevaluation)
 - descriptor value should be "42" but ""
+_ __Simple JavaScript code:__
 ```
 var x = { 42 : class   { x (  ) {  } } } ;
 ```
 
+## ArrayAccumulation - [Reported](https://github.com/Moddable-OpenSource/moddable/issues/401)
+- __Section:__ [12.2.5.1 Runtime Semantics: ArrayAccumulation](http://ecma-international.org/ecma-262/11.0/#sec-runtime-semantics-arrayaccumulation)
 - descriptor value should be 1 but 0
+_ __Simple JavaScript code:__
 ```
 var x = [ , ... '' ] ;
 var x = { * x ( ... [ , x ] ) { } } ;
