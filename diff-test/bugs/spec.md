@@ -51,8 +51,8 @@ class A {}
   부르지 않기 때문에, `name` property가 own property로 생성되지 않는다.
 - __Simple JavaScript code:__
 ```js
-var x;
-((y) => { x = y; })(() => {});
+var id = x => x;
+var f = id ( ( ) => { } );
 ```
 | JS Engine | Result |
 |:-:|:-|
@@ -122,7 +122,7 @@ x ++;
 - eval의 indirect call 안에 new.target, super등이 바로 오는 경우
 - __Simple JavaScript code:__
 ```js
-( 0 , eval )( new . target )
+( 0 , eval )( new . target );
 ```
 
 ## For In  - [Resolved](https://github.com/tc39/ecma262/pull/1969)
@@ -133,6 +133,27 @@ x ++;
 - __Simple JavaScript code:__
 ```js
 for ( x in { } ) ;
+```
+
+## Default Class Names - [Resolved](https://github.com/tc39/ecma262/pull/1490)
+- __Section:__ [14.6.16 Runtime Semantics: Evaluation](https://www.ecma-international.org/ecma-262/#sec-class-definitions-runtime-semantics-evaluation)
+- ClassExpression에서 이름을 가지지 않는 경우에는
+  className이 undefined이기 때문에
+  `name` property가 own property로 생성되지 않는다.
+- __Simple JavaScript code:__
+```js
+var id = x => x;
+var c = id ( class { } );
+```
+| JS Engine | Result |
+|:-:|:-|
+| GraalJS     | Expected ["length", "prototype"] but got ["length", "name", "prototype"] |
+| QuickJS     | Expected ["length", "prototype"] but got ["length", "name", "prototype"] |
+| Moddable XS | Expected ["length", "prototype"] but got ["length", "name", "prototype"] |
+| Google V8   | Pass |
+- __Generated JavaScript code:__
+```js
+var x = Object . getOwnPropertyNames ( class { x ( ) { } } ) ;
 ```
 <!--
 ## ArraySetLength
