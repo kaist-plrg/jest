@@ -1,37 +1,3 @@
 #!/bin/sh
-
 source ~/.profile
-TARGET="./injected"
-
-function check() {
-  local filename=$1
-  local result=$2
-  local name=$3
-  local cmd=$4
-
-  if [ "$result" != "" ]; then
-    echo "[$filename] $name ($cmd)";
-    echo "- $result";
-  fi
-}
-
-function checkFile() {
-  local filename=$1
-
-  cat helper.js "$TARGET/$filename" > temp.js
-  # XXX check "$filename" "`ires eval temp.js`" "ES2020" "ires"
-  check "$filename" "`js temp.js 2>&1`" "GraalJS" "js"
-  check "$filename" "`qjs temp.js 2>&1`" "QuickJS" "qjs"
-  check "$filename" "`xst temp.js 2>&1`" "Moddable XS" "xst"
-  check "$filename" "`node temp.js 2>&1`" "Google V8" "node"
-  rm temp.js
-}
-
-if [ $# -eq 1 ]; then
-  checkFile "$1.js"
-else
-  for filename in "$TARGET"/*
-  do
-    checkFile `basename "$filename"`
-  done
-fi
+python check.py "$@"
