@@ -250,6 +250,15 @@ object Generator extends DefaultJsonProtocol {
     val len1 = str1.length
     val len2 = str2.length
 
+    if (len1 == len2) str1 < str2 else len1 < len2
+  }
+  def cmpWithEval(s1: Script, s2: Script): Boolean = {
+    val str1 = s1.toString
+    val str2 = s2.toString
+
+    val len1 = str1.length
+    val len2 = str2.length
+
     val priority1 = if (str1.startsWith("( 0 , eval )")) 2 else if (str1.startsWith("eval")) 1 else 0
     val priority2 = if (str2.startsWith("( 0 , eval )")) 2 else if (str2.startsWith("eval")) 1 else 0
 

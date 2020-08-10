@@ -1,1 +1,0 @@
-eval ( "for ( class x { static x ( ) { } } in '' ) ;" ) ;

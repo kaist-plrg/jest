@@ -117,13 +117,6 @@ for (var y of x) throw 42;
 var x = 0;
 x ++;
 ```
-## Indirect Eval - [Resolved](https://github.com/tc39/ecma262/pull/1949)
-- __Section:__ [18.2.1.1 Runtime Semantics: PerformEval](https://www.ecma-international.org/ecma-262/#sec-performeval)
-- eval의 indirect call 안에 new.target, super등이 바로 오는 경우
-- __Simple JavaScript code:__
-```js
-( 0 , eval )( new . target );
-```
 
 ## For In  - [Resolved](https://github.com/tc39/ecma262/pull/1969)
 
@@ -253,4 +246,12 @@ var x = 1 | -1;
 | Moddable XS | Expected 4294967295 but got -1. |
 | Google V8   | Expected 4294967295 but got -1. |
 - __Failed Test262 tests:__ 위의 경우에 대해서 cover하지 못함
+
+## Indirect Eval - [Resolved](https://github.com/tc39/ecma262/pull/1949)
+- __Section:__ [18.2.1.1 Runtime Semantics: PerformEval](https://www.ecma-international.org/ecma-262/#sec-performeval)
+- eval의 indirect call 안에 new.target, super등이 바로 오는 경우
+- __Simple JavaScript code:__
+```js
+( 0 , eval )( new . target );
+```
 -->

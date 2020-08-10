@@ -1,1 +1,0 @@
-eval ( "for ( { async * x ( ... await ) { } } in '' ) ;" ) ;

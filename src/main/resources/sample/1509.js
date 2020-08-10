@@ -1,1 +1,0 @@
-eval ( "for ( class x extends x { x ( ) { } } in '' , '' ) ;" ) ;

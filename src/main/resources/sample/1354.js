@@ -1,1 +1,0 @@
-eval ( "try { } catch { } finally { }" ) ;

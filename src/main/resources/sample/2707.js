@@ -1,1 +1,0 @@
-( 0 , eval ) ( "var x = delete x" ) ;

@@ -1,1 +1,0 @@
-eval ( "var x = { set x ( x ) { } }" ) ;
