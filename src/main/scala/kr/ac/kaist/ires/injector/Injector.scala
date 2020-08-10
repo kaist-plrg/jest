@@ -1,5 +1,6 @@
 package kr.ac.kaist.ires.injector
 
+import kr.ac.kaist.ires.LINE_SEP
 import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 import kr.ac.kaist.ires.model.{ Parser => JSParser, Script, ModelHelper }
@@ -113,16 +114,15 @@ case class Injector(script: Script) {
     getValue(st, "result.Type")._1 == NamedAddr("CONST_normal")
   private def handleException: Unit = getValue(st, "result.Type")._1 match {
     case NamedAddr("CONST_normal") =>
-      injected = s"$$assert.notThrows(function () { $injected });"
+      injected = s"// Normal$LINE_SEP$injected"
     case _ =>
-      val thrown = getValue(st, "result.Value")._1 match {
+      injected = getValue(st, "result.Value")._1 match {
         case _: Addr => getValue(st, "result.Prototype")._1 match {
-          case NamedAddr(errorNameRegex(name)) => name + "Error"
+          case NamedAddr(errorNameRegex(name)) => s"// ${name}Error$LINE_SEP$injected"
           case _ => println(121); ???
         }
-        case x => println(s"123: $x"); toJSCode(x)
+        case x => s"// Throw ${toJSCode(x)}$LINE_SEP$injected"
       }
-      injected = s"try { $injected $$assert.shouldveThrown($thrown); } catch (thrown) { $$assert.sameThrows(thrown, $thrown); }"
   }
 
   // get values
