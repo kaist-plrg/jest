@@ -117,11 +117,12 @@ case class Injector(script: Script) {
       injected = s"// Normal$LINE_SEP$injected"
     case _ =>
       injected = getValue(st, "result.Value")._1 match {
+        case c: Const => s"// Throw ${toJSCode(c)}$LINE_SEP$injected"
         case _: Addr => getValue(st, "result.Prototype")._1 match {
           case NamedAddr(errorNameRegex(name)) => s"// ${name}Error$LINE_SEP$injected"
-          case _ => println(121); ???
+          case _ => println(123); ???
         }
-        case x => s"// Throw ${toJSCode(x)}$LINE_SEP$injected"
+        case x => println(125); println(x); ???
       }
   }
 
@@ -166,9 +167,9 @@ case class Injector(script: Script) {
   private def getKeys(value: Value): Set[Value] = value match {
     case addr: Addr => st(addr) match {
       case (m: IRMap) => m.props.keySet
-      case _ => println(169); ???
+      case _ => println(170); ???
     }
-    case _ => println(171); ???
+    case _ => println(172); ???
   }
 
   // conversion to JS codes
@@ -178,6 +179,6 @@ case class Injector(script: Script) {
   }
   private def toJSCode(value: Value): String = value match {
     case c: Const => toJSCode(c)
-    case _ => println(181); ???
+    case x => println(182); println(x); ???
   }
 }
