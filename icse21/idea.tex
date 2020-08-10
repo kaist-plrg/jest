@@ -8,7 +8,7 @@ phase
 \subsection{Main Idea}
 
 The traditional $N$-version testing (or differential testing) utilizes the
-cross-referencing Oracle, which is an assumption that any discrepency between
+cross-referencing Oracle, which is an assumption that any discrepancy between
 any program behaviors on the same input might be a potential bug.  Thus, it
 compares the execution results of same inputs on different $N$ implementations
 having same functionalities.  When an implementation provides a minority result
@@ -91,7 +91,7 @@ such abrupt completions, ECMAScript uses the question mark prefix (?) to check
 and pass out the abrupt completions.  However, invocations of
 \textbf{ToPrimitive} in step 10 and 11 do not use the question mark prefix (?).
 Thus, it cannot pass out the exceptions introduced by \textbf{ToPrimitive} to
-outisde.
+outside.
 
 For example, the JavaScript code in Figure~\ref{fig:example-js} causes the above
 problem.  In the \textbf{Abstract Equality Comparison} algorithm, variables
@@ -102,7 +102,7 @@ abrupt completion because the function stored in $\code{valueOf}$ throws an
 error.  However, the specification silently ignores the abrupt completion and
 returns $\code{false}$ as the result of comparison.  Based on the semantics
 described in the specification, we could inject assertions to check the code
-does not throw any erros as described in Figure~\ref{fig:example-injected}.
+does not throw any errors as described in Figure~\ref{fig:example-injected}.
 However, most of modern JavaScript engines throw an error with a string
 $\code{'err'}$.  Using this information, we know that there exists a potential
 specification bug with the JavaScript code.  Moreover, we can localize the
@@ -115,7 +115,7 @@ probability.
 
 \subsection{Overall Structure}
 
-Figure~\ref{fig:overall} depicts the overall structure of $N$+1-verison testing
+Figure~\ref{fig:overall} depicts the overall structure of $N$+1-version testing
 for $N$ different engines and a language specification.  It consists of two
 phases: a conformance test generation phase and a bug detection/localization
 phase.  Based on a given language specification, it automatically generates
