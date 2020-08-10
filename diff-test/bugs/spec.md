@@ -157,7 +157,7 @@ var x = Object . getOwnPropertyNames ( class { x ( ) { } } ) ;
 ```
 
 ## PropertyDefinitionEvaluation - [Pull requested](https://github.com/tc39/ecma262/pull/2130)
-- __Section:__ [14.6.16 Runtime Semantics: Evaluation](https://www.ecma-international.org/ecma-262/#sec-object-initializer-runtime-semantics-propertydefinitionevaluation)
+- __Section:__ [12.2.6.8 Runtime Semantics: PropertyDefinitionEvaluation](https://www.ecma-international.org/ecma-262/#sec-object-initializer-runtime-semantics-propertydefinitionevaluation)
 - PropertyDefinition:PropertyName:AssignmentExpression 의 3.a 스텝에서
 `propValue`가 abrupt completion일 수 있음에도 불구하고
 이를 `returnIfAbrupt`등으로 검사하지 않는다.
