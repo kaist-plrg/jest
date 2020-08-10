@@ -40,8 +40,10 @@ in the specification based on the statistical information.
     \begin{lstlisting}[style=myJSstyle]
 var obj = { valueOf: () => { throw 'err'; } };
 var result = 42 == obj;
+// expected: throw an exception with 'err'
+// ES11 semantics: result === false
     \end{lstlisting}
-    \caption{An example JavaScrpt program}
+    \caption{An example JavaScript program}
     \label{fig:example-js}
   \end{subfigure}
   \begin{subfigure}[t]{0.45\textwidth}
@@ -54,10 +56,10 @@ try {
   assert(false);
 }
     \end{lstlisting}
-    \caption{The assertion-injected JavaScrpt program}
+    \caption{The assertion-injected JavaScript program}
     \label{fig:example-injected}
   \end{subfigure}
-  \caption{A running example of $N$+1-version testing for JavaScrpt}
+  \caption{A running example of $N$+1-version testing for JavaScript}
   \label{fig:example}
   \vspace*{-1em}
 \end{figure}
@@ -72,13 +74,13 @@ try {
 \end{figure*}
 
 Figure~\ref{fig:example} shows the running example of $N$+1-version for
-JavaScrpt.  Figure~\ref{fig:example-algo} is a part of \textbf{Abstract Equality
+JavaScript.  Figure~\ref{fig:example-algo} is a part of \textbf{Abstract Equality
 Comparison} abstract algorithm in ECMAScript 2020 (ES11).  It describes the
-semantics of non-strict equality comparison ($\code{==}$) between two JavaScrpt
+semantics of non-strict equality comparison ($\code{==}$) between two JavaScript
 values.  For example, $\code{null == undefined}$ is $\code{true}$ because of the
 algorithm step 2.  According to step 10 and11, if a value has a String, Number,
 BigInt, or Symbol type and the other value is an Object, the algorithm call the
-\textbf{ToPrimitive} algorithm to convert the JavaScrpt object into a primitive
+\textbf{ToPrimitive} algorithm to convert the JavaScript object into a primitive
 value and recursively call itself.  However, \textbf{ToPrimitive} algorithm
 could return \textit{abrupt completion}.  ECMAScript uses completion values to
 explain the runtime propagation of values and control flow such as behavior of
@@ -91,7 +93,7 @@ and pass out the abrupt completions.  However, invocations of
 Thus, it cannot pass out the exceptions introduced by \textbf{ToPrimitive} to
 outisde.
 
-For example, the JavaScrpt code in Figure~\ref{fig:example-js} causes the above
+For example, the JavaScript code in Figure~\ref{fig:example-js} causes the above
 problem.  In the \textbf{Abstract Equality Comparison} algorithm, variables
 \textit{x} and \textit{y} denote $\code{42}$ and an object whose property
 $\code{valueOf}$ points to an arrow function that throws an error.  In step 10,
