@@ -1,3 +1,43 @@
 \subsection{Program Mutator}
 
-\inred{TODO}
+Given a target program, \textsf{Program Mutator} tries to mutate the program
+in to another program that increase sematics coverage.  One trial consists of
+the following steps.
+First, it selects one of the 5 transformers(?). The role
+of transformer is to simply modify the given program. Detailed explnation of each
+transformer will be described in subsection.  Probability of choosing a centain
+transformer depends on the given program, so that more promising transformer have
+better chance to be selected.
+Second, the chosen transformer is applied to the given program.  Then, the semantics
+coverage of the generated program is computed.  If it increases the total semntics
+coverage, then we say the trail is succesful.
+This process is repeated at most predefined maximum trial number.  If there was a successful
+trial, then \textsf{Program Mutator} will give the result of succesful trial as the final output.
+Otherwise, we say that the mutator fails for the specific program.
+
+\subsubsection{Simple Replacer}
+Simple Replacer is rather simple transformer.  It traverse the AST of the given program
+and whenenver it meets Statment, Declaration, AssignmentExpression or PrimaryExpression node,
+it replace that node with another node with 50 percent probability.  The node that will be inserted
+is generated from \textsf{Seed Synthesizer}.  //TODO: manual sampler?
+
+\subsubsection{Near-Syntax Replacer}
+Near-Syntax replacer is a smarter transformer compared to Simple Replacer.
+
+\subsubsection{String Replacer}
+String Replacer also take advantage of target branch information, as Near-Syntax replacer does.
+
+\subsubsection{Object Replacer}
+Object replacer is a transformer specialized in inserting objects.  What is does is to 
+randomly replace the PrimaryExpression node with randomly synthesized object.
+This replacer has higher chance to be selected when the target script expects
+objects.
+(Q: Primary Expression에 대한 설명이 필요한가?)
+
+\subsubsection{Statement Appender}
+StatementAppender is a transformer that appends a statement at the end of each statement list.
+This could happen at top level statement list, inside block, or at function body.  The statement
+to be appended is selected from \text{Seed Synthesizer}. The statemnts that have better potential
+to change the execution path, such as funciton call, return, break, or throw, have higher chance
+to be selected.
+
