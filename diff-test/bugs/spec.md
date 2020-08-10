@@ -155,6 +155,27 @@ var c = id ( class { } );
 ```js
 var x = Object . getOwnPropertyNames ( class { x ( ) { } } ) ;
 ```
+
+## PropertyDefinitionEvaluation - [Pull requested](https://github.com/tc39/ecma262/pull/2130)
+- __Section:__ [14.6.16 Runtime Semantics: Evaluation](https://www.ecma-international.org/ecma-262/#sec-object-initializer-runtime-semantics-propertydefinitionevaluation)
+- PropertyDefinition:PropertyName:AssignmentExpression 의 3.a 스텝에서
+`propValue`가 abrupt completion일 수 있음에도 불구하고
+이를 `returnIfAbrupt`등으로 검사하지 않는다.
+- __Simple JavaScript code:__
+```js
+var x = { p : class extends 42 {} };
+```
+| JS Engine | Result |
+|:-:|:-|
+| GraalJS     | Expected no exception but a TypeError is thrown |
+| QuickJS     | Expected no exception but a TypeError is thrown |
+| Moddable XS | Expected no exception but a TypeError is thrown |
+| Google V8   | Expected no exception but a TypeError is thrown |
+
+- __Generated JavaScript code:__
+```js
+var x = { 42 : class extends x `${ '' }${ x }${ '' , '' }` { } } ;
+```
 <!--
 ## ArraySetLength
 - __Section:__ [9.4.2.4 ArraySetLength](http://ecma-international.org/ecma-262/11.0/#sec-arraysetlength)
