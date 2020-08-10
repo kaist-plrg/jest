@@ -63,6 +63,22 @@ _ __Simple JavaScript code:__
 function x (...[x]) {}
 ```
 
+## ForInOfHeadEvaluation - [Reported](https://github.com/graalvm/graaljs/issues/332)
+- __Section:__ [13.7.5.12 Runtime Semantics: ForIn/OfHeadEvaluation](https://tc39.es/ecma262/#sec-runtime-semantics-forinofheadevaluation)
+- Expected a ReferenceError but got a TypeError
+- `ForIn/OfHeadEvaluation`의 3번째 step 에서 `exprRef`는 step 2.b 에서 생성된 새로운 lexical environment 의 reference 임
+- 이후 4번째 step 에서 lexical environment 가 old lexical environment로 바뀜
+- 5번째 step 에서 GetValue 를 하고, GetValue 의 step 6.b 에서 GetBindingValue 가 실행됨
+- GetBindingValue 의 3번째 step 에서 uninitialized binding 이므로 ReferenceError 가 발생해야함.
+_ __Generated code:__
+```
+for ( let x of x ++ ) switch ( [  ... '' ] ) { case NaN :  default : for ( var { } = x ; '' ;  ) ; case `${ '' , '' }${ x }${ '' }` :  }
+```
+_ __Simple JavaScript code:__
+```
+for(let x of x) ;
+```
+
 ## EarlyErrors - [Reported](https://github.com/graalvm/graaljs/issues/329)
 
 ### CoverParenthesizedExpressionAndArrowParameterList
@@ -71,24 +87,6 @@ function x (...[x]) {}
 ```js
 (...{x}) => {};
 (x0, ...{x1}) => {};
-```
-
-## Maybe spec error - [Not yet]
-- __Section:__ [13.7.5.12 Runtime Semantics: ForIn/OfHeadEvaluation](https://tc39.es/ecma262/#sec-runtime-semantics-forinofheadevaluation)
-- Expected a ReferenceError but got a TypeError
-
-- 스펙 에러인 것으로 보임.
-- `ForIn/OfHeadEvaluation`의 3번째 step 에서 `exprRef`는 step 2.b 에서 생성된 새로운 lexical environment 의 reference 임
-- 이후 4번째 step 에서 lexical environment 가 old lexical environment로 바뀜
-- 5번째 step 에서 GetValue 를 하고, GetValue 의 step 6.b 에서 GetBindingValue 가 실행됨
-- 그런데, old lexical environment 에 해당 reference 가 없으므로 8.1.1.1.6 GetBindingValue 의 step 2 assertion 에 걸리게 됨
-_ __Generated code:__
-```
-for ( let x of x ++ ) switch ( [  ... '' ] ) { case NaN :  default : for ( var { } = x ; '' ;  ) ; case `${ '' , '' }${ x }${ '' }` :  }
-```
-_ __Simple JavaScript code:__
-```
-for(let x of x) ;
 ```
 
 ## Need Inspection

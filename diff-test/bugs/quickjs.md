@@ -2,44 +2,38 @@
 
 - report 하는 곳 : https://github.com/ldarren/QuickJS/issues
 
-- Expected a ReferenceError to be thrown but no exception was thrown at all
-```
-let x = { x , x } = { async x ( x  ) {  } } ;
-```
-
-- SyntaxError: expected '}' after template expression
-```
-`${ '' }${ '' , '' }` . from ( '' ) ;
-var x = `${ '' , '' }${ '' }` ;
-```
-
-- SyntaxError: invalid destructuring target
-```
-for ( [  x ?. x [ '' , '' ] ,  ... [  x , , ... x ] ] of [  [  ] ] ) for ( var x  ; '' , '' ; '' , '' ) ;
-```
-
-- SyntaxError: variable name expected
-```
-function x ( ... [ , ... x ] ) {  } var { '' : { } = new class  extends x `${ '' }${ x }${ '' }` { ; } ( { set x ( x  ) {  } } ) } = async x => {  } ;
-function x ( ... [ , ,  ] ) {  } var { '' : { } = x `${ '' }${ '' }` } = async x => {  } ;
-```
-
-- Expected a ReferenceError but got a TypeError
-```
-const x = x = '' ;
-```
-
+## PadStart - [Reported](https://github.com/ldarren/QuickJS/issues/18)
+- __Section:__ [21.1.3.15.1 Runtime Semantics: StringPad](https://tc39.es/ecma262/#sec-stringpad)
 - Expected no exception but a InternalError is thrown.
+- __Generated code:__
 ```
 var x = String . prototype . padStart . call ( 42n , Infinity , [ ] ) ;
 ```
-
-- Expected no exception but a TypeError is thrown.
+_ __Simple JavaScript code:__
 ```
+var x = "42".padStart(Infinity , "") ;
+```
+
+## FunctionDeclarationInstantiation - [Reported](https://github.com/ldarren/QuickJS/issues/19)
+- Expected no exception but a TypeError is thrown.
+- __Generated code:__
+```js
 var x = x `` ; function * x ( ... { [ '' ] : { } = x } ) { ; var [ x , , ... x ] = x ; }
 ```
-
-- Expected undefined but got 0.
+_ __Simple JavaScript code:__
+```js
+(function x( {a} = x ) { var x; })();
 ```
+
+## IteratorBindingInitialization - [Reported](https://github.com/ldarren/QuickJS/issues/20)
+- Expected undefined but got 0.
+- __Generated code:__
+```js
 var [ x ] = { [ Symbol . asyncIterator ] : false , [ Symbol . iterator ] : function * ( ) { ; return 0 ; yield 0 ; } } ;
+```
+_ __Simple JavaScript code:__
+```js
+"use strict";
+function * g () { return 0; };
+var [x] = g();
 ```
