@@ -5,7 +5,7 @@
 ## PropertyDefinitionEvaluation - [Reported](https://github.com/Moddable-OpenSource/moddable/issues/400)
 - __Section:__ [12.2.6.8 Runtime Semantics: PropertyDefinitionEvaluation](http://ecma-international.org/ecma-262/11.0/#sec-object-initializer-runtime-semantics-propertydefinitionevaluation)
 - descriptor value should be "42" but ""
-_ __Simple JavaScript code:__
+- __Simple JavaScript code:__
 ```
 var x = { 42 : class   { x (  ) {  } } } ;
 ```
@@ -13,13 +13,16 @@ var x = { 42 : class   { x (  ) {  } } } ;
 ## ArrayAccumulation - [Reported](https://github.com/Moddable-OpenSource/moddable/issues/401)
 - __Section:__ [12.2.5.1 Runtime Semantics: ArrayAccumulation](http://ecma-international.org/ecma-262/11.0/#sec-runtime-semantics-arrayaccumulation)
 - descriptor value should be 1 but 0
-_ __Simple JavaScript code:__
+- __Simple JavaScript code:__
 ```
 var x = [ , ... '' ] ;
 var x = { * x ( ... [ , x ] ) { } } ;
 ```
 
+## Class Object toString - [Reported](https://github.com/Moddable-OpenSource/moddable/issues/402)
+- __Section:__ [19.2.3.5 Function.prototype.toString](http://ecma-international.org/ecma-262/11.0/#sec-function.prototype.tostring)
 - Expected "undefinedclass x  { static x (  ) {  } }" but got "undefinedfunction x (){[native code]}".
+- __Simple JavaScript code:__
 ```
 var x = x += class x  { static x (  ) {  } } ;
 ```
