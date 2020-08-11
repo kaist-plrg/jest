@@ -68,16 +68,17 @@ case class Injector(script: Script, debug: Boolean = false) {
   // handle addresses
   private val PREFIX_GLOBAL = "GLOBAL."
   private val PREFIX_INTRINSIC = "INTRINSIC_"
+  private def addrToName(addr: Addr): Option[String] = addr match {
+    case a @ NamedAddr(name) if name.startsWith(PREFIX_GLOBAL) =>
+      val str = name.substring(PREFIX_GLOBAL.length)
+      if (str.startsWith(PREFIX_INTRINSIC)) None
+      else Some(str)
+    case _ => None
+  }
   private var handledObjects: Map[Addr, String] = (for {
     (addr, _) <- initState.heap.map
-    (a, s) <- addr match {
-      case a @ NamedAddr(name) if name.startsWith(PREFIX_GLOBAL) =>
-        val str = name.substring(PREFIX_GLOBAL.length)
-        if (str.startsWith(PREFIX_INTRINSIC)) None
-        else Some((a, str))
-      case _ => None
-    }
-  } yield a -> s).toMap
+    name <- addrToName(addr)
+  } yield addr -> name).toMap
   private def handleObject(addr: Addr, path: String): Unit = {
     log(s"handleObject: $path")
     handledObjects.get(addr) match {
@@ -89,7 +90,7 @@ case class Injector(script: Script, debug: Boolean = false) {
         handleExtensible(addr, path)
         handleCall(addr, path)
         handleConstruct(addr, path)
-        handlePropNames(addr, path)
+        handlePropKeys(addr, path)
         handleProperty(addr, path)
     }
   }
@@ -129,17 +130,21 @@ case class Injector(script: Script, debug: Boolean = false) {
   }
 
   // handle property names
-  private def handlePropNames(addr: Addr, path: String): Unit = {
-    log("handlePropNames")
+  private def handlePropKeys(addr: Addr, path: String): Unit = {
+    log("handlePropKeys")
     val initSt = st.copy(globals = st.globals + (Id("input") -> addr))
-    val newSt = runInst(initSt, s"app result = (GetOwnPropertyKeys input CONST_string)")
-    val result = "result.SubMap"
-    val len = getValue(newSt, s"$result.length.Value")._1.asInstanceOf[INum].long.toInt
+    val newSt = runInst(initSt, s"app result = (input.OwnPropertyKeys input)")
+    val result = "result.Value"
+    val len = getValue(newSt, s"$result.length")._1.asInstanceOf[INum].long.toInt
     val array = (0 until len)
-      .map(k => getValue(newSt, s"""$result["${k}"].Value""")._1)
-      .map("\"" + _.asInstanceOf[Str].str + "\"")
-      .mkString("[", ", ", "]")
-    add(s"$$assert.compareArray(Object.getOwnPropertyNames($path), $array);")
+      .map(k => getValue(newSt, s"""$result[${k}i]""")._1)
+      .flatMap(_ match {
+        case Str(str) => Some(s"'$str'")
+        case addr: Addr => addrToName(addr)
+        case _ => None
+      })
+    if (array.length == len)
+      add(s"$$assert.compareArray(Reflect.ownKeys($path), ${array.mkString("[", ", ", "]")});")
   }
 
   // handle properties
@@ -228,9 +233,9 @@ case class Injector(script: Script, debug: Boolean = false) {
   private def getKeys(value: Value): Set[Value] = value match {
     case addr: Addr => st(addr) match {
       case (m: IRMap) => m.props.keySet
-      case _ => println(170); ???
+      case _ => warning; ???
     }
-    case _ => println(172); ???
+    case _ => warning; ???
   }
 
   // conversion to JS codes
@@ -240,6 +245,10 @@ case class Injector(script: Script, debug: Boolean = false) {
   }
   private def toJSCode(value: Value): String = value match {
     case c: Const => toJSCode(c)
-    case x => println(182); println(x); ???
+    case addr: Addr => addrToName(addr) match {
+      case Some(name) => name
+      case None => warning; ???
+    }
+    case x => warning; log(s"$x @ toJSCode"); ???
   }
 }
