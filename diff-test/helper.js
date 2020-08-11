@@ -19,7 +19,7 @@ function $isSameValue(x, y) {
 // assertion
 function $assert(mustBeTrue) {
   if (mustBeTrue === true) return;
-  $error('Expected true but got' + $toString(mustBeTrue));
+  $error('Expected true but got ' + $toString(mustBeTrue));
 }
 
 // assertion for comparing two thrown values
