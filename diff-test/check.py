@@ -17,9 +17,10 @@ class ExecutionResultType(enum.Enum):
   THROW = "Throw"
 # execution result of engines and IRES
 class ExecutionResult:
-  def __init__(self, result_type, msg = ''):
+  def __init__(self, result_type, msg = "", log = ""):
     self.result_type = result_type
     self.msg = msg
+    self.log = log
   @staticmethod
   def get_result_type(engine_msg, is_err = False):
     err_hints = {
@@ -49,16 +50,21 @@ class ExecutionResult:
     # handle `Node.js` warning
     is_err = err != "" and not "UnhandledPromiseRejectionWarning" in err
     result_type = ExecutionResult.get_result_type(err, True) if is_err else ExecutionResult.get_result_type(out)
-    msg = err if is_err else out
-    return ExecutionResult(result_type, msg)
+    # msg = err if is_err else out
+    return ExecutionResult(result_type, err, out)
   @staticmethod
   def get_expected(comment):
     result_type = ExecutionResult.get_result_type(comment)
     return ExecutionResult(result_type, comment)
+  def need_print(self, ires_output):
+    return ires_output != self or self.log != ""
   def __str__(self):
-    if self.msg == "":
-      return "{}\n".format(self.result_type.value)
-    return "{}\n- {}".format(self.result_type.value, self.msg)
+    ret = "{}\n".format(self.result_type.value)
+    if self.log != "":
+      ret += "- {}\n".format(self.log)
+    if self.msg != "":
+      ret += "- {}\n".format(self.msg)
+    return ret
   def __eq__(self, other):
     return self.result_type == other.result_type
 
@@ -98,7 +104,7 @@ def check_all(filepath):
   for engine in engines:
     engine_output = check(engine, temppath)
     # engine_output = ExecutionResult.get(out, err)
-    if engine_output != ires_output:
+    if engine_output.need_print(ires_output):
       print_check_result = True
       check_str += "[{}]: {}".format(engine, engine_output)
       diff_cnt += 1
