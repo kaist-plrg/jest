@@ -86,6 +86,7 @@ case class Injector(script: Script, debug: Boolean = false) {
       case None =>
         handledObjects += addr -> path
         handlePrototype(addr, path)
+        handleExtensible(addr, path)
         handlePropNames(addr, path)
         handleProperty(addr, path)
     }
@@ -96,6 +97,15 @@ case class Injector(script: Script, debug: Boolean = false) {
     log(s"handlePrototype: $path")
     access(st, addr, Str("Prototype")) match {
       case (proto: Addr) => handleObject(proto, s"Object.getPrototypeOf($path)")
+      case _ => warning
+    }
+  }
+
+  // handle [[Extensible]]
+  private def handleExtensible(addr: Addr, path: String): Unit = {
+    log(s"handleExtensible: $path")
+    access(st, addr, Str("Extensible")) match {
+      case Bool(b) => add(s"$$assert.sameValue(Object.isExtensible($path), $b);")
       case _ => warning
     }
   }
@@ -151,9 +161,9 @@ case class Injector(script: Script, debug: Boolean = false) {
     case _ =>
       injected = getValue(st, "result.Value")._1 match {
         case c: Const => s"// Throw ${toJSCode(c)}$LINE_SEP$injected"
-        case _: Addr => getValue(st, "result.Prototype")._1 match {
+        case addr: Addr => getValue(st, "result.Prototype")._1 match {
           case NamedAddr(errorNameRegex(name)) => s"// ${name}Error:$LINE_SEP$injected"
-          case addr => warning; s"// Throw ${beautify(addr)}$LINE_SEP$injected"
+          case _ => warning; s"// Throw ${beautify(addr)}$LINE_SEP$injected"
         }
         case x => warning; s"// Throw ${beautify(x)}$LINE_SEP$injected"
       }
