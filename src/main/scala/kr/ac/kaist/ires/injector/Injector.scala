@@ -149,22 +149,26 @@ case class Injector(script: Script, debug: Boolean = false) {
   }
 
   // handle properties
-  private val descFields = List("Value", "Writable", "Enumerable", "Configurable")
+  private val fields = List("Get", "Set", "Value", "Writable", "Enumerable", "Configurable")
   private def handleProperty(addr: Addr, path: String): Unit = {
     log("handleProperty")
     val subMap = access(st, addr, Str("SubMap"))
     for (p <- getKeys(subMap)) access(st, subMap, p) match {
       case addr: Addr => st(addr) match {
-        case IRMap(Ty("DataProperty"), props, _) =>
+        case IRMap(Ty("DataProperty" | "AccessorProperty"), props, _) =>
           var set = Set[String]()
           val propStr = toJSCode(p)
           for {
-            field <- descFields
+            field <- fields
             (value, _) <- props.get(Str(field))
           } interp.escapeCompletion((value, st)) match {
             case (c: Const, _) => set += s"${field.toLowerCase}: ${toJSCode(c)}"
-            case (addr: Addr, _) if field == "Value" =>
-              handleObject(addr, s"$path[$propStr]")
+            case (addr: Addr, _) => field match {
+              case "Value" => handleObject(addr, s"$path[$propStr]")
+              case "Get" => handleObject(addr, s"Object.getOwnPropertyDescriptor($path, $propStr).get")
+              case "Set" => handleObject(addr, s"Object.getOwnPropertyDescriptor($path, $propStr).set")
+              case _ =>
+            }
             case _ => warning
           }
           val desc = set.mkString("{ ", ", ", "}")
