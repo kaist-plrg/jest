@@ -1,10 +1,10 @@
 # Version of Each JS Engine
-| JS Engine   | Command | Version           | Site                                                        |
-|:-----------:|:-------:|------------------:|:------------------------------------------------------------|
-| GraalJS     | `js`    | 20.1.0            |[https://www.graalvm.org/](https://www.graalvm.org/)         |
-| QuickJS     | `qjs`   | 2020-04-12        |[https://bellard.org/quickjs/](https://bellard.org/quickjs/) |
-| Moddable XS | `xst`   | 10.2.1            |[https://www.moddable.com/](https://www.moddable.com/)       |
-| Google V8   | `node`  | 8.3 (node 14.5.0) |[https://v8.dev/](https://v8.dev/)                           |
+| JS Engine   | Command | Version           | Site                                                        | ES2020 support                            |
+|:-----------:|:-------:|------------------:|:------------------------------------------------------------|:-----------------------------------------:|
+| GraalJS     | `js`    | 20.1.0            |[https://www.graalvm.org/](https://www.graalvm.org/)         | [Y](https://github.com/graalvm/graaljs)   |
+| QuickJS     | `qjs`   | 2020-04-12        |[https://bellard.org/quickjs/](https://bellard.org/quickjs/) | [Y](https://bellard.org/quickjs/)         |
+| Moddable XS | `xst`   | 10.2.1            |[https://www.moddable.com/](https://www.moddable.com/)       | [Y](https://blog.moddable.com/blog/xs10/) |
+| Google V8   | `node`  | 8.3 (node 14.5.0) |[https://v8.dev/](https://v8.dev/)                           | [Y](https://v8.dev/)                      |
 
 
 ## Install JS Engines
