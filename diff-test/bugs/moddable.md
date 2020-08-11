@@ -27,14 +27,37 @@ var x = { * x ( ... [ , x ] ) { } } ;
 var x = x += class x  { static x (  ) {  } } ;
 ```
 
+## Optional Chains - [Reported](https://github.com/Moddable-OpenSource/moddable/issues/403)
+- __Section:__ [12.3.9 Optional Chains](http://ecma-international.org/ecma-262/11.0/#sec-optional-chains)
 - Expected no exception but a TypeError is thrown.
+- __Simple JavaScript code:__
+```
+var x = TypeError ( x ?. ( ) ) ;
+var x = Array . prototype . flat . call ( 'str' , x ?. ( ) ) ;
+var x = String . prototype . slice . call ( `${ '' }${ x }${ '' }` , 0 , x ?. ( ) ) ;
+```
+
+## Array.prototype.toString.call with non-array object - [Reported](https://github.com/Moddable-OpenSource/moddable/issues/404)
+- __Section:__ [22.1.3.30 Array.prototype.toString](http://ecma-international.org/ecma-262/11.0/#sec-array.prototype.tostring)
+- Expected no exception but a TypeError is thrown.
+- __Simple JavaScript code:__
 ```
 Array . prototype . toString . call ( function *  (  ) {  } ) ;
 Array . prototype . toString . call ( ( '' , '' ) ) ;
 Array . prototype . toString . call ( function x (  ) {  } ) ;
-var x = String . prototype . slice . call ( `${ '' }${ x }${ '' }` , 0 , x ?. ( ) ) ;
-var x = Array . prototype . flat . call ( 'str' , x ?. ( ) ) ;
-var x = TypeError ( x ?. ( ) ) ;
+var x = Array . prototype . toString . call ( Symbol . species ) ;
+```
+## Map Iterator, Set Iterator - [Reported](https://github.com/Moddable-OpenSource/moddable/issues/405)
+- __Section:__
+  - [23.1.5.1 CreateMapIterator](http://ecma-international.org/ecma-262/11.0/#sec-createmapiterator)
+  - [23.2.5.1 CreateSetIterator](http://ecma-international.org/ecma-262/11.0/#sec-createsetiterator)
+- Expected [] but got ["result", "iterable", "index"].
+- __Simple JavaScript code:__
+```
+var x = Map . prototype . keys . call ( new Map ( ) ) ;
+var x = Map . prototype . entries . call ( new Map ( ) ) ;
+var x = Set . prototype . entries . call ( new Set ( ) ) ;
+var x = Set . prototype . values . call ( new Set ( ) ) ;
 ```
 
 - Expected undefined but got "undefined[object Object]".
@@ -48,13 +71,7 @@ for ( { x } in x += '' ) var [ , x  ] = x ;
 String . prototype . split . call ( 1 , Symbol . species , 0 , 0 ) ;
 ```
 
-- Expected [] but got ["result", "iterable", "index"].
-```
-var x = Map . prototype . keys . call ( new Map ( ) ) ;
-var x = Map . prototype . entries . call ( new Map ( ) ) ;
-var x = Set . prototype . entries . call ( new Set ( ) ) ;
-var x = Set . prototype . values . call ( new Set ( ) ) ;
-```
+
 
 - Expected no exception but a SyntaxError is thrown.
 ```
@@ -128,9 +145,4 @@ var x = { p : 0 } ; ( { p : ( Symbol . match ) } = x ) ;
 - SyntaxError: invalid new.target
 ```
 async function * x ( ) { class x extends new . target { ; } } ; x ( ) ;
-```
-
-- Expected no exception but a TypeError is thrown
-```
-var x = Array . prototype . toString . call ( Symbol . species ) ;
 ```
