@@ -81,10 +81,10 @@ case class Injector(script: Script, debug: Boolean = false) {
   } yield addr -> name).toMap
   private def handleObject(addr: Addr, path: String): Unit = {
     log(s"handleObject: $path")
-    handledObjects.get(addr) match {
-      case Some(origPath) =>
+    (addr, handledObjects.get(addr)) match {
+      case (_, Some(origPath)) =>
         add(s"$$assert.sameValue($path, $origPath);")
-      case None =>
+      case (_: DynamicAddr, None) =>
         handledObjects += addr -> path
         handlePrototype(addr, path)
         handleExtensible(addr, path)
@@ -92,6 +92,7 @@ case class Injector(script: Script, debug: Boolean = false) {
         handleConstruct(addr, path)
         handlePropKeys(addr, path)
         handleProperty(addr, path)
+      case _ =>
     }
   }
 
