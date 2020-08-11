@@ -87,6 +87,8 @@ case class Injector(script: Script, debug: Boolean = false) {
         handledObjects += addr -> path
         handlePrototype(addr, path)
         handleExtensible(addr, path)
+        handleCall(addr, path)
+        handleConstruct(addr, path)
         handlePropNames(addr, path)
         handleProperty(addr, path)
     }
@@ -108,6 +110,22 @@ case class Injector(script: Script, debug: Boolean = false) {
       case Bool(b) => add(s"$$assert.sameValue(Object.isExtensible($path), $b);")
       case _ => warning
     }
+  }
+
+  // handle [[Call]]
+  private def handleCall(addr: Addr, path: String): Unit = {
+    log(s"handleCall: $path")
+    if (access(st, addr, Str("Call")) == Absent) {
+      add(s"$$assert.notCallable($path);")
+    } else add(s"$$assert.callable($path);")
+  }
+
+  // handle [[Construct]]
+  private def handleConstruct(addr: Addr, path: String): Unit = {
+    log(s"handleConstruct: $path")
+    if (access(st, addr, Str("Construct")) == Absent) {
+      add(s"$$assert.notConstructable($path);")
+    } else add(s"$$assert.constructable($path);")
   }
 
   // handle property names

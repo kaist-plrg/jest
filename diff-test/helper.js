@@ -64,6 +64,37 @@ $assert.notSameValue = function (actual, unexpected) {
   $error('Not expected ' + $toString(unexpected) + ' but got ' + $toString(actual) + '.');
 }
 
+// assertion for [[Call]]
+$assert.isCallable = function (f) {
+  return (typeof f === 'function');
+}
+$assert.callable = function (f) {
+  if (!$assert.isCallable(f))
+    $error('Expected ' + $toString(f) + ' has [[Call]] but does not.');
+}
+$assert.notCallable = function (f) {
+  if ($assert.isCallable(f))
+    $error('Expected ' + $toString(f) + ' does not have [[Call]] but does.');
+}
+
+// assertion for [[Construct]]
+$assert.isConstructable = function (f) {
+  try {
+    Reflect.construct(function(){}, [], f);
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+$assert.constructable = function (f) {
+  if (!$assert.isConstructable(f))
+    $error('Expected ' + $toString(f) + ' has [[Construct]] but does not.');
+}
+$assert.notConstructable = function (f) {
+  if ($assert.isConstructable(f))
+    $error('Expected ' + $toString(f) + ' does not have [[Construct]] but does.');
+}
+
 // assertion to compare arrays
 function $compareArray(a, b) {
   if (b.length !== a.length) return false;
