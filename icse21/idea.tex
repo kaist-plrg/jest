@@ -1,13 +1,13 @@
-\section{$N$+1-version Testing}\label{sec:idea}
+\section{$N$+1-differential Testing}\label{sec:idea}
 
-In this section, we introduce the core concept of $N$+1-version testing with a
+In this section, we introduce the core concept of $N$+1-differential testing with a
 simple running example.  Then, we explain its overall structure consists of two
 phases: a conformance test generation phase and a bug detection/localization
 phase
 
 \subsection{Main Idea}
 
-The traditional $N$-version testing (or differential testing) utilizes the
+The traditional differential testing (or differential testing) utilizes the
 cross-referencing Oracle, which is an assumption that any discrepancy between
 any program behaviors on the same input might be a potential bug.  Thus, it
 compares the execution results of same inputs on different $N$ implementations
@@ -15,13 +15,13 @@ having same functionalities.  When an implementation provides a minority result
 for a given input, it reports the implementation has a potential bug with the
 input.
 
-However, the $N$+1-version testing utilizes not only cross-referencing Oracle
+However, the $N$+1-differential testing utilizes not only cross-referencing Oracle
 from multiple implementations but also a mechanized specification.  It first
 assumes that a mechanized specification as the Oracle and generates tests from
 the specification.  Using the generated tests, it tests $N$ different
 implementations and detects bugs.  Moreover, if most of implementations fail to
 pass a test for the same reason, we are doubtful of the existence of bugs in
-the specification.  Thus, $N$+1-version testing assumes that there exists a
+the specification.  Thus, $N$+1-differential testing assumes that there exists a
 specification bugs related to the test in this situation and localizes the bugs
 in the specification based on the statistical information.
 
@@ -59,21 +59,21 @@ try {
     \caption{The assertion-injected JavaScript program}
     \label{fig:example-injected}
   \end{subfigure}
-  \caption{A running example of $N$+1-version testing for JavaScript}
+  \caption{A running example of $N$+1-differential testing for JavaScript}
   \label{fig:example}
   \vspace*{-1em}
 \end{figure}
 
 \begin{figure*}[t]
   \centering
-  \includegraphics[width=0.95\textwidth]{img/n+1-version-testing.pdf}
-  \caption{Overall structure of $N$+1-version testing for $N$ different
+  \includegraphics[width=0.95\textwidth]{img/n+1-differential-testing.pdf}
+  \caption{Overall structure of $N$+1-differential testing for $N$ different
     implementations (engines) and a language specification.}
   \label{fig:overall}
   \vspace*{-1em}
 \end{figure*}
 
-Figure~\ref{fig:example} shows the running example of $N$+1-version for
+Figure~\ref{fig:example} shows the running example of $N$+1-differential for
 JavaScript.  Figure~\ref{fig:example-algo} is a part of \textbf{Abstract Equality
 Comparison} abstract algorithm in ECMAScript 2020 (ES11).  It describes the
 semantics of non-strict equality comparison ($\code{==}$) between two JavaScript
@@ -115,14 +115,14 @@ probability.
 
 \subsection{Overall Structure}
 
-Figure~\ref{fig:overall} depicts the overall structure of $N$+1-version testing
+Figure~\ref{fig:overall} depicts the overall structure of $N$+1-differential testing
 for $N$ different engines and a language specification.  It consists of two
 phases: a conformance test generation phase and a bug detection/localization
 phase.  Based on a given language specification, it automatically generates
 conformance tests that reflect the language syntax and semantics described in
 the specification.  Then, it detects and localizes engine or specification bugs
 via results of the generated tests on $N$ different engines.  Now, we introduce
-each module in $N$+1-version testing and explain its functionalities.
+each module in $N$+1-differential testing and explain its functionalities.
 \newline
 
 \subsubsection{Seed Synthesizer}

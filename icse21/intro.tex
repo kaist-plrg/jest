@@ -43,13 +43,13 @@ specification and the implementation can co-evolve.  In this setting, both the
 specification and the implementation may contain bugs, and guaranteeing their
 correctness is a challenging task.
 
-In this paper, we propose a novel \textit{$N$+1-version testing},
+In this paper, we propose a novel \textit{$N$+1-differential testing},
 which enables testing of co-evolving specifications and their implementations.
-$N$-version testing~\cite{nversion} is a testing technique, which
+differential testing~\cite{nversion} is a testing technique, which
 executes $N$ implementations of a specification concurrently for each
 input, and detects a problem when the outputs are in disagreement.
 In addition to $N$ implementations, our approach tests the
-specification as well.  The $N$+1-version testing
+specification as well.  The $N$+1-differential testing
 consists of three steps: 1) to automatically synthesize
 programs guided by the syntax and semantics from a given language
 specification, 2) to generate conformance tests by injecting
@@ -65,7 +65,7 @@ conforms to the specification semantics.  Then, we run the test suite for $N$
 implementations of the specification.  Because generated tests strictly comply
 with the specification, they reflect specification errors as well, if any.  When
 one of the implementations fails in running a test, it is highly likely that the
-implementation has a bug, which is the traditional $N$-version testing.  When
+implementation has a bug, which is the traditional differential testing.  When
 most of the implementations fail in running a test, it is highly likely that
 the specification has a bug.  By automatically generating a rich set of test
 code from the specification and running them with implementations of the
@@ -73,7 +73,7 @@ specification, we can find and localize bugs either in the specification written
 in a natural language or in its implementations.
 
 To show the practicality of the proposed approach, we present $\tool$, which
-performs $N$+1-version testing for modern JavaScript engines and ECMAScript.
+performs $N$+1-differential testing for modern JavaScript engines and ECMAScript.
 We implement $\tool$ by extending $\jiset$~\cite{jiset}, which is a JavaScript
 IR-based semantics extraction toolchain, to utilize syntax and semantics
 automatically extracted from a given ECMAScript.  Using the extracted syntax,
@@ -88,7 +88,7 @@ features and the most recent version of ECMAScript (ES11, 2020).
 
 Our main contributions are as follows:
 \begin{itemize}
-  \item Present \textit{$N$+1-version testing}, a novel solution to the new
+  \item Present \textit{$N$+1-differential testing}, a novel solution to the new
     problem of the co-evolving language specification and implementation.
   \item Implement our solution in a tool $\tool$ for JavaScript engines with
     ECMAScript.  It is the first tool that automatically generates conformance
