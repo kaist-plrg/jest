@@ -1,10 +1,7 @@
 'use strict';
 
 // logging errors
-//var $error = (globalThis.console && globalThis.console.log) || globalThis.print;
-function $error(msg) {
-  throw msg;
-}
+  var $error = (globalThis.console && globalThis.console.log) || globalThis.print;
 
 // conversion to string
 function $toString(value) {
