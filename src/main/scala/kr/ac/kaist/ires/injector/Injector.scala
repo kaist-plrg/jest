@@ -80,7 +80,7 @@ case class Injector(script: Script, debug: Boolean = false) {
     name <- addrToName(addr)
   } yield addr -> name).toMap
   private def handleObject(addr: Addr, path: String): Unit = {
-    log(s"handleObject: $path")
+    log(s"handleObject: $addr, $path")
     (addr, handledObjects.get(addr)) match {
       case (_, Some(origPath)) =>
         add(s"$$assert.sameValue($path, $origPath);")
@@ -98,7 +98,7 @@ case class Injector(script: Script, debug: Boolean = false) {
 
   // handle [[Prototype]]
   private def handlePrototype(addr: Addr, path: String): Unit = {
-    log(s"handlePrototype: $path")
+    log(s"handlePrototype: $addr, $path")
     access(st, addr, Str("Prototype")) match {
       case (proto: Addr) => handleObject(proto, s"Object.getPrototypeOf($path)")
       case _ => warning
@@ -107,7 +107,7 @@ case class Injector(script: Script, debug: Boolean = false) {
 
   // handle [[Extensible]]
   private def handleExtensible(addr: Addr, path: String): Unit = {
-    log(s"handleExtensible: $path")
+    log(s"handleExtensible: $addr, $path")
     access(st, addr, Str("Extensible")) match {
       case Bool(b) => add(s"$$assert.sameValue(Object.isExtensible($path), $b);")
       case _ => warning
@@ -116,7 +116,7 @@ case class Injector(script: Script, debug: Boolean = false) {
 
   // handle [[Call]]
   private def handleCall(addr: Addr, path: String): Unit = {
-    log(s"handleCall: $path")
+    log(s"handleCall: $addr, $path")
     if (access(st, addr, Str("Call")) == Absent) {
       add(s"$$assert.notCallable($path);")
     } else add(s"$$assert.callable($path);")
@@ -124,7 +124,7 @@ case class Injector(script: Script, debug: Boolean = false) {
 
   // handle [[Construct]]
   private def handleConstruct(addr: Addr, path: String): Unit = {
-    log(s"handleConstruct: $path")
+    log(s"handleConstruct: $addr, $path")
     if (access(st, addr, Str("Construct")) == Absent) {
       add(s"$$assert.notConstructable($path);")
     } else add(s"$$assert.constructable($path);")
@@ -132,7 +132,7 @@ case class Injector(script: Script, debug: Boolean = false) {
 
   // handle property names
   private def handlePropKeys(addr: Addr, path: String): Unit = {
-    log("handlePropKeys")
+    log(s"handlePropKeys: $addr, $path")
     val initSt = st.copy(globals = st.globals + (Id("input") -> addr))
     val newSt = runInst(initSt, s"app result = (input.OwnPropertyKeys input)")
     val result = "result.Value"
@@ -151,28 +151,29 @@ case class Injector(script: Script, debug: Boolean = false) {
   // handle properties
   private val fields = List("Get", "Set", "Value", "Writable", "Enumerable", "Configurable")
   private def handleProperty(addr: Addr, path: String): Unit = {
-    log("handleProperty")
+    log(s"handleProperty: $addr, $path")
     val subMap = access(st, addr, Str("SubMap"))
     for (p <- getKeys(subMap)) access(st, subMap, p) match {
       case addr: Addr => st(addr) match {
         case IRMap(Ty("DataProperty" | "AccessorProperty"), props, _) =>
           var set = Set[String]()
-          val propStr = toJSCode(p)
-          for {
-            field <- fields
-            (value, _) <- props.get(Str(field))
-          } interp.escapeCompletion((value, st)) match {
-            case (c: Const, _) => set += s"${field.toLowerCase}: ${toJSCode(c)}"
-            case (addr: Addr, _) => field match {
-              case "Value" => handleObject(addr, s"$path[$propStr]")
-              case "Get" => handleObject(addr, s"Object.getOwnPropertyDescriptor($path, $propStr).get")
-              case "Set" => handleObject(addr, s"Object.getOwnPropertyDescriptor($path, $propStr).set")
-              case _ =>
+          toJSCode(p).map(propStr => {
+            for {
+              field <- fields
+              (value, _) <- props.get(Str(field))
+            } interp.escapeCompletion((value, st)) match {
+              case (c: Const, _) => set += s"${field.toLowerCase}: ${toJSCode(c)}"
+              case (addr: Addr, _) => field match {
+                case "Value" => handleObject(addr, s"$path[$propStr]")
+                case "Get" => handleObject(addr, s"Object.getOwnPropertyDescriptor($path, $propStr).get")
+                case "Set" => handleObject(addr, s"Object.getOwnPropertyDescriptor($path, $propStr).set")
+                case _ =>
+              }
+              case _ => warning
             }
-            case _ => warning
-          }
-          val desc = set.mkString("{ ", ", ", "}")
-          add(s"$$verifyProperty($path, $propStr, $desc);")
+            val desc = set.mkString("{ ", ", ", "}")
+            add(s"$$verifyProperty($path, $propStr, $desc);")
+          })
         case x => warning
       }
       case _ => warning
@@ -188,7 +189,6 @@ case class Injector(script: Script, debug: Boolean = false) {
       injected = s"// Normal:$LINE_SEP$injected"
     case _ =>
       injected = getValue(st, "result.Value")._1 match {
-        case c: Const => s"// Throw ${toJSCode(c)}:$LINE_SEP$injected"
         case addr: Addr => getValue(st, "result.Prototype")._1 match {
           case NamedAddr(errorNameRegex(name)) => s"// ${name}Error:$LINE_SEP$injected"
           case _ => warning; s"// Throw ${beautify(addr)}$LINE_SEP$injected"
@@ -239,9 +239,9 @@ case class Injector(script: Script, debug: Boolean = false) {
   private def getKeys(value: Value): Set[Value] = value match {
     case addr: Addr => st(addr) match {
       case (m: IRMap) => m.props.keySet
-      case _ => warning; ???
+      case _ => warning; Set()
     }
-    case _ => warning; ???
+    case _ => warning; Set()
   }
 
   // conversion to JS codes
@@ -249,12 +249,12 @@ case class Injector(script: Script, debug: Boolean = false) {
     case INum(n) => n.toString
     case c => beautify(c)
   }
-  private def toJSCode(value: Value): String = value match {
+  private def toJSCode(value: Value): Option[String] = value match {
     case c: Const => toJSCode(c)
     case addr: Addr => addrToName(addr) match {
-      case Some(name) => name
-      case None => warning; ???
+      case Some(name) => Some(name)
+      case None => warning; None
     }
-    case x => warning; log(s"$x @ toJSCode"); ???
+    case x => warning; log(s"$x @ toJSCode"); None
   }
 }
