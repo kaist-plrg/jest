@@ -56,7 +56,7 @@ class ExecutionResult:
     result_type = ExecutionResult.get_result_type(comment)
     return ExecutionResult(result_type, comment)
   def __str__(self):
-    if msg == "":
+    if self.msg == "":
       return "{}\n".format(self.result_type.value)
     return "{}\n- {}".format(self.result_type.value, self.msg)
   def __eq__(self, other):
@@ -94,12 +94,15 @@ def check_all(filepath):
   hr = "-" * 60
   check_str = "{}\n[{}]\n{}\n\n".format(hr, filepath, script_content)
   check_str += "[Expected]: {}\n\n".format(ires_output)
+  diff_cnt = 0
   for engine in engines:
     engine_output = check(engine, temppath)
     # engine_output = ExecutionResult.get(out, err)
     if engine_output != ires_output:
       print_check_result = True
       check_str += "[{}]: {}".format(engine, engine_output)
+      diff_cnt += 1
+  check_str += "\ndiff_cnt: %d\n"%diff_cnt
   check_str += hr
   # print if something different
   if print_check_result:
@@ -120,7 +123,7 @@ def main():
       check_all(args.file)
     # check directory
     elif os.path.isdir(args.dir):
-      for filepath in glob.glob("./injected/*.js"):
+      for filepath in glob.glob(args.dir+"/*.js"):
         check_all(filepath)
     else:
       raise Exception("Error : invalid arguments")

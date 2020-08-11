@@ -131,7 +131,7 @@ case class Injector(script: Script, debug: Boolean = false) {
       injected = getValue(st, "result.Value")._1 match {
         case c: Const => s"// Throw ${toJSCode(c)}$LINE_SEP$injected"
         case _: Addr => getValue(st, "result.Prototype")._1 match {
-          case NamedAddr(errorNameRegex(name)) => s"// ${name}Error$LINE_SEP$injected"
+          case NamedAddr(errorNameRegex(name)) => s"// ${name}Error:$LINE_SEP$injected"
           case addr => warning; s"// Throw ${beautify(addr)}$LINE_SEP$injected"
         }
         case x => warning; s"// Throw ${beautify(x)}$LINE_SEP$injected"
