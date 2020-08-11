@@ -4,6 +4,7 @@ import kr.ac.kaist.ires._
 import kr.ac.kaist.ires.model._
 import kr.ac.kaist.ires.model.Parser._
 import kr.ac.kaist.ires.injector.Injector
+import kr.ac.kaist.ires.util._
 import kr.ac.kaist.ires.util.Useful._
 import spray.json._
 
@@ -22,7 +23,8 @@ case object Inject extends PhaseObj[Unit, InjectConfig, Unit] {
   ): Unit = iresConfig.fileNames.headOption match {
     case Some(filename) =>
       val parseResult = parse(Script(Nil), fileReader(filename))
-      if (parseResult.successful) dumpFile(Injector(parseResult.get).result, filename)
+      if (parseResult.successful)
+        dumpFile(Injector(parseResult.get, config.debug).result, filename)
     case None => for {
       file <- walkTree(GENERATED_DIR)
       name = file.getName
@@ -30,7 +32,7 @@ case object Inject extends PhaseObj[Unit, InjectConfig, Unit] {
       parseResult = parse(Script(Nil), fileReader(filename)) if parseResult.successful
       script = parseResult.get
     } try {
-      val injected = Injector(script).result
+      val injected = Injector(script, config.debug).result
       println(s"- $INJECTED_DIR/$name")
       println(s"  $script")
       println(s"  ====>")
@@ -46,8 +48,13 @@ case object Inject extends PhaseObj[Unit, InjectConfig, Unit] {
   }
 
   def defaultConfig: InjectConfig = InjectConfig()
-  val options: List[PhaseOption[InjectConfig]] = List()
+  val options: List[PhaseOption[InjectConfig]] = List(
+    ("debug", BoolOption(c => c.debug = true),
+      "print intermediate process.")
+  )
 }
 
 // Inject phase config
-case class InjectConfig() extends Config
+case class InjectConfig(
+    var debug: Boolean = false
+) extends Config

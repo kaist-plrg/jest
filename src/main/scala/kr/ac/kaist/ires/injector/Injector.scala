@@ -5,7 +5,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 import kr.ac.kaist.ires.model.{ Parser => JSParser, Script, ModelHelper }
 
-case class Injector(script: Script) {
+case class Injector(script: Script, debug: Boolean = false) {
   // injected script
   lazy val result = {
     if (isNormal) {
@@ -18,6 +18,14 @@ case class Injector(script: Script) {
     println("handling Exception...")
     handleException
     injected
+  }
+
+  // logging
+  def log(any: Any): Unit = if (debug) println(any)
+  def warning: Unit = if (debug) {
+    val trace = (new Throwable).getStackTrace
+    val line = trace(1).getLineNumber
+    println(s"[Warning] $script @ $line")
   }
 
   // initial state
@@ -60,7 +68,7 @@ case class Injector(script: Script) {
   // handle addresses
   private var handledObjects: Map[Addr, String] = Map()
   private def handleObject(addr: Addr, path: String): Unit = {
-    println(s"handleObject: $path")
+    log(s"handleObject: $path")
     handledObjects.get(addr) match {
       case Some(origPath) =>
         add(s"$$assert.sameValue($path, $origPath);")
@@ -73,7 +81,7 @@ case class Injector(script: Script) {
 
   // handle property names
   private def handlePropNames(addr: Addr, path: String): Unit = {
-    println("handlePropNames")
+    log("handlePropNames")
     val initSt = st.copy(globals = st.globals + (Id("input") -> addr))
     val newSt = runInst(initSt, s"app result = (GetOwnPropertyKeys input CONST_string)")
     val result = "result.SubMap"
@@ -88,7 +96,7 @@ case class Injector(script: Script) {
   // handle properties
   private val descFields = List("Value", "Writable", "Enumerable", "Configurable")
   private def handleProperty(addr: Addr, path: String): Unit = {
-    println("handleProperty")
+    log("handleProperty")
     val subMap = access(st, addr, Str("SubMap"))
     for (p <- getKeys(subMap)) access(st, subMap, p) match {
       case addr: Addr => st(addr) match {
@@ -102,13 +110,13 @@ case class Injector(script: Script) {
             case (c: Const, _) => set += s"${field.toLowerCase}: ${toJSCode(c)}"
             case (addr: Addr, _) if field == "Value" =>
               handleObject(addr, s"$path[$propStr]")
-            case _ => println(100); ???
+            case _ => warning
           }
           val desc = set.mkString("{ ", ", ", "}")
           add(s"$$verifyProperty($path, $propStr, $desc);")
-        case x => println(104); println(x); ???
+        case x => warning
       }
-      case _ => println(106); ???
+      case _ => warning
     }
   }
 
@@ -124,9 +132,9 @@ case class Injector(script: Script) {
         case c: Const => s"// Throw ${toJSCode(c)}$LINE_SEP$injected"
         case _: Addr => getValue(st, "result.Prototype")._1 match {
           case NamedAddr(errorNameRegex(name)) => s"// ${name}Error$LINE_SEP$injected"
-          case _ => println(123); ???
+          case addr => warning; s"// Throw ${beautify(addr)}$LINE_SEP$injected"
         }
-        case x => println(125); println(x); ???
+        case x => warning; s"// Throw ${beautify(x)}$LINE_SEP$injected"
       }
   }
 
