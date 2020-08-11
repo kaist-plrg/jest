@@ -27,8 +27,12 @@ function * x ( ... x ) { }
 ## Delete - [Reported](https://github.com/graalvm/graaljs/issues/324)
 - __Section:__ [12.5.3.2 Runtime Semantics: Evaluation](https://tc39.es/ecma262/#sec-delete-operator-runtime-semantics-evaluation)
 - Expected a TypeError to be thrown but no exception was thrown at all
-_ __Simple JavaScript code:__
+- __Generated JavaScript code:__
+```js
+delete `${ ( Symbol . search ) , [ , ... '' ] }${ null }` [ 1 ] ;
 ```
+_ __Simple JavaScript code:__
+```js
 delete 'str' [ 0 ] ;
 ```
 
@@ -58,6 +62,10 @@ var x = [ undefined , , ... [undefined] ] ;
 
 ## ExpectedArgumentCount - [Reported](https://github.com/graalvm/graaljs/issues/328)
 - descriptor value should be 0 but 1
+- __Generated code:__
+```js
+var x = x ; async function x ( ... [ ... x ] ) { }
+```
 _ __Simple JavaScript code:__
 ```
 function x (...[x]) {}
@@ -109,10 +117,9 @@ function x ( ) { for ( { [ "prototype" ] : async function ( x ) { } } ?. x . x i
 for ( x in 'str' ) switch ( '' ) { case x : default : case x : ; async function * x ( ... { x } ) { } } var x = 42 ;
 ```
 
-## Spread Operator Of Object Initializer
-
+- Expected ReferenceError but no exception
 ```js
-
+var x = '0' ; ( { x , ... { x , } } = x ) ;
 ```
 
 <!--

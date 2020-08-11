@@ -1,0 +1,121 @@
+------------------------------------------------------------
+[./injected/771.js]
+// TypeError:
+var x = { x : 1 } ; ( { ... [ x , ... x ] } = x ) ;
+
+[Expected]: TypeError
+-  TypeError:
+
+[qjs]: SyntaxError
+- SyntaxError: invalid destructuring target
+    at _81204d72cd_temp.js:129
+
+[node]: SyntaxError
+- /Users/mini/plrg/ires/diff-test/_81204d72cd_temp.js:129
+var x = { x : 1 } ; ( { ... [ x , ... x ] } = x ) ;
+                            ^^^^^^^^^^^^^
+
+SyntaxError: `...` must be followed by an assignable reference in assignment contexts
+    at wrapSafe (internal/modules/cjs/loader.js:1117:16)
+    at Module._compile (internal/modules/cjs/loader.js:1165:27)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1221:10)
+    at Module.load (internal/modules/cjs/loader.js:1050:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:938:14)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)
+    at internal/main/run_main_module.js:17:47
+------------------------------------------------------------
+
+
+------------------------------------------------------------
+[./injected/631.js]
+// ReferenceError:
+var x = '0' ; ( { x , ... { x , } } = x ) ;
+
+[Expected]: ReferenceError
+-  ReferenceError:
+
+[js]: No Exception
+[qjs]: SyntaxError
+- SyntaxError: invalid destructuring target
+    at _81204d72cd_temp.js:129
+[xst]: No Exception
+[node]: SyntaxError
+- /Users/mini/plrg/ires/diff-test/_81204d72cd_temp.js:129
+var x = '0' ; ( { x , ... { x , } } = x ) ;
+                          ^^^^^^^
+
+SyntaxError: `...` must be followed by an assignable reference in assignment contexts
+    at wrapSafe (internal/modules/cjs/loader.js:1117:16)
+    at Module._compile (internal/modules/cjs/loader.js:1165:27)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1221:10)
+    at Module.load (internal/modules/cjs/loader.js:1050:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:938:14)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)
+    at internal/main/run_main_module.js:17:47
+------------------------------------------------------------
+
+
+------------------------------------------------------------
+[./injected/598.js]
+// Normal:
+var x = this . isFinite ( - Infinity ) ;$assert.sameValue(x, false);
+
+[Expected]: No Exception
+-  Normal:
+
+[node]: TypeError
+- /Users/mini/plrg/ires/diff-test/_81204d72cd_temp.js:129
+var x = this . isFinite ( - Infinity ) ;$assert.sameValue(x, false);
+               ^
+
+TypeError: this.isFinite is not a function
+    at Object.<anonymous> (/Users/mini/plrg/ires/diff-test/_81204d72cd_temp.js:129:16)
+    at Module._compile (internal/modules/cjs/loader.js:1201:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1221:10)
+    at Module.load (internal/modules/cjs/loader.js:1050:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:938:14)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)
+    at internal/main/run_main_module.js:17:47
+------------------------------------------------------------
+
+
+
+------------------------------------------------------------
+[./injected/992.js]
+// Normal:
+var x = Object . getOwnPropertyNames ( class { x ( ) { } } ) ;$assert.compareArray(Object.getOwnPropertyNames(x), ["0", "1", "length"]);$verifyProperty(x, "length", { value: 2, writable: true, enumerable: false, configurable: false});$verifyProperty(x, "0", { value: "length", writable: true, enumerable: true, configurable: true});$verifyProperty(x, "1", { value: "prototype", writable: true, enumerable: true, configurable: true});
+
+[Expected]: No Exception
+-  Normal:
+
+
+[js]: No Exception
+- Expected ["0", "1", "length"] but got ["0", "1", "2", "length"].
+descriptor value should be 2 but 3
+descriptor value should be "prototype" but "name"
+
+[qjs]: No Exception
+- Expected ["0", "1", "length"] but got ["0", "1", "2", "length"].
+descriptor value should be 2 but 3
+descriptor value should be "prototype" but "name"
+
+[xst]: No Exception
+- Expected ["0", "1", "length"] but got ["0", "1", "2", "length"].
+descriptor value should be 2 but 3
+descriptor value should be "prototype" but "name"
+
+------------------------------------------------------------
+
+
+
+------------------------------------------------------------
+[./injected/1718.js]
+// SyntaxError:
+eval ( "var x = new . target" ) ;
+
+[Expected]: SyntaxError
+-  SyntaxError:
+
+
+[node]: No Exception
+------------------------------------------------------------

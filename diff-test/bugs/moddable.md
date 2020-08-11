@@ -13,6 +13,10 @@ var x = { 42 : class   { x (  ) {  } } } ;
 ## ArrayAccumulation - [Reported](https://github.com/Moddable-OpenSource/moddable/issues/401)
 - __Section:__ [12.2.5.1 Runtime Semantics: ArrayAccumulation](http://ecma-international.org/ecma-262/11.0/#sec-runtime-semantics-arrayaccumulation)
 - descriptor value should be 1 but 0
+- __Generated JavaScript code:__
+```js
+var x = Array . prototype . slice . call ( [ , ... '' ] , { } , x ?? x ?? x ) ;
+```
 - __Simple JavaScript code:__
 ```
 var x = [ , ... '' ] ;
@@ -58,6 +62,82 @@ var x = Map . prototype . keys . call ( new Map ( ) ) ;
 var x = Map . prototype . entries . call ( new Map ( ) ) ;
 var x = Set . prototype . entries . call ( new Set ( ) ) ;
 var x = Set . prototype . values . call ( new Set ( ) ) ;
+```
+
+## Need Inspection
+
+- Expected ReferenceError but no exception
+```js
+for ( { x = ++ x } in 'str' ) ;
+for ( { x = ( ) => { } } in 'str' ) ;
+for ( let x in '0' ) throw { [ "done" ] : async * function ( ) { } } ;
+for ( { x = class extends x { static x ( ) { } } } in 'str' ) for ( ; '' , '' ; '' , '' ) ;
+for ( { } in 'str' ) for ( let x = x ; '' ; '' ) ;
+for ( x in 'str' ) ;
+for ( { x , } in 'str' ) ;
+var x = '0' ; ( { x , ... { x , } } = x ) ;
+```
+
+- Expected ReferenceError but SyntaxError is thrown
+```js
+switch ( '' ) { default : ; class x extends { x } { } }
+var x = [ 1 , 2 , 3 ] ; ( [ , ( class x extends x `${ '' , '' }${ x }${ '' }` { ; } . isConcatSpreadable ) , ... [ ] ] = x ) ;
+switch ( '' ) { case x : ; break ; case x : ; class x extends x ( ) ( ) { } }
+var x = [ 1 , 2 , 3 ] ; ( [ , ... ( Symbol . toStringTag ) ] = x ) ;
+```
+
+- Expected TypeError but SyntaxError is thrown
+```js
+var x = null ; ( { x , ... undefined } = x ) ;
+var x = { x : 1 } ; ( { ... ( Symbol . species ) } = x ) ;
+var x = [ 1 , 2 , 3 ] ; ( [ , x , ... ( Symbol . hasInstance ) ] = x ) ;
+function x ( ) { for ( var x ; x ?. x [ [ x , , ... x ] , [ x , , '' ] ] , x `${ '' }${ x }${ '' , '' }` ; null , class x extends x ( ) ( ) { } ) for ( [ x , , ... undefined ] in ( - Infinity ) ) continue ; if ( x & x , { } ) ; else ; return [ x [ '' ] , class x extends x { ; ; } , true ] ?. x ( ) ; } var x = new x ;
+var x = { [ "done" ] : function ( ) { } } ; ( [ , ( { [ "done" ] : function ( ) { } } . isConcatSpreadable ) , ... x ] = { [ "done" ] : function ( ) { } } ) ;
+var x = { x : 1 } ; ( { ... ( 42n . species ) } = x ) ;
+var x = [ 1 , 2 , 3 ] ; ( [ , ... [ undefined , ] ] = x ) ;
+var x = [ 1 , 2 , 3 ] ; ( [ , undefined ] = x ) ;
+```
+
+- Expected exception to throw but no exception
+```js
+for ( let x in '0' ) throw '' ;
+var x = Promise . race ( { [ Symbol . asyncIterator ] : function ( ) { ; } , [ Symbol . iterator ] : async function ( ) { ; await x ( ) ; } } ) ; async function * x ( ... { ... x } ) { } throw 42 ; async function x ( x ) { ; x ( 42 ) ; }
+```
+
+- SyntaxError: missing while
+```js
+do do ; while ( '' ) ; while ( BigInt ( 0 ) ) ;
+```
+
+- Expected ["length", "name"] but got ["length", "name", "boundFunction", "boundThis"].
+```js
+var x = Function . prototype . bind . call ( async x => x , 0 ) ; x ( ) ;
+var x = Function . prototype . bind . call ( ( ) => { } , ( Symbol . replace ) ) ;
+```
+
+- Expected "class x { ; }" but got "function x (){[native code]}".
+```js
+var x = String . prototype . substring . call ( class x { ; } , { ... '' } , x ?. x ?. x ) 
+```
+
+- Expected ["length"] but got ["0", "length"].
+```js
+var x = Array . prototype . splice . call ( [ , '' ] , ( x => { } ) , x === x ) ;
+```
+
+- Expected ["0", "1", "length"] but got ["0", "0", "length"].
+```js
+var x = Array . prototype . slice . call ( 'str' , { } , ~ x ) ;
+```
+
+- Expected ["length"] but got ["0", "length"].
+```js
+var x = Array . prototype . splice . call ( [ , '' ] , x != x , true , - 0 ) ;
+```
+
+- Expected "x => { }" but got "function  (){[native code]}".
+```js
+var x = `${ x => { } }` ;$assert.sameValue(x, "x => { }");
 ```
 
 - Expected undefined but got "undefined[object Object]".
@@ -131,7 +211,7 @@ switch ( '' ) { default : ; class x extends x [ '' , '' ] { ; } case x : }
 - Expected a TypeError to be thrown but no exception was thrown at all
 ```
 var x = String . prototype . split . call ( '' , ( Symbol . match ) , { x ( ) { } } ) ;
-
+var x = String . prototype . split . call ( new String ( 0 ) , { [ Symbol . toPrimitive ] : false } , 0 ) ;
 ```
 
 - SyntaxError: no reference
@@ -148,33 +228,8 @@ async function * x ( ) { class x extends new . target { ; } } ; x ( ) ;
 ```
 
 - Expected no exception but a TypeError is thrown
+- TypeError: Array.prototype.toString: no function
 ```
 var x = Array . prototype . toString . call ( Symbol . species ) ;
-```
-
-- Expected ReferenceError but no exception
-```js
-for ( { x = ++ x } in 'str' ) ;
-for ( let x in '0' ) throw { [ "done" ] : async * function ( ) { } } ;
-for ( { x = class extends x { static x ( ) { } } } in 'str' ) for ( ; '' , '' ; '' , '' ) ;
-```
-
-- Expected TypeError but SyntaxError is thrown
-```js
-var x = null ; ( { x , ... undefined } = x ) ;
-var x = { x : 1 } ; ( { ... ( Symbol . species ) } = x ) ;
-var x = [ 1 , 2 , 3 ] ; ( [ , x , ... ( Symbol . hasInstance ) ] = x ) ;
-function x ( ) { for ( var x ; x ?. x [ [ x , , ... x ] , [ x , , '' ] ] , x `${ '' }${ x }${ '' , '' }` ; null , class x extends x ( ) ( ) { } ) for ( [ x , , ... undefined ] in ( - Infinity ) ) continue ; if ( x & x , { } ) ; else ; return [ x [ '' ] , class x extends x { ; ; } , true ] ?. x ( ) ; } var x = new x ;
-var x = { [ "done" ] : function ( ) { } } ; ( [ , ( { [ "done" ] : function ( ) { } } . isConcatSpreadable ) , ... x ] = { [ "done" ] : function ( ) { } } ) ;
-```
-
-- Expected exception to throw but no exception
-```js
-for ( let x in '0' ) throw '' ;
-var x = Promise . race ( { [ Symbol . asyncIterator ] : function ( ) { ; } , [ Symbol . iterator ] : async function ( ) { ; await x ( ) ; } } ) ; async function * x ( ... { ... x } ) { } throw 42 ; async function x ( x ) { ; x ( 42 ) ; }
-```
-
-- SyntaxError: missing while
-```js
-do do ; while ( '' ) ; while ( BigInt ( 0 ) ) ;
+var x = Array . prototype . toString . call ( Symbol . split ) ;
 ```

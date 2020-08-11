@@ -53,6 +53,11 @@ class A {}
 - ArrowFunction, FunctionExpression, AsyncFunctionExpression 등에서 이름을 가지지 않는 경우에는
   Evaluation을 하더라도 [SetFunctionName](http://ecma-international.org/ecma-262/11.0/#sec-setfunctionname)을
   부르지 않기 때문에, `name` property가 own property로 생성되지 않는다.
+- __Generated code:__
+```js
+var x = Object . defineProperties ( ( ) => { } , x > x ) ;
+var x = Object . defineProperties ( ( ) => { } , ( ) => { } ) ;
+```
 - __Simple JavaScript code:__
 ```js
 var id = x => x;

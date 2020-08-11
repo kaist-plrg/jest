@@ -37,3 +37,14 @@ _ __Simple JavaScript code:__
 function * g () { return 0; };
 var [x] = g();
 ```
+
+## Function.prototype.bind - [Reported](https://github.com/ldarren/QuickJS/issues/21)
+- Expected ["length", "name"] but got ["name", "length"].
+- __Generated code:__
+```js
+var x = Function . prototype . bind . call ( async x => x , 0 ) ;
+```
+- __Simple JavaScript code:__
+```js
+var x = (async x => x).bind(0);
+```
