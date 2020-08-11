@@ -5,6 +5,10 @@
 - 10 번째 11 번째 step에서 [`ToPrimitive`](http://ecma-international.org/ecma-262/11.0/#sec-toprimitive)를
 호출하고 나서 [ReturnIfAbrupt (?)](http://ecma-international.org/ecma-262/11.0/#sec-returnifabrupt-shorthands)를
 안해서 오류가 밖으로 빠져나가지 못함
+- __Generated code:__
+```js
+var x = true == { [ Symbol . toPrimitive ] : ( ) => { throw '' ; } } ;
+```
 - __Simple JavaScript code:__
 ```js
 1 != { valueOf: () => { throw 42; } };

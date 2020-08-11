@@ -146,3 +146,35 @@ var x = { p : 0 } ; ( { p : ( Symbol . match ) } = x ) ;
 ```
 async function * x ( ) { class x extends new . target { ; } } ; x ( ) ;
 ```
+
+- Expected no exception but a TypeError is thrown
+```
+var x = Array . prototype . toString . call ( Symbol . species ) ;
+```
+
+- Expected ReferenceError but no exception
+```js
+for ( { x = ++ x } in 'str' ) ;
+for ( let x in '0' ) throw { [ "done" ] : async * function ( ) { } } ;
+for ( { x = class extends x { static x ( ) { } } } in 'str' ) for ( ; '' , '' ; '' , '' ) ;
+```
+
+- Expected TypeError but SyntaxError is thrown
+```js
+var x = null ; ( { x , ... undefined } = x ) ;
+var x = { x : 1 } ; ( { ... ( Symbol . species ) } = x ) ;
+var x = [ 1 , 2 , 3 ] ; ( [ , x , ... ( Symbol . hasInstance ) ] = x ) ;
+function x ( ) { for ( var x ; x ?. x [ [ x , , ... x ] , [ x , , '' ] ] , x `${ '' }${ x }${ '' , '' }` ; null , class x extends x ( ) ( ) { } ) for ( [ x , , ... undefined ] in ( - Infinity ) ) continue ; if ( x & x , { } ) ; else ; return [ x [ '' ] , class x extends x { ; ; } , true ] ?. x ( ) ; } var x = new x ;
+var x = { [ "done" ] : function ( ) { } } ; ( [ , ( { [ "done" ] : function ( ) { } } . isConcatSpreadable ) , ... x ] = { [ "done" ] : function ( ) { } } ) ;
+```
+
+- Expected exception to throw but no exception
+```js
+for ( let x in '0' ) throw '' ;
+var x = Promise . race ( { [ Symbol . asyncIterator ] : function ( ) { ; } , [ Symbol . iterator ] : async function ( ) { ; await x ( ) ; } } ) ; async function * x ( ... { ... x } ) { } throw 42 ; async function x ( x ) { ; x ( 42 ) ; }
+```
+
+- SyntaxError: missing while
+```js
+do do ; while ( '' ) ; while ( BigInt ( 0 ) ) ;
+```

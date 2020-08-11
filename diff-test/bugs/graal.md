@@ -73,6 +73,7 @@ function x (...[x]) {}
 _ __Generated code:__
 ```
 for ( let x of x ++ ) switch ( [  ... '' ] ) { case NaN :  default : for ( var { } = x ; '' ;  ) ; case `${ '' , '' }${ x }${ '' }` :  }
+for ( let x in + x ) ;
 ```
 _ __Simple JavaScript code:__
 ```
@@ -96,6 +97,22 @@ for ( [  ] in { [ '' ] : '' } ) for ( 1 ?. x . x in 'str' ) ;
 for ( [  ] in { set x ( x  ) {  } } ) for ( { x ( ... [ , ... x ] ) {  } } ?. x . x in { async * x (  ) {  } } ) ;
 for ( x ?. x [ '' ] in '' ) ;
 var x = { x : 1 } ; ( { x , ... { } } = x ) ;
+```
+
+- Spec, Graal -> TypeError, other engines -> SyntaxError
+```js
+function x ( ) { for ( { [ "prototype" ] : async function ( x ) { } } ?. x . x in { [ "prototype" ] : async function ( x ) { } } ) ; return { [ "prototype" ] : async function ( x ) { } } ?. x ( ) ; } var x = new x ;
+```
+
+- Expected no exception but ReferenceError
+```js
+for ( x in 'str' ) switch ( '' ) { case x : default : case x : ; async function * x ( ... { x } ) { } } var x = 42 ;
+```
+
+## Spread Operator Of Object Initializer
+
+```js
+
 ```
 
 <!--
