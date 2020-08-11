@@ -44,7 +44,7 @@ case class Injector(script: Script) {
     getValue(st, s"$globalMap.$x.Value")._1 match {
       case c: Const => add(s"$$assert.sameValue($x, ${toJSCode(c)});")
       case (addr: Addr) => handleObject(addr, x)
-      case _ => ???
+      case _ =>
     }
   }
 
@@ -53,18 +53,22 @@ case class Injector(script: Script) {
     getValue(st, s"$lexRecord.$x.BoundValue")._1 match {
       case c: Const => add(s"$$assert.sameValue($x, ${toJSCode(c)});")
       case (addr: Addr) => handleObject(addr, x)
-      case _ => ???
+      case _ =>
     }
   }
 
   // handle addresses
-  private var handledObjectSet = Set[Addr]()
+  private var handledObjects: Map[Addr, String] = Map()
   private def handleObject(addr: Addr, path: String): Unit = {
     println(s"handleObject: $path")
-    if (handledObjectSet contains addr) return
-    handledObjectSet += addr
-    handlePropNames(addr, path)
-    handleProperty(addr, path)
+    handledObjects.get(addr) match {
+      case Some(origPath) =>
+        add(s"$$assert.sameValue($path, $origPath);")
+      case None =>
+        handledObjects += addr -> path
+        handlePropNames(addr, path)
+        handleProperty(addr, path)
+    }
   }
 
   // handle property names
