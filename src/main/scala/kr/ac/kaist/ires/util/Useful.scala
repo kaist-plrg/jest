@@ -178,4 +178,12 @@ object Useful {
 
   // get hashCode string
   def hashCodeString(any: Any): String = f"0x${any.hashCode}%x"
+
+  // duration time
+  def time[T](input: => T): (T, Long) = {
+    val startTime = System.currentTimeMillis
+    val result = input
+    val duration = System.currentTimeMillis - startTime
+    (result, duration)
+  }
 }
