@@ -22,19 +22,25 @@ class ExecutionResult:
     self.msg = msg
   @staticmethod
   def get_result_type(engine_msg, is_err = False):
-    if "SyntaxError" in engine_msg:
-      return ExecutionResultType.SYNTAX_ERROR
-    elif "ReferenceError" in engine_msg:
-      return ExecutionResultType.REFERENCE_ERROR
-    elif "TypeError" in engine_msg:
-      return ExecutionResultType.TYPE_ERROR
-    elif "RangeError" in engine_msg:
-      return ExecutionResultType.RANGE_ERROR
-    elif "EvalError" in engine_msg:
-      return ExecutionResultType.EVAL_ERROR
-    elif "InternalError" in engine_msg:
-      return ExecutionResultType.INTERNAL_ERROR
-    elif "Throw" in engine_msg or is_err:
+    err_hints = {
+      "SyntaxError:": ExecutionResultType.SYNTAX_ERROR,
+      "ReferenceError:": ExecutionResultType.REFERENCE_ERROR,
+      "TypeError:": ExecutionResultType.TYPE_ERROR,
+      "RangeError:": ExecutionResultType.RANGE_ERROR,
+      "EvalError:": ExecutionResultType.EVAL_ERROR,
+      "InternalError:": ExecutionResultType.INTERNAL_ERROR
+    }
+    for line in engine_msg.splitlines():
+      cands = [err for err in err_hints.keys() if err in line]
+      if len(cands) != 0:
+        cand, idx = cands[0], line.find(cands[0])
+        for i in range(len(cands)):
+          if line.find(cands[i]) < idx:
+            cand, idx = cands[i], line.find(cands[i])
+        return err_hints[cand]
+      elif "Throw" in line:
+        return ExecutionResultType.THROW
+    if is_err:
       return ExecutionResultType.THROW
     else:
       return ExecutionResultType.NORMAL
@@ -50,6 +56,8 @@ class ExecutionResult:
     result_type = ExecutionResult.get_result_type(comment)
     return ExecutionResult(result_type, comment)
   def __str__(self):
+    if msg == "":
+      return "{}\n".format(self.result_type.value)
     return "{}\n- {}".format(self.result_type.value, self.msg)
   def __eq__(self, other):
     return self.result_type == other.result_type
@@ -84,7 +92,7 @@ def check_all(filepath):
   engines = ["js", "qjs", "xst", "node"]
   print_check_result = False
   hr = "-" * 60
-  check_str = "{}\n[Script]\n{}\n\n".format(hr, script_content)
+  check_str = "{}\n[{}]\n{}\n\n".format(hr, filepath, script_content)
   check_str += "[Expected]: {}\n\n".format(ires_output)
   for engine in engines:
     engine_output = check(engine, temppath)
