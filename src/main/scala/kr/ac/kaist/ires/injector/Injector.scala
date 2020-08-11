@@ -84,7 +84,7 @@ case class Injector(script: Script, debug: Boolean = false) {
     (addr, handledObjects.get(addr)) match {
       case (_, Some(origPath)) =>
         add(s"$$assert.sameValue($path, $origPath);")
-      case (_: DynamicAddr, None) =>
+      case (_: DynamicAddr, None) if addr != globalThis =>
         handledObjects += addr -> path
         handlePrototype(addr, path)
         handleExtensible(addr, path)
@@ -221,6 +221,7 @@ case class Injector(script: Script, debug: Boolean = false) {
 
   // get created variables
   private val globalMap = "REALM.GlobalObject.SubMap"
+  private val globalThis = getValue(st, s"$globalMap.globalThis.Value")._1
   private lazy val createdVars: Set[String] = {
     val initial = getStrKeys(getValue(st, "GLOBAL")._1)
     val current = getStrKeys(getValue(st, globalMap)._1)
