@@ -66,7 +66,18 @@ case class Injector(script: Script, debug: Boolean = false) {
   }
 
   // handle addresses
-  private var handledObjects: Map[Addr, String] = Map()
+  private val PREFIX_GLOBAL = "GLOBAL."
+  private val PREFIX_INTRINSIC = "INTRINSIC_"
+  private var handledObjects: Map[Addr, String] = (for {
+    (addr, _) <- initState.heap.map
+    (a, s) <- addr match {
+      case a @ NamedAddr(name) if name.startsWith(PREFIX_GLOBAL) =>
+        val str = name.substring(PREFIX_GLOBAL.length)
+        if (str.startsWith(PREFIX_INTRINSIC)) None
+        else Some((a, str))
+      case _ => None
+    }
+  } yield a -> s).toMap
   private def handleObject(addr: Addr, path: String): Unit = {
     log(s"handleObject: $path")
     handledObjects.get(addr) match {
@@ -74,8 +85,18 @@ case class Injector(script: Script, debug: Boolean = false) {
         add(s"$$assert.sameValue($path, $origPath);")
       case None =>
         handledObjects += addr -> path
+        handlePrototype(addr, path)
         handlePropNames(addr, path)
         handleProperty(addr, path)
+    }
+  }
+
+  // handle [[Prototype]]
+  private def handlePrototype(addr: Addr, path: String): Unit = {
+    log(s"handlePrototype: $path")
+    access(st, addr, Str("Prototype")) match {
+      case (proto: Addr) => handleObject(proto, s"Object.getPrototypeOf($path)")
+      case _ => warning
     }
   }
 
