@@ -8,16 +8,22 @@ import kr.ac.kaist.ires.model.{ Parser => JSParser, Script, ModelHelper }
 case class Injector(script: Script, debug: Boolean = false) {
   // injected script
   lazy val result = {
+    println("handling Exception...")
+    handleException
+
     if (isNormal) {
       println("handling varaible...")
       handleVariable
 
       println("handling let...")
       handleLet
+
+      if (isAsync) {
+        println("handling async...")
+        handleAsync
+      }
     }
-    println("handling Exception...")
-    handleException
-    injected
+    s"$header$LINE_SEP$script$LINE_SEP$assertions"
   }
 
   // logging
@@ -38,14 +44,15 @@ case class Injector(script: Script, debug: Boolean = false) {
   private val st = interp(initState)
 
   // injected script
-  private var injected = script.toString
+  private var header = ""
+  private var assertions = ""
 
   //////////////////////////////////////////////////////////
   // Helper Functions
   //////////////////////////////////////////////////////////
   // add assertions
   private var assertCount = 0
-  def add(assert: String): Unit = { assertCount += 1; injected += assert }
+  def add(assert: String): Unit = { assertCount += 1; assertions += assert; assertions += LINE_SEP; }
 
   // handle variables
   private def handleVariable: Unit = for (x <- createdVars) {
@@ -180,20 +187,29 @@ case class Injector(script: Script, debug: Boolean = false) {
     }
   }
 
+  // handle async
+  lazy val isAsync: Boolean = {
+    val str = script.toString
+    str.contains("async") || str.contains("Promise")
+  }
+  private def handleAsync: Unit = {
+    assertions = s"setTimeout( ( ) => {$LINE_SEP$assertions} , 100)"
+  }
+
   // handle exceptions
   private val errorNameRegex = "GLOBAL.([A-Z][a-z]+)Error.prototype".r
   private def isNormal: Boolean =
     getValue(st, "result.Type")._1 == NamedAddr("CONST_normal")
   private def handleException: Unit = getValue(st, "result.Type")._1 match {
     case NamedAddr("CONST_normal") =>
-      injected = s"// Normal:$LINE_SEP$injected"
+      header = s"// Normal:"
     case _ =>
-      injected = getValue(st, "result.Value")._1 match {
+      header = getValue(st, "result.Value")._1 match {
         case addr: Addr => getValue(st, "result.Prototype")._1 match {
-          case NamedAddr(errorNameRegex(name)) => s"// ${name}Error:$LINE_SEP$injected"
-          case _ => warning; s"// Throw ${beautify(addr)}$LINE_SEP$injected"
+          case NamedAddr(errorNameRegex(name)) => s"// ${name}Error:"
+          case _ => warning; s"// Throw ${beautify(addr)}:"
         }
-        case x => warning; s"// Throw ${beautify(x)}$LINE_SEP$injected"
+        case x => warning; s"// Throw ${beautify(x)}:"
       }
   }
 

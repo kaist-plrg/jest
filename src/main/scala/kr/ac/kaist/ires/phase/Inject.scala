@@ -25,26 +25,33 @@ case object Inject extends PhaseObj[Unit, InjectConfig, Unit] {
       val parseResult = parse(Script(Nil), fileReader(filename))
       if (parseResult.successful)
         dumpFile(Injector(parseResult.get, config.debug).result, filename)
-    case None => for {
-      file <- walkTree(GENERATED_DIR)
-      name = file.getName
-      filename = file.toString if jsFilter(filename)
-      parseResult = parse(Script(Nil), fileReader(filename)) if parseResult.successful
-      script = parseResult.get
-    } try {
-      val injected = Injector(script, config.debug).result
-      println(s"- $INJECTED_DIR/$name")
-      println(s"  $script")
-      println(s"  ====>")
-      println(s"  $injected")
-      mkdir(INJECTED_DIR)
-      dumpFile(injected, s"$INJECTED_DIR/$name")
-    } catch {
-      case e: Throwable => {
-        println(s"* Warning: $e")
-        dumpFile(Map(("message" -> e.getMessage()), ("stacktrace" -> e.getStackTrace().mkString(LINE_SEP))).toJson, s"$exceptionDirectory/$name.json")
+    case None =>
+      var count = 0
+      var total = 0
+      for {
+        file <- walkTree(GENERATED_DIR)
+        name = file.getName
+        filename = file.toString if jsFilter(filename)
+        parseResult = parse(Script(Nil), fileReader(filename)) if parseResult.successful
+        script = parseResult.get
+      } try {
+        val injector = Injector(script, config.debug)
+        val injected = injector.result
+        total += 1
+        if (injector.isAsync) count += 1
+        println(s"- $INJECTED_DIR/$name")
+        println(s"  $script")
+        println(s"  ====>")
+        println(s"  $injected")
+        mkdir(INJECTED_DIR)
+        dumpFile(injected, s"$INJECTED_DIR/$name")
+      } catch {
+        case e: Throwable => {
+          println(s"* Warning: $e")
+          dumpFile(Map(("message" -> e.getMessage()), ("stacktrace" -> e.getStackTrace().mkString(LINE_SEP))).toJson, s"$exceptionDirectory/$name.json")
+        }
       }
-    }
+      if (config.debug) println(s"[AsyncInejcted]: ${getPercent(count, total)}")
   }
 
   def defaultConfig: InjectConfig = InjectConfig()
