@@ -14,4 +14,6 @@ var x = this . isFinite ( - Infinity ) ;
 - __Related JavaScript code:__
 ```js
 var x = ( function (  ) {  } ) . toString (  ) ;
+var x = ( class x  {  } ) . toString (  ) ;
+var x = ( async function * (  ) {  } ) . toString (  ) ;
 ```
