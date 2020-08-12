@@ -70,7 +70,7 @@ case class Injector(script: Script, debug: Boolean = false) {
   private val PREFIX_INTRINSIC = "INTRINSIC_"
   private def addrToName(addr: Addr): Option[String] = addr match {
     case a @ NamedAddr(name) if name.startsWith(PREFIX_GLOBAL) =>
-      val str = name.substring(PREFIX_GLOBAL.length)
+      val str = name.substring(PREFIX_GLOBAL.length).replaceAll(s"#$PREFIX_GLOBAL", "")
       if (str.startsWith(PREFIX_INTRINSIC)) None
       else Some(str)
     case _ => None
