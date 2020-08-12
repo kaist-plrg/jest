@@ -155,3 +155,17 @@ function $verifyProperty(obj, prop, desc) {
   check('enumerable');
   check('configurable');
 }
+
+// delay checking assertions
+function $delay(f) {
+  var DELAY = 100;
+  var setTimeout = globalThis.setTimeout;
+  import('os')
+    .then(os => {
+      // qjs
+      if (!setTimeout) setTimeout = os?.setTimeout;
+    })
+    .finally(() => {
+      setTimeout(f, DELAY);
+    });
+}

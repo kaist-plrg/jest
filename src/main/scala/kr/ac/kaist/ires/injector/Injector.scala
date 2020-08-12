@@ -193,7 +193,7 @@ case class Injector(script: Script, debug: Boolean = false) {
     str.contains("async") || str.contains("Promise")
   }
   private def handleAsync: Unit = {
-    assertions = s"setTimeout( ( ) => {$LINE_SEP$assertions} , 100)"
+    assertions = s"$$delay( ( ) => {$LINE_SEP$assertions})"
   }
 
   // handle exceptions
