@@ -50,7 +50,7 @@ case class Injector(script: Script, debug: Boolean = false) {
   // handle variables
   private def handleVariable: Unit = for (x <- createdVars) {
     getValue(st, s"$globalMap.$x.Value")._1 match {
-      case c: Const => add(s"$$assert.sameValue($x, ${toJSCode(c)});")
+      case c: Const => add(s"$$assert.sameValue($x, ${const2code(c)});")
       case (addr: Addr) => handleObject(addr, x)
       case _ =>
     }
@@ -59,7 +59,7 @@ case class Injector(script: Script, debug: Boolean = false) {
   // handle lexical variables
   private def handleLet: Unit = for (x <- createdLets) {
     getValue(st, s"$lexRecord.$x.BoundValue")._1 match {
-      case c: Const => add(s"$$assert.sameValue($x, ${toJSCode(c)});")
+      case c: Const => add(s"$$assert.sameValue($x, ${const2code(c)});")
       case (addr: Addr) => handleObject(addr, x)
       case _ =>
     }
@@ -157,12 +157,12 @@ case class Injector(script: Script, debug: Boolean = false) {
       case addr: Addr => st(addr) match {
         case IRMap(Ty("DataProperty" | "AccessorProperty"), props, _) =>
           var set = Set[String]()
-          toJSCode(p).map(propStr => {
+          val2code(p).map(propStr => {
             for {
               field <- fields
               (value, _) <- props.get(Str(field))
             } interp.escapeCompletion((value, st)) match {
-              case (c: Const, _) => set += s"${field.toLowerCase}: ${toJSCode(c)}"
+              case (c: Const, _) => set += s"${field.toLowerCase}: ${const2code(c)}"
               case (addr: Addr, _) => field match {
                 case "Value" => handleObject(addr, s"$path[$propStr]")
                 case "Get" => handleObject(addr, s"Object.getOwnPropertyDescriptor($path, $propStr).get")
@@ -245,16 +245,16 @@ case class Injector(script: Script, debug: Boolean = false) {
   }
 
   // conversion to JS codes
-  private def toJSCode(c: Const): String = c match {
+  private def const2code(c: Const): String = c match {
     case INum(n) => n.toString
     case c => beautify(c)
   }
-  private def toJSCode(value: Value): Option[String] = value match {
-    case c: Const => toJSCode(c)
+  private def val2code(value: Value): Option[String] = value match {
+    case c: Const => Some(const2code(c))
     case addr: Addr => addrToName(addr) match {
       case Some(name) => Some(name)
       case None => warning; None
     }
-    case x => warning; log(s"$x @ toJSCode"); None
+    case x => warning; log(s"$x @ val2code"); None
   }
 }
