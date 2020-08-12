@@ -78,43 +78,50 @@ def execute(cmd):
 # run engine
 def check(engine, filepath):
   # execute temp.js
-  out, err = execute("{} {}".format(engine, filepath))
+  path = os.environ[engine]
+  out, err = execute("{} {}".format(path, filepath))
   # parse execution result
   return ExecutionResult.get(out, err)
   
 def check_all(filepath):
   # concat helper.js
   temppath = "_81204d72cd_temp.js"
+  qjspath = "_qjs_.js"
   with open("helper.js", "r") as helper:
     with open(filepath, "r") as script:
+      script_content = script.read()
+      # read first line and get expected output
+      expected = script_content.splitlines()[0][2:]
+      ires_output = ExecutionResult.get_expected(expected)
+      helper_script = helper.read()
       with open(temppath, "w") as temp:
-        script_content = script.read()
-        # read first line and get expected output
-        expected = script_content.splitlines()[0][2:]
-        ires_output = ExecutionResult.get_expected(expected)
         # write temp.js
-        temp.write(helper.read() + '\n' + script_content)
+        temp.write(helper_script + '\n' + script_content)
+      with open(qjspath, "w") as temp:
+        # write qjs.js
+        temp.write("import { setTimeout } from 'os';\n" + helper_script + '\n' + script_content)
   # execute script in each engines
-  engines = ["js", "qjs", "xst", "node"]
-  print_check_result = False
+  # engines = ["js", "qjs", "xst", "node"]
+  engines = ["GRAAL", "QJS", "MODDABLE", "V8"]
   hr = "-" * 60
   check_str = "{}\n[{}]\n{}\n\n".format(hr, filepath, script_content)
   check_str += "[Expected]: {}\n\n".format(ires_output)
   diff_cnt = 0
   for engine in engines:
-    engine_output = check(engine, temppath)
+    path = qjspath if engine == "QJS" else temppath
+    engine_output = check(engine, path)
     # engine_output = ExecutionResult.get(out, err)
     if engine_output.need_print(ires_output):
-      print_check_result = True
       check_str += "[{}]: {}".format(engine, engine_output)
       diff_cnt += 1
   check_str += "\ndiff_cnt: %d\n"%diff_cnt
   check_str += hr
   # print if something different
-  if print_check_result:
+  if diff_cnt > 0:
     print(check_str)
   # remove temp.js
   os.remove(temppath)
+  os.remove(qjspath)
 
 def main():
   # parse arguments
