@@ -1,43 +1,90 @@
 \subsection{Program Mutator}
 
-Given a target program, \textsf{Program Mutator} tries to mutate the program
-in to another program that increase sematics coverage.  One trial consists of
-the following steps.
-First, it selects one of the 5 transformers(?). The role
-of transformer is to simply modify the given program. Detailed explnation of each
-transformer will be described in subsection.  Probability of choosing a centain
-transformer depends on the given program, so that more promising transformer have
-better chance to be selected.
-Second, the chosen transformer is applied to the given program.  Then, the semantics
-coverage of the generated program is computed.  If it increases the total semntics
-coverage, then we say the trail is succesful.
-This process is repeated at most predefined maximum trial number.  If there was a successful
-trial, then \textsf{Program Mutator} will give the result of succesful trial as the final output.
-Otherwise, we say that the mutator fails for the specific program.
+Given a target program, \textsf{Program Mutator} repeatedly tries to mutate the
+target program to another program to increase semantics coverage.  One trial
+consists of the following steps.  First, it randomly selects one of five
+mutation methods and produces a mutated program.  If it is a new program, the
+mutator checks whether it increases the semantics coverage of the program pool.
+If it succeeds, the mutated program is added to the program pool.  This process
+is repeated at most pre-defined maximum trial number.  Now, we explain five
+mutation methods used in \textsf{Program Mutator}.
 
-\subsubsection{Simple Replacer}
-Simple Replacer is rather simple transformer.  It traverse the AST of the given program
-and whenenver it meets Statment, Declaration, AssignmentExpression or PrimaryExpression node,
-it replace that node with another node with 50 percent probability.  The node that will be inserted
-is generated from \textsf{Seed Synthesizer}.  //TODO: manual sampler?
 
-\subsubsection{Near-Syntax Replacer}
-Near-Syntax replacer is a smarter transformer compared to Simple Replacer.
+\subsubsection{Random Mutation}
+The first approach is a na\"ive method that randomly selects a statement, a
+declaration, or an expression in a given program and mutates the selected the
+syntax tree.  We utilize the non-recursive synthesizer to extract set of syntax
+trees and randomly selects and inserts one of them in the target position.
+For example, assume that the expression \code{1} is selected in the program
+\code{var x = 1 + 2;}.  Then, the left-hand side of the addition operator
+(\code{+}) will be mutated by a random expression such as \code{var x = true +
+2;}.
 
-\subsubsection{String Replacer}
-String Replacer also take advantage of target branch information, as Near-Syntax replacer does.
 
-\subsubsection{Object Replacer}
-Object replacer is a transformer specialized in inserting objects.  What is does is to 
-randomly replace the PrimaryExpression node with randomly synthesized object.
-This replacer has higher chance to be selected when the target script expects
-objects.
-(Q: Primary Expression에 대한 설명이 필요한가?)
+\subsubsection{Nearest Syntax Tree Mutation}
+This approach focuses on a branch whose true(false) branch is covered by the
+given target program but the other false(true) branch is not covered by any
+programs in the current program pool.  To increase the semantics coverage by
+targeting the uncovered part, it finds the nearest syntax tree that reaches the
+target branch in the given program.  Then, the nearest syntax tree is mutated by
+a random syntax tree derivable from the same syntax production.  For example,
+consider the following JavaScript program:
+\begin{lstlisting}[style=myJSstyle]
+var x = '' + (1 == 2);
+x *= 3 / true;
+\end{lstlisting}
+Assume that any programs in the current program pool cannot cover the true
+branch in the first step of the \textbf{Abstract Equality Comparison} algorithm
+in Figure~\ref{fig:example-algo}.  The above program covers only the false
+branch in the first step thus the mutator targets this branch and finds the
+nearest syntax tree.  Because the nearest part is \code{1 == 2} in the program,
+this approach tries to mutate only \code{1 == 2} not other syntax trees.
 
-\subsubsection{Statement Appender}
-StatementAppender is a transformer that appends a statement at the end of each statement list.
-This could happen at top level statement list, inside block, or at function body.  The statement
-to be appended is selected from \text{Seed Synthesizer}. The statemnts that have better potential
-to change the execution path, such as funciton call, return, break, or throw, have higher chance
-to be selected.
 
+% TODO discussion: is it really necessary?
+% \subsubsection{String Substitutions}
+% It substitutes random expressions with string literals in branch conditions.
+
+
+\subsubsection{Object Substitutions}
+Some abstract algorithms in ECMAScript try to access some properties of an
+object using \textbf{HasProperty}, \textbf{GetMethod}, \textbf{Get}, and
+\textbf{OrdinaryGetOwnProperty} algorithms.  In this case, objects having such
+properties are necessary to handle such algorithms.  Thus, we collects all
+touched algorithms including any invocations of such property access algorithms.
+For each invocation, we collects string literals and symbols used as its
+arguments.  Based on collected string values and symbols, we randomly generate
+object literals and replace a randomly selected expression with the generated
+object.  For example, the following program touches two algorithms
+\textbf{ToPrimitive} that has the invocation of \textbf{GetMethod} with the
+symbol \code{Symbol.toPrimitive} and \textbf{ToPropertyDescriptor} that has the
+invocation of \textbf{Get} with string literals \code{"get"}, \code{"set"},
+\code{"value"}, \code{"writable"}, \code{"enumerable"}, and
+\code{"configurable"}.
+\begin{lstlisting}[style=myJSstyle]
+Object.defineProperty({}, 'p', 42);
+\end{lstlisting}
+Thus, the mutator mutates a randomly selected expression in the program with a
+randomly generated object having properties whose keys are extracted symbols and
+string values.  If the expression \code{42} is selected, it might increase the
+semantics coverage with a high probability because the generated object could be
+a specific property descriptor.
+
+
+\subsubsection{Statement Insertion}
+To synthesize more complex programs, the mutator supports to insert a random
+statement into the end of a randomly selected statement list such as in
+the top-level code, block statements, or function bodies.  We also utilize the
+non-recursive synthesizer to synthesize a random statement with a pre-defined
+special statements.  The special statements have better potential to change the
+execution path, such as function calls, \code{return}, \code{break}, and
+\code{throw}, and they are selected with a higher probability than fully random
+statements synthesized by non-recursive synthesizer.  For example, assume the
+the function body in the following program is selected and the \code{throw 42;}
+is the new statement.
+\begin{lstlisting}[style=myJSstyle]
+function f() {} f();            // original
+function f() { throw 42; } f(); // mutated
+\end{lstlisting}
+Then, the mutated program throws an exception during a function call and it is
+helpful to cover different semantics related to control statements.
