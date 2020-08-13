@@ -24,13 +24,18 @@ lazy val test262ParseTest = taskKey[Unit]("Launch test262 parsing tests")
 lazy val ires = (project in file("."))
   .settings(
     name := "IRES",
-    libraryDependencies ++= Seq(
-      "io.spray" %% "spray-json" % "1.3.5",
-      "org.scala-lang" % "scala-reflect" % scalaVersion.value,
-      "org.scala-lang.modules" %% "scala-parser-combinators" % "1.1.2",
-      "org.scalatest" %% "scalatest" % "3.0.8" % "test",
-      "org.jline" % "jline" % "3.13.3"
-    ),
+    libraryDependencies ++= {
+      System.setProperty("java.library.path", s"${baseDirectory.value}/lib:${System.getProperty("java.library.path")}")
+      Seq(
+        // "com.eclipsesource.j2v8" % "j2v8_linux_x86_64" % "4.8.0",
+        "com.eclipsesource.j2v8" % "j2v8_linux_x86_64" % "6.2.0" from s"file://${baseDirectory.value}/lib/j2v8-6.2.0.jar",
+        "io.spray" %% "spray-json" % "1.3.5",
+        "org.scala-lang" % "scala-reflect" % scalaVersion.value,
+        "org.scala-lang.modules" %% "scala-parser-combinators" % "1.1.2",
+        "org.scalatest" %% "scalatest" % "3.0.8" % "test",
+        "org.jline" % "jline" % "3.13.3"
+      )
+    },
     retrieveManaged := true,
     scalariformPreferences := scalariformPreferences.value
       .setPreference(DanglingCloseParenthesis, Force)

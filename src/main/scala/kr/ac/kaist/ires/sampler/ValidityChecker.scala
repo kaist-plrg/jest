@@ -9,11 +9,22 @@ import kr.ac.kaist.ires.util.Useful._
 import sys.process._
 import java.util.concurrent.LinkedBlockingQueue
 import io.Source
+import com.eclipsesource.v8.{ V8, V8ScriptCompilationException, V8ScriptExecutionException }
 
 object ValidityChecker {
   val MESSAGE = "IRES-EXPECTED-EXCEPTION"
+  val checker = try {
+    val r = V8.createV8Runtime
+    r.release(true)
+    useNativeV8(_, _)
+  } catch {
+    case e: java.lang.IllegalStateException =>
+      Console.err.println("[WARNING] Cannot find j2v8 external native library. Instead, ValiditiChecker uses GraalJS")
+      useGraalJs(_, _)
+  }
+
   def apply(script: String, debug: Boolean = false): Boolean =
-    useGraalJs(script, debug)
+    checker(script, debug)
 
   def useGraalJs(script: String, debug: Boolean = false): Boolean = {
     val manager = new ScriptEngineManager
@@ -40,6 +51,23 @@ object ValidityChecker {
     pass
   }
 
+  def useNativeV8(script: String, debug: Boolean = false): Boolean = {
+    var pass = false
+    val v8runtime = V8.createV8Runtime()
+    try {
+      val revised = s"'use strict'; throw '$MESSAGE'; $script"
+      val res = v8runtime.executeScript(revised)
+    } catch {
+      case e: V8ScriptCompilationException =>
+        pass = false
+        if (debug && !pass) println(script)
+      case e: V8ScriptExecutionException =>
+        pass = true
+    }
+    v8runtime.release(true)
+    pass
+  }
+
   def test: Unit = {
     println(s"Loading samples...")
     val samples = Generator.getSample().map(_.toString)
@@ -48,8 +76,16 @@ object ValidityChecker {
     println(s"GraalJs took $graaljs ms.")
     val (nres, nodejs) = time(samples.map(s => (s, useNodeJs(s))))
     println(s"Node.js took $nodejs ms.")
+    val (vres, nativeV8) = time(samples.map(s => (s, useNativeV8(s))))
+    println(s"Native V8 took $nativeV8 ms.")
 
     ((gres zip nres) zip samples).foreach {
+      case ((g, n), s) => if (g != n) println(s)
+    }
+
+    println("----------------")
+
+    ((nres zip vres) zip samples).foreach {
       case ((g, n), s) => if (g != n) println(s)
     }
   }
