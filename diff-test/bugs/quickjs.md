@@ -48,3 +48,16 @@ var x = Function . prototype . bind . call ( async x => x , 0 ) ;
 ```js
 var x = (async x => x).bind(0);
 ```
+
+## ObjectBindingPattern BindingInitialization 
+- Expected ReferenceError but got no error
+- { x = x }를 interp하는 과정에서 [13.3.3.9 Runtime Semantics: KeyedBindingInitialization](https://www.ecma-international.org/ecma-262/#sec-runtime-semantics-keyedbindinginitialization)의 4.b.i 스텝의 defaultValue를 ?getValue로 호출하면 Reference Error가 나야하지만, qjs에서는 에러가 나지 않음
+- __Generated code:__
+```js
+var x = { x ( ... { x = x } ) { } } ; var [ , , ] = class extends x ?. x ( ) { ; } ;
+```
+- __Simple JavaScript code:__
+```js
+function f (... { x = x } ) { }  ;
+f()
+```
