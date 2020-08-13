@@ -282,6 +282,18 @@ var x = x `` ; function * x ( ) { }
 var x = x ( ) ; function * x ( ) { }
 ```
 
+# setter / getter descriptor value
+- descriptor value should be "get" but "get [object Object]"
+- descriptor value should be "set" but "set [object Object]"
+
+- __Generated JavaScript code:__
+```js
+var x = Object . defineProperty ( class { static x ( ) { } } , { [ "set" ] : ( ) => { throw { [ Symbol . toPrimitive ] : function ( x ) { } } ; } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : { [ Symbol . toPrimitive ] : function ( x ) { } } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : async function ( ) { } , [ "get" ] : { [ Symbol . toPrimitive ] : function ( x ) { } } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : { [ Symbol . toPrimitive ] : function ( x ) { } } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : { [ Symbol . toPrimitive ] : function ( x ) { } } } , { [ "set" ] : ( ) => { throw '' ; } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : { [ Symbol . toPrimitive ] : function ( x ) { } } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : async function ( ) { } , [ "get" ] : function ( ) { } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : async function ( x ) { } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : { [ Symbol . toPrimitive ] : function ( x ) { } } } ) ;
+```
+- __Simple JavaScript code:__
+```js
+var x = Object . defineProperty ( { } , "p" , { [ "get" ] : ( ) => { } , [ "set" ] : ( x ) => { } } ) ;
+```
 
 # Maybe other engines or specification is wrong
 - SyntaxError: duplicate variable x
