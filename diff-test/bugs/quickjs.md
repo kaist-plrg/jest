@@ -61,3 +61,15 @@ var x = { x ( ... { x = x } ) { } } ; var [ , , ] = class extends x ?. x ( ) { ;
 function f (... { x = x } ) { }  ;
 f()
 ```
+
+## SpreadElement
+- Expected ["0", "2", "3", "length"] but got ["0", "length"]
+- ...[ , , ] 가 잘 작동하지 않는 것으로 보임
+- __Generated code:__
+```js
+var x = [ x , , ... [ , , ] ] ;
+```
+- __Simple JavaScript code:__
+```js
+var x = [ ...[ , ] ] ;
+```
