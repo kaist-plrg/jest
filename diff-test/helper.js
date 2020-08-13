@@ -165,6 +165,7 @@ function $delay(f) {
       // qjs
       if (!setTimeout) setTimeout = os?.setTimeout;
     })
+    .catch(() => {})
     .finally(() => {
       setTimeout(f, DELAY);
     });
