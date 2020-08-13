@@ -269,7 +269,7 @@ var x = `${ x => { } }` ;$assert.sameValue(x, "x => { }");
 var x = String . prototype . split . call ( async function * ( ) { } , `${ '' }` , x && x ) ;
 ```
 
-## Symbol() comes out of nowhere
+## Generator Object has unwanted Symbol Property
 - Expected [] but got [Symbol()]
 - __Generated JavaScript code:__
 ```js
@@ -278,8 +278,7 @@ var x = x ( ) ; function * x ( ... [ x , , ] ) { }
 ```
 - __Simple JavaScript code:__
 ```js
-var x = x `` ; function * x ( ) { }
-var x = x ( ) ; function * x ( ) { }
+var x = ( function * ( ) { } ) ( )
 ```
 
 # setter / getter descriptor value
