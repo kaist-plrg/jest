@@ -61,6 +61,9 @@ case object CmdInject extends CommandObj("inject", CmdBase >> Inject)
 // mutate
 case object CmdMutate extends CommandObj("mutate", CmdParse >> Mutate)
 
+// check
+case object CmdCheck extends CommandObj("check", CmdBase >> Check)
+
 // localize
 case object CmdLocalize extends CommandObj("localize", CmdBase >> Localize)
 

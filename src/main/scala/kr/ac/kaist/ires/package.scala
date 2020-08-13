@@ -32,6 +32,7 @@ package object ires {
   val GENERATED_DIR = s"${DIFF_TEST_DIR}/generated"
   val INJECTED_DIR = s"${DIFF_TEST_DIR}/injected"
   val TOUCHED_DIR = s"${DIFF_TEST_DIR}/touched"
+  val FAILED_DIR = s"${DIFF_TEST_DIR}/failed"
 
   // Current directory root
   val CUR_DIR = System.getProperty("user.dir")
