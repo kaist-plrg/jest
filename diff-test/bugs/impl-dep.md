@@ -17,3 +17,11 @@ var x = ( function (  ) {  } ) . toString (  ) ;
 var x = ( class x  {  } ) . toString (  ) ;
 var x = ( async function * (  ) {  } ) . toString (  ) ;
 ```
+
+## Error Stacks
+- [Stage 1](https://github.com/tc39/proposals/blob/master/stage-1-proposals.md)
+- 아직 Stage1인 Error stack을 엔진들이 미리 구현해놓음
+- __Related JavaScript code:__
+```js
+var x = new Error ( 0 ) ;
+```
