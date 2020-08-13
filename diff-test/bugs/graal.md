@@ -88,6 +88,26 @@ _ __Simple JavaScript code:__
 for(let x of x) ;
 ```
 
+## IteratorClose - [Reported](https://github.com/graalvm/graaljs/issues/335)
+- __Section:__ [7.4.6 IteratorClose](http://ecma-international.org/ecma-262/11.0/#sec-iteratorclose)
+- 4 번째 step에서 [GetMethod](http://ecma-international.org/ecma-262/11.0/#sec-getmethod)를 통해서
+  `return`에 관한 것을 가져오는데, 이 과정에서 abrupt completion 검사를 하는 것이 8 번째 step에서
+  `completion.[[Type]]`에 대한 검사보다 먼저 일어난다. 따라서, `return` 함수를 가져오면서도
+  error가 나고, iterator 계산 도중에도 error가 나는 경우라면, `return` 함수에 대한 오류가 나가게 된다.
+- __Simple JavaScript code:__
+```js
+var x = {};
+x[Symbol.iterator] = function() {
+  return {
+    next: function() {
+      return { done: false, value: null };
+    },
+    return: 'str'
+  };
+};
+for (var y of x) throw 42;
+```
+
 ## EarlyErrors - [Reported](https://github.com/graalvm/graaljs/issues/329)
 
 ### CoverParenthesizedExpressionAndArrowParameterList
