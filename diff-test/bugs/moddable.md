@@ -269,7 +269,7 @@ var x = `${ x => { } }` ;$assert.sameValue(x, "x => { }");
 var x = String . prototype . split . call ( async function * ( ) { } , `${ '' }` , x && x ) ;
 ```
 
-## Generator Object has unwanted Symbol Property
+## Generator Object has unwanted Symbol Property - [Reported](https://github.com/Moddable-OpenSource/moddable/issues/420)
 - Expected [] but got [Symbol()]
 - __Generated JavaScript code:__
 ```js
@@ -281,7 +281,7 @@ var x = x ( ) ; function * x ( ... [ x , , ] ) { }
 var x = ( function * ( ) { } ) ( )
 ```
 
-# setter / getter descriptor value
+# setter / getter descriptor value - [Reported](https://github.com/Moddable-OpenSource/moddable/issues/421)
 - descriptor value should be "get" but "get [object Object]"
 - descriptor value should be "set" but "set [object Object]"
 
