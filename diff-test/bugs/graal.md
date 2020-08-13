@@ -8,7 +8,7 @@ _ __Simple JavaScript code:__
 var x = ++ undefined ;
 ```
 
-## Async Generator Function Property Orders - [Reported](https://github.com/graalvm/graaljs/issues/323)
+## Async Generator Function Property Orders - [Reported / Confirmed](https://github.com/graalvm/graaljs/issues/323)
 - __Section:__ [14.5.11 Runtime Semantics: InstantiateFunctionObject](https://tc39.es/ecma262/#sec-asyncgenerator-definitions-instantiatefunctionobject)
 - Expected ["length", "name", "prototype"] but got ["length", "prototype", "name"].
 _ __Simple JavaScript code:__
@@ -16,7 +16,7 @@ _ __Simple JavaScript code:__
 async function * x ( ) { for await ( var x of '' ) ; } ; x ( ) ;
 ```
 
-## Generator Function Property Orders - [Reported](https://github.com/graalvm/graaljs/issues/323)
+## Generator Function Property Orders - [Reported / Confirmed](https://github.com/graalvm/graaljs/issues/323)
 - __Section:__ [14.4.11 Runtime Semantics: InstantiateFunctionObject](https://tc39.es/ecma262/#sec-generator-function-definitions-runtime-semantics-instantiatefunctionobject)
 - Expected ["length", "name", "prototype"] but got ["length", "prototype", "name"].
 _ __Simple JavaScript code:__
