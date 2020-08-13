@@ -69,6 +69,7 @@
 % table
 \newcommand{\telem}[2]{\multicolumn{1}{#1}{\text{#2}}}
 \newcommand{\telembf}[2]{\multicolumn{1}{#1}{\textbf{#2}}}
+\newcommand{\telemsf}[2]{\multicolumn{1}{#1}{\textsf{#2}}}
 \newcommand{\rtext}[1]{\inred{\text{#1}}}
 
 % algorithms
@@ -162,3 +163,6 @@ throw, implements, import, this},
   showtabs=false,
   captionpos=b
 }
+
+% thicker vertical line
+\newcolumntype{?}{!{\vrule width 1pt}}
