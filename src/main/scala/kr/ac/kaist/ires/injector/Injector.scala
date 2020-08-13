@@ -26,6 +26,9 @@ case class Injector(script: Script, debug: Boolean = false) {
     s"$header$LINE_SEP$script$LINE_SEP$assertions"
   }
 
+  // visited
+  lazy val visited = interp.visited
+
   // logging
   def log(any: Any): Unit = if (debug) println(any)
   def warning: Unit = if (debug) {

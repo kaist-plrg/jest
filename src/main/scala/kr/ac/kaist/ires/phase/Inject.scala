@@ -15,6 +15,8 @@ case object Inject extends PhaseObj[Unit, InjectConfig, Unit] {
 
   val exceptionDirectory = s"$DIFF_TEST_DIR/inject_exceptions"
   mkdir(exceptionDirectory)
+  mkdir(s"$TOUCHED_DIR/algo")
+  mkdir(s"$TOUCHED_DIR/inst")
 
   def apply(
     unit: Unit,
@@ -45,6 +47,12 @@ case object Inject extends PhaseObj[Unit, InjectConfig, Unit] {
         println(s"  $injected")
         mkdir(INJECTED_DIR)
         dumpFile(injected, s"$INJECTED_DIR/$name")
+
+        // dump touched
+        val visited = injector.visited
+        val toJsonExt = changeExt("js", "json")
+        dumpJson(visited.instCovered, s"$TOUCHED_DIR/inst/${toJsonExt(name)}")
+        dumpJson(visited.touchedAlgos, s"$TOUCHED_DIR/algo/${toJsonExt(name)}")
       } catch {
         case e: Throwable => {
           println(s"* Warning: $e")

@@ -84,3 +84,5 @@ diff-test/injected
 diff-test/inject_exceptions
 diff-test/counts
 diff-test/failed
+diff-test/touched
+diff-test/localized
