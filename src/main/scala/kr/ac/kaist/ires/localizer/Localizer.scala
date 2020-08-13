@@ -32,6 +32,8 @@ object Localizer {
       if (exists(failedPath)) readFile(failedPath).split(LINE_SEP).toSet
       else Set()
 
+    val toJsonExt = changeExt("js", "json")
+
     // update total structural element from scriptDir, failed
     for {
       file <- walkTree(scriptDir)
@@ -42,34 +44,47 @@ object Localizer {
       script = parseResult.get
       failed = failedScriptNames contains name
     } {
+      // check if touched exist
+      val touchedInstCache = s"$TOUCHED_DIR/inst/${toJsonExt(name)}"
+      val touchedAlgoCache = s"$TOUCHED_DIR/algo/${toJsonExt(name)}"
+      val cached = exists(touchedInstCache) && exists(touchedAlgoCache)
 
-      Generator.getVisited(script) match {
+      var instCovered = Set[Int]()
+      var algoCovered = Set[String]()
+
+      if (cached) {
+        // read from cache
+        instCovered = readJson[Set[Int]](touchedInstCache)
+        algoCovered = readJson[Set[String]](touchedAlgoCache)
+      } else Generator.getVisited(script) match {
         case Left(visited) => {
-          val instCovered = visited.instCovered
-          val algoCovered = visited.touchedAlgos
-          // iter inst
-          instCounter.foreach {
-            case (uid, stat) =>
-              stat.update(instCovered contains uid, failed)
-          }
-          // iter algo
-          algoCounter.foreach {
-            case (algoName, stat) =>
-              stat.update(algoCovered contains algoName, failed)
-          }
+          instCovered = visited.instCovered
+          algoCovered = visited.touchedAlgos
+          // dump
+          dumpJson(visited.instCovered, touchedInstCache)
+          dumpJson(visited.touchedAlgos, touchedAlgoCache)
         }
         // TODO : handle exception?
         case _ =>
       }
-    }
 
-    // TODO : dump result?
+      // iter inst
+      instCounter.foreach {
+        case (uid, stat) =>
+          stat.update(instCovered contains uid, failed)
+      }
+      // iter algo
+      algoCounter.foreach {
+        case (algoName, stat) =>
+          stat.update(algoCovered contains algoName, failed)
+      }
+    }
 
     // sort counter by score
     val instScores: ListMap[Int, Double] = getSortedScore(instCounter)
     val algoScores: ListMap[String, Double] = getSortedScore(algoCounter)
 
-    // TODO : print? dump?
+    // dump
     val instContent =
       instScores.zipWithIndex.map {
         case ((uid, score), rank) => {
@@ -78,7 +93,7 @@ object Localizer {
           f"$rank%6d $score%6.2f [$uid] $inst @ $algoName"
         }
       }.mkString(LINE_SEP)
-    dumpFile(instContent, s"$DIFF_TEST_DIR/inst")
+    dumpFile(instContent, s"$DIFF_TEST_DIR/localized/inst")
 
     val algoContent =
       algoScores.zipWithIndex.map {
@@ -86,6 +101,6 @@ object Localizer {
           f"$rank%6d $score%6.2f $algoName"
         }
       }.mkString(LINE_SEP)
-    dumpFile(algoContent, s"$DIFF_TEST_DIR/algo")
+    dumpFile(algoContent, s"$DIFF_TEST_DIR/localized/algo")
   }
 }
