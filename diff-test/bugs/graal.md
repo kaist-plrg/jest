@@ -2,7 +2,7 @@
 
 - report 하는 곳 : https://github.com/graalvm/graaljs/issues
 
-## Engine Crash - [Reported](https://github.com/graalvm/graaljs/issues/322)
+## Engine Crash - [Reported / Confirmed / Fixed](https://github.com/graalvm/graaljs/issues/322)
 _ __Simple JavaScript code:__
 ```
 var x = ++ undefined ;
@@ -24,7 +24,7 @@ _ __Simple JavaScript code:__
 function * x ( ... x ) { }
 ```
 
-## Delete - [Reported](https://github.com/graalvm/graaljs/issues/324)
+## Delete - [Reported / Confirmed](https://github.com/graalvm/graaljs/issues/324)
 - __Section:__ [12.5.3.2 Runtime Semantics: Evaluation](https://tc39.es/ecma262/#sec-delete-operator-runtime-semantics-evaluation)
 - Expected a TypeError to be thrown but no exception was thrown at all
 - __Generated JavaScript code:__
@@ -36,7 +36,7 @@ _ __Simple JavaScript code:__
 delete 'str' [ 0 ] ;
 ```
 
-## PadStart - [Reported](https://github.com/graalvm/graaljs/issues/325)
+## PadStart - [Reported / Confirmed / Fixed](https://github.com/graalvm/graaljs/issues/325)
 - __Section:__ [21.1.3.15.1 Runtime Semantics: StringPad](https://tc39.es/ecma262/#sec-stringpad)
 - Expected no exception but a RangeError is thrown.
 _ __Simple JavaScript code:__
@@ -44,7 +44,7 @@ _ __Simple JavaScript code:__
 var x = "42".padStart(Infinity , "") ;
 ```
 
-## PropertyDefinitionEvaluation - [Reported](https://github.com/graalvm/graaljs/issues/326)
+## PropertyDefinitionEvaluation - [Reported / Was fixed in latest version](https://github.com/graalvm/graaljs/issues/326)
 - __Section:__ [12.2.6.8 Runtime Semantics: PropertyDefinitionEvaluation](https://tc39.es/ecma262/#sec-object-initializer-runtime-semantics-propertydefinitionevaluation)
 - descriptor value should be "42" but ""
 _ __Simple JavaScript code:__
@@ -52,7 +52,7 @@ _ __Simple JavaScript code:__
 var x = { 42 : class   { } } ;
 ```
 
-## Spread Operator Of Array Initializer - [Reported](https://github.com/graalvm/graaljs/issues/327)
+## Spread Operator Of Array Initializer - [Reported / Confirmed / Fixed](https://github.com/graalvm/graaljs/issues/327)
 - __Section:__ [12.2.6.8 Runtime Semantics: PropertyDefinitionEvaluation](https://tc39.es/ecma262/#sec-runtime-semantics-arrayaccumulation)
 - Expected ["0", "2", "length"] but got ["0", "length"].
 _ __Simple JavaScript code:__
@@ -60,7 +60,7 @@ _ __Simple JavaScript code:__
 var x = [ undefined , , ... [undefined] ] ;
 ```
 
-## ExpectedArgumentCount - [Reported](https://github.com/graalvm/graaljs/issues/328)
+## ExpectedArgumentCount - [Reported / Confirmed / Fixed](https://github.com/graalvm/graaljs/issues/328)
 - descriptor value should be 0 but 1
 - __Generated code:__
 ```js
@@ -71,7 +71,7 @@ _ __Simple JavaScript code:__
 function x (...[x]) {}
 ```
 
-## ForInOfHeadEvaluation - [Reported](https://github.com/graalvm/graaljs/issues/332)
+## ForInOfHeadEvaluation - [Reported / Confirmed / Fixed](https://github.com/graalvm/graaljs/issues/332)
 - __Section:__ [13.7.5.12 Runtime Semantics: ForIn/OfHeadEvaluation](https://tc39.es/ecma262/#sec-runtime-semantics-forinofheadevaluation)
 - Expected a ReferenceError but got a TypeError
 - `ForIn/OfHeadEvaluation`의 3번째 step 에서 `exprRef`는 step 2.b 에서 생성된 새로운 lexical environment 의 reference 임
