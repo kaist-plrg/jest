@@ -98,12 +98,18 @@ object Generator extends DefaultJsonProtocol {
       logSimple(k + 1)
       logSimple((System.currentTimeMillis - st) / 1000)
       logSimple(coverage.instCovered.size)
-      logSimple(getPercent(coverage.instCovered, coverage.insts))
+      logSimple(converage.insts.size)
+      logSimple(coverage.instCovered.size.toDouble / converage.insts.size)
+      // logSimple(getPercent(coverage.instCovered, coverage.insts))
       logSimple(coverage.condCovered.size)
-      logSimple(getPercent(coverage.condCovered, coverage.conds))
+      logSimple(coverage.conds.size)
+      logSimple(coverage.condCovered.size.toDouble / coverage.conds.size)
+      // logSimple(getPercent(coverage.condCovered, coverage.conds))
       logSimple(recentMutator.fold("Nothing")(_.name))
       logSimple(recentNewCovered.mkString(";"))
       logSimple(s"${runtime.totalMemory() - runtime.freeMemory()}/${runtime.totalMemory()}")
+      val tracer = RHSTracer(total)
+      logSimple(tracer.summary)
       loglnSimple("")
     }
 
@@ -130,6 +136,8 @@ object Generator extends DefaultJsonProtocol {
     logln("Mutating samples...")
     var scriptString = ""
     var uid = -1
+
+    logIterationSummary(-1)
     for (k <- 0 until maxIter) {
       try {
         val targetSeq = targets.toSeq
