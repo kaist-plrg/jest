@@ -145,7 +145,7 @@ getters as follows:
     \text{[[Prototype]]}  & \code{Object.getPrototypeOf(x)}\\\hline
     \text{[[Extensible]]} & \code{Object.isExtensible(x)}\\\hline
     \text{[[Call]]}       & \code{typeof f === 'function'}\\\hline
-    \text{[[Construct]]}  & \code{Reflect.construct(function()\string{\string},[],x)}\\\hline
+    % \text{[[Construct]]}  & \code{Reflect.construct(function(){},[],x)}\\\hline
   \end{array}
 \]
 
@@ -162,7 +162,7 @@ internal method.  For [[Construct]] method, we use the \code{Reflect.construct}
 built-in function that checks the existence of [[Construct]] methods and invokes
 it.  To preserve the current state, we pass a given object as the third argument
 to only check the existence of [[Construct]] and pass another dummy function
-\code{funcion()\string{\string}} as the first argument whose [[Construct]]
+\code{funcion(){}} as the first argument whose [[Construct]]
 invoked by \code{Reflect.construct}.  For example, the following code describes
 how the injector injects assertions related to internal methods and slots:
 \begin{lstlisting}[style=myJSstyle]

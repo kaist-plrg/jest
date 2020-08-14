@@ -1,3 +1,94 @@
+% Scala code style
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstdefinestyle{myScalastyle}{
+  frame=tb,
+  language=scala,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=fixed,
+  basicstyle={\footnotesize\ttfamily},
+  numbers=none,
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  frame=single,
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3,
+}
+\lstdefinestyle{smallScalastyle}{
+  frame=tb,
+  language=scala,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=fixed,
+  basicstyle={\scriptsize\ttfamily},
+  numbers=none,
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  frame=single,
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3,
+}
+
+% ECMAScript Intermediate Reprentations
+\lstdefinestyle{ires}{
+  frame=tb,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=fixed,
+  basicstyle={\footnotesize\ttfamily},
+  numbers=none,
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  frame=single,
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3,
+}
+
+% JavaScript code style
+\lstdefinelanguage{JavaScript}{
+  keywords={await, break, case, catch, class, const, continue, debugger,
+    default, delete, do, else, enum, export, extends, false, finally, for,
+    function, if, import, in, instanceof, new, null, return, super, switch,
+    this, throw, true, try, typeof, var, void, while, with, yield},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
+}
+
+\lstdefinestyle{myJSstyle}{
+  language=JavaScript,
+  extendedchars=true,
+  basicstyle=\footnotesize\ttfamily,
+  showstringspaces=false,
+  showspaces=false,
+  numbers=none,
+  tabsize=2,
+  breaklines=true,
+  showtabs=false,
+  captionpos=b
+}
+
+% thicker vertical line
+\newcolumntype{?}{!{\vrule width 1pt}}
+
 % names
 \newcommand{\cfg}{\text{CFG}}
 \newcommand{\bnf}{\text{BNF}}
@@ -6,8 +97,7 @@
 \newcommand{\peg}{\text{PEG}}
 
 % codes
-\newcommand{\scode}[1]{\texttt{\scriptsize#1}}
-\newcommand{\code}[1]{\texttt{\footnotesize#1}}
+\newcommand{\code}[1]{\text{\lstinline[style=myJSstyle]!#1!}}
 \newcommand{\kwtrue}{\code{true}}
 \newcommand{\kwt}{\code{\#t}}
 \newcommand{\kwfalse}{\code{false}}
@@ -76,93 +166,3 @@
 \newcommand{\ruleset}{\mathbb{R}}
 \newcommand{\worklist}{W}
 \newcommand{\alt}{\alpha}
-
-% Scala code style
-\definecolor{dkgreen}{rgb}{0,0.6,0}
-\definecolor{gray}{rgb}{0.5,0.5,0.5}
-\definecolor{mauve}{rgb}{0.58,0,0.82}
-\lstdefinestyle{myScalastyle}{
-  frame=tb,
-  language=scala,
-  aboveskip=3mm,
-  belowskip=3mm,
-  showstringspaces=false,
-  columns=fixed,
-  basicstyle={\footnotesize\ttfamily},
-  numbers=none,
-  keywordstyle=\color{blue},
-  commentstyle=\color{dkgreen},
-  stringstyle=\color{mauve},
-  frame=single,
-  breaklines=true,
-  breakatwhitespace=true,
-  tabsize=3,
-}
-\lstdefinestyle{smallScalastyle}{
-  frame=tb,
-  language=scala,
-  aboveskip=3mm,
-  belowskip=3mm,
-  showstringspaces=false,
-  columns=fixed,
-  basicstyle={\scriptsize\ttfamily},
-  numbers=none,
-  keywordstyle=\color{blue},
-  commentstyle=\color{dkgreen},
-  stringstyle=\color{mauve},
-  frame=single,
-  breaklines=true,
-  breakatwhitespace=true,
-  tabsize=3,
-}
-
-% ECMAScript Intermediate Reprentations
-\lstdefinestyle{ires}{
-  frame=tb,
-  aboveskip=3mm,
-  belowskip=3mm,
-  showstringspaces=false,
-  columns=fixed,
-  basicstyle={\footnotesize\ttfamily},
-  numbers=none,
-  keywordstyle=\color{blue},
-  commentstyle=\color{dkgreen},
-  stringstyle=\color{mauve},
-  frame=single,
-  breaklines=true,
-  breakatwhitespace=true,
-  tabsize=3,
-}
-
-% JavaScript code style
-\lstdefinelanguage{JavaScript}{
-  keywords={try, typeof, new, true, false, catch, function, return, null, catch,
-  switch, var, if, in, while, do, else, case, break, class, export, boolean,
-throw, implements, import, this},
-  keywordstyle=\color{blue}\bfseries,
-  ndkeywordstyle=\color{darkgray}\bfseries,
-  identifierstyle=\color{black},
-  sensitive=false,
-  comment=[l]{//},
-  morecomment=[s]{/*}{*/},
-  commentstyle=\color{purple}\ttfamily,
-  stringstyle=\color{red}\ttfamily,
-  morestring=[b]',
-  morestring=[b]"
-}
-
-\lstdefinestyle{myJSstyle}{
-  language=JavaScript,
-  extendedchars=true,
-  basicstyle=\footnotesize\ttfamily,
-  showstringspaces=false,
-  showspaces=false,
-  numbers=none,
-  tabsize=2,
-  breaklines=true,
-  showtabs=false,
-  captionpos=b
-}
-
-% thicker vertical line
-\newcolumntype{?}{!{\vrule width 1pt}}

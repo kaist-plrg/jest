@@ -156,71 +156,91 @@ values (\textsf{Obj}), property descriptors (\textsf{Desc}), property orders
   \caption{Specification bugs in ECMAScript 2020 (ES11) detected by $\tool$}
   \label{table:spec-bug}
   \vspace*{-.5em}
-  \small
-  \begin{tabular}{c?l|c|c|c|r|r}
-    \telembf{c?}{\bf Name} &
+  \footnotesize
+  \begin{tabular}{@{}c@{~}?c|l|c|c|@{~}c@{~}|@{~}c@{~}|@{~}r@{}}
+    \telembf{@{}c?}{\bf Name} &
+    \telembf{c}{\bf Feature} &
     \telembf{c}{\bf Description} &
-    \telembf{c}{\bf Lang} &
-    \telembf{c}{\bf Created} &
-    \telembf{c}{\bf Resolved} &
-    \telembf{c}{\bf Existed} &
-    \telembf{c}{\bf \# Fails} \\\toprule\\[-1.4em]
+    \telembf{@{~}c@{~}}{\bf Assertion} &
+    \telembf{@{~}c}{\bf Known} &
+    \telembf{@{}c}{\bf Created} &
+    \telembf{@{}c}{\bf Resolved} &
+    \telembf{@{}c@{~}}{\bf Existed} \\\toprule\\[-1.4em]
 
     ES11-1 &
-    \makecell[l]{} &
-    \inred{O} &
-    \inred{XXXX-XX-XX} &
-    \inred{XXXX-XX-XX} &
-    \inred{X,XXX} days &
-    \inred{X,XXX} \\\hline
+    \text{Expression} &
+    \makecell[l]{Unhandling abrupt completion in \textbf{Abstract Equality Comparison}} &
+    \textsf{Exc} &
+    O &
+    2015-06-01 &
+    2020-04-28 &
+    1,793 days \\\hline
 
     ES11-2 &
-    \makecell[l]{} &
-    \inred{O} &
-    \inred{XXXX-XX-XX} &
-    \inred{XXXX-XX-XX} &
-    \inred{X,XXX} days &
-    \inred{X,XXX} \\\hline
+    \text{Class} &
+    \makecell[l]{Wrong order of properties for classes} &
+    \textsf{Ord} &
+    O &
+    \inred{-} &
+    \inred{-} &
+    \inred{-} days \\\hline
 
     ES11-3 &
-    \makecell[l]{} &
-    \inred{O} &
-    \inred{XXXX-XX-XX} &
-    \inred{XXXX-XX-XX} &
-    \inred{X,XXX} days &
-    \inred{X,XXX} \\\hline
+    \text{Function} &
+    \makecell[l]{Missing property \code{name} for functions} &
+    \textsf{Ord} &
+    O &
+    \inred{-} &
+    \inred{-} &
+    \inred{-} days \\\hline
 
     ES11-4 &
-    \makecell[l]{} &
-    \inred{O} &
-    \inred{XXXX-XX-XX} &
-    \inred{XXXX-XX-XX} &
-    \inred{X,XXX} days &
-    \inred{X,XXX} \\\hline
+    \text{Expression} &
+    \makecell[l]{Using the wrong variable \code{oldvalue} instead of \code{oldValue} in\\
+      \textbf{Evaluation} of \textit{UpdateExpression}} &
+    \textsf{-} &
+    O &
+    \inred{-} &
+    \inred{-} &
+    \inred{-} days \\\hline
 
     ES11-5 &
-    \makecell[l]{} &
-    \inred{O} &
-    \inred{XXXX-XX-XX} &
-    \inred{XXXX-XX-XX} &
-    \inred{X,XXX} days &
-    \inred{X,XXX} \\\hline
+    \text{Loop} &
+    \makecell[l]{Returning iterator objects instead of iterator records\\
+      in \textbf{ForIn/OfHeadEvaluation} for \code{for-in} loops} &
+    \textsf{Exc} &
+    O &
+    \inred{-} &
+    \inred{-} &
+    \inred{-} days \\\hline
 
     ES11-6 &
-    \makecell[l]{} &
-    \inred{O} &
-    \inred{XXXX-XX-XX} &
-    \inred{XXXX-XX-XX} &
-    \inred{X,XXX} days &
-    \inred{X,XXX} \\\hline
+    \text{Class} &
+    \makecell[l]{Missing property \code{name} for classes} &
+    \textsf{Ord} &
+    O &
+    \inred{-} &
+    \inred{-} &
+    \inred{-} days \\\hline
 
     ES11-7 &
-    \makecell[l]{} &
-    \inred{O} &
-    \inred{XXXX-XX-XX} &
-    \inred{XXXX-XX-XX} &
-    \inred{X,XXX} days &
-    \inred{X,XXX}
+    \text{Object} &
+    \makecell[l]{Unhandling abrupt completion in \textbf{Evaluation} of\\
+      \textit{PropertyDefinition} for object literals} &
+    \textsf{Exc} &
+    X &
+    \inred{-} &
+    \inred{-} &
+    \inred{-} days
+
+    % ES11-X &
+    % \inred{\text{-}} &
+    % \makecell[l]{-} &
+    % \inred{\textsf{???}} &
+    % \inred{-} &
+    % \inred{-} &
+    % \inred{-} &
+    % \inred{-} days
   \end{tabular}
 \end{table*}
 
