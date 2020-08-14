@@ -2,11 +2,10 @@ package kr.ac.kaist.ires.phase
 
 import kr.ac.kaist.ires._
 import kr.ac.kaist.ires.checker._
-import kr.ac.kaist.ires.checker.ResultJsonProtocol._
 import kr.ac.kaist.ires.util._
 import kr.ac.kaist.ires.util.Useful._
 
-import scala.collection.mutable.Map
+//import scala.collection.mutable.Map
 
 import spray.json._
 
@@ -15,12 +14,12 @@ case object Check extends PhaseObj[Unit, CheckConfig, Unit] with DefaultJsonProt
   val name = "check"
   val help = "Get injected script and check whoose fault"
 
-  val engines = List("node", "xst", "qjs", "js")
+  val engines = List("node", "xst", "qjs", "gnode")
   val targets = engines :+ "spec"
   val dirs = targets.map(t => (t, s"$FAILED_DIR/$t.json")).toMap
   mkdir(FAILED_DIR)
 
-  val failedScripts: Map[String, Map[Result, Set[String]]] = Map()
+  var failedScripts: Map[String, Map[Result, Set[String]]] = Map()
 
   def apply(
     unit: Unit,
@@ -33,29 +32,35 @@ case object Check extends PhaseObj[Unit, CheckConfig, Unit] with DefaultJsonProt
       val helper: String = readFile(s"$DIFF_TEST_DIR/helper.js")
       val tempPath = "__temp__.js"
 
-      targets.foreach(failedScripts(_)= Map())
+      targets.foreach(t => { failedScripts = failedScripts + (t -> Map()) })
       for {
         file <- walkTree(INJECTED_DIR)
         name = file.getName
-        filename = file.toString
+        filename = file.toString if jsFilter(filename)
       } {
         println(filename)
         val injected = readFile(filename)
-        dumpFile(helper + injected, tempPath)
+        val comment = injected.split("\n").head
 
-        val checker = Checker(tempPath, engines, config.debug)
-        val fails: Map[String, Result] = checker.result
+        dumpFile(helper + injected, tempPath)
+        val checker = Checker(tempPath, engines, comment, config.debug)
+        deleteFile(tempPath)
+
+        val fails: Map[String, Result] = Map() //checker.result
 
         fails.foreach {
           case (e, r) =>
-            failedScripts(e).getOrElseUpdate(r, Set())
-            failedScripts(e)(r) += filename
+            //failedScripts(e).getOrElseUpdate(r, Set())
+            //failedScripts(e)(r) += filename
+            val m = failedScripts(e)
+            val s = m.getOrElse(r, Set())
+            failedScripts = failedScripts + (e -> (m + (r -> (s + name))))
         }
       }
 
       failedScripts.foreach {
-        case (e, m) =>
-          dumpJson(m.toList, dirs(e))
+        case (e, m) => println(e); println(m)
+        //dumpJson(m, dirs(e))
       }
 
     //if (config.debug) println(s"[AsyncInejcted]: ${getPercent(count, total)}")

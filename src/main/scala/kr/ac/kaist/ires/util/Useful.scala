@@ -8,6 +8,7 @@ import scala.Console.{ RESET, RED, YELLOW, GREEN, CYAN }
 import scala.collection.mutable
 import scala.io.Source
 import scala.util.Random
+import scala.sys.process._
 import spray.json._
 
 object Useful {
@@ -185,5 +186,12 @@ object Useful {
     val result = input
     val duration = System.currentTimeMillis - startTime
     (result, duration)
+  }
+
+  def executeCmd(cmd: String): (String, String) = {
+    val stdout = new StringBuilder
+    val stderr = new StringBuilder
+    cmd ! ProcessLogger(stdout append _, stderr append _)
+    (stdout.toString, stderr.toString)
   }
 }
