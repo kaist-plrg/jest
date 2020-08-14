@@ -89,7 +89,7 @@ var f = id ( ( ) => { } );
   - [language/expressions/generators/name.js](https://github.com/tc39/test262/tree/master/test/language/expressions/generators/name.js)
 
 
-## IteratorClose - [Resolved](https://github.com/tc39/ecma262/pull/1408)
+## IteratorClose - [Resolved](https://github.com/tc39/ecma262/pull/1408), Not Generated
 - __Section:__ [7.4.6 IteratorClose](http://ecma-international.org/ecma-262/11.0/#sec-iteratorclose)
 - 4 번째 step에서 [GetMethod](http://ecma-international.org/ecma-262/11.0/#sec-getmethod)를 통해서
   `return`에 관한 것을 가져오는데, 이 과정에서 abrupt completion 검사를 하는 것이 8 번째 step에서
