@@ -9,7 +9,8 @@ import kr.ac.kaist.ires.util.Useful._
 import sys.process._
 import java.util.concurrent.LinkedBlockingQueue
 import io.Source
-import com.eclipsesource.v8.{ V8, V8ScriptCompilationException, V8ScriptExecutionException }
+import com.eclipsesource.v8._
+import com.eclipsesource.v8.utils.MemoryManager
 
 object ValidityChecker {
   val MESSAGE = "IRES-EXPECTED-EXCEPTION"
@@ -53,16 +54,19 @@ object ValidityChecker {
 
   def useNativeV8(script: String, debug: Boolean = false): Boolean = {
     var pass = false
+
     try {
       val revised = s"'use strict'; throw '$MESSAGE'; $script"
-      val res = v8runtime.get.executeScript(revised)
+      v8runtime.get.executeScript(revised)
     } catch {
       case e: V8ScriptCompilationException =>
         pass = false
         if (debug && !pass) println(script)
       case e: V8ScriptExecutionException =>
-        pass = true
+        pass = e.toString.split(LINE_SEP)(0).endsWith(MESSAGE)
+        if (debug && !pass) println(script)
     }
+    v8runtime.get.resetContext
     pass
   }
 
