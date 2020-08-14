@@ -54,6 +54,8 @@ based on the following four research questions:
     four JavaScript engines detected by $\tool$.
   \item {\bf RQ3 (Bug Detection in ECMAScript)} The number of specification bugs
     in ES11 detected by $\tool$.
+  \item {\bf RQ4 (Accuracy of Bug Localization)} The accuracy of bug locations
+    pointed by \textsf{Bug Localizer} compared to the actual bug locations.
 \end{itemize}
 
 
@@ -116,16 +118,44 @@ semantics and their average size is \inred{XXX.XX}.
 
 \subsection{Bug Detection in JavaScript Engines}
 
-We introduced six different kinds of assertions used in \textsf{Asseriton
-Injector}: exceptions (\textsf{Exc}), variable values (\textsf{Var}), object
-values (\textsf{Obj}), property descriptors (\textsf{Desc}), property orders
-(\textsf{Ord}), and internal methods and slots (\textsf{In}).
+We executed the generated conformance tests on four different JavaScript engines
+to find engine or specification bugs.  We utilize the majority of execution
+results to assort bugs as engine or specification bugs.  If most of engines
+fails to a specific conformance test, we assume that the specification and
+engines passing the test have bugs related to the test.  Otherwise, we assume
+that engines failing the test have bugs.  We manually checked the detected bugs
+whether they are actually engine bugs or specification bugs.  The following
+table shows the number of engines failing tests related to each bug.
+
+\begin{table}[H]
+  \centering
+  \vspace*{-1em}
+  \small
+  \[
+    \begin{array}{l?r|r|r|r?r}
+      \telembf{c?}{\# Fails} &
+      \telembf{c}{1} &
+      \telembf{c}{2} &
+      \telembf{c}{3} &
+      \telembf{c?}{4} &
+      \telembf{c}{Total} \\\toprule\\[-1.4em]
+
+      \text{Engine Bugs}  & \inred{-} & \inred{-} & \inred{-} & \inred{-} & \inred{39}\\\hline
+      \text{Spec. Bugs}   & \inred{-} & \inred{-} & \inred{-} & \inred{-} & \inred{7}
+    \end{array}
+  \]
+  \vspace*{-1em}
+\end{table}
+
+According to the table, our assumption seems to be reliable because tests
+related to engine bugs failed in \inred{1.3} engines on average.  For
+specification bugs, the related tests failed in \inred{3.8} engines on average.
 
 \begin{table}
   \caption{The number of engine bugs detected by $\tool$}
   \label{table:engine-bug}
   \vspace*{-1em}
-  \small
+  \footnotesize
   \[
     \begin{array}{l?r|r|r|r|r|r?r}
       \telembf{c?}{Engines} &
@@ -137,16 +167,30 @@ values (\textsf{Obj}), property descriptors (\textsf{Desc}), property orders
       \telemsf{c?}{In} &
       \telembf{c}{Total}\\\toprule\\[-1.4em]
 
-      \text{GraalJS}      & \inred{0} & \inred{0} & \inred{0} & \inred{0} & \inred{0} & \inred{0} & \inred{0}\\\hline
-      \text{QuickJS}      & \inred{0} & \inred{0} & \inred{0} & \inred{0} & \inred{0} & \inred{0} & \inred{0}\\\hline
-      \text{Moddable XS}  & \inred{0} & \inred{0} & \inred{0} & \inred{0} & \inred{0} & \inred{0} & \inred{0}\\\hline
-      \text{V8}           & \inred{0} & \inred{0} & \inred{0} & \inred{0} & \inred{0} & \inred{0} & \inred{0}\\\hline
+      \text{GraalJS}      & \inred{-} & \inred{-} & \inred{-} & \inred{-} & \inred{-} & \inred{-} & \inred{10}\\\hline
+      \text{QuickJS}      & \inred{-} & \inred{-} & \inred{-} & \inred{-} & \inred{-} & \inred{-} & \inred{6}\\\hline
+      \text{Moddable XS}  & \inred{-} & \inred{-} & \inred{-} & \inred{-} & \inred{-} & \inred{-} & \inred{21}\\\hline
+      \text{V8}           & \inred{-} & \inred{-} & \inred{-} & \inred{-} & \inred{-} & \inred{-} & \inred{2}\\\hline
       \hline
-      \telembf{c?}{Total} & \inred{0} & \inred{0} & \inred{0} & \inred{0} & \inred{0} & \inred{0} & \inred{0}
+      \telembf{c?}{Total} & \inred{-} & \inred{-} & \inred{-} & \inred{-} & \inred{-} & \inred{-} & \inred{39}
     \end{array}
   \]
   \vspace*{-1.5em}
 \end{table}
+
+Based on the above approach, our tool detected \inred{39} engine bugs on four
+different JavaScript engines: \inred{-} for GraalJS, \inred{-} for QuickJS,
+\inred{-} for Moddable XS, and \inred{-} for V8.  Table~\ref{table:engine-bug}
+shows the number of detected bugs for each engine and depending on used
+asseritons.  The most reliable JavaScript engine is V8 because it contains only
+two bugs and the worst one is Moddable XS with \inred{-} bugs.  For asseritons,
+we introduced six different kinds of assertions related to exceptions
+(\textsf{Exc}), variable values (\textsf{Var}), object values (\textsf{Obj}),
+property descriptors (\textsf{Desc}), property orders (\textsf{Ord}), and
+internal methods and slots (\textsf{In}).  For bug detection, usefulness of each
+assertion is different with each other. The assertions \textsf{Exc} and
+\textsf{Ord} are top-two to detect engine bugs and they detects \inred{-} out of
+\inred{39} bugs
 
 
 \subsection{Bug Detection in ECMAScript}
@@ -243,5 +287,19 @@ values (\textsf{Obj}), property descriptors (\textsf{Desc}), property orders
     % \inred{-} days
   \end{tabular}
 \end{table*}
+
+\inred{TODO}
+
+
+\subsection{Accuracy of Bug Localization}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.48\textwidth]{img/localize.pdf}
+  \caption{Ranks of actual bug locations in results of \textsf{Bug Localizer}
+    for all detected engine or specification bugs by $\tool$}
+  \label{fig:localize}
+  \vspace*{-1em}
+\end{figure}
 
 \inred{TODO}
