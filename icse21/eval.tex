@@ -204,7 +204,7 @@ example}.
       \telemsf{c|}{Var} &
       \telemsf{c|}{Obj} &
       \telemsf{c|}{Desc} &
-      \telemsf{c|}{Ord} &
+      \telemsf{c|}{Key} &
       \telemsf{c?}{In} &
       \telembf{c}{Total}\\\toprule\\[-1.4em]
 
@@ -227,10 +227,10 @@ assertions.  The most reliable JavaScript engine is V8 because it contains only
 two bugs and the worst one is Moddable XS with \inred{-} bugs.  For assertions,
 we introduced six different kinds of assertions related to exceptions
 (\textsf{Exc}), variable values (\textsf{Var}), object values (\textsf{Obj}),
-property descriptors (\textsf{Desc}), property orders (\textsf{Ord}), and
+property descriptors (\textsf{Desc}), property keys (\textsf{Key}), and
 internal methods and slots (\textsf{In}).  For bug detection, usefulness of each
 assertion is different with each other.  The assertions \textsf{Exc} and
-\textsf{Ord} are top-two to detect engine bugs and they detects \inred{-} and
+\textsf{Key} are top-two to detect engine bugs and they detects \inred{-} and
 \inred{-} bugs out of \inred{39} bugs, respectively.  The \textsf{Var} detects
 \inred{-} engine bugs but other assertions failed to detect engine bugs.
 
@@ -258,7 +258,7 @@ assertion is different with each other.  The assertions \textsf{Exc} and
     ES11-1 &
     \text{Class} &
     \makecell[l]{Wrong order between property keys for classes} &
-    \textsf{Ord} &
+    \textsf{Key} &
     O &
     \inred{-} &
     \inred{-} &
@@ -287,7 +287,7 @@ assertion is different with each other.  The assertions \textsf{Exc} and
     ES11-4 &
     \text{Function} &
     \makecell[l]{Missing property \code{name} for anonymous functions} &
-    \textsf{Ord} &
+    \textsf{Key} &
     O &
     \inred{-} &
     \inred{-} &
@@ -296,7 +296,7 @@ assertion is different with each other.  The assertions \textsf{Exc} and
     ES11-5 &
     \text{Class} &
     \makecell[l]{Missing property \code{name} for anonymous classes} &
-    \textsf{Ord} &
+    \textsf{Key} &
     O &
     \inred{-} &
     \inred{-} &
@@ -368,14 +368,14 @@ ES11-3 comes from the misunderstanding of the term ``iterator object'' and
 return an iterator record, which is an implicit record consists of only internal
 slots.  However, In ES11, it returns an iterator object, which is a JavaScript
 object with some properties related to iterations.  It causes a \code{TypeError}
-when executing the code \code{for(var x in {});} according to ES11 but all
+when executing the code \code{for(var x in \{\});} according to ES11 but all
 engines normally execute the code without any exceptions.  This bug is confirmed
 by TC39 on \inred{-}.
 
 ES11-4 and ES11-5 break the backward-compatibility related to anonymous function
 and classes.  Until ES10, anonymous functions or classes, such as an identity
 arrow function \code{x => x}, have their own property \code{"name"} with an empty
-string (\code{""}).  However, ES11 removes the \code{"name"} property but still
+string \code{""}.  However, ES11 removes the \code{"name"} property but still
 three engines except V8 creates the \code{"name"} property in anonymous
 functions or classes.  In fact, the removal was not intention of TC39 and it was
 reverted to create the property again on \inred{-}.  Moreover, V8 also accepted
