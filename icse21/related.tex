@@ -1,7 +1,24 @@
 \section{Related Work}\label{sec:related}
-\inred{TODO}
+
+Our technique is related to two research fields: differential testing and
+fuzzing.
+
+\textbf{Differential Testing:} Differential testing~\cite{???} utilizes multiple
+implementations as cross-referencing oracles to find semantics bugs.
+Researchers applied this technique for various applications, such as Java
+Virtual Machine (JVM) implementations~\cite{???}, web applications~\cite{???},
+and binary lifters~\cite{ir-diff-test}.  Moreover, \textsc{Nezha} introduces a
+guided differential testing tool with the concept of $\delta$-diversity to
+efficiently find semantic bugs.  However, it has fundametal limitations because
+it uses only the cross-referencing oracles and targets implementations.  Our
+approach extends the idea of differential testing with not only $N$ different
+implementations but also a mechanized specification to test both of them.
+
+\textbf{Fuzzing:} \inred{TODO}
 
 \begin{itemize}
+
+
   \item CodeAlchemist\cite{codealchemist}
   \item Csmith\cite{csmith}
   \item Grammar-based Whitebox Fuzzing\cite{grammar-whitebox}
