@@ -345,14 +345,14 @@ of specification bugs our tool detected.
 The specification bug ES11-1 is due to a wrong order between property keys of
 classes.  If we define a class declaration with a name \code{A} (\code{class A {}}),
 three properties are defined in the function stored in the variable \code{A}:
-\code{"length"} with a number value \code{0}, \code{"prototype"} with an object, and
-\code{"name"} with a string \code{"A"}.  The problem is the different order of
+\code{length} with a number value \code{0}, \code{prototype} with an object, and
+\code{name} with a string \code{"A"}.  The problem is the different order of
 their keys because of the wrong order of their creations.  From ECMAScript 2015
 (ES6), the order between property keys is no more implementation-dependent
 feature and it is related to the creation order of properties.  According
 to the semantics of ES11, the order of property keys in the class \code{A}
-should be \code{["length", "prototype", "name"]} but three engines except V8
-claims that \code{["length", "name", "prototype"]}.  In fact, the three engines
+should be \code{[length, prototype, name]} but three engines except V8
+claims that \code{[length, name, prototype]}.  In fact, the three engines
 are correct thus the ES11 and V8 confirmed that it is a real bug.  This bug was
 created on \inred{-} and TC39 fixed it on \inred{-} after \inred{-} days.
 
@@ -374,9 +374,9 @@ by TC39 on \inred{-}.
 
 ES11-4 and ES11-5 break the backward-compatibility related to anonymous function
 and classes.  Until ES10, anonymous functions or classes, such as an identity
-arrow function \code{x => x}, have their own property \code{"name"} with an empty
-string \code{""}.  However, ES11 removes the \code{"name"} property but still
-three engines except V8 creates the \code{"name"} property in anonymous
+arrow function \code{x => x}, have their own property \code{name} with an empty
+string \code{""}.  However, ES11 removes the \code{name} property but still
+three engines except V8 creates the \code{name} property in anonymous
 functions or classes.  In fact, the removal was not intention of TC39 and it was
 reverted to create the property again on \inred{-}.  Moreover, V8 also accepted
 that it was the engine bug and it will be fixed in V8.
