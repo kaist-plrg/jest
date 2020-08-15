@@ -42,8 +42,15 @@ this approach tries to mutate only \code{1 == 2} not other syntax trees.
 
 
 \subsubsection{String Substitutions}
-\inred{TODO}
-% It substitutes random expressions with string literals in branch conditions.
+We utilize the literals as values in ECMAScript for diversity of JavaScript
+values in generated tests.  Most of literals existed in the specification
+represent the corner case values such as \code{-0}, \code{Infinity}, or
+\code{NaN}.  However, in some cases, specific strings are necessary to cover
+some semantics.  For example, the algorithm of [[DefineOwnProperty]] internal
+method of array exotic objects has different semantics depending on whether its
+parameter \code{P} is a string \code{"length"} or not.  Thus, we collects all
+string literals used in the conditions in any algorithms in ES11 and randomly
+substitutes with an expression with one of them.
 
 
 \subsubsection{Object Substitutions}
@@ -51,16 +58,16 @@ Some abstract algorithms in ECMAScript try to access some properties of an
 object using \textbf{HasProperty}, \textbf{GetMethod}, \textbf{Get}, and
 \textbf{OrdinaryGetOwnProperty} algorithms.  In this case, objects having such
 properties are necessary to handle such algorithms.  Thus, we collects all
-touched algorithms including any invocations of such property access algorithms.
-For each invocation, we collects string literals and symbols used as its
-arguments.  Based on collected string values and symbols, we randomly generate
-object literals and replace a randomly selected expression with the generated
-object.  For example, the following program touches two algorithms
-\textbf{ToPrimitive} that has the invocation of \textbf{GetMethod} with the
-symbol \code{Symbol.toPrimitive} and \textbf{ToPropertyDescriptor} that has the
-invocation of \textbf{Get} with string literals \code{"get"}, \code{"set"},
-\code{"value"}, \code{"writable"}, \code{"enumerable"}, and
-\code{"configurable"}.
+touched algorithms including any invocations of such property access algorithms
+similar with string substitutions.  For each invocation, we collects string
+literals and symbols used as its arguments.  Based on collected string values
+and symbols, we randomly generate object literals and replace a randomly
+selected expression with the generated object.  For example, the following
+program touches two algorithms \textbf{ToPrimitive} that has the invocation of
+\textbf{GetMethod} with the symbol \code{Symbol.toPrimitive} and
+\textbf{ToPropertyDescriptor} that has the invocation of \textbf{Get} with
+string literals \code{"get"}, \code{"set"}, \code{"value"}, \code{"writable"},
+\code{"enumerable"}, and \code{"configurable"}.
 \begin{lstlisting}[style=myJSstyle]
 Object.defineProperty({}, 'p', 42);
 \end{lstlisting}
