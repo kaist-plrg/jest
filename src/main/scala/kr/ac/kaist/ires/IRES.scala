@@ -105,7 +105,9 @@ object IRES {
     ("silent", BoolOption(c => c.silent = true),
       "final results are not displayed."),
     ("time", BoolOption(c => c.time = true),
-      "display duration time.")
+      "display duration time."),
+    ("bugfix", BoolOption(_ => BUG_FIX = true),
+      "use bug-fixed semantics.")
   )
 
   // indentation

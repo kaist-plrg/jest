@@ -50,4 +50,7 @@ package object ires {
 
   // Coverage check mode
   val COVERAGE_MODE: Boolean = true
+
+  // Bug-fix mode
+  var BUG_FIX: Boolean = false
 }
