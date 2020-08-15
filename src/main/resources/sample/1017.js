@@ -1,1 +1,1 @@
-var x = String . prototype . normalize . call ( null , 0 ) ;
+var x = String . prototype . localeCompare . call ( new String ( 0 ) , 0 ) ;

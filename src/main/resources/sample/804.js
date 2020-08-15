@@ -1,1 +1,1 @@
-var x = Array . prototype . toLocaleString . call ( null ) ;
+var x = Array . prototype . shift . call ( new Array ( ) ) ;

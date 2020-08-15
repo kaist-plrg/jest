@@ -1,1 +1,1 @@
-var x = Object . assign ( 0 , 0 , 0 ) ;
+var x = Number . prototype . toPrecision . call ( null , 0 ) ;

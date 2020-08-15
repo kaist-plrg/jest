@@ -1,1 +1,1 @@
-switch ( '' , '' ) { case '' : ; }
+do ; while ( '' , '' ) ;

@@ -1,1 +1,1 @@
-var x = String . raw ( 0 , 0 , 0 ) ;
+var x = Set . prototype . has . call ( null , 0 ) ;

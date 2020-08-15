@@ -1,1 +1,1 @@
-class x extends x `${ '' , '' }${ '' , '' }` { }
+class x extends new x { }

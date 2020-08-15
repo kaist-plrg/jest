@@ -1,1 +1,1 @@
-var x = Array . prototype . find . call ( new Array ( ) , 0 ) ;
+var x = Array . prototype . entries . call ( null ) ;

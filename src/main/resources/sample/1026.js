@@ -1,1 +1,1 @@
-var x = String . prototype . repeat . call ( new String ( 0 ) , 0 ) ;
+var x = String . prototype . matchAll . call ( null , 0 ) ;

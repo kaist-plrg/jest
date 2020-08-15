@@ -1,1 +1,1 @@
-var x = decodeURIComponent ( 0 ) ;
+var x = new ReferenceError ( 0 ) ;

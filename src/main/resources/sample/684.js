@@ -1,1 +1,1 @@
-async ( ) => { } ;
+class x extends { get x ( ) { } } { ; }

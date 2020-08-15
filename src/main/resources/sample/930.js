@@ -1,1 +1,1 @@
-var x = Object . prototype . toString . call ( new Object ( ) ) ;
+var x = Object . keys ( 0 ) ;

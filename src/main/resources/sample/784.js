@@ -1,1 +1,1 @@
-var x = Array . prototype . reduce . call ( null , 0 , 0 ) ;
+var x = Array . prototype . map . call ( new Array ( ) , 0 ) ;

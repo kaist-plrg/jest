@@ -1,1 +1,1 @@
-function * x ( ) { }
+class x { ; }

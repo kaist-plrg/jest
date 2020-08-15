@@ -1,1 +1,1 @@
-var x = new RangeError ( 0 ) ;
+var x = WeakSet . prototype . add . call ( new WeakSet ( ) , 0 ) ;

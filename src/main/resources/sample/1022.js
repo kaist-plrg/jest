@@ -1,1 +1,1 @@
-var x = String . prototype . padStart . call ( new String ( 0 ) , 0 ) ;
+var x = String . prototype . localeCompare . call ( null , 0 , 0 , 0 ) ;

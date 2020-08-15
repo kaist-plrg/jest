@@ -1,1 +1,1 @@
-var x = { * x ( ... await ) { } } ;
+class x extends { get x ( ) { } } { }

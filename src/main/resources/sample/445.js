@@ -1,1 +1,1 @@
-class x extends ( '' ) { ; }
+for ( [ ] in '' ) ;

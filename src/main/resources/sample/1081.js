@@ -1,1 +1,1 @@
-var x = WeakSet . prototype . add . call ( new WeakSet ( ) , 0 ) ;
+var x = new WeakMap ( 0 ) ;

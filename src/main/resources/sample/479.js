@@ -1,1 +1,1 @@
-var x = typeof x ;
+class x extends new x ( '' ) { }

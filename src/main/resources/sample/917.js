@@ -1,1 +1,1 @@
-var x = Object . keys ( 0 ) ;
+var x = Object . defineProperty ( 0 , 0 , 0 ) ;

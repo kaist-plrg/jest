@@ -1,1 +1,1 @@
-var x = ReferenceError ( 0 ) ;
+var x = WeakSet . prototype . add . call ( null , 0 ) ;

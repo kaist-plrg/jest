@@ -1,1 +1,1 @@
-var x = { p : 0 } ; ( { p : x } = x ) ;
+class x { constructor ( ) { this . x = super [ 42 ] ; } } ;

@@ -1,1 +1,1 @@
-var x = Function . prototype . call . call ( new Function ( ) , 0 ) ;
+var x = Boolean . prototype . valueOf . call ( null ) ;

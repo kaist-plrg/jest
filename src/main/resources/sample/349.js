@@ -1,1 +1,1 @@
-async function * x ( ) { for await ( let x of '' ) ; } ; x ( ) ;
+var x = x <<= '' ;

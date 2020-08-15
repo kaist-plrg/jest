@@ -1,1 +1,1 @@
-LABEL : for ( ; ; ) break LABEL ;
+class x extends `${ '' , '' }${ x }${ '' }` { ; }

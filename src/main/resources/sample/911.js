@@ -1,1 +1,1 @@
-var x = Object . getOwnPropertySymbols ( 0 ) ;
+var x = new Object ( 0 ) ;

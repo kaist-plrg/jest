@@ -1,1 +1,1 @@
-var x = Array . of ( 0 , 0 ) ;
+function x ( [ x ] = [ 1 , 2 , 3 ] ) { } ; x ( 0 ) ;

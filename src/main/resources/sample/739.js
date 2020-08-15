@@ -1,1 +1,1 @@
-var x = Array . prototype . findIndex . call ( new Array ( ) , 0 ) ;
+var x = Array . prototype . every . call ( null , 0 , 0 ) ;

@@ -1,1 +1,1 @@
-var x = Object . prototype . valueOf . call ( null ) ;
+var x = Object . setPrototypeOf ( 0 , 0 ) ;

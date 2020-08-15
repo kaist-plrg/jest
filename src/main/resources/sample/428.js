@@ -1,1 +1,1 @@
-async function x ( ... { x } ) { }
+var x = 42 ;

@@ -1,1 +1,1 @@
-var x = await ;
+for ( [ , ] in '' ) ;

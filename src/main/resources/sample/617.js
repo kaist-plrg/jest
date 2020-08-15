@@ -1,1 +1,1 @@
-switch ( '' ) { default : case x : }
+class x extends new x ( ... '' ) { }

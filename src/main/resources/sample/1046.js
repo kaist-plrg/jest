@@ -1,1 +1,1 @@
-var x = String . prototype . trim . call ( new String ( 0 ) ) ;
+var x = String . prototype . slice . call ( null , 0 , 0 ) ;

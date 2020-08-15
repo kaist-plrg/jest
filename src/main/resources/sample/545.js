@@ -1,1 +1,1 @@
-function x ( ... { 42 : { } } ) { }
+function * x ( ... [ x ] ) { }

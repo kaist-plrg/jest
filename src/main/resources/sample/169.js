@@ -1,1 +1,1 @@
-class x extends { async * x ( ) { } } { }
+switch ( '' , '' ) { default : ; case x : }

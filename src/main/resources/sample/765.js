@@ -1,1 +1,1 @@
-var x = Array . prototype . keys . call ( new Array ( ) ) ;
+var x = Array . prototype . forEach . call ( null , 0 ) ;

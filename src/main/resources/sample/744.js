@@ -1,1 +1,1 @@
-var x = Array . prototype . flat . call ( null ) ;
+var x = Array . prototype . filter . call ( new Array ( ) , 0 ) ;

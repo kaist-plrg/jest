@@ -1,1 +1,1 @@
-var x = Array . prototype . unshift . call ( null ) ;
+var x = Array . prototype . splice . call ( new Array ( ) , 0 , 0 ) ;

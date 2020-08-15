@@ -1,1 +1,1 @@
-var x = new Set ( 0 ) ;
+var x = Promise . allSettled ( 0 ) ;

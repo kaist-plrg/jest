@@ -1,1 +1,1 @@
-var x = String . prototype . search . call ( new String ( 0 ) , 0 ) ;
+var x = String . prototype . normalize . call ( null , 0 ) ;

@@ -1,1 +1,1 @@
-var x = RangeError ( 0 ) ;
+var x = new WeakSet ( 0 ) ;

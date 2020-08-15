@@ -1,1 +1,1 @@
-var x = new x ( x , ... '' ) ;
+var x = class extends x { x ( ) { } } ;

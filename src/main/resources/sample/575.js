@@ -1,1 +1,1 @@
-class x extends class x { } { ; }
+for ( let { } = x ; ; '' ) ;

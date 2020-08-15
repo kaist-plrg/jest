@@ -1,1 +1,1 @@
-var x = isNaN ( 0 ) ;
+var x = new EvalError ( 0 ) ;

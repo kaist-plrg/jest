@@ -1,1 +1,1 @@
-var x = Array . prototype . some . call ( null , 0 , 0 ) ;
+var x = Array . prototype . reduceRight . call ( new Array ( ) , 0 ) ;

@@ -1,1 +1,1 @@
-class x extends x ( ) { }
+var x = x [ '' ] ;

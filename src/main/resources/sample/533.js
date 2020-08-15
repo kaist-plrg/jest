@@ -1,1 +1,1 @@
-var x = class { ; ; } ;
+var x = { ... '' } ;

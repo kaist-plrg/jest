@@ -1,1 +1,1 @@
-var x = isFinite ( 0 ) ;
+var x = EvalError ( 0 ) ;

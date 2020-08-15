@@ -1,1 +1,1 @@
-var x = new ReferenceError ( 0 ) ;
+var x = WeakSet . prototype . delete . call ( new WeakSet ( ) , 0 ) ;

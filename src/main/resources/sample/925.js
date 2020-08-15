@@ -1,1 +1,1 @@
-var x = Object . prototype . isPrototypeOf . call ( null , 0 ) ;
+var x = Object . getPrototypeOf ( 0 ) ;

@@ -1,1 +1,1 @@
-var x = Array . prototype [ Symbol . unscopables ] ;
+var x = Array . prototype . toLocaleString . call ( null ) ;

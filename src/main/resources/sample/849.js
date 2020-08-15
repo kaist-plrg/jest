@@ -1,1 +1,1 @@
-var x = Function . prototype . toString . call ( new Function ( ) ) ;
+var x = new Function ( 0 ) ;

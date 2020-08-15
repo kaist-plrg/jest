@@ -1,1 +1,1 @@
-for ( x in '' , '' ) ;
+var x = x && x ;

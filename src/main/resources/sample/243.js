@@ -1,1 +1,1 @@
-var { 42 : { } } = x ;
+class x extends x `${ '' }${ x }${ '' , '' }` { }

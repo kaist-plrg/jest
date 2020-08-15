@@ -1,1 +1,1 @@
-var x = Object . prototype . hasOwnProperty . call ( null , 0 ) ;
+var x = Object . getOwnPropertyNames ( 0 ) ;

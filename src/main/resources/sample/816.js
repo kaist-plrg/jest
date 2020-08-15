@@ -1,1 +1,1 @@
-var x = Array . prototype . values . call ( null ) ;
+var x = Array . prototype . toLocaleString . call ( new Array ( ) ) ;

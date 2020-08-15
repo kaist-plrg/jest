@@ -1,1 +1,1 @@
-var x = Symbol . prototype . toString . call ( new Symbol ( ) ) ;
+var x = String . prototype . trim . call ( new String ( 0 ) ) ;

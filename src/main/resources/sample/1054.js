@@ -1,1 +1,1 @@
-var x = String . prototype [ Symbol . iterator ] . call ( new String ( 0 ) ) ;
+var x = String . prototype . substring . call ( null , 0 , 0 ) ;

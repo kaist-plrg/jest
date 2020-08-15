@@ -1,1 +1,1 @@
-var x = String . prototype . endsWith . call ( new String ( 0 ) , 0 , 0 ) ;
+var x = String . raw ( 0 , 0 , 0 ) ;

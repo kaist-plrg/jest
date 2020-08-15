@@ -1,1 +1,1 @@
-var x = Array . prototype . entries . call ( null ) ;
+var x = Array . isArray ( 0 ) ;

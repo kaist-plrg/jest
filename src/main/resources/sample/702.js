@@ -1,1 +1,1 @@
-var x = Array ( 0 ) ;
+delete x [ 42 ] ;

@@ -1,1 +1,1 @@
-async function * x ( ) { var x = new . target ; } ; x ( ) ;
+var x = x << x ;

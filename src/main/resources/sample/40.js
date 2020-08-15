@@ -1,1 +1,1 @@
-var await = x ;
+for ( let x ; ; ) ;

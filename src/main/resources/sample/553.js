@@ -1,1 +1,1 @@
-class x extends await { }
+function x ( ... { 42 : { } } ) { }

@@ -1,1 +1,1 @@
-for ( let x = x ; ; ) ;
+class x extends function * x ( ) { } { ; }

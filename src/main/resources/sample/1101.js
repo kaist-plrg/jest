@@ -1,1 +1,1 @@
-var x = URIError ( 0 ) ;
+var x = new Error ( 0 ) ;

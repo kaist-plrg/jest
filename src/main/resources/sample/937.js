@@ -1,1 +1,1 @@
-var x = Promise . allSettled ( 0 ) ;
+var x = Object . prototype . isPrototypeOf . call ( new Object ( ) , 0 ) ;

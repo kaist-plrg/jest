@@ -1,1 +1,1 @@
-var x = Map . prototype . delete . call ( null , 0 ) ;
+var x = Function . prototype . call . call ( new Function ( ) , 0 , 0 ) ;

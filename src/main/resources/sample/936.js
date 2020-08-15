@@ -1,1 +1,1 @@
-var x = Promise . all ( 0 ) ;
+var x = Object . prototype . hasOwnProperty . call ( null , 0 ) ;

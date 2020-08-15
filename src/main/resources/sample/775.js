@@ -1,1 +1,1 @@
-var x = Array . prototype . pop . call ( new Array ( ) ) ;
+var x = Array . prototype . indexOf . call ( null , 0 , 0 ) ;

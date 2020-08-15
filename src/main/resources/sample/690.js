@@ -1,1 +1,1 @@
-const x = 42 ;
+class x extends 42 { constructor ( ) { super ( ) ; } } ;

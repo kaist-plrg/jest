@@ -1,1 +1,1 @@
-var x = new String ( 0 ) ;
+var x = Set . prototype . delete . call ( new Set ( ) , 0 ) ;

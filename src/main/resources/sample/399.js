@@ -1,1 +1,1 @@
-var x = x instanceof x ;
+for ( let x in '' ) ;

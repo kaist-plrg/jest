@@ -1,1 +1,1 @@
-var x = eval ( 0 ) ;
+var x = Error . prototype . toString . call ( null ) ;

@@ -1,1 +1,1 @@
-var x = Object . prototype . toString . call ( null ) ;
+var x = Object . preventExtensions ( 0 ) ;

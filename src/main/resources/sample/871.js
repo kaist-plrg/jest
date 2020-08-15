@@ -1,1 +1,1 @@
-var x = Map . prototype . keys . call ( new Map ( ) ) ;
+var x = Map . prototype . clear . call ( null ) ;

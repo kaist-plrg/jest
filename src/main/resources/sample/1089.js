@@ -1,1 +1,1 @@
-var x = Error . prototype . toString . call ( new Error ( 0 ) ) ;
+var x = WeakMap . prototype . set . call ( null , 0 , 0 ) ;

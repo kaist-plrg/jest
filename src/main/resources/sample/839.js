@@ -1,1 +1,1 @@
-var x = Function . prototype . apply . call ( new Function ( ) , 0 , 0 ) ;
+var x = BigInt . prototype . valueOf . call ( null ) ;

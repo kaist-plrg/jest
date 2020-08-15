@@ -1,1 +1,1 @@
-var x = Object . getOwnPropertyDescriptor ( 0 , 0 ) ;
+var x = Object ( ) ;

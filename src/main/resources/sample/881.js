@@ -1,1 +1,1 @@
-var x = Number . isNaN ( 0 ) ;
+var x = Map . prototype . get . call ( null , 0 ) ;

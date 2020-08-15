@@ -1,1 +1,1 @@
-for ( { } in '' ) ;
+class x extends x `${ '' }${ '' , '' }` { ; }

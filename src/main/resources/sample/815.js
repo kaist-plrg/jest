@@ -1,1 +1,1 @@
-var x = Array . prototype . values . call ( new Array ( ) ) ;
+var x = Array . prototype . splice . call ( null , 0 , 0 , 0 ) ;

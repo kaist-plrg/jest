@@ -1,1 +1,1 @@
-var x = Function . prototype [ Symbol . hasInstance ] . call ( new Function ( ) , 0 ) ;
+var x = new Function ( 0 , 0 ) ;

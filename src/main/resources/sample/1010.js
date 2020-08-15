@@ -1,1 +1,1 @@
-var x = String . prototype . match . call ( new String ( 0 ) , 0 ) ;
+var x = String . prototype . indexOf . call ( null , 0 ) ;

@@ -1,1 +1,1 @@
-async function x ( ) { }
+try { } finally { }

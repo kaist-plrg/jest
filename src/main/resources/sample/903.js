@@ -1,1 +1,1 @@
-var x = Object . defineProperties ( 0 , 0 ) ;
+var x = Number . prototype . toString . call ( null ) ;

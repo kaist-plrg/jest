@@ -1,1 +1,1 @@
-var x = decodeURI ( 0 ) ;
+var x = ReferenceError ( 0 ) ;

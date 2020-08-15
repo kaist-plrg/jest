@@ -1,1 +1,1 @@
-var x = String . prototype . lastIndexOf . call ( new String ( 0 ) , 0 , 0 ) ;
+var x = String . prototype . endsWith . call ( null , 0 ) ;

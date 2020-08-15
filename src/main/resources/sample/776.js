@@ -1,1 +1,1 @@
-var x = Array . prototype . pop . call ( null ) ;
+var x = Array . prototype . join . call ( new Array ( ) , 0 ) ;

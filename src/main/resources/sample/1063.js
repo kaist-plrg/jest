@@ -1,1 +1,1 @@
-var x = Symbol . prototype [ Symbol . toPrimitive ] . call ( new Symbol ( ) , 0 ) ;
+var x = String . prototype . trimStart . call ( new String ( 0 ) ) ;

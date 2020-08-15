@@ -1,1 +1,1 @@
-var x = Array . prototype . indexOf . call ( new Array ( ) , 0 , 0 ) ;
+var x = Array . prototype . flatMap . call ( null , 0 ) ;

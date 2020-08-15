@@ -1,1 +1,1 @@
-var x = { x ( ... [ ] ) { } } ;
+class x extends class x { } { }

@@ -1,1 +1,1 @@
-switch ( '' ) { case '' : }
+function x ( ... [ , ] ) { }

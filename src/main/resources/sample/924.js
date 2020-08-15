@@ -1,1 +1,1 @@
-var x = Object . prototype . isPrototypeOf . call ( new Object ( ) , 0 ) ;
+var x = Object . getOwnPropertySymbols ( 0 ) ;

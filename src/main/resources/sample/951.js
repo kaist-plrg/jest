@@ -1,1 +1,1 @@
-var x = Set . prototype . add . call ( new Set ( ) , 0 ) ;
+var x = Promise . race ( 0 ) ;

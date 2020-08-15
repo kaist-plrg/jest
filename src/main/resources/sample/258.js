@@ -1,1 +1,1 @@
-function await ( ... { ... x } ) { }
+class x extends `${ '' }${ '' , '' }` { ; }

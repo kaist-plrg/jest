@@ -1,1 +1,1 @@
-var x = Symbol . keyFor ( 0 ) ;
+var x = String . prototype . toString . call ( null ) ;

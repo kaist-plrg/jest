@@ -1,1 +1,1 @@
-var x = new Array ( 0 ) ;
+const x = 42 ;

@@ -1,1 +1,1 @@
-async function * x ( ) { for await ( var x of '' ) ; } ; x ( ) ;
+class x extends '' { ; }

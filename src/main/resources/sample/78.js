@@ -1,1 +1,1 @@
-for ( var x of '' ) ;
+switch ( '' ) { case '' : }

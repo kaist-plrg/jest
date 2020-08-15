@@ -1,1 +1,1 @@
-var x = String . prototype . replace . call ( null , 0 , 0 ) ;
+var x = String . prototype . normalize . call ( new String ( 0 ) , 0 ) ;

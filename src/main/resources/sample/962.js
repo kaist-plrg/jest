@@ -1,1 +1,1 @@
-var x = Set . prototype . forEach . call ( null , 0 , 0 ) ;
+var x = Set ( 0 ) ;

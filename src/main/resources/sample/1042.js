@@ -1,1 +1,1 @@
-var x = String . prototype . toLowerCase . call ( new String ( 0 ) ) ;
+var x = String . prototype . replace . call ( null , 0 , 0 ) ;

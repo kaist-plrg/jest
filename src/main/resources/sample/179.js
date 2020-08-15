@@ -1,1 +1,1 @@
-class x extends x ?. x . x { }
+async function * x ( ) { var x = new . target ; } ; x ( ) ;

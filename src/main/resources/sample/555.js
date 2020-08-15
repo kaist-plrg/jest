@@ -1,1 +1,1 @@
-var x = this ;
+var x = [ , , ] ;

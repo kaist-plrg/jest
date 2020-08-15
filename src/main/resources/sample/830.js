@@ -1,1 +1,1 @@
-var x = Boolean . prototype . toString . call ( null ) ;
+var x = Array . prototype [ Symbol . unscopables ] ;

@@ -1,1 +1,1 @@
-var x = String . prototype . slice . call ( null , 0 , 0 ) ;
+var x = String . prototype . padEnd . call ( new String ( 0 ) , 0 , 0 ) ;

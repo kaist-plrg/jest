@@ -1,1 +1,1 @@
-var x = String . prototype . valueOf . call ( null ) ;
+var x = String . prototype . substring . call ( new String ( 0 ) , 0 , 0 ) ;

@@ -1,1 +1,1 @@
-var x = Set . prototype . forEach . call ( new Set ( ) , 0 ) ;
+var x = Promise . prototype . then . call ( null , 0 , 0 ) ;

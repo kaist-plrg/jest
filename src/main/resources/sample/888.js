@@ -1,1 +1,1 @@
-var x = Number . prototype . toPrecision . call ( null , 0 ) ;
+var x = Map . prototype . values . call ( new Map ( ) ) ;

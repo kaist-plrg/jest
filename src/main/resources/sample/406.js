@@ -1,1 +1,1 @@
-var x = { x ( ... await ) { } } ;
+class x extends x ?. x . x { ; }

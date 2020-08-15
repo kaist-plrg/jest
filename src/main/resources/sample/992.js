@@ -1,1 +1,1 @@
-var x = String . prototype . includes . call ( new String ( 0 ) , 0 ) ;
+var x = String . prototype . charAt . call ( null , 0 ) ;

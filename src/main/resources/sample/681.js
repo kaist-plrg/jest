@@ -1,1 +1,1 @@
-class x { constructor ( ) { this . x = super [ 42 ] ; } } ;
+var x = `${ '' }${ '' }` ;

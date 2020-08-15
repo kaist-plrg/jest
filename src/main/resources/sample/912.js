@@ -1,1 +1,1 @@
-var x = Object . getPrototypeOf ( 0 ) ;
+var x = Object . assign ( 0 ) ;

@@ -1,1 +1,1 @@
-var x = Array . prototype . push . call ( null , 0 ) ;
+var x = Array . prototype . lastIndexOf . call ( new Array ( ) , 0 ) ;

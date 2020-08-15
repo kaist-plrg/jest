@@ -1,1 +1,1 @@
-async function * x ( ) { return '' , '' ; } ; x ( ) ;
+class x extends x ?. ( ) { ; }

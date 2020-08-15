@@ -1,1 +1,1 @@
-class x { static x ( ) { } }
+for ( let x ; ; '' , '' ) ;

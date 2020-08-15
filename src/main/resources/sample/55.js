@@ -1,1 +1,1 @@
-class x extends 42 { }
+var x = { x ( ... { ... x } ) { } } ;

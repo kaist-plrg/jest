@@ -1,1 +1,1 @@
-class x extends function * x ( ) { } { }
+var x = new x ( ) ;

@@ -1,1 +1,1 @@
-var x = Symbol . prototype . valueOf . call ( null ) ;
+var x = String . prototype . trimEnd . call ( null ) ;

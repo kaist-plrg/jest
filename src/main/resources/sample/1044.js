@@ -1,1 +1,1 @@
-var x = String . prototype . toString . call ( new String ( 0 ) ) ;
+var x = String . prototype . search . call ( null , 0 ) ;

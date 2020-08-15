@@ -1,1 +1,1 @@
-throw '' ;
+var x = x ( ) ?. x ;

@@ -1,1 +1,1 @@
-for ( await in '' ) ;
+switch ( '' , '' ) { default : ; }

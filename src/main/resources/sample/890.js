@@ -1,1 +1,1 @@
-var x = Number . prototype . toString . call ( null ) ;
+var x = Number ( 0 ) ;

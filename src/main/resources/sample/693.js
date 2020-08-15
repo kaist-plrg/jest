@@ -1,1 +1,1 @@
-var x = [ 1 , 2 , 3 ] ; ( [ x , x ] = x ) ;
+function x ( x0 , x1 ) { } ;

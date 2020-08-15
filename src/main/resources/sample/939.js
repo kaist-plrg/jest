@@ -1,1 +1,1 @@
-var x = Promise . reject ( 0 ) ;
+var x = Object . prototype . propertyIsEnumerable . call ( new Object ( ) , 0 ) ;

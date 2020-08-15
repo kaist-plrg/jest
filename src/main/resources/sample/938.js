@@ -1,1 +1,1 @@
-var x = Promise . race ( 0 ) ;
+var x = Object . prototype . isPrototypeOf . call ( null , 0 ) ;

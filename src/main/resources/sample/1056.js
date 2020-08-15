@@ -1,1 +1,1 @@
-var x = Symbol ( ) ;
+var x = String . prototype . toLowerCase . call ( null ) ;

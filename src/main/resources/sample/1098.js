@@ -1,1 +1,1 @@
-var x = new SyntaxError ( 0 ) ;
+var x = WeakSet . prototype . has . call ( new WeakSet ( ) , 0 ) ;

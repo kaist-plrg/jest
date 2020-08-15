@@ -1,1 +1,1 @@
-var x = Array . prototype . reverse . call ( new Array ( ) ) ;
+var x = Array . prototype . pop . call ( null ) ;

@@ -1,1 +1,1 @@
-function * x ( ... [ x , , ] ) { }
+let x = x ;

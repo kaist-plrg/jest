@@ -1,1 +1,1 @@
-var x = Array . prototype . forEach . call ( null , 0 , 0 ) ;
+var x = Array . prototype . findIndex . call ( new Array ( ) , 0 , 0 ) ;

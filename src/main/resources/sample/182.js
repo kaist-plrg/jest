@@ -1,1 +1,1 @@
-async function x ( ... [ , ] ) { }
+class x extends x [ '' , '' ] { static x ( ) { } }

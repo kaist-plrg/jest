@@ -1,1 +1,1 @@
-var x = Array . of ( ) ;
+var x = { x : 1 } ; ( { ... x } = x ) ;

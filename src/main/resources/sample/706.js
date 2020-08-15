@@ -1,1 +1,1 @@
-var x = Array . from ( 0 ) ;
+var x = [ 1 , 2 , 3 ] ; ( [ x , x ] = x ) ;

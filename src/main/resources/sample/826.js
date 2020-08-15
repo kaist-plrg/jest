@@ -1,1 +1,1 @@
-var x = BigInt . prototype . valueOf . call ( null ) ;
+var x = Array . prototype . unshift . call ( new Array ( ) , 0 ) ;

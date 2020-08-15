@@ -1,1 +1,1 @@
-var x = new URIError ( 0 ) ;
+var x = Error . prototype . toString . call ( new Error ( 0 ) ) ;

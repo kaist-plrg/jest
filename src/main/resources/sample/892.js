@@ -1,1 +1,1 @@
-var x = Number . prototype . toString . call ( null , 0 ) ;
+var x = Number . isFinite ( 0 ) ;

@@ -1,1 +1,1 @@
-var x = Object . setPrototypeOf ( 0 , 0 ) ;
+var x = Object . fromEntries ( 0 ) ;

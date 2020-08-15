@@ -1,1 +1,1 @@
-var x = new Array ( ) ;
+let x0 , x1 ;

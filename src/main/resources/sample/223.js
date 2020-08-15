@@ -1,1 +1,1 @@
-for ( x ?. x . x in '' ) ;
+var x = { async * x ( ... { ... x } ) { } } ;

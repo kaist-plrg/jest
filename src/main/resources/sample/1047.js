@@ -1,1 +1,1 @@
-var x = String . prototype . trim . call ( null ) ;
+var x = String . prototype . split . call ( new String ( 0 ) , 0 , 0 ) ;

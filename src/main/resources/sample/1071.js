@@ -1,1 +1,1 @@
-var x = WeakMap . prototype . get . call ( new WeakMap ( ) , 0 ) ;
+var x = Symbol . keyFor ( 0 ) ;

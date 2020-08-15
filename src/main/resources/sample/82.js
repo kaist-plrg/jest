@@ -1,1 +1,1 @@
-var x = { async * x ( ... { x } ) { } } ;
+switch ( '' ) { default : ; case x : }

@@ -1,1 +1,1 @@
-async function * x ( ... { x : x } ) { }
+async function * x ( ) { var x = await x ; } ; x ( ) ;

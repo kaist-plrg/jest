@@ -1,1 +1,1 @@
-var x = Array . prototype . concat . call ( null , 0 ) ;
+var x = new Array ( 0 ) ;

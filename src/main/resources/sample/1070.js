@@ -1,1 +1,1 @@
-var x = WeakMap . prototype . delete . call ( null , 0 ) ;
+var x = Symbol . for ( 0 ) ;

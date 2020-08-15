@@ -1,1 +1,1 @@
-do ; while ( '' ) ;
+var x = { async * x ( ... [ ] ) { } } ;

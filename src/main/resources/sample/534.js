@@ -1,1 +1,1 @@
-class x extends this { ; }
+for ( var x ; '' , '' ; '' , '' ) ;

@@ -1,1 +1,1 @@
-var x = String . prototype . search . call ( null , 0 ) ;
+var x = String . prototype . padEnd . call ( new String ( 0 ) , 0 ) ;

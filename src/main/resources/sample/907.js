@@ -1,1 +1,1 @@
-var x = Object . fromEntries ( 0 ) ;
+var x = Number . prototype . valueOf . call ( null ) ;

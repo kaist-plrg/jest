@@ -1,1 +1,1 @@
-var x = Number . prototype . valueOf . call ( null ) ;
+var x = Number . isNaN ( 0 ) ;

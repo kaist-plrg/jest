@@ -1,1 +1,1 @@
-var x = SyntaxError ( 0 ) ;
+var x = WeakSet . prototype . delete . call ( null , 0 ) ;

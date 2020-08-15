@@ -1,1 +1,1 @@
-delete x [ 42 ] ;
+LABEL : for ( ; ; ) break LABEL ;

@@ -1,1 +1,1 @@
-var await ;
+class x extends x ?. x [ '' ] { ; }

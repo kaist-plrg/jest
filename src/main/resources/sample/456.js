@@ -1,1 +1,1 @@
-async function * x ( ) { return ; } ; x ( ) ;
+var x = { async * x ( x , ) { } } ;

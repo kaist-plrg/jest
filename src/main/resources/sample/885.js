@@ -1,1 +1,1 @@
-var x = Number . prototype . toFixed . call ( new Number ( 0 ) , 0 ) ;
+var x = Map . prototype . keys . call ( null ) ;

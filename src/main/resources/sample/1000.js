@@ -1,1 +1,1 @@
-var x = String . prototype . lastIndexOf . call ( new String ( 0 ) , 0 ) ;
+var x = String . prototype . concat . call ( null , 0 ) ;

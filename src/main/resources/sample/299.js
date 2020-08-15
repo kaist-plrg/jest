@@ -1,1 +1,1 @@
-async function x ( x , ) { }
+class x extends function * ( ) { } { }

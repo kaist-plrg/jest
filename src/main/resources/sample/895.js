@@ -1,1 +1,1 @@
-var x = Object ( ) ;
+var x = Number . isSafeInteger ( 0 ) ;

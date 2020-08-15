@@ -1,1 +1,1 @@
-class x extends x `${ '' , '' }` { ; }
+async function * x ( ) { var x = yield '' ; } ; x ( ) ;

@@ -1,1 +1,1 @@
-var x = Array . prototype . copyWithin . call ( new Array ( ) , 0 , 0 ) ;
+var x = Array ( 0 , 0 ) ;

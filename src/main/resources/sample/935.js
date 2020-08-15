@@ -1,1 +1,1 @@
-var x = new Promise ( 0 ) ;
+var x = Object . prototype . hasOwnProperty . call ( new Object ( ) , 0 ) ;

@@ -1,1 +1,1 @@
-var x = WeakSet . prototype . add . call ( null , 0 ) ;
+var x = WeakMap . prototype . delete . call ( new WeakMap ( ) , 0 ) ;

@@ -1,1 +1,1 @@
-var x = Boolean . prototype . valueOf . call ( null ) ;
+var x = BigInt . asIntN ( 0 , 0 ) ;

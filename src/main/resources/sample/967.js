@@ -1,1 +1,1 @@
-var x = String ( 0 ) ;
+var x = Set . prototype . clear . call ( null ) ;

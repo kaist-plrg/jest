@@ -1,1 +1,1 @@
-var x = Number . prototype . toString . call ( new Number ( 0 ) ) ;
+var x = Map . prototype . values . call ( null ) ;

@@ -1,1 +1,1 @@
-class x extends await { ; }
+class x extends async function ( ) { } { }

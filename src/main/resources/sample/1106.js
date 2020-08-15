@@ -1,1 +1,1 @@
-var x = parseFloat ( 0 ) ;
+var x = RangeError ( 0 ) ;

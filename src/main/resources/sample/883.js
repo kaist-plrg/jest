@@ -1,1 +1,1 @@
-var x = Number . prototype . toExponential . call ( new Number ( 0 ) , 0 ) ;
+var x = Map . prototype . has . call ( null , 0 ) ;

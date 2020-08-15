@@ -1,1 +1,1 @@
-async function * x ( ) { class x extends new . target { } } ; x ( ) ;
+var x = async function x ( ) { } ;

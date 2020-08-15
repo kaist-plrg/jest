@@ -1,1 +1,1 @@
-var x = Object . assign ( 0 ) ;
+var x = Number . prototype . toFixed . call ( null , 0 ) ;

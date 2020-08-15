@@ -1,1 +1,1 @@
-var x = new Function ( ) ;
+var x = BigInt . prototype . toString . call ( new BigInt ( 0 ) ) ;

@@ -1,1 +1,1 @@
-var x = Array . prototype . unshift . call ( new Array ( ) ) ;
+var x = Array . prototype . some . call ( null , 0 , 0 ) ;

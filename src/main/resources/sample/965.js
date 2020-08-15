@@ -1,1 +1,1 @@
-var x = Set . prototype . values . call ( new Set ( ) ) ;
+var x = Set . prototype . add . call ( null , 0 ) ;

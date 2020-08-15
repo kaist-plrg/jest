@@ -1,1 +1,1 @@
-var x = Number . isFinite ( 0 ) ;
+var x = Map . prototype . forEach . call ( null , 0 , 0 ) ;

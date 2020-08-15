@@ -1,1 +1,1 @@
-class x extends { get x ( ) { } } { ; }
+class x extends { set x ( x ) { } } { ; }

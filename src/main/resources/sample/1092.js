@@ -1,1 +1,1 @@
-var x = new EvalError ( 0 ) ;
+var x = WeakSet ( 0 ) ;

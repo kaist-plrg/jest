@@ -1,1 +1,1 @@
-var x = Array . prototype . toLocaleString . call ( null , 0 ) ;
+var x = Array . prototype . slice . call ( new Array ( ) , 0 , 0 ) ;

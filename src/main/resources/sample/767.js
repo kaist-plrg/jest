@@ -1,1 +1,1 @@
-var x = Array . prototype . lastIndexOf . call ( new Array ( ) , 0 ) ;
+var x = Array . prototype . forEach . call ( null , 0 , 0 ) ;

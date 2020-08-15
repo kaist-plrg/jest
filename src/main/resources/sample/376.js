@@ -1,1 +1,1 @@
-var [ x , , ... x ] = x ;
+class x extends { set x ( x ) { } } { }

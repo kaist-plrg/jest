@@ -1,1 +1,1 @@
-class x { constructor ( ) { this . x = super . x ; } } ;
+var x = x === x ;

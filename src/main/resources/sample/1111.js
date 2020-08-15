@@ -1,1 +1,1 @@
-var x = encodeURIComponent ( 0 ) ;
+var x = new SyntaxError ( 0 ) ;

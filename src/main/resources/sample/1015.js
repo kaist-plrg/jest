@@ -1,1 +1,1 @@
-var x = String . prototype . normalize . call ( null ) ;
+var x = String . prototype . lastIndexOf . call ( new String ( 0 ) , 0 , 0 ) ;

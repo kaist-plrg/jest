@@ -1,1 +1,1 @@
-var x = BigInt . prototype . toString . call ( null ) ;
+var x = Array . prototype . toString . call ( new Array ( ) ) ;

@@ -1,1 +1,1 @@
-var x = new WeakMap ( 0 ) ;
+var x = String . prototype [ Symbol . iterator ] . call ( null ) ;

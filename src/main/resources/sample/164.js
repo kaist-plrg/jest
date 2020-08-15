@@ -1,1 +1,1 @@
-var [ , x ] = x ;
+try { } catch { } finally { }

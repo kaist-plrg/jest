@@ -1,1 +1,1 @@
-var x = class { ; } ;
+async function * x ( ) { for await ( let x of '' ) ; } ; x ( ) ;

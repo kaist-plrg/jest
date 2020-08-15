@@ -1,1 +1,1 @@
-var x = { get x ( ) { } } ;
+switch ( '' ) { default : ; }

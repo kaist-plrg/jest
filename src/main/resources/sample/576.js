@@ -1,1 +1,1 @@
-var x = class x { ; ; } ;
+for ( { } in '' ) ;

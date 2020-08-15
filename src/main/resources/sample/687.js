@@ -1,1 +1,1 @@
-( x0 , ... x1 ) => { } ;
+LABEL : for ( ; ; ) continue LABEL ;

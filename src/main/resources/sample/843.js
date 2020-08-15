@@ -1,1 +1,1 @@
-var x = Function . prototype . bind . call ( new Function ( ) , 0 , 0 ) ;
+var x = Boolean . prototype . toString . call ( null ) ;

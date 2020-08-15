@@ -1,1 +1,1 @@
-var x = Set . prototype . add . call ( null , 0 ) ;
+var x = Promise . reject ( 0 ) ;

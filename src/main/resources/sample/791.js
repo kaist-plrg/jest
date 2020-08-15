@@ -1,1 +1,1 @@
-var x = Array . prototype . shift . call ( new Array ( ) ) ;
+var x = Array . prototype . push . call ( null ) ;

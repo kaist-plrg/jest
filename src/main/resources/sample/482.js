@@ -1,1 +1,1 @@
-var [ ] = x ;
+async function * x ( ) { for await ( var x of '' ) ; } ; x ( ) ;

@@ -1,1 +1,1 @@
-switch ( '' ) { }
+class x extends x { ; }

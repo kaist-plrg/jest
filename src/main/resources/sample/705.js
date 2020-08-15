@@ -1,1 +1,1 @@
-var x = new Array ( 0 , 0 ) ;
+var x = { p : 0 } ; ( { p : x } = x ) ;

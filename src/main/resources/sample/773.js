@@ -1,1 +1,1 @@
-var x = Array . prototype . map . call ( new Array ( ) , 0 , 0 ) ;
+var x = Array . prototype . indexOf . call ( null , 0 ) ;

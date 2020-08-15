@@ -1,1 +1,1 @@
-var x = BigInt ( 0 ) ;
+var x = Array . prototype . toLocaleString . call ( new Array ( ) , 0 ) ;

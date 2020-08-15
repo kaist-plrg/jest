@@ -1,1 +1,1 @@
-var x = Array . prototype . join . call ( null , 0 ) ;
+var x = Array . prototype . forEach . call ( new Array ( ) , 0 ) ;

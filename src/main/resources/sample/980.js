@@ -1,1 +1,1 @@
-var x = String . prototype . charCodeAt . call ( new String ( 0 ) , 0 ) ;
+var x = String ( 0 ) ;

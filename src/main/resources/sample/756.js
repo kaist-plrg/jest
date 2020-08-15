@@ -1,1 +1,1 @@
-var x = Array . prototype . includes . call ( null , 0 ) ;
+var x = Array . prototype . flat . call ( new Array ( ) ) ;

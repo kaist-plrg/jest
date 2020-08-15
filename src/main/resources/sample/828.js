@@ -1,1 +1,1 @@
-var x = new Boolean ( 0 ) ;
+var x = Array . prototype . values . call ( new Array ( ) ) ;

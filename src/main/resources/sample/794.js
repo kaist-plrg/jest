@@ -1,1 +1,1 @@
-var x = Array . prototype . slice . call ( null , 0 , 0 ) ;
+var x = Array . prototype . reduce . call ( new Array ( ) , 0 ) ;

@@ -1,1 +1,1 @@
-while ( '' , '' ) ;
+switch ( '' ) { case x : default : ; }

@@ -1,1 +1,1 @@
-var x = new x ( x , ) ;
+for ( var x in '' , '' ) ;

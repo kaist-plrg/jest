@@ -1,1 +1,1 @@
-for ( '' ; ; '' ) ;
+for ( await in '' ) ;

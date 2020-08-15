@@ -1,1 +1,1 @@
-var x = Promise . prototype . then . call ( new Promise ( 0 ) , 0 , 0 ) ;
+var x = Object . prototype . valueOf . call ( new Object ( ) ) ;

@@ -1,1 +1,1 @@
-var x = String . fromCodePoint ( ) ;
+var x = Set . prototype . forEach . call ( new Set ( ) , 0 ) ;

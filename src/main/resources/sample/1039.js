@@ -1,1 +1,1 @@
-var x = String . prototype . startsWith . call ( null , 0 , 0 ) ;
+var x = String . prototype . repeat . call ( new String ( 0 ) , 0 ) ;

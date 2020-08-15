@@ -1,1 +1,1 @@
-var x = Array . prototype . every . call ( null , 0 ) ;
+var x = Array . of ( 0 ) ;

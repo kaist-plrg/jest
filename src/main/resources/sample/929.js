@@ -1,1 +1,1 @@
-var x = Object . prototype . toLocaleString . call ( null , 0 , 0 ) ;
+var x = Object . isSealed ( 0 ) ;

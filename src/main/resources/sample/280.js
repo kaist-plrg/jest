@@ -1,1 +1,1 @@
-switch ( '' ) { default : ; }
+function * x ( ... { } ) { }

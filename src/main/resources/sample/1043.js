@@ -1,1 +1,1 @@
-var x = String . prototype . toLowerCase . call ( null ) ;
+var x = String . prototype . search . call ( new String ( 0 ) , 0 ) ;

@@ -1,1 +1,1 @@
-var x = Map . prototype . entries . call ( null ) ;
+var x = Function . prototype . toString . call ( new Function ( ) ) ;

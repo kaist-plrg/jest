@@ -1,1 +1,1 @@
-var x = new TypeError ( 0 ) ;
+var x = Error ( 0 ) ;

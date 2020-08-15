@@ -1,1 +1,1 @@
-var x = Error . prototype . toString . call ( null ) ;
+var x = WeakSet ( ) ;

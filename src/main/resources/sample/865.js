@@ -1,1 +1,1 @@
-var x = Map . prototype . forEach . call ( new Map ( ) , 0 , 0 ) ;
+var x = Function . prototype [ Symbol . hasInstance ] . call ( null , 0 ) ;

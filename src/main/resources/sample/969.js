@@ -1,1 +1,1 @@
-var x = String . fromCharCode ( ) ;
+var x = Set . prototype . delete . call ( null , 0 ) ;

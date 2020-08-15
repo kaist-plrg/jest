@@ -1,1 +1,1 @@
-var x = new x ;
+async function x ( ... [ , ] ) { }

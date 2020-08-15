@@ -1,1 +1,1 @@
-for ( ; ; ) continue ;
+function * x ( ... [ x , , ] ) { }

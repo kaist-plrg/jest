@@ -1,1 +1,1 @@
-var x = new Set ( ) ;
+var x = new Promise ( 0 ) ;

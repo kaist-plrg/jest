@@ -1,1 +1,1 @@
-var x = { async * x ( ... [ , x ] ) { } } ;
+try { } catch ( x ) { }

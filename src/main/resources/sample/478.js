@@ -1,1 +1,1 @@
-var x = x in x ;
+async function x ( ... { x : x } ) { }

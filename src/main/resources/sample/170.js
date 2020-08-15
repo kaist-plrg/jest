@@ -1,1 +1,1 @@
-debugger ;
+var x = class { static x ( ) { } } ;

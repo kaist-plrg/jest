@@ -1,1 +1,1 @@
-var x = Set . prototype . entries . call ( new Set ( ) ) ;
+var x = Promise . prototype . finally . call ( null , 0 ) ;

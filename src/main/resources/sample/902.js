@@ -1,1 +1,1 @@
-var x = Object . create ( 0 , 0 ) ;
+var x = Number . prototype . toString . call ( new Number ( 0 ) ) ;

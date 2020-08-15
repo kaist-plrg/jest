@@ -1,1 +1,1 @@
-var x = Set ( 0 ) ;
+var x = Promise . all ( 0 ) ;

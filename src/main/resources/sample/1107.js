@@ -1,1 +1,1 @@
-var x = parseInt ( 0 , 0 ) ;
+var x = new RangeError ( 0 ) ;

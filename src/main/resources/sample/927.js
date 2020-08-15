@@ -1,1 +1,1 @@
-var x = Object . prototype . propertyIsEnumerable . call ( null , 0 ) ;
+var x = Object . isExtensible ( 0 ) ;

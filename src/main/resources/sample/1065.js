@@ -1,1 +1,1 @@
-var x = WeakMap ( ) ;
+var x = String . prototype . valueOf . call ( new String ( 0 ) ) ;

@@ -1,1 +1,1 @@
-var x = Array . prototype . flatMap . call ( new Array ( ) , 0 , 0 ) ;
+var x = Array . prototype . find . call ( null , 0 ) ;

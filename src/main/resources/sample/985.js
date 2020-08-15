@@ -1,1 +1,1 @@
-var x = String . prototype . concat . call ( null ) ;
+var x = String . fromCodePoint ( ) ;

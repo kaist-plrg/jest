@@ -1,1 +1,1 @@
-var x = String . prototype . padStart . call ( null , 0 ) ;
+var x = String . prototype . match . call ( new String ( 0 ) , 0 ) ;

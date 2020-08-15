@@ -1,1 +1,1 @@
-for ( x in '' ) ;
+function x ( ... { } ) { }

@@ -1,1 +1,1 @@
-var x = Promise ( 0 ) ;
+var x = Object . values ( 0 ) ;

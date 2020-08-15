@@ -1,1 +1,1 @@
-var x = Object . isFrozen ( 0 ) ;
+var x = Object . create ( 0 , 0 ) ;

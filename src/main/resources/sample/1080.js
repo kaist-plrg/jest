@@ -1,1 +1,1 @@
-var x = new WeakSet ( 0 ) ;
+var x = WeakMap ( 0 ) ;

@@ -1,1 +1,1 @@
-var x = String . prototype . repeat . call ( null , 0 ) ;
+var x = String . prototype . normalize . call ( new String ( 0 ) ) ;

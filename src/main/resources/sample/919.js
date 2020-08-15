@@ -1,1 +1,1 @@
-var x = Object . seal ( 0 ) ;
+var x = Object . freeze ( 0 ) ;

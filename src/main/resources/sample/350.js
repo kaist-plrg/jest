@@ -1,1 +1,1 @@
-class x extends x `${ '' }${ '' }` { static x ( ) { } }
+for ( let x in '' , '' ) ;

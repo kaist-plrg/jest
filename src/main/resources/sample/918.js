@@ -1,1 +1,1 @@
-var x = Object . preventExtensions ( 0 ) ;
+var x = Object . entries ( 0 ) ;
