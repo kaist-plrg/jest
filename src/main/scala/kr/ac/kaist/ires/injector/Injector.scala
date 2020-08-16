@@ -205,7 +205,7 @@ case class Injector(script: Script, debug: Boolean = false) {
     getValue(st, "result.Type")._1 == NamedAddr("CONST_normal")
   private def handleException: Unit = getValue(st, "result.Type")._1 match {
     case NamedAddr("CONST_normal") =>
-      header = s"// Normal:"
+      header = s"// Pass:"
     case _ =>
       header = getValue(st, "result.Value")._1 match {
         case addr: Addr => getValue(st, "result.Prototype")._1 match {

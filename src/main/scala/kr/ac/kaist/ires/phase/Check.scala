@@ -8,6 +8,7 @@ import kr.ac.kaist.ires.util.Useful._
 //import scala.collection.mutable.Map
 
 import spray.json._
+import kr.ac.kaist.ires.checker.ResultProtocol._
 
 // Check phase
 case object Check extends PhaseObj[Unit, CheckConfig, Unit] with DefaultJsonProtocol {
@@ -38,7 +39,6 @@ case object Check extends PhaseObj[Unit, CheckConfig, Unit] with DefaultJsonProt
         name = file.getName
         filename = file.toString if jsFilter(filename)
       } {
-        println(filename)
         val injected = readFile(filename)
         val comment = injected.split("\n").head
 
@@ -46,21 +46,20 @@ case object Check extends PhaseObj[Unit, CheckConfig, Unit] with DefaultJsonProt
         val checker = Checker(tempPath, engines, comment, config.debug)
         deleteFile(tempPath)
 
-        val fails: Map[String, Result] = Map() //checker.result
+        val fails: Map[String, Set[Result]] = checker.result
 
         fails.foreach {
-          case (e, r) =>
-            //failedScripts(e).getOrElseUpdate(r, Set())
-            //failedScripts(e)(r) += filename
+          case (e, resultSet) =>
             val m = failedScripts(e)
-            val s = m.getOrElse(r, Set())
-            failedScripts = failedScripts + (e -> (m + (r -> (s + name))))
+            resultSet.foreach(r => {
+              val s = m.getOrElse(r, Set())
+              failedScripts = failedScripts + (e -> (m + (r -> (s + name))))
+            })
         }
       }
 
       failedScripts.foreach {
-        case (e, m) => println(e); println(m)
-        //dumpJson(m, dirs(e))
+        case (e, m) => dumpJson(m, dirs(e))
       }
 
     //if (config.debug) println(s"[AsyncInejcted]: ${getPercent(count, total)}")
