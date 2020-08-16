@@ -8,7 +8,7 @@ import kr.ac.kaist.ires.util.Useful._
 //import scala.collection.mutable.Map
 
 import spray.json._
-import kr.ac.kaist.ires.checker.ResultProtocol._
+import kr.ac.kaist.ires.checker.CheckResultProtocol._
 
 // Check phase
 case object Check extends PhaseObj[Unit, CheckConfig, Unit] with DefaultJsonProtocol {
@@ -20,7 +20,7 @@ case object Check extends PhaseObj[Unit, CheckConfig, Unit] with DefaultJsonProt
   val dirs = targets.map(t => (t, s"$FAILED_DIR/$t.json")).toMap
   mkdir(FAILED_DIR)
 
-  var failedScripts: Map[String, Map[Result, Set[String]]] = Map()
+  var failedScripts: Map[String, Map[CheckResult, Set[String]]] = Map()
 
   def apply(
     unit: Unit,
@@ -46,7 +46,7 @@ case object Check extends PhaseObj[Unit, CheckConfig, Unit] with DefaultJsonProt
         val checker = Checker(tempPath, engines, comment, config.debug)
         deleteFile(tempPath)
 
-        val fails: Map[String, Set[Result]] = checker.result
+        val fails: Map[String, Set[CheckResult]] = checker.result
 
         fails.foreach {
           case (e, resultSet) =>

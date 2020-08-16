@@ -12,28 +12,63 @@ import spray.json._
 import scala.collection.immutable.ListMap
 import scala.math.Ordering.Double.IeeeOrdering
 
+class Localizer(formula: Stat => Double) {
+  def getSortedScore[T](m: Map[T, Stat]): ListMap[T, Double] =
+    ListMap(m.view.mapValues(_.getScore(formula)).toSeq.sortWith(_._2 > _._2): _*)
+
+  // instruction localizer
+  val instCounter: Map[Int, Stat] =
+    insts.map(inst => (inst.uid, Stat())).toMap
+  lazy val instScores: ListMap[Int, Double] = getSortedScore(instCounter)
+  def updateInst(covered: Set[Int], failed: Boolean) =
+    instCounter.foreach {
+      case (uid, stat) =>
+        stat.update(covered contains uid, failed)
+    }
+  private def dumpInst(filepath: String): Unit = {
+    val instContent = instScores.zipWithIndex.map {
+      case ((uid, score), rank) => {
+        val algoName = instToAlgo(uid).name
+        val inst = beautify(insts(uid), detail = false)
+        f"$rank%6d $score%6.2f [$uid] $inst @ $algoName"
+      }
+    }.mkString(LINE_SEP)
+    dumpFile(instContent, filepath)
+  }
+
+  // algorithm localizer
+  val algoCounter: Map[String, Stat] =
+    Algorithm.all.map(algo => (algo.name, Stat())).toMap
+  lazy val algoScores: ListMap[String, Double] = getSortedScore(algoCounter)
+  def updateAlgo(covered: Set[String], failed: Boolean) =
+    algoCounter.foreach {
+      case (algoName, stat) =>
+        stat.update(covered contains algoName, failed)
+    }
+  private def dumpAlgo(filepath: String): Unit = {
+    val algoContent = algoScores.zipWithIndex.map {
+      case ((algoName, score), rank) => {
+        f"$rank%6d $score%6.2f $algoName"
+      }
+    }.mkString(LINE_SEP)
+    dumpFile(algoContent, filepath)
+  }
+
+  def dump(dir: String) = {
+    mkdir(dir)
+    dumpInst(s"$dir/inst")
+    dumpAlgo(s"$dir/algo")
+  }
+}
+
 object Localizer {
   def apply(
     scriptDir: String,
-    failedPath: String,
+    failedScripts: Set[String],
     formula: Stat => Double
-  ): Unit = {
-    def getSortedScore[T](m: Map[T, Stat]): ListMap[T, Double] =
-      ListMap(m.view.mapValues(_.getScore(formula)).toSeq.sortWith(_._2 > _._2): _*)
-
-    // generate structural element list(algo)
-    val algoCounter: Map[String, Stat] =
-      Algorithm.all.map(algo => (algo.name, Stat())).toMap
-    // generate structural element list(inst)
-    val instCounter: Map[Int, Stat] =
-      insts.map(inst => (inst.uid, Stat())).toMap
-
-    val failedScriptNames: Set[String] =
-      if (exists(failedPath)) readFile(failedPath).split(LINE_SEP).toSet
-      else Set()
-
+  ): Localizer = {
+    val localizer = new Localizer(formula)
     val toJsonExt = changeExt("js", "json")
-
     // update total structural element from scriptDir, failed
     for {
       file <- walkTree(scriptDir)
@@ -42,7 +77,7 @@ object Localizer {
       filename = file.toString
       parseResult = parse(Script(Nil), fileReader(filename)) if parseResult.successful
       script = parseResult.get
-      failed = failedScriptNames contains name
+      failed = failedScripts contains name
     } {
       // check if touched exist
       val touchedInstCache = s"$TOUCHED_DIR/inst/${toJsonExt(name)}"
@@ -68,39 +103,9 @@ object Localizer {
         case _ =>
       }
 
-      // iter inst
-      instCounter.foreach {
-        case (uid, stat) =>
-          stat.update(instCovered contains uid, failed)
-      }
-      // iter algo
-      algoCounter.foreach {
-        case (algoName, stat) =>
-          stat.update(algoCovered contains algoName, failed)
-      }
+      localizer.updateInst(instCovered, failed)
+      localizer.updateAlgo(algoCovered, failed)
     }
-
-    // sort counter by score
-    val instScores: ListMap[Int, Double] = getSortedScore(instCounter)
-    val algoScores: ListMap[String, Double] = getSortedScore(algoCounter)
-
-    // dump
-    val instContent =
-      instScores.zipWithIndex.map {
-        case ((uid, score), rank) => {
-          val algoName = instToAlgo(uid).name
-          val inst = beautify(insts(uid), detail = false)
-          f"$rank%6d $score%6.2f [$uid] $inst @ $algoName"
-        }
-      }.mkString(LINE_SEP)
-    dumpFile(instContent, s"$DIFF_TEST_DIR/localized/inst")
-
-    val algoContent =
-      algoScores.zipWithIndex.map {
-        case ((algoName, score), rank) => {
-          f"$rank%6d $score%6.2f $algoName"
-        }
-      }.mkString(LINE_SEP)
-    dumpFile(algoContent, s"$DIFF_TEST_DIR/localized/algo")
+    localizer
   }
 }
