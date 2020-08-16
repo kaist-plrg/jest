@@ -1,2 +1,20 @@
 \section{Conclusion}\label{sec:conclude}
-\inred{TODO}
+The development of modern languages follow continuous integration (CI) and
+continuous deployment (CD) approach to instantly support fast changing user
+demands.  It make more difficult to find both of semantics bug in implementations
+and the specification.  To alleviate this problem, we introduce
+$N$+1-differential testing, which is the first technique to test both of
+implementations and the specification.  We actualized our approach for the
+JavaScript programming language via $\tool$, which performs $N$+1-differential
+testing for modern JavaScript engines and their specification, ECMAScript.  It
+automatically generated \inred{-} JavaScript programs with \inred{-}\% of syntax
+coverage and \inred{-}\% of semantics coverage on the latest version of
+ECMAScript (ES11, 2020).  Our tool injected assertions to them in order to
+convert them as conformance tests.  We executed generated conformance tests on
+four different modern JavaScript engines: GraalJS, QuickJS, Moddable XS, and V8.
+Using the execution results, we found \inred{-} specification bugs and
+\inred{-} engine bugs (\inred{-} for GraalJS, \inred{-} for QuickJS, \inred{-}
+for Moddable XS, and \inred{-} for V8). All of them confirmed by the TC39, the
+committee of ECMAScript, and authors of JavaScript engines and will be fixed.
+We also localized detected bugs on ECMAScript and the average ranks of actual
+bug locations are \inred{-} for algorithms and \inred{-} for algorithm steps.
