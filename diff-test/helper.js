@@ -101,10 +101,18 @@ function $compareArray(a, b) {
   return true;
 }
 
-$assert.compareArray = function(actual, expected) {
+$assert.compareArray = function(actual, expected, obj) {
   function format(array) { return '[' + array.map($toString).join(', ') + ']'; }
+  function getObjDesc(obj) {
+    var str = Object.prototype.toString.call(obj);
+    str = str.substring("[object ".length, str.length - 1);
+    if(str !== "Function") return str;
+    else if(!obj.hasOwnProperty("arguments")) return "Class";
+    else return "Function"
+  }
+
   if ($compareArray(actual, expected)) return;
-  $error('Expected ' + format(expected) + ' but got ' + format(actual) + '.');
+  $error('Expected ' + format(expected) + ' but got ' + format(actual) + ' for ' + getObjDesc(obj) + '.');
 };
 
 // assertion to compare iterators

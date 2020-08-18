@@ -155,7 +155,7 @@ case class Injector(script: Script, debug: Boolean = false) {
         case _ => None
       })
     if (array.length == len)
-      add(s"$$assert.compareArray(Reflect.ownKeys($path), ${array.mkString("[", ", ", "]")});")
+      add(s"$$assert.compareArray(Reflect.ownKeys($path), ${array.mkString("[", ", ", "]")}, $path);")
   }
 
   // handle properties
