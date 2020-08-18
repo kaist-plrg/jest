@@ -26,7 +26,7 @@ case object Inject extends PhaseObj[Unit, InjectConfig, Unit] {
     case Some(filename) =>
       val parseResult = parse(Script(Nil), fileReader(filename))
       if (parseResult.successful)
-        dumpFile(Injector(parseResult.get, config.debug).result, filename)
+        dumpFile(Injector(parseResult.get, debug = config.debug).result, filename)
     case None =>
       var count = 0
       var total = 0
@@ -37,7 +37,7 @@ case object Inject extends PhaseObj[Unit, InjectConfig, Unit] {
         parseResult = parse(Script(Nil), fileReader(filename)) if parseResult.successful
         script = parseResult.get
       } try {
-        val injector = Injector(script, config.debug)
+        val injector = Injector(script, debug = config.debug)
         val injected = injector.result
         total += 1
         if (injector.isAsync) count += 1

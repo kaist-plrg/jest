@@ -1,10 +1,12 @@
 package kr.ac.kaist.ires.checker
 
 import kr.ac.kaist.ires.util.Useful._
+import kr.ac.kaist.ires._
 
 import spray.json._
 
-case class Checker(filename: String, engines: List[String], expected: String, debug: Boolean) {
+case class Checker(filename: String, expected: String, debug: Boolean) {
+  val engines = Checker.engines
   val result: Map[String, Set[CheckResult]] = {
     val executeResults: List[(String, Set[ExecuteResult])] = engines.map(e => (e, execute(e, filename)))
     val expectedResult: ExecuteResult = ExecuteResult(expected)
@@ -40,3 +42,8 @@ case class Checker(filename: String, engines: List[String], expected: String, de
   }
 }
 
+object Checker {
+  val engines: List[String] = List("node", "xst", "qjs", "gnode")
+  val targets: List[String] = engines :+ "spec"
+  val helper: String = readFile(s"$DIFF_TEST_DIR/helper.js")
+}

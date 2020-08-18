@@ -13,10 +13,7 @@ import spray.json._
 case object Check extends PhaseObj[Unit, CheckConfig, Unit] with DefaultJsonProtocol {
   val name = "check"
   val help = "Get injected script and check whoose fault"
-
-  val engines = List("node", "xst", "qjs", "gnode")
-  val targets = engines :+ "spec"
-  val dirs = targets.map(t => (t, s"$FAILED_DIR/$t.json")).toMap
+  val dirs = Checker.targets.map(t => (t, s"$FAILED_DIR/$t.json")).toMap
   mkdir(FAILED_DIR)
 
   var failedScripts: Map[String, Map[CheckResult, Set[String]]] = Map()
@@ -27,13 +24,12 @@ case object Check extends PhaseObj[Unit, CheckConfig, Unit] with DefaultJsonProt
     config: CheckConfig
   ): Unit = iresConfig.fileNames.headOption match {
     case Some(filename) =>
-      val helper: String = readFile(s"$DIFF_TEST_DIR/helper.js")
       val injected = readFile(filename)
       val tempPath = "__temp__.js"
       val comment = injected.split("\n").head
 
-      dumpFile(helper + injected, tempPath)
-      val checker = Checker(tempPath, engines, comment, config.debug)
+      dumpFile(Checker.helper + injected, tempPath)
+      val checker = Checker(tempPath, comment, config.debug)
       deleteFile(tempPath)
 
       checker.result.foreach {
@@ -42,10 +38,9 @@ case object Check extends PhaseObj[Unit, CheckConfig, Unit] with DefaultJsonProt
           rs.foreach(println)
       }
     case None =>
-      val helper: String = readFile(s"$DIFF_TEST_DIR/helper.js")
       val tempPath = "__temp__.js"
 
-      targets.foreach(t => { failedScripts = failedScripts + (t -> Map()) })
+      Checker.targets.foreach(t => { failedScripts = failedScripts + (t -> Map()) })
       for {
         file <- (walkTree(INJECTED_DIR) ++ walkTree(ERRORS_DIR))
         name = file.getName
@@ -54,8 +49,8 @@ case object Check extends PhaseObj[Unit, CheckConfig, Unit] with DefaultJsonProt
         val injected = readFile(filename)
         val comment = injected.split("\n").head
 
-        dumpFile(helper + injected, tempPath)
-        val checker = Checker(tempPath, engines, comment, config.debug)
+        dumpFile(Checker.helper + injected, tempPath)
+        val checker = Checker(tempPath, comment, config.debug)
         deleteFile(tempPath)
 
         val fails: Map[String, Set[CheckResult]] = checker.result

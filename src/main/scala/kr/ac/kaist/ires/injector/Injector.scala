@@ -6,7 +6,7 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 import kr.ac.kaist.ires.model.{ Parser => JSParser, Script, ModelHelper }
 
-case class Injector(script: Script, debug: Boolean = false) {
+case class Injector(script: Script, timeout: Option[Long] = None, debug: Boolean = false) {
   // injected script
   lazy val result = {
     uidOpt match {
@@ -51,7 +51,7 @@ case class Injector(script: Script, debug: Boolean = false) {
   script.updateSpan(0)
 
   // interpreter
-  private lazy val interp = new Interp(getName = true)
+  private lazy val interp = new Interp(false, timeout, getName = true)
 
   // final state
   private lazy val (st, uidOpt) = try {

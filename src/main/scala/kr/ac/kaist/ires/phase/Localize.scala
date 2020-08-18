@@ -32,12 +32,13 @@ case object Localize extends PhaseObj[Unit, LocalizeConfig, Unit] with DefaultJs
       name = failedFile.getName
       filename = failedFile.toString if jsonFilter(filename)
     } {
-      val localizedDir = s"${LOCALIZED_DIR}/$name"
+      val engine = removedExt(name)
+      val localizedDir = s"${LOCALIZED_DIR}/$engine"
       mkdir(localizedDir)
       val m = readJson[Map[String, Set[String]]](filename)
       m.zipWithIndex.foreach {
-        case ((_, failedSet), i) => {
-          val localizer = Localizer(scriptsDir, errorsDir, failedSet, config.formula)
+        case ((failedDesc, failedSet), i) => {
+          val localizer = Localizer(scriptsDir, errorsDir, engine, failedDesc, failedSet, config.formula)
           localizer.dump(s"$localizedDir/$i")
         }
       }
