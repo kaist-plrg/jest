@@ -47,17 +47,35 @@ class Localizer(formula: Stat => Double) {
     }
   private def dumpAlgo(filepath: String): Unit = {
     val algoContent = algoScores.zipWithIndex.map {
-      case ((algoName, score), rank) => {
-        f"$rank%6d $score%6.2f $algoName"
-      }
+      case ((algoName, score), rank) =>
+        f"$rank%8d $score%8.4f $algoName"
     }.mkString(LINE_SEP)
     dumpFile(algoContent, filepath)
+  }
+
+  // method-level aggregation
+  private def dumpAlgoAggregated(filepath: String): Unit = {
+    var agAlgoScores: ListMap[String, Double] = ListMap()
+    instScores.foreach {
+      case (uid, score) => {
+        val algoName = instToAlgo(uid).name
+        if (!agAlgoScores.keySet.contains(algoName))
+          agAlgoScores += algoName -> score
+      }
+    }
+
+    val agAlgoContent = agAlgoScores.zipWithIndex.map {
+      case ((algoName, score), rank) =>
+        f"$rank%8d $score%8.4f $algoName"
+    }.mkString(LINE_SEP)
+    dumpFile(agAlgoContent, filepath)
   }
 
   def dump(dir: String) = {
     mkdir(dir)
     dumpInst(s"$dir/inst")
     dumpAlgo(s"$dir/algo")
+    dumpAlgoAggregated(s"$dir/algo-aggregated")
   }
 }
 
