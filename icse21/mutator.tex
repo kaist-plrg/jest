@@ -30,7 +30,7 @@ target branch in the given program.  Then, the nearest syntax tree is mutated by
 a random syntax tree derivable from the same syntax production.  For example,
 consider the following JavaScript program:
 \begin{lstlisting}[style=myJSstyle]
-var x = '' + (1 == 2);
+var x = "" + (1 == 2);
 x *= 3 / true;
 \end{lstlisting}
 Assume that any programs in the current program pool cannot cover the true
@@ -69,7 +69,7 @@ program touches two algorithms \textbf{ToPrimitive} that has the invocation of
 string literals \code{"get"}, \code{"set"}, \code{"value"}, \code{"writable"},
 \code{"enumerable"}, and \code{"configurable"}.
 \begin{lstlisting}[style=myJSstyle]
-Object.defineProperty({}, 'p', 42);
+Object.defineProperty({}, "p", 42);
 \end{lstlisting}
 Thus, the mutator mutates a randomly selected expression in the program with a
 randomly generated object having properties whose keys are extracted symbols and

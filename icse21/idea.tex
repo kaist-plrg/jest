@@ -37,9 +37,9 @@ in the specification based on the statistical information.
   \end{subfigure}
   \begin{subfigure}[t]{0.43\textwidth}
     \begin{lstlisting}[style=myJSstyle]
-var obj = { valueOf: () => { throw 'err'; } };
+var obj = { valueOf: () => { throw "err"; } };
 var result = 42 == obj;
-// expected: throw an exception with 'err'
+// expected: throw an exception with "err"
 // ES11 semantics: result === false
     \end{lstlisting}
     \caption{An example JavaScript program}
@@ -48,7 +48,7 @@ var result = 42 == obj;
   \begin{subfigure}[t]{0.45\textwidth}
     \begin{lstlisting}[style=myJSstyle]
 try {
-  var obj = { valueOf: () => { throw 'err'; } };
+  var obj = { valueOf: () => { throw "err"; } };
   var result = 42 == obj;
   assert(result === false);
 } catch (e) {
@@ -103,7 +103,7 @@ returns $\code{false}$ as the result of comparison.  Based on the semantics
 described in the specification, we could inject assertions to check the code
 does not throw any errors as described in Figure~\ref{fig:example-injected}.
 However, most of modern JavaScript engines throw an error with a string
-$\code{'err'}$.  Using this information, we know that there exists a potential
+$\code{"err"}$.  Using this information, we know that there exists a potential
 specification bug with the JavaScript code.  Moreover, we can localize the
 detected bug using the statistical information. Among bunch of conformance
 tests, most of tests that go through steps 10 and 11 in the algorithm would be

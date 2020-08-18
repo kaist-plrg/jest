@@ -11,10 +11,8 @@ executing all asynchronous jobs assigned in the job queue, we enclose assertions
 with \code{setTimeout} to wait 100ms when the program uses asynchronous features
 such as \code{Promise} or \code{async}:
 \begin{lstlisting}[style=myJSstyle]
-// a given program
-setTimeout(() => {
-  // injected assertions
-}, 100)
+... /* a given program */
+setTimeout(() => { ... /* assertions */ }, 100)
 \end{lstlisting}
 
 
@@ -43,7 +41,7 @@ JavaScript program in Figure~\ref{fig:example-algo} normally terminates thus the
 program is modified as follows:
 \begin{lstlisting}[style=myJSstyle]
 // Normal
-var obj = { valueOf: () => { throw 'err'; } };
+var obj = { valueOf: () => { throw "err"; } };
 var result = 42 == obj;
 \end{lstlisting}
 
@@ -104,10 +102,8 @@ For example, the following code checks attributes of the data property
 \begin{lstlisting}[style=myJSstyle]
 var x = { p: 42 };
 $verifyProperty(x, "p", {
-  value: 42.0,
-  writable: true,
-  enumerable: true,
-  configurable: true
+  value: 42.0,      writable: true,
+  enumerable: true, configurable: true
 });
 \end{lstlisting}
 
@@ -122,13 +118,9 @@ own property keys for a given object.  We implement a helper
 length and contents.  For example, the following program is an example that
 checks the property keys and their order of the object in \code{x}.
 \begin{lstlisting}[style=myJSstyle]
-var x = {
-  [Symbol.match]: 0,
-  p: 0, 3: 0, q: 0
-}
+var x = { [Symbol.match]: 0, p: 0, 3: 0, q: 0 }
 $assert.compareArray(
-  Reflect.ownKeys(x),
-  ['3', 'p', 'q', Symbol.match]
+  Reflect.ownKeys(x), ["3", "p", "q", Symbol.match]
 );
 \end{lstlisting}
 
@@ -144,7 +136,7 @@ getters as follows:
     \telembf{|c|}{Name}   & \telembf{c|}{Indirect Getter}\\\hline
     \text{[[Prototype]]}  & \code{Object.getPrototypeOf(x)}\\\hline
     \text{[[Extensible]]} & \code{Object.isExtensible(x)}\\\hline
-    \text{[[Call]]}       & \code{typeof f === 'function'}\\\hline
+    \text{[[Call]]}       & \code{typeof f === "function"}\\\hline
     \text{[[Construct]]}  & \code{Reflect.construct(function()\{\},[],x)}\\\hline
   \end{array}
 \]
