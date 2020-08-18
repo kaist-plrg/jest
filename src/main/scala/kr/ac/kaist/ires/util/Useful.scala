@@ -191,7 +191,8 @@ object Useful {
   def executeCmd(cmd: String): (String, String) = {
     val stdout = new StringBuilder
     val stderr = new StringBuilder
-    cmd ! ProcessLogger(stdout append _, stderr append _)
+    def appendln(builder: StringBuilder, str: String) = builder append s"$str$LINE_SEP"
+    cmd ! ProcessLogger(appendln(stdout, _), appendln(stderr, _))
     (stdout.toString, stderr.toString)
   }
 }
