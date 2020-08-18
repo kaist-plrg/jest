@@ -87,14 +87,18 @@ program pool and it gradually grows via \textsf{Target Selector} and
 \textsf{Program Mutator}.  Figure~\ref{fig:sem-coverage} shows the change of
 semantics coverage of the program pool during the iterative process in
 \inred{50} hours.  The left and right graphs show the statement and branch
-coverage, respectively.  The red line for each graph denotes the coverage of
-tests of Test262.  For the statement coverage, \inred{29,728} statements exist
-in ES11 and tests in Test262 covers \inred{22,425 (75.43\%)} statements.  The
-initial program pool covers \inred{12,766 (42.94\%)} statements and the final
-program pool covers \inred{21,249 (71.48\%)} statements.  For branch coverage,
-\inred{11,448} branches exist in ES11 and tests in Test262 covers \inred{7,944
-(69.39\%)} branches.  The initial program pool covers \inred{3,986 (34.82\%)}
-branches and the final program pool covers \inred{7,476 (65.30\%)} branches.
+coverage, respectively.  The red line denotes the coverage of tests of Test262,
+dark gray X marks denote tests generated from ES11, and blue O marks denote
+tests generated from ES11 after fixing bugs detected by our tool.  For the
+statement coverage, \inred{29,728} statements exist in ES11 and tests in Test262
+covers \inred{22,425 (75.43\%)} statements.  The initial program pool covers
+\inred{12,766 (42.94\%)} statements and the final program pool covers
+\inred{21,249 (71.48\%)} and \inred{21,249 (71.48\%)} statements before and
+after fixing bugs, respectively.  For branch coverage, \inred{11,448} branches
+exist in ES11 and tests in Test262 covers \inred{7,944 (69.39\%)} branches.  The
+initial program pool covers \inred{3,986 (34.82\%)} branches and the final
+program pool covers \inred{7,476 (65.30\%)} and \inred{7,476 (65.30\%)} branches
+before and after fixing bugs.
 
 \begin{table}
   \caption{The number of successes and covered branches for mutation methods}

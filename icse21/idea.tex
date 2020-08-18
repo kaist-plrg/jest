@@ -37,10 +37,10 @@ in the specification based on the statistical information.
   \end{subfigure}
   \begin{subfigure}[t]{0.43\textwidth}
     \begin{lstlisting}[style=myJSstyle]
+// JavaScript engines: exception with "err"
+// ECMAScript (ES11) : result === false
 var obj = { valueOf: () => { throw "err"; } };
 var result = 42 == obj;
-// expected: throw an exception with "err"
-// ES11 semantics: result === false
     \end{lstlisting}
     \caption{An example JavaScript program}
     \label{fig:example-js}
