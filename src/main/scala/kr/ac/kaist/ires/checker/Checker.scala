@@ -23,7 +23,7 @@ case class Checker(filename: String, engines: List[String], expected: String, de
       val curIsAssertions = chead.isInstanceOf[AssertionError]
       (ansIsAssertions, curIsAssertions) match {
         case (true, true) => (cur -- ans).map(AssertionFail) ++ (ans -- cur).map(AssertionPass)
-        case (true, false) => if (chead == Normal) ans.map(AssertionPass) else Set(ExceptionFail(Normal, chead))
+        case (true, false) => ans.map(AssertionPass) ++ (if (chead != Normal) Set(ExceptionFail(Normal, chead)) else Set())
         case (false, true) => if (ahead == Normal) cur.map(AssertionFail) else Set(ExceptionFail(ahead, Normal))
         case (false, false) => if (ahead != chead) Set(ExceptionFail(ans.head, cur.head)) else Set()
       }
@@ -35,7 +35,7 @@ case class Checker(filename: String, engines: List[String], expected: String, de
 
   def execute(engine: String, filepath: String): Set[ExecuteResult] = {
     val cmd = if (engine contains "node") s"$engine --unhandled-rejections=none $filepath" else s"$engine $filepath"
-    val (stdout, stderr) = executeCmd(cmd)
+    val (stdout, stderr) = executeCmd(cmd).getOrElse(("Timeout occurs.", ""))
     //TODO:  "graal" need to use node
     ExecuteResult(stdout, stderr)
   }

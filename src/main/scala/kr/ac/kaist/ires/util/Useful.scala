@@ -10,6 +10,8 @@ import scala.io.Source
 import scala.util.Random
 import scala.sys.process._
 import spray.json._
+import scala.concurrent._
+import ExecutionContext.Implicits.global
 
 object Useful {
   // file reader
@@ -188,11 +190,20 @@ object Useful {
     (result, duration)
   }
 
-  def executeCmd(cmd: String): (String, String) = {
+  def executeCmd(cmd: String, timeout: Int = 1): Option[(String, String)] = {
     val stdout = new StringBuilder
     val stderr = new StringBuilder
     def appendln(builder: StringBuilder, str: String) = builder append s"$str$LINE_SEP"
-    cmd ! ProcessLogger(appendln(stdout, _), appendln(stderr, _))
-    (stdout.toString, stderr.toString)
+
+    val proc = cmd.run(ProcessLogger(appendln(stdout, _), appendln(stderr, _))) // start asynchronously
+    val future = Future(blocking(proc.exitValue())) // wrap in Future
+    try {
+      Await.result(future, duration.Duration(timeout, "sec"))
+      Some((stdout.toString, stderr.toString))
+    } catch {
+      case _: TimeoutException =>
+        proc.destroy()
+        None
+    }
   }
 }
