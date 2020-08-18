@@ -27,6 +27,8 @@ var x = true == { [ Symbol . toPrimitive ] : ( ) => { throw '' ; } } ;
 
 ## Class Property Orders - [Resolved](https://github.com/tc39/ecma262/pull/1490)
 - __Section:__ [14.6.13 Runtime Semantics: ClassDefinitionEvaluation](http://ecma-international.org/ecma-262/11.0/#sec-runtime-semantics-classdefinitionevaluation)
+- __Bug Starts From:__ [2019-02-07](https://github.com/tc39/ecma262/commit/a6d940eb00ee7809c365eb1158ade1947da43741)
+- __Bug Resolved At:__ [2020-04-11](https://github.com/tc39/ecma262/commit/74a9ef870ba6b002e2415c7a0c69705c8254c9ec)
 - ES2020에 따르면, class를 생성할 때 own property가 `length` -> `prototype` -> `name`의 순서로 추가가 된다.
   1. 12 번째 step에서 `constructor`의 [DefineMethod](http://ecma-international.org/ecma-262/11.0/#sec-runtime-semantics-definemethod)를 호출하고, 6 번째 step에서 [OrdinaryFunctionCreate](http://ecma-international.org/ecma-262/11.0/#sec-ordinaryfunctioncreate)를 호출, 18 번째 step에서 [SetFunctionLength](http://ecma-international.org/ecma-262/11.0/#sec-setfunctionlength)를 호출해서 4 번째 step에서 `length` property를 생성함.
   2. 14 번째 step에서 [MakeConstructor](http://ecma-international.org/ecma-262/11.0/#sec-makeconstructor)를 호출하고, 8 번째 step에서 `prototype` property를 생성함.
@@ -50,6 +52,8 @@ class A {}
 
 ## Default Function Names - [Resolved](https://github.com/tc39/ecma262/pull/1490)
 - __Section:__ [14.2.17 Runtime Semantics: Evaluation](http://ecma-international.org/ecma-262/11.0/#sec-arrow-function-definitions-runtime-semantics-evaluation)
+- __Bug Starts From:__ [2015-06-01](https://github.com/tc39/ecma262/commit/7461eea82908b2c5742e4d6e5f57dc0cd4b43a60)
+- __Bug Resolved At:__ [2020-04-11](https://github.com/tc39/ecma262/commit/74a9ef870ba6b002e2415c7a0c69705c8254c9ec)
 - ArrowFunction, FunctionExpression, AsyncFunctionExpression 등에서 이름을 가지지 않는 경우에는
   Evaluation을 하더라도 [SetFunctionName](http://ecma-international.org/ecma-262/11.0/#sec-setfunctionname)을
   부르지 않기 때문에, `name` property가 own property로 생성되지 않는다.
@@ -128,8 +132,9 @@ x ++;
 ```
 
 ## For In  - [Resolved](https://github.com/tc39/ecma262/pull/1969)
-
 - __Section:__ [13.7.5.12 Runtime Semantics: ForIn/OfHeadEvaluation](http://ecma-international.org/ecma-262/11.0/#sec-runtime-semantics-forinofheadevaluation)
+- __Bug Starts From:__ [2017-10-17](https://github.com/tc39/ecma262/commit/aa163479cc0480278e36a87c90cef5128ae350e3)
+- __Bug Resolved At:__ [2020-04-30](https://github.com/tc39/ecma262/commit/5e722af04aabe963ebd9eef8a5deddb1b5d8f5eb)
 - for in loop에서 *iterationKind* 가 enumerate 인 경우 EnumerateObjectProperties에서 iterator Record가 아닌 iterator **object**를 반환한다.
 그러나 iterator object는 [[NextMethod]] 가 없으므로 이후 ForIn/OfBodyEvaluation에서 6.a에서 TypeError 발생함
 - __Simple JavaScript code:__
@@ -139,6 +144,8 @@ for ( x in { } ) ;
 
 ## Default Class Names - [Resolved](https://github.com/tc39/ecma262/pull/1490)
 - __Section:__ [14.6.16 Runtime Semantics: Evaluation](https://www.ecma-international.org/ecma-262/#sec-class-definitions-runtime-semantics-evaluation)
+- __Bug Starts From:__ [2015-06-01](https://github.com/tc39/ecma262/commit/7461eea82908b2c5742e4d6e5f57dc0cd4b43a60)
+- __Bug Resolved At:__ [2020-04-11](https://github.com/tc39/ecma262/commit/74a9ef870ba6b002e2415c7a0c69705c8254c9ec)
 - ClassExpression에서 이름을 가지지 않는 경우에는
   className이 undefined이기 때문에
   `name` property가 own property로 생성되지 않는다.
@@ -160,6 +167,7 @@ var x = Object . getOwnPropertyNames ( class { x ( ) { } } ) ;
 
 ## PropertyDefinitionEvaluation - [Pull requested](https://github.com/tc39/ecma262/pull/2130)
 - __Section:__ [12.2.6.8 Runtime Semantics: PropertyDefinitionEvaluation](https://www.ecma-international.org/ecma-262/#sec-object-initializer-runtime-semantics-propertydefinitionevaluation)
+- __Bug Starts From:__ [2019-02-07](https://github.com/tc39/ecma262/commit/a6d940eb00ee7809c365eb1158ade1947da43741)
 - PropertyDefinition:PropertyName:AssignmentExpression 의 3.a 스텝에서
 `propValue`가 abrupt completion일 수 있음에도 불구하고
 이를 `returnIfAbrupt`등으로 검사하지 않는다.
