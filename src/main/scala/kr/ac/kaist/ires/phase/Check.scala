@@ -60,6 +60,18 @@ case object Check extends PhaseObj[Unit, CheckConfig, Unit] with DefaultJsonProt
         deleteFile(tempPath)
 
         val fails: Map[String, Set[CheckResult]] = checker.result
+        if (fails.nonEmpty && config.debug) {
+          val hr = "-" * 80
+          println(hr)
+          println(name)
+          fails.foreach {
+            case (e, rs) if rs.nonEmpty =>
+              println(s"\n[$e]")
+              rs.foreach(println)
+            case _ =>
+          }
+          println(hr)
+        }
 
         fails.foreach {
           case (e, resultSet) =>
