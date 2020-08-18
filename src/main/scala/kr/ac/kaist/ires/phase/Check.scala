@@ -28,7 +28,20 @@ case object Check extends PhaseObj[Unit, CheckConfig, Unit] with DefaultJsonProt
     config: CheckConfig
   ): Unit = iresConfig.fileNames.headOption match {
     case Some(filename) =>
-      ??? // 이 파일 하나를 분류하기
+      val helper: String = readFile(s"$DIFF_TEST_DIR/helper.js")
+      val injected = readFile(filename)
+      val tempPath = "__temp__.js"
+      val comment = injected.split("\n").head
+
+      dumpFile(helper + injected, tempPath)
+      val checker = Checker(tempPath, engines, comment, config.debug)
+      deleteFile(tempPath)
+
+      checker.result.foreach {
+        case (e, rs) =>
+          println(s"\n[$e]")
+          rs.foreach(println)
+      }
     case None =>
       val helper: String = readFile(s"$DIFF_TEST_DIR/helper.js")
       val tempPath = "__temp__.js"
