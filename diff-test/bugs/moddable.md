@@ -20,7 +20,7 @@ var x = String . prototype . slice . call ( `${ '' }${ x }${ '' }` , 0 , x ?. ( 
 var x = Number . prototype . toString . call ( new Number ( 0 ) , 0 ) ;
 ```
 
-## PropertyDefinitionEvaluation - [Reported](https://github.com/Moddable-OpenSource/moddable/issues/400)
+## PropertyDefinitionEvaluation - [Reported](https://github.com/Moddable-OpenSource/moddable/issues/400), [Confirmed](https://github.com/Moddable-OpenSource/moddable/issues/400#issuecomment-674142835)
 - __Section:__ [12.2.6.8 Runtime Semantics: PropertyDefinitionEvaluation](http://ecma-international.org/ecma-262/11.0/#sec-object-initializer-runtime-semantics-propertydefinitionevaluation)
 - descriptor value should be "42" but ""
 - __Simple JavaScript code:__
