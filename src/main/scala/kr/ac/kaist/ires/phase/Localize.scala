@@ -14,7 +14,7 @@ import spray.json._
 import kr.ac.kaist.ires.checker.CheckResultProtocol._
 
 // localize phase
-case object Localize extends PhaseObj[Unit, LocalizeConfig, Unit] {
+case object Localize extends PhaseObj[Unit, LocalizeConfig, Unit] with DefaultJsonProtocol {
   val name = "localize"
   val help = "Localize JavaScript files."
 
