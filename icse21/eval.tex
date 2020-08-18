@@ -236,12 +236,11 @@ assertion is different with each other.  The assertions \textsf{Exc} and
 \inred{-} bugs out of \inred{39} bugs, respectively.  The \textsf{Var} detects
 \inred{-} engine bugs but other assertions failed to detect engine bugs.
 
-The most reliable JavaScript engine is V8 because it contains only two bugs.
-Moreover, even two engine bugs are caused by specification bugs in ES11.  V8
-directly follows the semantics of the ES11 related to the specification bugs
-ES11-1 and ES11-5 listed in Table~\ref{table:spec-bug}.  Unfortunately, the
-semantics is not intention of TC39 thus V8 confirmed and fixed two bugs our tool
-detected.
+The most reliable JavaScript engine is V8 because it contains only two bugs and
+they are caused by specification bugs in ES11.  V8 strictly follows the
+semantics of functions described in ES11 related to the specification bugs
+ES11-1 and ES11-2 listed in Table~\ref{table:spec-bug}.  Unfortunately, the
+semantics is not intention of TC39 thus V8 confirmed and fixed two bugs.
 
 The worst one is Moddable XS with \inred{-} bugs and they are located in various
 language features such as optional chains, \code{Number.prototype.toString},
@@ -283,9 +282,10 @@ value of the variable \code{x} is \code{undefined} thus the function call
   \label{table:spec-bug}
   \vspace*{-.5em}
   \small
-  \begin{tabular}{@{}c@{~}?c|l|c|c|@{~}c@{~}|@{~}c@{~}|@{~}r@{}}
+  \begin{tabular}{@{}c@{~}?c|@{~}c@{~}|l|c|c|@{~}c@{~}|@{~}c@{~}|@{~}r@{}}
     \telembf{@{}c?}{\bf Name} &
     \telembf{c}{\bf Feature} &
+    \telembf{@{}c@{~}}{\bf \#} &
     \telembf{c}{\bf Description} &
     \telembf{@{~}c@{~}}{\bf Assertion} &
     \telembf{@{~}c}{\bf Known} &
@@ -294,8 +294,9 @@ value of the variable \code{x} is \code{undefined} thus the function call
     \telembf{@{}c@{~}}{\bf Existed} \\\toprule\\[-1.4em]
 
     ES11-1 &
-    \text{Class} &
-    \makecell[l]{Wrong order between property keys for classes} &
+    \text{Function} &
+    \inred{-} &
+    \makecell[l]{Wrong order between property keys for functions} &
     \textsf{Key} &
     O &
     2019-02-07 &
@@ -303,17 +304,18 @@ value of the variable \code{x} is \code{undefined} thus the function call
     429 days \\\hline
 
     ES11-2 &
-    \text{Expression} &
-    \makecell[l]{Using the wrong variable \code{oldvalue} instead of\\
-      \code{oldValue} in \textbf{Evaluation} of \textit{UpdateExpression}} &
-    \textsf{-} &
+    \text{Function} &
+    \inred{-} &
+    \makecell[l]{Missing property \code{name} for anonymous functions} &
+    \textsf{Key} &
     O &
-    2019-09-27 &
-    2020-04-23 &
-    209 days \\\hline
+    2015-06-01 &
+    2020-04-11 &
+    1,776 days \\\hline
 
     ES11-3 &
     \text{Loop} &
+    1 &
     \makecell[l]{Returning iterator objects instead of iterator records\\
       in \textbf{ForIn/OfHeadEvaluation} for \code{for-in} loops} &
     \textsf{Exc} &
@@ -323,25 +325,19 @@ value of the variable \code{x} is \code{undefined} thus the function call
     926 days \\\hline
 
     ES11-4 &
-    \text{Function} &
-    \makecell[l]{Missing property \code{name} for anonymous functions} &
-    \textsf{Key} &
+    \text{Expression} &
+    4 &
+    \makecell[l]{Using the wrong variable \code{oldvalue} instead of\\
+      \code{oldValue} in \textbf{Evaluation} of \textit{UpdateExpression}} &
+    \textsf{-} &
     O &
-    2015-06-01 &
-    2020-04-11 &
-    1,776 days \\\hline
+    2019-09-27 &
+    2020-04-23 &
+    209 days \\\hline
 
     ES11-5 &
-    \text{Class} &
-    \makecell[l]{Missing property \code{name} for anonymous classes} &
-    \textsf{Key} &
-    O &
-    2015-06-01 &
-    2020-04-11 &
-    1,776 days \\\hline
-
-    ES11-6 &
     \text{Expression} &
+    1 &
     \makecell[l]{Unhandling abrupt completion\\
       in \textbf{Abstract Equality Comparison}} &
     \textsf{Exc} &
@@ -350,8 +346,9 @@ value of the variable \code{x} is \code{undefined} thus the function call
     2020-04-28 &
     1,793 days \\\hline
 
-    ES11-7 &
+    ES11-6 &
     \text{Object} &
+    1 &
     \makecell[l]{Unhandling abrupt completion in \textbf{Evaluation} of\\
       \textit{PropertyDefinition} for object literals} &
     \textsf{Exc} &
@@ -371,56 +368,62 @@ value of the variable \code{x} is \code{undefined} thus the function call
   \end{tabular}
 \end{table*}
 
-Our tool detected not only engine bugs but also \inred{7} specification bugs in
-ES11, the most recent version of ECMAScript: ES11-1 to ES11-7 in
-Table~\ref{table:spec-bug}.  Among them, six bugs (ES11-1 to ES11-6) were
-already reported and fixed in the current draft of the next ECMAScript but the
-remaining one, ES11-7, was never reported before.  We reported the bug ES11-7
-and TC39 confirmed that it is an actual specification bug.  Thus, it will be
-fixed in the next version, ECMAScript 2021 (ES12).  Now, we explain the details
-of specification bugs our tool detected.
+Our tool detected not only engine bugs but also \inred{-} specification bugs in
+ES11, the most recent version of ECMAScript. We categorized them based on their
+root causes from ES11-1 to ES11-7 in Table~\ref{table:spec-bug}.  Among them,
+six categories (ES11-1 to ES11-6) were already reported and fixed in the current
+draft of the next ECMAScript but the remaining one, ES11-7, was never reported
+before.  We reported the bug ES11-7 and TC39 confirmed that it is an actual
+specification bug.  Thus, it will be fixed in the next version, ECMAScript 2021
+(ES12).  Now, we explain the details of specification bugs our tool detected.
 
-The specification bug ES11-1 is due to a wrong order between property keys of
-classes.  If we define a class declaration with a name \code{A} (\code{class A {}}),
-three properties are defined in the function stored in the variable \code{A}:
-\code{length} with a number value \code{0}, \code{prototype} with an object, and
-\code{name} with a string \code{"A"}.  The problem is the different order of
-their keys because of the wrong order of their creations.  From ECMAScript 2015
-(ES6), the order between property keys is no more implementation-dependent
-feature and it is related to the creation order of properties.  According
-to the semantics of ES11, the order of property keys in the class \code{A}
-should be \code{[length, prototype, name]} but three engines except V8
-claims that \code{[length, name, prototype]}.  In fact, the three engines
-are correct thus the ES11 and V8 confirmed that it is a real bug.  This bug was
-created on \inred{-} and TC39 fixed it on \inred{-} after \inred{-} days.
+ES11-1 contains \inred{-} specification bugs are due to a wrong order between
+property keys of all kinds of function values such as \code{async}/generator
+functions, arrow functions, or classes.  For example, if we define a class
+declaration with a name \code{A} (\code{class A {}}), three properties are
+defined in the function stored in the variable \code{A}: \code{length} with a
+number value \code{0}, \code{prototype} with an object, and \code{name} with a
+string \code{"A"}.  The problem is the different order of their keys because of
+the wrong order of their creations.  From ECMAScript 2015 (ES6), the order
+between property keys is no more implementation-dependent feature and it is
+related to the creation order of properties.  According to the semantics of
+ES11, the order of property keys in the class \code{A} should be \code{[length,
+prototype, name]} but three engines except V8 claims that \code{[length, name,
+prototype]}.  In fact, the three engines are correct thus the ES11 and V8
+confirmed that it is a real bug.  This bug was created on \inred{-} and TC39
+fixed it on \inred{-} after \inred{-} days.
 
-ES11-2 is related to a typo for the variable.  In \textbf{Evaluation} of
-\textit{UpdateExpression}, there exists a typo \code{oldvalue} instead of
-\code{oldValue}.  Our tool failed to execute the code \code{x++} using the
-semantics of ES11 because of the typo.  However, four JavaScript engines succeed
-to execute the code without any issues.  This bug was confirmed by TC39 on
-\inred{-}.
+Similarly, ES11-2 contains \inred{-} specification bugs related to all kinds of
+anonymous functions.  Until ES10, anonymous functions, such as an identity arrow
+function \code{x => x}, have their own property \code{name} with an empty string
+\code{""}.  However, ES11 removes the \code{name} property but still three
+engines except V8 creates the \code{name} property in anonymous functions.  In
+fact, the removal was not intention of TC39 and it was reverted to create the
+property again on \inred{-}.  Moreover, V8 also accepted that it was the engine
+bug and it will be fixed in V8.
 
-ES11-3 comes from the misunderstanding of the term ``iterator object'' and
-``iterator record''.  The algorithm \textbf{ForIn/OfHeadEvaluation} should
-return an iterator record, which is an implicit record consists of only internal
-slots.  However, In ES11, it returns an iterator object, which is a JavaScript
-object with some properties related to iterations.  It causes a \code{TypeError}
-when executing the code \code{for(var x in \{\});} according to ES11 but all
-engines normally execute the code without any exceptions.  This bug is confirmed
-by TC39 on \inred{-}.
+The bug in ES11-3 comes from the misunderstanding of the term ``iterator
+object'' and ``iterator record''.  The algorithm \textbf{ForIn/OfHeadEvaluation}
+should return an iterator record, which is an implicit record consists of only
+internal slots.  However, In ES11, it returns an iterator object, which is a
+JavaScript object with some properties related to iterations.  It causes a
+\code{TypeError} when executing the code \code{for(var x in \{\});} according to
+ES11 but all engines normally execute the code without any exceptions.  This bug
+is confirmed by TC39 on \inred{-}.
 
-ES11-4 and ES11-5 break the backward-compatibility related to anonymous function
-and classes.  Until ES10, anonymous functions or classes, such as an identity
-arrow function \code{x => x}, have their own property \code{name} with an empty
-string \code{""}.  However, ES11 removes the \code{name} property but still
-three engines except V8 creates the \code{name} property in anonymous
-functions or classes.  In fact, the removal was not intention of TC39 and it was
-reverted to create the property again on \inred{-}.  Moreover, V8 also accepted
-that it was the engine bug and it will be fixed in V8.
+ES11-4 contains four specification bugs caused by a typo for the variable in the
+semantics of four different update expressions (\code{x++}, \code{x--},
+\code{++x}, and \code{--x}).  In each \textbf{Evaluation} of four kinds of
+\textit{UpdateExpression}, there exists a typo \code{oldvalue} in the step 3
+instead of \code{oldValue} declared in the step 2.  Our tool failed to execute
+the code \code{x++} using the semantics of ES11 because of the typo.  In this
+case, we directly pass the code to \textsf{Bug Localizer} to test whether the
+code is executable in real engines and to localize the bug.  Of course, four
+JavaScript engines succeed to execute the update expressions without any issues
+and this bug was confirmed by TC39 on \inred{-}.
 
-ES11-6 and ES11-7 are caused by unhandling of abrupt completions in the abstract
-equality comparison and property definitions of object literals, respectively.
-ES11-6 confirmed by TC39 and was fixed on \inred{-}.  ES11-7 was a not yet
-discovered bug thus we reported it.  This bug was confirmed by TC39 on \inred{-}
-after existing for \inred{-} days.
+Two bugs in ES11-5 and ES11-6 are caused by unhandling of abrupt completions in
+the abstract equality comparison and property definitions of object literals,
+respectively.  While the bug in ES11-5 confirmed by TC39 and was fixed on
+\inred{-}, the bug in ES11-7 was not yet discovered thus we reported it and
+confirmed by TC39 on \inred{-} after existing for \inred{-} days.
