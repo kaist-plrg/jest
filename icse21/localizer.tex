@@ -1,3 +1,28 @@
 \subsection{Bug Localizer}
 
-\inred{TODO}
+In the bug detection/localization phase, \textsf{Bug Localizer} detects and
+localizes bugs based on the execution results of given conformance tests on
+multiple JavaScript engines.  If most of engines fails to a specific
+conformance test, we believe that the failure of the test represents the
+correct semantics.  Thus, we suspect engines passing the test and the
+specification of containing bugs related to the test.  Otherwise, we assume
+that bugs exist in engines failing the test.
+
+After targeting a poterntially buggy engine or specification with failed tests,
+we utilize Spectrum Based Fault Localization (SBFL)\cite{sbfl-survey}, which is
+which is a ranking technique based on likelihood of being faulty for each
+program element.  We use the following basic formula introduced by Jones et
+al. with a tool Tarantula\cite{tarantula, tarantula2}:
+\[
+  {{n_{ef}}\over{n_{ef} + n_{nf}}} /
+  \left(
+    {{n_{ef}}\over{n_{ef} + n_{nf}}} +
+    {{n_{ef}}\over{n_{ep} + n_{np}}}
+  \right)
+\]
+where $n_{ef}$, $n_{ep}$ , $n_{ep}$, and $n_{np}$ represent the number of test
+cases; subscripts ${}_e$ and ${}_n$ represent whether the test case touched the
+relevant program elements or not, and subscripts ${}_f$ and ${}_p$ represent
+whether the test case is failed or passed.
+
+\inred{TODO: mutation?}
