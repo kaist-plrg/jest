@@ -8,7 +8,6 @@ import kr.ac.kaist.ires.util.Useful._
 //import scala.collection.mutable.Map
 
 import spray.json._
-import kr.ac.kaist.ires.checker.CheckResultProtocol._
 
 // Check phase
 case object Check extends PhaseObj[Unit, CheckConfig, Unit] with DefaultJsonProtocol {
@@ -84,7 +83,10 @@ case object Check extends PhaseObj[Unit, CheckConfig, Unit] with DefaultJsonProt
       }
 
       failedScripts.foreach {
-        case (e, m) => dumpJson(m, dirs(e))
+        case (e, m) => {
+          val m_string = m.map { case (k, v) => (k.toString, v) }
+          dumpJson(m_string, dirs(e))
+        }
       }
 
     //if (config.debug) println(s"[AsyncInejcted]: ${getPercent(count, total)}")

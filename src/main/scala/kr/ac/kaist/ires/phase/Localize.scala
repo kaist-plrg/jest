@@ -11,7 +11,6 @@ import kr.ac.kaist.ires.util.Useful._
 import kr.ac.kaist.ires.localizer._
 import kr.ac.kaist.ires.checker._
 import spray.json._
-import kr.ac.kaist.ires.checker.CheckResultProtocol._
 
 // localize phase
 case object Localize extends PhaseObj[Unit, LocalizeConfig, Unit] with DefaultJsonProtocol {
@@ -35,7 +34,7 @@ case object Localize extends PhaseObj[Unit, LocalizeConfig, Unit] with DefaultJs
     } {
       val localizedDir = s"${LOCALIZED_DIR}/$name"
       mkdir(localizedDir)
-      val m = readJson[Map[CheckResult, Set[String]]](filename)
+      val m = readJson[Map[String, Set[String]]](filename)
       m.zipWithIndex.foreach {
         case ((_, failedSet), i) => {
           val localizer = Localizer(scriptsDir, failedSet, fomula)
