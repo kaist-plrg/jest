@@ -8,7 +8,7 @@ program.  We carefully implement helper functions for assertions in JavaScript
 not to affect the semantics of the original program and inject them in the front
 of the given program.  Moreover, in order to check the final state after
 executing all asynchronous jobs assigned in the job queue, we enclose assertions
-with \code{setTimeout} to wait 100ms when the program uses asynchronous features
+with \code{seatmate} to wait 100ms when the program uses asynchronous features
 such as \code{Promise} or \code{async}:
 \begin{lstlisting}[style=myJSstyle]
 ... /* a given program */
@@ -51,7 +51,7 @@ var result = 42 == obj;
 We injected assertions that compare values stored in variables with expected
 values.  To focus on newly introduced variables during the execution, we do not
 compare pre-defined variables such as built-in objects.  It detects variables
-introduced by not only variable declarations (\code{var}) but also lexcial
+introduced by not only variable declarations (\code{var}) but also lexical
 (\code{let} or \code{const}) and function declarations.  We discriminate
 \code{-0} and \code{+0} using division by zero because \code{-0/0} and
 \code{+0/0} produce positive and negative infinity values, respectively.  For
@@ -127,7 +127,7 @@ $assert.compareArray(
 
 \subsubsection{Internal Methods and Slots}
 
-JavaScript objects have internal methods and slots that we cannot direcly
+JavaScript objects have internal methods and slots that we cannot directly
 access.  However, several internal methods and slots are accessible using
 indirect ways.  We target four internal slots with their appropriate indirect
 getters as follows:
@@ -154,7 +154,7 @@ internal method.  For [[Construct]] method, we use the \code{Reflect.construct}
 built-in function that checks the existence of [[Construct]] methods and invokes
 it.  To preserve the current state, we pass a given object as the third argument
 to only check the existence of [[Construct]] and pass another dummy function
-\code{funcion(){}} as the first argument whose [[Construct]]
+\code{function(){}} as the first argument whose [[Construct]]
 invoked by \code{Reflect.construct}.  For example, the following code describes
 how the injector injects assertions related to internal methods and slots:
 \begin{lstlisting}[style=myJSstyle]
