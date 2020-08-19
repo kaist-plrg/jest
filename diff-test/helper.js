@@ -174,8 +174,3 @@ function $delay(f) {
       setTimeout(f, DELAY);
     });
 }
-
-function $getKeys(obj) {
-  var keys = Reflect.ownKeys(obj);
-  return keys.filter(x => (typeof x == 'symbol'));
-}
