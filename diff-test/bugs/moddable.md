@@ -236,7 +236,7 @@ var x = Function . prototype . bind . call ( ( ) => { } , ( Symbol . replace ) )
 var x = Promise . race ( { [ Symbol . asyncIterator ] : function ( ) { ; } , [ Symbol . iterator ] : async function ( ) { ; await x ( ) ; } } ) ; async function * x ( ... { ... x } ) { } throw 42 ; async function x ( x ) { ; x ( 42 ) ; }
 ```
 
-<-- ## Class, Async toString - ~[Reported1](https://github.com/Moddable-OpenSource/moddable/issues/402), [Reported2](https://github.com/Moddable-OpenSource/moddable/issues/408)~ [Rejected](https://github.com/Moddable-OpenSource/moddable/issues/402#issuecomment-671564992)
+<!-- ## Class, Async toString - ~[Reported1](https://github.com/Moddable-OpenSource/moddable/issues/402), [Reported2](https://github.com/Moddable-OpenSource/moddable/issues/408)~ [Rejected](https://github.com/Moddable-OpenSource/moddable/issues/402#issuecomment-671564992)
 - **Implmentation dependent**
 - __Section:__
   - [19.2.3.5 Function.prototype.toString](http://ecma-international.org/ecma-262/11.0/#sec-function.prototype.tostring)
