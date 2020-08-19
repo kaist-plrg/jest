@@ -109,7 +109,7 @@ case class Injector(script: Script, debug: Boolean = false) {
         add(s"$$assert.sameValue($path, $origPath);")
       case (_: DynamicAddr, None) if addr != globalThis =>
         handledObjects += addr -> path
-        interp.addrName.get(addr).map(name => add(s"""$path.__algo__ = "$name""""))
+        interp.addrName.get(addr).map(name => add(s"""$$algo.set($path, "$name")"""))
         handlePrototype(addr, path)
         handleExtensible(addr, path)
         handleCall(addr, path)

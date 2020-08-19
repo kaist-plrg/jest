@@ -1,7 +1,10 @@
 'use strict';
 
 // logging errors
-  var $error = (globalThis.console && globalThis.console.log) || globalThis.print;
+var $error = (globalThis.console && globalThis.console.log) || globalThis.print;
+
+// algo map
+var $algo = new Map();
 
 // conversion to string
 function $toString(value) {
@@ -103,7 +106,7 @@ function $compareArray(a, b) {
 
 $assert.compareArray = function(actual, expected, obj) {
   function format(array) { return '[' + array.map($toString).join(', ') + ']'; }
-  function getObjDesc(obj) { return obj.__algo__ || "Object"; }
+  function getObjDesc(obj) { return $algo.get(obj) || "Object"; }
   if ($compareArray(actual, expected)) return;
   $error('Expected ' + format(expected) + ' but got ' + format(actual) + ' for ' + getObjDesc(obj) + '.');
 };
@@ -174,5 +177,5 @@ function $delay(f) {
 
 function $getKeys(obj) {
   var keys = Reflect.ownKeys(obj);
-  return keys.filter(x => (typeof x == 'symbol') || !x.startsWith("__"));
+  return keys.filter(x => (typeof x == 'symbol'));
 }
