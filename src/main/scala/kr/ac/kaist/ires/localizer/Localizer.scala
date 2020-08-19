@@ -20,6 +20,8 @@ import kr.ac.kaist.ires.checker._
 class Localizer(formula: Formula) {
   def getSortedScore[T](m: Map[T, Stat]): ListMap[T, Double] =
     ListMap(m.view.mapValues(_.getScore(formula)).toSeq.sortWith(_._2 > _._2): _*)
+  def getRank(m: ListMap[String, Double]): String => Int =
+    algoName => m.keys.toList.indexOf(algoName)
 
   // instruction localizer
   val instCounter: Map[Int, Stat] =
@@ -50,6 +52,7 @@ class Localizer(formula: Formula) {
       case (algoName, stat) =>
         stat.update(covered contains algoName, failed)
     }
+  def getAlgoRank: String => Int = getRank(algoScores)
   private def dumpAlgo(filepath: String): Unit = {
     val algoContent = algoScores.zipWithIndex.map {
       case ((algoName, score), rank) =>
@@ -59,16 +62,19 @@ class Localizer(formula: Formula) {
   }
 
   // method-level aggregation
-  private def dumpAlgoAggregated(filepath: String): Unit = {
-    var agAlgoScores: ListMap[String, Double] = ListMap()
+  lazy val agAlgoScores: ListMap[String, Double] = {
+    var m: ListMap[String, Double] = ListMap()
     instScores.foreach {
       case (uid, score) => {
         val algoName = instToAlgo(uid).name
-        if (!agAlgoScores.keySet.contains(algoName))
-          agAlgoScores += algoName -> score
+        if (!m.keySet.contains(algoName))
+          m += algoName -> score
       }
     }
-
+    m
+  }
+  def getAgAlgoRank: String => Int = getRank(agAlgoScores)
+  private def dumpAlgoAggregated(filepath: String): Unit = {
     val agAlgoContent = agAlgoScores.zipWithIndex.map {
       case ((algoName, score), rank) =>
         f"$rank%8d $score%8.4f $algoName"

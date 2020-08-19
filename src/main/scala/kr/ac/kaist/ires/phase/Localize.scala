@@ -38,11 +38,43 @@ case object Localize extends PhaseObj[Unit, LocalizeConfig, Unit] with DefaultJs
       val dir = s"$localizedDir/$engine"
       mkdir(dir)
 
+      val answerMap: Option[Map[String, String]] = config.answerDir match {
+        case Some(answerDir) =>
+          Some(readJson[Map[String, String]](s"$answerDir/$name"))
+        case None => None
+      }
+
       val m = readJson[Map[String, Set[String]]](filename)
       m.zipWithIndex.foreach {
         case ((failedDesc, failedSet), i) => {
           val localizer = Localizer(scriptsDir, errorsDir, engine, failedDesc, failedSet, config.formula, config.mutate)
           localizer.dump(s"$dir/$i")
+
+          // create summary
+          var summary: String = {
+            s"mutate : ${config.mutate}" + LINE_SEP +
+              s"formula : ${config.formula.name}" + LINE_SEP +
+              s"fail description : $failedDesc" + LINE_SEP
+          }
+          // if answerMap exists, then save result
+          answerMap match {
+            case Some(am) => am.get(failedDesc) match {
+              case Some(answerAlgo) => {
+                val algoRank = localizer.getAlgoRank(answerAlgo)
+                val agAlgoRank = localizer.getAgAlgoRank(answerAlgo)
+                println(answerAlgo)
+                summary += {
+                  s"answer : $answerAlgo" + LINE_SEP +
+                    s"algo rank : $algoRank" + LINE_SEP +
+                    s"aggregated algo rank : $agAlgoRank" + LINE_SEP
+                }
+              }
+              case None => // do nothing
+            }
+            case None => // do nothing
+          }
+
+          dumpFile(summary, s"$dir/$i/summary")
         }
       }
     }
@@ -63,7 +95,9 @@ case object Localize extends PhaseObj[Unit, LocalizeConfig, Unit] with DefaultJs
     ("mutate", BoolOption(c => c.mutate = false),
       "apply mutation in localizer"),
     ("localized", StrOption((c, str) => c.localizedDir = str),
-      "path to localization result directory")
+      "path to localization result directory"),
+    ("answer", StrOption((c, str) => c.answerDir = Some(str)),
+      "path to answer directory")
   )
 }
 
@@ -74,6 +108,7 @@ case class LocalizeConfig(
     var scriptsDir: String = s"$GENERATED_DIR",
     var errorsDir: String = s"$ERRORS_DIR",
     var localizedDir: String = s"$LOCALIZED_DIR",
+    var answerDir: Option[String] = None,
     var formula: Formula = Tarantula,
     var mutate: Boolean = false
 ) extends Config
