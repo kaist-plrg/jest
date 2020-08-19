@@ -72,7 +72,6 @@ case object Check extends PhaseObj[Unit, CheckConfig, Unit] with DefaultJsonProt
           println(hr)
         }
 
-        println(fails)
         fails.foreach {
           case (e, resultSet) =>
             resultSet.foreach(r => {
