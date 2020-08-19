@@ -6,7 +6,7 @@
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-|
 |MD1  |Moddable| |X| | |Exc|||Y|`var x = TypeError ( x ?. ( ) ) ;`|
 |MD2  |Moddable| |X| | |Exc|||Y|`var x = Number . prototype . toString . call ( new Number ( 0 ) , 0 ) ;`|
-|MD3  |Moddable|X|X| |X|Desc|||Y|`var x = { 42 : class   { x (  ) {  } } } ;`|
+|MD3  |Moddable| |X| |X|Desc|||Y|`var x = { 42 : class   { x (  ) {  } } } ;`|
 |MD4  |Moddable| |X| | |Desc|||N|`var x = [ , ... '' ] ;`|
 |MD5  |Moddable| |X| | |Exc|||N|`Array . prototype . toString . call ( function x (  ) {  } ) ;`|
 |MD6-1|Moddable| |X| | |Key|||N|`var x = Map . prototype . keys . call ( new Map ( ) ) ;`|
@@ -18,12 +18,12 @@
 |MD10 |Moddable| |X| | |Exc|||N|`var x = [ 1 , 2 , 3 ] ; ( [ , undefined ] = x ) ;`|
 |MD11 |Moddable| |X| | |Key|||N|`var x = Array . prototype . slice . call ( 'str' , { } , ~ x ) ;`|
 |MD12 |Moddable| |X| | |Exc|||N|`switch ( '' ) { default : ; class x extends { x } { } }`|
-|MD13 |Moddable|X|X|X| |Exc|||N|`async function * x ( ) { class x extends new . target { ; } } ; x ( ) ;`|
+|MD13 |Moddable| |X| | |Exc|||N|`async function * x ( ) { class x extends new . target { ; } } ; x ( ) ;`|
 |MD14 |Moddable| |X| | |Exc|||N|`do do ; while ( '' ) ; while ( BigInt ( 0 ) ) ;`|
 |MD15 |Moddable| |X|X| |Key|||N|`var x = Function . prototype . bind . call ( ( ) => { } , ( Symbol . replace ) ) ;`|
 |MD16 |Moddable| |X| | |Exc|||N|`var x = Promise . race ( { [ Symbol . asyncIterator ] : function ( ) { ; } , [ Symbol . iterator ] : async function ( ) { ; await x ( ) ; } } ) ; async function * x ( ... { ... x } ) { } throw 42 ; async function x ( x ) { ; x ( 42 ) ; }`|
 |MD17 |Moddable| |X| | |Key|||N|`var x = x `` ; function * x ( ... [ ] ) { }`|
-|MD18 |Moddable|X|X| | |Desc|||N|`var x = Object . defineProperty ( class { static x ( ) { } } , { [ "set" ] : ( ) => { throw { [ Symbol . toPrimitive ] : function ( x ) { } } ; } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : { [ Symbol . toPrimitive ] : function ( x ) { } } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : async function ( ) { } , [ "get" ] : { [ Symbol . toPrimitive ] : function ( x ) { } } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : { [ Symbol . toPrimitive ] : function ( x ) { } } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : { [ Symbol . toPrimitive ] : function ( x ) { } } } , { [ "set" ] : ( ) => { throw '' ; } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : { [ Symbol . toPrimitive ] : function ( x ) { } } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : async function ( ) { } , [ "get" ] : function ( ) { } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : async function ( x ) { } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : { [ Symbol . toPrimitive ] : function ( x ) { } } } ) ;`|
+|MD18 |Moddable| |X| | |Desc|||N|`var x = Object . defineProperty ( class { static x ( ) { } } , { [ "set" ] : ( ) => { throw { [ Symbol . toPrimitive ] : function ( x ) { } } ; } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : { [ Symbol . toPrimitive ] : function ( x ) { } } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : async function ( ) { } , [ "get" ] : { [ Symbol . toPrimitive ] : function ( x ) { } } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : { [ Symbol . toPrimitive ] : function ( x ) { } } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : { [ Symbol . toPrimitive ] : function ( x ) { } } } , { [ "set" ] : ( ) => { throw '' ; } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : { [ Symbol . toPrimitive ] : function ( x ) { } } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : async function ( ) { } , [ "get" ] : function ( ) { } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : async function ( x ) { } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : { [ Symbol . toPrimitive ] : function ( x ) { } } } ) ;`|
 
 
 
