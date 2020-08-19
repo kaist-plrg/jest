@@ -54,10 +54,13 @@ case class Injector(script: Script, debug: Boolean = false) {
   private lazy val interp = new Interp(getName = true)
 
   // final state
-  private lazy val (st, uidOpt) = try { (interp(initState), None) } catch {
+  private lazy val (st, uidOpt) = try {
+    val st = interp(initState)
+    interp.getName = false
+    (st, None)
+  } catch {
     case e: IRError => (initState, Some(interp.recentInst.get.uid))
   }
-  interp.getName = false
 
   // injected script
   private var header = ""
