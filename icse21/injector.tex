@@ -46,6 +46,25 @@ var result = 42 == obj;
 \end{lstlisting}
 
 
+\subsubsection{Crashes}
+
+The semantics of ECMAScript rarely crashes because of the unspecified cases.
+For example, consider the following JavaScript program:
+\begin{lstlisting}[style=myJSstyle]
+var x = 42; x++;
+\end{lstlisting}
+It uses the increment postfix operator (\code{++}) to increase the number value
+stored in the variable \code{x}.  However, a typo exists in the
+\textbf{Evaluation} algorithm of ES11 for such update expressions thus the
+behavior of the program is not defined in ES11.  To represent this situation in
+the conformance test, we injects a tag \code{Crash} to the comment in the first
+line as follows:
+\begin{lstlisting}[style=myJSstyle]
+// Crash
+var x = 42; x++;
+\end{lstlisting}
+
+
 \subsubsection{Variable Values}
 
 We injected assertions that compare values stored in variables with expected

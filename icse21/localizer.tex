@@ -29,9 +29,8 @@ We classify the failed test cases based on their failure messages and apply SBFL
 with the above formula to each failure case.  To enhance the accuracy of the bug
 localization, we expand the set of failed test cases.  We utilize
 \textsf{Program Mutator} to get a new program but still failed with the same
-message.  We use two different program elements as targets of SBFL: abstract
-algorithms and their steps.  While we directly apply the above formula to
-calculate the SBFL scores for algorithm steps, we use method level aggregation
-introduced by Sohn et al.\cite{fluccs} for abstract algorithms.  in other
-words, we aggregate SBFL scores for steps up to algorithm level based on the
-highest score among those from steps of each algorithm.
+message.  We use abstract algorithms of ECMAScript as program elements as
+targets of SBFL.  We use method level aggregation introduced by Sohn et
+al.\cite{fluccs} to enhance the accuracy of bug localization.  It first
+calculates SBFL scores for algorithm steps and aggregates them up to algorithm
+level based on the highest score among those from steps of each algorithm.
