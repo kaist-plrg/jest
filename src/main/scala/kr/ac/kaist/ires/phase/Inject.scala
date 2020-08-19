@@ -41,10 +41,6 @@ case object Inject extends PhaseObj[Unit, InjectConfig, Unit] {
         val injected = injector.result
         total += 1
         if (injector.isAsync) count += 1
-        println(s"- $INJECTED_DIR/$name")
-        println(s"  $script")
-        println(s"  ====>")
-        println(s"  $injected")
         mkdir(INJECTED_DIR)
         dumpFile(injected, s"$INJECTED_DIR/$name")
 

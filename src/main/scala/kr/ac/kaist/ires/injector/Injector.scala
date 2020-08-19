@@ -1,6 +1,7 @@
 package kr.ac.kaist.ires.injector
 
 import kr.ac.kaist.ires.LINE_SEP
+import kr.ac.kaist.ires.error.IRError
 import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 import kr.ac.kaist.ires.model.{ Parser => JSParser, Script, ModelHelper }
@@ -8,20 +9,26 @@ import kr.ac.kaist.ires.model.{ Parser => JSParser, Script, ModelHelper }
 case class Injector(script: Script, debug: Boolean = false) {
   // injected script
   lazy val result = {
-    println("handling Exception...")
-    handleException
+    uidOpt match {
+      case Some(uid) =>
+        println("handling IRError...")
+        handleIRError(uid)
+      case None =>
+        println("handling Exception...")
+        handleException
 
-    if (isNormal) {
-      println("handling varaible...")
-      handleVariable
+        if (isNormal) {
+          println("handling varaible...")
+          handleVariable
 
-      println("handling let...")
-      handleLet
+          println("handling let...")
+          handleLet
 
-      if (isAsync) {
-        println("handling async...")
-        handleAsync
-      }
+          if (isAsync) {
+            println("handling async...")
+            handleAsync
+          }
+        }
     }
     s"$header$LINE_SEP$script$LINE_SEP$assertions"
   }
@@ -38,16 +45,18 @@ case class Injector(script: Script, debug: Boolean = false) {
   }
 
   // initial state
-  private val initState = ModelHelper.initState(script)
+  private lazy val initState = ModelHelper.initState(script)
 
   // update span
   script.updateSpan(0)
 
   // interpreter
-  private val interp = new Interp(getName = true)
+  private lazy val interp = new Interp(getName = true)
 
   // final state
-  private val st = interp(initState)
+  private lazy val (st, uidOpt) = try { (interp(initState), None) } catch {
+    case e: IRError => (initState, Some(interp.recentInst.get.uid))
+  }
   interp.getName = false
 
   // injected script
@@ -80,8 +89,8 @@ case class Injector(script: Script, debug: Boolean = false) {
   }
 
   // handle addresses
-  private val PREFIX_GLOBAL = "GLOBAL."
-  private val PREFIX_INTRINSIC = "INTRINSIC_"
+  private lazy val PREFIX_GLOBAL = "GLOBAL."
+  private lazy val PREFIX_INTRINSIC = "INTRINSIC_"
   private def addrToName(addr: Addr): Option[String] = addr match {
     case a @ NamedAddr(name) if name.startsWith(PREFIX_GLOBAL) =>
       val str = name.substring(PREFIX_GLOBAL.length).replaceAll(s"#$PREFIX_GLOBAL", "")
@@ -164,7 +173,7 @@ case class Injector(script: Script, debug: Boolean = false) {
   }
 
   // handle properties
-  private val fields = List("Get", "Set", "Value", "Writable", "Enumerable", "Configurable")
+  private lazy val fields = List("Get", "Set", "Value", "Writable", "Enumerable", "Configurable")
   private def handleProperty(addr: Addr, path: String): Unit = {
     log(s"handleProperty: $addr, $path")
     val subMap = access(st, addr, Str("SubMap"))
@@ -204,8 +213,11 @@ case class Injector(script: Script, debug: Boolean = false) {
     assertions = s"$$delay( ( ) => {$LINE_SEP$assertions})"
   }
 
+  // handle ir-error
+  private def handleIRError(uid: Int): Unit = header = s"// IRError: $uid"
+
   // handle exceptions
-  private val errorNameRegex = "GLOBAL.([A-Z][a-z]+)Error.prototype".r
+  private lazy val errorNameRegex = "GLOBAL.([A-Z][a-z]+)Error.prototype".r
   private def isNormal: Boolean =
     getValue(st, "result.Type")._1 == NamedAddr("CONST_normal")
   private def handleException: Unit = getValue(st, "result.Type")._1 match {
@@ -244,8 +256,8 @@ case class Injector(script: Script, debug: Boolean = false) {
     }
 
   // get created variables
-  private val globalMap = "REALM.GlobalObject.SubMap"
-  private val globalThis = getValue(st, s"$globalMap.globalThis.Value")._1
+  private lazy val globalMap = "REALM.GlobalObject.SubMap"
+  private lazy val globalThis = getValue(st, s"$globalMap.globalThis.Value")._1
   private lazy val createdVars: Set[String] = {
     val initial = getStrKeys(getValue(st, "GLOBAL")._1)
     val current = getStrKeys(getValue(st, globalMap)._1)
@@ -253,7 +265,7 @@ case class Injector(script: Script, debug: Boolean = false) {
   }
 
   // get created lexical variables
-  private val lexRecord = "REALM.GlobalEnv.EnvironmentRecord.DeclarativeRecord.SubMap"
+  private lazy val lexRecord = "REALM.GlobalEnv.EnvironmentRecord.DeclarativeRecord.SubMap"
   private lazy val createdLets: Set[String] =
     getStrKeys(getValue(st, lexRecord)._1)
 
