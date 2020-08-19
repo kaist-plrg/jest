@@ -38,9 +38,9 @@ case object Localize extends PhaseObj[Unit, LocalizeConfig, Unit] with DefaultJs
       val dir = s"$localizedDir/$engine"
       mkdir(dir)
 
-      val answerMap: Option[Map[String, String]] = config.answerDir match {
+      val answerMap: Option[Map[String, Set[String]]] = config.answerDir match {
         case Some(answerDir) =>
-          Some(readJson[Map[String, String]](s"$answerDir/$name"))
+          Some(readJson[Map[String, Set[String]]](s"$answerDir/$name"))
         case None => None
       }
 
@@ -59,15 +59,17 @@ case object Localize extends PhaseObj[Unit, LocalizeConfig, Unit] with DefaultJs
           // if answerMap exists, then save result
           answerMap match {
             case Some(am) => am.get(failedDesc) match {
-              case Some(answerAlgo) => {
-                val algoRank = localizer.getAlgoRank(answerAlgo)
-                val agAlgoRank = localizer.getAgAlgoRank(answerAlgo)
-                println(answerAlgo)
-                summary += {
-                  s"answer : $answerAlgo" + LINE_SEP +
-                    s"algo rank : $algoRank" + LINE_SEP +
-                    s"aggregated algo rank : $agAlgoRank" + LINE_SEP
-                }
+              case Some(answerAlgos) => {
+                answerAlgos.foreach(answerAlgo => {
+                  val algoRank = localizer.getAlgoRank(answerAlgo)
+                  val agAlgoRank = localizer.getAgAlgoRank(answerAlgo)
+                  println(answerAlgo)
+                  summary += {
+                    s"answer : $answerAlgo" + LINE_SEP +
+                      s"algo rank : $algoRank" + LINE_SEP +
+                      s"aggregated algo rank : $agAlgoRank" + LINE_SEP
+                  }
+                })
               }
               case None => // do nothing
             }
