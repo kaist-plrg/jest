@@ -72,10 +72,11 @@ case object Check extends PhaseObj[Unit, CheckConfig, Unit] with DefaultJsonProt
           println(hr)
         }
 
+        println(fails)
         fails.foreach {
           case (e, resultSet) =>
-            val m = failedScripts(e)
             resultSet.foreach(r => {
+              val m = failedScripts(e)
               val s = m.getOrElse(r, Set())
               failedScripts = failedScripts + (e -> (m + (r -> (s + name))))
             })
