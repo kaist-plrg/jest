@@ -1,5 +1,25 @@
 # GraalJS (js) Bugs
 
+|ID|Origin|V8|XS|qjs|js|Assertion|Bug Algo.|Conf.|Example|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-|
+|GR1|Graal| | | |X|Exc|UpdateExpression3Evaluation0|Y|`class A{}`|
+|GR2|Graal| | | |X|Key|GeneratorDeclaration0InstantiateFunctionObject0|Y|`function*f(){}`|
+|GR3|Graal| | | |X|Key|AsyncGeneratorDeclaration0InstantiateFunctionObject0|Y|`async function*f(){}`|
+|GR4|Graal| | | |X|Key|GeneratorExpression0Evaluation0|Y|`var x=function*(){}`|
+|GR5|Graal| | | |X|Key|GeneratorExpression0Evaluation1|Y|`var x=function*f(){}`|
+|GR6|Graal| | | |X|Key|AsyncGeneratorExpression0Evaluation0|Y|`var x=async function*(){}`|
+|GR7|Graal| | | |X|Key|AsyncGeneratorExpression0Evaluation1|Y|`var x=async function*f(){}`|
+|GR8|Graal| | | |X|Key|GeneratorMethod0PropertyDefinitionEvaluation0|Y|`var x={*f(){}}`|
+|GR9|Graal| | | |X|Key|AsyncGeneratorMethod0PropertyDefinitionEvaluation0|Y|`var x={async*f(){}}`|
+|GR10|Graal| | | |X|Exc|UnaryExpression1Evaluation0|Y|`delete""[0];`|
+|GR11|Graal| | |X|X|Exc|StringPad|Y|`var x="42".padStart(Infinity,"");`|
+|GR12|Graal| |X| |X|Desc|PropertyDefinition2PropertyDefinitionEvaluation0|Y|`var x={42:class{}};`|
+|GR13|Graal| | | |X|Exc|ElementList3ArrayAccumulation1|Y|`var x=[undefined,,...[undefined]];`|
+|GR13|Graal| | | |X|Desc|FormalParameters1ExpectedArgumentCount0|Y|`function x (...[x]){}`|
+|GR14|Graal| | | |X|Exc|ForInOfHeadEvaluation|Y|`for(let x of x);`|
+|GR15|Graal| | | |X|Exc|-|Y|`(...{x})=>{};`|
+
+
 - report 하는 곳 : https://github.com/graalvm/graaljs/issues
 
 ## Engine Crash - [Reported / Confirmed / Fixed](https://github.com/graalvm/graaljs/issues/322)
@@ -88,7 +108,7 @@ _ __Simple JavaScript code:__
 for(let x of x) ;
 ```
 
-## IteratorClose - [Reported](https://github.com/graalvm/graaljs/issues/335)
+## IteratorClose - [Reported / Not Generated](https://github.com/graalvm/graaljs/issues/335)
 - __Section:__ [7.4.6 IteratorClose](http://ecma-international.org/ecma-262/11.0/#sec-iteratorclose)
 - 4 번째 step에서 [GetMethod](http://ecma-international.org/ecma-262/11.0/#sec-getmethod)를 통해서
   `return`에 관한 것을 가져오는데, 이 과정에서 abrupt completion 검사를 하는 것이 8 번째 step에서
@@ -108,7 +128,7 @@ x[Symbol.iterator] = function() {
 for (var y of x) throw 42;
 ```
 
-## EarlyErrors - [Reported](https://github.com/graalvm/graaljs/issues/329)
+## EarlyErrors - [Reported / Confirmed](https://github.com/graalvm/graaljs/issues/329)
 
 ### CoverParenthesizedExpressionAndArrowParameterList
 - 현재 GraalJS에서 CoverParenthesizedExpressionAndArrowParameterList 에서 `...BindingPattern`에 대해 SyntaxError 를 띄우고 있으나 원래는 SyntaxError가 아님.
