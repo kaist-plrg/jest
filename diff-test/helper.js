@@ -103,14 +103,7 @@ function $compareArray(a, b) {
 
 $assert.compareArray = function(actual, expected, obj) {
   function format(array) { return '[' + array.map($toString).join(', ') + ']'; }
-  function getObjDesc(obj) {
-    var str = Object.prototype.toString.call(obj);
-    str = str.substring("[object ".length, str.length - 1);
-    if(str !== "Function") return str;
-    else if(!obj.hasOwnProperty("arguments")) return "Class";
-    else return "Function"
-  }
-
+  function getObjDesc(obj) { return obj.__algo__ || "Object"; }
   if ($compareArray(actual, expected)) return;
   $error('Expected ' + format(expected) + ' but got ' + format(actual) + ' for ' + getObjDesc(obj) + '.');
 };
@@ -177,4 +170,9 @@ function $delay(f) {
     .finally(() => {
       setTimeout(f, DELAY);
     });
+}
+
+function $getKeys(obj) {
+  var keys = Reflect.ownKeys(obj);
+  return keys.filter(x => (typeof x == 'symbol') || !x.startsWith("__"));
 }

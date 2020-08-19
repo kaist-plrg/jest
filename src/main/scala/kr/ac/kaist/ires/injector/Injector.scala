@@ -41,10 +41,11 @@ case class Injector(script: Script, debug: Boolean = false) {
   private val initState = ModelHelper.initState(script)
 
   // interpreter
-  private val interp = new Interp(false, None)
+  private val interp = new Interp(getName = true)
 
   // final state
   private val st = interp(initState)
+  interp.getName = false
 
   // injected script
   private var header = ""
@@ -96,6 +97,7 @@ case class Injector(script: Script, debug: Boolean = false) {
         add(s"$$assert.sameValue($path, $origPath);")
       case (_: DynamicAddr, None) if addr != globalThis =>
         handledObjects += addr -> path
+        interp.addrName.get(addr).map(name => add(s"""$path.__algo__ = "$name""""))
         handlePrototype(addr, path)
         handleExtensible(addr, path)
         handleCall(addr, path)
@@ -155,7 +157,7 @@ case class Injector(script: Script, debug: Boolean = false) {
         case _ => None
       })
     if (array.length == len)
-      add(s"$$assert.compareArray(Reflect.ownKeys($path), ${array.mkString("[", ", ", "]")}, $path);")
+      add(s"$$assert.compareArray($$getKeys($path), ${array.mkString("[", ", ", "]")}, $path);")
   }
 
   // handle properties

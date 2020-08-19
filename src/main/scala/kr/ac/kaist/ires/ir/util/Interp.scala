@@ -19,15 +19,19 @@ class Interp(
     isDebug: Boolean = false,
     timeLimit: Option[Long] = None,
     val visited: Visited = new Visited,
-    targetInst: Option[Int] = None
+    targetInst: Option[Int] = None,
+    var getName: Boolean = false
 ) {
   var startTime: Long = 0
   var instCount = 0
   var recentInst: Option[Inst] = None
 
   var astStack: List[AST] = List()
+  var nameStack: List[String] = List()
+  var addrName: Map[Addr, String] = Map()
   var targetAstStack: Option[List[AST]] = None
   val evaluationAlgorithmPattern = new Regex(".*[0-9]+.*Evaluation[0-9]+")
+  val syntaxAlgorithmPattern = new Regex(".*[0-9]+.*[0-9]+")
 
   def apply(inst: Inst) = interp(inst)
   def apply(st: State) = fixpoint(st)
@@ -109,7 +113,12 @@ class Interp(
             )
           })
         }
+        if (getName && st.context.name == "MakeBasicObject") nameStack.headOption.map(name => escapeCompletion((value, s0)) match {
+          case (addr: Addr, st) => addrName += addr -> name
+          case _ =>
+        })
         if (evaluationAlgorithmPattern.matches(st.context.name)) astStack = astStack.tail
+        if (getName && syntaxAlgorithmPattern.matches(st.context.name)) nameStack = nameStack.tail
         s0.ctxStack match {
           case Nil => s0.copy(context = s0.context.copy(locals = s0.context.locals + (s0.context.retId -> value), insts = Nil))
           case ctx :: rest => s0.copy(context = ctx.copy(locals = ctx.locals + (ctx.retId -> value)), ctxStack = rest)
@@ -240,6 +249,7 @@ class Interp(
                       case (pair, _) => pair
                     }
                     if (evaluationAlgorithmPattern.matches(fname)) astStack = ast :: astStack
+                    if (getName && syntaxAlgorithmPattern.matches(fname)) nameStack = fname :: nameStack
                     rest match {
                       case Nil =>
                         val updatedCtx = s2.context.copy(retId = id)
