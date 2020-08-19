@@ -2,6 +2,31 @@
 
 - report 하는 곳 : https://github.com/Moddable-OpenSource/moddable/issues
 
+|ID|Origin|V8|XS|qjs|js|Assertion|Algo.|Step|Conf.|Example|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-|
+|MD1  |Moddable| |X| | |Exc|||Y|`var x = TypeError ( x ?. ( ) ) ;`|
+|MD2  |Moddable| |X| | |Exc|||Y|`var x = Number . prototype . toString . call ( new Number ( 0 ) , 0 ) ;`|
+|MD3  |Moddable|X|X| |X|Desc|||Y|`var x = { 42 : class   { x (  ) {  } } } ;`|
+|MD4  |Moddable| |X| | |Desc|||Y|`var x = [ , ... '' ] ;`|
+|MD5  |Moddable| |X| | |Exc|||Y|`Array . prototype . toString . call ( function x (  ) {  } ) ;`|
+|MD6-1|Moddable| |X| | |Key|||Y|`var x = Map . prototype . keys . call ( new Map ( ) ) ;`|
+|MD6-2|Moddable| |X| | |Key|||Y|`var x = Set . prototype . values . call ( new Set ( ) ) ;`|
+|MD7  |Moddable| |X| | |Exc|||Y|`String . prototype . split . call ( 1 , Symbol . species , 0 , 0 ) ;`|
+|MD8  |Moddable| |X| | |Exc|||Y|`for ( x in 'str' ) ;`|
+|MD9-1|Moddable| |X| | |Exc|||Y|`var x = { p : 0 } ; ( { p : ( Symbol . match ) } = x ) ;`|
+|MD9-2|Moddable| |X| | |Exc|||Y|`var x = [ 1 , 2 , 3 ] ; ( [ , ( Symbol . isConcatSpreadable ) ] = x ) ;`|
+|MD10 |Moddable| |X| | |Exc|||Y|`var x = [ 1 , 2 , 3 ] ; ( [ , undefined ] = x ) ;`|
+|MD11 |Moddable| |X| | |Key|||Y|`var x = Array . prototype . slice . call ( 'str' , { } , ~ x ) ;`|
+|MD12 |Moddable| |X| | |Exc|||Y|`switch ( '' ) { default : ; class x extends { x } { } }`|
+|MD13 |Moddable|X|X|X| |Exc|||Y|`async function * x ( ) { class x extends new . target { ; } } ; x ( ) ;`|
+|MD14 |Moddable| |X| | |Exc|||Y|`do do ; while ( '' ) ; while ( BigInt ( 0 ) ) ;`|
+|MD15 |Moddable| |X|X| |Key|||Y|`var x = Function . prototype . bind . call ( ( ) => { } , ( Symbol . replace ) ) ;`|
+|MD16 |Moddable| |X| | |Exc|||Y|`var x = Promise . race ( { [ Symbol . asyncIterator ] : function ( ) { ; } , [ Symbol . iterator ] : async function ( ) { ; await x ( ) ; } } ) ; async function * x ( ... { ... x } ) { } throw 42 ; async function x ( x ) { ; x ( 42 ) ; }`|
+|MD17 |Moddable| |X| | |Key|||Y|`var x = x `` ; function * x ( ... [ ] ) { }`|
+|MD18 |Moddable|X|X| | |Desc|||Y|`var x = Object . defineProperty ( class { static x ( ) { } } , { [ "set" ] : ( ) => { throw { [ Symbol . toPrimitive ] : function ( x ) { } } ; } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : { [ Symbol . toPrimitive ] : function ( x ) { } } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : async function ( ) { } , [ "get" ] : { [ Symbol . toPrimitive ] : function ( x ) { } } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : { [ Symbol . toPrimitive ] : function ( x ) { } } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : { [ Symbol . toPrimitive ] : function ( x ) { } } } , { [ "set" ] : ( ) => { throw '' ; } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : { [ Symbol . toPrimitive ] : function ( x ) { } } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : async function ( ) { } , [ "get" ] : function ( ) { } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : async function ( x ) { } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : { [ Symbol . toPrimitive ] : function ( x ) { } } } ) ;`|
+
+
+
 ## Optional Chains - [Reported](https://github.com/Moddable-OpenSource/moddable/issues/403), [Confirmed](https://github.com/Moddable-OpenSource/moddable/issues/403#issuecomment-672295846)
 - __Section:__ [12.3.9 Optional Chains](http://ecma-international.org/ecma-262/11.0/#sec-optional-chains)
 - Expected no exception but a TypeError is thrown.
@@ -32,9 +57,9 @@ var x = { 42 : class   { x (  ) {  } } } ;
 - __Section:__ [12.2.5.1 Runtime Semantics: ArrayAccumulation](http://ecma-international.org/ecma-262/11.0/#sec-runtime-semantics-arrayaccumulation)
 - descriptor value should be 1 but 0
 - __Simple JavaScript code:__
-```
+```js
 var x = [ , ... '' ] ;
-var x = { * x ( ... [ , x ] ) { } } ;
+// var x = { * x ( ... [ , x ] ) { } } ; // only GraalJS failed
 ```
 
 ## Array.prototype.toString.call with non-array object - [Reported](https://github.com/Moddable-OpenSource/moddable/issues/404)
@@ -186,14 +211,6 @@ switch ( '' ) { case x : ; break ; case x : ; class x extends x ( ) ( ) { } }
 async function * x ( ) { class x extends new . target { ; } } ; x ( ) ;
 ```
 
-## DestructuringAssignmentTarget early error - [Reported](https://github.com/Moddable-OpenSource/moddable/issues/414)
-- __Section:__ [12.15.5.1 Static Semantics: Early Errors](http://ecma-international.org/ecma-262/11.0/#sec-destructuring-assignment-static-semantics-early-errors)
-- Expected SyntaxError but no exception
-- __Simple JavaScript code:__
-```js
-var x = '0' ; ( { x , ... { x , } } = x ) ;
-```
-
 ## do-while statement parsing error - [Reported](https://github.com/Moddable-OpenSource/moddable/issues/415)
 - __Section:__ [13 ECMAScript Language: Statements and Declarations](http://ecma-international.org/ecma-262/11.0/#sec-ecmascript-language-statements-and-declarations)
 - SyntaxError: missing while
@@ -219,7 +236,7 @@ var x = Function . prototype . bind . call ( ( ) => { } , ( Symbol . replace ) )
 var x = Promise . race ( { [ Symbol . asyncIterator ] : function ( ) { ; } , [ Symbol . iterator ] : async function ( ) { ; await x ( ) ; } } ) ; async function * x ( ... { ... x } ) { } throw 42 ; async function x ( x ) { ; x ( 42 ) ; }
 ```
 
-## Class, Async toString - ~[Reported1](https://github.com/Moddable-OpenSource/moddable/issues/402), [Reported2](https://github.com/Moddable-OpenSource/moddable/issues/408)~ [Rejected](https://github.com/Moddable-OpenSource/moddable/issues/402#issuecomment-671564992)
+<-- ## Class, Async toString - ~[Reported1](https://github.com/Moddable-OpenSource/moddable/issues/402), [Reported2](https://github.com/Moddable-OpenSource/moddable/issues/408)~ [Rejected](https://github.com/Moddable-OpenSource/moddable/issues/402#issuecomment-671564992)
 - **Implmentation dependent**
 - __Section:__
   - [19.2.3.5 Function.prototype.toString](http://ecma-international.org/ecma-262/11.0/#sec-function.prototype.tostring)
@@ -232,7 +249,7 @@ var x = x += class x  { static x (  ) {  } } ;
 - __Simple JavaScript code:__
 - Expected "class x { ; }" but got "function x (){[native code]}".
 ```js
-var x = String . prototype . substring . call ( class x { ; } , { ... '' } , x ?. x ?. x ) 
+var x = String . prototype . substring . call ( class x { ; } , { ... '' } , x ?. x ?. x ) ;
 ```
 - Expected "x => { }" but got "function  (){[native code]}".
 - __Simple JavaScript code:__
@@ -267,7 +284,7 @@ var x = `${ x => { } }` ;$assert.sameValue(x, "x => { }");
 - __Simple JavaScript code:__
 ```js
 var x = String . prototype . split . call ( async function * ( ) { } , `${ '' }` , x && x ) ;
-```
+``` -->
 
 ## Generator Object has unwanted Symbol Property - [Reported](https://github.com/Moddable-OpenSource/moddable/issues/420)
 - Expected [] but got [Symbol()]
@@ -292,6 +309,16 @@ var x = Object . defineProperty ( class { static x ( ) { } } , { [ "set" ] : ( )
 - __Simple JavaScript code:__
 ```js
 var x = Object . defineProperty ( { } , "p" , { [ "get" ] : ( ) => { } , [ "set" ] : ( x ) => { } } ) ;
+```
+
+# Only occurs when ValidityChecker uses GraalJS
+
+## DestructuringAssignmentTarget early error - [Reported](https://github.com/Moddable-OpenSource/moddable/issues/414)
+- __Section:__ [12.15.5.1 Static Semantics: Early Errors](http://ecma-international.org/ecma-262/11.0/#sec-destructuring-assignment-static-semantics-early-errors)
+- Expected SyntaxError but no exception
+- __Simple JavaScript code:__
+```js
+var x = '0' ; ( { x , ... { x , } } = x ) ;
 ```
 
 # Maybe other engines or specification is wrong
