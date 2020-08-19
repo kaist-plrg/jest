@@ -35,8 +35,7 @@ case class Checker(filename: String, engines: List[String], expected: String, de
 
   def execute(engine: String, filepath: String): Set[ExecuteResult] = {
     val cmd = if (engine contains "node") s"$engine --unhandled-rejections=none $filepath" else s"$engine $filepath"
-    val (stdout, stderr) = executeCmd(cmd).getOrElse(("Timeout occurs.", ""))
-    //TODO:  "graal" need to use node
+    val (stdout, stderr) = executeCmd(cmd).getOrElse(("", "TimeoutError: Execution time exceeded 1 sec."))
     ExecuteResult(stdout, stderr)
   }
 }

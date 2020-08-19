@@ -113,6 +113,44 @@ object Generator extends DefaultJsonProtocol {
       loglnSimple("")
     }
 
+    def dumpStatus(dir: String) = {
+      mkdir(dir)
+
+      //dump syntax
+      val tracer = RHSTracer(total)
+      tracer.dump(s"$dir/syntax")
+
+      // dump coverage
+      totalVisited.getCoverage.dump(s"$dir/semantics")
+
+      // dump algorithm coverages
+      val algoCoverages = totalVisited.getAlgoCoverages
+      val algoSummaryContent = algoCoverages.map(cov => cov.summary).mkString(LINE_SEP)
+      dumpFile(algoSummaryContent, s"$dir/semantics/algoSummary")
+      algoCoverages.foreach(cov => cov.dump(s"$dir/semantics/algorithm"))
+
+      // dump failed
+      dumpJson(failed.toList.map {
+        case target => FailedCase(totalVisited(target), target.uid)
+      }, s"$dir/failed.json")
+
+      //dump scripts
+      mkdir(s"$dir/scripts")
+      for ((script, k) <- total.toList.sortWith(cmp).zipWithIndex) {
+        dumpFile(script, s"$dir/scripts/$k.js")
+      }
+
+      // dump generated
+      dumpJson(generated, s"$dir/generated.json")
+
+      // dump error
+      dumpJson(errors.toList, s"$dir/errors.json")
+      mkdir(s"$dir/errors")
+      for (((uid, script), k) <- errors.toList.zipWithIndex) {
+        dumpFile(s"// IRError: $uid$LINE_SEP$script", s"$dir/errors/IRError$k.js")
+      }
+    }
+
     logln("Load Samples...")
     val samples = loadDir match {
       case Some(directory) => getSample(s"$directory/scripts/")
@@ -189,29 +227,7 @@ object Generator extends DefaultJsonProtocol {
 
       if (((k + 1) % 100) == 0) {
         val dir = s"$GEN_RES_DIR/iteration/${k + 1}"
-        mkdir(dir)
-        val tracer = RHSTracer(total)
-        tracer.dump(s"$dir/syntax")
-        // dump coverage
-        totalVisited.getCoverage.dump(s"$dir/semantics")
-        // dump algorithm coverages
-        val algoCoverages = totalVisited.getAlgoCoverages
-        val algoSummaryContent = algoCoverages.map(cov => cov.summary).mkString(LINE_SEP)
-        dumpFile(algoSummaryContent, s"$dir/semantics/algoSummary")
-        algoCoverages.foreach(cov => cov.dump(s"$dir/semantics/algorithm"))
-        // dump failed
-        dumpJson(failed.toList.map {
-          case target => FailedCase(totalVisited(target), target.uid)
-        }, s"$dir/failed.json")
-        //dump scripts
-        mkdir(s"$dir/scripts")
-        for ((script, k) <- total.toList.sortWith(cmp).zipWithIndex) {
-          dumpFile(script, s"$dir/scripts/$k.js")
-        }
-        // dump generated
-        dumpJson(generated, s"$dir/generated.json")
-        // dump error
-        dumpJson(errors.toList, s"$dir/errors.json")
+        dumpStatus(dir)
       }
 
       logFlush()
@@ -224,24 +240,7 @@ object Generator extends DefaultJsonProtocol {
     logln(coverage.summary)
     algoCoverages.foreach(cov => logln(cov.summary, false))
 
-    // dump coverage
-    coverage.dump(s"$GEN_RES_DIR/semantics")
-
-    // dump algorithm coverages
-    val algoSummaryContent = algoCoverages.map(cov => cov.summary).mkString(LINE_SEP)
-    dumpFile(algoSummaryContent + LINE_SEP, s"$GEN_RES_DIR/semantics/algoSummary")
-    algoCoverages.foreach(cov => cov.dump(s"$GEN_RES_DIR/semantics/algorithm"))
-
-    // dump failed
-    dumpJson(failed.toList.map {
-      case target => FailedCase(totalVisited(target), target.uid)
-    }, s"$GEN_RES_DIR/failed.json")
-
-    // dump generated
-    dumpJson(generated, s"$GEN_RES_DIR/generated.json")
-
-    // dump error
-    dumpJson(errors.toList, s"$GEN_RES_DIR/errors.json")
+    dumpStatus(GEN_RES_DIR)
 
     // close PrintWriter for the log file
     nf.close()

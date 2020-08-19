@@ -82,6 +82,7 @@ class Localizer(formula: Stat => Double) {
 object Localizer {
   def apply(
     scriptDir: String,
+    errorsDir: String,
     failedScripts: Set[String],
     formula: Stat => Double
   ): Localizer = {
@@ -89,7 +90,7 @@ object Localizer {
     val toJsonExt = changeExt("js", "json")
     // update total structural element from scriptDir, failed
     for {
-      file <- walkTree(scriptDir)
+      file <- (walkTree(scriptDir) ++ walkTree(errorsDir))
       name = file.getName
       if jsFilter(name)
       filename = file.toString
@@ -109,16 +110,17 @@ object Localizer {
         // read from cache
         instCovered = readJson[Set[Int]](touchedInstCache)
         algoCovered = readJson[Set[String]](touchedAlgoCache)
-      } else Generator.getVisited(script) match {
-        case Left(visited) => {
-          instCovered = visited.instCovered
-          algoCovered = visited.touchedAlgos
-          // dump
-          dumpJson(visited.instCovered, touchedInstCache)
-          dumpJson(visited.touchedAlgos, touchedAlgoCache)
+      } else {
+        val visited = Generator.getVisited(script) match {
+          case Left(visited) => visited
+          // TODO : handle exception?
+          case _ => Generator.recentInterp.get.visited
         }
-        // TODO : handle exception?
-        case _ =>
+        instCovered = visited.instCovered
+        algoCovered = visited.touchedAlgos
+        // dump
+        dumpJson(visited.instCovered, touchedInstCache)
+        dumpJson(visited.touchedAlgos, touchedAlgoCache)
       }
 
       localizer.updateInst(instCovered, failed)

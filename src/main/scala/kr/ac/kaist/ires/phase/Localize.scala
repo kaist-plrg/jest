@@ -26,6 +26,7 @@ case object Localize extends PhaseObj[Unit, LocalizeConfig, Unit] with DefaultJs
   ): Unit = {
     val failedPath = config.failedPath
     val scriptsDir = config.scriptsDir
+    val errorsDir = config.errorsDir
     val fomula = Formula.Tarantula _
     for {
       failedFile <- walkTree(failedPath)
@@ -37,7 +38,7 @@ case object Localize extends PhaseObj[Unit, LocalizeConfig, Unit] with DefaultJs
       val m = readJson[Map[String, Set[String]]](filename)
       m.zipWithIndex.foreach {
         case ((_, failedSet), i) => {
-          val localizer = Localizer(scriptsDir, failedSet, fomula)
+          val localizer = Localizer(scriptsDir, errorsDir, failedSet, fomula)
           localizer.dump(s"$localizedDir/$i")
         }
       }
@@ -50,6 +51,8 @@ case object Localize extends PhaseObj[Unit, LocalizeConfig, Unit] with DefaultJs
       "print intermediate process."),
     ("load", StrOption((c, str) => c.scriptsDir = str),
       "path to generated scripts"),
+    ("load-errors", StrOption((c, str) => c.errorsDir = str),
+      "path to error scripts"),
     ("failed", StrOption((c, str) => c.failedPath = str),
       "path to failed script lists")
   )
@@ -59,5 +62,6 @@ case object Localize extends PhaseObj[Unit, LocalizeConfig, Unit] with DefaultJs
 case class LocalizeConfig(
     var debug: Boolean = false,
     var failedPath: String = s"$DIFF_TEST_DIR/failed",
-    var scriptsDir: String = s"$GENERATED_DIR"
+    var scriptsDir: String = s"$GENERATED_DIR",
+    var errorsDir: String = s"$ERRORS_DIR"
 ) extends Config

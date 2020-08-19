@@ -9,6 +9,8 @@ case object TypeError extends ExecuteResult
 case object RangeError extends ExecuteResult
 case object EvalError extends ExecuteResult
 case object InternalError extends ExecuteResult
+case object TimeoutError extends ExecuteResult
+case class IRError(uid: Int) extends ExecuteResult
 case object Throw extends ExecuteResult
 
 object ExecuteResult {
@@ -21,6 +23,8 @@ object ExecuteResult {
     RangeError,
     EvalError,
     InternalError,
+    TimeoutError,
+    IRError(0),
     Throw
   )
   val hints = results.map(r => (s"${getKind(r)}:", r)).toMap
@@ -35,6 +39,12 @@ object ExecuteResult {
           index = curIndex
           result = res
         }
+    }
+
+    // IRError -> insert uid
+    if (result.isInstanceOf[IRError]) {
+      val uid = line.filter(c => '0' <= c && c <= '9').toInt
+      result = IRError(uid)
     }
 
     result

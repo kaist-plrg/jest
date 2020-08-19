@@ -47,7 +47,7 @@ case object Check extends PhaseObj[Unit, CheckConfig, Unit] with DefaultJsonProt
 
       targets.foreach(t => { failedScripts = failedScripts + (t -> Map()) })
       for {
-        file <- walkTree(INJECTED_DIR)
+        file <- (walkTree(INJECTED_DIR) ++ walkTree(ERRORS_DIR))
         name = file.getName
         filename = file.toString if jsFilter(filename)
       } {
