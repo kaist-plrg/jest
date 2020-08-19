@@ -11,7 +11,7 @@ case class Stat(var ep: Int, var ef: Int, var np: Int, var nf: Int) {
     }
   }
 
-  def getScore(formula: Stat => Double): Double = {
+  def getScore(formula: Formula): Double = {
     var score = 0.toDouble
     try score = formula(this)
     catch { case x: Throwable => }

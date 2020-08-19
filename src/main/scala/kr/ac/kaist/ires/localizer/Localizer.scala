@@ -12,7 +12,7 @@ import spray.json._
 import scala.collection.immutable.ListMap
 import scala.math.Ordering.Double.IeeeOrdering
 
-class Localizer(formula: Stat => Double) {
+class Localizer(formula: Formula) {
   def getSortedScore[T](m: Map[T, Stat]): ListMap[T, Double] =
     ListMap(m.view.mapValues(_.getScore(formula)).toSeq.sortWith(_._2 > _._2): _*)
 
@@ -84,7 +84,7 @@ object Localizer {
     scriptDir: String,
     errorsDir: String,
     failedScripts: Set[String],
-    formula: Stat => Double
+    formula: Formula
   ): Localizer = {
     val localizer = new Localizer(formula)
     val toJsonExt = changeExt("js", "json")
