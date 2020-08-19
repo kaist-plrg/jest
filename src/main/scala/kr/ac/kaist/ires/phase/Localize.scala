@@ -17,8 +17,6 @@ case object Localize extends PhaseObj[Unit, LocalizeConfig, Unit] with DefaultJs
   val name = "localize"
   val help = "Localize JavaScript files."
 
-  mkdir(LOCALIZED_DIR)
-
   def apply(
     unit: Unit,
     iresConfig: IRESConfig,
@@ -27,19 +25,24 @@ case object Localize extends PhaseObj[Unit, LocalizeConfig, Unit] with DefaultJs
     val failedPath = config.failedPath
     val scriptsDir = config.scriptsDir
     val errorsDir = config.errorsDir
+    val localizedDir = config.localizedDir
+
+    mkdir(localizedDir)
+
     for {
       failedFile <- walkTree(failedPath)
       name = failedFile.getName
       filename = failedFile.toString if jsonFilter(filename)
     } {
       val engine = removedExt(name)
-      val localizedDir = s"${LOCALIZED_DIR}/$engine"
-      mkdir(localizedDir)
+      val dir = s"$localizedDir/$engine"
+      mkdir(dir)
+
       val m = readJson[Map[String, Set[String]]](filename)
       m.zipWithIndex.foreach {
         case ((failedDesc, failedSet), i) => {
-          val localizer = Localizer(scriptsDir, errorsDir, engine, failedDesc, failedSet, config.formula)
-          localizer.dump(s"$localizedDir/$i")
+          val localizer = Localizer(scriptsDir, errorsDir, engine, failedDesc, failedSet, config.formula, config.mutate)
+          localizer.dump(s"$dir/$i")
         }
       }
     }
@@ -56,7 +59,11 @@ case object Localize extends PhaseObj[Unit, LocalizeConfig, Unit] with DefaultJs
     ("failed", StrOption((c, str) => c.failedPath = str),
       "path to failed script lists"),
     ("formula", StrOption((c, str) => c.formula = Formula.nameMap.getOrElse(str, Tarantula)),
-      "set the formula for SBFL (default: Tarantula).")
+      "set the formula for SBFL (default: Tarantula)."),
+    ("mutate", BoolOption(c => c.mutate = false),
+      "apply mutation in localizer"),
+    ("localized", StrOption((c, str) => c.localizedDir = str),
+      "path to localization result directory")
   )
 }
 
@@ -66,5 +73,7 @@ case class LocalizeConfig(
     var failedPath: String = s"$DIFF_TEST_DIR/failed",
     var scriptsDir: String = s"$GENERATED_DIR",
     var errorsDir: String = s"$ERRORS_DIR",
-    var formula: Formula = Tarantula
+    var localizedDir: String = s"$LOCALIZED_DIR",
+    var formula: Formula = Tarantula,
+    var mutate: Boolean = false
 ) extends Config

@@ -76,11 +76,28 @@ class Localizer(formula: Formula) {
     dumpFile(agAlgoContent, filepath)
   }
 
+  // dump stat
+  def dumpInstStat(filepath: String): Unit = {
+    val content = instCounter.map {
+      case (uid, stat) => s"[$uid]: $stat"
+    }.mkString(LINE_SEP)
+    dumpFile(content, filepath)
+  }
+
+  def dumpAlgoStat(filepath: String): Unit = {
+    val content = algoCounter.map {
+      case (uid, stat) => s"[$uid]: $stat"
+    }.mkString(LINE_SEP)
+    dumpFile(content, filepath)
+  }
+
   def dump(dir: String) = {
     mkdir(dir)
     dumpInst(s"$dir/inst")
     dumpAlgo(s"$dir/algo")
     dumpAlgoAggregated(s"$dir/algo-aggregated")
+    dumpInstStat(s"$dir/inst-stat")
+    dumpAlgoStat(s"$dir/algo-stat")
   }
 }
 
@@ -94,7 +111,8 @@ object Localizer {
     engine: String,
     failedDesc: String,
     failedScriptNames: Set[String],
-    formula: Formula
+    formula: Formula,
+    mutate: Boolean
   ): Localizer = {
     val localizer = new Localizer(formula)
     val toJsonExt = changeExt("js", "json")
@@ -146,62 +164,64 @@ object Localizer {
     }
 
     // calibrate localize result
-    var trial = 0
-    while (failedSet.size < MAX_FAILED_CNT && trial < MAX_TRIAL) {
-      // sample one script from failed
-      val target = choose(failedSet.toList)
-      val script = parse(Script(Nil), target).get
+    if (mutate) {
+      var trial = 0
+      while (failedSet.size < MAX_FAILED_CNT && trial < MAX_TRIAL) {
+        // sample one script from failed
+        val target = choose(failedSet.toList)
+        val script = parse(Script(Nil), target).get
 
-      try {
-        // mutate
-        val mutator = choose(List[Mutator](
-          StatementAppender(script),
-          SimpleReplacer(script),
-        ))
-        var mutated = mutator.script
-        do mutated = mutator.mutate while (!ValidityChecker(mutated.toString))
-        val mutatedStr = mutated.toString
+        try {
+          // mutate
+          val mutator = choose(List[Mutator](
+            StatementAppender(script),
+            SimpleReplacer(script),
+          ))
+          var mutated = mutator.script
+          do mutated = mutator.mutate while (!ValidityChecker(mutated.toString))
+          val mutatedStr = mutated.toString
 
-        if (!generatedSet.contains(mutatedStr)) {
-          // inject
-          val injector = Injector(mutated, timeout = Some(1))
-          val injected = injector.result
-          val visited = injector.visited
+          if (!generatedSet.contains(mutatedStr)) {
+            // inject
+            val injector = Injector(mutated, timeout = Some(1))
+            val injected = injector.result
+            val visited = injector.visited
 
-          // check
-          // TODO : refactoring
-          val tempPath = "__temp__.js"
-          val comment = injected.split("\n").head
-          dumpFile(Checker.helper + injected, tempPath)
-          val checker = Checker(tempPath, comment, false)
-          deleteFile(tempPath)
+            // check
+            // TODO : refactoring
+            val tempPath = "__temp__.js"
+            val comment = injected.split("\n").head
+            dumpFile(Checker.helper + injected, tempPath)
+            val checker = Checker(tempPath, comment, false)
+            deleteFile(tempPath)
 
-          // check mutated script has same fault
-          val fails: Map[String, Set[CheckResult]] = checker.result
-          val failed = fails.get(engine) match {
-            case Some(rs) => rs.map(_.toString).contains(failedDesc)
-            case _ => false
+            // check mutated script has same fault
+            val fails: Map[String, Set[CheckResult]] = checker.result
+            val failed = fails.get(engine) match {
+              case Some(rs) => rs.map(_.toString).contains(failedDesc)
+              case _ => false
+            }
+
+            // update localizer stat
+            localizer.updateInst(visited.instCovered, failed)
+            localizer.updateAlgo(visited.touchedAlgos, failed)
+
+            // add mutatedStr to generatedSet
+            generatedSet += mutatedStr
+            if (failed) failedSet += mutatedStr
           }
-
-          // update localizer stat
-          localizer.updateInst(visited.instCovered, failed)
-          localizer.updateAlgo(visited.touchedAlgos, failed)
-
-          // add mutatedStr to generatedSet
-          generatedSet += mutatedStr
-          if (failed) failedSet += mutatedStr
+        } catch {
+          // TODO : handle error?
+          case e: Throwable => println(e)
         }
-      } catch {
-        // TODO : handle error?
-        case e: Throwable => println(e)
+
+        trial += 1
+        println(s"$trial, ${failedSet.size}")
       }
 
-      trial += 1
-      println(s"$trial, ${failedSet.size}")
+      // TODO : print stat?
+      println(s"[LOCALIZER] trial: $trial, failed: ${failedSet.size}")
     }
-
-    // TODO : print stat?
-    println(s"[LOCALIZER] trial: $trial, failed: ${failedSet.size}")
 
     localizer
   }
