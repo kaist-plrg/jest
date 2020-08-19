@@ -14,13 +14,13 @@ several phases, each of which takes time, CI/CD amounts to a cycle of
 quick software development, deployment, and back to development with
 feedback. Even the development of programming languages uses the CI/CD approach.
 
-Consider JavaScript, which is one of the most widely used programming languages
-not only for client-side but also for server-side programming~\cite{nodejs} and
-even for embedded systems~\cite{moddable,espruino,tessel2}.  Various JavaScript
+Consider JavaScript, one of the most widely used programming languages
+for client-side and server-side programming~\cite{nodejs} and
+embedded systems~\cite{moddable,espruino,tessel2}.  Various JavaScript
 engines provide diverse extensions to adapt to fast-changing user demands.  At
 the same time, ECMAScript, the official specification that describes the syntax and
 semantics of JavaScript, is annually updated since ECMAScript 6 (ES6,
-2015)~\cite{es6} to support new language features in response to user demands.
+2015)~\cite{es6} to support new features in response to user demands.
 Such updates in both the specification and implementations in tandem make it
 difficult for them to be in sync.
 
@@ -43,17 +43,17 @@ specification and the implementation can co-evolve.  In this setting, both the
 specification and the implementation may contain bugs, and guaranteeing their
 correctness is a challenging task.
 
-In this paper, we propose a novel \textit{$N$+1-differential testing}, which
+In this paper, we propose a novel \textit{$N$+1-version differential testing}, which
 enables testing of co-evolving specifications and their implementations.  The
 differential testing~\cite{diff-test} is a testing technique, which executes $N$
 implementations of a specification concurrently for each input, and detects a
 problem when the outputs are in disagreement.  In addition to $N$
-implementations, our approach tests the specification as well using the
+implementations, our approach tests the specification as well using a
 mechanized specification.  Recently, several approaches to extract syntax and
 semantics directly from language specifications are presented\cite{jiset,
 extract-x86, extract-arm}.  We utilize them to bridge the gap between
 specifications and their implementations through conformance tests generated
-from mechanized specifications.  The $N$+1-differential testing consists of
+from mechanized specifications.  The $N$+1-version differential testing consists of
 three steps: 1) to automatically synthesize programs guided by the syntax and
 semantics from a given language specification, 2) to generate conformance tests
 by injecting assertions to the synthesized programs to check their final program
@@ -67,8 +67,8 @@ assertions in each test code to make sure that the result of running the code
 conforms to the specification semantics.  Then, we run the test suite for $N$
 implementations of the specification.  Because generated tests strictly comply
 with the specification, they reflect specification errors as well, if any.  When
-one of the implementations fails in running a test, it is highly likely that the
-implementation has a bug, which is the traditional differential testing.  When
+one of the implementations fails in running a test, the
+implementation may have a bug, as in the differential testing.  When
 most of the implementations fail in running a test, it is highly likely that
 the specification has a bug.  By automatically generating a rich set of test
 code from the specification and running them with implementations of the
@@ -76,31 +76,31 @@ specification, we can find and localize bugs either in the specification written
 in a natural language or in its implementations.
 
 To show the practicality of the proposed approach, we present $\tool$, which
-performs $N$+1-differential testing for modern JavaScript engines and ECMAScript.
-We implement $\tool$ by extending $\jiset$~\cite{jiset}, which is a JavaScript
-IR-based semantics extraction toolchain, to utilize syntax and semantics
-automatically extracted from a given ECMAScript.  Using the extracted syntax,
+performs $N$+1-version differential testing for JavaScript engines and ECMAScript.
+We implement $\tool$ by extending $\jiset$~\cite{jiset}, a JavaScript
+IR-based semantics extraction toolchain, to utilize the syntax and semantics
+automatically extracted from ECMAScript.  Using the extracted syntax,
 our tool automatically synthesizes initial seed programs and expands the program
 pool by mutating specific target programs guided by semantics coverage.  Then,
 the tool generates conformance tests by injecting assertions to synthesized
-JavaScript programs.  Finally, $\tool$ detects and localizes bugs via execution
+programs.  Finally, $\tool$ detects and localizes bugs using execution
 results of the tests on $N$ JavaScript engines.  We evaluate our tool with four
 JavaScript engines (GraalJS\cite{graaljs}, QuickJS\cite{qjs}, Moddable
 XS\cite{xs}, and Google V8\cite{v8}) that support all modern JavaScript language
-features and the most recent version of ECMAScript (ES11, 2020).
+features and the latest ECMAScript (ES11, 2020).
 
-Our main contributions are as follows:
+The main contributions of this paper include the following:
 \begin{itemize}
-  \item Present \textit{$N$+1-differential testing}, a novel solution to the new
-    problem of the co-evolving language specification and implementation.
-  \item Implement our solution in a tool $\tool$ for JavaScript engines with
-    ECMAScript.  It is the first tool that automatically generates conformance
-    tests for JavaScript engines from ECMAScript.  We first measure the coverage
-    of Test262, the official conformance tests, as \inred{-}\% for statements
-    and \inred{-}\% for branches.  The conformance tests generated by our tool
-    has the coverage \inred{-}\% for statements and \inred{-}\% for branches.
-  \item Evaluate $\tool$ with four modern JavaScript engines and the most recent
-    version of ECMAScript, ES11.  Using the generated conformance test
-    suite, our tool found and localized \inred{XX} engine bugs in four different
+  \item Present \textit{$N$+1-version differential testing}, a novel solution to the new
+    problem of co-evolving language specifications and their implementations.
+  \item Implement $N$+1-version differential testing for JavaScript engines and
+    ECMAScript as a tool called $\tool$. It is the first tool that automatically generates conformance
+    tests for JavaScript engines from ECMAScript.  While the coverage
+    of Test262, the official conformance tests, is \inred{--.--}\% for statements
+    and \inred{--.--}\% for branches, the coverage of the conformance tests generated by the tool
+    is \inred{--.--}\% for statements and \inred{--.--}\% for branches.
+  \item Evaluate $\tool$ with four modern JavaScript engines and the latest
+    ECMAScript, ES11.  Using the generated conformance test
+    suite, the tool found and localized \inred{XX} engine bugs in four different
     engines and \inred{X} specification bugs in ES11.
 \end{itemize}
