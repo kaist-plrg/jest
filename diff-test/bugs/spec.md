@@ -1,34 +1,34 @@
 # ECMAScript 2020 Bugs
 
-|ID|Origin|V8|XS|qjs|js|Assertion|Algo.|Step|Conf.|Example|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-|
-|ES1-1|ES11| |X|X|X|Key|||Y|`class A{}`|
-|ES1-2|ES11|X|X|X|X|Key|||Y|`function f(){}`|
-|ES1-3|ES11|X|X|X| |Key|||Y|`function*f(){}`|
-|ES1-4|ES11|X|X|X| |Key|||Y|`async function*f(){}`|
-|ES1-5|ES11|X|X|X|X|Key|||Y|`var x=function (){}`|
-|ES1-6|ES11|X|X|X|X|Key|||Y|`var x=function f(){}`|
-|ES1-7|ES11|X|X|X| |Key|||Y|`var x=function*(){}`|
-|ES1-8|ES11|X|X|X| |Key|||Y|`var x=function*f(){}`|
-|ES1-9|ES11|X|X|X| |Key|||Y|`var x=async function*(){}`|
-|ES1-10|ES11|X|X|X| |Key|||Y|`var x=async function*f(){}`|
-|ES1-11|ES11|X|X|X| |Key|||Y|`var x={*f(){}}`|
-|ES1-12|ES11|X|X|X| |Key|||Y|`var x={async*f(){}}`|
-|ES2-1|ES11|X|X|X|X|Key|||Y|`var x=(x=>x)(()=>{});`|
-|ES2-2|ES11|X|X|X|X|Key|||Y|`var x=(x=>x)(async x=>{});`|
-|ES2-3|ES11|X|X|X|X|Key|||Y|`var x=(x=>x)(async()=>{});`|
-|ES2-4|ES11| |X|X|X|Key|||Y|`var x=(x=>x)(class{});`|
-|ES2-5|ES11|X|X|X|X|Key|||Y|`var x=(x=>x)(function(){});`|
-|ES2-6|ES11|X|X|X|X|Key|||Y|`var x=(x=>x)(function*(){});`|
-|ES2-7|ES11|X|X|X|X|Key|||Y|`var x=(x=>x)(async function(){});`|
-|ES2-8|ES11|X|X|X|X|Key|||Y|`var x=(x=>x)(async function*(){});`|
-|ES3-1|ES11|X|X|X|X|Exc|||Y|`for(x in{});`|
-|ES4-1|ES11|X|X|X|X|   |||Y|`x++;`|
-|ES4-2|ES11|X|X|X|X|   |||Y|`x--;`|
-|ES4-3|ES11|X|X|X|X|   |||Y|`++x;`|
-|ES4-4|ES11|X|X|X|X|   |||Y|`--x;`|
-|ES5-1|ES11|X|X|X|X|Exc|||Y|`0=={valueOf:()=>{throw 42;}};`|
-|ES6-1|ES11|X|X|X|X|Exc|||N|`var x={p:class extends 42{}};`|
+|ID|Origin|V8|XS|qjs|js|Assertion|Bug Algo.|Conf.|Example|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-|
+|ES1-1|ES11| |X|X|X|Key|ClassTail0ClassDefinitionEvaluation3|Y|`class A{}`|
+|ES1-2|ES11|X|X|X|X|Key|FunctionDeclaration0InstantiateFunctionObject0|Y|`function f(){}`|
+|ES1-3|ES11|X|X|X| |Key|GeneratorDeclaration0InstantiateFunctionObject0|Y|`function*f(){}`|
+|ES1-4|ES11|X|X|X| |Key|AsyncGeneratorDeclaration0InstantiateFunctionObject0|Y|`async function*f(){}`|
+|ES1-5|ES11|X|X|X|X|Key|FunctionExpression0Evaluation0|Y|`var x=function (){}`|
+|ES1-6|ES11|X|X|X|X|Key|FunctionExpression0Evaluation1|Y|`var x=function f(){}`|
+|ES1-7|ES11|X|X|X| |Key|GeneratorExpression0Evaluation0|Y|`var x=function*(){}`|
+|ES1-8|ES11|X|X|X| |Key|GeneratorExpression0Evaluation1|Y|`var x=function*f(){}`|
+|ES1-9|ES11|X|X|X| |Key|AsyncGeneratorExpression0Evaluation0|Y|`var x=async function*(){}`|
+|ES1-10|ES11|X|X|X| |Key|AsyncGeneratorExpression0Evaluation1|Y|`var x=async function*f(){}`|
+|ES1-11|ES11|X|X|X| |Key|GeneratorMethod0PropertyDefinitionEvaluation0|Y|`var x={*f(){}}`|
+|ES1-12|ES11|X|X|X| |Key|AsyncGeneratorMethod0PropertyDefinitionEvaluation0|Y|`var x={async*f(){}}`|
+|ES2-1|ES11|X|X|X|X|Key|ArrowFunction0Evaluation0|Y|`var x=(x=>x)(()=>{});`|
+|ES2-2|ES11|X|X|X|X|Key|AsyncArrowFunction0Evaluation0|Y|`var x=(x=>x)(async x=>{});`|
+|ES2-3|ES11|X|X|X|X|Key|AsyncArrowFunction1Evaluation0|Y|`var x=(x=>x)(async()=>{});`|
+|ES2-4|ES11| |X|X|X|Key|ClassTail0ClassDefinitionEvaluation3|Y|`var x=(x=>x)(class{});`|
+|ES2-5|ES11|X|X|X|X|Key|FunctionExpression0Evaluation0|Y|`var x=(x=>x)(function(){});`|
+|ES2-6|ES11|X|X|X|X|Key|GeneratorExpression0Evaluation0|Y|`var x=(x=>x)(function*(){});`|
+|ES2-7|ES11|X|X|X|X|Key|AsyncFunctionExpression0Evaluation0|Y|`var x=(x=>x)(async function(){});`|
+|ES2-8|ES11|X|X|X|X|Key|AsyncGeneratorExpression0Evaluation0|Y|`var x=(x=>x)(async function*(){});`|
+|ES3-1|ES11|X|X|X|X|Exc|ForInOfHeadEvaluation|Y|`for(x in{});`|
+|ES4-1|ES11|X|X|X|X|Crash|UpdateExpression1Evaluation0|Y|`x++;`|
+|ES4-2|ES11|X|X|X|X|Crash|UpdateExpression2Evaluation0|Y|`x--;`|
+|ES4-3|ES11|X|X|X|X|Crash|UpdateExpression3Evaluation0|Y|`++x;`|
+|ES4-4|ES11|X|X|X|X|Crash|UpdateExpression4Evaluation0|Y|`--x;`|
+|ES5-1|ES11|X|X|X|X|Exc|AbstractEqualityComparison|Y|`0=={valueOf:()=>{throw 42;}};`|
+|ES6-1|ES11|X|X|X|X|Exc|PropertyDefinition2PropertyDefinitionEvaluation0|N|`var x={p:class extends 42{}};`|
 
 
 ## Abstract Equality Comparison - [Resolved, Found](https://github.com/tc39/ecma262/pull/1976)
