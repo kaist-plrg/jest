@@ -31,7 +31,7 @@ class Interp(
   var addrName: Map[Addr, String] = Map()
   var targetAstStack: Option[List[AST]] = None
   val evaluationAlgorithmPattern = new Regex(".*[0-9]+.*Evaluation[0-9]+")
-  val syntaxAlgorithmPattern = new Regex(".*[0-9]+.*[0-9]+")
+  val syntaxAlgorithmPattern = new Regex(".*[0-9]+[^0-9]+[0-9]+")
 
   def apply(inst: Inst) = interp(inst)
   def apply(st: State) = fixpoint(st)
