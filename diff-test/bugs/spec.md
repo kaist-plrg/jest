@@ -1,5 +1,30 @@
 # ECMAScript 2020 Bugs
 
+|ID|Origin|V8|XS|qjs|js|Assertion|Algo.|Step|Conf.|Example|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-|
+|ES1-1|ES11| |X|X|X|Key|||Y|`class A{}`|
+|ES1-2|ES11|X|X|X|X|Key|||Y|`function f(){}`|
+|ES1-3|ES11|X|X|X| |Key|||Y|`function*f(){}`|
+|ES1-4|ES11|X|X|X| |Key|||Y|`async function*f(){}`|
+|ES1-5|ES11|X|X|X|X|Key|||Y|`var x=function f(){}`|
+|ES1-6|ES11|X|X|X| |Key|||Y|`var x=function*f(){}`|
+|ES1-7|ES11|X|X|X| |Key|||Y|`var x=async function*f(){}`|
+|ES2-1|ES11|X|X|X|X|Key|||Y|`var x=(x=>x)(()=>{});`|
+|ES2-2|ES11|X|X|X|X|Key|||Y|`var x=(x=>x)(async()=>{});`|
+|ES2-3|ES11| |X|X|X|Key|||Y|`var x=(x=>x)(class{});`|
+|ES2-4|ES11|X|X|X|X|Key|||Y|`var x=(x=>x)(function(){});`|
+|ES2-5|ES11|X|X|X|X|Key|||Y|`var x=(x=>x)(function*(){});`|
+|ES2-6|ES11|X|X|X|X|Key|||Y|`var x=(x=>x)(async function(){});`|
+|ES2-7|ES11|X|X|X|X|Key|||Y|`var x=(x=>x)(async function*(){});`|
+|ES3-1|ES11|X|X|X|X|Exc|||Y|`for(x in{});`|
+|ES4-1|ES11|X|X|X|X|   |||Y|`x++;`|
+|ES4-2|ES11|X|X|X|X|   |||Y|`x--;`|
+|ES4-3|ES11|X|X|X|X|   |||Y|`++x;`|
+|ES4-4|ES11|X|X|X|X|   |||Y|`--x;`|
+|ES5-1|ES11|X|X|X|X|Exc|||Y|`0=={valueOf:()=>{throw 42;}};`|
+|ES6-1|ES11|X|X|X|X|Exc|||N|`var x={p:class extends 42{}};`|
+
+
 ## Abstract Equality Comparison - [Resolved, Found](https://github.com/tc39/ecma262/pull/1976)
 - __Section:__ [7.2.15 Abstract Equality Comparison](http://ecma-international.org/ecma-262/11.0/#sec-abstract-equality-comparison)
 - 10 번째 11 번째 step에서 [`ToPrimitive`](http://ecma-international.org/ecma-262/11.0/#sec-toprimitive)를
