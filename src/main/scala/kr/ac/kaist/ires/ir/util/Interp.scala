@@ -27,7 +27,7 @@ class Interp(
   var recentInst: Option[Inst] = None
 
   var astStack: List[AST] = List()
-  var nameStack: List[String] = List()
+  var nameStack: List[(AST, String)] = List()
   var addrName: Map[Addr, String] = Map()
   var targetAstStack: Option[List[AST]] = None
   val evaluationAlgorithmPattern = new Regex(".*[0-9]+.*Evaluation[0-9]+")
@@ -113,10 +113,12 @@ class Interp(
             )
           })
         }
-        if (getName && st.context.name == "MakeBasicObject") nameStack.headOption.map(name => escapeCompletion((value, s0)) match {
-          case (addr: Addr, st) => addrName += addr -> name
-          case _ =>
-        })
+        if (getName && st.context.name == "MakeBasicObject") nameStack.find(_._1.start >= 0).map {
+          case (ast, name) => escapeCompletion((value, s0)) match {
+            case (addr: Addr, st) => addrName += addr -> name
+            case _ =>
+          }
+        }
         if (evaluationAlgorithmPattern.matches(st.context.name)) astStack = astStack.tail
         if (getName && syntaxAlgorithmPattern.matches(st.context.name)) nameStack = nameStack.tail
         s0.ctxStack match {
@@ -249,7 +251,7 @@ class Interp(
                       case (pair, _) => pair
                     }
                     if (evaluationAlgorithmPattern.matches(fname)) astStack = ast :: astStack
-                    if (getName && syntaxAlgorithmPattern.matches(fname)) nameStack = fname :: nameStack
+                    if (getName && syntaxAlgorithmPattern.matches(fname)) nameStack = (ast, fname) :: nameStack
                     rest match {
                       case Nil =>
                         val updatedCtx = s2.context.copy(retId = id)

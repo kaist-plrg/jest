@@ -40,6 +40,9 @@ case class Injector(script: Script, debug: Boolean = false) {
   // initial state
   private val initState = ModelHelper.initState(script)
 
+  // update span
+  script.updateSpan(0)
+
   // interpreter
   private val interp = new Interp(getName = true)
 
