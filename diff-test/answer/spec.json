@@ -1,5 +1,13 @@
 {
+  "AssertionPass(AssertionError(Expected [\"length\", \"prototype\", \"name\"] but got [\"length\", \"name\", \"prototype\"] for MethodDefinition0DefineMethod0.))": [{
+    "id": "ES1-1",
+    "algo": "ClassTail0ClassDefinitionEvaluation3"
+  }],
   "AssertionPass(AssertionError(Expected [\"length\", \"prototype\", \"name\"] but got [\"length\", \"name\", \"prototype\"] for ClassTail0ClassDefinitionEvaluation3.))": [{
+    "id": "ES1-1",
+    "algo": "ClassTail0ClassDefinitionEvaluation3"
+  }],
+  "AssertionPass(AssertionError(Expected [\"length\", \"prototype\", \"name\", \"x\"] but got [\"length\", \"name\", \"prototype\", \"x\"] for ClassTail0ClassDefinitionEvaluation3.))": [{
     "id": "ES1-1",
     "algo": "ClassTail0ClassDefinitionEvaluation3"
   }],
@@ -51,6 +59,10 @@
     "id": "ES2-1",
     "algo": "ArrowFunction0Evaluation0"
   }],
+  "AssertionPass(AssertionError(Expected [\"length\", \"x\"] but got [\"length\", \"name\", \"x\"] for ArrowFunction0Evaluation0.))": [{
+    "id": "ES2-1",
+    "algo": "ArrowFunction0Evaluation0"
+  }],
   "AssertionPass(AssertionError(Expected [\"length\"] but got [\"length\", \"name\"] for AsyncArrowFunction0Evaluation0.))": [{
     "id": "ES2-2",
     "algo": "AsyncArrowFunction0Evaluation0"
@@ -80,6 +92,14 @@
     "algo": "AsyncGeneratorExpression0Evaluation0"
   }],
   "ExceptionFail(Normal,TypeError)": [{
+    "id": "ES3-1",
+    "algo": "ForInOfHeadEvaluation"
+  }],
+  "ExceptionFail(ReferenceError,TypeError)": [{
+    "id": "ES3-1",
+    "algo": "ForInOfHeadEvaluation"
+  }],
+  "ExceptionFail(SyntaxError,TypeError)": [{
     "id": "ES3-1",
     "algo": "ForInOfHeadEvaluation"
   }],
