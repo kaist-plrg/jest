@@ -11,7 +11,7 @@
 |MD5  |Moddable| |X| | |Exc|GLOBALDOTArrayDOTprototypeDOTtoString|Y|`Array . prototype . toString . call ( function x (  ) {  } ) ;`|
 |MD6-1|Moddable| |X| | |Key|CreateMapIterator|Y|`var x = Map . prototype . keys . call ( new Map ( ) ) ;`|
 |MD6-2|Moddable| |X| | |Key|CreateSetIterator|Y|`var x = Set . prototype . values . call ( new Set ( ) ) ;`|
-|MD7  |Moddable| |X| | |Exc|ToString|Y|`String . prototype . split . call ( 1 , Symbol . species , 0 , 0 ) ;`|
+|MD7  |Moddable| |X| | |Exc|GLOBALDOTStringDOTprototypeDOTsplit|Y|`String . prototype . split . call ( 1 , Symbol . species , 0 , 0 ) ;`|
 |MD8  |Moddable| |X| | |Exc|EnumerateObjectProperties|N|`for ( x in 'str' ) ;`|
 |MD9-1|Moddable| |X| | |Exc|-|Y|`var x = { p : 0 } ; ( { p : ( Symbol . match ) } = x ) ;`|
 |MD9-2|Moddable| |X| | |Exc|-|Y|`var x = [ 1 , 2 , 3 ] ; ( [ , ( Symbol . isConcatSpreadable ) ] = x ) ;`|
