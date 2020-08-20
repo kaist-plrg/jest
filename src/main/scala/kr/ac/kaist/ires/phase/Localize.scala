@@ -1,5 +1,4 @@
 package kr.ac.kaist.ires.phase
-
 import kr.ac.kaist.ires._
 import kr.ac.kaist.ires.generator.Generator
 import kr.ac.kaist.ires.ir.beautify
@@ -90,12 +89,12 @@ case object Localize extends PhaseObj[Unit, LocalizeConfig, Unit] with DefaultJs
                   }
                 })
               }
-              case None => {
+              case None => localizer.formulas.foreach(formula => {
                 add(config.mutate)
-                add(config.formula.name)
+                add(formula.name)
                 add(failedDesc)
                 newline
-              } // do nothing
+              })
             }
             case None => // do nothing
           }
