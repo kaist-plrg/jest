@@ -1,0 +1,1 @@
+Promise . race ( [  { async x ( ... [ , x  ] ) {  } } ] ) ;

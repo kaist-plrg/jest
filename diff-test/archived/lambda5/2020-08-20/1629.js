@@ -1,0 +1,1 @@
+var x = x `${ '' }${ '' }` ; async function x ( ... { x , } ) { ; for await ( var x of x ?. ( ) ) for ( ; '' ; ) ; async function * x ( ... [ ... x ] ) { ; var x = yield ; } await x ( ) ; }

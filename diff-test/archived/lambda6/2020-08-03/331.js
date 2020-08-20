@@ -1,0 +1,1 @@
+Object . values ( { [ "value" ] : 'str' , [ "enumerable" ] : false , [ "configurable" ] : false } ) ;

@@ -1,0 +1,1 @@
+var x = Array . prototype . reduceRight . call ( [ , ] , x => BigInt ( 0.1 ) ) ;

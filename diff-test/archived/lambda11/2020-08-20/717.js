@@ -1,0 +1,1 @@
+switch ( '' ) { case '' : ; throw 42 ; default : }

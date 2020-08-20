@@ -1,0 +1,1 @@
+switch ( '' ) { case x : default : ; function * x ( x ) { } }

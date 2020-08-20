@@ -1,0 +1,1 @@
+for ( var x in `${ { * x ( ... await ) {  } } }${ x }${ ( Symbol . toStringTag ) }` ) for ( var x = '' ; '' ;  ) ;

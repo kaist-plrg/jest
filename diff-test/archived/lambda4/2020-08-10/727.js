@@ -1,0 +1,1 @@
+var x = Array . prototype . indexOf . call ( 'str' , `${ '' }${ x }${ '' , '' }` , ( Symbol . toPrimitive ) ) ;

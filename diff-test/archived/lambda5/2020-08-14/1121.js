@@ -1,0 +1,1 @@
+function x ( ) { ; return ; } var { ... x } = class extends new x { } ;

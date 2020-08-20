@@ -1,0 +1,1 @@
+var x = Array . prototype . lastIndexOf . call ( [ , ... '' ] , { [ Symbol . asyncIterator ] : async * function ( x ) { } , [ Symbol . iterator ] : true } !== x ) ;

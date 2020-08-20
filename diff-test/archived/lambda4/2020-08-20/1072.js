@@ -1,0 +1,1 @@
+var x = ( x => { while ( '' ) ; x ( Symbol . species ) ; } ) ( ) ;

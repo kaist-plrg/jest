@@ -1,0 +1,1 @@
+String . prototype . lastIndexOf . call ( { [ "next" ] : function ( ) { } , [ "throw" ] : function ( ) { } } , [ ] ) ;

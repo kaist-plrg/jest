@@ -1,0 +1,1 @@
+eval ( `${ { [ { [ "valueOf" ] : '' , [ "toString" ] : function ( ) { } } . toPrimitive ] : { [ "valueOf" ] : '' , [ "toString" ] : function ( ) { } } } , x => { ; var x = { [ "valueOf" ] : '' , [ "toString" ] : function ( ) { } } ; } }` ) ;

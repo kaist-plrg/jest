@@ -1,0 +1,1 @@
+var x = String . prototype . search . call ( ( Symbol . asyncIterator ) , 0 ) ;

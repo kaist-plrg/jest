@@ -1,0 +1,1 @@
+Object . defineProperty ( { [ "value" ] : null , [ "configurable" ] : false } , 0 , 'str' ) ;

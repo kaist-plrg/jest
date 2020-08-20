@@ -1,0 +1,1 @@
+for ( [  ] of [  'str' ,  { get x ( ) {  } } ,  [  ] ] ) switch ( '' ) { case '' : ; }

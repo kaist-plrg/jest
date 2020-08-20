@@ -1,0 +1,1 @@
+var x = ( Symbol . search ) ; var { x , ... x } = x - x ;

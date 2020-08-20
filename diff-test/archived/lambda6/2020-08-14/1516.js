@@ -1,0 +1,1 @@
+var x = Array . prototype . map . call ( [ { p : 42 } , { async * x ( ... [ x ] ) { } } , x >>> x ] , ( x => { } ) ) ;

@@ -1,0 +1,1 @@
+( x => { try { } catch ( x ) { } x ( ) ; switch ( '' ) { } async function * x ( ... { x = '' } ) { } } ) ( ) ;

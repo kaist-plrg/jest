@@ -1,0 +1,1 @@
+var x = Symbol . iterator ; ( x === class x extends x [ '' , '' ] { } ) ;

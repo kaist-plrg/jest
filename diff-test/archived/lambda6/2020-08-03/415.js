@@ -1,0 +1,1 @@
+var x = { [ "writable" ] : true , [ "enumerable" ] : false , [ "configurable" ] : false } == [ x , ... x ] ;

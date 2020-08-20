@@ -1,0 +1,1 @@
+var x = x `${ '' }${ '' }` ; async function x ( ... { x , } ) { for await ( let x of '' ) ; for await ( var x of [ , ] ) switch ( '' ) { default : ; case x : } function x ( ) { } await x ( ) ; }

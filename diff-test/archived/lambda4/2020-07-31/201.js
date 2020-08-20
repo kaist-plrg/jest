@@ -1,0 +1,1 @@
+var x = x `` ; async function x ( ... [  ... x ] ) { for await ( let x of { [ "get" ] : function  ( x  ) {  } , [ "enumerable" ] : true , [ "configurable" ] : true } ) ; switch ( '' ) { case '' : ; } async function * x ( ... [ , x  ] ) {  } }

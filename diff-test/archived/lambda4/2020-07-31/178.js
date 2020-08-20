@@ -1,0 +1,1 @@
+Object . setPrototypeOf ( { [ "throw" ] : function  (  ) {  } } , { * x ( ... { ... x } ) {  } } , [  ] ) ;

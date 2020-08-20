@@ -1,0 +1,1 @@
+delete { [ Symbol . toPrimitive ] : async * function ( x ) { } } [ typeof { [ Symbol . toPrimitive ] : async * function ( x ) { } } ] ;

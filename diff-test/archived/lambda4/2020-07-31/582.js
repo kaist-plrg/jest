@@ -1,0 +1,1 @@
+var x = x ** ( Symbol . toPrimitive ) ; for ( { x = x } in '' ) ;

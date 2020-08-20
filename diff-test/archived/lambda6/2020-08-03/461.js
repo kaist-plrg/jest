@@ -1,0 +1,1 @@
+Array . prototype . slice . call ( undefined , async x => x ) ;

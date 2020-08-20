@@ -1,0 +1,1 @@
+var x = ( x => { ; return x ?. ( ) ; async function * x ( ... { x = '' } ) { } } ) ( ( Symbol . hasInstance ) ) ;

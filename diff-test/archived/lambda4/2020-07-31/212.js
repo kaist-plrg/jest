@@ -1,0 +1,1 @@
+Object . assign ( false , undefined , ( Symbol . unscopables ) ) ;

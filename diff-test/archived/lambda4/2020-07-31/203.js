@@ -1,0 +1,1 @@
+Array . prototype . every . call ( ( ) => x , x => {  } ) ;

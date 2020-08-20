@@ -1,0 +1,1 @@
+Array . prototype . copyWithin . call ( { x ( ... [ , ... x ] ) { } } , 0 , { x ( ... { x = x } ) { } } , 42n ) ;

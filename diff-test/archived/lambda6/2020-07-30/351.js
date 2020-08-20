@@ -1,0 +1,1 @@
+Array . prototype . find . call ( - 0 , function *  (  ) {  } , 42n , ( ) => {  } ) ;

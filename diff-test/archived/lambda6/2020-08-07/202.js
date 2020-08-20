@@ -1,0 +1,1 @@
+var x = Function . prototype . bind . call ( async x => '' , Symbol . matchAll ) ; var x = ( Symbol . unscopables ) instanceof x ;

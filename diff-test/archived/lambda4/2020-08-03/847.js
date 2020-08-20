@@ -1,0 +1,1 @@
+switch ( class extends x ?. x ?. x { } ) { case - 0 , Symbol . match : }

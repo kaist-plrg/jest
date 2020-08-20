@@ -1,0 +1,1 @@
+switch ( '' , 'str' ) { case 'str' : case x & x : }

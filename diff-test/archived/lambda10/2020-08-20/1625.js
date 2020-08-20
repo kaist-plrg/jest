@@ -1,0 +1,1 @@
+var x = Array . prototype . reduceRight . call ( [ x >> x , Symbol . replace , { } ] , x => class extends x ?. ( ) { ; } `${ class extends x . x { ; } }${ 42n }${ 0n , class extends x { ; } }` ) ;

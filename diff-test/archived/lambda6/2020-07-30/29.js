@@ -1,0 +1,1 @@
+String . prototype . slice . call ( ( - 1n ) , 0 , 42n ) ;

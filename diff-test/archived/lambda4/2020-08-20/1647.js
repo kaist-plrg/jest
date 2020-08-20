@@ -1,0 +1,1 @@
+for ( [ ] of [ { [ Symbol . asyncIterator ] : function ( ) { } , [ Symbol . iterator ] : function * ( ) { } } ] ) for ( x of { [ Symbol . asyncIterator ] : function ( ) { } , [ Symbol . iterator ] : function * ( ) { } } ) ;

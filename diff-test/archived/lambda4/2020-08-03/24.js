@@ -1,0 +1,1 @@
+async function * x ( ) { } ; x ( ) ; function * x ( ... [ x , ] ) { ; } Symbol . hasInstance ; function x ( ... [ , x ] ) { try { } catch ( { } ) { } return BigInt ( { [ "get" ] : function ( ) { } , [ "set" ] : function ( ) { } , [ "enumerable" ] : true , [ "configurable" ] : true } ) ; }

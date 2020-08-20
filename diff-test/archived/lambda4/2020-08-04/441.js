@@ -1,0 +1,1 @@
+String . prototype . split . call ( null , 0 , undefined ) ;

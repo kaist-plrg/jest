@@ -1,0 +1,1 @@
+for ( var x of Symbol . iterator ) for ( var x = '' ; ; '' ) ;

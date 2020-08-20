@@ -1,0 +1,1 @@
+var x = String . prototype . lastIndexOf . call ( new String ( { [ "valueOf" ] : async function ( ) { } , [ "toString" ] : async function ( x ) { } } ) , 0 ) ;

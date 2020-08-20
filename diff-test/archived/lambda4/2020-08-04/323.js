@@ -1,0 +1,1 @@
+( async x => { x ; for await ( let x of { [ Symbol . asyncIterator ] : null , [ Symbol . iterator ] : '0' } ) ; } ) ( 1 ) ;

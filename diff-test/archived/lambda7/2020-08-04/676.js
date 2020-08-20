@@ -1,0 +1,1 @@
+String . prototype . normalize . call ( 0n , Symbol . search ) ;

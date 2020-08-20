@@ -1,0 +1,1 @@
+var x = { [ "prototype" ] : { [ "prototype" ] : async function ( ) { } } } . prototype . toString . call ( new Array ( ) ) ;

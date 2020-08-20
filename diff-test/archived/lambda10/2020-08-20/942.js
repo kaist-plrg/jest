@@ -1,0 +1,1 @@
+for ( var x in { [ "done" ] : async function ( x ) { } } ) ;

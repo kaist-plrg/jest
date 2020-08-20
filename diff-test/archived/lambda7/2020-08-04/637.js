@@ -1,0 +1,1 @@
+var x = { [ "prototype" ] : true } instanceof { [ "prototype" ] : true } ; function * x ( ... { ... x } ) { }

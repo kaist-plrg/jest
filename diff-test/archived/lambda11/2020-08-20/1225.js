@@ -1,0 +1,1 @@
+var x = Array . prototype . includes . call ( [ 42 , 'str' , 0n ] , 0n ) ;

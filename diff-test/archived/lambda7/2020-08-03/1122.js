@@ -1,0 +1,1 @@
+WeakSet . prototype . has . call ( 1 ) ;

@@ -1,0 +1,1 @@
+Array . prototype . splice . call ( class x  { ; } , 0 , { [ "value" ] : 0 , [ "writable" ] : true , [ "enumerable" ] : true , [ "configurable" ] : false } , ( Symbol . split ) ) ;

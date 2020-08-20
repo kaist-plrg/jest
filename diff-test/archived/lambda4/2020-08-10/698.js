@@ -1,0 +1,1 @@
+var x = new { [ Symbol . toPrimitive ] : true } ( [ { [ { [ Symbol . toPrimitive ] : true } ] : { [ Symbol . toPrimitive ] : true } , [ "1" ] : { [ Symbol . toPrimitive ] : true } } , ] ) ;

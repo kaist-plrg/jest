@@ -1,0 +1,1 @@
+var x = typeof { [ "value" ] : undefined , [ "writable" ] : false , [ "configurable" ] : false } ;

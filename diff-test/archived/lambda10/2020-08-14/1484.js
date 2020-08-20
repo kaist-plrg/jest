@@ -1,0 +1,1 @@
+var x = Function . prototype . apply . call ( ( ) => { ; throw 42 ; } , - 1n , { [ "length" ] : true } ) ;

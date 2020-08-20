@@ -1,0 +1,1 @@
+Array . prototype . flat . call ( { [ "length" ] : true } , 0 ) ;

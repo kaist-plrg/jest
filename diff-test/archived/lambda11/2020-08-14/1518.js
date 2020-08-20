@@ -1,0 +1,1 @@
+var x = { [ Symbol . toPrimitive ] : ( ) => { throw '' ; } } | { [ Symbol . toPrimitive ] : async function ( x ) { } } ;

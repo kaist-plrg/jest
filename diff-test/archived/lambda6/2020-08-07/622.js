@@ -1,0 +1,1 @@
+var x = String . prototype . split . call ( new String ( 0 ) , { [ "valueOf" ] : '0' , [ "toString" ] : async function ( x ) { } } , 0 ) ;

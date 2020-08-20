@@ -1,0 +1,1 @@
+var x = Array . prototype . find . call ( 'str' , ( ) => BigInt ( 0.1 ) ) ;

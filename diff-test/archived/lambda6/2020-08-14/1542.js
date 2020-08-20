@@ -1,0 +1,1 @@
+for ( [ ] in '0' ) for ( { x = { [ "done" ] : async * function ( x ) { } } } in { [ "done" ] : async * function ( x ) { } } ) ;

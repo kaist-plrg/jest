@@ -1,0 +1,1 @@
+Array . prototype . copyWithin . call ( async x => x , { [ "get" ] : function ( ) { } , [ "set" ] : function ( x ) { } , [ "configurable" ] : true } ) ;

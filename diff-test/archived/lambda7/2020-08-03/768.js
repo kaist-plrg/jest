@@ -1,0 +1,1 @@
+Array . prototype . slice . call ( ( - 0 ) , 0 , Symbol . isConcatSpreadable ) ;

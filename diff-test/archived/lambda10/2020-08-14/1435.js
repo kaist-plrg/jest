@@ -1,0 +1,1 @@
+function x ( ... { [ { [ Symbol . toPrimitive ] : function * ( ) { } } ] : x } ) { } new x ( ) ;

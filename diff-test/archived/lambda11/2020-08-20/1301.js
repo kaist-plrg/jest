@@ -1,0 +1,1 @@
+var x = function * x ( ) { } . prototype . toString . call ( new Error ( 0 ) ) ;

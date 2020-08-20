@@ -1,0 +1,1 @@
+for ( x ( ) in '' ) ; var [ x , , ... x ] = ( Number ( Symbol . iterator ) ) ;

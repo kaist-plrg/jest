@@ -1,0 +1,1 @@
+var x = { [ "valueOf" ] : '0' , [ "toString" ] : ( ) => { throw '' ; } } == 42n ;

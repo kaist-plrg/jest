@@ -1,0 +1,1 @@
+Map ( 0 ) ; class x extends [ , '' ] { }

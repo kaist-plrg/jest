@@ -1,0 +1,1 @@
+for ( let x = { [ "next" ] : async function ( x ) { } , [ "throw" ] : async function ( x ) { } } ; ; new x ( x , ) ) for ( x [ '' ] in '' ) ;

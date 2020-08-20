@@ -1,0 +1,1 @@
+var x = x ( ) ( ) ; x ( ) ; function x ( ... [ x , ] ) { ; x ( x ( ) ( ) ) ; return function * x ( ) { } ; }

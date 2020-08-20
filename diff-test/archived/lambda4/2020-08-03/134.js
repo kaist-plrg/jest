@@ -1,0 +1,1 @@
+Array . prototype . splice . call ( 'str' , { [ "value" ] : 0 , [ "done" ] : false } , '0' , typeof `${ '' }${ '' , '' }` ) ;

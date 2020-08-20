@@ -1,0 +1,1 @@
+var x = String . prototype . codePointAt . call ( { [ Symbol . toPrimitive ] : async function ( x ) { } } , { [ Symbol . toPrimitive ] : async function ( x ) { } } ) ;

@@ -1,0 +1,1 @@
+var x = ( x => { ; return class extends class { static x ( ) { } } `${ this }${ true , '' }` { } ; } ) ( ( Symbol . hasInstance ) ) ;

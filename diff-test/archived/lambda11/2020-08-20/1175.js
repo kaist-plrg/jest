@@ -1,0 +1,1 @@
+while ( [ 42 , 'str' , true ] ) switch ( '' ) { default : ; case x : }

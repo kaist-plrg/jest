@@ -1,0 +1,1 @@
+function x ( ) { ; for ( var { } in '' , '' ) ; var x = class extends x `${ { [ "prototype" ] : 0 } }` { ; ; } ; async function x ( ... [ x ] ) { ; for ( x . x in { [ "prototype" ] : 0 } ) ; } if ( '' ) ; else ; } new x ( ) ;

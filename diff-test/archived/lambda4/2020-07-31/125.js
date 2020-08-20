@@ -1,0 +1,1 @@
+var x = '' ; var x = `${ '' }${ x }${ '' }` ; switch ( '' ) {  default : ; case x : ; throw 0 ; }

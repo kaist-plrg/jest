@@ -1,0 +1,1 @@
+try { ; class x extends { x : '' } { } } catch { ; class x extends new x ( x , ) { } }

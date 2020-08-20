@@ -1,0 +1,1 @@
+String . prototype . split . call ( 1 , NaN ) ;

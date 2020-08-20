@@ -1,0 +1,1 @@
+switch ( '' ) { default : break ; class x extends [ Symbol . isConcatSpreadable , ] { } }

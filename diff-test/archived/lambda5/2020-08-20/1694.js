@@ -1,0 +1,1 @@
+var x = x `${ '' }${ '' }` ; async function x ( ... { x , } ) { for await ( let x of { [ Symbol . asyncIterator ] : async function ( ) { } , [ Symbol . iterator ] : '' } ) ; for await ( var x of [ , ] ) switch ( { [ Symbol . asyncIterator ] : async function ( ) { } , [ Symbol . iterator ] : '' } ) { default : ; case x : } function x ( ) { } await x ( ) ; }

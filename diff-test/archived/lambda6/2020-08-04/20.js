@@ -1,0 +1,1 @@
+for ( var x of '' ) ; for ( x of '' ) ; function * x ( ... [ , ] ) { ( - 1 ) ; yield { x ( ... [ , ] ) { } } ; for ( x ( ) [ '' , '' ] in '' ) ; } var [ ... x ] = x /= Symbol . replace ;

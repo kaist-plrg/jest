@@ -1,0 +1,1 @@
+while ( '' ) ; var x = x += x >= x ;

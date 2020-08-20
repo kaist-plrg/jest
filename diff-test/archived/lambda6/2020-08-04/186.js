@@ -1,0 +1,1 @@
+String . prototype . charAt . call ( ( { [ "value" ] : 0 , [ "configurable" ] : true } . isConcatSpreadable ) , { [ "writable" ] : false , [ "enumerable" ] : false , [ "configurable" ] : true } ) ;

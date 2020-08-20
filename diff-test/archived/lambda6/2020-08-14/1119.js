@@ -1,0 +1,1 @@
+var x = - Infinity ; ( { p : [ x , ... x ] = ( - Infinity ) } = x ) ;

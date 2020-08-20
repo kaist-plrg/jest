@@ -1,0 +1,1 @@
+var x = { [ "enumerable" ] : false , [ "configurable" ] : false } - ( Symbol . species ) ;

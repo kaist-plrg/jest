@@ -1,0 +1,1 @@
+( x => { ; return [ ] `${ '' }${ x }${ class extends x ( ) `` { } , - 1n }` ; } ) ( ) ;

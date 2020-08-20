@@ -1,0 +1,1 @@
+for ( var x ; x < x ; ) for ( var x = '' ; ; ) ;

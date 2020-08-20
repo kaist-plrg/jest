@@ -1,0 +1,1 @@
+try { ; } catch { ; var x = x >= x ; } finally { ; class x extends [  ] { ; } }

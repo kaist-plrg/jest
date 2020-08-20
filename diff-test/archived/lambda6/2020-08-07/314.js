@@ -1,0 +1,1 @@
+var x = Function . prototype . bind . call ( class x { static x ( ) { } } , true ) ;

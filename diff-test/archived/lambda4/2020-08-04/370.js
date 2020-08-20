@@ -1,0 +1,1 @@
+( x => { ; x ( ) ; switch ( '' ) { default : ; case x : } } ) ( ) ;

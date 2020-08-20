@@ -1,0 +1,1 @@
+BigInt . asIntN ( ( - Infinity ) , [  42 ,  'str' ,  true ] , ( ( ) => {  } ) ) ;

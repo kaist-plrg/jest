@@ -1,0 +1,1 @@
+var x = - 0 ; var [ , , ] = [ 42 , 'str' , true ] ;

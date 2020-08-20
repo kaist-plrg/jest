@@ -1,0 +1,1 @@
+var x = new { [ Symbol . asyncIterator ] : async function ( x ) { } , [ Symbol . iterator ] : true } ( { [ Symbol . asyncIterator ] : async function ( x ) { } , [ Symbol . iterator ] : true } , ... { [ Symbol . asyncIterator ] : async function ( x ) { } , [ Symbol . iterator ] : true } ) ;

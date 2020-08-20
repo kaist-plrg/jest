@@ -1,0 +1,1 @@
+String . prototype . padEnd . call ( NaN , 42 ) ;

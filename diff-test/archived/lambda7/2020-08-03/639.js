@@ -1,0 +1,1 @@
+( Symbol . asyncIterator ) . prototype [ { x } ] . call ( ! x ) ;

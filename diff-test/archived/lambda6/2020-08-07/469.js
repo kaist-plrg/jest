@@ -1,0 +1,1 @@
+switch ( Symbol . isConcatSpreadable ) { default : break ; }

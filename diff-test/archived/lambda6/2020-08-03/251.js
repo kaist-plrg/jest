@@ -1,0 +1,1 @@
+for ( { x = class extends x ?. x . x { } } in { async * x ( ... [ , x ] ) { } } ) ;

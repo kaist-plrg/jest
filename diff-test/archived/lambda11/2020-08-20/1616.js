@@ -1,0 +1,1 @@
+switch ( '' ) { case '' , '' : } x ( ) ; function x ( ... [ x , ] ) { for ( x ( ) [ '' ] in '' ) ; null ( { * x ( ... [ x , , ] ) { } } ) ; return x [ '' ] ; }

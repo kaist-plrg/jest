@@ -1,0 +1,1 @@
+var x = Array . prototype . lastIndexOf . call ( { p : 42 } , { async x ( ... { ... x } ) { } } !== FREE ) ;

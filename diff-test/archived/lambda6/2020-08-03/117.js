@@ -1,0 +1,1 @@
+var x = async x => { switch ( '' ) { case '' : ; } for await ( x of '' ) ; } ; x ( -- x ) ;

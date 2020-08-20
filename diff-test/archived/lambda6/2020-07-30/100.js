@@ -1,0 +1,1 @@
+var x = ( Symbol . matchAll ) += { async x ( ... { x : { }  } ) {  } } ;

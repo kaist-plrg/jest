@@ -1,0 +1,1 @@
+var x = Array . prototype . splice . call ( { [ "length" ] : true } , { * x ( ... x ) { } } , Infinity ) ;

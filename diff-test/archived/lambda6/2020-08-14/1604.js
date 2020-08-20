@@ -1,0 +1,1 @@
+var x = { [ Symbol . toPrimitive ] : async * function ( ) { } } . prototype [ { [ Symbol . toPrimitive ] : async * function ( ) { } } . unscopables ] ;

@@ -1,0 +1,1 @@
+String . prototype . endsWith . call ( { [ "set" ] : function ( x0 , x1 ) { } } , { } ) ;

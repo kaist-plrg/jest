@@ -1,0 +1,1 @@
+var x = Array . prototype . reduceRight . call ( [ function ( ) { } , 'str' , true ] , x => [ x , , ] ) ;

@@ -1,0 +1,1 @@
+var x = Number . prototype . toString . call ( Infinity , { [ Symbol . toPrimitive ] : function * ( x ) { } } ) ;

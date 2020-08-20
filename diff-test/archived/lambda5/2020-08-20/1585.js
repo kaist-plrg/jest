@@ -1,0 +1,1 @@
+var x = String . prototype . slice . call ( x ? '' : '' , Symbol . matchAll , x ?. x [ class extends x `${ '' }${ x }${ '' , '' }` { ; } ] ) ;

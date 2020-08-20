@@ -1,0 +1,1 @@
+String . prototype . split . call ( { get x ( ) { } } , { [ "value" ] : 'str' , [ "writable" ] : true } , Symbol . replace ) ;

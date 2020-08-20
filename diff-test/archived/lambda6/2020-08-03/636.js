@@ -1,0 +1,1 @@
+Array . prototype . unshift . call ( [ 42 , 'str' , true ] , ( Symbol . hasInstance ) ) ;

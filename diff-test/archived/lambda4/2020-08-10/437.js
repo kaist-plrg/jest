@@ -1,0 +1,1 @@
+var x = isFinite ( 0 ) ; var x = [ '' ] << ( Number ( Symbol . iterator ) ) ;

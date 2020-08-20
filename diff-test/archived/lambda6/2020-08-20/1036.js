@@ -1,0 +1,1 @@
+var x = NaN ; ( undefined = class extends x ?. x [ '' ] { ; } ) ;

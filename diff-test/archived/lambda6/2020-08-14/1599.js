@@ -1,0 +1,1 @@
+var x = Object . prototype . isPrototypeOf . call ( { [ "length" ] : ( ) => { throw '' ; } } . species , { [ "length" ] : ( ) => { throw '' ; } } ) ;

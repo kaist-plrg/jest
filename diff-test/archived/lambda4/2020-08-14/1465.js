@@ -1,0 +1,1 @@
+var x = { [ "prototype" ] : true } . prototype . toString . call ( new Boolean ( { [ "prototype" ] : true } ) ) ;

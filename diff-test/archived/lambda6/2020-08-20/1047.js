@@ -1,0 +1,1 @@
+switch ( '' ) { case '' : ; async function x ( ... [ , x ] ) { } }

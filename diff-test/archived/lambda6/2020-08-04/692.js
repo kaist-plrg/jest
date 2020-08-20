@@ -1,0 +1,1 @@
+for ( ( Symbol . toPrimitive ) of [ '' ] ) for ( x of '' ) ;

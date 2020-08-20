@@ -1,0 +1,1 @@
+for ( Symbol . asyncIterator ; class   { static x (  ) {  } } ; x >>>= ( x => {  } ) ) continue ;

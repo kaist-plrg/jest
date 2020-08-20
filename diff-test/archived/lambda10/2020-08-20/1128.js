@@ -1,0 +1,1 @@
+var x = String . prototype . slice . call ( 0n , ( - 1 ) , 'str' ) ;

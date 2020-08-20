@@ -1,0 +1,1 @@
+Object . prototype . hasOwnProperty . call ( undefined , { async * x (  ) {  } } , ( Symbol . split ) ) ;

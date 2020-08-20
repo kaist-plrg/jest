@@ -1,0 +1,1 @@
+var x = String . prototype . startsWith . call ( Infinity , ( ( Symbol . isConcatSpreadable ) . asyncIterator ) ) ;

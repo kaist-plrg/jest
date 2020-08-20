@@ -1,0 +1,1 @@
+for ( ; x instanceof x ; '' ) for ( var x = '' ; '' ; '' ) ;

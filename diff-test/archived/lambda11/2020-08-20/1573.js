@@ -1,0 +1,1 @@
+var x = class extends new x ( x , ) { } ( ) ( ) ; var x = x ; function x ( ... [ x , ] ) { ; - 0 ; return { async * x ( x ) { } } ; }

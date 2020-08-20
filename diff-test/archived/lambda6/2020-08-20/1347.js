@@ -1,0 +1,1 @@
+{ ; new x ( ) ; function x ( ) { ; return { [ "prototype" ] : function ( ) { } } ; } }

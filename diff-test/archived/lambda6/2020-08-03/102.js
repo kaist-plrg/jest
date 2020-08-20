@@ -1,0 +1,1 @@
+for ( ; '' , '' ; ) ; var x = class extends x ( ) . x { } ; function x ( ... [ , , ... x ] ) { switch ( '' ) { } return x ( ) [ '' , '' ] ; }

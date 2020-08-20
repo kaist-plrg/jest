@@ -1,0 +1,1 @@
+var x = Object . isSealed ( { async x ( ... [ , x ] ) { } } ) ; var { x , } = BigInt ( 0.1 ) ;

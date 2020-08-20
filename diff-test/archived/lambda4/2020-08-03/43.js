@@ -1,0 +1,1 @@
+var x = { [ { [ "set" ] : function ( x ) { ; throw 0 ; } , [ "configurable" ] : true } ] : Symbol . asyncIterator , [ Symbol . toPrimitive ] : function ( x ) { ; x ( ) ; } } + ( - Infinity ) ;

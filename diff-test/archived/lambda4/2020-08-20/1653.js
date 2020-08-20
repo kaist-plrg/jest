@@ -1,0 +1,1 @@
+var x = { [ "constructor" ] : function ( x ) { } , [ Symbol . species ] : async * function ( x ) { } } . prototype . flat . call ( new { [ "constructor" ] : function ( x ) { } , [ Symbol . species ] : async * function ( x ) { } } ( ) ) ;

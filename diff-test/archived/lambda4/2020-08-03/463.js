@@ -1,0 +1,1 @@
+Object . getOwnPropertyDescriptors ( { [ "set" ] : function ( x ) { } , [ "enumerable" ] : true , [ "configurable" ] : true } ) ;

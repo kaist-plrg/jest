@@ -1,0 +1,1 @@
+{ p : 42 ; } ( "class x extends '' { }" ) ;

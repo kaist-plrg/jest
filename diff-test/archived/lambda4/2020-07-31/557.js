@@ -1,0 +1,1 @@
+Object . values ( { set x ( x  ) {  } } ) ;

@@ -1,0 +1,1 @@
+var x = Array . prototype . slice . call ( { [ Symbol . toPrimitive ] : function * ( ) { } } , { [ Symbol . toPrimitive ] : function * ( ) { } } , x < x ) ;

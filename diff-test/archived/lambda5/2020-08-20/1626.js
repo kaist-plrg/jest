@@ -1,0 +1,1 @@
+var x = { [ "prototype" ] : function * ( ) { } } . prototype . toString . call ( new Number ( { [ "prototype" ] : function * ( ) { } } ) , { [ "prototype" ] : function * ( ) { } } ) ;

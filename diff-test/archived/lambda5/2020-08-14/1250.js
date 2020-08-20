@@ -1,0 +1,1 @@
+for ( ( BigInt ( 'x' ) ) in { async * x ( ... { x = '' } ) { } } ) var { } = x ;

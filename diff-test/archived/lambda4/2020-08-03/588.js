@@ -1,0 +1,1 @@
+Array . prototype . push . call ( undefined , Symbol . match ) ;

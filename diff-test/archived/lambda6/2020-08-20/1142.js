@@ -1,0 +1,1 @@
+var x = Promise . resolve ( 0 ) ; switch ( '' ) { default : case x : }

@@ -1,0 +1,1 @@
+Array . prototype . findIndex . call ( async x => '' , x => x ^ x , ( ( ) => { } ) ) ;

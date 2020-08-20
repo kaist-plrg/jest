@@ -1,0 +1,1 @@
+var x = String . prototype . endsWith . call ( new String ( Symbol . matchAll ) , undefined , BigInt ( 0.1 ) ) ;

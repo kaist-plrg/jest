@@ -1,0 +1,1 @@
+var x = Promise . allSettled ( { [ Symbol . asyncIterator ] : ( ) => { throw '' ; new x ( ) ; for ( x ?. x . x in '' ) ; } , [ Symbol . iterator ] : function * ( ) { ; yield 42 ; yield * Symbol . isConcatSpreadable ; } } ) ;

@@ -1,0 +1,1 @@
+var x = NaN + class x extends x ( ) `` { ; } ;

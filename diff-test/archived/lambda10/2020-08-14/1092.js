@@ -1,0 +1,1 @@
+var x = Array ( { [ "length" ] : async * function ( ) { } } < x ) ;

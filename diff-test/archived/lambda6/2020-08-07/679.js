@@ -1,0 +1,1 @@
+for ( ( Symbol . split ) of [ 42 , 'str' , true ] ) for ( let x = x ; '' ; '' ) ;

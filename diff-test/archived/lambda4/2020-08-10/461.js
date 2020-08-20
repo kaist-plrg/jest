@@ -1,0 +1,1 @@
+var x = { [ Symbol . toPrimitive ] : class extends x [ '' , '' ] { ; } } > 42n ;

@@ -1,0 +1,1 @@
+( x => { for ( let x of '' ) ; var x = BigInt ( 0.1 ) ; } ) ( 0n ) ;

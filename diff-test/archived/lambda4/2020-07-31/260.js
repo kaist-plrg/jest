@@ -1,0 +1,1 @@
+Array . prototype . reduceRight . call ( undefined , function  (  ) {  } , NaN ) ;

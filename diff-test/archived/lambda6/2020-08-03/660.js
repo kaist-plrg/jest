@@ -1,0 +1,1 @@
+String . prototype . lastIndexOf . call ( { [ "get" ] : function ( ) { } , [ "set" ] : function ( ) { } , [ "configurable" ] : true } , Symbol . unscopables , 0 ) ;

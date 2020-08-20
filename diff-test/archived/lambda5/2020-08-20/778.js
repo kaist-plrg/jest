@@ -1,0 +1,1 @@
+for ( ( BigInt ( 0.1 ) ) of [ 42 , 'str' , true ] ) ;

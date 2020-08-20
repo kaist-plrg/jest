@@ -1,0 +1,1 @@
+Object . assign ( '' , { get x ( ) { ; class x extends super [ '' , class extends super . x { ; } ] { ; } } } ) ;

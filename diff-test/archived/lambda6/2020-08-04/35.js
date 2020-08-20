@@ -1,0 +1,1 @@
+function x ( ... { x : x } ) { } for ( { async x ( ... [ ] ) { } } ; [ 42 , 'str' , true ] ; ( ) => { } ) var { x , x } = x ; '0' ;

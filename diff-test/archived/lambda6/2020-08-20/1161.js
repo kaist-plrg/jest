@@ -1,0 +1,1 @@
+var x = Object . setPrototypeOf ( { x , x } , null ) ; var x = x ** x ;

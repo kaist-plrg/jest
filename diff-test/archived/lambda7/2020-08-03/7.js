@@ -1,0 +1,1 @@
+for ( var x of [ 42 , 'str' , true ] ) for ( let x = x ; ; '' ) ;

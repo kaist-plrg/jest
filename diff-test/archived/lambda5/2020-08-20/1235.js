@@ -1,0 +1,1 @@
+var x = Array . prototype . flat . call ( typeof ( Symbol . iterator ) ) ;

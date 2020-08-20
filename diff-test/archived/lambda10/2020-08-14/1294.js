@@ -1,0 +1,1 @@
+var x = Array . prototype . lastIndexOf . call ( '0' , 1 ) ; var x = x === x ;

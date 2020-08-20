@@ -1,0 +1,1 @@
+for ( x in Symbol . search ) for ( { [ "value" ] : undefined , [ "writable" ] : false , [ "configurable" ] : false } . x in Symbol . replace ) ;

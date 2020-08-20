@@ -1,0 +1,1 @@
+( x => { for ( { x = x } in '' ) ; var x = async x => BigInt ( 'x' ) ; x ( Symbol . match ) ; } ) ( ) ;

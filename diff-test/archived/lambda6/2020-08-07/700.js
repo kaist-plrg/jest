@@ -1,0 +1,1 @@
+class x extends ( ( ) => { } ) ( ) [ class x extends x { x ( ) { } } , Symbol . match ] { ; }

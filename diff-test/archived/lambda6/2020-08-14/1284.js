@@ -1,0 +1,1 @@
+try { ; var x = class x extends x { ; } ; } catch { ; new x ( ) ; } finally { }

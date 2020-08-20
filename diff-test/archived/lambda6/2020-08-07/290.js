@@ -1,0 +1,1 @@
+var x = Function . prototype . apply . call ( async x => '' , x >>> x , { [ Symbol . toPrimitive ] : function ( ) { } } ) ;

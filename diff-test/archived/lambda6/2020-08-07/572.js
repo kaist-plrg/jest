@@ -1,0 +1,1 @@
+var x = Promise . prototype . finally . call ( class { ; ; } , [ 42 , 'str' , true ] ) ;

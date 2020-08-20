@@ -1,0 +1,1 @@
+Object . entries ( { [ "configurable" ] : true } , { [ "value" ] : undefined , [ "writable" ] : true , [ "enumerable" ] : true , [ "configurable" ] : true } ) ;

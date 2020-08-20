@@ -1,0 +1,1 @@
+var x = x `` ; var [ ... { } ] = x ; function * x ( ... { ... x } ) { for ( x in '' ) ; yield true ; }

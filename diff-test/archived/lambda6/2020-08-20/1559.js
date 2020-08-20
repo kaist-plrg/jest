@@ -1,0 +1,1 @@
+var x = Array . prototype . concat . call ( Symbol . asyncIterator , { [ Symbol . isConcatSpreadable ] : async function ( x ) { } } ) ; var x = x >= x ;

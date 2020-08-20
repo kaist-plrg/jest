@@ -1,0 +1,1 @@
+var x = Object . assign ( { set x ( x ) { } } , { async * x ( ) { } } ) ;

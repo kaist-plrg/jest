@@ -1,0 +1,1 @@
+var x = { async x ( ... { [ '' ] : { } = x } ) { } } ; var [ , , ] = class extends x ?. x . x { ; } ;

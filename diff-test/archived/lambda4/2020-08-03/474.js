@@ -1,0 +1,1 @@
+String . prototype . normalize . call ( { async x ( ... [ x , , ] ) { } } . iterator , typeof x ) ;

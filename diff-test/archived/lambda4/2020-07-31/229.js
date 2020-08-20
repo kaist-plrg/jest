@@ -1,0 +1,1 @@
+for ( x of { [ Symbol . iterator ] : class  extends x ( ) . x {  } } ) ;

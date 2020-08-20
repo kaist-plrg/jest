@@ -1,0 +1,1 @@
+for ( ( { [ "done" ] : '' } . species ) of [ { [ "done" ] : '' } , 'str' , { [ "done" ] : '' } ] ) var { ... x } = { [ "done" ] : '' } ;

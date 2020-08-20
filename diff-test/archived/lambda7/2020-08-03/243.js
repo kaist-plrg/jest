@@ -1,0 +1,1 @@
+var x = '' ; switch ( '' ) { case x : ; x ( ) ; default : ; var [ x ] = x ; }

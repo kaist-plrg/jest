@@ -1,0 +1,1 @@
+function x ( [ x ] = FREE ) { } ; { p : 42 ; } ( 0 ) ;

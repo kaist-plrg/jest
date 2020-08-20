@@ -1,0 +1,1 @@
+var x = 42n | { [ "value" ] : null , [ "writable" ] : true } ;

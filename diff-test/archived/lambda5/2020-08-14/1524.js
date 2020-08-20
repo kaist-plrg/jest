@@ -1,0 +1,1 @@
+var x = x ( ) ; var x = { x ( ... [ , x ] ) { } } ; function x ( ... [ ... x ] ) { for ( let x in '' , '' ) ; x ( class x extends x ?. x [ '' ] { ; } ) ; var x ; }

@@ -1,0 +1,1 @@
+for ( let x in { * x ( ... { x = class extends x { ; } } ) { } } ) for ( let x = x ; ; '' ) ;

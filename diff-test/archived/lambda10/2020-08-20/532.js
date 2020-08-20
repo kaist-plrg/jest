@@ -1,0 +1,1 @@
+for ( { } in [ 42 , 'str' , true ] ) ;

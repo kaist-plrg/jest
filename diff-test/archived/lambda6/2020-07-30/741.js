@@ -1,0 +1,1 @@
+var x = Infinity ; var { x = class   { x (  ) {  } } } = { } ;

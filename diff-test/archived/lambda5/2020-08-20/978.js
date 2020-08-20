@@ -1,0 +1,1 @@
+var x = x => x ; 0n in class x extends new x ( x , ) { ; } ;

@@ -1,0 +1,1 @@
+var x = 42n ; switch ( { [ "done" ] : ( ) => { throw '' ; } } , { [ "done" ] : ( ) => { throw '' ; } } ) { default : for ( var x = '' ; '' ; '' ) ; case 0n < { [ "done" ] : ( ) => { throw '' ; } } : } for ( x ( ) . x in { [ "done" ] : ( ) => { throw '' ; } } ) ;

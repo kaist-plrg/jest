@@ -1,0 +1,1 @@
+for ( x ( ) [ '' ] in '' ) ; x ( ) ; function x ( ... [ x , ] ) { ; x ( ( Number ( Symbol . iterator ) ) ) ; return ( x && x ) ; }

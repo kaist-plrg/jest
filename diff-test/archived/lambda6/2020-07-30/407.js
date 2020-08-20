@@ -1,0 +1,1 @@
+Array . prototype . shift . call ( [  42 ,  'str' ,  true ] , Symbol . iterator ) ;

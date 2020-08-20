@@ -1,0 +1,1 @@
+var x = Object . assign ( 42n , null ) ; var x = x -- ;

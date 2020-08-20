@@ -1,0 +1,1 @@
+var x = Array . prototype . flatMap . call ( 'str' , x => class extends x . x { ; } ) ;

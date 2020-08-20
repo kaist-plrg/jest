@@ -1,0 +1,1 @@
+for ( { [ Symbol . iterator ] : { } } in { p : 42 } ) for ( x | x , '' ;  ;  ) ;

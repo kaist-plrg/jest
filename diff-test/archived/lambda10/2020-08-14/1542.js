@@ -1,0 +1,1 @@
+var x = Object . seal ( { async * x ( ... { [ '' ] : { } = x } ) { } } ) ; var x = x instanceof class x extends x . x { } ;

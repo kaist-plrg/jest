@@ -1,0 +1,1 @@
+Function . prototype . bind . call ( async function * ( ) { } , 42n ) ;

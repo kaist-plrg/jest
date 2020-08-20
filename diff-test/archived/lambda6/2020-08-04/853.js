@@ -1,0 +1,1 @@
+Array . prototype . fill . call ( 1 , class extends x `${ '' , '' }${ x }${ '' }` { ; } , { async x ( ... { x } ) { } } ) ;

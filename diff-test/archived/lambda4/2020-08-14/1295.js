@@ -1,0 +1,1 @@
+var x = `${ '' }` ; switch ( '' ) { case Symbol . species : default : case '' : }

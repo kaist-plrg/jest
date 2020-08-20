@@ -1,0 +1,1 @@
+for ( x + x ; false ; { [ "next" ] : function ( ) { } , [ "throw" ] : function ( x ) { } } ) ;

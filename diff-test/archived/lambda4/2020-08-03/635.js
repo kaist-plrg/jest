@@ -1,0 +1,1 @@
+var x = { [ "get" ] : function ( x ) { } , [ "configurable" ] : true } | ( Symbol . isConcatSpreadable ) ;

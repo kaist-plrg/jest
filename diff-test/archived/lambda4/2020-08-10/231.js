@@ -1,0 +1,1 @@
+var x = new WeakSet ( [ { [ "done" ] : ( ) => { throw '' ; } } , { [ "done" ] : ( ) => { throw '' ; } } ] ) ;

@@ -1,0 +1,1 @@
+class x extends ( x => { ; if ( '' ) ; else ; x ( 0 ) ; switch ( '' ) { default : case x : } try { } catch { } finally { } } ) ( ) ( ) { }

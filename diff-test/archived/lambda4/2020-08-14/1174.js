@@ -1,0 +1,1 @@
+var x = Number ( [ true , Symbol . toStringTag , Symbol . iterator ] ) ;

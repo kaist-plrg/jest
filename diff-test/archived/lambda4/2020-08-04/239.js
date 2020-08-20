@@ -1,0 +1,1 @@
+( async x => { x ; for await ( let x of [ 42 , 'str' , true ] ) for await ( ( Symbol . split ) of class x extends x ( ) . x { } ) ; } ) ( 1 ) ;

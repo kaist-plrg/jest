@@ -1,0 +1,1 @@
+var x = new Set ( [ 42n , x === x , - 1n ] ) ;

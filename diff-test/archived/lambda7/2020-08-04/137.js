@@ -1,0 +1,1 @@
+var x = x `` ; var [ x , , ] = x ; switch ( '' ) { default : } for ( var x ; '' , '' ; '' , '' ) ; function * x ( ... { ... x } ) { ; yield * ( BigInt ( 'x' ) ) ; for ( let x = x ; ; ) ; }

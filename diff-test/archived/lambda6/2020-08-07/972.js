@@ -1,0 +1,1 @@
+var x = { [ Symbol . toPrimitive ] : function * ( x ) { } } . prototype . slice . call ( new { [ Symbol . toPrimitive ] : function * ( x ) { } } ( 0 ) , { [ Symbol . toPrimitive ] : function * ( x ) { } } , { [ Symbol . toPrimitive ] : function * ( x ) { } } ) ;

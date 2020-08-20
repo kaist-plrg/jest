@@ -1,0 +1,1 @@
+function x ( [ x ] = [ 1 , 2 , 3 ] ) { } ; function x ( ... [ , , ... x ] ) { } x ( 0 ) ;

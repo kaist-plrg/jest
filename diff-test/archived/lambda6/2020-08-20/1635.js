@@ -1,0 +1,1 @@
+var x = Array . prototype . flat . call ( { [ Symbol . asyncIterator ] : function * ( x ) { } , [ Symbol . iterator ] : async function ( x ) { } } ) ; var [ x , , ... x ] = { [ Symbol . asyncIterator ] : function * ( x ) { } , [ Symbol . iterator ] : async function ( x ) { } } ;

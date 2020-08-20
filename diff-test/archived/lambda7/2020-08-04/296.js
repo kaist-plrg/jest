@@ -1,0 +1,1 @@
+Array . prototype . slice . call ( { [ "length" ] : { [ Symbol . toPrimitive ] : function * ( x ) { } } } , { [ Symbol . toPrimitive ] : function * ( x ) { } } ) ;

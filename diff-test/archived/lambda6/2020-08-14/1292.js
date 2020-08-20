@@ -1,0 +1,1 @@
+var x = ( Symbol . toPrimitive ) ? class x extends x ?. x { } : ( - Infinity ) ;

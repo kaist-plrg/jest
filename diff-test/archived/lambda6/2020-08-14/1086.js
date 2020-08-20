@@ -1,0 +1,1 @@
+var x = ( Symbol . match ) = class extends x { static x ( ) { } } ;

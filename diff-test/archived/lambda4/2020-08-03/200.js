@@ -1,0 +1,1 @@
+for ( let x of [ NaN , Symbol . asyncIterator , ( - 0 ) ] ) throw x ;

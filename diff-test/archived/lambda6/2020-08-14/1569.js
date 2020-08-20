@@ -1,0 +1,1 @@
+var x = String . prototype . split . call ( { async x ( ... { } ) { } } , { async x ( ) { } } , ( Symbol . search ) . hasInstance ) ;

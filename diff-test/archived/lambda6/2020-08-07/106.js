@@ -1,0 +1,1 @@
+if ( - Infinity ) for ( x ( ) [ '' ] in '' ) ; else for ( var { } in '' , '' ) ;

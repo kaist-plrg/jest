@@ -1,0 +1,1 @@
+String . prototype . indexOf . call ( null , function * ( ) { } , Symbol . species ) ;

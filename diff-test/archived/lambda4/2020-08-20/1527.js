@@ -1,0 +1,1 @@
+var x = async function * ( ) { } . prototype . propertyIsEnumerable . call ( - 0 , class x extends new x { } ) ;

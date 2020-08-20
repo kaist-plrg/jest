@@ -1,0 +1,1 @@
+Promise . allSettled ( [ async function ( ) { } , 'str' , { [ '' ] : '' } ] ) ;

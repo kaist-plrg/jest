@@ -1,0 +1,1 @@
+var x = Array . prototype . every . call ( `${ '' }${ x }${ '' }` , function ( ) { ; x ( ) ; } , { x , x } ) ;

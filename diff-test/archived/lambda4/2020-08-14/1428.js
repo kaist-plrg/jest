@@ -1,0 +1,1 @@
+async function * x ( ) { return ; } ; x instanceof { [ Symbol . hasInstance ] : ( ) => { throw '' ; } } ;

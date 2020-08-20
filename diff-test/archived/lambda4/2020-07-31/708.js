@@ -1,0 +1,1 @@
+Number . prototype . toString . call ( { [ "writable" ] : false } , [  42 ,  'str' ,  true ] , 0 ) ;

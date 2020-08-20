@@ -1,0 +1,1 @@
+async function * x ( ) { for ( x ?. x . x in '' ) ; } for ( x ?. x [ '' , '' ] in '' ) ; var { x } = x ;

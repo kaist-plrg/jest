@@ -1,0 +1,1 @@
+Array . prototype . map . call ( 0n , ( ) => {  } , async function x (  ) {  } , class   {  } ) ;

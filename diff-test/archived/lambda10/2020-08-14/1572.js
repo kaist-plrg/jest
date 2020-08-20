@@ -1,0 +1,1 @@
+var x = String . prototype . matchAll . call ( Symbol . hasInstance , { [ Symbol . match ] : class extends x `${ '' , '' }` { } } ) ;

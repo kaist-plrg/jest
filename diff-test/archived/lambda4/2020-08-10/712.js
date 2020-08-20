@@ -1,0 +1,1 @@
+var x = Array . prototype . indexOf . call ( [ '' ] , ( Symbol . split ) , class x { static x ( ) { } } ) ;

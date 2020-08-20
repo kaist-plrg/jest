@@ -1,0 +1,1 @@
+var x = Array . prototype . splice . call ( 42n , '0' , 0n === class x extends x ?. x ?. x { } ) ;

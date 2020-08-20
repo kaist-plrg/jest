@@ -1,0 +1,1 @@
+[ 42 , 'str' , true ] . values ( ) ;

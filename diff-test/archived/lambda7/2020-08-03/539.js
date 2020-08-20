@@ -1,0 +1,1 @@
+( x => { ; return class x extends x { static x ( ) { } } ; } ) ( ) ;

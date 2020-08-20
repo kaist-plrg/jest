@@ -1,0 +1,1 @@
+if ( ( Symbol . split ) ) var [ x ] = x ; else ;

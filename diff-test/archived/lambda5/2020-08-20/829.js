@@ -1,0 +1,1 @@
+switch ( ++ x ) { case x ?. x [ '' , '' ] : default : }

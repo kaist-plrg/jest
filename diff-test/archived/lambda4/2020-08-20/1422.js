@@ -1,0 +1,1 @@
+function x ( x0 , x1 ) { ; return { [ "value" ] : async * function ( ) { } } ; } ; x ( 42 ) ;

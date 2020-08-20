@@ -1,0 +1,1 @@
+var x = undefined ?? class x extends x ( ) . x {  } ;

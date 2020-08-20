@@ -1,0 +1,1 @@
+var x = new WeakSet ( [ { [ "value" ] : null } , 'str' , { [ "value" ] : null } ] ) ;

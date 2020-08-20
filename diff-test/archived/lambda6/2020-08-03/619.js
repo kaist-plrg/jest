@@ -1,0 +1,1 @@
+var x = { [ "next" ] : function ( x0 , x1 ) { } , [ "return" ] : function ( x ) { } , [ "throw" ] : function ( x0 , x1 ) { } } != 42n ;

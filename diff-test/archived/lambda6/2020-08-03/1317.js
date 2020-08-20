@@ -1,0 +1,1 @@
+String . prototype . charAt . call ( 1 , 0 ) ;

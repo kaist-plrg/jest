@@ -1,0 +1,1 @@
+var x = String . prototype . endsWith . call ( class { ; } , 0 , Symbol . toStringTag ) ;

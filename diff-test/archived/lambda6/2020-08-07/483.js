@@ -1,0 +1,1 @@
+var x = String . prototype . split . call ( Symbol . replace , 0 , 0 ) ;

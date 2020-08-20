@@ -1,0 +1,1 @@
+Array . prototype . reduceRight . call ( 'str' , async x => ( Symbol . match ) , ( - 0 ) , Symbol . match ) ;

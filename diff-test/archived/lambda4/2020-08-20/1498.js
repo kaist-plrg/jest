@@ -1,0 +1,1 @@
+var x = Array . prototype . includes . call ( [ ( Symbol . unscopables ) , class x { ; } , 0n ] , 42n ) ;

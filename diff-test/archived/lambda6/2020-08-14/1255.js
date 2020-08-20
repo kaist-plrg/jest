@@ -1,0 +1,1 @@
+var x = Object . defineProperty ( class { static x ( ) { } } , false , 0 ) ;

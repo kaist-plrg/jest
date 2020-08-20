@@ -1,0 +1,1 @@
+var x = new Map ( { [ Symbol . asyncIterator ] : ( ) => { throw '' ; } , [ Symbol . iterator ] : async function ( ) { } } ) ;

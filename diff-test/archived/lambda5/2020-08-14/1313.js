@@ -1,0 +1,1 @@
+var x = [ 42 , 'str' , true ] ; for ( let { } = x ; '' ; ) ; var x = typeof ( - 1n ) ;

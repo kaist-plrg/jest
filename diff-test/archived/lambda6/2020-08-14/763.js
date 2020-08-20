@@ -1,0 +1,1 @@
+var x = new String ( [ x , ] ) ; var [ x , ] = x ;

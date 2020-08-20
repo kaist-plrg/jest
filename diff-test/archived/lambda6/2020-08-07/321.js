@@ -1,0 +1,1 @@
+var x = { p : 0 } ; var x = x ?. x ; ( { p : x } = x ) ;

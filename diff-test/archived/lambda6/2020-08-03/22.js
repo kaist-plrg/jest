@@ -1,0 +1,1 @@
+( x => { ; x ( ) ; return 0 ; async function * x ( ... { x = '' } ) { } switch ( '' ) { case x : case x : } } ) ( ) ;

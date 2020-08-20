@@ -1,0 +1,1 @@
+var x = Object . defineProperty ( [ ... { [ Symbol . asyncIterator ] : function * ( ) { } , [ Symbol . iterator ] : false } ] , { [ Symbol . asyncIterator ] : function * ( ) { } , [ Symbol . iterator ] : false } , { } ) ;

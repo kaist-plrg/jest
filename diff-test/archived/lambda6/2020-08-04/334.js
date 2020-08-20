@@ -1,0 +1,1 @@
+for ( { x , x } in { [ "enumerable" ] : false , [ "configurable" ] : false } ) ;

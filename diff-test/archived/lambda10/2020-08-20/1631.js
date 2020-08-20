@@ -1,0 +1,1 @@
+var x = x `` ; var [ ... { } ] = x ; function * x ( ... [ x , ] ) { ; var x = x *= { [ "prototype" ] : async * function ( ) { } } ; } var [ x , , ... x ] = { [ "prototype" ] : async * function ( ) { } } ;

@@ -1,0 +1,1 @@
+var x = typeof [ { [ "next" ] : function ( x0 , x1 ) { } , [ "throw" ] : function ( ) { } } , class extends x { } , true ] ;

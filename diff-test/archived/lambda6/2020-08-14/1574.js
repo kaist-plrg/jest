@@ -1,0 +1,1 @@
+async function x ( ) { ; for await ( ( ( Number ( Symbol . iterator ) ) . iterator ) of [ , '' ] ) for ( var x , x ; ; ) ; } x ( 42 ) ;

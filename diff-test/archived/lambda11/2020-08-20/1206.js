@@ -1,0 +1,1 @@
+var x = TypeError ( { [ "prototype" ] : function ( x ) { } } . split ) ;

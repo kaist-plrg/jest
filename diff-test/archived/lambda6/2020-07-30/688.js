@@ -1,0 +1,1 @@
+String . prototype . padStart . call ( [  42 ,  'str' ,  true ] ) ;

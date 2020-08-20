@@ -1,0 +1,1 @@
+var x = String . prototype . repeat . call ( 0 , Infinity ) ;

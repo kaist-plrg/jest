@@ -1,0 +1,1 @@
+var x = Array . prototype . concat . call ( 42n ) ; var [ x , x ] = x << x ;

@@ -1,0 +1,1 @@
+Object . defineProperty ( { } , { * x ( ) { } } , { [ "get" ] : x => { } , [ - 0 ] : true } ) ;

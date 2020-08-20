@@ -1,0 +1,1 @@
+function x ( x0 , x1 ) { } ; async function * x ( ... { x = { [ "prototype" ] : async * function ( ) { } } } ) { } x ( 42 ) ;

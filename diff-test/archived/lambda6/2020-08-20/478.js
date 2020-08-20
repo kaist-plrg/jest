@@ -1,0 +1,1 @@
+var x = Object . is ( 42n , 42n ) ;

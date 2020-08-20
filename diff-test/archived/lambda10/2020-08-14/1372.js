@@ -1,0 +1,1 @@
+var x = class x { x ( ) { } } . prototype . toString . call ( new Boolean ( null ) ) ;

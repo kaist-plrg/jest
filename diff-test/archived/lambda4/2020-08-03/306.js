@@ -1,0 +1,1 @@
+Object . assign ( '' , { get x ( ) { ; for ( super . x in '' ) ; } } ) ;

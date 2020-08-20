@@ -1,0 +1,1 @@
+switch ( 0 ) { default : ; async function * x ( x ) { } }

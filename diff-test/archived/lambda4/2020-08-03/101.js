@@ -1,0 +1,1 @@
+for ( { [ - { } ] : x = '' } in [ , Symbol . hasInstance ] ) var x = { [ "value" ] : 0 , [ "done" ] : false } ;

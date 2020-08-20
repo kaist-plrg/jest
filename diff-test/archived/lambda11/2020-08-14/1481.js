@@ -1,0 +1,1 @@
+var x = String . prototype . padEnd . call ( new String ( { [ "valueOf" ] : 0 , [ "toString" ] : 0 } ) , 0 ) ;

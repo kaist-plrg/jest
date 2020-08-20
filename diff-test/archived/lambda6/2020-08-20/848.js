@@ -1,0 +1,1 @@
+if ( { async x ( ... x ) { } } ) if ( '' , '' ) ; else ;

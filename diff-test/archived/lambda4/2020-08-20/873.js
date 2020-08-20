@@ -1,0 +1,1 @@
+var x = - 1n ; var x = 0n % x ; var { x : x } = x === x ;

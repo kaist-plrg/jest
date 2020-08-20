@@ -1,0 +1,1 @@
+function x ( ) { ; switch ( '' ) { } for ( Infinity in '' ) ; var x = class extends x ( ) ?. x { ; } ; return '' , { } ; for ( x of '' ) ; } new x ( ) ;

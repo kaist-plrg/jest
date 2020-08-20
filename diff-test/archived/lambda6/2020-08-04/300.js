@@ -1,0 +1,1 @@
+String . prototype . indexOf . call ( 1 , Symbol . iterator , { [ "set" ] : function ( x0 , x1 ) { } , [ "configurable" ] : false } ) ;

@@ -1,0 +1,1 @@
+var x = isFinite ( { [ Symbol . toPrimitive ] : 0 } ) ;

@@ -1,0 +1,1 @@
+async function * x ( ... { x , } ) { } var x = typeof null ;

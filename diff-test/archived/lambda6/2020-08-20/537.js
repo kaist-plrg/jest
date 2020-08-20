@@ -1,0 +1,1 @@
+if ( 42 ) ; else for ( var x ; ; '' ) ;

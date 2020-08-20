@@ -1,0 +1,1 @@
+Array . prototype . fill . call ( { [ "length" ] : true } , 0 ) ;

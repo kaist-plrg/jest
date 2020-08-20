@@ -1,0 +1,1 @@
+var x = String . prototype . padStart . call ( { p : 42 } , ( Symbol . toStringTag ) && class extends x ?. x ( ) { ; } ) ;

@@ -1,0 +1,1 @@
+Function . prototype . bind . call ( ( ) => x , 0n ) ;

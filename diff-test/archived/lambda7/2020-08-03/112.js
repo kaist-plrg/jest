@@ -1,0 +1,1 @@
+var x = x `` ; var [ x , x ] = x ; function * x ( ... { ... x } ) { switch ( '' ) { default : ; } yield * class x extends x ?. x . x { } ; }

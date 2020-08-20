@@ -1,0 +1,1 @@
+Object . preventExtensions ( x => '' , ( Symbol . replace ) ) ;

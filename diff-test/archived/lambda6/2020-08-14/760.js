@@ -1,0 +1,1 @@
+var x = new Number ( 0 ) ; var { x , ... x } = x ;

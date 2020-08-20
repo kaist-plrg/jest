@@ -1,0 +1,1 @@
+var x = new Map ( { [ Symbol . asyncIterator ] : function * ( x ) { ; yield 42 ; } , [ Symbol . iterator ] : function * ( x ) { ; return class extends x ( ) ( ) { ; } ; yield 42 ; } } ) ;

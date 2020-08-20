@@ -1,0 +1,1 @@
+var x = x instanceof class  extends x ?. x [ '' , '' ] { ; } ;

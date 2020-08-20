@@ -1,0 +1,1 @@
+var x = Object . is ( NaN , 0 ) ;

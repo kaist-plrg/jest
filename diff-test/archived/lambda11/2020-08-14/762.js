@@ -1,0 +1,1 @@
+var x = typeof x ; async function x ( ... [ ] ) { }

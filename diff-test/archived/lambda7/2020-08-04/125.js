@@ -1,0 +1,1 @@
+String . prototype . substring . call ( '0' , undefined , ( Symbol . asyncIterator ) ) ;

@@ -1,0 +1,1 @@
+var x = Object . isSealed ( 0 ) ; var { x , } = x ;

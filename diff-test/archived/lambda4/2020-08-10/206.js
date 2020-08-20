@@ -1,0 +1,1 @@
+var x = Array . prototype . findIndex . call ( [ Symbol . species , NaN , Symbol . hasInstance ] , x => class extends x `${ '' }` { } ) ;

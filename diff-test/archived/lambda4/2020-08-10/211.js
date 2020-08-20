@@ -1,0 +1,1 @@
+var x = Array . prototype . forEach . call ( { [ "length" ] : { [ Symbol . toPrimitive ] : async function ( ) { } } } , x => { } , 0 ) ;

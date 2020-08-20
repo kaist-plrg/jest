@@ -1,0 +1,1 @@
+var x = Array . prototype . slice . call ( new Array ( ) , 0 , 0 ) ; var x = ! class x extends x ?. x [ '' ] { static x ( ) { } } ;

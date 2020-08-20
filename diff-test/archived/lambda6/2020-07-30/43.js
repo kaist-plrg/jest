@@ -1,0 +1,1 @@
+var x = 42n ; var x = ( Symbol . replace ) ?. x [ x -- , Infinity ] ;

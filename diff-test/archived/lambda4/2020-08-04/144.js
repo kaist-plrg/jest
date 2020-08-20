@@ -1,0 +1,1 @@
+Array . prototype . find . call ( { [ "length" ] : true } , ( ) => { ; throw 0 ; } ) ;

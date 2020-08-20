@@ -1,0 +1,1 @@
+var x = async function * ( ) { } . prototype . toString . call ( new Error ( ( - 0 ) ) ) ;

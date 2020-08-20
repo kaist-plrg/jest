@@ -1,0 +1,1 @@
+async function x ( x  , ) { ; for ( { x , x } in '' ) ; function x ( ... { } ) {  } for ( '' ; '' ; '' ) ; for await ( x of ( Symbol . toPrimitive ) ) switch ( '' ) { case '' :  } } x ( ) ;

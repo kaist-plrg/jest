@@ -1,0 +1,1 @@
+Array . prototype . fill . call ( null , Symbol . replace , Symbol . match ) ;

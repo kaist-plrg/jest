@@ -1,0 +1,1 @@
+String . prototype . lastIndexOf . call ( Infinity , Symbol . matchAll , true , 42n ) ;

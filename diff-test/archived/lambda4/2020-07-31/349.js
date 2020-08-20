@@ -1,0 +1,1 @@
+var x = { [ "get" ] : function  ( x0  , x1  ) {  } , [ "enumerable" ] : true } >>> ( - 1n ) ;

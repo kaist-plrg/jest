@@ -1,0 +1,1 @@
+var x = Object . prototype . isPrototypeOf . call ( ( { [ "length" ] : 0 } . matchAll ) , [ { [ "length" ] : 0 } , , { [ "length" ] : 0 } ] ) ;

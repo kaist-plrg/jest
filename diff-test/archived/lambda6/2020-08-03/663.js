@@ -1,0 +1,1 @@
+for ( NaN of { [ Symbol . iterator ] : Symbol . iterator } ) for ( var { } = x ; '' ; ) ;

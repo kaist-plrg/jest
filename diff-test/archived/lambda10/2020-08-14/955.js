@@ -1,0 +1,1 @@
+if ( ( - 1n ) ) switch ( '' ) { case x : default : case x : }

@@ -1,0 +1,1 @@
+var x = class { ; } ; switch ( '' ) { default : case x : }

@@ -1,0 +1,1 @@
+var x = { p : { [ "valueOf" ] : async * function ( ) { } , [ "toString" ] : function ( ) { } } } ** { [ "valueOf" ] : async * function ( ) { } , [ "toString" ] : function ( ) { } } ;

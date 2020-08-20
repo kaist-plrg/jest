@@ -1,0 +1,1 @@
+var x = { [ BigInt ( 0.1 ) ] : Symbol . unscopables } . prototype . flat . call ( new { [ "prototype" ] : false } ( ) ) ;

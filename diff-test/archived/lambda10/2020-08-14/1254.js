@@ -1,0 +1,1 @@
+var x = '' . iterator ; var [ x , ... x ] = x *= ( Symbol . unscopables ) ;

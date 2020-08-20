@@ -1,0 +1,1 @@
+var x = 0n ; { } while ( '' ) ; x + x ;

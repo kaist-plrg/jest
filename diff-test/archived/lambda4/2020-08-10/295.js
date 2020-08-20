@@ -1,0 +1,1 @@
+function * x ( ... { [ '' ] : { } = new x ( ) } ) { } x ( function ( ) { } ) ;

@@ -1,0 +1,1 @@
+for ( NaN of { [ Symbol . iterator ] : ( async function * ( ) { ; yield * { [ "writable" ] : false } ; } ) } ) ;

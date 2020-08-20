@@ -1,0 +1,1 @@
+var x = typeof [ ] ; switch ( '' ) { case x : default : ; case x : } function * x ( ... { ... x } ) { }

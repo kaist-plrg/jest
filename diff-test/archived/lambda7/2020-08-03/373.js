@@ -1,0 +1,1 @@
+var x = ( - 1n ) > x ; async function * x ( ... { [ '' ] : { } = x } ) { }

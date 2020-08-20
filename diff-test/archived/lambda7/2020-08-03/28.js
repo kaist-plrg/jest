@@ -1,0 +1,1 @@
+{ [ x , , ... x ( ) [ '' ] ] = [ ( ( ) => { } ) , { async * x ( ... x ) { } } , class x { static x ( ) { } } ] ; } do ; while ( '' ) ; var x = + ( Symbol . isConcatSpreadable ) ;

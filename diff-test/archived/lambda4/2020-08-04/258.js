@@ -1,0 +1,1 @@
+BigInt . asUintN ( class x { } , false ) ;

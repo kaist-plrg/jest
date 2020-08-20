@@ -1,0 +1,1 @@
+var x = Array . prototype . copyWithin . call ( 42n , - 1 , class { ; } ) ;

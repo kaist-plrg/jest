@@ -1,0 +1,1 @@
+isNaN ( Symbol . matchAll ) ;

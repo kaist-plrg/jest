@@ -1,0 +1,1 @@
+var x = Object . is ( 0 , 0 ) ; var x = typeof x ;

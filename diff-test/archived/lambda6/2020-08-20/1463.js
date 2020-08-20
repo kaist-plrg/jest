@@ -1,0 +1,1 @@
+for ( ; Symbol . toPrimitive ; ) for ( var x = { x ( ... x ) { } } ; ( ) => { } ; x `${ '' }${ '' , '' }` ) ;

@@ -1,0 +1,1 @@
+Object . values ( { [ ( ) => x ] : class extends x ?. x [ '' , '' ] { ; } } ) ;

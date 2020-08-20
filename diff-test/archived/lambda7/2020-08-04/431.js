@@ -1,0 +1,1 @@
+async function x ( ) { } var x = class { static x ( ) { } } ?. x [ x | x , BigInt ( Symbol . match ) ] ;

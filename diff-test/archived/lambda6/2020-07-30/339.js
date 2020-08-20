@@ -1,0 +1,1 @@
+Array . prototype . fill . call ( 1 , 0 , Symbol . asyncIterator , { x ( ... [  x  ,   ] ) { ; } } ) ;

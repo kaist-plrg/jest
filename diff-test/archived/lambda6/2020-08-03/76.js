@@ -1,0 +1,1 @@
+var x = async x => { switch ( undefined ) { case ( Symbol . iterator ) : ; } for await ( FREE of class x extends x ?. x . x { ; } ) ; } ; x ( -- x ) ;

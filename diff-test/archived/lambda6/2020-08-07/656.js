@@ -1,0 +1,1 @@
+var x = String . prototype . substring . call ( 'str' , x && x , ( Symbol . isConcatSpreadable ) ) ;

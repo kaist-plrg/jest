@@ -1,0 +1,1 @@
+Array . prototype . some . call ( 42n , class x { ; } ) ;

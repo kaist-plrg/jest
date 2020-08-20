@@ -1,0 +1,1 @@
+String . prototype . endsWith . call ( { [ Symbol . iterator ] : function * ( ) { } } . toPrimitive ) ;

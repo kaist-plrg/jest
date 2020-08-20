@@ -1,0 +1,1 @@
+for ( x of [  '' ] ) try { ; x ( 0 ) ; } catch ( x ) { ; var x = [  x ,  '' ] ; }

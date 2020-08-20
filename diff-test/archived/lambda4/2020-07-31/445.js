@@ -1,0 +1,1 @@
+var x = ( - 1n ) ** x ; switch ( '' ) { case x :  default :  case x :  }

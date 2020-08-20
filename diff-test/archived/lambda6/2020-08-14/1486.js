@@ -1,0 +1,1 @@
+var x = { async * x ( ) { } } ; var x = ( Number ( Symbol . iterator ) ) ?. x [ [ ] , { set x ( x ) { } } ] ;

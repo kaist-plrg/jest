@@ -1,0 +1,1 @@
+for ( var x = x !== x ; { x ( ... { x : x } ) { } } ; FREE ) ; var [ ] = x != x ;

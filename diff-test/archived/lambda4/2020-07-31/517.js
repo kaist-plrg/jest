@@ -1,0 +1,1 @@
+String . prototype . slice . call ( { [ "get" ] : function  ( x  ) {  } , [ "set" ] : function  ( x  ) {  } , [ "enumerable" ] : false , [ "configurable" ] : false } , Symbol . species , 1 ) ;

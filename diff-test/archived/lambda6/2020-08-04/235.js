@@ -1,0 +1,1 @@
+for ( [ { x , } , , ... ( Symbol . toStringTag ) ] of [ [ , , ] , x => { } , null ] ) ;

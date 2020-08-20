@@ -1,0 +1,1 @@
+for ( var x of [  '' ] ) ; switch ( '' ) { case x :  case x :  }

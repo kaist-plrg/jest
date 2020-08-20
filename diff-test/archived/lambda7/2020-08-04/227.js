@@ -1,0 +1,1 @@
+Array . prototype . lastIndexOf . call ( '0' , { async * x ( ... { [ '' ] : { } = x } ) { } } , 0 ) ;

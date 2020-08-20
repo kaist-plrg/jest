@@ -1,0 +1,1 @@
+Array . prototype . copyWithin . call ( [ 42 , 'str' , true ] , { [ "next" ] : function ( x0 , x1 ) { } , [ "return" ] : function ( x ) { } } ) ;

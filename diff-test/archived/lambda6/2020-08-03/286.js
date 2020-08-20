@@ -1,0 +1,1 @@
+try { ; class x extends x ?. x ?. x { } x ( ) ; } catch ( x ) { ; var x = x < x ; }

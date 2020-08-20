@@ -1,0 +1,1 @@
+for ( class x extends x `${ '' }${ x }${ '' , '' }` { } , Number ( Symbol . iterator ) ; '' , x ?? x ; x && x , '' ) for ( let { } = x ; '' ; ) ;

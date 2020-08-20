@@ -1,0 +1,1 @@
+var x = 0n ; var [ , , ] = class extends x ( ) [ '' ] { } | '0' ;

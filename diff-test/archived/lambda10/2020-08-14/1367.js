@@ -1,0 +1,1 @@
+function x ( [ x ] = [ null , class x extends x `` { ; } , ++ x ] ) { } ; x ( ) ?. x ;

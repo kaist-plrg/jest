@@ -1,0 +1,1 @@
+Function . prototype . apply . call ( async function x ( ) { } , ( Symbol . asyncIterator ) , [ ] ) ;

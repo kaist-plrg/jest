@@ -1,0 +1,1 @@
+do ; while ( Number ( Symbol . iterator ) ) ;

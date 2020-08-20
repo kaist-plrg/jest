@@ -1,0 +1,1 @@
+for ( [ ] in '0' ) try { } catch { } finally { }

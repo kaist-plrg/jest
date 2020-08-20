@@ -1,0 +1,1 @@
+var x = { 42 : class extends x `` { } } ;

@@ -1,0 +1,1 @@
+Array . prototype . reduceRight . call ( { [ Symbol . asyncIterator ] : async function * ( ) { } } , x => { } ) ;

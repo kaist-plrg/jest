@@ -1,0 +1,1 @@
+while ( 'str' , Symbol . match ) switch ( '' ) { case x : case x : }

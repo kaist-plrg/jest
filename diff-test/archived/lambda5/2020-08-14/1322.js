@@ -1,0 +1,1 @@
+var x = x instanceof x ; { } async function x ( ... { x } ) { ; for ( x ( ) in '' ) ; }

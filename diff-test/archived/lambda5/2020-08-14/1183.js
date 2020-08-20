@@ -1,0 +1,1 @@
+var x = Object . defineProperty ( [ ... '' ] , 1 , { } ) ; var x = x % x ;

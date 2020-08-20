@@ -1,0 +1,1 @@
+for ( let x in { async x ( ... [ x , ] ) { } } ) try { } catch ( { } ) { }

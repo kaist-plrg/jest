@@ -1,0 +1,1 @@
+var x = Array . prototype . map . call ( [ 42 , 'str' , true ] , class { ; } ) ;

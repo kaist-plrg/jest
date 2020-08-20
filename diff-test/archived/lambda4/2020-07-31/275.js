@@ -1,0 +1,1 @@
+Array . prototype . fill . call ( async x => x , 0 , ( ) => {  } ) ;

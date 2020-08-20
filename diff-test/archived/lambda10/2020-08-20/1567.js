@@ -1,0 +1,1 @@
+var x = x `` ; throw 42 ; function * x ( ... [ x , ] ) { ; function x ( ... { x } ) { } async function * x ( ... [ x , , ] ) { } }

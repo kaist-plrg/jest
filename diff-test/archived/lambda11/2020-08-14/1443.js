@@ -1,0 +1,1 @@
+var x = Array . prototype . copyWithin . call ( false , Symbol . isConcatSpreadable , x < ( - 1n ) ) ;

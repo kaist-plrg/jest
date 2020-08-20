@@ -1,0 +1,1 @@
+var x = Array . prototype . pop . call ( { [ "length" ] : { [ Symbol . toPrimitive ] : ( ) => { throw '' ; } } } ) ;

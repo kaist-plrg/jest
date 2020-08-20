@@ -1,0 +1,1 @@
+var x = String . prototype . normalize . call ( Symbol . split , [ 42 , 'str' , true ] ) ;

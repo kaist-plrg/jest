@@ -1,0 +1,1 @@
+delete { [ "length" ] : function * ( ) { } } [ [ ] ] ;

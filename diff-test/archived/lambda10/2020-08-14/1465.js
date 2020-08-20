@@ -1,0 +1,1 @@
+var x = ( x => { ; while ( '' , '' ) ; x ( 42 ) ; throw 42 ; try { } catch { } finally { } } ) ( 0 ) ;

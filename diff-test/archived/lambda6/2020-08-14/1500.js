@@ -1,0 +1,1 @@
+var x = String . prototype . endsWith . call ( x !== { [ Symbol . match ] : async * function ( ) { } } , null ) ;

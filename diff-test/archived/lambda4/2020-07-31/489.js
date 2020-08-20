@@ -1,0 +1,1 @@
+var x = true ; var x = { [ "get" ] : function  ( x0  , x1  ) {  } , [ "set" ] : function  ( x0  , x1  ) {  } , [ "enumerable" ] : true } instanceof { [ "get" ] : function  ( x  ) {  } , [ "configurable" ] : true } ;

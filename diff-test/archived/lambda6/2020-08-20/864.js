@@ -1,0 +1,1 @@
+var x = new Set ( [ Symbol . matchAll , - 1n , 42n ] ) ;

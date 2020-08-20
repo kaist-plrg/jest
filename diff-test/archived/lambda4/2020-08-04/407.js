@@ -1,0 +1,1 @@
+( async x => { x ; for await ( let x of new x ( x , ) ) ; } ) ( 1 ) ;

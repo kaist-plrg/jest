@@ -1,0 +1,1 @@
+var x = 42n ; function * x ( ... { ... x } ) { } var [ ] = ++ x ;

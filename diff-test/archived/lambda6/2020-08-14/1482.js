@@ -1,0 +1,1 @@
+var x = Array . prototype . slice . call ( '0' , ( Symbol . toPrimitive ) ? '' : ( Symbol . replace ) , 1 ) ;

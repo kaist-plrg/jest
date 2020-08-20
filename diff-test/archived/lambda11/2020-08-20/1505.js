@@ -1,0 +1,1 @@
+var x = String . prototype . matchAll . call ( { x ( ... { } ) { } } , { [ Symbol . matchAll ] : async x => x } ) ;

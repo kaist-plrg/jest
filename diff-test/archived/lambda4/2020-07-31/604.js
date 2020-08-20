@@ -1,0 +1,1 @@
+delete { [ "get" ] : function  (  ) {  } , [ "set" ] : function  (  ) {  } , [ "enumerable" ] : true , [ "configurable" ] : false } [ [  x ,  ... x ] ] ;

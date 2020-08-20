@@ -1,0 +1,1 @@
+Object . defineProperties ( x => { } , [ , { [ "get" ] : ( ) => { throw '' ; } , [ "value" ] : function * ( ) { } , [ "set" ] : function * ( x ) { } , [ "writable" ] : function ( x ) { } , [ "enumerable" ] : function * ( x ) { } , [ "configurable" ] : async function ( ) { } } ] ) ;

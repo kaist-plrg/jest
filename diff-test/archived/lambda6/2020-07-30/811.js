@@ -1,0 +1,1 @@
+async function * a (  ) { for ( { x } in '' ) ; } ; null ( ) ;

@@ -1,0 +1,1 @@
+var x = String . prototype . split . call ( { [ "valueOf" ] : function ( x ) { } , [ "toString" ] : function ( ) { } } , { [ "valueOf" ] : function ( x ) { } , [ "toString" ] : function ( ) { } } , { [ "valueOf" ] : function ( x ) { } , [ "toString" ] : function ( ) { } } && x ) ;

@@ -1,0 +1,1 @@
+var x = ( ( - 1n ) . replace ) -= Symbol . asyncIterator ;

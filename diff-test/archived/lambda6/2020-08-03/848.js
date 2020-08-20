@@ -1,0 +1,1 @@
+( Symbol . species ) . getOwnPropertyDescriptor ( x << x ) ;

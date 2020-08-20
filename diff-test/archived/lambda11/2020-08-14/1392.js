@@ -1,0 +1,1 @@
+for ( var x = '' ; { } ; class extends x { ; ; } ) for ( var { } = x ; '' ; '' ) ; Infinity ;

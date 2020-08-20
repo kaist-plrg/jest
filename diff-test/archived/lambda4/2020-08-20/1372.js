@@ -1,0 +1,1 @@
+try { ; for ( let { } = x ; '' ; ) ; } catch { ; var x = [ , ... '' ] ; } finally { ; }

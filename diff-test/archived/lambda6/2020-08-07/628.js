@@ -1,0 +1,1 @@
+class x { ; ; } x in { [ "valueOf" ] : function * ( ) { } , [ "toString" ] : async * function ( x ) { } } ;

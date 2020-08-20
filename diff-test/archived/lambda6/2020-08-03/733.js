@@ -1,0 +1,1 @@
+Object . getOwnPropertyDescriptors ( { [ false ] : x => x , [ "writable" ] : null , [ { [ "get" ] : function ( ) { } , [ "set" ] : function ( x0 , x1 ) { } , [ "configurable" ] : false } ] : BigInt ( 0.1 ) } ) ;

@@ -1,0 +1,1 @@
+ReferenceError ( - 1n ) ;

@@ -1,0 +1,1 @@
+var x = Array . prototype . fill . call ( [ , ... { [ Symbol . asyncIterator ] : '0' , [ Symbol . iterator ] : function ( x ) { } } ] , x => x ) ;

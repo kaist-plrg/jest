@@ -1,0 +1,1 @@
+for ( NaN of '' ) x : ;

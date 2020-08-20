@@ -1,0 +1,1 @@
+var x = { [ "valueOf" ] : true , [ "toString" ] : '0' } in { [ "valueOf" ] : true , [ "toString" ] : '0' } ; function * x ( x ) { }

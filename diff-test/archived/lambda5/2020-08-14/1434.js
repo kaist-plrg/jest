@@ -1,0 +1,1 @@
+var x = { [ "prototype" ] : '0' } . prototype . indexOf . call ( new String ( { [ "prototype" ] : '0' } ) , 0 ) ;

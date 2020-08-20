@@ -1,0 +1,1 @@
+function x ( ) { } typeof ( Symbol . isConcatSpreadable ) ;

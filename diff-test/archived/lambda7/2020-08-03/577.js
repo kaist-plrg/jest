@@ -1,0 +1,1 @@
+String . prototype . slice . call ( { async * x ( ... [ x ] ) { } } , Symbol . hasInstance ) ;

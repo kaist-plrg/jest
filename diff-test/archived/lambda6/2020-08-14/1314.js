@@ -1,0 +1,1 @@
+async function x ( ) { ; for await ( x of { [ "prototype" ] : 0 } ) ; } x ( 42 ) ;

@@ -1,0 +1,1 @@
+BigInt ( { [ Symbol . toPrimitive ] : 0 } ) ;

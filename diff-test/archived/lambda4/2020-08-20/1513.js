@@ -1,0 +1,1 @@
+var x = String . prototype . trimEnd . call ( { [ "valueOf" ] : function * ( ) { } , [ "toString" ] : 0 } ) ;

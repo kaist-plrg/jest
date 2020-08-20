@@ -1,0 +1,1 @@
+for ( ( Number ( Symbol . iterator ) ) of [ ( Symbol . asyncIterator ) , Symbol . asyncIterator , { p : 42 } ] ) for ( var x = '' ; ; '' ) ;

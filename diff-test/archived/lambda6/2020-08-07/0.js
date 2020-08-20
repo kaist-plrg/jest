@@ -1,0 +1,1 @@
+var x = String . prototype . endsWith . call ( false , { [ Symbol . match ] : class extends x `${ '' , '' }${ x }${ '' }` { } } ) ;

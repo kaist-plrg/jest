@@ -1,0 +1,1 @@
+var x = Array . prototype . map . call ( `${ null }${ { p : 42 } }${ undefined }` , async x => class extends x `${ '' }` { ; ; } ) ;

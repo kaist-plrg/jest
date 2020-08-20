@@ -1,0 +1,1 @@
+function x ( ) { } typeof x ;

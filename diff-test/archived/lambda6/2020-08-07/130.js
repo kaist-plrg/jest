@@ -1,0 +1,1 @@
+var x = { x , x } ; var x = { async x ( ... [ ... x ] ) { ; } } ; switch ( '' ) { case x : ; default : case x : ; throw 0 ; }

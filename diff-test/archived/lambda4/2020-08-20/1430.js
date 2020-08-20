@@ -1,0 +1,1 @@
+var x = ( - 1n ) . prototype . toLocaleString . call ( x || x , `${ '' }${ x }${ '' }` , 0 ) ;

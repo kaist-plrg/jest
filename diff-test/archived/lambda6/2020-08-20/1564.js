@@ -1,0 +1,1 @@
+var x = Array . prototype . copyWithin . call ( new Array ( ) , { [ "prototype" ] : function * ( x ) { } } , { [ "prototype" ] : function * ( x ) { } } ) ;

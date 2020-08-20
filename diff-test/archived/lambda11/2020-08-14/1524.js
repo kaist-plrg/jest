@@ -1,0 +1,1 @@
+var x = Object . setPrototypeOf ( ( ) => { } , { x ( ... { x : { } = ( ( ) => { } ) } ) { } } ) ; var x = x instanceof x ;

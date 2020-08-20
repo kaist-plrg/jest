@@ -1,0 +1,1 @@
+LABEL : var [ x , x ] = x ;

@@ -1,0 +1,1 @@
+let { } = class x extends x ( ) { ; } ;

@@ -1,0 +1,1 @@
+var x = typeof x ; var [ , ... x ] = Symbol . hasInstance ; function * x ( ... { ... x } ) { }

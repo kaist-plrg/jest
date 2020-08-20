@@ -1,0 +1,1 @@
+RangeError ( 42n ) ;

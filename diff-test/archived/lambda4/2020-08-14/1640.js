@@ -1,0 +1,1 @@
+var x = String . prototype . startsWith . call ( new { [ "valueOf" ] : '' , [ "toString" ] : async * function ( x ) { } } ( { [ "valueOf" ] : '' , [ "toString" ] : async * function ( x ) { } } ) , { [ "valueOf" ] : '' , [ "toString" ] : async * function ( x ) { } } ) ;

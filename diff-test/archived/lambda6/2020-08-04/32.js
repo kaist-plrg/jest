@@ -1,0 +1,1 @@
+for ( let x = '0' . match ; ; class extends x ( ) ?. x { ; } + ( '' , '' ) ) try { } catch ( x ) { }

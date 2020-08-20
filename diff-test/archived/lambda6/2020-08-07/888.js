@@ -1,0 +1,1 @@
+async function * x ( ) { for ( { [ "done" ] : null } ?. x . x in { [ "done" ] : null } ) ; } for ( { [ "done" ] : null } ?. x [ { [ "done" ] : null } , '' ] in { [ "done" ] : null } ) ; var { x } = x ;

@@ -1,0 +1,1 @@
+var x = async function *  (  ) {  } ; var x = ( Symbol . matchAll ) instanceof x ;

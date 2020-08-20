@@ -1,0 +1,1 @@
+var x = x ? '' : { [ "done" ] : async * function ( ) { } } ; var [ x , , ... x ] = x ;

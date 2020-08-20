@@ -1,0 +1,1 @@
+var x = Object . prototype . toLocaleString . call ( false , 0 , ( Symbol . split ) ) ;

@@ -1,0 +1,1 @@
+var x = Object . defineProperty ( class { ; ; } , 42n , Symbol . toPrimitive ) ;

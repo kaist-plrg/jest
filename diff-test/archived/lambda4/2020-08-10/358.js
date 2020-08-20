@@ -1,0 +1,1 @@
+var x = Array . prototype . concat . call ( new Array ( ) , 0 ) ; var [ x , x ] = { [ Symbol . asyncIterator ] : async function ( ) { } , [ Symbol . iterator ] : async function ( x ) { } } ;

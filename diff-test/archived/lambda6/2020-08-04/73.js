@@ -1,0 +1,1 @@
+Array . prototype . findIndex . call ( [ 42 , 'str' , true ] , class { } , 0 ) ;

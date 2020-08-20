@@ -1,0 +1,1 @@
+var x = Number . isNaN ( NaN ) ; var x = typeof x ;

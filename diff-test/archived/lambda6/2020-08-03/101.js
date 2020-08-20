@@ -1,0 +1,1 @@
+var x = { [ "next" ] : function ( x ) { } , [ "return" ] : function ( x0 , x1 ) { } , [ "throw" ] : function ( x0 , x1 ) { } } ; var [ x , , ... x ] = x += Symbol . replace ;

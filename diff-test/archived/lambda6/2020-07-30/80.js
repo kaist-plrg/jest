@@ -1,0 +1,1 @@
+Array . prototype . map . call ( x => {  } , x => {  } , undefined , { get x ( ) {  } } ) ;

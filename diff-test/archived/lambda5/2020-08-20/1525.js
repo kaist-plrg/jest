@@ -1,0 +1,1 @@
+var x = String . prototype . startsWith . call ( new String ( '' ) , { [ Symbol . match ] : class extends new x { ; } } ) ;

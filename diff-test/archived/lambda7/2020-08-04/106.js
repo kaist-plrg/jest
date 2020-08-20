@@ -1,0 +1,1 @@
+String . prototype . substring . call ( ( Symbol . unscopables ) . split , Symbol . matchAll , { async x ( ... { [ '' ] : { } = x } ) { } } ) ;

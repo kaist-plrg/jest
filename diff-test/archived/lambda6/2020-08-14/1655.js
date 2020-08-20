@@ -1,0 +1,1 @@
+var x = Object . defineProperty ( class { static x ( ) { } } , typeof x , { [ { x ( ... [ ... x ] ) { } } ] : ( ) => { throw true ; } , [ "enumerable" ] : 1 , [ "value" ] : x || x , [ "get" ] : x ?? x , [ ( ( ) => { } ) ] : async function ( x ) { } , [ "writable" ] : class extends x [ '' , '' ] { ; } } ) ;

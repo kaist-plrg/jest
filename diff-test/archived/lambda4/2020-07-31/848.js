@@ -1,0 +1,1 @@
+Array . prototype . fill . call ( { [ "writable" ] : true , [ "enumerable" ] : true , [ "configurable" ] : true } , 42n , x >> x ) ;

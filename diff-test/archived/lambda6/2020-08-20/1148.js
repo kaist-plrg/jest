@@ -1,0 +1,1 @@
+var x = new Set ( [ 'str' , 'str' , { p : 42 } ] ) ; var [ , x ] = x ;

@@ -1,0 +1,1 @@
+for ( x of [ Symbol . asyncIterator , { async * x ( ... [ ] ) { } } , x `` ] ) continue ;

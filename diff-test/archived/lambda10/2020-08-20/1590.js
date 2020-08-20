@@ -1,0 +1,1 @@
+var x = Array . prototype . reduce . call ( [ x , '' ] , ( ) => { ; x ( ) ; return ; switch ( '' ) { case x : default : ; break ; case x : } } ) ;

@@ -1,0 +1,1 @@
+for ( var x in x ?. x . x ) for ( { x = x } in '' ) ;

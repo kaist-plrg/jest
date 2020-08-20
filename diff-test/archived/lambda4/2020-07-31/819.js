@@ -1,0 +1,1 @@
+Number . prototype . valueOf . call ( { p : 42 } ) ;

@@ -1,0 +1,1 @@
+Array . prototype . unshift . call ( null , Symbol . search ) ;

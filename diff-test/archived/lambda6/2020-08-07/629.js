@@ -1,0 +1,1 @@
+for ( let x = { x ( ... { x } ) { } } ; class extends x ?. x [ '' ] { static x ( ) { } } ; - 1n ) ;

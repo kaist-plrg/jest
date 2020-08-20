@@ -1,0 +1,1 @@
+Array . from ( { [ Symbol . asyncIterator ] : false , [ Symbol . iterator ] : ( ) => { throw '' ; } } ) ;

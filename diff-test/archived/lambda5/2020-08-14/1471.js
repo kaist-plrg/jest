@@ -1,0 +1,1 @@
+var x = { get x ( ) { ; return class extends super [ FREE , class x extends x ?. x ?. x { ; } ] { } ; } } ; var x = x ?. x ;

@@ -1,0 +1,1 @@
+var x = Object . setPrototypeOf ( function ( ) { } , null ) ; var x = x in x ;

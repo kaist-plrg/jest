@@ -1,0 +1,1 @@
+var x = Array . prototype . some . call ( 'str' , function x ( ) { } ) ;

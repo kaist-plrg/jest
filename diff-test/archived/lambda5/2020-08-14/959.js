@@ -1,0 +1,1 @@
+try { ; class x extends x [ '' ] { } } finally { ; throw 42 ; }

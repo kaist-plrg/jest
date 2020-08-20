@@ -1,0 +1,1 @@
+var x = String . prototype . substring . call ( class x { static x ( ) { } } , - x , x ?? x ?? x ) ;

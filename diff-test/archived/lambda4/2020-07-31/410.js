@@ -1,0 +1,1 @@
+Array . prototype . findIndex . call ( 1 , function  (  ) {  } ) ;

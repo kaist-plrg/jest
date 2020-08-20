@@ -1,0 +1,1 @@
+Array . prototype . splice . call ( x => {  } , 0 , 1 , async function (  ) {  } ) ;

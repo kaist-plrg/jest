@@ -1,0 +1,1 @@
+async function x ( ) { } x ( x ( ) [ { [ Symbol . toPrimitive ] : 0 } , { [ Symbol . toPrimitive ] : 0 } ] ) ;

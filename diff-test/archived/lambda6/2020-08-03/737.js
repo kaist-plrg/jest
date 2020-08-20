@@ -1,0 +1,1 @@
+( Symbol . hasInstance ) = x => class extends x { ; ; } ;

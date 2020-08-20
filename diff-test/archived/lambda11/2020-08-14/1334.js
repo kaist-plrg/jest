@@ -1,0 +1,1 @@
+var x = String . prototype . endsWith . call ( ( ) => { } , ( - 1n ) >> ( - 1n ) ) ;

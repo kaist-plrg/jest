@@ -1,0 +1,1 @@
+{ ( Number ( Symbol . iterator ) ) , ( Symbol . asyncIterator ) ; } ;

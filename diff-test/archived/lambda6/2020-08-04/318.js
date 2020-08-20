@@ -1,0 +1,1 @@
+for ( { [ x != x ] : undefined } in { get x ( ) { } } ) for ( ; ; ) ;

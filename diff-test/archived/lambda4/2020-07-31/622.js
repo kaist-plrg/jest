@@ -1,0 +1,1 @@
+function x ( x  ) { ; throw 0 ; } var x = new x ;

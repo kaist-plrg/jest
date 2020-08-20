@@ -1,0 +1,1 @@
+var x = ( - 1 ) << { [ "get" ] : function ( x0 , x1 ) { } , [ "set" ] : function ( x ) { } , [ "enumerable" ] : true , [ "configurable" ] : true } ;

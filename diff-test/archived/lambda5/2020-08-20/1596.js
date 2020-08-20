@@ -1,0 +1,1 @@
+var x = [ { [ "done" ] : function * ( x ) { } } , 2 , { [ "done" ] : function * ( x ) { } } ] ; ( [ , x ] = { [ "done" ] : function * ( x ) { } } ) ;

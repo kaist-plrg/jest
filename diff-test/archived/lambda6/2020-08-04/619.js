@@ -1,0 +1,1 @@
+Array . from ( [ , ... { [ Symbol . iterator ] : function * ( ) { } } ] ) ;

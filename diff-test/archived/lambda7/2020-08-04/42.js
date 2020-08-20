@@ -1,0 +1,1 @@
+String . prototype . lastIndexOf . call ( ( Symbol . split ) , ( ( Symbol . replace ) . unscopables ) ) ;

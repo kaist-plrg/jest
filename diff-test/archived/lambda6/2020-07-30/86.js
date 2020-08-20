@@ -1,0 +1,1 @@
+Object . create ( { ... { p : 42 } } , 'str' ) ;

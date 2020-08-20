@@ -1,0 +1,1 @@
+switch ( '' ) { case [  42 ,  'str' ,  true ] :  default : for ( x ?. x [ '' ] in '' ) ;  }

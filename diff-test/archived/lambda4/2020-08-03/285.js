@@ -1,0 +1,1 @@
+[ x , ... Symbol . split ] = [ 42 , 'str' , true ] ; var x = `${ '' , '' }${ '' }` ;

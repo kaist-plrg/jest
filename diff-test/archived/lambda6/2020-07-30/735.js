@@ -1,0 +1,1 @@
+var x = { set x ( x  ) {  } } ; switch ( '' , '' ) {  default : ; case x :  }

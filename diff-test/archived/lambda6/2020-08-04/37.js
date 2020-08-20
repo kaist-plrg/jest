@@ -1,0 +1,1 @@
+Object . setPrototypeOf ( { [ "done" ] : false } , { async * x ( x ) { } } ) ;

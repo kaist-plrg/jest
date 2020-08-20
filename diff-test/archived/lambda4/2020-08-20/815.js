@@ -1,0 +1,1 @@
+delete ( Symbol . hasInstance ) [ Symbol . matchAll ] ;

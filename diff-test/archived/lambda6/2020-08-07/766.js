@@ -1,0 +1,1 @@
+var x = ( Symbol . matchAll ) + { [ Symbol . toPrimitive ] : async function ( ) { } } ;

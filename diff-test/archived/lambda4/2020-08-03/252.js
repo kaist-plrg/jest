@@ -1,0 +1,1 @@
+Array . prototype . splice . call ( ( Symbol . isConcatSpreadable ) , Symbol . match , 0 , x => { } ) ;

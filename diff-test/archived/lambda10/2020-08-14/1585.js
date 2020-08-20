@@ -1,0 +1,1 @@
+for ( [ ] in '0' ) try { ; x ( 42 ) ; class x extends async function * ( ) { } { } } catch { } finally { ; var x = [ x , '' ] ; new x ( ) ; }

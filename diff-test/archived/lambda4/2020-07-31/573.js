@@ -1,0 +1,1 @@
+( x => { ; x ( 0 ) ; async function * x ( ... [  x  , ,  ] ) {  } throw 0 ; } ) ( ) ;

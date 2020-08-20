@@ -1,0 +1,1 @@
+( x => { if ( '' ) ; switch ( '' ) { case x : default : for ( x in '' ) ; } return ( Symbol . asyncIterator ) ( Symbol . asyncIterator ) ; } ) ( ) ;

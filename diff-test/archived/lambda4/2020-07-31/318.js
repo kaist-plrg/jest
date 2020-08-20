@@ -1,0 +1,1 @@
+var x = x `` ; function x ( x  ) { ; var [ , , ... { } ] = Number ( Symbol . iterator ) ; return NaN ; }

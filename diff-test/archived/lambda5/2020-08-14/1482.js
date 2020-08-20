@@ -1,0 +1,1 @@
+var x = Promise . race ( { [ Symbol . asyncIterator ] : function ( ) { } , [ Symbol . iterator ] : async function ( x ) { } } ) ;

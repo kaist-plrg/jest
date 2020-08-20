@@ -1,0 +1,1 @@
+var x = ( Symbol . split ) + class x extends x `${ '' }${ x }${ '' }` { x ( ) { } } ;

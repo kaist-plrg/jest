@@ -1,0 +1,1 @@
+Array . prototype . map . call ( [ , '' ] , class x  { ; } , Symbol . toPrimitive , [  ] ) ;

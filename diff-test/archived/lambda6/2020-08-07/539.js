@@ -1,0 +1,1 @@
+var x = String . prototype . lastIndexOf . call ( class x { x ( ) { } } , ( Symbol . toPrimitive ) ) ;

@@ -1,0 +1,1 @@
+var x = async x => '' ; var { '' : { } = class extends x ?. x ( ) { ; } } = ( - 1n ) ;

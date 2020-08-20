@@ -1,0 +1,1 @@
+var x = Array . prototype . indexOf . call ( async x => x , class { } ) ;

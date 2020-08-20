@@ -1,0 +1,1 @@
+Object . entries ( { [ "value" ] : true , [ Symbol . asyncIterator ] : true } ) ;

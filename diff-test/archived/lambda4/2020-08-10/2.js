@@ -1,0 +1,1 @@
+var x = Array . prototype . flatMap . call ( [ x , ] , x => { ; switch ( '' ) { default : case x : } x ( 0 ) ; return 0 ; } , 0 ) ;

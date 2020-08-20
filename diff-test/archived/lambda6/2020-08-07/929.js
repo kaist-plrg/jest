@@ -1,0 +1,1 @@
+var x = { [ "prototype" ] : false } . prototype . forEach . call ( new { [ "prototype" ] : false } ( ) , 0 ) ;

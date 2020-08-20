@@ -1,0 +1,1 @@
+var x = Object . setPrototypeOf ( ( ) => { } , [ 42 , 'str' , true ] ) ;

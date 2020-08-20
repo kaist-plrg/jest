@@ -1,0 +1,1 @@
+var x = x ? '' : '' ; switch ( '' , '' ) { default : ; var [ x , x ] = x ; case x : ; new x ( ) ; }

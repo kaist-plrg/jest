@@ -1,0 +1,1 @@
+Array . prototype . map . call ( [  42 ,  'str' ,  true ] , x => {  } , [  42 ,  'str' ,  true ] , '0' ) ;

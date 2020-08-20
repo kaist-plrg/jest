@@ -1,0 +1,1 @@
+var x = class x extends x ?. x [ '' ] { ; } . prototype . trim . call ( '0' ) ;

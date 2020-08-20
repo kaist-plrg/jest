@@ -1,0 +1,1 @@
+do switch ( '' ) { default : ; case x : ; for ( var x = '' ; '' ; ) ; } while ( 0 ) ;

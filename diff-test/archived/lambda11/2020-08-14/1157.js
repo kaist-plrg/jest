@@ -1,0 +1,1 @@
+switch ( '' ) { default : ; new x ( ) ; class x extends x ?. ( ) { } }

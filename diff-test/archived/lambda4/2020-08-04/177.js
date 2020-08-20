@@ -1,0 +1,1 @@
+( async x => { x ; for await ( var x of { get x ( ) { } } ) if ( '' , '' ) ; else ; } ) ( 1 ) ;

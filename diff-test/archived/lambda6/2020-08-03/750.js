@@ -1,0 +1,1 @@
+var x = { [ "value" ] : 0 , [ "writable" ] : false , [ "configurable" ] : true } `${ '0' }${ ( ) => x }${ [ ] , x ( ) }` ;

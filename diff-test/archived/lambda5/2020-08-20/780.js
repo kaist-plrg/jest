@@ -1,0 +1,1 @@
+for ( x of x instanceof x ) for ( let { } = x ; ; ) ;

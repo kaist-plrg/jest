@@ -1,0 +1,1 @@
+var x = ( Symbol . match ) . assign ( '0' , `${ '' }${ x }${ ( Symbol . toPrimitive ) }` ) ;

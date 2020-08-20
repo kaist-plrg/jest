@@ -1,0 +1,1 @@
+var x = 42n == ( - Infinity ) ; function * x ( ... [  ... x ] ) {  }

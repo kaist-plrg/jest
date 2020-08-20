@@ -1,0 +1,1 @@
+{ [ { } = Symbol . unscopables , , ... x ] = ( '' , '' ) ; } throw '' , '' ;

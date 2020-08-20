@@ -1,0 +1,1 @@
+var x = [ ] ; var [ , , ] = x ; var [ x , , ] = [ , ... '' ] ? class extends x ?. ( ) { } : { p : 42 } ;

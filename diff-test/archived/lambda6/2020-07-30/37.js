@@ -1,0 +1,1 @@
+Array . prototype . indexOf . call ( [ , ] , Symbol . search , ( - Infinity ) ) ;

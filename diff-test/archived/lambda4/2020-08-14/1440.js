@@ -1,0 +1,1 @@
+var x = Array . prototype . reduce . call ( [ x , , '' ] , async x => class x extends x ?. [ '' ] { ; } ) ;

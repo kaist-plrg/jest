@@ -1,0 +1,1 @@
+var x = Array . prototype . join . call ( 42n , Symbol . search ) ;

@@ -1,0 +1,1 @@
+var x = { p : 1 } ; ( { p : NaN . match } = ( Symbol . split ) ) ;

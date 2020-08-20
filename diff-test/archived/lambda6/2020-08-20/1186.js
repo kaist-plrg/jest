@@ -1,0 +1,1 @@
+var x = new WeakSet ( ) ; var x = ( ( ) => { } ) + ( Symbol . search ) ;

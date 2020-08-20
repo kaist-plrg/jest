@@ -1,0 +1,1 @@
+var x = ( x => { switch ( '' ) { case '' , '' : } x ( Symbol . split ) ; return '' , '' ; for ( { } in '' ) ; for ( let x = x ; ; '' ) ; } ) ( x != x ) ;

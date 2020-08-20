@@ -1,0 +1,1 @@
+Symbol . prototype . valueOf . call ( ( Symbol . asyncIterator ) ) ;

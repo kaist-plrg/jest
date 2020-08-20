@@ -1,0 +1,1 @@
+var x = { [ "value" ] : 0 , [ "writable" ] : false , [ "configurable" ] : false } != 0n ;

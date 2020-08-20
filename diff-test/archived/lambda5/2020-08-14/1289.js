@@ -1,0 +1,1 @@
+var x = SyntaxError ( { [ "prototype" ] : async function ( x ) { } } . matchAll ) ;

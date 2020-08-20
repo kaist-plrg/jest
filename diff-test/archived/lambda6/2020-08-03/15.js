@@ -1,0 +1,1 @@
+( x => { ; switch ( '' ) { case x : default : ; for ( var x of '' ) ; } return Number ( Symbol . iterator ) ; } ) ( ) ;

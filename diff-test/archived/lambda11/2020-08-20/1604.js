@@ -1,0 +1,1 @@
+var x = x ( ) ( ) ; new x ( ) ; function x ( ... [ x , ] ) { ; ( Symbol . isConcatSpreadable ) ( undefined ) ; x : ; try { ; } catch ( { } ) { ; } }

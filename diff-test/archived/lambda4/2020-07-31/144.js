@@ -1,0 +1,1 @@
+try {  } catch {  } finally {  } var x = x **= Symbol . unscopables ;

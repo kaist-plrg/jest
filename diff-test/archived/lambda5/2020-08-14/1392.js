@@ -1,0 +1,1 @@
+var x = Array . prototype . splice . call ( Symbol . unscopables , ( Symbol . split ) , x ?. x ?. x ) ;

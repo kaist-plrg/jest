@@ -1,0 +1,1 @@
+var x = `${ class x  { x (  ) {  } } }${ { [ "writable" ] : false , [ "enumerable" ] : false , [ "configurable" ] : false } . unscopables }${ ( Symbol . search ) }` ;

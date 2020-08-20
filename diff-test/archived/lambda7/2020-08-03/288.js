@@ -1,0 +1,1 @@
+Array . prototype . splice . call ( [ , ... '' ] , false , 0 , { async * x ( ) { } } ) ;

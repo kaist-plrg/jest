@@ -1,0 +1,1 @@
+var x = Array . prototype . flat . call ( [ ( Symbol . toPrimitive ) , Symbol . iterator , `${ - Infinity }${ ( Symbol . unscopables ) }` ] ) ;

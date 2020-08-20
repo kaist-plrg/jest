@@ -1,0 +1,1 @@
+Object . fromEntries ( [ , '' ] , 0 ) ;

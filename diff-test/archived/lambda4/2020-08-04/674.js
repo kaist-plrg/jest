@@ -1,0 +1,1 @@
+delete { async x ( x , ) { } } [ 42 ] ;

@@ -1,0 +1,1 @@
+var x = undefined ; typeof class x extends x ( ) [ '' ] { } ;

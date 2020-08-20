@@ -1,0 +1,1 @@
+var x = String . prototype . concat . call ( new String ( ( x => { } ) ) , Symbol . match ) ;

@@ -1,0 +1,1 @@
+Array . prototype . filter . call ( async x => x , class x  { static x (  ) {  } } , x => {  } , x => {  } ) ;

@@ -1,0 +1,1 @@
+switch ( '' ) { case '' : for ( let x = 1 ; Symbol . search ; x ( ) [ '' ] ) ; }

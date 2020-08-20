@@ -1,0 +1,1 @@
+var x = ( Number ( Symbol . iterator ) ) in ( Symbol . isConcatSpreadable ) ;

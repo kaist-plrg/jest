@@ -1,0 +1,1 @@
+var x = this ; switch ( '' ) { default : ; case x : ; class x extends function ( ) { } { ; } }

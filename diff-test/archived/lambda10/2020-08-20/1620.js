@@ -1,0 +1,1 @@
+var x = String . prototype . indexOf . call ( new { [ "prototype" ] : function * ( ) { } } ( { [ "prototype" ] : function * ( ) { } } ) , { [ "prototype" ] : function * ( ) { } } ) ;

@@ -1,0 +1,1 @@
+var x = Boolean . prototype . valueOf . call ( ( - Infinity ) != 0n ) ;

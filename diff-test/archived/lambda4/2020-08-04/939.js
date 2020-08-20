@@ -1,0 +1,1 @@
+Number . isNaN ( { async x ( ... { x = '' } ) { } } ) ;

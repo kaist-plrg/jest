@@ -1,0 +1,1 @@
+async function * x ( ) { return '' , '' ; } ; async function * x ( ... { ... x } ) { } for ( x ( ) . x in '' ) ; x ( ) ;

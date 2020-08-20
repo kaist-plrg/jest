@@ -1,0 +1,1 @@
+var x = ( x => { ; x ( ) ; switch ( '' ) { case { [ "value" ] : '0' } : ; throw 42 ; default : ; case { [ "value" ] : '0' } : } x ( ) ; return { [ "value" ] : '0' } ; } ) ( { [ "value" ] : '0' } ) ;

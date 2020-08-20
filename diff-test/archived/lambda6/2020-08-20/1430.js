@@ -1,0 +1,1 @@
+var x = [ 1 , 2 , 3 ] ; ( [ , ( class extends new x ( ... '' ) { } . hasInstance ) , ... x ] = x ) ;

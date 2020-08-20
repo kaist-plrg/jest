@@ -1,0 +1,1 @@
+try { } finally { ; throw BigInt ( 0.1 ) ; }

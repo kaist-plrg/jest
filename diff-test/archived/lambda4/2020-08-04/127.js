@@ -1,0 +1,1 @@
+Function . prototype . bind . call ( ( class { ; } ) , 42n ) ;

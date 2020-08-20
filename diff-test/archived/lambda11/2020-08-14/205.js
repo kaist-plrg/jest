@@ -1,0 +1,1 @@
+switch ( void x ) { }

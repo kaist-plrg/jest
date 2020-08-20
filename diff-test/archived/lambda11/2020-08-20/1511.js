@@ -1,0 +1,1 @@
+var x = Array . prototype . reduceRight . call ( [ x ? '' : '' , ( x => { } ) , 0 ] , class { static x ( ) { } } ) ;

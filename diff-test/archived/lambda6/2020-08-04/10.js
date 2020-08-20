@@ -1,0 +1,1 @@
+function x ( x ) { do ; while ( '' , '' ) ; switch ( '' ) { case '' , { p : 42 } : ; } return Number ( Symbol . iterator ) ; } x ( { * x ( ... x ) { } } ) ;

@@ -1,0 +1,1 @@
+var x = { set x ( x ) { } } ; var { x , } = typeof x ;

@@ -1,0 +1,1 @@
+Error ( { [ "valueOf" ] : async function ( x ) { } , [ "toString" ] : function * ( ) { } } ) ;

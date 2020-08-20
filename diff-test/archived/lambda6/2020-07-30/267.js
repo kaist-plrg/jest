@@ -1,0 +1,1 @@
+var x = ( x => { ; debugger ; switch ( '' , '' ) { case x : ; case x : ; } x ( ) ; } ) `` ;

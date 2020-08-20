@@ -1,0 +1,1 @@
+var x = ( - 1n ) == { [ "value" ] : 0 , [ "writable" ] : true , [ "enumerable" ] : false , [ "configurable" ] : false } ;

@@ -1,0 +1,1 @@
+String . prototype . startsWith . call ( { [ "value" ] : 'str' , [ "writable" ] : false } , { [ "get" ] : function ( ) { } , [ "set" ] : function ( ) { } , [ "enumerable" ] : true , [ "configurable" ] : false } ) ;

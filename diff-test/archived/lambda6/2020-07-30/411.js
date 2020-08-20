@@ -1,0 +1,1 @@
+Array . prototype . forEach . call ( ( Symbol . isConcatSpreadable ) , function  (  ) {  } ) ;

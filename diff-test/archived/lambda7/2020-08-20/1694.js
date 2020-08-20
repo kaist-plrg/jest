@@ -1,0 +1,1 @@
+var x = ( x => { var { } = x ?. ( ) ; for ( '' ; '' ; ) ; switch ( class extends x ( ) [ '' , '' ] { } ) { case ( Symbol . toStringTag ) !== class extends x ?. x [ '' ] { } : default : case '' : } return this ; } ) `` ;

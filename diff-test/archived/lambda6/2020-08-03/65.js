@@ -1,0 +1,1 @@
+Object . keys ( { [ Symbol . iterator ] : function * ( ) { } } ) ;

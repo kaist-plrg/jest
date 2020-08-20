@@ -1,0 +1,1 @@
+var x = Array . prototype . unshift . call ( { [ "length" ] : class extends x ( ) ( ) { } } , class x { x ( ) { } } ) ;

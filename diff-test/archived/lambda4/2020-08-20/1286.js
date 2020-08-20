@@ -1,0 +1,1 @@
+var x = class { ; } ; ( { p : x = class extends new x ( '' ) { } } = x > x ) ;

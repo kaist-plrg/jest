@@ -1,0 +1,1 @@
+function x ( ... { x : x } ) { } for ( '' ; '' ; '' ) ; x instanceof { [ "get" ] : function ( ) { } , [ "set" ] : function ( x ) { } , [ "enumerable" ] : true } ;

@@ -1,0 +1,1 @@
+for ( x of [ , ... '' ] ) for ( let x = x ; ; ) ; var x = '' ;

@@ -1,0 +1,1 @@
+var x = x ( ) ( ) ; ( Symbol . iterator ) ( ) ; function x ( ... [ x , ] ) { ; x ( 42 ) ; for ( '' , '' ; '' , '' ; '' , '' ) ; return x <= x ; }

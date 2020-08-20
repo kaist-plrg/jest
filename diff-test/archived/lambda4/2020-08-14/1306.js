@@ -1,0 +1,1 @@
+async function * x ( ) { for ( let x = x ; ; ) ; } while ( '' , '' ) ; var x = '' ;

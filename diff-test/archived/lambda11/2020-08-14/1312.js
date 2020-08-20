@@ -1,0 +1,1 @@
+var x = new x ( null , ... class x extends x `${ '' , '' }${ '' , '' }` { ; } ) ;

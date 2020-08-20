@@ -1,0 +1,1 @@
+var x = { x : class { x ( ) { } } } ; x ?. x . x ;

@@ -1,0 +1,1 @@
+var x = Object . fromEntries ( { [ Symbol . asyncIterator ] : '0' , [ Symbol . iterator ] : function * ( ) { } } ) ;

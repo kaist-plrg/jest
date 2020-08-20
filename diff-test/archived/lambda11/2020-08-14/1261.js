@@ -1,0 +1,1 @@
+do for ( x ( ) [ '' ] in '' ) ; while ( class x extends x ?. [ '' ] { ; } ) ;

@@ -1,0 +1,1 @@
+( async x => { for await ( x of '' ) ; for await ( let x of [ 42 , 'str' , true ] ) ; } ) ( true ) ;

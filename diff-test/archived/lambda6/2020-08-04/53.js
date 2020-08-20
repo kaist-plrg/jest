@@ -1,0 +1,1 @@
+function x ( x ) { ; switch ( '' ) { case '' , '' : ; } return BigInt ( 'x' ) ; } x ( 0 ) ;

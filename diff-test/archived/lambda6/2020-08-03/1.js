@@ -1,0 +1,1 @@
+var x = Symbol . species ; var { ... x } = { [ "get" ] : ( x => { } ) , [ [ x , ] ] : BigInt ( 'x' ) , [ "enumerable" ] : `${ '' }` } ? ( Symbol . iterator ) /= { [ "value" ] : 0 , [ "writable" ] : false , [ "enumerable" ] : false } : - 0 ;

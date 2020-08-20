@@ -1,0 +1,1 @@
+var x = x ( ) ( ) ; { p : 42 ; } ; var x = '' ; function x ( ... [ x , ] ) { for ( var x ; '' , x ; ) ; x ( ) ; for ( x [ '' ] in '' ) ; return function ( ) { } ; }

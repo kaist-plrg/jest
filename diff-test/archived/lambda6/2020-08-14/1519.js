@@ -1,0 +1,1 @@
+var x = eval ( `${ '' }${ ( ) => { switch ( '' ) { case '' , '' : } class x extends { set x ( x ) { } } { ; } } }` ) ;

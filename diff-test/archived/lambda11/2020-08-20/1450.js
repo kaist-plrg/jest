@@ -1,0 +1,1 @@
+var x = { [ "prototype" ] : false } . prototype . flat . call ( new { [ "prototype" ] : false } ( ) ) ;

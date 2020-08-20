@@ -1,0 +1,1 @@
+for ( var x in Symbol . toPrimitive ) var [ ... x ] = x ;

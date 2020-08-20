@@ -1,0 +1,1 @@
+var x = String . prototype . slice . call ( async function * ( ) { } , { async x ( ... [ ] ) { } } , - 1 ) ;

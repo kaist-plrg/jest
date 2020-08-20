@@ -1,0 +1,1 @@
+var x = { [ "get" ] : function ( ) { } , [ "set" ] : function ( x ) { } , [ "configurable" ] : true } != ( - 0 ) ;

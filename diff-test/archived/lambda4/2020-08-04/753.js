@@ -1,0 +1,1 @@
+Object . prototype . hasOwnProperty . call ( { [ Symbol . toPrimitive ] : ( ) => { throw '' ; } } , { [ Symbol . toPrimitive ] : ( ) => { throw '' ; } } ) ;

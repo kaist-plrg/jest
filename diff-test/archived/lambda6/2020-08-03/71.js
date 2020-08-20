@@ -1,0 +1,1 @@
+Object . defineProperty ( async x => x , ( - Infinity ) , { [ this ] : true , [ "set" ] : '' , [ "enumerable" ] : false , [ { [ "get" ] : function ( x ) { } , [ "set" ] : function ( x ) { } , [ "enumerable" ] : true , [ "configurable" ] : true } ] : { [ "get" ] : function ( x0 , x1 ) { } , [ "enumerable" ] : true , [ "configurable" ] : true } } ) ;

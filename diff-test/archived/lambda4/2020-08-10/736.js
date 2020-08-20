@@ -1,0 +1,1 @@
+var x = '0' . entries ( class x extends x `${ '' , '' }${ x }${ '' }` { ; } ? { async * x ( ... { } ) { } } : 'str' ) ;

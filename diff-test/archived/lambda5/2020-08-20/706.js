@@ -1,0 +1,1 @@
+for ( { x = NaN } of [ , '' ] ) for ( x in '' ) ;

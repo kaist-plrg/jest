@@ -1,0 +1,1 @@
+var x = { [ Symbol . asyncIterator ] : '' , [ Symbol . iterator ] : 0 } < ( - 1n ) ;

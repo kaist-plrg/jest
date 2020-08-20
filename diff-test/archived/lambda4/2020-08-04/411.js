@@ -1,0 +1,1 @@
+Object . defineProperty ( { x ( ... { ... x } ) { } } , { [ Symbol . toPrimitive ] : function * ( x ) { } } , 1 ) ;

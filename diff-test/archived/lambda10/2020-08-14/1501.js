@@ -1,0 +1,1 @@
+var x = ( Symbol . isConcatSpreadable ) . prototype . padStart . call ( null , Number ( Symbol . iterator ) ) ;

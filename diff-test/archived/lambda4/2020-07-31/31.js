@@ -1,0 +1,1 @@
+for ( x of { [ Symbol . iterator ] : async function *  (  ) { ; throw 0 ; } } ) ;

@@ -1,0 +1,1 @@
+String . prototype . endsWith . call ( 1 , { [ "value" ] : 0 , [ "enumerable" ] : false } ) ;

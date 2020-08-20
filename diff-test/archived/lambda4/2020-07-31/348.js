@@ -1,0 +1,1 @@
+Array . prototype . pop . call ( 'str' , undefined ) ;

@@ -1,0 +1,1 @@
+var x = String . prototype . substring . call ( x != x , [ 42 , 'str' , true ] , x ) ;

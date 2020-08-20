@@ -1,0 +1,1 @@
+var x = ( x => { ; var x = x `${ '' , '' }${ '' , '' }` ; switch ( '' ) { default : ; case x : } for ( var { } in '' , '' ) ; try { } catch ( x ) { } } ) ; var x = x ( ) ( ) ;

@@ -1,0 +1,1 @@
+var x = x `` ; var [ x , , ] = x ; function * x ( ... [ , ] ) { switch ( '' ) { case x : default : } yield yield * { [ "value" ] : undefined , [ "writable" ] : false , [ "enumerable" ] : true , [ "configurable" ] : true } ; yield ( ) => { } ; } var [ ... x ] = { async * x ( ... { x = '' } ) { } } ;

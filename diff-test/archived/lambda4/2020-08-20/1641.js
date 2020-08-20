@@ -1,0 +1,1 @@
+var x = Set . prototype . add . call ( new Set ( ) , 0 ) ; var [ x , , ] = { [ Symbol . asyncIterator ] : function * ( ) { } , [ Symbol . iterator ] : async function ( ) { } } ; var [ x ] = x ;

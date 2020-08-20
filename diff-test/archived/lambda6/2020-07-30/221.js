@@ -1,0 +1,1 @@
+Array . prototype . pop . call ( '0' , class   { static x (  ) {  } } ) ;

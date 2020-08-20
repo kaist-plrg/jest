@@ -1,0 +1,1 @@
+var x = Function . prototype . apply . call ( x => x `${ '' }${ '' , '' }` , { p : 42 } , { [ ( Symbol . match ) ] : x >>= '' } ) ;

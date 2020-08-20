@@ -1,0 +1,1 @@
+for ( let x in '' , '' ) ; x ( ) ; switch ( '' ) { case '' : ; } function x ( ... [ x , ] ) { ; switch ( '' ) { case x : ; default : ; case x : ; } return class extends x ( ) ?. x { } ; }

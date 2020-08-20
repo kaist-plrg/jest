@@ -1,0 +1,1 @@
+LABEL : switch ( '' ) { default : ; case x : }

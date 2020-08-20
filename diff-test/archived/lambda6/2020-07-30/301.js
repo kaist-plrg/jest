@@ -1,0 +1,1 @@
+String . prototype . endsWith . call ( x => x , { [ class x extends x [ '' ] {  } ] : class x extends x { static x (  ) {  } } } ) ;

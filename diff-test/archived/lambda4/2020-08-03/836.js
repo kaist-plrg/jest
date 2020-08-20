@@ -1,0 +1,1 @@
+async function * x ( ) { return '' ; } function x ( ... [ , , ] ) { } var x = x <= x ; ; x ( ) ;

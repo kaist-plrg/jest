@@ -1,0 +1,1 @@
+var x = { [ "prototype" ] : function ( x ) { } } . from ( { [ "prototype" ] : function ( x ) { } } ) ;

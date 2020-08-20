@@ -1,0 +1,1 @@
+if ( class x { x ( ) { } } ) switch ( '' ) { case x : default : ; }

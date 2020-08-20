@@ -1,0 +1,1 @@
+var x = { [ x ?? x ?? x ] : function * ( x ) { } } >> ( Number ( Symbol . iterator ) ) ;

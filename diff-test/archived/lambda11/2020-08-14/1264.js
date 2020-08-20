@@ -1,0 +1,1 @@
+var x = Array . from ( x => { } , ( ) => { ; var x = Symbol . species ; } ) ;

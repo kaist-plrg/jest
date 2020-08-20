@@ -1,0 +1,1 @@
+const x = { x = x ( ) ( ) } = Symbol . split ;

@@ -1,0 +1,1 @@
+var x = String . prototype . endsWith . call ( new String ( x ^ x ) , '0' , Symbol . matchAll ) ;

@@ -1,0 +1,1 @@
+for ( x of [  '' ] ) try {  } catch ( x ) {  } class x extends x ?. x [ '' ] { ; }

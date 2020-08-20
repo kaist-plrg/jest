@@ -1,0 +1,1 @@
+var x = { } . match ; var { x , x } = `${ '' }${ x }${ { * x ( ... { } ) { } } , Symbol . hasInstance }` ;

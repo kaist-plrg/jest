@@ -1,0 +1,1 @@
+Promise . prototype . catch . call ( [ 42 , 'str' , true ] , ! x ) ;

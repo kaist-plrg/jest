@@ -1,0 +1,1 @@
+( Symbol . replace ) && x ; class x extends [ x , , ] { ; }

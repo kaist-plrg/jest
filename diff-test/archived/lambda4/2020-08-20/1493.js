@@ -1,0 +1,1 @@
+var x = Object . defineProperty ( [ 42 , 'str' , true ] , Symbol . isConcatSpreadable , [ x , , '' ] ) ;

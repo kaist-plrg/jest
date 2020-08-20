@@ -1,0 +1,1 @@
+var x = new x ( ... [ 42 , 'str' , true ] ) ;

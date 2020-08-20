@@ -1,0 +1,1 @@
+var x = { p : 0 } ; ( ( BigInt ( 0.1 ) ) = ( Symbol . toPrimitive ) ) ;

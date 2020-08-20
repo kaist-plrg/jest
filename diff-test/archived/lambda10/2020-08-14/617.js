@@ -1,0 +1,1 @@
+try { ; function x ( ... x ) { } } catch { }

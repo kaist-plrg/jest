@@ -1,0 +1,1 @@
+for ( { [ "value" ] : undefined } in [ 42 , 'str' , true ] ) ;

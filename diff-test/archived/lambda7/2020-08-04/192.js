@@ -1,0 +1,1 @@
+switch ( Symbol . toStringTag ) { default : ; case Symbol . toStringTag : ; var x = [ x , , ... x ] ; }

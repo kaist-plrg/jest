@@ -1,0 +1,1 @@
+switch ( '' ) { case x : ; for ( var x ; ; '' ) ; default : ; var x = class x { x ( ) { } } ; }

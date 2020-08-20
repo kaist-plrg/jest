@@ -1,0 +1,1 @@
+var x = ( Symbol . replace ) > { [ "get" ] : function ( x ) { } , [ "set" ] : function ( x ) { } , [ "enumerable" ] : false , [ "configurable" ] : true } ;

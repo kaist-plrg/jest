@@ -1,0 +1,1 @@
+var x = class extends x [ '' ] { ; } !== class x extends x ( ) ?. x { } ;

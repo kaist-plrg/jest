@@ -1,0 +1,1 @@
+class x { x ( ) { } } new class extends x ?. ( ) { } ( ) ;

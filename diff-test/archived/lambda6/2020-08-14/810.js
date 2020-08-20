@@ -1,0 +1,1 @@
+var x = [ Symbol . split , 0 , ( ) => { } ] ; x ^ x ;

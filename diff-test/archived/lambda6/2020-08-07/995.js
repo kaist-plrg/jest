@@ -1,0 +1,1 @@
+eval ( "for await ( let x of '' ) ;" ) ;

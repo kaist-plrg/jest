@@ -1,0 +1,1 @@
+var x = WeakMap . prototype . has . call ( new WeakMap ( ) , { * x ( ... { x : x } ) { } } ) ;

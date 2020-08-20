@@ -1,0 +1,1 @@
+String . prototype . normalize . call ( ( Symbol . unscopables ) , Symbol . toStringTag ) ;

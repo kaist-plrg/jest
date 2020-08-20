@@ -1,0 +1,1 @@
+var x = new x ( x , ... '' ) ; async function x ( ... [ , ... x ] ) { } function x ( ... [ ] ) { var await = x ; return BigInt ( 'x' ) ; }

@@ -1,0 +1,1 @@
+var x = x >= class  extends x ?. ( ) {  } ; switch ( Number ( Symbol . iterator ) ) { case { async * x ( ... { x  } ) {  } } :  default :  case x :  }

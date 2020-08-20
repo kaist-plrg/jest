@@ -1,0 +1,1 @@
+var x = String . prototype . matchAll . call ( Symbol . match , { [ Symbol . match ] : class extends x ( ) [ '' , '' ] { ; } } ) ;

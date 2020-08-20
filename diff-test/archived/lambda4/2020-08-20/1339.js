@@ -1,0 +1,1 @@
+var x = String . prototype . slice . call ( x ^ x , null , ( Symbol . species ) ) ;

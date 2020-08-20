@@ -1,0 +1,1 @@
+Object . defineProperties ( { async x ( ... [ ] ) { } } , { x ( ... { x : { } } ) { } } ) ;

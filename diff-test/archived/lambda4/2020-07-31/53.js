@@ -1,0 +1,1 @@
+Array . prototype . findIndex . call ( x => {  } , function  (  ) { ; class x extends [  '' ] {  } } ) ;

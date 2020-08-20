@@ -1,0 +1,1 @@
+Object . getOwnPropertySymbols ( 0 , 0 ) ;

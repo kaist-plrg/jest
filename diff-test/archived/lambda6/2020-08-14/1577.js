@@ -1,0 +1,1 @@
+async function x ( ) { } x ( 42 ) ; async function * x ( ... { [ { [ Symbol . toPrimitive ] : function * ( x ) { } } ] : { } = x } ) { }

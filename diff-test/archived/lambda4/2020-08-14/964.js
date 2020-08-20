@@ -1,0 +1,1 @@
+var x = Array . prototype . unshift . call ( typeof x , 0 ) ;

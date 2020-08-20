@@ -1,0 +1,1 @@
+Array . prototype . findIndex . call ( 'str' , ( ) => { ; class x extends x ?. x . x { static x ( ) { } } } ) ;

@@ -1,0 +1,1 @@
+try { ; async function * x ( ) { } } catch ( x ) { for ( { x , x } in '' ) ; }

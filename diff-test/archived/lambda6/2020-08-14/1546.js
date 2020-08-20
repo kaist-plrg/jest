@@ -1,0 +1,1 @@
+var x = Array . prototype . copyWithin . call ( typeof class x extends x ( ) `` { } , ( Symbol . unscopables ) , 0 , x && x ) ;

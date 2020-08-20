@@ -1,0 +1,1 @@
+while ( Number ( Symbol . iterator ) , '' ) for ( var x = '' ; '' ; '' ) ;

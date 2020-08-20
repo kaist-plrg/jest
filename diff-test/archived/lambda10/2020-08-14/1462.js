@@ -1,0 +1,1 @@
+async function * x ( ) { for await ( x of '' ) ; } x ( 42 ) ; ; x ( ) ; function x ( ... [ , , ] ) { }

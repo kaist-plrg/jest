@@ -1,0 +1,1 @@
+function x ( x ) { ; return 0 ; } x ( 0 ) ;

@@ -1,0 +1,1 @@
+for ( ( { [ Symbol . toPrimitive ] : async * function ( x ) { } } . iterator ) of ( { [ Symbol . toPrimitive ] : async * function ( x ) { } } . toPrimitive ) -- ) for ( let x ; ; ) ;

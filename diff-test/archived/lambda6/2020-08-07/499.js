@@ -1,0 +1,1 @@
+var x = Array . prototype . concat . call ( { [ "done" ] : false } , x == { [ "done" ] : false } ) ;

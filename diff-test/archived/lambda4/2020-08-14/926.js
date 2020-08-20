@@ -1,0 +1,1 @@
+try { ; var x = class { ; } ; } catch { ; var x = x . x ; }

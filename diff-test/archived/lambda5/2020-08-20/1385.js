@@ -1,0 +1,1 @@
+var x = Array . from ( x => { ; } , x => { ; async function x ( ... x ) { } x ( ) ; } ) ;

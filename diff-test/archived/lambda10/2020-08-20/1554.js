@@ -1,0 +1,1 @@
+var x = Array . prototype . findIndex . call ( [ 42 , [ ] , false ] , x => { ; x ( ) `` ; return [ 42 , 'str' , true ] ; } ) ;

@@ -1,0 +1,1 @@
+var x = async function x ( ) { ; for await ( x of { [ Symbol . asyncIterator ] : async function * ( ) { ; return ; } } ) ; } ; x ( 0 ) ;

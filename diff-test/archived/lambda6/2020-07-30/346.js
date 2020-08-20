@@ -1,0 +1,1 @@
+Promise . all ( [  ] , class x  { x (  ) {  } } ) ;

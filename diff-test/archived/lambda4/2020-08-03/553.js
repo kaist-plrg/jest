@@ -1,0 +1,1 @@
+var x = new { [ "value" ] : undefined , [ "configurable" ] : false } ( BigInt ( 0.1 ) , ... { [ "value" ] : undefined , [ "writable" ] : false , [ "configurable" ] : false } ) ;

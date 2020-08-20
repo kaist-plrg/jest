@@ -1,0 +1,1 @@
+var x = Array ( [ 42 , 'str' , true ] ) ;

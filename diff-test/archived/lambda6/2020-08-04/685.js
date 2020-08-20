@@ -1,0 +1,1 @@
+async function * x ( ) { } switch ( Symbol . toPrimitive ) { case Infinity : default : ; case Symbol . match : }

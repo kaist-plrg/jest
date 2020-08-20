@@ -1,0 +1,1 @@
+var x = Array . prototype . copyWithin . call ( 'str' , { set x ( x ) { } } , ( - 0 ) ) ;

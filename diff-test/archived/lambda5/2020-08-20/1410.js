@@ -1,0 +1,1 @@
+var x = Function . prototype [ [ x , ... x ] . hasInstance ] . call ( null , Symbol . split ) ;

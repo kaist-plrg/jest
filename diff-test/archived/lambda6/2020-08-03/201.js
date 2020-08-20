@@ -1,0 +1,1 @@
+String . prototype . trim . call ( { [ "value" ] : null , [ "writable" ] : true , [ "enumerable" ] : false , [ "configurable" ] : true } . unscopables ) ;

@@ -1,0 +1,1 @@
+var x = String . prototype . charAt . call ( - Infinity , Symbol . toStringTag ) ;

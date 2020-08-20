@@ -1,0 +1,1 @@
+( async x => { ; function * x ( x , ) { } function x ( ... { 42 : { } } ) { } } ) ( ) ;

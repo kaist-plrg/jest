@@ -1,0 +1,1 @@
+Object . values ( { p : 42 } , ( - 0 ) ) ;

@@ -1,0 +1,1 @@
+var x = true ; ( undefined = x => x ) ;

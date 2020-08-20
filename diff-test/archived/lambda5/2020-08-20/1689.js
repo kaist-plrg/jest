@@ -1,0 +1,1 @@
+var x = Object . defineProperty ( ( ) => { } , - ( - 1 ) , { [ x < x ] : function * ( ) { } , [ "set" ] : class extends x `${ '' }${ x }${ '' , '' }` { } , [ NaN ] : function ( x ) { } , [ x < x ] : ( ) => { throw - Infinity ; } , [ Infinity ] : Symbol . match , [ Symbol . iterator ] : class extends x `${ '' }` { } } ) ;

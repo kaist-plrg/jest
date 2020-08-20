@@ -1,0 +1,1 @@
+var x = { [ "valueOf" ] : ( ) => { throw '' ; } , [ "toString" ] : ( ) => { throw '' ; } } != Infinity ;

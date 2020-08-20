@@ -1,0 +1,1 @@
+var x = String . prototype . substring . call ( async function * x ( ) { } , NaN , ( Symbol . split ) ) ;

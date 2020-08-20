@@ -1,0 +1,1 @@
+while ( ( - Infinity ) ) for ( var x = '' ; Symbol . match ; '' ) var [ x , x ] = x ;

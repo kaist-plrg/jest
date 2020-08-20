@@ -1,0 +1,1 @@
+Array . prototype . lastIndexOf . call ( null , { [ "next" ] : function ( x ) { } , [ "return" ] : function ( x ) { } } . toStringTag , NaN ) ;

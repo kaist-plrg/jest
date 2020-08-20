@@ -1,0 +1,1 @@
+try { ; } catch { } finally { ; async function * x ( ... [ ... x ] ) { } }

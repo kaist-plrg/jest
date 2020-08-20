@@ -1,0 +1,1 @@
+Array . prototype . slice . call ( null , ( Symbol . matchAll ) , { get x ( ) { } } ) ;

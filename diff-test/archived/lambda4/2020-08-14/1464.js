@@ -1,0 +1,1 @@
+var x = this ; var x = { [ "valueOf" ] : 0 , [ "toString" ] : 0 } in { [ "valueOf" ] : 0 , [ "toString" ] : 0 } ;

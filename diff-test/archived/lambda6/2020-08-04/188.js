@@ -1,0 +1,1 @@
+function x ( ... { x : x } ) { } for ( '' ; '' ; '' ) ; x instanceof { [ Symbol . unscopables ] : function ( ) { } , [ class x { x ( ) { } } ] : function ( x ) { } , [ Symbol . hasInstance ] : [ , ] } ;

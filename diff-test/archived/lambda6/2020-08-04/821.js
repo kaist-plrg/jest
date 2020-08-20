@@ -1,0 +1,1 @@
+Map . prototype . delete . call ( { [ "get" ] : function ( ) { } , [ "set" ] : function ( x ) { } , [ "configurable" ] : true } , - 1n ) ;

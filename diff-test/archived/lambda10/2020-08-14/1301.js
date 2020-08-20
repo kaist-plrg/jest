@@ -1,0 +1,1 @@
+var x = String . prototype . slice . call ( 42n , ( x => { } ) , undefined ) ;

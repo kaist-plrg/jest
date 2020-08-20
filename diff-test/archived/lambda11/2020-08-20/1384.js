@@ -1,0 +1,1 @@
+for ( [ , ] in '' ) ; ( { x , ... Symbol . unscopables } = Symbol . isConcatSpreadable ) ;

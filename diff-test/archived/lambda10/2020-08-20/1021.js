@@ -1,0 +1,1 @@
+try { ; } finally { ; x ( 42 ) ; var x = { x ( ... x ) { } } ; }

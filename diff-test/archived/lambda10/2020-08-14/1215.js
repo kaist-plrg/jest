@@ -1,0 +1,1 @@
+async function * x ( ) { return ; } ; x ( ) ; var x = x ( ) [ '' , '' ] ;

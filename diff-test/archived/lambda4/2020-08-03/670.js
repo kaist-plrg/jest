@@ -1,0 +1,1 @@
+String . prototype . startsWith . call ( - Infinity , Symbol . iterator , { [ "value" ] : 'str' , [ "enumerable" ] : false , [ "configurable" ] : true } ) ;

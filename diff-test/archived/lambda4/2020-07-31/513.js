@@ -1,0 +1,1 @@
+String . prototype . split . call ( Symbol . hasInstance , 0 ) ;

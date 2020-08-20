@@ -1,0 +1,1 @@
+Object . defineProperty ( [ 42 , 'str' , true ] , false , { [ async function * ( ) { } ] : class extends x ?. x { } , [ "set" ] : class extends x ( ) [ '' ] { } , [ ( '' ) ] : true } ) ;

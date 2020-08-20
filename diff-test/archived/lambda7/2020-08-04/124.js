@@ -1,0 +1,1 @@
+var x = x instanceof x ; function * x ( ... { ... x } ) { } var x = ( - 1 ) >= ( - Infinity ) ;

@@ -1,0 +1,1 @@
+var x = [ 1 , 2 , 3 ] ; ( [ ( Symbol . replace ) , ( Symbol . toPrimitive ) ] = x ) ;

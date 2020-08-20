@@ -1,0 +1,1 @@
+Promise . race ( [  42 ,  'str' ,  true ] ) ;

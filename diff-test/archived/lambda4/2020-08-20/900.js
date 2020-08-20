@@ -1,0 +1,1 @@
+while ( ( Symbol . match ) ) for ( var { } = x ; ; '' ) ;

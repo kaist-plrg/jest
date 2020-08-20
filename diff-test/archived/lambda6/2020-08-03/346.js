@@ -1,0 +1,1 @@
+Array . prototype . findIndex . call ( null , Symbol . replace , Symbol . matchAll ) ;

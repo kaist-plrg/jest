@@ -1,0 +1,1 @@
+Object . assign ( `${ '' , '' }${ '' }` , { get x ( ) { ; class x extends super [ Symbol . unscopables , class x extends x ?. x . x { ; } ] { ; } } } ) ;

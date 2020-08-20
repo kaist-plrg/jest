@@ -1,0 +1,1 @@
+var x = String . prototype . startsWith . call ( new String ( [ 42 , 'str' , true ] ) , 0 ) ;

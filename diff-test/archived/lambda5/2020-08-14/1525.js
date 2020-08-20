@@ -1,0 +1,1 @@
+function x ( [ x ] = [ x !== x , x << x , class extends x [ '' , '' ] { } ] ) { } try { } catch { } finally { } 'str' ( class extends new x ( x , ... '' ) { ; } ) ;

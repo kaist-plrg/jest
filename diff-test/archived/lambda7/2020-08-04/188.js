@@ -1,0 +1,1 @@
+for ( var x , x ; { async x ( ... [ x , ] ) { } } ; x instanceof x ) for ( ; '' ; ) ;

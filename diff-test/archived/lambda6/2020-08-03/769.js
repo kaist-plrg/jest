@@ -1,0 +1,1 @@
+switch ( FREE ) { case ( Symbol . unscopables ) : default : ; }

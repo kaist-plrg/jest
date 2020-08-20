@@ -1,0 +1,1 @@
+var x = isFinite ( class { static x ( ) { } } ) ;

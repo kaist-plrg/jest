@@ -1,0 +1,1 @@
+for ( var x in '0' ) var [ ] = { [ Symbol . iterator ] : function * ( ) { } } ;

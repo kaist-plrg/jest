@@ -1,0 +1,1 @@
+Object . defineProperty ( { [ "throw" ] : function ( x ) { } } , class { ; } , { [ "value" ] : class extends x `${ '' }${ '' }` { ; } , [ null ] : Symbol . species } ) ;

@@ -1,0 +1,1 @@
+function x ( ... [ , , ] ) { } ; '' ; for ( x ( ) . x in '' ) ; var x = x -= Symbol . toPrimitive ; for ( let x ; x | x , Symbol . match ; ) ;

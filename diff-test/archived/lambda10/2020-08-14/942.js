@@ -1,0 +1,1 @@
+for ( ; function * ( ) { } ; ) for ( let x = x ; '' ; '' ) ;

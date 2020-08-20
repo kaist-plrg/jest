@@ -1,0 +1,1 @@
+Array . prototype . pop . call ( function *  (  ) {  } , { [ "next" ] : function  (  ) {  } , [ "return" ] : function  (  ) {  } , [ "throw" ] : function  ( x0  , x1  ) {  } } ) ;

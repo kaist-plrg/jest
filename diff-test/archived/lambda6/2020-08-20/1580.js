@@ -1,0 +1,1 @@
+async function * x ( ) { for ( '' ; '' ; ) ; } switch ( '' ) { case x : default : ; } x ( ) ; async function * x ( ... { x = class extends new x ( ... '' ) { } } ) { }

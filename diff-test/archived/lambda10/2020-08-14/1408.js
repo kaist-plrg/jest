@@ -1,0 +1,1 @@
+var x = Array . from ( { [ "length" ] : { [ "valueOf" ] : 0 , [ "toString" ] : false } } ) ;

@@ -1,0 +1,1 @@
+Promise . allSettled ( [ 42 , { [ "then" ] : function ( x ) { ; throw 0 ; } } , true ] ) ;

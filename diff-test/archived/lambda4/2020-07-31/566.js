@@ -1,0 +1,1 @@
+var x = new { [ "next" ] : function  (  ) {  } , [ "return" ] : function  (  ) {  } , [ "throw" ] : function  (  ) {  } } ( x , ... x => {  } ) ;

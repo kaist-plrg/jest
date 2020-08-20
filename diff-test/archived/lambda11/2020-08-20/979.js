@@ -1,0 +1,1 @@
+for ( var x of ( Number ( Symbol . iterator ) ) ) var x = x ;

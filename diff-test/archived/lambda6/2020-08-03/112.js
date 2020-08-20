@@ -1,0 +1,1 @@
+delete { [ "value" ] : undefined , [ "writable" ] : true , [ "enumerable" ] : true , [ "configurable" ] : true } [ 42 ] ;

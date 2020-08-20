@@ -1,0 +1,1 @@
+Array . prototype . reduce . call ( 'str' , class { ; } , { x ( ... [ ] ) { } } ) ;

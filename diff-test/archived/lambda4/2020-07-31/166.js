@@ -1,0 +1,1 @@
+Object . prototype . toLocaleString . call ( true , Symbol . toPrimitive ) ;

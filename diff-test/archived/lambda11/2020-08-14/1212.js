@@ -1,0 +1,1 @@
+var x = Object . create ( { async * x ( ) { } } , { set x ( x ) { } } ) ;

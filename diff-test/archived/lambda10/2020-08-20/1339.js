@@ -1,0 +1,1 @@
+var x = Map . prototype . forEach . call ( Number ( Symbol . iterator ) , false ) ;

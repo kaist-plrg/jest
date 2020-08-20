@@ -1,0 +1,1 @@
+for ( x of { [ ( x => { } ) . asyncIterator ] : ( Symbol . match ) , [ Symbol . iterator ] : class extends x { x ( ) { } } } ) ;

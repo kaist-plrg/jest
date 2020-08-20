@@ -1,0 +1,1 @@
+var x = Array . from ( { [ Symbol . asyncIterator ] : function * ( ) { } , [ Symbol . iterator ] : ( ) => { throw '' ; } } ) ;

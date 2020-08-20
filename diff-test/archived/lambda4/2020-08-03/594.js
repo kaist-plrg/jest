@@ -1,0 +1,1 @@
+String . prototype . startsWith . call ( Symbol . isConcatSpreadable , { * x ( ... [ , x ] ) { } } , { [ "enumerable" ] : false , [ "configurable" ] : true } ) ;

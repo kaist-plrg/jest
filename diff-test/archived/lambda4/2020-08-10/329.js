@@ -1,0 +1,1 @@
+var x = new Set ( [ { [ "length" ] : function ( x ) { } } , { [ "length" ] : function ( x ) { } } ] ) ;

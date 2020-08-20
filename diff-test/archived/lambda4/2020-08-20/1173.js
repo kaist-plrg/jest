@@ -1,0 +1,1 @@
+try { ; class x extends { async * x ( ) { } } { } } catch { ; x ( ) ; }

@@ -1,0 +1,1 @@
+Object . entries ( { [ '' ] : { p : 42 } , [ { get x ( ) { } } ] : class extends x ?. x ?. x { } } ) ;

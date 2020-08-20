@@ -1,0 +1,1 @@
+Function . prototype . toString . call ( { p : 42 } ) ;

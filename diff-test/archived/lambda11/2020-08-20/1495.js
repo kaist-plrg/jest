@@ -1,0 +1,1 @@
+var x = Array . prototype . find . call ( { [ "length" ] : { [ Symbol . toPrimitive ] : 0 } } , ( ( ) => { } ) ) ;

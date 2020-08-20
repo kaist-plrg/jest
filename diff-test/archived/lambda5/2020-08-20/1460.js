@@ -1,0 +1,1 @@
+var x = Object . getOwnPropertyNames ( class x { x ( ) { } } ) ; var { '' : { } = BigInt ( 0.1 ) } = x ;

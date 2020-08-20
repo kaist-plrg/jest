@@ -1,0 +1,1 @@
+[  x ,  ... class  extends x `${ '' }` { ; } . replace ] = [  x ,  ] ; for ( var x in [ , ... '' ] , ( - 1n ) ) for ( var x = '' ;  ; '' ) ;

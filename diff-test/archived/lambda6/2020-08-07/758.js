@@ -1,0 +1,1 @@
+for ( let x ; Symbol . iterator , ( Symbol . iterator ) ; Symbol . split , ( Number ( Symbol . iterator ) ) ) for ( [ x , ... x ] in '' ) ;

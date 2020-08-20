@@ -1,0 +1,1 @@
+var x = Object . assign ( + ( ( ) => { } ) , { async * x ( x ) { } } ) ;

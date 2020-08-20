@@ -1,0 +1,1 @@
+Object . create ( { * x ( ... [ , x ] ) { } } ) ;

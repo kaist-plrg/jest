@@ -1,0 +1,1 @@
+try { ; let { } = x ; } catch ( x ) { ; if ( '' ) ; else ; var x = ( Symbol . asyncIterator ) ; }

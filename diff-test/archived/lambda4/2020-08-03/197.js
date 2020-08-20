@@ -1,0 +1,1 @@
+Object . seal ( { p : 42 } ) ;

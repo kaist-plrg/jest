@@ -1,0 +1,1 @@
+async function * x ( ) { for ( var x , x ; '' ; ) ; } for ( var x , x ; '' ; ) ; x ( ) ;

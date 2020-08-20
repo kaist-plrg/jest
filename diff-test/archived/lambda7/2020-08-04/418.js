@@ -1,0 +1,1 @@
+delete '0' [ 0n ] ; function * x ( ) { }

@@ -1,0 +1,1 @@
+BigInt . prototype . toString . call ( 1 , 0 , 0 ) ;

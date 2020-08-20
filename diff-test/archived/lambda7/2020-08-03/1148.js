@@ -1,0 +1,1 @@
+Array . prototype . filter . call ( 1 , 0 , 0 ) ;

@@ -1,0 +1,1 @@
+switch ( x - x ) { case class extends x { x ( ) { } } : }

@@ -1,0 +1,1 @@
+var x = null ; function * x ( ... { ... x } ) {  } var [   ] = x == x ;

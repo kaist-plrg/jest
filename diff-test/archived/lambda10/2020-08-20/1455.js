@@ -1,0 +1,1 @@
+var x = String . prototype . indexOf . call ( new String ( x ?. x ) , Symbol . isConcatSpreadable ) ;

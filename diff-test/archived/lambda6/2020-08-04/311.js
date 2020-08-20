@@ -1,0 +1,1 @@
+switch ( function * ( ) { ; yield * x ( ) ; } ) { case 42n : default : break ; function x ( ... { x = '' } ) { } }

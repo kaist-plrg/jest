@@ -1,0 +1,1 @@
+if ( x ? '' : '' ) ; else switch ( '' ) { case x : case x : }

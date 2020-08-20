@@ -1,0 +1,1 @@
+function x ( x ) { ; try { } catch { } finally { } return x ?. ( ) ; } x ( 0 ) ;

@@ -1,0 +1,1 @@
+Array . prototype . indexOf . call ( [ 42 , 'str' , true ] , { x ( ... x ) { } } , - ( - Infinity ) ) ;

@@ -1,0 +1,1 @@
+var x = String . prototype . startsWith . call ( new class x { } ( NaN ) , 0 ) ;

@@ -1,0 +1,1 @@
+var x = String . prototype . normalize . call ( new String ( 0 ) , { [ "valueOf" ] : function * ( x ) { } , [ "toString" ] : false } ) ;

@@ -1,0 +1,1 @@
+var x = Object . setPrototypeOf ( Symbol . split , { x ( ... { x : { } = x } ) { } } ) ;

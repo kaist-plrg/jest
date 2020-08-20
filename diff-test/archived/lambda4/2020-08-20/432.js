@@ -1,0 +1,1 @@
+LABEL : for ( ; ; ) var { } = x ;

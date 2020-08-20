@@ -1,0 +1,1 @@
+var x = Function . prototype . apply . call ( ( ) => { } , ( - Infinity ) , - 1n ) ;

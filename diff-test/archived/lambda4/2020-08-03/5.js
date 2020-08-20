@@ -1,0 +1,1 @@
+function x ( x0 , x1 ) { } ; x | x ; function * x ( ... [ x , ] ) { for ( ; ; '' , '' ) ; } x ( 'str' ) ; function x ( ... [ , x ] ) { switch ( x ( ) [ '' , '' ] ) { default : ; for ( ; '' , '' ; '' , '' ) ; } return `${ '' }${ '' , '' }` ; }

@@ -1,0 +1,1 @@
+Array . prototype . every . call ( '0' , x => { ; for ( let x = x ; '' ; '' ) ; } ) ;

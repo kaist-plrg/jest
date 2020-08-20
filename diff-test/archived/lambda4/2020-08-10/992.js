@@ -1,0 +1,1 @@
+var x = new Object ( 0 ) ; var x = x ?. x [ '' , '' ] ;

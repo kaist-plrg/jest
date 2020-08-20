@@ -1,0 +1,1 @@
+Array . prototype . reverse . call ( typeof '' ) ;

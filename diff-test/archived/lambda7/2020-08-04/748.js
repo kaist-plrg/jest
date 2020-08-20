@@ -1,0 +1,1 @@
+Map . prototype . delete . call ( 42n , x ++ ) ;

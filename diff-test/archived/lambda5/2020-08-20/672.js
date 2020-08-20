@@ -1,0 +1,1 @@
+var x = async x => ( BigInt ( 0.1 ) ) ; x ( ) ;

@@ -1,0 +1,1 @@
+String . prototype . indexOf . call ( 0n , '0' , { [ "value" ] : 'str' , [ "configurable" ] : true } ) ;

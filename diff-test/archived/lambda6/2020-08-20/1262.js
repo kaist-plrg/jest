@@ -1,0 +1,1 @@
+var x = Array . prototype . slice . call ( Symbol . species , 0 , undefined ) ;

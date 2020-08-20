@@ -1,0 +1,1 @@
+var x = [ ] in class extends x `${ '' }${ x }${ '' , '' }` { ; } ;

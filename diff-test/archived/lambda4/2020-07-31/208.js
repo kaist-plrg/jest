@@ -1,0 +1,1 @@
+var x = BigInt ( [  ] ) ; var x = x ** x ; var x = x | x ;

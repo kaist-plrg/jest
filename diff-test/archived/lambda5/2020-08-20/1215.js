@@ -1,0 +1,1 @@
+var x = String . prototype . codePointAt . call ( Symbol . split , 0 ) ;

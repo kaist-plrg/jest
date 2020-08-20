@@ -1,0 +1,1 @@
+Array . prototype . reduce . call ( '0' , async function x (  ) {  } , Symbol . asyncIterator ) ;

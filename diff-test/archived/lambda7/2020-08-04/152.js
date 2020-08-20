@@ -1,0 +1,1 @@
+String . prototype . endsWith . call ( { } , { [ Symbol . match ] : function * ( ) { } } ) ;

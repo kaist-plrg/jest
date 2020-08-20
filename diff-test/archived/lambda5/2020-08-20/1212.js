@@ -1,0 +1,1 @@
+try { } catch ( x ) { ; var x = class extends x { static x ( ) { } } ; }

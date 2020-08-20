@@ -1,0 +1,1 @@
+( async x => typeof x ) ( 1 ) ;

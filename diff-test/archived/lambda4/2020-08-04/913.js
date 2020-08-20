@@ -1,0 +1,1 @@
+switch ( '' ) { case ( BigInt ( 0.1 ) ) : default : }

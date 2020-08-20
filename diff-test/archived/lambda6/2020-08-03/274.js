@@ -1,0 +1,1 @@
+var x = { [ - 1 ] : [ ... '' ] , [ [ '' ] ] : x === x } instanceof { [ { [ "value" ] : null , [ "writable" ] : true , [ "configurable" ] : true } ] : function ( ) { } , [ ( - 0 ) ] : ( ) => { } , [ - Infinity ] : Symbol . match , [ ( Symbol . hasInstance ) ] : x > x } ;

@@ -1,0 +1,1 @@
+for ( { get x ( ) {  } } . x in { x : '0' } ) switch ( x && x ) { case x :  default : ;  }

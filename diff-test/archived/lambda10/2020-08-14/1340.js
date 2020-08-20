@@ -1,0 +1,1 @@
+var x = EvalError ( ( { [ "prototype" ] : function ( x ) { } } . hasInstance ) ) ;

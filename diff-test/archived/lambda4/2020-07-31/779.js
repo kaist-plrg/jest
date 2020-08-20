@@ -1,0 +1,1 @@
+for ( undefined of NaN ) for ( var x  ; '' , '' ;  ) ;

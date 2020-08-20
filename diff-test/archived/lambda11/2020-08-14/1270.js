@@ -1,0 +1,1 @@
+var x = Promise . race ( x = { [ "resolve" ] : async * function ( ) { } } ) ;

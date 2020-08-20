@@ -1,0 +1,1 @@
+Array . prototype . splice . call ( { [ "value" ] : null , [ "done" ] : true } , 0 , Symbol . match , Symbol . search ) ;

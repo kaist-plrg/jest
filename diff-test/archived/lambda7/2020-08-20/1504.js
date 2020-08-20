@@ -1,0 +1,1 @@
+var x = ( x => { ; if ( { * x ( ... [ x , , ] ) { } } ) ; else ; x ( ) ; return new x ( ... '' ) ; } ) `` ;

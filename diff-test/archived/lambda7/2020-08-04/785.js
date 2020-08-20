@@ -1,0 +1,1 @@
+var x = async function ( ) { ; return 0 ; } ( ) . x ;

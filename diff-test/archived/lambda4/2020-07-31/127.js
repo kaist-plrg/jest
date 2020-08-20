@@ -1,0 +1,1 @@
+String . prototype . lastIndexOf . call ( undefined , { p : 42 } , ( Symbol . search ) , class x  { x (  ) {  } } ) ;

@@ -1,0 +1,1 @@
+var x = String . prototype . substring . call ( { p : 42 } , `${ '' , '' }` , x && x ) ;

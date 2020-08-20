@@ -1,0 +1,1 @@
+var x = Array . prototype . slice . call ( - 1n , 0 , Symbol . search ) ;

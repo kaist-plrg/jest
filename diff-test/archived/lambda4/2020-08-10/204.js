@@ -1,0 +1,1 @@
+var x = Set . prototype . forEach . call ( new Set ( ) , class x { static x ( ) { } } , Symbol . iterator ) ;

@@ -1,0 +1,1 @@
+async function * x ( ... { x , } ) { } ( Symbol . unscopables ) instanceof [ 42 , 'str' , true ] ;

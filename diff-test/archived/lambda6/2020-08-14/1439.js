@@ -1,0 +1,1 @@
+var x = String . prototype . endsWith . call ( [ 42 , 'str' , true ] , async function ( ) { } ) ;

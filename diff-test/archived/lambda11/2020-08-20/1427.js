@@ -1,0 +1,1 @@
+var x = Array . prototype . slice . call ( new class { static x ( ) { } } ( ) , 0 , - Infinity ) ;

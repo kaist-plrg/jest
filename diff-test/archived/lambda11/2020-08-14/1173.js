@@ -1,0 +1,1 @@
+var x = x ? [ 42 , 'str' , true ] : class x extends x ( ) [ '' ] { } ;

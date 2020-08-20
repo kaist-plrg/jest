@@ -1,0 +1,1 @@
+var x = Object . defineProperty ( ( x => { } ) , - { [ "get" ] : false , [ "set" ] : null , [ "writable" ] : true , [ "configurable" ] : null , [ "enumerable" ] : false , [ "value" ] : '' } , { [ "get" ] : false , [ "set" ] : null , [ "writable" ] : true , [ "configurable" ] : null , [ "enumerable" ] : false , [ "value" ] : '' } ) ;

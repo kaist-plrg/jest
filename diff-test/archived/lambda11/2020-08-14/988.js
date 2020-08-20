@@ -1,0 +1,1 @@
+switch ( '' ) { case x : ; for ( { x , } in '' ) ; default : }

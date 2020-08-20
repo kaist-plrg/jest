@@ -1,0 +1,1 @@
+var x = Array . prototype . some . call ( [ x , , ] , x => ( Symbol . isConcatSpreadable ) `${ x `${ '' }${ '' }` , Infinity }` ) ;

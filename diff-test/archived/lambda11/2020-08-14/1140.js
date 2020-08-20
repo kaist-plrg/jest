@@ -1,0 +1,1 @@
+var x = BigInt . prototype . valueOf . call ( 0n ) ; var x = x ** x ;

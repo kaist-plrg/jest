@@ -1,0 +1,1 @@
+var x = WeakMap . prototype . set . call ( new WeakMap ( ) , { [ "prototype" ] : false } , 0 ) ;

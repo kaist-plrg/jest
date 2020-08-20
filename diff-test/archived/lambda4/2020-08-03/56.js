@@ -1,0 +1,1 @@
+function x ( x0 , x1 ) { } ; Symbol . toStringTag ; function * x ( ... [ x , ] ) { Symbol . iterator ; } new class extends x ( ) `` { ; } ( ... { [ "enumerable" ] : false , [ "configurable" ] : true } ) ; function x ( ... [ , x ] ) { for ( x in '' ) ; return void x ; }

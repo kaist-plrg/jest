@@ -1,0 +1,1 @@
+String . prototype . startsWith . call ( { set x ( x  ) {  } } , { p : 42 } , 0 , class   { ; } ) ;

@@ -1,0 +1,1 @@
+var x = String . prototype . slice . call ( new String ( 0 ) , 0 , { [ "valueOf" ] : function * ( x ) { } , [ "toString" ] : function ( x ) { } } ) ;

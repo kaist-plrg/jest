@@ -1,0 +1,1 @@
+Array . prototype . splice . call ( 'str' , { [ "writable" ] : false , [ "configurable" ] : false } , 0 , 0 ) ;

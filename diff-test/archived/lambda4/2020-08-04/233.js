@@ -1,0 +1,1 @@
+var x = x `` ; function * x ( ... { } ) { ; new . target ; } var [ , , ... { } ] = x ;

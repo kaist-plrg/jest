@@ -1,0 +1,1 @@
+var x = new 42n ( ... class extends x { ; } ) ;

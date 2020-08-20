@@ -1,0 +1,1 @@
+Array . prototype . map . call ( [  42 ,  'str' ,  true ] , x => { ; var x = class x extends x { static x (  ) {  } } ; } , [  42 ,  'str' ,  true ] , '0' ) ;

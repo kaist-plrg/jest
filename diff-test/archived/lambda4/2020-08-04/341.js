@@ -1,0 +1,1 @@
+[ ... { [ Symbol . asyncIterator ] : 0 , [ Symbol . iterator ] : function * ( ) { ; yield * [ 42 , 'str' , true ] ; } } ] ;

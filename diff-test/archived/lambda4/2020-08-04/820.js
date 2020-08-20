@@ -1,0 +1,1 @@
+WeakMap . prototype . delete . call ( x => { } , Symbol . replace ) ;

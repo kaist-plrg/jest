@@ -1,0 +1,1 @@
+var x = Function . prototype . bind . call ( ( ) => x , 0 ) ; var x = x ( ) `` ;

@@ -1,0 +1,1 @@
+var x = Array . prototype . map . call ( [ 42 , Symbol . toPrimitive , true ] , x => { } ) ;

@@ -1,0 +1,1 @@
+var x = Object . assign ( { } , { p : class extends x [ '' , '' ] { } } ) ;

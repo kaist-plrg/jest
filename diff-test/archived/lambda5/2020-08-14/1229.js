@@ -1,0 +1,1 @@
+for ( ; { async * x ( ... x ) { } } ; ) switch ( '' ) { default : ; case x : }

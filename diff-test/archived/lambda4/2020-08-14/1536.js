@@ -1,0 +1,1 @@
+var x = { [ "prototype" ] : class extends x ( ) . x { } } . prototype . toString . call ( new { } ( Symbol . isConcatSpreadable ) ) ;

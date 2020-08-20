@@ -1,0 +1,1 @@
+var x = String . prototype . includes . call ( x | x , { [ "valueOf" ] : function * ( ) { } , [ "toString" ] : async function ( x ) { } } ) ;

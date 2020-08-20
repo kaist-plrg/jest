@@ -1,0 +1,1 @@
+var x = Symbol . iterator ; for ( [ x , , ] in '' ) ; x >>= '' ; x ( ( '' , '' ) ) ; function * x ( ... { ... x } ) { ; yield yield ; return 0 ; }

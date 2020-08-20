@@ -1,0 +1,1 @@
+try { for ( { x , } in { [ "done" ] : async function ( x ) { } } ) ; function x ( ... [ ] ) { } } catch ( x ) { ; }

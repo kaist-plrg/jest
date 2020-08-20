@@ -1,0 +1,1 @@
+var x = { [ "value" ] : 0 , [ "writable" ] : true , [ "configurable" ] : true } == false ;

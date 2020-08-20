@@ -1,0 +1,1 @@
+var x = Array . prototype . lastIndexOf . call ( Symbol . replace , class x extends x ( ) . x { } ) ;

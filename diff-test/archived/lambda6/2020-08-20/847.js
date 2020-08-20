@@ -1,0 +1,1 @@
+if ( Symbol . split ) if ( x [ '' , '' ] , '' ) ; else ;

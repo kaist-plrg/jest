@@ -1,0 +1,1 @@
+var x = Symbol . toStringTag ; function * x ( ... { ... x } ) {  } var x = x &= '' ;

@@ -1,0 +1,1 @@
+var x = Function . prototype . apply . call ( class { static x ( ) { } } , 0 , [ x , , ] ) ;

@@ -1,0 +1,1 @@
+Array . prototype . copyWithin . call ( undefined , 0 ) ;

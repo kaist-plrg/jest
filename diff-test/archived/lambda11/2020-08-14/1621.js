@@ -1,0 +1,1 @@
+var x = Promise . allSettled ( { [ Symbol . asyncIterator ] : ( ) => { throw '' ; } , [ Symbol . iterator ] : function * ( ) { ; class x extends new . target { ; } x ( ) ; } } ) ;

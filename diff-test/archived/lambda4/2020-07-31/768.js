@@ -1,0 +1,1 @@
+typeof class  extends x ?. x [ '' ] {  } ;

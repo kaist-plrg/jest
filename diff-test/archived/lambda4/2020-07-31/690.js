@@ -1,0 +1,1 @@
+var x = x >= x ; throw 0 ; switch ( '' ) { case x :  default : ; var x = class   { static x (  ) {  } } ; case x :  }

@@ -1,0 +1,1 @@
+Array . prototype . map . call ( x => { } , class { ; } , { p : Symbol . split } ) ;

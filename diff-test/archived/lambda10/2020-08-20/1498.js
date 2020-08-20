@@ -1,0 +1,1 @@
+var x = String . prototype . search . call ( Symbol . toStringTag , class x { static x ( ) { } } . replace ) ;

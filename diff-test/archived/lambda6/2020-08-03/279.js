@@ -1,0 +1,1 @@
+String . prototype . slice . call ( 0n , 42n , { async x ( ... [ , ] ) { } } ) ;

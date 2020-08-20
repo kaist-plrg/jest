@@ -1,0 +1,1 @@
+String . prototype . endsWith . call ( { [ "prototype" ] : function ( x ) { } } , { [ { [ "prototype" ] : function ( x ) { } } . toPrimitive ] : async function ( ) { } } ) ;

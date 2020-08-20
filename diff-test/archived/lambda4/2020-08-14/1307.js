@@ -1,0 +1,1 @@
+do ; while ( '' , '' ) ; ( ( Symbol . unscopables ) = class x extends x . x { } ) ;

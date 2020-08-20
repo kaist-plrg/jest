@@ -1,0 +1,1 @@
+for ( class extends new x ( ) { } ; x => { } ; ) ;

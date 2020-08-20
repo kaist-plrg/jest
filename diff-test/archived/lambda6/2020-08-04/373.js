@@ -1,0 +1,1 @@
+for ( [ 42 , 'str' , true ] , - class extends x ( ) { ; } ; ( Symbol . matchAll ) . hasInstance , Symbol . toPrimitive ; Symbol . match , '0' ) for ( ; ; '' ) ;

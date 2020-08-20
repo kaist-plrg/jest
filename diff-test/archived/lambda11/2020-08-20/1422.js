@@ -1,0 +1,1 @@
+if ( '' , '' ) ; x ( ) ; function x ( ... [ x , ] ) { ; x ( { p : 42 } ) ; return x ?. x ?. x ; }

@@ -1,0 +1,1 @@
+var x = { x : class extends x { static x ( ) { } } } ; x ?. x . x ;

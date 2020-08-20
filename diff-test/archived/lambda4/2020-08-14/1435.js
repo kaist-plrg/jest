@@ -1,0 +1,1 @@
+switch ( '' ) { case '' : for ( let x = Symbol . unscopables ; Symbol . isConcatSpreadable ; x /= '' ) ; }

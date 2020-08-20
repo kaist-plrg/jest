@@ -1,0 +1,1 @@
+var x = Infinity ; var x = x instanceof class x extends x ( ) ?. x { ; } ;

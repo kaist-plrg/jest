@@ -1,0 +1,1 @@
+Array . prototype . splice . call ( x => { } , 0 , 'str' , class x { static x ( ) { } } ) ;

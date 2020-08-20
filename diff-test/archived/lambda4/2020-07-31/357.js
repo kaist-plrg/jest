@@ -1,0 +1,1 @@
+Array . prototype . reduce . call ( null , { p : 42 } , 0 ) ;

@@ -1,0 +1,1 @@
+var x = Promise . race ( [ { [ "constructor" ] : '' , [ Symbol . species ] : function * ( ) { } } , { [ "constructor" ] : '' , [ Symbol . species ] : function * ( ) { } } , { [ "constructor" ] : '' , [ Symbol . species ] : function * ( ) { } } ] ) ;

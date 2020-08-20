@@ -1,0 +1,1 @@
+{ for ( [ x , , ] in '' ) ; async function * x ( ... { x = '' } ) { } } ;

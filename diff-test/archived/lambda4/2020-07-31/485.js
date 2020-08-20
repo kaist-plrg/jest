@@ -1,0 +1,1 @@
+String . prototype . split . call ( { [ "writable" ] : false , [ "enumerable" ] : true , [ "configurable" ] : true } , { [ "get" ] : function  (  ) {  } , [ "set" ] : function  (  ) {  } , [ "enumerable" ] : false , [ "configurable" ] : false } ) ;

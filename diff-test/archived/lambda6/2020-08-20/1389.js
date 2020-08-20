@@ -1,0 +1,1 @@
+var x = x `${ class extends x . x { } }${ { async * x ( ... { [ '' ] : { } = x } ) { } } }` ;

@@ -1,0 +1,1 @@
+var x = class extends x ?. x [ '' ] { ; } `${ FREE , x | x }${ null }${ { x ( ... [ ] ) { } } }` ;

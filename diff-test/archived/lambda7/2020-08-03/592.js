@@ -1,0 +1,1 @@
+String . prototype . endsWith . call ( 0n , 0 ) ;

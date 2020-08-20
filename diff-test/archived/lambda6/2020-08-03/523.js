@@ -1,0 +1,1 @@
+while ( 'str' , class extends x { } ) switch ( '' ) { case x : default : ; case x : }

@@ -1,0 +1,1 @@
+for ( let x in { [ { p : 42 } ] : '' } ) for ( let x in '' ) ;

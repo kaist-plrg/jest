@@ -1,0 +1,1 @@
+var x = ( '' ) . all ( { [ [ , ] ] : class extends x { static x ( ) { } } , [ Symbol . iterator ] : x ( ) ?. x } ) ;

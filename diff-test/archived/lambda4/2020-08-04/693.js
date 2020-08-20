@@ -1,0 +1,1 @@
+Object . prototype . toLocaleString . call ( Symbol . split , false , { x ( ... await ) { } } ) ;

@@ -1,0 +1,1 @@
+var x = 42n ; switch ( ( Symbol . replace ) , x ) { default : for ( var x = '' ; '' ; '' ) ; case x >> x : } for ( x ( ) . x in '' ) ;

@@ -1,0 +1,1 @@
+var x = Promise . prototype . finally . call ( Symbol . match , [ ] = '' ) ;

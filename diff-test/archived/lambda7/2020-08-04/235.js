@@ -1,0 +1,1 @@
+Object . defineProperties ( x => { } , { [ "length" ] : function * ( x ) { } } ) ;

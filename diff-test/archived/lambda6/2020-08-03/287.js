@@ -1,0 +1,1 @@
+Array . prototype . slice . call ( async x => '' , function * ( ) { } , - 1 ) ;

@@ -1,0 +1,1 @@
+var x = Array . of ( ) ; var x = ( Symbol . matchAll ) in class x extends x ( ) [ '' ] { ; } ;

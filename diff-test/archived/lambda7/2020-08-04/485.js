@@ -1,0 +1,1 @@
+var x = async function ( ) { ; for await ( var x of 42n ) var x ; } ( ) . x ;

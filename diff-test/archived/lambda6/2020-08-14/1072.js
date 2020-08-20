@@ -1,0 +1,1 @@
+var x = Number . isSafeInteger ( [ ] == class extends x `` { } ) ;

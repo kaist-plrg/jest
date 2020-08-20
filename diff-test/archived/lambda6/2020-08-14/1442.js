@@ -1,0 +1,1 @@
+var x = eval ( `${ x += '' }${ [ ] }` ) ; async function x ( ) { } async function * x ( x , ) { }

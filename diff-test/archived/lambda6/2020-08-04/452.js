@@ -1,0 +1,1 @@
+var x = { [ "next" ] : function ( ) { } , [ "return" ] : function ( ) { } } != 0 ;

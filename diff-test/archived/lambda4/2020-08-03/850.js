@@ -1,0 +1,1 @@
+var x = { [ "writable" ] : false , [ "configurable" ] : false } `` ;

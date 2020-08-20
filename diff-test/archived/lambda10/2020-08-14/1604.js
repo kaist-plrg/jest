@@ -1,0 +1,1 @@
+var x = Array . prototype . copyWithin . call ( { [ "length" ] : { [ Symbol . toPrimitive ] : function * ( x ) { } } } , { set x ( x ) { } } , ( - 0 ) ) ;

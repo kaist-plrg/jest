@@ -1,0 +1,1 @@
+Object . assign ( { get x ( ) { } } , { get x ( ) { ; var x = super [ '' , '' ] ; function * x ( x ) { ; } } } ) ;

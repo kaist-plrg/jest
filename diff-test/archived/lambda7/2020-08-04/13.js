@@ -1,0 +1,1 @@
+Object . prototype . propertyIsEnumerable . call ( null , NaN ) ;

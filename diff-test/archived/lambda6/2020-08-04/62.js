@@ -1,0 +1,1 @@
+var x = `${ x %= '' }${ { [ "value" ] : 0 , [ "writable" ] : false , [ "enumerable" ] : false , [ "configurable" ] : false } . iterator }${ '' , Symbol . isConcatSpreadable }` ;

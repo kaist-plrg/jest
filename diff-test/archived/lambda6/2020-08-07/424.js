@@ -1,0 +1,1 @@
+for ( let x in { [ Infinity ] : 'str' } ) throw '' , '' ;

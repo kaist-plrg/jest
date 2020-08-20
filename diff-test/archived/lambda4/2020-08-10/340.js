@@ -1,0 +1,1 @@
+var x = Array . prototype . join . call ( async function * ( ) { } , Symbol . search ) ;

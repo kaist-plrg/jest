@@ -1,0 +1,1 @@
+var x = { [ Symbol . toPrimitive ] : true } + { [ Symbol . toPrimitive ] : true } ;

@@ -1,0 +1,1 @@
+class x { ; } var { '' : { } = class extends x ( ) . x { } } = ( Symbol . species ) ;

@@ -1,0 +1,1 @@
+Object . setPrototypeOf ( 0 , 0 , 0 ) ;

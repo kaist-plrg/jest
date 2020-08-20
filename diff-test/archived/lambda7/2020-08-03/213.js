@@ -1,0 +1,1 @@
+for ( x === x , 0n ; Symbol . species , FREE ; new x ( ... '' ) , BigInt ( 0.1 ) ) ;

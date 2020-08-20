@@ -1,0 +1,1 @@
+var x = String . prototype . indexOf . call ( + NaN , ( Symbol . unscopables ) >>>= '0' ) ;

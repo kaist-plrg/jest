@@ -1,0 +1,1 @@
+String . prototype . normalize . call ( NaN , Symbol . isConcatSpreadable ) ;

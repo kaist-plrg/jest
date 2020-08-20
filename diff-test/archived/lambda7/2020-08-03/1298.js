@@ -1,0 +1,1 @@
+Object . defineProperty ( 0 , 0 ) ;

@@ -1,0 +1,1 @@
+Array . prototype . flatMap . call ( 1 , 0 ) ; class x extends x . x { ; }

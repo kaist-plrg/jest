@@ -1,0 +1,1 @@
+var x = Function . prototype . bind . call ( class x { x ( ) { } } , 42n ) ; var x = class extends x { static x ( ) { } } ; new x ( ) ;

@@ -1,0 +1,1 @@
+var x = RangeError ( { [ "prototype" ] : async function ( ) { } } . split ) ;

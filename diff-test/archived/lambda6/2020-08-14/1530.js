@@ -1,0 +1,1 @@
+var x = Array . prototype . join . call ( new Array ( ) , 0 ) ; switch ( '' ) { case x : ; throw 42 ; default : case x : }

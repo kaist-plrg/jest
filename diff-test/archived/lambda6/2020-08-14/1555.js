@@ -1,0 +1,1 @@
+var x = { [ class extends x `${ '' }${ x }${ '' , '' }` { } . toPrimitive ] : 0n } <= { [ [ , '' ] . toPrimitive ] : x => { } } ;

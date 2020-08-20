@@ -1,0 +1,1 @@
+String . prototype . split . call ( { [ Symbol . toPrimitive ] : function ( ) { } } , { [ Symbol . toPrimitive ] : function ( ) { } } , - 1 ) ;

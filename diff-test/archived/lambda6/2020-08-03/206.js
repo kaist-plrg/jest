@@ -1,0 +1,1 @@
+for ( { [ NaN ] : Symbol . replace } in { [ "value" ] : null , [ "writable" ] : false } ) ;

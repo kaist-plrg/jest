@@ -1,0 +1,1 @@
+var x = new x ( x . x , ... { [ "value" ] : undefined , [ "writable" ] : false , [ "enumerable" ] : false } ) ;

@@ -1,0 +1,1 @@
+for ( { x , } of [ { [ "length" ] : 0 } . search ] ) for ( ; ; ) ;

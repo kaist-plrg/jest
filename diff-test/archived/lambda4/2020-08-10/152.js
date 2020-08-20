@@ -1,0 +1,1 @@
+try { ; } catch { ; for ( var x = '' ; ; '' ) ; } finally { }

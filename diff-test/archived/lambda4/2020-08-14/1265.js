@@ -1,0 +1,1 @@
+var x = Object . getOwnPropertyDescriptor ( void x , async function ( ) { } ) ;

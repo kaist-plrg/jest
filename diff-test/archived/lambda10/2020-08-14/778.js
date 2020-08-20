@@ -1,0 +1,1 @@
+var x = Object . getOwnPropertyNames ( { p : 42 } ) ;

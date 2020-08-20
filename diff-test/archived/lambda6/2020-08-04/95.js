@@ -1,0 +1,1 @@
+Array . prototype . some . call ( 'str' , class { x ( ) { } } ) ;

@@ -1,0 +1,1 @@
+Array . prototype . copyWithin . call ( Symbol . iterator , undefined , 0 , ( Symbol . toPrimitive ) ) ;

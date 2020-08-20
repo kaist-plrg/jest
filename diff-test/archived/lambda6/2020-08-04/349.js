@@ -1,0 +1,1 @@
+Array . prototype . flatMap . call ( '0' , ( ) => x , ( x => { } ) ) ; var x = { * x ( ... { x : x } ) { } } ;

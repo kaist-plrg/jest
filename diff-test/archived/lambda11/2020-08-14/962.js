@@ -1,0 +1,1 @@
+var x = { get x ( ) { ; throw 42 ; } } ; var { ... x } = x ;

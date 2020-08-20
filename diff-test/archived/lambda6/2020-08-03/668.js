@@ -1,0 +1,1 @@
+var x = class { x ( ) { } } ; var x = typeof x ;

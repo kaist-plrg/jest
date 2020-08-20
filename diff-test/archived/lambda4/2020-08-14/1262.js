@@ -1,0 +1,1 @@
+var x = Array . prototype . splice . call ( [ x , , ] , { p : 42 } , x == x ) ;

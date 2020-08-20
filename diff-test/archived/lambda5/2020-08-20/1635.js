@@ -1,0 +1,1 @@
+var x = new x ( x , ... '' ) ; async function * x ( ... [ x ] ) { for ( var { } in '' , '' ) ; for await ( x of '' ) ; } function x ( ... [ ] ) { try { } catch ( x ) { } return class x { ; ; } ; }

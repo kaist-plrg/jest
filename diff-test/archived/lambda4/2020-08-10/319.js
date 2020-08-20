@@ -1,0 +1,1 @@
+var x = String . prototype . indexOf . call ( { [ "valueOf" ] : function * ( x ) { } , [ "toString" ] : '' } , - x , 0 ) ;

@@ -1,0 +1,1 @@
+var x = { [ "value" ] : 0 , [ "writable" ] : false , [ "enumerable" ] : true , [ "configurable" ] : false } - ( Symbol . asyncIterator ) ;

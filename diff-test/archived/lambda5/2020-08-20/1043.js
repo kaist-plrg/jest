@@ -1,0 +1,1 @@
+var x = NaN ; ( { x , ... x . x } = ( Symbol . hasInstance ) ) ;

@@ -1,0 +1,1 @@
+var x = { get x ( ) { for ( [ x , ] in '' ) ; return class x extends x ( ) [ '' , '' ] { ; } ; } } ; var { x , } = x ;

@@ -1,0 +1,1 @@
+var x = async function * x (  ) {  } ; switch ( '' , '' ) { case x :  case x :  }

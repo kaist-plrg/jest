@@ -1,0 +1,1 @@
+var x = eval ( `${ '' }${ ( ) => { ; for ( x ?. x . x in '' ) ; class x extends { get x ( ) { } } { } } }` ) ;

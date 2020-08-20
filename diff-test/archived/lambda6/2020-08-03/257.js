@@ -1,0 +1,1 @@
+switch ( '' , '' ) { default : break ; case ( Symbol . matchAll ) : }

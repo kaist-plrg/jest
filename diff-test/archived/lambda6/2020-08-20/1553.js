@@ -1,0 +1,1 @@
+var x = Promise . all ( { [ Symbol . toPrimitive ] : ( ) => { throw '' ; } } ) ; var x = { [ Symbol . toPrimitive ] : ( ) => { throw '' ; } } in x ;

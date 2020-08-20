@@ -1,0 +1,1 @@
+var x = 42n ** ( BigInt ( 'x' ) ) ;

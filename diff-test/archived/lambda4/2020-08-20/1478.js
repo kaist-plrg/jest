@@ -1,0 +1,1 @@
+var x = function * ( ) { } . prototype . valueOf . call ( ( Symbol . matchAll ) ) ; var x = x *= NaN ;

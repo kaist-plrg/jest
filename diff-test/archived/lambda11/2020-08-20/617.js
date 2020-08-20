@@ -1,0 +1,1 @@
+if ( false >> class extends x ?. ( ) { } ) ;

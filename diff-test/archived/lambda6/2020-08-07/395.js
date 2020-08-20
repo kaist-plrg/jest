@@ -1,0 +1,1 @@
+var x = isNaN ( Symbol . iterator ) ;

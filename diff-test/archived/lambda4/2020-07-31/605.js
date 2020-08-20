@@ -1,0 +1,1 @@
+var x = 'str' ** x ; var { x = FREE } = 'str' ;

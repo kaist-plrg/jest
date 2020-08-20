@@ -1,0 +1,1 @@
+SyntaxError ( ( Symbol . asyncIterator ) ) ;

@@ -1,0 +1,1 @@
+Array . prototype . map . call ( 'str' , class { ; } , { p : 42 } ) ;

@@ -1,0 +1,1 @@
+( Symbol . hasInstance ) ( typeof true ) ;

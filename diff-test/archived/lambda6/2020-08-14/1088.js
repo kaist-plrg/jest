@@ -1,0 +1,1 @@
+var x = 42n ; var x = 0n % x ; switch ( '' ) { case x : default : }

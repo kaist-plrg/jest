@@ -1,0 +1,1 @@
+var x = new Map ( ) ; var x = class extends x { ; } + x ;

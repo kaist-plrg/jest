@@ -1,0 +1,1 @@
+do switch ( '' ) { case x : default : ; case x : } while ( Symbol . match ) ;

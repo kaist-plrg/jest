@@ -1,0 +1,1 @@
+for ( let x in '' , '' ) ; new x ( ) ; while ( '' ) ; switch ( Symbol . species ) { case class x { ; ; } : ; } function x ( ... [ x , ] ) { ; debugger ; for ( x [ '' , '' ] in '' ) ; return BigInt ( 0.1 ) ; }

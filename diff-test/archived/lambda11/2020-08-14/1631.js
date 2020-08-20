@@ -1,0 +1,1 @@
+var x = x | { [ Symbol . toPrimitive ] : function ( x ) { ; x ( ) ; var x = { x ( x ) { } } ; return 42 ; switch ( '' , '' ) { case x : ; debugger ; case x : ; var x = class extends x { ; ; } ; } } } ;

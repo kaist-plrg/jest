@@ -1,0 +1,1 @@
+var x = ( x => { ; switch ( '' ) { case x : default : case x : } x ( ) ; for ( let x of '' ) ; } ) ( ( Symbol . hasInstance ) ) ;

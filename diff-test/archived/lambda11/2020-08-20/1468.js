@@ -1,0 +1,1 @@
+var x = Array . prototype . concat . call ( + class extends x ?. [ '' , '' ] { } , [ 42 , 'str' , true ] ) ;

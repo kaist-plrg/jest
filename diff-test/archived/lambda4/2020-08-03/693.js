@@ -1,0 +1,1 @@
+var x = { [ "value" ] : undefined , [ "enumerable" ] : true , [ "configurable" ] : true } instanceof class x { x ( ) { } } ;

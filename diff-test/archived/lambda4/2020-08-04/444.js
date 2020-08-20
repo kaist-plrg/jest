@@ -1,0 +1,1 @@
+String . prototype . lastIndexOf . call ( null , 1 ) ;

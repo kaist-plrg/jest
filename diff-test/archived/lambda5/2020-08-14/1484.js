@@ -1,0 +1,1 @@
+var x = [ 1 , { [ "done" ] : ( ) => { throw '' ; } } , 3 ] ; ( [ x , ( { [ "done" ] : ( ) => { throw '' ; } } . split ) ] = x ) ;

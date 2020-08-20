@@ -1,0 +1,1 @@
+var x = Map . prototype . set . call ( new Map ( ) , 0n , Symbol . match ) ; var [ x , , ... x ] = ( Symbol . toStringTag ) ;

@@ -1,0 +1,1 @@
+Object . entries ( { async x ( ... [ , ] ) { } } ) ;

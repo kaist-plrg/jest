@@ -1,0 +1,1 @@
+var x = Array . prototype . concat . call ( [ , ] ) ; var x = typeof x ;

@@ -1,0 +1,1 @@
+Array . from ( Symbol . search , class { ; } , 0 ) ;

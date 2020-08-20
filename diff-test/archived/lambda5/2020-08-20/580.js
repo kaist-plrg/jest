@@ -1,0 +1,1 @@
+while ( ( Symbol . species ) ) throw '' ;

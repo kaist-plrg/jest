@@ -1,0 +1,1 @@
+var x = String . prototype . slice . call ( new function ( ) { } ( 1 ) , this , - 1 ) ;

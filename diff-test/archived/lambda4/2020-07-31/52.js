@@ -1,0 +1,1 @@
+var x = class  extends x ( ) `` { ; } `` ; function x ( x  ) {  } function * x ( ... [ , ... x ] ) {  } var [   ] = null ;

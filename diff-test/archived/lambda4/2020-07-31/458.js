@@ -1,0 +1,1 @@
+Array . prototype . splice . call ( 42n , 0 , ( Symbol . search ) , ( ) => {  } ) ;

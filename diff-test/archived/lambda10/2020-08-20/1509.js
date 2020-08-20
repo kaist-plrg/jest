@@ -1,0 +1,1 @@
+var x = String . prototype . substring . call ( new String ( 0 ) , true , { async * x ( ... { x = '' } ) { } } ) ;

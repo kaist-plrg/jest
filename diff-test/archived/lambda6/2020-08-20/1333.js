@@ -1,0 +1,1 @@
+var x = Array . prototype . splice . call ( new Array ( ) , null , Symbol . split ) ;

@@ -1,0 +1,1 @@
+Object . assign ( ( Symbol . toStringTag ) , ( ( ) => { } ) ) ;

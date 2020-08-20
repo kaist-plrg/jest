@@ -1,0 +1,1 @@
+Number . prototype . toString . call ( { * x ( ... { } ) {  } } , 0 , 1 ) ;

@@ -1,0 +1,1 @@
+function x ( ) { ; for ( var { } in ( Symbol . species ) , class extends x `` { ; } ) continue ; var x = class extends { [ "value" ] : function ( ) { } } `${ { [ "value" ] : function ( ) { } } }` { ; ; } ; async function x ( ... [ x ] ) { ; for ( x . x in '' ) ; } if ( { [ "value" ] : function ( ) { } } ) ; else ; } new x ( ) ;

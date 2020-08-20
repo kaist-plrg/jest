@@ -1,0 +1,1 @@
+var x = x `${ '' }${ class x extends x { } }${ { [ "value" ] : 0 , [ "enumerable" ] : true , [ "configurable" ] : false } , { get x ( ) { } } }` ;

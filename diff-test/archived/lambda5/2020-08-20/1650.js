@@ -1,0 +1,1 @@
+var x = Array ( { [ "valueOf" ] : function * ( ) { } , [ "toString" ] : null } , { [ "valueOf" ] : function * ( ) { } , [ "toString" ] : null } ) ; var x = x <<= { [ "valueOf" ] : function * ( ) { } , [ "toString" ] : null } ;

@@ -1,0 +1,1 @@
+Array . prototype . splice . call ( class extends x `${ '' , '' }${ x }${ '' }` { } , 0 , 0n , Symbol . replace ) ;

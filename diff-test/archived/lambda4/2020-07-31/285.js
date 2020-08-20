@@ -1,0 +1,1 @@
+Function . prototype . bind . call ( async x => x , NaN ) ;

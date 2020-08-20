@@ -1,0 +1,1 @@
+for ( { x , x } in [ , 42n ] ) try { } catch ( x ) { }

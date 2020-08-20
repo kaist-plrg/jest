@@ -1,0 +1,1 @@
+switch ( x |= '' ) { default : case 42n : }

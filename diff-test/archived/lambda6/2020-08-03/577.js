@@ -1,0 +1,1 @@
+String . prototype . split . call ( Symbol . unscopables , ( ) => Symbol . iterator , 0 ) ;

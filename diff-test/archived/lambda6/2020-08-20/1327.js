@@ -1,0 +1,1 @@
+class x { } x >= { [ "valueOf" ] : null , [ "toString" ] : async function ( ) { } } ;

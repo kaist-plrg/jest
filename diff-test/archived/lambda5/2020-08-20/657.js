@@ -1,0 +1,1 @@
+var x = ( class { static x ( ) { } } ) < 42n ;

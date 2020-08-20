@@ -1,0 +1,1 @@
+var x = Array . prototype . reduceRight . call ( { [ "length" ] : { [ Symbol . toPrimitive ] : 0 } } , class x { x ( ) { } } ) ;

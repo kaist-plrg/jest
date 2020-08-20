@@ -1,0 +1,1 @@
+for ( ; x [ '' , '' ] , Symbol . species ; ) for ( [ x , ... x ] in '' ) ;

@@ -1,0 +1,1 @@
+var x = [ ... { [ "done" ] : async * function ( x ) { } } ] ;

@@ -1,0 +1,1 @@
+Object . entries ( 0 , 0 ) ;

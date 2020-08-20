@@ -1,0 +1,1 @@
+var x = Array . prototype . copyWithin . call ( - 1n , x | x , ( Symbol . iterator ) , x && `` ) ;

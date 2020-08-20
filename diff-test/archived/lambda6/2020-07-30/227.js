@@ -1,0 +1,1 @@
+String . prototype . trimEnd . call ( ( Symbol . asyncIterator ) ) ;

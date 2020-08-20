@@ -1,0 +1,1 @@
+for ( { [ "value" ] : [ ] } in [ 42 , 'str' , true ] ) ;

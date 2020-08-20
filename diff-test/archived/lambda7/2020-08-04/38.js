@@ -1,0 +1,1 @@
+switch ( '' , '' ) { case '' , '' : ; } var [ ] = { [ Symbol . asyncIterator ] : '0' , [ Symbol . iterator ] : async function * ( ) { } } ;

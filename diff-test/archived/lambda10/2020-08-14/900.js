@@ -1,0 +1,1 @@
+switch ( - Infinity ) { case new x ( ... '' ) : case x : }

@@ -1,0 +1,1 @@
+for ( let x = Symbol . match ; ; x + x ) for ( ; '' ; ) ;

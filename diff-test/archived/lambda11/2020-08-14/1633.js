@@ -1,0 +1,1 @@
+var x = Promise . allSettled ( { [ Symbol . asyncIterator ] : ( ) => { throw '' ; var x = class { static x ( ) { } } ; } , [ Symbol . iterator ] : function * ( ) { ; var x = new . target ; x ( ) ; } } ) ;

@@ -1,0 +1,1 @@
+var x = x `` ; async function * x ( ... { x = class extends x ?. [ '' ] { } } ) { ; var x , x ; }

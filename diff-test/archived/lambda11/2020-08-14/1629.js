@@ -1,0 +1,1 @@
+var x = String . prototype . slice . call ( new String ( { [ "valueOf" ] : ( ) => { throw '' ; } , [ "toString" ] : '0' } ) , 0 , { [ "valueOf" ] : ( ) => { throw '' ; } , [ "toString" ] : '0' } ) ;

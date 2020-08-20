@@ -1,0 +1,1 @@
+var x = new Set ( class extends x ?. x ( ) { } ) ;

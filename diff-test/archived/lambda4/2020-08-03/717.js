@@ -1,0 +1,1 @@
+var x = ( Symbol . unscopables ) instanceof class x { x ( ) { } } ;

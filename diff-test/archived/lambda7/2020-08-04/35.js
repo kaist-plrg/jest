@@ -1,0 +1,1 @@
+Promise . prototype . finally . call ( x => '' , class x { } ) ;

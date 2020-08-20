@@ -1,0 +1,1 @@
+function x ( ) { ; var x = BigInt ( 0.1 ) ; for ( let x in '' , '' ) ; async function x ( ... [ x ] ) { } } new x ( ) ;

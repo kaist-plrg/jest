@@ -1,0 +1,1 @@
+( x => { ; x ( ) ; function * x ( ... [ x ] ) { ; yield 0 ; } var x = { async * x ( ... [ x ] ) { } } ; } ) ( 0n ) ;

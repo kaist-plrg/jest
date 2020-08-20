@@ -1,0 +1,1 @@
+String . prototype . endsWith . call ( { async x ( x  , ) {  } } , { [ '' ] : { x ( ... [ , ... x ] ) {  } } } ) ;

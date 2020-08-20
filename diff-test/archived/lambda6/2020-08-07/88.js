@@ -1,0 +1,1 @@
+if ( ( [ 42 , 'str' , true ] ) ) ; else for ( var x = '' ; ; '' ) ;

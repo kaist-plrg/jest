@@ -1,0 +1,1 @@
+var x = Array . prototype . copyWithin . call ( { [ "length" ] : { [ Symbol . toPrimitive ] : 0 } } , { [ Symbol . toPrimitive ] : 0 } , { [ Symbol . toPrimitive ] : 0 } ) ;

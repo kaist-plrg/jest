@@ -1,0 +1,1 @@
+Promise . prototype . finally . call ( { [ "value" ] : null , [ "writable" ] : false , [ "configurable" ] : true } ) ;

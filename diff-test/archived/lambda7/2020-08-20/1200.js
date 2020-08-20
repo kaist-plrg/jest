@@ -1,0 +1,1 @@
+var x = ( x => { ; x ( ) ; for ( var x of '' ) ; return x /= '' ; } ) `` ;

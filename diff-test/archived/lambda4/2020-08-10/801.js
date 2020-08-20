@@ -1,0 +1,1 @@
+class x extends class { } { ; } [ 42 , 'str' , true ] instanceof async function ( ) { } ;

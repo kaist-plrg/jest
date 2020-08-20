@@ -1,0 +1,1 @@
+Array . prototype . lastIndexOf . call ( x => { } , true . toStringTag , - 1 ) ;

@@ -1,0 +1,1 @@
+do for ( let x ; '' , '' ; '' , '' ) ; while ( BigInt ( 'x' ) ) ;

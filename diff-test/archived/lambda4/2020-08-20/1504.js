@@ -1,0 +1,1 @@
+var x = Array . prototype . flatMap . call ( `${ '' , '' }${ x }${ '' }` , class x { static x ( ) { } } ) ;

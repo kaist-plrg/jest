@@ -1,0 +1,1 @@
+var x = URIError ( x && x ) ;

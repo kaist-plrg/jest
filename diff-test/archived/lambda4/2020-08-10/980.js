@@ -1,0 +1,1 @@
+try { ; x ( ) ; } catch { ; throw 0 ; } finally { ; }

@@ -1,0 +1,1 @@
+Array . prototype . slice . call ( 'str' , class x { static x ( ) { } } ) ;

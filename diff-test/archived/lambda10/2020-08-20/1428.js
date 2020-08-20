@@ -1,0 +1,1 @@
+for ( var x = [ , '' ] ; x >= x ; x ** x ) var [ x , ] = x ; switch ( '' ) { case x : default : }

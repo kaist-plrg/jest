@@ -1,0 +1,1 @@
+while ( - 1n ) for ( let { } = x ; '' ; ) ;

@@ -1,0 +1,1 @@
+var x = String . prototype . repeat . call ( { p : 42 } , { [ "valueOf" ] : class extends x `${ '' }${ x }${ '' }` { ; } , [ [ x , '' ] ] : ( ) => { throw class x { ; ; } ; } } ) ;

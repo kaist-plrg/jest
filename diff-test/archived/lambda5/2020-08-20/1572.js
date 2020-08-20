@@ -1,0 +1,1 @@
+for ( { x = { [ "done" ] : function ( ) { } } } of [ { [ "done" ] : function ( ) { } } , 'str' , { [ "done" ] : function ( ) { } } ] ) ;

@@ -1,0 +1,1 @@
+var x = [ { async x ( ... { x } ) { } } , class extends x ?. x ?. x { ; } , x && x ] ; Infinity ;

@@ -1,0 +1,1 @@
+String . prototype . repeat . call ( ( Symbol . split ) , 0 ) ;

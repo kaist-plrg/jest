@@ -1,0 +1,1 @@
+var x = { [ "valueOf" ] : function * ( ) { } , [ "toString" ] : '' } ; x >= x ;

@@ -1,0 +1,1 @@
+for ( { } in 'str' ) var [ ... x ] = x ;

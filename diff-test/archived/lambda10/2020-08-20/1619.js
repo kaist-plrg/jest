@@ -1,0 +1,1 @@
+var x = Object . keys ( { [ Symbol . asyncIterator ] : true , [ Symbol . iterator ] : true } ) ; var [ , x ] = { [ Symbol . asyncIterator ] : true , [ Symbol . iterator ] : true } ;

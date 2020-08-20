@@ -1,0 +1,1 @@
+var x = 'str' != ( Number ( Symbol . iterator ) ) ;

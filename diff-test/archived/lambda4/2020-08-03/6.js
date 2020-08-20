@@ -1,0 +1,1 @@
+function * x ( ... { x } ) { } while ( x `` ) for ( var x = '' ; '' ; '' ) ; try { } catch ( { } ) { } for ( '' ; ; '' ) ;

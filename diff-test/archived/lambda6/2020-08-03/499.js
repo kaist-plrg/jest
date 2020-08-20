@@ -1,0 +1,1 @@
+Array . prototype . flatMap . call ( null , 1 , { [ "value" ] : 'str' , [ "writable" ] : false , [ "enumerable" ] : false , [ "configurable" ] : false } ) ;

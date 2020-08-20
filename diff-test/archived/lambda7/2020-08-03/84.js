@@ -1,0 +1,1 @@
+var x = 42n ; var [ x ] = x ^ ( Symbol . match ) ; function * x ( ... { ... x } ) { }

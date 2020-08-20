@@ -1,0 +1,1 @@
+( x => { ; switch ( '' ) { case x : default : ; } switch ( '' ) { case x : default : case x : } return Number ( Symbol . iterator ) ; } ) ( ) ;

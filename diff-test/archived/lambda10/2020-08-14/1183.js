@@ -1,0 +1,1 @@
+var x = ( x => { ; x ( 42 ) ; return 42 ; try { } catch { } } ) ( 0 ) ;

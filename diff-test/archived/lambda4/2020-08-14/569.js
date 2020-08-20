@@ -1,0 +1,1 @@
+let { } = Number ( Symbol . iterator ) ;

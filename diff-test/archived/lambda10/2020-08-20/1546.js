@@ -1,0 +1,1 @@
+var x = Array . prototype . reduceRight . call ( [ x >> x , Symbol . replace , { } ] , x => x `${ '' }${ x }${ '' , '' }` ) ;

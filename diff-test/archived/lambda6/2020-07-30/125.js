@@ -1,0 +1,1 @@
+var x = 0n ; function * x ( ... { ... x } ) { ; for ( let x  ; '' , '' ; '' , '' ) ; } var x = ++ x ;

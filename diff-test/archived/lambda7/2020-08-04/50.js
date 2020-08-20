@@ -1,0 +1,1 @@
+var x = 0n ; var [ , ... x ] = x & x ; for ( var x ; ; '' , '' ) ; try { } catch { } finally { } function * x ( ... { ... x } ) { for ( ; ; '' , '' ) ; for ( x ?. x . x in '' ) ; return x == x ; }

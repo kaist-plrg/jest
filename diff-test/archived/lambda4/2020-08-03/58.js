@@ -1,0 +1,1 @@
+var x = { [ "writable" ] : false , [ "configurable" ] : true } instanceof { [ ( Symbol . hasInstance ) ] : { } , [ ( Symbol . toPrimitive ) ] : { async x ( ... { x = '' } ) { } } , [ "configurable" ] : Infinity } ;

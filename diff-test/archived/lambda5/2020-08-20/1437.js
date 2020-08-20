@@ -1,0 +1,1 @@
+var x = eval ( x + ( x => { ; var x = { set x ( x ) { } } ; } ) ) ; function x ( ... { x , } ) { ; }

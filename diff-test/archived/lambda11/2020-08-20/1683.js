@@ -1,0 +1,1 @@
+var x = class extends x `${ '' }` { } ( ) ( ) ; switch ( x != x ) { case x : default : for ( let x ; '' , '' ; '' , '' ) ; case x : } throw Symbol . asyncIterator ; function x ( ... [ x , ] ) { switch ( '' ) { case x : default : ; } x ( NaN ) ; return -- x ; for ( let x = x ; ; ) { ; } }

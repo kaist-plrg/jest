@@ -1,0 +1,1 @@
+var x = new String ( { [ "valueOf" ] : true , [ "toString" ] : false } ) ;

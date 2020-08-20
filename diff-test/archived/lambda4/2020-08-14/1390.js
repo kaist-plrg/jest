@@ -1,0 +1,1 @@
+var x = String . prototype . split . call ( { } , void ( Symbol . iterator ) , x ?? x ?? x ) ;

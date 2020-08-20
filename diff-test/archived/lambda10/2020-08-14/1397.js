@@ -1,0 +1,1 @@
+var x = Function . prototype . bind . call ( x => { } , null ) ; var x = x instanceof x ;

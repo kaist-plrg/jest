@@ -1,0 +1,1 @@
+var x = String . prototype . includes . call ( new String ( { [ Symbol . match ] : true } ) , { [ Symbol . match ] : true } , 0 ) ;

@@ -1,0 +1,1 @@
+var x = [ Symbol . replace , 2 , x %= '' ] ; ( ( Symbol . replace ) = x => x ) ;

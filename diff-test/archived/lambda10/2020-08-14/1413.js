@@ -1,0 +1,1 @@
+var x = String . prototype . substring . call ( new String ( ( - 1n ) ) , 42n , Infinity ) ;

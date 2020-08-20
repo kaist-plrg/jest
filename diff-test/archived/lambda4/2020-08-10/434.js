@@ -1,0 +1,1 @@
+var x = String . prototype . endsWith . call ( new String ( class { ; ; } ) , '0' ) ;

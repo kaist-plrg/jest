@@ -1,0 +1,1 @@
+for ( NaN in x ^ x ) for ( [ ] in '' ) ;

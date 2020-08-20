@@ -1,0 +1,1 @@
+Array . prototype . fill . call ( null , ( Symbol . split ) , Symbol . split ) ;

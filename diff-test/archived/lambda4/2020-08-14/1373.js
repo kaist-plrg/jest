@@ -1,0 +1,1 @@
+var x = isNaN ( { [ "valueOf" ] : class extends x ( ) { ; } , [ x ?. x ] : undefined } ) ;

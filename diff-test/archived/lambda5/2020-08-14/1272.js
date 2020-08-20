@@ -1,0 +1,1 @@
+var x = Object . defineProperties ( [ ] , ( { async * x ( ... [ , ] ) { } } ) ) ;

@@ -1,0 +1,1 @@
+let x ; switch ( '' , '' ) { case x : case x : }

@@ -1,0 +1,1 @@
+var x = this ?. x ( ) ; async function * x ( x ) { }

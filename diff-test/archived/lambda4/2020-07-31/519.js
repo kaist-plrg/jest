@@ -1,0 +1,1 @@
+for ( let x  ; 0n , Symbol . matchAll ; x && x , { [ "set" ] : function  ( x  ) {  } , [ "enumerable" ] : true , [ "configurable" ] : true } ( 'x' ) ) '' , '' ;

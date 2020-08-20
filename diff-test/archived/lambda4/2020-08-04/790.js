@@ -1,0 +1,1 @@
+Array . prototype . splice . call ( { [ "length" ] : true } , 0 , 0 , { [ "length" ] : true } ) ;

@@ -1,0 +1,1 @@
+Object . prototype . isPrototypeOf . call ( undefined , class x { } ) ;

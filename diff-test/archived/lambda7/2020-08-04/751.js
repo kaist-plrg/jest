@@ -1,0 +1,1 @@
+WeakMap . prototype . get . call ( ( ( ) => { } ) ) ;

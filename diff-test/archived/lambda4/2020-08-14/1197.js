@@ -1,0 +1,1 @@
+var x = new ( Symbol . match ) ( ... new x ) ; function x ( ... [ ] ) { }

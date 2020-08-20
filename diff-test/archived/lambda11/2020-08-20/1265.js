@@ -1,0 +1,1 @@
+var x = String . prototype . substring . call ( Infinity , 0 , x ?. x . x ) ;

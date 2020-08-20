@@ -1,0 +1,1 @@
+var x = Array . prototype . every . call ( [ - 1n , 'str' , 'str' ] , async x => class extends x `${ '' }${ x }${ '' }` { } ) ;

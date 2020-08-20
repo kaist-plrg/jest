@@ -1,0 +1,1 @@
+var x = Object . defineProperty ( ( x => { } ) , - NaN , { [ [ 42 , 'str' , true ] ] : Symbol . unscopables , [ "set" ] : x => { } , [ { x ( ) { } } ] : [ x , , '' ] , [ - Infinity ] : x ?. x [ '' ] , [ x == x ] : false , [ "enumerable" ] : '0' } ) ;

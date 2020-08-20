@@ -1,0 +1,1 @@
+var x = 42n | { [ Symbol . toPrimitive ] : function ( x ) { var { x : x } = x ; ( Symbol . toStringTag ) ( ) ; switch ( '' ) { } return ( Symbol . toPrimitive ) ; } } ;

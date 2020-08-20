@@ -1,0 +1,1 @@
+var x = async function x ( ) { ; for await ( let x of '' ) ; } ; x ( 0 ) ;

@@ -1,0 +1,1 @@
+Promise . all ( { [ Symbol . asyncIterator ] : true , [ Symbol . iterator ] : async function ( x ) { } } ) ;

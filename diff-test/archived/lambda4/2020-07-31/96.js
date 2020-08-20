@@ -1,0 +1,1 @@
+for ( { x , x } in 'str' ) if ( { async * x ( ... [  x  ,   ] ) {  } } ) ; else ; var x = x += '' ;

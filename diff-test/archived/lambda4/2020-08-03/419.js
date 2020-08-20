@@ -1,0 +1,1 @@
+for ( { [ - Infinity ] : [ ] } in [ , x >>> x ] ) var x = '' ;

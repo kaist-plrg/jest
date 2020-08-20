@@ -1,0 +1,1 @@
+var x = async function ( ) { ; class x extends new . target { } } ( ) . x ;

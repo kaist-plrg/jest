@@ -1,0 +1,1 @@
+var x = String . prototype . lastIndexOf . call ( new String ( x == x ) , 0 ) ;

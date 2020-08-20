@@ -1,0 +1,1 @@
+do switch ( '' ) { case '' , '' : ; } while ( x `${ '' , '' }` ) ;

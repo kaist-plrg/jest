@@ -1,0 +1,1 @@
+var x = Array . prototype . slice . call ( new Array ( ) , { set x ( x ) { } } , x || x ) ;

@@ -1,0 +1,1 @@
+var x = String . prototype . matchAll . call ( x % x , { [ Symbol . matchAll ] : 42n } ) ;

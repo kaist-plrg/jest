@@ -1,0 +1,1 @@
+var x = Array . prototype . reduce . call ( [ x , '' ] , ( ) => { ; for ( x of '' ) ; for ( var x in '' ) ; x ( ) ; } ) ;

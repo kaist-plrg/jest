@@ -1,0 +1,1 @@
+async function x ( x  , ) {  } function x ( ... { 42 : { }  } ) {  } x ( new Infinity ( ... - 1 ) ) ;

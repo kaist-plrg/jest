@@ -1,0 +1,1 @@
+if ( class x extends x `${ '' }${ '' }` { } ) for ( x in '' , '' ) ; else ;

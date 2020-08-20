@@ -1,0 +1,1 @@
+for ( var x in { [ - 1 ] : null } ) for ( var x = '' ; '' ; '' ) ;

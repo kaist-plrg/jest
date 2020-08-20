@@ -1,0 +1,1 @@
+Array . prototype . reduce . call ( { async x ( ... [ x ] ) { } } , async x => x , { [ "get" ] : function ( x ) { } , [ "set" ] : function ( x0 , x1 ) { } , [ "configurable" ] : true } ) ;

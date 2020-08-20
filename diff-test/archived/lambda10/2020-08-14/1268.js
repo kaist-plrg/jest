@@ -1,0 +1,1 @@
+var x = ( - ( - { [ Symbol . toPrimitive ] : function ( ) { } } ) ) != 42n ;

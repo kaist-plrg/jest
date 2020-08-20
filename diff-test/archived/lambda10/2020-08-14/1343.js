@@ -1,0 +1,1 @@
+var x = { x ( ) { } } . defineProperty ( { } , Infinity , x << [ x , , ... x ] ) ;

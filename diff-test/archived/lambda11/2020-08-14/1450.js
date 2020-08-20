@@ -1,0 +1,1 @@
+var x = Array . prototype . reverse . call ( typeof class extends x `${ '' , '' }${ x }${ '' }` { } ) ;

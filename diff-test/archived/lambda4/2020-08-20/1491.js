@@ -1,0 +1,1 @@
+var x = Array . prototype . flat . call ( [ 42 , [ '' ] , `${ '' }${ '' }` ] ) ; var [ x , ... x ] = x ;

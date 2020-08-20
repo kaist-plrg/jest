@@ -1,0 +1,1 @@
+switch ( '' ) { case '' : ; switch ( '' ) { case '' :  } }

@@ -1,0 +1,1 @@
+delete class extends x ( ) { } [ null ] ;

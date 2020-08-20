@@ -1,0 +1,1 @@
+var x = ( x => { ; x ( 0 ) ; switch ( '' ) { case x : ; default : ; case x : ; var x = x `${ '' }${ '' }` ; } ( Symbol . hasInstance ) ( ) ; } ) `` ;

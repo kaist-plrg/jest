@@ -1,0 +1,1 @@
+var x = new x ( Number ( Symbol . iterator ) , ... 1 ) ;

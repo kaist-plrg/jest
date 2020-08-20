@@ -1,0 +1,1 @@
+for ( { [ x %= '' ] : ( Symbol . replace ) } in [ , { [ "value" ] : null , [ "enumerable" ] : false , [ "configurable" ] : false } ] ) { ; }

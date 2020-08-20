@@ -1,0 +1,1 @@
+var x = BigInt ( { [ Symbol . toPrimitive ] : async function ( x ) { } } ) ;

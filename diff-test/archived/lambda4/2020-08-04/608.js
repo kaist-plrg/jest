@@ -1,0 +1,1 @@
+var x = x instanceof { [ "prototype" ] : async * function ( ) { } } ; function x ( ... [ , , ... x ] ) { }

@@ -1,0 +1,1 @@
+class x { } ( BigInt ( 'x' ) ) instanceof x ;

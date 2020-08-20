@@ -1,0 +1,1 @@
+async function * x ( ... { [ '' ] : { } = x } ) { } switch ( '' ) { case x : default : } x & x ; async function x ( ) { } x ( [ ] ) ; function x ( ... [ , x ] ) { switch ( '' ) { case x : default : case x : } return '' ( 'x' ) ; }

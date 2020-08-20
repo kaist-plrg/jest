@@ -1,0 +1,1 @@
+for ( ( Symbol . iterator ) in x ?? x ) var { x } = x ;

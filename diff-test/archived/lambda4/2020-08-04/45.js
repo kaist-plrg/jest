@@ -1,0 +1,1 @@
+Object . prototype . toLocaleString . call ( undefined , 0 , Symbol . species ) ;

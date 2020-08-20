@@ -1,0 +1,1 @@
+function x ( ) { for ( var x = '' ; '' ; ) ; var x = class extends x `${ x `${ '' }${ x }${ '' }` }` { ; ; } ; try { } catch { } } new x ( ) ;

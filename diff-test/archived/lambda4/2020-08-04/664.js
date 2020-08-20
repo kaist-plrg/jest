@@ -1,0 +1,1 @@
+Object . isFrozen ( class { static x ( ) { } } ) ;

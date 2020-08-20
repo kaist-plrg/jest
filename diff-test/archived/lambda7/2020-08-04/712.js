@@ -1,0 +1,1 @@
+Object . defineProperties ( { * x ( ... { x : { } } ) { } } , 0 ) ;

@@ -1,0 +1,1 @@
+for ( ( Number ( Symbol . iterator ) ) in ++ x ) switch ( '' ) { case x : case x : }

@@ -1,0 +1,1 @@
+var x = Array . prototype . find . call ( { [ "length" ] : true } , class x { static x ( ) { } } ) ;

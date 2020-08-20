@@ -1,0 +1,1 @@
+for ( var x of class  extends x { static x (  ) {  } } ) switch ( '' ) { case x :  default : ;  }

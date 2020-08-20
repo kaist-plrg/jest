@@ -1,0 +1,1 @@
+var x = Object . isExtensible ( class x { x ( ) { } } ) ; var x = typeof x ;

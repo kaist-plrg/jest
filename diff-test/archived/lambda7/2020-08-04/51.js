@@ -1,0 +1,1 @@
+var x = 0n ; var [ ] = { [ x + x ] : '0' , [ 42n . iterator ] : - 1 } ;

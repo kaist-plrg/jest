@@ -1,0 +1,1 @@
+var x = NaN <<= { [ "valueOf" ] : false , [ "toString" ] : async function ( x ) { } } ;

@@ -1,0 +1,1 @@
+if ( class extends x ?. ( ) { } ) try { } catch ( { } ) { } else ;

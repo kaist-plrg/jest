@@ -1,0 +1,1 @@
+var x = ( Symbol . isConcatSpreadable ) . prototype . match . call ( [ '' ] , 0 ) ;

@@ -1,0 +1,1 @@
+function x ( ) { } switch ( '' , '' ) { case x : case x : } new x ( ) ;

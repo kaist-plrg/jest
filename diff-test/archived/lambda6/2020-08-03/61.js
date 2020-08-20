@@ -1,0 +1,1 @@
+Function . prototype . apply . call ( class x { x ( ) { } } , { * x ( ... [ , x ] ) { } } . split , [ 42 , 'str' , true ] ) ;

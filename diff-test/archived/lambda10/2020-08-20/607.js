@@ -1,0 +1,1 @@
+try { ; new x ( ) ; } catch { } finally { }

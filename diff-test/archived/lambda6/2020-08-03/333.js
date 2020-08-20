@@ -1,0 +1,1 @@
+var x = 0n << { [ "next" ] : function ( x ) { } , [ "return" ] : function ( x ) { } } ;

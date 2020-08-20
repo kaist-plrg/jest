@@ -1,0 +1,1 @@
+Object . getOwnPropertyDescriptors ( class x { } ) ;

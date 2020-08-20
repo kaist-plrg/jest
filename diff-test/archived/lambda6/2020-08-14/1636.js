@@ -1,0 +1,1 @@
+var x = String . prototype . split . call ( new String ( x < { [ "prototype" ] : function ( ) { } } ) , { [ "prototype" ] : function ( ) { } } , { [ "prototype" ] : function ( ) { } } ?. [ '' , '' ] ) ;

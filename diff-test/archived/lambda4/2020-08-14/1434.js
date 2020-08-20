@@ -1,0 +1,1 @@
+function x ( x0 , x1 ) { for ( let x in '' ) ; var x = x ( ) ( ) ; return BigInt ( 'x' ) ; } ; new x ( ) ;

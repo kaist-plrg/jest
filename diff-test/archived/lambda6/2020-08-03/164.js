@@ -1,0 +1,1 @@
+for ( NaN of { [ Symbol . iterator ] : function * ( ) { ; yield * '' ; var x = new . target ; } } ) ;

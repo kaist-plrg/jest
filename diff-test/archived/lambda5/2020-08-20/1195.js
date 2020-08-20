@@ -1,0 +1,1 @@
+var x = 42n ; ( [ , x = class extends x { static x ( ) { } } ] = '' ) ;

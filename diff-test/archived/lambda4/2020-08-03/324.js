@@ -1,0 +1,1 @@
+function x ( x0 , x1 ) { } ; x ( ) ; var x = { [ "get" ] : function ( x ) { } , [ "set" ] : function ( x ) { } , [ "enumerable" ] : true , [ "configurable" ] : false } && class x extends x `${ '' , '' }` { } ;

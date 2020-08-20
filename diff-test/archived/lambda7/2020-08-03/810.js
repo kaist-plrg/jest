@@ -1,0 +1,1 @@
+String . prototype . substring . call ( Symbol . toPrimitive , 0 ) ;

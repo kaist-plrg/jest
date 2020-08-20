@@ -1,0 +1,1 @@
+for ( ( - ( Symbol . asyncIterator ) ) . x in { x : NaN } ) continue ;

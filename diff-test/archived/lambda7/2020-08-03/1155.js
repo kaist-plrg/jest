@@ -1,0 +1,1 @@
+Array . prototype . push . call ( 1 ) ;

@@ -1,0 +1,1 @@
+String . prototype . repeat . call ( { [ "value" ] : 'str' , [ "enumerable" ] : true } . toStringTag , [ , ... '' ] ) ;

@@ -1,0 +1,1 @@
+var x = NaN . allSettled ( { [ null . asyncIterator ] : { get x ( ) { } } , [ Symbol . iterator ] : Symbol . isConcatSpreadable } ) ;

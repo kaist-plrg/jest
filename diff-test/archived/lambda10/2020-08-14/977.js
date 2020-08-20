@@ -1,0 +1,1 @@
+for ( undefined of { x ( x , ) { } } ) for ( var x , x ; ; ) ;

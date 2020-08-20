@@ -1,0 +1,1 @@
+var x = [ Symbol . search , Symbol . asyncIterator ] ; var [ , ... x ] = x in x ;

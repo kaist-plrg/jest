@@ -1,0 +1,1 @@
+var x = { [ "prototype" ] : '0' } . prototype . includes . call ( new Array ( ) , 0 ) ;

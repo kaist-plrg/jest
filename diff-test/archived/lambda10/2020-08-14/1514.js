@@ -1,0 +1,1 @@
+var x = Array . prototype . reduce . call ( { [ "length" ] : { [ Symbol . toPrimitive ] : '0' } } , ( ) => { } ) ;

@@ -1,0 +1,1 @@
+class x { } ( Symbol . asyncIterator ) + x ;

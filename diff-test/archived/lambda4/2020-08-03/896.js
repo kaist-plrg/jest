@@ -1,0 +1,1 @@
+false . prototype . reduceRight . call ( true ) ;

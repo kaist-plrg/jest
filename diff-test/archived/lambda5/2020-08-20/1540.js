@@ -1,0 +1,1 @@
+try { for ( x of '' ) ; function x ( ... { x , } ) { } } catch ( x ) { for ( var { } = x ; ; ) ; var x = 42n ; var x = 'str' ; }

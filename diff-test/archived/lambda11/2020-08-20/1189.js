@@ -1,0 +1,1 @@
+var x = new Map ( [ { [ "done" ] : '' } ] ) ; var [ x , , ... x ] = x ;

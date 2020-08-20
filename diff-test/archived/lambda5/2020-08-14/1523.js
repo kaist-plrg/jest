@@ -1,0 +1,1 @@
+for ( [ ] of [ { [ true ] : Symbol . matchAll , [ Symbol . iterator ] : class extends x ( ) [ '' ] { } } , x /= '' , true ] ) for ( var x = { p : 42 } ; '' ; ) ;

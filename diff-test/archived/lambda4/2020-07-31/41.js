@@ -1,0 +1,1 @@
+BigInt . prototype . toString . call ( 0n , Symbol . toPrimitive , { [ "next" ] : function  (  ) {  } , [ "throw" ] : function  ( x  ) {  } } ) ;

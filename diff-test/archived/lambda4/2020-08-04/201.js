@@ -1,0 +1,1 @@
+( async x => { x ; for await ( x of { [ Symbol . asyncIterator ] : async function ( ) { } , [ Symbol . iterator ] : function ( ) { } } ) ; } ) ( { [ Symbol . asyncIterator ] : async function ( ) { } , [ Symbol . iterator ] : function ( ) { } } ) ;

@@ -1,0 +1,1 @@
+for ( x of [ '0' , undefined , true ] ) for ( var x ; '' , '' ; '' , '' ) ;

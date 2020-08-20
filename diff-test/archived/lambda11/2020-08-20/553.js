@@ -1,0 +1,1 @@
+for ( var x of 1 ) var [ ... { } ] = x ;

@@ -1,0 +1,1 @@
+undefined ( typeof 42n ) ;

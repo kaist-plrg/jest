@@ -1,0 +1,1 @@
+var x = String . prototype . indexOf . call ( new String ( { [ "valueOf" ] : ( ) => { throw '' ; } , [ "toString" ] : null } ) , 0 ) ;

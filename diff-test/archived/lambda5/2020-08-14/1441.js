@@ -1,0 +1,1 @@
+async function * x ( ) { var x = yield ; } ; x ( ) ; var x = x && { [ "prototype" ] : async * function ( x ) { } } ;

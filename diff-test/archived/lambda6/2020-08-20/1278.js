@@ -1,0 +1,1 @@
+var x = Array . prototype . reduce . call ( 'str' , async function x ( ) { } ) ;

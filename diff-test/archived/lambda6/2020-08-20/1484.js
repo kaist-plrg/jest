@@ -1,0 +1,1 @@
+var x = Function . prototype . apply . call ( class x { static x ( ) { } } , { async x ( x ) { } } , async x => x ) ;

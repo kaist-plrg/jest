@@ -1,0 +1,1 @@
+var x = Object . defineProperty ( ( x => { } ) , - [ ] , { [ { x ( ... [ ... x ] ) { } } ] : undefined , [ Symbol . split ] : undefined , [ "writable" ] : class extends new x ( x , ) { } , [ { [ '' ] : '' } ] : class { ; ; } , [ `${ '' }` ] : [ ] , [ "enumerable" ] : - 1 } ) ;

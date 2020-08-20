@@ -1,0 +1,1 @@
+Number . prototype . toString . call ( { [ "next" ] : function ( x0 , x1 ) { } , [ "throw" ] : function ( ) { } } , undefined ) ;

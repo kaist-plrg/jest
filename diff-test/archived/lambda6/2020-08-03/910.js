@@ -1,0 +1,1 @@
+Array . prototype . splice . call ( async x => { } , 0 , ( Symbol . species ) ) ;

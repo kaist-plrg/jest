@@ -1,0 +1,1 @@
+var x = Symbol . toPrimitive ; x ?. [ { [ Symbol . toPrimitive ] : function * ( ) { } } , { [ Symbol . toPrimitive ] : function * ( ) { } } ] ;

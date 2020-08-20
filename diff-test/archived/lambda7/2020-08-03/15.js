@@ -1,0 +1,1 @@
+for ( { set x ( x ) { ; var x = super [ new x ( ) ] ; } } . x in '0' ) ;

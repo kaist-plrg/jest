@@ -1,0 +1,1 @@
+var x = String . prototype . substring . call ( new String ( false ) , ( Number ( Symbol . iterator ) ) , 0 ) ;

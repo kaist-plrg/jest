@@ -1,0 +1,1 @@
+var x = Object . defineProperty ( [ Symbol . match , ] , Symbol . matchAll , { async x ( ... { [ '' ] : { } = x } ) { } } ) ;

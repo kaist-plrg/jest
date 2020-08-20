@@ -1,0 +1,1 @@
+do for ( let x = ( Symbol . hasInstance ) ; '0' ; Number ( Symbol . iterator ) ) for ( { x } in '' ) ; while ( [ ] ) ;

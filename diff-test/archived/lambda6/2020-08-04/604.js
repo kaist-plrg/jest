@@ -1,0 +1,1 @@
+if ( { [ "value" ] : undefined , [ "writable" ] : true , [ "enumerable" ] : true , [ "configurable" ] : false } , { [ "next" ] : function ( ) { } , [ "return" ] : function ( x ) { } , [ "throw" ] : function ( x0 , x1 ) { } } ) switch ( '' ) { case x : default : }

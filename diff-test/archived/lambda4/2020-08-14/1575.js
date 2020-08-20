@@ -1,0 +1,1 @@
+var [ x ] = { [ ( Symbol . unscopables ) . asyncIterator ] : Infinity , [ Symbol . iterator ] : async function * ( ) { ; throw 42 ; return 42 ; } } ;

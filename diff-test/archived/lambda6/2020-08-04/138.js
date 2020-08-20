@@ -1,0 +1,1 @@
+function x ( ... [ ... x ] ) { } x ( x < { * x ( ... x ) { } } ) ; if ( '' ) ; else ; function x ( ... { x = class extends x ( ) [ '' , '' ] { ; } } ) { ; var x = class { } ; }

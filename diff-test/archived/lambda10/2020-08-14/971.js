@@ -1,0 +1,1 @@
+var x = new Set ( [ 42 , NaN , true ] ) ; var [ x , , ] = x ;

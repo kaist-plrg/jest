@@ -1,0 +1,1 @@
+var x = class extends x [ '' , '' ] { } in class extends x [ '' , '' ] { } ;

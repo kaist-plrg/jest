@@ -1,0 +1,1 @@
+var x = { [ "prototype" ] : ( ) => { throw '' ; } } . prototype . unshift . call ( new Array ( ) , { [ "prototype" ] : ( ) => { throw '' ; } } ) ;

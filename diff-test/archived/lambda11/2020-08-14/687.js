@@ -1,0 +1,1 @@
+var x = x >= x ; ( ( Symbol . search ) = 0n ) ;

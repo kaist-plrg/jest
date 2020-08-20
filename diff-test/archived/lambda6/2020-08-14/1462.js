@@ -1,0 +1,1 @@
+var x = Array . prototype . findIndex . call ( { [ "length" ] : class extends x { ; ; } } , x => { } ) ;

@@ -1,0 +1,1 @@
+Number . prototype . toString . call ( { p : 42 } ) ;

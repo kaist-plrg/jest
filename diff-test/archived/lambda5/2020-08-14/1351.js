@@ -1,0 +1,1 @@
+var x = { [ Symbol . hasInstance ] : true } instanceof { [ Symbol . hasInstance ] : true } ;

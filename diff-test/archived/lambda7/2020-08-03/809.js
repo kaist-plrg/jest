@@ -1,0 +1,1 @@
+Map . prototype . entries . call ( async function * x ( ) { } ) ;

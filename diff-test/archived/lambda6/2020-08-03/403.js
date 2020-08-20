@@ -1,0 +1,1 @@
+String . prototype . endsWith . call ( { [ "value" ] : { [ "writable" ] : true , [ "enumerable" ] : false , [ "configurable" ] : false } , [ [ ] ] : class extends x ( ) ?. x { } , [ "enumerable" ] : async x => '' } , ( '' , '' ) ) ;

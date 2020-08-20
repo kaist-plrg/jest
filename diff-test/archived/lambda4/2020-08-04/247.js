@@ -1,0 +1,1 @@
+isNaN ( [ 42 , 'str' , true ] ) ;

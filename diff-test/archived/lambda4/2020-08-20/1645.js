@@ -1,0 +1,1 @@
+var x = Function . prototype . apply . call ( async function ( ) { ; for await ( var x of { [ Symbol . asyncIterator ] : function ( ) { } , [ Symbol . iterator ] : function ( ) { } } ) ; } , x => '' , x => { } ) ;

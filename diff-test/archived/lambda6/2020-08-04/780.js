@@ -1,0 +1,1 @@
+Array ( { [ "get" ] : function ( ) { } , [ "set" ] : function ( ) { } , [ "enumerable" ] : true , [ "configurable" ] : false } ) ;

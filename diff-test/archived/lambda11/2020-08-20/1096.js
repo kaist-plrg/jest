@@ -1,0 +1,1 @@
+var x = 42n != ( ( { async * x ( ... [ ] ) { } } , - Infinity ) ) ;

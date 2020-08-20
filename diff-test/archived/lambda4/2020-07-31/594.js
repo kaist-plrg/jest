@@ -1,0 +1,1 @@
+var x = { [ "get" ] : function  ( x0  , x1  ) {  } , [ "configurable" ] : true } << x ; var x = Infinity === x ;

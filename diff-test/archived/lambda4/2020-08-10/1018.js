@@ -1,0 +1,1 @@
+var x = Object . setPrototypeOf ( Symbol . isConcatSpreadable , { p : 42 } ) ;

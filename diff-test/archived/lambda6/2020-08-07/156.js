@@ -1,0 +1,1 @@
+try { ; x ( 0 ) ; } catch { ; } finally { ; switch ( '' , '' ) { default : ; case x : } }

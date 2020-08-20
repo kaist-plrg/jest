@@ -1,0 +1,1 @@
+Array . prototype . find . call ( [ 42 , 'str' , true ] , function * ( ) { } ) ;

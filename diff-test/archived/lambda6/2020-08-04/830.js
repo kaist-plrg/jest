@@ -1,0 +1,1 @@
+Function . prototype [ true ] . call ( Symbol . toStringTag , { [ "get" ] : function ( ) { } , [ "set" ] : function ( x0 , x1 ) { } } ) ;

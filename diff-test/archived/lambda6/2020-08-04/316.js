@@ -1,0 +1,1 @@
+for ( { [ "value" ] : { } } in { get x ( ) { } } ) for ( ; ; ) ;

@@ -1,0 +1,1 @@
+for ( [ ] of [ '' ] ) switch ( '' ) { case x : default : case x : }

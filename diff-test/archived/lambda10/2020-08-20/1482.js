@@ -1,0 +1,1 @@
+var x = Object . defineProperty ( [ x , ] , { [ Symbol . toPrimitive ] : async function ( ) { } } , { } ) ;

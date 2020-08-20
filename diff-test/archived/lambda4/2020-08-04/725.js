@@ -1,0 +1,1 @@
+Promise . all ( { [ Symbol . asyncIterator ] : function ( ) { ; function x ( ... [ , x ] ) { } } , [ Symbol . iterator ] : function * ( ) { ; return 0 ; } } ) ;

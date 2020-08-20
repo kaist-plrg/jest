@@ -1,0 +1,1 @@
+var x = Array . prototype . slice . call ( 0n , x ** x , 0n < x ) ;

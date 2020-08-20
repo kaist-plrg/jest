@@ -1,0 +1,1 @@
+var x = [ { [ "value" ] : function * ( ) { } } , { [ "value" ] : function * ( ) { } } , { [ "value" ] : function * ( ) { } } ] ; ( [ , x ] = { [ "value" ] : function * ( ) { } } ) ;

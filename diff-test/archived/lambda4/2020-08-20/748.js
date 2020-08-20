@@ -1,0 +1,1 @@
+if ( 1 ) switch ( '' ) { default : case x : } else ;

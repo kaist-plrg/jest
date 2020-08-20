@@ -1,0 +1,1 @@
+var x = Function . prototype . apply . call ( async function ( ) { ; for await ( undefined of [ '' ] ) ; } , x => '' , x => { } ) ;

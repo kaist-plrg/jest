@@ -1,0 +1,1 @@
+for ( x of [ , ... '' ] ) try { } catch ( { } ) { ; var x = x == x ; }

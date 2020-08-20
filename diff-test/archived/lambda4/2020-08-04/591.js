@@ -1,0 +1,1 @@
+Array . from ( { [ "length" ] : { [ Symbol . toPrimitive ] : false } } ) ;

@@ -1,0 +1,1 @@
+String . prototype . substring . call ( 'str' , { [ "configurable" ] : true } , Symbol . hasInstance ) ;

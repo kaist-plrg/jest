@@ -1,0 +1,1 @@
+switch ( '' ) { case '' , '' : } x ( x -- ) ; async function x ( ... [ ] ) { ; for await ( var x of '' ) ; return { async * x ( ... { [ '' ] : { } = x } ) { } } ; }

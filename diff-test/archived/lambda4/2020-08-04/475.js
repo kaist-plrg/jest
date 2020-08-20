@@ -1,0 +1,1 @@
+false ( typeof ( - 1n ) ) ;

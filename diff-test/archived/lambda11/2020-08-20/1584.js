@@ -1,0 +1,1 @@
+var x = { [ Symbol . hasInstance ] : ( ) => { throw '' ; } } ; var x = { [ Symbol . hasInstance ] : ( ) => { throw '' ; } } instanceof x ;

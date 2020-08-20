@@ -1,0 +1,1 @@
+var x = Function . prototype . apply . call ( ( ) => { } , ( { [ "length" ] : true } ) , { [ "length" ] : true } ) ;

@@ -1,0 +1,1 @@
+BigInt . asUintN ( { [ Symbol . toPrimitive ] : function * ( ) { } } ) ;

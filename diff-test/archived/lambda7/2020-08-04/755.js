@@ -1,0 +1,1 @@
+async function * x ( ) { return ( Symbol . toPrimitive ) ; } switch ( '' ) { default : ; case x : } ! x ; for ( [ , ] in '' ) ;

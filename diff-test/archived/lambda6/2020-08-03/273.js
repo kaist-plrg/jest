@@ -1,0 +1,1 @@
+Array . prototype . lastIndexOf . call ( x => { } , Symbol . toStringTag , { async x ( ... [ x , , ] ) { } } ) ;

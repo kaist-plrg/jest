@@ -1,0 +1,1 @@
+String . prototype . slice . call ( NaN , - 1 ) ;

@@ -1,0 +1,1 @@
+var x = Array . prototype . reduceRight . call ( [ 42 , 'str' , true ] , x => BigInt ( x << x ) ) ;

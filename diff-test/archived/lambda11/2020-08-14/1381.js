@@ -1,0 +1,1 @@
+var x = Array . prototype . slice . call ( x => { } , [ 42 , 'str' , true ] , undefined ) ;

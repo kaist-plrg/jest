@@ -1,0 +1,1 @@
+var x = ( Symbol . toPrimitive ) >> { [ "value" ] : 'str' , [ "writable" ] : false , [ "enumerable" ] : true } ;

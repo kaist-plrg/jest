@@ -1,0 +1,1 @@
+var x = Array . prototype . every . call ( typeof x , x => { ; throw 42 ; } ) ;

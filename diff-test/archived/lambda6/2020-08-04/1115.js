@@ -1,0 +1,1 @@
+Boolean . prototype . toString . call ( 1 ) ;

@@ -1,0 +1,1 @@
+( Symbol . split ) . prototype . slice . call ( 1 , - Infinity , 0 ) ;

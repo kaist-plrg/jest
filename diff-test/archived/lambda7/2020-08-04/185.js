@@ -1,0 +1,1 @@
+Array . prototype . flatMap . call ( 'str' , function * ( ) { } , 0 ) ;

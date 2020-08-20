@@ -1,0 +1,1 @@
+String . prototype . trim . call ( 42n ) ;

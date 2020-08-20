@@ -1,0 +1,1 @@
+var x = Object . prototype . hasOwnProperty . call ( { [ Symbol . toPrimitive ] : false } , { [ Symbol . toPrimitive ] : false } ) ;

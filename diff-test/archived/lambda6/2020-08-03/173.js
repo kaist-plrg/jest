@@ -1,0 +1,1 @@
+Object . defineProperty ( ( ) => { } , async function x ( ) { } , { [ "value" ] : null , [ "done" ] : true } ) ;

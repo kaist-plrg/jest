@@ -1,0 +1,1 @@
+var x = String . prototype . lastIndexOf . call ( ++ x , { [ "valueOf" ] : [ x , ] , [ Symbol . replace ] : null } , ( - 1n ) ) ;

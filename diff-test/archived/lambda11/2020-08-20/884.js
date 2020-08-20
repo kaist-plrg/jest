@@ -1,0 +1,1 @@
+switch ( - 1 ) { default : for ( var { } = x ; ; '' ) ; }

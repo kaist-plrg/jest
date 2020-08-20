@@ -1,0 +1,1 @@
+var x = async function x ( ) { ; for await ( x of { [ Symbol . iterator ] : ( Symbol . matchAll ) } ) for ( x ?. x [ '' , '' ] in '' ) ; } ; x ( 0 ) ;

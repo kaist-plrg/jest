@@ -1,0 +1,1 @@
+Array . prototype . splice . call ( { [ "value" ] : 0 , [ "writable" ] : true , [ "enumerable" ] : true , [ "configurable" ] : true } , Symbol . toStringTag , 0 , 0 ) ;

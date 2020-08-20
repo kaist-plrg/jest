@@ -1,0 +1,1 @@
+var x = Array . prototype . every . call ( 42n , class x { } ) ;

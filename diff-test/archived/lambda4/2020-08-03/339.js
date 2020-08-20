@@ -1,0 +1,1 @@
+var x = undefined !== ( BigInt ( 'x' ) ) ;

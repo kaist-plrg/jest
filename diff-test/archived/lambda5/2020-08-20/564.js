@@ -1,0 +1,1 @@
+var x = BigInt . asUintN ( x || x , 0 ) ;

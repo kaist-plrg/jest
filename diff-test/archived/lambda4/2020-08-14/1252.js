@@ -1,0 +1,1 @@
+var x = Promise . resolve ( { [ "prototype" ] : async function ( x ) { } } ) ;

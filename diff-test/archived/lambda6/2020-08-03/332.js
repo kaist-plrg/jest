@@ -1,0 +1,1 @@
+for ( { [ ( - Infinity ) ] : x [ '' ] } in { [ "get" ] : function ( x ) { } , [ "set" ] : function ( x ) { } , [ "enumerable" ] : true , [ "configurable" ] : false } ) ;

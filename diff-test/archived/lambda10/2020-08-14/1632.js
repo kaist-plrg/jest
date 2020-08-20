@@ -1,0 +1,1 @@
+var x = x ? '' : Symbol . species ; while ( - 1n , ( Symbol . split ) ) var { x , } = x ; switch ( { async x ( ... { x , } ) { } } ) { case x : for ( var { } = x ; ; '' ) ; var x = new x ; default : }

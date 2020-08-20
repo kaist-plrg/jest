@@ -1,0 +1,1 @@
+Object . getOwnPropertyNames ( { [ Symbol . asyncIterator ] : async function * ( ) { } } ) ;

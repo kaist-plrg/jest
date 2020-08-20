@@ -1,0 +1,1 @@
+var x = ( x => { ; return BigInt ( 'x' ) ; } ) ( ( Symbol . hasInstance ) ) ;

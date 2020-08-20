@@ -1,0 +1,1 @@
+var x = ( Symbol . species ) - { [ "get" ] : function ( x0 , x1 ) { } , [ "set" ] : function ( ) { } , [ "enumerable" ] : false } ;

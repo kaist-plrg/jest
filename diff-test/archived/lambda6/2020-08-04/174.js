@@ -1,0 +1,1 @@
+Array . prototype . map . call ( 1 , function * ( ) { } , 0 ) ;

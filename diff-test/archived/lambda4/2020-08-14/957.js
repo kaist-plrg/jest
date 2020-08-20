@@ -1,0 +1,1 @@
+var x = { p : x & x } ; ( { p : { } } = Symbol . replace ) ;

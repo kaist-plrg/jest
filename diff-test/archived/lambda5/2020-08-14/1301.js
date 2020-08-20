@@ -1,0 +1,1 @@
+var x = { p : class extends x `${ '' }` { ; ; } } ; for ( x ( ) [ '' , '' ] in '' ) ;

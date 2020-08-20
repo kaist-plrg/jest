@@ -1,0 +1,1 @@
+var x = Object . defineProperty ( { [ { [ "valueOf" ] : async function ( x ) { } , [ "toString" ] : function ( ) { } } . toPrimitive ] : null } , { [ "valueOf" ] : async function ( x ) { } , [ "toString" ] : function ( ) { } } , { [ "valueOf" ] : async function ( x ) { } , [ "toString" ] : function ( ) { } } ) ;

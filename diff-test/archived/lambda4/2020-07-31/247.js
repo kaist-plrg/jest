@@ -1,0 +1,1 @@
+String . prototype . lastIndexOf . call ( { [ "value" ] : null , [ "writable" ] : true , [ "enumerable" ] : false , [ "configurable" ] : false } , { async * x ( x  ) {  } } , 0 , { [ "value" ] : undefined , [ "done" ] : false } ) ;

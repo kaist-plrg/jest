@@ -1,0 +1,1 @@
+Map . prototype . has . call ( ~ x , true ) ;

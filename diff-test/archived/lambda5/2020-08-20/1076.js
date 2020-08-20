@@ -1,0 +1,1 @@
+var x = ( BigInt ( 'x' ) ) . prototype . concat . call ( false ) ;

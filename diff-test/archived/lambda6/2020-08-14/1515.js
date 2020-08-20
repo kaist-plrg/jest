@@ -1,0 +1,1 @@
+var x = { [ Symbol . toPrimitive ] : function * ( x ) { } } . prototype . normalize . call ( new String ( 0 ) , 0 ) ;

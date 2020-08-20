@@ -1,0 +1,1 @@
+var x = Symbol . asyncIterator ; var [ x , ... x ] = -- ( BigInt ( 'x' ) ) ;

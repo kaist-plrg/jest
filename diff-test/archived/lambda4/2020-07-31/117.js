@@ -1,0 +1,1 @@
+for ( let x  ; 0n , x == null ; x && class  extends x ?. x [ '' ] {  } , - 42n ) FREE , x == x ;

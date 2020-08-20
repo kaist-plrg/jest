@@ -1,0 +1,1 @@
+var x = - 1n ; var x = x + class x extends x `${ '' }${ x }${ '' , '' }` { ; } ;

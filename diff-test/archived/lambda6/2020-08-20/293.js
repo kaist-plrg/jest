@@ -1,0 +1,1 @@
+delete { } [ typeof x ] ;

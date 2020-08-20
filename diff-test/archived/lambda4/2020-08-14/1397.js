@@ -1,0 +1,1 @@
+var x = Function . prototype . apply . call ( class x { } , async x => x <= x , [ x , , '' ] ) ;

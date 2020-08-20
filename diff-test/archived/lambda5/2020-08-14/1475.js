@@ -1,0 +1,1 @@
+for ( ; '' ; ) ; async function x ( x ) { } var x = class x { static x ( ) { ; for ( super [ '' , '' ] in '' ) ; } } ?. x ( ) ;

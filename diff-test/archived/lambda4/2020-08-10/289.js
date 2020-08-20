@@ -1,0 +1,1 @@
+var x = Array . prototype . splice . call ( typeof x , 0 , 1 ) ;

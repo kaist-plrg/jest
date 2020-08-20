@@ -1,0 +1,1 @@
+function x ( x ) { ; throw 0 ; } async function x ( ... { [ '' ] : { } = x } ) { ; var { x = x } = x ; } x ( ) ;

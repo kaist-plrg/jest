@@ -1,0 +1,1 @@
+let x ; for ( let { } = x ; '' ; ) ;

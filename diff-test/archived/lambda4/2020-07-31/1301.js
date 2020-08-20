@@ -1,0 +1,1 @@
+Array . prototype . reduceRight . call ( 1 , 0 , 0 ) ;

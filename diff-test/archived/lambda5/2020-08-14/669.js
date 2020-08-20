@@ -1,0 +1,1 @@
+if ( Symbol . unscopables ) var [ ... { } ] = x ;

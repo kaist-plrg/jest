@@ -1,0 +1,1 @@
+var x = { x ( ... [ , ] ) { } } ; var x = { [ "value" ] : null , [ "writable" ] : true , [ "enumerable" ] : false } ** class extends x [ '' , '' ] { ; } ;

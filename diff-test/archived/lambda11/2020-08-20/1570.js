@@ -1,0 +1,1 @@
+var x = Array . prototype . some . call ( [ x , , ] , ( ) => { ; return x ( ) `` ; for ( ; ; ) ; } ) ; function * x ( ... { x } ) { }

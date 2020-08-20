@@ -1,0 +1,1 @@
+var x = this ; switch ( '' ) { case x : default : case x : ; var x = { get x ( ) { } } ; }

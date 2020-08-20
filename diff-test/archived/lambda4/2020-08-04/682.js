@@ -1,0 +1,1 @@
+Promise . all ( [ 42 , 'str' , true ] ) ;

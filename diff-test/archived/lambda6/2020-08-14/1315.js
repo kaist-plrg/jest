@@ -1,0 +1,1 @@
+switch ( { async x ( ... { [ '' ] : { } = x } ) { } } ) { case x ^ x : default : }

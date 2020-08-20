@@ -1,0 +1,1 @@
+var x = String . prototype . repeat . call ( Symbol . isConcatSpreadable , { [ "valueOf" ] : function * ( x ) { } , [ "toString" ] : ( ) => { throw '' ; } } ) ;

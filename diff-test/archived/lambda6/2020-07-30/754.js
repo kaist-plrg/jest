@@ -1,0 +1,1 @@
+new 'str' ( Symbol . match , ... null ) ;

@@ -1,0 +1,1 @@
+Object . defineProperty ( { [ "next" ] : function ( ) { } , [ "return" ] : function ( x ) { } } , 0 , { x ( ... [ ] ) { } } ) ;

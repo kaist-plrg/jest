@@ -1,0 +1,1 @@
+var x = { [ "value" ] : 'str' , [ "writable" ] : false , [ "configurable" ] : true } != x ;

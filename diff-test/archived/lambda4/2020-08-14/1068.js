@@ -1,0 +1,1 @@
+if ( '' , '' ) ; ( { p : x = class { static x ( ) { } } } = NaN ) ;

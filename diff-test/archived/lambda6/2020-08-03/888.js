@@ -1,0 +1,1 @@
+Array . prototype . lastIndexOf . call ( { p : 42 } , await , 0 ) ;

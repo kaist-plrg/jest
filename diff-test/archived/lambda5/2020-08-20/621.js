@@ -1,0 +1,1 @@
+if ( class x { static x ( ) { } } ) ; else ;

@@ -1,0 +1,1 @@
+var x = Array . prototype . forEach . call ( [ 42 , - 1 , true ] , async function * ( ) { } ) ;

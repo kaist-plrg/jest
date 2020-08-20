@@ -1,0 +1,1 @@
+var x = { [ "length" ] : false } > 0n ;

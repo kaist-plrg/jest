@@ -1,0 +1,1 @@
+BigInt . prototype . toString . call ( 0n , 0 , { [ "set" ] : function  ( x  ) {  } , [ "configurable" ] : true } ) ;

@@ -1,0 +1,1 @@
+String . prototype . charAt . call ( { [ "get" ] : function ( x0 , x1 ) { } , [ "enumerable" ] : false , [ "configurable" ] : true } , Symbol . iterator ) ;

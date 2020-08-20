@@ -1,0 +1,1 @@
+var x = class extends x ?. x . x { } ? [ 42 , 'str' , true ] : { p : 42 } ;

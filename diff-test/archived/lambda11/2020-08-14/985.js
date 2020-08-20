@@ -1,0 +1,1 @@
+while ( ( x => { } ) ) switch ( '' ) { default : ; case x : }

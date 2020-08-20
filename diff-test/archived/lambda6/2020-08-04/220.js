@@ -1,0 +1,1 @@
+var x = x `${ '' }${ Number ( Symbol . iterator ) }${ Symbol . search , { [ "get" ] : function ( ) { } , [ "set" ] : function ( x ) { } , [ "enumerable" ] : true } }` ;

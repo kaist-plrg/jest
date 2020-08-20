@@ -1,0 +1,1 @@
+x %= ( Symbol . species ) ; var { ... x } = x ;

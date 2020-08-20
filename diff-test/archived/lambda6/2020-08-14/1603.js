@@ -1,0 +1,1 @@
+var x = String . prototype . indexOf . call ( { [ Symbol . toPrimitive ] : function * ( ) { } } , { [ Symbol . toPrimitive ] : function * ( ) { } } ) ;

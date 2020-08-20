@@ -1,0 +1,1 @@
+Array . prototype . slice . call ( { [ "value" ] : null , [ "writable" ] : true } , x ++ ) ;

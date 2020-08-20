@@ -1,0 +1,1 @@
+var x = BigInt ( x === { [ "set" ] : function ( ) { } , [ "enumerable" ] : false } ) ;

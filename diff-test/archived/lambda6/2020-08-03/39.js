@@ -1,0 +1,1 @@
+var x = `${ '' }${ { [ "next" ] : NaN , [ Symbol . toPrimitive ] : function ( ) { ; throw 0 ; } } }${ { } , FREE }` ;

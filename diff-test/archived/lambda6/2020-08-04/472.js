@@ -1,0 +1,1 @@
+Array . prototype . copyWithin . call ( 1 , { [ "get" ] : function ( x ) { } , [ "configurable" ] : true } , { [ "next" ] : function ( x ) { } , [ "return" ] : function ( x0 , x1 ) { } , [ "throw" ] : function ( x ) { } } , ( Symbol . search ) ) ;

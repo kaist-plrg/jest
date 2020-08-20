@@ -1,0 +1,1 @@
+async function x ( ) { } x ( 42 ) ; var x = x instanceof x ;

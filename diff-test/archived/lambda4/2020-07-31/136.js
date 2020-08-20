@@ -1,0 +1,1 @@
+try { x : ; } finally { ; function * x ( ... await ) {  } }

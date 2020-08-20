@@ -1,0 +1,1 @@
+var x = 42n ; var [ , , ] = [ 42 , 'str' , true ] ;

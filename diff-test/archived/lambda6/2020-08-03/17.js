@@ -1,0 +1,1 @@
+[ x = new x ( x , ) , ... Symbol . search ] = x ? '' : '' ; async function * x ( ... { x = '' } ) { }

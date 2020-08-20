@@ -1,0 +1,1 @@
+Object . isSealed ( { [ "get" ] : function ( x0 , x1 ) { } , [ "enumerable" ] : false , [ "configurable" ] : false } ) ;

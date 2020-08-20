@@ -1,0 +1,1 @@
+for ( x of { [ Symbol . iterator ] : function *  (  ) { ; yield 0 ; } } ) ; for ( var x  , x  ; '' ; '' ) ;

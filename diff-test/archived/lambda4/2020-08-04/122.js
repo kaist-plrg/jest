@@ -1,0 +1,1 @@
+Function . prototype . apply . call ( x => x >> x , Infinity , 1 ) ;

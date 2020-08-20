@@ -1,0 +1,1 @@
+Array . prototype . lastIndexOf . call ( null , - 0n , Infinity ) ;

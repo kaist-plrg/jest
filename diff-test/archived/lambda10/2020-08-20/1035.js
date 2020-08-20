@@ -1,0 +1,1 @@
+delete { [ Symbol . toPrimitive ] : function ( x ) { } } [ 42 ] ;

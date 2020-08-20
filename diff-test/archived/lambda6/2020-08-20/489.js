@@ -1,0 +1,1 @@
+throw Number ( Symbol . iterator ) ;

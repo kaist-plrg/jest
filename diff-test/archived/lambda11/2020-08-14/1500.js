@@ -1,0 +1,1 @@
+var x = new WeakMap ( [ { [ "0" ] : async function ( x ) { } , [ "1" ] : function * ( x ) { } } , 'str' , true ] ) ;

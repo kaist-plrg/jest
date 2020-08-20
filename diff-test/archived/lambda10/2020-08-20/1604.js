@@ -1,0 +1,1 @@
+var x = String . prototype . includes . call ( new String ( { [ Symbol . match ] : function * ( x ) { } } ) , { [ Symbol . match ] : function * ( x ) { } } ) ;

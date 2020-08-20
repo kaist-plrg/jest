@@ -1,0 +1,1 @@
+var x = Array . prototype . forEach . call ( { p : 42 } , x => { } , 0 ) ;

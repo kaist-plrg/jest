@@ -1,0 +1,1 @@
+var x = Object . defineProperties ( x => { } , 0 ) ; var x = x || x ;

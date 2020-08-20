@@ -1,0 +1,1 @@
+Object . values ( { p : class  extends x [ '' , '' ] { ; } } , ( Symbol . isConcatSpreadable ) ) ;

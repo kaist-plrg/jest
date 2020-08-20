@@ -1,0 +1,1 @@
+for ( let x of [ 42 , 'str' , x == x ] ) do ; while ( '' ) ;

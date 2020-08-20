@@ -1,0 +1,1 @@
+try { } finally { ; class x extends { x , x } { ; } }

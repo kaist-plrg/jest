@@ -1,0 +1,1 @@
+async function * x ( ) { } x ( ) ; switch ( '' ) { case x : default : ; throw 0 ; case '' : ; throw 0 ; }

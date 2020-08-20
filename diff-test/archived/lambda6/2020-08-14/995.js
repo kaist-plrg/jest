@@ -1,0 +1,1 @@
+try { ; class x extends [ , ... '' ] { ; ; } } catch ( x ) { }

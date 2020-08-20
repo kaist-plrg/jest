@@ -1,0 +1,1 @@
+Boolean . prototype . valueOf . call ( true , { [ "get" ] : function  ( x0  , x1  ) {  } , [ "set" ] : function  ( x  ) {  } , [ "configurable" ] : true } ) ;

@@ -1,0 +1,1 @@
+var x = { [ "value" ] : undefined , [ "configurable" ] : true } & ( Symbol . replace ) ;

@@ -1,0 +1,1 @@
+String . prototype . startsWith . call ( - Infinity , `${ '' }${ '' , '' }` , { x ( ... { x : x  } ) {  } } , { x : '' } ) ;

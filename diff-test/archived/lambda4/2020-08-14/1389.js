@@ -1,0 +1,1 @@
+var x = Function . prototype . bind . call ( ( ( ) => { } ) , Symbol . hasInstance ) ; x ( ) ;

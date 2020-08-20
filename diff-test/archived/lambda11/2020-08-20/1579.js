@@ -1,0 +1,1 @@
+var x = Function . prototype . apply . call ( ( ) => { ; class x extends x `${ '' , '' }${ '' , '' }` { ; } } , ( 0 ) , { x ( ) { } } ) ;

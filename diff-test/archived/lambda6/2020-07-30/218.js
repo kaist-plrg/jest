@@ -1,0 +1,1 @@
+Array . from ( `${ x < x }${ class  extends x ?. [ '' ] {  } , class  extends x `${ '' , '' }${ '' , '' }` { ; } }` ) ;

@@ -1,0 +1,1 @@
+var x = Array . prototype . unshift . call ( async x => '' , 1 ) ;

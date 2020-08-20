@@ -1,0 +1,1 @@
+var x = { [ "valueOf" ] : false , [ "toString" ] : 0 } + { [ "valueOf" ] : false , [ "toString" ] : 0 } ;

@@ -1,0 +1,1 @@
+var x = { get x ( ) { ; x ( 42 ) ; return 42 ; switch ( '' ) { default : case x : } } } ; var x = x ?. x ;

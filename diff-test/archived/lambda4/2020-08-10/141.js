@@ -1,0 +1,1 @@
+delete false [ '0' ] ;

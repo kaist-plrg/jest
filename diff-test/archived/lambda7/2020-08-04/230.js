@@ -1,0 +1,1 @@
+Object . preventExtensions ( { p : 42 } ) ;

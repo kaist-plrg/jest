@@ -1,0 +1,1 @@
+var x = String . prototype . slice . call ( Symbol . matchAll , [ 42 , 'str' , true ] , 0 ) ;

@@ -1,0 +1,1 @@
+Object . defineProperties ( x => { } , [ , { [ "set" ] : ( ) => { throw '' ; } , [ "enumerable" ] : '0' , [ "writable" ] : true , [ "configurable" ] : false , [ "get" ] : 0 , [ "value" ] : false } ] ) ;

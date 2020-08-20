@@ -1,0 +1,1 @@
+for ( x in x << x ) var { 42 : { } } = x ;

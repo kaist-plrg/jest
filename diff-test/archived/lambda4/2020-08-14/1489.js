@@ -1,0 +1,1 @@
+try { ; class x extends x { } } catch { ; var x = x `${ '' , '' }${ x }${ '' }` ; } finally { ; class x extends x { } }

@@ -1,0 +1,1 @@
+Number . isInteger ( ) ; class x extends this { static x (  ) {  } }

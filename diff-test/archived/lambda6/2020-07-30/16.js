@@ -1,0 +1,1 @@
+String . prototype . startsWith . call ( { set x ( x  ) {  } } , Symbol . split , 0 , 0 ) ;

@@ -1,0 +1,1 @@
+var x = BigInt . asIntN ( ( x ?? x ?? x ) ?? class extends x `${ '' }` { } ?? [ '' ] , 0n ) ;

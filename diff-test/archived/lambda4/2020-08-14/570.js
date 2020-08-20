@@ -1,0 +1,1 @@
+var [ ] = Number ( Symbol . iterator ) ;

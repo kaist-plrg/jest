@@ -1,0 +1,1 @@
+try { ; for ( '' , '' ; '' , '' ; '' , '' ) ; class x extends [ , '' ] { } } catch ( x ) { ; x ( ) ; }

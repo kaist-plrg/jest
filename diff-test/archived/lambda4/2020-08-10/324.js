@@ -1,0 +1,1 @@
+function * x ( ... { [ { [ Symbol . toPrimitive ] : false } ] : { } = { [ Symbol . toPrimitive ] : false } } ) { } x ( { [ Symbol . toPrimitive ] : false } . hasInstance ) ;

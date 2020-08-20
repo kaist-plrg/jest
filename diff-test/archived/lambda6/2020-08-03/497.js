@@ -1,0 +1,1 @@
+Array . prototype . indexOf . call ( x => { } , class { static x ( ) { } } . isConcatSpreadable ) ;

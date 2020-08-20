@@ -1,0 +1,1 @@
+async function x ( ) { } function x ( ... { 42 : { } } ) { } x ( ) ;

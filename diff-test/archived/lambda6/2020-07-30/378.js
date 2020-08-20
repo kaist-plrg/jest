@@ -1,0 +1,1 @@
+Array . prototype . findIndex . call ( ( Symbol . match ) , x => x , 0 , { x : '' } ) ;

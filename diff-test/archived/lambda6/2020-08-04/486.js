@@ -1,0 +1,1 @@
+Function . prototype . apply . call ( class { static x ( ) { } } , 0 , 42n ) ;

@@ -1,0 +1,1 @@
+var x = new x ( Symbol . species , ... Symbol . hasInstance ) ;

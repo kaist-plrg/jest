@@ -1,0 +1,1 @@
+var x = [ 1 , { } , { get x ( ) { } } ] ; ( ( BigInt ( 0.1 ) ) = ( BigInt ( 'x' ) ) ) ;

@@ -1,0 +1,1 @@
+var x = [ { [ "length" ] : null } , { [ "length" ] : null } , { [ "length" ] : null } ] ; ( [ , ... x ] = { [ "length" ] : null } ) ;

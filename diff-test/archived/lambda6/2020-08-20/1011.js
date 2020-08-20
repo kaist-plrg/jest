@@ -1,0 +1,1 @@
+for ( ; '' , '' ; ) ; ( ( Number ( Symbol . iterator ) ) = x ) ;

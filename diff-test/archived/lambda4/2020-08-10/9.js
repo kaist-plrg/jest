@@ -1,0 +1,1 @@
+var x = Array . prototype . flatMap . call ( [ [ '' ] , ] , x => { ; x ( class { } ) ; return x [ '' , '' ] ; } , { async * x ( ... [ , ... x ] ) { } } ) ;

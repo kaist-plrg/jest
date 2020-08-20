@@ -1,0 +1,1 @@
+class x extends function ( ) { ; return 0 ; } { ; } new x ;

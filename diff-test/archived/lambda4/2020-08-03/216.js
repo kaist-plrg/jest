@@ -1,0 +1,1 @@
+Object . assign ( 'str' , 'str' ) ;

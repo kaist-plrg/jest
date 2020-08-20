@@ -1,0 +1,1 @@
+var x = Array . prototype . every . call ( '0' , x => { ; return x ?. ( ) ; var x = [ , '' ] ; } ) ;

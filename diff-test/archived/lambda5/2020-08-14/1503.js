@@ -1,0 +1,1 @@
+var x = String . prototype . split . call ( new String ( { async x ( ... x ) { } } ) , undefined , { x ( ... { ... x } ) { } } ?? FREE ?? x ) ;

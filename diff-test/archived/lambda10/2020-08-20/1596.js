@@ -1,0 +1,1 @@
+var x = Array . prototype . findIndex . call ( [ - 1n , `` , ( ( ) => { } ) ] , x => { ; x ( 0n ) ; return `${ '' }${ x }${ '' }` ; debugger ; } ) ;

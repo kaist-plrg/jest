@@ -1,0 +1,1 @@
+( x => Number ( Symbol . iterator ) ) ( ) ;

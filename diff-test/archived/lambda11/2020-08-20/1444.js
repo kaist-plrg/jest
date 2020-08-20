@@ -1,0 +1,1 @@
+var x = Array . prototype . push . call ( new Array ( ) ) ; var x = class extends x ?. ( ) { ; } > x ;

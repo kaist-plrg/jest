@@ -1,0 +1,1 @@
+function x ( [ x ] = [ FREE , 2 , 3 ] ) { for ( { x = x } in '' ) ; function * x ( ... [ x , ] ) { ; } } ; new class extends x { ; ; } ;

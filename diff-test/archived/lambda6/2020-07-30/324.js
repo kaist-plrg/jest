@@ -1,0 +1,1 @@
+String . prototype . lastIndexOf . call ( - 1n , Symbol . iterator , 0 ) ;

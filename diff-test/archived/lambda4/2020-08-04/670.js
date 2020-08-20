@@ -1,0 +1,1 @@
+Function . prototype [ Symbol . hasInstance ] . call ( ( ) => { } , function * x ( ) { } ) ;

@@ -1,0 +1,1 @@
+switch ( '' ) { default : for ( let x ; '' , '' ; ) ; var x = { x , } ; case x : }

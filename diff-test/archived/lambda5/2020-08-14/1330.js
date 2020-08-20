@@ -1,0 +1,1 @@
+delete { [ Symbol . toPrimitive ] : ( ) => { throw '' ; } } [ async function * ( ) { } ] ;

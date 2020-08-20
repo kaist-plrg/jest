@@ -1,0 +1,1 @@
+for ( x of [ 42 , 'str' , true ] ) try { } catch { } finally { }

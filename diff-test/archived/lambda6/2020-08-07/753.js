@@ -1,0 +1,1 @@
+var x = x `` ; var x = x * x ; function x ( ... [ ... x ] ) { ; x ( 0 ) ; async function x ( ... { x } ) { } }

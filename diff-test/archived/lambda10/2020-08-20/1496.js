@@ -1,0 +1,1 @@
+try { for ( { x , } in '' ) ; new x ( ) ; function x ( ... [ ] ) { ; return ; } } catch ( x ) { ; x ( 42 ) ; }

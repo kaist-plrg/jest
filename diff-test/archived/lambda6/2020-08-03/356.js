@@ -1,0 +1,1 @@
+for ( let x in - Infinity , { [ - 1n ] : - 1n , [ Symbol . match ] : [ 42 , 'str' , true ] } ) continue ;

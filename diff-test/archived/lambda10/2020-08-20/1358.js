@@ -1,0 +1,1 @@
+var x = Array . prototype . includes . call ( new Array ( ) , 0 ) ; var x = typeof x ;

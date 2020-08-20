@@ -1,0 +1,1 @@
+var x = ( Symbol . species ) += 0n ;

@@ -1,0 +1,1 @@
+var x = String . prototype . matchAll . call ( Symbol . isConcatSpreadable , { [ Symbol . match ] : class extends x { x ( ) { } } } ) ;

@@ -1,0 +1,1 @@
+var x = ( x => { ; var x = x `${ '' , '' }${ '' , '' }` ; switch ( '' ) { default : ; class x extends x `${ '' , '' }${ '' , '' }` { ; } case x : ; x ( ) ; } for ( var { } in '' , '' ) ; } ) ; var x = x ( ) ( ) ;

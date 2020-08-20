@@ -1,0 +1,1 @@
+var x = Promise . all ( { [ Symbol . asyncIterator ] : 0 , [ Symbol . iterator ] : function * ( x ) { ; var x = yield ; x ( 42 ) ; } } ) ;

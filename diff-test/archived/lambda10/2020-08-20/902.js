@@ -1,0 +1,1 @@
+var x = ( 0n ) . prototype . flat . call ( x ?? x ?? x ) ;

@@ -1,0 +1,1 @@
+switch ( '' ) { default : case `${ '' , '' }${ '' }` : ; var x = BigInt ( 'x' ) ; }

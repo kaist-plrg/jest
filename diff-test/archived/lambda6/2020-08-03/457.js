@@ -1,0 +1,1 @@
+var x = ( Symbol . search ) *= { [ "value" ] : undefined , [ "writable" ] : false , [ "enumerable" ] : false , [ "configurable" ] : true } . toStringTag ;

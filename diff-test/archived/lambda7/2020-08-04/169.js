@@ -1,0 +1,1 @@
+eval ( `${ { [ Symbol . toPrimitive ] : function * ( x ) { } } , x => { ; var x = { [ Symbol . toPrimitive ] : function * ( x ) { } } ; } }` ) ;

@@ -1,0 +1,1 @@
+var x = Promise . allSettled ( { [ Symbol . asyncIterator ] : true , [ Symbol . iterator ] : function * ( ) { ; function * x ( ... { x : { } } ) { } x ( ) ; } } ) ;

@@ -1,0 +1,1 @@
+async function * x ( ) { for await ( var x of class x extends x `${ '' }${ '' }` { ; } ) var { x , ... x } = x ; } ; x ( ) ;

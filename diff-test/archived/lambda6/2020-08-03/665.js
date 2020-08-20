@@ -1,0 +1,1 @@
+Number . prototype . toString . call ( { [ "get" ] : function ( x0 , x1 ) { } , [ "enumerable" ] : false } , { p : 42 } ) ;

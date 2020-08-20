@@ -1,0 +1,1 @@
+var x = - 1n ; var [ , , ] = class extends x `${ '' }${ '' , '' }` { ; } == x ;

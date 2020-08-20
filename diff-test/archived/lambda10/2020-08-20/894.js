@@ -1,0 +1,1 @@
+var x = Symbol . matchAll ; var { 42 : { } } = x **= '' ;

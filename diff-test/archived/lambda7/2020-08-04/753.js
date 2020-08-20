@@ -1,0 +1,1 @@
+var x = x *= [ { [ "valueOf" ] : 0 , [ "toString" ] : null } , { [ "valueOf" ] : 0 , [ "toString" ] : null } ] ;

@@ -1,0 +1,1 @@
+var x = String . prototype . substring . call ( 1 , 42n , { x : ( - 1n ) } ) ;

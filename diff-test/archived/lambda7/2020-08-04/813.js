@@ -1,0 +1,1 @@
+for ( ( Symbol . species ) of [ 42 , 'str' , true ] ) var { ... x } = x ;

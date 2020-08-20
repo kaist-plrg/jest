@@ -1,0 +1,1 @@
+function x ( ) { ; var x = class extends x `${ '' }` { ; ; } ; do ; while ( '' , '' ) ; async function x ( ... [ x ] ) { } } new x ( ) ;

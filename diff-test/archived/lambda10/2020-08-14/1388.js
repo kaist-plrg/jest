@@ -1,0 +1,1 @@
+function x ( ... { [ class x { ; ; } ] : x } ) { ; NaN ( ) ; return -- x ; } new x ( ) ;

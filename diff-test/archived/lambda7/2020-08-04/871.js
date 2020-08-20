@@ -1,0 +1,1 @@
+switch ( Symbol . replace ) { case ( - 0 ) , Symbol . toStringTag : }

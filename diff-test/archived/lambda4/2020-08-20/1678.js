@@ -1,0 +1,1 @@
+var x = Object . create ( ( ( ) => { } ) , [ { [ "length" ] : false } , , { [ "configurable" ] : { [ "length" ] : false } , [ { [ "length" ] : false } ] : { [ "length" ] : false } , [ { [ "length" ] : false } ] : '' , [ { [ "length" ] : false } ] : function ( x ) { } , [ { [ "length" ] : false } ] : function * ( ) { } , [ "get" ] : async function ( ) { } } ] ) ;

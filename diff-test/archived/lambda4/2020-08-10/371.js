@@ -1,0 +1,1 @@
+var x = new Object ( ! x ) ; var x = [ x , ] in x ;

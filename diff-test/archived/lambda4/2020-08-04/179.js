@@ -1,0 +1,1 @@
+String . prototype . charAt . call ( Symbol . iterator , { async x ( ... x ) { } } ) ;

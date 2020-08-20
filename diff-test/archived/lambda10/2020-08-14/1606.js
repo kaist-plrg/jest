@@ -1,0 +1,1 @@
+async function * x ( ) { for await ( var x of FREE ) for ( var x , x ; ; '' ) ; } for ( let x of '' ) ; async function * x ( ... [ x ] ) { } x instanceof x ;

@@ -1,0 +1,1 @@
+var x = x `${ '' }${ '' }` ; var x = { set x ( x ) { } } ; var { '' : { } = x } = x ; async function x ( ... { x , } ) { ; for await ( var x of x ?. ( ) ) for ( var { } = x ; '' ; '' ) ; for ( x . x in '' ) ; return 42 ; async function * x ( ... [ ... x ] ) { ; return 42 ; yield * [ x , , ] ; } await x ( ) ; }

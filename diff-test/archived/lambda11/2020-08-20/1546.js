@@ -1,0 +1,1 @@
+var x = Infinity ; while ( Symbol . unscopables , [ 42 , 'str' , true ] ) var { x , } = x ; function x ( ... { x : x } ) { }

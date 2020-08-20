@@ -1,0 +1,1 @@
+Object . entries ( { [ "value" ] : undefined , [ "configurable" ] : true } ) ;

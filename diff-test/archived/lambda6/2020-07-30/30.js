@@ -1,0 +1,1 @@
+BigInt . asIntN ( true , - 1n , Symbol . unscopables ) ;

@@ -1,0 +1,1 @@
+String . prototype . lastIndexOf . call ( - 0 , '' , x => { } ) ;

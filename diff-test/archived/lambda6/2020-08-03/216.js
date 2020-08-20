@@ -1,0 +1,1 @@
+for ( let x in - Infinity , { [ - 1n ] : 42 , [ 0 ] : ( Symbol . split ) } ) break ;

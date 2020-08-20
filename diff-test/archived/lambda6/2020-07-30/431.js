@@ -1,0 +1,1 @@
+Array . prototype . shift . call ( 'str' , ( Symbol . isConcatSpreadable ) ) ;

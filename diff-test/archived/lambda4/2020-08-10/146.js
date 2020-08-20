@@ -1,0 +1,1 @@
+var x = Array . prototype . unshift . call ( { [ "length" ] : { [ Symbol . toPrimitive ] : true } } , { [ Symbol . toPrimitive ] : true } ) ;

@@ -1,0 +1,1 @@
+for ( [ , ] in '' ) ; ( FREE = class x { ; ; } ) ;

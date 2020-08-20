@@ -1,0 +1,1 @@
+throw Infinity , class extends x { ; ; } ;

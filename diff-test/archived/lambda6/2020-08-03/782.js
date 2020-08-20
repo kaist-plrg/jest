@@ -1,0 +1,1 @@
+Array . prototype . unshift . call ( ( ) => { } , { [ "set" ] : function ( x ) { } , [ "enumerable" ] : true } ) ;

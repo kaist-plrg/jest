@@ -1,0 +1,1 @@
+for ( x of class extends x ( ) . x { ; } ) ;

@@ -1,0 +1,1 @@
+String . prototype . indexOf . call ( typeof x ) ;

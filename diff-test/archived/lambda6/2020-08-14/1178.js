@@ -1,0 +1,1 @@
+var x = Promise . resolve ( 0 ) ; var x = class extends x ( ) { } > x ;

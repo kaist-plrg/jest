@@ -1,0 +1,1 @@
+switch ( '' ) { case '' : ; function x ( ... [ x , , ] ) { } }

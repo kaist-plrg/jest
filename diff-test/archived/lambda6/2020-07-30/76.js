@@ -1,0 +1,1 @@
+String . prototype . repeat . call ( x => {  } , - 1 , Infinity ) ;

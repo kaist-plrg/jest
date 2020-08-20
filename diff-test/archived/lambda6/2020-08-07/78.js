@@ -1,0 +1,1 @@
+for ( { x , x } of [ 42 , 'str' , true ] ) ; var x = class extends x { ; } ;

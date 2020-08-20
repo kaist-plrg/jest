@@ -1,0 +1,1 @@
+switch ( 1 , Symbol . search ) { default : { } case Symbol . search : }

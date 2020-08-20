@@ -1,0 +1,1 @@
+var x = ( Symbol . isConcatSpreadable ) . prototype . findIndex . call ( class extends x `${ '' }${ '' }` { } , ( x => { } ) ) ;

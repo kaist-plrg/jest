@@ -1,0 +1,1 @@
+var x = Array . prototype . slice . call ( new Array ( ) , NaN , { async x ( ... [ ... x ] ) { ; } } ) ;

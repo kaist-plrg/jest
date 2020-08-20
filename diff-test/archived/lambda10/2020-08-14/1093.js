@@ -1,0 +1,1 @@
+var x = Array . isArray ( 0 ) ; var x = ( Symbol . replace ) <= 0 ;

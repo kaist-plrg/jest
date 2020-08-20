@@ -1,0 +1,1 @@
+var x = { [ "value" ] : undefined , [ "writable" ] : false , [ "enumerable" ] : true } < x ;

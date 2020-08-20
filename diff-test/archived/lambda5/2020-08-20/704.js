@@ -1,0 +1,1 @@
+for ( var x of [ 42 , [ , ] , true ] ) continue ;

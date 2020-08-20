@@ -1,0 +1,1 @@
+var x = String . prototype . startsWith . call ( ( ) => { } , { [ Symbol . toPrimitive ] : async function ( x ) { } } ) ;

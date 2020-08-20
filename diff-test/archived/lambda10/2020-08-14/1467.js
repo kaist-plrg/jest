@@ -1,0 +1,1 @@
+var x = Array . prototype . forEach . call ( [ 42 , 'str' , ( Symbol . replace ) ] , class { ; ; } ) ;

@@ -1,0 +1,1 @@
+while ( null , [ x , , ... x ] ) ;

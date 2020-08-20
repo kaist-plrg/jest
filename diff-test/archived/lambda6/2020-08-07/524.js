@@ -1,0 +1,1 @@
+var x = String . prototype . includes . call ( x %= { [ Symbol . match ] : ( ) => { throw { [ "valueOf" ] : 0 , [ "toString" ] : function * ( x ) { } } ; } } , { [ "valueOf" ] : 0 , [ "toString" ] : function * ( x ) { } } ) ;

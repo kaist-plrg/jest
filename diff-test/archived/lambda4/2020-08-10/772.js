@@ -1,0 +1,1 @@
+var x = Object . is ( Symbol . iterator , Symbol . unscopables ) ;

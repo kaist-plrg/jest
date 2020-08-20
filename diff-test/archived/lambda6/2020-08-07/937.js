@@ -1,0 +1,1 @@
+var x = ( - 1n ) . prototype . search . call ( null , Symbol . iterator ) ;

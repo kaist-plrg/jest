@@ -1,0 +1,1 @@
+var x = String . prototype . repeat . call ( new String ( { [ "valueOf" ] : function * ( x ) { } , [ "toString" ] : ( ) => { throw '' ; } } ) , { [ "valueOf" ] : function * ( x ) { } , [ "toString" ] : ( ) => { throw '' ; } } ) ;

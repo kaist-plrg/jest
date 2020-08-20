@@ -1,0 +1,1 @@
+var x = ( Symbol . hasInstance ) + [ 42 , 'str' , true ] ;

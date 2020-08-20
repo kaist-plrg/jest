@@ -1,0 +1,1 @@
+async function * x ( ) { var x = yield ; async function * x ( ... [ , ] ) { } } ; x ( ) ;

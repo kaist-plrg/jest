@@ -1,0 +1,1 @@
+if ( Symbol . search ) ; else ;

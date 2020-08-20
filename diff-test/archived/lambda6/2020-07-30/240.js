@@ -1,0 +1,1 @@
+delete 'str' [ ( - 1 ) ] ; function x ( ... [ , , ... x ] ) {  }

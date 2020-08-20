@@ -1,0 +1,1 @@
+Array . prototype . lastIndexOf . call ( undefined , 1 , Infinity , { [ "next" ] : function  (  ) {  } , [ "throw" ] : function  (  ) {  } } ) ;

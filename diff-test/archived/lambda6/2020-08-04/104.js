@@ -1,0 +1,1 @@
+Array . prototype . lastIndexOf . call ( [ , { [ "get" ] : function ( x0 , x1 ) { } , [ "set" ] : function ( x ) { } , [ "enumerable" ] : true } ] , class x { ; } , Symbol . unscopables ) ;

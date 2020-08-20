@@ -1,0 +1,1 @@
+function x ( [ x ] = [ 1 , 2 , 3 ] ) { ; var x = x ?. ( ) ; x ( 42 ) ; switch ( '' ) { case x : ; break ; default : } } ; x ( ) ;

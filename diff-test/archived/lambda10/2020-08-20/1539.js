@@ -1,0 +1,1 @@
+for ( var x = 42n ; '' ; { async x ( ) { } } ) ; switch ( Infinity ) { case -- x : default : try { } catch { } finally { } }

@@ -1,0 +1,1 @@
+do switch ( '' ) { default : ; var x = Symbol . match ; case -- x : ; for ( let x ; '' , '' ; ) ; } while ( true ) ;

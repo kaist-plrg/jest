@@ -1,0 +1,1 @@
+var x = { [ "prototype" ] : '0' } . prototype . endsWith . call ( new String ( { [ "prototype" ] : '0' } ) , { [ "prototype" ] : '0' } ) ;

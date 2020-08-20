@@ -1,0 +1,1 @@
+var x = Array . prototype . find . call ( `${ '' }${ x }${ '' , '' }` , x => { ; return 42 ; } ) ;

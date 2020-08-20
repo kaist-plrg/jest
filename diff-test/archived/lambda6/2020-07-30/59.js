@@ -1,0 +1,1 @@
+Array . prototype . forEach . call ( [ , '' ] , function  (  ) { ; x ( 0 ) ; } ) ;

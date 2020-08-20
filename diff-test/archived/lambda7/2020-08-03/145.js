@@ -1,0 +1,1 @@
+try { ; switch ( '' , '' ) { case '' : ; } } catch ( { } ) { ; var x = { x ( ... [ ] ) { } } ; }

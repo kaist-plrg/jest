@@ -1,0 +1,1 @@
+while ( class { static x ( ) { } } ) switch ( '' ) { default : ; case x : }

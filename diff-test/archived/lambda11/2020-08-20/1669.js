@@ -1,0 +1,1 @@
+for ( let x of '' ) ; x ( ) ; function x ( ... [ x , ] ) { ; switch ( { ... '' } ) { case class extends x `${ Number ( Symbol . iterator ) }${ { async * x ( ... { x , } ) { } } }` { } : default : case x : } return x ^= '' ; }

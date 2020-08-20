@@ -1,0 +1,1 @@
+var x = { [ "prototype" ] : false } . prototype . reduce . call ( new { [ "prototype" ] : false } ( ) , { [ "prototype" ] : false } ) ;

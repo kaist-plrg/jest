@@ -1,0 +1,1 @@
+var x = async function *  (  ) {  } | class  extends x `${ '' }${ '' }` { ; } ;

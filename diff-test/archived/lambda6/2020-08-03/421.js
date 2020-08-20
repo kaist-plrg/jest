@@ -1,0 +1,1 @@
+for ( let x in Symbol . toPrimitive , { [ "get" ] : function ( ) { } , [ "configurable" ] : false } ) continue ;

@@ -1,0 +1,1 @@
+for ( ( Symbol . toStringTag ) of NaN ) for ( var x , x ; '' ; ) ;

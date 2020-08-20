@@ -1,0 +1,1 @@
+function x ( ) { ; var x = class extends x `${ '' }` { ; ; } ; switch ( '' ) { case x : ; default : ; try { } catch ( x ) { } } } new x ( ) ;

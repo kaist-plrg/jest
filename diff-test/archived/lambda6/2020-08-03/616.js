@@ -1,0 +1,1 @@
+Array . prototype . filter . call ( { [ "value" ] : null , [ "enumerable" ] : false , [ "configurable" ] : true } , class x { } ) ;

@@ -1,0 +1,1 @@
+do var [ x , ... x ] = x ; while ( '' ) ;

@@ -1,0 +1,1 @@
+Array . prototype . forEach . call ( 'str' , ( ) => { ; class x extends [ , '' ] { } } , Symbol . split ) ;

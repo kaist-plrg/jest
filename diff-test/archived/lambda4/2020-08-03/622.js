@@ -1,0 +1,1 @@
+Array . prototype . splice . call ( ( '' ) , - 0 , { [ "get" ] : function ( x0 , x1 ) { } , [ "set" ] : function ( ) { } , [ "enumerable" ] : true , [ "configurable" ] : true } , { async * x ( ... [ x ] ) { } } ) ;

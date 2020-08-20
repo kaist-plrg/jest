@@ -1,0 +1,1 @@
+Array . prototype . splice . call ( { [ "length" ] : Symbol . match } , 0 , 0 , Symbol . iterator ) ;

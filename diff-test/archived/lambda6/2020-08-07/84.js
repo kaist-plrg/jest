@@ -1,0 +1,1 @@
+var x = Object . assign ( ( Symbol . search ) , { async * x ( ... { ... x } ) { } } ) ;

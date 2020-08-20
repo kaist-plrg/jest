@@ -1,0 +1,1 @@
+Array . from ( { [ Symbol . asyncIterator ] : async function ( x ) { } , [ Symbol . iterator ] : async function ( ) { } } ) ;

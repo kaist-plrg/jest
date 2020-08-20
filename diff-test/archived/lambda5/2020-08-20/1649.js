@@ -1,0 +1,1 @@
+var x = Array . prototype . includes . call ( [ { [ "length" ] : function * ( ) { } } , - { [ "length" ] : function * ( ) { } } , x ?. [ { [ "length" ] : function * ( ) { } } ] ] , - { [ "length" ] : function * ( ) { } } ) ;

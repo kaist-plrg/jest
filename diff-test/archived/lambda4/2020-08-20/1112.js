@@ -1,0 +1,1 @@
+var x = new { p : 42 } ( x || x , ... class x extends x . x { } ) ;

@@ -1,0 +1,1 @@
+do for ( var { } = x ; '' ; ) ; while ( [ 42 , 'str' , true ] ) ;

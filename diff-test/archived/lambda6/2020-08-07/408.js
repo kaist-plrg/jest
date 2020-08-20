@@ -1,0 +1,1 @@
+var x = Object . getOwnPropertyDescriptors ( `${ '' }${ x instanceof x }${ NaN }` ) ;

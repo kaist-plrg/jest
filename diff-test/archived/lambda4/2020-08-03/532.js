@@ -1,0 +1,1 @@
+Object . defineProperty ( { [ "get" ] : function ( x0 , x1 ) { } , [ "enumerable" ] : false } , 0 , 0 ) ;

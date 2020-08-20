@@ -1,0 +1,1 @@
+var x = Symbol . match ; var [ , ... x ] = undefined %= ( Symbol . match ) ; function x ( ... { x = '' } ) { }

@@ -1,0 +1,1 @@
+String . prototype . slice . call ( 1 , ( Symbol . match ) , 0 ) ;

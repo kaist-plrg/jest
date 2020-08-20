@@ -1,0 +1,1 @@
+String . prototype . startsWith . call ( this , ( Symbol . asyncIterator ) ) ;

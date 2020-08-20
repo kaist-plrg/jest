@@ -1,0 +1,1 @@
+var x = x `${ '' }${ '' }` ; async function x ( ... { x , } ) { ; for await ( var x of x ?. ( ) ) return Number ( Symbol . iterator ) , '' ; async function * x ( ... [ ... x ] ) { ; var x = yield ; } await x ( ) ; }

@@ -1,0 +1,1 @@
+var x = ( Symbol . unscopables ) -- ; var { '' : { } = Symbol . iterator } = { p : 42 } ;

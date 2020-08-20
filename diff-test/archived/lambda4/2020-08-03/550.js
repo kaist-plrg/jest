@@ -1,0 +1,1 @@
+Array . prototype . concat . call ( [ 42 , 'str' , true ] ) ;

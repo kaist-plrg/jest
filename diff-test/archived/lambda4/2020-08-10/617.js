@@ -1,0 +1,1 @@
+var x = String . prototype . includes . call ( new String ( { [ "prototype" ] : ( ) => { throw '' ; } } ) , 0 , 0 ) ;

@@ -1,0 +1,1 @@
+var x = typeof { [ "enumerable" ] : true , [ "configurable" ] : true } ;

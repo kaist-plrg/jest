@@ -1,0 +1,1 @@
+function x ( ... [ , ] ) { } ; new class extends x `` { } ;

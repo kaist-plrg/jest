@@ -1,0 +1,1 @@
+for ( ( Symbol . replace ) of ++ x ) throw '' , '' ;

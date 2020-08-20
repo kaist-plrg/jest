@@ -1,0 +1,1 @@
+function x ( x0 , x1 ) { } try { } catch ( x ) { } var x = 42n ; x ++ ;

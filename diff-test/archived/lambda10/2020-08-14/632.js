@@ -1,0 +1,1 @@
+if ( undefined ) ; else for ( var x of '' ) ;

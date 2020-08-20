@@ -1,0 +1,1 @@
+for ( x in 'str' ) ; class x extends function ( ) { } { }

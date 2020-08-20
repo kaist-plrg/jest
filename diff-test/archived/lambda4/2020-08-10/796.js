@@ -1,0 +1,1 @@
+var x = x + { [ "valueOf" ] : async * function ( ) { } , [ "toString" ] : '0' } ; function * x ( ... x ) { }

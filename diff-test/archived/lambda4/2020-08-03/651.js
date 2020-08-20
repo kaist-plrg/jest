@@ -1,0 +1,1 @@
+var x = { [ { x ( ... { x : { } } ) { } } ] : null , [ "enumerable" ] : 'str' } instanceof class x extends x . x { } ;

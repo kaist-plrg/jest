@@ -1,0 +1,1 @@
+var x = 42n >> ( - 1n ) ; var x = x / x ;

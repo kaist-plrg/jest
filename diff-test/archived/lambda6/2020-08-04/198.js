@@ -1,0 +1,1 @@
+Function . prototype . bind . call ( function ( ) { } , class { x ( ) { } } , 42n ) ;

@@ -1,0 +1,1 @@
+var x = Array . prototype . slice . call ( Infinity , Symbol . match , 0 ) ;

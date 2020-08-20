@@ -1,0 +1,1 @@
+var x = ( Symbol . hasInstance ) >>= class { static x ( ) { } } ;

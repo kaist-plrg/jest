@@ -1,0 +1,1 @@
+Symbol . prototype [ Symbol . toPrimitive ] . call ( Symbol . toStringTag ) ;

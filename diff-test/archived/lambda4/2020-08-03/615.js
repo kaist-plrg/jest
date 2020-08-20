@@ -1,0 +1,1 @@
+for ( var x of { set x ( x ) { } } ) var [ x , ... x ] = x ;

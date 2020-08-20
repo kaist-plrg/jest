@@ -1,0 +1,1 @@
+Object . prototype . toLocaleString . call ( ( Symbol . search ) , ( Symbol . match ) ) ;

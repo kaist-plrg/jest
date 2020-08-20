@@ -1,0 +1,1 @@
+( x => { ; var x = async x => x ; switch ( '' ) { default : case x : } x ( 0 ) ; try { } finally { } } ) ( ) ;

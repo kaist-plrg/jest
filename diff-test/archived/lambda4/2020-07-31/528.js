@@ -1,0 +1,1 @@
+var x = ( Symbol . match ) << { [ "get" ] : function  ( x  ) {  } , [ "set" ] : function  (  ) {  } , [ "enumerable" ] : false , [ "configurable" ] : true } ; var x = Symbol . match ;

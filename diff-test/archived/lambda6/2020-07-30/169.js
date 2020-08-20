@@ -1,0 +1,1 @@
+Array . prototype . map . call ( undefined , false , async function x (  ) {  } , class   {  } ) ;

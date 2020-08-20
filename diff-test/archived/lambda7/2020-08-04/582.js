@@ -1,0 +1,1 @@
+for ( let x = { async x ( ... [ ... x ] ) { ; } } ; class extends x ?. x [ '' , '' ] { } ; ) for ( '' , '' ; '' , '' ; '' , '' ) ;

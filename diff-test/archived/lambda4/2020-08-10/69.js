@@ -1,0 +1,1 @@
+var x = { [ "prototype" ] : { [ "prototype" ] : false } } . prototype . toString . call ( new Error ( { [ "prototype" ] : false } ) ) ;

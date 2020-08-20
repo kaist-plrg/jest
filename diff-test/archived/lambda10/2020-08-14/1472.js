@@ -1,0 +1,1 @@
+var x = ( x => { ; ( - Infinity ) ( 42 ) ; return ( ) => x ; for ( '' , '' ; ; ) ; } ) ( { p : 42 } ) ;

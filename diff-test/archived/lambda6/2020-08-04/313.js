@@ -1,0 +1,1 @@
+var x = async x => BigInt ( 'x' ) ; for ( { x = x } in '' ) ; x `` ;

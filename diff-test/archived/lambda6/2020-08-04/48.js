@@ -1,0 +1,1 @@
+String . prototype . slice . call ( false , - Infinity , { p : '0' } ) ;

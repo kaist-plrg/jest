@@ -1,0 +1,1 @@
+Object . assign ( Infinity , null ) ;

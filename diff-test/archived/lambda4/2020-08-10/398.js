@@ -1,0 +1,1 @@
+for ( var x = '' ; '' ; ) ; switch ( '' ) { default : case x : ; throw 0 ; }

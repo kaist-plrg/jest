@@ -1,0 +1,1 @@
+Object . getOwnPropertyDescriptors ( { [ "value" ] : undefined , [ "writable" ] : false , [ "enumerable" ] : true } ) ;

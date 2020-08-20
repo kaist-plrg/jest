@@ -1,0 +1,1 @@
+var x = String . prototype . slice . call ( new String ( ( ) => { } ) , [ 42 , 'str' , true ] , - Infinity ) ;

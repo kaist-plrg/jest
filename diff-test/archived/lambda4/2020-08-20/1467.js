@@ -1,0 +1,1 @@
+var x = { [ "valueOf" ] : async function ( x ) { } , [ "toString" ] : ( ) => { throw '' ; } } == 1 ;

@@ -1,0 +1,1 @@
+for ( let x of class x extends x `${ '' , '' }${ '' , '' }` {  } ) for ( let x = x ;  ;  ) ;

@@ -1,0 +1,1 @@
+eval ( `${ NaN , class x { x ( ) { } } }` ) ;

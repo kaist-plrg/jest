@@ -1,0 +1,1 @@
+var x = new { [ "done" ] : ( ) => { throw '' ; } } ( x , ... { [ "done" ] : ( ) => { throw '' ; } } ) ;

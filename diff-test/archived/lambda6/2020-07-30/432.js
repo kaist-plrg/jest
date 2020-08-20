@@ -1,0 +1,1 @@
+var x = 42n `${ async function (  ) {  } , NaN }${ class  extends x { ; ; } }${ x = '' }` ; async function x ( ... { x  ,  } ) {  }

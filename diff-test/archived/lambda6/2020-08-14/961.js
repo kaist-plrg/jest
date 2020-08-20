@@ -1,0 +1,1 @@
+function x ( ) { ; return ; } new x ( ) ; var x = x ?. ( ) ;

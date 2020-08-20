@@ -1,0 +1,1 @@
+var x = ( x => { ; this ( Infinity ) ; return Symbol . split ; for ( let x of '' ) ; } ) ( 0 ) ;

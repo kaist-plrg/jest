@@ -1,0 +1,1 @@
+if ( class x extends x ?. x . x { ; } ) switch ( '' ) { case '' , '' : } else for ( var x , x ; ; '' ) ;

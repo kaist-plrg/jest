@@ -1,0 +1,1 @@
+String . prototype . split . call ( { set x ( x ) { } } , true ) ;

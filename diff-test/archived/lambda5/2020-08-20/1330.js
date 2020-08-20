@@ -1,0 +1,1 @@
+var x = URIError ( { [ "prototype" ] : function ( ) { } } . isConcatSpreadable ) ;

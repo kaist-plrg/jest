@@ -1,0 +1,1 @@
+Array . prototype . filter . call ( 'str' , x => { ; throw 0 ; } ) ;

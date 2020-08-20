@@ -1,0 +1,1 @@
+var x = String . prototype . startsWith . call ( { [ { [ Symbol . match ] : function * ( ) { } } . toPrimitive ] : { [ Symbol . match ] : function * ( ) { } } } , { [ Symbol . match ] : function * ( ) { } } , { x : { [ Symbol . match ] : function * ( ) { } } } ) ;

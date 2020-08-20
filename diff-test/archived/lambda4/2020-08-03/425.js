@@ -1,0 +1,1 @@
+var x = x >>> ( Symbol . hasInstance ) ; var { x } = { [ "return" ] : function ( x ) { } , [ "throw" ] : function ( ) { } } ;

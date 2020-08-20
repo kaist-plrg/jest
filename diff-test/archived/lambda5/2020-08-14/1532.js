@@ -1,0 +1,1 @@
+var x = x `` ; async function x ( ... { x } ) { for await ( var x of { [ "length" ] : null } ) ; for ( { [ "length" ] : null } [ '' , '' ] in { [ "length" ] : null } ) ; }

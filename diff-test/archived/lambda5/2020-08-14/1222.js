@@ -1,0 +1,1 @@
+var x = Function . prototype . bind . call ( async x => '' , 0 ) ; x ( 42 ) ;

@@ -1,0 +1,1 @@
+async function x ( ... { x , } ) { } var { 42 : { } } = class extends x ( ) `` { } ;

@@ -1,0 +1,1 @@
+switch ( '' , Infinity ) { default : for ( var { } = x ; '' ; '' ) ; case 0 : }

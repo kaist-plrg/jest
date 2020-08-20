@@ -1,0 +1,1 @@
+Array . prototype . copyWithin . call ( 'str' , true ) ;

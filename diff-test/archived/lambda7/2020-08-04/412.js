@@ -1,0 +1,1 @@
+Array . prototype . some . call ( x => x , class x { ; } ) ;

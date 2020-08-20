@@ -1,0 +1,1 @@
+var x = String . prototype . substring . call ( Symbol . matchAll , ( - 1 ) , 0 ) ;

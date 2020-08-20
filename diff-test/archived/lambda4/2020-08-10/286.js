@@ -1,0 +1,1 @@
+var x = Array . prototype . findIndex . call ( [ undefined , class { static x ( ) { } } , true ] , x => 0 ) ;

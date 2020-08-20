@@ -1,0 +1,1 @@
+async function x ( ) { for await ( let x of [ , ] ) return '' ; var x = x %= '' ; } x ( 42 ) ;

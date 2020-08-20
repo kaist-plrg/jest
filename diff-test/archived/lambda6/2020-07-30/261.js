@@ -1,0 +1,1 @@
+Symbol . for ( Symbol . matchAll , 0 ) ;

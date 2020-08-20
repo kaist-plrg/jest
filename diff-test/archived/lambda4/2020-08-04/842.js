@@ -1,0 +1,1 @@
+Array . prototype . slice . call ( { [ "length" ] : true } , { [ "length" ] : true } , 0 ) ;
