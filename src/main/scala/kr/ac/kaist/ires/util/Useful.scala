@@ -67,8 +67,12 @@ object Useful {
     dumpFile(data.toJson.prettyPrint, filename)
 
   // read file
-  def readFile(filename: String): String =
-    Source.fromFile(filename, "UTF-8").mkString
+  def readFile(filename: String): String = {
+    val src = Source.fromFile(filename, "UTF-8")
+    val str = src.mkString
+    src.close
+    str
+  }
 
   // read JSON
   def readJson[T](filename: String)(implicit reader: JsonReader[T]): T =
@@ -206,4 +210,8 @@ object Useful {
         None
     }
   }
+
+  // sort string
+  def cmpStr(a: String, b: String): Boolean =
+    if (a.length == b.length) a < b else a.length < b.length
 }

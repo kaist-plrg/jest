@@ -31,7 +31,7 @@ case object Localize extends PhaseObj[Unit, LocalizeConfig, Unit] with DefaultJs
 
     for {
       failedFile <- walkTree(failedPath)
-      name = failedFile.getName
+      name = failedFile.getName if name == "spec.json"
       filename = failedFile.toString if jsonFilter(filename)
     } {
       val engine = removedExt(name)
