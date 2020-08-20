@@ -2,6 +2,7 @@ package kr.ac.kaist.ires.coverage
 
 import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Inst._
+import kr.ac.kaist.ires.util.Useful._
 
 class Visited {
   private var _instCovered: Set[Int] = Set()
@@ -59,7 +60,7 @@ class Visited {
   }
 
   // add/remove touched algorithm name
-  def +=(algoName: String): Unit = _touchedAlgos += algoName
+  def +=(algoName: String): Unit = _touchedAlgos += getScalaName(algoName)
 
   // merge another Visited
   def ++=(that: Visited): Unit = {
