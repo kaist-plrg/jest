@@ -7,23 +7,23 @@
 |MD1  |Moddable| |X| | |Exc|OptionalExpression0Evaluation0|Y|`var x = TypeError ( x ?. ( ) ) ;`|
 |MD2  |Moddable| |X| | |Exc|GLOBALDOTNumberDOTprototypeDOTtoString|Y|`var x = Number . prototype . toString . call ( new Number ( 0 ) , 0 ) ;`|
 |MD3  |Moddable| |X| |X|Desc|ElementList1ArrayAccumulation1|Y|`var x = { 42 : class   { x (  ) {  } } } ;`|
-|MD4  |Moddable| |X| | |Desc|PropertyDefinition2PropertyDefinitionEvaluation0|N|`var x = [ , ... '' ] ;`|
-|MD5  |Moddable| |X| | |Exc|GLOBALDOTArrayDOTprototypeDOTtoString|N|`Array . prototype . toString . call ( function x (  ) {  } ) ;`|
-|MD6-1|Moddable| |X| | |Key|CreateMapIterator|N|`var x = Map . prototype . keys . call ( new Map ( ) ) ;`|
-|MD6-2|Moddable| |X| | |Key|CreateSetIterator|N|`var x = Set . prototype . values . call ( new Set ( ) ) ;`|
-|MD7  |Moddable| |X| | |Exc|ToString|N|`String . prototype . split . call ( 1 , Symbol . species , 0 , 0 ) ;`|
+|MD4  |Moddable| |X| | |Desc|PropertyDefinition2PropertyDefinitionEvaluation0|Y|`var x = [ , ... '' ] ;`|
+|MD5  |Moddable| |X| | |Exc|GLOBALDOTArrayDOTprototypeDOTtoString|Y|`Array . prototype . toString . call ( function x (  ) {  } ) ;`|
+|MD6-1|Moddable| |X| | |Key|CreateMapIterator|Y|`var x = Map . prototype . keys . call ( new Map ( ) ) ;`|
+|MD6-2|Moddable| |X| | |Key|CreateSetIterator|Y|`var x = Set . prototype . values . call ( new Set ( ) ) ;`|
+|MD7  |Moddable| |X| | |Exc|ToString|Y|`String . prototype . split . call ( 1 , Symbol . species , 0 , 0 ) ;`|
 |MD8  |Moddable| |X| | |Exc|EnumerateObjectProperties|N|`for ( x in 'str' ) ;`|
-|MD9-1|Moddable| |X| | |Exc|-|N|`var x = { p : 0 } ; ( { p : ( Symbol . match ) } = x ) ;`|
-|MD9-2|Moddable| |X| | |Exc|-|N|`var x = [ 1 , 2 , 3 ] ; ( [ , ( Symbol . isConcatSpreadable ) ] = x ) ;`|
-|MD10 |Moddable| |X| | |Exc|-|N|`var x = [ 1 , 2 , 3 ] ; ( [ , undefined ] = x ) ;`|
-|MD11 |Moddable| |X| | |Key|GLOBALDOTArrayDOTprototypeDOTslice|N|`var x = Array . prototype . slice . call ( 'str' , { } , ~ x ) ;`|
-|MD12 |Moddable| |X| | |Exc|-|N|`switch ( '' ) { default : ; class x extends { x } { } }`|
+|MD9-1|Moddable| |X| | |Exc|-|Y|`var x = { p : 0 } ; ( { p : ( Symbol . match ) } = x ) ;`|
+|MD9-2|Moddable| |X| | |Exc|-|Y|`var x = [ 1 , 2 , 3 ] ; ( [ , ( Symbol . isConcatSpreadable ) ] = x ) ;`|
+|MD10 |Moddable| |X| | |Exc|-|Y|`var x = [ 1 , 2 , 3 ] ; ( [ , undefined ] = x ) ;`|
+|MD11 |Moddable| |X| | |Key|GLOBALDOTArrayDOTprototypeDOTslice|Y|`var x = Array . prototype . slice . call ( 'str' , { } , ~ x ) ;`|
+|MD12 |Moddable| |X| | |Exc|-|Y|`switch ( '' ) { default : ; class x extends { x } { } }`|
 |MD13 |Moddable| |X| | |Exc|-|N|`async function * x ( ) { class x extends new . target { ; } } ; x ( ) ;`|
 |MD14 |Moddable| |X| | |Exc|-|N|`do do ; while ( '' ) ; while ( BigInt ( 0 ) ) ;`|
-|MD15 |Moddable| |X|X| |Key|BoundFunctionCreate|N|`var x = Function . prototype . bind . call ( ( ) => { } , ( Symbol . replace ) ) ;`|
-|MD16 |Moddable| |X| | |Exc|AwaitExpression0Evaluation0|N|`var x = Promise . race ( { [ Symbol . asyncIterator ] : function ( ) { ; } , [ Symbol . iterator ] : async function ( ) { ; await x ( ) ; } } ) ; async function * x ( ... { ... x } ) { } throw 42 ; async function x ( x ) { ; x ( 42 ) ; }`|
-|MD17 |Moddable| |X| | |Key|GeneratorBody0EvaluateBody0|N|`var x = x `` ; function * x ( ... [ ] ) { }`|
-|MD18 |Moddable| |X| | |Desc|ToPropertyDescriptor|N|`var x = Object . defineProperty ( class { static x ( ) { } } , { [ "set" ] : ( ) => { throw { [ Symbol . toPrimitive ] : function ( x ) { } } ; } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : { [ Symbol . toPrimitive ] : function ( x ) { } } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : async function ( ) { } , [ "get" ] : { [ Symbol . toPrimitive ] : function ( x ) { } } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : { [ Symbol . toPrimitive ] : function ( x ) { } } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : { [ Symbol . toPrimitive ] : function ( x ) { } } } , { [ "set" ] : ( ) => { throw '' ; } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : { [ Symbol . toPrimitive ] : function ( x ) { } } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : async function ( ) { } , [ "get" ] : function ( ) { } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : async function ( x ) { } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : { [ Symbol . toPrimitive ] : function ( x ) { } } } ) ;`|
+|MD15 |Moddable| |X|X| |Key|BoundFunctionCreate|Y|`var x = Function . prototype . bind . call ( ( ) => { } , ( Symbol . replace ) ) ;`|
+|MD16 |Moddable| |X| | |Exc|Await|N|`var x = Promise . race ( { [ Symbol . asyncIterator ] : function ( ) { ; } , [ Symbol . iterator ] : async function ( ) { ; await x ( ) ; } } ) ; async function * x ( ... { ... x } ) { } throw 42 ; async function x ( x ) { ; x ( 42 ) ; }`|
+|MD17 |Moddable| |X| | |Key|GeneratorBody0EvaluateBody0|Y|`var x = x `` ; function * x ( ... [ ] ) { }`|
+|MD18 |Moddable| |X| | |Desc|ToPropertyDescriptor|Y|`var x = Object . defineProperty ( class { static x ( ) { } } , { [ "set" ] : ( ) => { throw { [ Symbol . toPrimitive ] : function ( x ) { } } ; } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : { [ Symbol . toPrimitive ] : function ( x ) { } } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : async function ( ) { } , [ "get" ] : { [ Symbol . toPrimitive ] : function ( x ) { } } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : { [ Symbol . toPrimitive ] : function ( x ) { } } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : { [ Symbol . toPrimitive ] : function ( x ) { } } } , { [ "set" ] : ( ) => { throw '' ; } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : { [ Symbol . toPrimitive ] : function ( x ) { } } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : async function ( ) { } , [ "get" ] : function ( ) { } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : async function ( x ) { } , [ { [ Symbol . toPrimitive ] : function ( x ) { } } ] : { [ Symbol . toPrimitive ] : function ( x ) { } } } ) ;`|
 
 
 
@@ -228,8 +228,8 @@ var x = Function . prototype . bind . call ( async x => x , 0 ) ; x ( ) ;
 var x = Function . prototype . bind . call ( ( ) => { } , ( Symbol . replace ) ) ;
 ```
 
-## Promise.race - [Reported](https://github.com/Moddable-OpenSource/moddable/issues/419)
-- __Section:__ [25.6.4.4 Promise.race](http://ecma-international.org/ecma-262/11.0/#sec-promise.race)
+## Await - [Reported](https://github.com/Moddable-OpenSource/moddable/issues/419)
+- __Section:__ [6.2.3.1 Await](http://ecma-international.org/ecma-262/11.0/#await)
 - Expected exception to throw but no exception
 - __Simple JavaScript code:__
 ```js
