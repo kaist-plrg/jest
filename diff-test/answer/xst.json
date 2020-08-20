@@ -1,0 +1,60 @@
+{
+  "ExceptionFail(Normal,TypeError)": [{
+    "id": "MD1",
+    "algo": "OptionalExpression0Evaluation0"
+  }, {
+    "id": "MD5",
+    "algo": "GLOBALDOTArrayDOTprototypeDOTtoString"
+  }],
+  "ExceptionFail(RangeError,Normal)": [{
+    "id": "MD2",
+    "algo": "GLOBALDOTNumberDOTprototypeDOTtoString"
+  }],
+  "AssertionFail(AssertionError(descriptor value should be \"42\" but \"\"))": [{
+    "id": "MD3",
+    "algo": "ElementList1ArrayAccumulation1"
+  }],
+  "AssertionFail(AssertionError(descriptor value should be 1 but 0))": [{
+    "id": "MD4",
+    "algo": "PropertyDefinition2PropertyDefinitionEvaluation0"
+  }],
+  "AssertionFail(AssertionError(Expected [] but got [\"result\", \"iterable\", \"index\"] for CallExpression0Evaluation0.))": [{
+    "id": "MD6-1",
+    "algo": "CreateMapIterator"
+  }, {
+    "id": "MD6-2",
+    "algo": "CreateSetIterator"
+  }],
+  "ExceptionFail(TypeError,Normal)": [{
+    "id": "MD7",
+    "algo": "ToString"
+  }],
+  "ExceptionFail(ReferenceError,Normal)": [{
+    "id": "MD8",
+    "algo": "EnumerateObjectProperties"
+  }],
+  "AssertionFail(AssertionError(Expected [\"0\", \"1\", \"length\"] but got [\"0\", \"0\", \"length\"] for CallExpression0Evaluation0.))": [{
+    "id": "MD11",
+    "algo": "GLOBALDOTArrayDOTprototypeDOTslice"
+  }],
+  "AssertionFail(AssertionError(Expected [\"length\", \"name\"] but got [\"length\", \"name\", \"boundFunction\", \"boundThis\"] for CallExpression0Evaluation0.))": [{
+    "id": "MD15",
+    "algo": "BoundFunctionCreate"
+  }],
+  "ExceptionFail(Throw,Normal)": [{
+    "id": "MD16",
+    "algo": "Await"
+  }],
+  "AssertionFail(AssertionError(Expected [] but got [Symbol()] for GeneratorBody0EvaluateBody0.))": [{
+    "id": "MD17",
+    "algo": "GeneratorBody0EvaluateBody0"
+  }],
+  "AssertionFail(AssertionError(descriptor value should be \"set\" but \"set [object Object]\"))": [{
+    "id": "MD18",
+    "algo": "ToPropertyDescriptor"
+  }],
+  "AssertionFail(AssertionError(descriptor value should be \"get\" but \"get [object Object]\"))": [{
+    "id": "MD18",
+    "algo": "ToPropertyDescriptor"
+  }]
+}
