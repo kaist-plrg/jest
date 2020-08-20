@@ -6,8 +6,8 @@
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-|
 |MD1  |Moddable| |X| | |Exc|OptionalExpression0Evaluation0|Y|`var x = TypeError ( x ?. ( ) ) ;`|
 |MD2  |Moddable| |X| | |Exc|GLOBALDOTNumberDOTprototypeDOTtoString|Y|`var x = Number . prototype . toString . call ( new Number ( 0 ) , 0 ) ;`|
-|MD3  |Moddable| |X| |X|Desc|ElementList1ArrayAccumulation1|Y|`var x = { 42 : class   { x (  ) {  } } } ;`|
-|MD4  |Moddable| |X| | |Desc|PropertyDefinition2PropertyDefinitionEvaluation0|Y|`var x = [ , ... '' ] ;`|
+|MD3  |Moddable| |X| |X|Desc|PropertyDefinition2PropertyDefinitionEvaluation0|Y|`var x = { 42 : class   { x (  ) {  } } } ;`|
+|MD4  |Moddable| |X| | |Desc|ElementList1ArrayAccumulation1|Y|`var x = [ , ... '' ] ;`|
 |MD5  |Moddable| |X| | |Exc|GLOBALDOTArrayDOTprototypeDOTtoString|Y|`Array . prototype . toString . call ( function x (  ) {  } ) ;`|
 |MD6-1|Moddable| |X| | |Key|CreateMapIterator|Y|`var x = Map . prototype . keys . call ( new Map ( ) ) ;`|
 |MD6-2|Moddable| |X| | |Key|CreateSetIterator|Y|`var x = Set . prototype . values . call ( new Set ( ) ) ;`|
