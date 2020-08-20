@@ -2,7 +2,7 @@
 
 |ID|Origin|V8|XS|qjs|js|Assertion|Bug Algo.|Conf.|Example|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-|
-|GR1|Graal| | | |X|Exc|UpdateExpression3Evaluation0|Y|`class A{}`|
+|GR1|Graal| | | |X|Exc|UpdateExpression3Evaluation0|Y|`++undefined;`|
 |GR2|Graal| | | |X|Key|GeneratorDeclaration0InstantiateFunctionObject0|Y|`function*f(){}`|
 |GR3|Graal| | | |X|Key|AsyncGeneratorDeclaration0InstantiateFunctionObject0|Y|`async function*f(){}`|
 |GR4|Graal| | | |X|Key|GeneratorExpression0Evaluation0|Y|`var x=function*(){}`|
@@ -11,13 +11,13 @@
 |GR7|Graal| | | |X|Key|AsyncGeneratorExpression0Evaluation1|Y|`var x=async function*f(){}`|
 |GR8|Graal| | | |X|Key|GeneratorMethod0PropertyDefinitionEvaluation0|Y|`var x={*f(){}}`|
 |GR9|Graal| | | |X|Key|AsyncGeneratorMethod0PropertyDefinitionEvaluation0|Y|`var x={async*f(){}}`|
-|GR10|Graal| | | |X|Exc|UnaryExpression1Evaluation0|Y|`delete""[0];`|
+|GR10|Graal| | | |X|Exc|UnaryExpression1Evaluation0|Y|`delete"str"[0];`|
 |GR11|Graal| | |X|X|Exc|StringPad|Y|`var x="42".padStart(Infinity,"");`|
 |GR12|Graal| |X| |X|Desc|PropertyDefinition2PropertyDefinitionEvaluation0|Y|`var x={42:class{}};`|
 |GR13|Graal| | | |X|Exc|ElementList3ArrayAccumulation1|Y|`var x=[undefined,,...[undefined]];`|
-|GR13|Graal| | | |X|Desc|FormalParameters1ExpectedArgumentCount0|Y|`function x (...[x]){}`|
-|GR14|Graal| | | |X|Exc|ForInOfHeadEvaluation|Y|`for(let x of x);`|
-|GR15|Graal| | | |X|Exc|-|Y|`(...{x})=>{};`|
+|GR14|Graal| | | |X|Desc|FormalParameters1ExpectedArgumentCount0|Y|`function x (...[x]){}`|
+|GR15|Graal| | | |X|Exc|ForInOfHeadEvaluation|Y|`for(let x of x);`|
+|GR16|Graal| | | |X|Exc|-|Y|`(...{x})=>{};`|
 
 
 - report 하는 곳 : https://github.com/graalvm/graaljs/issues
