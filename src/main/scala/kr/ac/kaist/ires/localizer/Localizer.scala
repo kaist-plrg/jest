@@ -110,6 +110,8 @@ class Localizer(formula: Formula) {
 object Localizer {
   val MAX_FAILED_CNT = 100
   val MAX_TRIAL = 10000
+  var instMap: Map[String, Set[Int]] = Map()
+  var algoMap: Map[String, Set[String]] = Map()
 
   def apply(
     scriptDir: String,
@@ -136,6 +138,7 @@ object Localizer {
       script = parseResult.get
       failed = failedScriptNames contains name
     } {
+      val loaded = instMap.contains(name) && algoMap.contains(name)
       // check if touched exist
       val touchedInstCache = s"$TOUCHED_DIR/inst/${toJsonExt(name)}"
       val touchedAlgoCache = s"$TOUCHED_DIR/algo/${toJsonExt(name)}"
@@ -144,7 +147,10 @@ object Localizer {
       var instCovered = Set[Int]()
       var algoCovered = Set[String]()
 
-      if (cached) {
+      if (loaded) {
+        instCovered = instMap(name)
+        algoCovered = algoMap(name)
+      } else if (cached) {
         // read from cache
         instCovered = readJson[Set[Int]](touchedInstCache)
         algoCovered = readJson[Set[String]](touchedAlgoCache)
@@ -159,6 +165,11 @@ object Localizer {
         // dump
         dumpJson(visited.instCovered, touchedInstCache)
         dumpJson(visited.touchedAlgos, touchedAlgoCache)
+      }
+
+      if (!loaded) {
+        instMap += name -> instCovered
+        algoMap += name -> algoCovered
       }
 
       localizer.updateInst(instCovered, failed)

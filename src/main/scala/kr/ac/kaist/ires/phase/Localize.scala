@@ -11,6 +11,7 @@ import kr.ac.kaist.ires.util.Useful._
 import kr.ac.kaist.ires.localizer._
 import kr.ac.kaist.ires.checker._
 import spray.json._
+import kr.ac.kaist.ires.localizer.AnswerProtocol._
 
 // localize phase
 case object Localize extends PhaseObj[Unit, LocalizeConfig, Unit] with DefaultJsonProtocol {
@@ -31,18 +32,34 @@ case object Localize extends PhaseObj[Unit, LocalizeConfig, Unit] with DefaultJs
 
     for {
       failedFile <- walkTree(failedPath)
-      name = failedFile.getName if name == "spec.json"
+      name = failedFile.getName
       filename = failedFile.toString if jsonFilter(filename)
     } {
       val engine = removedExt(name)
       val dir = s"$localizedDir/$engine"
       mkdir(dir)
 
-      val answerMap: Option[Map[String, Set[String]]] = config.answerDir match {
+      val answerMap: Option[Map[String, Set[Answer]]] = config.answerDir match {
         case Some(answerDir) =>
-          Some(readJson[Map[String, Set[String]]](s"$answerDir/$name"))
+          Some(readJson[Map[String, Set[Answer]]](s"$answerDir/$name"))
         case None => None
       }
+
+      val nf = getPrintWriter(s"$dir/summary")
+      def add(any: Any): Unit = nf.print(s"$any\t")
+      def newline: Unit = nf.println
+
+      val headers: List[String] = List(
+        "mutate",
+        "formula",
+        "fail description",
+        "answer",
+        "id",
+        "algo",
+        "aggregated"
+      )
+
+      headers.foreach(add)
 
       val m = readJson[Map[String, Set[String]]](filename)
       m.zipWithIndex.foreach {
@@ -50,35 +67,38 @@ case object Localize extends PhaseObj[Unit, LocalizeConfig, Unit] with DefaultJs
           val localizer = Localizer(scriptsDir, errorsDir, engine, failedDesc, failedSet, config.formula, config.mutate)
           localizer.dump(s"$dir/$i")
 
-          // create summary
-          var summary: String = {
-            s"mutate : ${config.mutate}" + LINE_SEP +
-              s"formula : ${config.formula.name}" + LINE_SEP +
-              s"fail description : $failedDesc" + LINE_SEP
-          }
           // if answerMap exists, then save result
           answerMap match {
             case Some(am) => am.get(failedDesc) match {
-              case Some(answerAlgos) => {
-                answerAlgos.foreach(answerAlgo => {
-                  val algoRank = localizer.getAlgoRank(answerAlgo)
-                  val agAlgoRank = localizer.getAgAlgoRank(answerAlgo)
-                  println(answerAlgo)
-                  summary += {
-                    s"answer : $answerAlgo" + LINE_SEP +
-                      s"algo rank : $algoRank" + LINE_SEP +
-                      s"aggregated algo rank : $agAlgoRank" + LINE_SEP
-                  }
+              case Some(answers) => {
+                answers.foreach(answer => {
+                  val Answer(id, algo) = answer
+                  val algoRank = localizer.getAlgoRank(algo)
+                  val agAlgoRank = localizer.getAgAlgoRank(algo)
+
+                  add(config.mutate)
+                  add(config.formula.name)
+                  add(failedDesc)
+                  add(id)
+                  add(algo)
+                  add(algoRank)
+                  add(agAlgoRank)
+                  newline
                 })
               }
-              case None => // do nothing
+              case None => {
+                add(config.mutate)
+                add(config.formula.name)
+                add(failedDesc)
+                newline
+              } // do nothing
             }
             case None => // do nothing
           }
-
-          dumpFile(summary, s"$dir/$i/summary")
         }
       }
+
+      nf.close
     }
   }
 
