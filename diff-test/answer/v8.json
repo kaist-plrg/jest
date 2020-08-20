@@ -1,0 +1,10 @@
+{
+  "AssertionPass(AssertionError(Expected [\"length\", \"prototype\", \"name\"] but got [\"length\", \"name\", \"prototype\"] for ClassTail0ClassDefinitionEvaluation3.))": [{
+    "id": "VE1",
+    "algo": "ClassTail0ClassDefinitionEvaluation3"
+  }],
+  "AssertionPass(AssertionError(Expected [\"length\", \"prototype\"] but got [\"length\", \"name\", \"prototype\"] for ClassTail0ClassDefinitionEvaluation3.))": [{
+    "id": "VE2",
+    "algo": "ClassTail0ClassDefinitionEvaluation3"
+  }]
+}

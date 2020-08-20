@@ -1,23 +1,4 @@
 {
-  "AssertionPass(AssertionError(Expected [\"length\", \"x\"] but got [\"length\", \"name\", \"x\"] for ArrowFunction0Evaluation0.))": ["ArrowFunction0Evaluation0"],
-  "ExceptionFail(Throw,Normal)": ["AbstractEqualityComparison"],
-  "ExceptionFail(Normal,TypeError)": ["ForInOfHeadEvaluation"],
-
-  "AssertionPass(AssertionError(Expected [\"length\"] but got [\"length\", \"name\"] for AsyncArrowFunction0Evaluation0.))": ["AsyncArrowFunction0Evaluation0"],
-
-  "AssertionPass(AssertionError(Expected [\"length\", \"prototype\"] but got [\"length\", \"name\", \"prototype\"] for ClassTail0ClassDefinitionEvaluation3.))": ["ClassTail0ClassDefinitionEvaluation3"],
-
-  "ExceptionFail(TimeoutError,TypeError)": ["ForInOfHeadEvaluation"],
-  "ExceptionFail(ReferenceError,TypeError)": ["ForInOfHeadEvaluation"],
-  "AssertionPass(AssertionError(Expected [\"length\", \"prototype\", \"name\"] but got [\"length\", \"name\", \"prototype\"] for MethodDefinition0DefineMethod0.))": ["MethodDefinition0DefineMethod0"],
-  "AssertionPass(AssertionError(Expected [\"length\"] but got [\"length\", \"name\"] for ArrowFunction0Evaluation0.))": ["ArrowFunction0Evaluation0"],
-
-
-
-
-
-
-
   "AssertionPass(AssertionError(Expected [\"length\", \"prototype\", \"name\"] but got [\"length\", \"name\", \"prototype\"] for ClassTail0ClassDefinitionEvaluation3.))": [{
     "id": "ES1-1",
     "algo": "ClassTail0ClassDefinitionEvaluation3"
