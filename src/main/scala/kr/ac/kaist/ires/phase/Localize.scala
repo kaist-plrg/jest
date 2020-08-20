@@ -17,6 +17,7 @@ import kr.ac.kaist.ires.localizer.AnswerProtocol._
 case object Localize extends PhaseObj[Unit, LocalizeConfig, Unit] with DefaultJsonProtocol {
   val name = "localize"
   val help = "Localize JavaScript files."
+  val FORMULAS: List[Formula] = List(ER1b, Jaccard, Ochiai)
 
   def apply(
     unit: Unit,
@@ -60,11 +61,12 @@ case object Localize extends PhaseObj[Unit, LocalizeConfig, Unit] with DefaultJs
       )
 
       headers.foreach(add)
+      newline
 
       val m = readJson[Map[String, Set[String]]](filename)
       m.zipWithIndex.foreach {
         case ((failedDesc, failedSet), i) => {
-          val localizer = Localizer(scriptsDir, errorsDir, engine, failedDesc, failedSet, config.formula, config.mutate)
+          val localizer = Localizer(scriptsDir, errorsDir, engine, failedDesc, failedSet, FORMULAS, config.mutate)
           localizer.dump(s"$dir/$i")
 
           // if answerMap exists, then save result
@@ -73,17 +75,19 @@ case object Localize extends PhaseObj[Unit, LocalizeConfig, Unit] with DefaultJs
               case Some(answers) => {
                 answers.foreach(answer => {
                   val Answer(id, algo) = answer
-                  val algoRank = localizer.getAlgoRank(algo)
-                  val agAlgoRank = localizer.getAgAlgoRank(algo)
-
-                  add(config.mutate)
-                  add(config.formula.name)
-                  add(failedDesc)
-                  add(id)
-                  add(algo)
-                  add(algoRank)
-                  add(agAlgoRank)
-                  newline
+                  val algoRanks = localizer.getAlgoRank.map(_(algo))
+                  val agAlgoRanks = localizer.getAgAlgoRank.map(_(algo))
+                  (localizer.formulas zip (algoRanks zip agAlgoRanks)).foreach {
+                    case (formula, (algoRank, agAlgoRank)) =>
+                      add(config.mutate)
+                      add(formula.name)
+                      add(failedDesc)
+                      add(id)
+                      add(algo)
+                      add(algoRank)
+                      add(agAlgoRank)
+                      newline
+                  }
                 })
               }
               case None => {

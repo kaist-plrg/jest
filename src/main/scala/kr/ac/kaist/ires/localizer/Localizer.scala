@@ -17,54 +17,63 @@ import kr.ac.kaist.ires.sampler.ValidityChecker
 import kr.ac.kaist.ires.injector._
 import kr.ac.kaist.ires.checker._
 
-class Localizer(formula: Formula) {
-  def getSortedScore[T](m: Map[T, Stat]): ListMap[T, Double] =
+class Localizer(val formulas: List[Formula]) {
+  def getSortedScore[T](m: Map[T, Stat]): List[ListMap[T, Double]] = formulas.map(formula => {
     ListMap(m.view.mapValues(_.getScore(formula)).toSeq.sortWith(_._2 > _._2): _*)
+  })
   def getRank(m: ListMap[String, Double]): String => Int =
     algoName => m.keys.toList.indexOf(algoName)
 
   // instruction localizer
   val instCounter: Map[Int, Stat] =
     insts.map(inst => (inst.uid, Stat())).toMap
-  lazy val instScores: ListMap[Int, Double] = getSortedScore(instCounter)
+  lazy val instScores: List[ListMap[Int, Double]] = getSortedScore(instCounter)
   def updateInst(covered: Set[Int], failed: Boolean) =
     instCounter.foreach {
       case (uid, stat) =>
         stat.update(covered contains uid, failed)
     }
   private def dumpInst(filepath: String): Unit = {
-    val instContent = instScores.zipWithIndex.map {
-      case ((uid, score), rank) => {
-        val algoName = instToAlgo(uid).name
-        val inst = beautify(insts(uid), detail = false)
-        f"$rank%6d $score%6.2f [$uid] $inst @ $algoName"
-      }
-    }.mkString(LINE_SEP)
-    dumpFile(instContent, filepath)
+    mkdir(filepath)
+    (formulas zip instScores).foreach {
+      case (formula, scores) =>
+        val instContent = scores.zipWithIndex.map {
+          case ((uid, score), rank) => {
+            val algoName = instToAlgo(uid).name
+            val inst = beautify(insts(uid), detail = false)
+            f"$rank%6d $score%6.2f [$uid] $inst @ $algoName"
+          }
+        }.mkString(LINE_SEP)
+        dumpFile(instContent, s"$filepath/$formula")
+    }
   }
 
   // algorithm localizer
   val algoCounter: Map[String, Stat] =
     Algorithm.all.map(algo => (algo.name, Stat())).toMap
-  lazy val algoScores: ListMap[String, Double] = getSortedScore(algoCounter)
+  lazy val algoScores: List[ListMap[String, Double]] = getSortedScore(algoCounter)
   def updateAlgo(covered: Set[String], failed: Boolean) =
     algoCounter.foreach {
       case (algoName, stat) =>
         stat.update(covered contains algoName, failed)
     }
-  def getAlgoRank: String => Int = getRank(algoScores)
+  def getAlgoRank: List[String => Int] = algoScores.map(getRank _)
   private def dumpAlgo(filepath: String): Unit = {
-    val algoContent = algoScores.zipWithIndex.map {
-      case ((algoName, score), rank) =>
-        f"$rank%8d $score%8.4f $algoName"
-    }.mkString(LINE_SEP)
-    dumpFile(algoContent, filepath)
+    mkdir(filepath)
+    (formulas zip algoScores).foreach {
+      case (formula, scores) =>
+        val algoContent = scores.zipWithIndex.map {
+          case ((algoName, score), rank) =>
+            f"$rank%8d $score%8.4f $algoName"
+        }.mkString(LINE_SEP)
+        dumpFile(algoContent, s"$filepath/$formula")
+    }
   }
 
   // method-level aggregation
-  lazy val agAlgoScores: ListMap[String, Double] = {
+  lazy val agAlgoScores: List[ListMap[String, Double]] = instScores.map(scores => {
     var m: ListMap[String, Double] = ListMap()
-    instScores.foreach {
+    scores.foreach {
       case (uid, score) => {
         val algoName = instToAlgo(uid).name
         if (!m.keySet.contains(algoName))
@@ -72,14 +81,18 @@ class Localizer(formula: Formula) {
       }
     }
     m
-  }
-  def getAgAlgoRank: String => Int = getRank(agAlgoScores)
+  })
+  def getAgAlgoRank: List[String => Int] = agAlgoScores.map(getRank _)
   private def dumpAlgoAggregated(filepath: String): Unit = {
-    val agAlgoContent = agAlgoScores.zipWithIndex.map {
-      case ((algoName, score), rank) =>
-        f"$rank%8d $score%8.4f $algoName"
-    }.mkString(LINE_SEP)
-    dumpFile(agAlgoContent, filepath)
+    mkdir(filepath)
+    (formulas zip agAlgoScores).foreach {
+      case (formula, scores) =>
+        val agAlgoContent = scores.zipWithIndex.map {
+          case ((algoName, score), rank) =>
+            f"$rank%8d $score%8.4f $algoName"
+        }.mkString(LINE_SEP)
+        dumpFile(agAlgoContent, s"$filepath/$formula")
+    }
   }
 
   // dump stat
@@ -119,10 +132,10 @@ object Localizer {
     engine: String,
     failedDesc: String,
     failedScriptNames: Set[String],
-    formula: Formula,
+    formulas: List[Formula],
     mutate: Boolean
   ): Localizer = {
-    val localizer = new Localizer(formula)
+    val localizer = new Localizer(formulas)
     val toJsonExt = changeExt("js", "json")
     var generatedSet: Set[String] = Set()
     var failedSet: Set[String] = Set()

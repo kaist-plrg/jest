@@ -6,8 +6,8 @@ sealed abstract class Formula(val name: String) {
   def div(a: Double, b: Double) = if (a == 0) 0 else a / b
   def apply(stat: Stat): Double = {
     val DStat(ep, ef, np, nf) = stat
-    val F: Double = ef + nf // TODO correct?
-    val P: Double = ep + np // TODO correct?
+    val F: Double = ef + nf
+    val P: Double = ep + np
     this match {
       case ER1a => if (nf > 0) -1 else np
       case ER5a => ef - div(ef, ep + np + 1)
@@ -44,6 +44,8 @@ sealed abstract class Formula(val name: String) {
       case Zoltar => div(ef, ef + ep + nf + div(10000 * nf * ep, ef))
     }
   }
+
+  override def toString: String = name
 }
 object Formula {
   val all: List[Formula] = List(
