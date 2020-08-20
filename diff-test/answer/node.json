@@ -3,6 +3,18 @@
     "id": "VE1",
     "algo": "ClassTail0ClassDefinitionEvaluation3"
   }],
+  "AssertionPass(AssertionError(Expected [\"length\", \"prototype\", \"name\", \"x\"] but got [\"length\", \"name\", \"prototype\", \"x\"] for ClassTail0ClassDefinitionEvaluation3.))": [{
+    "id": "VE1",
+    "algo": "ClassTail0ClassDefinitionEvaluation3"
+  }],
+  "AssertionFail(AssertionError(Expected [\"length\", \"prototype\", \"name\", \"x\"] but got [\"length\", \"prototype\", \"x\", \"name\"] for ClassTail0ClassDefinitionEvaluation3.))": [{
+    "id": "VE1",
+    "algo": "ClassTail0ClassDefinitionEvaluation3"
+  }],
+  "AssertionPass(AssertionError(Expected [\"length\", \"prototype\", \"name\"] but got [\"length\", \"name\", \"prototype\"] for MethodDefinition0DefineMethod0.))": [{
+    "id": "VE1",
+    "algo": "ClassTail0ClassDefinitionEvaluation3"
+  }],
   "AssertionPass(AssertionError(Expected [\"length\", \"prototype\"] but got [\"length\", \"name\", \"prototype\"] for ClassTail0ClassDefinitionEvaluation3.))": [{
     "id": "VE2",
     "algo": "ClassTail0ClassDefinitionEvaluation3"
