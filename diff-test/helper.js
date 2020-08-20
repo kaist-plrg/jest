@@ -147,12 +147,14 @@ function $verifyProperty(obj, prop, desc) {
   $assert.sameValue(typeof desc, 'object');
 
   function check(name) {
-    if (!hasOwnProperty.call(desc, name)) return;
-    if ($isSameValue(desc[name], originalDesc[name])) return;
-    var message;
-    if (name === 'value') message = 'descriptor value should be ' + $toString(desc.value) + ' but ' + $toString(originalDesc.value);
-    else message = 'descriptor should ' + (desc[name] ? '' : 'not ') + 'be ' + name;
-    $error(message);
+    try {
+      if (!hasOwnProperty.call(desc, name)) return;
+      if ($isSameValue(desc[name], originalDesc[name])) return;
+      var message;
+      if (name === 'value') message = 'descriptor value should be ' + $toString(desc.value) + ' but ' + $toString(originalDesc.value);
+      else message = 'descriptor should ' + (desc[name] ? '' : 'not ') + 'be ' + name;
+      $error(message);
+    } catch (e) { }
   }
   check('value');
   check('writable');
