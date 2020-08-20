@@ -3,11 +3,11 @@
 |ID|Origin|V8|XS|qjs|js|Assertion|Algo.|Conf.|Example|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-|
 |QJ1|Quick| | |X|X|Exc|StringPad|Y|var x = String . prototype . padStart . call ( 42n , Infinity , [ ] ) ;|
-|QJ2|Quick| | |X| |Exc||Y|var x = x `` ; function * x ( ... { [ '' ] : { } = x } ) { ; var [ x , , ... x ] = x ; }|
-|QJ3|Quick| | |X| |Var||Y|var [ x ] = { [ Symbol . asyncIterator ] : false , [ Symbol . iterator ] : function * ( ) { ; return 0 ; yield 0 ; } } ;|
-|QJ4|Quick| |X|X| |Key||Y|var x = Function . prototype . bind . call ( async x => x , 0 ) ;|
-|QJ5|Quick| | |X| |Exc||Y|var x = { x ( ... { x = x } ) { } } ; var [ , , ] = class extends x ?. x ( ) { ; } ;|
-|QJ6|Quick| | |X| |Key||Y|var x = [ ... [ , ] ] ;|
+|QJ2|Quick| | |X| |Exc|FunctionDeclarationInstantiation|Y|var x = x `` ; function * x ( ... { [ '' ] : { } = x } ) { ; var [ x , , ... x ] = x ; }|
+|QJ3|Quick| | |X| |Var|ArrayBindingPattern1IteratorBindingInitialization0|Y|var [ x ] = { [ Symbol . asyncIterator ] : false , [ Symbol . iterator ] : function * ( ) { ; return 0 ; yield 0 ; } } ;|
+|QJ4|Quick| |X|X| |Key|GLOBALDOTFunctionDOTprototypeDOTbind|Y|var x = Function . prototype . bind . call ( async x => x , 0 ) ;|
+|QJ5|Quick| | |X| |Exc|FunctionRestParameter0IteratorBindingInitialization0|Y|var x = { x ( ... { x = x } ) { } } ; var [ , , ] = class extends x ?. x ( ) { ; } ;|
+|QJ6|Quick| | |X| |Key|SpreadElement0ArrayAccumulation0|Y|var x = [ ... [ , ] ] ;|
 
 - report 하는 곳 : https://github.com/ldarren/QuickJS/issues
 
