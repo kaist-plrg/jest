@@ -1,0 +1,34 @@
+{
+  "ExceptionFail(Normal,InternalError)": [{
+    "id": "QJ1",
+    "algo": "StringPad"
+  }],
+  "ExceptionFail(Normal,TypeError)": [{
+    "id": "QJ2",
+    "algo": "FunctionDeclarationInstantiation"
+  }],
+  "AssertionFail(AssertionError(Expected undefined but got 0.))": [{
+    "id": "QJ3",
+    "algo": "ArrayBindingPattern1IteratorBindingInitialization0"
+  }],
+  "AssertionFail(AssertionError(Expected [\"length\", \"name\"] but got [\"name\", \"length\"] for CallExpression0Evaluation0.))": [{
+    "id": "QJ4",
+    "algo": "GLOBALDOTFunctionDOTprototypeDOTbind"
+  }],
+  "ExceptionFail(ReferenceError,TypeError)": [{
+    "id": "QJ5",
+    "algo": "FunctionRestParameter0IteratorBindingInitialization0"
+  }],
+  "AssertionFail(AssertionError(Expected [\"0\", \"length\"] but got [\"length\"] for ArrayLiteral1Evaluation0.))": [{
+    "id": "QJ6",
+    "algo": "SpreadElement0ArrayAccumulation0"
+  }],
+  "AssertionFail(AssertionError(Expected [\"0\", \"2\", \"3\", \"length\"] but got [\"0\", \"2\", \"length\"] for ArrayLiteral1Evaluation0.))": [{
+    "id": "QJ6",
+    "algo": "SpreadElement0ArrayAccumulation0"
+  }],
+  "AssertionFail(AssertionError(Expected true but got false))": [{
+    "id": "QJ6",
+    "algo": "SpreadElement0ArrayAccumulation0"
+  }]
+}
