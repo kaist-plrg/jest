@@ -53,6 +53,7 @@ case object Localize extends PhaseObj[Unit, LocalizeConfig, Unit] with DefaultJs
         "mutate",
         "formula",
         "fail description",
+        "failed set",
         "answer",
         "id",
         "algo",
@@ -81,6 +82,7 @@ case object Localize extends PhaseObj[Unit, LocalizeConfig, Unit] with DefaultJs
                       add(config.mutate)
                       add(formula.name)
                       add(failedDesc)
+                      add(failedSet.toSeq.sorted.mkString(", "))
                       add(id)
                       add(algo)
                       add(algoRank)
@@ -93,6 +95,7 @@ case object Localize extends PhaseObj[Unit, LocalizeConfig, Unit] with DefaultJs
                 add(config.mutate)
                 add(formula.name)
                 add(failedDesc)
+                add(failedSet.toSeq.sorted.mkString(", "))
                 newline
               })
             }
