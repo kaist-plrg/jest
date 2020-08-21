@@ -9,36 +9,24 @@ import kr.ac.kaist.ires.model.{ Parser => JSParser, Script, ModelHelper }
 case class Injector(script: Script, timeout: Option[Long] = None, debug: Boolean = false) {
   // injected script
   lazy val result = {
-    uidOpt match {
-      case Some(uid) =>
-        println("handling IRError...")
-        handleIRError(uid)
-      case None =>
-        println("handling Exception...")
-        handleException
-
-        if (isNormal) {
-          println("handling varaible...")
-          handleVariable
-
-          println("handling let...")
-          handleLet
-
-          if (isAsync) {
-            println("handling async...")
-            handleAsync
-          }
-        }
+    injectTag
+    injectFeature
+    append(script.toString)
+    if (isNormal) {
+      if (isAsync) startAsync
+      handleVariable
+      handleLet
+      if (isAsync) endAsync
     }
-    s"$header$LINE_SEP$script$LINE_SEP$assertions"
+    getString
   }
 
   // visited
   lazy val visited = interp.visited
 
   // logging
-  def log(any: Any): Unit = if (debug) println(any)
-  def warning: Unit = if (debug) {
+  private def log(any: Any): Unit = if (debug) println(any)
+  private def warning: Unit = if (debug) {
     val trace = (new Throwable).getStackTrace
     val line = trace(1).getLineNumber
     println(s"[Warning] $script @ $line")
@@ -62,21 +50,22 @@ case class Injector(script: Script, timeout: Option[Long] = None, debug: Boolean
     case e: IRError => (initState, Some(interp.recentInst.get.uid))
   }
 
-  // injected script
-  private var header = ""
-  private var assertions = ""
-
   //////////////////////////////////////////////////////////
   // Helper Functions
   //////////////////////////////////////////////////////////
-  // add assertions
-  private var assertCount = 0
-  def add(assert: String): Unit = { assertCount += 1; assertions += assert; assertions += LINE_SEP; }
+  // add line
+  private var sb = new StringBuilder
+  private def append(str: String, comment: Boolean = false): Unit = {
+    if (comment) sb.append("// ")
+    sb.append(str).append(LINE_SEP)
+  }
+  private def getString: String = sb.toString
 
   // handle variables
   private def handleVariable: Unit = for (x <- createdVars) {
+    println("handling varaible...")
     getValue(st, s"$globalMap.$x.Value")._1 match {
-      case c: Const => add(s"$$assert.sameValue($x, ${const2code(c)});")
+      case c: Const => append(s"$$assert.sameValue($x, ${const2code(c)});")
       case (addr: Addr) => handleObject(addr, x)
       case _ =>
     }
@@ -84,8 +73,9 @@ case class Injector(script: Script, timeout: Option[Long] = None, debug: Boolean
 
   // handle lexical variables
   private def handleLet: Unit = for (x <- createdLets) {
+    println("handling let...")
     getValue(st, s"$lexRecord.$x.BoundValue")._1 match {
-      case c: Const => add(s"$$assert.sameValue($x, ${const2code(c)});")
+      case c: Const => append(s"$$assert.sameValue($x, ${const2code(c)});")
       case (addr: Addr) => handleObject(addr, x)
       case _ =>
     }
@@ -109,10 +99,10 @@ case class Injector(script: Script, timeout: Option[Long] = None, debug: Boolean
     log(s"handleObject: $addr, $path")
     (addr, handledObjects.get(addr)) match {
       case (_, Some(origPath)) =>
-        add(s"$$assert.sameValue($path, $origPath);")
+        append(s"$$assert.sameValue($path, $origPath);")
       case (_: DynamicAddr, None) if addr != globalThis =>
         handledObjects += addr -> path
-        interp.addrName.get(addr).map(name => add(s"""$$algo.set($path, "$name")"""))
+        interp.addrName.get(addr).map(name => append(s"""$$algo.set($path, "$name")"""))
         handlePrototype(addr, path)
         handleExtensible(addr, path)
         handleCall(addr, path)
@@ -136,7 +126,7 @@ case class Injector(script: Script, timeout: Option[Long] = None, debug: Boolean
   private def handleExtensible(addr: Addr, path: String): Unit = {
     log(s"handleExtensible: $addr, $path")
     access(st, addr, Str("Extensible")) match {
-      case Bool(b) => add(s"$$assert.sameValue(Object.isExtensible($path), $b);")
+      case Bool(b) => append(s"$$assert.sameValue(Object.isExtensible($path), $b);")
       case _ => warning
     }
   }
@@ -145,16 +135,16 @@ case class Injector(script: Script, timeout: Option[Long] = None, debug: Boolean
   private def handleCall(addr: Addr, path: String): Unit = {
     log(s"handleCall: $addr, $path")
     if (access(st, addr, Str("Call")) == Absent) {
-      add(s"$$assert.notCallable($path);")
-    } else add(s"$$assert.callable($path);")
+      append(s"$$assert.notCallable($path);")
+    } else append(s"$$assert.callable($path);")
   }
 
   // handle [[Construct]]
   private def handleConstruct(addr: Addr, path: String): Unit = {
     log(s"handleConstruct: $addr, $path")
     if (access(st, addr, Str("Construct")) == Absent) {
-      add(s"$$assert.notConstructable($path);")
-    } else add(s"$$assert.constructable($path);")
+      append(s"$$assert.notConstructable($path);")
+    } else append(s"$$assert.constructable($path);")
   }
 
   // handle property names
@@ -172,7 +162,7 @@ case class Injector(script: Script, timeout: Option[Long] = None, debug: Boolean
         case _ => None
       })
     if (array.length == len)
-      add(s"$$assert.compareArray(Reflect.ownKeys($path), ${array.mkString("[", ", ", "]")}, $path);")
+      append(s"$$assert.compareArray(Reflect.ownKeys($path), ${array.mkString("[", ", ", "]")}, $path);")
   }
 
   // handle properties
@@ -199,7 +189,7 @@ case class Injector(script: Script, timeout: Option[Long] = None, debug: Boolean
               case _ => warning
             }
             val desc = set.mkString("{ ", ", ", "}")
-            add(s"$$verifyProperty($path, $propStr, $desc);")
+            append(s"$$verifyProperty($path, $propStr, $desc);")
           })
         case x => warning
       }
@@ -212,28 +202,39 @@ case class Injector(script: Script, timeout: Option[Long] = None, debug: Boolean
     val str = script.toString
     str.contains("async") || str.contains("Promise")
   }
-  private def handleAsync: Unit = {
-    assertions = s"$$delay( ( ) => {$LINE_SEP$assertions})"
+  private def startAsync: Unit = {
+    println("handling async...")
+    append("$delay(() => {")
+  }
+  private def endAsync: Unit = {
+    append("});")
   }
 
-  // handle ir-error
-  private def handleIRError(uid: Int): Unit = header = s"// IRError: $uid"
-
-  // handle exceptions
+  // inject tag
   private lazy val errorNameRegex = "GLOBAL.([A-Z][a-z]+)Error.prototype".r
-  private def isNormal: Boolean =
-    getValue(st, "result.Type")._1 == NamedAddr("CONST_normal")
-  private def handleException: Unit = getValue(st, "result.Type")._1 match {
-    case NamedAddr("CONST_normal") =>
-      header = s"// Normal:"
-    case _ =>
-      header = getValue(st, "result.Value")._1 match {
+  private lazy val isNormal: Boolean = getValue(st, "result.Type")._1 == NamedAddr("CONST_normal")
+  private def injectTag: Unit = {
+    println("injecting tag...")
+    val tag = uidOpt match {
+      case Some(uid) => s"IRError: $uid"
+      case None => if (isNormal) "Normal:" else getValue(st, "result.Value")._1 match {
         case addr: Addr => getValue(st, "result.Prototype")._1 match {
-          case NamedAddr(errorNameRegex(name)) => s"// ${name}Error:"
-          case _ => warning; s"// Throw ${beautify(addr)}:"
+          case NamedAddr(errorNameRegex(name)) => s"${name}Error:"
+          case _ => warning; s"Throw ${beautify(addr)}:"
         }
-        case x => warning; s"// Throw ${beautify(x)}:"
+        case x => warning; s"Throw ${beautify(x)}:"
       }
+    }
+    append(tag, comment = true)
+  }
+
+  // inject feature
+  private def injectFeature: Unit = {
+    println("injecting feature...")
+    val touched = visited.touchedAlgos.filter(_.startsWith("GLOBALDOT")).headOption.getOrElse("")
+    val nearErrorSyntax = interp.nearErrorSyntax
+    val feature = if (touched != "") touched else nearErrorSyntax
+    append(s"feature: $feature", comment = true)
   }
 
   // get values

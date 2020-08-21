@@ -1,4 +1,5 @@
 package kr.ac.kaist.ires.phase
+
 import kr.ac.kaist.ires._
 import kr.ac.kaist.ires.generator.Generator
 import kr.ac.kaist.ires.ir.beautify
@@ -16,127 +17,95 @@ import kr.ac.kaist.ires.localizer.AnswerProtocol._
 case object Localize extends PhaseObj[Unit, LocalizeConfig, Unit] with DefaultJsonProtocol {
   val name = "localize"
   val help = "Localize JavaScript files."
-  val FORMULAS: List[Formula] = List(ER1b, Jaccard, Ochiai)
+
+  val failedPath: String = s"$DIFF_TEST_DIR/failed"
+  val localizedDir: String = LOCALIZED_DIR
 
   def apply(
     unit: Unit,
     iresConfig: IRESConfig,
     config: LocalizeConfig
   ): Unit = {
-    val failedPath = config.failedPath
-    val scriptsDir = config.scriptsDir
-    val errorsDir = config.errorsDir
-    val localizedDir = config.localizedDir
+    mkdir(LOCALIZED_DIR)
+    val nf = getPrintWriter(s"$LOCALIZED_DIR/summary.tsv")
+    def add(any: Any): Unit = nf.print(s"$any\t")
+    def newline: Unit = nf.println
 
-    mkdir(localizedDir)
+    List("target", "formula", "fail description", "failed set", "answer", "id", "algo", "aggregated").foreach(add)
+    newline
 
     for {
       failedFile <- walkTree(failedPath)
       name = failedFile.getName
       filename = failedFile.toString if jsonFilter(filename)
     } {
-      val engine = removedExt(name)
-      val dir = s"$localizedDir/$engine"
+      val target = removedExt(name)
+      val dir = s"$LOCALIZED_DIR/$target"
       mkdir(dir)
 
-      val answerMap: Option[Map[String, Set[Answer]]] = config.answerDir match {
-        case Some(answerDir) =>
-          Some(readJson[Map[String, Set[Answer]]](s"$answerDir/$name"))
-        case None => None
-      }
-
-      val nf = getPrintWriter(s"$dir/summary")
-      def add(any: Any): Unit = nf.print(s"$any\t")
-      def newline: Unit = nf.println
-
-      val headers: List[String] = List(
-        "mutate",
-        "formula",
-        "fail description",
-        "failed set",
-        "answer",
-        "id",
-        "algo",
-        "aggregated"
-      )
-
-      headers.foreach(add)
-      newline
-
+      // generating localizer
+      println("generating localizer...")
       val m = readJson[Map[String, Set[String]]](filename)
+      val failedSet = m.map(_._2).foldLeft(Set[String]())(_ ++ _)
+      val base = Localizer(failedSet)
+
+      println("calculating rankings...")
       m.zipWithIndex.foreach {
         case ((failedDesc, failedSet), i) => {
-          val localizer = Localizer(scriptsDir, errorsDir, engine, failedDesc, failedSet, FORMULAS, config.mutate)
+          val localizer = base.updated(failedSet)
           localizer.dump(s"$dir/$i")
+          mkdir(s"$dir/$i/result")
+          FORMULAS.foreach(formula => {
+            val result = localizer.getResult(formula)
+            result.dump(s"$dir/$i/result/$formula")
 
-          // if answerMap exists, then save result
-          answerMap match {
-            case Some(am) => am.get(failedDesc) match {
-              case Some(answers) => {
-                answers.foreach(answer => {
-                  val Answer(id, algo) = answer
-                  val algoRanks = localizer.getAlgoRank.map(_(algo))
-                  val agAlgoRanks = localizer.getAgAlgoRank.map(_(algo))
-                  (localizer.formulas zip (algoRanks zip agAlgoRanks)).foreach {
-                    case (formula, (algoRank, agAlgoRank)) =>
-                      add(config.mutate)
-                      add(formula.name)
-                      add(failedDesc)
-                      add(failedSet.toSeq.sorted.mkString(", "))
-                      add(id)
-                      add(algo)
-                      add(algoRank)
-                      add(agAlgoRank)
-                      newline
-                  }
-                })
+            // if answers exist, then save result
+            if (config.answer) {
+              val answerMap: Map[String, Set[Answer]] = readJson[Map[String, Set[Answer]]](s"$ANSWER_DIR/$name")
+              answerMap.get(failedDesc) match {
+                case Some(answers) => {
+                  answers.foreach(answer => {
+                    val Answer(id, algo) = answer
+                    val algoRank = result.getAlgoRank(algo)
+                    val agAlgoRank = result.getAgAlgoRank(algo)
+                    add(target)
+                    add(formula.name)
+                    add(failedDesc)
+                    add(failedSet.toSeq.sorted.mkString(", "))
+                    add(id)
+                    add(algo)
+                    add(algoRank)
+                    add(agAlgoRank)
+                    newline
+                  })
+                }
+                case None =>
+                  add(target)
+                  add(formula.name)
+                  add(failedDesc)
+                  add(failedSet.toSeq.sorted.mkString(", "))
+                  newline
               }
-              case None => localizer.formulas.foreach(formula => {
-                add(config.mutate)
-                add(formula.name)
-                add(failedDesc)
-                add(failedSet.toSeq.sorted.mkString(", "))
-                newline
-              })
             }
-            case None => // do nothing
-          }
+            nf.flush
+          })
         }
       }
-
-      nf.close
     }
+    nf.close
   }
 
   def defaultConfig: LocalizeConfig = LocalizeConfig()
   val options: List[PhaseOption[LocalizeConfig]] = List(
     ("debug", BoolOption(c => c.debug = true),
       "print intermediate process."),
-    ("load", StrOption((c, str) => c.scriptsDir = str),
-      "path to generated scripts"),
-    ("load-errors", StrOption((c, str) => c.errorsDir = str),
-      "path to error scripts"),
-    ("failed", StrOption((c, str) => c.failedPath = str),
-      "path to failed script lists"),
-    ("formula", StrOption((c, str) => c.formula = Formula.nameMap.getOrElse(str, Tarantula)),
-      "set the formula for SBFL (default: Tarantula)."),
-    ("mutate", BoolOption(c => c.mutate = false),
-      "apply mutation in localizer"),
-    ("localized", StrOption((c, str) => c.localizedDir = str),
-      "path to localization result directory"),
-    ("answer", StrOption((c, str) => c.answerDir = Some(str)),
-      "path to answer directory")
+    ("answer", BoolOption(c => c.answer = true),
+      "show ranks of answer algorithms.")
   )
 }
 
 // Localize phase config
 case class LocalizeConfig(
     var debug: Boolean = false,
-    var failedPath: String = s"$DIFF_TEST_DIR/failed",
-    var scriptsDir: String = s"$GENERATED_DIR",
-    var errorsDir: String = s"$ERRORS_DIR",
-    var localizedDir: String = s"$LOCALIZED_DIR",
-    var answerDir: Option[String] = None,
-    var formula: Formula = Tarantula,
-    var mutate: Boolean = false
+    var answer: Boolean = false
 ) extends Config

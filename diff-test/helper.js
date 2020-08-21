@@ -106,9 +106,14 @@ function $compareArray(a, b) {
 
 $assert.compareArray = function(actual, expected, obj) {
   function format(array) { return '[' + array.map($toString).join(', ') + ']'; }
-  function getObjDesc(obj) { return $algo.get(obj) || "Object"; }
+  function getObjDesc(obj) {
+    var algo = $algo.get(obj) || "Nothing";
+    var ty = Object.prototype.toString.call(obj);
+    ty = ty.substring('[object '.length, ty.length - ']'.length);
+    return `${algo} for ${ty}`;
+  }
   if ($compareArray(actual, expected)) return;
-  $error('Expected ' + format(expected) + ' but got ' + format(actual) + ' for ' + getObjDesc(obj) + '.');
+  $error('Expected ' + format(expected) + ' but got ' + format(actual) + ' in ' + getObjDesc(obj) + '.');
 };
 
 // assertion to compare iterators

@@ -9,7 +9,6 @@ import kr.ac.kaist.ires.model.Parser._
 import kr.ac.kaist.ires.util._
 import kr.ac.kaist.ires.util.Useful._
 import spray.json._
-import scala.collection.immutable.ListMap
 import scala.math.Ordering.Double.IeeeOrdering
 
 import kr.ac.kaist.ires.mutator._
@@ -17,242 +16,124 @@ import kr.ac.kaist.ires.sampler.ValidityChecker
 import kr.ac.kaist.ires.injector._
 import kr.ac.kaist.ires.checker._
 
-class Localizer(val formulas: List[Formula]) {
-  def getSortedScore[T](m: Map[T, Stat]): List[ListMap[T, Double]] = formulas.map(formula => {
-    ListMap(m.view.mapValues(_.getScore(formula)).toSeq.sortWith(_._2 > _._2): _*)
-  })
-  def getRank(m: ListMap[String, Double]): String => Int =
-    algoName => m.keys.toList.indexOf(algoName)
+case class Localizer(
+    passSet: Set[String],
+    instStats: Map[Int, Stat],
+    algoStats: Map[String, Stat]
+) {
+  // update stats
+  private val statOp: (Stat, Stat) => Stat = _ + _
+  def updated(failed: Set[String]): Localizer = Localizer(
+    passSet,
+    merge(instStats, Localizer.getInstStats(passSet, failed), statOp),
+    merge(algoStats, Localizer.getAlgoStats(passSet, failed), statOp)
+  )
 
-  // instruction localizer
-  val instCounter: Map[Int, Stat] =
-    insts.map(inst => (inst.uid, Stat())).toMap
-  lazy val instScores: List[ListMap[Int, Double]] = getSortedScore(instCounter)
-  def updateInst(covered: Set[Int], failed: Boolean) =
-    instCounter.foreach {
-      case (uid, stat) =>
-        stat.update(covered contains uid, failed)
-    }
-  private def dumpInst(filepath: String): Unit = {
-    mkdir(filepath)
-    (formulas zip instScores).foreach {
-      case (formula, scores) =>
-        val instContent = scores.zipWithIndex.map {
-          case ((uid, score), rank) => {
-            val algoName = instToAlgo(uid).name
-            val inst = beautify(insts(uid), detail = false)
-            f"$rank%6d $score%6.2f [$uid] $inst @ $algoName"
-          }
-        }.mkString(LINE_SEP)
-        dumpFile(instContent, s"$filepath/$formula")
-    }
-  }
-
-  // algorithm localizer
-  val algoCounter: Map[String, Stat] =
-    Algorithm.all.map(algo => (algo.name, Stat())).toMap
-  lazy val algoScores: List[ListMap[String, Double]] = getSortedScore(algoCounter)
-  def updateAlgo(covered: Set[String], failed: Boolean) =
-    algoCounter.foreach {
-      case (algoName, stat) =>
-        stat.update(covered contains algoName, failed)
-    }
-  def getAlgoRank: List[String => Int] = algoScores.map(getRank _)
-  private def dumpAlgo(filepath: String): Unit = {
-    mkdir(filepath)
-    (formulas zip algoScores).foreach {
-      case (formula, scores) =>
-        val algoContent = scores.zipWithIndex.map {
-          case ((algoName, score), rank) =>
-            f"$rank%8d $score%8.4f $algoName"
-        }.mkString(LINE_SEP)
-        dumpFile(algoContent, s"$filepath/$formula")
-    }
-  }
-
-  // method-level aggregation
-  lazy val agAlgoScores: List[ListMap[String, Double]] = instScores.map(scores => {
-    var m: ListMap[String, Double] = ListMap()
-    scores.foreach {
-      case (uid, score) => {
-        val algoName = instToAlgo(uid).name
-        if (!m.keySet.contains(algoName))
-          m += algoName -> score
-      }
-    }
-    m
-  })
-  def getAgAlgoRank: List[String => Int] = agAlgoScores.map(getRank _)
-  private def dumpAlgoAggregated(filepath: String): Unit = {
-    mkdir(filepath)
-    (formulas zip agAlgoScores).foreach {
-      case (formula, scores) =>
-        val agAlgoContent = scores.zipWithIndex.map {
-          case ((algoName, score), rank) =>
-            f"$rank%8d $score%8.4f $algoName"
-        }.mkString(LINE_SEP)
-        dumpFile(agAlgoContent, s"$filepath/$formula")
-    }
-  }
-
-  // dump stat
-  def dumpInstStat(filepath: String): Unit = {
-    val content = instCounter.map {
-      case (uid, stat) => s"[$uid]: $stat"
-    }.mkString(LINE_SEP)
-    dumpFile(content, filepath)
-  }
-
-  def dumpAlgoStat(filepath: String): Unit = {
-    val content = algoCounter.map {
-      case (uid, stat) => s"[$uid]: $stat"
-    }.mkString(LINE_SEP)
-    dumpFile(content, filepath)
-  }
-
+  // dump
   def dump(dir: String) = {
     mkdir(dir)
-    dumpInst(s"$dir/inst")
-    dumpAlgo(s"$dir/algo")
-    dumpAlgoAggregated(s"$dir/algo-aggregated")
     dumpInstStat(s"$dir/inst-stat")
     dumpAlgoStat(s"$dir/algo-stat")
+  }
+
+  // get result
+  def getResult(formula: Formula): LocalizeResult = LocalizeResult(
+    getSortedScore(instStats, formula),
+    getSortedScore(algoStats, formula)
+  )
+
+  // get sorted scores
+  private def getSortedScore[T](
+    m: Map[T, Stat],
+    formula: Formula
+  ): List[(T, Double)] = (m.toList.map {
+    case (k, stat) => (k, stat.getScore(formula))
+  }).sortWith(_._2 > _._2)
+
+  // dump stat
+  private def dumpInstStat(filepath: String): Unit = {
+    val content = instStats.map {
+      case (uid, stat) =>
+        val inst = beautify(insts(uid), detail = false)
+        val algoName = instToAlgo(uid).name
+        s"[$uid] $inst : $stat @ $algoName"
+    }.mkString(LINE_SEP)
+    dumpFile(content, filepath)
+  }
+
+  private def dumpAlgoStat(filepath: String): Unit = {
+    val content = algoStats.map {
+      case (name, stat) => s"[$name]: $stat"
+    }.mkString(LINE_SEP)
+    dumpFile(content, filepath)
   }
 }
 
 object Localizer {
-  val MAX_FAILED_CNT = 100
-  val MAX_TRIAL = 10000
-  var instMap: Map[String, Set[Int]] = Map()
-  var algoMap: Map[String, Set[String]] = Map()
+  def apply(failedSet: Set[String]): Localizer = {
+    val passSet = totalSet -- failedSet
+    Localizer(
+      passSet,
+      getStats(instMap, passSet, passSet, totalInsts),
+      getStats(algoMap, passSet, passSet, totalAlgos)
+    )
+  }
 
-  def apply(
-    scriptDir: String,
-    errorsDir: String,
-    engine: String,
-    failedDesc: String,
-    failedScriptNames: Set[String],
-    formulas: List[Formula],
-    mutate: Boolean
-  ): Localizer = {
-    val localizer = new Localizer(formulas)
-    val toJsonExt = changeExt("js", "json")
-    var generatedSet: Set[String] = Set()
-    var failedSet: Set[String] = Set()
+  private lazy val totalSet = instMap.keySet
+  private lazy val toJsonExt = changeExt("js", "json")
+  private lazy val totalAlgos = Algorithm.all.map(_.name).toSet
+  private lazy val totalInsts = insts.map(_.uid).toSet
+  private lazy val (instMap, algoMap) = (for {
+    file <- (walkTree(GENERATED_DIR) ++ walkTree(ERRORS_DIR))
+    name = file.getName
+    if jsFilter(name)
+    filename = file.toString
+    rawScript = readFile(filename)
+    parseResult = parse(Script(Nil), rawScript) if parseResult.successful
+    script = parseResult.get
+  } yield {
+    val touchedInstCache = s"$TOUCHED_DIR/inst/${toJsonExt(name)}"
+    val touchedAlgoCache = s"$TOUCHED_DIR/algo/${toJsonExt(name)}"
+    val cached = exists(touchedInstCache) && exists(touchedAlgoCache)
 
-    // update total structural element from scriptDir, failed
-    for {
-      file <- (walkTree(scriptDir) ++ walkTree(errorsDir))
-      name = file.getName
-      if jsFilter(name)
-      filename = file.toString
-      rawScript = readFile(filename)
-      parseResult = parse(Script(Nil), rawScript) if parseResult.successful
-      script = parseResult.get
-      failed = failedScriptNames contains name
-    } {
-      val loaded = instMap.contains(name) && algoMap.contains(name)
-      // check if touched exist
-      val touchedInstCache = s"$TOUCHED_DIR/inst/${toJsonExt(name)}"
-      val touchedAlgoCache = s"$TOUCHED_DIR/algo/${toJsonExt(name)}"
-      val cached = exists(touchedInstCache) && exists(touchedAlgoCache)
-
-      var instCovered = Set[Int]()
-      var algoCovered = Set[String]()
-
-      if (loaded) {
-        instCovered = instMap(name)
-        algoCovered = algoMap(name)
-      } else if (cached) {
-        // read from cache
-        instCovered = readJson[Set[Int]](touchedInstCache)
-        algoCovered = readJson[Set[String]](touchedAlgoCache)
-      } else {
-        val visited = Generator.getVisited(script) match {
-          case Left(visited) => visited
-          // TODO : handle exception?
-          case _ => Generator.recentInterp.get.visited
-        }
-        instCovered = visited.instCovered
-        algoCovered = visited.touchedAlgos
-        // dump
-        dumpJson(visited.instCovered, touchedInstCache)
-        dumpJson(visited.touchedAlgos, touchedAlgoCache)
+    val (instCovered, algoCovered) = if (cached) (
+      readJson[Set[Int]](touchedInstCache),
+      readJson[Set[String]](touchedAlgoCache)
+    )
+    else {
+      val visited = Generator.getVisited(script) match {
+        case Left(visited) => visited
+        case _ => Generator.recentInterp.get.visited
       }
-
-      if (!loaded) {
-        instMap += name -> instCovered
-        algoMap += name -> algoCovered
-      }
-
-      localizer.updateInst(instCovered, failed)
-      localizer.updateAlgo(algoCovered, failed)
-
-      // add to generatedSet, failedSet
-      generatedSet += rawScript
-      if (failed) failedSet += rawScript
+      (visited.instCovered, visited.touchedAlgos)
     }
 
-    // calibrate localize result
-    if (mutate) {
-      var trial = 0
-      while (failedSet.size < MAX_FAILED_CNT && trial < MAX_TRIAL) {
-        // sample one script from failed
-        val target = choose(failedSet.toList)
-        val script = parse(Script(Nil), target).get
+    (name -> instCovered, name -> algoCovered)
+  }).unzip match { case (i, a) => (i.toMap, a.toMap) }
 
-        try {
-          // mutate
-          val mutator = choose(List[Mutator](
-            StatementAppender(script),
-            SimpleReplacer(script),
-          ))
-          var mutated = mutator.script
-          do mutated = mutator.mutate while (!ValidityChecker(mutated.toString))
-          val mutatedStr = mutated.toString
+  private def getInstStats(
+    passSet: Set[String],
+    targetSet: Set[String]
+  ): Map[Int, Stat] = getStats(instMap, passSet, targetSet, totalInsts)
 
-          if (!generatedSet.contains(mutatedStr)) {
-            // inject
-            val injector = Injector(mutated, timeout = Some(1))
-            val injected = injector.result
-            val visited = injector.visited
+  private def getAlgoStats(
+    passSet: Set[String],
+    targetSet: Set[String]
+  ): Map[String, Stat] = getStats(algoMap, passSet, targetSet, totalAlgos)
 
-            // check
-            // TODO : refactoring
-            val tempPath = "__temp__.js"
-            val comment = injected.split("\n").head
-            dumpFile(Checker.helper + injected, tempPath)
-            val checker = Checker(tempPath, comment, false)
-            deleteFile(tempPath)
-
-            // check mutated script has same fault
-            val fails: Map[String, Set[CheckResult]] = checker.result
-            val failed = fails.get(engine) match {
-              case Some(rs) => rs.map(_.toString).contains(failedDesc)
-              case _ => false
-            }
-
-            // update localizer stat
-            localizer.updateInst(visited.instCovered, failed)
-            localizer.updateAlgo(visited.touchedAlgos, failed)
-
-            // add mutatedStr to generatedSet
-            generatedSet += mutatedStr
-            if (failed) failedSet += mutatedStr
-          }
-        } catch {
-          // TODO : handle error?
-          case e: Throwable => println(e)
-        }
-
-        trial += 1
-        println(s"$trial, ${failedSet.size}")
-      }
-
-      // TODO : print stat?
-      println(s"[LOCALIZER] trial: $trial, failed: ${failedSet.size}")
+  private def getStats[T](
+    map: Map[String, Set[T]],
+    passSet: Set[String],
+    targetSet: Set[String],
+    total: Set[T]
+  ): Map[T, Stat] = map.foldLeft(Map[T, Stat]()) {
+    case (m, (name, set)) if targetSet contains name => total.foldLeft(m) {
+      case (m, elem) =>
+        val covered = set contains elem
+        val pass = passSet contains name
+        val stat = m.getOrElse(elem, Stat())
+        m + (elem -> stat.updated(covered, pass))
     }
-
-    localizer
+    case (m, _) => m
   }
 }

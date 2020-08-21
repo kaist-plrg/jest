@@ -26,10 +26,11 @@ case object Check extends PhaseObj[Unit, CheckConfig, Unit] with DefaultJsonProt
     case Some(filename) =>
       val injected = readFile(filename)
       val tempPath = "__temp__.js"
-      val comment = injected.split("\n").head
+      val comment = injected.split(LINE_SEP).head
+      val feature = injected.split(LINE_SEP).tail.head.substring("// feature: ".length)
 
       dumpFile(Checker.helper + injected, tempPath)
-      val checker = Checker(tempPath, comment, config.debug)
+      val checker = Checker(tempPath, comment, feature, config.debug)
       deleteFile(tempPath)
 
       checker.result.foreach {
@@ -47,10 +48,11 @@ case object Check extends PhaseObj[Unit, CheckConfig, Unit] with DefaultJsonProt
         filename = file.toString if jsFilter(filename)
       } {
         val injected = readFile(filename)
-        val comment = injected.split("\n").head
+        val comment = injected.split(LINE_SEP).head
+        val feature = injected.split(LINE_SEP).tail.head.substring("// feature: ".length)
 
         dumpFile(Checker.helper + injected, tempPath)
-        val checker = Checker(tempPath, comment, config.debug)
+        val checker = Checker(tempPath, comment, feature, config.debug)
         deleteFile(tempPath)
 
         val fails: Map[String, Set[CheckResult]] = checker.result

@@ -1,5 +1,6 @@
 package kr.ac.kaist
 
+import kr.ac.kaist.ires.localizer._
 import java.io.File
 
 package object ires {
@@ -36,6 +37,7 @@ package object ires {
   val FAILED_DIR = s"${DIFF_TEST_DIR}/failed"
   val LOCALIZED_DIR = s"${DIFF_TEST_DIR}/localized"
   val ARCHIVED_DIR = s"${DIFF_TEST_DIR}/archived"
+  val ANSWER_DIR = s"${DIFF_TEST_DIR}/answer"
 
   // Current directory root
   val CUR_DIR = System.getProperty("user.dir")
@@ -56,4 +58,7 @@ package object ires {
 
   // Bug-fix mode
   var BUG_FIX: Boolean = false
+
+  // formula list for SBFL
+  val FORMULAS: List[Formula] = List(ER1b, Jaccard, Ochiai)
 }

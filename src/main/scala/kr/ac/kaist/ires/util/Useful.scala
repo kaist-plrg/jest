@@ -214,4 +214,17 @@ object Useful {
   // sort string
   def cmpStr(a: String, b: String): Boolean =
     if (a.length == b.length) a < b else a.length < b.length
+
+  // merge maps
+  def merge[K, V](left: Map[K, V], right: Map[K, V], op: (V, V) => V): Map[K, V] = {
+    val result = (left.keySet ++ right.keySet).foldLeft(Map[K, V]()) {
+      case (map, k) => (left.get(k), right.get(k)) match {
+        case (Some(l), Some(r)) => map + (k -> op(l, r))
+        case (Some(l), _) => map + (k -> l)
+        case (_, Some(r)) => map + (k -> r)
+        case _ => map
+      }
+    }
+    result
+  }
 }

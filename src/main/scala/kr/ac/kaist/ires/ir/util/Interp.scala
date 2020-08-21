@@ -26,6 +26,7 @@ class Interp(
   var instCount = 0
   var recentInst: Option[Inst] = None
 
+  var nearErrorSyntax: String = ""
   var astStack: List[AST] = List()
   var nameStack: List[(AST, String)] = List()
   var addrName: Map[Addr, String] = Map()
@@ -95,28 +96,32 @@ class Interp(
         }
       case IReturn(expr) =>
         val (value, s0) = interp(expr)(st)
+        lazy val isNormal = value match {
+          case addr: Addr => s0.heap.map.getOrElse(addr, error(s"unknown address: $addr")) match {
+            case value @ IRMap(Ty("Completion"), props, _) =>
+              props.getOrElse(Str("Type"), error(s"type should exist: $value"))._1 == NamedAddr("CONST_normal")
+            case _ => true
+          }
+          case _ => true
+        }
         if (COVERAGE_MODE) {
           s0.ctxStack.headOption.foreach(ctx => {
             visited += (
               s0.script,
-              ReturnValueTarget(
-                ctx.curInst.uid,
-                value match {
-                  case addr: Addr => s0.heap.map.getOrElse(addr, error(s"unknown address: $addr")) match {
-                    case value @ IRMap(Ty("Completion"), props, _) =>
-                      props.getOrElse(Str("Type"), error(s"type should exist: $value"))._1 == NamedAddr("CONST_normal")
-                    case _ => true
-                  }
-                  case _ => true
-                }
-              )
+              ReturnValueTarget(ctx.curInst.uid, isNormal)
             )
           })
         }
-        if (getName && st.context.name == "MakeBasicObject") nameStack.find(_._1.start >= 0).map {
-          case (ast, name) => escapeCompletion((value, s0)) match {
-            case (addr: Addr, st) => addrName += addr -> name
-            case _ =>
+        if (getName) {
+          if (!isNormal && nearErrorSyntax == "") {
+            nearErrorSyntax = nameStack.find(_._1.start >= 0).map(_._2).getOrElse("")
+          }
+
+          if (st.context.name == "MakeBasicObject") nameStack.find(_._1.start >= 0).map {
+            case (ast, name) => escapeCompletion((value, s0)) match {
+              case (addr: Addr, st) => addrName += addr -> name
+              case _ =>
+            }
           }
         }
         if (evaluationAlgorithmPattern.matches(st.context.name)) astStack = astStack.tail
