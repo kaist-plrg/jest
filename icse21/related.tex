@@ -12,7 +12,7 @@ applications\cite{diff-web}, and binary lifters\cite{ir-diff-test}.  Moreover,
 \textsc{Nezha}\cite{nezha} introduces a guided differential testing tool with
 the concept of $\delta$-diversity to efficiently find semantic bugs.  However,
 they have fundamental limitations because they use only the cross-referencing
-oracles and target potential bugs in implementations.  Our $N$+1-differential
+oracles and target potential bugs in implementations.  Our $N$+1-version differential
 testing extends the idea of differential testing with not only $N$ different
 implementations but also a mechanized specification to test both of them.
 Moreover, our approach automatically generates conformance tests directly from
@@ -29,7 +29,7 @@ presented Superion using Grammar-aware greybox fuzzing, Park et al.\cite{die}
 presented \textsc{Die} using an aspect-preserving mutation, and Lee et
 al.\cite{montage} presented Montage using neural network language models
 (NNLMs).  However, they only focus on finding security vulnerabilities but not
-the semantics correctness. Unlike fuzzing approaches, our $N$+1-differential
+the semantics correctness. Unlike fuzzing approaches, our $N$+1-version differential
 testing focuses on semantics bugs by comparing multiple implementations with
 the mechanized specification.  To extract mechanized specification from
 ECMAScript, we utilized a tool $\jiset$, which is a JavaScript IR-based

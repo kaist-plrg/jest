@@ -1,28 +1,26 @@
-\section{$N$+1-differential Testing}\label{sec:idea}
-
-In this section, we introduce the core concept of $N$+1-differential testing with a
-simple running example.  Then, we explain its overall structure consists of two
-phases: a conformance test generation phase and a bug detection/localization
-phase
+\section{$N$+1-Version Differential Testing}\label{sec:idea}
+This section introduces the core concept of $N$+1-version differential testing with a
+simple running example.  The overall structure consists of two
+phases: a conformance test generation phase and a bug detection and localization
+phase.
 
 \subsection{Main Idea}
 
-The differential testing utilizes the cross-referencing Oracle, which is an
-assumption that any discrepancies between any program behaviors on the same input
-might be potential bugs.  Thus, it compares the execution results of same
-inputs on different $N$ implementations having same functionalities.  When an
-implementation provides a minority result for a given input, it reports the
-implementation has a potential bug with the input.
+Differential testing utilizes the cross-referencing Oracle, which is
+an assumption that any discrepancies between program behaviors on the same input
+could be bugs.  It compares the execution results of a program with the same
+input on $N$ different implementations.  When an implementation produces a different
+result from the one by the majority of the implementations, differential testing
+reports that the implementation may have a bug.
 
-However, the $N$+1-differential testing utilizes not only cross-referencing Oracle
-from multiple implementations but also a mechanized specification.  It first
-assumes that a mechanized specification as the Oracle and generates tests from
-the specification.  Using the generated tests, it tests $N$ different
-implementations and detects bugs.  Moreover, if most of implementations fail to
-pass a test for the same reason, we are doubtful of the existence of bugs in
-the specification.  Thus, $N$+1-differential testing assumes that there exists a
-specification bugs related to the test in this situation and localizes the bugs
-in the specification based on the statistical information.
+On the contrary, $N$+1-version differential testing utilizes not only the cross-referencing Oracle
+using multiple implementations but also a mechanized specification.  It first
+generates test code from a mechanized specification, and tests 
+$N$ different implementations of the specification using the generated test code
+as in differential testing.  In addition, it can detect possible bugs in the specification
+as well when most implementations fail for a test.  In such cases,
+because a bug in the specification could be triggered by the test, it
+localizes the bug using statistical information as we explain later in this section.
 
 
 \subsection{Running Example}
@@ -31,8 +29,9 @@ in the specification based on the statistical information.
   \centering
   \begin{subfigure}[t]{0.48\textwidth}
     \includegraphics[width=\textwidth]{img/example-algo.pdf}
+\vspace*{-.5em}
     \caption{The \textbf{Abstract Equality Comparison} abstract algorithm in
-    ECMAScript 2020 (ES11)}
+    ES11}
     \label{fig:example-algo}
   \end{subfigure}
   \begin{subfigure}[t]{0.43\textwidth}
@@ -42,7 +41,8 @@ in the specification based on the statistical information.
 var obj = { valueOf: () => { throw "err"; } };
 var result = 42 == obj;
     \end{lstlisting}
-    \caption{An example JavaScript program}
+\vspace*{-.5em}
+    \caption{JavaScript code using abstract equality comparison}
     \label{fig:example-js}
   \end{subfigure}
   \begin{subfigure}[t]{0.45\textwidth}
@@ -55,10 +55,11 @@ try {
   assert(false);
 }
     \end{lstlisting}
-    \caption{The assertion-injected JavaScript program}
+\vspace*{-1em}
+    \caption{JavaScript code with injected assertions}
     \label{fig:example-injected}
   \end{subfigure}
-  \caption{A running example of $N$+1-differential testing for JavaScript}
+  \caption{Abstract algorithm in ES11 and code example using it}
   \label{fig:example}
   \vspace*{-1em}
 \end{figure}
@@ -66,103 +67,104 @@ try {
 \begin{figure*}[t]
   \centering
   \includegraphics[width=0.98\textwidth]{img/overall.pdf}
-  \caption{Overall structure of $N$+1-differential testing for $N$ different
-    implementations (engines) and a language specification.}
+  \vspace*{.5em}
+  \caption{Overall structure of $N$+1-version differential testing for $N$
+    implementations (engines) and one language specification}
   \label{fig:overall}
-  \vspace*{-1em}
 \end{figure*}
 
-Figure~\ref{fig:example} shows the running example of $N$+1-differential for
-JavaScript.  Figure~\ref{fig:example-algo} is a part of \textbf{Abstract Equality
-Comparison} abstract algorithm in ECMAScript 2020 (ES11).  It describes the
-semantics of non-strict equality comparison (\code{==} or \code{!=}) between two JavaScript
-values.  For example, $\code{null == undefined}$ is $\code{true}$ because of the
-algorithm step 2.  According to step 10 and11, if a value has a String, Number,
-BigInt, or Symbol type and the other value is an Object, the algorithm call the
-\textbf{ToPrimitive} algorithm to convert the JavaScript object into a primitive
-value and recursively call itself.  However, \textbf{ToPrimitive} algorithm
-could return \textit{abrupt completion}.  ECMAScript uses completion values to
-explain the runtime propagation of values and control flow such as behavior of
-exceptions or $\code{break}$ statements.  When the type of a completion is not
-$\code{normal}$ but one of $\code{break}$, $\code{continue}$, $\code{return}$,
-and $\code{throw}$, the completion is called as an abrupt completion.  To handle
-such abrupt completions, ECMAScript uses the question mark prefix (?) to check
-and pass out the abrupt completions.  However, invocations of
-\textbf{ToPrimitive} in step 10 and 11 do not use the question mark prefix (?).
-Thus, it cannot pass out the exceptions introduced by \textbf{ToPrimitive} to
-outside.
+We explain how $N$+1-version differential testing works with a simple
+JavaScript example shown in Figure~\ref{fig:example}.
 
-For example, the JavaScript code in Figure~\ref{fig:example-js} causes the above
-problem.  In the \textbf{Abstract Equality Comparison} algorithm, variables
-\textit{x} and \textit{y} denote $\code{42}$ and an object whose property
-$\code{valueOf}$ points to an arrow function that throws an error.  In step 10,
-the object is passed to the \textbf{ToPrimitive} function and it returns an
-abrupt completion because the function stored in $\code{valueOf}$ throws an
-error.  However, the specification silently ignores the abrupt completion and
-returns $\code{false}$ as the result of comparison.  Based on the semantics
-described in the specification, we could inject assertions to check the code
-does not throw any errors as described in Figure~\ref{fig:example-injected}.
-However, most of modern JavaScript engines throw an error with a string
-$\code{"err"}$.  Using this information, we know that there exists a potential
-specification bug with the JavaScript code.  Moreover, we can localize the
-detected bug using the statistical information. Among bunch of conformance
-tests, most of tests that go through steps 10 and 11 in the algorithm would be
-fail in most of JavaScript engines.  It gives us the information that the bug
-exists in the steps 10 and 11 of \textbf{Abstract Equality Comparison} with high
-probability.
+Figure~\ref{fig:example}(a) is an excerpt from ECMAScript 2020 (ES11),
+which shows some part of the \textbf{Abstract Equality Comparison} abstract algorithm.
+It describes the semantics of non-strict equality comparison such as \code{==} and \code{!=}.
+For example, $\code{null == undefined}$ is $\code{true}$ because of
+the algorithm step 2.  According to the steps 10 and 11, if the type of a value is
+String, Number, BigInt, or Symbol, and the type of the other value is Object, the algorithm calls
+\textbf{ToPrimitive} to convert the JavaScript object to a primitive value.
+Note that this is a bug in the specification!
+To express control diverters such as exceptions, $\code{break}$, $\code{continue}$,
+$\code{return}$, and $\code{throw}$ statements in addition to normal values,
+ECMAScript uses ``completions'' : the type of a completion is either
+``normal'' or ``abrupt.''  To handle such abrupt completions,
+ECMAScript uses the question mark prefix (?) to denote necessary checking of abrupt completions.
+However, even though \textbf{ToPrimitive} can produce an abrupt completion,
+the calls of \textbf{ToPrimitive} in steps 10 and 11 do not use the question mark, which is a bug.
+
+Now, let's see how $N$+1-version differential testing can detect the
+bug in the specification. Consider the example JavaScript code in
+Figure~\ref{fig:example}(b), which triggers the above specification bug.
+In the \textbf{Abstract Equality Comparison} algorithm, variables
+\textit{x} and \textit{y} respectively denote $\code{42}$ and an object with a property
+named $\code{valueOf}$ whose value is a function throwing an error.
+Step 10 calls \textbf{ToPrimitive} with the object as its argument, and the call returns
+an abrupt completion because the call of $\code{valueOf}$ throws an error.
+However, because the call of \textbf{ToPrimitive} in step 10 does not
+use the question mark, the specification semantics silently ignores the abrupt completion and
+returns $\code{false}$ as the result of comparison. Using the specification semantics,
+we can inject assertions to check that the code does not throw any errors as shown
+in Figure~\ref{fig:example}(c). Then, by running the code with the injected assertions
+on $N$ JavaScript engines, which throw errors, we can find that the specification
+may have a bug.  Moreover, we can localize the bug using statistical information:
+because most conformance tests that go through steps 10 and 11 of the algorithm
+would fail in most of JavaScript engines, we can use the information
+to localize the bug in the steps 10 and 11 of \textbf{Abstract
+Equality Comparison} with high probability.
 
 
 \subsection{Overall Structure}
 
-Figure~\ref{fig:overall} depicts the overall structure of $N$+1-differential testing
-for $N$ different engines and a language specification.  It consists of two
-phases: a conformance test generation phase and a bug detection/localization
-phase.  Based on the mechanized specification extracted from a given language
-specification, it automatically generates conformance tests that reflect the
-language syntax and semantics described in the specification.  Then, it detects
-and localizes engine or specification bugs via results of the generated tests on
-$N$ different engines.  Now, we introduce each module in $N$+1-differential
-testing and explain its functionalities.
-\newline
+Figure~\ref{fig:overall} depicts the overall structure of $N$+1-version differential testing
+for $N$ different implementations (engines) and one language specification.
+It takes a mechanized specification extracted from a given language
+specification, it first takes the conformance test generation phase, which
+automatically generates conformance tests that reflect the language
+syntax and semantics described in the specification.  Then, it takes the
+bug detection and localization phase, which detects and localizes bugs
+in the engines or the specification by comparing the results
+of the generated tests on $N$ engines.
+
+The functionalities of each module in the overall structure are as follows:
 
 \subsubsection{Seed Synthesizer}
-At the first step, \textsf{Seed Synthesizer} synthesizes initial seed programs
-based on the language syntax.  Its main goal is to synthesize 1) few number of
-2) small sized programs 3) that cover possible cases in syntax rules as many as
-possible.
-\newline
+The first module of the conformance test generation phase is \textsf{Seed Synthesizer},
+which synthesizes an initial seed programs using the language syntax.
+Its main goal is to synthesize 1) a few number of
+2) small-sized programs 3) that cover possible cases in the syntax rules as many as possible.
 
 \subsubsection{Target Selector}
-For a given program pool, it selects a target program in the program pool
-depending on the semantics coverage of program pool.  The initial program pool
-is the seed programs generated by \textsf{Seed Synthesizer}. The program pool
-will grow by adding a new program mutated by \textsf{Program Mutator} from
-the selected target program.  When specific criteria are satisfied,
-\textsf{Target Selector} stops to select target program and gives programs in
-the current program pool as the result.
-\newline
+Starting from the seed programs generated by \textsf{Seed Synthesizer}
+as the initial \emph{program pool}, \textsf{Target Selector}
+selects a target program in the program pool utilizing the coverage of the language semantics 
+by the pool.
+From the selected target program, \textsf{Program Mutator} constructs a new mutated program
+and adds it to the program pool.  When specific criteria are satisfied,
+\textsf{Target Selector} stops selecting target programs and returns
+the program pool as its result.
 
 \subsubsection{Program Mutator}
 The main goal of \textsf{Program Mutator} is to generate a new program by
-mutating a given target program in order to increase the semantics coverage.
-If it fails to generate a new program to increase semantics coverage,
-\textsf{Target Selector} selects a new target program again and repeat this
-process less than the pre-defined maximum iteration number.
-\newline
+mutating a given target program in order to increase the coverage of
+the language semantics by the program pool.
+If it fails to generate a new program to increase the semantics coverage,
+\textsf{Target Selector} retries to select a new target program and repeats this
+process less than a pre-defined iteration limit.
 
 \subsubsection{Assertion Injector}
-It modifies given programs to conformance tests by injecting appropriate
-assertions reflecting the semantics described in the specification.
-\textsf{Assertion Injector} executes each program under the mechanized
-specification and obtains the final state of the execution.  Based on the final
-state, it automatically inject assertions to the program.
-\newline
+Finally, the conformance test generation phase modifies the programs in the pool to generate
+conformance tests by injecting appropriate assertions reflecting the
+semantics described in the specification.  More specifically,
+\textsf{Assertion Injector} executes each program in the pool on the mechanized
+specification and obtains the final state of its execution.  It then
+automatically injects assertions to the program using the final state.
 
 \subsubsection{Bug Localizer}
-First, it executes the given conformance tests on $N$ different engines and
-collects the test results.  For each test, if minor engines fail, it reports the
-potential bugs in the engines fail the test.  Otherwise, it reports the
-potential bugs in the specification.  Moreover, it utilizes \textit{Spectrum
-Based Fault Localization} (SBFL)~\cite{sbfl-survey}, which is a localization
-technique relying on the coverage ans pass/fail results of test cases, to
-localize detected bugs.
+Then, the second phase executes the conformance tests on $N$ engines and
+collects their results.  For each test, if a small number of engines fail,
+it reports potential bugs in the engines that fail the test.
+Otherwise, it reports potential bugs in the specification.
+In addition, its \textsf{Bug Localizer} module uses \textit{Spectrum
+Based Fault Localization} (SBFL)~\cite{sbfl-survey}, a localization
+technique utilizing the coverage and pass/fail results of test cases, to
+localize potential bugs.

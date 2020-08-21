@@ -9,7 +9,7 @@
   In this setting, both the specification and implementations may have bugs, and
   guaranteeing their correctness is non-trivial.
 
-  In this paper, we propose a novel \textit{$N$+1-differential testing} to resolve
+  In this paper, we propose a novel \textit{$N$+1-version differential testing} to resolve
   the problem.  Unlike the traditional differential testing, our approach
   consists of three steps: 1) to automatically synthesize programs guided by the
   syntax and semantics from a given language specification, 2) to generate
@@ -17,7 +17,7 @@
   states, and 3) to find and localize bugs in the specification and implementations via executing
   the conformance tests on multiple implementations.  We actualize our approach for
   the JavaScript programming language via \( \tool \), which performs
-  $N$+1-differential testing for modern JavaScript engines and ECMAScript,
+  $N$+1-version differential testing for modern JavaScript engines and ECMAScript,
   the language specification describing the syntax and semantics
   of JavaScript in a natural language.  We evaluated \( \tool \) with four JavaScript engines that
   support all modern JavaScript language features and the latest version of
