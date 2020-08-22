@@ -143,6 +143,10 @@
     "id": "ES4-4",
     "algo": "UpdateExpression4Evaluation0"
   }],
+  "ExceptionFail(Throw,Normal,GLOBALDOTPromiseResolveFunctions)": [{
+    "id": "ES5-1",
+    "algo": "AbstractEqualityComparison"
+  }],
   "ExceptionFail(Throw,Normal,ThrowStatement0Evaluation0)": [{
     "id": "ES5-1",
     "algo": "AbstractEqualityComparison"
@@ -150,5 +154,89 @@
   "ExceptionFail(TypeError,Normal)": [{
     "id": "ES6-1",
     "algo": "PropertyDefinition2PropertyDefinitionEvaluation0"
+  }],
+  "ExceptionFail(TimeoutError,TypeError,IterationStatement5LabelledEvaluation0)": [{
+    "id": "",
+    "algo": ""
+  }],
+  "ExceptionFail(TimeoutError,Normal,GLOBALDOTINTRINSIC_AsyncGeneratorPrototypeDOTreturn)": [{
+    "id": "",
+    "algo": ""
+  }],
+  "ExceptionFail(TimeoutError,Normal,GLOBALDOTArrayDOTprototypeDOTvalues)": [{
+    "id": "",
+    "algo": ""
+  }],
+  "ExceptionFail(SyntaxError,ReferenceError,AssignmentExpression4Evaluation0)": [{
+    "id": "",
+    "algo": ""
+  }],
+  "ExceptionFail(SyntaxError,TypeError,GLOBALDOTArrayDOTprototypeDOTvalues)": [{
+    "id": "",
+    "algo": ""
+  }],
+  "ExceptionFail(SyntaxError,TypeError,GLOBALDOTNumber)": [{
+    "id": "",
+    "algo": ""
+  }],
+  "AssertionPass(AssertionError(Expected [] but got [\"stack\"] in GLOBAL.Error for Error.))": [{
+    "id": "",
+    "algo": ""
+  }],
+  "AssertionPass(AssertionError(Expected [] but got [\"stack\"] in GLOBAL.EvalError for Error.))": [{
+    "id": "",
+    "algo": ""
+  }],
+  "AssertionPass(AssertionError(Expected [] but got [\"stack\"] in GLOBAL.RangeError for Error.))": [{
+    "id": "",
+    "algo": ""
+  }],
+  "AssertionPass(AssertionError(Expected [] but got [\"stack\"] in GLOBAL.ReferenceError for Error.))": [{
+    "id": "",
+    "algo": ""
+  }],
+  "AssertionPass(AssertionError(Expected [] but got [\"stack\"] in GLOBAL.SyntaxError for Error.))": [{
+    "id": "",
+    "algo": ""
+  }],
+  "AssertionPass(AssertionError(Expected [] but got [\"stack\"] in GLOBAL.TypeError for Error.))": [{
+    "id": "",
+    "algo": ""
+  }],
+  "AssertionPass(AssertionError(Expected [] but got [\"stack\"] in GLOBAL.URIError for Error.))": [{
+    "id": "",
+    "algo": ""
+  }],
+  "AssertionPass(AssertionError(Expected [] but got [\"stack\"] in GLOBAL.Error for Error.))": [{
+    "id": "",
+    "algo": ""
+  }],
+  "AssertionPass(AssertionError(Expected [] but got [\"stack\"] in GLOBAL.EvalError for Error.))": [{
+    "id": "",
+    "algo": ""
+  }],
+  "AssertionPass(AssertionError(Expected [] but got [\"stack\"] in GLOBAL.RangeError for Error.))": [{
+    "id": "",
+    "algo": ""
+  }],
+  "AssertionPass(AssertionError(Expected [] but got [\"stack\"] in GLOBAL.ReferenceError for Error.))": [{
+    "id": "",
+    "algo": ""
+  }],
+  "AssertionPass(AssertionError(Expected [] but got [\"stack\"] in GLOBAL.SyntaxError for Error.))": [{
+    "id": "",
+    "algo": ""
+  }],
+  "AssertionPass(AssertionError(Expected [] but got [\"stack\"] in GLOBAL.TypeError for Error.))": [{
+    "id": "",
+    "algo": ""
+  }],
+  "AssertionPass(AssertionError(Expected [] but got [\"stack\"] in GLOBAL.URIError for Error.))": [{
+    "id": "",
+    "algo": ""
+  }],
+  "ExceptionFail(SyntaxError,RangeError,GLOBALDOTBigInt)": [{
+    "id": "",
+    "algo": ""
   }]
 }

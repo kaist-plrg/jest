@@ -65,17 +65,25 @@ case object Localize extends PhaseObj[Unit, LocalizeConfig, Unit] with DefaultJs
               answerMap.get(failedDesc) match {
                 case Some(answers) => {
                   answers.foreach(answer => {
-                    val Answer(id, algo) = answer
-                    val algoRank = result.getAlgoRank(algo)
-                    val agAlgoRank = result.getAgAlgoRank(algo)
                     add(target)
                     add(formula.name)
                     add(failedDesc)
                     add(failedSet.toSeq.sorted.mkString(", "))
-                    add(id)
-                    add(algo)
-                    add(algoRank)
-                    add(agAlgoRank)
+
+                    val Answer(id, algo) = answer
+                    if (algo == "") {
+                      add("-")
+                      add("-")
+                      add("-")
+                      add("-")
+                    } else {
+                      val algoRank = result.getAlgoRank(algo)
+                      val agAlgoRank = result.getAgAlgoRank(algo)
+                      add(id)
+                      add(algo)
+                      add(algoRank)
+                      add(agAlgoRank)
+                    }
                     newline
                   })
                 }

@@ -32,7 +32,9 @@ class Interp(
   var addrName: Map[Addr, String] = Map()
   var targetAstStack: Option[List[AST]] = None
   val evaluationAlgorithmPattern = new Regex(".*[0-9]+.*Evaluation[0-9]+")
-  val syntaxAlgorithmPattern = new Regex(".*[0-9]+[^0-9]+[0-9]+")
+  val syntaxAlgorithmPattern = new Regex(".*[0-9]+[^0-9]+[0-9]+|GLOBAL\\..*")
+  val dummyAST = Lexical("", "")
+  dummyAST.updateSpan(0)
 
   def apply(inst: Inst) = interp(inst)
   def apply(st: State) = fixpoint(st)
@@ -176,6 +178,7 @@ class Interp(
         val (fv, s0) = interp(fexpr)(st)
         fv match {
           case Func(fname, params, varparam, body) =>
+            if (getName && syntaxAlgorithmPattern.matches(fname)) nameStack = (dummyAST, fname) :: nameStack
             val (locals0, s1, restArg) = params.foldLeft(Map[Id, Value](), s0, args) {
               case ((map, st, arg :: rest), param) =>
                 val (av, s0) = interp(arg)(st)
