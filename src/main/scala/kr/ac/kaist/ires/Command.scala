@@ -70,6 +70,9 @@ case object CmdInjectCheck extends CommandObj("inject-check", CmdBase >> Inject 
 // localize
 case object CmdLocalize extends CommandObj("localize", CmdBase >> Localize)
 
+// find-bug
+case object CmdFindBug extends CommandObj("find-bug", CmdBase >> Inject >> Check >> Localize)
+
 // parse-ir
 case object CmdIRParse extends CommandObj("parse-ir", CmdBase >> IRParse) {
   override def display(pgm: ir.Program): Unit = println(ir.beautify(pgm))

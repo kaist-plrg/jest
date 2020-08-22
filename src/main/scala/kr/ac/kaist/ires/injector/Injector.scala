@@ -63,7 +63,7 @@ case class Injector(script: Script, timeout: Option[Long] = None, debug: Boolean
 
   // handle variables
   private def handleVariable: Unit = for (x <- createdVars) {
-    println("handling varaible...")
+    log("handling varaible...")
     getValue(st, s"$globalMap.$x.Value")._1 match {
       case c: Const => append(s"$$assert.sameValue($x, ${const2code(c)});")
       case (addr: Addr) => handleObject(addr, x)
@@ -73,7 +73,7 @@ case class Injector(script: Script, timeout: Option[Long] = None, debug: Boolean
 
   // handle lexical variables
   private def handleLet: Unit = for (x <- createdLets) {
-    println("handling let...")
+    log("handling let...")
     getValue(st, s"$lexRecord.$x.BoundValue")._1 match {
       case c: Const => append(s"$$assert.sameValue($x, ${const2code(c)});")
       case (addr: Addr) => handleObject(addr, x)
@@ -103,12 +103,16 @@ case class Injector(script: Script, timeout: Option[Long] = None, debug: Boolean
       case (_: DynamicAddr, None) if addr != globalThis =>
         handledObjects += addr -> path
         interp.addrName.get(addr).map(name => append(s"""$$algo.set($path, "$name")"""))
-        handlePrototype(addr, path)
-        handleExtensible(addr, path)
-        handleCall(addr, path)
-        handleConstruct(addr, path)
-        handlePropKeys(addr, path)
-        handleProperty(addr, path)
+        st(addr) match {
+          case (_: IRMap) =>
+            handlePrototype(addr, path)
+            handleExtensible(addr, path)
+            handleCall(addr, path)
+            handleConstruct(addr, path)
+            handlePropKeys(addr, path)
+            handleProperty(addr, path)
+          case _ =>
+        }
       case _ =>
     }
   }
@@ -203,7 +207,7 @@ case class Injector(script: Script, timeout: Option[Long] = None, debug: Boolean
     str.contains("async") || str.contains("Promise")
   }
   private def startAsync: Unit = {
-    println("handling async...")
+    log("handling async...")
     append("$delay(() => {")
   }
   private def endAsync: Unit = {
@@ -212,9 +216,11 @@ case class Injector(script: Script, timeout: Option[Long] = None, debug: Boolean
 
   // inject tag
   private lazy val errorNameRegex = "GLOBAL.([A-Z][a-z]+)Error.prototype".r
-  private lazy val isNormal: Boolean = getValue(st, "result.Type")._1 == NamedAddr("CONST_normal")
+  private lazy val isNormal: Boolean = try {
+    getValue(st, "result.Type")._1 == NamedAddr("CONST_normal")
+  } catch { case e: IRError => false }
   private def injectTag: Unit = {
-    println("injecting tag...")
+    log("injecting tag...")
     val tag = uidOpt match {
       case Some(uid) => s"IRError: $uid"
       case None => if (isNormal) "Normal:" else getValue(st, "result.Value")._1 match {
@@ -230,7 +236,7 @@ case class Injector(script: Script, timeout: Option[Long] = None, debug: Boolean
 
   // inject feature
   private def injectFeature: Unit = {
-    println("injecting feature...")
+    log("injecting feature...")
     val touched = visited.touchedAlgos.filter(_.startsWith("GLOBALDOT")).headOption.getOrElse("")
     val nearErrorSyntax = interp.nearErrorSyntax
     val feature = if (touched != "") touched else nearErrorSyntax

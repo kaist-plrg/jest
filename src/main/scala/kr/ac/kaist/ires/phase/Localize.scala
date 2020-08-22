@@ -26,6 +26,8 @@ case object Localize extends PhaseObj[Unit, LocalizeConfig, Unit] with DefaultJs
     iresConfig: IRESConfig,
     config: LocalizeConfig
   ): Unit = {
+    println("localizing bugs...")
+
     mkdir(LOCALIZED_DIR)
     val nf = getPrintWriter(s"$LOCALIZED_DIR/summary.tsv")
     def add(any: Any): Unit = nf.print(s"$any\t")
@@ -44,12 +46,10 @@ case object Localize extends PhaseObj[Unit, LocalizeConfig, Unit] with DefaultJs
       mkdir(dir)
 
       // generating localizer
-      println("generating localizer...")
       val m = readJson[Map[String, Set[String]]](filename)
       val failedSet = m.map(_._2).foldLeft(Set[String]())(_ ++ _)
       val base = Localizer(failedSet)
 
-      println("calculating rankings...")
       m.zipWithIndex.foreach {
         case ((failedDesc, failedSet), i) => {
           val localizer = base.updated(failedSet)

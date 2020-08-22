@@ -39,11 +39,12 @@ case object Check extends PhaseObj[Unit, CheckConfig, Unit] with DefaultJsonProt
           rs.foreach(println)
       }
     case None =>
-      val tempPath = "__temp__.js"
+      println("differential testing...")
 
+      val tempPath = "__temp__.js"
       Checker.targets.foreach(t => { failedScripts = failedScripts + (t -> Map()) })
       for {
-        file <- (walkTree(INJECTED_DIR) ++ walkTree(ERRORS_DIR))
+        file <- walkTree(INJECTED_DIR)
         name = file.getName
         filename = file.toString if jsFilter(filename)
       } {

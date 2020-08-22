@@ -67,7 +67,7 @@
     "id": "ES2-2",
     "algo": "AsyncArrowFunction0Evaluation0"
   }],
-  "AssertionPass(AssertionError(Expected [\"length\"] but got [\"length\", \"name\"] for AsyncArrowFunction1Evaluation0.))": [{
+  "AssertionPass(AssertionError(Expected [\"length\"] but got [\"length\", \"name\"] in AsyncArrowFunction1Evaluation0 for AsyncFunction.))": [{
     "id": "ES2-3",
     "algo": "AsyncArrowFunction1Evaluation0"
   }],
@@ -75,19 +75,19 @@
     "id": "ES2-4",
     "algo": "ClassTail0ClassDefinitionEvaluation3"
   }],
-  "AssertionPass(AssertionError(Expected [\"length\", \"prototype\"] but got [\"length\", \"name\", \"prototype\"] for FunctionExpression0Evaluation0.))": [{
+  "AssertionPass(AssertionError(Expected [\"length\", \"prototype\"] but got [\"length\", \"name\", \"prototype\"] in FunctionExpression0Evaluation0 for Function.))": [{
     "id": "ES2-5",
     "algo": "FunctionExpression0Evaluation0"
   }],
-  "AssertionPass(AssertionError(Expected [\"length\", \"prototype\"] but got [\"length\", \"name\", \"prototype\"] for GeneratorExpression0Evaluation0.))": [{
+  "AssertionPass(AssertionError(Expected [\"length\", \"prototype\"] but got [\"length\", \"name\", \"prototype\"] in GeneratorExpression0Evaluation0 for Function.))": [{
     "id": "ES2-6",
     "algo": "GeneratorExpression0Evaluation0"
   }],
-  "AssertionPass(AssertionError(Expected [\"length\"] but got [\"length\", \"name\"] for AsyncFunctionExpression0Evaluation0.))": [{
+  "AssertionPass(AssertionError(Expected [\"length\"] but got [\"length\", \"name\"] in AsyncFunctionExpression0Evaluation0 for Function.))": [{
     "id": "ES2-7",
     "algo": "AsyncFunctionExpression0Evaluation0"
   }],
-  "AssertionPass(AssertionError(Expected [\"length\", \"prototype\"] but got [\"length\", \"name\", \"prototype\"] for AsyncGeneratorExpression0Evaluation0.))": [{
+  "AssertionPass(AssertionError(Expected [\"length\", \"prototype\"] but got [\"length\", \"name\", \"prototype\"] in AsyncGeneratorExpression0Evaluation0 for Function.))": [{
     "id": "ES2-8",
     "algo": "AsyncGeneratorExpression0Evaluation0"
   }],
@@ -111,23 +111,35 @@
     "id": "ES3-1",
     "algo": "ForInOfHeadEvaluation"
   }],
-  "ExceptionFail(SyntaxError,TypeError)": [{
-    "id": "ES3-1",
-    "algo": "ForInOfHeadEvaluation"
-  }],
-  "ExceptionFail(Normal,IRError(28811))": [{
+  "ExceptionFail(TypeError,IRError(28811),)": [{
     "id": "ES4-1",
     "algo": "UpdateExpression1Evaluation0"
   }],
-  "ExceptionFail(Normal,IRError(28845))": [{
+  "ExceptionFail(TypeError,IRError(28845),)": [{
     "id": "ES4-2",
     "algo": "UpdateExpression2Evaluation0"
   }],
-  "ExceptionFail(Normal,IRError(28879))": [{
+  "ExceptionFail(TypeError,IRError(28879),)": [{
     "id": "ES4-3",
     "algo": "UpdateExpression3Evaluation0"
   }],
-  "ExceptionFail(Normal,IRError(28914))": [{
+  "ExceptionFail(TypeError,IRError(28914),)": [{
+    "id": "ES4-4",
+    "algo": "UpdateExpression4Evaluation0"
+  }],
+  "ExceptionFail(Normal,IRError(28811),)": [{
+    "id": "ES4-1",
+    "algo": "UpdateExpression1Evaluation0"
+  }],
+  "ExceptionFail(Normal,IRError(28845),)": [{
+    "id": "ES4-2",
+    "algo": "UpdateExpression2Evaluation0"
+  }],
+  "ExceptionFail(Normal,IRError(28879),)": [{
+    "id": "ES4-3",
+    "algo": "UpdateExpression3Evaluation0"
+  }],
+  "ExceptionFail(Normal,IRError(28914),)": [{
     "id": "ES4-4",
     "algo": "UpdateExpression4Evaluation0"
   }],

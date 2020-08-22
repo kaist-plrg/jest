@@ -84,7 +84,7 @@ object Localizer {
   private lazy val totalAlgos = Algorithm.all.map(_.name).toSet
   private lazy val totalInsts = insts.map(_.uid).toSet
   private lazy val (instMap, algoMap) = (for {
-    file <- (walkTree(GENERATED_DIR) ++ walkTree(ERRORS_DIR))
+    file <- walkTree(GENERATED_DIR)
     name = file.getName
     if jsFilter(name)
     filename = file.toString

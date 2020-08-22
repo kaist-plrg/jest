@@ -32,7 +32,6 @@ package object ires {
   val DIFF_TEST_DIR = s"${BASE_DIR}/diff-test"
   val GENERATED_DIR = s"${DIFF_TEST_DIR}/generated"
   val INJECTED_DIR = s"${DIFF_TEST_DIR}/injected"
-  val ERRORS_DIR = s"${DIFF_TEST_DIR}/errors"
   val TOUCHED_DIR = s"${DIFF_TEST_DIR}/touched"
   val FAILED_DIR = s"${DIFF_TEST_DIR}/failed"
   val LOCALIZED_DIR = s"${DIFF_TEST_DIR}/localized"

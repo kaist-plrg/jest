@@ -28,6 +28,8 @@ case object Inject extends PhaseObj[Unit, InjectConfig, Unit] {
       if (parseResult.successful)
         dumpFile(Injector(parseResult.get, debug = config.debug).result, filename)
     case None =>
+      println("injecting assertions...")
+
       var count = 0
       var total = 0
       for {

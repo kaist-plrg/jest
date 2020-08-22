@@ -74,6 +74,7 @@ object IRES {
     CmdCheck,
     CmdInjectCheck,
     CmdLocalize,
+    CmdFindBug,
     CmdIRParse,
     CmdIRLoad,
     CmdIREval,
