@@ -1,19 +1,15 @@
 \subsection{Seed Synthesizer}
 
-To synthesize seed JavaScript programs, we implement two different
-synthesizers: \textit{non-recursive synthesizer} and \textit{built-in function
-synthesizer}.
-\newline
+$\tool$ synthesizes seed programs using two synthesizers.
 
 \subsubsection{Non-Recursive Synthesizer}
-
-The main goal of the non-recursive synthesizer is to cover various cases of
-syntax.  It consists of two steps: 1) to find the shortest string for each
-non-terminal and 2) to synthesize JavaScript programs using the pre-calculated
-shortest strings.  While we support various extended rules in grammar of
-ECMAScript such as parametric non-terminals, conditional alternatives, and
-various special terminal symbols, we focus on simple terminals and non-terminals
-in this section for the brevity.
+The first synthesizer aims to cover as many syntax cases as possible
+in two steps: 1) to find the shortest string for each non-terminal
+and 2) to synthesize JavaScript programs using the shortest strings.
+For presentation brevity, we explain simple cases like terminals and non-terminals,
+but the implementation supports the extended grammar of
+ECMAScript such as parametric non-terminals, conditional alternatives,
+and special terminal symbols.
 
 \begin{algorithm}[t]
   \caption{Worklist-based Shortest String}
@@ -24,14 +20,14 @@ in this section for the brevity.
   \SetKwFunction{update}{update}
   \SetKwFunction{propagate}{propagate}
   \KwIn{$\ruleset$ - syntax reduction rules}
-  \KwOut{$M$ - map from non-terminals to shortest strings}
+  \KwOut{$M$ - map from non-terminals to shortest strings derivable
+    from them}
   \Fn{\shortestStrings{$\ruleset$}} {
-    $M = \varnothing, \worklist = \text{a queue that consists of}\ \ruleset$\;
+    $M = \varnothing, \worklist = \text{a queue that contains}\ \ruleset$\;
     \While{$\worklist \neq \varnothing$} {
       $\text{pop}\ (A, \alpha) \gets \worklist$\;
       \lIf{$\update(A, \alpha)$} {
-        $\propagate(\worklist, \ruleset, A)$
-      }
+        $\propagate(\worklist, \ruleset, A)$}
     }
   }
   \Fn{\update{$A, \alpha$}} {
@@ -40,8 +36,8 @@ in this section for the brevity.
       \lIf{$s\ \text{is a terminal}\ t$} {
         $str = str + t$
       }
-      \ElseIf{$s\ \text{is a non-terminal}\ A \wedge A \in M$} {
-        $str = str + M[A]$
+      \ElseIf{$s\ \text{is a non-terminal}\ A' \wedge A' \in M$} {
+        $str = str + M[A']$
       }
       \lElse {
         \Return false
@@ -62,24 +58,25 @@ in this section for the brevity.
   }
 \end{algorithm}
 
-For the first step, we find the shortest string for each non-terminal via the
-\textsf{shortestStrings} function described in Algorithm~\ref{alg:short-string}.
-We modifies the algorithm introduced by McKenize~\cite{cfg-gen} to find the
-shortest string instead of a random string.  It takes syntax reduction rules
-$\ruleset$, which is a set of pairs of non-terminals and alternatives and
-returns a map $M$ from non-terminals to their shortest strings.  It utilizes a
-worklist $W$, which is a queue structure that includes syntax reduction rules
-that affected by updated non-terminals.  The function initializes the worklist
-$W$ with all syntax reduction rules $\ruleset$.  Then, it extracts a syntax
-reduction rule $(A, \alpha)$, updates the map $M$ via the \textsf{update}
-function, and propagate updated information via the \textsf{propagate} function.
-The \textsf{update} function checks whether the given alternative $\alpha$ of
-the non-terminal $A$ can derive a string shorter than the current shortest one
-based on the current map $M$.  If it is possible, it stores the pair the
-non-terminal $A$ and the newly found shortest string in the map $M$ and invokes
-the \textsf{propagate} function.  The \textsf{propagate} function finds all
-syntax reduction rules whose alternatives contains the updated non-terminal $A$
-and inserts them into the worklist $W$.  The \textsf{shortestStrings} function
+The \textsf{shortestStrings} function in Algorithm~\ref{alg:short-string} shows the first step.
+We modified McKenize's algorithm~\cite{cfg-gen} that finds random
+strings to find the shorted string.  It takes syntax reduction rules
+$\ruleset$, a set of pairs of non-terminals and alternatives, and
+returns a map $M$ from non-terminals to shortest strings derivable from them.
+It utilizes a worklist $W$, a queue structure that includes syntax reduction rules
+affected by updated non-terminals.
+The function initializes the worklist $W$ with all the syntax reduction rules $\ruleset$.
+Then, for a syntax reduction rule $(A, \alpha)$, it updates the
+map $M$ via the \textsf{update} function, and propagates updated
+information via the \textsf{propagate} function.
+The \textsf{update} function checks whether a given alternative $\alpha$ of
+a non-terminal $A$ can derive a string shorter than the current
+shortest one using the current map $M$.
+If possible, it stores the mapping from the non-terminal $A$ to the
+newly found shortest string in $M$ and invokes \textsf{propagate}.
+The \textsf{propagate} function finds all the syntax reduction rules
+whose alternatives contain the updated non-terminal $A$ 
+and inserts them into $W$.  The \textsf{shortestStrings} function
 repeats this process until the worklist $W$ becomes empty.
 
 \begin{algorithm}[t]
@@ -111,98 +108,95 @@ repeats this process until the worklist $W$ becomes empty.
     $L = \text{an empty list}$\;
     \ForAll{$s \in \alpha$} {
       \If{$s\ \text{is a terminal}\ t$} {
-        $\text{append}\ (\{ t \}, t) \rightarrow L$\;
+        $\text{append}\ (\{ t \}, t)\ \text{to}\ L$\;
       }
       \ElseIf{$s\ \text{is a non-terminal}\ A'$} {
-        $\text{append}\ (\getProd(M, V, \ruleset, A'), M[A])
-        \rightarrow L$\;
-      }
+        $\text{append}\ (\getProd(M, V, \ruleset, A'), M[A])\ \text{to}\ L$}
     }
-    $D =$ point-wise concatenation of first elements of pairs in $L$ and use
-    second elements for short cases.\;
+    $D =$ point-wise concatenation of first elements of pairs in $L$ using
+    second elements as default ones.\;
     \Return $D$\;
   }
 \end{algorithm}
 
-After finding shortest strings for non-terminals, we synthesize programs via the
-\textsf{nonRecSynthesize} function.  It takes syntax reduction rules $\ruleset$
-and a start symbol $S$.  To reduce the number of redundant syntax elements, it
-keeps the visited set $V$ of non-terminals and utilizes the map $M$ produced by
-the \textsf{shortestStrings} function.  For the first visit with a non-terminal
-$A$, The \textsf{getProd} function takes and returns unions of sets of strings
-generated by invoking the \textsf{getAlt} algorithm with alternatives of the
-non-terminal $A$.  However, if the already visited non-terminal $A$ is passed,
-it returns the single shortest string $M[A]$.  The \textsf{getAlt} takes a
-non-terminal $A$ with an alternative $\alpha$ and returns a set of strings
-derivable from $\alpha$ via point-wise concatenation of strings derived by
-symbols of $\alpha$.  If the numbers of strings derived by symbols are
-different, the shortest strings are used to fill out the short cases.
+Using shortest strings derivable from non-terminals, 
+the \textsf{nonRecSynthesize} function in Algorithm~\ref{alg:non-rec-synthesize}
+synthesize programs.  It takes syntax reduction rules $\ruleset$ and a start symbol $S$.
+For the first visit with a non-terminal $A$, the \textsf{getProd} function returns
+strings generated by \textsf{getAlt} with alternatives of the non-terminal $A$.
+For an already visited non-terminal $A$, it returns the single shortest string $M[A]$.
+The \textsf{getAlt} function takes a non-terminal $A$ with an alternative
+$\alpha$ and returns a set of strings derivable from $\alpha$ via
+point-wise concatenation of strings derived by symbols of $\alpha$.
+When the numbers of strings derived by symbols are different,
+it uses the shortest strings derived by symbols as default strings.
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=0.32\textwidth]{img/syntax-member.pdf}
+  \includegraphics[width=0.31\textwidth]{img/syntax-member.pdf}
   \caption{The \textit{MemberExpression} production in ES11}
   \label{fig:prod-example}
   \vspace*{-1em}
 \end{figure}
 
-For example, Figure~\ref{fig:prod-example} shows the simplified
+For example, Figure~\ref{fig:prod-example} shows a simplified
 \textit{MemberExpression} production in ES11.  For the first step, we find
 the shortest string for each non-terminal: \code{()} for \textit{Arguments} and
-\code{x} for other non-terminals.  In the next step, we synthesize the strings
-derivable from \textit{MemberExpression}.  The first alternative consists of a
-single non-terminal \textit{PrimaryExpression} and it is the first time to visit
-it.  Thus, it generates all cases of \textit{PrimaryExpression}.  The fourth
+\code{x} for the other non-terminals.  In the next step, we synthesize strings
+derivable from \textit{MemberExpression}.  The first alternative is a
+single non-terminal \textit{PrimaryExpression}, which is never visited.
+Thus, it generates all cases of \textit{PrimaryExpression}.  The fourth
 alternative consists of one terminal \code{new} and two non-terminals
-\textit{MemberExpression} and \textit{Arguments}.  The \textit{MemberExpression}
-is already visited thus it generates a single shortest string \code{x} but it is
-the first time to visit \textit{Arguments}.  It generates all cases: \code{()},
-\code{(x)}, \code{(...x)}, and \code{(x,)}.  However, the numbers of strings for
-its symbols are different with each other.  To match the number of strings, we
-fill out the short cases with terminal itself for \code{new} and the shortest
-string \code{x} for \textit{MemberExpression} as follows:
+\textit{MemberExpression} and \textit{Arguments}.  Because \textit{MemberExpression}
+is already visited, it generates a single shortest string \code{x}.
+For the first visit of \textit{Arguments}, it generates all cases:
+\code{()}, \code{(x)}, \code{(...x)}, and \code{(x,)}.
+Note that the numbers of strings generated for symbols are different.
+In such cases, we use the shortest strings for symbols like
+\code{x} for \textit{MemberExpression} as follows:
 
+\vspace*{-.5em}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.48\textwidth]{img/member-example.pdf}
+  \includegraphics[width=0.46\textwidth]{img/member-example.pdf}
 \end{figure}
-
+\vspace*{-.5em}
 
 \subsubsection{Built-in Function Synthesizer}
 
-JavaScript includes various kinds of built-in functions to provide more
-functionalities related to primitive values and built-in objects.  To cover
-their semantics, we extract information for each built-in function from
-mechanized ECMAScript and synthesize JavaScript programs that invoke built-in
-functions.  We utilize \code{Function.prototype.call} function to invoke
-built-in functions to easily handle the \code{this} object in \textsf{Program
-Mutator}.  In this step, we pass a corresponding object or \code{null} as the
-\code{this} object in default.  To consider optional and variable arguments, we
-synthesize function calls with various number of arguments.  Moreover, we
-consider not only built-in functions but also built-in constructors with the
-\code{new} keyword.
+JavaScript supports diverse built-in functions for primitive values and built-in objects.
+To synthesize JavaScript programs that invoke built-in functions,
+we extract the information of each built-in function from the mechanized ECMAScript.
+We utilize the \code{Function.prototype.call} function to invoke
+built-in functions to easily handle the \code{this} object in \textsf{Program Mutator};
+we use a corresponding object or \code{null} as the \code{this} object by default.
+In addition, we synthesize function calls with optional and variable number of arguments
+and built-in constructor calls with the \code{new} keyword.
 
+Consider the following \code{Array.prototype.indexOf} function for
+JavaScript array objects that have a parameter \textit{searchElement}
+and an optional parameter \textit{fromIndex}:
+
+\vspace*{-.5em}
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.4\textwidth]{img/array-indexof.pdf}
 \end{figure}
+\vspace*{-.5em}
 
-For example, consider the above \code{Array.prototype.indexOf} function for
-JavaScript array objects.  It takes one parameter \textit{searchElement} that
-denotes the element we want to search and one more optional parameter
-\textit{fromIndex} to change the searching scope.  Thus, the synthesizer passes
-one or two arguments with an array object or \code{null} as the \code{this}
+\noindent
+the synthesizer generates the following calls with an array object or \code{null} as the \code{this}
 object as follows:
 \begin{lstlisting}[style=myJSstyle]
-Array.prototype.indexOf.call(new Array(), 0);
-Array.prototype.indexOf.call(new Array(), 0, 0);
-Array.prototype.indexOf.call(null, 0);
-Array.prototype.indexOf.call(null, 0, 0);
+  Array.prototype.indexOf.call(new Array(), 0);
+  Array.prototype.indexOf.call(new Array(), 0, 0);
+  Array.prototype.indexOf.call(null, 0);
+  Array.prototype.indexOf.call(null, 0, 0);
 \end{lstlisting}
-Moreover, \code{Array} itself is also not only a built-in function but also
-a built-in constructor with an optional single argument or variable arguments.
+Moreover, \code{Array} is a built-in function and
+a built-in constructor with a variable number of arguments.
 Thus, we synthesize the following six programs for \code{Array}:
 \begin{lstlisting}[style=myJSstyle]
-Array();      Array(0);      Array(0, 0);
-new Array();  new Array(0);  new Array(0, 0);
+    Array();      Array(0);      Array(0, 0);
+    new Array();  new Array(0);  new Array(0, 0);
 \end{lstlisting}

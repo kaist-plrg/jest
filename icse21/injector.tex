@@ -1,67 +1,56 @@
 \subsection{Assertion Injector}
 
 After generating JavaScript programs, \textsf{Assertion Injector} injects
-assertions to them based on the final state of the program according to
-ECMAScript.  It first obtains the final state of a given program from the
-mechanized specification and injects six different kinds of assertions to the
-program.  We carefully implement helper functions for assertions in JavaScript
-not to affect the semantics of the original program and inject them in the front
-of the given program.  Moreover, in order to check the final state after
-executing all asynchronous jobs assigned in the job queue, we enclose assertions
-with \code{seatmate} to wait 100ms when the program uses asynchronous features
-such as \code{Promise} or \code{async}:
+assertions to them using their final states as specified in ECMAScript.
+It first obtains the final state of a given program from the
+mechanized specification and injects seven kinds of assertions in the beginning of the program.
+To check the final state after executing all asynchronous jobs,
+we enclose assertions with \code{setTimeout} to wait 100 ms when a
+program uses asynchronous features such as \code{Promise} and \code{async}:
 \begin{lstlisting}[style=myJSstyle]
-... /* a given program */
-setTimeout(() => { ... /* assertions */ }, 100)
+  ... /* a given program */
+  setTimeout(() => { ... /* assertions */ }, 100)
 \end{lstlisting}
 
 
 \subsubsection{Exceptions}
 
-JavaScript supports both internal exceptions, such as \code{SyntaxError} and
-\code{TypeError}, and custom exceptions with the keyword \code{throw}.  We could
-catch such exceptions using \code{try-catch} statements.  However, it might
-change the semantics of a given program.  For example,
+JavaScript supports both internal exceptions like \code{SyntaxError} and
+\code{TypeError} and custom exceptions with the keyword \code{throw}.
+Note that catching such exceptions using the \code{try-catch} statement
+may change the program semantics.  For example, the following does not throw any exception:
 \begin{lstlisting}[style=myJSstyle]
-var x; function x() {}
+    var x; function x() {}
 \end{lstlisting}
-does not throw any exception but
+but the following:
 \begin{lstlisting}[style=myJSstyle]
-try { var x; function x() {} } catch (e) {}
+    try { var x; function x() {} } catch (e) {}
 \end{lstlisting}
-throws a \code{SyntaxError} because the same name of a variable and a function
-declaration is not allowed in \code{try-catch} blocks.
+throws \code{SyntaxError} because declarations of a variable and a function
+with the same name are not allowed in \code{try-catch}.
 
-To resolve this problem, we utilize the comment in the first line.  If the
-program throws an internal exception, we tag its name in the comment.
-Otherwise, we tag \code{Throw} for a custom exception and \code{Normal} for
-the normal termination.  Using the tag in the comment, we checked the execution
-result of the program in each engine.  For example, ES11 says that the example
-JavaScript program in Figure~\ref{fig:example-algo} normally terminates thus the
-program is modified as follows:
-\begin{lstlisting}[style=myJSstyle]
-// Normal
-var obj = { valueOf: () => { throw "err"; } };
-var result = 42 == obj;
-\end{lstlisting}
+To resolve this problem, we exploit a comment in the first line of a program.
+If the program throws an internal exception, we tag its name in the comment.
+Otherwise, we tag \code{// Throw} for a custom exception and \code{// Normal} for
+normal termination.  Using the tag in the comment, $\tool$ checks the
+execution result of a program in each engine.
 
 
 \subsubsection{Crashes}
 
-The semantics of ECMAScript rarely crashes because of the unspecified cases.
+The mechanized semantics of ECMAScript can crash due to unspecified cases.
 For example, consider the following JavaScript program:
 \begin{lstlisting}[style=myJSstyle]
-var x = 42; x++;
+    var x = 42; x++;
 \end{lstlisting}
-It uses the increment postfix operator (\code{++}) to increase the number value
-stored in the variable \code{x}.  However, a typo exists in the
-\textbf{Evaluation} algorithm of ES11 for such update expressions thus the
+The postfix increment operator (\code{++}) increases the number value
+stored in the variable \code{x}.  However, because of a typo in the
+\textbf{Evaluation} algorithm for such update expressions in ES11, the
 behavior of the program is not defined in ES11.  To represent this situation in
-the conformance test, we injects a tag \code{Crash} to the comment in the first
-line as follows:
+the conformance test, we tag \code{Crash} in the comment as follows:
 \begin{lstlisting}[style=myJSstyle]
-// Crash
-var x = 42; x++;
+    // Crash
+    var x = 42; x++;
 \end{lstlisting}
 
 
@@ -109,9 +98,11 @@ state.
 
 JavaScript supports two different kinds of object properties: \textit{data
 property} and \textit{accessor property}.  Each property consists of four
-different attributes [[Value]], [[Writable]], [[Enumerable]], and
-[[Configurable]] for data properties and [[Get]], [[Set]], [[Enumerable]], and
-[[Configurable]] for accessor properties.  We could access them using the
+different attributes
+% [[Value]], [[Writable]], [[Enumerable]], and
+%[[Configurable]] for data properties and [[Get]], [[Set]], [[Enumerable]], and
+%[[Configurable]] for accessor properties.  We could
+that are accessible by using the
 \code{Object.getOwnPropertyDescriptor} built-in function.  It takes an object
 and a value that represents a property key, and returns an object that
 represents the property descriptor.  We implement a helper

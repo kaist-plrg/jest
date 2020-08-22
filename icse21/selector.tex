@@ -1,31 +1,21 @@
 \subsection{Target Selector}
-
-At the first step, \textsf{Target Selector} initializes the program pool with
-the seed programs synthesized by \textsf{Seed Synthesizer}.  Then, it repeatedly
-picks a target program that will be mutated in \textsf{Program Mutator}.  To
-focus on increasing the semantics coverage, we use the branch coverage
-of the current program pool when selecting the target program.
-
-For example, Figure~\ref{fig:example-algo} is an excerpt of the \textbf{Abstract
-Equality Comparison} algorithm that describes the semantics of non-strict
-equality comparison operators (\code{==} or \code{\!=}).  Assume that the
-following programs are the current program pool:
+From the synthesized programs, \textsf{Target Selector} selects a
+target program to mutate to increase the semantics coverage of the
+program pool.  Consider the \textbf{Abstract Equality Comparison} algorithm 
+in Figure~\ref{fig:example}(a) again where the first step has the condition
+``If Type($x$) is the same as Type($y$).'' Assuming that the current pool
+has the following three programs:
 \begin{lstlisting}[style=myJSstyle]
-1 + 2;  true == false;  0 == 1;
+           1 + 2;  true == false;  0 == 1;
 \end{lstlisting}
-In this case, all pairs of left- and right-hand sides of the equality operator
-in the current program pool have the same typed values.  Thus, in the first step
-in the algorithm, the condition ``Type($x$) is the same as Type($y$)'' is always
-true and the false branch is not covered.  To cover this false branch, the
-\textsf{Target Selector} selects a program that passes the true branch such as
-\code{true == false;} or \code{0 == 1;}.  If the program \code{true == false;} is
-selected and mutated to \code{42 == false;} by \textsf{Program Mutator}, the
-new program covers more semantics thus the program pool is extended as follows:
+because two programs that perform comparison have values of the same type,
+the pool covers only the true branch of the condition in the algorithm.
+To cover its false branch, \textsf{Target Selector} selects any program
+that covers the true branch like \code{true == false;} and \textsf{Program Mutator}
+mutates it to \code{42 == false;} for example.  Then, since the mutated
+program covers the false branch, the pool is extended as follows:
 \begin{lstlisting}[style=myJSstyle]
-1 + 2;  true == false;  0 == 1;  42 == false;
+   1 + 2;  true == false;  0 == 1;  42 == false;
 \end{lstlisting}
-Then, \textsf{Target Selector} has more choices of branches in steps 2, 3, 10,
-and 11 to select next target program.  When it targets the branch in the step
-10, it selects the code \code{42 == false;} as the target program.  In the same
-way, \textsf{Target Selector} iterates this process until the semantics coverage
-is converged.
+which now covers more steps in the algorithm.
+This process repeats until the semantics coverage converges.
