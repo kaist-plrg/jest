@@ -51,7 +51,7 @@ based on the following four research questions:
     to Test262, the manually written official conformance test suite for
     ECMAScript.
   \item {\bf RQ2 (Accuracy of Bug Localization)} The accuracy of bug locations
-    pointed by \textsf{Bug Localizer} compared to the actual bug locations.
+    pointed by \mytextsf{Bug Localizer} compared to the actual bug locations.
   \item {\bf RQ3 (Bug Detection in JavaScript Engines)} The number of bugs in
     four JavaScript engines detected by $\tool$.
   \item {\bf RQ4 (Bug Detection in ECMAScript)} The number of specification bugs
@@ -61,12 +61,12 @@ based on the following four research questions:
 
 \subsection{Coverage of Generated Tests}
 
-For the first step, we synthesize seed programs via \textsf{Seed Synthesizer}
+For the first step, we synthesize seed programs via \mytextsf{Seed Synthesizer}
 based on the syntax of ES11.  It synthesizes \inred{1,112} JavaScript programs
 in about \inred{10} seconds and covers \inred{97.25\% (395/406)} of reachable
 alternatives in syntax productions.  The seed programs becomes the initial
-program pool and it gradually grows via \textsf{Target Selector} and
-\textsf{Program Mutator}.  Figure~\ref{fig:sem-coverage} shows the change of
+program pool and it gradually grows via \mytextsf{Target Selector} and
+\mytextsf{Program Mutator}.  Figure~\ref{fig:sem-coverage} shows the change of
 semantics coverage of the program pool during the iterative process in
 \inred{50} hours.  The left and right graphs show the statement and branch
 coverage, respectively.  The red line denotes the coverage of tests of Test262,
@@ -113,7 +113,7 @@ substitution (\inred{4} successes and \inred{5} covered branches).  On average,
 
 Finally, $\tool$ generates \inred{X,XXX} JavaScript programs and the average
 length of generated programs is \inred{XX.XX}.  After injecting assertions by
-\textsf{Assertion Injector}, generated programs become conformance tests and
+\mytextsf{Assertion Injector}, generated programs become conformance tests and
 their average length is \inred{XXX.XX}.  Compared to Test262, the number of
 generated tests are much smaller and their sizes also shorter than that of tests
 in Test262.  Test262 provides \inred{XX,XXX} tests for the same range of
@@ -125,7 +125,7 @@ semantics and their average size is \inred{XXX.XX}.
 \begin{figure}[t]
   \centering
   \includegraphics[width=0.48\textwidth]{img/localize.pdf}
-  \caption{Ranks of actual buggy alogrithms in results of \textsf{Bug Localizer}
+  \caption{Ranks of actual buggy alogrithms in results of \mytextsf{Bug Localizer}
     for bugs detected by $\tool$}
   \label{fig:localize}
   \vspace*{-1em}
@@ -169,7 +169,7 @@ specification bugs, the related tests failed in \inred{3.8} engines on average.
 Based on results of conformance tests on four JavaScript engines, we localize
 the specification or engine bugs on the semantics of ES11.  We detected
 \inred{-} bugs and Figure~\ref{fig:localize} shows the ranks of their actual
-buggy algorithms in results of \textsf{Bug Localizer}.  The average rank is
+buggy algorithms in results of \mytextsf{Bug Localizer}.  The average rank is
 \inred{-}, and \inred{-}\% of buggy algorithms are ranked in less than 5,
 \inred{-}\% in less than 10, and \inred{-}\% in less than 15.  Among \inred{-}
 bugs, locations of \inred{-} bugs are ranked in more than \inred{-}.  It shows
@@ -214,13 +214,13 @@ different JavaScript engines: \inred{-} for GraalJS, \inred{-} for QuickJS,
 \inred{-} for Moddable XS, and \inred{-} for V8.  Table~\ref{table:engine-bug}
 shows the number of detected bugs for each engine and depending on used
 assertions.  We injected seven different kinds of assertions for exceptions
-(\textsf{Exc}), crashes (\textsf{Crash}), variable values (\textsf{Var}), object
-values (\textsf{Obj}), property descriptors (\textsf{Desc}), property keys
-(\textsf{Key}), and internal methods and slots (\textsf{In}).  For bug
+(\mytextsf{Exc}), crashes (\mytextsf{Crash}), variable values (\mytextsf{Var}), object
+values (\mytextsf{Obj}), property descriptors (\mytextsf{Desc}), property keys
+(\mytextsf{Key}), and internal methods and slots (\mytextsf{In}).  For bug
 detection, usefulness of each assertion is different with each other.  The
-assertions \textsf{Exc} and \textsf{Key} are top-two to detect engine bugs and
+assertions \mytextsf{Exc} and \mytextsf{Key} are top-two to detect engine bugs and
 they detects \inred{-} and \inred{-} bugs out of \inred{39} bugs, respectively.
-\inred{The \textsf{Var} detects - engine bugs but other assertions failed to
+\inred{The \mytextsf{Var} detects - engine bugs but other assertions failed to
 detect engine bugs.}
 
 The most reliable JavaScript engine is V8 because it contains only two bugs and
@@ -284,7 +284,7 @@ value of the variable \code{x} is \code{undefined} thus the function call
     \text{Function} &
     \inred{-} &
     \makecell[l]{Wrong order between property keys for functions} &
-    \textsf{Key} &
+    \mytextsf{Key} &
     O &
     2019-02-07 &
     2020-04-11 &
@@ -294,7 +294,7 @@ value of the variable \code{x} is \code{undefined} thus the function call
     \text{Function} &
     \inred{-} &
     \makecell[l]{Missing property \code{name} for anonymous functions} &
-    \textsf{Key} &
+    \mytextsf{Key} &
     O &
     2015-06-01 &
     2020-04-11 &
@@ -305,7 +305,7 @@ value of the variable \code{x} is \code{undefined} thus the function call
     1 &
     \makecell[l]{Returning iterator objects instead of iterator records\\
       in \textbf{ForIn/OfHeadEvaluation} for \code{for-in} loops} &
-    \textsf{Exc} &
+    \mytextsf{Exc} &
     O &
     2017-10-17 &
     2020-04-30 &
@@ -316,7 +316,7 @@ value of the variable \code{x} is \code{undefined} thus the function call
     4 &
     \makecell[l]{Using the wrong variable \code{oldvalue} instead of\\
       \code{oldValue} in \textbf{Evaluation} of \textit{UpdateExpression}} &
-    \textsf{-} &
+    \mytextsf{-} &
     O &
     2019-09-27 &
     2020-04-23 &
@@ -327,7 +327,7 @@ value of the variable \code{x} is \code{undefined} thus the function call
     1 &
     \makecell[l]{Unhandling abrupt completion\\
       in \textbf{Abstract Equality Comparison}} &
-    \textsf{Exc} &
+    \mytextsf{Exc} &
     O &
     2015-06-01 &
     2020-04-28 &
@@ -338,7 +338,7 @@ value of the variable \code{x} is \code{undefined} thus the function call
     1 &
     \makecell[l]{Unhandling abrupt completion in \textbf{Evaluation} of\\
       \textit{PropertyDefinition} for object literals} &
-    \textsf{Exc} &
+    \mytextsf{Exc} &
     X &
     2019-02-07 &
     \inred{-} &
@@ -347,7 +347,7 @@ value of the variable \code{x} is \code{undefined} thus the function call
     % ES11-X &
     % \inred{\text{-}} &
     % \makecell[l]{-} &
-    % \inred{\textsf{???}} &
+    % \inred{\mytextsf{???}} &
     % \inred{-} &
     % \inred{-} &
     % \inred{-} &
@@ -404,7 +404,7 @@ semantics of four different update expressions (\code{x++}, \code{x--},
 \textit{UpdateExpression}, there exists a typo \code{oldvalue} in the step 3
 instead of \code{oldValue} declared in the step 2.  Our tool failed to execute
 the code \code{x++} using the semantics of ES11 because of the typo.  In this
-case, we directly pass the code to \textsf{Bug Localizer} to test whether the
+case, we directly pass the code to \mytextsf{Bug Localizer} to test whether the
 code is executable in real engines and to localize the bug.  Of course, four
 JavaScript engines succeed to execute the update expressions without any issues
 and this bug was confirmed by TC39 on \inred{-}.

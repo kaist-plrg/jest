@@ -143,10 +143,10 @@
   \endgroup
 }
 
+\newcommand{\mytextsf}[1]{\textsf{\small #1}}
 % Our tool name
-%\newcommand{\tool}{\text{\sf JSN+1}}
-\newcommand{\tool}{\text{\sf JEST}}
-\newcommand{\jiset}{\text{\sf JISET}}
+\newcommand{\tool}{\mytextsf{JEST}}
+\newcommand{\jiset}{\mytextsf{JISET}}
 
 % K framework
 \newcommand{\kframework}{\mathbb{K}}
@@ -160,7 +160,7 @@
 % table
 \newcommand{\telem}[2]{\multicolumn{1}{#1}{\text{#2}}}
 \newcommand{\telembf}[2]{\multicolumn{1}{#1}{\textbf{#2}}}
-\newcommand{\telemsf}[2]{\multicolumn{1}{#1}{\textsf{#2}}}
+\newcommand{\telemsf}[2]{\multicolumn{1}{#1}{\mytextsf{#2}}}
 \newcommand{\rtext}[1]{\inred{\text{#1}}}
 
 % algorithms

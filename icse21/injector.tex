@@ -1,6 +1,6 @@
 \subsection{Assertion Injector}
 
-After generating JavaScript programs, \textsf{Assertion Injector} injects
+After generating JavaScript programs, \mytextsf{Assertion Injector} injects
 assertions to them using their final states as specified in ECMAScript.
 It first obtains the final state of a given program from the
 mechanized specification and injects seven kinds of assertions in the beginning of the program.
@@ -56,122 +56,105 @@ the conformance test, we tag \code{Crash} in the comment as follows:
 
 \subsubsection{Variable Values}
 
-We injected assertions that compare values stored in variables with expected
-values.  To focus on newly introduced variables during the execution, we do not
-compare pre-defined variables such as built-in objects.  It detects variables
-introduced by not only variable declarations (\code{var}) but also lexical
-(\code{let} or \code{const}) and function declarations.  We discriminate
-\code{-0} and \code{+0} using division by zero because \code{-0/0} and
-\code{+0/0} produce positive and negative infinity values, respectively.  For
-object values, we use other assertions to deeply check them.  For example, the
-following code is an example that checks whether the value of the variable
-\code{x} is \code{3}.
+We inject assertions that compare the values of variables with expected values.
+To focus on variables introduced by tests, we do not
+check the values of pre-defined variables like built-in objects.
+For numbers, we distinguish \code{-0} from \code{+0} using division by zero because \code{-0/0} and
+\code{+0/0} produce positive and negative infinity values, respectively.
+%For objects, we use various assertions to check their values deeply.
+The following example checks whether the value of \code{x} is \code{3}:
 \begin{lstlisting}[style=myJSstyle]
-var x = 1 + 2;
-$assert.sameValue(x, 3);
+    var x = 1 + 2;
+    $assert.sameValue(x, 3);
 \end{lstlisting}
-
+%$
 
 \subsubsection{Object Values}
 
-To check the equality between two object values, we keep the representative path
-for each object.  If the injector meets an object in the first time, it injects
-assertions for its properties will be explained in the remaining the section and
-stores the current path.  Otherwise, the injector adds assertions to compare the
-current path and the representative path.
+To check the equality of object values, we keep a representative path for each object.
+If the injector meets an object for the first time, it keeps the current path of the object 
+as its representative path and injects assertions for the properties of the object.
+Otherwise, the injector adds assertions to compare the values of the
+objects with the current path and the representative path.  In
+the following example:
 \begin{lstlisting}[style=myJSstyle]
-var x = {}, y = {}, z = { p: x, q: y };
-$assert.sameValue(z.p, x);
-$assert.sameValue(z.q, y);
+    var x = {}, y = {}, z = { p: x, q: y };
+    $assert.sameValue(z.p, x);
+    $assert.sameValue(z.q, y);
 \end{lstlisting}
-For example, in the above code, the injector meets two different new objects
-stored in the variables \code{x} and \code{y} thus it stores the paths \code{x}
-and \code{y}.  Then, the object in \code{z} is also a new object but its
-properties \code{z.p} and \code{z.q} stores already visited objects.  Thus, the
-injector inserts two assertions that check whether \code{z.p} and \code{x} have
-a same object and \code{z.q} and \code{y} have a same object.  To handle
-built-in objects, we store all paths of built-in objects before traversing the
-state.
+because the injector meets two different new objects
+stored in \code{x} and \code{y}, it keeps the paths \code{x} and \code{y}.
+Then, the object stored in \code{z} is also a new object but its
+properties \code{z.p} and \code{z.q} store already visited objects values.
+Thus, the injector inserts two assertions that check whether \code{z.p} and \code{x} have
+the same object value and \code{z.q} and \code{y} as well.
+To handle built-in objects, we store all the paths of built-in objects in advance.
 
 
-\subsubsection{Property Descriptors}
+\subsubsection{Object Properties}
 
-JavaScript supports two different kinds of object properties: \textit{data
-property} and \textit{accessor property}.  Each property consists of four
-different attributes
-% [[Value]], [[Writable]], [[Enumerable]], and
-%[[Configurable]] for data properties and [[Get]], [[Set]], [[Enumerable]], and
-%[[Configurable]] for accessor properties.  We could
-that are accessible by using the
-\code{Object.getOwnPropertyDescriptor} built-in function.  It takes an object
-and a value that represents a property key, and returns an object that
-represents the property descriptor.  We implement a helper
-\code{\$verifyProperty} to check attributes of each property for each object.
-For example, the following code checks attributes of the data property
-\code{x.p}.
+Checking object properties involves checking four attributes for each property.
+We implement a helper \code{\$verifyProperty} to check the attributes of each property for each object.
+For example, the following code checks the attributes of the property of \code{x.p}:
 \begin{lstlisting}[style=myJSstyle]
-var x = { p: 42 };
-$verifyProperty(x, "p", {
-  value: 42.0,      writable: true,
-  enumerable: true, configurable: true
-});
+    var x = { p: 42 };
+    $verifyProperty(x, "p", {
+        value: 42.0,      writable: true,
+        enumerable: true, configurable: true
+    });
 \end{lstlisting}
-
+%$
 
 \subsubsection{Property Keys}
 
-Since ECMAScript 2015 (ES6), the order between property keys in objects is
-defined in the specification.  Thus, we check the order by using the
-\code{Reflect.ownKeys} built-in function that returns an array that consists of
-own property keys for a given object.  We implement a helper
-\code{\$assert.compareArray} that takes two different arrays and compare their
-length and contents.  For example, the following program is an example that
-checks the property keys and their order of the object in \code{x}.
+Since ECMAScript 2015 (ES6), the specification defines orders between property keys in objects.
+We check the order of property keys by \code{Reflect.ownKeys},
+which takes an object and returns an array of the object's property keys.
+We implement a helper \code{\$assert.compareArray} that takes two
+arrays and compares their lengths and contents.
+For example, the following program checks the property keys and their order of the object in \code{x}:
 \begin{lstlisting}[style=myJSstyle]
 var x = { [Symbol.match]: 0, p: 0, 3: 0, q: 0 }
 $assert.compareArray(
-  Reflect.ownKeys(x), ["3", "p", "q", Symbol.match]
+    Reflect.ownKeys(x), ["3", "p", "q", Symbol.match]
 );
 \end{lstlisting}
-
+%$
 
 \subsubsection{Internal Methods and Slots}
 
-JavaScript objects have internal methods and slots that we cannot directly
-access.  However, several internal methods and slots are accessible using
-indirect ways.  We target four internal slots with their appropriate indirect
-getters as follows:
+While internal methods and slots of JavaScript objects are generally inaccessible by users,
+the names in the following are accessible by indirect getters:
 \[
-  \begin{array}{|l|l|}\hline
-    \telembf{|c|}{Name}   & \telembf{c|}{Indirect Getter}\\\hline
+\small
+  \begin{array}{l|l}
+    \telem{c|}{Name}   & \telem{c}{Indirect Getter}\\\hline
     \text{[[Prototype]]}  & \code{Object.getPrototypeOf(x)}\\\hline
     \text{[[Extensible]]} & \code{Object.isExtensible(x)}\\\hline
     \text{[[Call]]}       & \code{typeof f === "function"}\\\hline
-    \text{[[Construct]]}  & \code{Reflect.construct(function()\{\},[],x)}\\\hline
+    \text{[[Construct]]}  & \code{Reflect.construct(function()\{\},[],x)}
   \end{array}
 \]
 
-The internal slot [[Prototype]] represents the prototype object of an object.
-We extracts it using a built-in function \code{Object.getPrototypeOf}.  In the
-similar way, we use \code{Object.isExtensible(x)} for [[Extensible]] slot.  The
-internal methods [[Call]] and [[Construct]] represents whether a given object is
-a function or a constructor.  However, methods stored in [[Call]] and
-[[Construct]] are not JavaScript values thus we only check the their existence
-using two helpers \code{\$assert.callable} and \code{\$assert.constructable}.  For
-[[Call]] method, we use the \code{typeof} operator because it returns the string
-\code{"function"} if and only if the given value is an object has the [[Call]]
-internal method.  For [[Construct]] method, we use the \code{Reflect.construct}
-built-in function that checks the existence of [[Construct]] methods and invokes
-it.  To preserve the current state, we pass a given object as the third argument
-to only check the existence of [[Construct]] and pass another dummy function
-\code{function()\{\}} as the first argument whose [[Construct]]
-invoked by \code{Reflect.construct}.  For example, the following code describes
-how the injector injects assertions related to internal methods and slots:
+The internal slot [[Prototype]] represents the prototype object of an object,
+which is available by a built-in function \code{Object.getPrototypeOf}.
+The internal slot [[Extensible]] is also available by a built-in function \code{Object.isExtensible(x)}.
+The internal methods [[Call]] and [[Construct]] represent whether a given object is
+a function and a constructor, respectively.  Because the methods are not JavaScript values,
+we simply check their existence using helpers \code{\$assert.callable}
+and \code{\$assert.constructable}.  For [[Call]], we use the \code{typeof} operator because it returns
+\code{"function"} if and only if a given value is an object with the [[Call]] method.
+For [[Construct]] method, we use the \code{Reflect.construct} 
+built-in function that checks the existence of the [[Construct]] methods and invokes it.
+To avoid invoking [[Construct]] unintentionally, we call \code{Reflect.construct} with
+a dummy function \code{function()\{\}} as its first argument and 
+a given object as its third argument.  For example, the following code shows
+how the injector injects assertions for internal methods and slots:
 \begin{lstlisting}[style=myJSstyle]
-function f() {}
-$assert.sameValue(Object.getPrototypeOf(f),
-                  Function.prototype);
-$assert.sameValue(Object.isExtensible(x), true);
-$assert.callable(f);
-$assert.constructable(f);
+  function f() {}
+  $assert.sameValue(Object.getPrototypeOf(f),
+                    Function.prototype);
+  $assert.sameValue(Object.isExtensible(x), true);
+  $assert.callable(f);
+  $assert.constructable(f);
 \end{lstlisting}

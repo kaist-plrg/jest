@@ -1,5 +1,5 @@
 \subsection{Target Selector}
-From the synthesized programs, \textsf{Target Selector} selects a
+From the synthesized programs, \mytextsf{Target Selector} selects a
 target program to mutate to increase the semantics coverage of the
 program pool.  Consider the \textbf{Abstract Equality Comparison} algorithm 
 in Figure~\ref{fig:example}(a) again where the first step has the condition
@@ -10,8 +10,8 @@ has the following three programs:
 \end{lstlisting}
 because two programs that perform comparison have values of the same type,
 the pool covers only the true branch of the condition in the algorithm.
-To cover its false branch, \textsf{Target Selector} selects any program
-that covers the true branch like \code{true == false;} and \textsf{Program Mutator}
+To cover its false branch, \mytextsf{Target Selector} selects any program
+that covers the true branch like \code{true == false;} and \mytextsf{Program Mutator}
 mutates it to \code{42 == false;} for example.  Then, since the mutated
 program covers the false branch, the pool is extended as follows:
 \begin{lstlisting}[style=myJSstyle]
