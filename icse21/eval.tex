@@ -183,7 +183,7 @@ semantics and their average size is \inred{XXX.XX}.
     4 &
     \makecell[l]{Using the wrong variable \code{oldvalue} instead of\\
       \code{oldValue} in \textbf{Evaluation} of \textit{UpdateExpression}} &
-    \mytextsf{-} &
+    \mytextsf{Crash} &
     O &
     2019-09-27 &
     2020-04-23 &
@@ -384,9 +384,9 @@ This bug was created on \inred{X} and TC39 fixed it on \inred{X};
 the bug lasted for \inred{X} days.
 
 ES11-2 contains \inred{X} bugs that are due to the missing property
-\code{name} of anonymous functions.  Until ES10, anonymous functions, such as an identity arrow
+\code{name} of anonymous functions.  Until ES5.1, anonymous functions, such as an identity arrow
 function \code{x => x}, had their own property \code{name} with an empty string \code{""}.
-While ES11 removed the \code{name} property from anonymous functions,
+While ES6 removed the \code{name} property from anonymous functions,
 three engines except V8 still create the \code{name} property in anonymous functions.
 We also found that it was reported as a specification bug and reported it
 to V8, and it will be fixed in V8.
