@@ -1,20 +1,20 @@
 \section{Conclusion}\label{sec:conclude}
-The development of modern languages follow continuous integration (CI) and
-continuous deployment (CD) approach to instantly support fast changing user
-demands.  It make more difficult to find both of semantics bug in implementations
-and the specification.  To alleviate this problem, we introduce
-$N$+1-version differential testing, which is the first technique to test both of
-implementations and the specification.  We actualized our approach for the
-JavaScript programming language via $\tool$, which performs $N$+1-version differential
-testing for modern JavaScript engines and their specification, ECMAScript.  It
-automatically generated \inred{-} JavaScript programs with \inred{-}\% of syntax
-coverage and \inred{-}\% of semantics coverage on the latest version of
-ECMAScript (ES11, 2020).  Our tool injected assertions to them in order to
-convert them as conformance tests.  We executed generated conformance tests on
-four different modern JavaScript engines: GraalJS, QuickJS, Moddable XS, and V8.
-Using the execution results, we found \inred{-} specification bugs and
-\inred{-} engine bugs (\inred{-} for GraalJS, \inred{-} for QuickJS, \inred{-}
-for Moddable XS, and \inred{-} for V8). All of them confirmed by the TC39, the
-committee of ECMAScript, and authors of JavaScript engines and will be fixed.
-We also localized detected bugs on ECMAScript and the average ranks of actual
-bug locations are \inred{-} for algorithms and \inred{-} for algorithm steps.
+The development of modern programming languages follows the continuous integration (CI) and
+continuous deployment (CD) approach to instantly support fast changing user demands.
+Such continuous development makes it difficult to find semantics bugs
+in both the language specification and its various implementations.
+To alleviate this problem, we present $N$+1-version differential testing,
+which is the first technique to test both implementations and its specification in tandem.
+We actualized our approach for the JavaScript programming language via $\tool$,
+using four modern JavaScript engines and the latest version of ECMAScript (ES11, 2020).
+It automatically generated \inred{X} JavaScript programs with \inred{X}\% of syntax
+coverage and \inred{X}\% of semantics coverage on ES11.  $\tool$ injected assertions
+to the generated JavaScript programs to convert them as conformance tests.
+We executed generated conformance tests on four engines that support ES11:
+GraalJS, QuickJS, Moddable XS, and V8.  Using the execution results,
+we found \inred{X} specification bugs and \inred{X} engine bugs (\inred{X} for GraalJS,
+\inred{X} for QuickJS, \inred{X} for Moddable XS, and \inred{X} for V8).
+All the bugs were confirmed by TC39, the committee of ECMAScript, and
+the corresponding engine teams, and they will be fixed in the specification and the engines.
+We believe that $\tool$ takes the first step towards co-evolution of
+software specifications, tests, and their implementations for CI/CD.
