@@ -30,7 +30,7 @@ case object Check extends PhaseObj[Unit, CheckConfig, Unit] with DefaultJsonProt
       val feature = injected.split(LINE_SEP).tail.head.substring("// feature: ".length)
 
       dumpFile(Checker.helper + injected, tempPath)
-      val checker = Checker(tempPath, comment, feature, config.debug)
+      val checker = Checker(tempPath, comment, feature, iresConfig.debug || config.debug)
       deleteFile(tempPath)
 
       checker.result.foreach {
@@ -53,11 +53,11 @@ case object Check extends PhaseObj[Unit, CheckConfig, Unit] with DefaultJsonProt
         val feature = injected.split(LINE_SEP).tail.head.substring("// feature: ".length)
 
         dumpFile(Checker.helper + injected, tempPath)
-        val checker = Checker(tempPath, comment, feature, config.debug)
+        val checker = Checker(tempPath, comment, feature, iresConfig.debug || config.debug)
         deleteFile(tempPath)
 
         val fails: Map[String, Set[CheckResult]] = checker.result
-        if (fails.nonEmpty && config.debug) {
+        if (fails.nonEmpty && iresConfig.debug || config.debug) {
           val hr = "-" * 80
           println(hr)
           println(name)
@@ -86,8 +86,6 @@ case object Check extends PhaseObj[Unit, CheckConfig, Unit] with DefaultJsonProt
           dumpJson(m_string, dirs(e))
         }
       }
-
-    //if (config.debug) println(s"[AsyncInejcted]: ${getPercent(count, total)}")
   }
 
   def defaultConfig: CheckConfig = CheckConfig()

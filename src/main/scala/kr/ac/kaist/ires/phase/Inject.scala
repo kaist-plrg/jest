@@ -26,7 +26,7 @@ case object Inject extends PhaseObj[Unit, InjectConfig, Unit] {
     case Some(filename) =>
       val parseResult = parse(Script(Nil), fileReader(filename))
       if (parseResult.successful)
-        dumpFile(Injector(parseResult.get, debug = config.debug).result, filename)
+        dumpFile(Injector(parseResult.get, debug = iresConfig.debug || config.debug).result, filename)
     case None =>
       println("injecting assertions...")
 
@@ -39,7 +39,7 @@ case object Inject extends PhaseObj[Unit, InjectConfig, Unit] {
         parseResult = parse(Script(Nil), fileReader(filename)) if parseResult.successful
         script = parseResult.get
       } try {
-        val injector = Injector(script, debug = config.debug)
+        val injector = Injector(script, debug = iresConfig.debug || config.debug)
         val injected = injector.result
         total += 1
         if (injector.isAsync) count += 1
@@ -57,7 +57,7 @@ case object Inject extends PhaseObj[Unit, InjectConfig, Unit] {
           dumpFile(Map(("message" -> e.getMessage()), ("stacktrace" -> e.getStackTrace().mkString(LINE_SEP))).toJson, s"$exceptionDirectory/$name.json")
         }
       }
-      if (config.debug) println(s"[AsyncInejcted]: ${getPercent(count, total)}")
+      if (iresConfig.debug || config.debug) println(s"[AsyncInejcted]: ${getPercent(count, total)}")
   }
 
   def defaultConfig: InjectConfig = InjectConfig()

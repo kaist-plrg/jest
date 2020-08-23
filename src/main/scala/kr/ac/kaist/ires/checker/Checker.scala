@@ -5,7 +5,12 @@ import kr.ac.kaist.ires._
 
 import spray.json._
 
-case class Checker(filename: String, expected: String, info: String, debug: Boolean) {
+case class Checker(
+    filename: String,
+    expected: String,
+    feature: String,
+    debug: Boolean
+) {
   val engines = Checker.engines
   val result: Map[String, Set[CheckResult]] = {
     val executeResults: List[(String, Set[ExecuteResult])] = engines.map(e => (e, execute(e, filename)))
@@ -24,10 +29,10 @@ case class Checker(filename: String, expected: String, info: String, debug: Bool
       val ansIsAssertions = ahead.isInstanceOf[AssertionError]
       val curIsAssertions = chead.isInstanceOf[AssertionError]
       (ansIsAssertions, curIsAssertions) match {
-        case (true, true) => (cur -- ans).map(AssertionFail) ++ (ans -- cur).map(AssertionPass)
-        case (true, false) => ans.map(AssertionPass) ++ (if (chead != Normal) Set(ExceptionFail(Normal, chead, info)) else Set())
-        case (false, true) => if (ahead == Normal) cur.map(AssertionFail) else Set(ExceptionFail(ahead, Normal, info))
-        case (false, false) => if (ahead != chead) Set(ExceptionFail(ans.head, cur.head, info)) else Set()
+        case (true, true) => (cur -- ans).map(AssertionFail(_, feature)) ++ (ans -- cur).map(AssertionPass(_, feature))
+        case (true, false) => ans.map(AssertionPass(_, feature)) ++ (if (chead != Normal) Set(ExceptionFail(Normal, chead, feature)) else Set())
+        case (false, true) => if (ahead == Normal) cur.map(AssertionFail(_, feature)) else Set(ExceptionFail(ahead, Normal, feature))
+        case (false, false) => if (ahead != chead) Set(ExceptionFail(ans.head, cur.head, feature)) else Set()
       }
     }
 

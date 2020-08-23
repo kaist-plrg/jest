@@ -6,12 +6,17 @@ import kr.ac.kaist.ires.ir._
 import kr.ac.kaist.ires.ir.Parser._
 import kr.ac.kaist.ires.model.{ Parser => JSParser, Script, ModelHelper }
 
-case class Injector(script: Script, timeout: Option[Long] = None, debug: Boolean = false) {
+case class Injector(
+    script: Script,
+    timeout: Option[Long] = Some(1),
+    debug: Boolean = false
+) {
   // injected script
   lazy val result = {
+    log(scriptStr)
     injectTag
     injectFeature
-    append(script.toString)
+    append(scriptStr)
     if (isNormal) {
       if (isAsync) startAsync
       handleVariable
@@ -24,12 +29,15 @@ case class Injector(script: Script, timeout: Option[Long] = None, debug: Boolean
   // visited
   lazy val visited = interp.visited
 
+  // string
+  private lazy val scriptStr = script.toString
+
   // logging
   private def log(any: Any): Unit = if (debug) println(any)
   private def warning: Unit = if (debug) {
     val trace = (new Throwable).getStackTrace
     val line = trace(1).getLineNumber
-    println(s"[Warning] $script @ $line")
+    println(s"[Warning] $scriptStr @ $line")
   }
 
   // initial state
@@ -203,8 +211,7 @@ case class Injector(script: Script, timeout: Option[Long] = None, debug: Boolean
 
   // handle async
   lazy val isAsync: Boolean = {
-    val str = script.toString
-    str.contains("async") || str.contains("Promise")
+    scriptStr.contains("async") || scriptStr.contains("Promise")
   }
   private def startAsync: Unit = {
     log("handling async...")
@@ -237,7 +244,11 @@ case class Injector(script: Script, timeout: Option[Long] = None, debug: Boolean
   // inject feature
   private def injectFeature: Unit = {
     log("injecting feature...")
-    val touched = visited.touchedAlgos.filter(_.startsWith("GLOBALDOT")).headOption.getOrElse("")
+    val pattern = ".+= ((?:[a-zA-Z]+ \\. )*[a-zA-Z]+) \\. call.+".r
+    val touched = scriptStr match {
+      case pattern(name) => name.replaceAll(" ", "")
+      case _ => ""
+    }
     val nearErrorSyntax = interp.nearErrorSyntax
     val feature = if (touched != "") touched else nearErrorSyntax
     append(s"feature: $feature", comment = true)

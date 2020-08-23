@@ -1,13 +1,13 @@
 {
-  "AssertionPass(AssertionError(Expected [\"length\", \"prototype\", \"name\"] but got [\"length\", \"name\", \"prototype\"] in ClassTail0ClassDefinitionEvaluation3 for Function.))": [{
+  "AssertionPass(AssertionError(Expected [\"length\", \"prototype\", \"name\"] but got [\"length\", \"name\", \"prototype\"] in ClassTail0ClassDefinitionEvaluation3 for Function.),)": [{
     "id": "VE1",
     "algo": "ClassTail0ClassDefinitionEvaluation3"
   }],
-  "AssertionPass(AssertionError(Expected [\"length\", \"prototype\", \"name\", \"x\"] but got [\"length\", \"name\", \"prototype\", \"x\"] in ClassTail0ClassDefinitionEvaluation3 for Function.))": [{
+  "AssertionPass(AssertionError(Expected [\"length\", \"prototype\", \"name\", \"x\"] but got [\"length\", \"name\", \"prototype\", \"x\"] in ClassTail0ClassDefinitionEvaluation3 for Function.),)": [{
     "id": "VE1",
     "algo": "ClassTail0ClassDefinitionEvaluation3"
   }],
-  "AssertionFail(AssertionError(Expected [\"length\", \"prototype\", \"name\", \"x\"] but got [\"length\", \"prototype\", \"x\", \"name\"] in ClassTail0ClassDefinitionEvaluation3 for Function.))": [{
+  "AssertionFail(AssertionError(Expected [\"length\", \"prototype\", \"name\", \"x\"] but got [\"length\", \"prototype\", \"x\", \"name\"] in ClassTail0ClassDefinitionEvaluation3 for Function.),)": [{
     "id": "VE1",
     "algo": "ClassTail0ClassDefinitionEvaluation3"
   }],
@@ -15,7 +15,7 @@
     "id": "VE1",
     "algo": "ClassTail0ClassDefinitionEvaluation3"
   }],
-  "AssertionPass(AssertionError(Expected [\"length\", \"prototype\"] but got [\"length\", \"name\", \"prototype\"] in ClassTail0ClassDefinitionEvaluation3 for Function.))": [{
+  "AssertionPass(AssertionError(Expected [\"length\", \"prototype\"] but got [\"length\", \"name\", \"prototype\"] in ClassTail0ClassDefinitionEvaluation3 for Function.),)": [{
     "id": "VE2",
     "algo": "ClassTail0ClassDefinitionEvaluation3"
   }],

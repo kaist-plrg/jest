@@ -109,7 +109,9 @@ object IRES {
     ("time", BoolOption(c => c.time = true),
       "display duration time."),
     ("bugfix", BoolOption(_ => BUG_FIX = true),
-      "use bug-fixed semantics.")
+      "use bug-fixed semantics."),
+    ("debug", BoolOption(c => c.debug = true),
+      "print intermediate process.")
   )
 
   // indentation
@@ -158,5 +160,6 @@ case class IRESConfig(
     var command: Command,
     var fileNames: List[String] = Nil,
     var silent: Boolean = false,
-    var time: Boolean = false
+    var time: Boolean = false,
+    var debug: Boolean = false
 ) extends Config

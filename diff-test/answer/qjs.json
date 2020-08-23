@@ -7,21 +7,17 @@
     "id": "QJ2",
     "algo": "FunctionDeclarationInstantiation"
   }],
+  "ExceptionFail(Normal,TypeError,AsyncGeneratorBody0EvaluateBody0)": [{
+    "id": "QJ2",
+    "algo": "FunctionDeclarationInstantiation"
+  }],
   "AssertionFail(AssertionError(Expected undefined but got 0.))": [{
     "id": "QJ3",
     "algo": "ArrayBindingPattern1IteratorBindingInitialization0"
   }],
-  "AssertionFail(AssertionError(Expected [\"length\", \"name\"] but got [\"name\", \"length\"] in GLOBAL.Function.prototype.bind for Function.))": [{
+  "AssertionFail(AssertionError(Expected [\"length\", \"name\"] but got [\"name\", \"length\"] in GLOBAL.Function.prototype.bind for Function.),Function.prototype.bind)": [{
     "id": "QJ4",
     "algo": "GLOBALDOTFunctionDOTprototypeDOTbind"
-  }],
-  "ExceptionFail(ReferenceError,TypeError,SingleNameBinding0KeyedBindingInitialization1)": [{
-    "id": "QJ5",
-    "algo": "FunctionRestParameter0IteratorBindingInitialization0"
-  }],
-  "ExceptionFail(ReferenceError,TypeError,OptionalExpression0Evaluation0)": [{
-    "id": "QJ5",
-    "algo": "FunctionRestParameter0IteratorBindingInitialization0"
   }],
   "AssertionFail(AssertionError(Expected [\"0\", \"length\"] but got [\"length\"] in ArrayLiteral1Evaluation0 for Array.))": [{
     "id": "QJ6",
@@ -31,9 +27,9 @@
     "id": "QJ6",
     "algo": "SpreadElement0ArrayAccumulation0"
   }],
-  "AssertionFail(AssertionError(Expected true but got false))": [{
+  "AssertionFail(AssertionError(Expected true but got false),)": [{
     "id": "QJ6",
-    "algo": "SpreadElement0ArrayAccumulation0"
+    "algo": "PropertyDefinition4PropertyDefinitionEvaluation0"
   }],
   "ExceptionFail(TypeError,SyntaxError,CallExpression0Evaluation0)": [{
     "id": "",
