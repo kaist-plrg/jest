@@ -19,6 +19,10 @@
     "id": "VE2",
     "algo": "ClassTail0ClassDefinitionEvaluation3"
   }],
+  "AssertionPass(AssertionError(Expected [\"length\", \"prototype\"] but got [\"length\", \"name\", \"prototype\"] in ClassTail0ClassDefinitionEvaluation3 for Function.),ExpressionBody0Evaluation0)": [{
+    "id": "VE2",
+    "algo": "ClassTail0ClassDefinitionEvaluation3"
+  }],
   "ExceptionFail(SyntaxError,Normal,IterationStatement5LabelledEvaluation0)": [{
     "id": "",
     "algo": ""

@@ -87,9 +87,17 @@
     "id": "ES2-1",
     "algo": "ArrowFunction0Evaluation0"
   }],
+  "AssertionPass(AssertionError(Expected [\"length\"] but got [\"length\", \"name\"] in ArrowFunction0Evaluation0 for Function.),ExpressionBody0Evaluation0)": [{
+    "id": "ES2-1",
+    "algo": "ArrowFunction0Evaluation0"
+  }],
   "AssertionPass(AssertionError(Expected [\"0\", \"length\"] but got [\"0\", \"length\", \"name\"] in ArrowFunction0Evaluation0 for Function.),Array.prototype.fill)": [{
     "id": "ES2-1",
     "algo": "ArrowFunction0Evaluation0"
+  }],
+  "AssertionPass(AssertionError(Expected [\"length\"] but got [\"length\", \"name\"] in AsyncArrowFunction0Evaluation0 for AsyncFunction.),ExpressionBody0Evaluation0)": [{
+    "id": "ES2-2",
+    "algo": "AsyncArrowFunction0Evaluation0"
   }],
   "AssertionPass(AssertionError(Expected [\"0\", \"length\"] but got [\"0\", \"length\", \"name\"] in AsyncArrowFunction0Evaluation0 for AsyncFunction.),Array.prototype.fill)": [{
     "id": "ES2-2",
@@ -102,6 +110,14 @@
   "AssertionPass(AssertionError(Expected [\"length\"] but got [\"length\", \"name\"] in AsyncArrowFunction1Evaluation0 for AsyncFunction.))": [{
     "id": "ES2-3",
     "algo": "AsyncArrowFunction1Evaluation0"
+  }],
+  "AssertionPass(AssertionError(Expected [\"length\"] but got [\"length\", \"name\"] in AsyncArrowFunction1Evaluation0 for AsyncFunction.),ExpressionBody0Evaluation0)": [{
+    "id": "ES2-3",
+    "algo": "AsyncArrowFunction1Evaluation0"
+  }],
+  "AssertionPass(AssertionError(Expected [\"length\", \"prototype\"] but got [\"length\", \"name\", \"prototype\"] in ClassTail0ClassDefinitionEvaluation3 for Function.),ExpressionBody0Evaluation0)": [{
+    "id": "ES2-4",
+    "algo": "ClassTail0ClassDefinitionEvaluation3"
   }],
   "AssertionPass(AssertionError(Expected [\"length\", \"prototype\"] but got [\"length\", \"name\", \"prototype\"] in ClassTail0ClassDefinitionEvaluation3 for Function.),)": [{
     "id": "ES2-4",
@@ -119,7 +135,15 @@
     "id": "ES2-5",
     "algo": "FunctionExpression0Evaluation0"
   }],
+  "AssertionPass(AssertionError(Expected [\"length\", \"prototype\"] but got [\"length\", \"name\", \"prototype\"] in FunctionExpression0Evaluation0 for Function.),ExpressionBody0Evaluation0)": [{
+    "id": "ES2-5",
+    "algo": "FunctionExpression0Evaluation0"
+  }],
   "AssertionPass(AssertionError(Expected [\"length\", \"prototype\"] but got [\"length\", \"name\", \"prototype\"] in GeneratorExpression0Evaluation0 for Function.))": [{
+    "id": "ES2-6",
+    "algo": "GeneratorExpression0Evaluation0"
+  }],
+  "AssertionPass(AssertionError(Expected [\"length\", \"prototype\"] but got [\"length\", \"name\", \"prototype\"] in GeneratorExpression0Evaluation0 for GeneratorFunction.),ExpressionBody0Evaluation0)": [{
     "id": "ES2-6",
     "algo": "GeneratorExpression0Evaluation0"
   }],
@@ -127,7 +151,15 @@
     "id": "ES2-7",
     "algo": "AsyncFunctionExpression0Evaluation0"
   }],
+  "AssertionPass(AssertionError(Expected [\"length\"] but got [\"length\", \"name\"] in AsyncFunctionExpression0Evaluation0 for AsyncFunction.),ExpressionBody0Evaluation0)": [{
+    "id": "ES2-7",
+    "algo": "AsyncFunctionExpression0Evaluation0"
+  }],
   "AssertionPass(AssertionError(Expected [\"length\", \"prototype\"] but got [\"length\", \"name\", \"prototype\"] in AsyncGeneratorExpression0Evaluation0 for Function.))": [{
+    "id": "ES2-8",
+    "algo": "AsyncGeneratorExpression0Evaluation0"
+  }],
+  "AssertionPass(AssertionError(Expected [\"length\", \"prototype\"] but got [\"length\", \"name\", \"prototype\"] in AsyncGeneratorExpression0Evaluation0 for AsyncGeneratorFunction.),ExpressionBody0Evaluation0)": [{
     "id": "ES2-8",
     "algo": "AsyncGeneratorExpression0Evaluation0"
   }],
@@ -232,6 +264,10 @@
     "algo": "AbstractEqualityComparison"
   }],
   "ExceptionFail(TypeError,Normal,MemberExpression1Evaluation0)": [{
+    "id": "ES6-1",
+    "algo": "PropertyDefinition2PropertyDefinitionEvaluation0"
+  }],
+  "ExceptionFail(TypeError,Normal,ClassTail0ClassDefinitionEvaluation3)": [{
     "id": "ES6-1",
     "algo": "PropertyDefinition2PropertyDefinitionEvaluation0"
   }],

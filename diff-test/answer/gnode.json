@@ -55,15 +55,19 @@
     "id": "GR11",
     "algo": "StringPad"
   }],
-  "AssertionFail(AssertionError(descriptor value should be \"42\" but \"\"))": [{
+  "ExceptionFail(Normal,RangeError,)": [{
+    "id": "GR11",
+    "algo": "StringPad"
+  }],
+  "AssertionFail(AssertionError(descriptor value should be \"42\" but \"\"),)": [{
     "id": "GR12",
     "algo": "PropertyDefinition2PropertyDefinitionEvaluation0"
   }],
-  "AssertionFail(AssertionError(Expected [\"0\", \"2\", \"length\"] but got [\"0\", \"length\"] in ArrayLiteral1Evaluation0 for Array.))": [{
+  "AssertionFail(AssertionError(Expected [\"0\", \"2\", \"length\"] but got [\"0\", \"length\"] in ArrayLiteral1Evaluation0 for Array.),)": [{
     "id": "GR13",
     "algo": "ElementList3ArrayAccumulation1"
   }],
-  "AssertionFail(AssertionError(Expected true but got false))": [{
+  "AssertionFail(AssertionError(Expected true but got false),)": [{
     "id": "GR13",
     "algo": "ElementList3ArrayAccumulation1"
   }],
@@ -96,6 +100,10 @@
     "algo": "ForInOfHeadEvaluation"
   }],
   "ExceptionFail(ReferenceError,Normal,OptionalExpression0Evaluation0)": [{
+    "id": "GR15",
+    "algo": "ForInOfHeadEvaluation"
+  }],
+  "ExceptionFail(ReferenceError,TypeError,IterationStatement10LabelledEvaluation0)": [{
     "id": "GR15",
     "algo": "ForInOfHeadEvaluation"
   }],

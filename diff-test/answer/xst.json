@@ -1,4 +1,16 @@
 {
+  "ExceptionFail(Normal,TypeError,Array.prototype.flat)": [{
+    "id": "MD1",
+    "algo": "OptionalExpression0Evaluation0"
+  }],
+  "ExceptionFail(Normal,TypeError,String.prototype.slice)": [{
+    "id": "MD1",
+    "algo": "OptionalExpression0Evaluation0"
+  }],
+  "ExceptionFail(Normal,TypeError,)": [{
+    "id": "MD5",
+    "algo": "GLOBALDOTArrayDOTprototypeDOTtoString"
+  }],
   "ExceptionFail(Normal,TypeError,Array.prototype.toString)": [{
     "id": "MD5",
     "algo": "GLOBALDOTArrayDOTprototypeDOTtoString"
@@ -7,7 +19,7 @@
     "id": "MD2",
     "algo": "GLOBALDOTNumberDOTprototypeDOTtoString"
   }],
-  "AssertionFail(AssertionError(descriptor value should be \"42\" but \"\"))": [{
+  "AssertionFail(AssertionError(descriptor value should be \"42\" but \"\"),)": [{
     "id": "MD3",
     "algo": "PropertyDefinition2PropertyDefinitionEvaluation0"
   }],
@@ -55,6 +67,14 @@
     "id": "MD7",
     "algo": "GLOBALDOTStringDOTprototypeDOTsplit"
   }],
+  "ExceptionFail(TypeError,Normal,GLOBAL.String.prototype.split)": [{
+    "id": "MD7",
+    "algo": "GLOBALDOTStringDOTprototypeDOTsplit"
+  }],
+  "AssertionFail(AssertionError(Expected [\"0\", \"1\", \"length\"] but got [\"0\", \"0\", \"length\"] in GLOBAL.Array.prototype.slice for Array.),Array.prototype.slice)": [{
+    "id": "MD11",
+    "algo": "GLOBALDOTArrayDOTprototypeDOTslice"
+  }],
   "AssertionFail(AssertionError(Expected [\"length\"] but got [\"0\", \"length\"] in GLOBAL.Array.prototype.splice for Array.),Array.prototype.splice)": [{
     "id": "MD11",
     "algo": "GLOBALDOTArrayDOTprototypeDOTsplice"
@@ -94,6 +114,14 @@
   "ExceptionFail(Throw,Normal,IterationStatement7LabelledEvaluation0)": [{
     "id": "MD8",
     "algo": "EnumerateObjectProperties"
+  }],
+  "ExceptionFail(ReferenceError,Normal,IterationStatement5LabelledEvaluation0)": [{
+    "id": "MD8",
+    "algo": "EnumerateObjectProperties"
+  }],
+  "ExceptionFail(Throw,Normal,CallExpression0Evaluation0)": [{
+    "id": "MD16",
+    "algo": "Await"
   }],
   "AssertionFail(AssertionError(Expected [] but got [Symbol()] in GeneratorBody0EvaluateBody0 for Generator.),Array.prototype.map)": [{
     "id": "MD17",
