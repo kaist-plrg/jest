@@ -33,7 +33,7 @@ engines, all of which support ES11:
     SDK~\cite{xs}, which is a combination of development tools and runtime
     software to create applications for micro-controllers
   \item \textbf{V8(v8.5)\footnote{https://v8.dev/}:} An open-source high-performance engine
-for JavaScript and WebAssembly written in C++ developed by Google~\cite{v8}
+for JavaScript and WebAssembly developed by Google~\cite{v8}
 \end{itemize}
 To extract a mechanized specification from ECMAScript, we utilize the tool
 $\jiset$, which is a JavaScript IR-based semantics extraction
@@ -100,7 +100,7 @@ and the final program pool covers \inred{7,480 (77.95\%)} and
       \telembf{c?}{Total}                 & 1,177                 & 3,527 (3.00)\\
     \end{array}
   \]
-  \vspace*{-1.5em}
+  \vspace*{-3em}
 \end{table}
 
 Table~\ref{table:mutation-method} shows the number of successes and covered
@@ -213,6 +213,7 @@ semantics and their average size is \inred{XXX.XX}.
     \inred{X} &
     \inred{X} days
   \end{tabular}
+  \vspace*{-0.5em}
 \end{table*}
 
 \setcounter{table}{1}
@@ -244,6 +245,8 @@ semantics and their average size is \inred{XXX.XX}.
   \vspace*{-1.5em}
 \end{table}
 
+To detect more bugs through high diversity of programs,
+we repeat the conformance test generation phase in ten times.
 We executed the generated conformance tests on four JavaScript engines
 to find bugs in the engines and the specification.
 After inferring locations of the bugs in the engines or the specification
