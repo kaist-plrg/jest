@@ -61,11 +61,11 @@ bugs of ES11 does $\tool$ detect?
 \subsection{Coverage of Generated Tests}
 
 $\tool$ generates the seed programs via \mytextsf{Seed Synthesizer},
-which synthesizes \inred{1,112} JavaScript programs in about \inred{10}
-seconds and covers \inred{97.25\% (395/406)} of reachable 
+which synthesizes 1,112 JavaScript programs in about 10
+seconds and covers 97.78\% (397/406) of reachable 
 alternatives in the syntax productions of ES11.
 Figure~\ref{fig:sem-coverage} shows the change of
-semantics coverage of the program pool during the iterative process in \inred{50} hours.
+semantics coverage of the program pool during the iterative process in 100 hours.
 The left and right graphs present the statement and branch coverages, respectively.
 The top red line denotes the coverage of Test262,
 dark gray X marks denote tests generated from ES11, and blue O marks denote
@@ -89,13 +89,13 @@ and the final program pool covers \inred{7,476 (65.30\%)} and
   \[
     \begin{array}{l?r|r}
       \telembf{c?}{Mutation Method}      & \telembf{c|}{Success}  & \telembf{c}{Branch (Avg.)}\\\toprule\\[-1.4em]
-      \text{Nearest Syntax Tree Mutation} & \rtext{436}           & \rtext{1,450 (3.33)}\\\hline
-      \text{Random Mutation}              & \rtext{320}           & \rtext{910   (2.84)}\\\hline
-      \text{Statement Insertion}          & \rtext{201}           & \rtext{672   (3.34)}\\\hline
-      \text{Object Substitution}          & \rtext{162}           & \rtext{453   (2.80)}\\\hline
-      \text{String Substitution}          & \rtext{4}             & \rtext{5     (1.25)}\\\hline
+      \text{Nearest Syntax Tree Mutation} & 459                   & 1,230 (2.68)\\\hline
+      \text{Random Mutation}              & 337                   & 1,153 (3.42)\\\hline
+      \text{Statement Insertion}          & 209                   & 650   (3.11)\\\hline
+      \text{Object Substitution}          & 169                   & 491   (2.91)\\\hline
+      \text{String Substitution}          & 3                     & 3     (1.00)\\\hline
       \hline
-      \telembf{c?}{Total}                 & \rtext{1,123}         & \rtext{3,490 (3.11)}\\
+      \telembf{c?}{Total}                 & 1,177                 & 3,527 (3.00)\\
     \end{array}
   \]
   \vspace*{-1.5em}
@@ -103,14 +103,14 @@ and the final program pool covers \inred{7,476 (65.30\%)} and
 
 Table~\ref{table:mutation-method} shows the number of successes and covered
 branches for each mutation method during the test generation phase.  In total,
-$\tool$ successfully synthesize \inred{1,123} programs that cover \inred{3,490}
+$\tool$ successfully synthesize 1,177 programs that cover 3,527
 more branches than the initial program pool.  Among five mutation methods, the
-nearest syntax tree mutation is the most contributed method (\inred{436}
-successes and \inred{1,450} covered branches) and the least one is the string
-substitution (\inred{4} successes and \inred{5} covered branches).  On average,
-\inred{3.11} branches are covered by one successful mutation.
+nearest syntax tree mutation is the most contributed method (459
+successes and 1,230 covered branches) and the least one is the string
+substitution (3 successes and 3 covered branches).  On average,
+3.00 branches are covered by one successful mutation.
 
-Finally, $\tool$ generates \inred{X,XXX} JavaScript programs and the average
+Finally, $\tool$ generates 1,699 JavaScript programs and the average
 length of generated programs is \inred{XX.XX}.  After injecting assertions by
 \mytextsf{Assertion Injector}, generated programs become conformance tests and
 their average length is \inred{XXX.XX}.  Compared to Test262, the number of
