@@ -64,6 +64,8 @@ $\tool$ generates the seed programs via \mytextsf{Seed Synthesizer},
 which synthesizes 1,112 JavaScript programs in about 10
 seconds and covers 97.78\% (397/406) of reachable 
 alternatives in the syntax productions of ES11.
+Among them, we filtered out 600 programs not necessary to increase semantics
+coverage and started the mutation iteration with 522 programs.
 Figure~\ref{fig:sem-coverage} shows the change of
 semantics coverage of the program pool during the iterative process in 100 hours.
 The left and right graphs present the statement and branch coverages, respectively.
@@ -111,9 +113,9 @@ substitution (3 successes and 3 covered branches).  On average,
 3.00 branches are covered by one successful mutation.
 
 Finally, $\tool$ generates 1,699 JavaScript programs and the average
-length of generated programs is \inred{XX.XX}.  After injecting assertions by
+length of generated programs is 62.31.  After injecting assertions by
 \mytextsf{Assertion Injector}, generated programs become conformance tests and
-their average length is \inred{XXX.XX}.  Compared to Test262, the number of
+their average length is 245.90.  Compared to Test262, the number of
 generated tests are much smaller and their sizes also shorter than those of tests
 in Test262.  Test262 provides \inred{XX,XXX} tests for the same range of
 semantics and their average size is \inred{XXX.XX}.
@@ -149,7 +151,7 @@ semantics and their average size is \inred{XXX.XX}.
 
     ES11-1 &
     \text{Function} &
-    \inred{X} &
+    12 &
     \makecell[l]{Wrong order between property keys for functions} &
     \mytextsf{Key} &
     O &
@@ -159,7 +161,7 @@ semantics and their average size is \inred{XXX.XX}.
 
     ES11-2 &
     \text{Function} &
-    \inred{X} &
+    8 &
     \makecell[l]{Missing property \code{name} for anonymous functions} &
     \mytextsf{Key} &
     O &
@@ -240,12 +242,12 @@ semantics and their average size is \inred{XXX.XX}.
       \telemsf{@{~}c@{~}?}{In} &
       \telembf{@{~}c@{}}{Total}\\\toprule\\[-1.4em]
 
-      \text{GraalJS}      & \inred{X} & \inred{X} & \inred{X} & \inred{X} & \inred{X} & \inred{X} & \inred{X} & \inred{10}\\\hline
-      \text{QuickJS}      & \inred{X} & \inred{X} & \inred{X} & \inred{X} & \inred{X} & \inred{X} & \inred{X} & \inred{6}\\\hline
-      \text{Moddable XS}  & \inred{X} & \inred{X} & \inred{X} & \inred{X} & \inred{X} & \inred{X} & \inred{X} & \inred{21}\\\hline
-      \text{V8}           & \inred{X} & \inred{X} & \inred{X} & \inred{X} & \inred{X} & \inred{X} & \inred{X} & \inred{2}\\\hline
+      \text{GraalJS}      & 6   & 0 & 0 & 0 & 2 & 8   & 0 & 16\\\hline
+      \text{QuickJS}      & 3   & 1 & 1 & 0 & 0 & 2   & 0 & 6\\\hline
+      \text{Moddable XS}  & 12  & 0 & 0 & 0 & 3 & 5   & 0 & 20\\\hline
+      \text{V8}           & 0   & 0 & 0 & 0 & 0 & 2   & 0 & 2\\\hline
       \hline
-      \telembf{c?}{Total} & \inred{X} & \inred{X} & \inred{X} & \inred{X} & \inred{X} & \inred{X} & \inred{X} & \inred{39}
+      \telembf{c?}{Total} & 21  & 0 & 1 & 0 & 5 & 17  & 0 & 44\\
     \end{array}
   \]
   \vspace*{-1.5em}
@@ -272,16 +274,16 @@ The following table shows that our method works well:
       \telembf{c?}{Total} &
       \telembf{c}{Average} \\\toprule\\[-1.4em]
 
-      \text{Engine Bugs}  & \inred{X} & \inred{X} & \inred{X} & \inred{X} & \inred{39} & \inred{1.3}\\\hline
-      \text{Specification Bugs}   & \inred{X} & \inred{X} & \inred{X} & \inred{X} & \inred{7} & \inred{3.8}
+      \text{Engine Bugs}        & 38  & 6   & 0   & 0   & 44  & 1.14\\\hline
+      \text{Specification Bugs} & 0   & 0   & 10  & 17  & 27  & 3.63\\
     \end{array}
   \]
   \vspace*{-1em}
 \end{table}
 
 \noindent
-For engine bugs, the average number of engine failures is 1.3
-while the average number of failed engines for specification bugs is 3.8.
+For engine bugs, the average number of engine failures is 1.14
+while the average number of failed engines for specification bugs is 3.63.
 As we expected, when most engines fail for a test, the specification
 may have a bug.
 
@@ -294,14 +296,13 @@ bugs are ranked in less than 5, \inred{X}\% in less than 10, and \inred{X}\% in 
 Note that the locations of \inred{X} bugs are ranked in more than \inred{X},
 which shows the limitation of the statistical fault localization approach;
 its localization accuracy becomes low for bugs caused by missing statements.
-For example, \inred{TODO: example}.
 
 
 
 \subsection{Bug Detection in JavaScript Engines}
-From four JavaScript engines, $\tool$ detected \inred{39} bugs:
-\inred{X} from GraalJS, \inred{X} from QuickJS,
-\inred{X} from Moddable XS, and \inred{X} from V8.
+From four JavaScript engines, $\tool$ detected 44 bugs:
+16 from GraalJS, 6 from QuickJS,
+20 from Moddable XS, and 2 from V8.
 Table~\ref{table:engine-bug} presents how many bugs for each assertion are detected
 for each engine.  We injected seven kinds of assertions: exceptions
 (\mytextsf{Exc}), crashes (\mytextsf{Crash}), variable values (\mytextsf{Var}), object
@@ -309,12 +310,12 @@ values (\mytextsf{Obj}), object properties (\mytextsf{Desc}), property keys
 (\mytextsf{Key}), and internal methods and slots (\mytextsf{In}).
 The effectiveness of bug finding is different for different assertions.
 The \mytextsf{Exc} and \mytextsf{Key} assertions detected
-engine bugs the most; out of \inred{39} bugs, the former detected \inred{X} bugs
-and the latter detected \inred{X} bugs.
-\inred{The \mytextsf{Var} assertion detected X bugs but the other
-assertions did not detect any engine bugs.}
+engine bugs the most; out of 44 bugs, the former detected 21 bugs
+and the latter detected 17 bugs.
+\mytextsf{Desc} and \mytextsf{Var} detected 5 and 1 bugs, respectively, but the
+other assertions did not detect any engine bugs.
 
-We detected \inred{X} engine bugs in GraalJS and one of them caused an engine
+We detected 16 engine bugs in GraalJS and one of them caused an engine
 crash.  When we apply the prefix increment operator for \code{undefined}
 as \code{++undefined}, GraalJS throws \code{java.lang.IllegalStateException}.
 Because it crashes the engine, we cannot catch the exception using the
@@ -330,7 +331,7 @@ were not detected by other conformance tests:
 unit test suites in our CI for every change, it might make sense to
 add your suite as well.''}
 
-In QuickJS, $\tool$ detected \inred{X} engine bugs, most of which are due to corner cases of
+In QuickJS, $\tool$ detected 6 engine bugs, most of which are due to corner cases of
 the function semantics.  For example, the following code should throw
 a \code{ReferenceError} exception:
 \begin{lstlisting}[style=myJSstyle]
@@ -342,7 +343,7 @@ However, since QuickJS assumes that the initial value of \code{x} is
 \code{undefined}, the function call \code{f()} returns \code{undefined}.
 The QuickJS team confirmed our bug reports and it has been fixing the bugs.
 
-$\tool$ found the most bugs in Moddable XS; it detected \inred{X} bugs for various
+$\tool$ found the most bugs in Moddable XS; it detected 20 bugs for various
 language features such as optional chains, \code{Number.prototype.toString},
 iterators of \code{Map} and \code{Set}, and complex assignment patterns.
 Among them, optional chains are newly introduced in ES11, which shows that
@@ -359,14 +360,14 @@ that led to ES11-1 and ES11-2 listed in Table~\ref{table:spec-bug}.
 The V8 team confirmed the bugs and fixed them.
 
 \subsection{Bug Detection in ECMAScript}
-From the latest ECMAScript ES11, $\tool$ detected \inred{X} specification bugs.
+From the latest ECMAScript ES11, $\tool$ detected 27 specification bugs.
 Table~\ref{table:spec-bug} summarizes the bugs categorized by their root causes.
 Among them, five categories (ES11-1 to ES11-5) were already reported and fixed in the current
 draft of the next ECMAScript but ES11-6 was never reported before.
 We reported it to TC39; they confirmed it and they will
 fix it in the next version, ECMAScript 2021 (ES12).
 
-ES11-1 contains \inred{X} bugs; it is due to a wrong order between property keys of all kinds of
+ES11-1 contains 12 bugs; it is due to a wrong order between property keys of all kinds of
 function values such as \code{async} and generator functions, arrow functions, and classes.
 For example, if we define a class declaration with a name \code{A}
 (\code{class A \{\}}), three properties are defined in the function
@@ -380,10 +381,10 @@ While the order of property keys in the class \code{A} should be \code{[length, 
 according to the semantics of ES11, the order is \code{[length, name, prototype]}
 in three engines except V8.  We found that it was already reported as a specification bug;
 we reported it to V8 and they fixed it.
-This bug was created on \inred{X} and TC39 fixed it on \inred{X};
-the bug lasted for \inred{X} days.
+This bug was created on February 7, 2019 and TC39 fixed it on April 11, 2020;
+the bug lasted for 429 days.
 
-ES11-2 contains \inred{X} bugs that are due to the missing property
+ES11-2 contains 8 bugs that are due to the missing property
 \code{name} of anonymous functions.  Until ES5.1, anonymous functions, such as an identity arrow
 function \code{x => x}, had their own property \code{name} with an empty string \code{""}.
 While ES6 removed the \code{name} property from anonymous functions,
@@ -398,7 +399,7 @@ However, In ES11, it returns an iterator object, which is a
 JavaScript object with some properties related to iteration.
 It causes a \code{TypeError} exception when executing the code \code{for(var x in \{\});} according to
 ES11 but all engines execute the code normally without any exceptions.
-This bug was confirmed by TC39 on \inred{X}.
+This bug was confirmed by TC39 on April 30, 2020.
 
 ES11-4 contains four bugs caused by a typo for the variable in the
 semantics of four different update expressions: \code{x++}, \code{x--},
@@ -409,10 +410,10 @@ the code \code{x++} using the semantics of ES11 because of the typo.
 For this case, we directly pass the code to \mytextsf{Bug Localizer} to test whether the
 code is executable in real-world engines and to localize the bug.
 Of course, four JavaScript engines executed the update expressions without any issues
-and this bug was confirmed by TC39 on \inred{X}.
+and this bug was confirmed by TC39 on April 23, 2020.
 
 Two bugs in ES11-5 and ES11-6 are caused by unhandling of abrupt completions in
-abstract equality comparison and property definitions of object literals, respectively.  
-The bug in ES11-5 was confirmed by TC39 and was fixed on \inred{X}.
+abstract equality comparison and property definitions of object literals, respectively.
+The bug in ES11-5 was confirmed by TC39 and was fixed on April 28, 2020.
 The bug in ES11-6 was a genuine one, and we reported it and received a confirmation
 from TC39 on \inred{X}; the bug lasted for \inred{X} days.
