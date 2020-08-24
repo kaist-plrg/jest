@@ -289,13 +289,12 @@ may have a bug.
 
 Based on the results of conformance tests on four JavaScript engines, we localized
 the specification or engine bugs on the semantics of ES11.
-Figure~\ref{fig:localize} shows the ranks of algorithms that caused
-\inred{X} bugs in engines and the specification.
-The average rank is \inred{X}, and \inred{X}\% of algorithms causing
-bugs are ranked in less than 5, \inred{X}\% in less than 10, and \inred{X}\% in less than 15.
-Note that the locations of \inred{X} bugs are ranked in more than \inred{X},
-which shows the limitation of the statistical fault localization approach;
-its localization accuracy becomes low for bugs caused by missing statements.
+Among 71 bugs, 7 bugs are related to syntax thus we localized only 64 semantics bugs.
+Figure~\ref{fig:localize} shows the ranks of algorithms that caues the semantics bugs.
+The average rank is 3.19, and 82.8\% of algorithms causing
+bugs are ranked in less than 5, 93.8\% in less than 10, and 98.4\% in less than 15.
+Note that the location of one bug is ranked in 21 because of the limitation of SBFL;
+its accuracy becomes low with a small number of failed test cases.
 
 
 
