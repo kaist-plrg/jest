@@ -68,10 +68,12 @@ Among them, we filtered out 602 programs that do not increase
 the semantics coverage and started the mutation iteration with 523 programs.
 Figure~\ref{fig:sem-coverage} shows the change of
 semantics coverage of the program pool during the iterative process in 100 hours.
-The left and right graphs present the statement and branch coverages, respectively.
-The top red line denotes the coverage of Test262,
-dark gray X marks denote tests generated from ES11, and blue O marks denote
-tests generated from ES11 after fixing bugs detected by $\tool$.
+The left and right graphs present the statement and branch coverages,
+respectively, and the top red line denotes the coverage of Test262.
+We generated conformance tests two times before and after fixing bugs detected
+by $\tool$ because the specification bugs affected the semantics coverage.
+In each graph, dark gray X marks and blue O marks denote the semantics coverage
+of generated tests before and after fixing bugs.
 The semantics that we target in ES11 consists of 1,550 algorithms with 24,495
 statements and 9,596 branches.
 For the statement coverage, Test262 covers 22,440 (91.61\%) statements.
@@ -184,7 +186,7 @@ and their average size is 1,276.10.
     4 &
     \makecell[l]{Using the wrong variable \code{oldvalue} instead of\\
       \code{oldValue} in \textbf{Evaluation} of \textit{UpdateExpression}} &
-    \mytextsf{Crash} &
+    \mytextsf{Abort} &
     O &
     2019-09-27 &
     2020-04-23 &
@@ -225,7 +227,7 @@ and their average size is 1,276.10.
     \begin{array}{l?r|r|r|r|r|r|r?r}
       \telembf{@{}c@{~}?}{Engines} &
       \telemsf{@{~}c@{~}|}{Exc} &
-      \telemsf{@{~}c@{~}|}{Crash} &
+      \telemsf{@{~}c@{~}|}{Abort} &
       \telemsf{@{~}c@{~}|}{Var} &
       \telemsf{@{~}c@{~}|}{Obj} &
       \telemsf{@{~}c@{~}|}{Desc} &
@@ -234,7 +236,7 @@ and their average size is 1,276.10.
       \telembf{@{~}c@{}}{Total}\\\toprule\\[-1.4em]
 
       \text{GraalJS}      & 6   & 0 & 0 & 0 & 2 & 8   & 0 & 16\\\hline
-      \text{QuickJS}      & 3   & 1 & 1 & 0 & 0 & 2   & 0 & 6\\\hline
+      \text{QuickJS}      & 3   & 0 & 1 & 0 & 0 & 2   & 0 & 6\\\hline
       \text{Moddable XS}  & 12  & 0 & 0 & 0 & 3 & 5   & 0 & 20\\\hline
       \text{V8}           & 0   & 0 & 0 & 0 & 0 & 2   & 0 & 2\\\hline
       \hline
@@ -297,7 +299,7 @@ From four JavaScript engines, $\tool$ detected 44 bugs:
 20 from Moddable XS, and 2 from V8.
 Table~\ref{table:engine-bug} presents how many bugs for each assertion are detected
 for each engine.  We injected seven kinds of assertions: exceptions
-(\mytextsf{Exc}), crashes (\mytextsf{Crash}), variable values (\mytextsf{Var}), object
+(\mytextsf{Exc}), aborts (\mytextsf{Abort}), variable values (\mytextsf{Var}), object
 values (\mytextsf{Obj}), object properties (\mytextsf{Desc}), property keys
 (\mytextsf{Key}), and internal methods and slots (\mytextsf{In}).
 The effectiveness of bug finding is different for different assertions.
@@ -310,8 +312,7 @@ other assertions did not detect any engine bugs.
 We detected 16 engine bugs in GraalJS and one of them caused an engine
 crash.  When we apply the prefix increment operator for \code{undefined}
 as \code{++undefined}, GraalJS throws \code{java.lang.IllegalStateException}.
-Because it crashes the engine, we cannot catch the exception using the
-\code{try} statement:
+Because it crashes the engine, developers even cannot catch the exception as follows:
 \begin{lstlisting}[style=myJSstyle]
     try { ++undefined; } catch(e) { }
 \end{lstlisting}

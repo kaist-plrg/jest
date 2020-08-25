@@ -34,14 +34,14 @@ according to the semantics implemented in the compiler.  As in JavaScript,
 bidirectional effects in the specification and the implementation make
 it hard to guarantee their correspondence.
 
+In this approach, both the specification and the implementation may contain bugs,
+and guaranteeing their correctness is a challenging task.
 The conventional approach to build a programming language is uni-directional from
 a language specification to its implementation.  The specification is believed to
 be correct and the conformance of an implementation to the specification is
 checked by dynamic testing.  Unlike in the conventional approach, in the modern CI/CD
-approach, the specification may not be the Oracle, because both the
-specification and the implementation can co-evolve.  In this setting, both the
-specification and the implementation may contain bugs, and guaranteeing their
-correctness is a challenging task.
+approach, the specification may not be the oracle, because both the
+specification and the implementation can co-evolve.
 
 In this paper, we propose a novel \textit{$N$+1-version differential testing}, which
 enables testing of co-evolving specifications and their implementations.  The
@@ -57,8 +57,9 @@ from mechanized specifications.  The $N$+1-version differential testing consists
 three steps: 1) to automatically synthesize programs guided by the syntax and
 semantics from a given language specification, 2) to generate conformance tests
 by injecting assertions to the synthesized programs to check their final program
-states, and 3) to find and localize bugs in the specification and
-implementations via executing the conformance tests on multiple implementations.
+states, 3) to detect bugs in the specification and implementations
+via executing the conformance tests on multiple implementations, and 4) to
+localize bugs on the specification using statistical information.
 
 Given a language specification and $N$ existing real-world
 implementations of the specification, we
@@ -76,7 +77,8 @@ specification, we can find and localize bugs either in the specification written
 in a natural language or in its implementations.
 
 To show the practicality of the proposed approach, we present $\tool$, which
-performs $N$+1-version differential testing for JavaScript engines and ECMAScript.
+is a \underline{J}avaScript \underline{E}ngines and
+\underline{S}pecification \underline{T}ester using $N$+1-version differential testing.
 We implement $\tool$ by extending $\jiset$~\cite{jiset}, a JavaScript
 IR-based semantics extraction toolchain, to utilize the syntax and semantics
 automatically extracted from ECMAScript.  Using the extracted syntax,

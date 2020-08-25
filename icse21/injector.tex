@@ -36,9 +36,9 @@ normal termination.  Using the tag in the comment, $\tool$ checks the
 execution result of a program in each engine.
 
 
-\subsubsection{Crashes}
+\subsubsection{Aborts}
 
-The mechanized semantics of ECMAScript can crash due to unspecified cases.
+The mechanized semantics of ECMAScript can abort due to unspecified cases.
 For example, consider the following JavaScript program:
 \begin{lstlisting}[style=myJSstyle]
     var x = 42; x++;
@@ -47,9 +47,9 @@ The postfix increment operator (\code{++}) increases the number value
 stored in the variable \code{x}.  However, because of a typo in the
 \textbf{Evaluation} algorithm for such update expressions in ES11, the
 behavior of the program is not defined in ES11.  To represent this situation in
-the conformance test, we tag \code{Crash} in the comment as follows:
+the conformance test, we tag \code{Abort} in the comment as follows:
 \begin{lstlisting}[style=myJSstyle]
-    // Crash
+    // Abort
     var x = 42; x++;
 \end{lstlisting}
 
@@ -59,8 +59,8 @@ the conformance test, we tag \code{Crash} in the comment as follows:
 We inject assertions that compare the values of variables with expected values.
 To focus on variables introduced by tests, we do not
 check the values of pre-defined variables like built-in objects.
-For numbers, we distinguish \code{-0} from \code{+0} using division by zero because \code{-0/0} and
-\code{+0/0} produce positive and negative infinity values, respectively.
+For numbers, we distinguish \code{-0} from \code{+0} using division by zero because \code{1/-0} and
+\code{1/+0} produce negative and positive infinity values, respectively.
 %For objects, we use various assertions to check their values deeply.
 The following example checks whether the value of \code{x} is \code{3}:
 \begin{lstlisting}[style=myJSstyle]
