@@ -64,8 +64,8 @@ $\tool$ generates the seed programs via \mytextsf{Seed Synthesizer},
 which synthesizes 1,112 JavaScript programs in about 10
 seconds and covers 97.78\% (397/406) of reachable 
 alternatives in the syntax productions of ES11.
-Among them, we filtered out 600 programs not necessary to increase semantics
-coverage and started the mutation iteration with 523 programs.
+Among them, we filtered out 600 programs that do not increase
+the semantics coverage and started the mutation iteration with \inred{523} programs.
 Figure~\ref{fig:sem-coverage} shows the change of
 semantics coverage of the program pool during the iterative process in 100 hours.
 The left and right graphs present the statement and branch coverages, respectively.
@@ -245,8 +245,8 @@ semantics and their average size is 1,276.10.
   \vspace*{-1.5em}
 \end{table}
 
-To detect more bugs through high diversity of programs,
-we repeat the conformance test generation phase in ten times.
+To detect more bugs using more diverse programs,
+we repeated the conformance test generation phase for ten times.
 We executed the generated conformance tests on four JavaScript engines
 to find bugs in the engines and the specification.
 After inferring locations of the bugs in the engines or the specification
@@ -282,13 +282,13 @@ As we expected, when most engines fail for a test, the specification
 may have a bug.
 
 Based on the results of conformance tests on four JavaScript engines, we localized
-the specification or engine bugs on the semantics of ES11.
-Among 71 bugs, 7 bugs are related to syntax thus we localized only 64 semantics bugs.
-Figure~\ref{fig:localize} shows the ranks of algorithms that caues the semantics bugs.
-The average rank is 3.19, and 82.8\% of algorithms causing
-bugs are ranked in less than 5, 93.8\% in less than 10, and 98.4\% in less than 15.
-Note that the location of one bug is ranked in 21 because of the limitation of SBFL;
-its accuracy becomes low with a small number of failed test cases.
+the specification or engine bugs on the \emph{semantics} of ES11.
+Among 71 bugs, we excluded 7 syntax bugs and localized only 64 semantics bugs.
+Figure~\ref{fig:localize} shows the ranks of algorithms that caused the semantics bugs.
+The average rank is 3.19, and 82.8\% of the algorithms causing the
+bugs are ranked less than 5, 93.8\% less than 10, and 98.4\% less than 15.
+Note that the location of one bug is ranked 21 because of the limitation of SBFL;
+its localization accuracy becomes low for a small number of failed test cases.
 
 
 
