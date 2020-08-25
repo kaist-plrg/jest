@@ -61,27 +61,27 @@ bugs of ES11 does $\tool$ detect?
 \subsection{Coverage of Generated Tests}
 
 $\tool$ generates the seed programs via \mytextsf{Seed Synthesizer},
-which synthesizes 1,112 JavaScript programs in about 10
+which synthesizes 1,125 JavaScript programs in about 10
 seconds and covers 97.78\% (397/406) of reachable 
 alternatives in the syntax productions of ES11.
-Among them, we filtered out 600 programs that do not increase
-the semantics coverage and started the mutation iteration with \inred{523} programs.
+Among them, we filtered out 602 programs that do not increase
+the semantics coverage and started the mutation iteration with 523 programs.
 Figure~\ref{fig:sem-coverage} shows the change of
 semantics coverage of the program pool during the iterative process in 100 hours.
 The left and right graphs present the statement and branch coverages, respectively.
 The top red line denotes the coverage of Test262,
 dark gray X marks denote tests generated from ES11, and blue O marks denote
 tests generated from ES11 after fixing bugs detected by $\tool$.
-For the statement coverage, out of \inred{24,495} statements in ES11, Test262
-covers \inred{22,440 (91.61\%)} statements.
-The initial program pool covers \inred{12,768 (52.12\%)} statements
-and the final program pool covers \inred{21,230 (86.67\%)} and
-\inred{21,482 (87.70\%)} statements before and after fixing bugs, respectively.
-For the branch coverage, out of \inred{9,596} branches in ES11, Test262
-covers \inred{7,956 (82.91\%)} branches.
-The initial program pool covers \inred{3,987 (41.55\%)} branches
-and the final program pool covers \inred{7,480 (77.95\%)} and
-\inred{7,514 (78.30\%)} branches before and after fixing bugs, respectively.
+The semantics that we target in ES11 consists of 1,550 algorithms with 24,495
+statements and 9,596 branches.
+For the statement coverage, Test262 covers 22,440 (91.61\%) statements.
+The initial program pool covers 12,768 (52.12\%) statements
+and the final program pool covers 21,230 (86.67\%) and
+21,482 (87.70\%) statements before and after fixing bugs, respectively.
+For the branch coverage, Test262 covers 7,956 (82.91\%) branches.
+The initial program pool covers 3,987 (41.55\%) branches
+and the final program pool covers 7,480 (77.95\%) and
+7,514 (78.30\%) branches before and after fixing bugs, respectively.
 
 \begin{table}
   \caption{The number of successes and covered branches of mutation methods}
@@ -112,13 +112,12 @@ successes and 1,230 covered branches) and the least one is the string
 substitution (3 successes and 3 covered branches).  On average,
 3.00 branches are covered by one successful mutation.
 
-Finally, $\tool$ generates 1,700 JavaScript programs and the average
-length of generated programs is 62.31.  After injecting assertions by
-\mytextsf{Assertion Injector}, generated programs become conformance tests and
-their average length is 245.90.  Compared to Test262, the number of
-generated tests are much smaller and their sizes also shorter than those of tests
-in Test262.  Test262 provides 16,251 tests for the same range of
-semantics and their average size is 1,276.10.
+Finally, $\tool$ generates 1,700 JavaScript programs and their average length is
+62.31.  After injecting assertions, generated programs become conformance tests
+and their average length is 245.90.  Compared to Test262, the number of
+generated tests are much smaller and their sizes also shorter than those of
+tests in Test262.  Test262 provides 16,251 tests for the same range of semantics
+and their average size is 1,276.10.
 
 
 \subsection{Accuracy of Bug Localization}
