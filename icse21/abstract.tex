@@ -14,8 +14,9 @@
   consists of three steps: 1) to automatically synthesize programs guided by the
   syntax and semantics from a given language specification, 2) to generate
   conformance tests by injecting assertions to the synthesized programs to check their final program
-  states, and 3) to find and localize bugs in the specification and implementations via executing
-  the conformance tests on multiple implementations.  We actualize our approach for
+  states, 3) to detect bugs in the specification and implementations via executing
+  the conformance tests on multiple implementations, and 4) to localize bugs on
+  the specification using statistical information.  We actualize our approach for
   the JavaScript programming language via \( \tool \), which performs
   $N$+1-version differential testing for modern JavaScript engines and ECMAScript,
   the language specification describing the syntax and semantics
