@@ -211,8 +211,8 @@ and their average size is 1,276.10.
     \mytextsf{Exc} &
     X &
     2019-02-07 &
-    \inred{X} &
-    \inred{X} days
+    TBD &
+    TBD
   \end{tabular}
   \vspace*{-0.5em}
 \end{table*}
@@ -392,7 +392,7 @@ However, In ES11, it returns an iterator object, which is a
 JavaScript object with some properties related to iteration.
 It causes a \code{TypeError} exception when executing the code \code{for(var x in \{\});} according to
 ES11 but all engines execute the code normally without any exceptions.
-This bug was confirmed by TC39 on April 30, 2020.
+This bug was resolved by TC39 on April 30, 2020.
 
 ES11-4 contains four bugs caused by a typo for the variable in the
 semantics of four different update expressions: \code{x++}, \code{x--},
@@ -403,10 +403,11 @@ the code \code{x++} using the semantics of ES11 because of the typo.
 For this case, we directly pass the code to \mytextsf{Bug Localizer} to test whether the
 code is executable in real-world engines and to localize the bug.
 Of course, four JavaScript engines executed the update expressions without any issues
-and this bug was confirmed by TC39 on April 23, 2020.
+and this bug was resolved by TC39 on April 23, 2020.
 
 Two bugs in ES11-5 and ES11-6 are caused by unhandling of abrupt completions in
 abstract equality comparison and property definitions of object literals, respectively.
 The bug in ES11-5 was confirmed by TC39 and was fixed on April 28, 2020.
 The bug in ES11-6 was a genuine one, and we reported it and received a confirmation
-from TC39 on \inred{X}; the bug lasted for \inred{X} days.
+from TC39 on August 18, 2020. The bug will be fixed in the next version, ES12.
+% from TC39 on \inred{X}; the bug lasted for \inred{X} days.
