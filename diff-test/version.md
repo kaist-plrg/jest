@@ -59,6 +59,7 @@ sudo apt-get install -y build-essential gcc-multilib
 ```
 git clone https://github.com/ldarren/QuickJS.git
 cd QuickJS
+git checkout 6fe8f8f
 make
 sudo make install # to use qjs and qjsc outside of repo folder
 ```
@@ -76,13 +77,15 @@ qjs -h
 1. Prepare the proper environments:
   - Linux:
 ```
-sudo apt-get install libgtk-3-dev
+sudo apt-get install -y libgtk-3-dev
 ```
   - MacOS: update xcode to the most recent version
 2. Clone the repository of [Moddable](https://github.com/Moddable-OpenSource/moddable) and set the path of Moddable:
 ```
 git clone https://github.com/Moddable-OpenSource/moddable.git
 export MODDABLE=<path to Moddable>
+cd $MODDABLE
+git checkout 79b50f50
 ```
 3. Install Moddable:
   - Linux:
@@ -102,11 +105,11 @@ make
 4. Insert the following command to the `.profile` (or `.zshrc` when you use `zsh`).
   - Linux:
 ```
-alias xst=<path to Moddable>/build/bin/lin/release/xst
+alias xst=$MODDABLE/build/bin/lin/release/xst
 ```
   - MacOS:
 ```
-alias xst=<path to Moddable>/build/bin/mac/release/xst
+alias xst=$MODDABLE/build/bin/mac/release/xst
 ```
 5. Check the version of Moddable XS:
 ```
