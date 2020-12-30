@@ -1,6 +1,0 @@
-[32mLabelledStatement0LexicallyScopedDeclarations0[0m
-[32m- Inst: 3 / 3 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 22615 [-]   : { ... }[0m
-[32m+ 22616 [-]   : access __x0__ = (LabelledItem "LexicallyScopedDeclarations")[0m
-[32m+ 22617 [-]   : return __x0__[0m

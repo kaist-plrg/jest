@@ -1,1 +1,0 @@
-for ( { [ '0' ] : [ ] } in { [ "get" ] : function ( ) { } , [ "set" ] : function ( x ) { } , [ "configurable" ] : true } ) ;

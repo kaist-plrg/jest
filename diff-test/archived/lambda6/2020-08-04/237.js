@@ -1,1 +1,0 @@
-for ( { x , x } in { [ "enumerable" ] : false , [ "configurable" ] : false } ) ; var x = { * x ( ... [ ] ) { } } ;

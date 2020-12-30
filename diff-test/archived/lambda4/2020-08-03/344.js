@@ -1,1 +1,0 @@
-var x = 0n / { [ "value" ] : undefined , [ "writable" ] : false , [ "enumerable" ] : true , [ "configurable" ] : true } ;

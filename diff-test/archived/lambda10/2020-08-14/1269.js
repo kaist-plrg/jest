@@ -1,1 +1,0 @@
-var x = ( x => { ; x ( 42 ) ; throw 42 ; try { } finally { } { } } ) ( 0 ) ;

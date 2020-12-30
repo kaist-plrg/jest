@@ -1,1 +1,0 @@
-async function * x ( ) { for await ( x of '' ) ; } ; x ( ) ; throw 42 ; async function * x ( ... { x = '' } ) { ; var x = x %= '' ; }

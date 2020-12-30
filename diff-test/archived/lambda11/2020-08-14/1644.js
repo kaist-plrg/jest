@@ -1,1 +1,0 @@
-var x = new WeakMap ( { [ { [ "0" ] : async function ( x ) { } , [ "1" ] : function ( x ) { } } . asyncIterator ] : '0' , [ Symbol . iterator ] : function * ( x ) { ; yield * [ { [ "0" ] : async function ( x ) { } , [ "1" ] : function ( x ) { } } , , '' ] ; } } ) ;

@@ -1,1 +1,0 @@
-switch ( async function ( ) { } ) { case { [ "set" ] : function ( x0 , x1 ) { } , [ "enumerable" ] : true , [ "configurable" ] : true } : default : x : ; case x : }

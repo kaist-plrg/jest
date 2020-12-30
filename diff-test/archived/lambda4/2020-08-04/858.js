@@ -1,1 +1,0 @@
-Array . prototype . copyWithin . call ( 1 , Symbol . toStringTag , [ ] ) ;

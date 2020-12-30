@@ -1,1 +1,0 @@
-Array . prototype . copyWithin . call ( x == x , { [ "value" ] : undefined , [ "done" ] : true } , ( x => { } ) , 0 ) ;

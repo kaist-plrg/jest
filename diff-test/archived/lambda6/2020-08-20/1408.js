@@ -1,1 +1,0 @@
-var x = true == x ; async function * x ( ... { [ class extends x ( ) . x { } ] : { } = x } ) { }

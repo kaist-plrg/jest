@@ -1,1 +1,0 @@
-try { for ( { x , } in { async x ( ... [ , ... x ] ) { } } ) ; class x extends x ?. ( ) { ; } } catch ( x ) { ; }

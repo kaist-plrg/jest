@@ -1,1 +1,0 @@
-switch ( ~ x ) { case false : case true : }

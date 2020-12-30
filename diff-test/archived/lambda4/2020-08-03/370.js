@@ -1,1 +1,0 @@
-Number . prototype . valueOf . call ( { x ( ... { x = x } ) { } } ) ;

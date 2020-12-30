@@ -1,1 +1,0 @@
-try { ; throw 42 ; } catch { ; class x extends { async x ( ) { } } { } } finally { ; async function x ( ... { x : { } } ) { } }

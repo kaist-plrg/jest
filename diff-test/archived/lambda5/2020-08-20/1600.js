@@ -1,1 +1,0 @@
-var x = String . prototype . includes . call ( class x { ; } , { [ "valueOf" ] : { p : 42 } , [ "toString" ] : class extends x ?. [ '' , '' ] { } } ) ;

@@ -1,1 +1,0 @@
-Set . prototype . add . call ( { [ "value" ] : 'str' } ) ;

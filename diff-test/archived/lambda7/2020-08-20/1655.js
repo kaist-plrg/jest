@@ -1,1 +1,0 @@
-var x = ( x => { var { } = x ( ) [ '' , '' ] ; if ( '' ) ; switch ( 'str' ) { case x => { } : default : case this : } return async function * ( ) { } ; } ) `` ;

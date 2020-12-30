@@ -1,1 +1,0 @@
-function * x ( ... await ) { } for ( var x = '' ; ( Symbol . hasInstance ) ; ) var { x , } = x ; switch ( [ , ] ) { default : case x [ '' , '' ] : ; throw ( Symbol . isConcatSpreadable ) ; }

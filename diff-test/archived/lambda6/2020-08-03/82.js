@@ -1,1 +1,0 @@
-var x = new x ( ... '' ) ; var x = { [ "get" ] : function ( x0 , x1 ) { } , [ "enumerable" ] : true , [ "configurable" ] : true } ; function x ( ... [ , , ... x ] ) { ; return { [ "set" ] : function ( ) { } , [ "enumerable" ] : false , [ "configurable" ] : false } ; }

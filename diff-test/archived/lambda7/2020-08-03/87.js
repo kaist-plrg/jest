@@ -1,1 +1,0 @@
-String . prototype . slice . call ( undefined , 0 ) ;

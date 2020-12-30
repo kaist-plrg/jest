@@ -1,1 +1,0 @@
-var x = function ( ) { } ; switch ( '' ) { case x : case x : }

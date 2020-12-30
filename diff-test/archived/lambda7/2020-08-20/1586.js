@@ -1,1 +1,0 @@
-for ( x of { [ - 1 ] : typeof x , [ { p : 42 } ] : x > x } ) for ( '' , '' ; ; '' , '' ) ; class x extends { get x ( ) { } } { }

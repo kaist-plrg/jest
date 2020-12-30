@@ -1,1 +1,0 @@
-SyntaxError ( Symbol . replace ) ;

@@ -1,5 +1,0 @@
-[32mThrowCompletion[0m
-[32m- Inst: 2 / 2 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 27979 [-]   : { ... }[0m
-[32m+ 27980 [-]   : return (new Completion("Type" -> CONST_throw, "Value" -> argument, "Target" -> CONST_empty))[0m

@@ -1,1 +1,0 @@
-Array . prototype . lastIndexOf . call ( x => {  } , 42n , Infinity , ( { x ( ... { x  ,  } ) {  } } . hasInstance ) ) ;

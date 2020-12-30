@@ -1,1 +1,0 @@
-Promise . prototype . finally . call ( 1 , 0 , 0 ) ;

@@ -1,1 +1,0 @@
-switch ( x [ '' , '' ] ) { default : case typeof x : }

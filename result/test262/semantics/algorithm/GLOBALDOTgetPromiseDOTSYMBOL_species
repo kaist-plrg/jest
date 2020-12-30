@@ -1,6 +1,0 @@
-[31mGLOBALDOTgetPromiseDOTSYMBOL_species[0m
-[31m- Inst: 0 / 3 (0.00%)[0m
-[31m- Cond: -[0m
-[31m- 19269 [-]   : { ... }[0m
-[31m- 19270 [-]   : app __x0__ = (WrapCompletion this)[0m
-[31m- 19271 [-]   : return __x0__[0m

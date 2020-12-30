@@ -1,1 +1,0 @@
-if ( ( Symbol . split ) ) if ( '' , '' ) ; else var x , x ;

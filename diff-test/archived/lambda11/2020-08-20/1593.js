@@ -1,1 +1,0 @@
-var x = String . prototype . normalize . call ( new String ( { [ "valueOf" ] : function ( x ) { } , [ "toString" ] : function ( x ) { } } ) ) ;

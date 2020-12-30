@@ -1,1 +1,0 @@
-for ( [ ] of [ { [ Symbol . asyncIterator ] : function ( ) { ; var x = { async * x ( x , ) { } } ; } , [ Symbol . iterator ] : function * ( ) { } } ] ) for ( x of { [ Symbol . asyncIterator ] : function ( ) { if ( '' ) ; var x = new x ( ... '' ) ; function x ( x , ) { } } , [ Symbol . iterator ] : async function * x ( ) { ; var x = yield ; } } ) ;

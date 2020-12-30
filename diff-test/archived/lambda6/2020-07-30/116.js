@@ -1,1 +1,0 @@
-String . prototype . substring . call ( ( - 1n ) . toPrimitive , [ , Infinity ] , Symbol . hasInstance , ( ) => {  } ) ;

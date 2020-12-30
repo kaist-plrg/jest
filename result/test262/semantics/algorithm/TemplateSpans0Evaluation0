@@ -1,8 +1,0 @@
-[32mTemplateSpans0Evaluation0[0m
-[32m- Inst: 5 / 5 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 2484  [-]   : { ... }[0m
-[32m+ 2485  [-]   : access __x0__ = (TemplateTail "TV")[0m
-[32m+ 2486  [-]   : let tail = __x0__[0m
-[32m+ 2487  [-]   : app __x1__ = (WrapCompletion tail)[0m
-[32m+ 2488  [-]   : return __x1__[0m

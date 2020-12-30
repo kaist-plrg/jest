@@ -1,1 +1,0 @@
-var x = String . prototype . lastIndexOf . call ( x === x , Symbol . matchAll ) ;

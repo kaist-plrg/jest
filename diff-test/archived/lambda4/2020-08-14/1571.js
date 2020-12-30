@@ -1,1 +1,0 @@
-var x = Object . fromEntries ( { [ Symbol . asyncIterator ] : function ( x ) { } , [ Symbol . iterator ] : function * ( x ) { ; yield 42 ; } } ) ;

@@ -1,1 +1,0 @@
-async function x ( x  , ) {  } x ( 0 ) ; function * x ( ... [ , x  ] ) {  } async function x ( ... { x = '' } ) {  }

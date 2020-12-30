@@ -1,1 +1,0 @@
-var x = Array . prototype . splice . call ( Symbol . match , x & x , Symbol . search ) ;

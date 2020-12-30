@@ -1,1 +1,0 @@
-var x = String . prototype . substring . call ( { } , ( 1 ) , { [ "valueOf" ] : ( ) => { throw '' ; } , [ "toString" ] : function * ( x ) { } } ) ;

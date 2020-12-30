@@ -1,1 +1,0 @@
-Object . fromEntries ( { [ [ ] . asyncIterator ] : Symbol . match , [ Symbol . iterator ] : class extends x ?. x . x { } } ) ;

@@ -1,1 +1,0 @@
-for ( ; class x { ; ; } ; FREE ) ;

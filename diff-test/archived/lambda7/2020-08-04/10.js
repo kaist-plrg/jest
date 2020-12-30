@@ -1,1 +1,0 @@
-Array . prototype . map . call ( 'str' , function * ( ) { } , Symbol . hasInstance ) ;

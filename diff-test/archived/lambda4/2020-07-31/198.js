@@ -1,1 +1,0 @@
-for ( x of [  '' ] ) try { ; x ( 0 ) ; var x = x `` ; } catch ( x ) { ; var x = `${ '' }${ x }${ '' , '' }` ; var x = [  x ,  '' ] ; throw 0 ; }

@@ -1,1 +1,0 @@
-Promise . prototype . finally . call ( { [ "next" ] : function  ( x  ) {  } , [ "return" ] : function  ( x  ) {  } , [ "throw" ] : function  ( x0  , x1  ) {  } } , [  '' ] , ( - 1n ) ) ;

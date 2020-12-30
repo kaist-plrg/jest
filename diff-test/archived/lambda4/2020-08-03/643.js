@@ -1,1 +1,0 @@
-for ( ; Symbol . matchAll ; x ) for ( { } in '' ) ;

@@ -1,1 +1,0 @@
-var x = void ( Number ( Symbol . iterator ) ) ;

@@ -1,1 +1,0 @@
-var x = new x ( x , ... { [ Symbol . asyncIterator ] : '0' , [ Symbol . iterator ] : async function ( x ) { } } ) ;

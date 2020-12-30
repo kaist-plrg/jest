@@ -1,1 +1,0 @@
-for ( x in class extends x `${ '' }${ x }${ '' }` { x ( ) { } } ) ;

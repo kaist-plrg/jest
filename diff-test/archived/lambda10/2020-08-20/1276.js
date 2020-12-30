@@ -1,1 +1,0 @@
-var x = false . prototype . map . call ( new { set x ( x ) { } } ( ) , 0 ) ;

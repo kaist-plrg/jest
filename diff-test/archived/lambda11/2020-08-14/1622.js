@@ -1,1 +1,0 @@
-var x = new WeakMap ( [ { [ "0" ] : function * ( x ) { } , [ "1" ] : 0 } , { [ "0" ] : function * ( x ) { } , [ "1" ] : 0 } , { [ "0" ] : function * ( x ) { } , [ "1" ] : 0 } ] ) ;

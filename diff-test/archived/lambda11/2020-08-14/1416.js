@@ -1,1 +1,0 @@
-for ( var x = '' ; ( 'str' ) ; `${ '' }${ '' , '' }` ) var [ x , x ] = x ; Symbol . unscopables ;

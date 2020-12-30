@@ -1,1 +1,0 @@
-for ( let x = typeof x ; new x ( x , '' ) ; ( - Infinity ) ) ;

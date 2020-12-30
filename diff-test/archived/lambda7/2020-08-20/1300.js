@@ -1,1 +1,0 @@
-async function * x ( ) { return ; } ; var x = async x => { } ; x ( ) ; x ( 42 ) ;

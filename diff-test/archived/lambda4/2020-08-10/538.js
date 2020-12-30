@@ -1,1 +1,0 @@
-var x = String . prototype . endsWith . call ( new String ( - Infinity ) , undefined , BigInt ( { [ Symbol . toPrimitive ] : function * ( x ) { } } ) ) ;

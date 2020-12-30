@@ -1,1 +1,0 @@
-var x = Array . prototype . unshift . call ( Symbol . search , + class x extends new x ( ) { } ) ;

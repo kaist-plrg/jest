@@ -1,1 +1,0 @@
-try { ; } finally { for ( var { } = x ; '' ; '' ) ; class x extends [ x , , '' ] { ; } }

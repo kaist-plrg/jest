@@ -1,1 +1,0 @@
-Boolean . prototype . toString . call ( false , { [ "value" ] : undefined } ) ;

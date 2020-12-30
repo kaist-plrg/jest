@@ -1,1 +1,0 @@
-var x = Function . prototype . apply . call ( async x => '' , { [ "length" ] : true } >>> x , { [ "length" ] : true } ) ;

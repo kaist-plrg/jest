@@ -1,1 +1,0 @@
-Array . prototype . forEach . call ( [ 42 , 'str' , true ] , class { ; } , Symbol . match ) ;

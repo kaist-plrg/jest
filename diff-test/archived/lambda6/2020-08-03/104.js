@@ -1,1 +1,0 @@
-Object . defineProperty ( { } , { * x ( ) { } } , { [ "get" ] : 0n , [ class x { ; } ] : true } ) ;

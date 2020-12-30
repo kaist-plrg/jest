@@ -1,1 +1,0 @@
-undefined instanceof x ; function * x ( ) { }

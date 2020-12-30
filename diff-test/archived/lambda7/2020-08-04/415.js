@@ -1,1 +1,0 @@
-if ( class x extends x `${ '' , '' }${ '' , '' }` { ; } ) ; else while ( '' , '' ) ;

@@ -1,1 +1,0 @@
-var x = NaN <= class extends x [ '' ] { ; } ;

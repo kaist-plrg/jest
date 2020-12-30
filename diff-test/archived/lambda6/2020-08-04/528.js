@@ -1,1 +1,0 @@
-Array . prototype . indexOf . call ( async x => { } , Symbol . search ) ;

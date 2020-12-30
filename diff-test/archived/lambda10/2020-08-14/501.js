@@ -1,1 +1,0 @@
-do try { } finally { } while ( '' ) ;

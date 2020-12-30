@@ -1,1 +1,0 @@
-for ( var x in class extends x ?. x [ '' , '' ] { } ) switch ( '' ) { case 42n : default : ; }

@@ -1,1 +1,0 @@
-if ( x = '' ) ; else for ( x ( ) . x in '' ) ;

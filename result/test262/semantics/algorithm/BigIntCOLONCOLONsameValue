@@ -1,7 +1,0 @@
-[31mBigIntCOLONCOLONsameValue[0m
-[31m- Inst: 0 / 4 (0.00%)[0m
-[31m- Cond: -[0m
-[31m- 6610  [-]   : { ... }[0m
-[31m- 6611  [-]   : app result = (PRIMITIVES["BigInt"]["equal"] x y)[0m
-[31m- 6612  [-]   : app wrapped = (WrapCompletion result)[0m
-[31m- 6613  [-]   : return wrapped[0m

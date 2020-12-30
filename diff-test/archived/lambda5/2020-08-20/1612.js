@@ -1,1 +1,0 @@
-var x = Object . assign ( { set x ( x ) { ; x ( { [ "done" ] : false } ) ; return { [ "done" ] : false } ; } } , { async * x ( ... [ ... x ] ) { ; x ( ) ; } } ) ;

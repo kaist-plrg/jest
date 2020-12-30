@@ -1,1 +1,0 @@
-String . prototype . normalize . call ( { [ "get" ] : function ( ) { } , [ "set" ] : function ( ) { } , [ "enumerable" ] : false } , Symbol . toStringTag ) ;

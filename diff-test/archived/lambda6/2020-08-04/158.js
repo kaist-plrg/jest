@@ -1,1 +1,0 @@
-String . prototype . trim . call ( 0n . replace ) ;

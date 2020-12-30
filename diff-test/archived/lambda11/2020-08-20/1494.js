@@ -1,1 +1,0 @@
-var x = Array . prototype . copyWithin . call ( Symbol . isConcatSpreadable , { p : 42 } , ( Symbol . search ) ) ;

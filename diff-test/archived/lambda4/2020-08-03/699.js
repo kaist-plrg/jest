@@ -1,1 +1,0 @@
-( x => { ; x ( ) ; function * x ( ... [ x ] ) { ; yield 0 ; } } ) ( 0n ) ;

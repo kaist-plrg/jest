@@ -1,6 +1,0 @@
-[32mBigIntCOLONCOLONunsignedRightShift[0m
-[32m- Inst: 3 / 3 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 6646  [-]   : { ... }[0m
-[32m+ 6647  [-]   : app __x0__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))[0m
-[32m+ 6648  [-]   : return __x0__[0m

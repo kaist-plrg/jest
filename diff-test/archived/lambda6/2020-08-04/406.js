@@ -1,1 +1,0 @@
-var x = 42n > { [ "value" ] : 0 , [ "writable" ] : false , [ "configurable" ] : true } ;

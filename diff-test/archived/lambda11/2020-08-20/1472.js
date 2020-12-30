@@ -1,1 +1,0 @@
-var x = x ( ) ( ) ; x ( ) ; function x ( ... [ x , ] ) { ; x ( 42 ) ; for ( let { } = x ; ; ) ; throw 42 ; }

@@ -1,1 +1,0 @@
-for ( [ x , ... ( Symbol . replace ) ] of [ '' ] ) ; async function x ( ... { x , } ) { }

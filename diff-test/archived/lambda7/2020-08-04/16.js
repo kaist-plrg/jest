@@ -1,1 +1,0 @@
-Array . prototype . splice . call ( '0' , - Infinity , { p : 42 } , ( ) => { } ) ;

@@ -1,1 +1,0 @@
-Function . prototype . bind . call ( ( ) => { } , { [ "set" ] : function ( x0 , x1 ) { } , [ "enumerable" ] : false , [ "configurable" ] : true } , Symbol . unscopables ) ;

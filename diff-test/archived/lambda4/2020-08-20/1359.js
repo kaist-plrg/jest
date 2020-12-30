@@ -1,1 +1,0 @@
-var x = String . prototype . substring . call ( { get x ( ) { } } , 0 , undefined ) ;

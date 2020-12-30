@@ -1,1 +1,0 @@
-var x = new Map ( [ { [ "0" ] : class extends x `${ '' }${ x }${ '' , '' }` { ; } , [ ( - 1n ) ] : true } , ] ) ;

@@ -1,1 +1,0 @@
-var x = ( x => { ; false ( 42 ) ; for ( [ ] in '' ) switch ( '' ) { case x : default : ; case x : } return x & x ; } ) ( ) ;

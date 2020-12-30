@@ -1,1 +1,0 @@
-BigInt . asIntN ( ( Symbol . search ) ) ;

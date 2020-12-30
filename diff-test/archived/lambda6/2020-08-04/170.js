@@ -1,1 +1,0 @@
-String . prototype . slice . call ( 0n , Infinity , ( Symbol . iterator ) ) ;

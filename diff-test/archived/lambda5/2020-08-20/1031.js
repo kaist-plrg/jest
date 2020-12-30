@@ -1,1 +1,0 @@
-var x = String . prototype . slice . call ( x === x , 0 , 0 ) ;

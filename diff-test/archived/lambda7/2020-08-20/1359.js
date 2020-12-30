@@ -1,1 +1,0 @@
-var x = ( x => { ; if ( '' ) ; else ; try { } finally { } x ( ) ; return 42 ; } ) `` ;

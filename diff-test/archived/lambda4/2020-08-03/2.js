@@ -1,1 +1,0 @@
-function x ( x0 , x1 ) { } ; BigInt ( 0.1 ) ; async function x ( ... [ x , ] ) { } x ( 0 ) ; function x ( ... [ , x ] ) { switch ( '' ) { default : switch ( '' ) { default : case x : } for ( var x , x ; '' ; ) ; } return BigInt ( 0.1 ) ; }

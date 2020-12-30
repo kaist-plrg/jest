@@ -1,1 +1,0 @@
-for ( { x } in { [ "set" ] : function ( x ) { } , [ "enumerable" ] : true , [ "configurable" ] : false } ) ;

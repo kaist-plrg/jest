@@ -1,1 +1,0 @@
-var x = { [ "prototype" ] : true } . prototype . substring . call ( new { [ "prototype" ] : true } ( 0 ) , 0 , 0 ) ;

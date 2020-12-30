@@ -1,7 +1,0 @@
-[32mHoistableDeclaration1Evaluation0[0m
-[32m- Inst: 4 / 4 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 20810 [-]   : { ... }[0m
-[32m+ 20811 [-]   : app __x0__ = (NormalCompletion CONST_empty)[0m
-[32m+ 20812 [-]   : app __x1__ = (WrapCompletion __x0__)[0m
-[32m+ 20813 [-]   : return __x1__[0m

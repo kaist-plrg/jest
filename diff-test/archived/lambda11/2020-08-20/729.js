@@ -1,1 +1,0 @@
-var x = Map . prototype . entries . call ( - 1 ) ;

@@ -1,1 +1,0 @@
-var x = Object . prototype . toLocaleString . call ( - Infinity , async function * x ( ) { } , 0 ) ;

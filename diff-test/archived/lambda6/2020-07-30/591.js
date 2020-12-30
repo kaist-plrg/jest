@@ -1,1 +1,0 @@
-do var [  x  ,   ] = x ; while ( Symbol . species ) ;

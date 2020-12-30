@@ -1,1 +1,0 @@
-Array . prototype . lastIndexOf . call ( x => { } , { [ "enumerable" ] : true , [ "configurable" ] : false } , ( - Infinity ) ) ;

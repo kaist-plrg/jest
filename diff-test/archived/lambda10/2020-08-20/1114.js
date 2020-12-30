@@ -1,1 +1,0 @@
-switch ( Symbol . search ) { case Symbol . toPrimitive : default : }

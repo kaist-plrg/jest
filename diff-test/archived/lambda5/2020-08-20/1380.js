@@ -1,1 +1,0 @@
-var x = String . prototype . startsWith . call ( true , class x extends x ?. x { ; } ) ;

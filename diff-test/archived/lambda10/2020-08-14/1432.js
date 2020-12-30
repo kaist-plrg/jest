@@ -1,1 +1,0 @@
-var x = String . prototype . split . call ( new class x { static x ( ) { } } ( 0 ) , 0n , 1 ) ;

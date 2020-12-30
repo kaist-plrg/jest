@@ -1,6 +1,0 @@
-[32mContinueStatement0Evaluation0[0m
-[32m- Inst: 3 / 3 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 8349  [-]   : { ... }[0m
-[32m+ 8350  [-]   : app __x0__ = (WrapCompletion (new Completion("Type" -> CONST_continue, "Value" -> CONST_empty, "Target" -> CONST_empty)))[0m
-[32m+ 8351  [-]   : return __x0__[0m

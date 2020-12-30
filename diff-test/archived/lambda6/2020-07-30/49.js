@@ -1,1 +1,0 @@
-Array . prototype . slice . call ( 0 , ( - 1 ) , 0 , 0 ) ;

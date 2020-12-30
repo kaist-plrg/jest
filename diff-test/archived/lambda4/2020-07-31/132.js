@@ -1,1 +1,0 @@
-Number . prototype . toString . call ( 1 , Symbol . hasInstance , { [ "get" ] : function  ( x0  , x1  ) {  } , [ "configurable" ] : false } ) ;

@@ -1,8 +1,0 @@
-[32mBreakStatement1Evaluation0[0m
-[32m- Inst: 5 / 5 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 7284  [-]   : { ... }[0m
-[32m+ 7285  [-]   : access __x0__ = (LabelIdentifier "StringValue")[0m
-[32m+ 7286  [-]   : let label = __x0__[0m
-[32m+ 7287  [-]   : app __x1__ = (WrapCompletion (new Completion("Type" -> CONST_break, "Value" -> CONST_empty, "Target" -> label)))[0m
-[32m+ 7288  [-]   : return __x1__[0m

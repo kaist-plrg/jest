@@ -1,1 +1,0 @@
-var x = Array . prototype . map . call ( { async x ( ... [ x , ] ) { } } , class x { ; } ) ;

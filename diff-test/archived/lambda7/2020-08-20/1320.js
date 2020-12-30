@@ -1,1 +1,0 @@
-var x = Object . assign ( { set x ( x ) { ; throw 42 ; } } , { * x ( ) { ; } } ) ;

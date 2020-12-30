@@ -1,0 +1,20 @@
+package kr.ac.kaist.jest.model
+
+import kr.ac.kaist.jest.ir._
+import kr.ac.kaist.jest.ir.Parser._
+
+object GlobalEnvironmentRecordDOTHasVarDeclaration extends Algorithm {
+  val name: String = "GlobalEnvironmentRecordDOTHasVarDeclaration"
+  val length: Int = 1
+  val lang: Boolean = true
+  val func: Func = FixUIdWalker(parseFunc(""""GlobalEnvironmentRecord.HasVarDeclaration" (this, N) => {
+    let envRec = this
+    let varDeclaredNames = envRec["VarNames"]
+    if (contains varDeclaredNames N) {
+      app __x0__ = (WrapCompletion true)
+      return __x0__
+    } else {}
+    app __x1__ = (WrapCompletion false)
+    return __x1__
+  }"""), this)
+}

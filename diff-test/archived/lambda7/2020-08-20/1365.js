@@ -1,1 +1,0 @@
-var x = BigInt ( [ { [ "valueOf" ] : '0' , [ "toString" ] : function * ( ) { } } ] ) ;

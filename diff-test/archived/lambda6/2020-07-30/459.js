@@ -1,1 +1,0 @@
-String . prototype . endsWith . call ( 42n , Symbol . iterator , - 0 ) ;

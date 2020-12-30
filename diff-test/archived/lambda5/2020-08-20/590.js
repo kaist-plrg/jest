@@ -1,1 +1,0 @@
-var x = Object . values ( 0 ) ; x ( 42 ) ;

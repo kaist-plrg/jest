@@ -1,1 +1,0 @@
-var x = Object . setPrototypeOf ( void x , async x => 1 ) ;

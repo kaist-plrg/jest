@@ -1,9 +1,0 @@
-[32mPropertySetParameterList0ExpectedArgumentCount0[0m
-[32m- Inst: 6 / 6 (100.00%)[0m
-[32m- Cond: 2 / 2 (100.00%)[0m
-[32m+ 25598 [-]   : { ... }[0m
-[32m+ 25599 [-]   : access __x0__ = (FormalParameter "HasInitializer")[0m
-[32m+ 25600 [[32mT[0m/[32mT[0m[32m]: if (= __x0__ true) ... else ...[0m
-[32m+ 25601 [-]   : return 0i[0m
-[32m+ 25602 [-]   : {}[0m
-[32m+ 25603 [-]   : return 1i[0m

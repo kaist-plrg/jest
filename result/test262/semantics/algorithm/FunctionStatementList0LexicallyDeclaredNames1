@@ -1,6 +1,0 @@
-[32mFunctionStatementList0LexicallyDeclaredNames1[0m
-[32m- Inst: 3 / 3 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 333   [-]   : { ... }[0m
-[32m+ 334   [-]   : access __x0__ = (StatementList "TopLevelLexicallyDeclaredNames")[0m
-[32m+ 335   [-]   : return __x0__[0m

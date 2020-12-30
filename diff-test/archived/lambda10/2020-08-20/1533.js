@@ -1,1 +1,0 @@
-class x extends class { } { } x %= { [ "valueOf" ] : function * ( x ) { } , [ "toString" ] : async * function ( x ) { } } ;

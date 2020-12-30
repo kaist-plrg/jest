@@ -1,1 +1,0 @@
-var x = Function . prototype . apply . call ( x => { ; x ( ) ; } , x => { ; } , x ?? x ) ;

@@ -1,1 +1,0 @@
-var x = ( x => { ; return { [ "done" ] : async * function ( x ) { } } ; } ) `` ;

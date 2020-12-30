@@ -1,1 +1,0 @@
-for ( x of { [ Symbol . iterator ] : function * ( ) { ; yield * x ( ) ; async function * x ( ... [ ... x ] ) { } } } ) ;

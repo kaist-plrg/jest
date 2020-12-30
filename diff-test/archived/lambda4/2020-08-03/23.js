@@ -1,1 +1,0 @@
-function x ( x0 , x1 ) { } debugger ; for ( '' , '' ; '' , '' ; '' , '' ) ; function * x ( ... [ x , ] ) { null ; } new x ( ... '' ) ; function x ( ... [ , x ] ) { if ( x `${ '' }${ x }${ '' , '' }` , async function ( ) { } ) ; else { ; } return ( ) => { } ; }

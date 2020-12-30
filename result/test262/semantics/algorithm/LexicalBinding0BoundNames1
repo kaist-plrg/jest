@@ -1,6 +1,0 @@
-[32mLexicalBinding0BoundNames1[0m
-[32m- Inst: 3 / 3 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 2780  [-]   : { ... }[0m
-[32m+ 2781  [-]   : access __x0__ = (BindingIdentifier "BoundNames")[0m
-[32m+ 2782  [-]   : return __x0__[0m

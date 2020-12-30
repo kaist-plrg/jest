@@ -1,1 +1,0 @@
-var x = { [ "throw" ] : function ( x0 , x1 ) { } } ** ( Symbol . isConcatSpreadable ) ;

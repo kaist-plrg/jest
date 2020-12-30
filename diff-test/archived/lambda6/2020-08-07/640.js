@@ -1,1 +1,0 @@
-for ( let x = ( Symbol . isConcatSpreadable ) ; ( Symbol . isConcatSpreadable ) ; await ) try { } catch ( x ) { }

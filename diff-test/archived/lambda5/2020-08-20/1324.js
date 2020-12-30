@@ -1,1 +1,0 @@
-var x = Array . prototype . filter . call ( '0' , class x { static x ( ) { } } ) ;

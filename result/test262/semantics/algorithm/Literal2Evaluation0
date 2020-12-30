@@ -1,7 +1,0 @@
-[32mLiteral2Evaluation0[0m
-[32m- Inst: 4 / 4 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 207   [-]   : { ... }[0m
-[32m+ 208   [-]   : access __x0__ = (NumericLiteral "NumericValue")[0m
-[32m+ 209   [-]   : app __x1__ = (WrapCompletion __x0__)[0m
-[32m+ 210   [-]   : return __x1__[0m

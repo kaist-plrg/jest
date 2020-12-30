@@ -1,1 +1,0 @@
-function x ( ) { ; var x = x `${ '' }${ x }${ '' }` ; } var x = new x ;

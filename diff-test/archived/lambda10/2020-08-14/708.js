@@ -1,1 +1,0 @@
-let x ; switch ( - 0 ) { default : case x >> x : }

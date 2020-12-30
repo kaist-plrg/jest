@@ -1,1 +1,0 @@
-class x { } new { [ "prototype" ] : async * function ( ) { } } ( ) ;

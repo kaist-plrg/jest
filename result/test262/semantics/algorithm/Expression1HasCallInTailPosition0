@@ -1,8 +1,0 @@
-[32mExpression1HasCallInTailPosition0[0m
-[32m- Inst: 5 / 5 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 2853  [-]   : { ... }[0m
-[32m+ 2854  [-]   : access __x0__ = (AssignmentExpression "HasCallInTailPosition")[0m
-[32m+ 2855  [-]   : app __x1__ = (__x0__ call)[0m
-[32m+ 2856  [-]   : app __x2__ = (WrapCompletion __x1__)[0m
-[32m+ 2857  [-]   : return __x2__[0m

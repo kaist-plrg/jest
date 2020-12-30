@@ -1,1 +1,0 @@
-var x = class extends x ( ) `` { ; } != { [ "get" ] : function ( x ) { } , [ "set" ] : function ( ) { } , [ "enumerable" ] : false , [ "configurable" ] : false } ;

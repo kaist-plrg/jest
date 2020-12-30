@@ -1,1 +1,0 @@
-function x ( ) { ; return ; } x ( ) ; new x ( ) ;

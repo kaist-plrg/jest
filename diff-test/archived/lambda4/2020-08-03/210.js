@@ -1,1 +1,0 @@
-Object . entries ( { [ "enumerable" ] : true , [ "configurable" ] : false } ) ;

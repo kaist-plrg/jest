@@ -1,1 +1,0 @@
-String . prototype . slice . call ( ( Symbol . replace ) , class x { x ( ) { } } ) ;

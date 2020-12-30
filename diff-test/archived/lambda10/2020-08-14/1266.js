@@ -1,1 +1,0 @@
-var x = `${ Symbol . replace }${ { async * x ( ... [ , ... x ] ) { } } }` ;

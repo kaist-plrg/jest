@@ -1,1 +1,0 @@
-async function x ( ) { } NaN ; var x = [ 42 , 'str' , true ] instanceof class extends x ( ) ?. x { } ;

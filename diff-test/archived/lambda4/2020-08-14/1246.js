@@ -1,1 +1,0 @@
-function x ( [ x ] = x [ '' , '' ] ) { } try { } finally { } x ( x ( ) ( ) ) ;

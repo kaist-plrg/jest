@@ -1,1 +1,0 @@
-class x { } true < 42n ;

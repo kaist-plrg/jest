@@ -1,1 +1,0 @@
-switch ( ( Number ( Symbol . iterator ) ) ) {  default :   }

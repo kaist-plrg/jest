@@ -1,1 +1,0 @@
-Array . prototype . reduce . call ( x => '' , async x => class x extends x { } , Symbol . species ) ;

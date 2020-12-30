@@ -1,1 +1,0 @@
-var x = { get x ( ) { ; return x `` ; x ( ) ; } } ; var x = x ?. x ;

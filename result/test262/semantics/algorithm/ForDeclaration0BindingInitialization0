@@ -1,8 +1,0 @@
-[32mForDeclaration0BindingInitialization0[0m
-[32m- Inst: 5 / 5 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 3590  [-]   : { ... }[0m
-[32m+ 3591  [-]   : access __x0__ = (ForBinding "BindingInitialization")[0m
-[32m+ 3592  [-]   : app __x1__ = (__x0__ value environment)[0m
-[32m+ 3593  [-]   : app __x2__ = (WrapCompletion __x1__)[0m
-[32m+ 3594  [-]   : return __x2__[0m

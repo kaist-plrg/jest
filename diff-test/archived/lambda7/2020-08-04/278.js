@@ -1,1 +1,0 @@
-if ( { * x ( ... await ) { } } , x instanceof x ) ;

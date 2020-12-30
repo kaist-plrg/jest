@@ -1,1 +1,0 @@
-var x = Promise . allSettled ( x ? class x extends x `` { ; } : [ 42 , 'str' , true ] ) ;

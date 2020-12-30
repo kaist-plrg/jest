@@ -1,1 +1,0 @@
-var x = { [ "prototype" ] : async * function ( x ) { } } . resolve ( 0 ) ;

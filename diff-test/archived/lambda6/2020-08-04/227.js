@@ -1,1 +1,0 @@
-String . prototype . lastIndexOf . call ( null , [ 42 , 'str' , true ] , { async * x ( ... x ) { } } ) ;

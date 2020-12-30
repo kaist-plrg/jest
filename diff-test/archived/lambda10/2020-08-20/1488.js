@@ -1,1 +1,0 @@
-var x = Array . prototype . slice . call ( ( Symbol . unscopables ) , 0 , [ ] < ( Symbol . toStringTag ) ) ;

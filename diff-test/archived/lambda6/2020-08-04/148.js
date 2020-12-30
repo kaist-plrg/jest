@@ -1,1 +1,0 @@
-String . prototype . repeat . call ( { [ "value" ] : 'str' } , Infinity ) ;

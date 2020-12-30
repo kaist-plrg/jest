@@ -1,1 +1,0 @@
-var x = Array . prototype . every . call ( 'str' , async x => class x { static x ( ) { } } ) ;

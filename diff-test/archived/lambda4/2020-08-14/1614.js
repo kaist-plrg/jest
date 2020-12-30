@@ -1,1 +1,0 @@
-for ( ( class x extends x `${ '' }${ x }${ '' }` { x ( ) { } } . isConcatSpreadable ) of [ 42 , 'str' , true ] ) for ( let { } = x ; Symbol . unscopables ; '' ) for ( var x , x ; ; ) ;

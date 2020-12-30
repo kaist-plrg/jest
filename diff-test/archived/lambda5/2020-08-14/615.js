@@ -1,1 +1,0 @@
-( BigInt ( 0.1 ) ) == ( Symbol . iterator ) ;

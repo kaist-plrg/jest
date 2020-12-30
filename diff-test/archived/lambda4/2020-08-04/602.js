@@ -1,1 +1,0 @@
-Array . prototype . slice . call ( 1 , async function ( ) { } , Symbol . iterator ) ;

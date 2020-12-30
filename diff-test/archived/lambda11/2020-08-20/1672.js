@@ -1,1 +1,0 @@
-for ( let x in x => x , Symbol . asyncIterator ) switch ( '' ) { case x : default : case x : } x ( ) ; function x ( ... [ x , ] ) { ; switch ( false ) { case class extends x `${ '' }${ '' }` { } : default : case x : } return NaN ; }

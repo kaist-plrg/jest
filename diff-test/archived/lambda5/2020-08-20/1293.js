@@ -1,1 +1,0 @@
-var x = String . prototype . split . call ( async x => '' , ( - 1n ) , true ) ;

@@ -1,1 +1,0 @@
-if ( Symbol . isConcatSpreadable ) for ( var { } = x ; ; ) ; else ;

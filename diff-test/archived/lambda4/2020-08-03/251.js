@@ -1,1 +1,0 @@
-function x ( x0 , x1 ) { } do ; while ( '' , '' ) ; new x ( ... '' ) ; async function x ( ) { } function x ( ... [ , x ] ) { ; return x => { } ; } var x = { async x ( ... { [ '' ] : { } = x } ) { } } ;

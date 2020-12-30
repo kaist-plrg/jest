@@ -1,6 +1,0 @@
-[32mScriptBody0LexicallyScopedDeclarations0[0m
-[32m- Inst: 3 / 3 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 1921  [-]   : { ... }[0m
-[32m+ 1922  [-]   : access __x0__ = (StatementList "TopLevelLexicallyScopedDeclarations")[0m
-[32m+ 1923  [-]   : return __x0__[0m

@@ -1,1 +1,0 @@
-var x = Promise . allSettled ( { [ Symbol . asyncIterator ] : false , [ Symbol . iterator ] : async function ( x ) { ; for await ( [ ] of [ 42 , 'str' , true ] ) var { x , ... x } = x ; } } ) ;

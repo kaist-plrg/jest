@@ -1,1 +1,0 @@
-var x = ( x => { ; x ( ) ; for ( x [ '' , '' ] in '' ) ; return 42 ; for ( var { } = x ; '' ; ) ; } ) `` ;

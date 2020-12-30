@@ -1,1 +1,0 @@
-try { if ( '' , '' ) ; else ; class x extends x ( ) . x { } } catch { }

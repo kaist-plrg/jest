@@ -1,1 +1,0 @@
-var x = String . prototype . slice . call ( `${ '' }${ x }${ '' }` , Symbol . hasInstance , 0 ) ;

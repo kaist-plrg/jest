@@ -1,1 +1,0 @@
-var x = x `${ ( Symbol . replace ) }${ class extends x ( ) `` { ; } }${ 1 }` ;

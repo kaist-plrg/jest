@@ -1,1 +1,0 @@
-String . prototype . endsWith . call ( { async * x ( ... { x = '' } ) { } } , { [ "value" ] : 0 , [ "writable" ] : false , [ "configurable" ] : false } ) ;

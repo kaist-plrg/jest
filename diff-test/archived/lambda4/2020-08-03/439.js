@@ -1,1 +1,0 @@
-String . prototype . substring . call ( `` , x => { } , - 1n ) ;

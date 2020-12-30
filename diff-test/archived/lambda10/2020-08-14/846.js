@@ -1,1 +1,0 @@
-var x = 'str' [ { [ Symbol . toPrimitive ] : false } ] ;

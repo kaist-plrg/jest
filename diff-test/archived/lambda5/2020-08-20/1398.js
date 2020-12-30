@@ -1,1 +1,0 @@
-var x = Object . assign ( 0 , { async x ( ... { x : x } ) { } } ) ; var x = x ?. x [ '' ] ;

@@ -1,1 +1,0 @@
-var x = Array . prototype . splice . call ( NaN , - Infinity , Symbol . replace ) ;

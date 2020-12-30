@@ -1,1 +1,0 @@
-var x = Promise . all ( { [ Symbol . asyncIterator ] : function ( ) { ; class x extends x ?. x ?. x { } } , [ Symbol . iterator ] : function ( x ) { ; x = '' ; for ( ; '' ; ) ; switch ( '' ) { case BigInt ( 0.1 ) : ; x : ; default : } } } ) ;

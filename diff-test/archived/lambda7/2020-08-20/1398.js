@@ -1,1 +1,0 @@
-var x = Object . prototype . hasOwnProperty . call ( `${ '' , '' }${ x }${ '' }` , - 0 ) ;

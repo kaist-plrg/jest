@@ -1,1 +1,0 @@
-var x = class x { ; } ; var { x , ... x } = ( new x ) instanceof x ;

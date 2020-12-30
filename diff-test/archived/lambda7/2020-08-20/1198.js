@@ -1,1 +1,0 @@
-delete ( BigInt ( 'x' ) ) [ [ ] ] ; async function x ( ... { x : x } ) { }

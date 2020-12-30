@@ -1,1 +1,0 @@
-var x = Symbol . asyncIterator ; var [ x ] = undefined **= x ; function * x ( ... { ... x } ) { for ( var x in { x ( ... { ... x } ) { } } ) ; yield * [ x , '' ] ; }

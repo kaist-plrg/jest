@@ -1,1 +1,0 @@
-var x = { async x ( ... x ) { } } ; ( ( Symbol . matchAll ) = class { } ) ;

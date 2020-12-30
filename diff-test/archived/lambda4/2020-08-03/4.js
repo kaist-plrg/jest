@@ -1,1 +1,0 @@
-async function * x ( ) { } for ( var x ; '' , '' ; ) ; switch ( '' ) { } function * x ( ... [ x , ] ) { for ( let x in '' , '' ) ; } x ( ) . x ; function x ( ... [ , x ] ) { switch ( BigInt ( 0.1 ) ) { default : ; break ; } return x <= x ; }

@@ -1,1 +1,0 @@
-var x = function *  (  ) {  } `` ; function x ( x  ) {  }

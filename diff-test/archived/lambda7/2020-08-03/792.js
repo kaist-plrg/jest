@@ -1,1 +1,0 @@
-for ( x of null ) for ( x [ '' , '' ] in '' ) ;

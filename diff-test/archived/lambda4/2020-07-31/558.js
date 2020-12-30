@@ -1,1 +1,0 @@
-async function * x ( ... { x : x  } ) {  } var x = { * x ( ... { x : x  } ) {  } } ; x ?. x . x ;

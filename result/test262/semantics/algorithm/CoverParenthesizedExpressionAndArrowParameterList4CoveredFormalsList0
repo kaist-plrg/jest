@@ -1,4 +1,0 @@
-[31mCoverParenthesizedExpressionAndArrowParameterList4CoveredFormalsList0[0m
-[31m- Inst: 0 / 1 (0.00%)[0m
-[31m- Cond: -[0m
-[31m- 8429  [-]   : return (parse-syntax this "ArrowFormalParameters" absent)[0m

@@ -1,1 +1,0 @@
-var x = x - x ; var [ x ] = x %= 0n ; function * x ( ... { ... x } ) { for ( var x in [ ... '' ] ) var x ; yield * 0 ; }

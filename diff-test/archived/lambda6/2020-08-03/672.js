@@ -1,1 +1,0 @@
-var x = { [ "get" ] : function ( ) { } , [ "set" ] : function ( ) { } , [ "enumerable" ] : false } != '' ;

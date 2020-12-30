@@ -1,1 +1,0 @@
-var x = String . prototype . matchAll . call ( '0' . matchAll , { [ x + x ] : function ( ) { } } && { [ Symbol . match ] : class extends x ?. x . x { } } ) ; async function x ( ... { [ '' ] : { } = x } ) { }

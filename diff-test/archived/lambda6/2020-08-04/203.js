@@ -1,1 +1,0 @@
-Array . prototype . slice . call ( [ , ] , { * x ( ... { x : x } ) { } } ) ;

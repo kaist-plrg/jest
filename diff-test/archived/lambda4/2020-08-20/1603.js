@@ -1,1 +1,0 @@
-var x = { [ "prototype" ] : async function ( ) { } } . prototype . push . call ( new { [ "prototype" ] : async function ( ) { } } ( ) , 0 ) ;

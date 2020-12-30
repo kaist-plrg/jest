@@ -1,1 +1,0 @@
-'0' . from ( async x => x ) ;

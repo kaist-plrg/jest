@@ -1,1 +1,0 @@
-while ( '' , ( Symbol . unscopables ) ) var [ x , ] = x ;

@@ -1,1 +1,0 @@
-if ( { [ "return" ] : function ( x ) { } , [ "throw" ] : function ( ) { } } , FREE ) ;

@@ -1,1 +1,0 @@
-x ? class x extends x { ; ; } : Infinity ; function * x ( ) { }

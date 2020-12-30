@@ -1,1 +1,0 @@
-Promise . allSettled ( { [ Symbol . asyncIterator ] : '' , [ Symbol . iterator ] : async function ( x ) { ; await x ( ) ; } } ) ;

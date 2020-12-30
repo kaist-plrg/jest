@@ -1,1 +1,0 @@
-String . prototype . split . call ( class x { x ( ) { } } , { [ - 0 ] : function ( x ) { } , [ ( Symbol . split ) ] : true } ) ;

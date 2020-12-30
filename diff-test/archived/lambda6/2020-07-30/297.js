@@ -1,1 +1,0 @@
-var x = new x ; async function x ( ... { [ '' ] : { } = x } ) {  } var x = x `` ; function x ( ... [ ,  ] ) { ; var x = x ( ) ; return ; }

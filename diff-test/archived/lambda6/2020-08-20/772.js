@@ -1,1 +1,0 @@
-var x = 42n . fromEntries ( [ 42 , 'str' , true ] ) ;

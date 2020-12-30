@@ -1,1 +1,0 @@
-Object . setPrototypeOf ( 0 , { * x ( ... { [ '' ] : { } = x } ) {  } } , 0 ) ;

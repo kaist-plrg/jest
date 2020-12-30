@@ -1,1 +1,0 @@
-var x = String . prototype . padEnd . call ( ( Symbol . toStringTag ) , 0 ) ;

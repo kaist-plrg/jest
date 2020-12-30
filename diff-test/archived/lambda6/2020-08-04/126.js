@@ -1,1 +1,0 @@
-String . prototype . indexOf . call ( { [ "enumerable" ] : true , [ "configurable" ] : false } , ( ) => x , - 1n ) ;

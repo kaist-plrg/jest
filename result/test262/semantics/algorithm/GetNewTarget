@@ -1,9 +1,0 @@
-[32mGetNewTarget[0m
-[32m- Inst: 6 / 6 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 19931 [-]   : { ... }[0m
-[32m+ 19932 [-]   : app __x0__ = (GetThisEnvironment )[0m
-[32m+ 19933 [-]   : let envRec = __x0__[0m
-[32m+ 19934 [-]   : assert (! (= envRec["NewTarget"] absent))[0m
-[32m+ 19935 [-]   : app __x1__ = (WrapCompletion envRec["NewTarget"])[0m
-[32m+ 19936 [-]   : return __x1__[0m

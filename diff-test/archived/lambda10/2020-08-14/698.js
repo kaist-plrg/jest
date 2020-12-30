@@ -1,1 +1,0 @@
-var x = Object . keys ( [ 42 , 'str' , true ] ) ;

@@ -1,1 +1,0 @@
-async function x ( ) { for await ( let x of undefined ) ; for ( { } in '' ) ; } var x = x ( ) . x ;

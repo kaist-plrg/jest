@@ -1,1 +1,0 @@
-var x = ( x => { ; x ( { [ "done" ] : function ( x ) { } } ) ; return { [ "done" ] : function ( x ) { } } ; switch ( '' ) { case x : ; for ( ; ; { [ "done" ] : function ( x ) { } } ) ; default : ; return 42 ; } } ) ( ) ;

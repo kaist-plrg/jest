@@ -1,1 +1,0 @@
-var x = ( x => { ; x ( { [ "done" ] : function ( ) { } } ) ; return { [ "done" ] : function ( ) { } } ; } ) ( { [ "done" ] : function ( ) { } } ) ;

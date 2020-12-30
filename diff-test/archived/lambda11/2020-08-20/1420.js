@@ -1,1 +1,0 @@
-var x = String . prototype . slice . call ( x >= ( - 1 ) , { p : 42 } , ( Symbol . replace ) ) ;

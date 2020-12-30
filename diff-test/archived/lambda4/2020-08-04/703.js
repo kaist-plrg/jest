@@ -1,1 +1,0 @@
-for ( ( Symbol . isConcatSpreadable ) in { [ "done" ] : { } } ) ;

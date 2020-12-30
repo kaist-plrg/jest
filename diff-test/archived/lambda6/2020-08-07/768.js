@@ -1,1 +1,0 @@
-var x = new Map ( [ 42 , 'str' , true ] ) ;

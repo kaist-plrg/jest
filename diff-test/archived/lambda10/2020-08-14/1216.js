@@ -1,1 +1,0 @@
-for ( [ ] in '0' ) try { ; function * x ( ) { } } catch { } finally { ; }

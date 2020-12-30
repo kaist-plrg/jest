@@ -1,8 +1,0 @@
-[32mFormalParameter0IteratorBindingInitialization0[0m
-[32m- Inst: 5 / 5 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 196   [-]   : { ... }[0m
-[32m+ 197   [-]   : access __x0__ = (BindingElement "IteratorBindingInitialization")[0m
-[32m+ 198   [-]   : app __x1__ = (__x0__ iteratorRecord environment)[0m
-[32m+ 199   [-]   : app __x2__ = (WrapCompletion __x1__)[0m
-[32m+ 200   [-]   : return __x2__[0m

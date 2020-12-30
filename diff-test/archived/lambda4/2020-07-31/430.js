@@ -1,1 +1,0 @@
-Array . prototype . indexOf . call ( '0' , Symbol . split , 0n , 0n ) ;

@@ -1,1 +1,0 @@
-var x = Array . prototype . indexOf . call ( [ , ( - 0 ) ] , - 0 ) ;

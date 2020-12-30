@@ -1,7 +1,0 @@
-[32mVariableDeclaration0Evaluation0[0m
-[32m- Inst: 4 / 4 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 779   [-]   : { ... }[0m
-[32m+ 780   [-]   : app __x0__ = (NormalCompletion CONST_empty)[0m
-[32m+ 781   [-]   : app __x1__ = (WrapCompletion __x0__)[0m
-[32m+ 782   [-]   : return __x1__[0m

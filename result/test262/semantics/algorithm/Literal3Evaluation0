@@ -1,7 +1,0 @@
-[32mLiteral3Evaluation0[0m
-[32m- Inst: 4 / 4 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 656   [-]   : { ... }[0m
-[32m+ 657   [-]   : access __x0__ = (StringLiteral "StringValue")[0m
-[32m+ 658   [-]   : app __x1__ = (WrapCompletion __x0__)[0m
-[32m+ 659   [-]   : return __x1__[0m

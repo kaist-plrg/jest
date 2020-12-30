@@ -1,6 +1,0 @@
-[32mForDeclaration0IsDestructuring0[0m
-[32m- Inst: 3 / 3 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 3626  [-]   : { ... }[0m
-[32m+ 3627  [-]   : access __x0__ = (ForBinding "IsDestructuring")[0m
-[32m+ 3628  [-]   : return __x0__[0m

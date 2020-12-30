@@ -1,1 +1,0 @@
-var x = Array . prototype . fill . call ( typeof class extends x ?. x . x { } , Symbol . unscopables ) ;

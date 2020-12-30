@@ -1,1 +1,0 @@
-String . prototype . trimStart . call ( Symbol . asyncIterator ) ;

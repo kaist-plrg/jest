@@ -1,1 +1,0 @@
-Array . prototype . splice . call ( 'str' , { [ "next" ] : function ( x ) { } , [ "throw" ] : function ( x0 , x1 ) { } } , Infinity , { p : 42 } ) ;

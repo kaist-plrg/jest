@@ -1,1 +1,0 @@
-var x = x `` ; do ; while ( '' ) ; function * x ( ... { x = async x => x } ) { ; var [ x , , ... x ] = { p : 42 } ; }

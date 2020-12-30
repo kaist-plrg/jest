@@ -1,1 +1,0 @@
-var x = ( Symbol . toPrimitive ) << { [ "get" ] : function ( ) { } , [ "set" ] : function ( x ) { } } ;

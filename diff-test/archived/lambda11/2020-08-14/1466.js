@@ -1,1 +1,0 @@
-var x = Array . prototype . find . call ( 'str' , ( ) => null `${ x === x }${ BigInt ( 'x' ) }${ '' }` ) ;

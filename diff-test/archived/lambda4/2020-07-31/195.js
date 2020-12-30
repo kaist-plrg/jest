@@ -1,1 +1,0 @@
-delete { [ "value" ] : undefined , [ "writable" ] : false , [ "enumerable" ] : true } [ 42 ] ;

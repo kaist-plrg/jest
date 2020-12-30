@@ -1,1 +1,0 @@
-var x = ( Symbol . toPrimitive ) . prototype . reduceRight . call ( null , false ) ;

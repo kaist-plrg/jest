@@ -1,1 +1,0 @@
-String . prototype . repeat . call ( 0n , Symbol . asyncIterator ) ;

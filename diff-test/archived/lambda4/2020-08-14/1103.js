@@ -1,1 +1,0 @@
-for ( x in ++ ( Symbol . unscopables ) ) for ( let { } = x ; '' ; ) ;

@@ -1,1 +1,0 @@
-var x = eval ( x + ( x => { ; var x = { [ { [ "valueOf" ] : function * ( x ) { } , [ "toString" ] : ( ) => { throw '' ; } } . toPrimitive ] : { [ "valueOf" ] : function * ( x ) { } , [ "toString" ] : ( ) => { throw '' ; } } } ; } ) ) ; function x ( ... { x , } ) { ; }

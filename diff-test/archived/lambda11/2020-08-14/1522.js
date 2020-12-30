@@ -1,1 +1,0 @@
-var x = Array . prototype . copyWithin . call ( { [ "length" ] : class extends x [ '' ] { ; } } , x => { } , undefined ) ;

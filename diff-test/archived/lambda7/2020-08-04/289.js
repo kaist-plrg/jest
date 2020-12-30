@@ -1,1 +1,0 @@
-eval ( `${ '' , x => { ; var x = class x extends x { static x ( ) { } } ; } }` ) ;

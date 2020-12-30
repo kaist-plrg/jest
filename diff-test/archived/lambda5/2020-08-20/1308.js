@@ -1,1 +1,0 @@
-var x = new ( Symbol . matchAll ) ( ( Symbol . matchAll ) , ... [ x , , '' ] ) ;

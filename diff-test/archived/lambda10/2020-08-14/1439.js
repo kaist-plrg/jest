@@ -1,1 +1,0 @@
-var x = x ? '' : '' ; while ( '' , '' ) ; switch ( '' ) { case x : ; var x = new x ; default : }

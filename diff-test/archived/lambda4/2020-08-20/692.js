@@ -1,1 +1,0 @@
-var [ ] = typeof x ; class x extends ( '' ) { ; }

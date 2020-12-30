@@ -1,1 +1,0 @@
-var x = x ( ) ( ) ; x ( ) ; throw 42 ; function x ( ... [ x , ] ) { ; x ( 42 ) ; return 42 ; while ( '' ) ; }

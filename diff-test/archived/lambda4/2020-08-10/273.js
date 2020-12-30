@@ -1,1 +1,0 @@
-var x = ReferenceError ( x && x ) ;

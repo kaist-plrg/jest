@@ -1,1 +1,0 @@
-var x = new Set ( [ 42 , NaN , x ++ ] ) ; var [ x ] = { p : 42 } ;

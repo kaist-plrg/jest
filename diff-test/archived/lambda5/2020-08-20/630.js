@@ -1,1 +1,0 @@
-var x = class x { } ; var { x = FREE } = x ;

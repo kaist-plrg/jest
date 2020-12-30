@@ -1,1 +1,0 @@
-Symbol . replace ; for ( var x in x ?. x [ '' ] , this ) for ( x ( ) [ { x : '' } , Symbol . search ] in { * x ( ... { x = '' } ) {  } } ) ;

@@ -1,1 +1,0 @@
-for ( { x = class extends x ?. x { ; } } of [ 42 , NaN , true ] ) ;

@@ -1,1 +1,0 @@
-function x ( ) { } var x = { [ class x extends x ( ) `` { ; } ] : { async x ( ... { x = '' } ) { } } } instanceof { [ 0n ] : Symbol . iterator } ;

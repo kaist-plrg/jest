@@ -1,1 +1,0 @@
-for ( let x in { [ ( - 1n ) ] : Symbol . toPrimitive } ) ;

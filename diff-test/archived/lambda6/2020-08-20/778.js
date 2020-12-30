@@ -1,1 +1,0 @@
-var x = BigInt . asUintN ( undefined , { p : 42 } ) ;

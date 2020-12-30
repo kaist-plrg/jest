@@ -1,1 +1,0 @@
-function x ( x0 , x1 ) { } ; try { } catch { } function * x ( ... [ x , ] ) { if ( '' ) ; } x ( '' ) ; function x ( ... [ , x ] ) { try { } catch { } finally { } return { [ "get" ] : function ( ) { } , [ "set" ] : function ( ) { } , [ "configurable" ] : true } ( undefined ) ; }

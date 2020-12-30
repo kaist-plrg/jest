@@ -1,1 +1,0 @@
-var x = async function x ( ) { ; class x extends x ?. x . x { ; } } ; x ( 0 ) ;

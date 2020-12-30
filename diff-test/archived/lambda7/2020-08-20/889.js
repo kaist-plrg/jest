@@ -1,1 +1,0 @@
-for ( x > x ; class x extends new x ( ... '' ) { ; } ; ) ;

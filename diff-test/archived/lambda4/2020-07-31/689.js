@@ -1,1 +1,0 @@
-Array . prototype . reduce . call ( { * x ( ... { x = '' } ) {  } } , async function x (  ) {  } , 0 ) ;

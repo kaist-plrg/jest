@@ -1,1 +1,0 @@
-for ( class  extends x ?. x ?. x {  } ; - 1 ; ( - 0 ) ) switch ( '' ) { case '' , '' : ; }

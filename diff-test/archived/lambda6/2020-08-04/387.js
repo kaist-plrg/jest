@@ -1,1 +1,0 @@
-try { ; class x extends function * x ( ) { } { ; } } finally { ; var x = { x ( x ) { } } ; }

@@ -1,1 +1,0 @@
-var x = String . prototype . slice . call ( Symbol . split , null , 0 ) ;

@@ -1,7 +1,0 @@
-[31mGeneratorMethod0ComputedPropertyContains0[0m
-[31m- Inst: 0 / 4 (0.00%)[0m
-[31m- Cond: -[0m
-[31m- 19516 [-]   : { ... }[0m
-[31m- 19517 [-]   : access __x0__ = (PropertyName "ComputedPropertyContains")[0m
-[31m- 19518 [-]   : app __x1__ = (__x0__ symbol)[0m
-[31m- 19519 [-]   : return __x1__[0m

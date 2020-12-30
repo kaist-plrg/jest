@@ -1,1 +1,0 @@
-var x = Array . from ( { [ Symbol . asyncIterator ] : function * ( x ) { } , [ Symbol . iterator ] : function ( ) { } } ) ;

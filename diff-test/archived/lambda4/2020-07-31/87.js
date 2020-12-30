@@ -1,1 +1,0 @@
-Array . prototype . reduceRight . call ( typeof x , class   { ; } , { [ "get" ] : function  (  ) {  } , [ "set" ] : function  (  ) {  } , [ "configurable" ] : true } ) ;

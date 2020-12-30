@@ -1,1 +1,0 @@
-Promise . allSettled ( [ 42 , 'str' , true ] ) ;

@@ -1,1 +1,0 @@
-async function * x ( ) { for ( ; { [ Symbol . toPrimitive ] : async function ( x ) { } } ; '' ) ; } do ; while ( { [ Symbol . toPrimitive ] : async function ( x ) { } } , '' ) ; x ?. [ { [ Symbol . toPrimitive ] : async function ( x ) { } } ] ;

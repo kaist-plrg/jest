@@ -1,1 +1,0 @@
-var x = { x ( ... [ ] ) { } } ; var x = class extends class extends x ?. ( ) { ; } { x ( ) { } } ; var x = new x ;

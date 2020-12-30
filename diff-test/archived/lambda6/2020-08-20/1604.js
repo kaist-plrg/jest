@@ -1,1 +1,0 @@
-var x = Promise . all ( { [ Symbol . asyncIterator ] : function ( ) { ; var x = class x extends x { ; } ; } , [ Symbol . iterator ] : function ( x ) { ; x ( 42 ) ; for ( let { } = x ; '' ; ) ; } } ) ;

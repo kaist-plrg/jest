@@ -1,1 +1,0 @@
-var x = [ 42 , 'str' , true ] . keys ( 0 ) ; var [ , x ] = x ;

@@ -1,1 +1,0 @@
-var x = async x => await class x extends x [ '' , '' ] { } ; for ( let x ; '' ; ) ; x `` ;

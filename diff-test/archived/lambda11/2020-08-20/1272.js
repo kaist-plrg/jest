@@ -1,1 +1,0 @@
-var x = Array . from ( { [ "length" ] : { [ Symbol . toPrimitive ] : 0 } } ) ;

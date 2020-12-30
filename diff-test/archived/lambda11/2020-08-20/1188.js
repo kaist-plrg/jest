@@ -1,1 +1,0 @@
-var x = String . prototype . startsWith . call ( { p : 42 } , x ^ x ) ;

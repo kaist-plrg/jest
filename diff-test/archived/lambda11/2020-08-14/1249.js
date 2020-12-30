@@ -1,1 +1,0 @@
-function x ( [ x ] = { [ "value" ] : ( ) => { throw '' ; } } ) { } ; new x ;

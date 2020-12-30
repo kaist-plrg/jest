@@ -1,1 +1,0 @@
-var x = Function . prototype . apply . call ( x => { ; throw 42 ; } , 0n , undefined ) ;

@@ -1,1 +1,0 @@
-switch ( '' ) { default : ; case x : } x ( ) ; function x ( ... [ x , ] ) { x : ; x ( class extends x ( ) ?. x { ; } ) ; return x !== x ; }

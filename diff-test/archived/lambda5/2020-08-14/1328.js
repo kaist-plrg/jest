@@ -1,1 +1,0 @@
-var x = { get x ( ) { ; return class x extends new x ( x , ) { } ; } } ; var x = x ?. x ;

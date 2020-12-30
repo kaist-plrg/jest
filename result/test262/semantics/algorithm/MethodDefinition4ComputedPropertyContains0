@@ -1,7 +1,0 @@
-[32mMethodDefinition4ComputedPropertyContains0[0m
-[32m- Inst: 4 / 4 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 22938 [-]   : { ... }[0m
-[32m+ 22939 [-]   : access __x0__ = (PropertyName "ComputedPropertyContains")[0m
-[32m+ 22940 [-]   : app __x1__ = (__x0__ symbol)[0m
-[32m+ 22941 [-]   : return __x1__[0m

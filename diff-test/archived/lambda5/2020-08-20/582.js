@@ -1,1 +1,0 @@
-delete ( Symbol . hasInstance ) [ null ] ;

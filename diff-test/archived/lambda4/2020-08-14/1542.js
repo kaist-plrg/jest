@@ -1,1 +1,0 @@
-function x ( ) { ; for ( ; '' , '' ; '' , '' ) ; for ( x in '' ) ; debugger ; var x = class extends x `${ '' }` { ; ; } ; } new x ( ) ;

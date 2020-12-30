@@ -1,6 +1,0 @@
-[31mArrayBindingPattern2BoundNames0[0m
-[31m- Inst: 0 / 3 (0.00%)[0m
-[31m- Cond: -[0m
-[31m- 4709  [-]   : { ... }[0m
-[31m- 4710  [-]   : access __x0__ = (BindingElementList "BoundNames")[0m
-[31m- 4711  [-]   : return __x0__[0m

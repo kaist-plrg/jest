@@ -1,1 +1,0 @@
-Object . prototype . propertyIsEnumerable . call ( 'str' , 0 , 0 ) ;

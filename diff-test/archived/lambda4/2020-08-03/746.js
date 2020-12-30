@@ -1,1 +1,0 @@
-Number . prototype . toString . call ( { * x ( ) { } } , { [ "set" ] : function ( x0 , x1 ) { } , [ "configurable" ] : false } ) ;

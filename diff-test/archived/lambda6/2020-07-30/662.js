@@ -1,1 +1,0 @@
-Function . prototype . apply . call ( x => {  } , false , 0 ) ;

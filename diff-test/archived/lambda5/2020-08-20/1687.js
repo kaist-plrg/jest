@@ -1,1 +1,0 @@
-var x = Object . assign ( { set x ( x ) { ; 0 ( 42 ) ; var x = x ; return ; return Symbol . species ; try { for ( [ , ] in '' ) ; } catch ( x ) { } } } , { async * x ( ... [ ... x ] ) { x : ; true ; for ( x ( ) in x instanceof x ) switch ( '' ) { default : case x : } x `${ '' , '' }${ '' , '' }` ; return ; } } ) ;

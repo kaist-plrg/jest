@@ -1,1 +1,0 @@
-var x = - 1n ; x `${ x - x }${ ( Symbol . asyncIterator ) }${ x ?. [ '' ] , { p : 42 } }` ;

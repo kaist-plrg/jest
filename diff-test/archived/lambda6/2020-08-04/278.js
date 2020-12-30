@@ -1,1 +1,0 @@
-var x = async x => await { [ "then" ] : class { } } ; var x , x ; x `` ;

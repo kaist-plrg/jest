@@ -1,1 +1,0 @@
-var x = String . prototype . trim . call ( new String ( 0 ) ) ;

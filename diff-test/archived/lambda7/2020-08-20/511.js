@@ -1,1 +1,0 @@
-for ( x in null ) while ( '' , '' ) ;

@@ -1,1 +1,0 @@
-String . prototype . endsWith . call ( async function ( ) { } , { [ "return" ] : function ( ) { } , [ "throw" ] : function ( x0 , x1 ) { } } , 0 ) ;

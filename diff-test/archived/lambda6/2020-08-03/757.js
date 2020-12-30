@@ -1,1 +1,0 @@
-var x = { [ "value" ] : 'str' , [ "writable" ] : false , [ "enumerable" ] : false } != class extends x ?. x ?. x { ; } ;

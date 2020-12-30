@@ -1,1 +1,0 @@
-function x ( x0 , x1 ) { } ; Symbol . toStringTag ; function * x ( ... [ x , ] ) { ; } x ( class x { static x ( ) { } } ) ; function x ( ... [ , x ] ) { switch ( class extends x ( ) `` { } ) { default : switch ( '' ) { case x : default : } break ; } return x += '' ; }

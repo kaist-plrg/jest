@@ -1,1 +1,0 @@
-var x = 0n || class x extends new x ( '' ) { ; } ;

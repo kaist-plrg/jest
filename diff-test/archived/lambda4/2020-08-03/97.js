@@ -1,1 +1,0 @@
-var x = 0n - { [ "next" ] : function ( x ) { } , [ "throw" ] : function ( x0 , x1 ) { } } ;

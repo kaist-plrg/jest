@@ -1,1 +1,0 @@
-var x = BigInt ( false ) ; var x = x >> x ;

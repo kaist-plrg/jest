@@ -1,1 +1,0 @@
-Array . prototype . map . call ( '0' , ( ) => new x ( '' ) , Symbol . isConcatSpreadable , { async * x ( ... [ ,  ] ) {  } } ) ;

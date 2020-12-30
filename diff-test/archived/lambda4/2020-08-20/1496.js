@@ -1,1 +1,0 @@
-var x = Array . prototype . copyWithin . call ( Symbol . asyncIterator , x & x , Symbol . toPrimitive ) ;

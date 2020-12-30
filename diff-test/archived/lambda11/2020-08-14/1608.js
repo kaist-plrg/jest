@@ -1,1 +1,0 @@
-var x = Array . prototype . slice . call ( `${ '' }${ x }${ { [ "length" ] : async * function ( ) { } } , '' }` , '0' , { [ "length" ] : async * function ( ) { } } ) ;

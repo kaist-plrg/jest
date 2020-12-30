@@ -1,1 +1,0 @@
-var x = Array . prototype . flat . call ( new { [ "constructor" ] : function * ( ) { } , [ Symbol . species ] : async * function ( ) { } } ( ) ) ;

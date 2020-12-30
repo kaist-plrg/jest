@@ -1,1 +1,0 @@
-var x = new Set ( [ 0n , { [ "length" ] : { p : 42 } } ] ) ;

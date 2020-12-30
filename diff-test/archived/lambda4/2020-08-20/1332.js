@@ -1,1 +1,0 @@
-var x = function * ( ) { } . prototype . valueOf . call ( 42n ) ; var x = x >= x ;

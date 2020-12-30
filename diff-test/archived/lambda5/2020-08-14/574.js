@@ -1,1 +1,0 @@
-for ( x in undefined ) try { } finally { }

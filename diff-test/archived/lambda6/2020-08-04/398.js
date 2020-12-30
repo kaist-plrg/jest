@@ -1,1 +1,0 @@
-Array . prototype . slice . call ( '0' , { [ "get" ] : function ( ) { } , [ "set" ] : function ( x0 , x1 ) { } , [ "configurable" ] : false } ) ;

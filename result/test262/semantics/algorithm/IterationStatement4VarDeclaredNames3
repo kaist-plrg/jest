@@ -1,6 +1,0 @@
-[32mIterationStatement4VarDeclaredNames3[0m
-[32m- Inst: 3 / 3 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 3584  [-]   : { ... }[0m
-[32m+ 3585  [-]   : access __x0__ = (Statement "VarDeclaredNames")[0m
-[32m+ 3586  [-]   : return __x0__[0m

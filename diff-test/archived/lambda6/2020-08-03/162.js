@@ -1,1 +1,0 @@
-Object . defineProperty ( ( ) => { } , async function x ( ) { } , { [ "value" ] : 'str' , [ "writable" ] : false , [ "enumerable" ] : true } ) ;

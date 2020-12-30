@@ -1,1 +1,0 @@
-try { } finally { ; var x = class x extends x { ; ; } ; }

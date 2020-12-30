@@ -1,1 +1,0 @@
-var x = String . prototype . lastIndexOf . call ( new String ( 42n ) , x ?. [ '' ] , ( - 1n ) ) ;

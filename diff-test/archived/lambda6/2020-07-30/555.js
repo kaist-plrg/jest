@@ -1,1 +1,0 @@
-switch ( 0 ) {  default :  case NaN : ; async function * x ( ... { x : { }  } ) {  } }

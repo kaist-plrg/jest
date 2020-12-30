@@ -1,1 +1,0 @@
-var x = ( x => { ; return class extends x `${ '' }${ '' , '' }` { } ; } ) ( ( Symbol . hasInstance ) ) ;

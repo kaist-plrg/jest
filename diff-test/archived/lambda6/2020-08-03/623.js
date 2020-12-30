@@ -1,1 +1,0 @@
-var x = new { [ "get" ] : function ( ) { } , [ "set" ] : function ( x ) { } , [ "enumerable" ] : false } ( class extends x ?. [ '' ] { ; } , ... '' ) ;

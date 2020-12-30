@@ -1,1 +1,0 @@
-var x = true == 42n ; async function * x ( ... { [ class extends x ( ) . x { } ] : { } = ( Symbol . toStringTag ) } ) { }

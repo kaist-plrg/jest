@@ -1,1 +1,0 @@
-var x = class { static x ( ) { } } . prototype . toString . call ( new Boolean ( 'str' ) ) ;

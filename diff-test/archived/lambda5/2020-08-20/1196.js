@@ -1,1 +1,0 @@
-var x = Array . prototype . slice . call ( typeof x , x >>> x , - 1 ) ;

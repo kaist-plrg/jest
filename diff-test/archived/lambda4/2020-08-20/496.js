@@ -1,1 +1,0 @@
-if ( class extends x { ; } ) ; else ;

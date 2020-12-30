@@ -1,1 +1,0 @@
-var x = Array . prototype . fill . call ( function ( ) { } , true == x ) ;

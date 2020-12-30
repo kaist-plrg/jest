@@ -1,1 +1,0 @@
-var x = Map . prototype . forEach . call ( new Map ( ) , async function x ( ) { } , 0 ) ;

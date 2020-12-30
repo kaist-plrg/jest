@@ -1,6 +1,0 @@
-[32mLiteral0Evaluation0[0m
-[32m- Inst: 3 / 3 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 1841  [-]   : { ... }[0m
-[32m+ 1842  [-]   : app __x0__ = (WrapCompletion null)[0m
-[32m+ 1843  [-]   : return __x0__[0m

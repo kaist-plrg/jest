@@ -1,1 +1,0 @@
-var x = x `` ; var [ x , x ] = x ; var [ ... { } ] = x ; function * x ( ... await ) { ; async function * x ( x , ) { } yield * yield ; for ( [ x , , ] in '' ) ; }

@@ -1,1 +1,0 @@
-var x = BigInt . prototype . toString . call ( - 1n ) ;

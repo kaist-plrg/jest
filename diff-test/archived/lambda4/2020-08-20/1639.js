@@ -1,1 +1,0 @@
-var x = String . prototype . normalize . call ( new String ( 0 ) , { [ "valueOf" ] : async function ( ) { ; var x = new . target ; } , [ "toString" ] : function * ( x ) { ; throw 42 ; } } ) ;

@@ -1,1 +1,0 @@
-String . prototype . lastIndexOf . call ( ( Symbol . replace ) , 0 , Symbol . search , async x => x ) ;

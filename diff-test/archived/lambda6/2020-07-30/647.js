@@ -1,1 +1,0 @@
-Object . getOwnPropertyNames ( { async * x ( ... { } ) {  } } , class x  {  } ) ;

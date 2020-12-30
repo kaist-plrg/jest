@@ -1,1 +1,0 @@
-async function x ( ) { switch ( '' ) { case '' , '' : } for await ( var x of class extends x { static x ( ) { } } ) var [ x , ] = x ; } x ( 42 ) ;

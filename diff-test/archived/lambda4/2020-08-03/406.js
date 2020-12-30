@@ -1,1 +1,0 @@
-var x = { [ "value" ] : 0 , [ "writable" ] : false , [ "enumerable" ] : false , [ "configurable" ] : true } instanceof ( x => { } ) ;

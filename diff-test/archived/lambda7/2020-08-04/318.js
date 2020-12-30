@@ -1,1 +1,0 @@
-Array . prototype . reduce . call ( '' , function ( ) { } , 1 ) ;

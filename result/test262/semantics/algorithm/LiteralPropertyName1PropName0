@@ -1,7 +1,0 @@
-[32mLiteralPropertyName1PropName0[0m
-[32m- Inst: 4 / 4 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 22692 [-]   : { ... }[0m
-[32m+ 22693 [-]   : access result = (StringLiteral "SV")[0m
-[32m+ 22694 [-]   : app wrapped = (WrapCompletion result)[0m
-[32m+ 22695 [-]   : return wrapped[0m

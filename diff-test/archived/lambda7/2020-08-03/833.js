@@ -1,1 +1,0 @@
-do for ( var x ; '' , '' ; ) ; while ( class extends x [ '' , '' ] { } ) ;

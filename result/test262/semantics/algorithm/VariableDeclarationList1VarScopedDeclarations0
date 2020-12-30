@@ -1,8 +1,0 @@
-[32mVariableDeclarationList1VarScopedDeclarations0[0m
-[32m- Inst: 5 / 5 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 2124  [-]   : { ... }[0m
-[32m+ 2125  [-]   : access __x0__ = (VariableDeclarationList "VarScopedDeclarations")[0m
-[32m+ 2126  [-]   : let declarations = __x0__[0m
-[32m+ 2127  [-]   : append VariableDeclaration -> declarations[0m
-[32m+ 2128  [-]   : return declarations[0m

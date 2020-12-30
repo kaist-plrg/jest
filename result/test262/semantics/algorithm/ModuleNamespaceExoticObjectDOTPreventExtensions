@@ -1,6 +1,0 @@
-[31mModuleNamespaceExoticObjectDOTPreventExtensions[0m
-[31m- Inst: 0 / 3 (0.00%)[0m
-[31m- Cond: -[0m
-[31m- 23188 [-]   : { ... }[0m
-[31m- 23189 [-]   : app __x0__ = (WrapCompletion true)[0m
-[31m- 23190 [-]   : return __x0__[0m

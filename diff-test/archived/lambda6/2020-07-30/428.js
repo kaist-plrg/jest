@@ -1,1 +1,0 @@
-Array . prototype . indexOf . call ( x => {  } , false , Symbol . matchAll ) ;

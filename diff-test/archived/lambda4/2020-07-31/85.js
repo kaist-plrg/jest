@@ -1,1 +1,0 @@
-var x = ( x ?. x [ '' ] ) *= x ?. [ Symbol . unscopables , new x ( ) ] ;

@@ -1,1 +1,0 @@
-String . prototype . substring . call ( Symbol . toStringTag , 0 , 0 ) ;

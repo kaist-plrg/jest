@@ -1,1 +1,0 @@
-Object . create ( { [ Symbol . toPrimitive ] : async function ( x ) { } } , { [ Symbol . toPrimitive ] : async function ( x ) { } } ) ;

@@ -1,1 +1,0 @@
-String . prototype . indexOf . call ( ( Symbol . asyncIterator ) , Symbol . toPrimitive , - 0 ) ;

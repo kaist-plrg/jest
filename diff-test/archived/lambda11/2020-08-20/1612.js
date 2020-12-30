@@ -1,1 +1,0 @@
-var x = x ( ) ( ) ; x ( ) ; function x ( ... [ x , ] ) { ; x ( { [ "length" ] : 0 } ) ; switch ( '' ) { case x : default : } return { [ "length" ] : 0 } ; }

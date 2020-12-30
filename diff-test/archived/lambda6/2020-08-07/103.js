@@ -1,1 +1,0 @@
-var x = Object . create ( { p : 42 } , null ) ;

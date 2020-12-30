@@ -1,1 +1,0 @@
-Array . prototype . some . call ( 'str' , x => { ; x ( ) ; } , Symbol . iterator , - 0 ) ;

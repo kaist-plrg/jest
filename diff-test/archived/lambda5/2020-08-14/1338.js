@@ -1,1 +1,0 @@
-var x = { get x ( ) { ; var x = { async * x ( ... [ x , ] ) { } } ; } } ; var x = x ?. x ;

@@ -1,1 +1,0 @@
-var x = ( Symbol . species ) ? ( Symbol . search ) : { [ "get" ] : function  ( x0  , x1  ) {  } , [ "set" ] : function  ( x0  , x1  ) {  } , [ "configurable" ] : false } ;

@@ -1,1 +1,0 @@
-var x = Symbol . prototype [ class extends x `${ '' }${ x }${ '' , '' }` { } . toPrimitive ] . call ( null , 0 ) ;

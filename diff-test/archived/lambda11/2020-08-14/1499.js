@@ -1,1 +1,0 @@
-var x = String . prototype . endsWith . call ( ( ) => { } , x >> { [ "valueOf" ] : '' , [ "toString" ] : false } ) ;

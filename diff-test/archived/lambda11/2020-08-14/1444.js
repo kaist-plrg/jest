@@ -1,1 +1,0 @@
-var x = Array . prototype . some . call ( { [ "done" ] : async function ( x ) { } } , async x => x ) ;

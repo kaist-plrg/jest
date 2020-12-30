@@ -1,1 +1,0 @@
-var x = eval ( '0' ) ; var { ... x } = x ;

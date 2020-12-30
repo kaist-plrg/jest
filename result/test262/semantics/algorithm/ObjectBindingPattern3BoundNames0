@@ -1,6 +1,0 @@
-[32mObjectBindingPattern3BoundNames0[0m
-[32m- Inst: 3 / 3 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 23723 [-]   : { ... }[0m
-[32m+ 23724 [-]   : access __x0__ = (BindingPropertyList "BoundNames")[0m
-[32m+ 23725 [-]   : return __x0__[0m

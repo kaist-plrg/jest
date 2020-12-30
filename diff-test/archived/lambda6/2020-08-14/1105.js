@@ -1,1 +1,0 @@
-try { switch ( '' ) { default : ; case x : } let x = x ; } catch { }

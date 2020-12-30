@@ -1,1 +1,0 @@
-Map ( typeof x ) ;

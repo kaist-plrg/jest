@@ -1,1 +1,0 @@
-if ( Symbol . match ) ; else for (  ; '' ; '' ) ;

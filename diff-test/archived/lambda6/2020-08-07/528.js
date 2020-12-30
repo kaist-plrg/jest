@@ -1,1 +1,0 @@
-var x = Object . prototype . toLocaleString . call ( Symbol . species , 0 , 0 ) ;

@@ -1,1 +1,0 @@
-Object . assign ( 0 , [ 42 , 'str' , true ] ) ;

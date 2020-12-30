@@ -1,1 +1,0 @@
-if ( '' , Symbol . toStringTag ) var [  ... x ] = x ; else ;

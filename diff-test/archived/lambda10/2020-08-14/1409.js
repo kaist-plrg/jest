@@ -1,1 +1,0 @@
-var x = Array . prototype . find . call ( { async x ( ... { x : x } ) { } } , ( ) => { } ) ;

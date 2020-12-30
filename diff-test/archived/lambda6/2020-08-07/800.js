@@ -1,1 +1,0 @@
-var x = String . prototype . substring . call ( Symbol . search , 0 , { x : '' } ) ;

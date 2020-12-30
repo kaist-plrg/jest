@@ -1,1 +1,0 @@
-var x = Array . prototype . slice . call ( { [ "prototype" ] : null } , { [ "prototype" ] : null } !== { [ "prototype" ] : null } , { [ "prototype" ] : null } ) ;

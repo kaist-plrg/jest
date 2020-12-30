@@ -1,1 +1,0 @@
-for ( var x in [ 42 , 'str' , true ] ) for ( var x in '' ) ;

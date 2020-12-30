@@ -1,1 +1,0 @@
-var x = { [ "prototype" ] : ( ) => { throw '' ; } } . prototype . toString . call ( new Error ( { [ "prototype" ] : ( ) => { throw '' ; } } ) ) ;

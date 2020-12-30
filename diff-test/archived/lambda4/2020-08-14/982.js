@@ -1,1 +1,0 @@
-var x = NaN ; ( x => { } ) !== class extends x ( ) . x { ; } ;

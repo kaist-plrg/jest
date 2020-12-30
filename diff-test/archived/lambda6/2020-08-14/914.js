@@ -1,1 +1,0 @@
-function x ( [ x ] = { p : 42 } ) { } x : ; new x ( '' ) ;

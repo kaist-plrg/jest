@@ -1,1 +1,0 @@
-var x = ( x => { } ) . getOwnPropertyDescriptor ( void class extends x ?. [ '' , '' ] { } , Symbol . unscopables ) ;

@@ -1,1 +1,0 @@
-for ( var x in 1 ) for ( var { } = x ; ; '' ) ;

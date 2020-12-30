@@ -1,9 +1,0 @@
-[32mRequireObjectCoercible[0m
-[32m- Inst: 6 / 6 (100.00%)[0m
-[32m- Cond: 2 / 2 (100.00%)[0m
-[32m+ 26847 [-]   : { ... }[0m
-[32m+ 26848 [[32mT[0m/[32mT[0m[32m]: if (|| (= (typeof argument) "Undefined") (= (typeof argument) "Null")) ... else ...[0m
-[32m+ 26849 [-]   : { ... }[0m
-[32m+ 26850 [-]   : return (new Completion("Type" -> CONST_throw, "Value" -> (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))), "Target" -> CONST_empty))[0m
-[32m+ 26851 [-]   : { ... }[0m
-[32m+ 26852 [-]   : return argument[0m

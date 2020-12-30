@@ -1,1 +1,0 @@
-x : ; x ( ) ; function x ( ... [ x , ] ) { switch ( Symbol . match , BigInt ( 0.1 ) ) { case Symbol . asyncIterator : case Symbol . replace : } ( class extends new x { ; } . iterator ) ( ( NaN ) ) ; return x ?. [ '' ] ; }

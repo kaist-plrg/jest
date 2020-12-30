@@ -1,1 +1,0 @@
-var x = new WeakSet ( [ { [ "done" ] : function ( x ) { } } ] ) ;

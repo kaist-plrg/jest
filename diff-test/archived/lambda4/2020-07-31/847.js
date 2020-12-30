@@ -1,1 +1,0 @@
-var x = { [ "value" ] : 'str' , [ "writable" ] : false , [ "enumerable" ] : true , [ "configurable" ] : false } `` ;

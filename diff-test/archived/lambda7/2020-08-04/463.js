@@ -1,1 +1,0 @@
-Object . prototype . propertyIsEnumerable . call ( 1 , { [ Symbol . toPrimitive ] : function * ( ) { } } ) ;

@@ -1,1 +1,0 @@
-var x = Array . prototype . filter . call ( { [ "length" ] : true } , x => { } ) ;

@@ -1,1 +1,0 @@
-( Number ( Symbol . iterator ) ) | '0' ;

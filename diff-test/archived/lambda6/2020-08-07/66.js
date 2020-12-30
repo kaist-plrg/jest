@@ -1,1 +1,0 @@
-var x = new Map ( [ { [ "value" ] : 0 } , { [ "value" ] : 0 } , true ] ) ;

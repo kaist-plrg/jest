@@ -1,1 +1,0 @@
-for ( { [ NaN ] : undefined } in { [ "get" ] : function ( x0 , x1 ) { } , [ "set" ] : function ( ) { } , [ "configurable" ] : true } ) for ( ; ; ) ;

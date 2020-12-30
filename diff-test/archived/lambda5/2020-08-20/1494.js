@@ -1,1 +1,0 @@
-try { ; x ( 42 ) ; var x = x ; } catch { ; class x extends true { } } finally { ; class x extends x ?. ( ) { ; } }

@@ -1,5 +1,0 @@
-[32mIsAbruptCompletion[0m
-[32m- Inst: 2 / 2 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 21721 [-]   : { ... }[0m
-[32m+ 21722 [-]   : return (&& (is-completion x) (! (= x["Type"] CONST_normal)))[0m

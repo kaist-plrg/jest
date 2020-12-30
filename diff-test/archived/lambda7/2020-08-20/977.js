@@ -1,1 +1,0 @@
-for ( let x in { [ "done" ] : [ 42 , 'str' , true ] } ) break ;

@@ -1,1 +1,0 @@
-for ( var x = '' ; '' ; ) ; ( { p : x [ - Infinity ] } = ( - 1n ) ) ;

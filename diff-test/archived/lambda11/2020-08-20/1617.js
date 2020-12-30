@@ -1,1 +1,0 @@
-var x = Array . prototype . splice . call ( { [ Symbol . toPrimitive ] : function * ( x ) { } } , NaN , { [ Symbol . toPrimitive ] : function * ( x ) { } } ) ;

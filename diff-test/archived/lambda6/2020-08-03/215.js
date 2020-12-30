@@ -1,1 +1,0 @@
-String . prototype . normalize . call ( false , ( Symbol . matchAll ) ) ;

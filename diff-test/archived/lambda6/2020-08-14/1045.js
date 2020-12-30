@@ -1,1 +1,0 @@
-var x = { p : 0 } ; ( { p : ( Symbol . asyncIterator ) } = x ) ;

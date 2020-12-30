@@ -1,1 +1,0 @@
-SyntaxError ( { [ "prototype" ] : function ( x ) { } } . split ) ;

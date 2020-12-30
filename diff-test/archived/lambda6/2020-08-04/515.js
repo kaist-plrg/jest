@@ -1,1 +1,0 @@
-Array . prototype . slice . call ( { [ "value" ] : undefined , [ "writable" ] : false , [ "enumerable" ] : false , [ "configurable" ] : false } , Symbol . species ) ;

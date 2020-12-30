@@ -1,1 +1,0 @@
-var x = class x { } . prototype . toString . call ( ( - 1 ) ) ;

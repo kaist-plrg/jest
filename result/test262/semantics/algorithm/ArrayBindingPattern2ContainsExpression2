@@ -1,6 +1,0 @@
-[31mArrayBindingPattern2ContainsExpression2[0m
-[31m- Inst: 0 / 3 (0.00%)[0m
-[31m- Cond: -[0m
-[31m- 4727  [-]   : { ... }[0m
-[31m- 4728  [-]   : access __x0__ = (BindingElementList "ContainsExpression")[0m
-[31m- 4729  [-]   : return __x0__[0m

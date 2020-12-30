@@ -1,1 +1,0 @@
-var x = x `${ { [ Symbol . asyncIterator ] : null , [ Symbol . iterator ] : async function ( x ) { } } }${ '' }` ; async function x ( ... { x , } ) { ; for await ( var x of { [ Symbol . asyncIterator ] : null , [ Symbol . iterator ] : async function ( x ) { } } ) ; function x ( ) { } await x ( ) ; }

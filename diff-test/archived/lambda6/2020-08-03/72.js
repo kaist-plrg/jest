@@ -1,1 +1,0 @@
-Array . prototype . splice . call ( 0 , ( - 1 ) , [ 42 , 'str' , true ] , 0 ) ;

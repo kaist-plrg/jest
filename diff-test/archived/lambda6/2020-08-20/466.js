@@ -1,1 +1,0 @@
-class x { } ( - Infinity ) >= 42n ;

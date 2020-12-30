@@ -1,1 +1,0 @@
-var x = Array . prototype . concat . call ( new Array ( ) ) ; var x = ( Number ( Symbol . iterator ) ) instanceof class extends x ?. [ '' ] { ; } ;

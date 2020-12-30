@@ -1,1 +1,0 @@
-var x = new { [ Symbol . asyncIterator ] : async function ( x ) { } , [ Symbol . iterator ] : async function ( x ) { ; } } ( BigInt ( { [ Symbol . toPrimitive ] : async function ( x ) { ; for await ( let x of { [ ( ) => x ] : undefined , [ Symbol . iterator ] : async function * ( ) { ; return 42 ; } } ) switch ( { set x ( x ) { ; } } ) { default : ; return ; } } } ) ) ;

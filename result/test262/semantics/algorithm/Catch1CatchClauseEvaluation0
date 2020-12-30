@@ -1,7 +1,0 @@
-[32mCatch1CatchClauseEvaluation0[0m
-[32m- Inst: 4 / 4 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 7881  [-]   : { ... }[0m
-[32m+ 7882  [-]   : access __x0__ = (Block "Evaluation")[0m
-[32m+ 7883  [-]   : app __x1__ = (WrapCompletion __x0__)[0m
-[32m+ 7884  [-]   : return __x1__[0m

@@ -1,1 +1,0 @@
-var x = ( function *  (  ) {  } . split ) += x %= ( Symbol . replace ) ;

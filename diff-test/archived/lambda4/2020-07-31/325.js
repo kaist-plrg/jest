@@ -1,1 +1,0 @@
-Array . prototype . splice . call ( 1 , ( Symbol . replace ) , 0 , Symbol . match ) ;

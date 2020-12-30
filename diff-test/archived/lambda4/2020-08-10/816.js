@@ -1,1 +1,0 @@
-var x = String . prototype . substring . call ( ( Symbol . toPrimitive ) , Symbol . replace , Symbol . unscopables ) ;

@@ -1,1 +1,0 @@
-class x extends function ( ) { } { } ( Number ( Symbol . iterator ) ) instanceof x ;

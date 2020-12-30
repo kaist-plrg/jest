@@ -1,1 +1,0 @@
-var x = String . prototype . split . call ( { p : 42 } , { async x ( ... [ x ] ) { } } , - 1 ) ;

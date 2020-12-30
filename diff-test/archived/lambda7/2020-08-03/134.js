@@ -1,1 +1,0 @@
-( x => { try { } catch { } finally { } var x = true ; switch ( class extends x `${ '' , '' }` { } ) { case x : default : ; } switch ( '' ) { case x : case x : } } ) ( ) ;

@@ -1,1 +1,0 @@
-var x = BigInt . asUintN ( Symbol . unscopables , Symbol . iterator ) ;

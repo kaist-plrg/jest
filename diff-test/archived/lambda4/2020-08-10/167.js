@@ -1,1 +1,0 @@
-try { ; throw 0 ; } catch ( x ) { ; new x ( ) ; }

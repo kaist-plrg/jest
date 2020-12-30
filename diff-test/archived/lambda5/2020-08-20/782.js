@@ -1,1 +1,0 @@
-function x ( x0 , x1 ) { ; throw 42 ; } new x ( ) ; ;

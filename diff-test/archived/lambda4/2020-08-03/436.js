@@ -1,1 +1,0 @@
-Object . defineProperty ( { [ "next" ] : { p : 42 } , [ "return" ] : ( - Infinity ) } , { [ "value" ] : null , [ "writable" ] : false , [ "enumerable" ] : true , [ "configurable" ] : true } , { [ "value" ] : 0 , [ "configurable" ] : true } ) ;

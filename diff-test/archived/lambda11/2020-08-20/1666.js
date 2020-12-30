@@ -1,1 +1,0 @@
-var x = Promise . race ( { [ Symbol . asyncIterator ] : async function ( ) { ; x ; } , [ Symbol . iterator ] : async function ( ) { ; var x = new . target ; for await ( let x of [ 42 , 'str' , true ] ) return '' ; } } ) ;

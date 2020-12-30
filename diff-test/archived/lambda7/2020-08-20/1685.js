@@ -1,1 +1,0 @@
-var x = ( x => { do ; while ( '' , '' ) ; while ( '' ) ; x >= x ; switch ( '0' ) { case x <= x : default : ; return 42 ; case x ( ) `` : ; } return { [ "value" ] : function * ( ) { } } ; } ) `` ;

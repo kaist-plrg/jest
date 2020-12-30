@@ -1,1 +1,0 @@
-let x ; switch ( - { [ Symbol . toPrimitive ] : function ( x ) { } } ) { default : case x >> { [ Symbol . toPrimitive ] : function ( x ) { } } : }

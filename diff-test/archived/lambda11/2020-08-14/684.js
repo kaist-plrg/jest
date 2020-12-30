@@ -1,1 +1,0 @@
-var x = new WeakMap ( [ 42 , 'str' , true ] ) ;

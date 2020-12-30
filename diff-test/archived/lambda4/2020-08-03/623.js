@@ -1,1 +1,0 @@
-var x = + 1 ; var x = { [ "value" ] : undefined , [ "enumerable" ] : false , [ "configurable" ] : false } == class extends x ?. ( ) { } ;

@@ -1,1 +1,0 @@
-Array . prototype . forEach . call ( Infinity , x => {  } , 0 ) ;

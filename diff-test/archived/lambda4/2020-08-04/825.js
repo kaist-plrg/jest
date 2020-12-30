@@ -1,1 +1,0 @@
-Promise . resolve ( { [ "prototype" ] : function * ( x ) { } } ) ;

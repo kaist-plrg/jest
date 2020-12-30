@@ -1,1 +1,0 @@
-var x = String . prototype . endsWith . call ( ( ) => { } , 42n >> class x extends x `${ '' }${ x }${ '' }` { x ( ) { } } ) ;

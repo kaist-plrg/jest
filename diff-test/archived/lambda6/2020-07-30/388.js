@@ -1,1 +1,0 @@
-Array . prototype . shift . call ( function *  (  ) {  } , ( [  42 ,  'str' ,  true ] ) ) ;

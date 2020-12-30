@@ -1,1 +1,0 @@
-switch ( NaN ) { case 1 : case x / x : }

@@ -1,1 +1,0 @@
-var x = Array . prototype . map . call ( 1 , function x ( ) { } ) ;

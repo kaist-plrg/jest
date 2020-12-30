@@ -1,1 +1,0 @@
-var x = new Set ( [ undefined , ! x , true ] ) ;

@@ -1,1 +1,0 @@
-var x = Array . prototype . reverse . call ( `${ x [ '' ] }${ class x extends x ?. [ '' , '' ] { } }${ { * x ( ... { x : { } } ) { } } }` ) ;

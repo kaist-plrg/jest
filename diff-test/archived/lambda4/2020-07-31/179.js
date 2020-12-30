@@ -1,1 +1,0 @@
-while ( '' , { async x ( ... [  x  , ,  ] ) {  } } ) switch ( '' ) { case x :  default : ;  }

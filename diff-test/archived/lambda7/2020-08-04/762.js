@@ -1,1 +1,0 @@
-var x = { [ "valueOf" ] : '' , [ "toString" ] : '0' } >>> { [ "valueOf" ] : '' , [ "toString" ] : '0' } ;

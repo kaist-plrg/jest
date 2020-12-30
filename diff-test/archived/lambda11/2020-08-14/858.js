@@ -1,1 +1,0 @@
-var x = 42n . prototype . matchAll . call ( null , 0 ) ;

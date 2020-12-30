@@ -1,1 +1,0 @@
-( Symbol . isConcatSpreadable ) . asIntN ( class x extends x ?. x . x { ; } , ( Symbol . species ) ) ;

@@ -1,1 +1,0 @@
-var x = ( class x extends x ( ) [ '' , '' ] { ; } . species ) *= BigInt ( 'x' ) ;

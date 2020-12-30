@@ -1,1 +1,0 @@
-var x = x ( ) ( ) ; ( - 1n ) ( ) . x ; function x ( ... [ x , ] ) { switch ( [ 42 , 'str' , true ] ) { case x %= '' , '' : } x ( async function x ( ) { } ) ; return x >>> x ; }

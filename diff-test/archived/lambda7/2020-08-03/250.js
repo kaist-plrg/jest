@@ -1,1 +1,0 @@
-Array . prototype . reduce . call ( 'str' , x => { ; throw 0 ; } , 1 ) ;

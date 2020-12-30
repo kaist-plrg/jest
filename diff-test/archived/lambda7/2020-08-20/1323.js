@@ -1,1 +1,0 @@
-var x = Set . prototype . entries . call ( new Set ( ) ) ; var x = [ x , ... x ] ;

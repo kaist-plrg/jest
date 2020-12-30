@@ -1,6 +1,0 @@
-[32mLiteralPropertyName0PropName0[0m
-[32m- Inst: 3 / 3 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 582   [-]   : { ... }[0m
-[32m+ 583   [-]   : access __x0__ = (IdentifierName "StringValue")[0m
-[32m+ 584   [-]   : return __x0__[0m

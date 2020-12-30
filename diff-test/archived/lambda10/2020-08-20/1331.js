@@ -1,1 +1,0 @@
-var x = String . prototype . charAt . call ( - 0 , Symbol . isConcatSpreadable ) ;

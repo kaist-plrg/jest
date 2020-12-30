@@ -1,1 +1,0 @@
-var x = ( x => { ; for ( { x , } in '' ) ; switch ( x & x ) { case BigInt ( 'x' ) : default : case ( Symbol . isConcatSpreadable ) : } return `${ '' }` ; } ) `` ;

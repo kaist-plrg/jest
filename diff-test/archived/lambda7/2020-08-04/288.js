@@ -1,1 +1,0 @@
-for ( { x , x } of [ 42 , 'str' , true ] ) ; var x = { async x ( ... [ , ... x ] ) { } } ;

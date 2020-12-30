@@ -1,1 +1,0 @@
-var x = x ? BigInt ( 0.1 ) : class extends x `${ '' }${ '' }` { ; } ; function x ( ... [ ... x ] ) { }

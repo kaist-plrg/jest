@@ -1,1 +1,0 @@
-delete { [ Symbol . toPrimitive ] : ( ) => { throw '' ; } } [ { [ Symbol . toPrimitive ] : ( ) => { throw '' ; } } ] ;

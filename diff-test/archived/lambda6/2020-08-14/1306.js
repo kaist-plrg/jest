@@ -1,1 +1,0 @@
-var x = Array . prototype . reduceRight . call ( '0' , async function ( ) { } ) ;

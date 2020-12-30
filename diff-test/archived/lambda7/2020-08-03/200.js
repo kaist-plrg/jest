@@ -1,1 +1,0 @@
-var x = x `` ; var await ; function x ( ... { [ '' ] : x } ) { ; var x = x >>= '' ; var x = typeof x ; }

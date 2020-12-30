@@ -1,1 +1,0 @@
-for ( [ x , ... [ x , , ... x ] ] of [ '' ] ) ; async function x ( ... { x , } ) { }

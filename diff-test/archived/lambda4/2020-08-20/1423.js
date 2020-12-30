@@ -1,1 +1,0 @@
-var x = ( x => { ; Number ( Symbol . iterator ) ; return '' , void x ; return NaN ; } ) ( ) ;

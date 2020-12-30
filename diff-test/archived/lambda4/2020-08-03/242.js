@@ -1,1 +1,0 @@
-function x ( x0 , x1 ) { } ; try { } catch ( { } ) { } function * x ( ... [ x , ] ) { for ( '' , '' ; ; ) ; } function x ( ... [ , x ] ) { for ( '' ; '' ; ) ; return BigInt ( 'x' ) ; } var x = new x ( Symbol . toStringTag , Symbol . isConcatSpreadable ) ;

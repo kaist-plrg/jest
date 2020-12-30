@@ -1,1 +1,0 @@
-EvalError ( ( Symbol . iterator ) , 0 ) ;

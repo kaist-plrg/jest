@@ -1,1 +1,0 @@
-var x = class extends x [ '' ] { } . prototype [ Symbol . species ] ;

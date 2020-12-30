@@ -1,1 +1,0 @@
-var x = ( { [ "get" ] : function  (  ) {  } , [ "set" ] : function  ( x0  , x1  ) {  } , [ "enumerable" ] : true , [ "configurable" ] : false } . asyncIterator ) += `` ;

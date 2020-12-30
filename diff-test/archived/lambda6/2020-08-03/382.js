@@ -1,1 +1,0 @@
-var x = Infinity ++ ; var { 42 : { } } = { async x ( ... [ ] ) { } } ;

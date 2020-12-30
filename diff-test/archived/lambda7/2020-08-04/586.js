@@ -1,1 +1,0 @@
-delete x [ x < x ] ; function * x ( ) { }

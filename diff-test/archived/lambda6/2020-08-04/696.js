@@ -1,1 +1,0 @@
-for ( ( Symbol . iterator ) , - 1n ; Symbol . hasInstance , Symbol . toPrimitive ; '' , x <= x ) ;

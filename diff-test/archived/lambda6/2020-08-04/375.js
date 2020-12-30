@@ -1,1 +1,0 @@
-for ( var x in { [ "value" ] : 0 } ) for ( let x = x ; '' ; '' ) ;

@@ -1,1 +1,0 @@
-String . prototype . lastIndexOf . call ( ( Symbol . isConcatSpreadable ) , 0 , 0 ) ;

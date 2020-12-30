@@ -1,1 +1,0 @@
-Array . prototype . reduceRight . call ( '0' , x => { ; x ( 0 ) ; } , 'str' ) ;

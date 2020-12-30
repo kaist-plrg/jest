@@ -1,1 +1,0 @@
-var x = Array . prototype . copyWithin . call ( class x { x ( ) { } } , Symbol . match , 0 ) ;

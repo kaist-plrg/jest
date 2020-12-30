@@ -1,1 +1,0 @@
-Function . prototype . apply . call ( class { static x ( ) { } } , Symbol . unscopables , undefined ) ;

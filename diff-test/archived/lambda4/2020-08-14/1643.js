@@ -1,1 +1,0 @@
-var x = Promise . all ( { [ { [ Symbol . asyncIterator ] : null , [ Symbol . iterator ] : async function ( ) { } } . asyncIterator ] : '0' , [ Symbol . iterator ] : async function ( ) { ; for await ( x of { [ Symbol . asyncIterator ] : null , [ Symbol . iterator ] : async function ( ) { } } ) ; } } ) ;

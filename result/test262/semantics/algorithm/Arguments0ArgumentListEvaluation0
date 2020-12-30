@@ -1,6 +1,0 @@
-[32mArguments0ArgumentListEvaluation0[0m
-[32m- Inst: 3 / 3 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 2163  [-]   : { ... }[0m
-[32m+ 2164  [-]   : app __x0__ = (WrapCompletion (new []))[0m
-[32m+ 2165  [-]   : return __x0__[0m

@@ -1,6 +1,0 @@
-[32mSwitchStatement0VarScopedDeclarations0[0m
-[32m- Inst: 3 / 3 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 27887 [-]   : { ... }[0m
-[32m+ 27888 [-]   : access __x0__ = (CaseBlock "VarScopedDeclarations")[0m
-[32m+ 27889 [-]   : return __x0__[0m

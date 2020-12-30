@@ -1,1 +1,0 @@
-var x = Symbol . match ; var x = { [ { } ] : x => x , [ `${ '' }${ '' }` ] : function  ( x0  , x1  ) {  } , [ ( Symbol . toStringTag ) ] : true } instanceof { [ [  x ,  '' ] ] : x << x , [ { async * x ( ... [ , ... x ] ) {  } } ] : true } ;

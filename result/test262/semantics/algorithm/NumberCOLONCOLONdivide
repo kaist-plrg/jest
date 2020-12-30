@@ -1,5 +1,0 @@
-[32mNumberCOLONCOLONdivide[0m
-[32m- Inst: 2 / 2 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 23370 [-]   : { ... }[0m
-[32m+ 23371 [-]   : return (/ x y)[0m

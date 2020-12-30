@@ -1,6 +1,0 @@
-[32mBindingElisionElement0BoundNames1[0m
-[32m- Inst: 3 / 3 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 6721  [-]   : { ... }[0m
-[32m+ 6722  [-]   : access __x0__ = (BindingElement "BoundNames")[0m
-[32m+ 6723  [-]   : return __x0__[0m

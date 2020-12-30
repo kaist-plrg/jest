@@ -1,1 +1,0 @@
-for ( var { } = Symbol . search ; ; ) var { x = x } = x ;

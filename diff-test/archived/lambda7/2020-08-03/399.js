@@ -1,1 +1,0 @@
-Array . prototype . forEach . call ( ( x => { } ) , class { ; } , - 1n ) ;

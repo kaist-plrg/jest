@@ -1,7 +1,0 @@
-[32mTemplateLiteral0Evaluation0[0m
-[32m- Inst: 4 / 4 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 27907 [-]   : { ... }[0m
-[32m+ 27908 [-]   : access __x0__ = (NoSubstitutionTemplate "TV")[0m
-[32m+ 27909 [-]   : app __x1__ = (WrapCompletion __x0__)[0m
-[32m+ 27910 [-]   : return __x1__[0m

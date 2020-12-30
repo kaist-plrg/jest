@@ -1,1 +1,0 @@
-delete ( Symbol . toStringTag ) [ typeof ( - 1n ) ] ;

@@ -1,1 +1,0 @@
-[  42 ,  'str' ,  true ] . values ( { x (  ) {  } } ) ;

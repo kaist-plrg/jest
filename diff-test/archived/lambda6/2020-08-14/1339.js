@@ -1,1 +1,0 @@
-var x = Object . defineProperties ( { ... '' } , { get x ( ) { ; new x ( ) ; } } ) ;

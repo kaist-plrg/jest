@@ -1,1 +1,0 @@
-String . prototype . endsWith . call ( { [ "length" ] : function ( x ) { } } , { [ "length" ] : function ( x ) { } } ) ;

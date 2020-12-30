@@ -1,1 +1,0 @@
-switch ( [ , ... '' ] ) { default : ; for ( let x = ( Symbol . toPrimitive ) ; ; class extends x ( ) `` { } ) ; }

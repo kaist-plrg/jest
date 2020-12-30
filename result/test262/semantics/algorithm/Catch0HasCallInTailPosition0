@@ -1,8 +1,0 @@
-[32mCatch0HasCallInTailPosition0[0m
-[32m- Inst: 5 / 5 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 1601  [-]   : { ... }[0m
-[32m+ 1602  [-]   : access __x0__ = (Block "HasCallInTailPosition")[0m
-[32m+ 1603  [-]   : app __x1__ = (__x0__ call)[0m
-[32m+ 1604  [-]   : app __x2__ = (WrapCompletion __x1__)[0m
-[32m+ 1605  [-]   : return __x2__[0m

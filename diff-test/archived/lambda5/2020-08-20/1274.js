@@ -1,1 +1,0 @@
-var x = Array . prototype . slice . call ( async x => x , x ?? x ?? x , 1 ) ;

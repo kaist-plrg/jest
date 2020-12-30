@@ -1,1 +1,0 @@
-var x = ( ( Symbol . hasInstance ) . search ) -= x ?. x ( ) ;

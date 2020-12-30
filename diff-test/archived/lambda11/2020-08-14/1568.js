@@ -1,1 +1,0 @@
-var x = x | { [ Symbol . toPrimitive ] : function ( x ) { ; x ( ) ; while ( '' ) ; switch ( '' ) { case x : default : case x : } } } ;

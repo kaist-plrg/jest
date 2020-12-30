@@ -1,1 +1,0 @@
-var x = { [ "prototype" ] : 0 } . prototype . toString . call ( new Number ( 0 ) , { [ "prototype" ] : 0 } ) ;

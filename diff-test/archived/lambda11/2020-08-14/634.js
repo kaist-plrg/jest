@@ -1,1 +1,0 @@
-for ( let x ; { p : 42 } ; ) throw '' , '' ;

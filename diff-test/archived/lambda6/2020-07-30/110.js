@@ -1,1 +1,0 @@
-String . prototype . repeat . call ( [  ... '' ] , ( Symbol . toStringTag ) , 0 ) ;

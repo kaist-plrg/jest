@@ -1,1 +1,0 @@
-function x ( x  ) {  } var x = x ?. [ class x extends x { ; ; } ] ;

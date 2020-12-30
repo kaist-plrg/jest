@@ -1,1 +1,0 @@
-var x = async x => { for ( ; '' ; '' ) ; for ( x ?. [ '' , '' ] ; { set x ( x ) { } } ; ) var { x : x } = x ; } ; x ( -- x ) ;

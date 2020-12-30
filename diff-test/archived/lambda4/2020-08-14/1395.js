@@ -1,1 +1,0 @@
-for ( ( Symbol . isConcatSpreadable ) of [ 42 , 'str' , true ] ) for ( let { } = x ; '' ; '' ) ;

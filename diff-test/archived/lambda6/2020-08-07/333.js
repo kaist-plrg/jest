@@ -1,1 +1,0 @@
-var x = { p : x %= class { ; ; } } ** class extends { x , x } ?. x . x { ; } ;

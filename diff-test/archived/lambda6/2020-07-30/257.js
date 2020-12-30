@@ -1,1 +1,0 @@
-delete 'str' [ 0n ] ; class x extends x [ '' ] { ; }

@@ -1,1 +1,0 @@
-for ( ; - Infinity ; { x , x } ) for ( { } in ( BigInt ( 0.1 ) ) ) ;

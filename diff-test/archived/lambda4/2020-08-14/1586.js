@@ -1,1 +1,0 @@
-var [ x ] = { [ Symbol . asyncIterator ] : '' , [ Symbol . iterator ] : function * ( x ) { ; function * x ( ... { } ) { ; throw 42 ; } yield * x ( ) ; } } ;

@@ -1,1 +1,0 @@
-var x = { x : null } ; var { [ [ x , ... x ] ] : x } = function ( ) { } ; for ( ; ; ) ;

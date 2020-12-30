@@ -1,1 +1,0 @@
-for ( ( FREE . toPrimitive ) of [ Symbol . asyncIterator ] ) var [ , ] = x ;

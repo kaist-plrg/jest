@@ -1,1 +1,0 @@
-var x = String . prototype . substring . call ( Symbol . unscopables , [ 42 , 'str' , true ] , Symbol . hasInstance ) ;

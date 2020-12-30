@@ -1,1 +1,0 @@
-for ( let x of class x extends x { x ( ) { } } ) for ( x [ '' , '' ] in '' ) ;

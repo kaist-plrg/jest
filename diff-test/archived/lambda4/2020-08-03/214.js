@@ -1,1 +1,0 @@
-Object . assign ( { get x ( ) { } } , { get x ( ) { ; function * x ( x ) { } } } ) ;

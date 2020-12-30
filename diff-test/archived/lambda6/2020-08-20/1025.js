@@ -1,1 +1,0 @@
-var x = new Set ( [ x ** x , - 1 , + x ] ) ; var { x , x } = x ;

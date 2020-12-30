@@ -1,1 +1,0 @@
-var x = Array . prototype . splice . call ( Symbol . species , Symbol . hasInstance , - 1 ) ;

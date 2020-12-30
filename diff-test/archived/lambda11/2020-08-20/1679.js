@@ -1,1 +1,0 @@
-for ( x ( ) [ undefined ] in Symbol . replace ) for ( { x = x } in '' ) ; var { [ FREE ] : x } = + x ; function x ( ... [ x , ] ) { switch ( Symbol . split ) { case '' , class extends x ?. x [ '' , '' ] { } : } x ( ( x | x ) ) ; for ( '' , '' ; ; '' , '' ) ; }

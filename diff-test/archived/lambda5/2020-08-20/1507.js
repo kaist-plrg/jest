@@ -1,1 +1,0 @@
-var x = { [ "prototype" ] : class extends x { } } . prototype . toString . call ( 0 , class extends new x ( ) { } ) ;

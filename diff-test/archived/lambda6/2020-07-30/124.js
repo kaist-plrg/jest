@@ -1,1 +1,0 @@
-Array . prototype . findIndex . call ( [  42 ,  'str' ,  true ] , x => { ; var [  x  ,  x  ] = x ; } , { async * x ( ... [   ] ) {  } } , Symbol . unscopables ) ;

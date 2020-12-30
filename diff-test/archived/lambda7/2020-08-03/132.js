@@ -1,1 +1,0 @@
-async function x ( ) { for await ( let x of [ 42 , 'str' , true ] ) for ( let x = x ; ; '' ) ; for ( { } in '' ) ; } var x = x ( ) . x ;

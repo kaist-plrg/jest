@@ -1,1 +1,0 @@
-var x = ( x => { for ( { x = x } in '' ) ; BigInt ( 'x' ) ; for ( var x in '' , '' ) ; } ) ( 'str' ) ;

@@ -1,1 +1,0 @@
-Array . prototype . indexOf . call ( undefined , '0' , Symbol . replace , '0' ) ;

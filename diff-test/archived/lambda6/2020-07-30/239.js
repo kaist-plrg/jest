@@ -1,1 +1,0 @@
-delete x [ 42 ] ; x ( 0 ) ; async function * x ( ... { } ) { ; x ( 0 ) ; }

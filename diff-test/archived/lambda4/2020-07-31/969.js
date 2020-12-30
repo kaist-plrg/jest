@@ -1,1 +1,0 @@
-Map . prototype . get . call ( 1 , 0 , 0 ) ;

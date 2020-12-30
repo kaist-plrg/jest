@@ -1,1 +1,0 @@
-function x ( ... [ ... x ] ) { ; var [ , , ... { } ] = x ; } var x = async x => { ; var x = await x ; } ; ; x `` ;

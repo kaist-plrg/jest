@@ -1,1 +1,0 @@
-String . prototype . charAt . call ( [ ] . match , - Infinity ) ;

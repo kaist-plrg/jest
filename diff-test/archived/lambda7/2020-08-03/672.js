@@ -1,1 +1,0 @@
-var x = class { ; } ; var { x , ... x } = x ;

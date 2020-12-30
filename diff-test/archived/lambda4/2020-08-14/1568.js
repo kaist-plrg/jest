@@ -1,1 +1,0 @@
-var x = String . prototype . substring . call ( new String ( { [ Symbol . toPrimitive ] : true } ) , { [ Symbol . toPrimitive ] : true } , 0 ) ;

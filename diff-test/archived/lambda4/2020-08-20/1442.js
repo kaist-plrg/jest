@@ -1,1 +1,0 @@
-var x = Array . prototype . map . call ( Symbol . isConcatSpreadable , class x { x ( ) { } } ) ;

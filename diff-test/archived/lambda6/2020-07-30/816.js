@@ -1,1 +1,0 @@
-var x = ( BigInt ( 'x' ) ) instanceof class x extends x `${ '' }${ x }${ '' , '' }` {  } ;

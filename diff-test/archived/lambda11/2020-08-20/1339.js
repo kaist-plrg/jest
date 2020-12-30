@@ -1,1 +1,0 @@
-var x = Promise . all ( 0 ) ; var x = class extends x ?. x [ '' ] { ; } in ( - 1 ) ;

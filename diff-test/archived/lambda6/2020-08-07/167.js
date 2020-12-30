@@ -1,1 +1,0 @@
-var x = Array . prototype . slice . call ( x <= x , { async * x ( ... [ , x ] ) { } } , ( - Infinity ) ) ;

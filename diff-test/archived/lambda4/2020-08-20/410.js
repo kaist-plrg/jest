@@ -1,1 +1,0 @@
-var x = Symbol . keyFor ( 0 ) ;

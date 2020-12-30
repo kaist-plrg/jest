@@ -1,1 +1,0 @@
-class x { x ( ) { } } switch ( -- x ) { case ( - 0 ) : default : ; case x : }

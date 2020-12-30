@@ -1,1 +1,0 @@
-var x = { [ - FREE ] : new x ( x , ) } >> x ;

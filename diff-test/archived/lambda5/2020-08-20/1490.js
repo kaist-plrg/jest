@@ -1,1 +1,0 @@
-var x = { [ "prototype" ] : '' } . prototype . slice . call ( new Array ( ) , { [ "prototype" ] : '' } , - 1 ) ;

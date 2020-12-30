@@ -1,1 +1,0 @@
-var x = WeakMap . prototype . delete . call ( ( x => { } ) , { async x ( ) { } } ) ;

@@ -1,1 +1,0 @@
-var x = String . prototype . split . call ( Symbol . toStringTag , { async x ( ... [ , x ] ) { } } , [ 42 , 'str' , true ] ) ;

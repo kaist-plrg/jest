@@ -1,1 +1,0 @@
-String . prototype . lastIndexOf . call ( [  42 ,  'str' ,  true ] , { p : 42 } , Symbol . toStringTag , '' ) ;

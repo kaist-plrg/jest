@@ -1,1 +1,0 @@
-var x = x `` ; function x ( ... { x = class extends x { } } ) { ; var x = - class extends x ( ) . x { ; } ; }

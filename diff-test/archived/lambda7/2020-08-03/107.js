@@ -1,1 +1,0 @@
-for ( { get x ( ) { } } . x in { x : '' } ) for ( [ x , , ... x ] in '' ) ;

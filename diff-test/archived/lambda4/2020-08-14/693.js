@@ -1,1 +1,0 @@
-var x = - Infinity ; var [ , ... x ] = x === x ;

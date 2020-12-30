@@ -1,8 +1,0 @@
-[32mLogicalANDExpression1HasCallInTailPosition0[0m
-[32m- Inst: 5 / 5 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 2412  [-]   : { ... }[0m
-[32m+ 2413  [-]   : access __x0__ = (BitwiseORExpression "HasCallInTailPosition")[0m
-[32m+ 2414  [-]   : app __x1__ = (__x0__ call)[0m
-[32m+ 2415  [-]   : app __x2__ = (WrapCompletion __x1__)[0m
-[32m+ 2416  [-]   : return __x2__[0m

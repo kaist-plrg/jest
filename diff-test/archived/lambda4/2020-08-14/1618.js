@@ -1,1 +1,0 @@
-var x = Array . prototype . splice . call ( { [ "length" ] : ( ) => { throw '' ; } } , { [ "length" ] : ( ) => { throw '' ; } } . species , { [ "length" ] : ( ) => { throw '' ; } } == true ) ;

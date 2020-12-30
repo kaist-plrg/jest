@@ -1,1 +1,0 @@
-var x = { [ "valueOf" ] : function * ( ) { } , [ "toString" ] : null } <= { x ( ) { } } ;

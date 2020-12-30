@@ -1,1 +1,0 @@
-var x = { * x ( ... [   ] ) {  } } <= { [ "next" ] : function  ( x  ) {  } , [ "throw" ] : function  ( x0  , x1  ) {  } } ;

@@ -1,1 +1,0 @@
-async function x ( ... [ x ] ) { } '0' `${ class x extends x [ '' ] { ; } }${ '' , Symbol . species }` ;

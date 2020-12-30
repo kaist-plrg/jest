@@ -1,1 +1,0 @@
-var x = x ? '' : '' ; switch ( '' ) { default : ; new x ( ) ; case x : ; var x = class x extends x { x ( ) { } } ; }

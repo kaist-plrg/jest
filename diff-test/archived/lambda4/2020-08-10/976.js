@@ -1,1 +1,0 @@
-var x = new Object ( { [ Symbol . toPrimitive ] : ( ) => { throw '' ; } } ) ; var x = x in { [ Symbol . toPrimitive ] : ( ) => { throw '' ; } } ;

@@ -1,6 +1,0 @@
-[32mScriptBody0VarDeclaredNames0[0m
-[32m- Inst: 3 / 3 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 1924  [-]   : { ... }[0m
-[32m+ 1925  [-]   : access __x0__ = (StatementList "TopLevelVarDeclaredNames")[0m
-[32m+ 1926  [-]   : return __x0__[0m

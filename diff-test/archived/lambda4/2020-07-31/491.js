@@ -1,1 +1,0 @@
-Object . getOwnPropertyDescriptors ( x => {  } , Symbol . hasInstance ) ;

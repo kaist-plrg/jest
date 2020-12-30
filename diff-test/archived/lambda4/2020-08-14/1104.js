@@ -1,1 +1,0 @@
-try { ; function * x ( ... { x : x } ) { } } finally { ; x ( 42 ) ; }

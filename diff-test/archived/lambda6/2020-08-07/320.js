@@ -1,1 +1,0 @@
-for ( x of '' ) ; 1 !== ( - Infinity ) ;

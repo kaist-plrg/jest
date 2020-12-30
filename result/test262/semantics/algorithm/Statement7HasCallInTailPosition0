@@ -1,6 +1,0 @@
-[32mStatement7HasCallInTailPosition0[0m
-[32m- Inst: 3 / 3 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 3205  [-]   : { ... }[0m
-[32m+ 3206  [-]   : app __x0__ = (WrapCompletion false)[0m
-[32m+ 3207  [-]   : return __x0__[0m

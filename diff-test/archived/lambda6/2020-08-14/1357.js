@@ -1,1 +1,0 @@
-var x = String . prototype . split . call ( x => { } , undefined , class x { ; ; } ) ;

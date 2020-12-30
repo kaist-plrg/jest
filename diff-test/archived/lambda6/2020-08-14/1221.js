@@ -1,1 +1,0 @@
-var x = ( x => { ; x ( ) ; var x = 42 ; } ) ( ( Symbol . hasInstance ) ) ;

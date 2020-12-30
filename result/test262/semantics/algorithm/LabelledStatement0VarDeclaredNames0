@@ -1,6 +1,0 @@
-[32mLabelledStatement0VarDeclaredNames0[0m
-[32m- Inst: 3 / 3 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 22626 [-]   : { ... }[0m
-[32m+ 22627 [-]   : access __x0__ = (LabelledItem "VarDeclaredNames")[0m
-[32m+ 22628 [-]   : return __x0__[0m

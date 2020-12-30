@@ -1,1 +1,0 @@
-var x = { [ { [ Symbol . species ] : function ( x ) { } , [ { [ "next" ] : function ( x ) { } } ] : true } ] : Symbol . matchAll , [ Symbol . toPrimitive ] : async function * x ( ) { } } + ( - { } ) ;

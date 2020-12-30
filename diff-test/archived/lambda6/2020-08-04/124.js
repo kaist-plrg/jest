@@ -1,1 +1,0 @@
-var x = async function x ( ) { for await ( var x of '' ) ; for await ( x of Symbol . toStringTag ) ; } ; x ( 0 ) ;

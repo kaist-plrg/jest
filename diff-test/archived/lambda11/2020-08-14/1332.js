@@ -1,1 +1,0 @@
-function * x ( ... await ) { } var { x , } = class extends x ( ) [ '' , '' ] { ; } ;

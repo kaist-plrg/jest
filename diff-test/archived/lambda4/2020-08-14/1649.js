@@ -1,1 +1,0 @@
-var [ x ] = { [ { [ Symbol . asyncIterator ] : null , [ Symbol . iterator ] : async function ( x ) { } } . asyncIterator ] : { [ Symbol . asyncIterator ] : null , [ Symbol . iterator ] : async function ( x ) { } } , [ Symbol . iterator ] : async function * ( ) { ; return yield * { [ Symbol . asyncIterator ] : null , [ Symbol . iterator ] : async function ( x ) { } } ; } } ;

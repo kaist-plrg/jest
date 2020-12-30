@@ -1,1 +1,0 @@
-Object . defineProperty ( { [ { async * x ( ... { x } ) { } } ] : 0 } , ( - 0 ) . hasInstance , { [ "get" ] : { [ "get" ] : function ( x ) { } , [ "set" ] : function ( x0 , x1 ) { } , [ "enumerable" ] : true } , [ "set" ] : x => x , [ [ ... '' ] ] : { [ "writable" ] : false , [ "enumerable" ] : true , [ "configurable" ] : true } } ) ;

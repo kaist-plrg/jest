@@ -1,1 +1,0 @@
-var x = String . prototype . padEnd . call ( { x ( ... [ x , ] ) { ; } } , Infinity , ( Symbol . isConcatSpreadable ) ) ;

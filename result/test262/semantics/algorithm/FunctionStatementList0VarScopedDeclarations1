@@ -1,6 +1,0 @@
-[32mFunctionStatementList0VarScopedDeclarations1[0m
-[32m- Inst: 3 / 3 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 345   [-]   : { ... }[0m
-[32m+ 346   [-]   : access __x0__ = (StatementList "TopLevelVarScopedDeclarations")[0m
-[32m+ 347   [-]   : return __x0__[0m

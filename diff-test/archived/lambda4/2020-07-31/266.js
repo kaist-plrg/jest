@@ -1,1 +1,0 @@
-Array . prototype . unshift . call ( '0' , { [ "value" ] : 0 , [ "writable" ] : false , [ "enumerable" ] : true , [ "configurable" ] : true } ) ;

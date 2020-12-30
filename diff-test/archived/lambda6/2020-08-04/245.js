@@ -1,1 +1,0 @@
-for ( let x in false , class extends x { x ( ) { } } ) ;

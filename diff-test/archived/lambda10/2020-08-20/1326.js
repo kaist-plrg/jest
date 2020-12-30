@@ -1,1 +1,0 @@
-for ( ( Symbol . match ) in ( Symbol . toPrimitive ) ) switch ( '' ) { case '' : }

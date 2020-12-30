@@ -1,1 +1,0 @@
-var x = Promise . resolve ( [ 42 , 'str' , true ] ) ;

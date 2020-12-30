@@ -1,1 +1,0 @@
-for ( var x  , x  ; class x  { static x (  ) {  } } ;  ) for ( var { } = x ; '' ; '' ) ;

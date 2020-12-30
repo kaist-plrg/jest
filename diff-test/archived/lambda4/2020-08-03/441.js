@@ -1,1 +1,0 @@
-Object . defineProperty ( { [ Symbol . unscopables ] : { async * x ( ... [ x ] ) { } } , [ class { ; ; } ] : 42n } , Symbol . asyncIterator , { [ "set" ] : function ( x0 , x1 ) { } } ) ;

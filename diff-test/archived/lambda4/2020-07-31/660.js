@@ -1,1 +1,0 @@
-var x = Symbol . matchAll ; switch ( x /= '' ) { case x :  default :  case x % x :  }

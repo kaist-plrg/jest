@@ -1,1 +1,0 @@
-for ( [ ] in { p : 42 } ) continue ;

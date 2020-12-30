@@ -1,1 +1,0 @@
-let x ; switch ( Infinity ) { default : case x >> ( - 0 ) : }

@@ -1,6 +1,0 @@
-[31mBindingElisionElement0ContainsExpression1[0m
-[31m- Inst: 0 / 3 (0.00%)[0m
-[31m- Cond: -[0m
-[31m- 6724  [-]   : { ... }[0m
-[31m- 6725  [-]   : access __x0__ = (BindingElement "ContainsExpression")[0m
-[31m- 6726  [-]   : return __x0__[0m

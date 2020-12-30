@@ -1,1 +1,0 @@
-var x = { [ "valueOf" ] : ( ) => { throw '' ; } , [ "toString" ] : true } != 0n ;

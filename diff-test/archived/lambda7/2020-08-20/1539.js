@@ -1,1 +1,0 @@
-var x = { [ Symbol . asyncIterator ] : null , [ Symbol . iterator ] : function * ( ) { } } ; var [ ] = typeof x ;

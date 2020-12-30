@@ -1,1 +1,0 @@
-function x ( ) { } new x ( ) ;

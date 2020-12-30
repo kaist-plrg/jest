@@ -1,1 +1,0 @@
-var x = Array . prototype . splice . call ( async x => x , [ 42 , x ?. x [ '' , '' ] , { * x ( ... await ) { } } ] , 0 , 'str' ) ;

@@ -1,1 +1,0 @@
-try { ; async function * x ( ... [ ] ) { } } catch { ; var x = x ( ) . x ; }

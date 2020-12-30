@@ -1,1 +1,0 @@
-var x = { [ Symbol . match ] : async * function ( x ) { } } . prototype . endsWith . call ( new { [ Symbol . match ] : async * function ( x ) { } } ( { [ Symbol . match ] : async * function ( x ) { } } ) , { [ Symbol . match ] : async * function ( x ) { } } ) ;

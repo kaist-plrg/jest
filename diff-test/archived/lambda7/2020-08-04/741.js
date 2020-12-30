@@ -1,1 +1,0 @@
-for ( var x , x ; NaN ; ( - 1n ) ) for ( var { } = x ; ; '' ) ;

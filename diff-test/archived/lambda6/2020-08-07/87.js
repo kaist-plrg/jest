@@ -1,1 +1,0 @@
-while ( class extends x . x { ; } ) if ( '' ) ;

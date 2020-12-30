@@ -1,1 +1,0 @@
-var x = Array . prototype . includes . call ( [ 42 , { p : 42 } , NaN ] , - class x { ; ; } ) ;

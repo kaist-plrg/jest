@@ -1,1 +1,0 @@
-for ( [ ] in { [ "set" ] : function ( x ) { } } ) ;

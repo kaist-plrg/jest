@@ -1,1 +1,0 @@
-var x = EvalError ( 0 ) ; var x = x / x ;

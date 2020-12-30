@@ -1,1 +1,0 @@
-var x = true ; if ( '' ) ; else ; x **= Symbol . iterator ;

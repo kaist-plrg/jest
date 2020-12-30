@@ -1,8 +1,0 @@
-[31mCoverCallExpressionAndAsyncArrowHead0IsSimpleParameterList0[0m
-[31m- Inst: 0 / 5 (0.00%)[0m
-[31m- Cond: -[0m
-[31m- 953   [-]   : { ... }[0m
-[31m- 954   [-]   : access __x0__ = (this "CoveredAsyncArrowHead")[0m
-[31m- 955   [-]   : let head = __x0__[0m
-[31m- 956   [-]   : access __x1__ = (head "IsSimpleParameterList")[0m
-[31m- 957   [-]   : return __x1__[0m

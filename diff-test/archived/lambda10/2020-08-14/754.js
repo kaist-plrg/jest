@@ -1,1 +1,0 @@
-try { ; x ( ) ; } catch { ; throw 42 ; } finally { }

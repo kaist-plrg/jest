@@ -1,1 +1,0 @@
-var x = 'str' [ NaN ] ;

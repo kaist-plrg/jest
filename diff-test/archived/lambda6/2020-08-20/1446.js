@@ -1,1 +1,0 @@
-var x = Array . prototype . splice . call ( class { static x ( ) { } } , Symbol . species , - 1n , 0 ) ;

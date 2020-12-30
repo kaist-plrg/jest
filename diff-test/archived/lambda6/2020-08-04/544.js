@@ -1,1 +1,0 @@
-var x = { [ "value" ] : undefined , [ "enumerable" ] : true , [ "configurable" ] : true } << ( Symbol . unscopables ) ;

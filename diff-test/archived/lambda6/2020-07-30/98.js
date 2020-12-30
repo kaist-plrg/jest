@@ -1,1 +1,0 @@
-Object . prototype . hasOwnProperty . call ( '0' , 0 , Infinity ) ;

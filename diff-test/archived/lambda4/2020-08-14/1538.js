@@ -1,1 +1,0 @@
-function x ( ) { switch ( '' ) { case x : case x : } var x = class extends `${ '' , '' }${ '' }` `${ '' }` { ; ; } ; { } } new x ( ) ;

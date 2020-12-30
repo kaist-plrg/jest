@@ -1,1 +1,0 @@
-var x = Promise . race ( { [ Symbol . asyncIterator ] : async function ( ) { } , [ Symbol . iterator ] : async function ( ) { ; for await ( let x of [ 42 , 'str' , true ] ) for await ( ( Number ( 42 ) ) of [ , ] ) for ( class extends x ( ) [ '' ] { } ( ) [ function ( ) { } ] in Symbol . toPrimitive ) ; } } ) ;

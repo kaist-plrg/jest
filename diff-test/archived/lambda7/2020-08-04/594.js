@@ -1,1 +1,0 @@
-Object . prototype . propertyIsEnumerable . call ( `${ '' }${ '' , '' }` , 0 ) ;

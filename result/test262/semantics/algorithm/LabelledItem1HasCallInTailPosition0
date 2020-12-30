@@ -1,6 +1,0 @@
-[31mLabelledItem1HasCallInTailPosition0[0m
-[31m- Inst: 0 / 3 (0.00%)[0m
-[31m- Cond: -[0m
-[31m- 22563 [-]   : { ... }[0m
-[31m- 22564 [-]   : app __x0__ = (WrapCompletion false)[0m
-[31m- 22565 [-]   : return __x0__[0m

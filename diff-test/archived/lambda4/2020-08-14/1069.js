@@ -1,1 +1,0 @@
-switch ( '' ) { case '' : for ( let x = 1 ; { p : 42 } ; FREE ) ; }

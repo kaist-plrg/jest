@@ -1,1 +1,0 @@
-for ( var x , x ; '' ; { async * x ( ... [ ... x ] ) { } } ) var x , x ;

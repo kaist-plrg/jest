@@ -1,1 +1,0 @@
-var x = String . prototype . matchAll . call ( ( Symbol . match ) , { [ Symbol . match ] : async function ( x ) { } } . hasInstance ) ;

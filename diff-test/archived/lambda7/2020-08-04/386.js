@@ -1,1 +1,0 @@
-Array . prototype . includes . call ( async x => x , [ 42 , 'str' , true ] ) ;

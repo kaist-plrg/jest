@@ -1,1 +1,0 @@
-var x = String . prototype . indexOf . call ( Symbol . replace , x !== x ) ;

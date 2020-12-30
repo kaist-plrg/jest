@@ -1,1 +1,0 @@
-var x = 0 ; function * x ( ... { ... x } ) { } var x = ( - Infinity ) >= x ;

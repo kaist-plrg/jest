@@ -1,1 +1,0 @@
-async function * x ( ) { return ; } ; NaN instanceof class extends x ?. [ '' , '' ] { ; } ;

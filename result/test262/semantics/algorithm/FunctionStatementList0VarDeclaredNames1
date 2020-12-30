@@ -1,6 +1,0 @@
-[32mFunctionStatementList0VarDeclaredNames1[0m
-[32m- Inst: 3 / 3 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 341   [-]   : { ... }[0m
-[32m+ 342   [-]   : access __x0__ = (StatementList "TopLevelVarDeclaredNames")[0m
-[32m+ 343   [-]   : return __x0__[0m

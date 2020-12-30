@@ -1,1 +1,0 @@
-String . prototype . charAt . call ( null , true ) ;

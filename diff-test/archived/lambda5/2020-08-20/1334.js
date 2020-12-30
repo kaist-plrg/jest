@@ -1,1 +1,0 @@
-var x = String . prototype . codePointAt . call ( { p : 42 } , Symbol . species ) ;

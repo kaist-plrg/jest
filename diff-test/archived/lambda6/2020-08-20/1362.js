@@ -1,1 +1,0 @@
-var x = String . prototype . split . call ( new String ( [ ] ) , null , async x => x ) ;

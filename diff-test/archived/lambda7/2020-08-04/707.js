@@ -1,1 +1,0 @@
-Object . fromEntries ( { [ Symbol . asyncIterator ] : async function ( x ) { } , [ Symbol . iterator ] : function ( ) { } } ) ;

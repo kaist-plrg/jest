@@ -1,1 +1,0 @@
-function x ( [ x ] = x => '' ) { } try { } catch ( { } ) { } ( Symbol . replace ) ( class extends x ( ) { ; } ) ;

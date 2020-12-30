@@ -1,1 +1,0 @@
-for ( { } in { * x ( ... await ) { } } ) for ( x of '' ) ;

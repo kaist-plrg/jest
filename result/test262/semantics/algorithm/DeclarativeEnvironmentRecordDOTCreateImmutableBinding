@@ -1,9 +1,0 @@
-[32mDeclarativeEnvironmentRecordDOTCreateImmutableBinding[0m
-[32m- Inst: 6 / 6 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 9110  [-]   : { ... }[0m
-[32m+ 9111  [-]   : let envRec = this[0m
-[32m+ 9112  [-]   : envRec["SubMap"][N] = (new ImmutableBinding("initialized" -> false, "strict" -> S))[0m
-[32m+ 9113  [-]   : app __x0__ = (NormalCompletion CONST_empty)[0m
-[32m+ 9114  [-]   : app __x1__ = (WrapCompletion __x0__)[0m
-[32m+ 9115  [-]   : return __x1__[0m

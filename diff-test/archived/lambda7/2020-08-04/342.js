@@ -1,1 +1,0 @@
-for ( let x of new x ( x , '' ) ) ;

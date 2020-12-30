@@ -1,6 +1,0 @@
-[32mGlobalEnvironmentRecordDOTWithBaseObject[0m
-[32m- Inst: 3 / 3 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 20763 [-]   : { ... }[0m
-[32m+ 20764 [-]   : app __x0__ = (WrapCompletion undefined)[0m
-[32m+ 20765 [-]   : return __x0__[0m

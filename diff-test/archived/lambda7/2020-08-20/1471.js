@@ -1,1 +1,0 @@
-var x = ( x => { for ( let x ; Number ( Symbol . iterator ) , '' ; ) ; return x [ '' , '' ] ; } ) `` ;

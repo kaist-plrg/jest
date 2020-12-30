@@ -1,1 +1,0 @@
-class x extends null { } for ( x ?. x [ '' ] in '' ) ; new class extends x { ; } ;

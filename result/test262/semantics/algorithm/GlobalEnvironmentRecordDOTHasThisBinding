@@ -1,6 +1,0 @@
-[32mGlobalEnvironmentRecordDOTHasThisBinding[0m
-[32m- Inst: 3 / 3 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 20712 [-]   : { ... }[0m
-[32m+ 20713 [-]   : app __x0__ = (WrapCompletion true)[0m
-[32m+ 20714 [-]   : return __x0__[0m

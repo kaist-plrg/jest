@@ -1,1 +1,0 @@
-var x = x !== x ; var x = class x extends x ( ) [ '' ] { } ?. x . x ;

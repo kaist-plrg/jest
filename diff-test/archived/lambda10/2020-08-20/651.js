@@ -1,1 +1,0 @@
-for ( x in '0' ) switch ( '' ) { case '' : ; }

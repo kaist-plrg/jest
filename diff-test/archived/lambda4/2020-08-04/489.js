@@ -1,1 +1,0 @@
-String . prototype . trim . call ( NaN . matchAll ) ;

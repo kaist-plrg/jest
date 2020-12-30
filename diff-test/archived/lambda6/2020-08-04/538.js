@@ -1,1 +1,0 @@
-String . prototype . slice . call ( { [ "value" ] : undefined , [ "writable" ] : true , [ "enumerable" ] : false , [ "configurable" ] : true } . match , { [ "set" ] : function ( x ) { } , [ "enumerable" ] : true } , { p : 42 } ) ;

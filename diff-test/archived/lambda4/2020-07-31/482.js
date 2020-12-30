@@ -1,1 +1,0 @@
-for ( ( ( - 1n ) . species ) in { [ "next" ] : function  ( x0  , x1  ) {  } , [ "return" ] : function  (  ) {  } } ) for ( var x  ;  ;  ) ;

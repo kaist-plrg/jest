@@ -1,1 +1,0 @@
-var x = x ( ) ( ) ; { p : for ( ; '' , '' ; ) ; } ; for ( [ , ] in '' ) ; function x ( ... [ x , ] ) { for ( var x ; ~ x , class extends x `${ '' }` { } ; ) for ( '' ; ; '' ) ; switch ( '' ) { default : case x : } for ( [ x , , ] in '' ) ; return new x ; }

@@ -1,1 +1,0 @@
-new x ; function x ( ... x ) { ; return ; }

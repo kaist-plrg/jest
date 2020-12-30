@@ -1,1 +1,0 @@
-Array . prototype . lastIndexOf . call ( 'str' , NaN , - 1 , `${ '' , '' }` ) ;

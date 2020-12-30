@@ -1,1 +1,0 @@
-var x = 42n == '' ; async function * x ( ... { [ class extends x ( ) . x { } ] : { } = x } ) { }

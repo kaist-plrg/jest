@@ -1,1 +1,0 @@
-Array . prototype . reduceRight . call ( Symbol . split , Symbol . unscopables , { [ "value" ] : undefined , [ "writable" ] : false , [ "configurable" ] : true } ) ;

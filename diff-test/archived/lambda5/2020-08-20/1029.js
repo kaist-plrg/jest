@@ -1,1 +1,0 @@
-var x = Object . create ( { * x ( x , ) { } } , x ?. x ?. x ) ;

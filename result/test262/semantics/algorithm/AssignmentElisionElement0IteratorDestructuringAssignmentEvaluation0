@@ -1,8 +1,0 @@
-[32mAssignmentElisionElement0IteratorDestructuringAssignmentEvaluation0[0m
-[32m- Inst: 5 / 5 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 5226  [-]   : { ... }[0m
-[32m+ 5227  [-]   : access __x0__ = (AssignmentElement "IteratorDestructuringAssignmentEvaluation")[0m
-[32m+ 5228  [-]   : app __x1__ = (__x0__ iteratorRecord)[0m
-[32m+ 5229  [-]   : app __x2__ = (WrapCompletion __x1__)[0m
-[32m+ 5230  [-]   : return __x2__[0m

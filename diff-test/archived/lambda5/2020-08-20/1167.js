@@ -1,1 +1,0 @@
-var x = eval ( x + class x { ; ; } ) ; function x ( ... { x , } ) { }

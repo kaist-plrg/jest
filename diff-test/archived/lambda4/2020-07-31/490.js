@@ -1,1 +1,0 @@
-var x = ( { [ "value" ] : 0 , [ "writable" ] : false , [ "enumerable" ] : false , [ "configurable" ] : false } . species ) ? { 42 : '' } : 42n ; var x = x != { [ "value" ] : 'str' , [ "done" ] : true } ;

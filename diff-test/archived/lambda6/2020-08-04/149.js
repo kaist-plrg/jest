@@ -1,1 +1,0 @@
-Object . isExtensible ( { [ "value" ] : null , [ "writable" ] : false , [ "enumerable" ] : false , [ "configurable" ] : false } ) ;

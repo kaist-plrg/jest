@@ -1,1 +1,0 @@
-var x = Array . prototype . indexOf . call ( [ null , ( ) => { } , x || x ] , x ?. x . x ) ;

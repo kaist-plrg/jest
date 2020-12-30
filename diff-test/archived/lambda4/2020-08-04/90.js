@@ -1,1 +1,0 @@
-var x = x `` ; function * x ( ... { } ) { ; yield * [ 42 , 'str' , true ] ; class x extends async function * x ( ) { } { } } var [ , , ... { } ] = x ; var [ x , ... x ] = x ;

@@ -1,1 +1,0 @@
-for ( var { } in '' , { [ "value" ] : null , [ "writable" ] : true } ) switch ( '' ) {  default : ; case x :  }

@@ -1,1 +1,0 @@
-String . prototype . split . call ( [ ] , ( class { ; ; } . asyncIterator ) , [ 42 , ( Symbol . iterator ) , true ] ) ;

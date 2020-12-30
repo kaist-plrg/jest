@@ -1,1 +1,0 @@
-var x = x `` ; function x ( ... { x = ( - 1n ) } ) { ; try { } catch { } finally { } for ( ; ; class x extends x ( ) [ '' ] { } , Symbol . iterator ) for ( [ ] in '' ) ; }

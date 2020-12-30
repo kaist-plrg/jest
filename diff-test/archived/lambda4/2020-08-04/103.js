@@ -1,1 +1,0 @@
-Function . prototype . apply . call ( x => x ( ) ?. x , ( - 1 ) , class { ; ; } ) ;

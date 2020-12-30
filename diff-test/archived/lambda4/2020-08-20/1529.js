@@ -1,1 +1,0 @@
-var x = { [ "prototype" ] : async function ( ) { } } . prototype . toString . call ( new class x { ; ; } ( ) ) ;

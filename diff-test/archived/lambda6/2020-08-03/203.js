@@ -1,1 +1,0 @@
-for ( NaN of { [ Symbol . iterator ] : ( async function * ( ) { ; await x ( ) ; var x = `${ '' }${ '' }` ; async function x ( ... { x } ) { ; throw 0 ; } } ) } ) ;

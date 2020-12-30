@@ -1,1 +1,0 @@
-function x ( ... { [ '' ] : x } ) { ; return { [ "done" ] : async function ( x ) { } } ; } new x ( ) ;

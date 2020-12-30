@@ -1,8 +1,0 @@
-[32mArrayBindingPattern0IteratorBindingInitialization2[0m
-[32m- Inst: 5 / 5 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 4683  [-]   : { ... }[0m
-[32m+ 4684  [-]   : access __x0__ = (Elision "IteratorDestructuringAssignmentEvaluation")[0m
-[32m+ 4685  [-]   : app __x1__ = (__x0__ iteratorRecord)[0m
-[32m+ 4686  [-]   : app __x2__ = (WrapCompletion __x1__)[0m
-[32m+ 4687  [-]   : return __x2__[0m

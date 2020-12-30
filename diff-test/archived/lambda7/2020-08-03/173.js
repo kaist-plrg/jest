@@ -1,1 +1,0 @@
-Array . prototype . flatMap . call ( ( Symbol . species ) . unscopables , x => { } , 0 ) ;

@@ -1,1 +1,0 @@
-async function * x ( ) { return ; } ; for ( ; '' , '' ; '' , '' ) ; var x = async x => BigInt ( 'x' ) ; x ( ) ;

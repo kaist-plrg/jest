@@ -1,1 +1,0 @@
-Object . defineProperties ( { async x ( ... [ ... x ] ) { ; } } , { [ "get" ] : function ( x0 , x1 ) { } , [ "set" ] : function ( x ) { } , [ "enumerable" ] : false } ) ;

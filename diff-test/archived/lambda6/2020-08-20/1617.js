@@ -1,1 +1,0 @@
-var x = Promise . all ( { [ Symbol . asyncIterator ] : function ( ) { ; async function * x ( ... { x = '' } ) { } new x ( ) ; } , [ Symbol . iterator ] : function ( x ) { ; x ( 42 ) ; return 42 ; for ( var x of '' ) ; } } ) ;

@@ -1,1 +1,0 @@
-String . prototype . padStart . call ( Symbol . matchAll ) ;

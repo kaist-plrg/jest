@@ -1,1 +1,0 @@
-var x = new WeakSet ( [ { [ "return" ] : false } , { [ "return" ] : false } , { [ "return" ] : false } ] ) ;

@@ -1,1 +1,0 @@
-var x = { async * x ( ) { } } ? class x extends x `${ '' , '' }${ x }${ '' }` { } . asyncIterator : ( BigInt ( 0.1 ) ) ;

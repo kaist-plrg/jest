@@ -1,1 +1,0 @@
-var x = Function . prototype . apply . call ( ( ( ) => { } ) , Symbol . replace , x ?. x [ '' ] ) ;

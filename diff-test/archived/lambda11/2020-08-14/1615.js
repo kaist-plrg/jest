@@ -1,1 +1,0 @@
-var x = x `` ; async function x ( ... [ ] ) { if ( { [ "value" ] : async function ( ) { } } ) ; else ; for await ( var x of { [ "value" ] : async function ( ) { } } ) ; }

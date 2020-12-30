@@ -1,1 +1,0 @@
-var x = async x => { ; var x = await x ; } ; x ( -- x ) ;

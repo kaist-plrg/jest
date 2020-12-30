@@ -1,1 +1,0 @@
-var x = 42n ; var x = x >> 0n ;

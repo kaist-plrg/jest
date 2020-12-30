@@ -1,1 +1,0 @@
-switch ( 1 ) { case - 0 : switch ( '' ) { case x : default : case x : } throw 42 ; default : }

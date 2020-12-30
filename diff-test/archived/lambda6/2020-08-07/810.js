@@ -1,1 +1,0 @@
-var x = String . prototype . endsWith . call ( 0 , 1 ) ;

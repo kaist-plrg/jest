@@ -1,1 +1,0 @@
-switch ( '' ) { case x : ; break ; case x : ; class x extends x `${ '' }${ '' }` { ; } }

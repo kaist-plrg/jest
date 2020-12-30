@@ -1,1 +1,0 @@
-var x = Array . prototype . flat . call ( Symbol . isConcatSpreadable , ( - 1n ) ) ;

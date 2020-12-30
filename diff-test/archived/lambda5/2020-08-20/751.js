@@ -1,1 +1,0 @@
-var x = Set . prototype . has . call ( null , 0 ) ;

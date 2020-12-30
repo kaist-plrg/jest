@@ -1,1 +1,0 @@
-class x extends ( '' ) { } { p : 42 ; } ;

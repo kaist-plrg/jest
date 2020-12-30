@@ -1,1 +1,0 @@
-for ( x ( ) [ 0 ] in x => { } ) while ( '' ) ; x ( ) ; function x ( ... [ x , ] ) { ; x ( ) [ '' ] ; return x >> x ; }

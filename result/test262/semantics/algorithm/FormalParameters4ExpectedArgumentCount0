@@ -1,6 +1,0 @@
-[32mFormalParameters4ExpectedArgumentCount0[0m
-[32m- Inst: 3 / 3 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 10531 [-]   : { ... }[0m
-[32m+ 10532 [-]   : access __x0__ = (FormalParameterList "ExpectedArgumentCount")[0m
-[32m+ 10533 [-]   : return __x0__[0m

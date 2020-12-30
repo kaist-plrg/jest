@@ -1,1 +1,0 @@
-String . prototype . indexOf . call ( 0n , - 0 , 0 ) ;

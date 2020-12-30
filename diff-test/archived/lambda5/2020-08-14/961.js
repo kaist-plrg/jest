@@ -1,1 +1,0 @@
-var x = Array . prototype . every . call ( 1 , async x => x ) ;

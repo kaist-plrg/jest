@@ -1,1 +1,0 @@
-var x = ( x => { ; ( Symbol . replace ) ( ) ; return ( - 1n ) ; } ) `` ;

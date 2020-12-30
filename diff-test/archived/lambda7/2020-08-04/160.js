@@ -1,1 +1,0 @@
-class x extends ( x => { try { } catch { } x ( { async * x ( ... { } ) { } } ) ; throw '' ; } ) ( ) ( ) { }

@@ -1,1 +1,0 @@
-for ( let x in [ ] ) for ( { x , } in '' ) ;

@@ -1,1 +1,0 @@
-class x extends ( x => { for ( let x in '' ) ; x ( 0 ) ; } ) ( ) ( ) { }

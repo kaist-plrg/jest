@@ -1,1 +1,0 @@
-var x = String . prototype . split . call ( new String ( 0 ) , { [ Symbol . toPrimitive ] : async function ( x ) { } } , 0 ) ;

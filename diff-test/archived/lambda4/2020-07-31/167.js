@@ -1,1 +1,0 @@
-Symbol . prototype [ Symbol . toPrimitive ] . call ( ( Symbol . split ) ) ;

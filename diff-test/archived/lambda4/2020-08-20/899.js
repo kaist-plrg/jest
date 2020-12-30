@@ -1,1 +1,0 @@
-var x = { x : 1 } ; ( { ... ( 'str' . species ) } = x ) ;

@@ -1,1 +1,0 @@
-var x = Array . prototype . splice . call ( undefined , - class x extends x `${ '' }${ '' }` { } , `${ ( Symbol . hasInstance ) }` ) ;

@@ -1,1 +1,0 @@
-switch ( '' ) { case x : ; throw 42 ; default : ; class x extends { } { } }

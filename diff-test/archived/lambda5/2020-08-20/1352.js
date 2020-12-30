@@ -1,1 +1,0 @@
-var x = [ Symbol . unscopables , ( x => { } ) , Infinity ] ; `${ '' }${ x }${ '' }` ;

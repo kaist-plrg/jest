@@ -1,1 +1,0 @@
-Object . isSealed ( { get x ( ) {  } } ) ;

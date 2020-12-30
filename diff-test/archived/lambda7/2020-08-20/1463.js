@@ -1,1 +1,0 @@
-var x = ( x => { ; for ( let x of '' ) ; try { } finally { } BigInt ( 0.1 ) ; return new x ; } ) `` ;

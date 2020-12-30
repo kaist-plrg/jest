@@ -1,1 +1,0 @@
-async function x ( ) { for ( var x in '' ) ; for await ( var x of class x extends x ?. x ?. x { } ) ; } var x = x ( ) . x ;

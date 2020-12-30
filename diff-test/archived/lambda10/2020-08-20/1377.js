@@ -1,1 +1,0 @@
-var x = x `` ; function * x ( ... [ x , ] ) { ; yield * '' ; } var [ x , , ... x ] = x ;

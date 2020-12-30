@@ -1,1 +1,0 @@
-switch ( x ( ) ?. x ) { case x ^ x : }

@@ -1,1 +1,0 @@
-42n . getOwnPropertyNames ( { '' : class x extends x ( ) ?. x { } } ) ;

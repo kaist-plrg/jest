@@ -1,1 +1,0 @@
-function x ( ) { } x ( ) [ ( Number ( Symbol . iterator ) ) ] ; var { x , ... x } = 'str' ;

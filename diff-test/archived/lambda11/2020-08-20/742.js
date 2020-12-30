@@ -1,1 +1,0 @@
-for ( ( Number ( Symbol . iterator ) ) in 'str' ) ;

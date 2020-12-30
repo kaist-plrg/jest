@@ -1,1 +1,0 @@
-var x = Object . create ( null , { [ "value" ] : false , [ "set" ] : 0 , [ "enumerable" ] : true , [ "get" ] : async function ( x ) { } , [ "writable" ] : false , [ "configurable" ] : false } ) ;

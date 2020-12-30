@@ -1,1 +1,0 @@
-var x = String . prototype . startsWith . call ( { async * x ( ... [ ] ) { } } . search , `${ Infinity }${ - Infinity }${ ( Number ( Symbol . iterator ) ) }` ) ;

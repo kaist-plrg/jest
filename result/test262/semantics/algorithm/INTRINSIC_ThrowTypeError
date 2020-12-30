@@ -1,6 +1,0 @@
-[32mINTRINSIC_ThrowTypeError[0m
-[32m- Inst: 3 / 3 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 21124 [-]   : { ... }[0m
-[32m+ 21125 [-]   : app __x0__ = (ThrowCompletion (new OrdinaryObject("Prototype" -> INTRINSIC_TypeErrorPrototype, "ErrorData" -> undefined, "SubMap" -> (new SubMap()))))[0m
-[32m+ 21126 [-]   : return __x0__[0m

@@ -1,1 +1,0 @@
-var x = ( x => { ; x ( ) ; for ( '' , '' ; '' , '' ; ) ; } ) ( ( Symbol . hasInstance ) ) ;

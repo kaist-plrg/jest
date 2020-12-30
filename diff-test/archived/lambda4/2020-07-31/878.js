@@ -1,1 +1,0 @@
-String . prototype . substring . call ( { [ "get" ] : function  (  ) {  } , [ "set" ] : function  ( x0  , x1  ) {  } , [ "enumerable" ] : true , [ "configurable" ] : false } , x != x , - 0 ) ;

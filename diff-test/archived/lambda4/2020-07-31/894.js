@@ -1,1 +1,0 @@
-async function * a (  ) { var [ , ,  ] = x ; } ; x ** x ;

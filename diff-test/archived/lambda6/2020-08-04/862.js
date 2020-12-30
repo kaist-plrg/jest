@@ -1,1 +1,0 @@
-( Symbol . split ) . prototype . flat . call ( class extends x { ; ; } ) ;

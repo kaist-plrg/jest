@@ -1,1 +1,0 @@
-var x = String . prototype . split . call ( Symbol . toStringTag , 0 , 0 ) ;

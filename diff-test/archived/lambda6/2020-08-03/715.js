@@ -1,1 +1,0 @@
-String . prototype . endsWith . call ( { [ "value" ] : 0 , [ "writable" ] : true , [ "enumerable" ] : true } , ( x => { } ) ) ;

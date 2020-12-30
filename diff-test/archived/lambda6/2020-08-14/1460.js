@@ -1,1 +1,0 @@
-var x = Object . defineProperty ( [ , '' ] , ( Symbol . species ) , { async x ( ... { x , } ) { } } ) ;

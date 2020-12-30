@@ -1,1 +1,0 @@
-for ( let x in { [ "value" ] : null , [ "writable" ] : false , [ "enumerable" ] : false } ) ;

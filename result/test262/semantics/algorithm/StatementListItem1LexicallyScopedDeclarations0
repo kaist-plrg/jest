@@ -1,6 +1,0 @@
-[32mStatementListItem1LexicallyScopedDeclarations0[0m
-[32m- Inst: 3 / 3 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 1755  [-]   : { ... }[0m
-[32m+ 1756  [-]   : access __x0__ = (Declaration "DeclarationPart")[0m
-[32m+ 1757  [-]   : return (new [__x0__])[0m

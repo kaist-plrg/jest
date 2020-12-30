@@ -1,1 +1,0 @@
-function x ( x0 , x1 ) { } ; [ '' ] ; function * x ( ... [ x , ] ) { ; } function x ( ... [ , x ] ) { ; return x ?. x ( ) ; } var x = new x ( x instanceof x , - 1n ) ;

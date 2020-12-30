@@ -1,1 +1,0 @@
-var x = Symbol . split ; NaN == 0n ;

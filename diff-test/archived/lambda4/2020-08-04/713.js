@@ -1,1 +1,0 @@
-switch ( '' ) { default : ; case - 1n : ; for ( x of '' ) ; }

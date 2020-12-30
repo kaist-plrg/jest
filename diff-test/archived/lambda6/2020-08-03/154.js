@@ -1,1 +1,0 @@
-var x = null ; var x = class extends x { x ( ) { } } ; var x = new x ;

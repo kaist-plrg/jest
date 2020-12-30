@@ -1,1 +1,0 @@
-Function . prototype . apply . call ( x => { ; var { x  } = x ; } , false , { async * x ( ... [  x  ] ) { ; await x ( ) ; } } ) ;

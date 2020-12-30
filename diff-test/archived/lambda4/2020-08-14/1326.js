@@ -1,1 +1,0 @@
-function x ( ) { ; var x = class extends x `${ '' }` { ; ; } ; return ; } new x ( ) ;

@@ -1,1 +1,0 @@
-var x = [ x != x , ( Symbol . isConcatSpreadable ) ] ; var { x , ... x } = x <= x ;

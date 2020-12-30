@@ -1,1 +1,0 @@
-var x = Array . prototype . copyWithin . call ( { [ "valueOf" ] : '' , [ "toString" ] : '' } , ( - Infinity ) , async x => '' , { [ "valueOf" ] : '' , [ "toString" ] : '' } ) ;

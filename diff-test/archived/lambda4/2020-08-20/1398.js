@@ -1,1 +1,0 @@
-try { ; for ( var x of '' ) ; } catch { } finally { ; class x extends `${ '' , '' }` { } }

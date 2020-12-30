@@ -1,1 +1,0 @@
-if ( Symbol . iterator ) for ( var x = '' ; '' ; ) ; else ;

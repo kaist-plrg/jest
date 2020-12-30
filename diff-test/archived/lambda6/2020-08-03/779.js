@@ -1,1 +1,0 @@
-var x = x `${ class extends x { ; ; } }${ Symbol . replace }${ Symbol . iterator , { async x ( ... { [ '' ] : { } = x } ) { } } }` ;

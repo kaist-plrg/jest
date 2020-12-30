@@ -1,1 +1,0 @@
-var x = '0' ? class extends x { } : NaN ;

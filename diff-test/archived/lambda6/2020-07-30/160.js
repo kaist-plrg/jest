@@ -1,1 +1,0 @@
-Array . prototype . some . call ( Symbol . split , x => {  } , - 1 ) ;

@@ -1,1 +1,0 @@
-var x = Array . prototype . copyWithin . call ( null , class extends x `${ '' , '' }` { } , { p : 42 } ) ;

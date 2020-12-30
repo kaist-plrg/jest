@@ -1,1 +1,0 @@
-switch ( '' ) { case x : ; let { } = x ; case x : ; ; }

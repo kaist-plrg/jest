@@ -1,1 +1,0 @@
-String . prototype . slice . call ( [ 42 , 'str' , true ] , x => { } , class { static x ( ) { } } ) ;

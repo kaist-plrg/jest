@@ -1,1 +1,0 @@
-this . isNaN ( ( Symbol . hasInstance ) ) ;

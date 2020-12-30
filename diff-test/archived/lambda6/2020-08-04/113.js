@@ -1,1 +1,0 @@
-Array . prototype . lastIndexOf . call ( [ , '' ] , class x { ; } , { } ) ;

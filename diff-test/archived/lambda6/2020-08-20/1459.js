@@ -1,1 +1,0 @@
-var x = String . prototype . substring . call ( 0 , ( Symbol . toPrimitive ) , ( Symbol . toStringTag ) ) ;

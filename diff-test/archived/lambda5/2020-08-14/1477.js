@@ -1,1 +1,0 @@
-var x = 1 . defineProperties ( [ 42 , 'str' , true ] , x ? [ , '' ] : class x extends x `${ '' }${ x }${ '' }` { x ( ) { } } ) ;

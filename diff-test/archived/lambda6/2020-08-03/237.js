@@ -1,1 +1,0 @@
-for ( { [ class extends x ?. x [ '' , '' ] { ; } ] : [ ] } in [ 42 , 'str' , true ] ) ;

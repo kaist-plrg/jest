@@ -1,1 +1,0 @@
-for ( ; { p : 42 } ; BigInt ( 'x' ) ) try { } finally { }

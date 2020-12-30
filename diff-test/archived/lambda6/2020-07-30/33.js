@@ -1,1 +1,0 @@
-[  x ,  ... [  ] ] = [  x ,  ] ; for ( var x in class   {  } , class x  { ; } ) for ( x ?. x [ '' ] in '' ) ;

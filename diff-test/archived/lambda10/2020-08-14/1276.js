@@ -1,1 +1,0 @@
-var x = Promise . resolve ( { async x ( ... { [ '' ] : { } = x } ) { } } ) ;

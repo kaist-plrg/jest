@@ -1,1 +1,0 @@
-Array . prototype . flatMap . call ( x => x , x => x , Symbol . split ) ;

@@ -1,1 +1,0 @@
-var x = { p : 42 } | { [ Symbol . toPrimitive ] : function ( x ) { var { x : x } = x ; x ( ) ; switch ( '' ) { } return ( - 0 ) ; } } ;

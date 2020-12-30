@@ -1,1 +1,0 @@
-for ( x ( ) . x in '' ) ; var { x = class extends x `${ '' }` { } } = - 0 ;

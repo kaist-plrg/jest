@@ -1,1 +1,0 @@
-Object . prototype . toLocaleString . call ( 42n ) ;

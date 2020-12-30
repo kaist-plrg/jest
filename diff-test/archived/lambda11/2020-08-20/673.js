@@ -1,1 +1,0 @@
-var x = new WeakSet ( [ 42 , 'str' , true ] ) ;

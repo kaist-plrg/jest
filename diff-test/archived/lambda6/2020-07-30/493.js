@@ -1,1 +1,0 @@
-String . prototype . split . call ( function *  (  ) {  } , Symbol . split ) ;

@@ -1,1 +1,0 @@
-Symbol . prototype . toString . call ( ( Symbol . hasInstance ) ) ;

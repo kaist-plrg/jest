@@ -1,1 +1,0 @@
-Array . prototype . splice . call ( undefined , 0 , 0 ) ;

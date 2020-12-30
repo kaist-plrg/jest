@@ -1,1 +1,0 @@
-Object . preventExtensions ( { [ false ] : [ ] , [ { async * x ( ... { x = '' } ) { } } ] : new x ( x , '' ) } ) ;

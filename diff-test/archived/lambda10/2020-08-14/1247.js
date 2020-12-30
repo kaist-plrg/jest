@@ -1,1 +1,0 @@
-while ( Symbol . isConcatSpreadable ) switch ( '' ) { default : case x : }

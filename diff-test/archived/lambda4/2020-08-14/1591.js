@@ -1,1 +1,0 @@
-var x = Array . prototype . flat . call ( `${ '' }${ x }${ { [ "constructor" ] : async * function ( ) { } , [ Symbol . species ] : function * ( x ) { } } }` ) ;

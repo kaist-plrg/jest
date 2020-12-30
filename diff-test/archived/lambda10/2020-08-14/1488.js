@@ -1,1 +1,0 @@
-var x = async function x ( ) { } ; var x = class x extends x `${ '' }${ x }${ '' }` { ; } instanceof FREE ;

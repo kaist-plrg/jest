@@ -1,1 +1,0 @@
-String . prototype . normalize . call ( Symbol . hasInstance , 0 ) ;

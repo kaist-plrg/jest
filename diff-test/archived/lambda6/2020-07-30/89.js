@@ -1,1 +1,0 @@
-Array . prototype . copyWithin . call ( Symbol . replace , 0 , 0 , Symbol . matchAll ) ;

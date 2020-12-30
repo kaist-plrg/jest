@@ -1,1 +1,0 @@
-var x = x ? FREE : class extends x ?. x ?. x { } ;

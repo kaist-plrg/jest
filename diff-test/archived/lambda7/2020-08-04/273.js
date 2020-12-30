@@ -1,1 +1,0 @@
-var x = x instanceof x ; function * x ( ... { ... x } ) { } var x = x >= ( Symbol . isConcatSpreadable ) ;

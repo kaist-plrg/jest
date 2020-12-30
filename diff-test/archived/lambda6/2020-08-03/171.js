@@ -1,1 +1,0 @@
-Function . prototype . apply . call ( async x => '' , Symbol . split , { x ( x ) { } } ) ;

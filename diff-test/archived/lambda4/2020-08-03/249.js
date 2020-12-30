@@ -1,1 +1,0 @@
-var x = [ Symbol . species , Symbol . unscopables ] ; var [ x , x ] = x in x ; var { x , ... x } = x ;

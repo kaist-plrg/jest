@@ -1,1 +1,0 @@
-var x = x ( ) ( ) ; x ( 42 ) ; x ( 42 ) ; async function x ( ... { x , } ) { ; function x ( ) { } await x ( ) ; throw 42 ; async function x ( ) { ; new x ( ) ; } }

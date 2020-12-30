@@ -1,1 +1,0 @@
-for ( { [ - Infinity ] : x . x } in { [ "next" ] : function ( x0 , x1 ) { } , [ "return" ] : function ( x ) { } , [ "throw" ] : function ( x ) { } } ) var x = { [ "value" ] : 'str' , [ "writable" ] : true , [ "configurable" ] : false } ;

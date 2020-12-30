@@ -1,1 +1,0 @@
-var x = Object . create ( [ , ] , { [ "length" ] : 0 } ) ;

@@ -1,1 +1,0 @@
-var x = Array . prototype . indexOf . call ( typeof x , { * x ( ... [ x ] ) { } } ) ;

@@ -1,1 +1,0 @@
-var x = [ { [ "value" ] : null } , { [ "value" ] : null } , 3 ] ; ( [ , ... x ] = { [ "value" ] : null } ) ;

@@ -1,1 +1,0 @@
-var x = 0n ; function * x ( ... { ... x } ) {  } var [   ] = x & x ;

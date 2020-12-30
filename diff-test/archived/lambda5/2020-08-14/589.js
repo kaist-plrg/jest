@@ -1,1 +1,0 @@
-var x = Object . setPrototypeOf ( x , 0 ) ;

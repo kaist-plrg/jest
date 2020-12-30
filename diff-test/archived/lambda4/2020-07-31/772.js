@@ -1,1 +1,0 @@
-switch ( class x  { ; } ) { case ( Number ( Symbol . iterator ) ) , '' :  }

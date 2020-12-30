@@ -1,1 +1,0 @@
-Object . isSealed ( 0 , 0 ) ;

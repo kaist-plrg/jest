@@ -1,1 +1,0 @@
-var x = String . prototype . split . call ( Symbol . hasInstance , false , ( Symbol . isConcatSpreadable ) ) ;

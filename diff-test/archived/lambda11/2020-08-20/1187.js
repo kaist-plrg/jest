@@ -1,1 +1,0 @@
-var x = String . prototype . slice . call ( x >= x , { p : 42 } , x ) ;

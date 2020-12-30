@@ -1,1 +1,0 @@
-switch ( { [ "throw" ] : function ( x ) { } } , { [ "get" ] : function ( x ) { } } ) { case { [ "enumerable" ] : true } : case { [ "return" ] : function ( x ) { } , [ "throw" ] : function ( x0 , x1 ) { } } : }

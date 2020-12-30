@@ -1,1 +1,0 @@
-var x = ( x => { ; switch ( '' ) { case x : default : ; x ( 42 ) ; case x : ; var x = { async * x ( x , ) { } } ; } x ( ) ; } ) ( ( Symbol . hasInstance ) ) ;

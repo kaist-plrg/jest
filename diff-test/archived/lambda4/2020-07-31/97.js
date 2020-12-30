@@ -1,1 +1,0 @@
-var x = { [ "then" ] : function  ( x  ) {  } } ? BigInt ( 'x' ) : [  42 ,  'str' ,  true ] ;

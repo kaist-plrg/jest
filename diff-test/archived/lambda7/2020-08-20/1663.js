@@ -1,1 +1,0 @@
-var x = ( x => { for ( let x ; '' , '' ; ) ; return class extends x ?. ( ) { ; } `${ Symbol . matchAll , Symbol . split }${ Symbol . match , ( x => { } ) }` ; } ) `` ;

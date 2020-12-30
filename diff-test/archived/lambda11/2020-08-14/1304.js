@@ -1,1 +1,0 @@
-var x = Array . prototype . copyWithin . call ( 'str' , x === x , x < ( - 1 ) ) ;

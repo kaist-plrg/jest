@@ -1,1 +1,0 @@
-var x = Object . prototype . propertyIsEnumerable . call ( [ 42 , 'str' , true ] , 0 ) ;

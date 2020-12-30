@@ -1,1 +1,0 @@
-var x = this ; var x = class extends x ?. x [ '' ] { } in x ;

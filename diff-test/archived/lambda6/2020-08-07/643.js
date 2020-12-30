@@ -1,1 +1,0 @@
-function x ( x0 , x1 ) { ; class x extends x `${ '' , '' }` { ; } } ; new x ( ) ;

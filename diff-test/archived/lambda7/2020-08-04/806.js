@@ -1,1 +1,0 @@
-Array . prototype . concat . call ( { [ Symbol . isConcatSpreadable ] : function * ( x ) { } } , 0 ) ;

@@ -1,1 +1,0 @@
-var x = Array . prototype . findIndex . call ( [ { [ "length" ] : '0' } , { [ "length" ] : '0' } , true ] , x => { ; for ( { x } in '' ) ; x ( 42 ) ; return { [ "length" ] : '0' } ; switch ( '' ) { default : case x : ; var x = x >>> x ; } } ) ;

@@ -1,1 +1,0 @@
-for ( x in { [ Symbol . toPrimitive ] : Symbol . iterator } ) ;

@@ -1,1 +1,0 @@
-var x = 42n ; switch ( '' ) { case x : default : ; case x : } function * x ( ... [ , ] ) { return '' ; for ( ; '' ; ) ; x >>> x ; } var [ ... x ] = x >> x ;

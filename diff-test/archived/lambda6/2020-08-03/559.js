@@ -1,1 +1,0 @@
-var x = class { x ( ) { } } ; var x = x instanceof class x extends x ?. x ( ) { ; } ;

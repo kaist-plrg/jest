@@ -1,1 +1,0 @@
-var x = [ 1 , 2 , { [ "done" ] : null } ] ; ( [ , x , ... x ] = { [ "done" ] : null } ) ;

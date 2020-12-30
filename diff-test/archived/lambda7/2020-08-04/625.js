@@ -1,1 +1,0 @@
-var x = async function ( ) { ; return { [ "prototype" ] : async * function ( x ) { } } ; } ( ) . x ;

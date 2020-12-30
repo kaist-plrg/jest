@@ -1,1 +1,0 @@
-var x = Symbol . species ; var [ , x ] = x + x ;

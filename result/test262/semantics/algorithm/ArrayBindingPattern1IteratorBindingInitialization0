@@ -1,8 +1,0 @@
-[32mArrayBindingPattern1IteratorBindingInitialization0[0m
-[32m- Inst: 5 / 5 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 4704  [-]   : { ... }[0m
-[32m+ 4705  [-]   : access __x0__ = (BindingElementList "IteratorBindingInitialization")[0m
-[32m+ 4706  [-]   : app __x1__ = (__x0__ iteratorRecord environment)[0m
-[32m+ 4707  [-]   : app __x2__ = (WrapCompletion __x1__)[0m
-[32m+ 4708  [-]   : return __x2__[0m

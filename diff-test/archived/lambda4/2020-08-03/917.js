@@ -1,1 +1,0 @@
-Infinity . getPrototypeOf ( 0 ) ;

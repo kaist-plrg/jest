@@ -1,1 +1,0 @@
-function x ( ... { x : x } ) { ; + ( Symbol . isConcatSpreadable ) ; } ; new x ( ) ;

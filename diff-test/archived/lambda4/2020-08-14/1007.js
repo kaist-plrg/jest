@@ -1,1 +1,0 @@
-if ( '' , '' ) ; ( { p : x = class extends x { ; ; } } = NaN ) ;

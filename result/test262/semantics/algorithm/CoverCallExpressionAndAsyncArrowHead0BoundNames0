@@ -1,8 +1,0 @@
-[31mCoverCallExpressionAndAsyncArrowHead0BoundNames0[0m
-[31m- Inst: 0 / 5 (0.00%)[0m
-[31m- Cond: -[0m
-[31m- 946   [-]   : { ... }[0m
-[31m- 947   [-]   : access __x0__ = (this "CoveredAsyncArrowHead")[0m
-[31m- 948   [-]   : let head = __x0__[0m
-[31m- 949   [-]   : access __x1__ = (head "BoundNames")[0m
-[31m- 950   [-]   : return __x1__[0m

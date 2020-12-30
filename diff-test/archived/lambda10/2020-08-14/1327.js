@@ -1,1 +1,0 @@
-var x = function * ( ) { } . prototype . toString . call ( new Error ( NaN ) ) ;

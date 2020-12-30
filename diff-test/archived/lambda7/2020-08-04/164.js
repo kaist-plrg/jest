@@ -1,1 +1,0 @@
-Promise . prototype . finally . call ( { async * x ( ) { } } , Symbol . split ) ;

@@ -1,1 +1,0 @@
-var x = Object . defineProperties ( this , { [ "configurable" ] : ( ) => { throw '' ; } , [ "get" ] : false , [ "enumerable" ] : false , [ "writable" ] : 0 , [ "set" ] : null , [ "value" ] : '0' } ) ;

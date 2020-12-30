@@ -1,1 +1,0 @@
-Array . prototype . reverse . call ( typeof ( - 1n ) ) ;

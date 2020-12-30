@@ -1,1 +1,0 @@
-Symbol . for ( 0 ) ;

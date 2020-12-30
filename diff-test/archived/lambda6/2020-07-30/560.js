@@ -1,1 +1,0 @@
-async function * a (  ) { for await ( var x of null ) for ( var x  ;  ; '' ) ; } ; a ( ) ;

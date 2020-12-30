@@ -1,1 +1,0 @@
-( Symbol . hasInstance ) . prototype . isPrototypeOf . call ( ! x ) ;

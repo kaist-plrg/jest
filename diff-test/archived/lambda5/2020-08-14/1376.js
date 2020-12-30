@@ -1,1 +1,0 @@
-var x = Set . prototype . forEach . call ( x /= '' , class x extends x ( ) [ '' ] { ; } !== x ) ;

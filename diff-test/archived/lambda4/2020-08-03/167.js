@@ -1,1 +1,0 @@
-var x = [ Symbol . toPrimitive , - 1 ] ; var { x , ... x } = x **= '' ;

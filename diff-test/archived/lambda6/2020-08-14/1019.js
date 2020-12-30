@@ -1,1 +1,0 @@
-var x = Array . prototype . push . call ( new Array ( ) , 0 ) ;

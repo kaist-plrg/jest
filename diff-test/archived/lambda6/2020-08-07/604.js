@@ -1,1 +1,0 @@
-var x = Object . getOwnPropertyDescriptor ( { [ Symbol . toPrimitive ] : async function ( x ) { } } , { [ Symbol . toPrimitive ] : async function ( x ) { } } ) ;

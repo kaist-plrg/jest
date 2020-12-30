@@ -1,1 +1,0 @@
-var x = ( Symbol . toStringTag ) + { [ Symbol . toPrimitive ] : function ( x ) { } } ;

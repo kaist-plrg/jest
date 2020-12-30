@@ -1,1 +1,0 @@
-function * x ( ... [ , ] ) { } NaN ( class extends x ( ) ?. x { } ) ;

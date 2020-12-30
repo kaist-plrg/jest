@@ -1,1 +1,0 @@
-function x ( [ x ] = [ BigInt ( 0.1 ) , typeof x , class x extends new x ( '' ) { ; } ] ) { } try { } catch { } finally { } new x ( ) ;

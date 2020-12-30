@@ -1,1 +1,0 @@
-var x = Symbol ( ) ; var x = typeof x ;

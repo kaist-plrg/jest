@@ -1,1 +1,0 @@
-switch ( '' ) { case '' : ; try { } catch ( x ) { } break ; }

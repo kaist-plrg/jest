@@ -1,1 +1,0 @@
-var x = 42n != ( function * ( ) { } ) ; var [ , ... x ] = [ 42 , 'str' , true ] ;

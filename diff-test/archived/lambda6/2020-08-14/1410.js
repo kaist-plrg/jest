@@ -1,1 +1,0 @@
-var x = String . prototype . split . call ( '' , { set x ( x ) { } } , Symbol . matchAll ) ;

@@ -1,1 +1,0 @@
-for ( '' , '' ; '' , '' ; '' , '' ) ; ( NaN = class extends new x ( x , '' ) { ; } ) ;

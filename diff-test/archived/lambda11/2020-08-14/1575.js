@@ -1,1 +1,0 @@
-var x = Array . prototype . every . call ( '0' , x => { ; return x ( ) ?. x ; switch ( '' ) { default : case x : } for ( x of '' ) ; } ) ;

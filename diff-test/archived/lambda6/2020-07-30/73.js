@@ -1,1 +1,0 @@
-var x = x `` ; function * x ( ... { ... x } ) { for ( [  x ,  ] in '' ) ; return ( BigInt ( 0.1 ) ) ; } var x = [  Symbol . split , , ... x ] ;

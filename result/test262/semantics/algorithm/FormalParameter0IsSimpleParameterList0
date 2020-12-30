@@ -1,6 +1,0 @@
-[32mFormalParameter0IsSimpleParameterList0[0m
-[32m- Inst: 3 / 3 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 193   [-]   : { ... }[0m
-[32m+ 194   [-]   : access __x0__ = (BindingElement "IsSimpleParameterList")[0m
-[32m+ 195   [-]   : return __x0__[0m

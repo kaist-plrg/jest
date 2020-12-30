@@ -1,1 +1,0 @@
-var x = x `` ; async function x ( ... [ ] ) { ; for await ( ( Symbol . toPrimitive ) of [ 42 , 'str' , true ] ) ; }

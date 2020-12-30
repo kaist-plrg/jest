@@ -1,1 +1,0 @@
-Array . prototype . indexOf . call ( '0' , { [ "set" ] : function  ( x  ) {  } , [ "configurable" ] : false } , 1 , Infinity ) ;

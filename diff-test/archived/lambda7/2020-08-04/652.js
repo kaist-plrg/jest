@@ -1,1 +1,0 @@
-for ( var x of { p : 42 } ) for ( x ( ) [ '' , '' ] in '' ) ;

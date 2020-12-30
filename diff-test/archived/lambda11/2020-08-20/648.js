@@ -1,1 +1,0 @@
-do ; while ( class x extends new x ( ) { } ) ;

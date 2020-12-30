@@ -1,1 +1,0 @@
-var x = ( Symbol . toStringTag ) / class extends new x ( x , '' ) { ; } ;

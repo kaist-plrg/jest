@@ -1,7 +1,0 @@
-[32mNumberCOLONCOLONbitwiseAND[0m
-[32m- Inst: 4 / 4 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 23348 [-]   : { ... }[0m
-[32m+ 23349 [-]   : app __x0__ = (NumberBitwiseOp "&" x y)[0m
-[32m+ 23350 [-]   : app __x1__ = (WrapCompletion __x0__)[0m
-[32m+ 23351 [-]   : return __x1__[0m

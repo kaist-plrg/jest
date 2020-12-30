@@ -1,1 +1,0 @@
-var x = Object . assign ( { set x ( x ) { ; Number ( Symbol . iterator ) ; for ( var x = '' ; ; ) ; return ( Symbol . match ) ; var { x , ... x } = x ; } } , { async * x ( ... [ ... x ] ) { var x ; for ( var { } = x ; '' ; '' ) ; x && x ; } } ) ;

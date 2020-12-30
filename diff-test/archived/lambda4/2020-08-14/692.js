@@ -1,1 +1,0 @@
-switch ( ( - 1n ) ) { case 0n : case x !== x : }

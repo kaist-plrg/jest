@@ -1,1 +1,0 @@
-delete 'str' [ 1 ] ; async function x ( ... { x : x } ) { }

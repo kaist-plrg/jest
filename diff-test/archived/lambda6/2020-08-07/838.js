@@ -1,1 +1,0 @@
-var x = Array . prototype . push . call ( { [ "length" ] : true } , x ?. [ { [ "length" ] : true } ] ) ;

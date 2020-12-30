@@ -1,1 +1,0 @@
-var x = new Set ( [ false , Infinity , ( - 0 ) ] ) ; var [ x , , ] = x ;

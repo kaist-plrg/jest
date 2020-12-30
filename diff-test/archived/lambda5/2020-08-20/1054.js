@@ -1,1 +1,0 @@
-if ( [ ] ) for ( var { } = x ; '' ; '' ) ; else for ( x in '' ) ;

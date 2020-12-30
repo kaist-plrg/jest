@@ -1,1 +1,0 @@
-try { ; class x extends `${ '' }${ '' , '' }` { } } catch ( x ) { ; throw 42 ; }

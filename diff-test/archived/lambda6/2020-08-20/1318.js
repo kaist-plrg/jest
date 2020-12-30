@@ -1,1 +1,0 @@
-switch ( '' ) { case '' : ; var x = { async x ( ... { [ '' ] : { } = x } ) { } } ; }

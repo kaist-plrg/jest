@@ -1,1 +1,0 @@
-var x = Infinity . prototype . flat . call ( false ) ;

@@ -1,1 +1,0 @@
-for ( x ( ) [ { async * x ( ) { } } ] in { x , x } ) for ( [ , ] in '' ) ; var { [ '' ] : x } = x ; function x ( ... [ x , ] ) { switch ( '' ) { case '' , '' : } x ( ( Symbol . match ) ) ; return x << x ; }

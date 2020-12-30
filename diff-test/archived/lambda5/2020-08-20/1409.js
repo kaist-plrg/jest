@@ -1,1 +1,0 @@
-var x = 0n == { [ "valueOf" ] : function * ( ) { } , [ "toString" ] : ( ) => { throw '' ; } } ;

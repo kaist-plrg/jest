@@ -1,1 +1,0 @@
-var x = Map . prototype . set . call ( new Map ( ) , 0n , { x ( ... [ ] ) { } } ) ; var x = [ x >= x , , ... false ] ;

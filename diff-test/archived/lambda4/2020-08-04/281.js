@@ -1,1 +1,0 @@
-Array . prototype . map . call ( x => { } , class x { static x ( ) { } } ) ;

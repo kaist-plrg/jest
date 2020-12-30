@@ -1,1 +1,0 @@
-var x = { [ "value" ] : undefined , [ "writable" ] : false , [ "enumerable" ] : false } > { [ "get" ] : function ( x0 , x1 ) { } , [ "set" ] : function ( x0 , x1 ) { } , [ "enumerable" ] : true , [ "configurable" ] : true } ;

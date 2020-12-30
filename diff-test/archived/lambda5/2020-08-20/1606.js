@@ -1,1 +1,0 @@
-var x = { [ "prototype" ] : async * function ( x ) { } } . prototype [ { [ "prototype" ] : async * function ( x ) { } } . hasInstance ] . call ( null , 0 ) ;

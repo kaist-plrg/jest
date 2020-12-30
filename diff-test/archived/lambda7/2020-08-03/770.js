@@ -1,1 +1,0 @@
-for ( NaN of [ 42 , 'str' , true ] ) ;

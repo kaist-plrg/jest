@@ -1,1 +1,0 @@
-Number . isSafeInteger ( - 1 ) ;

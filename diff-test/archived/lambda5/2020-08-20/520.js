@@ -1,1 +1,0 @@
-var x = NaN == [ 42 , 'str' , true ] ;

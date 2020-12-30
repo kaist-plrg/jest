@@ -1,1 +1,0 @@
-Object . getOwnPropertyDescriptors ( { get x ( ) { } } ) ;

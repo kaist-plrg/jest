@@ -1,1 +1,0 @@
-for ( { set x ( x  ) { ; throw 0 ; } } . x in { x ( ... [   ] ) {  } } ) ;

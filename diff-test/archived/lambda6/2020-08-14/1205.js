@@ -1,1 +1,0 @@
-var x = eval ( `${ x += '' }${ [ ] }` ) ; function x ( ... { x , } ) { }

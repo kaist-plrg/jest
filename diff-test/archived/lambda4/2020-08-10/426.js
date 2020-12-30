@@ -1,1 +1,0 @@
-var x = `${ '' }` ; switch ( '' ) { case x : case x : }

@@ -1,1 +1,0 @@
-var x = Object . setPrototypeOf ( 'str' , { async * x ( ... [ x ] ) { } } ) ;

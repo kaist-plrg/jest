@@ -1,1 +1,0 @@
-function x ( ... [ ... x ] ) { } var x = async x => { ; for await ( var x of [ , ] ) return '' ; } ; try { } catch { } finally { } x `` ;

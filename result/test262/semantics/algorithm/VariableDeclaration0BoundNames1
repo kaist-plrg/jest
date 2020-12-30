@@ -1,6 +1,0 @@
-[32mVariableDeclaration0BoundNames1[0m
-[32m- Inst: 3 / 3 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 776   [-]   : { ... }[0m
-[32m+ 777   [-]   : access __x0__ = (BindingIdentifier "BoundNames")[0m
-[32m+ 778   [-]   : return __x0__[0m

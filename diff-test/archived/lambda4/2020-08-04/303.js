@@ -1,1 +1,0 @@
-Promise . prototype . finally . call ( { [ "constructor" ] : true , [ Symbol . species ] : function * ( x ) { } } , 0 ) ;

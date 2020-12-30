@@ -1,1 +1,0 @@
-var x = new ( Symbol . iterator ) ( - class extends x ?. x [ '' ] { ; } ) ;

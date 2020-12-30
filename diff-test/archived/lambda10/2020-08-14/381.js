@@ -1,1 +1,0 @@
-var x = Promise ( ( - 1n ) ) ;

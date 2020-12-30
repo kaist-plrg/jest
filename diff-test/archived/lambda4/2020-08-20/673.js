@@ -1,1 +1,0 @@
-for ( var x in undefined ) for ( var x in '' ) ;

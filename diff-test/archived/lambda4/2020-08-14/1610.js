@@ -1,1 +1,0 @@
-var x = Function . prototype . apply . call ( x => { } , async x => Infinity , { [ class x { ; } ] : ( ) => { switch ( '' ) { case x : default : case x : } } } . asyncIterator ) ;

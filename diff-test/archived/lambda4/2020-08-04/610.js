@@ -1,1 +1,0 @@
-switch ( Symbol . hasInstance ) { case Symbol . toPrimitive : }

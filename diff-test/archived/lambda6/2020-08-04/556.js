@@ -1,1 +1,0 @@
-async function * x ( ) { class x extends new . target { } } ; function x ( ... [ x , , ] ) { } x ( ) ;

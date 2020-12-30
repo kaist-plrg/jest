@@ -1,1 +1,0 @@
-var x = class extends x `${ '' }` { } `` ; function x ( ... [ , ] ) { } function x ( ... { 42 : { } } ) { }

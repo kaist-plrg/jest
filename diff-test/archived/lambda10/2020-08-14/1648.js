@@ -1,1 +1,0 @@
-var x = Object . defineProperty ( class { ; ; } , { * x ( ... await ) { } } , { [ "set" ] : - 1n , [ 0 ] : x ++ , [ '' ] : function ( x ) { } , [ "writable" ] : 0 , [ "value" ] : class extends x { } , [ { async * x ( ... { [ '' ] : { } = x } ) { } } ] : class { static x ( ) { } } } ) ;

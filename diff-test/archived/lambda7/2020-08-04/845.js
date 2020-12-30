@@ -1,1 +1,0 @@
-Promise . prototype . then . call ( class { ; } , class x { } ) ;

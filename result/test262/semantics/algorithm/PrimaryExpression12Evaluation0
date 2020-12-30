@@ -1,9 +1,0 @@
-[32mPrimaryExpression12Evaluation0[0m
-[32m- Inst: 6 / 6 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 2195  [-]   : { ... }[0m
-[32m+ 2196  [-]   : access __x0__ = (CoverParenthesizedExpressionAndArrowParameterList "CoveredParenthesizedExpression")[0m
-[32m+ 2197  [-]   : let expr = __x0__[0m
-[32m+ 2198  [-]   : access __x1__ = (expr "Evaluation")[0m
-[32m+ 2199  [-]   : app __x2__ = (WrapCompletion __x1__)[0m
-[32m+ 2200  [-]   : return __x2__[0m

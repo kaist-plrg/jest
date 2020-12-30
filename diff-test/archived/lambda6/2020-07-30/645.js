@@ -1,1 +1,0 @@
-switch ( class x extends x ?. x {  } , [  42 ,  'str' ,  true ] ) { case x :  case undefined :  }

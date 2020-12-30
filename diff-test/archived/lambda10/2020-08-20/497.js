@@ -1,1 +1,0 @@
-delete ( Symbol . replace ) [ 42 ] ;

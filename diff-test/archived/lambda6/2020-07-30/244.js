@@ -1,1 +1,0 @@
-Array . prototype . copyWithin . call ( - 1 , { async * x ( ... [ , ... x ] ) {  } } , Symbol . hasInstance , Symbol . split ) ;

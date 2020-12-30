@@ -1,1 +1,0 @@
-var x = Symbol . iterator ; var [ , ... x ] = `${ BigInt ( 0.1 ) }${ x }${ [ x , , ] , 42n }` ;

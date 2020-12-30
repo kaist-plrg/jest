@@ -1,1 +1,0 @@
-function x ( x0 , x1 ) { do ; while ( '' , '' ) ; var x = x ( ) ?. x ; async function * x ( ... [ ... x ] ) { } } ; new x ( ... '' ) ;

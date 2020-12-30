@@ -1,1 +1,0 @@
-var x = x `` ; function * x ( ... [ x , ] ) { ; yield * { [ Symbol . asyncIterator ] : '' , [ Symbol . iterator ] : async function ( x ) { } } ; } var [ x , , ... x ] = x ;

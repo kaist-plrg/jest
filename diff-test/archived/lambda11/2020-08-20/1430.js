@@ -1,1 +1,0 @@
-var x = Array . prototype . find . call ( { [ "length" ] : true } , ( ( ) => { ; throw 42 ; } ) ) ;

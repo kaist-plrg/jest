@@ -1,1 +1,0 @@
-var x = null >>> class extends x { ; } ;

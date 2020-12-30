@@ -1,1 +1,0 @@
-var x = { ... { [ Infinity ] : { } , [ "set" ] : { async * x ( ... [ x , ] ) { } } , [ { [ "next" ] : function ( ) { } , [ "throw" ] : function ( x0 , x1 ) { } } ] : class extends x { } , [ "configurable" ] : { p : 42 } } } ;

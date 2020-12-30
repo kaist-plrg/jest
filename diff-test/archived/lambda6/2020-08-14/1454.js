@@ -1,1 +1,0 @@
-var x = Array . prototype . filter . call ( [ , '' ] , ( ) => { ; var x = class extends x { } ; } ) ;

@@ -1,1 +1,0 @@
-var x = Function . prototype . bind . call ( x => BigInt ( 'x' ) , 0 ) ; var x = x ( ) . x ;

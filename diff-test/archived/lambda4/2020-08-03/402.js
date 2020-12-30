@@ -1,1 +1,0 @@
-var x = ( Symbol . hasInstance ) ^ { [ "get" ] : function ( x0 , x1 ) { } , [ "set" ] : function ( ) { } } ;

@@ -1,1 +1,0 @@
-Promise . prototype . finally . call ( { x ( ... [  x  ] ) {  } } , 0 , 0 ) ;

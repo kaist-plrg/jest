@@ -1,1 +1,0 @@
-var x = ( x => { ; x ( 42 ) ; switch ( '' ) { case x : ; return ; default : ; for ( x of '' ) ; } try { } catch { } finally { } } ) ( ) ;

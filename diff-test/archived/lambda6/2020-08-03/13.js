@@ -1,1 +1,0 @@
-var x = async x => { for await ( var x of '' ) ; for await ( let x of [ , ... '' ] ) throw '' ; } ; x ( -- x ) ;

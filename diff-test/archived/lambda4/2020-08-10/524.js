@@ -1,1 +1,0 @@
-var x = new Object ( { async * x ( ) { } } ) ; var x = x ?. x [ '' , '' ] ;

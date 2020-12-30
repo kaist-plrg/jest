@@ -1,1 +1,0 @@
-let x = { x , } = ( Symbol . iterator ) . unscopables ;

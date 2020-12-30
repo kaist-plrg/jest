@@ -1,1 +1,0 @@
-var x = class x { x ( ) { } } . prototype . toString . call ( new Error ( 0 ) ) ;

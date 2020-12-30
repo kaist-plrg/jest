@@ -1,6 +1,0 @@
-[31mUnaryExpression2HasCallInTailPosition0[0m
-[31m- Inst: 0 / 3 (0.00%)[0m
-[31m- Cond: -[0m
-[31m- 28882 [-]   : { ... }[0m
-[31m- 28883 [-]   : app __x0__ = (WrapCompletion false)[0m
-[31m- 28884 [-]   : return __x0__[0m

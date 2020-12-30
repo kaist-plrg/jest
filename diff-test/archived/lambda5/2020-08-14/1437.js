@@ -1,1 +1,0 @@
-var x = Array . prototype . forEach . call ( 'str' , x => [ , class extends x `${ '' , '' }${ '' , '' }` { } ] ) ;

@@ -1,1 +1,0 @@
-var [ x ] = { [ "set" ] : function ( x0 , x1 ) { } , [ "enumerable" ] : true } ? class extends x ?. x ?. x { ; } : x => x ;

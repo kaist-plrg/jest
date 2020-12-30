@@ -1,1 +1,0 @@
-var x = ( x => { ; x ( ) ; switch ( - 1n ) { case Symbol . search : default : case FREE : } return x ++ ; switch ( '' ) { default : } } ) `` ;

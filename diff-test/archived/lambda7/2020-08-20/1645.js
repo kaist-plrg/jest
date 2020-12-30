@@ -1,1 +1,0 @@
-delete { [ Symbol . toPrimitive ] : function * ( x ) { } } [ { [ Symbol . toPrimitive ] : function * ( x ) { } } ] ; async function x ( ... { x : x } ) { }

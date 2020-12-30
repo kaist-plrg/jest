@@ -1,8 +1,0 @@
-Coverage:
-- Inst: 22425 / 29728 (75.43%)
-- Cond: 7944 / 11448 (69.39%)
-Visit Algorithm:
-- Never  : 381 / 1550 (24.58%)
-- Partial: 453 / 1550 (29.23%)
-- Full   : 716 / 1550 (46.19%)
-Meaningful Failed: 390 / 11448 (3.41%)

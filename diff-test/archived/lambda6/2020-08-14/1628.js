@@ -1,1 +1,0 @@
-var x = ( x => { switch ( '' ) { case x : case x : ; switch ( '' ) { } } switch ( BigInt ( 'x' ) ) { case x : ; x ( 42 ) ; default : case { p : 42 } : } new x ( '' ) ; } ) ( ( x => { } ) ) ;

@@ -1,8 +1,0 @@
-[32mGetArgument[0m
-[32m- Inst: 5 / 5 (100.00%)[0m
-[32m- Cond: 2 / 2 (100.00%)[0m
-[32m+ 19718 [-]   : { ... }[0m
-[32m+ 19719 [-]   : let arg = argumentsList[idx][0m
-[32m+ 19720 [[32mT[0m/[32mT[0m[32m]: if (= arg absent) ... else ...[0m
-[32m+ 19721 [-]   : return undefined[0m
-[32m+ 19722 [-]   : return arg[0m

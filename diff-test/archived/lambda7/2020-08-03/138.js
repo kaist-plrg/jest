@@ -1,1 +1,0 @@
-async function x ( ) { for await ( x of '' ) ; await x ( ) ; throw Number ( Symbol . iterator ) ; async function x ( ... { x : x } ) { } } var x = x ( ) . x ;

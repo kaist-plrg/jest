@@ -1,1 +1,0 @@
-( async x => { x ; for await ( let x of null ) ; } ) ( 1 ) ;

@@ -1,1 +1,0 @@
-var x = { [ "next" ] : function ( x ) { } , [ "return" ] : function ( ) { } , [ "throw" ] : function ( x0 , x1 ) { } } >> class x extends x ?. ( ) { ; } ;

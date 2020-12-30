@@ -1,1 +1,0 @@
-var x = { ... { [ 42n ] : Symbol . species , [ async function * ( ) { } ] : class extends x [ '' ] { ; } , [ Symbol . toStringTag ] : false , [ ( - 0 ) ] : { * x ( ) { } } } } ;

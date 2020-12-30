@@ -1,1 +1,0 @@
-Array . prototype . push . call ( undefined , [  42 ,  'str' ,  true ] ) ;

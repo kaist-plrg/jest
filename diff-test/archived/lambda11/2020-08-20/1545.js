@@ -1,1 +1,0 @@
-try { ; x ( 42 ) ; async function * x ( ... { x , } ) { } } catch ( x ) { ; var x = { x ( ... { x , } ) { } } ; x ( 42 ) ; }

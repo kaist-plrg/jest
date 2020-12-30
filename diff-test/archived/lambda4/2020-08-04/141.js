@@ -1,1 +1,0 @@
-switch ( 0 ) { case 0 : ; x ( 0 ) ; default : ; class x extends x ?. x ?. x { } }

@@ -1,1 +1,0 @@
-delete `${ '' }${ '' , '' }` [ NaN ] ; class x extends x [ class x extends x ( ) {  } ] { ; }

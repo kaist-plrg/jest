@@ -1,1 +1,0 @@
-var x = new WeakSet ( [ { [ "length" ] : async function ( ) { } } , '' ] ) ;

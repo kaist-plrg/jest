@@ -1,6 +1,0 @@
-[32mBindingProperty1BoundNames0[0m
-[32m- Inst: 3 / 3 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 6863  [-]   : { ... }[0m
-[32m+ 6864  [-]   : access __x0__ = (BindingElement "BoundNames")[0m
-[32m+ 6865  [-]   : return __x0__[0m

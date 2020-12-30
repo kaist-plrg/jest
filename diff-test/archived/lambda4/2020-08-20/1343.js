@@ -1,1 +1,0 @@
-var x = Array . prototype . indexOf . call ( new Array ( ) , 0 ) ; var x = x >>> x ;

@@ -1,1 +1,0 @@
-var x = Symbol . matchAll ; var [ ... x ] = x === x ;

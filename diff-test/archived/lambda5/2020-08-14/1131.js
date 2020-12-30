@@ -1,1 +1,0 @@
-var x = Object . is ( ( Symbol . asyncIterator ) , Symbol . species ) ;

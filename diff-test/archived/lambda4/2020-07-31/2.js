@@ -1,1 +1,0 @@
-Array . prototype . copyWithin . call ( 'str' , 1 , { [ "value" ] : null , [ "done" ] : true } ) ;

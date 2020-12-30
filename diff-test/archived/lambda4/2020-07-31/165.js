@@ -1,1 +1,0 @@
-Array . prototype . reduce . call ( '0' , class   { ; ; } , ( x => {  } ) . asyncIterator ) ;

@@ -1,1 +1,0 @@
-var x = Array . prototype . findIndex . call ( [ 42 , 1 , true ] , x => Number ( Symbol . iterator ) ) ;

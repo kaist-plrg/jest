@@ -1,1 +1,0 @@
-var x = Promise . all ( 0 ) ; var x = typeof x ;

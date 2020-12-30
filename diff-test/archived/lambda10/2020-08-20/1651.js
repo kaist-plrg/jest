@@ -1,1 +1,0 @@
-switch ( '' ) { case '' , '' : } x ( x -- ) ; async function x ( ... [ ] ) { while ( '' , '' ) ; for await ( ( Symbol . isConcatSpreadable ) of [ x , ] ) for ( var x , x ; ; '' ) ; return { async * x ( ... { [ '' ] : { } = class x extends x ?. x [ '' ] { ; } } ) { } } ; }

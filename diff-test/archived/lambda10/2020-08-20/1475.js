@@ -1,1 +1,0 @@
-var x = Object . defineProperties ( { [ "prototype" ] : function * ( x ) { } } , { async * x ( ) { } } ) ;

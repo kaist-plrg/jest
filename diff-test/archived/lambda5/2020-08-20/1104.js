@@ -1,1 +1,0 @@
-var x = { x : 0n } ; x && class extends x `${ '' }${ '' }` { ; } ;

@@ -1,1 +1,0 @@
-var x = Array . prototype . lastIndexOf . call ( [ , ... '' ] , { [ ( - 1n ) . asyncIterator ] : class extends x ?. x ?. x { } , [ ( Symbol . match ) . iterator ] : '0' } !== class extends x ( ) [ '' ] { } ) ;

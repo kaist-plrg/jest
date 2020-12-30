@@ -1,1 +1,0 @@
-while ( '' ) ; ( { x , ... Symbol . toPrimitive } = { * x ( x ) { } } ) ;

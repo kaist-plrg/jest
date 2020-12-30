@@ -1,1 +1,0 @@
-var x = Object . fromEntries ( 0 ) ;

@@ -1,1 +1,0 @@
-Array . prototype . shift . call ( x => x ) ;

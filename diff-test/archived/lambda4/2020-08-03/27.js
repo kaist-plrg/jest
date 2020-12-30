@@ -1,1 +1,0 @@
-function x ( x0 , x1 ) { } ; x ( ) ; function * x ( ... [ x , ] ) { ; } x ( 0 ) ; function x ( ... [ , x ] ) { switch ( '' ) { default : ; break ; switch ( '' , '' ) { case x : case x : } } return BigInt ( 'x' ) ; }

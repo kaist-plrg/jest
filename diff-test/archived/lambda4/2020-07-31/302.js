@@ -1,1 +1,0 @@
-if ( { [ "get" ] : function  (  ) {  } , [ "enumerable" ] : false } ) ; else var await = x ;

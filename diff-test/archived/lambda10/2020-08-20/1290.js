@@ -1,1 +1,0 @@
-var x = Object . prototype . toLocaleString . call ( 1 , ( ) => { } , true ) ;

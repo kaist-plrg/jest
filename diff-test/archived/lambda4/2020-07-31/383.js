@@ -1,1 +1,0 @@
-Array . prototype . pop . call ( [  42 ,  'str' ,  true ] , Symbol . isConcatSpreadable ) ;

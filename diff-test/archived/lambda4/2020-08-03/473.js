@@ -1,1 +1,0 @@
-String . prototype . lastIndexOf . call ( NaN , Symbol . toPrimitive ) ;

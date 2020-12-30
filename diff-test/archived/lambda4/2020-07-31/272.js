@@ -1,1 +1,0 @@
-String . prototype . split . call ( { [ "value" ] : 0 , [ "enumerable" ] : true , [ "configurable" ] : true } , `${ Symbol . iterator }${ Symbol . replace , { get x ( ) {  } } }` ) ;

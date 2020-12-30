@@ -1,1 +1,0 @@
-var x = { [ "length" ] : function ( x ) { } } `` ;

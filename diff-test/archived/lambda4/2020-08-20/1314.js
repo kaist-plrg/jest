@@ -1,1 +1,0 @@
-do switch ( '' ) { default : case x ? '' : '' : } while ( [ x , , '' ] ?. ( ) ) ;

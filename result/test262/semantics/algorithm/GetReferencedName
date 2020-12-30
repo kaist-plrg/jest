@@ -1,8 +1,0 @@
-[32mGetReferencedName[0m
-[32m- Inst: 5 / 5 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 20027 [-]   : { ... }[0m
-[32m+ 20028 [-]   : app __x0__ = (Type V)[0m
-[32m+ 20029 [-]   : assert (= __x0__ Reference)[0m
-[32m+ 20030 [-]   : app __x1__ = (WrapCompletion V["ReferencedName"])[0m
-[32m+ 20031 [-]   : return __x1__[0m

@@ -1,9 +1,0 @@
-[32mGlobalEnvironmentRecordDOTHasLexicalDeclaration[0m
-[32m- Inst: 6 / 6 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 20680 [-]   : { ... }[0m
-[32m+ 20681 [-]   : let envRec = this[0m
-[32m+ 20682 [-]   : let DclRec = envRec["DeclarativeRecord"][0m
-[32m+ 20683 [-]   : app __x0__ = (DclRec["HasBinding"] DclRec N)[0m
-[32m+ 20684 [-]   : app __x1__ = (WrapCompletion __x0__)[0m
-[32m+ 20685 [-]   : return __x1__[0m

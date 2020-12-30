@@ -1,1 +1,0 @@
-for ( { [ ( Symbol . unscopables ) ] : [ , ] } in { * x (  ) {  } } ) if ( class x extends x `${ '' }${ '' }` {  } ) for ( x of '' ) ; else for ( x in '' ) ;

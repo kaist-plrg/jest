@@ -1,1 +1,0 @@
-var x = Symbol . matchAll ; ( { x , ... ( Symbol . split ) } = x && x ) ;

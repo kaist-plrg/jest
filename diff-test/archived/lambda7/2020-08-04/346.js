@@ -1,1 +1,0 @@
-var x = - Infinity ; var [ ] = { [ x && x ] : null , [ class x extends x . x { } . iterator ] : function * ( x ) { } } ;

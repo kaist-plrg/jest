@@ -1,1 +1,0 @@
-var x = Array . prototype . slice . call ( class { x ( ) { } } , x %= '' , ( Symbol . match ) ) ;

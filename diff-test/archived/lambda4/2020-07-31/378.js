@@ -1,1 +1,0 @@
-Object . setPrototypeOf ( 0 , { [ "value" ] : 0 , [ "writable" ] : false , [ "enumerable" ] : true } , [  ] ) ;

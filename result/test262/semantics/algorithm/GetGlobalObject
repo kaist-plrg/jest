@@ -1,7 +1,0 @@
-[31mGetGlobalObject[0m
-[31m- Inst: 0 / 4 (0.00%)[0m
-[31m- Cond: -[0m
-[31m- 19804 [-]   : { ... }[0m
-[31m- 19805 [-]   : let currentRealm = REALM[0m
-[31m- 19806 [-]   : app __x0__ = (WrapCompletion currentRealm["GlobalObject"])[0m
-[31m- 19807 [-]   : return __x0__[0m

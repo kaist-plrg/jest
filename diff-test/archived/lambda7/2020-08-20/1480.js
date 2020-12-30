@@ -1,1 +1,0 @@
-try { ; async function * x ( ... [ x ] ) { } x ( 42 ) ; } catch ( x ) { } var [ , ... x ] = false != x ;

@@ -1,1 +1,0 @@
-delete '' [ ( - Infinity ) ] ; function * x ( ) { }

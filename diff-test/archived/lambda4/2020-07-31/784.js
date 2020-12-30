@@ -1,1 +1,0 @@
-String . prototype . split . call ( { [ "value" ] : 0 , [ "writable" ] : true , [ "enumerable" ] : true , [ "configurable" ] : true } , `${ '' }${ '' , '' }` ) ;

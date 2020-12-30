@@ -1,1 +1,0 @@
-Array . prototype . keys . call ( 1 ) ;

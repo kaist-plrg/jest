@@ -1,1 +1,0 @@
-for ( x in { async * x ( ... { } ) { } } ) for ( x . x in '' ) ;

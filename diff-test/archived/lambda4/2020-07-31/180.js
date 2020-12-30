@@ -1,1 +1,0 @@
-Array . prototype . copyWithin . call ( '0' , - Infinity , { [ "get" ] : function  (  ) {  } , [ "set" ] : function  ( x0  , x1  ) {  } } ) ;

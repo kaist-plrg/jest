@@ -1,1 +1,0 @@
-switch ( Symbol . toStringTag ) { default : case Symbol . toStringTag : }

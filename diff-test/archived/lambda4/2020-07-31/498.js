@@ -1,1 +1,0 @@
-var x = { [ "get" ] : function  ( x0  , x1  ) {  } , [ "set" ] : function  (  ) {  } , [ "enumerable" ] : true , [ "configurable" ] : true } & ( BigInt ( 'x' ) ) ;

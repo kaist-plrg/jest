@@ -1,7 +1,0 @@
-[31mDebuggerStatement0Evaluation0[0m
-[31m- Inst: 0 / 4 (0.00%)[0m
-[31m- Cond: -[0m
-[31m- 9105  [-]   : { ... }[0m
-[31m- 9106  [-]   : app __x0__ = (NormalCompletion CONST_empty)[0m
-[31m- 9107  [-]   : let result = __x0__[0m
-[31m- 9108  [-]   : return result[0m

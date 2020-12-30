@@ -1,1 +1,0 @@
-var x = Object . setPrototypeOf ( undefined , x != ( - 1n ) ) ;

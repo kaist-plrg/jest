@@ -1,1 +1,0 @@
-String . prototype . indexOf . call ( NaN . matchAll , 42n ) ;

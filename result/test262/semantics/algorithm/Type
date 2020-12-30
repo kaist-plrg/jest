@@ -1,8 +1,0 @@
-[32mType[0m
-[32m- Inst: 5 / 5 (100.00%)[0m
-[32m- Cond: 2 / 2 (100.00%)[0m
-[32m+ 28846 [-]   : { ... }[0m
-[32m+ 28847 [-]   : let t = (typeof argument)[0m
-[32m+ 28848 [[32mT[0m/[32mT[0m[32m]: if (|| (= t "ArgumentsExoticObject") (|| (= t "ArrayExoticObject") (|| (= t "BoundFunctionExoticObject") (|| (= t "BuiltinFunctionObject") (|| (= t "ECMAScriptFunctionObject") (|| (= t "ImmutablePrototypeExoticObject") (|| (= t "IntegerIndexedExoticObject") (|| (= t "ModuleNamespaceExoticObject") (|| (= t "OrdinaryObject") (|| (= t "ProxyExoticObject") (= t "StringExoticObject"))))))))))) ... else ...[0m
-[32m+ 28849 [-]   : return "Object"[0m
-[32m+ 28850 [-]   : return t[0m

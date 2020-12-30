@@ -1,1 +1,0 @@
-switch ( function * ( ) { } ) { case 42n : default : break ; }

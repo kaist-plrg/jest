@@ -1,1 +1,0 @@
-var x = Object . defineProperty ( { x ( ... [ , ... x ] ) { } } , typeof ( Symbol . replace ) , { [ 0n ] : class extends x { static x ( ) { } } , [ "enumerable" ] : class extends x ?. x [ '' ] { } , [ { x : '' } ] : x = '' , [ { async * x ( ... { x , } ) { } } ] : x ?? x , [ ( ( ) => { } ) ] : { get x ( ) { } } , [ x ^ x ] : { async x ( ) { } } } ) ;

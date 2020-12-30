@@ -1,1 +1,0 @@
-var x = Object . defineProperty ( [ , { [ "valueOf" ] : function ( ) { } , [ "toString" ] : '' } ] , { p : 42 } , { [ "valueOf" ] : function ( ) { } , [ "toString" ] : '' } ) ;

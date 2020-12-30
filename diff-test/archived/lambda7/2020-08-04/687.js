@@ -1,1 +1,0 @@
-var x = x *= [ { [ "valueOf" ] : true , [ "toString" ] : ( ) => { throw '' ; } } , { [ "valueOf" ] : { [ "valueOf" ] : true , [ "toString" ] : ( ) => { throw '' ; } } , [ { [ "valueOf" ] : true , [ "toString" ] : ( ) => { throw '' ; } } ] : null } ] ;

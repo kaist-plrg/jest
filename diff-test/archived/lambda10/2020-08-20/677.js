@@ -1,1 +1,0 @@
-var x = new String ( Symbol . asyncIterator ) ;

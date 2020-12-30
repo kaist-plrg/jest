@@ -1,1 +1,0 @@
-var x = x ( ) ( ) ; switch ( '' ) { case x : default : ; case x : } throw FREE ; function x ( ... [ x , ] ) { switch ( '' ) { case x : default : ; } x ( NaN ) ; return x == x ; for ( let x = x ; ; ) ; }

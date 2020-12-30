@@ -1,1 +1,0 @@
-Array . prototype . reduce . call ( [ 42 , 'str' , true ] , function ( ) { ; throw 0 ; } , 1 ) ;

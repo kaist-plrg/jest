@@ -1,1 +1,0 @@
-var x = x => x `${ { * x ( ... await ) { } } , BigInt ( 0.1 ) }` ; x ( null ) ;

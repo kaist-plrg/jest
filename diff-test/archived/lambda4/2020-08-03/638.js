@@ -1,1 +1,0 @@
-for ( '' , '' ; '' , '' ; '' , '' ) ; var x = false == { [ "value" ] : null , [ "writable" ] : false , [ "configurable" ] : false } ;

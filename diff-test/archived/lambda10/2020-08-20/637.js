@@ -1,1 +1,0 @@
-switch ( true ) { case true : case x == x : }

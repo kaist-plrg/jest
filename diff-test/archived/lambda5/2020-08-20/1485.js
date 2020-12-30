@@ -1,1 +1,0 @@
-var x = new WeakSet ( [ { [ "prototype" ] : '0' } , { [ "prototype" ] : '0' } , { [ "prototype" ] : '0' } ] ) ;

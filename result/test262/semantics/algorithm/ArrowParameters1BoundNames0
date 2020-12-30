@@ -1,8 +1,0 @@
-[31mArrowParameters1BoundNames0[0m
-[31m- Inst: 0 / 5 (0.00%)[0m
-[31m- Cond: -[0m
-[31m- 2859  [-]   : { ... }[0m
-[31m- 2860  [-]   : access __x0__ = (CoverParenthesizedExpressionAndArrowParameterList "CoveredFormalsList")[0m
-[31m- 2861  [-]   : let formals = __x0__[0m
-[31m- 2862  [-]   : access __x1__ = (formals "BoundNames")[0m
-[31m- 2863  [-]   : return __x1__[0m

@@ -1,1 +1,0 @@
-var x = Object . getOwnPropertyNames ( [ 42 , 'str' , true ] ) ;

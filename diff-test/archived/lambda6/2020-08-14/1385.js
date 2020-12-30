@@ -1,1 +1,0 @@
-var x = String . prototype . slice . call ( { async * x ( ... { x } ) { } } , 42n , 0 ) ;

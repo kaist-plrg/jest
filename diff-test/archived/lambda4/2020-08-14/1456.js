@@ -1,1 +1,0 @@
-function x ( x0 , x1 ) { if ( x || x ) ; var x = x ( ) ( ) ; return this ; } try { } catch ( x ) { } new x ( ) ;

@@ -1,1 +1,0 @@
-var x = Function . prototype . apply . call ( x => BigInt ( 0.1 ) , 'str' , void x ) ;

@@ -1,1 +1,0 @@
-while ( x ( ) . x , { [ "get" ] : function ( ) { } , [ "configurable" ] : true } ) if ( '' , '' ) ; else ;

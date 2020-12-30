@@ -1,1 +1,0 @@
-Array . prototype . some . call ( undefined , undefined , 0 , '0' ) ;

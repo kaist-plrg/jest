@@ -1,1 +1,0 @@
-Array . prototype . indexOf . call ( ( Symbol . hasInstance ) , x <<= '' , function *  (  ) {  } , x || x ) ;

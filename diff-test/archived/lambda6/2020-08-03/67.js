@@ -1,1 +1,0 @@
-Object . defineProperty ( { } , 'str' , { [ "get" ] : class extends x { static x ( ) { } } , [ - 0 ] : true } ) ;

@@ -1,1 +1,0 @@
-var x = x `` ; async function x ( ... [  ... x ] ) { try {  } catch {  } finally {  } for ( let x in 42n , { async x ( ... [   ] ) {  } } ) switch ( '' ) { case x :  default : ;  } async function * x ( ... [ , x  ] ) {  } for await ( var x of { [ "value" ] : 'str' , [ "writable" ] : true , [ "enumerable" ] : true , [ "configurable" ] : true } ) ; }

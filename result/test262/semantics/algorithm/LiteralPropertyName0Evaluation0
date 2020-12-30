@@ -1,7 +1,0 @@
-[32mLiteralPropertyName0Evaluation0[0m
-[32m- Inst: 4 / 4 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 578   [-]   : { ... }[0m
-[32m+ 579   [-]   : access __x0__ = (IdentifierName "StringValue")[0m
-[32m+ 580   [-]   : app __x1__ = (WrapCompletion __x0__)[0m
-[32m+ 581   [-]   : return __x1__[0m

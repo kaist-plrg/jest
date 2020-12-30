@@ -1,1 +1,0 @@
-var x = { [ "length" ] : async * function ( x ) { } } >= [ 42 , 'str' , { [ "length" ] : async * function ( x ) { } } ] ;

@@ -1,1 +1,0 @@
-async function * x ( ) { var x = yield ; } ; x ( ) ; var x = class x extends new x ( x , ... '' ) { x ( ) { } } && x ;

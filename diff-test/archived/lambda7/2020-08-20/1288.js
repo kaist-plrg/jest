@@ -1,1 +1,0 @@
-var x = class x extends new x ( x , '' ) { } + class extends x ?. x . x { ; } ;

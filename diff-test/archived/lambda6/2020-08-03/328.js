@@ -1,1 +1,0 @@
-var x = null ; var x = typeof x ; var x = new x ;

@@ -1,1 +1,0 @@
-String . prototype . substring . call ( Symbol . split , Symbol . matchAll , 0 ) ;

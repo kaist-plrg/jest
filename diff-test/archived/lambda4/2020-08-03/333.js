@@ -1,1 +1,0 @@
-Array . prototype . pop . call ( typeof 0n ) ;

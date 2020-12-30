@@ -1,1 +1,0 @@
-var x = x `` ; function * x ( ... { x = new . target } ) { } try { } catch { } finally { }

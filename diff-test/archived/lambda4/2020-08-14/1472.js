@@ -1,1 +1,0 @@
-var x = Function . prototype . apply . call ( class x { } , async x => ( Symbol . asyncIterator ) , class x { } ) ;

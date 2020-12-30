@@ -1,1 +1,0 @@
-var x = Object . preventExtensions ( { x ( ... [ x , , ] ) { } } ) ;

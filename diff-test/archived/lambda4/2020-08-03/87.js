@@ -1,1 +1,0 @@
-for ( { [ - { } ] : x = class extends x `${ '' }${ x }${ '' , '' }` { } } in { [ "get" ] : function ( x0 , x1 ) { } , [ "set" ] : function ( ) { } , [ "configurable" ] : false } ) do ; while ( '' ) ;

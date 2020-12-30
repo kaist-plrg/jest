@@ -1,1 +1,0 @@
-Array . prototype . flat . call ( [ x => x , [ 42 , 'str' , true ] , null ] ) ;

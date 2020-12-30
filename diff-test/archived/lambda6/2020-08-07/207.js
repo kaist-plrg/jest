@@ -1,1 +1,0 @@
-var x = x `${ { x ( ... [ x , , ] ) { } } , Symbol . toStringTag }${ ( - 1 ) }${ x [ '' , '' ] }` ;

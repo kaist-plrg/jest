@@ -1,1 +1,0 @@
-switch ( 0n ) { case 42n : default : var { [ '' ] : x } = x ; }

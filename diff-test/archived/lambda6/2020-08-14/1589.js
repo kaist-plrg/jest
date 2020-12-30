@@ -1,1 +1,0 @@
-var x = Array . prototype . copyWithin . call ( 0 , ( Symbol . split ) , { x ( ... await ) { } } , 'str' && ( Number ( Symbol . iterator ) ) ) ;

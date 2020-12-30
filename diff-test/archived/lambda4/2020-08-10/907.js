@@ -1,1 +1,0 @@
-var x = String . prototype . charAt . call ( new String ( { [ "valueOf" ] : '' , [ "toString" ] : null } ) , 0 ) ;

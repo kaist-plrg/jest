@@ -1,1 +1,0 @@
-var x = { [ "prototype" ] : async function ( x ) { } } . prototype . toString . call ( new Error ( { [ "prototype" ] : async function ( x ) { } } ) ) ;

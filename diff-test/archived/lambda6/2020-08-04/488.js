@@ -1,1 +1,0 @@
-var x = x > x ; var x = null >= { [ "get" ] : function ( ) { } , [ "set" ] : function ( ) { } , [ "enumerable" ] : false , [ "configurable" ] : true } ;

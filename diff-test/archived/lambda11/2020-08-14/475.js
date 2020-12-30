@@ -1,1 +1,0 @@
-try { ; x ( 42 ) ; } finally { ; }

@@ -1,1 +1,0 @@
-for ( var { } in '' , { [ Symbol . unscopables ] : { * x ( ... [  x  ,   ] ) {  } } , [ - 1 ] : { [ "return" ] : function  (  ) {  } } } ) switch ( Infinity ) {  default : for ( var x  , x  ;  ; '' ) ; case BigInt ( 'x' ) :  }

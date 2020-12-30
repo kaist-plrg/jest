@@ -1,1 +1,0 @@
-var x = BigInt . asUintN ( x ?. x ( ) , Symbol . iterator ) ;

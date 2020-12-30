@@ -1,1 +1,0 @@
-var x = eval ( x + ( ( ) => { ; class x extends x `${ '' , '' }${ x }${ '' }` { ; } } ) ) ; function x ( ... { x , } ) { }

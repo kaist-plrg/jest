@@ -1,1 +1,0 @@
-( class x extends x ( ) { ; } . asyncIterator ) = 42n ;

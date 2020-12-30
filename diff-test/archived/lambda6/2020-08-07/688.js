@@ -1,1 +1,0 @@
-for ( x of x ++ ) try { } catch ( { } ) { }

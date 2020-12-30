@@ -1,7 +1,0 @@
-[32mObjectLiteral0Evaluation0[0m
-[32m- Inst: 4 / 4 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 3294  [-]   : { ... }[0m
-[32m+ 3295  [-]   : app obj = (OrdinaryObjectCreate INTRINSIC_ObjectPrototype)[0m
-[32m+ 3296  [-]   : app wrapped = (WrapCompletion obj)[0m
-[32m+ 3297  [-]   : return wrapped[0m

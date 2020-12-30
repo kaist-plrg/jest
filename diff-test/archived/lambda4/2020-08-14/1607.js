@@ -1,1 +1,0 @@
-var x = x `` ; var [ , , ] = x ; var x = { * x ( ... { x : { } } ) { } } ; var x = class x { } ; function * x ( ... [ , ] ) { ; yield 42 ; var [ , , ... { } ] = x ; x ( ) ; }

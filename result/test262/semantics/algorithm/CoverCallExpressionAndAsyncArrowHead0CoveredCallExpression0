@@ -1,4 +1,0 @@
-[32mCoverCallExpressionAndAsyncArrowHead0CoveredCallExpression0[0m
-[32m- Inst: 1 / 1 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 952   [-]   : return (parse-syntax this "CallMemberExpression" absent)[0m

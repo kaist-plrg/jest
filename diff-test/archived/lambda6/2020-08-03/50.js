@@ -1,1 +1,0 @@
-Object . defineProperty ( { [ Symbol . species ] : false , [ { [ "get" ] : function ( ) { } , [ "set" ] : function ( x ) { } , [ "enumerable" ] : true , [ "configurable" ] : true } ] : true , [ [ '' ] ] : Symbol . species } , { async * x ( ) { } } , function * ( ) { } ) ;

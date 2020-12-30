@@ -1,1 +1,0 @@
-var x = ( x => { ; switch ( '' ) { default : case x : } return class extends x `${ '' }${ '' , '' }` { } ; } ) ( ( Symbol . hasInstance ) ) ;

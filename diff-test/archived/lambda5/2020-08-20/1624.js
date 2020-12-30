@@ -1,1 +1,0 @@
-var x = Object . assign ( { set x ( x ) { ; x ( 42 ) ; for ( x in '' ) ; return 42 ; for ( let x in '' , '' ) ; } } , { async * x ( ... [ ... x ] ) { ; x ( ) ; new x ( ) ; } } ) ;

@@ -1,1 +1,0 @@
-class x extends ( x => { ; x ( 0 ) ; for ( [ x , ] in '' ) ; } ) ( ) ( ) { }

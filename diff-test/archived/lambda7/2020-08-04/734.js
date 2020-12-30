@@ -1,1 +1,0 @@
-Promise . prototype . catch . call ( undefined , 0 ) ;

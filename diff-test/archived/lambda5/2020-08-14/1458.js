@@ -1,1 +1,0 @@
-var x = Array . prototype . splice . call ( typeof x , { async x ( ... [ x , ] ) { } } , x | x , Symbol . toStringTag ) ;

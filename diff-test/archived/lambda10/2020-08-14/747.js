@@ -1,1 +1,0 @@
-var x = x ( ) ; function x ( ... { 42 : { } } ) { }

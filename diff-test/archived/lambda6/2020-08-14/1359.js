@@ -1,1 +1,0 @@
-async function x ( ) { ; for await ( ( Symbol . iterator ) of [ , '' ] ) ; } x ( 42 ) ;

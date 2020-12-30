@@ -1,1 +1,0 @@
-Object . getOwnPropertyDescriptor ( null , 0 ) ;

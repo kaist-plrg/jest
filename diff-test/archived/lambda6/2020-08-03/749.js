@@ -1,1 +1,0 @@
-var x = this ; switch ( '' ) { default : case x >= x : }

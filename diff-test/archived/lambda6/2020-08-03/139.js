@@ -1,1 +1,0 @@
-function x ( x ) { ; for ( x of '' ) ; } async function x ( ... { [ '' ] : { } = class extends x { static x ( ) { } } } ) { if ( '' ) ; for ( let x in '' ) ; } x ( ) ;

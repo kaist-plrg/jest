@@ -1,1 +1,0 @@
-var x = String . prototype . slice . call ( Symbol . isConcatSpreadable , Symbol . match , 'str' ) ;

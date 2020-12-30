@@ -1,1 +1,0 @@
-var x = Object . assign ( { set x ( x ) { ; { } ( [ , '' ] ) ; for ( super . x in '' ) ; } } , { async * x ( ... [ ... x ] ) { for ( let { } = x ; ; ) ; Symbol . match ; } } ) ;

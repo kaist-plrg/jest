@@ -1,1 +1,0 @@
-String . prototype . split . call ( { async * x ( x , ) { } } , `${ '' }${ '' }` , - 1 ) ;

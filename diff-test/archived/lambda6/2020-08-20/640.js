@@ -1,1 +1,0 @@
-var x = x instanceof async function ( ) { } ;

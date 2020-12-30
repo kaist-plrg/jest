@@ -1,1 +1,0 @@
-function x ( ... { } ) { } var x = async x => { for await ( let x of x >>> x ) ; for await ( var x of { x ( ... { x : x } ) { } } ) ; } ; do ; while ( '' ) ; x `` ;

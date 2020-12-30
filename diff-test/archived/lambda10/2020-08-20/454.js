@@ -1,1 +1,0 @@
-var x = Object . is ( 0n , 0n ) ;

@@ -1,1 +1,0 @@
-var x = String . prototype . codePointAt . call ( { [ "valueOf" ] : true , [ "toString" ] : false } , { x , } ) ;

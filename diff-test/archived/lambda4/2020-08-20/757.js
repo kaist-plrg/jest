@@ -1,1 +1,0 @@
-var x = Object . entries ( [ 42 , 'str' , true ] ) ;

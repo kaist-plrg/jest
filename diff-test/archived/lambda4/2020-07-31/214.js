@@ -1,1 +1,0 @@
-Array . prototype . flat . call ( NaN , Symbol . iterator ) ;

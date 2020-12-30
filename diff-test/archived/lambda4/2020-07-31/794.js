@@ -1,1 +1,0 @@
-Map . prototype . entries . call ( void x ) ;

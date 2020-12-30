@@ -1,1 +1,0 @@
-var x = { get x ( ) { ; return class extends super [ '' , '' ] { } ; } } ; var x = x ?. x ;

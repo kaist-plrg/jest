@@ -1,1 +1,0 @@
-var x = Array . prototype . copyWithin . call ( Symbol . split , [ ] , [ { [ "valueOf" ] : 0 , [ "toString" ] : 0 } , 'str' , { [ "valueOf" ] : 0 , [ "toString" ] : 0 } ] ) ;

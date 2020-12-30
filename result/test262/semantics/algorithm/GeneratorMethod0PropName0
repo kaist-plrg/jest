@@ -1,6 +1,0 @@
-[32mGeneratorMethod0PropName0[0m
-[32m- Inst: 3 / 3 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 19520 [-]   : { ... }[0m
-[32m+ 19521 [-]   : access __x0__ = (PropertyName "PropName")[0m
-[32m+ 19522 [-]   : return __x0__[0m

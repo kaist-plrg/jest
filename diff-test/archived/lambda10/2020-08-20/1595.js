@@ -1,1 +1,0 @@
-var x = x ( ) . x ; x ( 42 ) ; async function x ( ... [ ] ) { ; for await ( var x of function * ( ) { } ) for ( var x ; '' , '' ; ) ; return 42 ; }

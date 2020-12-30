@@ -1,1 +1,0 @@
-Array . prototype . copyWithin . call ( 'str' , { async x ( x , ) { } } ) ;

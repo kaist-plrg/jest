@@ -1,1 +1,0 @@
-String . prototype . indexOf . call ( - Infinity , Symbol . toStringTag ) ;

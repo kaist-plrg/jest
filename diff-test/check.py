@@ -15,7 +15,7 @@ class ExecutionResultType(enum.Enum):
   EVAL_ERROR = "EvalError"
   INTERNAL_ERROR = "InternalError"
   THROW = "Throw"
-# execution result of engines and IRES
+# execution result of engines and JEST
 class ExecutionResult:
   def __init__(self, result_type, msg = "", log = ""):
     self.result_type = result_type
@@ -56,8 +56,8 @@ class ExecutionResult:
   def get_expected(comment):
     result_type = ExecutionResult.get_result_type(comment)
     return ExecutionResult(result_type, comment)
-  def need_print(self, ires_output):
-    return ires_output != self or self.log != ""
+  def need_print(self, jest_output):
+    return jest_output != self or self.log != ""
   def __str__(self):
     ret = "{}\n".format(self.result_type.value)
     if self.log != "":
@@ -82,7 +82,7 @@ def check(engine, filepath):
   out, err = execute("{} {}".format(path, filepath))
   # parse execution result
   return ExecutionResult.get(out, err)
-  
+
 def check_all(filepath):
   # concat helper.js
   temppath = "_81204d72cd_temp.js"
@@ -92,7 +92,7 @@ def check_all(filepath):
         script_content = script.read()
         # read first line and get expected output
         expected = script_content.splitlines()[0][2:]
-        ires_output = ExecutionResult.get_expected(expected)
+        jest_output = ExecutionResult.get_expected(expected)
         # write temp.js
         temp.write(helper.read() + '\n' + script_content)
   # execute script in each engines
@@ -100,12 +100,12 @@ def check_all(filepath):
   engines = ["GRAAL", "QJS", "MODDABLE", "V8"]
   hr = "-" * 60
   check_str = "{}\n[{}]\n{}\n\n".format(hr, filepath, script_content)
-  check_str += "[Expected]: {}\n\n".format(ires_output)
+  check_str += "[Expected]: {}\n\n".format(jest_output)
   diff_cnt = 0
   for engine in engines:
     engine_output = check(engine, temppath)
     # engine_output = ExecutionResult.get(out, err)
-    if engine_output.need_print(ires_output):
+    if engine_output.need_print(jest_output):
       check_str += "[{}]: {}".format(engine, engine_output)
       diff_cnt += 1
   check_str += "\ndiff_cnt: %d\n"%diff_cnt

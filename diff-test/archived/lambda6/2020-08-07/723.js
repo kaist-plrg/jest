@@ -1,1 +1,0 @@
-var x = String . prototype . slice . call ( new String ( 0 ) , { [ "valueOf" ] : ( ) => { throw '' ; } , [ "toString" ] : async function ( ) { } } , 0 ) ;

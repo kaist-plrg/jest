@@ -1,8 +1,0 @@
-[32mElision1ArrayAccumulation0[0m
-[32m- Inst: 5 / 5 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 9469  [-]   : { ... }[0m
-[32m+ 9470  [-]   : access __x0__ = (Elision "ArrayAccumulation")[0m
-[32m+ 9471  [-]   : app __x1__ = (__x0__ array (+ nextIndex 1i))[0m
-[32m+ 9472  [-]   : app __x2__ = (WrapCompletion __x1__)[0m
-[32m+ 9473  [-]   : return __x2__[0m

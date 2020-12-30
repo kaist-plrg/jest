@@ -1,1 +1,0 @@
-for ( ( Symbol . match ) of '' ) x : ;

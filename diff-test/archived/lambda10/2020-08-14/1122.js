@@ -1,1 +1,0 @@
-var x = class x extends x . x { ; } == ( { async * x ( x ) { } } ) ;

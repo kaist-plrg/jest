@@ -1,1 +1,0 @@
-var x = Array . prototype . copyWithin . call ( 0 , - { [ "length" ] : async * function ( x ) { } } , { [ "length" ] : async * function ( x ) { } } ) ;

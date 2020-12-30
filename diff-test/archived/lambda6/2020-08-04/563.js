@@ -1,1 +1,0 @@
-var x = async function x ( ) { ; throw 0 ; } ; x ( 0 ) ;

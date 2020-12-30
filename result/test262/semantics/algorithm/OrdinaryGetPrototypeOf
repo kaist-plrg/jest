@@ -1,6 +1,0 @@
-[32mOrdinaryGetPrototypeOf[0m
-[32m- Inst: 3 / 3 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 24401 [-]   : { ... }[0m
-[32m+ 24402 [-]   : app __x0__ = (WrapCompletion O["Prototype"])[0m
-[32m+ 24403 [-]   : return __x0__[0m

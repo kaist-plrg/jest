@@ -1,1 +1,0 @@
-var x = URIError ( - 1n ) ;

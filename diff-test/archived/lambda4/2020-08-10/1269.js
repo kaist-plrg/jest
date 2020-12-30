@@ -1,1 +1,0 @@
-var x = Promise . prototype . finally . call ( null , 0 ) ;

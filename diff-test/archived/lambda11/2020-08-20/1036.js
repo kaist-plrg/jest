@@ -1,1 +1,0 @@
-for ( x of ! x ) switch ( '' ) { case x : default : ; case x : }

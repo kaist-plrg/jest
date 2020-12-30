@@ -1,1 +1,0 @@
-function x ( [ x ] = { [ Symbol . asyncIterator ] : async * function ( x ) { } , [ Symbol . iterator ] : '' } ) { } ; x ( ) ?. x ;

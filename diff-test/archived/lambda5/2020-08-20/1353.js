@@ -1,1 +1,0 @@
-var x = ( Symbol . replace ) . prototype . forEach . call ( ( Symbol . match ) , 0 ) ;

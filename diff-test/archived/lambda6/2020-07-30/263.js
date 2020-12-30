@@ -1,1 +1,0 @@
-String . prototype . charAt . call ( ( Symbol . toStringTag ) , 0n ) ;

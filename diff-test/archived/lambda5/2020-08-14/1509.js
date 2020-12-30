@@ -1,1 +1,0 @@
-var x = { [ "prototype" ] : '' } . prototype . split . call ( new String ( { [ "prototype" ] : '' } ) , { [ "prototype" ] : '' } , x ?? x ?? x ) ;

@@ -1,1 +1,0 @@
-Array . prototype . slice . call ( function ( ) { } , 0n , 0n ) ;

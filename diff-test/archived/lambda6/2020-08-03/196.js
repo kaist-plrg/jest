@@ -1,1 +1,0 @@
-for ( BigInt ( 0.1 ) , `${ '' }${ x }${ '' }` ; { [ "throw" ] : function ( x0 , x1 ) { } } , '' ; x ( ) , { [ "enumerable" ] : true , [ "configurable" ] : true } ) ;

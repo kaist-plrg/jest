@@ -1,1 +1,0 @@
-var x = Array . prototype . lastIndexOf . call ( `${ x & x }${ x }${ async function ( ) { } , x `${ '' }${ '' }` }` , 0 ) ;

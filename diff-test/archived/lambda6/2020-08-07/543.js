@@ -1,1 +1,0 @@
-for ( [ ] of [ { [ Symbol . asyncIterator ] : async function ( ) { } , [ Symbol . iterator ] : function * ( ) { } } , 'str' , true ] ) ;

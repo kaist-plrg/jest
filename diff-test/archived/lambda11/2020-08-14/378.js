@@ -1,1 +1,0 @@
-var x = new Number ( 42n ) ;

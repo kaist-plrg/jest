@@ -1,1 +1,0 @@
-var x = String . prototype . endsWith . call ( new String ( 0 ) , { [ "valueOf" ] : function * ( x ) { } , [ "toString" ] : async function ( x ) { } } ) ;

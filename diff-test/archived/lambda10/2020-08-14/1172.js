@@ -1,1 +1,0 @@
-var x = function ( ) { ; class x extends new . target { ; } } ( ) `` ;

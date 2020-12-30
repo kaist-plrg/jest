@@ -1,1 +1,0 @@
-Promise . prototype . finally . call ( { [ "constructor" ] : 0 , [ Symbol . species ] : null } , { [ "constructor" ] : 0 , [ Symbol . species ] : null } . split ) ;

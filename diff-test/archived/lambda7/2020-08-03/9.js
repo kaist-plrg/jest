@@ -1,1 +1,0 @@
-var x = '' . search ; var { x , ... x } = x ( ) ?. x ;

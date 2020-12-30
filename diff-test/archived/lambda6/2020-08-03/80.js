@@ -1,1 +1,0 @@
-Array . prototype . lastIndexOf . call ( [ - 0 , Symbol . match , 42n ] , - 0 , [ , '' ] ) ;

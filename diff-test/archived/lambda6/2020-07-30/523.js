@@ -1,1 +1,0 @@
-var x = ( x => { ; var x = ( Symbol . species ) in class  extends x [ '' ] { ; } ; } ) `` ;

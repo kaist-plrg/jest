@@ -1,6 +1,0 @@
-[31mPropertyDefinition0PropName0[0m
-[31m- Inst: 0 / 3 (0.00%)[0m
-[31m- Cond: -[0m
-[31m- 25542 [-]   : { ... }[0m
-[31m- 25543 [-]   : access __x0__ = (IdentifierReference "StringValue")[0m
-[31m- 25544 [-]   : return __x0__[0m

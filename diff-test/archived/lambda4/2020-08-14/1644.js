@@ -1,1 +1,0 @@
-function x ( ) { ; for ( var { } in [ x , ] , 'str' ) for ( var x of '' ) ; var x = class extends { [ "value" ] : function ( ) { } } `${ { [ "value" ] : function ( ) { } } }` { ; ; } ; async function x ( ... [ x ] ) { ; for ( x . x in '' ) ; } if ( { [ "value" ] : function ( ) { } } ) ; else ; } new x ( ) ;

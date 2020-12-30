@@ -1,7 +1,0 @@
-[32mGlobalEnvironmentRecordDOTGetThisBinding[0m
-[32m- Inst: 4 / 4 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 20658 [-]   : { ... }[0m
-[32m+ 20659 [-]   : let envRec = this[0m
-[32m+ 20660 [-]   : app __x0__ = (WrapCompletion envRec["GlobalThisValue"])[0m
-[32m+ 20661 [-]   : return __x0__[0m

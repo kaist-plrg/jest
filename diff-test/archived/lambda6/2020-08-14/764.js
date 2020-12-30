@@ -1,1 +1,0 @@
-var x = new function x ( ) { } ( 0n , ... FREE ) ;

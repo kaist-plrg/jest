@@ -1,1 +1,0 @@
-if ( ( - Infinity ) ) for ( let { } = x ; '' ; '' ) ;

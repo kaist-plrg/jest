@@ -1,1 +1,0 @@
-switch ( '' ) { case '' : } ( { x , ... FREE } = [ 42 , 'str' , true ] ) ;

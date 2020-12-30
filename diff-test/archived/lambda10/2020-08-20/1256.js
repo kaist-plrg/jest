@@ -1,1 +1,0 @@
-var x = [ class extends x ?. x { ; } , 2 , 3 ] ; for ( var x , x ; ; '' ) ;

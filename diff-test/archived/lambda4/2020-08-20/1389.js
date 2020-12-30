@@ -1,1 +1,0 @@
-var x = [ 1 , 2 , 3 ] ; ( [ , ( { [ "return" ] : 0 } . toPrimitive ) , ... NaN ] = x ) ;

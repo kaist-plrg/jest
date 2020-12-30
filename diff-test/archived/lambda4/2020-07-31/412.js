@@ -1,1 +1,0 @@
-function x ( x  ) { ; return ; } var x = new x ;

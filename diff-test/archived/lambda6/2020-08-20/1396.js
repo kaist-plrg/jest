@@ -1,1 +1,0 @@
-var x = { [ ( Symbol . species ) . toPrimitive ] : function ( x ) { } } ^ ( Symbol . split ) ;

@@ -1,1 +1,0 @@
-var x = WeakMap . prototype . delete . call ( new WeakMap ( ) , { async * x ( ... { x : { } } ) { } } ) ; var x = x > x ;

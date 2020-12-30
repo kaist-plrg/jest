@@ -1,1 +1,0 @@
-String . prototype . lastIndexOf . call ( 42n . toStringTag , { [ "value" ] : null , [ "enumerable" ] : false , [ "configurable" ] : false } ) ;

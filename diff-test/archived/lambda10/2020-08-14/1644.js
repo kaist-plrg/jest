@@ -1,1 +1,0 @@
-var x = Object . defineProperty ( { x , x } , Symbol . species , { [ '0' ] : true , [ "enumerable" ] : class extends x { x ( ) { } } , [ "get" ] : false , [ Symbol . split ] : ( Symbol . search ) , [ ( x => { } ) ] : ( 0n ) , [ x >>> x ] : function ( ) { } } ) ;

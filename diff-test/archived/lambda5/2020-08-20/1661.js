@@ -1,1 +1,0 @@
-var x = Object . assign ( { set x ( x ) { ; x ( 42 ) ; return ; return 42 ; switch ( '' ) { } try { ; class x extends [ x , ... x ] { } } catch ( x ) { } } } , { async * x ( ... [ ... x ] ) { ; x ( ) ; for ( x ( ) in '' ) ; return ; function x ( ) { } } } ) ;

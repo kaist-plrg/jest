@@ -1,1 +1,0 @@
-Object . getOwnPropertyNames ( { [ Symbol . replace ] : { [ "return" ] : function ( x ) { } } , [ null ] : ( - Infinity ) } ) ;

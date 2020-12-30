@@ -1,1 +1,0 @@
-String . prototype . charAt . call ( { p : 42 } , 0n ) ;

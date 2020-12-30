@@ -1,1 +1,0 @@
-Object . getOwnPropertyDescriptors ( { [ 'str' ] : ( Symbol . iterator ) , [ 42n ] : true , [ 1 ] : true } ) ;

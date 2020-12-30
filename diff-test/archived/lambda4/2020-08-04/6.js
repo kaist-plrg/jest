@@ -1,1 +1,0 @@
-Array . prototype . find . call ( async x => Symbol . species , async x => x ) ;

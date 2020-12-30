@@ -1,1 +1,0 @@
-var x = Infinity > ( BigInt ( x > x ) ) ;

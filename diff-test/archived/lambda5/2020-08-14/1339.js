@@ -1,1 +1,0 @@
-var x = Array . prototype . copyWithin . call ( [ 42 , 'str' , true ] , '' , { p : 42 } ) ;

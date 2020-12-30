@@ -1,1 +1,0 @@
-String . prototype . normalize . call ( { [ Symbol . toPrimitive ] : function ( ) { } } . asyncIterator , - { [ Symbol . toPrimitive ] : function ( ) { } } ) ;

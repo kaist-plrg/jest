@@ -1,1 +1,0 @@
-for ( x of { [ Symbol . iterator ] : 42n } ) for ( let x in '' ) ;

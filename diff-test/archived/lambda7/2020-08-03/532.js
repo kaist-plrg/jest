@@ -1,1 +1,0 @@
-Object . entries ( { x ( ... { x = x } ) { } } ) ;

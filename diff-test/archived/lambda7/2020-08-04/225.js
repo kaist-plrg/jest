@@ -1,1 +1,0 @@
-Array . prototype . lastIndexOf . call ( { [ "length" ] : true } , { [ "length" ] : true } , { [ "length" ] : true } ) ;

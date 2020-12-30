@@ -1,1 +1,0 @@
-var x = { p : 1 } ; ( { p : Symbol . match } = ( Symbol . split ) ) ;

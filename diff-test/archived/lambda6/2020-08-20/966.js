@@ -1,1 +1,0 @@
-var x = Set . prototype . delete . call ( new Set ( ) , 0 ) ;

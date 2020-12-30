@@ -1,1 +1,0 @@
-Array . prototype . fill . call ( 0n , 0 , Symbol . hasInstance ) ;

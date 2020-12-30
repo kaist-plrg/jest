@@ -1,1 +1,0 @@
-var x = Object . prototype . propertyIsEnumerable . call ( NaN < class extends x ?. ( ) { ; } , ~ x ) ;

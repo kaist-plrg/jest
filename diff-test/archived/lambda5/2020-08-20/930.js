@@ -1,1 +1,0 @@
-var x = eval ( typeof x ) ; function x ( ... { x , } ) { }

@@ -1,9 +1,0 @@
-[33mGLOBALDOTAsyncFunction[0m
-[33m- Inst: 4 / 6 (66.67%)[0m
-[33m- Cond: -[0m
-[32m+ 13711 [-]   : { ... }[0m
-[32m+ 13712 [-]   : let C = GLOBAL_context["Function"][0m
-[32m+ 13713 [-]   : let args = argumentsList[0m
-[32m+ 13714 [-]   : app __x0__ = (CreateDynamicFunction C NewTarget CONST_async args)[0m
-[31m- 13715 [-]   : app __x1__ = (WrapCompletion __x0__)[0m
-[31m- 13716 [-]   : return __x1__[0m

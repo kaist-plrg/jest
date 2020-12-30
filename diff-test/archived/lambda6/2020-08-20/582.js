@@ -1,1 +1,0 @@
-delete 'str' [ - { async * x ( ) { } } ] ;

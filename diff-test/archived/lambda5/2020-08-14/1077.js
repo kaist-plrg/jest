@@ -1,1 +1,0 @@
-for ( var x of class x extends x { } ) for ( var x = '' ; '' ; '' ) ;

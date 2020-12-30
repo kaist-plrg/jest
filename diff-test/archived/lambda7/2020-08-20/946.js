@@ -1,1 +1,0 @@
-var x = { x : 'str' } ; var x = ! x ; var { 42 : { } } = x ;

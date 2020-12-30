@@ -1,1 +1,0 @@
-switch ( x ^ x , Infinity ) { default : for ( var { } = [ ] ; 1 ; true ) var { x : x } = x ; case Symbol . split : }

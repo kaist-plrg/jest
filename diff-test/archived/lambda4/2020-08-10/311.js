@@ -1,1 +1,0 @@
-for ( x of [ { [ Symbol . asyncIterator ] : 0 , [ Symbol . iterator ] : async function ( x ) { } } , 'str' , { [ Symbol . asyncIterator ] : 0 , [ Symbol . iterator ] : async function ( x ) { } } ] ) var [ , x ] = { [ Symbol . asyncIterator ] : 0 , [ Symbol . iterator ] : async function ( x ) { } } ;

@@ -1,1 +1,0 @@
-Array . prototype . indexOf . call ( [  42 ,  'str' ,  true ] , false , 0 ) ;

@@ -1,1 +1,0 @@
-String . prototype . lastIndexOf . call ( Symbol . toStringTag , - Infinity , { [ "writable" ] : false , [ "enumerable" ] : true } . matchAll ) ;

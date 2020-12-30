@@ -1,1 +1,0 @@
-var x = false ; function * x ( x ) { } var [ , , ... { } ] = `${ false }${ 1 }${ Symbol . replace , Symbol . asyncIterator }` ;

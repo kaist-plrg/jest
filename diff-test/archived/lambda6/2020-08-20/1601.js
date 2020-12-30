@@ -1,1 +1,0 @@
-var x = Map . prototype . keys . call ( new Map ( ) ) ; var [ , ] = { [ Symbol . asyncIterator ] : function * ( ) { } , [ Symbol . iterator ] : async function ( x ) { } } ; var [ , ... x ] = x ;

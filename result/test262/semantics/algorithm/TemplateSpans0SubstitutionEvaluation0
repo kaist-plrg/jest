@@ -1,6 +1,0 @@
-[32mTemplateSpans0SubstitutionEvaluation0[0m
-[32m- Inst: 3 / 3 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 2489  [-]   : { ... }[0m
-[32m+ 2490  [-]   : app __x0__ = (WrapCompletion (new []))[0m
-[32m+ 2491  [-]   : return __x0__[0m

@@ -1,1 +1,0 @@
-Array . prototype . splice . call ( '0' , { [ "value" ] : 0 , [ "writable" ] : true , [ "enumerable" ] : true } , { [ "set" ] : function ( x ) { } , [ "configurable" ] : false } , typeof { [ "value" ] : 'str' , [ "configurable" ] : false } ) ;

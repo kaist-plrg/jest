@@ -1,1 +1,0 @@
-function x ( x0 , x1 ) { } ; async function * x ( ... { x : { } } ) { }

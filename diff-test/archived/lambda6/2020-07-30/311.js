@@ -1,1 +1,0 @@
-x = class   { static x (  ) {  } } ;

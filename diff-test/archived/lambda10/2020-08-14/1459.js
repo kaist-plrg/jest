@@ -1,1 +1,0 @@
-function x ( ... { [ '' ] : x } ) { ; return 42 ; function x ( ... { [ '' ] : x } ) { } } new x ( ) ;

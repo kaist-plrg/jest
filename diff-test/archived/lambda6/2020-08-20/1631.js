@@ -1,1 +1,0 @@
-var x = Promise . all ( { [ Symbol . asyncIterator ] : function ( ) { ; for ( { x = x } in '' ) ; } , [ Symbol . iterator ] : function ( x ) { ; x ( 42 ) ; debugger ; switch ( '' ) { case x : ; var x = x instanceof x ; default : ; throw 42 ; } } } ) ;

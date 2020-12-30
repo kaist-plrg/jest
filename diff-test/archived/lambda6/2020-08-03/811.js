@@ -1,1 +1,0 @@
-switch ( { [ "next" ] : function ( x0 , x1 ) { } , [ "return" ] : function ( x0 , x1 ) { } } , { [ "value" ] : 'str' , [ "enumerable" ] : true } ) { default : var { [ '' ] : x } = x ; case '0' : }

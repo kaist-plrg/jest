@@ -1,1 +1,0 @@
-var x = Array . prototype . copyWithin . call ( new Array ( ) , Symbol . split , 0 ) ;

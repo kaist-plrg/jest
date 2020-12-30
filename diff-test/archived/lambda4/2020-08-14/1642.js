@@ -1,1 +1,0 @@
-function x ( ) { ; for ( ; { [ "prototype" ] : '' } , '' ; { [ "prototype" ] : '' } , { [ "prototype" ] : '' } ) ; for ( x in { [ "prototype" ] : '' } ) ; var x = class extends { [ "prototype" ] : '' } `${ '' }` { ; ; } ; return { [ "prototype" ] : '' } , { [ "prototype" ] : '' } ; } new x ( ) ;

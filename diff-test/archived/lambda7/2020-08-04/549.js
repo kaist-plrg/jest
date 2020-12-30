@@ -1,1 +1,0 @@
-Array . prototype . pop . call ( { [ "length" ] : { [ Symbol . toPrimitive ] : async function ( x ) { } } } ) ;

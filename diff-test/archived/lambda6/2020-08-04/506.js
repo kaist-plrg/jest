@@ -1,1 +1,0 @@
-function x ( ... [ ... x ] ) { } x ( x < ( Symbol . toStringTag ) ) ;

@@ -1,1 +1,0 @@
-[ x , , ] = { [ Symbol . asyncIterator ] : function * ( ) { } , [ Symbol . iterator ] : function * ( x ) { ; yield { [ Symbol . asyncIterator ] : function * ( ) { } , [ Symbol . iterator ] : async * function ( ) { } } ; } } ;

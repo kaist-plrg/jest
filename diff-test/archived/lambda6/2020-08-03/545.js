@@ -1,1 +1,0 @@
-Array . prototype . map . call ( { async * x ( ... { x , } ) { } } , class { ; } , { async * x ( ... { [ '' ] : { } = x } ) { } } ) ;

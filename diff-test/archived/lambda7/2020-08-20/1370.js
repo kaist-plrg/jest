@@ -1,1 +1,0 @@
-var x = Array . prototype . findIndex . call ( [ x , , ] , ( ) => { ; return 42 ; } ) ;

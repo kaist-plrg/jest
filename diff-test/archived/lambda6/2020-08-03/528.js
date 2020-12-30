@@ -1,1 +1,0 @@
-( function * ( ) { } . hasInstance ) = x => class extends x { ; ; } ;

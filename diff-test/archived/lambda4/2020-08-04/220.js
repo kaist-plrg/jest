@@ -1,1 +1,0 @@
-String . prototype . trimEnd . call ( ( Symbol . toStringTag ) ) ;

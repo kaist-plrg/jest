@@ -1,1 +1,0 @@
-Array . prototype . splice . call ( 'str' , ( ) => { } , Infinity , Symbol . iterator ) ;

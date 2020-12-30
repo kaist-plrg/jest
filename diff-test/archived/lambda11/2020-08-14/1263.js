@@ -1,1 +1,0 @@
-try { ; new x ( ) ; } catch { ; class x extends [ x , , ] { ; } } finally { }

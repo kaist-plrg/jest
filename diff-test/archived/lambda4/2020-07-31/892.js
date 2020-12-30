@@ -1,1 +1,0 @@
-var x = typeof x ; function x ( ... { x  } ) {  }

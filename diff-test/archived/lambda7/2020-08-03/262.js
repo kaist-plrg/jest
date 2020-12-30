@@ -1,1 +1,0 @@
-Array . prototype . reduce . call ( x => { } , class { static x ( ) { } } , 0 ) ;

@@ -1,1 +1,0 @@
-for ( var { } = x ; '' ; '' ) ; function * x ( ... { ... x } ) {  } var [   ] = `${ undefined }${ 1 }${ [  x ,  ... x ] }` ;

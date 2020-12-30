@@ -1,1 +1,0 @@
-var x = String . prototype . split . call ( null , 0 , 0 ) ;

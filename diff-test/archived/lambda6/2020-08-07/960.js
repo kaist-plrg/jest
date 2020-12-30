@@ -1,1 +1,0 @@
-var x = String . prototype . substring . call ( new { [ "prototype" ] : async * function ( ) { } } ( { [ "prototype" ] : async * function ( ) { } } ) , { [ "prototype" ] : async * function ( ) { } } , 0 ) ;

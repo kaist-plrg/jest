@@ -1,8 +1,0 @@
-[32mIterationStatement7HasCallInTailPosition0[0m
-[32m- Inst: 5 / 5 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 22319 [-]   : { ... }[0m
-[32m+ 22320 [-]   : access __x0__ = (Statement "HasCallInTailPosition")[0m
-[32m+ 22321 [-]   : app __x1__ = (__x0__ call)[0m
-[32m+ 22322 [-]   : app __x2__ = (WrapCompletion __x1__)[0m
-[32m+ 22323 [-]   : return __x2__[0m

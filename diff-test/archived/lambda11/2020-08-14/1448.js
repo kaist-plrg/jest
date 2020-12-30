@@ -1,1 +1,0 @@
-function x ( ... { x , } ) { } var { x , } = class extends class extends x ( ) . x { ; } ( ) `` { ; } ;

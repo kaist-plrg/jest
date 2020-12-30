@@ -1,1 +1,0 @@
-var x = { [ "prototype" ] : true } . prototype . values . call ( new { [ "prototype" ] : true } ( ) ) ;

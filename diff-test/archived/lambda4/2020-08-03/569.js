@@ -1,1 +1,0 @@
-for ( ; 0n ; BigInt ( 0.1 ) ) for ( var x ; ; ) ;

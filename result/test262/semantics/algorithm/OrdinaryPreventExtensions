@@ -1,7 +1,0 @@
-[32mOrdinaryPreventExtensions[0m
-[32m- Inst: 4 / 4 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 24669 [-]   : { ... }[0m
-[32m+ 24670 [-]   : O["Extensible"] = false[0m
-[32m+ 24671 [-]   : app __x0__ = (WrapCompletion true)[0m
-[32m+ 24672 [-]   : return __x0__[0m

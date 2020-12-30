@@ -1,1 +1,0 @@
-var x = { x } ; var x = x ?. x [ Symbol . isConcatSpreadable , class x extends x ?. x . x { } ] ;

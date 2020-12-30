@@ -1,1 +1,0 @@
-Array . prototype . splice . call ( '' , ( Symbol . unscopables ) , function ( ) { } , ( '' ) ) ;

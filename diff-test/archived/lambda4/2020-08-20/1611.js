@@ -1,1 +1,0 @@
-var x = String . prototype . trimEnd . call ( { [ "valueOf" ] : class extends x ?. [ '' , '' ] { ; } , [ "toString" ] : Symbol . hasInstance } ) ;

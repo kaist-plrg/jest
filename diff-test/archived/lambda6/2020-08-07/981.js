@@ -1,1 +1,0 @@
-( 0 , eval ) ( "for ( new . target in '' ) ;" ) ;

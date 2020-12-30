@@ -1,1 +1,0 @@
-var x = Array . prototype . splice . call ( async function * x ( ) { } , 'str' , Symbol . hasInstance ) ;

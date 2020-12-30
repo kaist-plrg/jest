@@ -1,1 +1,0 @@
-function x ( ... { } ) { } switch ( '' ) { case x : case x : } '0' instanceof x ;

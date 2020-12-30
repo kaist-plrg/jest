@@ -1,1 +1,0 @@
-Array . prototype . slice . call ( 0n , 0 , Symbol . matchAll ) ;

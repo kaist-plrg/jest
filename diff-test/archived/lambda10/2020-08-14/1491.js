@@ -1,1 +1,0 @@
-var x = ( x => { do ; while ( '' ) ; x ( ) ( ) ; for ( var x ; ; '' , '' ) ; if ( NaN , '' ) ; } ) ( NaN ) ;

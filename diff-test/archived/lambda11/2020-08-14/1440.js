@@ -1,1 +1,0 @@
-for ( var x = x ( ) ( ) ; '0' ; { async * x ( ... { x : { } } ) { } } ) for ( var x , x ; ; ) ; x ++ ;

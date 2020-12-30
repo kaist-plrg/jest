@@ -1,1 +1,0 @@
-Object . getOwnPropertyDescriptors ( ( - 1n ) ) ;

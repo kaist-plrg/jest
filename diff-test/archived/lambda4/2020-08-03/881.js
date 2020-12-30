@@ -1,1 +1,0 @@
-Map . prototype . keys . call ( { [ "next" ] : function ( x ) { } , [ "return" ] : function ( x0 , x1 ) { } , [ "throw" ] : function ( ) { } } ) ;

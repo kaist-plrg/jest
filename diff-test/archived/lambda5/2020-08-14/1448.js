@@ -1,1 +1,0 @@
-var x = String . prototype . matchAll . call ( Symbol . iterator , { [ Symbol . match ] : async function ( ) { } } ) ;

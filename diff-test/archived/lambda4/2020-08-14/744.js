@@ -1,1 +1,0 @@
-var x = typeof class x extends x ?. x ?. x { ; } ;

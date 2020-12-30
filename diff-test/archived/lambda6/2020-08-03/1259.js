@@ -1,1 +1,0 @@
-Map . prototype . forEach . call ( 1 , 0 ) ;

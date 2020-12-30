@@ -1,1 +1,0 @@
-( x => { ; x ( ) ; return 0 ; for ( let x in '' , '' ) ; async function * x ( ... { x = '' } ) { } } ) ( ) ;

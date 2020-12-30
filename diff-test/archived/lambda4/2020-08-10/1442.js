@@ -1,1 +1,0 @@
-var x = Set . prototype . forEach . call ( new Set ( ) , 0 , 0 ) ;

@@ -1,1 +1,0 @@
-switch ( class x { ; } ) { default : ; async function * x ( ... [ x ] ) { } }

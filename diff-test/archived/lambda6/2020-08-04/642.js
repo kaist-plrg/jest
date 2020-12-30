@@ -1,1 +1,0 @@
-for ( x of [ , ... '' ] ) try { } catch ( { } ) { } class x extends [ x , , ... x ] { }

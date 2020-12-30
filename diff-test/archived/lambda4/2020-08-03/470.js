@@ -1,1 +1,0 @@
-for ( { [ ( x => { } ) ] : [ ] } in [ , '' ] ) for ( x ?. x [ x ?. x [ '' , '' ] , ( Symbol . search ) ] in '' ) ;

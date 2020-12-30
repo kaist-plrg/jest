@@ -1,1 +1,0 @@
-var x = Object . defineProperties ( class { } , { [ "prototype" ] : { [ "configurable" ] : function * ( x ) { } , [ "set" ] : async function ( ) { } , [ "writable" ] : ( ) => { throw '' ; } , [ "enumerable" ] : ( ) => { throw '' ; } , [ "get" ] : '' , [ "value" ] : async function ( x ) { } } } ) ;

@@ -1,1 +1,0 @@
-function x ( ... { x : x } ) { } for ( '' ; '' ; '' ) ; x instanceof { [ Symbol . hasInstance ] : class extends x ( ) ?. x { } , [ x `${ '' , '' }` ] : function ( x ) { } , [ ( ) => { } ] : { x , } } ;

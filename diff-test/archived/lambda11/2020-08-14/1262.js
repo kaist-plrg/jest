@@ -1,1 +1,0 @@
-switch ( '' ) { default : case x : ; async function x ( ... { x : x } ) { } }

@@ -1,1 +1,0 @@
-Array . prototype . reduceRight . call ( { [ "length" ] : true } , async function ( ) { } , Symbol . replace ) ;

@@ -1,1 +1,0 @@
-Object . defineProperty ( { [ 'str' ] : { p : Symbol . matchAll } , [ [ , ... '' ] ] : ( '0' ) } , ( '' , '' ) , { [ "set" ] : function ( ) { } , [ "enumerable" ] : true } ) ;

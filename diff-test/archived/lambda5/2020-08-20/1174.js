@@ -1,1 +1,0 @@
-switch ( - 0 ) { case ( - 0 ) : ; for ( x in '' , '' ) ; default : ; }

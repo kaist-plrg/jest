@@ -1,6 +1,0 @@
-[32mCatch0VarDeclaredNames0[0m
-[32m- Inst: 3 / 3 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 1606  [-]   : { ... }[0m
-[32m+ 1607  [-]   : access __x0__ = (Block "VarDeclaredNames")[0m
-[32m+ 1608  [-]   : return __x0__[0m

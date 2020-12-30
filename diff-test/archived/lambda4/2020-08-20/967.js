@@ -1,1 +1,0 @@
-var x = [ Symbol . asyncIterator , { p : 42 } , 3 ] ; x ++ ;

@@ -1,1 +1,0 @@
-for ( { x ( x  , ) {  } } . x in { x : { x : '' } } ) switch ( '' ) { case x :  default : ;  }

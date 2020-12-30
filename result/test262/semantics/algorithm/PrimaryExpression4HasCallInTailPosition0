@@ -1,6 +1,0 @@
-[32mPrimaryExpression4HasCallInTailPosition0[0m
-[32m- Inst: 3 / 3 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 651   [-]   : { ... }[0m
-[32m+ 652   [-]   : app __x0__ = (WrapCompletion false)[0m
-[32m+ 653   [-]   : return __x0__[0m

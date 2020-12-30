@@ -1,1 +1,0 @@
-function x ( x0 , x1 ) { } var x ; x ( ) [ '' ] ; function * x ( ... [ x , ] ) { while ( '' , '' ) ; } throw 0 ; function x ( ... [ , x ] ) { switch ( '' ) { case '' , '' : ; } return x `${ x ?. x }${ `` , '' }` ; } var x = Symbol . split ;

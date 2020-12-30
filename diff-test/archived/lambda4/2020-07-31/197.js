@@ -1,1 +1,0 @@
-var x = x `` ; async function x ( ... [  ... x ] ) { for await ( let x of '' ) ; for ( let x in '' , '' ) ; async function * x ( ... [ , x  ] ) {  } for await ( var x of '' ) ; }

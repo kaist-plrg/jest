@@ -1,1 +1,0 @@
-var x = x `` ; var [ x , ] = x ; function * x ( ... [ , ] ) { ; var [ ... { } ] = x ; x instanceof x ; } var [ ... x ] = { [ "get" ] : function ( x0 , x1 ) { } , [ "set" ] : function ( x0 , x1 ) { } , [ "configurable" ] : true } ;

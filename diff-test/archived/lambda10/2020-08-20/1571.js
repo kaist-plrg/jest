@@ -1,1 +1,0 @@
-var x = x `` ; function * x ( ... [ x , ] ) { ; yield * class x extends x `${ '' }${ x }${ '' }` { ; } ; } var [ x , , ... x ] = x ;

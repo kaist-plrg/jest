@@ -1,1 +1,0 @@
-var x = Object . getOwnPropertyDescriptor ( void class extends x [ '' ] { ; } , Symbol . isConcatSpreadable ) ;

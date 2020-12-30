@@ -1,1 +1,0 @@
-var x = new Set ( { [ Symbol . toStringTag ] : true , [ Symbol . iterator ] : class extends x ( ) `` { } } ) ;

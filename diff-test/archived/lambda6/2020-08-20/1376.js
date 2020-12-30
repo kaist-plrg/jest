@@ -1,1 +1,0 @@
-switch ( '' ) { case '' , '' : } ( { x , ... x } = class x extends new x ( ... '' ) { } ) ;

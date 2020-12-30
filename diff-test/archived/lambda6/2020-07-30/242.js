@@ -1,1 +1,0 @@
-var x = typeof [  ] ; var x = typeof x ;

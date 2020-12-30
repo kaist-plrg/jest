@@ -1,1 +1,0 @@
-var x = String . prototype . match . call ( Symbol . match , x ) ;

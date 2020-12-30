@@ -1,1 +1,0 @@
-async function * x ( ) { for ( ; ; ) ; } while ( class extends x `${ '' }` { ; } ) ; new x ( x , ... '' ) ;

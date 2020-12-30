@@ -1,1 +1,0 @@
-String . prototype . indexOf . call ( ( - 1n ) . match , Symbol . toStringTag , Symbol . search , - 1n ) ;

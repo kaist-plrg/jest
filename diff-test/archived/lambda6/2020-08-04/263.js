@@ -1,1 +1,0 @@
-for ( { x , } in { [ "value" ] : null , [ "writable" ] : true , [ "enumerable" ] : true , [ "configurable" ] : false } ) '' , '' ;

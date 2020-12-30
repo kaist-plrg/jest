@@ -1,1 +1,0 @@
-var x = String . prototype . lastIndexOf . call ( new String ( { [ "prototype" ] : false } ) , 0 , { [ "prototype" ] : false } ) ;

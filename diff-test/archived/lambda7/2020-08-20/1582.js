@@ -1,1 +1,0 @@
-var x = Function . prototype . apply . call ( x => { ; x ( 42 ) ; } , - 1 , { [ Symbol . toPrimitive ] : 0 } . toPrimitive ) ;

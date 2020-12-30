@@ -1,1 +1,0 @@
-var x = Array . prototype . lastIndexOf . call ( async x => x , ( 'str' ) ) ;

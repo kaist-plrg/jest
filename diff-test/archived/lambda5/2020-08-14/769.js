@@ -1,1 +1,0 @@
-var x = BigInt . asIntN ( NaN , ( Symbol . split ) ) ;

@@ -1,1 +1,0 @@
-var x = { [ - 1n ] : { x } } . prototype . flat . call ( new { [ "prototype" ] : false } ( ) ) ;

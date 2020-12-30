@@ -1,1 +1,0 @@
-var x = String . prototype . repeat . call ( new String ( { x ( ... [ , ... x ] ) { } } ) , Symbol . toStringTag ) ;

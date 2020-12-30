@@ -1,1 +1,0 @@
-class x extends class { } { } new { [ Symbol . asyncIterator ] : async function ( x ) { } , [ Symbol . iterator ] : async function ( x ) { } } ( x , ... { [ Symbol . asyncIterator ] : async function ( x ) { } , [ Symbol . iterator ] : async function ( x ) { } } ) ;

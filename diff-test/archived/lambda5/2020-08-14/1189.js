@@ -1,1 +1,0 @@
-var x = new Set ( [ Symbol . hasInstance , 0n , ( - ( - Infinity ) ) ] ) ;

@@ -1,1 +1,0 @@
-Object . defineProperties ( { get x ( ) { } } , [ 42 , 'str' , true ] ) ;

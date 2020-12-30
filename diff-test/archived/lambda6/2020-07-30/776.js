@@ -1,1 +1,0 @@
-String . prototype . slice . call ( { p : 42 } , 0 , { async x ( ... [ , ... x ] ) {  } } ) ;

@@ -1,1 +1,0 @@
-class x extends null { } { x = x ; } ;

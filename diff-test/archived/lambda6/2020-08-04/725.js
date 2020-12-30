@@ -1,1 +1,0 @@
-var x = { [ "value" ] : null , [ "writable" ] : true , [ "configurable" ] : false } [ Number ( Symbol . iterator ) , { async * x ( ... { x } ) { } } ] ;

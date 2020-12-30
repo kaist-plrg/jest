@@ -1,8 +1,0 @@
-[32mPrimaryExpression12IsFunctionDefinition0[0m
-[32m- Inst: 5 / 5 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 2217  [-]   : { ... }[0m
-[32m+ 2218  [-]   : access __x0__ = (CoverParenthesizedExpressionAndArrowParameterList "CoveredParenthesizedExpression")[0m
-[32m+ 2219  [-]   : let expr = __x0__[0m
-[32m+ 2220  [-]   : access __x1__ = (expr "IsFunctionDefinition")[0m
-[32m+ 2221  [-]   : return __x1__[0m

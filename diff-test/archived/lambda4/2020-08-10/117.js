@@ -1,1 +1,0 @@
-for ( { x = class extends x { ; } } of [ 1 ] ) ;

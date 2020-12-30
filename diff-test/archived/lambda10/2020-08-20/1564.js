@@ -1,1 +1,0 @@
-var x = WeakMap . prototype . delete . call ( new WeakMap ( ) , { [ "prototype" ] : 0 } ) ; var x = { [ "prototype" ] : 0 } > x ;

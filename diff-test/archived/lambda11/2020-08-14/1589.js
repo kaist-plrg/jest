@@ -1,1 +1,0 @@
-function x ( [ x ] = [ 1 , 2 , 3 ] ) { ; x ( 42 ) ; return '' , '' ; function * x ( ... [ x , ] ) { ; } for ( [ x , ... x ] in '' ) ; } ; new x ;

@@ -1,1 +1,0 @@
-var x = Object . getOwnPropertyNames ( { async * x ( ... [ x , , ] ) { } } ) ;

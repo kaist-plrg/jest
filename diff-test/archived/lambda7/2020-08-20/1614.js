@@ -1,1 +1,0 @@
-var x = Function . prototype . apply . call ( x => { ; x ( 42 ) ; } , { async * x ( ) { ; function * x ( ... await ) { } } } , x => x ) ;

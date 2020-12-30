@@ -1,1 +1,0 @@
-var x = async x => { for await ( var x of [ { * x ( ... [ , x ] ) { } } , false , { [ "get" ] : function ( x0 , x1 ) { } , [ "set" ] : function ( x0 , x1 ) { } , [ "enumerable" ] : true , [ "configurable" ] : true } ] ) break ; for ( { async x ( ... { x : x } ) { } } ; class x extends x ?. [ '' ] { ; } ; ) ; } ; x ( -- x ) ;

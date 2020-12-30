@@ -1,8 +1,0 @@
-[32mIsStrictReference[0m
-[32m- Inst: 5 / 5 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 22086 [-]   : { ... }[0m
-[32m+ 22087 [-]   : app __x0__ = (Type V)[0m
-[32m+ 22088 [-]   : assert (= __x0__ Reference)[0m
-[32m+ 22089 [-]   : app __x1__ = (WrapCompletion V["StrictReference"])[0m
-[32m+ 22090 [-]   : return __x1__[0m

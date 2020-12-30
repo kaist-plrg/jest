@@ -1,1 +1,0 @@
-Promise . prototype . finally . call ( x => { } , 0 ) ;

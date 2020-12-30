@@ -1,1 +1,0 @@
-for ( { x = class { ; ; } } of [ 42 , 'str' , true ] ) ;

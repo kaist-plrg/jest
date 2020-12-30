@@ -1,1 +1,0 @@
-var x = ( Symbol . replace ) != ( Symbol . iterator ) ; var [ , ... x ] = class x extends x [ '' ] { } ;

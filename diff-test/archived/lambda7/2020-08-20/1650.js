@@ -1,1 +1,0 @@
-var x = String . prototype . split . call ( new String ( { [ "length" ] : async function ( ) { } } ) , { [ "length" ] : async function ( ) { } } , x == x ) ;

@@ -1,1 +1,0 @@
-while ( Symbol . isConcatSpreadable ) for ( let x = x ; '' ; ) ;

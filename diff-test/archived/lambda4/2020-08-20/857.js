@@ -1,1 +1,0 @@
-var x = Object . getPrototypeOf ( 0 ) ; var x = 1 >= x ;

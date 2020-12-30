@@ -1,1 +1,0 @@
-if ( Symbol . toPrimitive ) var [ , , ... { } ] = x ; else ;

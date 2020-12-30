@@ -1,1 +1,0 @@
-switch ( '' ) { default : case `` : ; class x extends [ '' ] { ; } }

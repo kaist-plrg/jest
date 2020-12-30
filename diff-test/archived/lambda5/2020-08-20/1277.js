@@ -1,1 +1,0 @@
-var x = String . prototype . endsWith . call ( Symbol . unscopables , 42n ) ;

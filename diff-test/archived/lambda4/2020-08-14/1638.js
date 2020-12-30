@@ -1,1 +1,0 @@
-function x ( ) { for ( let x in '' ) ; var x = class extends x `${ Symbol . isConcatSpreadable }` { ; ; } ; switch ( ( ) => { } ) { case ( Symbol . hasInstance ) : default : return ( Symbol . match ) ; } switch ( '' ) { case x : default : ; case x : } } new x ( ) ;

@@ -1,1 +1,0 @@
-for ( x <<= '' ; '0' ; ) switch ( '' ) { case x : default : ; }

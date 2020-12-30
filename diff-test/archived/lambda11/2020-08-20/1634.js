@@ -1,1 +1,0 @@
-for ( x ( ) [ { * x ( ) { } } ] in { async x ( ... [ x , ] ) { } } ) ; x ( ) ; function x ( ... [ x , ] ) { ; 0 ( ( 1 ( ( Symbol . replace ) . iterator ) ) ) ; return ! x ; }

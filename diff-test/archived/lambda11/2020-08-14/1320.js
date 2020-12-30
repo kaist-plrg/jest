@@ -1,1 +1,0 @@
-class x extends class x { } { } switch ( '' ) { } ! class extends x ?. x ?. x { } ;

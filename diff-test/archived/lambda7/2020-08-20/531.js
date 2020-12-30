@@ -1,1 +1,0 @@
-var x = Promise . all ( [ x , '' ] ) ;

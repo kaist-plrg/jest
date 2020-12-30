@@ -1,1 +1,0 @@
-BigInt . asUintN ( ( Symbol . replace ) ) ;

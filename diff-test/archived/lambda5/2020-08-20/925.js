@@ -1,1 +1,0 @@
-var x = String . prototype . indexOf . call ( null , 0 ) ;

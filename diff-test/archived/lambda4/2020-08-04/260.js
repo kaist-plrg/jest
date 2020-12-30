@@ -1,1 +1,0 @@
-Object . assign ( ( Symbol . unscopables ) , typeof x ) ;

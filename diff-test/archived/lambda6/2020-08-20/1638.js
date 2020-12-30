@@ -1,1 +1,0 @@
-var x = new WeakSet ( { [ Symbol . asyncIterator ] : { [ Symbol . asyncIterator ] : '' , [ Symbol . iterator ] : async function ( ) { } } , [ Symbol . iterator ] : function * ( ) { ; yield * { [ Symbol . asyncIterator ] : '' , [ Symbol . iterator ] : async function ( ) { } } ; } } ) ;

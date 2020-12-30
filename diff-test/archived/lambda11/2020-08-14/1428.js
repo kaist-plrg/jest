@@ -1,1 +1,0 @@
-var x = String . prototype . slice . call ( ( Symbol . replace ) , true , ( Symbol . matchAll ) ) ;

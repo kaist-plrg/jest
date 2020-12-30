@@ -1,1 +1,0 @@
-var x = Array . prototype . reduceRight . call ( { [ "length" ] : { [ Symbol . toPrimitive ] : async function ( ) { } } } , { [ Symbol . toPrimitive ] : async function ( ) { } } ) ;

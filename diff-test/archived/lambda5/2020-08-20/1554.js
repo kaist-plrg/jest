@@ -1,1 +1,0 @@
-for ( var x of [ 42 , { [ "return" ] : async * function ( x ) { } } , true ] ) throw { [ "return" ] : async * function ( x ) { } } ;

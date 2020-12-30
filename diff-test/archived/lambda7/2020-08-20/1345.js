@@ -1,1 +1,0 @@
-var x = new WeakMap ( [ { [ "return" ] : function * ( x ) { } } , 'str' , true ] ) ;

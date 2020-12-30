@@ -1,1 +1,0 @@
-var x = String . prototype . substring . call ( x >= x , true , x ?? x ?? x ) ;

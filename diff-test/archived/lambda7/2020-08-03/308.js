@@ -1,1 +1,0 @@
-async function x ( ) { } 0n < 42n ;

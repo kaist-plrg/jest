@@ -1,1 +1,0 @@
-Promise . all ( { [ class extends x `${ '' }` { } . asyncIterator ] : x . x , [ null . iterator ] : function * ( ) { } } ) ;

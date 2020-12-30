@@ -1,1 +1,0 @@
-var x = { [ "get" ] : function ( x ) { } , [ "set" ] : function ( ) { } , [ "configurable" ] : false } - ( Symbol . replace ) ;

@@ -1,1 +1,0 @@
-async function * x ( ... [ x ] ) { } ; switch ( '' ) { default : } function * x ( ... [ x , ] ) { ; } x ( { x ( ... [ , ... x ] ) { } } ) ; function x ( ... [ , x ] ) { for ( var x of '' ) ; return BigInt ( x `${ '' }${ x }${ '' , '' }` ) ; }

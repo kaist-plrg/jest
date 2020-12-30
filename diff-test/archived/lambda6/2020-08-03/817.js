@@ -1,1 +1,0 @@
-var x = ( Symbol . unscopables ) + { [ "value" ] : 'str' , [ "writable" ] : true , [ "configurable" ] : true } ;

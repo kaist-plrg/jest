@@ -1,1 +1,0 @@
-Function . prototype . apply . call ( class x { static x ( ) { } } , Symbol . split , undefined ) ;

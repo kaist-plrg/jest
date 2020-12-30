@@ -1,1 +1,0 @@
-function x ( [ x ] = [ 1 , 2 , 3 ] ) { } ; var x = function ( ) { } ; x ( 0 ) ;

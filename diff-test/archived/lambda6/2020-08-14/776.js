@@ -1,1 +1,0 @@
-var x = Object . freeze ( [ 42 , 'str' , true ] ) ;

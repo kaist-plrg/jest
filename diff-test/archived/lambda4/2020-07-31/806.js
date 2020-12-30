@@ -1,1 +1,0 @@
-var x = { [ "value" ] : 'str' , [ "writable" ] : true } <= class x extends x ( ) [ '' , '' ] { ; } ;

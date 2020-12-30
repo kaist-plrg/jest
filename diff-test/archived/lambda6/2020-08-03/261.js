@@ -1,1 +1,0 @@
-Array . prototype . copyWithin . call ( { [ "get" ] : function ( x ) { } , [ "set" ] : function ( x0 , x1 ) { } , [ "enumerable" ] : false } , { [ "writable" ] : false , [ "enumerable" ] : false , [ "configurable" ] : true } , 0 , Symbol . match ) ;

@@ -1,1 +1,0 @@
-for ( ; Symbol . toPrimitive ; ) for ( var x = { x ( ... x ) { } } ; ( ) => { } ; x ) var { x } = x ;

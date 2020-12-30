@@ -1,1 +1,0 @@
-function * x ( ) { } function x ( ... { 42 : { } } ) { }

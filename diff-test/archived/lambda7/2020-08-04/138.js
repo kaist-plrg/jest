@@ -1,1 +1,0 @@
-Array . prototype . indexOf . call ( { [ "length" ] : class extends x ( ) [ '' , '' ] { ; } } , 0 ) ;

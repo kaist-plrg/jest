@@ -1,1 +1,0 @@
-var x = Object . create ( { set x ( x ) { } } , x !== x ) ;

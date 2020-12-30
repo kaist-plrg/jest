@@ -1,1 +1,0 @@
-var x = String . prototype . startsWith . call ( new String ( { [ "valueOf" ] : ( ) => { throw '' ; } , [ "toString" ] : async function ( ) { } } ) , { [ "valueOf" ] : ( ) => { throw '' ; } , [ "toString" ] : async function ( ) { } } ) ;

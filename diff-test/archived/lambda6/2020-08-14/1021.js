@@ -1,1 +1,0 @@
-var x = Array . prototype . toString . call ( new Array ( ) ) ;

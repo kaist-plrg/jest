@@ -1,1 +1,0 @@
-String . prototype . split . call ( 1 , ( Symbol . asyncIterator ) , [ 42 , 'str' , true ] ) ;

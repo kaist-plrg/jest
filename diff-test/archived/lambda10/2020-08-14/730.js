@@ -1,1 +1,0 @@
-do for ( let x = 1 ; x -- ; '' ) ; while ( null ) ;

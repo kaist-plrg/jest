@@ -1,1 +1,0 @@
-var x = Object . defineProperty ( { [ "length" ] : ( ) => { throw '' ; } } , 0 , { x , } ) ;

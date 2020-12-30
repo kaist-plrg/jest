@@ -1,1 +1,0 @@
-var x = Object . preventExtensions ( { p : 42 } ) ;

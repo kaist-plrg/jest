@@ -1,1 +1,0 @@
-var x = URIError ( ( Symbol . isConcatSpreadable ) ) ;

@@ -1,1 +1,0 @@
-var x = [ 42 , Symbol . split , x ?. x [ '' ] ] < x ;

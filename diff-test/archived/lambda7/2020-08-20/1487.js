@@ -1,1 +1,0 @@
-var x = x = '' ; switch ( '' ) { default : ; var x = { * x ( ... await ) { } } ; case x : ; x ( 42 ) ; }

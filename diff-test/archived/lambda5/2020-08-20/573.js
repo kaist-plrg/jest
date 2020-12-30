@@ -1,1 +1,0 @@
-var x = isFinite ( ( Symbol . split ) ) ;

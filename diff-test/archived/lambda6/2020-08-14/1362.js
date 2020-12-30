@@ -1,1 +1,0 @@
-var x = - Infinity ; ( { p : undefined = class extends x `${ '' }${ '' }` { } } = x ) ;

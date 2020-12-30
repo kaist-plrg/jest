@@ -1,1 +1,0 @@
-var x = Array . prototype . splice . call ( [ , '' ] , - { async * x ( ... { x = - 0 } ) { } } , true , Symbol . species ) ;

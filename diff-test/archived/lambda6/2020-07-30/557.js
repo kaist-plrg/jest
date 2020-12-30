@@ -1,1 +1,0 @@
-switch ( - Infinity ) { case 0 :  }

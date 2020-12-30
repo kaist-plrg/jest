@@ -1,1 +1,0 @@
-var x = Number . prototype . valueOf . call ( new Number ( { [ Symbol . toPrimitive ] : async * function ( ) { } } ) ) ;

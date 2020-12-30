@@ -1,1 +1,0 @@
-var x = { ... { [ - 1 ] : '' , [ '0' ] : function ( x ) { } , [ "enumerable" ] : Symbol . search , [ { async * x ( ... { x = '' } ) { } } ] : { [ "get" ] : function ( ) { } , [ "set" ] : function ( ) { } , [ "enumerable" ] : true , [ "configurable" ] : false } } } ;

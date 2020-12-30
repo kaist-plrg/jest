@@ -1,6 +1,0 @@
-[32mIfStatement1VarScopedDeclarations0[0m
-[32m- Inst: 3 / 3 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 2351  [-]   : { ... }[0m
-[32m+ 2352  [-]   : access __x0__ = (Statement "VarScopedDeclarations")[0m
-[32m+ 2353  [-]   : return __x0__[0m

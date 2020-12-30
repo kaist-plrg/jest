@@ -1,1 +1,0 @@
-var x = Object . isSealed ( { p : 42 } ) ;

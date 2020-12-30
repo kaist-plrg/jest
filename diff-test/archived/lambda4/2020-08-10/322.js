@@ -1,1 +1,0 @@
-var x = x `` ; function * x ( ... { ... x } ) { ; return ; } var x = [ x , , ... x ] ;

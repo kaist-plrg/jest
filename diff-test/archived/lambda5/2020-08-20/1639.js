@@ -1,1 +1,0 @@
-var x = eval ( x + ( x => { for ( x of '' ) ; var x = { [ - 1n ] : { get x ( ) { } } } ; var x = new x ( x , ... '' ) ; } ) ) ; function x ( ... { x , } ) { ; async function * x ( ... [ ... x ] ) { } }

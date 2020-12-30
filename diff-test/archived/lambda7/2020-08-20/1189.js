@@ -1,1 +1,0 @@
-var x = Infinity != 0n ; var [ , ... x ] = class x extends x [ '' ] { } ;

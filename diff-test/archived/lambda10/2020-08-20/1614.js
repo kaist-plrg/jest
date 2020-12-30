@@ -1,1 +1,0 @@
-var x = Array . prototype . findIndex . call ( [ 42 , 'str' , true ] , x => { ; x ( x = '' ) ; return ( Symbol . split ) ; if ( false ) try { } catch ( x ) { } else ; } ) ;

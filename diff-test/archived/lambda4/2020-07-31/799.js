@@ -1,1 +1,0 @@
-Array . prototype . indexOf . call ( { [ Symbol . iterator ] : function *  (  ) {  } } , 0 , 0 , -- x ) ;

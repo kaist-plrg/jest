@@ -1,1 +1,0 @@
-Object . isSealed ( { async * x ( ... x ) { } } ) ;

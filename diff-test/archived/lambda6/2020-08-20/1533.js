@@ -1,1 +1,0 @@
-async function x ( ... [ x , ] ) { } var x = x `${ '' }${ x }${ '' }` ; switch ( '' , '' ) { case '' : ; if ( '' ) ; else ; } x ( ) ;

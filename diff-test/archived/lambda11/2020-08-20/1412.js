@@ -1,1 +1,0 @@
-var x = Array . prototype . join . call ( ( Symbol . asyncIterator ) , Symbol . toPrimitive ) ;

@@ -1,1 +1,0 @@
-var x = [ Infinity , Number ( Symbol . iterator ) , 3 ] ; ( - 1 ) ;

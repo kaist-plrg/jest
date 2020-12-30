@@ -1,1 +1,0 @@
-function x ( ) { ; switch ( ( Symbol . iterator ) ) { } for ( ( Symbol . unscopables ) in ( Symbol . replace ) ) ; var x = class extends x ( ) ?. x { ; } ; return Symbol . match , [ ] ; } new x ( ) ;

@@ -1,1 +1,0 @@
-Object . create ( [ 42 , 'str' , true ] ) ;

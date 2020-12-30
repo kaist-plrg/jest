@@ -1,1 +1,0 @@
-var x = ( x => BigInt ( 42n ) ) `` ;

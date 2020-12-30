@@ -1,1 +1,0 @@
-var x = eval ( 42n ) ; var { ... x } = x ** x ;

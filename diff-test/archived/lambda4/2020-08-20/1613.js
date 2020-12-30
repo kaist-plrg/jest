@@ -1,1 +1,0 @@
-var x = { x : class extends x { ; } } ; var x = '0' ?. [ ( Symbol . unscopables ) , class extends x ?. x . x { ; } ] ; try { } catch { } finally { }

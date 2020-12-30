@@ -1,1 +1,0 @@
-Array . from ( `${ Symbol . species }${ { x } , 'str' }` ) ;

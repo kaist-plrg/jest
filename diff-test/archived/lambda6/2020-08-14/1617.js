@@ -1,1 +1,0 @@
-var x = String . prototype . endsWith . call ( { [ Symbol . toPrimitive ] : true } !== { [ Symbol . toPrimitive ] : true } , { [ Symbol . toPrimitive ] : true } ) ;

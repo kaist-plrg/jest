@@ -1,1 +1,0 @@
-'0' . prototype . substring . call ( class x extends x ?. x ?. x { } , 0 , BigInt ( 0.1 ) ) ;

@@ -1,9 +1,0 @@
-[32mObjectBindingPattern1BindingInitialization0[0m
-[32m- Inst: 6 / 6 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 23691 [-]   : { ... }[0m
-[32m+ 23692 [-]   : let excludedNames = (new [])[0m
-[32m+ 23693 [-]   : access __x0__ = (BindingRestProperty "RestBindingInitialization")[0m
-[32m+ 23694 [-]   : app __x1__ = (__x0__ value environment excludedNames)[0m
-[32m+ 23695 [-]   : app __x2__ = (WrapCompletion __x1__)[0m
-[32m+ 23696 [-]   : return __x2__[0m

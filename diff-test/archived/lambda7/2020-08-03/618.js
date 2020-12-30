@@ -1,1 +1,0 @@
-Object . defineProperties ( class x { static x ( ) { } } , - Infinity ) ;

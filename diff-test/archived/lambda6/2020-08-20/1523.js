@@ -1,1 +1,0 @@
-var x = String . prototype . indexOf . call ( x => { } , { [ "valueOf" ] : true , [ "toString" ] : async function ( x ) { } } ) ;

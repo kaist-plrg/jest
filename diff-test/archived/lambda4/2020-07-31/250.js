@@ -1,1 +1,0 @@
-Array . prototype . copyWithin . call ( '0' , [ , '' ] , { [ "return" ] : function  ( x0  , x1  ) {  } } ) ;

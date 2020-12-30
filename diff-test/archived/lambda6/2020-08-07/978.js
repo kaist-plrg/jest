@@ -1,1 +1,0 @@
-throw class x extends x `${ '' }${ '' }` { ; } ;

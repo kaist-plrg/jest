@@ -1,1 +1,0 @@
-Object . defineProperty ( { [ "writable" ] : false , [ "enumerable" ] : true , [ "configurable" ] : false } , async function x ( ) { } , { [ "get" ] : function ( x ) { } , [ "set" ] : function ( x0 , x1 ) { } , [ "enumerable" ] : false , [ "configurable" ] : false } ) ;

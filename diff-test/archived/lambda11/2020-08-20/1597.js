@@ -1,1 +1,0 @@
-; x ( ) ; function x ( ... [ x , ] ) { ; switch ( BigInt ( 'x' ) ) { case Infinity : default : case ( BigInt ( 'x' ) ) : } return x ?? x ?? x ; }

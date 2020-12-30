@@ -1,1 +1,0 @@
-var x = Object . defineProperty ( { [ Symbol . toPrimitive ] : null } , 1 , { [ { [ Symbol . toPrimitive ] : null } ] : { [ Symbol . toPrimitive ] : null } , [ "enumerable" ] : null , [ { [ Symbol . toPrimitive ] : null } ] : 0 , [ "value" ] : function ( x ) { } , [ "get" ] : function ( ) { } , [ { [ Symbol . toPrimitive ] : null } ] : { [ Symbol . toPrimitive ] : null } } ) ;

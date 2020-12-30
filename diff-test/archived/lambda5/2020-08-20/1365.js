@@ -1,1 +1,0 @@
-var x = ( - Infinity ) instanceof class x extends x `${ '' }${ x }${ '' , '' }` { ; } ;

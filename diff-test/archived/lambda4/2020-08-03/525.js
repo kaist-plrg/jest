@@ -1,1 +1,0 @@
-function x ( x0 , x1 ) { } ; x ( 0 ) ; x ( ) ; function * x ( ... [ x , ] ) { ; } function x ( ... [ , x ] ) { ; x ( 0 ) ; return 0 ; }

@@ -1,1 +1,0 @@
-var x = String . prototype . substring . call ( class x { static x ( ) { } } , ( Symbol . matchAll ) , false ) ;

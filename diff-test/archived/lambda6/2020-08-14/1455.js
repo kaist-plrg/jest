@@ -1,1 +1,0 @@
-var x = String . prototype . slice . call ( Symbol . replace , [ ] , class x { static x ( ) { } } ) ;

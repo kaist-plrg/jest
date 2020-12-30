@@ -1,1 +1,0 @@
-Function . prototype . apply . call ( class   {  } , { [ "get" ] : function  (  ) {  } , [ "set" ] : function  (  ) {  } , [ "enumerable" ] : false } , null ) ;

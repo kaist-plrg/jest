@@ -1,1 +1,0 @@
-Object . defineProperty ( { [ "next" ] : 'str' , [ { [ "next" ] : function ( x ) { } , [ "return" ] : function ( x ) { } , [ "throw" ] : function ( x ) { } } ] : 42n } , { [ "value" ] : 0 , [ "writable" ] : false , [ "configurable" ] : false } , { [ "enumerable" ] : false , [ "configurable" ] : false } ) ;

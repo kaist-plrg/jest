@@ -1,1 +1,0 @@
-var x = Error ( 0 ) ;

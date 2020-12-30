@@ -1,1 +1,0 @@
-function * x ( ... { x } ) { } while ( '' ) ; if ( '' , '' ) ; else ; x %= Symbol . iterator ;

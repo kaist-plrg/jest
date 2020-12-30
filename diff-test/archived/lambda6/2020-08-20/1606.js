@@ -1,1 +1,0 @@
-var x = new String ( BigInt ( { [ Symbol . toPrimitive ] : async function ( x ) { ; await x ( ) ; async function x ( ... [ x , ] ) { } return ; async function * x ( ... { } ) { } return 42 ; } } ) ) ;

@@ -1,1 +1,0 @@
-do ; while ( new x ( '' ) ) ;

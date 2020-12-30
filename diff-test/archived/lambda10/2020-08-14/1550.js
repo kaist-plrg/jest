@@ -1,1 +1,0 @@
-var x = ( x => { ; true ( class x extends x { x ( ) { } } ) ; return x === x ; } ) ( { [ 'str' ] : class x { x ( ) { } } } ) ;

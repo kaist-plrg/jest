@@ -1,9 +1,0 @@
-[32mBreakableStatement0Evaluation0[0m
-[32m- Inst: 6 / 6 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 1700  [-]   : { ... }[0m
-[32m+ 1701  [-]   : let newLabelSet = (new [])[0m
-[32m+ 1702  [-]   : access __x0__ = (this "LabelledEvaluation")[0m
-[32m+ 1703  [-]   : app __x1__ = (__x0__ newLabelSet)[0m
-[32m+ 1704  [-]   : app __x2__ = (WrapCompletion __x1__)[0m
-[32m+ 1705  [-]   : return __x2__[0m

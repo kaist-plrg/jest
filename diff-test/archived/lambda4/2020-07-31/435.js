@@ -1,1 +1,0 @@
-String . prototype . padEnd . call ( ( - 0 ) . asyncIterator , Symbol . toPrimitive ) ;

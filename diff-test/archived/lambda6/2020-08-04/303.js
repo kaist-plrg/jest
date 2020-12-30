@@ -1,1 +1,0 @@
-var x = x `` ; var [ x , ] = x ; function * x ( ... [ , ] ) { ; yield yield * Symbol . match ; yield 0 ; } var [ ... x ] = x ;

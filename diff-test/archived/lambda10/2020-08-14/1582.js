@@ -1,1 +1,0 @@
-async function x ( ... [ x ] ) { } x `${ '' }${ { [ "done" ] : async * function ( ) { } } , { [ "done" ] : async * function ( ) { } } }` ;

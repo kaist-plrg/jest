@@ -1,1 +1,0 @@
-var x = new x ( ) ; if ( '' , '' ) ; function x ( ... [ , , ... x ] ) { ; return Number ( Symbol . iterator ) ; }

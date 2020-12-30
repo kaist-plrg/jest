@@ -1,1 +1,0 @@
-for ( var x in { [ class { ; } ] : ( x => { } ) } ) for ( let x = x ; ; ) ;

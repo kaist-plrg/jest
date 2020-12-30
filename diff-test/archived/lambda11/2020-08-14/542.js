@@ -1,1 +1,0 @@
-var x = Object . assign ( 0 , null ) ;

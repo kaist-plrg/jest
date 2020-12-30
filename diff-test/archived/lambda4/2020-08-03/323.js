@@ -1,1 +1,0 @@
-String . prototype . slice . call ( typeof x , 0 , 0n ) ;

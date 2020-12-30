@@ -1,1 +1,0 @@
-var x = Array . prototype . find . call ( '0' , class x { ; ; } ) ;

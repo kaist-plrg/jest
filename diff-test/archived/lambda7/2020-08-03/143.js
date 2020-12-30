@@ -1,1 +1,0 @@
-String . prototype . slice . call ( Symbol . toStringTag , ( - 1 ) ) ;

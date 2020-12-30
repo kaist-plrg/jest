@@ -1,1 +1,0 @@
-while ( { [ "return" ] : function ( x0 , x1 ) { } , [ "throw" ] : function ( ) { } } , { [ "get" ] : function ( x ) { } , [ "set" ] : function ( ) { } , [ "enumerable" ] : false , [ "configurable" ] : false } ) for ( let x = x ; ; ) ;

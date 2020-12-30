@@ -1,1 +1,0 @@
-var x = undefined != ( Number ( Symbol . iterator ) ) ;

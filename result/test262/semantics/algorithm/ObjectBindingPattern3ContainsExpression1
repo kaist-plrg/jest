@@ -1,6 +1,0 @@
-[31mObjectBindingPattern3ContainsExpression1[0m
-[31m- Inst: 0 / 3 (0.00%)[0m
-[31m- Cond: -[0m
-[31m- 23738 [-]   : { ... }[0m
-[31m- 23739 [-]   : access __x0__ = (BindingPropertyList "ContainsExpression")[0m
-[31m- 23740 [-]   : return __x0__[0m

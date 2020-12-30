@@ -1,1 +1,0 @@
-for ( let x = Symbol . toStringTag ; x /= '' ; x >= x ) do ; while ( '' , '' ) ;

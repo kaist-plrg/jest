@@ -1,1 +1,0 @@
-( x => { ; x ( ) ; return ; return 0 ; async function * x ( ... { x = '' } ) { ; var x = x !== x ; } switch ( '' ) { default : ; } switch ( '' ) { case x : ; var x = { * x ( ... { x : { } } ) { } } ; return ; case x : ; throw 0 ; } } ) ( ) ;

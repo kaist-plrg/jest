@@ -1,1 +1,0 @@
-Array . prototype . indexOf . call ( null , 0 , NaN ) ;

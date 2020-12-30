@@ -1,1 +1,0 @@
-for ( ; '0' ; class extends x ?. x ?. x { } ) for ( ; '' , '' ; ) ;

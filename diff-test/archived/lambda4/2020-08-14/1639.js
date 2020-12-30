@@ -1,1 +1,0 @@
-var x = String . prototype . matchAll . call ( NaN , { [ class extends x `${ '' , '' }${ '' , '' }` { ; } . match ] : ( - Infinity ) } && { [ [ , ... '' ] . match ] : function ( ) { } } ) ; async function x ( ... { [ class extends x ?. [ '' ] { ; } ] : { } = x } ) { }

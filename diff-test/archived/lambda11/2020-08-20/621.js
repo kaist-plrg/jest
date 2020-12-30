@@ -1,1 +1,0 @@
-var x = Object . fromEntries ( undefined ) ;

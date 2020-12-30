@@ -1,1 +1,0 @@
-var x = x `` ; var x = { '' : '' } ; async function x ( ... { x = '' } ) { ; await x ( ) ; }

@@ -1,1 +1,0 @@
-Object . defineProperties ( { [ - 1n ] : x | x , [ class x extends x ( ) [ '' , '' ] { ; } ] : Symbol . matchAll , [ { [ "get" ] : function ( ) { } , [ "configurable" ] : false } ] : '0' } , 0 ) ;

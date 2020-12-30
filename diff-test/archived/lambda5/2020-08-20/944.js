@@ -1,1 +1,0 @@
-var x = Array . prototype . slice . call ( 1 , - 1n , 0 ) ;

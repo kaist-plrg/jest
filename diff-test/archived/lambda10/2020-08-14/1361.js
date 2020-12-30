@@ -1,1 +1,0 @@
-let x ; switch ( Symbol . asyncIterator ) { default : case Symbol . asyncIterator : }

@@ -1,1 +1,0 @@
-var x = Array . prototype . indexOf . call ( [ 42 , 'str' , true ] , Symbol . iterator ) ;

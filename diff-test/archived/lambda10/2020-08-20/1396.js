@@ -1,1 +1,0 @@
-var x = Array . from ( x => x , ( ) => { for ( var x = '' ; '' ; ) ; x instanceof x ; } ) ;

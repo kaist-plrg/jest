@@ -1,6 +1,0 @@
-[32mMethodDefinition4PropName0[0m
-[32m- Inst: 3 / 3 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 22942 [-]   : { ... }[0m
-[32m+ 22943 [-]   : access __x0__ = (PropertyName "PropName")[0m
-[32m+ 22944 [-]   : return __x0__[0m

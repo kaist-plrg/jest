@@ -1,1 +1,0 @@
-var x = { [ "prototype" ] : function ( x ) { } } . prototype . toString . call ( new Array ( ) ) ;

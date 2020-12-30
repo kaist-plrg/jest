@@ -1,1 +1,0 @@
-var x = Array . prototype . flatMap . call ( new ( Number ( Symbol . iterator ) ) ( ) , Symbol . match ) ;

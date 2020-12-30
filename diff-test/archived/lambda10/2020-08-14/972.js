@@ -1,1 +1,0 @@
-var x = { p : 0 } ; ( { p : FREE } = Symbol . hasInstance ) ;

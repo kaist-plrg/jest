@@ -1,1 +1,0 @@
-var x = ( x => { ; x ( true ) ; return Number ( Symbol . iterator ) ; function * x ( ... { [ '' ] : { } = x } ) { } } ) ( ) ;

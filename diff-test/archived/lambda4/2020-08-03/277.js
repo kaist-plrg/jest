@@ -1,1 +1,0 @@
-for ( { x = '' } in [ , Symbol . unscopables ] ) for ( { async x ( x ) { } } ?. x [ Symbol . hasInstance , '' ] in Symbol . toStringTag ) ;

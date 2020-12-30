@@ -1,1 +1,0 @@
-for ( var x = Symbol . search ; ( x => { } ) ; x ( ) ) ; switch ( Symbol . match ) { case [ x , ... x ] : default : ; }

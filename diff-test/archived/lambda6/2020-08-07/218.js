@@ -1,1 +1,0 @@
-var x = undefined ; ( { ... ( Symbol . iterator ) } = x ) ;

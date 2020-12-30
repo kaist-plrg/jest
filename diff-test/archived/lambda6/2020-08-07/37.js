@@ -1,1 +1,0 @@
-var x = String . prototype . repeat . call ( async function * ( ) { } , 1 ) ;

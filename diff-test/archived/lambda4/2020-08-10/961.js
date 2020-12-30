@@ -1,1 +1,0 @@
-var x = class x extends x `${ '' , '' }${ x }${ '' }` { } . prototype [ { p : 42 } . hasInstance ] . call ( x - x , Symbol . replace ) ;

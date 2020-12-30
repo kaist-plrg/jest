@@ -1,1 +1,0 @@
-Array . prototype . lastIndexOf . call ( 'str' , 1 , ( Symbol . asyncIterator ) , ( 0n ) ) ;

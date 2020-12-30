@@ -1,1 +1,0 @@
-var x = String . prototype . normalize . call ( { * x ( ... [ , ] ) { } } , ( Symbol . search ) ) ;

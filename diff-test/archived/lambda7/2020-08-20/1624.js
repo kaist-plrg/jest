@@ -1,1 +1,0 @@
-var x = ( '' , '' ) ; switch ( '' ) { case ( Symbol . species ) : default : switch ( '' ) { case x : default : ; } case Symbol . species : }

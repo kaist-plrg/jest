@@ -1,1 +1,0 @@
-var x = { set x ( x ) { } } ; var { x , } = class extends new x ( x , ) { ; } ;

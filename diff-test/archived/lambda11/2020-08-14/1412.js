@@ -1,1 +1,0 @@
-var x = Object . defineProperty ( [ ] , Symbol . split , { async x ( ... [ , ... x ] ) { } } ) ;

@@ -1,1 +1,0 @@
-try { } catch { } finally { ; function * x ( ... { ... x } ) { } }

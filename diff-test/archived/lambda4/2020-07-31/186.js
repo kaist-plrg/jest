@@ -1,1 +1,0 @@
-var x = x `` ; async function x ( ... [  ... x ] ) { for await ( x of '' ) ; for ( let x in BigInt ( 0.1 ) , - 1 ) ; async function * x ( ... [ , x  ] ) {  } }

@@ -1,1 +1,0 @@
-Array . prototype . filter . call ( undefined , Symbol . asyncIterator ) ;

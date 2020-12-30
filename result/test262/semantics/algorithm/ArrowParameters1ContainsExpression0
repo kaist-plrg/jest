@@ -1,8 +1,0 @@
-[31mArrowParameters1ContainsExpression0[0m
-[31m- Inst: 0 / 5 (0.00%)[0m
-[31m- Cond: -[0m
-[31m- 2870  [-]   : { ... }[0m
-[31m- 2871  [-]   : access __x0__ = (CoverParenthesizedExpressionAndArrowParameterList "CoveredFormalsList")[0m
-[31m- 2872  [-]   : let formals = __x0__[0m
-[31m- 2873  [-]   : access __x1__ = (formals "ContainsExpression")[0m
-[31m- 2874  [-]   : return __x1__[0m

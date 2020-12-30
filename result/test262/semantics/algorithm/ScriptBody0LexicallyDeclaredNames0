@@ -1,6 +1,0 @@
-[32mScriptBody0LexicallyDeclaredNames0[0m
-[32m- Inst: 3 / 3 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 1918  [-]   : { ... }[0m
-[32m+ 1919  [-]   : access __x0__ = (StatementList "TopLevelLexicallyDeclaredNames")[0m
-[32m+ 1920  [-]   : return __x0__[0m

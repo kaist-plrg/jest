@@ -1,1 +1,0 @@
-for ( let x in '' , '' ) ; var { x = class  extends x ?. [ '' ] {  } } = [ , ... '' ] ;

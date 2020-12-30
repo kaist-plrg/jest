@@ -1,1 +1,0 @@
-var x = Array . prototype . every . call ( [ x ?? x ?? x , 'str' , ( Symbol . hasInstance ) ] , async x => class x extends x ?. ( ) { } ) ;

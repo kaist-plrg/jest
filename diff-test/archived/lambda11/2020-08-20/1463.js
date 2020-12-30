@@ -1,1 +1,0 @@
-var x = String . prototype . substring . call ( '' , { [ "valueOf" ] : 0 , [ "toString" ] : true } , 0n ) ;

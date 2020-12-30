@@ -1,1 +1,0 @@
-var x = EvalError ( Symbol . isConcatSpreadable ) ;

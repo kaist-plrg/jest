@@ -1,1 +1,0 @@
-Object . defineProperty ( { * x ( ... await ) { } } , 0 ) ;

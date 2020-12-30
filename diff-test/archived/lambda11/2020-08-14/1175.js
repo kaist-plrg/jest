@@ -1,1 +1,0 @@
-var x = ( Number ( Symbol . iterator ) ) < class extends x ?. ( ) { } ;

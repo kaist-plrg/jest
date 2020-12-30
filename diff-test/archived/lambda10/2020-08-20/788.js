@@ -1,1 +1,0 @@
-for ( var x in [ 42 , 'str' , true ] ) throw '' , '' ;

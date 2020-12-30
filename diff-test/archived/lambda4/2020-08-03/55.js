@@ -1,1 +1,0 @@
-function x ( ... [ ... x ] ) { } var x = async x => { for await ( let x of '' ) ; for await ( var x of class extends x ?. [ '' ] { ; } ) ; } ; ; x `` ;

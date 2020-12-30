@@ -1,1 +1,0 @@
-try { ; x ( ) ; } catch ( x ) { ; var x = new x ( ... '' ) ; }

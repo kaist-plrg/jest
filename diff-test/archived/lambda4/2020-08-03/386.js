@@ -1,1 +1,0 @@
-delete { [ "set" ] : function ( ) { } , [ "enumerable" ] : true , [ "configurable" ] : true } [ '0' ] ;

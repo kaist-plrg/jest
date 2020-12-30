@@ -1,1 +1,0 @@
-for ( var x ; '' , '' ; ) ; var [ , ... x ] = class extends x `${ '' }${ x }${ '' , '' }` { } != class x extends new x ( x , ... '' ) { } ;

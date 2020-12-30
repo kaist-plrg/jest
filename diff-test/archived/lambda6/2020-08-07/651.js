@@ -1,1 +1,0 @@
-var x = { x , x } ; for ( [ ] in '' ) ; switch ( '' ) { case x : ; default : ; var x = [ , '' ] ; case x : }

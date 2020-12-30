@@ -1,1 +1,0 @@
-String . prototype . substring . call ( ( Symbol . asyncIterator ) , Symbol . species , Symbol . asyncIterator ) ;

@@ -1,1 +1,0 @@
-var x = eval ( BigInt ( 0.1 ) ) ;

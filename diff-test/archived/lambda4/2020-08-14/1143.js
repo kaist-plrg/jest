@@ -1,1 +1,0 @@
-switch ( '' ) { case '' : for ( let x = 0n ; { p : 42 } ; x / x ) { } }

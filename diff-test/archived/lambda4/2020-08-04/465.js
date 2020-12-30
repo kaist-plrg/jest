@@ -1,1 +1,0 @@
-eval ( typeof x ) ; async function * x ( ... { ... x } ) { }

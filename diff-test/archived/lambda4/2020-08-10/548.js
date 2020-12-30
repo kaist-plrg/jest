@@ -1,1 +1,0 @@
-var x = x `${ '' , '' }${ - Infinity }${ class x extends x `${ '' }${ '' }` { } }` ;

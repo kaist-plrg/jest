@@ -1,1 +1,0 @@
-function x ( ... [ ... x ] ) { } ; x `` ; function * x ( ... { [ new x ] : { } = Symbol . iterator } ) { }

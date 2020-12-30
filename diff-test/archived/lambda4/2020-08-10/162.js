@@ -1,1 +1,0 @@
-try { ; var x = x `${ '' , '' }${ x }${ '' }` ; } catch { } finally { ; new x ( ) ; }

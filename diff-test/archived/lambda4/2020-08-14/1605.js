@@ -1,1 +1,0 @@
-var x = Array . prototype . flat . call ( [ x , , ] ) ; switch ( '' , '' ) { default : ; new x ( ) ; case x : ; var x = { x ( ... [ , ... x ] ) { } } ; } var { x , x } = x ;

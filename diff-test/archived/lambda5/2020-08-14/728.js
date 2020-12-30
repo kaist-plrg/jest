@@ -1,1 +1,0 @@
-switch ( Symbol . species ) { default : case ! x : }

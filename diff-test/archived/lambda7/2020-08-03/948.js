@@ -1,1 +1,0 @@
-Object . fromEntries ( 0 ) ;

@@ -1,1 +1,0 @@
-for ( var x of { [ "done" ] : function * ( x ) { } } ) ;

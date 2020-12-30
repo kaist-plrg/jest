@@ -1,1 +1,0 @@
-var x = Object . defineProperty ( [ , ... '' ] , ( Symbol . hasInstance ) , { [ "set" ] : function * ( ) { } , [ "enumerable" ] : function * ( x ) { } , [ "get" ] : function ( x ) { } , [ "writable" ] : 0 , [ "value" ] : function ( x ) { } , [ "configurable" ] : function ( ) { } } ) ;

@@ -1,1 +1,0 @@
-var x = Object . getPrototypeOf ( x ?. x ?. x ) ;

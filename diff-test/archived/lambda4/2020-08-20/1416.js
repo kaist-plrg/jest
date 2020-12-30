@@ -1,1 +1,0 @@
-for ( let x ; '' , '' ; '' , '' ) ; ( ( Symbol . replace ) = { x ( ... [ ... x ] ) { } } ) ;

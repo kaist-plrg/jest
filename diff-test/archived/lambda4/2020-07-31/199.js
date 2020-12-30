@@ -1,1 +1,0 @@
-Array . prototype . copyWithin . call ( undefined , ( Symbol . isConcatSpreadable ) , [  ] ) ;

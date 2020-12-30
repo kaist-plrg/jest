@@ -1,1 +1,0 @@
-for ( { x = class { static x ( ) { } } } of [ 1 ] ) ;

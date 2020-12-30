@@ -1,1 +1,0 @@
-for ( x in 42n ) for ( x of '' ) ;

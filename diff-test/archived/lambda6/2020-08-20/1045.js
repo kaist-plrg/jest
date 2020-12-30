@@ -1,1 +1,0 @@
-for ( ( BigInt ( 'x' ) ) of [ , '' ] ) for ( var x ; '' , '' ; ) ;

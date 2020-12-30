@@ -1,1 +1,0 @@
-var x = Array . prototype . shift . call ( { [ "length" ] : { [ Symbol . toPrimitive ] : async function ( ) { } } } ) ;

@@ -1,1 +1,0 @@
-async function * x ( ... [ x , , ] ) { } for ( let { } = x ; { x ( ... [ , x ] ) { } } ; ) var { [ '' ] : x } = x ;

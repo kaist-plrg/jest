@@ -1,1 +1,0 @@
-var x = async x => await { [ "constructor" ] : async * function ( x ) { } } ; x ( ) . x ;

@@ -1,1 +1,0 @@
-Number . isInteger ( 0 ) ;

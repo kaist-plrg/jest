@@ -1,1 +1,0 @@
-var x = Array . prototype . reverse . call ( typeof ( Symbol . species ) ) ;

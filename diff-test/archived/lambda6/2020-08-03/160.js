@@ -1,1 +1,0 @@
-function x ( x ) { ; throw 0 ; } async function x ( ... { [ async x => x ] : { } = x } ) { for ( var x ; '' , '' ; '' , '' ) ; var { x = { get x ( ) { } } } = - 1 ; } x ( ) ;

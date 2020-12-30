@@ -1,1 +1,0 @@
-class x { } { ( Number ( Symbol . iterator ) ) = Number ( Symbol . iterator ) ; } ;

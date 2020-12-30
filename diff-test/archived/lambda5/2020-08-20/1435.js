@@ -1,1 +1,0 @@
-var x = String . prototype . lastIndexOf . call ( - Infinity , 1 , { * x ( ... [ x , , ] ) { } } ) ;

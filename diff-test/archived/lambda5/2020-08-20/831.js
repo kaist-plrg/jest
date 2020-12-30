@@ -1,1 +1,0 @@
-var x = 42n . prototype . bind . call ( null , - 1n ) ;

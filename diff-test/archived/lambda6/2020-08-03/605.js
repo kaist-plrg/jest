@@ -1,1 +1,0 @@
-for ( var x in { async * x ( ... { } ) { } } ) for ( let x = x ; ; '' ) ;

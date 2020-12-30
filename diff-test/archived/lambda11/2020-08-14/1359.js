@@ -1,1 +1,0 @@
-for ( x in { [ "done" ] : false } ) ; class x extends x `${ '' }${ x }${ '' , '' }` { }

@@ -1,1 +1,0 @@
-( class extends x ( ) ?. x { } . toStringTag ) = ( Symbol . species ) ;

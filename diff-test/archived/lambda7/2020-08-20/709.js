@@ -1,1 +1,0 @@
-var x = Symbol . iterator ; var [ , , ] = x < x ;

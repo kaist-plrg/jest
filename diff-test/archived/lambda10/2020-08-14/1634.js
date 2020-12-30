@@ -1,1 +1,0 @@
-var x = Promise . prototype . finally . call ( { [ "constructor" ] : class extends x { } , [ [ , '' ] ] : ( ) => { throw x !== x ; } } , { [ 1 ] : [ 42 , 'str' , true ] , [ - Infinity ] : ( ) => { throw `` ; } } ) ;

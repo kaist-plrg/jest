@@ -1,1 +1,0 @@
-while ( Infinity ) switch ( '' ) { case x :  default :   }

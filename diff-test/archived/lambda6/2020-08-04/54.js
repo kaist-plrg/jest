@@ -1,1 +1,0 @@
-for ( { [ `${ '' }${ x }${ '' , '' }` ] : { [ "enumerable" ] : true , [ "configurable" ] : false } . x } in { [ "get" ] : function ( ) { } , [ "enumerable" ] : false } ) var x , x ;

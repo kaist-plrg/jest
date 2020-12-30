@@ -1,1 +1,0 @@
-switch ( '' ) { case { async * x ( ... { [ '' ] : { } = x } ) { } } : default : for ( x ?. x [ '' , '' ] in '' ) ; }

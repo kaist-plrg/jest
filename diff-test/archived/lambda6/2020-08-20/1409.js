@@ -1,1 +1,0 @@
-function x ( [ x ] = class x extends x ?. [ '' , '' ] { } ) { } ; x ( class extends x ( ) { } ) ;

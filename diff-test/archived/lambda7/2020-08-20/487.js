@@ -1,1 +1,0 @@
-var x = ReferenceError ( void x ) ;

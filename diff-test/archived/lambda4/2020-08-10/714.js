@@ -1,1 +1,0 @@
-async function x ( ... [ x , , ] ) { } ( - Infinity ) ( x ( ) [ '' , { [ Symbol . toPrimitive ] : ( ) => { throw '' ; } } ] ) ;

@@ -1,1 +1,0 @@
-var x = x `${ '' }${ '' }` ; async function x ( ... { x , } ) { ; for await ( ( BigInt ( false ) ) of [ [ x , , ] , ] ) if ( '' ) ; else ; function x ( ) { } await x ( ) ; }

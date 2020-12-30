@@ -1,1 +1,0 @@
-var x = new Boolean ( 0 ) ;

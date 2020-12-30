@@ -1,1 +1,0 @@
-async function x ( ) { switch ( '' ) { case '' , '' : } for await ( var x of '' ) ; } x ( 42 ) ;

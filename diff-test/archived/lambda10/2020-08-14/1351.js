@@ -1,1 +1,0 @@
-var x = String . prototype . split . call ( { * x ( ... await ) { } } , { } , 1 ) ;

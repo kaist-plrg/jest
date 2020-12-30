@@ -1,1 +1,0 @@
-async function * x ( ) { ; } switch ( '' ) { case x : ; default : ; x ( 0 ) ; case x : ; var await = x ; }

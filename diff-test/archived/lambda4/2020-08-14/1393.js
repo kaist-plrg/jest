@@ -1,1 +1,0 @@
-var x = Object . prototype . isPrototypeOf . call ( 1 , { async * x ( ... { ... x } ) { } } ) ;

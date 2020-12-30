@@ -1,1 +1,0 @@
-var x = Array . prototype . flat . call ( [ x , , ] ) ; var x = [ - 1n , , ... Number ( Symbol . iterator ) ] ;

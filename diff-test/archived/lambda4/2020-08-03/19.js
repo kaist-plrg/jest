@@ -1,1 +1,0 @@
-function x ( x0 , x1 ) { } var x = { async * x ( ... { [ '' ] : { } = x } ) { } } ; ; var x = async x => await { [ "then" ] : function ( ) { ; x ( 0 ) ; } } ; x ( ) ;

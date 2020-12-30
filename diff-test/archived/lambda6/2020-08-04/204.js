@@ -1,1 +1,0 @@
-while ( ( Symbol . asyncIterator ) , { [ "writable" ] : true , [ "enumerable" ] : false } ) switch ( '' ) { case x : case x : }

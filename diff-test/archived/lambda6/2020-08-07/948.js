@@ -1,1 +1,0 @@
-async function * x ( ) { return false , x += '' ; } ; switch ( '' , '' ) { default : ; case x : }

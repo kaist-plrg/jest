@@ -1,1 +1,0 @@
-( x => { switch ( '' ) { case x :  case x :  } [  ] ( Symbol . iterator ) ; for ( let x of '' ) ; } ) ( ) ;

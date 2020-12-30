@@ -1,6 +1,0 @@
-[32mGLOBALDOTINTRINSIC_IteratorPrototypeDOTSYMBOL_iterator[0m
-[32m- Inst: 3 / 3 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 14764 [-]   : { ... }[0m
-[32m+ 14765 [-]   : app __x0__ = (WrapCompletion this)[0m
-[32m+ 14766 [-]   : return __x0__[0m

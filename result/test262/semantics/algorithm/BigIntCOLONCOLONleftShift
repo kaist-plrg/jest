@@ -1,8 +1,0 @@
-[32mBigIntCOLONCOLONleftShift[0m
-[32m- Inst: 5 / 5 (100.00%)[0m
-[32m- Cond: 2 / 2 (100.00%)[0m
-[32m+ 6589  [-]   : { ... }[0m
-[32m+ 6590  [[32mT[0m/[32mT[0m[32m]: if (< y 0n) ... else ...[0m
-[32m+ 6591  [-]   : return (>> (convert x num2bigint ) (- (convert y num2bigint )))[0m
-[32m+ 6592  [-]   : {}[0m
-[32m+ 6593  [-]   : return (* (convert x num2bigint ) (** 2n (convert y num2bigint )))[0m

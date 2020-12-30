@@ -1,1 +1,0 @@
-function x ( ... [ , , ] ) { } ; 42n ; for ( x ( ) . x in { get x ( ) { } } ) for ( x ?. x . x in '' ) ; for ( var x in '' ) ; for ( let x ; Symbol . asyncIterator , `${ '' }${ x }${ '' }` . match ; ) ;

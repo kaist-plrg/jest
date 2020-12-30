@@ -1,1 +1,0 @@
-for ( var x in `${ '' }${ x }${ '' }` ) try { ; x ( 0 ) ; } catch {  }

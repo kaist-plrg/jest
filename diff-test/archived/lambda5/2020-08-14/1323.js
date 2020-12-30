@@ -1,1 +1,0 @@
-var x = Object . getOwnPropertyDescriptor ( 0 , { [ Symbol . toPrimitive ] : false } ) ;

@@ -1,1 +1,0 @@
-var x = ( Symbol . species ) == class x extends x `${ '' }${ '' }` { ; } ;

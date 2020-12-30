@@ -1,1 +1,0 @@
-var x = Object . isFrozen ( async x => x ) ;

@@ -1,1 +1,0 @@
-var x = String . prototype . lastIndexOf . call ( new { * x ( ) { } } ( x ( ) [ '' ] ) , `${ '' , '' }` , 0 ) ;

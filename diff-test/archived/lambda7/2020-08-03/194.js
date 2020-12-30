@@ -1,1 +1,0 @@
-class x extends function ( ) { for ( var x = '' ; '' ; '' ) ; return { set x ( x ) { } } ; } { ; } new x ;

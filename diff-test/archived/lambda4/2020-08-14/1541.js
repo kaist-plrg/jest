@@ -1,1 +1,0 @@
-for ( let x ; '' , '' ; ) ; switch ( 42n , class extends x { static x ( ) { } } ) { default : for ( var x = '' ; '' ; '' ) ; case x : }

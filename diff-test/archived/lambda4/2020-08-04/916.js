@@ -1,1 +1,0 @@
-WeakMap . prototype . set . call ( x || x , x >= x , x ++ ) ;

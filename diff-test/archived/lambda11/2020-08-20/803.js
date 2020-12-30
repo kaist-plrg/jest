@@ -1,1 +1,0 @@
-for ( x of { [ "done" ] : async function ( ) { } } ) ;

@@ -1,6 +1,0 @@
-[31mRelationalExpression1HasCallInTailPosition0[0m
-[31m- Inst: 0 / 3 (0.00%)[0m
-[31m- Cond: -[0m
-[31m- 870   [-]   : { ... }[0m
-[31m- 871   [-]   : app __x0__ = (WrapCompletion false)[0m
-[31m- 872   [-]   : return __x0__[0m

@@ -1,1 +1,0 @@
-var x = String . prototype . padStart . call ( Symbol . replace , Symbol . species ) ;

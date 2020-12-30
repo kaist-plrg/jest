@@ -1,1 +1,0 @@
-for ( let x = { async x ( ... { x } ) { } } ; '0' ; ) throw '' ;

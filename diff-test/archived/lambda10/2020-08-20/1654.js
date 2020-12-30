@@ -1,1 +1,0 @@
-switch ( { [ "prototype" ] : '0' } ) { case '' , { [ "prototype" ] : '0' } : } x ( x -- ) ; async function x ( ... [ ] ) { while ( '' , '' ) ; for await ( x of { [ "prototype" ] : '0' } ) ; return { async * x ( ... { [ { [ "prototype" ] : '0' } ] : { } = { [ "prototype" ] : '0' } } ) { } } ; }

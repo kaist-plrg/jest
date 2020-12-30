@@ -1,1 +1,0 @@
-var x = Object . is ( true , x < x ) ;

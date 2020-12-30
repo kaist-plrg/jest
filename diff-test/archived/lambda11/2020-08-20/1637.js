@@ -1,1 +1,0 @@
-var x = x ( ) ( ) ; x ( ) . x ; function x ( ... [ x , ] ) { switch ( class extends x ( ) [ '' , '' ] { ; } ) { case '' , Number ( Symbol . iterator ) : } x ?? x ; return x != x ; }

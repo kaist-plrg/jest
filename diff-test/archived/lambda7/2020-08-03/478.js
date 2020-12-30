@@ -1,1 +1,0 @@
-String . prototype . endsWith . call ( class x { } , 0 , Symbol . unscopables ) ;

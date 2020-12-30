@@ -1,1 +1,0 @@
-var x = Array . prototype . reduce . call ( 'str' , x => class x extends x `${ '' }${ x }${ '' , '' }` { } ) ;

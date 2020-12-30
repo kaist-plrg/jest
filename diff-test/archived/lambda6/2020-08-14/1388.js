@@ -1,1 +1,0 @@
-var x = new String ( x > x ) ; var x = ( Symbol . hasInstance ) instanceof ( x => { } ) ;

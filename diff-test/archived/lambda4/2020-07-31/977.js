@@ -1,1 +1,0 @@
-Array . prototype . pop . call ( 1 , 0 ) ;

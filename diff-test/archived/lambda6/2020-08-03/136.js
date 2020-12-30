@@ -1,1 +1,0 @@
-var x = async x => { for await ( var x of { p : 42 } ) for ( x ?. x . x in '' ) ; for ( '' ; '' ; ) ; } ; x ( -- x ) ;

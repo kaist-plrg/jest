@@ -1,1 +1,0 @@
-for ( x in new x ( ... '' ) ) var x ;

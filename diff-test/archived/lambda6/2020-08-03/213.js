@@ -1,1 +1,0 @@
-String . prototype . substring . call ( { [ "enumerable" ] : true , [ "configurable" ] : false } , { * x ( ... [ , ] ) { } } , Symbol . asyncIterator ) ;

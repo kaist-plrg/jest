@@ -1,1 +1,0 @@
-var x = Array . prototype . slice . call ( - { [ "length" ] : async * function ( ) { } } , x %= '' , 0 ) ;

@@ -1,1 +1,0 @@
-for ( [ { } , , ... Symbol . split ] of [ '' ] ) for ( [ x , , ] in '' ) ;

@@ -1,1 +1,0 @@
-Array . prototype . map . call ( ( '' ) , async function ( ) { } , [ 42 , 'str' , true ] ) ;

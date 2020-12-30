@@ -1,1 +1,0 @@
-var x = String . prototype . codePointAt . call ( ( ) => { } , ( Symbol . toStringTag ) ) ;

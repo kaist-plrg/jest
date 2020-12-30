@@ -1,1 +1,0 @@
-if ( ( Symbol . isConcatSpreadable ) , class x extends x ( ) ( ) {  } ) ;

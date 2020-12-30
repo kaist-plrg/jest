@@ -1,6 +1,0 @@
-[31mShiftExpression1HasCallInTailPosition0[0m
-[31m- Inst: 0 / 3 (0.00%)[0m
-[31m- Cond: -[0m
-[31m- 27296 [-]   : { ... }[0m
-[31m- 27297 [-]   : app __x0__ = (WrapCompletion false)[0m
-[31m- 27298 [-]   : return __x0__[0m

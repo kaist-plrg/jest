@@ -1,1 +1,0 @@
-Array . prototype . copyWithin . call ( { [ "length" ] : { [ Symbol . toPrimitive ] : true } } , { [ "length" ] : true } ) ;

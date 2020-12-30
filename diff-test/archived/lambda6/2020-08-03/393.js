@@ -1,1 +1,0 @@
-var x = { [ "value" ] : undefined , [ "writable" ] : false , [ "configurable" ] : false } < class x extends x ?. ( ) { ; } ;

@@ -1,1 +1,0 @@
-String . prototype . indexOf . call ( ( Symbol . toStringTag ) , [ 42 , 'str' , true ] , { * x ( ) { } } ) ;

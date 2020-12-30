@@ -1,6 +1,0 @@
-[31mModuleEnvironmentRecordDOTHasThisBinding[0m
-[31m- Inst: 0 / 3 (0.00%)[0m
-[31m- Cond: -[0m
-[31m- 23011 [-]   : { ... }[0m
-[31m- 23012 [-]   : app __x0__ = (WrapCompletion true)[0m
-[31m- 23013 [-]   : return __x0__[0m

@@ -1,1 +1,0 @@
-for ( Infinity of [  { * x ( ... { [ '' ] : { } = x } ) {  } } ] ) try {  } catch ( x ) {  }

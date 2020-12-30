@@ -1,7 +1,0 @@
-[32mCaseClause0Evaluation1[0m
-[32m- Inst: 4 / 4 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 7764  [-]   : { ... }[0m
-[32m+ 7765  [-]   : access __x0__ = (StatementList "Evaluation")[0m
-[32m+ 7766  [-]   : app __x1__ = (WrapCompletion __x0__)[0m
-[32m+ 7767  [-]   : return __x1__[0m

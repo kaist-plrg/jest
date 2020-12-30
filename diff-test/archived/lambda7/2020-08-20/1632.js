@@ -1,1 +1,0 @@
-var x = BigInt . asUintN ( { [ Symbol . toPrimitive ] : async function ( x ) { } } , { [ Symbol . toPrimitive ] : async function ( x ) { } } ) ;

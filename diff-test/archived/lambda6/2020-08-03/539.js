@@ -1,1 +1,0 @@
-try { ; x ( 0 ) ; } catch { ; } finally { ; var x = { x ( ... { x : { } = x } ) { } } ; }

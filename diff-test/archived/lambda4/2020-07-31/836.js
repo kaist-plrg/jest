@@ -1,1 +1,0 @@
-( - 1 ) ( 0 , class x extends x { x (  ) {  } } ) ;

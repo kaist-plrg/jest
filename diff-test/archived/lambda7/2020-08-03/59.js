@@ -1,1 +1,0 @@
-var x = x ? { p : 42 } : class extends x { ; } ;

@@ -1,1 +1,0 @@
-var x = { get x ( ) { for ( var x ; '' , '' ; ) ; return BigInt ( 'x' ) ; } } ; var x = x ?. x ;

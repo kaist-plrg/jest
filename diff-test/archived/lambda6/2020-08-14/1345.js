@@ -1,1 +1,0 @@
-var x = WeakSet . prototype . has . call ( new WeakSet ( ) , 0 ) ; var x = typeof x ;

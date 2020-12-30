@@ -1,1 +1,0 @@
-var x = { } ; var { ... x } = x ? ( ( Symbol . search ) . match ) /= x **= - 1n : class x { x ( ) { } } ;

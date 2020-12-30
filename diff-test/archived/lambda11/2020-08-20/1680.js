@@ -1,1 +1,0 @@
-var x = String . prototype . split . call ( new String ( 0 ) , { [ Symbol . asyncIterator ] : 0 , [ Symbol . iterator ] : async function ( ) { } } , 0 ) ; var [ x , , ... x ] = { [ Symbol . asyncIterator ] : 0 , [ Symbol . iterator ] : async function ( ) { } } ;

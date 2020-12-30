@@ -1,6 +1,0 @@
-[31mModuleNamespaceExoticObjectDOTIsExtensible[0m
-[31m- Inst: 0 / 3 (0.00%)[0m
-[31m- Cond: -[0m
-[31m- 23184 [-]   : { ... }[0m
-[31m- 23185 [-]   : app __x0__ = (WrapCompletion false)[0m
-[31m- 23186 [-]   : return __x0__[0m

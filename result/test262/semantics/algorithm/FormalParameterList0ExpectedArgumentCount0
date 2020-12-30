@@ -1,9 +1,0 @@
-[32mFormalParameterList0ExpectedArgumentCount0[0m
-[32m- Inst: 6 / 6 (100.00%)[0m
-[32m- Cond: 2 / 2 (100.00%)[0m
-[32m+ 201   [-]   : { ... }[0m
-[32m+ 202   [-]   : access __x0__ = (FormalParameter "HasInitializer")[0m
-[32m+ 203   [[32mT[0m/[32mT[0m[32m]: if (= __x0__ true) ... else ...[0m
-[32m+ 204   [-]   : return 0.0[0m
-[32m+ 205   [-]   : {}[0m
-[32m+ 206   [-]   : return 1.0[0m

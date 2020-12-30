@@ -1,1 +1,0 @@
-var x = x `` ; async function x ( ... [ ] ) { for await ( let x of { [ "constructor" ] : 0 } ) ; for ( let x in { [ "constructor" ] : 0 } , { [ "constructor" ] : 0 } ) ; }

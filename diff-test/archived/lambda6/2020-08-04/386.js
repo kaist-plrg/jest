@@ -1,1 +1,0 @@
-function x ( x ) { ; return BigInt ( ( '' ) ) ; } x ( 0 ) ;

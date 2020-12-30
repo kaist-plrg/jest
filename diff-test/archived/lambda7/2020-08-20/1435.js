@@ -1,1 +1,0 @@
-var x = ( - 0 ) != ( '' ) ; var x = typeof x ; var [ , ... x ] = class x extends x [ '' ] { } ;

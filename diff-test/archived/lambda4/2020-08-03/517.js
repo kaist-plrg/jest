@@ -1,1 +1,0 @@
-switch ( Symbol . isConcatSpreadable ) { case { } , Symbol . asyncIterator : }

@@ -1,5 +1,0 @@
-[32mNumberCOLONCOLONmultiply[0m
-[32m- Inst: 2 / 2 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 23467 [-]   : { ... }[0m
-[32m+ 23468 [-]   : return (* x y)[0m

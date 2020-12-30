@@ -1,1 +1,0 @@
-var x = x `` ; async function x ( ... { x = { [ "prototype" ] : async * function ( x ) { } } } ) { ; function x ( ... [ , ... x ] ) { } }

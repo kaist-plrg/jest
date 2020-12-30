@@ -1,1 +1,0 @@
-var x = [ 42 , 'str' , true ] . all ( { [ Symbol . species ] : true , [ Symbol . iterator ] : class extends x ?. x [ '' ] { ; } } ) ;

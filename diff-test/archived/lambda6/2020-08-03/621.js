@@ -1,1 +1,0 @@
-switch ( { [ "get" ] : function ( x0 , x1 ) { } , [ "set" ] : function ( ) { } , [ "enumerable" ] : true , [ "configurable" ] : false } , '' ) { case ( '' ) : case class x { x ( ) { } } : }

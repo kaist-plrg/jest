@@ -1,1 +1,0 @@
-( x => { ; var x = async x => x ; switch ( '' ) { case x : default : ; } for ( [ x , ... x ] in '' ) ; x ( 0 ) ; } ) ( ) ;

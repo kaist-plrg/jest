@@ -1,1 +1,0 @@
-var x = ( Symbol . isConcatSpreadable ) . getOwnPropertyDescriptor ( [ , ] , [ , '' ] + ( Symbol . split ) ) ;

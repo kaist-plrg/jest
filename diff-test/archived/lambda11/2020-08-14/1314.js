@@ -1,1 +1,0 @@
-for ( var x = '' ; ( Symbol . search ) ; BigInt ( 'x' ) ) ; Symbol . unscopables ;

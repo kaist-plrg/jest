@@ -1,1 +1,0 @@
-var x = ( x => { ; var x = x `${ '' , '' }${ '' , '' }` ; throw 0 ; for ( x ( ) . x in '' ) ; } ) ; var x = x ( ) ( ) ;

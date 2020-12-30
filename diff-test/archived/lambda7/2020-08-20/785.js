@@ -1,1 +1,0 @@
-var x = false . prototype . valueOf . call ( null ) ;

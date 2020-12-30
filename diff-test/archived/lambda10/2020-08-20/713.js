@@ -1,1 +1,0 @@
-for ( { } in x | x ) for ( [ x , ... x ] in '' ) ;

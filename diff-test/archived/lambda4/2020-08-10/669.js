@@ -1,1 +1,0 @@
-var x = { ... 'str' } ; var x = { x ( ... [ ... x ] ) { } } ; var x = x ?. x . x ;

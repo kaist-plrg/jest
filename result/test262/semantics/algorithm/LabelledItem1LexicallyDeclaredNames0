@@ -1,6 +1,0 @@
-[31mLabelledItem1LexicallyDeclaredNames0[0m
-[31m- Inst: 0 / 3 (0.00%)[0m
-[31m- Cond: -[0m
-[31m- 22570 [-]   : { ... }[0m
-[31m- 22571 [-]   : access __x0__ = (FunctionDeclaration "BoundNames")[0m
-[31m- 22572 [-]   : return __x0__[0m

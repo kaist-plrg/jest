@@ -1,1 +1,0 @@
-var x = Array . prototype . splice . call ( typeof ( Symbol . unscopables ) , { async x ( ... { x : { } } ) { } } , 1 ) ;

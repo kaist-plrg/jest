@@ -1,1 +1,0 @@
-Object . assign ( 0 , { async x ( ... { x } ) { } } ) ;

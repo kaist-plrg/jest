@@ -1,1 +1,0 @@
-var x = Object . getOwnPropertyDescriptor ( class x { static x ( ) { } } , - Infinity ) ;

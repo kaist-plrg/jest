@@ -1,1 +1,0 @@
-var x = String . prototype . lastIndexOf . call ( NaN , { p : 42 } , ( Symbol . split ) ) ;

@@ -1,1 +1,0 @@
-switch ( '' ) { case '' : ; for ( var { } in '' , '' ) ; }

@@ -1,1 +1,0 @@
-var x = Function . prototype . apply . call ( async x => ( Symbol . unscopables ) , [ ] , async x => { } ) ;

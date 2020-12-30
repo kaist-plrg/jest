@@ -1,1 +1,0 @@
-( Symbol . toPrimitive ) . isSafeInteger ( typeof x ) ;

@@ -1,1 +1,0 @@
-String . prototype . lastIndexOf . call ( ( ( Symbol . replace ) . split ) , '0' ) ;

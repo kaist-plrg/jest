@@ -1,1 +1,0 @@
-var [ ] = { [ NaN ] : ++ x , [ { } ] : Infinity } ;

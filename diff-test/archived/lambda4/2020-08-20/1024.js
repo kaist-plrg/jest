@@ -1,1 +1,0 @@
-var x = BigInt . asUintN ( undefined , Symbol . toStringTag ) ;

@@ -1,1 +1,0 @@
-var x = Object . getOwnPropertyNames ( undefined ) ; var { '' : { } = { async x ( ... { } ) { } } } = 1 ;

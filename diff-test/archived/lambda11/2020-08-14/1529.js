@@ -1,1 +1,0 @@
-var x = Object . prototype . propertyIsEnumerable . call ( null , { [ Symbol . toPrimitive ] : async function ( ) { } } ) ;

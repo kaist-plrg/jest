@@ -1,1 +1,0 @@
-var x = Array . prototype . every . call ( Symbol . replace , async function * ( ) { } ) ;

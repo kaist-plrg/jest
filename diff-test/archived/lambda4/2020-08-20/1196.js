@@ -1,1 +1,0 @@
-var x = Object . getOwnPropertySymbols ( { async x ( ... { } ) { } } ) ;

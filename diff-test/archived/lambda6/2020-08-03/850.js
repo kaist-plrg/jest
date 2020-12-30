@@ -1,1 +1,0 @@
-String . prototype . split . call ( 1 , ( ) => x , { async x ( ... [ x ] ) { } } ) ;

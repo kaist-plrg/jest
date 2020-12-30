@@ -1,1 +1,0 @@
-var x = new Object ( ( Symbol . search ) ) ; var x = x in x ;

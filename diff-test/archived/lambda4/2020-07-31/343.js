@@ -1,1 +1,0 @@
-Array . prototype . reverse . call ( [  42 ,  'str' ,  true ] , - 0 ) ;

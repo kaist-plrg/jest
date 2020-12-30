@@ -1,1 +1,0 @@
-switch ( '' ) { case - Infinity : default : for ( '' ; ; ) ; case x : }

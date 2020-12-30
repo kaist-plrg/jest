@@ -1,1 +1,0 @@
-Object . defineProperty ( { x ( ... { ... x } ) { } } , 0 , 1 ) ;

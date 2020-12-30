@@ -1,1 +1,0 @@
-var x = Array . from ( { [ "length" ] : true } , class { static x ( ) { } } ) ;

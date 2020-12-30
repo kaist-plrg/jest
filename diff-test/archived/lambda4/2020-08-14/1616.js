@@ -1,1 +1,0 @@
-var x = Object . defineProperty ( ( ) => { } , { [ "valueOf" ] : null , [ "toString" ] : async function ( ) { } } , { [ "valueOf" ] : null , [ "toString" ] : async function ( ) { } } ) ;

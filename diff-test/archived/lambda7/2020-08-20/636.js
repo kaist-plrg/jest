@@ -1,1 +1,0 @@
-var x = RangeError ( Symbol . hasInstance ) ;

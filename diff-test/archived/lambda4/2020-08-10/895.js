@@ -1,1 +1,0 @@
-var x = x `` ; var x = 42 ; async function * x ( ... [ , ... x ] ) { ; var x = { * x ( ... { x : { } } ) { } } ; }

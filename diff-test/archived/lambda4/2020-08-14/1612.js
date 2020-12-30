@@ -1,1 +1,0 @@
-function x ( ) { ; for ( var { } in '' , '' ) ; var x = class extends x `${ '' }` { ; ; } ; async function x ( ... [ x ] ) { ; for ( x . x in '' ) ; } if ( '' ) ; else ; } new x ( ) ;

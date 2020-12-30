@@ -1,1 +1,0 @@
-var x = Array . from ( ( x => { } ) , ( ) => { ; class x extends [ , ... '' ] { } } ) ;

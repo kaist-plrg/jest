@@ -1,1 +1,0 @@
-Array . prototype . some . call ( async x => '' , x => {  } , { p : 42 } ) ;

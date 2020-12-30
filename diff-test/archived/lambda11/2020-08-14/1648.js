@@ -1,1 +1,0 @@
-var x = { [ "constructor" ] : function ( x ) { } , [ Symbol . species ] : async * function ( ) { } } . prototype . splice . call ( new { [ "constructor" ] : function ( x ) { } , [ Symbol . species ] : async * function ( ) { } } ( ) , { [ "constructor" ] : function ( x ) { } , [ Symbol . species ] : async * function ( ) { } } , 0 ) ;

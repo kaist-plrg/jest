@@ -1,1 +1,0 @@
-Object . getOwnPropertyNames ( 0 , 0 ) ;

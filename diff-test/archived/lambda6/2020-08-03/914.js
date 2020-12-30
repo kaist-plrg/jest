@@ -1,1 +1,0 @@
-class x extends { [ "value" ] : null , [ "enumerable" ] : false } { }

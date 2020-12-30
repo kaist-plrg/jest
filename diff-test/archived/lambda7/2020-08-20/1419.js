@@ -1,1 +1,0 @@
-var x = class x { static x ( ) { } } ? class extends x ( ) [ '' ] { ; } : function ( ) { } ;

@@ -1,1 +1,0 @@
-Array . prototype . filter . call ( { async x ( ) { } } , async function ( ) { } ) ;

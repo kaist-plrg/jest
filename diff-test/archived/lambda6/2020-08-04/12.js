@@ -1,1 +1,0 @@
-Object . setPrototypeOf ( { x ( ... x ) { } } , null ) ;

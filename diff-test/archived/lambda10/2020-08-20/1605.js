@@ -1,1 +1,0 @@
-var x = WeakMap . prototype . set . call ( new WeakMap ( ) , { [ "prototype" ] : async function ( x ) { } } , { [ "prototype" ] : async function ( x ) { } } ) ;

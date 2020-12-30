@@ -1,1 +1,0 @@
-var x = '' ; switch ( '' ) { case typeof x : default : do ; while ( '' , '' ) ; }

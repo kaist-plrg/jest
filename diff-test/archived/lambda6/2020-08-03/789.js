@@ -1,1 +1,0 @@
-var x = class { x ( ) { } } !== { [ "get" ] : function ( x ) { } , [ "set" ] : function ( x0 , x1 ) { } , [ "enumerable" ] : false , [ "configurable" ] : true } ;

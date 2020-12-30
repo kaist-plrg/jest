@@ -1,1 +1,0 @@
-for ( var x ; ( Symbol . iterator ) ; ) for ( var x in '' ) ;

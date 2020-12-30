@@ -1,1 +1,0 @@
-var x = { [ Symbol . toPrimitive ] : ( ) => { throw '' ; } } | { [ Symbol . toPrimitive ] : ( ) => { throw '' ; } } ;

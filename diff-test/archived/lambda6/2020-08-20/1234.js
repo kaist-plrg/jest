@@ -1,1 +1,0 @@
-var x = Symbol . split ; switch ( '' ) { default : case `${ '' }${ '' }` : }

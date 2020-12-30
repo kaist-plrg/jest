@@ -1,1 +1,0 @@
-Number . prototype . toString . call ( ( Symbol . match ) , 0 ) ;

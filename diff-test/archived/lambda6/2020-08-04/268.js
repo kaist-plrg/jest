@@ -1,1 +1,0 @@
-Array . prototype . findIndex . call ( undefined , { x ( ... { x : { } = x } ) { } } , { [ "next" ] : function ( x ) { } , [ "return" ] : function ( x0 , x1 ) { } , [ "throw" ] : function ( x ) { } } ) ;

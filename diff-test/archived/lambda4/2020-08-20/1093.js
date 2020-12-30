@@ -1,1 +1,0 @@
-var x = class { ; } ; ( { p : x = function * ( ) { } } = x > x ) ;

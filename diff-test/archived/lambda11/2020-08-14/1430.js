@@ -1,1 +1,0 @@
-var x = Array . prototype . fill . call ( { [ "length" ] : true } , x %= { [ "length" ] : true } ) ;

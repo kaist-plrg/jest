@@ -1,1 +1,0 @@
-Object . getOwnPropertySymbols ( [ 42 , 'str' , true ] ) ;

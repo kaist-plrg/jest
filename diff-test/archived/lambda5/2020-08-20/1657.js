@@ -1,1 +1,0 @@
-var x = eval ( x + ( x => { ; var x = { [ Symbol . toPrimitive ] : async function ( x ) { } } ; var x = async x => '' ; var x = x ?. x ( ) ; } ) ) ; function x ( ... { x , } ) { ; return 42 ; async function * x ( ... [ ... x ] ) { ; x ( 42 ) ; } }

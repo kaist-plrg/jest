@@ -1,1 +1,0 @@
-for ( { [ x ?. [ '' ] ] : { } } in { async * x (  ) {  } } ) for ( { [ "value" ] : 'str' , [ "writable" ] : true , [ "configurable" ] : true } , { [ "get" ] : function  ( x0  , x1  ) {  } , [ "set" ] : function  ( x0  , x1  ) {  } , [ "configurable" ] : true } ;  ;  ) ;

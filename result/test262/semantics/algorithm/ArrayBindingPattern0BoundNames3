@@ -1,6 +1,0 @@
-[32mArrayBindingPattern0BoundNames3[0m
-[32m- Inst: 3 / 3 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 4672  [-]   : { ... }[0m
-[32m+ 4673  [-]   : access __x0__ = (BindingRestElement "BoundNames")[0m
-[32m+ 4674  [-]   : return __x0__[0m

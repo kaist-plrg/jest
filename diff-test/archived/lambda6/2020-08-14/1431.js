@@ -1,1 +1,0 @@
-var x = ( - 1 ) . prototype . reduce . call ( BigInt ( 0.1 ) , class x extends x [ '' ] { ; } ) ;

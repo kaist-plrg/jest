@@ -1,1 +1,0 @@
-for ( var x , x ; ( ) => x ; class extends x ?. x [ '' ] { static x ( ) { } } ) switch ( '' ) { }

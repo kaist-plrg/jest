@@ -1,1 +1,0 @@
-var x = x < ( - 1n ) ; async function * x ( ) { }

@@ -1,1 +1,0 @@
-try { ; class x extends new x ( x , ) { ; } } catch { ; } finally { }

@@ -1,1 +1,0 @@
-Array . prototype . findIndex . call ( 'str' , function ( ) { } , Symbol . matchAll ) ;

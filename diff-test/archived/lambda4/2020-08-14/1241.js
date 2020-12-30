@@ -1,1 +1,0 @@
-var x = String . prototype . concat . call ( x >>> 42n , Symbol . replace ) ;

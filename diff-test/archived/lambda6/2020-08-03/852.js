@@ -1,1 +1,0 @@
-switch ( '' , Symbol . unscopables ) { default : for ( var { } = x ; '' ; ) ; case Symbol . toStringTag : }

@@ -1,1 +1,0 @@
-class x { } FREE < class extends x ?. x [ '' , '' ] { ; } ;

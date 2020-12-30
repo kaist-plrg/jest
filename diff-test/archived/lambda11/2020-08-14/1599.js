@@ -1,1 +1,0 @@
-for ( var x = '' ; '' ; ) ; ( { p : { [ Symbol . toPrimitive ] : true } [ { [ Symbol . toPrimitive ] : true } ] } = { [ Symbol . toPrimitive ] : true } ) ;

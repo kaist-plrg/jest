@@ -1,1 +1,0 @@
-var x = `${ { [ x ** x ] : { async x ( x  ) {  } } , [ Symbol . toPrimitive ] : async function * x (  ) {  } } }${ Symbol . unscopables }${ Symbol . replace }` ;

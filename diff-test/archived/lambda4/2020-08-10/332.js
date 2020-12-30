@@ -1,1 +1,0 @@
-var x = String . prototype . split . call ( ( ) => class x extends { [ "valueOf" ] : '0' , [ "toString" ] : function ( x ) { } } ?. x { ; } , { [ "valueOf" ] : '0' , [ "toString" ] : function ( x ) { } } || x , x && { [ "valueOf" ] : '0' , [ "toString" ] : function ( x ) { } } ) ;

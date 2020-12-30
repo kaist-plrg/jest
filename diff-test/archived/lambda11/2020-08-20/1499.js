@@ -1,1 +1,0 @@
-var x = x => x ; var x = x `${ '0' }${ ( Symbol . hasInstance ) }${ '' , class x extends new x ( x , '' ) { } }` ;

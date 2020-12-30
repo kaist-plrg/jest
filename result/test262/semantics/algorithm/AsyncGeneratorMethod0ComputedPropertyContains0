@@ -1,7 +1,0 @@
-[31mAsyncGeneratorMethod0ComputedPropertyContains0[0m
-[31m- Inst: 0 / 4 (0.00%)[0m
-[31m- Cond: -[0m
-[31m- 6039  [-]   : { ... }[0m
-[31m- 6040  [-]   : access __x0__ = (PropertyName "ComputedPropertyContains")[0m
-[31m- 6041  [-]   : app __x1__ = (__x0__ symbol)[0m
-[31m- 6042  [-]   : return __x1__[0m

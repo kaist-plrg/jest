@@ -1,1 +1,0 @@
-var x = [ 1 , 2 , 3 ] ; var [ ... { } ] = x ; var x = { * x ( ... { x , } ) { ; for ( super [ '' ] in '' ) ; } } ; var x = x ?. x ( ) ; ( [ , ... x ] = x ) ;

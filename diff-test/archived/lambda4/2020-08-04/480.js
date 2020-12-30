@@ -1,1 +1,0 @@
-String . prototype . padEnd . call ( ( '' , '' ) , Symbol . iterator ) ;

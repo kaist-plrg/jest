@@ -1,1 +1,0 @@
-var x = Array . prototype . pop . call ( [ 42 , 'str' , true ] ) ;

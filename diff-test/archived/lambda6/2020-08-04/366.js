@@ -1,1 +1,0 @@
-for ( x in { [ "get" ] : function ( x ) { } , [ "set" ] : function ( x ) { } , [ "enumerable" ] : false , [ "configurable" ] : false } ) var { x , ... x } = { x ( ... { x : { } } ) { } } ;

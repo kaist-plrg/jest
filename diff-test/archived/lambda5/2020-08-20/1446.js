@@ -1,1 +1,0 @@
-var x = Object . defineProperty ( ( x => { } ) , - Infinity , { [ Symbol . toPrimitive ] : null } ) ;

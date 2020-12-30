@@ -1,1 +1,0 @@
-var x = Array . prototype . copyWithin . call ( Symbol . replace , class { static x ( ) { } } , { p : 42 } ) ;

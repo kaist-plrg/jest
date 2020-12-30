@@ -1,1 +1,0 @@
-var x = ( x => { for ( let x ; '' , '' ; '' , '' ) ; x ( ( BigInt ( 'x' ) ) ) ; for ( let x = x ; ; '' ) ; return Infinity ; } ) ( ) ;

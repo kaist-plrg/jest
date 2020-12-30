@@ -1,1 +1,0 @@
-var x = String . prototype . trimStart . call ( new String ( { [ "valueOf" ] : function ( x ) { } , [ "toString" ] : true } ) ) ;

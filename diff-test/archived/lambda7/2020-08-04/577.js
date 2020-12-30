@@ -1,1 +1,0 @@
-Array . prototype . splice . call ( 1 , 42n , 42n , 0 ) ;

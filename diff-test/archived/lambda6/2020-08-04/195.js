@@ -1,1 +1,0 @@
-var x = - 1n ; function * x ( ... [ , ] ) { } var [ ... x ] = x -- ;

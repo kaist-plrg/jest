@@ -1,1 +1,0 @@
-var x = Promise . prototype . finally . call ( { [ "constructor" ] : true , [ Symbol . species ] : function * ( x ) { } } , { [ "constructor" ] : true , [ Symbol . species ] : function * ( x ) { } } ) ;

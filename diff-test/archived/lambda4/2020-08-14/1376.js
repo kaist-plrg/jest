@@ -1,1 +1,0 @@
-function x ( ) { ; var x = { [ "prototype" ] : async * function ( x ) { } } ; } new x ( ) ;

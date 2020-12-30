@@ -1,1 +1,0 @@
-switch ( '' ) { default : ; break ; case x : ; class x extends x { } }

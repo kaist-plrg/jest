@@ -1,1 +1,0 @@
-var x = { p : class extends x `${ '' }${ x }${ '' }` { ; } } ; x = '' ;

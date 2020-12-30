@@ -1,1 +1,0 @@
-function x ( x0 , x1 ) { } ; x != x ; function * x ( ... [ x , ] ) { Symbol . matchAll ; } x ?. ( ) ; function x ( ... [ , x ] ) { for ( x of '' ) ; return BigInt ( 1 ) ; }

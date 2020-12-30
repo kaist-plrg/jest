@@ -1,1 +1,0 @@
-Number . isNaN ( 0 , 0 ) ;

@@ -1,1 +1,0 @@
-var x = { [ Symbol . hasInstance ] : null } instanceof { [ Symbol . hasInstance ] : null } ;

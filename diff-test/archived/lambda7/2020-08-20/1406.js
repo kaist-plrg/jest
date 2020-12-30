@@ -1,1 +1,0 @@
-var x = Function . prototype . bind . call ( ( class { ; ; } ) , Symbol . asyncIterator ) ;

@@ -1,1 +1,0 @@
-function x ( ... [ ... x ] ) { } ( Symbol . replace ) ( 0n < [ '' ] ) ;

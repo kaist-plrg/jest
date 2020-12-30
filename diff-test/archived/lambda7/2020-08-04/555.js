@@ -1,1 +1,0 @@
-Object . assign ( { set x ( x ) { } } , function ( ) { } ) ;

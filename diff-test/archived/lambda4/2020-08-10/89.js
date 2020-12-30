@@ -1,1 +1,0 @@
-var x = Promise . allSettled ( { [ Symbol . asyncIterator ] : false , [ Symbol . iterator ] : async function ( x ) { for await ( var x of '' ) ; switch ( '' ) { default : case x : } } } ) ;

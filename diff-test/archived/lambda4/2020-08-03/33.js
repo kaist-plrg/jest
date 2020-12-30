@@ -1,1 +1,0 @@
-function * x ( ... { x } ) { } while ( x `` ) var { [ Symbol . matchAll ] : x } = [ x , , '' ] ; try { } catch ( { } ) { } Number ( Symbol . iterator ) ;

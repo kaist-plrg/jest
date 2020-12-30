@@ -1,1 +1,0 @@
-var x = false || class x extends x { ; } ;

@@ -1,1 +1,0 @@
-Array . prototype . slice . call ( - 0 , { [ "next" ] : function ( ) { } , [ "return" ] : function ( x0 , x1 ) { } , [ "throw" ] : function ( x ) { } } , Symbol . matchAll ) ;

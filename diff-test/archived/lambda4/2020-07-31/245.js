@@ -1,1 +1,0 @@
-for ( { [ Symbol . match ] : x ?. x [ '' , '' ] } in 'str' ) for (  ; '' ;  ) ;

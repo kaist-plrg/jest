@@ -1,1 +1,0 @@
-function x ( x0 , x1 ) { } for ( let x ; '' , '' ; ) ; x ( ) ; function * x ( ... [ x , ] ) { ; } function x ( ... [ , x ] ) { ; return x ( ) . x ; }

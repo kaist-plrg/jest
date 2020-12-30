@@ -1,1 +1,0 @@
-var x = new Set ( { [ class x extends new x ( '' ) { } . asyncIterator ] : ( ) => { throw class x extends new x ( x , ) { ; } ; } , [ - 1 ] : function * ( ) { } } ) ;

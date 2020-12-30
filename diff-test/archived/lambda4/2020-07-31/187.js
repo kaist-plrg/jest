@@ -1,1 +1,0 @@
-var x = x += Symbol . split ; async function * x ( x  ) {  }

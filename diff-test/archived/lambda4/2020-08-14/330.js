@@ -1,1 +1,0 @@
-delete '0' [ - Infinity ] ;

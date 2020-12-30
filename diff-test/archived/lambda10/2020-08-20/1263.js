@@ -1,1 +1,0 @@
-try { for ( { x , } in '' ) ; function x ( ... [ ] ) { } } catch ( x ) { ; }

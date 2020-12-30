@@ -1,1 +1,0 @@
-{ ; } var x = ( Symbol . species ) /= [  42 ,  'str' ,  true ] ; function * x ( ... { ... x } ) {  }

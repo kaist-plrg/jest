@@ -1,1 +1,0 @@
-var x = Array ( { p : 42 } ) ;

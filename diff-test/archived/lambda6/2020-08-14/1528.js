@@ -1,1 +1,0 @@
-for ( var x of { [ Symbol . asyncIterator ] : ( ) => { throw '' ; } , [ Symbol . iterator ] : async function ( ) { } } ) ;

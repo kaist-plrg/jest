@@ -1,1 +1,0 @@
-for ( x in BigInt ( { [ Symbol . toPrimitive ] : function ( x ) { } } ) ) ;

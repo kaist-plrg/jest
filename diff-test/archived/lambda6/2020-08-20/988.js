@@ -1,1 +1,0 @@
-{ ; new x ( ) ; function x ( ) { ; return BigInt ( 0.1 ) ; } }

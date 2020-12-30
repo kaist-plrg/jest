@@ -1,1 +1,0 @@
-for ( var { } in class x extends x { ; ; } , [ , ... '' ] ) var { ... x } = x ;

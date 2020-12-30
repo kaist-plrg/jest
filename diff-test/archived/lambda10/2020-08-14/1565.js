@@ -1,1 +1,0 @@
-var x = Array . of ( ) ; var x = { [ "prototype" ] : async * function ( ) { } } in { [ "prototype" ] : async * function ( ) { } } ;

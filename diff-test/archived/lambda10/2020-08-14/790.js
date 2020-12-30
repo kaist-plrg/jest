@@ -1,1 +1,0 @@
-try { ; var x = x / x ; } finally { ; var x = x ++ ; }

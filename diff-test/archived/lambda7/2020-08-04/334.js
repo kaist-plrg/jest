@@ -1,1 +1,0 @@
-String . prototype . startsWith . call ( { x ( ... x ) { } } . isConcatSpreadable ) ;

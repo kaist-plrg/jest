@@ -1,1 +1,0 @@
-try { ; class x extends async function ( ) { } { } } finally { ; var x = { x , x } ; }

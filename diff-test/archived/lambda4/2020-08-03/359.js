@@ -1,1 +1,0 @@
-Array . prototype . forEach . call ( { [ "value" ] : undefined , [ "writable" ] : true , [ "configurable" ] : true } , ( ) => { } , Symbol . split ) ;

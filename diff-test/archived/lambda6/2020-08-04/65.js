@@ -1,1 +1,0 @@
-var x = async function x ( ) { ; for await ( x of { [ Symbol . asyncIterator ] : async function * ( ) { ; yield * x ( ) ; class x extends { async x ( ) { ; x ( 0 ) ; } } { ; } } } ) ; } ; x ( 0 ) ;

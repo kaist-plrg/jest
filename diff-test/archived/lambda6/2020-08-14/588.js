@@ -1,1 +1,0 @@
-var x = Symbol . split ; var x = x & x ;

@@ -1,9 +1,0 @@
-[32mTemplateLiteral0ArgumentListEvaluation0[0m
-[32m- Inst: 6 / 6 (100.00%)[0m
-[32m- Cond: -[0m
-[32m+ 27901 [-]   : { ... }[0m
-[32m+ 27902 [-]   : let templateLiteral = this[0m
-[32m+ 27903 [-]   : app __x0__ = (GetTemplateObject templateLiteral)[0m
-[32m+ 27904 [-]   : let siteObj = __x0__[0m
-[32m+ 27905 [-]   : app __x1__ = (WrapCompletion (new [siteObj]))[0m
-[32m+ 27906 [-]   : return __x1__[0m

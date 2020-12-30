@@ -1,1 +1,0 @@
-var x = ( x => { ; var x = { p : 42 } `` ; for ( var x of '' ) ; } ) `` ;

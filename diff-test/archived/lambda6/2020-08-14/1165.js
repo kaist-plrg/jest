@@ -1,1 +1,0 @@
-delete ( Symbol . toStringTag ) [ class x extends x ?. x [ '' ] { } ] ;

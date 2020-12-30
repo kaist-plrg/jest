@@ -1,1 +1,0 @@
-for ( let x ; '' , '' ; ) ; ( { p : x } = class x extends x `${ '' }${ x }${ '' }` { x ( ) { } } ) ;

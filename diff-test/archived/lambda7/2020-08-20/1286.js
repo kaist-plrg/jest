@@ -1,1 +1,0 @@
-var x = String . prototype . repeat . call ( { set x ( x ) { } } , Infinity ) ;

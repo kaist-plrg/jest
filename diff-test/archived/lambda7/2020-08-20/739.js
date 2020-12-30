@@ -1,1 +1,0 @@
-if ( Symbol . hasInstance ) var [ x , ... x ] = x ;

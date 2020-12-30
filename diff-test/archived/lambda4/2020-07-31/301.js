@@ -1,1 +1,0 @@
-Array . prototype . reverse . call ( undefined , Symbol . matchAll ) ;

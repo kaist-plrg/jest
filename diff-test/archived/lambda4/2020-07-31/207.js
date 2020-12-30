@@ -1,1 +1,0 @@
-Array . prototype . forEach . call ( undefined , Infinity , Symbol . split ) ;

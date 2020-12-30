@@ -1,1 +1,0 @@
-for ( let x in [ 42 , 'str' , true ] ) for ( let x = x ; '' ; ) ;

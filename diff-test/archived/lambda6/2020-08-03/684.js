@@ -1,1 +1,0 @@
-for ( let x of undefined ) for ( var { } in '' , '' ) ;

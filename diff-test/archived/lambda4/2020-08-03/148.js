@@ -1,1 +1,0 @@
-function x ( x0 , x1 ) { } for ( x . x in '' ) ; try { } catch { } finally { } x **= Symbol . toStringTag ;

@@ -1,1 +1,0 @@
-var x = Array . prototype . splice . call ( [ 42 , 'str' , true ] , 0 , 1 ) ;

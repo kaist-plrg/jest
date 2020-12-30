@@ -1,1 +1,0 @@
-var x = ( '' ) . getOwnPropertyDescriptor ( `${ NaN , '' }${ class extends x ?. ( ) { } }${ '' }` , Symbol . species ) ;

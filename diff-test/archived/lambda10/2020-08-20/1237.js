@@ -1,1 +1,0 @@
-var x = String . prototype . includes . call ( new String ( true ) , 0 ) ;

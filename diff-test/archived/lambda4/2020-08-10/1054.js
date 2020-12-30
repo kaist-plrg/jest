@@ -1,1 +1,0 @@
-var x = true . isArray ( 0 ) ;

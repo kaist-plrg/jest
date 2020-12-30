@@ -1,1 +1,0 @@
-for ( let x in x = '' ) switch ( '' ) { case x : default : ; }

@@ -1,1 +1,0 @@
-var x = x ( ) ( ) ; var x = x **= '' ; function x ( ... [ x , ] ) { ; for ( '' ; '' ; '' ) ; x ( 42 ) ; return ; }

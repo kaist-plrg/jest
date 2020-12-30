@@ -1,1 +1,0 @@
-for ( { [ ( - 1 ) ] : [ ] } in { [ "next" ] : function ( x0 , x1 ) { } , [ "return" ] : function ( ) { } , [ "throw" ] : function ( x0 , x1 ) { } } ) var x = class extends x { ; ; } ;

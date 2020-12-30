@@ -1,1 +1,0 @@
-var x = String . prototype . repeat . call ( [ 42 , 'str' , true ] , ( Symbol . replace ) ) ;

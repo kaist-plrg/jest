@@ -1,1 +1,0 @@
-Object . keys ( { async x ( ... { x = '' } ) { } } ) ;

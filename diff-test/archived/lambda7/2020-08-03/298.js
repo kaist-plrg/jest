@@ -1,1 +1,0 @@
-Object . assign ( - 1n , { set x ( x ) { } } ) ;

@@ -1,1 +1,0 @@
-var x = Array . prototype . map . call ( [ x , ] , function x ( ) { ; throw 42 ; } ) ;

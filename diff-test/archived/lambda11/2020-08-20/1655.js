@@ -1,1 +1,0 @@
-var x = class extends class extends { [ "prototype" ] : async * function ( x ) { } } ?. x { ; } ( ) [ { async x ( ... { x = '' } ) { } } , Symbol . replace ] { } ( ) ( ) ; function x ( ... [ x , ] ) { ; }

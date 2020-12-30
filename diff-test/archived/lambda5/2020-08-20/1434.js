@@ -1,1 +1,0 @@
-var x = String . prototype . concat . call ( new String ( 0 ) , { [ Symbol . toPrimitive ] : 0 } ) ;

@@ -1,1 +1,0 @@
-function x ( [ x ] = x in x ) { } do ; while ( '' ) ; x ( ) . x ;

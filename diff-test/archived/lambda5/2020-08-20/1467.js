@@ -1,1 +1,0 @@
-var x = x `` ; async function * x ( ... [ x ] ) { ; throw 42 ; } function x ( ... [ ] ) { ; return 42 ; }

@@ -1,1 +1,0 @@
-var x = Symbol . unscopables ; var x = { [ "get" ] : function  ( x0  , x1  ) {  } , [ "set" ] : function  ( x  ) {  } , [ "configurable" ] : false } instanceof { [ ( Symbol . hasInstance ) ] : { [ "next" ] : function  (  ) {  } , [ "return" ] : function  ( x  ) {  } , [ "throw" ] : function  ( x  ) {  } } , [ ( Symbol . matchAll ) ] : ( Symbol . unscopables ) } ;

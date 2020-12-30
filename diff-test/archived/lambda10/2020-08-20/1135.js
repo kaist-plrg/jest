@@ -1,1 +1,0 @@
-for ( { x , x } in { * x ( ) { } } ) ; class x extends [ x , '' ] { }

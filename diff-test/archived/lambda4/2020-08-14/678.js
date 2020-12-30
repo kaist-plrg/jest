@@ -1,1 +1,0 @@
-delete this [ ( Symbol . iterator ) . split ] ;

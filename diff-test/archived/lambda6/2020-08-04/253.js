@@ -1,1 +1,0 @@
-function x ( x ) { ; return async function x ( ) { } ; } var x = new x ;

@@ -1,1 +1,0 @@
-var x = Array . prototype . slice . call ( Symbol . asyncIterator , 0 , x ) ;

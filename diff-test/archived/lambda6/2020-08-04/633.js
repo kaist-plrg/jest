@@ -1,1 +1,0 @@
-var x = ( - 1n ) + { [ "get" ] : function ( x ) { } , [ "set" ] : function ( x ) { } , [ "enumerable" ] : false , [ "configurable" ] : true } ;

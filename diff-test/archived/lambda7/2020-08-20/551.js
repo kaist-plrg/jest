@@ -1,1 +1,0 @@
-for ( var x ; '' ; ) for ( var x ; ; ) ;

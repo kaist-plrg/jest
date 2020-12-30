@@ -1,1 +1,0 @@
-var x = String . prototype . slice . call ( [ 42 , 'str' , true ] , ( Symbol . species ) , Symbol . match ) ;

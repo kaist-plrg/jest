@@ -1,1 +1,0 @@
-Object . isFrozen ( { [ "get" ] : function ( ) { } , [ "enumerable" ] : false } ) ;

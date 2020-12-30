@@ -1,1 +1,0 @@
-var x = new Object ( Symbol . split ) ; var x = `${ '' }${ x }${ '' }` ;

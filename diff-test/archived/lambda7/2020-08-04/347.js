@@ -1,1 +1,0 @@
-RangeError ( Symbol . search ) ;

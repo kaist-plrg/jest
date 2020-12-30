@@ -1,1 +1,0 @@
-switch ( typeof x ) { default : }

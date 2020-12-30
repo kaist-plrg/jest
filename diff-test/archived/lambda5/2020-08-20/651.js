@@ -1,1 +1,0 @@
-var x = false & class extends x ( ) ( ) { } ;

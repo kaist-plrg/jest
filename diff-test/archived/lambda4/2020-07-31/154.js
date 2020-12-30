@@ -1,1 +1,0 @@
-String . prototype . indexOf . call ( true , true , { * x ( ... { } ) {  } } , 0 ) ;

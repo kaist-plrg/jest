@@ -1,1 +1,0 @@
-'' . prototype . find . call ( 1 ) ;

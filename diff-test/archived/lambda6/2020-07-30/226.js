@@ -1,1 +1,0 @@
-switch ( - [ , ] ) { case 0 : for ( [  x ,  ] in '' ) ; let x = ( Symbol . unscopables ) ; }

@@ -1,6 +1,0 @@
-[31mOptionalChain6HasCallInTailPosition0[0m
-[31m- Inst: 0 / 3 (0.00%)[0m
-[31m- Cond: -[0m
-[31m- 24122 [-]   : { ... }[0m
-[31m- 24123 [-]   : app __x0__ = (WrapCompletion false)[0m
-[31m- 24124 [-]   : return __x0__[0m

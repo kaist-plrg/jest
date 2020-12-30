@@ -1,1 +1,0 @@
-var x = ( Symbol . toStringTag ) >= ( BigInt ( 0.1 ) ) ;

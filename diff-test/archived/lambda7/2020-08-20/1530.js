@@ -1,1 +1,0 @@
-var x = Array . prototype . every . call ( { [ "length" ] : { [ Symbol . toPrimitive ] : true } } , x => { } ) ;

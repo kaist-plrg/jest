@@ -1,1 +1,0 @@
-var x = [ 1 , 2 , 3 ] ; ( [ , ( { p : 42 } . iterator ) , ... ( Symbol . split ) ] = x ) ;

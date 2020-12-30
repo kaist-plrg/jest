@@ -1,1 +1,0 @@
-String . prototype . startsWith . call ( undefined , Symbol . matchAll , { [ "value" ] : null , [ "writable" ] : true , [ "configurable" ] : true } ) ;

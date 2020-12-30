@@ -1,1 +1,0 @@
-String . prototype . substring . call ( { async x ( ... { } ) { } } , [ 42 , 'str' , true ] ) ;

@@ -1,1 +1,0 @@
-var x = 1 || class x extends x ?. x ( ) { ; } ;

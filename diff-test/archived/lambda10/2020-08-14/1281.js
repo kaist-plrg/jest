@@ -1,1 +1,0 @@
-var x = ( x => { ; x ( - Infinity ) ; return x | x ; } ) ( ( - Infinity ) ) ;

@@ -1,1 +1,0 @@
-for ( let x = ( Symbol . isConcatSpreadable ) ; `${ '' }${ NaN **= Symbol . split }${ '' , '' }` ; ) ;

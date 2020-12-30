@@ -1,1 +1,0 @@
-switch ( '' ) { case x : ; for ( let x of '' ) ; case x : ; class x extends { } { ; ; } }

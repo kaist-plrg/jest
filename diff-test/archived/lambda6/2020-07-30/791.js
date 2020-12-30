@@ -1,1 +1,0 @@
-( Symbol . matchAll ) . prototype . toString . call ( 0 ) ;

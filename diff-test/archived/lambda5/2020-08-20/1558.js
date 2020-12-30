@@ -1,1 +1,0 @@
-var x = new Map ( { [ class extends x ?. [ '' ] { ; } . asyncIterator ] : Symbol . iterator , [ ( x => { } ) . iterator ] : '' } ) ;

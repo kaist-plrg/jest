@@ -1,1 +1,0 @@
-var x = eval ( `${ '' }${ ( ) => { ; class x extends { [ Symbol . toPrimitive ] : function * ( ) { } } { } for ( x ( ) . x in '' ) ; } }` ) ;

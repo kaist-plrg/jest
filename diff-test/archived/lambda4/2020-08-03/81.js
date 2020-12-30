@@ -1,1 +1,0 @@
-function x ( x0 , x1 ) { } ; x != x ; function * x ( ... [ x , ] ) { x ; } new x ( ... '' ) ; function x ( ... [ , x ] ) { if ( '' , '' ) ; else ; return BigInt ( class extends x { ; ; } ) ; }

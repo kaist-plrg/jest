@@ -1,1 +1,0 @@
-var x = String . prototype . split . call ( class { static x ( ) { } } , x ?? x ?? x , Symbol . toPrimitive ) ;

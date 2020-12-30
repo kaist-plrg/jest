@@ -1,1 +1,0 @@
-for ( x in { async x ( ... [ x , , ] ) { } } ) ;

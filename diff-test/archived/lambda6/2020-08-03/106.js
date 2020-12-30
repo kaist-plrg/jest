@@ -1,1 +1,0 @@
-var x = async x => { for await ( var x of [ 42 , 'str' , true ] ) throw '' , '' ; for ( '' ; '' ; ) ; } ; x ( -- x ) ;

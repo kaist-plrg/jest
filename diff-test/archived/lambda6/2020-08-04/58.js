@@ -1,1 +1,0 @@
-var x = async function x ( ) { for await ( var x of - 0 ) for ( { x , } in '' ) ; for await ( x of class { ; ; } ) for await ( let x of '' ) ; } ; x ( 0 ) ;

@@ -1,1 +1,0 @@
-{ } for ( undefined ; ; new x ( ) ) for ( x [ '' ] in '' ) ;

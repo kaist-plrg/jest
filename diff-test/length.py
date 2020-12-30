@@ -7,7 +7,7 @@ import jsbeautifier
 def main():
     # parse arguments
     parser = argparse.ArgumentParser(description="check injected result")
-    parser.add_argument( '-d', '--dir', help="target directory", default="./archived/paper_scripts")
+    parser.add_argument( '-d', '--dir', help="target directory", default="./paper_scripts")
     parser.add_argument( '-b', '--beautify', dest='beautify', action='store_true', help="beautify script")
     parser.set_defaults(beautify=False)
     args = parser.parse_args()

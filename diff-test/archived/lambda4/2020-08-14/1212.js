@@ -1,1 +1,0 @@
-for ( { x , x } in 'str' ) ; class x extends x `${ '' }${ x }${ '' }` { ; }

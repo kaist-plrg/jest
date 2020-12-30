@@ -1,1 +1,0 @@
-var x = new x ( { [ "done" ] : function ( x ) { } } , ... { [ "done" ] : function ( x ) { } } ) ;

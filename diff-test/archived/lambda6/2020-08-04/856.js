@@ -1,1 +1,0 @@
-String . prototype . repeat . call ( Infinity , Symbol . replace ) ;

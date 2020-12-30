@@ -1,1 +1,0 @@
-if ( [ ] ) ; else var [ , x ] = x ;
