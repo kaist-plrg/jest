@@ -21,12 +21,12 @@ object JEST {
       Console.err.println(ex.getMessage)
     // JESTError: print the error message.
     case ex: JESTError =>
-      Console.err.println(ex.getMessage)
-      Console.err.println(ex.getStackTrace.mkString(LINE_SEP)) // XXX remove
+      Console.err.println("[ERROR]: " + ex.getMessage)
+      if (DEBUG) Console.err.println(ex.getStackTrace.mkString(LINE_SEP))
     // Unexpected: print the stack trace.
     case ex: Throwable =>
       Console.err.println("* Unexpected error occurred.")
-      Console.err.println(ex.toString)
+      Console.err.println("[ERROR]: " + ex.toString)
       Console.err.println(ex.getStackTrace.mkString(LINE_SEP))
   }
 
@@ -65,9 +65,9 @@ object JEST {
   // commands
   val commands: List[Command] = List(
     CmdHelp,
+    CmdSample,
     CmdParse,
     CmdEval,
-    CmdSample,
     CmdMutate,
     CmdGenerate,
     CmdInject,
@@ -82,19 +82,15 @@ object JEST {
   // phases
   var phases: List[Phase] = List(
     Help,
-    FilterMeta,
+    Sample,
     Parse,
     Load,
-    Generate,
-    Sample,
-    Inject,
+    Eval,
     Mutate,
+    Generate,
+    Inject,
     Check,
-    Localize,
-    IRParse,
-    IRLoad,
-    IREval,
-    IRREPL
+    Localize
   )
 
   // global options
@@ -105,7 +101,7 @@ object JEST {
       "display duration time."),
     ("bugfix", BoolOption(_ => BUG_FIX = true),
       "use bug-fixed semantics."),
-    ("debug", BoolOption(c => c.debug = true),
+    ("debug", BoolOption(c => { DEBUG = true; c.debug = true }),
       "print intermediate process.")
   )
 

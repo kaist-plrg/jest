@@ -11,7 +11,7 @@ import spray.json._
 // Inject phase
 case object Inject extends PhaseObj[Unit, InjectConfig, Unit] {
   val name = "inject"
-  val help = "Inject semantics assertions into JavaScript files."
+  val help = "constructs tests by injecting semantics assertions to given JavaScript programs."
 
   val exceptionDirectory = s"$DIFF_TEST_DIR/inject_exceptions"
   mkdir(exceptionDirectory)

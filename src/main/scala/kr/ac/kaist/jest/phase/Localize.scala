@@ -16,7 +16,7 @@ import kr.ac.kaist.jest.localizer.AnswerProtocol._
 // localize phase
 case object Localize extends PhaseObj[Unit, LocalizeConfig, Unit] with DefaultJsonProtocol {
   val name = "localize"
-  val help = "Localize JavaScript files."
+  val help = "localizes found bugs in the specification."
 
   val failedPath: String = s"$DIFF_TEST_DIR/failed"
   val localizedDir: String = LOCALIZED_DIR

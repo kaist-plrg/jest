@@ -5,7 +5,7 @@ import kr.ac.kaist.jest.{ JEST, JESTConfig }
 // Help phase
 case object Help extends PhaseObj[Unit, HelpConfig, Unit] {
   val name = "help"
-  val help = ""
+  val help = "shows the help message."
 
   def apply(
     unit: Unit,

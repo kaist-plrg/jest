@@ -12,7 +12,7 @@ import spray.json._
 // Check phase
 case object Check extends PhaseObj[Unit, CheckConfig, Unit] with DefaultJsonProtocol {
   val name = "check"
-  val help = "Get injected script and check whoose fault"
+  val help = "performs n+1-version differential testing for given tests."
   val dirs = Checker.targets.map(t => (t, s"$FAILED_DIR/$t.json")).toMap
   mkdir(FAILED_DIR)
 

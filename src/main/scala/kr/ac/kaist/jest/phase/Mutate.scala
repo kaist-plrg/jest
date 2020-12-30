@@ -11,7 +11,7 @@ import kr.ac.kaist.jest.util.Useful._
 // mutate phase
 case object Mutate extends PhaseObj[Script, MutateConfig, Script] {
   val name = "mutate"
-  val help = "Mutate JavaScript files."
+  val help = "mutates given JavaScript files."
 
   def apply(
     script: Script,

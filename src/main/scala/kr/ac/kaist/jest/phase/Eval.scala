@@ -5,25 +5,25 @@ import kr.ac.kaist.jest.coverage.Visited
 import kr.ac.kaist.jest.ir._
 import kr.ac.kaist.jest.util._
 
-// IREval phase
-case object IREval extends PhaseObj[State, IREvalConfig, State] {
-  val name: String = "eval-ir"
-  val help: String = "evaluates JavaScript source files to IR."
+// Eval phase
+case object Eval extends PhaseObj[State, EvalConfig, State] {
+  val name: String = "eval"
+  val help: String = "evaluates a given JavaScript program."
 
   def apply(
     initialSt: State,
     jestConfig: JESTConfig,
-    config: IREvalConfig
+    config: EvalConfig
   ): State = {
-    val st = (new Interp(config.debugir, config.timeout, Visited.global))(initialSt)
+    val st = (new Interp(config.debug, config.timeout, Visited.global))(initialSt)
     if (config.state) println(beautify(st))
     st
   }
 
-  def defaultConfig: IREvalConfig = IREvalConfig()
-  val options: List[PhaseOption[IREvalConfig]] = List(
-    ("debug-ir", BoolOption(c => c.debugir = true),
-      "print each step of IR."),
+  def defaultConfig: EvalConfig = EvalConfig()
+  val options: List[PhaseOption[EvalConfig]] = List(
+    ("debug", BoolOption(c => c.debug = true),
+      "print each step."),
     ("timeout", NumOption((c, i) => c.timeout = if (i == 0) None else Some(i)),
       "set timeout of interpreter(second), 0 for unlimited."),
     ("state", BoolOption(c => c.state = true),
@@ -31,9 +31,9 @@ case object IREval extends PhaseObj[State, IREvalConfig, State] {
   )
 }
 
-// IREval phase config
-case class IREvalConfig(
-    var debugir: Boolean = false,
+// Eval phase config
+case class EvalConfig(
+    var debug: Boolean = false,
     var timeout: Option[Long] = Some(10),
     var state: Boolean = false
 ) extends Config

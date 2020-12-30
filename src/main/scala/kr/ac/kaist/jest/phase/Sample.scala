@@ -9,7 +9,7 @@ import kr.ac.kaist.jest.util.Useful._
 // sample phase
 case object Sample extends PhaseObj[Unit, SampleConfig, Unit] {
   val name = "sample"
-  val help = "Sample JavaScript files."
+  val help = "samples JavaScript files."
 
   def apply(
     unit: Unit,

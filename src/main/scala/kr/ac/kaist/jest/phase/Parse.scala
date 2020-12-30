@@ -9,7 +9,7 @@ import Useful._
 // Parse phase
 case object Parse extends PhaseObj[Unit, ParseConfig, Script] {
   val name = "parse"
-  val help = "Parses AST files."
+  val help = "parses AST files."
 
   def apply(
     unit: Unit,
@@ -18,25 +18,12 @@ case object Parse extends PhaseObj[Unit, ParseConfig, Script] {
   ): Script = {
     val filename = getFirstFilename(jestConfig, "parse")
     val ast = Parser.parse(Parser.Script(Nil), fileReader(filename)).get
-    config.jsonFile match {
-      case Some(name) =>
-        val nf = getPrintWriter(name)
-        nf.println(ast.toJson)
-        nf.close()
-      case None =>
-    }
     ast
   }
 
   def defaultConfig: ParseConfig = ParseConfig()
-  val options: List[PhaseOption[ParseConfig]] = List(
-    ("json", StrOption((c, s) => c.jsonFile = Some(s)),
-      "dump JSON of AST tree into a file.")
-  )
+  val options: List[PhaseOption[ParseConfig]] = Nil
 }
 
 // Parse phase config
-case class ParseConfig(
-    var jsonFile: Option[String] = None,
-    var debug: Boolean = false
-) extends Config
+case class ParseConfig() extends Config

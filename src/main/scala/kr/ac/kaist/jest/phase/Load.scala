@@ -9,7 +9,7 @@ import scala.io.Source
 // Load phase
 case object Load extends PhaseObj[Script, LoadConfig, State] {
   val name = "load"
-  val help = "read script object and using global, convert to State object."
+  val help = "Read script object and using global, convert to State object."
 
   def apply(
     script: Script,

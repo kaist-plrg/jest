@@ -35,13 +35,13 @@ package object jest {
   val TOUCHED_DIR = s"${DIFF_TEST_DIR}/touched"
   val FAILED_DIR = s"${DIFF_TEST_DIR}/failed"
   val LOCALIZED_DIR = s"${DIFF_TEST_DIR}/localized"
-  val ARCHIVED_DIR = s"${DIFF_TEST_DIR}/archived"
   val ANSWER_DIR = s"${DIFF_TEST_DIR}/answer"
 
   // Current directory root
   val CUR_DIR = System.getProperty("user.dir")
 
   // Debugging mode
+  var DEBUG: Boolean = false
   val DEBUG_SEMI_INSERT: Boolean = false
   val DEBUG_PARSER: Boolean = false
   val DEBUG_INTERP: Boolean = false
