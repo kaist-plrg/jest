@@ -72,7 +72,7 @@ case class Injector(
   // handle variables
   private def handleVariable: Unit = for (x <- createdVars) {
     log("handling varaible...")
-    getValue(st, s"$globalMap.$x.Value")._1 match {
+    interp.getValue(st, s"$globalMap.$x.Value")._1 match {
       case c: Const => append(s"$$assert.sameValue($x, ${const2code(c)});")
       case (addr: Addr) => handleObject(addr, x)
       case _ =>
@@ -82,7 +82,7 @@ case class Injector(
   // handle lexical variables
   private def handleLet: Unit = for (x <- createdLets) {
     log("handling let...")
-    getValue(st, s"$lexRecord.$x.BoundValue")._1 match {
+    interp.getValue(st, s"$lexRecord.$x.BoundValue")._1 match {
       case c: Const => append(s"$$assert.sameValue($x, ${const2code(c)});")
       case (addr: Addr) => handleObject(addr, x)
       case _ =>
@@ -165,9 +165,9 @@ case class Injector(
     val initSt = st.copy(globals = st.globals + (Id("input") -> addr))
     val newSt = runInst(initSt, s"app result = (input.OwnPropertyKeys input)")
     val result = "result.Value"
-    val len = getValue(newSt, s"$result.length")._1.asInstanceOf[INum].long.toInt
+    val len = interp.getValue(newSt, s"$result.length")._1.asInstanceOf[INum].long.toInt
     val array = (0 until len)
-      .map(k => getValue(newSt, s"""$result[${k}i]""")._1)
+      .map(k => interp.getValue(newSt, s"""$result[${k}i]""")._1)
       .flatMap(_ match {
         case Str(str) => Some(s"'$str'")
         case addr: Addr => addrToName(addr)
@@ -223,20 +223,14 @@ case class Injector(
 
   // inject tag
   private lazy val errorNameRegex = "GLOBAL.([A-Z][a-z]+)Error.prototype".r
-  private lazy val isNormal: Boolean = try {
-    getValue(st, "result.Type")._1 == NamedAddr("CONST_normal")
-  } catch { case e: IRError => false }
+  private lazy val isNormal: Boolean = interp.isNormal(st)
   private def injectTag: Unit = {
     log("injecting tag...")
-    val tag = uidOpt match {
-      case Some(uid) => s"IRError: $uid"
-      case None => if (isNormal) "Normal:" else getValue(st, "result.Value")._1 match {
-        case addr: Addr => getValue(st, "result.Prototype")._1 match {
-          case NamedAddr(errorNameRegex(name)) => s"${name}Error:"
-          case _ => warning; s"Throw ${beautify(addr)}:"
-        }
-        case x => warning; s"Throw ${beautify(x)}:"
-      }
+    val tag = interp.getTag(st, uidOpt) match {
+      case NormalTag => "Normal:"
+      case IRErrorTag(uid) => s"IRError: $uid"
+      case ErrorThrowTag(name) => s"${name}Error:"
+      case ValueThrowTag(name) => s"Throw ${name}:"
     }
     append(tag, comment = true)
   }
@@ -254,16 +248,6 @@ case class Injector(
     append(s"feature: $feature", comment = true)
   }
 
-  // get values
-  private def getValue(st: State, str: String): (Value, State) =
-    interp.escapeCompletion(getValue(st, parseExpr(str)))
-  private def getValue(st: State, expr: Expr): (Value, State) =
-    interp.interp(expr)(st)
-  private def getValue(st: State, refV: RefValue): (Value, State) =
-    interp.interp(refV)(st)
-  private def getValue(st: State, addr: Addr, prop: String): (Value, State) =
-    getValue(st, RefValueProp(addr, Str(prop)))
-
   // run instructions
   private def runInst(st: State, str: String): State = {
     val inst = parseInst(str)
@@ -273,22 +257,22 @@ case class Injector(
   // access properties
   private def access(st: State, base: Value, props: Value*): Value =
     props.foldLeft(base) {
-      case (base, p) => getValue(st, interp.interp(base, p)(st)._1)._1
+      case (base, p) => interp.getValue(st, interp.interp(base, p)(st)._1)._1
     }
 
   // get created variables
   private lazy val globalMap = "REALM.GlobalObject.SubMap"
-  private lazy val globalThis = getValue(st, s"$globalMap.globalThis.Value")._1
+  private lazy val globalThis = interp.getValue(st, s"$globalMap.globalThis.Value")._1
   private lazy val createdVars: Set[String] = {
-    val initial = getStrKeys(getValue(st, "GLOBAL")._1)
-    val current = getStrKeys(getValue(st, globalMap)._1)
+    val initial = getStrKeys(interp.getValue(st, "GLOBAL")._1)
+    val current = getStrKeys(interp.getValue(st, globalMap)._1)
     current -- initial
   }
 
   // get created lexical variables
   private lazy val lexRecord = "REALM.GlobalEnv.EnvironmentRecord.DeclarativeRecord.SubMap"
   private lazy val createdLets: Set[String] =
-    getStrKeys(getValue(st, lexRecord)._1)
+    getStrKeys(interp.getValue(st, lexRecord)._1)
 
   // get keys
   private def getStrKeys(value: Value): Set[String] =

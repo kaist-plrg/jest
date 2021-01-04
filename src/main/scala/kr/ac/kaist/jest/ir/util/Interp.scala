@@ -9,7 +9,7 @@ import scala.concurrent.ExecutionContext.Implicits.global
 
 import kr.ac.kaist.jest.{ DEBUG_INTERP, JEST, COVERAGE_MODE, Lexical, AST }
 import kr.ac.kaist.jest.coverage.{ Visited, ReturnValueTarget }
-import kr.ac.kaist.jest.error.{ NotSupported, NotYetModeled, Timeout }
+import kr.ac.kaist.jest.error.{ NotSupported, NotYetModeled, IRError, Timeout }
 import kr.ac.kaist.jest.model.{ Parser => ESParser, ESValueParser, ModelHelper }
 import kr.ac.kaist.jest.parser.UnicodeRegex.WSLT
 import scala.util.matching.Regex
@@ -756,5 +756,35 @@ class Interp(
     case INum(k) => Str(str(k.toInt).toString)
     case Num(k) => Str(str(k.toInt).toString)
     case v => error(s"wrong access of string reference: $str.$v")
+  }
+
+  // get values
+  def getValue(st: State, str: String): (Value, State) =
+    escapeCompletion(getValue(st, Parser.parseExpr(str)))
+  def getValue(st: State, expr: Expr): (Value, State) =
+    interp(expr)(st)
+  def getValue(st: State, refV: RefValue): (Value, State) =
+    interp(refV)(st)
+  def getValue(st: State, addr: Addr, prop: String): (Value, State) =
+    getValue(st, RefValueProp(addr, Str(prop)))
+
+  // normal check
+  def isNormal(st: State): Boolean = try {
+    getValue(st, "result.Type")._1 == NamedAddr("CONST_normal")
+  } catch { case e: IRError => false }
+
+  // get tag
+  private val errorNameRegex = "GLOBAL.([A-Z][a-z]+)Error.prototype".r
+  def getTag(st: State, uidOpt: Option[Int]): Tag = uidOpt match {
+    case Some(uid) => IRErrorTag(uid)
+    case None =>
+      if (isNormal(st)) NormalTag
+      else getValue(st, "result.Value")._1 match {
+        case addr: Addr => getValue(st, "result.Prototype")._1 match {
+          case NamedAddr(errorNameRegex(name)) => ErrorThrowTag(name)
+          case _ => ValueThrowTag(beautify(addr))
+        }
+        case x => ValueThrowTag(beautify(x))
+      }
   }
 }
