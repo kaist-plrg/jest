@@ -21,8 +21,7 @@ lazy val jest = (project in file("."))
         "com.eclipsesource.j2v8" % "j2v8_linux_x86_64" % "6.2.0" from s"file://${baseDirectory.value}/lib/j2v8-6.2.0.jar",
         "io.spray" %% "spray-json" % "1.3.5",
         "org.scala-lang" % "scala-reflect" % scalaVersion.value,
-        "org.scala-lang.modules" %% "scala-parser-combinators" % "1.1.2",
-        "org.jline" % "jline" % "3.13.3"
+        "org.scala-lang.modules" %% "scala-parser-combinators" % "1.1.2"
       )
     },
     retrieveManaged := true,
