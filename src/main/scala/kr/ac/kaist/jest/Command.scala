@@ -1,6 +1,7 @@
 package kr.ac.kaist.jest
 
 import kr.ac.kaist.jest.error.NoMode
+import kr.ac.kaist.jest.ir._
 import kr.ac.kaist.jest.model.Script
 import kr.ac.kaist.jest.phase._
 import kr.ac.kaist.jest.util.ArgParser
@@ -44,7 +45,14 @@ case object CmdParse extends CommandObj("parse", CmdBase >> Parse) {
 }
 
 // eval
-case object CmdEval extends CommandObj("eval", CmdParse >> Load >> Eval)
+case object CmdEval extends CommandObj("eval", CmdParse >> Load >> Eval) {
+  override def display(tag: Tag): Unit = println(tag match {
+    case NormalTag => "Normally terminated."
+    case IRErrorTag(uid) => s"Throws an IR error (#$uid)."
+    case ErrorThrowTag(name) => s"Throws a JavaScript ${name}Error."
+    case ValueThrowTag(name) => s"Throws a JavaScript value: ${name}."
+  })
+}
 
 // mutate
 case object CmdMutate extends CommandObj("mutate", CmdParse >> Mutate)

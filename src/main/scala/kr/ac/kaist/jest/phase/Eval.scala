@@ -2,11 +2,12 @@ package kr.ac.kaist.jest.phase
 
 import kr.ac.kaist.jest.JESTConfig
 import kr.ac.kaist.jest.coverage.Visited
+import kr.ac.kaist.jest.error.IRError
 import kr.ac.kaist.jest.ir._
 import kr.ac.kaist.jest.util._
 
 // Eval phase
-case object Eval extends PhaseObj[State, EvalConfig, State] {
+case object Eval extends PhaseObj[State, EvalConfig, Tag] {
   val name: String = "eval"
   val help: String = "evaluates a given JavaScript program."
 
@@ -14,10 +15,16 @@ case object Eval extends PhaseObj[State, EvalConfig, State] {
     initialSt: State,
     jestConfig: JESTConfig,
     config: EvalConfig
-  ): State = {
-    val st = (new Interp(config.debug, config.timeout, Visited.global))(initialSt)
-    if (config.state) println(beautify(st))
-    st
+  ): Tag = {
+    val interp = new Interp(config.debug, config.timeout, Visited.global)
+    val (st, uidOpt) = try {
+      val st = interp(initialSt)
+      if (config.state) println(beautify(st))
+      (st, None)
+    } catch {
+      case e: IRError => (initialSt, Some(interp.recentInst.get.uid))
+    }
+    interp.getTag(st, uidOpt)
   }
 
   def defaultConfig: EvalConfig = EvalConfig()
