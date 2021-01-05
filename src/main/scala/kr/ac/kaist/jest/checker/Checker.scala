@@ -40,15 +40,18 @@ case class Checker(
     results.map { case (e, rs) => (e, merge(answer, rs)) }.filter(_._2.nonEmpty).toMap
   }
 
-  def execute(engine: String, filepath: String): Set[ExecuteResult] = {
-    val cmd = if (engine contains "node") s"$engine --unhandled-rejections=none $filepath" else s"$engine $filepath"
+  def execute(name: String, filepath: String): Set[ExecuteResult] = {
+    val engine = if (name == "gnode") "$GRAAL_HOME/bin/gnode" else name
+    var cmd = "bash -c \"" + engine + " "
+    if (engine contains "node") cmd += "--unhandled-rejections=none "
+    cmd += filepath + "\""
     val (stdout, stderr) = executeCmd(cmd).getOrElse(("", "TimeoutError: Execution time exceeded 1 sec."))
     ExecuteResult(stdout, stderr)
   }
 }
 
 object Checker {
-  val engines: List[String] = List("node", "xst", "qjs")
+  val engines: List[String] = List("node", "xst", "qjs", "gnode")
   val targets: List[String] = engines :+ "spec"
   val helper: String = readFile(s"$DIFF_TEST_DIR/helper.js")
 }

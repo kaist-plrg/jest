@@ -74,5 +74,6 @@ bin/jest
 .metals
 project/metals.sbt
 
-# result
+# temporal
 result
+__temp__.js
