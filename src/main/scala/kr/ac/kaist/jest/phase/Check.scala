@@ -30,7 +30,7 @@ case object Check extends PhaseObj[Unit, CheckConfig, Unit] with DefaultJsonProt
       val feature = injected.split(LINE_SEP).tail.head.substring("// feature: ".length)
 
       dumpFile(Checker.helper + injected, tempPath)
-      val checker = Checker(tempPath, comment, feature, jestConfig.debug || config.debug)
+      val checker = Checker(tempPath, comment, feature, jestConfig.debug)
       deleteFile(tempPath)
 
       checker.result.foreach {
@@ -53,11 +53,11 @@ case object Check extends PhaseObj[Unit, CheckConfig, Unit] with DefaultJsonProt
         val feature = injected.split(LINE_SEP).tail.head.substring("// feature: ".length)
 
         dumpFile(Checker.helper + injected, tempPath)
-        val checker = Checker(tempPath, comment, feature, jestConfig.debug || config.debug)
+        val checker = Checker(tempPath, comment, feature, jestConfig.debug)
         deleteFile(tempPath)
 
         val fails: Map[String, Set[CheckResult]] = checker.result
-        if (fails.nonEmpty && jestConfig.debug || config.debug) {
+        if (fails.nonEmpty && jestConfig.debug) {
           val hr = "-" * 80
           println(hr)
           println(name)
@@ -89,13 +89,8 @@ case object Check extends PhaseObj[Unit, CheckConfig, Unit] with DefaultJsonProt
   }
 
   def defaultConfig: CheckConfig = CheckConfig()
-  val options: List[PhaseOption[CheckConfig]] = List(
-    ("debug", BoolOption(c => c.debug = true),
-      "print intermediate process.")
-  )
+  val options: List[PhaseOption[CheckConfig]] = Nil
 }
 
 // Inject phase config
-case class CheckConfig(
-    var debug: Boolean = false
-) extends Config
+case class CheckConfig() extends Config

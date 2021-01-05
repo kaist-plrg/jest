@@ -26,7 +26,7 @@ case object Inject extends PhaseObj[Unit, InjectConfig, Unit] {
     case Some(filename) =>
       val parseResult = parse(Script(Nil), fileReader(filename))
       if (parseResult.successful)
-        dumpFile(Injector(parseResult.get, debug = jestConfig.debug || config.debug).result, filename)
+        dumpFile(Injector(parseResult.get, debug = jestConfig.debug).result, filename)
     case None =>
       println("injecting assertions...")
 
@@ -39,7 +39,7 @@ case object Inject extends PhaseObj[Unit, InjectConfig, Unit] {
         parseResult = parse(Script(Nil), fileReader(filename)) if parseResult.successful
         script = parseResult.get
       } try {
-        val injector = Injector(script, debug = jestConfig.debug || config.debug)
+        val injector = Injector(script, debug = jestConfig.debug)
         val injected = injector.result
         total += 1
         if (injector.isAsync) count += 1
@@ -57,17 +57,12 @@ case object Inject extends PhaseObj[Unit, InjectConfig, Unit] {
           dumpFile(Map(("message" -> e.getMessage()), ("stacktrace" -> e.getStackTrace().mkString(LINE_SEP))).toJson, s"$exceptionDirectory/$name.json")
         }
       }
-      if (jestConfig.debug || config.debug) println(s"[AsyncInejcted]: ${getPercent(count, total)}")
+      if (jestConfig.debug) println(s"[AsyncInejcted]: ${getPercent(count, total)}")
   }
 
   def defaultConfig: InjectConfig = InjectConfig()
-  val options: List[PhaseOption[InjectConfig]] = List(
-    ("debug", BoolOption(c => c.debug = true),
-      "print intermediate process.")
-  )
+  val options: List[PhaseOption[InjectConfig]] = Nil
 }
 
 // Inject phase config
-case class InjectConfig(
-    var debug: Boolean = false
-) extends Config
+case class InjectConfig() extends Config

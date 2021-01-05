@@ -105,8 +105,6 @@ case object Localize extends PhaseObj[Unit, LocalizeConfig, Unit] with DefaultJs
 
   def defaultConfig: LocalizeConfig = LocalizeConfig()
   val options: List[PhaseOption[LocalizeConfig]] = List(
-    ("debug", BoolOption(c => c.debug = true),
-      "print intermediate process."),
     ("answer", BoolOption(c => c.answer = true),
       "show ranks of answer algorithms.")
   )
@@ -114,6 +112,5 @@ case object Localize extends PhaseObj[Unit, LocalizeConfig, Unit] with DefaultJs
 
 // Localize phase config
 case class LocalizeConfig(
-    var debug: Boolean = false,
     var answer: Boolean = false
 ) extends Config

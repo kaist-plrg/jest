@@ -954,8 +954,6 @@ object BuiltinHeap {
     "Atomics",
     "JSON",
     "Math",
-    "Reflect",
-    // test262
-    "$262"
+    "Reflect"
   )
 }
