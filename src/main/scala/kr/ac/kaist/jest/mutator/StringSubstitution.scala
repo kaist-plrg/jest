@@ -5,11 +5,11 @@ import kr.ac.kaist.jest.ir.Inst._
 import kr.ac.kaist.jest.ir.{ CondInst, EBOp, ERef, EStr, OEq, RefId }
 import kr.ac.kaist.jest.util.Useful.randBool
 
-case class StringLiteralReplacer(
+case class StringSubstitution(
     uid: Int,
     script: Script
 ) extends Mutator with Walker {
-  val name = "StringLiteralReplacer"
+  val name = "String Substitution"
   val candidate = insts(uid) match {
     case condInst: CondInst => condInst.cond match {
       case EBOp(OEq, ERef(RefId(_)), EStr(string)) => Some(s"'$string'")

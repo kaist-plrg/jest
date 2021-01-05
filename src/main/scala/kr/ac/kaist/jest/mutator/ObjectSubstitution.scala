@@ -7,8 +7,8 @@ import scala.collection.immutable.{ Set => ScalaSet }
 import kr.ac.kaist.jest.util.Useful._
 import kr.ac.kaist.jest.sampler.ValidityChecker
 
-case class ObjectReplacer(script: Script) extends Mutator {
-  val name = "ObjectReplacer"
+case class ObjectSubstitution(script: Script) extends Mutator {
+  val name = "Object Substitution"
 
   // get touched algorithm and filtering
   val interp = new Interp(timeLimit = Some(1))
@@ -58,7 +58,7 @@ case class ObjectReplacer(script: Script) extends Mutator {
       val parseResult = Parser.parse(parser, obj)
       if (parseResult.successful) {
         // insert object literal to PrimaryExpression
-        val mutated = ObjectReplacer(script, parseResult.get)
+        val mutated = ObjectSubstitution(script, parseResult.get)
         // check if mutant is valid
         if (mutated != None && ValidityChecker(mutated.get.toString))
           result = mutated
@@ -68,7 +68,7 @@ case class ObjectReplacer(script: Script) extends Mutator {
   }
 
 }
-object ObjectReplacer extends Walker {
+object ObjectSubstitution extends Walker {
   var targetObj: Option[PrimaryExpression] = None
   def apply(script: Script, obj: PrimaryExpression): Option[Script] = {
     targetObj = Some(obj)

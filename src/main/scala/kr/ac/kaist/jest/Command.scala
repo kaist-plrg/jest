@@ -55,7 +55,12 @@ case object CmdEval extends CommandObj("eval", CmdParse >> Load >> Eval) {
 }
 
 // mutate
-case object CmdMutate extends CommandObj("mutate", CmdParse >> Mutate)
+case object CmdMutate extends CommandObj("mutate", CmdParse >> Mutate) {
+  override def display(mutated: Script): Unit = {
+    println("Mutated Script:")
+    println(mutated)
+  }
+}
 
 // generate
 case object CmdGenerate extends CommandObj("generate", CmdBase >> Generate)

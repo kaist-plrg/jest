@@ -7,13 +7,13 @@ import kr.ac.kaist.jest.sampler.ValidityChecker
 import kr.ac.kaist.jest.util.Useful._
 import java.io.PrintWriter
 
-case class NearSyntaxReplacer(
+case class NearestSyntaxTreeMutation(
     uid: Int,
     script: Script,
     filename: Option[String] = None,
     debug: Boolean = false
 ) extends Mutator with Walker {
-  val name = "NearSyntaxReplacer"
+  val name = "Nearest Syntax Tree Mutation"
 
   // script string
   val scriptString = script.toString
@@ -46,7 +46,7 @@ case class NearSyntaxReplacer(
   // get prefix and suffix
   val posOpt = getNear.map(targetAst => {
     val scriptString = script.toString()
-    logln(s"[NearSyntaxReplacer] From ```$scriptString'''")
+    logln(s"[NearestSyntaxTreeMutation] From ```$scriptString'''")
     val prefix = scriptString.substring(0, targetAst.start)
     val suffix = scriptString.substring(targetAst.end)
     (prefix, suffix)
@@ -61,13 +61,13 @@ case class NearSyntaxReplacer(
       var parseResult = dummyResult
 
       do {
-        val mutated = SimpleReplacer(targetAst)
+        val mutated = RandomMutation(targetAst)
         newScriptString = s"$prefix${mutated.toString()}$suffix"
         validity = ValidityChecker(newScriptString)
         if (validity) parseResult = Parser.parse(Parser.Script(Nil), newScriptString)
       } while (!validity || !parseResult.successful)
 
-      logln(s"[NearSyntaxReplacer] To   ```$newScriptString'''")
+      logln(s"[NearestSyntaxTreeMutation] To   ```$newScriptString'''")
 
       Some(parseResult.get)
     case _ => None

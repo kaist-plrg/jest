@@ -5,18 +5,18 @@ import kr.ac.kaist.jest.sampler._
 import kr.ac.kaist.jest.util.Useful._
 import kr.ac.kaist.jest.AST
 
-case class SimpleReplacer(script: Script) extends Mutator with Walker {
-  val name = "SimpleReplacer"
+case class RandomMutation(script: Script) extends Mutator with Walker {
+  val name = "Random Mutation"
   val weight = IMPORTANT
   def mutateOption: Option[Script] = {
     var parseResult: Parser.ParseResult[Script] = Parser.Failure("", new util.parsing.input.CharSequenceReader(""));
     do {
-      parseResult = Parser.parse(Parser.Script(Nil), SimpleReplacer.walk(script).toString())
+      parseResult = Parser.parse(Parser.Script(Nil), RandomMutation.walk(script).toString())
     } while (!parseResult.successful)
     Some(parseResult.get)
   }
 }
-object SimpleReplacer extends Walker {
+object RandomMutation extends Walker {
   def apply(script: AST): AST = walk(script)
 
   lazy val exprList1 = NRSampler.origAssignmentExpression.toList

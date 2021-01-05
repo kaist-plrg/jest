@@ -5,13 +5,13 @@ import kr.ac.kaist.jest.sampler._
 import kr.ac.kaist.jest.util.Useful._
 import kr.ac.kaist.jest.AST
 
-case class StatementAppender(script: Script) extends Mutator {
-  val name = "StatementAppender"
+case class StatementInsertion(script: Script) extends Mutator {
+  val name = "Statement Insertion"
   val weight = NORMAL
-  def mutateOption: Option[Script] = Some(StatementAppender.walk(script))
+  def mutateOption: Option[Script] = Some(StatementInsertion.walk(script))
 }
 
-object StatementAppender extends Walker {
+object StatementInsertion extends Walker {
   def apply(script: AST): AST = walk(script)
 
   val parser = Parser.StatementListItem(List(true, true, true))
