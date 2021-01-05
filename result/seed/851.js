@@ -1,1 +1,0 @@
-var x = new Function ( 0 , 0 ) ;

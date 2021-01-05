@@ -1,1 +1,0 @@
-class x { constructor ( ) { this . x = super [ 42 ] ; } } ;

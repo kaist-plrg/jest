@@ -1,1 +1,0 @@
-var x = String . prototype . concat . call ( null , 0 ) ;

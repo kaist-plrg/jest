@@ -13,8 +13,7 @@ case object Inject extends PhaseObj[Unit, InjectConfig, Unit] {
   val name = "inject"
   val help = "constructs tests by injecting semantics assertions to given JavaScript programs."
 
-  val exception = s"$INJECT_DIR/exception"
-  mkdir(exception)
+  mkdir(INJECT_EXC_DIR)
   mkdir(TOUCHED_ALGO_DIR)
   mkdir(TOUCHED_INST_DIR)
 
@@ -28,7 +27,10 @@ case object Inject extends PhaseObj[Unit, InjectConfig, Unit] {
       if (parseResult.successful)
         dumpFile(Injector(parseResult.get, debug = jestConfig.debug).result, filename)
     case None =>
-      println("injecting assertions...")
+      println("##############################")
+      println("#     Assertion Injection    #")
+      println("##############################")
+      mkdir(TESTS_DIR)
 
       var count = 0
       var total = 0
@@ -39,11 +41,11 @@ case object Inject extends PhaseObj[Unit, InjectConfig, Unit] {
         parseResult = parse(Script(Nil), fileReader(filename)) if parseResult.successful
         script = parseResult.get
       } try {
+        print(f"[$name%10s] ")
         val injector = Injector(script, debug = jestConfig.debug)
         val injected = injector.result
         total += 1
         if (injector.isAsync) count += 1
-        mkdir(TESTS_DIR)
         dumpFile(injected, s"$TESTS_DIR/$name")
 
         // dump touched
@@ -51,10 +53,15 @@ case object Inject extends PhaseObj[Unit, InjectConfig, Unit] {
         val toJsonExt = changeExt("js", "json")
         dumpJson(visited.touchedAlgos, s"$TOUCHED_ALGO_DIR/${toJsonExt(name)}")
         dumpJson(visited.instCovered, s"$TOUCHED_INST_DIR/${toJsonExt(name)}")
+        println(s"Success")
       } catch {
         case e: Throwable => {
-          println(s"* Warning: $e")
-          dumpFile(Map(("message" -> e.getMessage()), ("stacktrace" -> e.getStackTrace().mkString(LINE_SEP))).toJson, s"$exception/$name.json")
+          val msg = e.getMessage()
+          println(s"Failed: $msg")
+          dumpFile(Map(
+            "message" -> msg,
+            "stacktrace" -> e.getStackTrace().mkString(LINE_SEP)
+          ).toJson, s"$INJECT_EXC_DIR/$name.json")
         }
       }
       if (jestConfig.debug) println(s"[AsyncInejcted]: ${getPercent(count, total)}")

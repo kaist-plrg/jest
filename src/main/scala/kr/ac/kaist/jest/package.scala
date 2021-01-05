@@ -44,6 +44,7 @@ package object jest {
   val LOGS_DIR = s"${BASE_DIR}/logs"
   val GENERATE_DIR = s"${LOGS_DIR}/generate"
   val INJECT_DIR = s"${LOGS_DIR}/inject"
+  val INJECT_EXC_DIR = s"$INJECT_DIR/exception"
   val TOUCHED_ALGO_DIR = s"$INJECT_DIR/touched/algo"
   val TOUCHED_INST_DIR = s"$INJECT_DIR/touched/inst"
 

@@ -1,1 +1,0 @@
-var x = Number . prototype . toExponential . call ( new Number ( 0 ) , 0 ) ;

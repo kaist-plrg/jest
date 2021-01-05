@@ -1,1 +1,0 @@
-var x = String . prototype [ Symbol . iterator ] . call ( new String ( 0 ) ) ;

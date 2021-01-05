@@ -1,1 +1,0 @@
-var x = String . prototype . localeCompare . call ( new String ( 0 ) , 0 , 0 ) ;

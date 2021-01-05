@@ -1,1 +1,0 @@
-var x = String . prototype . toString . call ( new String ( 0 ) ) ;

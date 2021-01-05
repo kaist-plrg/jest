@@ -1,1 +1,0 @@
-var x = Function . prototype . call . call ( new Function ( ) , 0 , 0 ) ;

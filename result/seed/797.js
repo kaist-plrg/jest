@@ -1,1 +1,0 @@
-var x = Array . prototype . reduce . call ( null , 0 , 0 ) ;

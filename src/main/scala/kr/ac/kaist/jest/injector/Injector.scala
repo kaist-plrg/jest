@@ -8,7 +8,7 @@ import kr.ac.kaist.jest.model.{ Parser => JSParser, Script, ModelHelper }
 
 case class Injector(
     script: Script,
-    timeout: Option[Long] = Some(1),
+    timeout: Option[Long] = Some(5),
     debug: Boolean = false
 ) {
   // injected script

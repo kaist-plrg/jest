@@ -1,1 +1,0 @@
-var x = Array . prototype . toLocaleString . call ( new Array ( ) ) ;

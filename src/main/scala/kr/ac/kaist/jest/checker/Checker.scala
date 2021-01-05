@@ -48,7 +48,7 @@ case class Checker(
 }
 
 object Checker {
-  val engines: List[String] = List("node", "xst", "qjs", "gnode")
+  val engines: List[String] = List("node", "xst", "qjs")
   val targets: List[String] = engines :+ "spec"
   val helper: String = readFile(s"$DIFF_TEST_DIR/helper.js")
 }

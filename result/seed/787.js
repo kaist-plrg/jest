@@ -1,1 +1,0 @@
-var x = Array . prototype . map . call ( null , 0 , 0 ) ;

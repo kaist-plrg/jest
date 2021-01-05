@@ -1,1 +1,0 @@
-var x = WeakMap ( 0 ) ;

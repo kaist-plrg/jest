@@ -1,1 +1,0 @@
-var x = String . prototype . codePointAt . call ( new String ( 0 ) , 0 ) ;
