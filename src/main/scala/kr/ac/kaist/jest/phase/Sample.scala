@@ -16,10 +16,21 @@ case object Sample extends PhaseObj[Unit, SampleConfig, Unit] {
     jestConfig: JESTConfig,
     config: SampleConfig
   ): Unit = {
-    val samples = NRSampler.getSample ++ ManualSampler.getSample ++ BuiltinSampler.getSample //++ NRSampler.getEvalSample ++ NRSampler.getIndirectEvalSample
+    println("##############################")
+    println("#       Seed Synthesis       #")
+    println("##############################")
+    val samples = NRSampler.getSample ++
+      ManualSampler.getSample ++
+      BuiltinSampler.getSample
+    val len = samples.length
+    println(s"$len seed programs are synthesized.")
+    println("Calculating syntax coverage...")
+    val tracer = RHSTracer(samples)
+    println(tracer.summary)
+    tracer.dump(s"$GENERATE_DIR/syntax")
+    mkdir(SEED_DIR)
     for ((script, k) <- samples.zipWithIndex) {
-      mkdir(SAMPLE_DIR)
-      dumpFile(script, s"$SAMPLE_DIR/$k.js")
+      dumpFile(script, s"$SEED_DIR/$k.js")
     }
   }
 

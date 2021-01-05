@@ -84,7 +84,7 @@ object Localizer {
   private lazy val totalAlgos = Algorithm.all.map(_.name).toSet
   private lazy val totalInsts = insts.map(_.uid).toSet
   private lazy val (instMap, algoMap) = (for {
-    file <- walkTree(GENERATED_DIR)
+    file <- walkTree(PROGRAMS_DIR)
     name = file.getName
     if jsFilter(name)
     filename = file.toString
@@ -92,8 +92,9 @@ object Localizer {
     parseResult = parse(Script(Nil), rawScript) if parseResult.successful
     script = parseResult.get
   } yield {
-    val touchedInstCache = s"$TOUCHED_DIR/inst/${toJsonExt(name)}"
-    val touchedAlgoCache = s"$TOUCHED_DIR/algo/${toJsonExt(name)}"
+    val jsonName = toJsonExt(name)
+    val touchedAlgoCache = s"$TOUCHED_ALGO_DIR/$jsonName"
+    val touchedInstCache = s"$TOUCHED_INST_DIR/$jsonName"
     val cached = exists(touchedInstCache) && exists(touchedAlgoCache)
 
     val (instCovered, algoCovered) = if (cached) (

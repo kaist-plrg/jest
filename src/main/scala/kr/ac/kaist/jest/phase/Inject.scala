@@ -13,10 +13,10 @@ case object Inject extends PhaseObj[Unit, InjectConfig, Unit] {
   val name = "inject"
   val help = "constructs tests by injecting semantics assertions to given JavaScript programs."
 
-  val exceptionDirectory = s"$DIFF_TEST_DIR/inject_exceptions"
-  mkdir(exceptionDirectory)
-  mkdir(s"$TOUCHED_DIR/algo")
-  mkdir(s"$TOUCHED_DIR/inst")
+  val exception = s"$INJECT_DIR/exception"
+  mkdir(exception)
+  mkdir(TOUCHED_ALGO_DIR)
+  mkdir(TOUCHED_INST_DIR)
 
   def apply(
     unit: Unit,
@@ -33,7 +33,7 @@ case object Inject extends PhaseObj[Unit, InjectConfig, Unit] {
       var count = 0
       var total = 0
       for {
-        file <- walkTree(GENERATED_DIR)
+        file <- walkTree(PROGRAMS_DIR)
         name = file.getName
         filename = file.toString if jsFilter(filename)
         parseResult = parse(Script(Nil), fileReader(filename)) if parseResult.successful
@@ -43,18 +43,18 @@ case object Inject extends PhaseObj[Unit, InjectConfig, Unit] {
         val injected = injector.result
         total += 1
         if (injector.isAsync) count += 1
-        mkdir(INJECTED_DIR)
-        dumpFile(injected, s"$INJECTED_DIR/$name")
+        mkdir(TESTS_DIR)
+        dumpFile(injected, s"$TESTS_DIR/$name")
 
         // dump touched
         val visited = injector.visited
         val toJsonExt = changeExt("js", "json")
-        dumpJson(visited.instCovered, s"$TOUCHED_DIR/inst/${toJsonExt(name)}")
-        dumpJson(visited.touchedAlgos, s"$TOUCHED_DIR/algo/${toJsonExt(name)}")
+        dumpJson(visited.touchedAlgos, s"$TOUCHED_ALGO_DIR/${toJsonExt(name)}")
+        dumpJson(visited.instCovered, s"$TOUCHED_INST_DIR/${toJsonExt(name)}")
       } catch {
         case e: Throwable => {
           println(s"* Warning: $e")
-          dumpFile(Map(("message" -> e.getMessage()), ("stacktrace" -> e.getStackTrace().mkString(LINE_SEP))).toJson, s"$exceptionDirectory/$name.json")
+          dumpFile(Map(("message" -> e.getMessage()), ("stacktrace" -> e.getStackTrace().mkString(LINE_SEP))).toJson, s"$exception/$name.json")
         }
       }
       if (jestConfig.debug) println(s"[AsyncInejcted]: ${getPercent(count, total)}")

@@ -33,7 +33,6 @@ target/
 ## tests
 tests/detail
 tests/manual.json
-tests/result/test262Test_*
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
@@ -75,10 +74,7 @@ bin/jest
 .metals
 project/metals.sbt
 
-# generate directory
-result/generated/
-
-# diff-test
+# result
 diff-test/generated
 diff-test/injected
 diff-test/inject_exceptions

@@ -1,13 +1,13 @@
 package kr.ac.kaist.jest.generator
 
-import kr.ac.kaist.jest.GEN_RES_DIR
+import kr.ac.kaist.jest.GENERATE_DIR
 import kr.ac.kaist.jest.ir._
 import kr.ac.kaist.jest.ir.Inst._
 import kr.ac.kaist.jest.model.Algorithm
 import kr.ac.kaist.jest.util.Useful._
 
 object FailedStat {
-  val failedPath = s"$GEN_RES_DIR/failed.json"
+  val failedPath = s"$GENERATE_DIR/failed.json"
 
   println(failedPath)
   def showMergedResult(filename: String = failedPath): Unit = showResult(merged(filename))

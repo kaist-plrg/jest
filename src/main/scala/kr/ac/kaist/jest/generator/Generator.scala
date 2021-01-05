@@ -20,14 +20,14 @@ object Generator extends DefaultJsonProtocol {
   var recentInterp: Option[Interp] = None
 
   // generate JavaScript programs
-  def generate(debug: Boolean, maxIter: Int, loadDir: Option[String]): List[Script] = {
+  def generate(maxIter: Int, loadDir: Option[String]): List[Script] = {
     val runtime = Runtime.getRuntime()
 
     // log file
-    mkdir(GEN_RES_DIR)
-    val nf = getPrintWriter(s"$GEN_RES_DIR/log")
-    val nfSimple = getPrintWriter(s"$GEN_RES_DIR/simple_log")
-    val exceptionDirectory = s"$GEN_RES_DIR/exceptions"
+    mkdir(GENERATE_DIR)
+    val nf = getPrintWriter(s"$GENERATE_DIR/log")
+    val nfSimple = getPrintWriter(s"$GENERATE_DIR/simple_log")
+    val exceptionDirectory = s"$GENERATE_DIR/exceptions"
     mkdir(exceptionDirectory)
 
     var total: List[Script] = Nil
@@ -39,11 +39,11 @@ object Generator extends DefaultJsonProtocol {
 
     def log(any: Any, stdout: Boolean = true): Unit = {
       nf.print(any)
-      if (debug && stdout) print(any)
+      if (stdout) print(any)
     }
     def logln(any: Any, stdout: Boolean = true): Unit = {
       nf.println(any)
-      if (debug && stdout) println(any)
+      if (stdout) println(any)
     }
     def logSimple(any: Any): Unit = nfSimple.print(any.toString + "\t")
     def loglnSimple(any: Any): Unit = nfSimple.println(any)
@@ -113,7 +113,8 @@ object Generator extends DefaultJsonProtocol {
       loglnSimple("")
     }
 
-    def dumpStatus(dir: String) = {
+    def dumpStatus = {
+      val dir = GENERATE_DIR
       mkdir(dir)
 
       //dump syntax
@@ -135,9 +136,9 @@ object Generator extends DefaultJsonProtocol {
       }, s"$dir/failed.json")
 
       //dump scripts
-      mkdir(s"$dir/scripts")
+      mkdir(s"$PROGRAMS_DIR")
       for ((script, k) <- total.toList.sortWith(cmp).zipWithIndex) {
-        dumpFile(script, s"$dir/scripts/$k.js")
+        dumpFile(script, s"$PROGRAMS_DIR/$k.js")
       }
 
       // dump generated
@@ -157,11 +158,6 @@ object Generator extends DefaultJsonProtocol {
       case None => getSample()
     }
     logln(s"# of Samples: ${samples.size}")
-
-    logln("Calculating syntax coverage...")
-    val tracer = RHSTracer(samples)
-    logln(tracer.summary)
-    tracer.dump(s"$GEN_RES_DIR/syntax")
 
     logln("Running samples...")
     for (script <- samples) addScript(script)
@@ -225,10 +221,7 @@ object Generator extends DefaultJsonProtocol {
         }
       }
 
-      if (((k + 1) % 100) == 0) {
-        val dir = s"$GEN_RES_DIR/iteration/${k + 1}"
-        dumpStatus(dir)
-      }
+      if (((k + 1) % 100) == 0) dumpStatus
 
       logFlush()
     }
@@ -240,7 +233,7 @@ object Generator extends DefaultJsonProtocol {
     logln(coverage.summary)
     algoCoverages.foreach(cov => logln(cov.summary, false))
 
-    dumpStatus(GEN_RES_DIR)
+    dumpStatus
 
     // close PrintWriter for the log file
     nf.close()
@@ -273,7 +266,7 @@ object Generator extends DefaultJsonProtocol {
   }
 
   // random sampling
-  def getSample(dir: String = SAMPLE_DIR): List[Script] = (for {
+  def getSample(dir: String = SEED_DIR): List[Script] = (for {
     file <- walkTree(dir)
     filename = file.toString if jsFilter(filename)
     str = readFile(filename)

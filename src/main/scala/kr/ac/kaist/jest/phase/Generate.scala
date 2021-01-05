@@ -18,16 +18,15 @@ case object Generate extends PhaseObj[Unit, GenerateConfig, Unit] {
     unit: Unit,
     jestConfig: JESTConfig,
     config: GenerateConfig
-  ): Unit = Generator.generate(
-    debug = config.debug,
-    maxIter = config.iter,
-    loadDir = config.loadDir
-  )
+  ): Unit = {
+    println("##############################")
+    println("#     Program Generation     #")
+    println("##############################")
+    Generator.generate(config.iter, config.loadDir)
+  }
 
   def defaultConfig: GenerateConfig = GenerateConfig()
   val options: List[PhaseOption[GenerateConfig]] = List(
-    ("debug", BoolOption(c => c.debug = true),
-      "print intermediate process."),
     ("iter", NumOption((c, i) => c.iter = i),
       "maximum number of iterations for generations (default: 100)."),
     ("load", StrOption((c, str) => c.loadDir = Some(str)),
@@ -37,7 +36,6 @@ case object Generate extends PhaseObj[Unit, GenerateConfig, Unit] {
 
 // Generate phase config
 case class GenerateConfig(
-    var debug: Boolean = false,
     var iter: Int = 100,
     var loadDir: Option[String] = None
 ) extends Config

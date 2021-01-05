@@ -44,7 +44,7 @@ case object Check extends PhaseObj[Unit, CheckConfig, Unit] with DefaultJsonProt
       val tempPath = "__temp__.js"
       Checker.targets.foreach(t => { failedScripts = failedScripts + (t -> Map()) })
       for {
-        file <- walkTree(INJECTED_DIR)
+        file <- walkTree(TESTS_DIR)
         name = file.getName
         filename = file.toString if jsFilter(filename)
       } {

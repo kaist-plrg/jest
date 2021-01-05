@@ -19,23 +19,33 @@ package object jest {
   // Source directory root
   val RESOURCE_DIR = s"${SRC_DIR}/resources"
 
-  // Sample directory
-  val SAMPLE_DIR = s"${RESOURCE_DIR}/sample"
-
   // Scala source directory root
   val SCALA_DIR = s"${SRC_DIR}/scala/kr/ac/kaist/jest"
 
   // Model directory root
   val MODEL_DIR = s"${SCALA_DIR}/model"
 
-  // Differential testing directories
-  val DIFF_TEST_DIR = s"${BASE_DIR}/diff-test"
-  val GENERATED_DIR = s"${DIFF_TEST_DIR}/generated"
-  val INJECTED_DIR = s"${DIFF_TEST_DIR}/injected"
-  val TOUCHED_DIR = s"${DIFF_TEST_DIR}/touched"
-  val FAILED_DIR = s"${DIFF_TEST_DIR}/failed"
-  val LOCALIZED_DIR = s"${DIFF_TEST_DIR}/localized"
-  val ANSWER_DIR = s"${DIFF_TEST_DIR}/answer"
+  // Differential testing directory
+  val DIFF_TEST_DIR = s"${BASE_DIR}/lib/diff-test"
+
+  // Bug directories
+  val BUG_DIR = s"${BASE_DIR}/data"
+  val LOCATIONS_DIR = s"${BUG_DIR}/locations"
+
+  // Result directories
+  val RESULT_DIR = s"${BASE_DIR}/result"
+  val SEED_DIR = s"${RESULT_DIR}/seed"
+  val PROGRAMS_DIR = s"${RESULT_DIR}/programs"
+  val TESTS_DIR = s"${RESULT_DIR}/tests"
+  val FAILED_DIR = s"${RESULT_DIR}/failed"
+  val LOCALIZED_DIR = s"${RESULT_DIR}/localized"
+
+  // Log directories
+  val LOGS_DIR = s"${BASE_DIR}/logs"
+  val GENERATE_DIR = s"${LOGS_DIR}/generate"
+  val INJECT_DIR = s"${LOGS_DIR}/inject"
+  val TOUCHED_ALGO_DIR = s"$INJECT_DIR/touched/algo"
+  val TOUCHED_INST_DIR = s"$INJECT_DIR/touched/inst"
 
   // Current directory root
   val CUR_DIR = System.getProperty("user.dir")
@@ -46,10 +56,6 @@ package object jest {
   val DEBUG_PARSER: Boolean = false
   val DEBUG_INTERP: Boolean = false
   val DEBUG_FILTER: Boolean = false
-
-  // Result directory
-  val RESULT_DIR = s"$BASE_DIR/result"
-  val GEN_RES_DIR = s"$RESULT_DIR/generated"
 
   // Coverage check mode
   val COVERAGE_MODE: Boolean = true

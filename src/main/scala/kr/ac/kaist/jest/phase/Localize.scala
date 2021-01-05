@@ -61,7 +61,7 @@ case object Localize extends PhaseObj[Unit, LocalizeConfig, Unit] with DefaultJs
 
             // if answers exist, then save result
             if (config.answer) {
-              val answerMap: Map[String, Set[Answer]] = readJson[Map[String, Set[Answer]]](s"$ANSWER_DIR/$name")
+              val answerMap: Map[String, Set[Answer]] = readJson[Map[String, Set[Answer]]](s"$LOCATIONS_DIR/$name")
               answerMap.get(failedDesc) match {
                 case Some(answers) => {
                   answers.foreach(answer => {
