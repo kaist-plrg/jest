@@ -32,7 +32,7 @@ case class NearestSyntaxTreeMutation(
   val interp = new Interp(targetInst = Some(uid))
   val initSt = ModelHelper.initState(script)
   interp(initSt)
-  val targetAstStack: List[AST] = interp.targetAstStack.get
+  val targetAstStack: List[AST] = interp.targetAstStack.getOrElse(Nil)
 
   // get valid nearest AST
   def getNear: Option[AST] = targetAstStack match {
