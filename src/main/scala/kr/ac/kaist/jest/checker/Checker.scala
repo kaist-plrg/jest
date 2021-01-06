@@ -9,7 +9,7 @@ case class Checker(
     filename: String,
     expected: String,
     feature: String,
-    debug: Boolean
+    debug: Boolean = false
 ) {
   val engines = Checker.engines
   val result: Map[String, Set[CheckResult]] = {

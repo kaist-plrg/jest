@@ -2,7 +2,7 @@ package kr.ac.kaist.jest.phase
 
 import kr.ac.kaist.jest.JESTConfig
 import kr.ac.kaist.jest.coverage.Visited
-import kr.ac.kaist.jest.error.IRError
+import kr.ac.kaist.jest.error._
 import kr.ac.kaist.jest.ir._
 import kr.ac.kaist.jest.util._
 
@@ -22,6 +22,7 @@ case object Eval extends PhaseObj[State, EvalConfig, Tag] {
       if (config.state) println(beautify(st))
       (st, None)
     } catch {
+      case Timeout => (initialSt, Some(-1))
       case e: IRError => (initialSt, Some(interp.recentInst.get.uid))
     }
     interp.getTag(st, uidOpt)

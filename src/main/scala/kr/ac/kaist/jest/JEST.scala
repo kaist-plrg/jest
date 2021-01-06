@@ -48,9 +48,7 @@ object JEST {
     val duration = System.currentTimeMillis - startTime
 
     // display the result.
-    if (!config.silent) {
-      command.display(result)
-    }
+    command.display(result)
 
     // display the time.
     if (config.time) {
@@ -66,7 +64,6 @@ object JEST {
   val commands: List[Command] = List(
     CmdHelp,
     CmdSample,
-    CmdParse,
     CmdEval,
     CmdMutate,
     CmdGenerate,
@@ -95,13 +92,11 @@ object JEST {
 
   // global options
   val options: List[PhaseOption[JESTConfig]] = List(
-    ("silent", BoolOption(c => c.silent = true),
-      "final results are not displayed."),
     ("time", BoolOption(c => c.time = true),
       "display duration time."),
     ("bugfix", BoolOption(_ => BUG_FIX = true),
       "use bug-fixed semantics."),
-    ("debug", BoolOption(c => { DEBUG = true; c.debug = true }),
+    ("detail", BoolOption(c => DETAIL = true),
       "print intermediate process.")
   )
 
@@ -150,7 +145,5 @@ object JEST {
 case class JESTConfig(
     var command: Command,
     var fileNames: List[String] = Nil,
-    var silent: Boolean = false,
-    var time: Boolean = false,
-    var debug: Boolean = false
+    var time: Boolean = false
 ) extends Config

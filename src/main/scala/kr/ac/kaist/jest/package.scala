@@ -1,6 +1,7 @@
 package kr.ac.kaist
 
 import kr.ac.kaist.jest.localizer._
+import kr.ac.kaist.jest.error._
 import java.io.File
 
 package object jest {
@@ -50,6 +51,9 @@ package object jest {
   // Current directory root
   val CUR_DIR = System.getProperty("user.dir")
 
+  // Detail
+  var DETAIL: Boolean = false
+
   // Debugging mode
   var DEBUG: Boolean = false
   val DEBUG_SEMI_INSERT: Boolean = false
@@ -62,4 +66,7 @@ package object jest {
 
   // Bug-fix mode
   var BUG_FIX: Boolean = false
+
+  // Error
+  def err(msg: String) = throw new JESTError(msg)
 }

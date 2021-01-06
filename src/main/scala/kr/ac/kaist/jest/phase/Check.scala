@@ -30,16 +30,16 @@ case object Check extends PhaseObj[Unit, CheckConfig, Unit] with DefaultJsonProt
       val feature = injected.split(LINE_SEP).tail.head.substring("// feature: ".length)
 
       dumpFile(Checker.helper + injected, tempPath)
-      val checker = Checker(tempPath, comment, feature, jestConfig.debug)
+      val checker = Checker(tempPath, comment, feature)
       deleteFile(tempPath)
 
       checker.result.foreach {
         case (e, rs) =>
-          println(s"\n[$e]")
+          println(s"\n[${getTargetName(e)}]")
           rs.foreach(println)
       }
     case None =>
-      println("Perform N+1-version differential testing...")
+      println("n+1-version differential testing...")
 
       val tempPath = "__temp__.js"
       Checker.targets.foreach(t => { failedScripts = failedScripts + (t -> Map()) })
@@ -53,11 +53,11 @@ case object Check extends PhaseObj[Unit, CheckConfig, Unit] with DefaultJsonProt
         val feature = injected.split(LINE_SEP).tail.head.substring("// feature: ".length)
 
         dumpFile(Checker.helper + injected, tempPath)
-        val checker = Checker(tempPath, comment, feature, jestConfig.debug)
+        val checker = Checker(tempPath, comment, feature)
         deleteFile(tempPath)
 
         val fails: Map[String, Set[CheckResult]] = checker.result
-        if (fails.nonEmpty) {
+        if (fails.nonEmpty && DETAIL) {
           val hr = "-" * 80
           println(hr)
           println(name)
@@ -86,6 +86,8 @@ case object Check extends PhaseObj[Unit, CheckConfig, Unit] with DefaultJsonProt
           dumpJson(m_string, dirs(e))
         }
       }
+
+      println(s"dumped failed cases in $FAILED_DIR.")
   }
 
   def defaultConfig: CheckConfig = CheckConfig()

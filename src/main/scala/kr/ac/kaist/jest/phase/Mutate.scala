@@ -42,7 +42,7 @@ case object Mutate extends PhaseObj[Script, MutateConfig, Script] {
   val string = TargetPattern("string")
   val options: List[PhaseOption[MutateConfig]] = List(
     ("mutator", StrOption((c, s) => c.mutator = Some(s)),
-      "select a mutator: random, nearest(id), string(id), object, stmt).")
+      "select a mutator (random, nearest(id), string(id), object, stmt).")
   )
 }
 

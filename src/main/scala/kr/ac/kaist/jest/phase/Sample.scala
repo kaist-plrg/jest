@@ -9,29 +9,27 @@ import kr.ac.kaist.jest.util.Useful._
 // sample phase
 case object Sample extends PhaseObj[Unit, SampleConfig, Unit] {
   val name = "sample"
-  val help = "samples JavaScript files."
+  val help = "synthesizes seed JavaScript programs."
 
   def apply(
     unit: Unit,
     jestConfig: JESTConfig,
     config: SampleConfig
   ): Unit = {
-    println("##############################")
-    println("#       Seed Synthesis       #")
-    println("##############################")
+    println("Synthesizing seed...")
     val samples = NRSampler.getSample ++
       ManualSampler.getSample ++
       BuiltinSampler.getSample
     val len = samples.length
     println(s"$len seed programs are synthesized.")
-    println("Calculating syntax coverage...")
-    val tracer = RHSTracer(samples)
-    println(tracer.summary)
-    tracer.dump(s"$GENERATE_DIR/syntax")
     mkdir(SEED_DIR)
     for ((script, k) <- samples.zipWithIndex) {
       dumpFile(script, s"$SEED_DIR/$k.js")
     }
+    println(s"Dumped seed programs to $SEED_DIR.")
+    val tracer = RHSTracer(samples)
+    println(tracer.summary)
+    tracer.dump(s"$GENERATE_DIR/syntax")
   }
 
   def defaultConfig: SampleConfig = SampleConfig()

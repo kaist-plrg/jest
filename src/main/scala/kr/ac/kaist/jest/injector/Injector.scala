@@ -1,6 +1,6 @@
 package kr.ac.kaist.jest.injector
 
-import kr.ac.kaist.jest.LINE_SEP
+import kr.ac.kaist.jest._
 import kr.ac.kaist.jest.error._
 import kr.ac.kaist.jest.ir._
 import kr.ac.kaist.jest.ir.Parser._
@@ -8,8 +8,7 @@ import kr.ac.kaist.jest.model.{ Parser => JSParser, Script, ModelHelper }
 
 case class Injector(
     script: Script,
-    timeout: Option[Long] = Some(5),
-    debug: Boolean = false
+    timeout: Option[Long] = Some(5)
 ) {
   // injected script
   lazy val result = {
@@ -33,8 +32,8 @@ case class Injector(
   private lazy val scriptStr = script.toString
 
   // logging
-  private def log(any: Any): Unit = if (debug) println(any)
-  private def warning: Unit = if (debug) {
+  private def log(any: Any): Unit = if (DEBUG) println(any)
+  private def warning: Unit = if (DEBUG) {
     val trace = (new Throwable).getStackTrace
     val line = trace(1).getLineNumber
     println(s"[Warning] $scriptStr @ $line")

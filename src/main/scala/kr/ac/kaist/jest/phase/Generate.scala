@@ -12,30 +12,25 @@ import scala.collection.immutable.{ Set => ScalaSet }
 // generate phase
 case object Generate extends PhaseObj[Unit, GenerateConfig, Unit] {
   val name = "generate"
-  val help = "generates JavaScript files using mutators."
+  val help = "generates JavaScript programs using mutators."
 
   def apply(
     unit: Unit,
     jestConfig: JESTConfig,
     config: GenerateConfig
   ): Unit = {
-    println("########################################")
-    println("#          Program Generation          #")
-    println("########################################")
-    Generator.generate(config.iter, config.loadDir)
+    Generator.generate(config.iter)
   }
 
   def defaultConfig: GenerateConfig = GenerateConfig()
   val options: List[PhaseOption[GenerateConfig]] = List(
     ("iter", NumOption((c, i) => c.iter = i),
-      "maximum number of iterations for generations (default: 100)."),
-    ("load", StrOption((c, str) => c.loadDir = Some(str)),
-      "load existing scripts from the given directory")
+      "maximum number of iterations for generations (default: 10).")
   )
 }
 
 // Generate phase config
 case class GenerateConfig(
-    var iter: Int = 100,
+    var iter: Int = 10,
     var loadDir: Option[String] = None
 ) extends Config

@@ -36,26 +36,22 @@ case object CmdBase extends CommandObj("", PhaseNil)
 // help
 case object CmdHelp extends CommandObj("help", CmdBase >> Help)
 
-// sample
-case object CmdSample extends CommandObj("sample", CmdBase >> Sample)
-
-// parse
-case object CmdParse extends CommandObj("parse", CmdBase >> Parse) {
-  override def display(script: Script): Unit = println(script.toJson)
-}
-
 // eval
-case object CmdEval extends CommandObj("eval", CmdParse >> Load >> Eval) {
+case object CmdEval extends CommandObj("eval", CmdBase >> Parse >> Load >> Eval) {
   override def display(tag: Tag): Unit = println(tag match {
-    case NormalTag => "Normally terminated."
-    case IRErrorTag(uid) => s"Throws an IR error (#$uid)."
-    case ErrorThrowTag(name) => s"Throws a JavaScript ${name}Error."
-    case ValueThrowTag(name) => s"Throws a JavaScript value: ${name}."
+    case NormalTag => "normally terminated."
+    case TimeoutTag => s"Timeout"
+    case IRErrorTag(uid) => s"throws an IR error (#$uid)."
+    case ErrorThrowTag(name) => s"throws a JavaScript ${name}Error."
+    case ValueThrowTag(name) => s"throws a JavaScript value: ${name}."
   })
 }
 
+// sample
+case object CmdSample extends CommandObj("sample", CmdBase >> Sample)
+
 // mutate
-case object CmdMutate extends CommandObj("mutate", CmdParse >> Mutate) {
+case object CmdMutate extends CommandObj("mutate", CmdBase >> Parse >> Mutate) {
   override def display(mutated: Script): Unit = {
     println("Mutated Script:")
     println(mutated)

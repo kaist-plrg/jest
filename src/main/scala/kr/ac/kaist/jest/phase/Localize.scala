@@ -24,13 +24,6 @@ case object Localize extends PhaseObj[Unit, LocalizeConfig, Unit] with DefaultJs
     jestConfig: JESTConfig,
     config: LocalizeConfig
   ): Unit = {
-    println("Localize specification/engine bugs...")
-
-    mkdir(s"$RESULT_DIR/localized")
-    val nf = getPrintWriter(s"$RESULT_DIR/localized/rank.tsv")
-    def log(seq: Any*): Unit = nf.println(seq.mkString("\t"))
-    log("bug id", "answer", "fail description", "failed set", "rank")
-
     mkdir(LOCALIZE_DIR)
     var table: Map[Answer, List[Result]] = Map()
     for {
@@ -39,7 +32,7 @@ case object Localize extends PhaseObj[Unit, LocalizeConfig, Unit] with DefaultJs
       filename = failedFile.toString if jsonFilter(filename)
     } {
       val target = removedExt(name)
-      println(s"Loading failed tests for $target...")
+      println(s"localizing failed tests for $target...")
       val dir = s"$LOCALIZE_DIR/$target"
       mkdir(dir)
 
@@ -76,14 +69,21 @@ case object Localize extends PhaseObj[Unit, LocalizeConfig, Unit] with DefaultJs
               case None =>
             }
           }
-          nf.flush
         }
       }
     }
 
     if (config.answer) {
-      val snf = getPrintWriter(s"$RESULT_DIR/localized/figure-5")
-      def slog(any: Any): Unit = snf.println(any)
+      mkdir(s"$RESULT_DIR/localized")
+      val nf = getPrintWriter(s"$RESULT_DIR/localized/rank.tsv")
+      def log(seq: Any*): Unit = nf.println(seq.mkString("\t"))
+      log("bug id", "answer", "fail description", "failed set", "rank")
+
+      val snf = getPrintWriter(s"$RESULT_DIR/localized/rank-summary")
+      def slog(any: Any): Unit = {
+        println(any)
+        snf.println(any)
+      }
       var count: Map[Int, Int] = Map()
       table.toSeq.sortBy(_._1.id).foreach {
         case (Answer(id, algo), results) =>
@@ -91,16 +91,24 @@ case object Localize extends PhaseObj[Unit, LocalizeConfig, Unit] with DefaultJs
           count += rank -> (count.getOrElse(rank, 0) + 1)
           log(id, algo, desc, set.toSeq.mkString(", "), rank)
       }
-      slog("---------")
-      slog("rank | # ")
-      slog("---------")
-      count.toSeq.sortBy(_._1).foreach {
-        case (rank, k) => slog(f"$rank%4d | $k%2d")
+      println
+      slog("rank  | count")
+      slog("------------")
+      val total = count.toSeq.sortBy(_._1).foldLeft(0) {
+        case (total, (rank, k)) =>
+          slog(f"$rank%5d | $k%5d")
+          total + k
       }
-      slog("---------")
+      slog("------------")
+      slog(f"total | $total%5d")
+
+      nf.close
       snf.close
+
+      println
+      println(s"dumped ranks to $RESULT_DIR/localized/rank.tsv")
+      println(s"dumped summary of ranks to $RESULT_DIR/localized/rank-summary")
     }
-    nf.close
   }
 
   def defaultConfig: LocalizeConfig = LocalizeConfig()

@@ -25,9 +25,9 @@ case object Inject extends PhaseObj[Unit, InjectConfig, Unit] {
     case Some(filename) =>
       val parseResult = parse(Script(Nil), fileReader(filename))
       if (parseResult.successful)
-        dumpFile(Injector(parseResult.get, debug = jestConfig.debug).result, filename)
+        dumpFile(Injector(parseResult.get).result, filename)
     case None =>
-      println("inject assertions...")
+      println("injecting assertions...")
       mkdir(TESTS_DIR)
 
       var count = 0
@@ -39,8 +39,8 @@ case object Inject extends PhaseObj[Unit, InjectConfig, Unit] {
         parseResult = parse(Script(Nil), fileReader(filename)) if parseResult.successful
         script = parseResult.get
       } try {
-        print(f"[$name%10s] ")
-        val injector = Injector(script, debug = jestConfig.debug)
+        if (DETAIL) print(f"[$name%10s] ")
+        val injector = Injector(script)
         val injected = injector.result
         total += 1
         if (injector.isAsync) count += 1
@@ -51,18 +51,18 @@ case object Inject extends PhaseObj[Unit, InjectConfig, Unit] {
         val toJsonExt = changeExt("js", "json")
         dumpJson(visited.touchedAlgos, s"$TOUCHED_ALGO_DIR/${toJsonExt(name)}")
         dumpJson(visited.instCovered, s"$TOUCHED_INST_DIR/${toJsonExt(name)}")
-        println(s"Success")
+        if (DETAIL) println(s"Success")
       } catch {
         case e: Throwable => {
           val msg = e.getMessage()
-          println(s"Failed: $msg")
+          if (DETAIL) println(s"Failed: $msg")
           dumpFile(Map(
             "message" -> msg,
             "stacktrace" -> e.getStackTrace().mkString(LINE_SEP)
           ).toJson, s"$INJECT_EXC_DIR/$name.json")
         }
       }
-      if (jestConfig.debug) println(s"[AsyncInejcted]: ${getPercent(count, total)}")
+      println(s"dumped generated tests to $TESTS_DIR.")
   }
 
   def defaultConfig: InjectConfig = InjectConfig()

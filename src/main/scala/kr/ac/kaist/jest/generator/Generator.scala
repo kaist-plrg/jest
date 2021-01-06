@@ -1,7 +1,7 @@
 package kr.ac.kaist.jest.generator
 
 import kr.ac.kaist.jest._
-import kr.ac.kaist.jest.error.{ NotSupported, Timeout, IRError }
+import kr.ac.kaist.jest.error._
 import kr.ac.kaist.jest.ir.{ Interp, CondInst, beautify }
 import kr.ac.kaist.jest.ir.Inst._
 import kr.ac.kaist.jest.mutator._
@@ -16,11 +16,13 @@ object Generator extends DefaultJsonProtocol {
   // max iteration
   val MAX_TRIAL = 500
   var recentMutator: Option[Mutator] = None
+  def recentMutatorName: String = recentMutator.fold("Nothing")(_.name)
   var recentNewCovered: Set[Target] = Set()
   var recentInterp: Option[Interp] = None
+  var recentInc: Int = 0
 
   // generate JavaScript programs
-  def generate(maxIter: Int, loadDir: Option[String]): List[Script] = {
+  def generate(maxIter: Int): List[Script] = {
     val runtime = Runtime.getRuntime()
 
     // log file
@@ -73,7 +75,9 @@ object Generator extends DefaultJsonProtocol {
             if (others.forall(targets contains _)) targets --= others
             else targets += target
           }
+          val origSize = totalVisited.targetCovered.size
           totalVisited ++= visited
+          recentInc = totalVisited.targetCovered.size - origSize
           total ::= script
           true
         case Left(_) =>
@@ -105,7 +109,7 @@ object Generator extends DefaultJsonProtocol {
       logSimple(coverage.conds.size)
       logSimple(coverage.condCovered.size.toDouble / coverage.conds.size)
       // logSimple(getPercent(coverage.condCovered, coverage.conds))
-      logSimple(recentMutator.fold("Nothing")(_.name))
+      logSimple(recentMutatorName)
       logSimple(recentNewCovered.mkString(";"))
       logSimple(s"${runtime.totalMemory() - runtime.freeMemory()}/${runtime.totalMemory()}")
       val tracer = RHSTracer(total)
@@ -152,25 +156,16 @@ object Generator extends DefaultJsonProtocol {
       }
     }
 
-    logln("Load Samples...")
-    val samples = loadDir match {
-      case Some(directory) => getSample(s"$directory/scripts/")
-      case None => getSample()
-    }
-    logln(s"# of Samples: ${samples.size}")
+    val samples = getSample()
 
-    logln("Running samples...")
+    logln(s"loading ${samples.size} seed programs...")
     for (script <- samples) addScript(script)
 
-    loadDir.foreach((directory) => {
-      logln("Loading generated scripts...")
-      generated = readJson[Set[String]](s"$directory/generated.json")
-    })
-
-    logln("Mutating samples...")
+    logln(s"starting with ${total.size} programs (${samples.size - total.size} programs are filtered out)...")
     var scriptString = ""
     var uid = -1
 
+    var table: Map[String, (Int, Int)] = Map()
     logIterationSummary(-1)
     for (k <- 0 until maxIter) {
       try {
@@ -179,7 +174,8 @@ object Generator extends DefaultJsonProtocol {
         scriptString = totalVisited(target)
         uid = target.uid
 
-        logln(s"${k + 1}th iteration: $scriptString")
+        logln("")
+        logln(s"[$k] $scriptString")
         logln(s"target instruction: $uid", false)
 
         val beautified = beautify(insts(uid), detail = false)
@@ -193,15 +189,21 @@ object Generator extends DefaultJsonProtocol {
         )
 
         var trial = 0
-        while (trial < MAX_TRIAL && !add(mutateString(mutators))) trial += 1
+        var str = ""
+        while (trial < MAX_TRIAL && {
+          str = mutateString(mutators)
+          !add(str)
+        }) trial += 1
 
-        log("result: ")
         if (trial == MAX_TRIAL) {
-          logln("FAILED")
+          logln("[FAILED]")
           failed += target
         } else {
+          logln(s"[SUCCESS] $recentMutatorName -> $str")
+          val (pSize, bSize) = table.getOrElse(recentMutatorName, (0, 0))
+          table += recentMutatorName -> (pSize + 1, bSize + recentInc)
+          logln(s"Coverage: (statement, branch) = ${totalVisited.simpleString}")
           failed -= target
-          logln(totalVisited.simpleString)
           logIterationSummary(k)
         }
       } catch {
@@ -213,7 +215,7 @@ object Generator extends DefaultJsonProtocol {
             ("message" -> e.getMessage()),
             ("stackTrace" -> e.getStackTrace().mkString(LINE_SEP)),
             ("originalScript" -> scriptString),
-            ("recentMutator" -> recentMutator.fold("Nothing")(_.name)),
+            ("recentMutator" -> recentMutatorName),
             ("targetUid" -> uid.toString()),
           )
           nfException.println(result.toJson)
@@ -226,11 +228,23 @@ object Generator extends DefaultJsonProtocol {
       logFlush()
     }
 
+    println
+    println("       mutation method         | program | branch  (avg.)")
+    println("---------------------------------------------------------")
+    val (tp, tb) = table.foldLeft((0, 0)) {
+      case ((tp, tb), (name, (p, b))) =>
+        println(f"$name%-30s | $p%7d | $b%6d (${b.toDouble / p}%5.2f)")
+        (tp + p, tb + b)
+    }
+    println("---------------------------------------------------------")
+    println(f"           total               | $tp%7d | $tb%6d (${tb.toDouble / tp}%5.2f)")
+
     val coverage = totalVisited.getCoverage
     val algoCoverages = totalVisited.getAlgoCoverages
 
-    logln(s"TOTAL: ${total.length} / ${generated.size}")
-    logln(coverage.summary)
+    logln("")
+    logln(s"${total.length} programs are generated.")
+    logln(s"dumped generated programs to $PROGRAMS_DIR.")
     algoCoverages.foreach(cov => logln(cov.summary, false))
 
     dumpStatus
@@ -266,12 +280,15 @@ object Generator extends DefaultJsonProtocol {
   }
 
   // random sampling
-  def getSample(dir: String = SEED_DIR): List[Script] = (for {
-    file <- walkTree(dir)
-    filename = file.toString if jsFilter(filename)
-    str = readFile(filename)
-    script = Parser.parse(Parser.Script(Nil), str).get
-  } yield script).toList.sortWith(cmp)
+  def getSample(dir: String = SEED_DIR): List[Script] = {
+    if (!exists(SEED_DIR)) err("[NoSeed] Please run `jest sample`")
+    (for {
+      file <- walkTree(dir)
+      filename = file.toString if jsFilter(filename)
+      str = readFile(filename)
+      script = Parser.parse(Parser.Script(Nil), str).get
+    } yield script).toList.sortWith(cmp)
+  }
 
   // mutate given JavaScript program
   def mutate(mutators: List[Mutator]): Script =
