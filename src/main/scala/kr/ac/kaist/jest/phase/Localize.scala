@@ -24,10 +24,11 @@ case object Localize extends PhaseObj[Unit, LocalizeConfig, Unit] with DefaultJs
     jestConfig: JESTConfig,
     config: LocalizeConfig
   ): Unit = {
+    println("-------------- localize ----------------")
     mkdir(LOCALIZE_DIR)
     var table: Map[Answer, List[Result]] = Map()
     for {
-      failedFile <- walkTree(FAILED_DIR)
+      failedFile <- walkTree(BUGS_DIR)
       name = failedFile.getName
       filename = failedFile.toString if jsonFilter(filename)
     } {

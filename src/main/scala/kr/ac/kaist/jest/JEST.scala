@@ -64,13 +64,11 @@ object JEST {
   val commands: List[Command] = List(
     CmdHelp,
     CmdSample,
-    CmdEval,
-    CmdMutate,
     CmdGenerate,
     CmdInject,
     CmdCheck,
     CmdLocalize,
-    CmdFindBug
+    CmdRun
   )
   val cmdMap = commands.foldLeft[Map[String, Command]](Map()) {
     case (map, cmd) => map + (cmd.name -> cmd)
@@ -80,10 +78,6 @@ object JEST {
   var phases: List[Phase] = List(
     Help,
     Sample,
-    Parse,
-    Load,
-    Eval,
-    Mutate,
     Generate,
     Inject,
     Check,

@@ -27,6 +27,7 @@ case object Inject extends PhaseObj[Unit, InjectConfig, Unit] {
       if (parseResult.successful)
         dumpFile(Injector(parseResult.get).result, filename)
     case None =>
+      println("--------------- inject -----------------")
       println("injecting assertions...")
       mkdir(TESTS_DIR)
 

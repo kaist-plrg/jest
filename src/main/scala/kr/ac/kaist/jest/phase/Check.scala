@@ -12,9 +12,9 @@ import spray.json._
 // Check phase
 case object Check extends PhaseObj[Unit, CheckConfig, Unit] with DefaultJsonProtocol {
   val name = "check"
-  val help = "performs n+1-version differential testing for given tests."
-  val dirs = Checker.targets.map(t => (t, s"$FAILED_DIR/${getTargetName(t)}.json")).toMap
-  mkdir(FAILED_DIR)
+  val help = "performs differential testing for given tests."
+  val dirs = Checker.targets.map(t => (t, s"$BUGS_DIR/${getTargetName(t)}.json")).toMap
+  mkdir(BUGS_DIR)
 
   var failedScripts: Map[String, Map[CheckResult, Set[String]]] = Map()
 
@@ -39,7 +39,8 @@ case object Check extends PhaseObj[Unit, CheckConfig, Unit] with DefaultJsonProt
           rs.foreach(println)
       }
     case None =>
-      println("n+1-version differential testing...")
+      println("---------------- check -----------------")
+      println("differential testing...")
 
       val tempPath = "__temp__.js"
       Checker.targets.foreach(t => { failedScripts = failedScripts + (t -> Map()) })
@@ -87,7 +88,7 @@ case object Check extends PhaseObj[Unit, CheckConfig, Unit] with DefaultJsonProt
         }
       }
 
-      println(s"dumped failed cases in $FAILED_DIR.")
+      println(s"dumped failed cases in $BUGS_DIR.")
   }
 
   def defaultConfig: CheckConfig = CheckConfig()

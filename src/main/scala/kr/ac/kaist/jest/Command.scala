@@ -36,27 +36,8 @@ case object CmdBase extends CommandObj("", PhaseNil)
 // help
 case object CmdHelp extends CommandObj("help", CmdBase >> Help)
 
-// eval
-case object CmdEval extends CommandObj("eval", CmdBase >> Parse >> Load >> Eval) {
-  override def display(tag: Tag): Unit = println(tag match {
-    case NormalTag => "normally terminated."
-    case TimeoutTag => s"Timeout"
-    case IRErrorTag(uid) => s"throws an IR error (#$uid)."
-    case ErrorThrowTag(name) => s"throws a JavaScript ${name}Error."
-    case ValueThrowTag(name) => s"throws a JavaScript value: ${name}."
-  })
-}
-
 // sample
 case object CmdSample extends CommandObj("sample", CmdBase >> Sample)
-
-// mutate
-case object CmdMutate extends CommandObj("mutate", CmdBase >> Parse >> Mutate) {
-  override def display(mutated: Script): Unit = {
-    println("Mutated Script:")
-    println(mutated)
-  }
-}
 
 // generate
 case object CmdGenerate extends CommandObj("generate", CmdBase >> Generate)
@@ -70,5 +51,5 @@ case object CmdCheck extends CommandObj("check", CmdBase >> Check)
 // localize
 case object CmdLocalize extends CommandObj("localize", CmdBase >> Localize)
 
-// find-bug
-case object CmdFindBug extends CommandObj("find-bug", CmdBase >> Inject >> Check >> Localize)
+// run
+case object CmdRun extends CommandObj("run", CmdBase >> Sample >> Generate >> Inject >> Check >> Localize)

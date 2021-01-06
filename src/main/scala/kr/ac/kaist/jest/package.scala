@@ -37,7 +37,7 @@ package object jest {
   val SEED_DIR = s"${RESULT_DIR}/seed"
   val PROGRAMS_DIR = s"${RESULT_DIR}/programs"
   val TESTS_DIR = s"${RESULT_DIR}/tests"
-  val FAILED_DIR = s"${RESULT_DIR}/failed"
+  val BUGS_DIR = s"${RESULT_DIR}/bugs"
 
   // Log directories
   val LOGS_DIR = s"${BASE_DIR}/logs"

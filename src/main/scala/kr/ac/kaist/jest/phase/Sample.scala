@@ -16,6 +16,7 @@ case object Sample extends PhaseObj[Unit, SampleConfig, Unit] {
     jestConfig: JESTConfig,
     config: SampleConfig
   ): Unit = {
+    println("--------------- sample -----------------")
     println("Synthesizing seed...")
     val samples = NRSampler.getSample ++
       ManualSampler.getSample ++
