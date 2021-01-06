@@ -1,7 +1,7 @@
 package kr.ac.kaist.jest.injector
 
 import kr.ac.kaist.jest.LINE_SEP
-import kr.ac.kaist.jest.error.IRError
+import kr.ac.kaist.jest.error._
 import kr.ac.kaist.jest.ir._
 import kr.ac.kaist.jest.ir.Parser._
 import kr.ac.kaist.jest.model.{ Parser => JSParser, Script, ModelHelper }
@@ -55,6 +55,7 @@ case class Injector(
     interp.getName = false
     (st, None)
   } catch {
+    case Timeout => (initState, Some(-1))
     case e: IRError => (initState, Some(interp.recentInst.get.uid))
   }
 
@@ -228,6 +229,7 @@ case class Injector(
     log("injecting tag...")
     val tag = interp.getTag(st, uidOpt) match {
       case NormalTag => "Normal:"
+      case TimeoutTag => "Timeout:"
       case IRErrorTag(uid) => s"IRError: $uid"
       case ErrorThrowTag(name) => s"${name}Error:"
       case ValueThrowTag(name) => s"Throw ${name}:"

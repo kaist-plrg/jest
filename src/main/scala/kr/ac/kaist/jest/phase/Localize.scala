@@ -18,31 +18,29 @@ case object Localize extends PhaseObj[Unit, LocalizeConfig, Unit] with DefaultJs
   val name = "localize"
   val help = "localizes found bugs in the specification."
 
-  val failedPath: String = s"$DIFF_TEST_DIR/failed"
-  val localizedDir: String = LOCALIZED_DIR
-
+  case class Result(desc: String, set: Set[String], rank: Int)
   def apply(
     unit: Unit,
     jestConfig: JESTConfig,
     config: LocalizeConfig
   ): Unit = {
-    println("localizing bugs...")
+    println("Localize specification/engine bugs...")
 
-    mkdir(LOCALIZED_DIR)
-    val nf = getPrintWriter(s"$LOCALIZED_DIR/summary.tsv")
-    def add(any: Any): Unit = nf.print(s"$any\t")
-    def newline: Unit = nf.println
+    mkdir(s"$RESULT_DIR/localized")
+    val nf = getPrintWriter(s"$RESULT_DIR/localized/rank.tsv")
+    def log(seq: Any*): Unit = nf.println(seq.mkString("\t"))
+    log("bug id", "answer", "fail description", "failed set", "rank")
 
-    List("target", "formula", "fail description", "failed set", "answer", "id", "algo", "aggregated").foreach(add)
-    newline
-
+    mkdir(LOCALIZE_DIR)
+    var table: Map[Answer, List[Result]] = Map()
     for {
-      failedFile <- walkTree(failedPath)
+      failedFile <- walkTree(FAILED_DIR)
       name = failedFile.getName
       filename = failedFile.toString if jsonFilter(filename)
     } {
       val target = removedExt(name)
-      val dir = s"$LOCALIZED_DIR/$target"
+      println(s"Loading failed tests for $target...")
+      val dir = s"$LOCALIZE_DIR/$target"
       mkdir(dir)
 
       // generating localizer
@@ -55,50 +53,52 @@ case object Localize extends PhaseObj[Unit, LocalizeConfig, Unit] with DefaultJs
           val localizer = base.updated(failedSet)
           localizer.dump(s"$dir/$i")
           mkdir(s"$dir/$i/result")
-          FORMULAS.foreach(formula => {
-            val result = localizer.getResult(formula)
-            result.dump(s"$dir/$i/result/$formula")
+          val result = localizer.getResult(ER1b)
+          result.dump(s"$dir/$i/result")
+          val topRanked = result.agAlgoScores.head._1
+          println(s"$target[$i] - ${failedSet.toSeq.mkString(", ")} - $topRanked")
 
-            // if answers exist, then save result
-            if (config.answer) {
-              val answerMap: Map[String, Set[Answer]] = readJson[Map[String, Set[Answer]]](s"$LOCATIONS_DIR/$name")
-              answerMap.get(failedDesc) match {
-                case Some(answers) => {
-                  answers.foreach(answer => {
-                    add(target)
-                    add(formula.name)
-                    add(failedDesc)
-                    add(failedSet.toSeq.sorted.mkString(", "))
-
-                    val Answer(id, algo) = answer
-                    if (algo == "") {
-                      add("-")
-                      add("-")
-                      add("-")
-                      add("-")
-                    } else {
-                      val algoRank = result.getAlgoRank(algo)
-                      val agAlgoRank = result.getAgAlgoRank(algo)
-                      add(id)
-                      add(algo)
-                      add(algoRank)
-                      add(agAlgoRank)
-                    }
-                    newline
-                  })
-                }
-                case None =>
-                  add(target)
-                  add(formula.name)
-                  add(failedDesc)
-                  add(failedSet.toSeq.sorted.mkString(", "))
-                  newline
+          // if answers exist, then save result
+          if (config.answer) {
+            val answerMap: Map[String, Set[Answer]] =
+              readJson[Map[String, Set[Answer]]](s"$ANSWER_DIR/$name")
+            answerMap.get(failedDesc) match {
+              case Some(answers) => answers.foreach {
+                case answer if answer.algo != "" =>
+                  val rank = result.getAgAlgoRank(answer.algo)
+                  table += answer -> (Result(
+                    failedDesc,
+                    failedSet,
+                    rank
+                  ) :: table.getOrElse(answer, Nil))
+                case _ =>
               }
+              case None =>
             }
-            nf.flush
-          })
+          }
+          nf.flush
         }
       }
+    }
+
+    if (config.answer) {
+      val snf = getPrintWriter(s"$RESULT_DIR/localized/figure-5")
+      def slog(any: Any): Unit = snf.println(any)
+      var count: Map[Int, Int] = Map()
+      table.toSeq.sortBy(_._1.id).foreach {
+        case (Answer(id, algo), results) =>
+          val Result(desc, set, rank) = results.sortBy(_.rank).head
+          count += rank -> (count.getOrElse(rank, 0) + 1)
+          log(id, algo, desc, set.toSeq.mkString(", "), rank)
+      }
+      slog("---------")
+      slog("rank | # ")
+      slog("---------")
+      count.toSeq.sortBy(_._1).foreach {
+        case (rank, k) => slog(f"$rank%4d | $k%2d")
+      }
+      slog("---------")
+      snf.close
     }
     nf.close
   }

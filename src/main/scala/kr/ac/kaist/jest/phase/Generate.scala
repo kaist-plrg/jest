@@ -19,9 +19,9 @@ case object Generate extends PhaseObj[Unit, GenerateConfig, Unit] {
     jestConfig: JESTConfig,
     config: GenerateConfig
   ): Unit = {
-    println("##############################")
-    println("#     Program Generation     #")
-    println("##############################")
+    println("########################################")
+    println("#          Program Generation          #")
+    println("########################################")
     Generator.generate(config.iter, config.loadDir)
   }
 

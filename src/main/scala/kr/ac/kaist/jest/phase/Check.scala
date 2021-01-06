@@ -39,7 +39,9 @@ case object Check extends PhaseObj[Unit, CheckConfig, Unit] with DefaultJsonProt
           rs.foreach(println)
       }
     case None =>
-      println("differential testing...")
+      println("########################################")
+      println("#   N+1-version Differential Testing   #")
+      println("########################################")
 
       val tempPath = "__temp__.js"
       Checker.targets.foreach(t => { failedScripts = failedScripts + (t -> Map()) })
@@ -57,7 +59,7 @@ case object Check extends PhaseObj[Unit, CheckConfig, Unit] with DefaultJsonProt
         deleteFile(tempPath)
 
         val fails: Map[String, Set[CheckResult]] = checker.result
-        if (fails.nonEmpty && jestConfig.debug) {
+        if (fails.nonEmpty) {
           val hr = "-" * 80
           println(hr)
           println(name)

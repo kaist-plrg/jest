@@ -29,8 +29,7 @@ package object jest {
   val DIFF_TEST_DIR = s"${BASE_DIR}/lib/diff-test"
 
   // Bug directories
-  val BUG_DIR = s"${BASE_DIR}/data"
-  val LOCATIONS_DIR = s"${BUG_DIR}/locations"
+  val ANSWER_DIR = s"${BASE_DIR}/answer"
 
   // Result directories
   val RESULT_DIR = s"${BASE_DIR}/result"
@@ -38,15 +37,15 @@ package object jest {
   val PROGRAMS_DIR = s"${RESULT_DIR}/programs"
   val TESTS_DIR = s"${RESULT_DIR}/tests"
   val FAILED_DIR = s"${RESULT_DIR}/failed"
-  val LOCALIZED_DIR = s"${RESULT_DIR}/localized"
 
   // Log directories
   val LOGS_DIR = s"${BASE_DIR}/logs"
   val GENERATE_DIR = s"${LOGS_DIR}/generate"
   val INJECT_DIR = s"${LOGS_DIR}/inject"
-  val INJECT_EXC_DIR = s"$INJECT_DIR/exception"
-  val TOUCHED_ALGO_DIR = s"$INJECT_DIR/touched/algo"
-  val TOUCHED_INST_DIR = s"$INJECT_DIR/touched/inst"
+  val INJECT_EXC_DIR = s"${INJECT_DIR}/exception"
+  val TOUCHED_ALGO_DIR = s"${INJECT_DIR}/touched/algo"
+  val TOUCHED_INST_DIR = s"${INJECT_DIR}/touched/inst"
+  val LOCALIZE_DIR = s"${LOGS_DIR}/localize"
 
   // Current directory root
   val CUR_DIR = System.getProperty("user.dir")
@@ -63,7 +62,4 @@ package object jest {
 
   // Bug-fix mode
   var BUG_FIX: Boolean = false
-
-  // formula list for SBFL
-  val FORMULAS: List[Formula] = List(ER1b, Jaccard, Ochiai)
 }

@@ -776,6 +776,7 @@ class Interp(
   // get tag
   private val errorNameRegex = "GLOBAL.([A-Z][a-z]+)Error.prototype".r
   def getTag(st: State, uidOpt: Option[Int]): Tag = uidOpt match {
+    case Some(-1) => TimeoutTag
     case Some(uid) => IRErrorTag(uid)
     case None =>
       if (isNormal(st)) NormalTag
