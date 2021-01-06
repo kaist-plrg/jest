@@ -227,4 +227,24 @@ object Useful {
     }
     result
   }
+
+  // get target names
+  def getTargetName(target: String): String = target match {
+    case "node" => "V8"
+    case "xst" => "ModdableXS"
+    case "qjs" => "QuickJS"
+    case "gnode" => "GraalJS"
+    case "spec" => "ECMAScript"
+    case _ => target
+  }
+
+  // get engine names
+  def getEngineName(name: String): String = name match {
+    case "V8" => "node"
+    case "ModdableXS" => "xst"
+    case "QuickJS" => "qjs"
+    case "GraalJS" => "gnode"
+    case "ECMAScript" => "spec"
+    case _ => name
+  }
 }

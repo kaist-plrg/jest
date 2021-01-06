@@ -27,9 +27,7 @@ case object Inject extends PhaseObj[Unit, InjectConfig, Unit] {
       if (parseResult.successful)
         dumpFile(Injector(parseResult.get, debug = jestConfig.debug).result, filename)
     case None =>
-      println("########################################")
-      println("#          Assertion Injection         #")
-      println("########################################")
+      println("inject assertions...")
       mkdir(TESTS_DIR)
 
       var count = 0
