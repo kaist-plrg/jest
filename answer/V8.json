@@ -22,57 +22,5 @@
   "AssertionPass(AssertionError(Expected [\"length\", \"prototype\"] but got [\"length\", \"name\", \"prototype\"] in ClassTail0ClassDefinitionEvaluation3 for Function.),ExpressionBody0Evaluation0)": [{
     "id": "VE2",
     "algo": "ClassTail0ClassDefinitionEvaluation3"
-  }],
-  "ExceptionFail(SyntaxError,Normal,IterationStatement5LabelledEvaluation0)": [{
-    "id": "",
-    "algo": ""
-  }],
-  "ExceptionFail(SyntaxError,RangeError,GLOBALDOTBigInt)": [{
-    "id": "",
-    "algo": ""
-  }],
-  "ExceptionFail(SyntaxError,ReferenceError,AssignmentExpression4Evaluation0)": [{
-    "id": "",
-    "algo": ""
-  }],
-  "ExceptionFail(SyntaxError,TypeError,GLOBALDOTArrayDOTprototypeDOTvalues)": [{
-    "id": "",
-    "algo": ""
-  }],
-  "ExceptionFail(SyntaxError,TypeError,GLOBALDOTNumber)": [{
-    "id": "",
-    "algo": ""
-  }],
-  "AssertionFail(AssertionError(Expected [\"message\"] but got [\"stack\", \"message\"] in GLOBAL.Error for Error.))": [{
-    "id": "",
-    "algo": ""
-  }],
-  "AssertionFail(AssertionError(Expected [\"message\"] but got [\"stack\", \"message\"] in GLOBAL.EvalError for Error.))": [{
-    "id": "",
-    "algo": ""
-  }],
-  "AssertionFail(AssertionError(Expected [\"message\"] but got [\"stack\", \"message\"] in GLOBAL.RangeError for Error.))": [{
-    "id": "",
-    "algo": ""
-  }],
-  "AssertionFail(AssertionError(Expected [\"message\"] but got [\"stack\", \"message\"] in GLOBAL.ReferenceError for Error.))": [{
-    "id": "",
-    "algo": ""
-  }],
-  "AssertionFail(AssertionError(Expected [\"message\"] but got [\"stack\", \"message\"] in GLOBAL.SyntaxError for Error.))": [{
-    "id": "",
-    "algo": ""
-  }],
-  "AssertionFail(AssertionError(Expected [\"message\"] but got [\"stack\", \"message\"] in GLOBAL.TypeError for Error.))": [{
-    "id": "",
-    "algo": ""
-  }],
-  "AssertionFail(AssertionError(Expected [\"message\"] but got [\"stack\", \"message\"] in GLOBAL.URIError for Error.))": [{
-    "id": "",
-    "algo": ""
-  }],
-  "AssertionFail(AssertionError(Expected [\"length\", \"prototype\", \"name\"] but got [\"length\", \"name\", \"prototype\"] in AsyncGeneratorDeclaration0InstantiateFunctionObject0 for AsyncGeneratorFunction.))": [{
-    "id": "",
-    "algo": ""
   }]
 }

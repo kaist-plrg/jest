@@ -106,41 +106,5 @@
   "ExceptionFail(ReferenceError,TypeError,IterationStatement10LabelledEvaluation0)": [{
     "id": "GR15",
     "algo": "ForInOfHeadEvaluation"
-  }],
-  "ExceptionFail(Normal,ReferenceError,)": [{
-    "id": "",
-    "algo": ""
-  }],
-  "ExceptionFail(Normal,SyntaxError,)": [{
-    "id": "",
-    "algo": ""
-  }],
-  "AssertionFail(AssertionError(Expected [\"message\"] but got [\"message\", \"stack\"] in GLOBAL.Error for Error.))": [{
-    "id": "",
-    "algo": ""
-  }],
-  "AssertionFail(AssertionError(Expected [\"message\"] but got [\"message\", \"stack\"] in GLOBAL.EvalError for Error.))": [{
-    "id": "",
-    "algo": ""
-  }],
-  "AssertionFail(AssertionError(Expected [\"message\"] but got [\"message\", \"stack\"] in GLOBAL.RangeError for Error.))": [{
-    "id": "",
-    "algo": ""
-  }],
-  "AssertionFail(AssertionError(Expected [\"message\"] but got [\"message\", \"stack\"] in GLOBAL.ReferenceError for Error.))": [{
-    "id": "",
-    "algo": ""
-  }],
-  "AssertionFail(AssertionError(Expected [\"message\"] but got [\"message\", \"stack\"] in GLOBAL.SyntaxError for Error.))": [{
-    "id": "",
-    "algo": ""
-  }],
-  "AssertionFail(AssertionError(Expected [\"message\"] but got [\"message\", \"stack\"] in GLOBAL.TypeError for Error.))": [{
-    "id": "",
-    "algo": ""
-  }],
-  "AssertionFail(AssertionError(Expected [\"message\"] but got [\"message\", \"stack\"] in GLOBAL.URIError for Error.))": [{
-    "id": "",
-    "algo": ""
   }]
 }
