@@ -1,4 +1,4 @@
--Xms16g
+-Xms4g
 -Xmx32g
 -Xss1g
 -Xmn512m

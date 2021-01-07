@@ -53,7 +53,7 @@ docker by following the instruction in
 and downlaod our docker image with the following command:
 ```
 $ docker pull jhnaldo/icse-21-jest
-$ docker run -it jhnaldo/icse-21-jest
+$ docker run -it jhnaldo/icse-21-jest # user: guest, password: jest
 ```
 _WARNING_: The docker image is X.XGB large thus be patient when you
 download it.
