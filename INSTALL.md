@@ -11,10 +11,11 @@ docker by following the instruction in
 and downlaod our docker image with the following command:
 ```
 $ docker pull jhnaldo/icse-21-jest
-$ docker run -it jhnaldo/icse-21-jest # user: guest, password: jest
+$ docker run -it -m=16g --rm jhnaldo/icse-21-jest
+# user: guest, password: jest
 ```
-_WARNING_: The docker image is X.XGB large thus be patient when you
-download it.
+_WARNING_: The docker image is 3GB large thus be patient when you
+download it and please assign more than 16GB memory for the docker engine.
 
 ## Download JEST
 ```

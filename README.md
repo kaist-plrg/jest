@@ -53,10 +53,11 @@ docker by following the instruction in
 and downlaod our docker image with the following command:
 ```
 $ docker pull jhnaldo/icse-21-jest
-$ docker run -it jhnaldo/icse-21-jest # user: guest, password: jest
+$ docker run -it -m=16g --rm jhnaldo/icse-21-jest
+# user: guest, password: jest
 ```
-_WARNING_: The docker image is X.XGB large thus be patient when you
-download it.
+_WARNING_: The docker image is 3GB large thus be patient when you
+download it and please assign more than 16GB memory for the docker engine.
 
 ## Basic Commands
 
@@ -103,7 +104,7 @@ Then, check the basic program generation wth the following commmand.
 $ jest generate
 ```
 It shows the semantics coverage changes (Figure 4), and the number of generated
-programs and covered branchesof mutation methods (Table I) during program
+programs and covered branches of mutation methods (Table I) during program
 generation.  Even though it is impossible to exactly reproduce results because
 of the randomness in the program generation, you can check the tendencies by
 running the program generation with a large maximum iteration (≥ 1,000).
