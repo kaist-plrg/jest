@@ -159,7 +159,7 @@ object Generator extends DefaultJsonProtocol {
 
     val samples = getSample()
 
-    logln(s"loading ${samples.size} seed programs...")
+    logln(s"loading ${samples.size} seed programs... (it may take several minutes.)")
     for (script <- samples) addScript(script)
     coverage = totalVisited.getCoverage
     logln(s"[Coverage] statement: ${coverage.instCovered.size} / branch: ${coverage.condCovered.size}")

@@ -86,7 +86,6 @@ The artifact is open-source can be obtained by cloning the following git
 repository:
 \begin{lstlisting}
 $ git clone https://github.com/jhnaldo/jest.git
-$ cd jest
 \end{lstlisting}
 To build and execute the artifact, you should follow the instrucitons in the
 \texttt{INSTALL} file in the artifact.  Since we implement the artifact in
@@ -102,10 +101,11 @@ docker by following the instruction in
 the following command:
 \begin{lstlisting}
 $ docker pull jhnaldo/icse-21-jest
-$ docker run -it jhnaldo/icse-21-jest # user: guest, password: jest
+$ docker run -it -m=16g --rm jhnaldo/icse-21-jest
+# user: guest, password: jest
 \end{lstlisting}
-\textit{WARNING}: The docker image is X.XGB large thus be patient when you
-download it.
+\textit{WARNING}: The docker image is 3GB large thus be patient when you
+download it and please assign more than 16GB memory for the docker engine.
 
 
 \section{Basic Commands}

@@ -3,7 +3,7 @@
 ## Machine Requirements
 | Name              | Requirements   |
 |:-----------------:|:---------------|
-| Memory            | ≥ 4GB          |
+| Memory            | ≥ 16GB         |
 | Operating System  | Linux or macOS |
 
 ## Programming Language Environments
