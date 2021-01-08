@@ -41,7 +41,7 @@ case class Checker(
   }
 
   def execute(name: String, filepath: String): Set[ExecuteResult] = {
-    val engine = if (name == "gnode") "$GRAAL_HOME/bin/gnode" else name
+    val engine = if (name == "gnode") "$GRAAL_HOME/bin/node" else name
     var cmd = "bash -c \"" + engine + " "
     if (engine contains "node") cmd += "--unhandled-rejections=none "
     cmd += filepath + "\""
