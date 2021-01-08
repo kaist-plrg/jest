@@ -20,6 +20,7 @@ object Generator extends DefaultJsonProtocol {
   var recentNewCovered: Set[Target] = Set()
   var recentInterp: Option[Interp] = None
   var recentInc: Int = 0
+  var coverage: Coverage = null
 
   // generate JavaScript programs
   def generate(maxIter: Int): List[Script] = {
@@ -97,7 +98,7 @@ object Generator extends DefaultJsonProtocol {
 
     lazy val st = System.currentTimeMillis
     def logIterationSummary(k: Int): Unit = {
-      val coverage = totalVisited.getCoverage
+      coverage = totalVisited.getCoverage
 
       logSimple(k + 1)
       logSimple((System.currentTimeMillis - st) / 1000)
@@ -160,6 +161,8 @@ object Generator extends DefaultJsonProtocol {
 
     logln(s"loading ${samples.size} seed programs...")
     for (script <- samples) addScript(script)
+    coverage = totalVisited.getCoverage
+    logln(s"[Coverage] statement: ${coverage.instCovered.size} / branch: ${coverage.condCovered.size}")
 
     logln(s"starting with ${total.size} programs (${samples.size - total.size} programs are filtered out)...")
     var scriptString = ""
@@ -202,9 +205,9 @@ object Generator extends DefaultJsonProtocol {
           logln(s"[SUCCESS] $recentMutatorName -> $str")
           val (pSize, bSize) = table.getOrElse(recentMutatorName, (0, 0))
           table += recentMutatorName -> (pSize + 1, bSize + recentInc)
-          logln(s"Coverage: (statement, branch) = ${totalVisited.simpleString}")
           failed -= target
           logIterationSummary(k)
+          logln(s"[Coverage] statement: ${coverage.instCovered.size} / branch: ${coverage.condCovered.size}")
         }
       } catch {
         case e: Throwable => {
@@ -239,7 +242,7 @@ object Generator extends DefaultJsonProtocol {
     println("---------------------------------------------------------")
     println(f"           total               | $tp%7d | $tb%6d (${tb.toDouble / tp}%5.2f)")
 
-    val coverage = totalVisited.getCoverage
+    coverage = totalVisited.getCoverage
     val algoCoverages = totalVisited.getAlgoCoverages
 
     logln("")
