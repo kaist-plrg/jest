@@ -173,6 +173,7 @@ export PATH=$NODE_HOME/bin:$PATH
 ```
 3. Check the version of Node.js:
 ```
+$ source ~/.bashrc
 $ node --version
 # Expected: v14.5.0
 ```
