@@ -142,7 +142,9 @@ it uses the shortest strings derived by symbols as default strings.
 For example, Figure~\ref{fig:prod-example} shows a simplified
 \textit{MemberExpression} production in ES11.  For the first step, we find
 the shortest string for each non-terminal: \code{()} for \textit{Arguments} and
-\code{x} for the other non-terminals.  In the next step, we synthesize strings
+\code{x} for the other non-terminals.  Note that we use pre-defined shortest
+strings for identifiers and literals such as \code{x} for identifiers and
+\code{0} for numerical literals.  In the next step, we synthesize strings
 derivable from \textit{MemberExpression}.  The first alternative is a
 single non-terminal \textit{PrimaryExpression}, which is never visited.
 Thus, it generates all cases of \textit{PrimaryExpression}.  The fourth

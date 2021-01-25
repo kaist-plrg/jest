@@ -4,27 +4,6 @@ simple running example.  The overall structure consists of two
 phases: a conformance test generation phase and a bug detection and localization
 phase.
 
-\subsection{Main Idea}
-
-Differential testing utilizes the cross-referencing oracle, which is
-an assumption that any discrepancies between program behaviors on the same input
-could be bugs.  It compares the execution results of a program with the same
-input on $N$ different implementations.  When an implementation produces a different
-result from the one by the majority of the implementations, differential testing
-reports that the implementation may have a bug.
-
-On the contrary, $N$+1-version differential testing utilizes not only the cross-referencing oracle
-using multiple implementations but also a mechanized specification.  It first
-generates test code from a mechanized specification, and tests 
-$N$ different implementations of the specification using the generated test code
-as in differential testing.  In addition, it can detect possible bugs in the specification
-as well when most implementations fail for a test.  In such cases,
-because a bug in the specification could be triggered by the test, it
-localizes the bug using statistical information as we explain later in this section.
-
-
-\subsection{Running Example}
-
 \begin{figure}[t]
   \centering
   \begin{subfigure}[t]{0.48\textwidth}
@@ -64,6 +43,25 @@ try {
   \vspace*{-1em}
 \end{figure}
 
+
+\subsection{Main Idea}
+
+Differential testing utilizes the cross-referencing oracle, which is
+an assumption that any discrepancies between program behaviors on the same input
+could be bugs.  It compares the execution results of a program with the same
+input on $N$ different implementations.  When an implementation produces a different
+result from the one by the majority of the implementations, differential testing
+reports that the implementation may have a bug.
+
+On the contrary, $N$+1-version differential testing utilizes not only the cross-referencing oracle
+using multiple implementations but also a mechanized specification.  It first
+generates test code from a mechanized specification, and tests 
+$N$ different implementations of the specification using the generated test code
+as in differential testing.  In addition, it can detect possible bugs in the specification
+as well when most implementations fail for a test.  In such cases,
+because a bug in the specification could be triggered by the test, it
+localizes the bug using statistical information as we explain later in this section.
+
 \begin{figure*}[t]
   \centering
   \includegraphics[width=0.98\textwidth]{img/overall.pdf}
@@ -71,8 +69,11 @@ try {
   \caption{Overall structure of $N$+1-version differential testing for $N$
     implementations (engines) and one language specification}
   \label{fig:overall}
-  \vspace*{-.5em}
+  \vspace*{-1em}
 \end{figure*}
+
+
+\subsection{Running Example}
 
 We explain how $N$+1-version differential testing works with a simple
 JavaScript example shown in Figure~\ref{fig:example}.
@@ -84,14 +85,14 @@ For example, $\code{null == undefined}$ is $\code{true}$ because of
 the algorithm step 2.  According to the steps 10 and 11, if the type of a value is
 String, Number, BigInt, or Symbol, and the type of the other value is Object, the algorithm calls
 \textbf{ToPrimitive} to convert the JavaScript object to a primitive value.
-Note that this is an unhandling abrupt completion bug in the specification!
+Note that this is a specification bug caused by unhandled abrupt completions!
 To express control diverters such as exceptions, $\code{break}$, $\code{continue}$,
 $\code{return}$, and $\code{throw}$ statements in addition to normal values,
-ECMAScript uses ``completions'' : the type of a completion is either
-normal or abrupt.  To handle such abrupt completions,
-ECMAScript uses the question mark prefix (?) to denote necessary checking of abrupt completions.
-However, even though \textbf{ToPrimitive} can produce an abrupt completion,
-the calls of \textbf{ToPrimitive} in steps 10 and 11 do not use the question mark, which is a bug.
+ECMAScript uses ``abrupt completions''.  To denote necessary checking of them,
+ECMAScript annotates the question mark prefix (?) to all function calls possible
+to return abrupt completions.  However, even though \textbf{ToPrimitive} can
+produce an abrupt completion, the calls of \textbf{ToPrimitive} in steps 10 and
+11 do not use the question mark, which is a bug.
 
 Now, let's see how $N$+1-version differential testing can detect the
 bug in the specification. Consider the example JavaScript code in
@@ -119,9 +120,9 @@ Equality Comparison} with high probability.
 Figure~\ref{fig:overall} depicts the overall structure of $N$+1-version differential testing
 for $N$ different implementations (engines) and one language specification.
 It takes a mechanized specification extracted from a given language
-specification, it first takes the conformance test generation phase, which
+specification, it first performs the conformance test generation phase, which
 automatically generates conformance tests that reflect the language
-syntax and semantics described in the specification.  Then, it takes the
+syntax and semantics described in the specification.  Then, it performs the
 bug detection and localization phase, which detects and localizes bugs
 in the engines or the specification by comparing the results
 of the generated tests on $N$ engines.
