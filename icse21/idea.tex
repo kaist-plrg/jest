@@ -88,9 +88,12 @@ String, Number, BigInt, or Symbol, and the type of the other value is Object, th
 Note that this is a specification bug caused by unhandled abrupt completions!
 To express control diverters such as exceptions, $\code{break}$, $\code{continue}$,
 $\code{return}$, and $\code{throw}$ statements in addition to normal values,
-ECMAScript uses ``abrupt completions''.  To denote necessary checking of them,
-ECMAScript annotates the question mark prefix (?) to all function calls possible
-to return abrupt completions.  However, even though \textbf{ToPrimitive} can
+ECMAScript uses ``abrupt completions.''
+%
+ECMAScript annotates the question mark prefix (?) to all function
+calls that may return abrupt completions to denote that they should be checked.
+%
+  However, even though \textbf{ToPrimitive} can
 produce an abrupt completion, the calls of \textbf{ToPrimitive} in steps 10 and
 11 do not use the question mark, which is a bug.
 
