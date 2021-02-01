@@ -24,7 +24,7 @@ fully support modern JavaScript features and the latest specification,
 ECMAScript 2020 (ES11, 2020).  Our experiments use the following four JavaScript
 engines, all of which support ES11:
 \begin{itemize}
-  \item \textbf{V8(v8.5)\footnote{https://v8.dev/}:} An open-source high-performance engine
+  \item \textbf{V8(v8.3)\footnote{https://v8.dev/}:} An open-source high-performance engine
     for JavaScript and WebAssembly developed by Google~\cite{v8}
   \item \textbf{GraalJS(v20.1.0)\footnote{https://github.com/graalvm/graaljs\#current-status}:} A JavaScript implementation built on
     GraalVM~\cite{graaljs}, which is a Java Virtual Machine (JVM) based on
@@ -65,7 +65,7 @@ which synthesizes 1,125 JavaScript programs in about 10
 seconds and covers 97.78\% (397/406) of reachable 
 alternatives in the syntax productions of ES11.
 Among them, we filtered out 602 programs that do not increase
-the semantics coverage and started the mutation iteration with 523 programs.
+the semantics coverage and started the mutation iteration with 519 programs.
 Figure~\ref{fig:sem-coverage} shows the change of
 semantics coverage of the program pool during the iterative process in 100 hours.
 The left and right graphs present the statement and branch coverages,
