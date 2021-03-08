@@ -3,6 +3,7 @@ FILE=abstract
 TEXSRC=abstract.tex
 
 $(FILE).pdf: $(TEXSRC)
+	pdflatex $(FILE).tex && \
 	pdflatex $(FILE).tex
 
 .PHONY: clean

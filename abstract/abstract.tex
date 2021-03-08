@@ -1,13 +1,6 @@
-\documentclass{article}
+\documentclass[conference]{IEEEtran}
 
-\usepackage{geometry}
-\geometry{
-  a4paper,
-  total={170mm,257mm},
-  left=20mm,
-  top=20mm,
-}
-
+\IEEEoverridecommandlockouts
 \usepackage{cite}
 \usepackage{kotex}
 \usepackage{float}
@@ -32,35 +25,103 @@
 \urlstyle{same}
 
 \lstset{basicstyle=\ttfamily}
+\newcommand{\tool}{\textsf{\small JEST}}
 
 \begin{document}
 
-\title{$\textsf{JEST}$: $N\!+\!1$-version Differential Testing of\\ Both JavaScript Engines and Specification
-\\ {\large Artifact Evaluation}}
+\title{$\textsf{JEST}$: $N\!+\!1$-version Differential Testing of\\
+  Both JavaScript Engines and Specification}
 
 \author{
-  Jihyeok Park
+  \IEEEauthorblockN{Jihyeok Park}
+  \IEEEauthorblockA{\textit{School of Computing} \\
+  \textit{KAIST}\\
+  Daejeon, South Korea\\
+  jhpark0223@kaist.ac.kr}
+
   \and
-  Seungmin An
+
+  \IEEEauthorblockN{Seungmin An}
+  \IEEEauthorblockA{\textit{School of Computing} \\
+  \textit{KAIST}\\
+  Daejeon, South Korea\\
+  h2oche@kaist.ac.kr}
+
   \and
-  Dongjun Youn
+
+  \IEEEauthorblockN{Dongjun Youn}
+  \IEEEauthorblockA{\textit{School of Computing} \\
+  \textit{KAIST}\\
+  Daejeon, South Korea\\
+  f52985@kaist.ac.kr}
+
   \and
-  Gyeongwon Kim
+
+  \IEEEauthorblockN{Gyeongwon Kim}
+  \IEEEauthorblockA{\textit{School of Computing} \\
+  \textit{KAIST}\\
+  Daejeon, South Korea\\
+  gyeongwon.kim@kaist.ac.kr}
+
   \and
-  Sukyoung Ryu
+
+  \IEEEauthorblockN{Sukyoung Ryu}
+  \IEEEauthorblockA{\textit{School of Computing} \\
+  \textit{KAIST}\\
+  Daejeon, South Korea\\
+  sryu.cs@kaist.ac.kr}
 }
-\date{KAIST, South Korea}
 
 \maketitle
 
+\begin{abstract}
+  Modern programming follows the continuous integration (CI) and continuous
+  deployment (CD) approach rather than the traditional waterfall model.  Even
+  the development of modern programming languages uses the CI/CD approach to
+  swiftly provide new language features and to adapt to new development
+  environments.  Unlike in the conventional approach, in the modern CI/CD
+  approach, a language specification is no more the oracle of the language semantics
+  because both the specification and its implementations (interpreters or compilers) can co-evolve.
+  In this setting, both the specification and implementations may have bugs, and
+  guaranteeing their correctness is non-trivial.
+
+  In this paper, we propose a novel \textit{$N$+1-version differential testing} to resolve
+  the problem.  Unlike the traditional differential testing, our approach
+  consists of three steps: 1) to automatically synthesize programs guided by the
+  syntax and semantics from a given language specification, 2) to generate
+  conformance tests by injecting assertions to the synthesized programs to check their final program
+  states, 3) to detect bugs in the specification and implementations via executing
+  the conformance tests on multiple implementations, and 4) to localize bugs on
+  the specification using statistical information.  We actualize our approach for
+  the JavaScript programming language via \( \tool \), which performs
+  $N$+1-version differential testing for modern JavaScript engines and ECMAScript,
+  the language specification describing the syntax and semantics
+  of JavaScript in a natural language.  We evaluated \( \tool \) with four JavaScript engines that
+  support all modern JavaScript language features and the latest version of
+  ECMAScript (ES11, 2020).  \( \tool \) automatically synthesized 1,700
+  programs that covered 97.78\% of syntax and 87.70\% of
+  semantics from ES11.  Using the assertion-injected JavaScript programs,
+  it detected 44 engine bugs in four different engines and 27
+  specification bugs in ES11.
+\end{abstract}
+
+\begin{IEEEkeywords}
+JavaScript, conformance test generation, mechanized specification,
+differential testing
+\end{IEEEkeywords}
+
 \section{Artifact Description}
 
-\begin{figure}[H]
-  \includegraphics[width=0.98\textwidth]{overall.pdf}
-\end{figure}
+\begin{figure*}
+  \includegraphics[width=0.98\textwidth]{img/overall.pdf}
+  \caption{Overall structure of $N$+1-version differential testing for $N$
+    implementations (engines) and one language specification}
+  \label{fig:overall}
+\end{figure*}
 
-The artifact consists of following modules to perform $N$+1-version differential
-testing of JavaScript engines and specification:
+As described in Figure~\ref{fig:overall}, the artifact consists of following
+modules to perform $N$+1-version differential testing of JavaScript engines and
+specification:
 \begin{itemize}
   \item \textbf{SeedSynthesizer} synthesizes an initial seed programs using
     the language syntax.
@@ -85,7 +146,8 @@ testing of JavaScript engines and specification:
 The artifact is open-source can be obtained by cloning the following git
 repository:
 \begin{lstlisting}
-$ git clone https://github.com/jhnaldo/jest.git
+$ git clone \
+  https://github.com/jhnaldo/jest.git
 \end{lstlisting}
 To build and execute the artifact, you should follow the instrucitons in the
 \texttt{INSTALL} file in the artifact.  Since we implement the artifact in
@@ -101,7 +163,8 @@ docker by following the instruction in
 the following command:
 \begin{lstlisting}
 $ docker pull jhnaldo/icse-21-jest
-$ docker run -it -m=16g --rm jhnaldo/icse-21-jest
+$ docker run -it -m=16g --rm \
+  jhnaldo/icse-21-jest
 # user: guest, password: jest
 \end{lstlisting}
 \textit{WARNING}: The docker image is 3GB large thus be patient when you
@@ -125,12 +188,13 @@ with the following sub-commands:
     maximum iteration via the option \texttt{-generate:iter=<number>} (default:
     10).
   \item \texttt{inject} loaded programs from \texttt{result/programs} and dumps
-    results of \textbf{AssertionInjector} to \texttt{result/tests}.
-  \item \texttt{check} performs \textbf{DifferentialTester} for
+    results of \textbf{AssertionInjector} to the directory \texttt{result/tests}.
+  \item \texttt{check} performs \textbf{DifferentialTester} with the tests in
     \texttt{result/tests} and records bugs to \texttt{result/bugs}.
-  \item \texttt{localize} performs \textbf{BugLocalizer} for found bugs in
-    \texttt{result/bugs}. When the option \texttt{-localize:answer} is given, it
-    reads answers from \texttt{answer} and shows their ranks.
+  \item \texttt{localize} performs \textbf{BugLocalizer} for detected bugs in
+    the directory \texttt{result/bugs}. When the option
+    \texttt{-localize:answer} is given, it reads answers from \texttt{answer}
+    and shows their ranks.
   \item \texttt{run} integrates all modules to perform $N$+1-vesion differential
     testing at once.
 \end{itemize}
@@ -173,7 +237,8 @@ command:
 \begin{lstlisting}
 $ rm -r result/programs
 $ cp -r data result/programs
-$ jest inject && jest check && jest localize -localize:answer
+$ jest inject && jest check && \
+  jest localize -localize:answer
 \end{lstlisting}
 Moreover, we provide detailed data of each bug detected by the artifact in
 \texttt{bugs.md}. You can check the table in Section IV.B with this file.
