@@ -7,8 +7,13 @@ artifact extends the an [Intermediate Representations for ECMAScript
 Specifications (IRES)](https://github.com/kaist-plrg/ires) extracted from
 ECMAScript 2020 (ES11) using [JISET](https://github.com/kaist-plrg/jiset).
 
-This package is provided for [ICSE'21 Artifact
-Evaluation](https://conf.researchr.org/track/icse-2021/icse-2021-Artifact-Evaluation#Call-For-Artifact-Submissions).
+## Publications
+
+Details of the JEST framework are available in our papers:
+- [ASE 2020] [JISET: JavaScript IR-based Semantics Extraction
+  Toolchain](https://doi.org/10.1145/3324884.3416632)
+- [ICSE 2021] [JEST: N+1-version Differential Testing of Both JavaScript
+  Engines](https://doi.org/10.1109/ICSE43902.2021.00015)
 
 ## Overall Structure
 
@@ -34,7 +39,7 @@ differential testing of JavaScript engines and specification:
 The artifact is open-source can be obtained by cloning the following git
 repository:
 ```
-$ git clone https://github.com/jhnaldo/jest.git
+$ git clone https://github.com/kaist-plrg/jest.git
 $ cd jest
 ```
 To build and execute the artifact, you should follow the instrucitons in the

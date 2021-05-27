@@ -19,7 +19,7 @@ download it and please assign more than 16GB memory for the docker engine.
 
 ## Download JEST
 ```
-$ git clone https://github.com/jhnaldo/jest.git
+$ git clone https://github.com/kaist-plrg/jest.git
 $ cd jest
 ```
 
